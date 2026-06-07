@@ -1,0 +1,563 @@
+#include <iostream>
+#include <argparse/argparse.hpp>
+#include <benches/datasets/DataLoader.hpp>
+#include <nlohmann/json.hpp>
+#include <ACSG/IndexACSG.h>
+#include <tuple>
+#include <fstream>
+#include <filesystem>
+
+#include <benches/utils/Timer.hpp>
+#include <benches/utils/metrics.hpp>
+#include <benches/utils/graph_properties.hpp>
+
+// 辅助函数：打印JSON类型信息
+std::string json_type_str(const nlohmann::json& j) {
+    if (j.is_null()) return "null";
+    if (j.is_boolean()) return "boolean";
+    if (j.is_number()) return "number";
+    if (j.is_string()) return "string";
+    if (j.is_array()) return "array";
+    if (j.is_object()) return "object";
+    return "unknown";
+}
+
+double train_ACO(const DataLoader &data_loader, acsg::IndexACSG &index)
+{
+    try {
+        using idx_t = faiss::idx_t;
+        std::cerr << "Starting ACO training\n";
+        double train_time_sec;
+        {
+            auto [nq, xq] = data_loader.load_query("acpg"); 
+            std::cerr << "Loaded ACPG query data: " << nq << " queries\n";
+            // === 修改开始 ===
+            auto [k, gt] = data_loader.load_gt("acpg");
+            std::cout << "\n[DEBUG CHECK] Real-time k value check:\n";
+            std::cout << "  - k (from load_gt) = " << k << " (Expect 100)\n";
+            std::cout << "  - nq (queries)     = " << nq << "\n";
+            if (k == nq) {
+                std::cout << "  [!!!] CRITICAL WARNING: k equals nq! DataLoader bug persists!\n";
+            }
+            std::cout << "==========================================\n\n";
+            // === 修改结束 ===  
+
+            if (!xq) throw std::runtime_error("train xq is null");
+            if (!gt) throw std::runtime_error("train gt is null");
+            
+            Timer timer;
+            index.antSearch(nq, xq.get(), k, gt.get());
+            train_time_sec = timer.elapsed_ms() * 1e-3;
+            std::cout << "Training Time = " << train_time_sec << " [s]" << std::endl;
+        }
+        return train_time_sec;
+    } catch (const std::exception& e) {
+        std::cerr << "ERROR in train_ACO: " << e.what() << "\n";
+        throw;
+    }
+}
+
+std::tuple<double, double, double> compute_qps_recall_ACO(
+    acsg::IndexACSG &index, const int nq,
+    const std::unique_ptr<float[]> &xq, const int k,
+    const std::unique_ptr<faiss::idx_t[]> &gt)
+{
+    try {
+        using idx_t = faiss::idx_t;
+        std::cerr << "Computing ACO QPS for nq=" << nq << ", k=" << k << "\n";
+
+        if (!xq) throw std::runtime_error("xq is null");
+        if (!gt) throw std::runtime_error("gt is null");
+        if (nq <= 0 || k <= 0) throw std::runtime_error("invalid nq or k");
+
+        std::unique_ptr<idx_t[]> I(new idx_t[nq * k]);
+        std::unique_ptr<float[]> D(new float[nq * k]);
+
+        Timer timer;
+        index.search_ACO(nq, xq.get(), k, D.get(), I.get());
+        auto elapsed = timer.elapsed_ns() * 1e-9;
+
+        float qps = nq / elapsed;
+        float r_at_k = recall_at_k(nq, k, k, I, 100, gt);
+        std::cout << "ACO QPS = " << qps << " [q/s], R@k = " << r_at_k << std::endl;
+        return {qps, r_at_k, elapsed};
+    } catch (const std::exception& e) {
+        std::cerr << "ERROR in compute_qps_recall_ACO: " << e.what() << "\n";
+        throw;
+    }
+}
+
+// 函数声明（恢复为5个参数，与旧版本一致）
+std::tuple<double, double, double> compute_qps_recall(
+    acsg::IndexACSG &index, const int nq,
+    const std::unique_ptr<float[]> &xq, const int k,
+    const std::unique_ptr<faiss::idx_t[]> &gt
+);
+
+// 函数定义（删除current_search_L参数，通过index获取search_L）
+std::tuple<double, double, double> compute_qps_recall(
+    acsg::IndexACSG &index, const int nq,
+    const std::unique_ptr<float[]> &xq, const int k,
+    const std::unique_ptr<faiss::idx_t[]> &gt
+) {
+    try {
+        using idx_t = faiss::idx_t;
+        // 直接从index获取当前search_L（无需新增参数）
+        int current_search_L = index.acsg.search_L;
+        std::cerr << "=== Starting compute_qps_recall (search_L=" << current_search_L << ") ===" << std::endl;
+        std::cerr << "Parameters: nq=" << nq << ", k=" << k 
+                  << ", index.d=" << index.d << ", index.ntotal=" << index.ntotal << std::endl;
+
+        // 1. 索引核心结构完整性检查（基于Graph结构体的N/K成员）
+        if (!index.acsg.final_graph) {
+            throw std::runtime_error("index.acsg.final_graph is null (graph structure missing)");
+        }
+        if (index.acsg.final_graph->N != index.ntotal) {
+            throw std::runtime_error("graph node count mismatch: graph.N=" + std::to_string(index.acsg.final_graph->N) + 
+                                    ", index.ntotal=" + std::to_string(index.ntotal));
+        }
+        if (index.acsg.final_graph->K != index.nsg_R) {
+            throw std::runtime_error("graph K mismatch: graph.K=" + std::to_string(index.acsg.final_graph->K) + 
+                                    ", nsg_R=" + std::to_string(index.nsg_R));
+        }
+
+        // 2. 搜索参数有效性检查（用current_search_L替代新增参数）
+        if (current_search_L <= 0) {
+            throw std::invalid_argument("invalid search_L (must be positive): " + std::to_string(current_search_L));
+        }
+        if (current_search_L > index.ntotal) {
+            throw std::invalid_argument("search_L (" + std::to_string(current_search_L) + 
+                                      ") exceeds total vectors (" + std::to_string(index.ntotal) + ")");
+        }
+
+        // 3. 索引内部向量存储检查
+        auto flat_index = dynamic_cast<faiss::IndexFlat*>(index.storage);
+        if (!flat_index) {
+            throw std::runtime_error("index.storage is not IndexFlat (invalid vector storage)");
+        }
+        if (flat_index->ntotal != index.ntotal || flat_index->d != index.d) {
+            throw std::runtime_error("storage mismatch: flat_ntotal=" + std::to_string(flat_index->ntotal) + 
+                                    ", index_ntotal=" + std::to_string(index.ntotal) + 
+                                    ", flat_d=" + std::to_string(flat_index->d) + 
+                                    ", index_d=" + std::to_string(index.d));
+        }
+
+        // 4. 输入参数合法性检查
+        if (nq <= 0) throw std::invalid_argument("nq must be positive: " + std::to_string(nq));
+        if (k <= 0) throw std::invalid_argument("k must be positive: " + std::to_string(k));
+        if (k > index.ntotal) throw std::invalid_argument("k (" + std::to_string(k) + ") exceeds index size (" + std::to_string(index.ntotal) + ")");
+        if (!xq) throw std::runtime_error("xq is null (query vectors not provided)");
+        if (!gt) throw std::runtime_error("gt is null (ground truth not provided)");
+
+        // 5. 结果内存分配检查
+        const size_t result_size = static_cast<size_t>(nq) * k;
+        std::unique_ptr<idx_t[]> I;
+        std::unique_ptr<float[]> D;
+        try {
+            I = std::make_unique<idx_t[]>(result_size);
+            D = std::make_unique<float[]>(result_size);
+            std::fill(I.get(), I.get() + result_size, -1);  // 初始化无效值便于检查
+            std::fill(D.get(), D.get() + result_size, 0.0f);
+        } catch (const std::bad_alloc& e) {
+            throw std::runtime_error("memory allocation failed (size=" + std::to_string(result_size) + "): " + e.what());
+        }
+
+        // 6. 执行搜索并捕获异常（包含search_L上下文）
+        Timer timer;
+        std::string faiss_error_msg;
+        try {
+            std::cerr << "DEBUG: index.is_built = " << std::boolalpha << index.is_built << std::endl;
+
+            std::cerr << "Calling index.search(nq=" << nq << ", k=" << k << ", search_L=" << current_search_L << ")" << std::endl;
+
+            index.search(nq, xq.get(), k, D.get(), I.get());
+        } catch (const faiss::FaissException& e) {
+            faiss_error_msg = std::string(e.what());
+            if (faiss_error_msg.find("out of bounds") != std::string::npos) {
+                throw std::runtime_error("Faiss out-of-bounds: " + faiss_error_msg + 
+                                        " (invalid neighbor index in graph at search_L=" + std::to_string(current_search_L) + ")");
+            } else if (faiss_error_msg.find("null pointer") != std::string::npos) {
+                throw std::runtime_error("Faiss null pointer: " + faiss_error_msg + 
+                                        " (index internal structure corrupted)");
+            } else {
+                throw std::runtime_error("Faiss error: " + faiss_error_msg);
+            }
+        } catch (const std::exception& e) {
+            throw std::runtime_error("search failed: " + std::string(e.what()));
+        }
+        const auto elapsed = timer.elapsed_ns() * 1e-9;
+
+        // 7. 搜索结果有效性检查
+        if (elapsed <= 0) {
+            throw std::runtime_error("invalid search time (" + std::to_string(elapsed) + "s) - possible search logic failure");
+        }
+        // 检查前10个查询的第一个结果是否有效
+        for (int i = 0; i < std::min(10, nq); ++i) {
+            if (I[i * k] == -1 && k > 0) {
+                std::cerr << "WARNING: query " << i << " has invalid first neighbor (-1)" << std::endl;
+            }
+        }
+
+        // 8. 计算召回率并返回结果（3个元素，匹配结构化绑定）
+        const float r_at_k = recall_at_k(nq, k, k, I, 100, gt);
+        std::cout << "Standard QPS = " << nq / elapsed << " [q/s], R@k = " << r_at_k << std::endl;
+        return {nq / elapsed, r_at_k, elapsed};
+
+    } catch (const std::exception& e) {
+        // 错误信息包含search_L上下文
+        int current_search_L = index.acsg.search_L;
+        std::cerr << "FATAL ERROR in compute_qps_recall (search_L=" << current_search_L << "): " << e.what() << std::endl;
+        std::cerr << "Error context: " << std::endl;
+        std::cerr << "  index.is_built=" << std::boolalpha << index.is_built << std::endl;
+        std::cerr << "  index.is_trained=" << std::boolalpha << index.is_trained << std::endl;
+        std::cerr << "  graph.N=" << (index.acsg.final_graph ? std::to_string(index.acsg.final_graph->N) : "null") << std::endl;
+        std::cerr << "  graph.K=" << (index.acsg.final_graph ? std::to_string(index.acsg.final_graph->K) : "null") << std::endl;
+        std::cerr << "  index.nsg_R=" << index.nsg_R << std::endl;
+        throw;  // 重新抛出异常供上层处理
+    }
+}
+
+
+nlohmann::json measure_search_performance(acsg::IndexACSG &index,
+                                          const DataLoader &data_loader)
+{
+    try {
+        size_t d = data_loader.dim();
+        auto [nq, xq] = data_loader.load_query();
+        auto [k, gt] = data_loader.load_gt();
+        std::cerr << "Measuring standard search performance: nq=" << nq 
+                  << ", d=" << d << ", k=" << k << "\n";
+
+        if (!xq || !gt) throw std::runtime_error("query data or gt is null");
+        if (nq <= 0 || k <= 0) throw std::runtime_error("invalid query parameters");
+
+        nlohmann::json results = nlohmann::json::array();
+        std::cerr << "Initialized results as " << json_type_str(results) << "\n";
+
+        for (int search_L : {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024})
+        {
+            std::cerr << "\nProcessing search_L=" << search_L << " (standard)\n";
+            index.acsg.search_L = search_L;
+
+            auto [qps, r_at_k, elapsed] = compute_qps_recall(index, nq, xq, 10, gt);
+
+            nlohmann::json result;
+            result["search_L"] = search_L;
+            result["qps"] = qps;
+            result["r_at_k"] = r_at_k;
+            result["search_time"] = elapsed;
+
+            if (!results.is_array()) {
+                throw std::runtime_error("results is not array before push_back (search_L=" + 
+                                        std::to_string(search_L) + ", type=" + json_type_str(results) + ")");
+            }
+            results.push_back(result);
+            std::cerr << "Added search_L=" << search_L << " to standard results (new size=" << results.size() << ")\n";
+        }
+
+        return results;
+    } catch (const std::exception& e) {
+        std::cerr << "ERROR in measure_search_performance: " << e.what() << "\n";
+        throw;
+    }
+}
+
+nlohmann::json measure_search_performance_ACO(acsg::IndexACSG &index,
+                                              const DataLoader &data_loader)
+{
+    try {
+        size_t d = data_loader.dim();
+        auto [nq, xq] = data_loader.load_query();
+        auto [k, gt] = data_loader.load_gt();
+        std::cerr << "Measuring ACO search performance: nq=" << nq 
+                  << ", d=" << d << ", k=" << k << "\n";
+
+        if (!xq || !gt) throw std::runtime_error("query data or gt is null");
+        if (nq <= 0 || k <= 0) throw std::runtime_error("invalid query parameters");
+
+        nlohmann::json results = nlohmann::json::array();
+        std::cerr << "Initialized ACO results as " << json_type_str(results) << "\n";
+
+        for (int search_L : {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024})
+        {
+            std::cerr << "\nProcessing search_L=" << search_L << " (ACO)\n";
+            index.acsg.search_L = search_L;
+
+            auto [qps, r_at_k, elapsed] = compute_qps_recall_ACO(index, nq, xq, 10, gt);
+
+            nlohmann::json result;
+            result["search_L"] = search_L;
+            result["qps"] = qps;
+            result["r_at_k"] = r_at_k;
+            result["elapsed"] = elapsed;
+
+            if (!results.is_array()) {
+                throw std::runtime_error("ACO results is not array before push_back (search_L=" + 
+                                        std::to_string(search_L) + ", type=" + json_type_str(results) + ")");
+            }
+            results.push_back(result);
+            std::cerr << "Added search_L=" << search_L << " to ACO results (new size=" << results.size() << ")\n";
+        }
+
+        return results;
+    } catch (const std::exception& e) {
+        std::cerr << "ERROR in measure_search_performance_ACO: " << e.what() << "\n";
+        throw;
+    }
+}
+
+double measure_search_performance_brute_force(acsg::IndexACSG &index,
+                                              const DataLoader &data_loader)
+{
+    try {
+        size_t d = data_loader.dim();
+        auto [nb, xb] = data_loader.load_base();
+        auto [nq, xq] = data_loader.load_query();
+        std::cerr << "Measuring brute force time: nq=" << nq << ", d=" << d << "\n";
+
+        using idx_t = faiss::idx_t;
+        idx_t k = 10;
+
+        std::unique_ptr<idx_t[]> I(new idx_t[nq * k]);
+        std::unique_ptr<float[]> D(new float[nq * k]);
+        Timer timer;
+        // index.brute_force_search(nb, xb.get(), nq, xq.get(), k, D.get(), I.get());
+        auto brute_force_time = timer.elapsed_ns() * 1e-9;
+        std::cerr << "Brute force time: " << brute_force_time << "s (simulated)\n";
+        return brute_force_time;
+    } catch (const std::exception& e) {
+        std::cerr << "ERROR in measure_search_performance_brute_force: " << e.what() << "\n";
+        throw;
+    }
+}
+
+nlohmann::json acsg_properties(acsg::IndexACSG &index)
+{
+    try {
+        const int n = index.ntotal;
+        const int R = index.acsg.nsg_R;
+        std::cerr << "Computing ACSG properties: n=" << n << ", R=" << R << "\n";
+
+        std::vector<int> neighbors(R * n);
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < R; ++j) {
+                neighbors[i * R + j] = index.acsg.final_graph->at(i, j);
+            }
+        }
+        const auto get_range = [&](int u) -> std::tuple<int, int> {
+            return {u * R, (u + 1) * R};
+        };
+
+        auto props = graph_properties(n, neighbors, get_range);
+        std::cerr << "Computed graph properties (type: " << json_type_str(props) << ")\n";
+        return props;
+    } catch (const std::exception& e) {
+        std::cerr << "ERROR in acsg_properties: " << e.what() << "\n";
+        throw;
+    }
+}
+
+int main(int argc, char **argv)
+{
+    std::cout << "Enterting bench_ACO_TEST" << std::endl;
+    setvbuf(stdout, NULL, _IONBF, 0);
+
+    try {
+        argparse::ArgumentParser program("train_and_benchmark_ACO");
+
+        program.add_argument("--index_file").required();
+        program.add_argument("--dataset").required();
+        program.add_argument("--fn_result").required();
+        program.add_argument("--trials").default_value(10).scan<'i', int>();
+        program.add_argument("--num_aco").default_value(10).scan<'i', int>();
+        program.add_argument("--acpg_file").required();
+        
+        // 参数覆盖选项 (默认值为 -1，表示不覆盖)
+        program.add_argument("--alpha").default_value(-1.0f).scan<'g', float>();
+        program.add_argument("--beta").default_value(-1.0f).scan<'g', float>();
+        program.add_argument("--rho").default_value(-1.0f).scan<'g', float>();
+        program.add_argument("--lambda").default_value(-1.0f).scan<'g', float>();
+        program.add_argument("--iterations").default_value(-1).scan<'i', int>();
+        
+        // 【新增】修复报错的关键：添加 rejection 参数
+        program.add_argument("--rejection").default_value(-1).scan<'i', int>();
+        program.add_argument("--L")
+        .help("Search depth L for ACO training")
+        .default_value(500) // 默认值设为 500，以防 Python 没传
+        .scan<'i', int>();
+
+        // 【SSG 直通模式】可选：直接加载 SSG 图跑蚁群，跳过 bench_ACO
+        program.add_argument("--ssg_file")
+        .help("SSG graph file path. If set, bypass index_file loading and directly load SSG + run ACO")
+        .default_value(std::string(""));
+        program.add_argument("--R")
+        .help("Graph degree R (only used in SSG direct mode, def: 50)")
+        .default_value(50)
+        .scan<'i', int>();
+
+        try {
+            program.parse_args(argc, argv);
+        } catch (const std::runtime_error &err) {
+            std::cerr << "Argument parsing error: " << err.what() << std::endl;
+            std::cerr << program;
+            return 1;
+        }
+
+        std::string index_file = program.get<std::string>("--index_file");
+        std::string acpg_file = program.get<std::string>("--acpg_file");
+        std::string dataset_name = program.get<std::string>("--dataset");
+        std::string result_file = program.get<std::string>("--fn_result");
+        int num_trials = program.get<int>("--trials");
+        int num_aco = program.get<int>("--num_aco");
+
+        // 获取覆盖参数
+        float new_alpha = program.get<float>("--alpha");
+        float new_beta = program.get<float>("--beta");
+        float new_rho = program.get<float>("--rho");
+        float new_lambda = program.get<float>("--lambda");
+        int new_iterations = program.get<int>("--iterations");
+        int new_rejection = program.get<int>("--rejection"); // 【新增】
+        int new_L = program.get<int>("--L");
+        std::string ssg_file = program.get<std::string>("--ssg_file");
+        int ssg_R = program.get<int>("--R");
+
+        // 加载索引
+        auto index = std::make_unique<acsg::IndexACSGFlat>();
+
+        if (!ssg_file.empty()) {
+            // ============ SSG 直通模式：跳过 bench_ACO，直接加载 SSG 图 ============
+            std::cout << "\n========== SSG DIRECT MODE ==========" << std::endl;
+            std::cout << "SSG file: " << ssg_file << std::endl;
+            std::cout << "Bypassing index_file, loading SSG graph directly.\n" << std::endl;
+
+            // ① 加载 base 数据，获取维度和数量
+            DataLoader tmp_loader(dataset_name);
+            auto [nb, xb] = tmp_loader.load_base();
+            int dim = tmp_loader.dim();
+            std::cout << "Base data: N=" << nb << ", dim=" << dim << std::endl;
+
+            // ② 重新创建带正确维度的 IndexACSGFlat
+            index = std::make_unique<acsg::IndexACSGFlat>(dim, ssg_R);
+            index->verbose = true;
+            index->is_trained = true;
+
+            // ③ 把 base 数据灌入 storage
+            index->storage->add(nb, xb.get());
+            index->ntotal = index->storage->ntotal;
+
+            // ④ 读取 SSG 文件（格式: width | n_ep | eps[] | 逐节点 [deg | neighbors[]] ）
+            std::ifstream in(ssg_file, std::ios::binary);
+            if (!in.good()) {
+                throw std::runtime_error("Cannot open SSG file: " + ssg_file);
+            }
+
+            unsigned width;
+            in.read((char*)&width, sizeof(unsigned));
+
+            unsigned n_ep = 0;
+            in.read((char*)&n_ep, sizeof(unsigned));
+            std::vector<unsigned> eps(n_ep);
+            in.read((char*)eps.data(), n_ep * sizeof(unsigned));
+
+            // ⑤ 逐节点读邻居，统计最大度数 K
+            std::vector<std::vector<unsigned>> adj(nb);
+            int K = 0;
+            for (faiss::idx_t i = 0; i < nb; i++) {
+                unsigned deg;
+                in.read((char*)&deg, sizeof(unsigned));
+                if (in.eof()) {
+                    throw std::runtime_error("SSG file truncated at node " + std::to_string(i) +
+                                             " (expected " + std::to_string(nb) + " nodes)");
+                }
+                adj[i].resize(deg);
+                in.read((char*)adj[i].data(), deg * sizeof(unsigned));
+                K = std::max(K, static_cast<int>(deg));
+            }
+            in.close();
+
+            std::cout << "SSG loaded: N=" << nb << ", max_degree(K)=" << K
+                      << ", n_ep=" << n_ep
+                      << ", EP=" << (n_ep > 0 ? eps[0] : 0) << std::endl;
+
+            // ⑥ 转成 N×K 平铺格式（不足 K 的填 -1），然后调用 acsg.build() 初始化信息素
+            std::vector<faiss::idx_t> knng(nb * K, -1);
+            for (faiss::idx_t i = 0; i < nb; i++) {
+                for (size_t j = 0; j < adj[i].size(); j++) {
+                    knng[i * K + j] = static_cast<faiss::idx_t>(adj[i][j]);
+                }
+            }
+
+            index->acsg.enterpoint = (n_ep > 0) ? static_cast<int>(eps[0]) : 0;
+            const acsg::Graph<faiss::idx_t> knn_graph(knng.data(), nb, K);
+            index->acsg.build(index->storage, nb, knn_graph, true);
+            index->nsg_R = K; // 对齐 graph.K，使后续检查不报错
+            index->is_built = true;
+
+            std::cout << "SSG direct load completed. Pheromone initialized to 1.0, weight to 0.0\n";
+            std::cout << "========================================\n" << std::endl;
+
+        } else {
+            // ============ 原有模式：从 bench_ACO 保存的 index_file 加载 ============
+            std::cout << "Loading index from: " << index_file << std::endl;
+            index->load(index_file.c_str());
+            std::cout << "Index loaded successfully!" << std::endl;
+        }
+
+        // 【关键修改】强制覆盖参数
+        std::cout << "\n=== Overriding Parameters from Command Line ===" << std::endl;
+        if (new_alpha != -1.0f) {
+            std::cout << "Overriding Alpha: " << index->acsg.alpha << " -> " << new_alpha << std::endl;
+            index->acsg.alpha = new_alpha;
+        }
+        if (new_beta != -1.0f) {
+            std::cout << "Overriding Beta:  " << index->acsg.beta << " -> " << new_beta << std::endl;
+            index->acsg.beta = new_beta;
+        }
+        if (new_rho != -1.0f) {
+            std::cout << "Overriding Rho:   " << index->acsg.rho << " -> " << new_rho << std::endl;
+            index->acsg.rho = new_rho;
+        }
+        if (new_lambda != -1.0f) {
+            std::cout << "Overriding Lambda:" << index->acsg.lambda << " -> " << new_lambda << std::endl;
+            index->acsg.lambda = new_lambda;
+        }
+        if (new_iterations != -1) {
+            std::cout << "Overriding Iterations:" << index->acsg.iterations << " -> " << new_iterations << std::endl;
+            index->acsg.iterations = new_iterations;
+            index->iterations = new_iterations;
+        }
+        // 【新增】覆盖 rejection 参数
+        if (new_rejection != -1) {
+            std::cout << "Overriding Rejection:" << index->acsg.thresholdrej << " -> " << new_rejection << std::endl;
+            index->acsg.thresholdrej = new_rejection;
+        }
+        if (new_L != -1) {
+            std::cout << "Overriding Search L: " << index->acsg.search_L << " -> " << new_L << std::endl;
+            index->acsg.search_L = new_L;
+        }
+        std::cout << "==============================================\n" << std::endl;
+
+        // 加载数据集
+        DataLoader data_loader(dataset_name);
+        
+        for (int aco_run = 0; aco_run < 1; ++aco_run) {
+            std::cout << "\n===== ACO Run " << (aco_run + 1) << "/" << num_aco << " =====\n";
+            index->acsg.search_L = new_L;
+            train_ACO(data_loader, *index);
+            index->saveACPG(acpg_file.c_str());
+            std::cout << "Completed ACO run " << (aco_run + 1) << "/" << num_aco << std::endl;
+        }
+
+        // 输出结果
+        nlohmann::json output_aco;
+        output_aco["dataset"] = dataset_name;
+        output_aco["status"] = "ACPG generated";
+        std::ofstream ofs_aco(result_file);
+        ofs_aco << output_aco.dump(4) << std::endl;
+
+    } catch (const std::exception& e) {
+        std::cerr << "FATAL ERROR: " << e.what() << "\n";
+        return 1;
+    }
+    return 0;
+}

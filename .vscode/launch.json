@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C++ Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/benches/bench_ACO", // 可执行文件路径
+            "args": [
+                "--alpha",
+                "1.4",
+                "--beta",
+                "2.2",
+                "--rho",
+                "0.15",
+                "--iterations",
+                "10",
+                "--dataset",
+                "deep",
+                "--fn_result",
+                "benches/outputs/deep/acosp.json"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb", // 或者 "lldb" 如果你使用的是 clang
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "/usr/bin/gdb", // gdb 路径
+            "preLaunchTask": "build", // 确保先构建
+            "miDebuggerArgs": "",
+            "logging": {
+                "engineLogging": false
+            }
+        }
+    ]
+}

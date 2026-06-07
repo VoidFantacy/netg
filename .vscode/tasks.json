@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CMake Build Debug",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-B",
+                "build",
+                "-DFAISS_ENABLE_GPU=OFF",
+                "-DFAISS_ENABLE_PYTHON=OFF",
+                "-DCMAKE_BUILD_TYPE=Debug", // 这里将构建类型设置为 Debug
+                "-DFAISS_OPT_LEVEL=avx2",
+                "."
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Generate build files using cmake for Debug"
+        },
+        {
+            "label": "Make Build Debug",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-C",
+                "build", // 进入 build 目录
+                "-j",
+                "$(nproc)" // 启用并行构建
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": "CMake Build Debug",
+            "problemMatcher": [],
+            "detail": "Build the project with make in Debug mode"
+        }
+    ]
+}

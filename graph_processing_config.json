@@ -1,0 +1,21 @@
+{
+  "datasets": [
+    "glove",
+    "sift1M",
+    "sift10M",
+    "sift100K",
+    "deep",
+    "gist"
+  ],
+  "threads": 16,
+  "input_paths": {
+    "acpg_file": "acpg/{dataset}_index/acpg_nsg.json",
+    "clustering": "dpc/{dataset}_results/dpc_hierarchical_results.json",
+    "query_file": "benches/datasets/{dataset_dir}/{query_path}"
+  },
+  "output_path": "graph_processing/{dataset}_results/",
+  "expected_outputs": [
+    "entry_points.json",
+    "knn_12k_graph.json"
+  ]
+}

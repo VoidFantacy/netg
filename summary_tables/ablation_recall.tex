@@ -1,0 +1,37 @@
+\begin{table}[t]
+\centering
+\caption{Supplementary ablation at fixed Recall@100 thresholds. Each cell shows QPS and the search depth $L$ required to reach the target recall. ``---'' means the threshold is not reachable within the maximum budget.}
+\label{tab:ablation_recall}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{llcc}
+\toprule
+\textbf{Dataset} & \textbf{Method} & \textbf{R=0.90} & \textbf{R=0.95} \\
+\midrule
+\multirow{4}{*}{Deep10M} & Medoid (NSG) & 7927 ({\scriptsize $\pm$61, $L$23}) & 5248 ({\scriptsize $\pm$27, $L$42}) \\
+ & + ACO-Max & 7997 ({\scriptsize $\pm$75, $L$24}) & 5368 ({\scriptsize $\pm$45, $L$42}) \\
+ & + W-DPC (multi-hub) & 8738 ({\scriptsize $\pm$72, $L$24}) & 5777 ({\scriptsize $\pm$47, $L$43}) \\
+ & Full NETG & 8459 ({\scriptsize $\pm$69, $L$24}) & 5636 ({\scriptsize $\pm$34, $L$43}) \\
+\midrule
+\multirow{4}{*}{SIFT10M} & Medoid (NSG) & 14306 ({\scriptsize $\pm$133, $L$7}) & 11419 ({\scriptsize $\pm$96, $L$10}) \\
+ & + ACO-Max & 14144 ({\scriptsize $\pm$128, $L$6}) & 11306 ({\scriptsize $\pm$112, $L$9}) \\
+ & + W-DPC (multi-hub) & 14681 ({\scriptsize $\pm$134, $L$6}) & 11702 ({\scriptsize $\pm$80, $L$9}) \\
+ & Full NETG & 14406 ({\scriptsize $\pm$167, $L$5}) & 11640 ({\scriptsize $\pm$100, $L$8}) \\
+\midrule
+\multirow{4}{*}{SIFT10M-Skewed} & Medoid (NSG) & 14144 ({\scriptsize $\pm$133, $L$7}) & 11223 ({\scriptsize $\pm$89, $L$10}) \\
+ & + ACO-Max & 13865 ({\scriptsize $\pm$134, $L$7}) & 10992 ({\scriptsize $\pm$90, $L$10}) \\
+ & + W-DPC (multi-hub) & 14106 ({\scriptsize $\pm$106, $L$6}) & 11134 ({\scriptsize $\pm$76, $L$10}) \\
+ & Full NETG & 13813 ({\scriptsize $\pm$106, $L$5}) & 11334 ({\scriptsize $\pm$117, $L$8}) \\
+\midrule
+\multirow{4}{*}{Yandex T2I} & Medoid (NSG) & 861.0 ({\scriptsize $\pm$1.9, $L$257}) & 324.6 ({\scriptsize $\pm$0.2, $L$792}) \\
+ & + ACO-Max & 877.3 ({\scriptsize $\pm$0.7, $L$253}) & 330.3 ({\scriptsize $\pm$0.2, $L$788}) \\
+ & + W-DPC (multi-hub) & 934.7 ({\scriptsize $\pm$0.7, $L$243}) & 337.7 ({\scriptsize $\pm$0.2, $L$784}) \\
+ & Full NETG & 1073 ({\scriptsize $\pm$1, $L$210}) & 363.2 ({\scriptsize $\pm$0.3, $L$733}) \\
+\midrule
+\multirow{4}{*}{Gist1M} & Medoid (NSG) & 849.9 ({\scriptsize $\pm$1.7, $L$87}) & 527.6 ({\scriptsize $\pm$1.8, $L$150}) \\
+ & + ACO-Max & 845.0 ({\scriptsize $\pm$1.6, $L$86}) & 509.4 ({\scriptsize $\pm$0.8, $L$154}) \\
+ & + W-DPC (multi-hub) & 834.0 ({\scriptsize $\pm$1.2, $L$89}) & 483.0 ({\scriptsize $\pm$0.8, $L$169}) \\
+ & Full NETG & 817.9 ({\scriptsize $\pm$1.7, $L$87}) & 492.8 ({\scriptsize $\pm$0.7, $L$161}) \\
+\midrule
+\bottomrule
+\end{tabular}}
+\end{table}
