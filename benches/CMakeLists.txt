@@ -186,6 +186,15 @@ add_executable(bench_per_query_recall bench_per_query_recall.cpp)
 setup_target(bench_per_query_recall)
 target_include_directories(bench_per_query_recall PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/benches>)
 
+# Read-only validation oracle for frozen-graph entry headroom.
+add_executable(bench_entry_oracle bench_entry_oracle.cpp)
+setup_target(bench_entry_oracle)
+target_include_directories(bench_entry_oracle PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/benches>)
+
+# Lossless frozen-graph adapter for GATE's standard variable-degree NSG format.
+add_executable(export_gate_nsg export_gate_nsg.cpp)
+setup_target(export_gate_nsg)
+
 # --- HNSW 基准测试 ---
 add_executable(bench_hnsw bench_hnsw.cpp)
 setup_target(bench_hnsw)

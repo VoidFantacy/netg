@@ -1,0 +1,174 @@
+{
+    "root_dir": "./benches/datasets",
+    "datasets": {
+        "sift10M": {
+            "dataset_dir": "SIFT10M",
+            "train_path": "sift_base.fvecs", 
+            "base_path": "sift_base.fvecs",
+            "query_path": "sift_query.fvecs",
+            "gt_path": "sift_groundtruth.ivecs",
+            
+            "acpg_query_path": "sift_query.fvecs",
+            "acpg_gt_path": "sift_groundtruth.ivecs",
+            
+            "drl_train_query_path": "sift_query.fvecs",
+            "drl_train_gt_path": "sift_groundtruth.ivecs",
+            "drl_test_query_path": "sift_query.fvecs",
+            "drl_test_gt_path": "sift_groundtruth.ivecs",
+            "alpha": 0.5, "beta": 4.5, "R": 48, "L": 100, "ef_search": 200
+        },
+        "sift10M_skewed": {
+            "dataset_dir": "SIFT10M",
+            "train_path": "sift_base.fvecs",
+            "base_path": "sift_base.fvecs",
+            "query_path": "sift_skewed_query.fvecs",
+            "gt_path": "sift_skewed_groundtruth.ivecs",
+            
+            "acpg_query_path": "sift_skewed_query.fvecs",
+            "acpg_gt_path": "sift_skewed_groundtruth.ivecs",
+            
+            "drl_train_query_path": "sift_skewed_query.fvecs",
+            "drl_train_gt_path": "sift_skewed_groundtruth.ivecs",
+            "drl_test_query_path": "sift_skewed_query.fvecs",
+            "drl_test_gt_path": "sift_skewed_groundtruth.ivecs",
+            "alpha": 0.5, "beta": 4.5, "R": 48, "L": 100, "ef_search": 200
+        },
+        "deep10M": {
+            "dataset_dir": "DEEP10M",
+            "train_path": "base.10M.fvecs",
+            "base_path": "base.10M.fvecs",
+            "query_path": "query.public.10K.fvecs",
+            "gt_path": "groundtruth_10M_subset.ivecs",
+            
+            "acpg_query_path": "query.public.10K.fvecs",
+            "acpg_gt_path": "groundtruth_10M_subset.ivecs",
+            
+            "drl_train_query_path": "query.public.10K.fvecs",
+            "drl_train_gt_path": "groundtruth_10M_subset.ivecs",
+            "drl_test_query_path": "query.public.10K.fvecs",
+            "drl_test_gt_path": "groundtruth_10M_subset.ivecs",
+            "alpha": 0.5, "beta": 4.5, "R": 48, "L": 100, "ef_search": 200
+        },
+        "yandex_t2i": {
+            "dataset_dir": "YandexT2I",
+            "train_path": "base.10M.fvecs",
+            "base_path": "base.10M.fvecs",
+            "query_path": "query.public.100K.fvecs",
+            "gt_path": "groundtruth_10M_subset.ivecs",
+            
+            "acpg_query_path": "query.public.100K.fvecs",
+            "acpg_gt_path": "groundtruth_10M_subset.ivecs",
+            
+            "drl_train_query_path": "query.public.100K.fvecs",
+            "drl_train_gt_path": "groundtruth_10M_subset.ivecs",
+            "drl_test_query_path": "query.public.100K.fvecs",
+            "drl_test_gt_path": "groundtruth_10M_subset.ivecs",
+            "alpha": 0.01, "beta": 10.0, "R": 64, "L": 128, "ef_search": 200
+        },
+        "yandex_t2i_official10M_ip_v1": {
+            "dataset_dir": "YandexT2I_official10M_ip_v1",
+            "train_path": "query.router_train.fvecs",
+            "base_path": "base.official_first10M.fvecs",
+            "query_path": "query.test.public100K.fvecs",
+            "gt_path": "gt.test.public100K.ip.ivecs",
+
+            "acpg_query_path": "query.aco_train.fvecs",
+            "acpg_gt_path": "gt.aco_train.ip.ivecs",
+
+            "drl_train_query_path": "query.router_train.fvecs",
+            "drl_train_gt_path": "gt.router_train.ip.ivecs",
+            "validation_query_path": "query.validation.fvecs",
+            "validation_gt_path": "gt.validation.ip.ivecs",
+            "drl_test_query_path": "query.test.public100K.fvecs",
+            "drl_test_gt_path": "gt.test.public100K.ip.ivecs",
+
+            "metric": "ip",
+            "normalization": "none",
+            "artifact_version": "yandex-t2i-official-first10m-ip-v1",
+            "nvecs": 10000000,
+            "alpha": 0.01, "beta": 10.0, "R": 64, "L": 128, "ef_search": 200
+        },
+        "webvid2_5m_light_v1": {
+            "dataset_dir": "WebVid2.5M_light_v1",
+            "train_path": "query.router_train.seed20260826.fvecs",
+            "base_path": "base.webvid2_5m.fvecs",
+            "query_path": "query.test.public10K.fvecs",
+            "gt_path": "gt.test.public10K.ip.top100.ivecs",
+
+            "acpg_query_path": "query.aco_train.seed20260826.fvecs",
+            "acpg_gt_path": "gt.aco_train.seed20260826.ip.ivecs",
+
+            "drl_train_query_path": "query.router_train.seed20260826.fvecs",
+            "drl_train_gt_path": "gt.router_train.seed20260826.ip.ivecs",
+            "validation_query_path": "query.validation.seed20260826.fvecs",
+            "validation_gt_path": "gt.validation.seed20260826.ip.ivecs",
+            "drl_test_query_path": "query.test.public10K.fvecs",
+            "drl_test_gt_path": "gt.test.public10K.ip.top100.ivecs",
+
+            "metric": "ip",
+            "normalization": "source_unit_norm_no_additional",
+            "artifact_version": "roargraph-webvid2.5m-ip-v1",
+            "nvecs": 2505000,
+            "alpha": 0.01, "beta": 10.0, "R": 64, "L": 128, "ef_search": 200
+        },
+        "laion10m_acsg_v1": {
+            "dataset_dir": "LAION10M_acsg_v1",
+            "train_path": "query.router_train.seed20260830.unit.fvecs",
+            "base_path": "base.roargraph_laion10m.unit.fvecs",
+            "query_path": "query.test.public10K.unit.fvecs",
+            "gt_path": "gt.test.public10K.unit_ip.top100.ivecs",
+
+            "acpg_query_path": "query.aco_train.seed20260830.unit.fvecs",
+            "acpg_gt_path": "gt.aco_train.seed20260830.unit_ip.ivecs",
+
+            "drl_train_query_path": "query.router_train.seed20260830.unit.fvecs",
+            "drl_train_gt_path": "gt.router_train.seed20260830.unit_ip.ivecs",
+            "validation_query_path": "query.validation.seed20260830.unit.fvecs",
+            "validation_gt_path": "gt.validation.seed20260830.unit_ip.ivecs",
+            "drl_test_query_path": "query.test.public10K.unit.fvecs",
+            "drl_test_gt_path": "gt.test.public10K.unit_ip.top100.ivecs",
+
+            "metric": "ip",
+            "normalization": "explicit_l2_unit_all_base_and_queries",
+            "artifact_version": "roargraph-laion10m-unit-ip-acsg-v1",
+            "nvecs": 10004480,
+            "alpha": 0.01, "beta": 10.0, "R": 64, "L": 128, "ef_search": 200
+        },
+        "sift100K_env_smoke": {
+            "dataset_dir": "SIFT100K",
+            "train_path": "sift_learn_filtered.fvecs",
+            "base_path": "sift_base.fvecs",
+            "query_path": "sift_query.fvecs",
+            "gt_path": "sift_groundtruth_100k.ivecs",
+
+            "acpg_query_path": "sift_acpg_query.fvecs",
+            "acpg_gt_path": "sift_acpg_groundtruth.ivecs",
+
+            "drl_train_query_path": "sift_acpg_query.fvecs",
+            "drl_train_gt_path": "sift_acpg_groundtruth.ivecs",
+            "drl_test_query_path": "sift_drl_test_query.fvecs",
+            "drl_test_gt_path": "sift_drl_test_groundtruth.ivecs",
+
+            "metric": "l2",
+            "normalization": "none",
+            "artifact_version": "env-smoke-v1",
+            "alpha": 0.5, "beta": 4.5, "R": 32, "L": 50, "ef_search": 100
+        },
+        "gist1M": {
+            "dataset_dir": "GIST1M",
+            "train_path": "gist_learn.fvecs",
+            "base_path": "gist_base.fvecs",
+            "query_path": "gist_query.fvecs",
+            "gt_path": "gist_groundtruth.ivecs",
+            
+            "acpg_query_path": "gist_query.fvecs",
+            "acpg_gt_path": "gist_groundtruth.ivecs",
+            
+            "drl_train_query_path": "gist_query.fvecs",
+            "drl_train_gt_path": "gist_groundtruth.ivecs",
+            "drl_test_query_path": "gist_query.fvecs",
+            "drl_test_gt_path": "gist_groundtruth.ivecs",
+            "alpha": 0.5, "beta": 4.5, "R": 64, "L": 128, "ef_search": 300
+        }
+    }
+}

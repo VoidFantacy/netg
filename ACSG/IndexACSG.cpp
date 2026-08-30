@@ -12,6 +12,9 @@
 #include <stack>
 #include <vector>
 #include <algorithm>
+#include <cmath>
+#include <limits>
+#include <stdexcept>
 
 
 #include <faiss/IndexFlat.h>
@@ -247,7 +250,12 @@ void IndexACSG::antSearch(idx_t train_size, const float *train_set, idx_t k, idx
 
                         for (int ant_id = 0; ant_id < new_ant_nums; ++ant_id) 
                         {
-                            auto [path, accuracy] = acsg.ant_search(*dis, k, train_gt + sample_idx * k, vt);
+                            auto [path, accuracy] = acsg.ant_search(
+                                *dis,
+                                k,
+                                train_gt + sample_idx * k,
+                                vt,
+                                is_similarity_metric(metric_type));
                             
                             // 3. 存入 paths (注意：这里用 j 而不是 sample_idx，因为 paths 只有 batch 大小)
                             size_t local_path_idx = j * new_ant_nums + ant_id;
@@ -277,15 +285,45 @@ void IndexACSG::antSearch(idx_t train_size, const float *train_set, idx_t k, idx
         
         // 1. 先计算全局真实平均误差 (用于监控)
         double total_loss = 0.0;
-        double total_len = 0.0; // 新增
-        #pragma omp parallel for reduction(+:total_loss)
+        double total_len = 0.0;
+        double min_loss = std::numeric_limits<double>::infinity();
+        double max_loss = -std::numeric_limits<double>::infinity();
+        size_t zero_loss_count = 0;
+        size_t invalid_loss_count = 0;
+        size_t empty_path_count = 0;
+        #pragma omp parallel for reduction(+:total_loss,total_len,zero_loss_count,invalid_loss_count,empty_path_count) reduction(min:min_loss) reduction(max:max_loss)
         for (size_t i = 0; i < paths.size(); ++i) {
-            total_loss += std::get<1>(paths[i]);
-            total_len += std::get<0>(paths[i]).size(); // 累加路径长度
+            const double loss = std::get<1>(paths[i]);
+            const size_t path_len = std::get<0>(paths[i]).size();
+            if (!std::isfinite(loss) || loss < 0.0) {
+                invalid_loss_count += 1;
+            } else {
+                total_loss += loss;
+                min_loss = std::min(min_loss, loss);
+                max_loss = std::max(max_loss, loss);
+                if (loss <= 1e-12) zero_loss_count += 1;
+            }
+            total_len += path_len;
+            if (path_len == 0) empty_path_count += 1;
         }
-        // 打印双指标
-        std::cerr << "Avg Error: " << total_loss / paths.size() 
-                << ", Avg Hops: " << total_len / paths.size() << std::endl;
+        if (paths.empty() || invalid_loss_count != 0 || empty_path_count != 0) {
+            throw std::runtime_error(
+                "ACO iteration sanity check failed: paths=" + std::to_string(paths.size()) +
+                ", invalid_loss=" + std::to_string(invalid_loss_count) +
+                ", empty_path=" + std::to_string(empty_path_count) +
+                ", zero_loss=" + std::to_string(zero_loss_count));
+        }
+        std::cerr << "ACO_SANITY AvgError=" << total_loss / paths.size()
+                  << " MinError=" << min_loss
+                  << " MaxError=" << max_loss
+                  << " ZeroErrorRate=" << static_cast<double>(zero_loss_count) / paths.size()
+                  << " AvgHops=" << total_len / paths.size()
+                  << " InvalidLoss=" << invalid_loss_count
+                  << " EmptyPath=" << empty_path_count << std::endl;
+        if (zero_loss_count == paths.size()) {
+            std::cerr << "ACO_SANITY_WARNING All paths have zero top-1 error; "
+                      << "this iteration has no accuracy-ranking signal." << std::endl;
+        }
 
         // 2. 全局挥发
         acsg.decrease_pheromone();

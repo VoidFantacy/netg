@@ -25,7 +25,7 @@ std::tuple<std::unique_ptr<acsg::IndexACSG>, double> construct_ACSG(const DataLo
     try {
         int d = data_loader.dim();
         int R = parameters["R"];
-        auto index = std::make_unique<acsg::IndexACSGFlat>(d, R);
+        auto index = std::make_unique<acsg::IndexACSGFlat>(d, R, data_loader.metric_type());
         
         // 设置 NSG 构建参数
         if (parameters.contains("L_build")) {
@@ -152,6 +152,9 @@ int main(int argc, char **argv)
         build_info["parameters"] = parameters;
         build_info["construction_time"] = construction_time;
         build_info["dataset"] = dataset_name;
+        build_info["metric"] = data_loader.metric_name();
+        build_info["normalization"] = data_loader.normalization();
+        build_info["artifact_version"] = data_loader.artifact_version();
         
         std::string build_info_file = index_file + ".info";
         std::ofstream info_ofs(build_info_file);

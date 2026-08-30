@@ -7,6 +7,10 @@ import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
+import argparse
+import random
+import math
+import sys
 
 # ==========================================
 # 1. 配置
@@ -25,7 +29,8 @@ CONFIG = {
     "aug_noise_std": 0.01,
     "neg_k": 15,
     "neg_refresh_interval": 15,
-    "device": "cuda" if torch.cuda.is_available() else "cpu"
+    "device": "cuda" if torch.cuda.is_available() else "cpu",
+    "seed": 20260825,
 }
 
 # 针对不同数据集的特殊覆盖配置
@@ -78,10 +83,10 @@ class PathManager:
         
         dataset_dir = os.path.join(data_root, ds_conf["dataset_dir"])
         
-        train_filename = ds_conf.get("acpg_query_path", "")
+        train_filename = ds_conf.get("drl_train_query_path", "")
         if not train_filename:
-            print(f"⚠️ Warning: {dataset_name} 未配置 acpg_query_path，回退到 train_path (可能导致标签不匹配!)")
-            train_filename = ds_conf.get("train_path", "")
+            print(f"⚠️ Warning: {dataset_name} 未配置 drl_train_query_path，回退到 acpg_query_path")
+            train_filename = ds_conf.get("acpg_query_path", ds_conf.get("train_path", ""))
             
         paths = {
             "base": os.path.join(dataset_dir, ds_conf["base_path"]),
@@ -256,6 +261,9 @@ def train_dataset(dataset_name, path_mgr):
     print(f"{'='*60}")
     
     cfg = get_config(dataset_name)
+    random.seed(cfg["seed"])
+    np.random.seed(cfg["seed"])
+    torch.manual_seed(cfg["seed"])
     if dataset_name in DATASET_OVERRIDES:
         print(f"   ⚡ 使用数据集特化配置: epochs={cfg['epochs']}, lr={cfg['lr']}, patience={cfg['patience']}")
     
@@ -329,8 +337,10 @@ def train_dataset(dataset_name, path_mgr):
         aug_noise_std=cfg["aug_noise_std"],
         neg_k=cfg["neg_k"]
     )
+    generator = torch.Generator()
+    generator.manual_seed(cfg["seed"])
     loader = DataLoader(dataset, batch_size=cfg["batch_size"], shuffle=True,
-                        num_workers=4, pin_memory=True, drop_last=True)
+                        num_workers=4, pin_memory=True, drop_last=True, generator=generator)
 
     print(f"🔧 开启非对称模式，Neural Router 输出维度: {target_dim}")
     model = LightRouter(input_dim, target_dim, residue_scale=cfg["residue_scale"]).to(cfg["device"])
@@ -395,8 +405,16 @@ def train_dataset(dataset_name, path_mgr):
             loss_triplet = F.relu(neg_sim - pos_sim + 0.1).mean()
 
             loss = loss_nce + loss_triplet
+            if not torch.isfinite(loss):
+                raise RuntimeError(
+                    f"Router epoch {epoch + 1} produced a non-finite loss"
+                )
             loss.backward()
-            torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+            grad_norm = torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+            if not torch.isfinite(grad_norm):
+                raise RuntimeError(
+                    f"Router epoch {epoch + 1} produced a non-finite gradient norm"
+                )
             optimizer.step()
             scheduler.step()  # OneCycleLR 每 step 更新
             total_loss += loss.item()
@@ -409,9 +427,21 @@ def train_dataset(dataset_name, path_mgr):
             break
 
         avg_loss = total_loss / steps
+        if not math.isfinite(avg_loss):
+            raise RuntimeError(f"Router epoch {epoch + 1} average loss is non-finite")
+
+        correct = (
+            (pos_sim_last > neg_sim_last).float().mean().item()
+            if pos_sim_last is not None else 0.0
+        )
+        if not math.isfinite(correct) or not 0.0 <= correct <= 1.0:
+            raise RuntimeError(f"Router epoch {epoch + 1} accuracy diagnostic is invalid")
+        print(
+            f"ROUTER_SANITY Epoch={epoch + 1} Loss={avg_loss:.8f} "
+            f"OracleGTNeg={correct:.8f} Steps={steps}"
+        )
 
         if (epoch + 1) % 10 == 0 or epoch == 0:
-            correct = (pos_sim_last > neg_sim_last).float().mean().item() if pos_sim_last is not None else 0
             print(f"   Epoch {epoch+1:03d} | Loss: {avg_loss:.4f} | "
                   f"Oracle>HardNeg: {correct*100:.1f}% | LR: {optimizer.param_groups[0]['lr']:.1e}")
 
@@ -439,6 +469,8 @@ def train_dataset(dataset_name, path_mgr):
     with torch.no_grad():
         all_hubs_tensor = torch.from_numpy(hub_vecs).to(cfg["device"])
         transformed_hubs = model(all_hubs_tensor).cpu().numpy()
+        if not np.isfinite(transformed_hubs).all():
+            raise RuntimeError("Router produced non-finite transformed hub vectors")
 
         # ============================================================
         # 【关键修复】训练目标是余弦空间，推理时 HNSW 也需要用内积。
@@ -449,6 +481,14 @@ def train_dataset(dataset_name, path_mgr):
         # ============================================================
         raw_norms_before = np.linalg.norm(transformed_hubs, axis=1)
         transformed_hubs_normed = transformed_hubs / (raw_norms_before[:, None] + 1e-8)
+        transformed_norms = np.linalg.norm(transformed_hubs_normed, axis=1)
+        if not np.isfinite(transformed_norms).all() or not np.allclose(
+            transformed_norms, 1.0, atol=1e-4, rtol=1e-4
+        ):
+            raise RuntimeError(
+                "Router transformed hub normalization failed: "
+                f"min={transformed_norms.min()}, max={transformed_norms.max()}"
+            )
 
         # Task5 存归一化后的 Hub（与 InnerProductSpace 匹配）
         transformed_hubs_normed.astype(np.float32).tofile(hub_embs_path)
@@ -495,11 +535,18 @@ def train_dataset(dataset_name, path_mgr):
     print(f"✅ {dataset_name} 完成!")
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--datasets", nargs="+", default=CONFIG["datasets"])
+    args = parser.parse_args()
     path_mgr = PathManager()
-    for ds in CONFIG["datasets"]:
+    failed = False
+    for ds in args.datasets:
         try:
             train_dataset(ds, path_mgr)
         except Exception as e:
+            failed = True
             print(f"⚠️ {ds} 异常: {e}")
             import traceback
             traceback.print_exc()
+    if failed:
+        sys.exit(1)

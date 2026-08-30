@@ -179,6 +179,7 @@ int main(int argc, char** argv) {
     program.add_argument("--raw_hubs").default_value(std::string(""));
     program.add_argument("--search_L").default_value(std::string("512,1024"));
     program.add_argument("--top_k").default_value(1).scan<'i', int>();
+    program.add_argument("--max_queries").default_value(10000).scan<'i', int>();
 
     try { program.parse_args(argc, argv); } catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;
@@ -193,6 +194,7 @@ int main(int argc, char** argv) {
     std::string raw_hubs = program.get<std::string>("--raw_hubs");
     std::string search_L_str = program.get<std::string>("--search_L");
     int top_k = program.get<int>("--top_k");
+    int max_q = program.get<int>("--max_queries");
 
     // 解析 search_L 列表
     std::vector<int> search_Ls;
@@ -218,8 +220,7 @@ int main(int argc, char** argv) {
     auto [k_gt, gt] = data_loader.load_gt("drl_test");
     int d = data_loader.dim();
 
-    int max_q = 10000;
-    if (nq > (size_t)max_q) { 
+    if (max_q > 0 && nq > (size_t)max_q) { 
         std::cout << "⚠️ Truncating queries to " << max_q << std::endl; 
         nq = max_q; 
     }
@@ -238,6 +239,10 @@ int main(int argc, char** argv) {
     all_results["dataset"] = dataset;
     all_results["num_queries"] = nq;
     all_results["top_k"] = top_k;
+    all_results["split"] = "held-out-test";
+    all_results["metric"] = data_loader.metric_name();
+    all_results["normalization"] = data_loader.normalization();
+    all_results["artifact_version"] = data_loader.artifact_version();
     all_results["methods"] = json::array();
 
     // ==========================================
@@ -258,6 +263,7 @@ int main(int argc, char** argv) {
             for (float r : recalls) mean_r += r;
             mean_r /= nq;
 
+            const auto recalls_aligned = recalls;
             std::sort(recalls.begin(), recalls.end());
             float p5 = recalls[(int)(nq * 0.05)];
             float p10 = recalls[(int)(nq * 0.10)];
@@ -286,6 +292,7 @@ int main(int argc, char** argv) {
             l_result["pct_below_90"] = (float)count_below_90 / nq * 100;
             l_result["pct_perfect"] = (float)count_perfect / nq * 100;
             l_result["per_query_recalls"] = recalls;
+            l_result["per_query_recalls_aligned"] = recalls_aligned;
 
             method_result["search_results"].push_back(l_result);
 
@@ -319,6 +326,7 @@ int main(int argc, char** argv) {
                 for (float r : recalls) mean_r += r;
                 mean_r /= nq;
 
+                const auto recalls_aligned = recalls;
                 std::sort(recalls.begin(), recalls.end());
                 float p5 = recalls[(int)(nq * 0.05)];
                 float p10 = recalls[(int)(nq * 0.10)];
@@ -346,6 +354,7 @@ int main(int argc, char** argv) {
                 l_result["pct_below_90"] = (float)count_below_90 / nq * 100;
                 l_result["pct_perfect"] = (float)count_perfect / nq * 100;
                 l_result["per_query_recalls"] = recalls;
+                l_result["per_query_recalls_aligned"] = recalls_aligned;
 
                 method_result["search_results"].push_back(l_result);
 
@@ -370,7 +379,7 @@ int main(int argc, char** argv) {
         
         std::cout << "\n📊 [Ablation] Raw HNSW Routing (no neural folding)..." << std::endl;
         searcher.reset();
-        if (searcher.load_hnsw(raw_hubs, trans_ids, d, index.get(), false)) {
+        if (searcher.load_hnsw(raw_hubs, trans_ids, d, index.get(), data_loader.metric_type() == faiss::METRIC_INNER_PRODUCT)) {
             json method_result;
             method_result["method"] = "Raw_HNSW_Ablation";
             method_result["search_results"] = json::array();
@@ -383,6 +392,7 @@ int main(int argc, char** argv) {
                 for (float r : recalls) mean_r += r;
                 mean_r /= nq;
 
+                const auto recalls_aligned = recalls;
                 std::sort(recalls.begin(), recalls.end());
                 float p5 = recalls[(int)(nq * 0.05)];
                 float p10 = recalls[(int)(nq * 0.10)];
@@ -410,6 +420,7 @@ int main(int argc, char** argv) {
                 l_result["pct_below_90"] = (float)count_below_90 / nq * 100;
                 l_result["pct_perfect"] = (float)count_perfect / nq * 100;
                 l_result["per_query_recalls"] = recalls;
+                l_result["per_query_recalls_aligned"] = recalls_aligned;
 
                 method_result["search_results"].push_back(l_result);
 

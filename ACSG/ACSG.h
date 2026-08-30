@@ -209,13 +209,14 @@ namespace acsg
             float *D,
             idx_t nb,
             const float *xb);
-        void insert_with_binary_search(std::vector<float> &probabilities, float probability, int r);
+        void insert_with_binary_search(std::vector<float> &log_probabilities, float log_probability, int r);
         
         std::tuple<std::vector<int>, double> ant_search(faiss::DistanceComputer &dis, int k,
                                                         idx_t *gt,
-                                                        faiss::VisitedTable &vt);
+                                                        faiss::VisitedTable &vt,
+                                                        bool similarity_metric);
 
-        int roulette_wheel_selection(std::vector<float> &probability);
+        int roulette_wheel_selection(const std::vector<float> &log_probabilities);
 
         void update_pheromone(const std::vector<int> &paths, const float recall);
         void decrease_pheromone();

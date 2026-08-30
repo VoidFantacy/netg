@@ -443,6 +443,7 @@ int main(int argc, char** argv) {
     program.add_argument("--R").default_value(32).scan<'i', int>();
     program.add_argument("--search_Ls").default_value(std::string(""));
     program.add_argument("--top_k").default_value(1).scan<'i', int>(); 
+    program.add_argument("--max_queries").default_value(10000).scan<'i', int>();
 
     try { program.parse_args(argc, argv); } catch (...) { return 1; }
     
@@ -452,6 +453,7 @@ int main(int argc, char** argv) {
     int num_runs = program.get<int>("--num_runs");
     std::string onnx_path = program.get<std::string>("--drl_model_config");
     std::string test_scope = program.get<std::string>("--test_scope");
+    int max_q = program.get<int>("--max_queries");
 
     std::string f_pca = program.get<std::string>("--cluster_pca");
     std::string f_geo = program.get<std::string>("--cluster_neural_geo");
@@ -468,8 +470,7 @@ int main(int argc, char** argv) {
     auto [k_gt, gt] = data_loader.load_gt("drl_test");
     int d = data_loader.dim();
     
-    int max_q = 10000; 
-    if (nq > (size_t)max_q) { std::cout << "⚠️ Truncating queries to " << max_q << std::endl; nq = max_q; }
+    if (max_q > 0 && nq > (size_t)max_q) { std::cout << "⚠️ Truncating queries to " << max_q << std::endl; nq = max_q; }
     
     std::cout << "\n>>> Loading ACPG Index: " << acpg_file << std::endl;
     auto index = std::make_unique<acsg::IndexACSGFlat>();
@@ -484,19 +485,21 @@ int main(int argc, char** argv) {
     std::vector<TestTask> tasks;
 
     // 添加测试任务
-    if (test_scope == "all" || test_scope == "baselines") {
+    if (test_scope == "all" || test_scope == "baselines" || test_scope == "comparison") {
         tasks.push_back({"0. Medoid (Baseline)", EntryPointSearcher::MEDOID, f_pca, "", "", true});
+    }
+    if (test_scope == "all" || test_scope == "baselines") {
         tasks.push_back({"1. ACO-Max (Global)", EntryPointSearcher::ACO_WEIGHT, f_pca, "", "", true});
     }
     
     // 【核心修改 3】真正的消融实验 Baseline：完全未经神经网络处理的原始 Hub HNSW 图
-    if ((test_scope == "all" || test_scope == "routing") && !raw_hubs.empty() && std::filesystem::exists(raw_hubs)) {
+    if ((test_scope == "all" || test_scope == "routing" || test_scope == "comparison") && !raw_hubs.empty() && std::filesystem::exists(raw_hubs)) {
         // 注意：这里使用的是 raw_hubs，但是 ID 文件依然复用 trans_ids，做到完美控制变量！
-        tasks.push_back({"2. Raw HNSW Routing (Ablation Baseline)", EntryPointSearcher::HNSW_ROUTING, raw_hubs, "", trans_ids, false});
+        tasks.push_back({"2. Raw HNSW Routing (Ablation Baseline)", EntryPointSearcher::HNSW_ROUTING, raw_hubs, "", trans_ids, false, data_loader.metric_type() == faiss::METRIC_INNER_PRODUCT});
     }
 
     // 加入终极杀器：非对称 HNSW 路由任务 (Task 5)
-    if ((test_scope == "all" || test_scope == "routing") && !trans_hubs.empty() && std::filesystem::exists(trans_hubs)) {
+    if ((test_scope == "all" || test_scope == "routing" || test_scope == "comparison") && !trans_hubs.empty() && std::filesystem::exists(trans_hubs)) {
         tasks.push_back({"5. Asym-Neural HNSW Routing (0ms inference)", EntryPointSearcher::HNSW_ROUTING, trans_hubs, "", trans_ids, false, true});
     }
 
@@ -569,7 +572,16 @@ int main(int argc, char** argv) {
         all_results.push_back(method_res);
     }
     
-    json final_output; final_output["dataset"] = dataset; final_output["results"] = all_results;
+    json final_output;
+    final_output["dataset"] = dataset;
+    final_output["split"] = "held-out-test";
+    final_output["metric"] = data_loader.metric_name();
+    final_output["normalization"] = data_loader.normalization();
+    final_output["artifact_version"] = data_loader.artifact_version();
+    final_output["top_k"] = top_k;
+    final_output["num_queries"] = nq;
+    final_output["num_runs"] = num_runs;
+    final_output["results"] = all_results;
     std::ofstream out(result_file); out << final_output.dump(4);
     std::cout << "\n✅ Benchmark finished. Saved to " << result_file << std::endl;
     return 0;

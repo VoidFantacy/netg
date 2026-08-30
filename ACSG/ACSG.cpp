@@ -263,7 +263,8 @@ namespace acsg
 
     std::tuple<std::vector<int>, double> ACSG::ant_search(faiss::DistanceComputer &dis, int k_target,
                                                           idx_t *gt,
-                                                          faiss::VisitedTable &vt)
+                                                          faiss::VisitedTable &vt,
+                                                          bool similarity_metric)
     {
         std::vector<int> path;
         int L = std::max(search_L, k_target); 
@@ -306,7 +307,24 @@ namespace acsg
         std::vector<ScoredNeighbor> temp_scored;
         temp_scored.reserve(L);
         std::vector<Neighbor> retset(L + 1);
-        std::vector<float> probabilities(L + 1);
+        // retset needs L+1 slots for insert_into_pool's temporary shift, but
+        // roulette selection must only see the L initialized candidates.
+        std::vector<float> log_probabilities(
+            L, -std::numeric_limits<float>::infinity());
+        bool invalid_probability = false;
+
+        // DistanceComputer is wrapped in NegativeDistanceComputer for IP, so
+        // both metrics use the same "smaller is better" ordering.  The old
+        // 1/(distance+eps) heuristic is invalid for negative IP distances:
+        // raising a negative value to fractional alpha produces NaN.
+        auto heuristic_for_distance = [similarity_metric](float distance) {
+            if (similarity_metric) {
+                // distance == -inner_product.  exp(inner_product) is positive
+                // and monotonic; clipping prevents overflow on unnormalised IP.
+                return std::exp(std::clamp(-distance, -20.0f, 20.0f));
+            }
+            return 1.0f / (std::max(distance, 0.0f) + 1e-6f);
+        };
 
         for (int i = 0; i < L; i++)
         {
@@ -314,12 +332,21 @@ namespace acsg
             float dist_val = dis(id); // Renamed to avoid confusion
             Neighbor nn(id, dist_val, true);
             
-            float heuristic = 1.0 / (dist_val + 1e-6);
-            float pheromone_factor = pow(pheromone[id], beta);
-            float heuristic_factor = pow(heuristic, alpha);
-            float probability = pheromone_factor * heuristic_factor;
+            float heuristic = heuristic_for_distance(dist_val);
+            const float pheromone_value = pheromone[id];
+            float log_probability = -std::numeric_limits<float>::infinity();
+            if (pheromone_value > 0.0f && std::isfinite(pheromone_value) &&
+                heuristic > 0.0f && std::isfinite(heuristic)) {
+                // Equivalent to pheromone^beta * heuristic^alpha, without
+                // overflow/underflow from the direct power/product form.
+                log_probability = beta * std::log(pheromone_value) +
+                                  alpha * std::log(heuristic);
+            }
+            if (!std::isfinite(log_probability)) {
+                invalid_probability = true;
+            }
 
-            temp_scored.push_back({nn, probability});
+            temp_scored.push_back({nn, log_probability});
             path.push_back(id);
         }
 
@@ -327,7 +354,7 @@ namespace acsg
         std::sort(temp_scored.begin(), temp_scored.end());
         for (int i = 0; i < L; i++) {
             retset[i] = temp_scored[i].n;
-            probabilities[i] = temp_scored[i].p;
+            log_probabilities[i] = temp_scored[i].p;
         }
 
         // Step 5: 蚁群搜索主循环
@@ -335,7 +362,7 @@ namespace acsg
         while (k < L)
         {
             int updated_pos = L;
-            int n = roulette_wheel_selection(probabilities);
+            int n = roulette_wheel_selection(log_probabilities);
 
             if (n == -1) break;
 
@@ -343,7 +370,7 @@ namespace acsg
             {
                 idx_t node = retset[n].id;
                 retset[n].flag = false;
-                probabilities[n] = 0;
+                log_probabilities[n] = -std::numeric_limits<float>::infinity();
 
                 for (int m = 0; m < graph.K; m++)
                 {
@@ -360,107 +387,110 @@ namespace acsg
                     
                     int r = insert_into_pool(retset.data(), L, nn);
 
-                    float heuristic = 1.0 / (distance + 1e-6);
-                    float pheromone_factor = pow(pheromone[id], beta);
-                    float heuristic_factor = pow(heuristic, alpha);
-                    float probability = pheromone_factor * heuristic_factor;
+                    float heuristic = heuristic_for_distance(distance);
+                    const float pheromone_value = pheromone[id];
+                    float log_probability = -std::numeric_limits<float>::infinity();
+                    if (pheromone_value > 0.0f && std::isfinite(pheromone_value) &&
+                        heuristic > 0.0f && std::isfinite(heuristic)) {
+                        log_probability = beta * std::log(pheromone_value) +
+                                          alpha * std::log(heuristic);
+                    }
+                    if (!std::isfinite(log_probability)) {
+                        invalid_probability = true;
+                    }
 
-                    insert_with_binary_search(probabilities, probability, r);
+                    insert_with_binary_search(log_probabilities, log_probability, r);
                     updated_pos = std::min(updated_pos, r);
                 }
             }
             k = (updated_pos <= k) ? updated_pos : (k + 1);
         }
 
-        // Step 6: 计算准确率 (Fix Fake Death)
-        // 【修改 1】将默认值设为 1.0 (最大误差)，防止静默失败
-        float accuracy = 1.0f; 
-        const float epsilon = 1e-6;
-
-        if (retset[0].distance > epsilon)
-        {
-            if (gt != nullptr) {
-                idx_t gt_id = *gt;
-                
-                // 【修改 2】添加越界检查和错误打印
-                if (gt_id < 0 || gt_id >= ntotal) {
-                    // 使用原子标志位确保只打印一次错误，避免日志刷屏
-                    static std::atomic<bool> warned{false};
-                    bool expected = false;
-                    if (warned.compare_exchange_strong(expected, true)) {
-                        std::cerr << "\n[CRITICAL ERROR] GT index out of bounds! gt_id=" 
-                                  << gt_id << ", ntotal=" << ntotal << "\n"
-                                  << "PLEASE CHECK: Are you using the correct GT file for this Index?" << std::endl;
-                    }
-                    accuracy = 1.0f; // 保持高误差
+        // Step 6: metric-aware top-1 relative error. Keep the established L2
+        // formula unchanged. For IP, DistanceComputer is wrapped and returns
+        // -inner_product, so the relative similarity gap is
+        // (gt_ip - candidate_ip) / |gt_ip|.
+        float accuracy = 1.0f;
+        const float epsilon = 1e-6f;
+        if (gt != nullptr) {
+            idx_t gt_id = *gt;
+            if (gt_id < 0 || gt_id >= ntotal) {
+                static std::atomic<bool> warned{false};
+                bool expected = false;
+                if (warned.compare_exchange_strong(expected, true)) {
+                    std::cerr << "\n[CRITICAL ERROR] GT index out of bounds! gt_id="
+                              << gt_id << ", ntotal=" << ntotal << "\n"
+                              << "PLEASE CHECK: Are you using the correct GT file for this Index?" << std::endl;
+                }
+            } else {
+                const float candidate_dist = retset[0].distance;
+                const float gt_dist = dis(gt_id);
+                if (similarity_metric) {
+                    const float similarity_gap = candidate_dist - gt_dist;
+                    accuracy = std::max(0.0f, similarity_gap) /
+                               std::max(std::abs(gt_dist), epsilon);
+                } else if (candidate_dist > epsilon) {
+                    // Preserve the pre-existing L2 behavior.
+                    accuracy = std::abs(candidate_dist - gt_dist) /
+                               (gt_dist + epsilon);
                 } else {
-                    float gt_dist = dis(gt_id);
-                    accuracy = (retset[0].distance - gt_dist) / (gt_dist + epsilon);
+                    accuracy = 0.0f;
                 }
             }
         }
-        else
-        {
-            accuracy = 0.0f; // 距离为0，完美匹配
-        }
 
+        if (invalid_probability) {
+            accuracy = std::numeric_limits<float>::quiet_NaN();
+        }
         return {path, accuracy};
     }
 
-void ACSG::insert_with_binary_search(std::vector<float> &probabilities, float probability, int r)
+void ACSG::insert_with_binary_search(
+        std::vector<float> &log_probabilities, float log_probability, int r)
     {
-        if (r >= 0 && r < probabilities.size()) // 只允许插入有效范围内
+        if (r >= 0 && r < static_cast<int>(log_probabilities.size()))
         {
-            probabilities.insert(probabilities.begin() + r, probability); // 在 r 位置插入
-            probabilities.pop_back();                                     // 删除最后一个元素，保持 size 不变
+            log_probabilities.insert(log_probabilities.begin() + r, log_probability);
+            log_probabilities.pop_back();
         }
-        // 移除错误提示打印
     }
 
-    int ACSG::roulette_wheel_selection(std::vector<float> &probability)
+    int ACSG::roulette_wheel_selection(
+        const std::vector<float> &log_probabilities)
     {
-        float sum_prob = 0;
-        int last_valid_index = -1; // 【关键修复1】必须在这里定义！
-
-        // 第一遍循环：计算总和，并记录最后一个有效节点的索引
-        for (size_t i = 0; i < probability.size(); i++)
-        {
-            if (probability[i] > 0) {
-                sum_prob += probability[i];
-                last_valid_index = i;
+        float max_log_probability = -std::numeric_limits<float>::infinity();
+        int last_valid_index = -1;
+        for (size_t i = 0; i < log_probabilities.size(); ++i) {
+            if (std::isfinite(log_probabilities[i])) {
+                max_log_probability = std::max(max_log_probability, log_probabilities[i]);
+                last_valid_index = static_cast<int>(i);
             }
         }
+        if (last_valid_index == -1) return -1;
 
-        // 如果总概率为0，说明所有节点权重都极低，无法选择
-        if (sum_prob == 0 || last_valid_index == -1)
-        {
-            return -1;
+        double sum_probability = 0.0;
+        for (float log_probability : log_probabilities) {
+            if (std::isfinite(log_probability)) {
+                sum_probability += std::exp(
+                    static_cast<double>(log_probability - max_log_probability));
+            }
         }
+        if (!std::isfinite(sum_probability) || sum_probability <= 0.0) return -1;
 
-        // 生成随机阈值
-        std::random_device rd;
         static thread_local std::mt19937 gen(std::random_device{}());
-        std::uniform_real_distribution<float> dist(0, sum_prob);
-        float threshold = dist(gen);
+        std::uniform_real_distribution<double> dist(0.0, sum_probability);
+        const double threshold = dist(gen);
 
-        // 第二遍循环：轮盘赌选择
-        float cumulative_prob = 0;
-        for (size_t i = 0; i < probability.size(); i++)
-        {
-            if (probability[i] > 0)
-            {
-                cumulative_prob += probability[i];
-                // 如果累加概率超过阈值，选中该节点
-                if (cumulative_prob >= threshold)
-                {
-                    return i;
+        double cumulative_probability = 0.0;
+        for (size_t i = 0; i < log_probabilities.size(); ++i) {
+            if (std::isfinite(log_probabilities[i])) {
+                cumulative_probability += std::exp(static_cast<double>(
+                    log_probabilities[i] - max_log_probability));
+                if (cumulative_probability >= threshold) {
+                    return static_cast<int>(i);
                 }
             }
         }
-
-        // 【关键修复2】兜底逻辑
-        // 如果因浮点数精度误差导致循环结束还没选中（例如 threshold=1.0，cumulative_prob=0.999999）
-        // 强制返回最后一个有效节点，绝不能返回 -1
         return last_valid_index;
     }
 

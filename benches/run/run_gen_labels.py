@@ -2,6 +2,7 @@ import subprocess
 import os
 import datetime
 import json
+import argparse
 
 # ==========================================
 # 配置区域
@@ -33,6 +34,10 @@ DATASET_PARAMS = {
 DEFAULT_L = 100  # 默认兜底值
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--datasets", nargs="+", default=DATASETS)
+    parser.add_argument("--max-train-samples", type=int, default=MAX_TRAIN_SAMPLES)
+    args = parser.parse_args()
     executable = "./build/benches/bench_generate_labels"
     if not os.path.exists(executable):
         print(f"❌ 错误: 找不到 {executable}")
@@ -43,7 +48,7 @@ def main():
 
     total_start = datetime.datetime.now()
 
-    for dataset in DATASETS:
+    for dataset in args.datasets:
         print(f"\n{'='*60}")
         print(f"👉 Processing dataset: {dataset}")
         print(f"{'='*60}")
@@ -68,8 +73,8 @@ def main():
             "--index_file", acpg_file,
             "--cluster_file", cluster_file,
             "--output_file", output_file,
-            "--limit", str(MAX_TRAIN_SAMPLES),
-            "--query_type", "acpg",
+            "--limit", str(args.max_train_samples),
+            "--query_type", "drl_train",
             "--L", str(current_L)  # <--- 【新增】传入动态 L 参数
         ]
 
