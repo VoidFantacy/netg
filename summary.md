@@ -113,10 +113,11 @@ IP、explicit-unit normalization 和 artifact version 均与 manifest 一致；N
 `origin/main` 单独生成，local ref 为 `research/core-source-20260830`。快照覆盖 ACSG/MRNN
 C++、全部实验 C++/Python/shell、dataset settings、GATE baseline 适配、测试和交接文档，
 共 221 files / 约 1.65 MB；明确不含数据、索引、模型、结果、日志、PDF、图片或 build。
-用户指定并授权的新目标仓库是 `https://github.com/VoidFantacy/netg.git`，已配置为 remote
-`voidfantacy`。仓库公开读取正常，但当前服务器仍没有 GitHub HTTPS credential、GitHub CLI
-或 SSH key；实际 push 返回缺少 Username。GitHub 连接插件已建议安装/授权。取得写凭据后
-只推该独立 ref，禁止直接推含大文件历史的本地 `main`。
+用户指定并授权的新目标仓库是 `https://github.com/VoidFantacy/netg.git`，本地 remote 名为
+`voidfantacy`。GitHub 连接账号 `VoidFantacy` 的 admin/push 权限已验证；221-file tree 通过
+Git Data API 上传到独立远端分支 `research/core-source-20260830`，远端 tree SHA 与本地快照
+完全一致。仓库 `main` 未改动，也未上传数据/build 历史。服务器 CLI 仍无凭据，但不影响
+已完成的 GitHub connector 上传；后续更新继续只操作独立分支。
 
 ## 方法定位与相关工作边界
 

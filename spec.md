@@ -304,10 +304,9 @@ excluded:  data, GT, index, model, result, log, PDF/image, build
 ```
 
 用户授权目标为 `https://github.com/VoidFantacy/netg.git`，本地 remote 名为
-`voidfantacy`，公开 fetch/ls-remote 正常。本机 `gh` 不存在，HTTPS credential helper 无
-条目，SSH 对 GitHub 返回 `Permission denied (publickey)`，实际 HTTPS push 返回无法读取
-Username，因此 remote push 尚未发生。GitHub 插件连接已建议安装/授权。包含最终底图交接的
-本地可搬运备份保存为 `/data/netg/ACSG_core_source_20260830_v2.bundle`。取得 GitHub 凭据后只推独立 ref：
+`voidfantacy`。GitHub connector 已确认账号 `VoidFantacy` 具有 admin/push 权限，并将精确
+221-file source tree 上传到独立分支 `research/core-source-20260830`；remote/local tree SHA
+一致，`main` 未改动。CLI 本身仍没有 HTTPS/SSH credential，后续若不用 connector 可执行：
 
 ```bash
 git push voidfantacy research/core-source-20260830:research/core-source-20260830
@@ -315,6 +314,9 @@ git push voidfantacy research/core-source-20260830:research/core-source-20260830
 
 不得直接 push 本地 `main`：它的两个旧提交包含数 GB dataset/build blobs，会触发 GitHub
 大文件限制并污染远端历史。
+
+包含最终底图与上传终态交接的本地可搬运备份为
+`/data/netg/ACSG_core_source_20260830_v3.bundle`。
 
 ## 冻结图 oracle evaluator（首个 pilot 已完成）
 
