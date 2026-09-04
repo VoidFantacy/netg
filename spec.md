@@ -1,14 +1,18 @@
 # NETG / ACSG 当前实现规格
 
-> 最后核对：2026-08-30。本文件只记录当前有效的代码入口、数据/metric 契约、artifact、评测协议和重跑依赖。研究判断与 go/no-go 见 `summary.md`；旧 ACO/Router 诊断与结果历史见 `aco_router_fast_entry.md`。
+> 最后核对：2026-09-04。本文件只记录当前有效的代码入口、数据/metric 契约、artifact、评测协议和重跑依赖。研究判断与 go/no-go 见 `summary.md`；旧 ACO/Router 诊断与结果历史见 `aco_router_fast_entry.md`。
 
 ## 权威性与工作区保护
 
 实现事实的证据优先级：
 
-1. 当前源码、dataset config、manifest 和机器可读结果；
+1. 当前本地工作区源码、dataset config、manifest 和机器可读结果；
 2. 本文件；
-3. `summary.md`、历史日志、旧 README 和旧结果。
+3. `summary.md`、历史日志、旧 README、旧结果和远端 Git 分支。
+
+默认以本地工作区代码和实测 artifact 为最新权威状态。远端提交时间或分支指针较新，只说明
+Git 历史/上传动作较新，不得据此覆盖本地源码、文档或实验结论；只有用户明确指定以某个远端
+commit/branch 为准时，才允许反向同步远端内容。
 
 工作区包含大量未提交源码、构建文件和历史 artifact。禁止擅自执行 `git reset --hard`、`git clean`，禁止删除或覆盖旧索引、日志、结果、`*.bak` 和论文材料。新 variant 必须写入隔离目录。
 
@@ -34,6 +38,12 @@ frozen NSG
 
 Fast 主路径不读取 ACO weights、DPC centers、probe labels 或 Neural Router bins，不运行 optimizer/MLP，也不修改 NSG 邻接边。当前 Fast artifact 仍依赖 exact train GT。
 
+当前通过 train-first 与双数据集 validation gate 的中等容量扩展是
+`Multi-view Target-Basin Routing`：复用三个独立 Fast build 作为 prototype views，固定
+seed-20260828 Fast rank-0，将三个 view 的 top-8 并集按最高 cosine 合并，再选两个补充入口。
+它仍搜索同一冻结 NSG，不读取在线 GT/probe/held-out。当前 `28/29/30` 三个 view 合起来是一个
+模型，不是三次独立方法重复。
+
 固定的 C++ 任务名 `Asym-Neural/NETG_AsymHNSW` 在 Fast 结果中承载 closed-form prototype；读结果时必须结合 manifest，不得据槽名误报成神经网络。
 
 ## 当前代码入口
@@ -41,9 +51,13 @@ Fast 主路径不读取 ACO weights、DPC centers、probe labels 或 Neural Rout
 | 目的 | 文件 |
 | --- | --- |
 | Fast variant 构建 | `benches/run/build_fast_entry_variants.py` |
+| Three-view reference routing | `benches/run/route_multiseed_target_basin_ensemble.py` |
+| Three-view C++ 在线/图搜索复验 | `benches/bench_entry_oracle.cpp` -> `build/benches/bench_entry_oracle` |
+| Meta-inspired confidence gate | `benches/run/route_confidence_attentive_target_basin.py` |
 | 单/多 seed 验证 | `benches/run/run_fast_entry_validation.sh`、`run_yandex_qgt_fast_light.sh` |
 | 双数据集正式复验 | `benches/run/run_two_dataset_fast_benchmark.sh` |
 | LAION 下载/准备/冻结图 | `download_laion10m_acsg_v1.sh`、`prepare_laion10m_acsg_v1.py`、`run_laion10m_acsg_v1.sh` |
+| LAION Fast validation / held-out | `benches/run/run_laion_fast_validation.sh`、`run_laion_fast_heldout.sh` |
 | Recall/QPS 搜索 | `benches/test.cpp` -> `build/benches/test` |
 | 逐 query Recall@10 | `benches/bench_per_query_recall.cpp` -> `build/benches/bench_per_query_recall` |
 | 汇总 | `summarize_fast_entry_multiseed.py`、`summarize_two_dataset_fast_benchmark.py` |
@@ -107,7 +121,7 @@ manifest 记录训练源中排除的 duplicate 与 public-test overlap；最终�
 
 四个 split 的六组两两 overlap 均为 0，GT 为匹配 first-10M base 的 exact IP top-100。
 
-### LAION-10M/IP（数据、GT、冻结 NSG 已完成）
+### LAION-10M/IP（数据、GT、冻结 NSG、Fast validation 与 held-out 已完成）
 
 - dataset key：`laion10m_acsg_v1`
 - artifact version：`roargraph-laion10m-unit-ip-acsg-v1`
@@ -131,7 +145,8 @@ manifest 记录训练源中排除的 duplicate 与 public-test overlap；最终�
 
 LAION 与 WebVid public-query 源文件 MD5 相同。这不造成同一数据集内部 train/test 泄漏，
 但意味着二者不是独立 held-out query workload；结果解释必须限定为不同 base corpus/scale
-上的迁移。manifest、exact GT 与冻结 NSG 已通过终态验证；Fast 搜索结果仍未生成。
+上的迁移。manifest、exact GT 与冻结 NSG 已通过终态验证；Fast validation 与 held-out
+正式复验均已完成。
 
 首轮 raw-vector 诊断已终态失败并保留：完整 base 上 first-32 public queries 的官方
 top-100 set recall，raw-IP 为 `0.994375`、raw-L2 为 `0.9909375`；explicit-unit cosine/IP
@@ -145,7 +160,7 @@ top-100 set recall，raw-IP 为 `0.994375`、raw-L2 为 `0.9909375`；explicit-u
 
 ## 冻结底图
 
-两个正式数据集当前共用参数：
+三个正式数据集当前共用参数：
 
 ```text
 R=64, L_build=100, C=512
@@ -190,13 +205,39 @@ Hub budget：
 
 早期探索文件 `fast_entry_variants/webvid2_5m_light_v1/eval_qgt_vs_prototype_r1.json` 的 raw task 曾发生 vector/ID 错配，标记为 INVALID，禁止引用。
 
+### Three-view target-basin ensemble（validation 诊断）
+
+`benches/run/route_multiseed_target_basin_ensemble.py` 冻结 seed-20260828 Fast 的 rank-0，合并
+三个 QGT/GT-basin prototype 视角的 top-8 候选，再按各自 prototype cosine 选择另外两个入口。
+诊断 artifact 位于 `target_basin_ensemble_diagnostics/v1/`；路由不读取在线 GT、probe label 或
+held-out。`bench_entry_oracle` 的 `--ensemble_prototype_{hubs,ids}_{2,3}` 可执行同一冻结规则的
+C++ 在线版本，并记录批量 routing wall time 与 reference-route mismatch；结果中的 NDC/latency
+字段仍是 graph-only，routing NDC 与正式端到端计时必须另行补齐。
+
+当前 `v1` validation 10K、Recall@10、`L=64/128` 相对 seed-20260828 Fast 的 Recall delta
+分别为 WebVid `+0.871/+0.369 pp`、Yandex `+0.250/+0.209 pp`，graph NDC 四点均下降。
+C++ 在线复验仍四点提高 Recall。完整判断与 claim boundary 见
+`target_basin_ensemble_diagnostics/v1/decision.json`。
+
+### Confidence-attentive meta-inspired diagnostic（train-only no-go）
+
+`route_confidence_attentive_target_basin.py` 在 three-view score 上加入
+`alpha * (view_top1 - view_top2)`；`alpha=0` 必须逐字节复现当前 ensemble。非零 alpha 只用
+WebVid/Yandex `drl_train`、`L=64/128` 选择。WebVid 仅 `alpha=-0.5` 通过，Yandex 仅相反的
+`alpha=+0.5` 通过，没有共享非零 alpha 满足双数据集 gate，故未读取 validation/held-out。
+artifact 位于 `target_basin_meta_diagnostics/v1/`。该结果禁止表述为已实现元学习。
+
 ## 在线搜索与计时
 
 `benches/test.cpp`：
 
 - `--top_k 1` 测 Recall@1；`--top_k 100` 测 Recall@100。
+- `--query_split drl_test|validation` 显式选择 held-out 或 validation；默认仍是
+  `drl_test`。结果 JSON 同步记录 split，LAION validation 与 held-out 写入物理隔离目录。
 - `--test_scope comparison` 只运行 Medoid、Raw 和 prototype/Neural comparison slots。
 - Router 通过 Micro-HNSW 选择 top-3 entry IDs。
+- three-view ensemble 已有 Python reference 与 C++ 在线实现；在纳入主方法前仍须将三路
+  routing NDC/latency 纳入正式 total NDC/latency。
 - Raw routing metric 从 dataset config 读取；IP 数据使用 IP。
 - QPS 计时只包含当前进程的在线搜索，不包含后续 tail 汇总。
 
@@ -229,6 +270,28 @@ QPS 与 tail 是两个串行、独立进程；tail 阈值与转移统计不会�
 - 跨 invocation 比较优先使用同次 Medoid 归一化 QPS；
 - tail 阈值固定 `0.1/0.2/0.5/0.8`。
 
+LAION 首轮是单独的 validation gate，不属于上述 held-out 双数据集批次。权威输出：
+
+- `fast_entry_variants/laion10m_acsg_v1_validation_report.md`：可读报告；
+- `fast_entry_variants/laion10m_acsg_v1_validation_multiseed_summary.json`：机器汇总；
+- `fast_entry_variants/laion10m_acsg_v1_validation_seed{20260828,20260829,20260830}/`：
+  三个 seed 的 manifest、Recall/QPS、tail 和 `/usr/bin/time -v`。
+
+协议为独立 validation 10K、821 hubs、3 build seeds × 每 seed 3 timing runs；Recall@1
+使用 `L=64/128/200/400`，Recall@100 使用合法的 `L=100/128/200/400`，逐 query
+Recall@10 使用 `L=64/128/200/400`。held-out public 10K 未读取。
+
+validation gate 通过后，LAION held-out 使用同一冻结协议完成正式复验：
+
+- `fast_entry_variants/laion10m_acsg_v1_heldout_report.md`：可读报告；
+- `fast_entry_variants/laion10m_acsg_v1_heldout_multiseed_summary.json`：机器汇总；
+- `fast_entry_variants/laion10m_acsg_v1_heldout_seed{20260828,20260829,20260830}/`：
+  三个 seed 的隔离 artifact 和原始结果。
+
+held-out Fast artifact 与同 seed validation artifact checksum 完全一致；test split 不参与
+构建或调参。协议仍为 10K、821 hubs、3 build seeds × 每 seed 3 timing runs，`L` 和
+tail 阈值不变。
+
 ## Artifact 重跑依赖
 
 | 变化 | 可复用 | 必须重跑 |
@@ -243,15 +306,139 @@ QPS 与 tail 是两个串行、独立进程；tail 阈值与转移统计不会�
 
 ## 当前已知限制
 
-1. Fast 构建倍率未包含 exact train-GT 生成成本；论文必须补充 GT 成本和 break-even。
-2. 当前 top-3 依据 prototype 相似度，不显式优化 entry 的共同失败或边际覆盖。
-3. WebVid validation 1K 已完成 current-hub single 与 greedy top-3 proxy；broad candidates、top-5、Yandex 和 validation 10K 尚未完成。
-4. WebVid standalone GATE 已完成同图、raw-IP、独立 split 和 graph NDC/latency 适配；旧 GATE 日志仍禁止引用，Yandex 复制按 WebVid no-go gate 停止。
-5. `test.cpp` 的 legacy ACO-Max 在释放 weight 后仍会回退到 medoid；Fast comparison scope 不运行它，修复前不得作为有效 ACO 基线。
-6. LAION-10M 下载、unit conversion、split、GT、manifest 和冻结 NSG 已完成；尚无 Fast 结果，也没有完整的 RoarGraph/RobustVamana 同机端到端结果。
-7. current Fast 依赖 exact train GT；需评估更少 GT、top-1/10/100 和 trace-only 版本。
+1. Three-view ensemble 当前只有一组 `28/29/30` 组合；尚缺三组独立 ensemble-build 稳定性。
+2. Fast 构建倍率未包含 exact train-GT 生成成本；论文必须补充 GT 成本和 break-even。
+3. Three-view 当前只报告 graph NDC/latency；routing NDC、total NDC、端到端 latency 与 tail
+   尚未达到正式结果要求。
+4. confidence margin 在两个数据集需要相反 alpha，不能作为可迁移的 view reliability signal。
+5. WebVid standalone GATE 已完成同图、raw-IP、独立 split 和 graph NDC/latency 适配；旧 GATE 日志仍禁止引用，Yandex 复制按 WebVid no-go gate 停止。
+6. `test.cpp` 的 legacy ACO-Max 在释放 weight 后仍会回退到 medoid；Fast comparison scope 不运行它，修复前不得作为有效 ACO 基线。
+7. LAION-10M Fast validation 与 held-out 10K×3 seeds×3 timing runs 均已完成；仍没有
+   完整的 RoarGraph/RobustVamana 同机端到端结果，且 LAION/WebVid public query 相同。
+8. current Fast/three-view 都依赖 exact train GT；需评估更少 GT 与 GT depth 消融。
 
-## LAION 持久流水线与续接
+## 下一批实验冻结契约
+
+当前执行点已进入 three-view ensemble 的 P2 正式化。P0/P1 条款保留为论文完整性与 artifact
+审计要求，不再作为追加模块的入口；confidence attention 已 no-go，禁止借“元学习”名义重开。
+下一批只补独立 ensemble-build、tail、routing/total cost 与完整 offline cost。
+
+### 全阶段不变量
+
+- formulation、核心机制、hub budget、prototype 形式、top-m 和 objective 只能基于已有
+  train/validation 证据确定；现有 held-out 结果不得反向用于方法设计。
+- 快速机制 pilot 可使用一个明确记录的 build seed 和 validation 子集；正式 validation 使用
+  `20260828/20260829/20260830` 三个 build seeds。build seed 与每点 timing runs 是两层重复。
+- 所有新输出使用隔离的 variant/result 目录，不覆盖现有 Fast、oracle、GATE、reroute 或
+  LAION artifact；冻结 NSG 不允许添加、删除或重连边。
+- LAION 与 WebVid 共享 public query，只作为 corpus/scale control，不计作新的独立 query gate。
+
+### P0：论文方法骨架冻结
+
+P0 原则上不启动新的大规模实验。实现前必须先形成方法设计稿，至少冻结以下接口：
+
+```text
+problem: frozen graph G, historical query distribution Q, candidate budget M, online budget B
+output: candidate entry set H and query-conditioned policy pi(q)
+objective: expected_search_utility - lambda * online_cost - beta * tail_risk
+constraints: pi(q) subset of H, |H| <= M, cost(pi(q)) <= B
+core_mechanism: shared query-entry search utility u(q,e)
+```
+
+设计稿必须包含三层定义及数据流：
+
+1. `query_distribution_coverage`：怎样从训练 query/GT 在预算 `M` 下产生真实 base entries；
+2. `query_entry_utility`：怎样表示或估计 query-entry 在冻结图上的 quality/cost/risk；
+3. `budgeted_entry_policy`：怎样根据边际 utility 与预算产生 `pi(q)`。
+
+工作主轴固定为共享 `u(q,e)`：候选层以其做预算化 query coverage，表示层估计其搜索质量/
+成本效用，决策层按其 marginal utility/cost 产生 `pi(q)`。设计稿必须明确 `u` 的监督定义、
+tail weighting、cost normalization，以及 single utility 如何扩展到 entry set；其余模块标记为
+`supporting_component|system_acceleration|ablation`。若采用
+`F(H)=sum_q w(q) max_{e in H} u(q,e)`，必须验证非负性、单调性和次模条件后才能主张 greedy
+approximation，不能只凭形式写理论结论。
+
+`u(q,e)` 的实现不得原样恢复已 no-go 的 top-32 static geometry listwise ranker。设计稿必须
+给出新的可估计性来源（例如新的结构假设、可证明近似或与搜索过程一致的充分统计）；否则该
+formulation 不通过 P0，不进入代码实现。
+
+设计稿还要给出伪代码、离线/在线复杂度、可检验假设，以及 Fast v1 到新骨架的复用/失效
+映射。在这些内容冻结之前，不得把 mode-aware prototype、TailRisk-Cover 或 top-1/3/5 任一
+选择写成既定主方法。
+
+### P1：核心机制实现与小规模验证
+
+只实现 P0 选定的 `core_mechanism`。新 variant manifest 除通用 provenance 外至少记录：
+
+```text
+framework_version / core_mechanism / component_role
+objective_terms / constraint_terms
+selection_split / build_seed
+candidate_budget / online_budget / artifact_bytes
+heldout_accessed=false
+```
+
+先在 WebVid/Yandex validation 子集、单 seed 上验证 formulation 中的核心假设。入口数量、
+mode-aware representation、current/broad candidate pool 只能作为核心机制要求的组件选择逐步
+开启。Oracle 只用于上限或假设诊断；`greedy top-m` 必须标为 marginal-coverage proxy，不能
+称为组合穷举 oracle。若实现仍是多个没有共同 objective 的 heuristic，返回 P0 重构，不通过
+增加模块或搜索预算来掩盖。
+
+### P2：结构冻结与正式 validation
+
+当前冻结结构为三 view、每 view top-8、seed-20260828 rank-0 anchor、duplicate max-score merge、
+最终 top-3。现有 `28/29/30` 组合已通过 WebVid/Yandex validation 10K 的 Recall@10 与 graph-NDC
+gate；它只算一个 ensemble instance。正式比较必须另建三组互相独立的 three-view ensemble，
+并在每个点同时报告等 `search_L`、等总 NDC 和等端到端 latency，至少保存：
+
+```text
+Recall@1 / Recall@10 / Recall@100
+rescued / newly_harmed / P1 / P5 / bottom_cvar
+routing_ndc / graph_ndc / total_ndc
+routing_latency / graph_latency / total_latency
+seed_mean / seed_std / timing_mean / timing_std
+```
+
+继续条件：两个数据集同方向，并在至少两个 `L` 上同时改善 Recall 与 bottom-tail，且成本对齐后
+优势不消失。若结果依赖单个 seed、只在 WebVid 有微小正值，或 Yandex 退化，则停止该结构，
+不得直接运行 held-out。
+
+结构通过后再补强基线、归因消融和以下完整成本；这些不是 P0 前置项：
+
+成本报告必须拆分保存以下字段；缺失项写 `null + reason`，不得并入其他阶段：
+
+```text
+exact_gt_wall_seconds / exact_gt_cpu_seconds / exact_gt_peak_rss_bytes
+candidate_construction_wall_seconds
+utility_model_wall_seconds
+online_policy_index_wall_seconds
+entry_artifact_bytes / base_index_bytes / peak_rss_bytes
+routing_ndc / routing_latency
+graph_ndc / graph_latency
+total_ndc / total_latency
+cache_condition / threads / cpu_model
+```
+
+强基线与骨架化方法必须绑定相同 dataset artifact version、base checksum、metric、normalization、
+query split 和 GT checksum。主表只接受同机实测；外部论文数值单列。优先补已有
+HNSW/NSG/LSH-APG，再评估 RoarGraph/RobustVamana 的可复现端到端适配。
+
+归因消融至少覆盖 hub budget、QGT/prototype query count、GT supervision depth、prototype
+必要性、top-m、hardness strata 和监督成本。每个 artifact 记录相应参数、build seed 与底图
+checksum；Medoid、QGT-Raw、Fast baseline v1 和骨架化方法使用相同在线成本口径。
+
+独立 workload 也在 P2 接入：query 来源必须独立于 WebVid/LAION public query，具有可审计且
+无重叠的 train/validation/test、匹配的 GT/metric/normalization，并先确认磁盘、内存和强基线
+预算。条件未满足时不得为凑“第三任务”下载大文件或改变正式协议。
+
+### P3：冻结后的 held-out 复验
+
+骨架化后的方法只有在 P2 通过且比较口径冻结后，才能读取对应 held-out 一次。新 artifact 的
+manifest 必须额外记录 `selection_split`、`oracle_gate_source` 和
+`heldout_accessed=false|true`。test 结果不得触发返回 validation 调参；如实现、输入或预算
+发生实质变化，创建新的方法版本并重新走 P0--P2，而不是覆盖既有结果。
+
+## LAION 已完成流水线与终态复核
 
 启动命令：
 
@@ -266,7 +453,7 @@ setsid bash benches/run/run_laion10m_acsg_v1.sh \
 `1:04:22`、construction `3816.927s`、max RSS `76,627,580 KiB`、exit 0 完成；保存
 `10,004,480 × 512` vectors，图全连通，索引大小 `23,130,357,863 bytes`，SHA256
 `7040cd0a2b8f5d34b3e3affbbcb30ce19c947731a8a81c40ec64f0e0d99bb238`；`.info` SHA256
-`28c77e5e2b2e6b42d382c9ec9807cef6e4d397cca95f815f59c5b3f832e25f58`。下一会话先验证：
+`28c77e5e2b2e6b42d382c9ec9807cef6e4d397cca95f815f59c5b3f832e25f58`。若需复核终态，可运行：
 
 ```bash
 tail -n 1 logs/laion10m_acsg_v1/build_nsg.time.txt
@@ -287,8 +474,9 @@ available；底图完成后约 22 GiB available，足够当前 Fast artifact/val
 2. official GT sample `set_recall_at_100=1.0`，所有源/输出 checksum 已记录；
 3. NSG 与 `.info` 存在，`.info` 明确 `ip`、`R64/L_build100/C512` 和 artifact version；
 4. 日志无 traceback/FATAL，time 文件记录 exit status 0；
-5. 之后才可构建 Fast variants 并在 validation 10K 上做 `L=64/128/200/400`、
-   Recall@1/10/100（Recall@100 的首点必须 `L>=100`）和 3-run 评测。
+5. Fast variants 与 validation 10K 已按 `L=64/128/200/400`、Recall@1/10/100
+   （Recall@100 首点 `L=100`）和 3-run 协议完成；结果见
+   `fast_entry_variants/laion10m_acsg_v1_validation_report.md`。
 
 ## Git 核心源码快照
 
@@ -393,8 +581,70 @@ top-1 对 Recall@1/100 退化。后续 artifact schema 必须保存 shortlist �
 - 完整判断：`sparse_utility_ranker_results/analysis.md`
 
 静态 ranker 已判定跨数据集 no-go：WebVid 等成本仅有小正增益，Yandex 等成本失败。
-下一实现若继续，必须是固定总预算的 early-probe trace + selective reroute；不得继续扫
-当前 ranker 超参或无证据扩大成通用 MLP/双塔。
+当时的下一诊断是固定总预算的 early-probe trace + selective reroute；该分支后来也已按下节
+结果停止。当前不得继续扫 ranker 超参或无证据扩大成通用 MLP/双塔。
+
+### Basin Transition Graph v1 最小证伪
+
+新增只读诊断实现：
+
+- `benches/build_basin_transition_graph.cpp` / `build/benches/build_basin_transition_graph`：
+  加载既有 ACSG index 与一个 QGT hub-ID 文件，以全部 hubs 为初始源，在冻结 NSG 出边上执行
+  确定性 FIFO 多源 BFS；每个节点在首次发现时归入相应 basin，等 hop 冲突按 hub 文件顺序
+  决定。随后统计所有有效有向边的 `basin(source) -> basin(target)` 计数。它不修改邻接、向量、
+  hub 或搜索器。
+- `benches/run/run_basin_transition_falsification.py`：读取上述 transition matrix、seed
+  `20260828` 的 Fast prototypes、独立 prototype-train/validation query，以及现有 top-32
+  sparse utility。它在 top-32 内计算 `geometry_z + gamma * reachability_z`，只输出一个 entry。
+  reachability 使用带可选 self-stay 的 row-normalized transition matrix、1--4 步扩散和
+  top-32 prototype similarity soft target；不运行在线 probe，不读取 GT 作为 scorer 输入。
+
+隔离 artifact：
+
+```text
+basin_transition_diagnostics/
+  webvid_seed20260828_graph_bfs_v1/
+    manifest.json
+    transition_counts.u64
+    basin_sizes.u64
+  yandex_seed20260828_graph_bfs_v1/
+    manifest.json
+    transition_counts.u64
+    basin_sizes.u64
+  btg_falsification_v4/
+    report.json
+    analysis.md
+    {webvid,yandex}_validation_single_routes.int32
+    {webvid,yandex}_validation_individual_train_tuned_single_routes.int32
+```
+
+`v1/v2/v3` 结果目录保留早期选择规则与报告迭代，不覆盖；`v4` 是当前权威结果。最终 report 记录完整
+index、`.info`、hub IDs、prototypes、query、utility 和 transition artifact 的 path/bytes/SHA256，
+实现源码 SHA256、dataset/artifact version、normalization、build seed、candidate/online budget，
+并明确 `heldout_accessed=false`。
+
+图构造结果：
+
+| 数据集 | nodes / hubs | valid / cross-basin edges | max BFS hop | basin size range | build wall |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| WebVid | `2,505,000 / 815` | `49,612,453 / 35,681,779` | `8` | `1..65,012` | `32.66s` |
+| Yandex | `10,000,000 / 821` | `294,844,816 / 218,124,715` | `7` | `783..175,473` | `65.38s` |
+
+两图的全部节点均已标记，transition matrix 总和等于有效边数；utility candidate 顺序与由原
+prototype 精确重算的 geometry rank-0 在 train/validation 四个 split 上均 `100%` 一致。
+
+固定 utility 为两个预算的平均 Recall@10 减去
+`0.05 * candidate_graph_NDC / Fast_top3_graph_NDC`。主 gate 允许每个数据集仅用各自
+prototype-train utility 的末 2K 独立选参，然后在 WebVid/Yandex validation 10K 各评一次；
+要求两个数据集 utility delta 均大于 `0.0001`、`L=64/128` 均不降 Recall，且相对 rank-0
+平均 graph-NDC 增长不超过 `0.5%`。共享 train-only 配置另作更严格的 transfer 诊断。
+
+权威 `v4` 结论为 no-go：共享配置在 WebVid/Yandex 的 validation utility delta 分别为
+`-0.000081/-0.000049`。每数据集独立 train-only 最优配置下，WebVid utility `+0.001896`，
+`L=64/128` Recall delta `+0.163/+0.185 pp`、NDC delta `-0.327%/-0.131%`；Yandex utility
+`-0.001831`，Recall delta `-0.210/-0.102 pp`、NDC delta `+0.483%/+0.317%`。因此停止这一
+具体 `graph-BFS basin + edge-frequency diffusion` 定义，不继续扫其 horizon/temperature/gamma。
+该 gate 没有记录真实 beam expansion path，不能据此判定 node-level finite-beam barrier 失败。
 
 ### Probe trace 与 budgeted reroute gate
 

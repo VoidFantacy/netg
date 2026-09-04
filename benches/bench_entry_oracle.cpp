@@ -194,6 +194,57 @@ public:
     }
 };
 
+class ExactPrototypeView {
+    int dim_;
+    std::vector<float> vectors_;
+    std::vector<int> ids_;
+    std::unordered_map<int, size_t> local_by_id_;
+public:
+    ExactPrototypeView(const std::string& hubs_path, const std::string& ids_path, int dim)
+        : dim_(dim), ids_(load_i32(ids_path)) {
+        std::ifstream hubs(hubs_path, std::ios::binary | std::ios::ate);
+        if (!hubs) throw std::runtime_error("cannot open prototypes: " + hubs_path);
+        const size_t bytes = static_cast<size_t>(hubs.tellg());
+        if (bytes != ids_.size() * sizeof(float) * dim_)
+            throw std::runtime_error("prototype/id count mismatch: " + hubs_path);
+        hubs.seekg(0);
+        vectors_.resize(ids_.size() * dim_);
+        hubs.read(reinterpret_cast<char*>(vectors_.data()), bytes);
+        for (size_t i = 0; i < ids_.size(); ++i) {
+            if (!local_by_id_.emplace(ids_[i], i).second)
+                throw std::runtime_error("duplicate prototype id: " + ids_path);
+        }
+    }
+
+    size_t size() const { return ids_.size(); }
+
+    float score(const float* query, int id) const {
+        const auto found = local_by_id_.find(id);
+        if (found == local_by_id_.end()) throw std::runtime_error("prototype id missing");
+        const float* vector = vectors_.data() + found->second * dim_;
+        float value = 0.0f;
+        for (int d = 0; d < dim_; ++d) value += query[d] * vector[d];
+        return value;
+    }
+
+    std::vector<std::pair<int, float>> topk(const float* query, size_t k) const {
+        std::vector<std::pair<int, float>> scored(ids_.size());
+        for (size_t i = 0; i < ids_.size(); ++i) {
+            const float* vector = vectors_.data() + i * dim_;
+            float value = 0.0f;
+            for (int d = 0; d < dim_; ++d) value += query[d] * vector[d];
+            scored[i] = {ids_[i], value};
+        }
+        k = std::min(k, scored.size());
+        std::partial_sort(scored.begin(), scored.begin() + k, scored.end(),
+            [](const auto& a, const auto& b) {
+                return a.second != b.second ? a.second > b.second : a.first < b.first;
+            });
+        scored.resize(k);
+        return scored;
+    }
+};
+
 struct Aggregate {
     double recall_sum = 0.0;
     double ndc_sum = 0.0;
@@ -228,6 +279,11 @@ int main(int argc, char** argv) {
     program.add_argument("--extra_routes").default_value(std::string(""));
     program.add_argument("--extra_method").default_value(std::string("SearchAware_Prototype_Top3"));
     program.add_argument("--extra_top_m").default_value(3).scan<'i', int>();
+    program.add_argument("--ensemble_prototype_hubs_2").default_value(std::string(""));
+    program.add_argument("--ensemble_prototype_ids_2").default_value(std::string(""));
+    program.add_argument("--ensemble_prototype_hubs_3").default_value(std::string(""));
+    program.add_argument("--ensemble_prototype_ids_3").default_value(std::string(""));
+    program.add_argument("--ensemble_reference_routes").default_value(std::string(""));
     program.add_argument("--skip_oracle").default_value(false).implicit_value(true);
     program.add_argument("--generate_sparse_utility").default_value(false).implicit_value(true);
     program.add_argument("--utility_shortlist").default_value(32).scan<'i', int>();
@@ -256,6 +312,11 @@ int main(int argc, char** argv) {
     const auto extra_routes = program.get<std::string>("--extra_routes");
     const auto extra_method = program.get<std::string>("--extra_method");
     const int extra_top_m = program.get<int>("--extra_top_m");
+    const auto ensemble_hubs_2 = program.get<std::string>("--ensemble_prototype_hubs_2");
+    const auto ensemble_ids_2 = program.get<std::string>("--ensemble_prototype_ids_2");
+    const auto ensemble_hubs_3 = program.get<std::string>("--ensemble_prototype_hubs_3");
+    const auto ensemble_ids_3 = program.get<std::string>("--ensemble_prototype_ids_3");
+    const auto ensemble_reference_routes = program.get<std::string>("--ensemble_reference_routes");
     const bool skip_oracle = program.get<bool>("--skip_oracle");
     const bool generate_sparse_utility = program.get<bool>("--generate_sparse_utility");
     const int utility_shortlist = program.get<int>("--utility_shortlist");
@@ -291,9 +352,56 @@ int main(int argc, char** argv) {
     for (int q = 0; q < nq; ++q) fast_entries[q] = fast_router.topk(queries.get() + q * loader.dim(), 3);
     std::vector<std::vector<int>> extra_entries;
     std::unique_ptr<FastRouter> extra_router;
+    double ensemble_routing_wall_us = 0.0;
+    double ensemble_route_mismatch_fraction = 0.0;
+    const bool use_ensemble = !ensemble_hubs_2.empty();
+    if (use_ensemble) {
+        if (ensemble_ids_2.empty() || ensemble_hubs_3.empty() || ensemble_ids_3.empty())
+            throw std::runtime_error("all second/third ensemble prototype paths are required");
+        if (!extra_prototype_hubs.empty() || !extra_routes.empty())
+            throw std::runtime_error("online ensemble cannot be combined with other extra routing");
+        if (loader.metric_type() != faiss::METRIC_INNER_PRODUCT)
+            throw std::runtime_error("target-basin ensemble currently requires inner product");
+        ExactPrototypeView view_1(prototype_hubs, prototype_ids, loader.dim());
+        ExactPrototypeView view_2(ensemble_hubs_2, ensemble_ids_2, loader.dim());
+        ExactPrototypeView view_3(ensemble_hubs_3, ensemble_ids_3, loader.dim());
+        extra_entries.resize(nq);
+        const auto route_begin = Clock::now();
+        #pragma omp parallel for schedule(static)
+        for (int q = 0; q < nq; ++q) {
+            const float* query = queries.get() + q * loader.dim();
+            const auto primary = fast_router.topk(query, 8);
+            std::unordered_map<int, float> scores;
+            for (int id : primary) scores[id] = view_1.score(query, id);
+            for (const auto& [id, score] : view_2.topk(query, 8))
+                scores[id] = std::max(scores.count(id) ? scores[id] : -std::numeric_limits<float>::infinity(), score);
+            for (const auto& [id, score] : view_3.topk(query, 8))
+                scores[id] = std::max(scores.count(id) ? scores[id] : -std::numeric_limits<float>::infinity(), score);
+            const int rank0 = primary.front();
+            scores.erase(rank0);
+            std::vector<std::pair<int, float>> ranked(scores.begin(), scores.end());
+            std::partial_sort(ranked.begin(), ranked.begin() + 2, ranked.end(),
+                [](const auto& a, const auto& b) {
+                    return a.second != b.second ? a.second > b.second : a.first < b.first;
+                });
+            extra_entries[q] = {rank0, ranked[0].first, ranked[1].first};
+        }
+        ensemble_routing_wall_us = std::chrono::duration<double, std::micro>(
+            Clock::now() - route_begin).count();
+        if (!ensemble_reference_routes.empty()) {
+            const auto reference = load_i32(ensemble_reference_routes);
+            if (reference.size() != static_cast<size_t>(nq * 3))
+                throw std::runtime_error("ensemble reference route count mismatch");
+            size_t mismatches = 0;
+            for (int q = 0; q < nq; ++q)
+                for (int m = 0; m < 3; ++m)
+                    if (extra_entries[q][m] != reference[q * 3 + m]) ++mismatches;
+            ensemble_route_mismatch_fraction = static_cast<double>(mismatches) / reference.size();
+        }
+    }
     if (!extra_prototype_hubs.empty() && !extra_routes.empty())
         throw std::runtime_error("provide either extra prototypes or extra routes, not both");
-    if (!extra_prototype_hubs.empty()) {
+    if (!use_ensemble && !extra_prototype_hubs.empty()) {
         if (extra_prototype_ids.empty()) throw std::runtime_error("extra prototype ids missing");
         extra_router = std::make_unique<FastRouter>(extra_prototype_hubs, extra_prototype_ids,
             loader.dim(), loader.metric_type() == faiss::METRIC_INNER_PRODUCT);
@@ -301,7 +409,7 @@ int main(int argc, char** argv) {
         if (extra_top_m < 1 || extra_top_m > 3) throw std::runtime_error("extra_top_m must be 1..3");
         for (int q = 0; q < nq; ++q)
             extra_entries[q] = extra_router->topk(queries.get() + q * loader.dim(), extra_top_m);
-    } else if (!extra_routes.empty()) {
+    } else if (!use_ensemble && !extra_routes.empty()) {
         const auto flat_routes = load_i32(extra_routes);
         if (extra_top_m < 1 || flat_routes.size() != static_cast<size_t>(nq * extra_top_m))
             throw std::runtime_error("extra route count mismatch");
@@ -321,6 +429,15 @@ int main(int argc, char** argv) {
         {"oracle_definition", "single=exhaustive current-hub true-search best; top3=greedy union of single-entry GT-hit masks then true multi-entry replay"},
         {"results", json::array()}
     };
+    if (use_ensemble) {
+        output["online_ensemble"] = {
+            {"prototype_views", 3}, {"top_per_view", 8}, {"rank0_preserved", true},
+            {"routing_batch_wall_us", ensemble_routing_wall_us},
+            {"routing_effective_wall_us_per_query", ensemble_routing_wall_us / nq},
+            {"exact_prototype_dot_products_per_query", 8 + load_i32(ensemble_ids_2).size() + load_i32(ensemble_ids_3).size()},
+            {"reference_route_mismatch_fraction", ensemble_route_mismatch_fraction}
+        };
+    }
     std::filesystem::create_directories(std::filesystem::path(output_file).parent_path());
 
     if (generate_budget_reroute) {
