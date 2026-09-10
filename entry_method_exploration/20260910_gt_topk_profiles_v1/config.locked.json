@@ -1,0 +1,51 @@
+{
+  "protocol_sha256": "03c2375cc14943ebed060b1751b27227770c167cc538785b9c15cb23f2d450f7",
+  "seed": 20260828,
+  "fit_queries": 20000,
+  "cal_queries": 1024,
+  "audit_queries": 1024,
+  "recovery_queries": 32,
+  "validation_queries": 2000,
+  "L": [
+    64,
+    128,
+    256,
+    400,
+    800
+  ],
+  "cal_L": 128,
+  "query_threads": 1,
+  "offline_threads": 16,
+  "query_cpu": 15,
+  "temperatures": {
+    "webvid2_5m_light_v1": [
+      0.0040502846240997314,
+      0.016201138496398926,
+      0.0648045539855957
+    ],
+    "yandex_t2i_official10M_ip_v1": [
+      0.010893512517213821,
+      0.043574050068855286,
+      0.17429620027542114
+    ]
+  },
+  "normal_real_call_cap": 543296,
+  "repair_real_call_cap": 8192,
+  "total_real_call_cap": 551488,
+  "synthetic_call_cap": 10000,
+  "rss_limit_bytes": 42949672960,
+  "output_limit_bytes": 2147483648,
+  "min_free_bytes": 10737418240,
+  "job_timeout_seconds": 1800,
+  "total_search_seconds": 7200,
+  "timing_repeats": 1,
+  "gate": "both datasets primary cal HNSW total hits strictly greater than matched Fast20K",
+  "selection_ties": [
+    "total_hits descending",
+    "graph_ndc ascending",
+    "hard10 then soft1 then soft10",
+    "temperature ascending"
+  ],
+  "historical_splits": true,
+  "heldout_allowed": false
+}

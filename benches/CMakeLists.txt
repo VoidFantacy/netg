@@ -191,10 +191,43 @@ add_executable(bench_entry_oracle bench_entry_oracle.cpp)
 setup_target(bench_entry_oracle)
 target_include_directories(bench_entry_oracle PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/benches>)
 
+# Deployment-faithful target-basin router with separate count/timing modes.
+add_executable(bench_target_basin_eval bench_target_basin_eval.cpp)
+setup_target(bench_target_basin_eval)
+target_include_directories(bench_target_basin_eval PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/benches>)
+
+# Read-only finite-beam expansion diagnostics for the frozen-graph entry layer.
+add_executable(bench_finite_beam_trace bench_finite_beam_trace.cpp)
+setup_target(bench_finite_beam_trace)
+target_include_directories(bench_finite_beam_trace PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/benches>)
+
 # Lossless frozen-graph adapter for GATE's standard variable-degree NSG format.
 add_executable(export_gate_nsg export_gate_nsg.cpp)
 setup_target(export_gate_nsg)
 
+# Read-only coarse transition graph over QGT hub basins on a frozen NSG.
+add_executable(build_basin_transition_graph build_basin_transition_graph.cpp)
+setup_target(build_basin_transition_graph)
+
 # --- HNSW 基准测试 ---
 add_executable(bench_hnsw bench_hnsw.cpp)
 setup_target(bench_hnsw)
+
+# Isolated frozen-graph regional search: legacy code paths are unchanged.
+add_executable(test_regional_search test_regional_search.cpp)
+setup_target(test_regional_search)
+
+# Isolated pure-wall evaluator for the hierarchical target search protocol.
+add_executable(bench_hierarchical_eval bench_hierarchical_eval.cpp)
+setup_target(bench_hierarchical_eval)
+target_include_directories(bench_hierarchical_eval PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/benches>)
+
+# Versioned P3 structure/portal diagnostic evaluator; P2 target stays unchanged.
+add_executable(bench_hierarchical_eval_p3 bench_hierarchical_eval_p3.cpp)
+setup_target(bench_hierarchical_eval_p3)
+target_include_directories(bench_hierarchical_eval_p3 PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/benches>)
+
+# Fit-only P3 portal probes; no default routing or changes to legacy methods.
+add_executable(bench_hierarchical_portals bench_hierarchical_portals.cpp)
+setup_target(bench_hierarchical_portals)
+target_include_directories(bench_hierarchical_portals PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/benches>)

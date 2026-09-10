@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/inputs/webvid2_5m_light_v1/config.json",
+    "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/inputs/yandex_t2i_official10M_ip_v1/config.json"
+  ],
+  "L": [
+    64,
+    128
+  ],
+  "K": 10,
+  "max_candidates": 4,
+  "candidate_generator": "independent paired HNSW top7, ranks 3:7 zero-based; remove initial/duplicate IDs without refill",
+  "start_policy": "paired Fast20K direct HNSW top3; reverse maxheap to rank order",
+  "checkpoint_rule": "per L: max(1,floor(0.5 * min_dataset median native completed expansions)))",
+  "B_rule": "single global B=max(128,64*ceil(max_dataset_L percentile75(native graph NDC)/128))",
+  "primary_family_size": 4,
+  "bootstrap_repetitions": 20000,
+  "bootstrap_seed": 20260909,
+  "familywise_alpha": 0.05,
+  "minimum_mean_recall_gain": 0.005,
+  "resources": {
+    "cpu_only": true,
+    "max_threads": 16,
+    "worker_threads": 1,
+    "max_distinct_queries_per_dataset": 2000,
+    "max_native_or_branch_calls": 200000,
+    "max_wall_seconds_per_stage": 7200,
+    "max_rss_gib": 32,
+    "max_new_disk_gib": 5
+  },
+  "created_utc": "2026-09-09T07:04:52.099848+00:00"
+}

@@ -1,0 +1,24 @@
+{
+  "config": "gate_baseline_artifacts/webvid2_5m_frozen_r64_v2/config_webvid_gate_uniquehub_max200_patience20_v4.json",
+  "finite_embeddings": true,
+  "hub_count": 512,
+  "hub_embeddings": "gate_baseline_artifacts/webvid2_5m_frozen_r64_v2/routes_webvid_gate_max200_best_validation10k_top3_v1/hub_embeddings.fvecs",
+  "hub_embeddings_sha256": "aa2f33198429f70a87811c3e6d1e4790d70059a81a7f18ac14c81c4bf98e308c",
+  "hub_ids": "gate_baseline_artifacts/webvid2_5m_frozen_r64_v2/hbkm512_sinkhorn_seed42_v2/hub_ids.int32",
+  "hub_indices": "gate_baseline_artifacts/webvid2_5m_frozen_r64_v2/routes_webvid_gate_max200_best_validation10k_top3_v1/hub_indices_top3.int32",
+  "hub_indices_sha256": "e716e7b0633f4c9b911f37bc46242875563686356a79d3719b2eb9e6189ffc88",
+  "model": "gate_baseline_artifacts/webvid2_5m_frozen_r64_v2/models_webvid_gate_uniquehub_max200_patience20_v4/webvid_gate_uniquehub_max200_patience20_v4_input_dim512_hidden_dim2024_output_dim512_dropout0.05_batch_size16384_lr1e-05_temperature0.07_epochs200_seed42_efficient_unique_hubsTrue_early_stopping_patience20.pth",
+  "model_sha256": "de67525db1ae26913389ae558a57dabfa8f4cfe69d5393df47e97a541f961370",
+  "purpose": "exact dense-cosine GATE routes for frozen-graph evaluation",
+  "query": "benches/datasets/WebVid2.5M_light_v1/query.validation.seed20260826.fvecs",
+  "query_count": 10000,
+  "route_shape": [
+    10000,
+    3
+  ],
+  "routes": "gate_baseline_artifacts/webvid2_5m_frozen_r64_v2/routes_webvid_gate_max200_best_validation10k_top3_v1/routes_top3.int32",
+  "routes_sha256": "2070396fdc85dd6993bbcebd9f633e19610e2de69055f1ab308691483bc67e85",
+  "routing": "exact dense cosine; no approximate routing-index error",
+  "schema_version": 1,
+  "top_m": 3
+}

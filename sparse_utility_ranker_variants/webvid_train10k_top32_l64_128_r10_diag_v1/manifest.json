@@ -1,0 +1,81 @@
+{
+  "batch_size": 256,
+  "cost_weight": 0.05,
+  "dataset": "webvid2_5m_light_v1",
+  "learning_rate": 0.02,
+  "max_epochs": 50,
+  "method": "cost-aware listwise diagonal query-entry interaction reranker over Fast top-32",
+  "runs": [
+    {
+      "best_internal_dev_loss": 4.541060447692871,
+      "epochs_run": 15,
+      "model": "sparse_utility_ranker_variants/webvid_train10k_top32_l64_128_r10_diag_v1/model_seed20260828.pt",
+      "model_sha256": "8c3c67f6f4bafd549e0ef229729d81698dfc1190fa8e3738c0544c8a551a6a3b",
+      "routes": "sparse_utility_ranker_variants/webvid_train10k_top32_l64_128_r10_diag_v1/routes_seed20260828_top3.bin",
+      "routes_sha256": "e0458bca1153a01ff3ccbe5f70a8c856a711d3bc4a3416cff7078bc2b55f7747",
+      "seed": 20260828,
+      "validation_mean_utility_fast_rank0": 0.6494494080543518,
+      "validation_mean_utility_predicted_top1": 0.6466564536094666,
+      "validation_mean_utility_shortlist_oracle": 0.7401939630508423,
+      "validation_top1_changed_fraction": 0.7992
+    },
+    {
+      "best_internal_dev_loss": 4.541347980499268,
+      "epochs_run": 13,
+      "model": "sparse_utility_ranker_variants/webvid_train10k_top32_l64_128_r10_diag_v1/model_seed20260829.pt",
+      "model_sha256": "5a7da5d949da50bd05a80504faa3e768b5ca1cf554f8d89ee6d504e837906f77",
+      "routes": "sparse_utility_ranker_variants/webvid_train10k_top32_l64_128_r10_diag_v1/routes_seed20260829_top3.bin",
+      "routes_sha256": "03749685b25c75d0dc3529671779fa2267728bb3784fb66d0289839e66d5cc5d",
+      "seed": 20260829,
+      "validation_mean_utility_fast_rank0": 0.6494494080543518,
+      "validation_mean_utility_predicted_top1": 0.6461820006370544,
+      "validation_mean_utility_shortlist_oracle": 0.7401939630508423,
+      "validation_top1_changed_fraction": 0.7415
+    },
+    {
+      "best_internal_dev_loss": 4.540797710418701,
+      "epochs_run": 11,
+      "model": "sparse_utility_ranker_variants/webvid_train10k_top32_l64_128_r10_diag_v1/model_seed20260830.pt",
+      "model_sha256": "d6d8334459b7c38f2dda75815a0cd44ef609d10ec33dd8e21f060f28c02ac8ae",
+      "routes": "sparse_utility_ranker_variants/webvid_train10k_top32_l64_128_r10_diag_v1/routes_seed20260830_top3.bin",
+      "routes_sha256": "14d7543a0c35eb0ba8ef4f286aefc512385b3feb4ee1399f3f281712fa0d72c2",
+      "seed": 20260830,
+      "validation_mean_utility_fast_rank0": 0.6494494080543518,
+      "validation_mean_utility_predicted_top1": 0.6457027792930603,
+      "validation_mean_utility_shortlist_oracle": 0.7401939630508423,
+      "validation_top1_changed_fraction": 0.7583
+    }
+  ],
+  "schema_version": 1,
+  "seeds": [
+    20260828,
+    20260829,
+    20260830
+  ],
+  "shortlist": 32,
+  "sources": {
+    "hub_ids": "fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_cover_hub_ids.bin",
+    "hub_ids_sha256": "47c58c28e48e85c5a4f0cad245ef66f451dde404afb0ad7231909ba1956e8e03",
+    "prototypes": "fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+    "prototypes_sha256": "b9e549ee8406798db8a9ee191f4765277a505a5372587f379e7a3e88e780d2a0",
+    "raw_hubs": "fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_cover_hubs.bin",
+    "raw_hubs_sha256": "9dcfb5cc8bc34ae83d46797c887cc6061abebb34e2deb6c05ce81b55de938ad5",
+    "train_utility": "sparse_utility_datasets/webvid_train10k_top32_l64_128_r10_v1/results.json",
+    "train_utility_sha256": "ecc93e316fc5f4768b52cc871256b099bc5d5c61eddd196023bdcddd156c1d12",
+    "validation_utility": "sparse_utility_datasets/webvid_validation10k_top32_l64_128_r10_v1/results.json",
+    "validation_utility_sha256": "7363d2ddc7105dafe5e7e82431da72b2bb7e99244a6c3863aabd088e497ea9f5"
+  },
+  "tail_weight": 1.0,
+  "target_temperature": 0.05,
+  "train_queries": 10000,
+  "train_split": "drl_train",
+  "utility_search_Ls": [
+    64,
+    128
+  ],
+  "utility_top_ks": [
+    10
+  ],
+  "validation_queries": 10000,
+  "validation_split": "validation"
+}

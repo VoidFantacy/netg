@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "purpose": "GATE training samples on an independent split",
+  "base": "benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+  "query": "benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+  "gt": "benches/datasets/WebVid2.5M_light_v1/gt.router_train.seed20260826.ip.ivecs",
+  "nsg": "gate_baseline_artifacts/webvid2_5m_frozen_r64_v2/nsg.graph",
+  "hubs": "gate_baseline_artifacts/webvid2_5m_frozen_r64_v2/hbkm512_sinkhorn_seed42_v2/hubs.txt",
+  "metric": "ip",
+  "query_count": 10000,
+  "hub_count": 512,
+  "search_L": 64,
+  "search_K": 1,
+  "no_hit_queries": 915,
+  "positive_assignments": 18799,
+  "negative_assignments": 1005496
+}

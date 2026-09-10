@@ -1,0 +1,77 @@
+{
+  "available_probe_Ls": [
+    10,
+    16,
+    32
+  ],
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "gain_threshold": 0.1,
+  "method": "GT-free early-probe actionable-reroute detection gate",
+  "runs": [
+    {
+      "metrics": {
+        "router_plus_probe_trace": {
+          "average_precision": 0.46947081903958626,
+          "roc_auc": 0.7590836737411888,
+          "top_10pct_mean_oracle_gain": 0.1928499937057495,
+          "top_10pct_positive_rate": 0.553,
+          "top_10pct_total_gain_coverage": 0.31865496853089126,
+          "top_20pct_mean_oracle_gain": 0.15269999206066132,
+          "top_20pct_positive_rate": 0.4955,
+          "top_20pct_total_gain_coverage": 0.5046265494654533,
+          "top_5pct_mean_oracle_gain": 0.21739999949932098,
+          "top_5pct_positive_rate": 0.596,
+          "top_5pct_total_gain_coverage": 0.1796100376003583
+        },
+        "router_static": {
+          "average_precision": 0.33677562805758327,
+          "roc_auc": 0.619534940050866,
+          "top_10pct_mean_oracle_gain": 0.10639999806880951,
+          "top_10pct_positive_rate": 0.388,
+          "top_10pct_total_gain_coverage": 0.1758096486777347,
+          "top_20pct_mean_oracle_gain": 0.09492500126361847,
+          "top_20pct_positive_rate": 0.3575,
+          "top_20pct_total_gain_coverage": 0.31369795484830615,
+          "top_5pct_mean_oracle_gain": 0.12160000950098038,
+          "top_5pct_positive_rate": 0.408,
+          "top_5pct_total_gain_coverage": 0.10046265998910606
+        }
+      },
+      "seed": 20260828
+    }
+  ],
+  "schema_version": 1,
+  "sources": {
+    "train_trace": "probe_trace_datasets/yandex_train10k_l10_16_32_v1/results.json",
+    "train_trace_sha256": "0ced793d1a1e6d00c76e5d90a66546544c6bdcade6e6f3e0ddd839c889f73812",
+    "train_utility": "sparse_utility_datasets/yandex_train10k_top32_l64_128_r10_v1/results.json",
+    "train_utility_sha256": "baebcf831b54142186cd2dfced73606f28a964c2d349e48d2741a6e68659306e",
+    "validation_trace": "probe_trace_datasets/yandex_validation10k_l10_16_32_v1/results.json",
+    "validation_trace_sha256": "ecbd78a2ab5b46ea2730dc8b7380e21fa4090b414b4ecd162aef3fb4ae08cd36",
+    "validation_utility": "sparse_utility_datasets/yandex_validation10k_top32_l64_128_r10_v1/results.json",
+    "validation_utility_sha256": "c3eb75e0e5099b8ddefe960162c5e70eb7b00b703bcd77dab9d6124600404178"
+  },
+  "static_feature_count": 20,
+  "trace_feature_count": 45,
+  "train_positive_rate": 0.2555,
+  "train_queries": 10000,
+  "train_split": "drl_train",
+  "used_probe_Ls": [
+    10
+  ],
+  "validation_mean_shortlist_oracle_gain": 0.060520000755786896,
+  "validation_oracle_selection": {
+    "top_10pct_mean_oracle_gain": 0.3842499852180481,
+    "top_10pct_positive_rate": 1.0,
+    "top_10pct_total_gain_coverage": 0.6349140651843757,
+    "top_20pct_mean_oracle_gain": 0.24320001900196075,
+    "top_20pct_positive_rate": 1.0,
+    "top_20pct_total_gain_coverage": 0.8037012799128485,
+    "top_5pct_mean_oracle_gain": 0.5798999667167664,
+    "top_5pct_positive_rate": 1.0,
+    "top_5pct_total_gain_coverage": 0.4790977789839583
+  },
+  "validation_positive_rate": 0.2461,
+  "validation_queries": 10000,
+  "validation_split": "validation"
+}

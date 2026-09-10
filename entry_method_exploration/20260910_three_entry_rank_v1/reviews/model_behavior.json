@@ -1,0 +1,92 @@
+{
+  "status": "STATIC_ANALYSIS_COMPLETE",
+  "new_searches": 0,
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "selected_models": {
+        "full": {
+          "model_name": "full_lambda10",
+          "lambda": 10.0,
+          "training_objective": 0.6390658698393356,
+          "training_data_loss": 0.6367926388335059,
+          "residual_Fro_norm": 0.02922207385213107,
+          "relative_residual_Fro_norm": 0.0010236053692298092,
+          "row_residual_median": 0.0004551523905154799,
+          "row_residual_max": 0.010197145801247013,
+          "residual_top8_singular_energy_fraction": 0.9024773979776411,
+          "validation_queries_with_changed_triple": 354,
+          "validation_queries": 2000,
+          "validation_unique_selected_real_entries": 671,
+          "full_objective_optimality_gap_upper_bound": 1.6224523265161188e-15
+        },
+        "rank8": {
+          "model_name": "rank8_lambda10",
+          "lambda": 10.0,
+          "training_objective": 0.6392876599204973,
+          "training_data_loss": 0.6372352063176735,
+          "residual_Fro_norm": 0.027766778245870267,
+          "relative_residual_Fro_norm": 0.0009726285493119966,
+          "row_residual_median": 0.00034940992131349193,
+          "row_residual_max": 0.010180853687346128,
+          "residual_top8_singular_energy_fraction": 0.9999999994877006,
+          "validation_queries_with_changed_triple": 347,
+          "validation_queries": 2000,
+          "validation_unique_selected_real_entries": 671,
+          "full_objective_optimality_gap_upper_bound": 0.0002218869883249402
+        }
+      },
+      "context_preference_reversals": {
+        "fit_queries": 20000,
+        "queries_with_repeated_nonzero_pair": 3588,
+        "repeated_nonzero_query_action_pairs": 8444,
+        "conflicting_query_action_pairs": 412,
+        "queries_with_any_conflict": 319,
+        "scope": "only repeated nonzero pairs among these sampled four contexts; not full-H global prevalence"
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "selected_models": {
+        "full": {
+          "model_name": "full_lambda0.1",
+          "lambda": 0.1,
+          "training_objective": 0.2695702775575535,
+          "training_data_loss": 0.24959424650296713,
+          "residual_Fro_norm": 1.6358421726848325,
+          "relative_residual_Fro_norm": 0.05709129009193728,
+          "row_residual_median": 0.042400860481933506,
+          "row_residual_max": 0.29549985408380325,
+          "residual_top8_singular_energy_fraction": 0.6327041794200401,
+          "validation_queries_with_changed_triple": 1311,
+          "validation_queries": 2000,
+          "validation_unique_selected_real_entries": 776,
+          "full_objective_optimality_gap_upper_bound": 1.774298194986582e-12
+        },
+        "rank8": {
+          "model_name": "rank8_lambda0.1",
+          "lambda": 0.1,
+          "training_objective": 0.27714698835735696,
+          "training_data_loss": 0.26394260589194274,
+          "residual_Fro_norm": 1.329982254127344,
+          "relative_residual_Fro_norm": 0.046416704469045306,
+          "row_residual_median": 0.027430158227576173,
+          "row_residual_max": 0.2945509200456172,
+          "residual_top8_singular_energy_fraction": 0.999999999999723,
+          "validation_queries_with_changed_triple": 1201,
+          "validation_queries": 2000,
+          "validation_unique_selected_real_entries": 778,
+          "full_objective_optimality_gap_upper_bound": 0.007822578990316293
+        }
+      },
+      "context_preference_reversals": {
+        "fit_queries": 20000,
+        "queries_with_repeated_nonzero_pair": 1365,
+        "repeated_nonzero_query_action_pairs": 2904,
+        "conflicting_query_action_pairs": 97,
+        "queries_with_any_conflict": 82,
+        "scope": "only repeated nonzero pairs among these sampled four contexts; not full-H global prevalence"
+      }
+    }
+  ]
+}

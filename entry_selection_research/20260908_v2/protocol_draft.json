@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "status": "DRAFT_NOT_IMPLEMENTED_NOT_RUN",
+  "executable": false,
+  "experiment_authorized": false,
+  "authoritative_human_design": "minimum_gate.md",
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "metric": "raw_inner_product",
+  "frozen_graph": "original NSG R64/Lbuild100/C512",
+  "fit_range": [
+    10000,
+    30000
+  ],
+  "pilot_range": [
+    0,
+    10000
+  ],
+  "qgt_queries": 5000,
+  "fit_label_queries": 2048,
+  "d1_pilot_queries": 512,
+  "d2_disjoint_pilot_queries": 512,
+  "pool_diagnostic_queries": 128,
+  "anchor_diagnostic_queries": 64,
+  "sample_algorithm": "SHA256(dataset|entry_joint_gate_v1|original_row_id) order as minimum_gate.md",
+  "router": {
+    "views": 1,
+    "M": 16,
+    "efConstruction": 200,
+    "efSearch": 10,
+    "seed": 20260828,
+    "shortlist": 8
+  },
+  "method": {
+    "anchor_fixed": true,
+    "main_entry_count": 3,
+    "main_triples": 21,
+    "diagnostic_anchored_subsets": 29,
+    "combined_single_and_anchored_actions": 36,
+    "anchor_free_subsets": 92,
+    "features": 40,
+    "extra_feature_dot_products": 16,
+    "ridge_penalty": 0.001,
+    "graph_cost_weight": 0.05,
+    "online_gt": false,
+    "online_probe": false
+  },
+  "label_L": [
+    64,
+    128
+  ],
+  "K": 10,
+  "cost_points": {
+    "Fast3": [
+      48,
+      64,
+      96,
+      128
+    ],
+    "B-single": [
+      48,
+      64,
+      96,
+      128
+    ],
+    "C": [
+      48,
+      64,
+      96,
+      128
+    ],
+    "Fast1": [
+      64,
+      128
+    ],
+    "Fast2": [
+      64,
+      128
+    ]
+  },
+  "timing_rounds": 5,
+  "count_runs_per_point": 1,
+  "g3_total_points_per_dataset": 16,
+  "g3_queries": 10000,
+  "g3_qps_ratio_interval": [
+    1.0,
+    1.03
+  ],
+  "g3_fixed_simultaneous_statistics": 96,
+  "g3_bootstrap_replicates": 10000,
+  "g3_bootstrap_matching_stability_min": 0.995,
+  "call_budget": {
+    "g1_pool": 484352,
+    "g1_actions": 73728,
+    "g1_anchor_extra": 14336,
+    "g2_fit": 294912,
+    "g2_audit": 73728,
+    "g3_count_plus_timing": 1920000,
+    "subtotal": 2861056,
+    "reserve": 138944,
+    "hard_limit": 3000000
+  },
+  "resource_limits": {
+    "cpu_threads": 16,
+    "heavy_dataset_processes": 1,
+    "total_wall_hours": 4,
+    "g0_g1_wall_hours": 2,
+    "max_new_artifact_GiB": 8,
+    "min_data_free_GiB": 10,
+    "max_RSS_GiB": 80,
+    "GPU": false
+  },
+  "forbidden_inputs": [
+    "raw_validation_queries",
+    "raw_validation_GT",
+    "raw_heldout_queries",
+    "raw_heldout_GT",
+    "old_30k_prototypes_as_training_inputs"
+  ],
+  "future_formal_requirements": "two datasets; >=2 adjacent points; matched recall QPS +10% or matched QPS Recall10 +1pp with corrected intervals; 3 independent builds; strong baselines; tails; frozen heldout10Kx3",
+  "stages": {
+    "G0": "NOT_IMPLEMENTED_NOT_RUN",
+    "G1": "NOT_IMPLEMENTED_NOT_RUN",
+    "G2": "NOT_IMPLEMENTED_NOT_RUN",
+    "G3": "NOT_IMPLEMENTED_NOT_RUN"
+  },
+  "qps_estimator": "batch_n / arithmetic_mean(round_wall_seconds)",
+  "bootstrap_rng": "PCG64",
+  "bootstrap_seeds": {
+    "G1": 202609081,
+    "G2": 202609082,
+    "G3": 202609083
+  },
+  "quantile_rule": "linear interpolation at (B-1)*p",
+  "bootstrap_std_ddof": 1,
+  "G3_unmeasured_comparator": "B-triple-additive pure wall; required for formal follow-up"
+}

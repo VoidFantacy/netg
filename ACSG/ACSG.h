@@ -11,7 +11,9 @@
 #include <faiss/utils/Heap.h>
 #include <faiss/utils/random.h>
 #include <atomic>
+#include <cstdint>
 #include <iostream>
+#include <limits>
 
 namespace acsg
 {
@@ -34,6 +36,35 @@ namespace acsg
         {
             return distance < other.distance;
         }
+    };
+
+    // Optional, diagnostic-only summary of one finite-beam search_new invocation.
+    // It deliberately contains no graph mutation or routing state.
+    struct SearchTrace
+    {
+        uint64_t distance_evaluations = 0;
+        uint64_t evaluated_neighbor_count = 0;
+        uint64_t expanded_count = 0;
+        uint64_t accepted_insertion_count = 0;
+        uint64_t rejected_by_pool_bound_count = 0;
+        uint64_t rewind_count = 0;
+        uint64_t rewind_span_sum = 0;
+        uint64_t rewind_span_max = 0;
+        uint64_t best_distance_improvement_count = 0;
+        double best_distance_improvement_sum = 0.0;
+        uint64_t pool_bound_improvement_count = 0;
+        double pool_bound_improvement_sum = 0.0;
+        uint64_t max_stagnation_expansions = 0;
+        uint64_t stagnation_run_count = 0;
+        uint64_t stagnation_expansion_sum = 0;
+        uint64_t first_topk_gt_evaluation_ndc = std::numeric_limits<uint64_t>::max();
+        uint64_t first_topk_gt_expansion = std::numeric_limits<uint64_t>::max();
+        float initial_best_distance = std::numeric_limits<float>::max();
+        float final_best_distance = std::numeric_limits<float>::max();
+        float final_frontier_gap = std::numeric_limits<float>::quiet_NaN();
+        float final_pool_gap = std::numeric_limits<float>::quiet_NaN();
+        const int64_t* trace_gt = nullptr;
+        int trace_gt_k = 0;
     };
 
     struct newNeighbor;
@@ -288,6 +319,21 @@ namespace acsg
             const std::vector<EnterPoint> &custom_enterpoints = std::vector<EnterPoint>(),
             std::vector<Neighbor> *retset_buf = nullptr);
 
+        // Runs the same search_new implementation while filling a diagnostic summary.
+        // `trace_gt` is optional supervision-only metadata and never affects search.
+        void search_new_traced(
+            DistanceComputer &dis,
+            int topk,
+            idx_t *I,
+            float *D,
+            VisitedTable &vt,
+            int mode,
+            const std::vector<EnterPoint> &custom_enterpoints,
+            SearchTrace &trace,
+            const int64_t* trace_gt = nullptr,
+            int trace_gt_k = 0,
+            std::vector<Neighbor> *retset_buf = nullptr);
+
         // 新的图搜索函数模板
         template <bool collect_fullset, class index_t>
         void search_on_graph_new(
@@ -298,6 +344,7 @@ namespace acsg
             std::vector<Neighbor> &retset,
             const std::vector<EnterPoint> &enterpoints,
             int mode,
-            int query_id);  // 添加query_id参数
+            int query_id,
+            SearchTrace* trace = nullptr);  // 添加query_id参数
     };
 }

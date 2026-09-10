@@ -1,0 +1,754 @@
+{
+  "dataset": "SYNTHETIC_ONLY",
+  "methods": [
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+        "dim": 8,
+        "exact": false,
+        "hub_count": 32,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+        "name": "fast1_L64",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32"
+      },
+      "failed_queries": 0,
+      "failure_rate": 0.0,
+      "mean_graph_ndc": 192.0,
+      "mean_route_ndc": 24.2,
+      "mean_total_ndc": 216.2,
+      "name": "fast1_L64",
+      "plain_count_parity_queries": 20,
+      "queries": 20,
+      "recall_at_10": 1.0,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 0.000157536,
+          "graph_only_seconds": 0.000131218,
+          "order_position": 0,
+          "qps": 126955.10867357302,
+          "repeat": 0,
+          "route_only_seconds": 0.012183685
+        },
+        {
+          "end_to_end_seconds": 0.000147999,
+          "graph_only_seconds": 0.000115053,
+          "order_position": 10,
+          "qps": 135136.048216542,
+          "repeat": 1,
+          "route_only_seconds": 3.751e-05
+        },
+        {
+          "end_to_end_seconds": 0.000150693,
+          "graph_only_seconds": 0.000118131,
+          "order_position": 6,
+          "qps": 132720.16616564803,
+          "repeat": 2,
+          "route_only_seconds": 1.7665e-05
+        }
+      ],
+      "total_hits": 200
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+        "dim": 8,
+        "exact": false,
+        "hub_count": 32,
+        "k": 3,
+        "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+        "name": "fast3_L64",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32"
+      },
+      "failed_queries": 0,
+      "failure_rate": 0.0,
+      "mean_graph_ndc": 192.0,
+      "mean_route_ndc": 24.2,
+      "mean_total_ndc": 216.2,
+      "name": "fast3_L64",
+      "plain_count_parity_queries": 20,
+      "queries": 20,
+      "recall_at_10": 1.0,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 0.000159456,
+          "graph_only_seconds": 0.000110908,
+          "order_position": 1,
+          "qps": 125426.44992976118,
+          "repeat": 0,
+          "route_only_seconds": 3.8959e-05
+        },
+        {
+          "end_to_end_seconds": 0.000169771,
+          "graph_only_seconds": 0.000113898,
+          "order_position": 11,
+          "qps": 117805.7500986623,
+          "repeat": 1,
+          "route_only_seconds": 2.6338e-05
+        },
+        {
+          "end_to_end_seconds": 0.000147733,
+          "graph_only_seconds": 0.000116173,
+          "order_position": 7,
+          "qps": 135379.36683070133,
+          "repeat": 2,
+          "route_only_seconds": 2.2301e-05
+        }
+      ],
+      "total_hits": 200
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+        "dim": 8,
+        "exact": false,
+        "hub_count": 32,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+        "name": "identity_slots_L64",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32"
+      },
+      "failed_queries": 0,
+      "failure_rate": 0.0,
+      "mean_graph_ndc": 192.0,
+      "mean_route_ndc": 24.2,
+      "mean_total_ndc": 216.2,
+      "name": "identity_slots_L64",
+      "plain_count_parity_queries": 20,
+      "queries": 20,
+      "recall_at_10": 1.0,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 0.000185983,
+          "graph_only_seconds": 0.000120237,
+          "order_position": 2,
+          "qps": 107536.71034449385,
+          "repeat": 0,
+          "route_only_seconds": 1.9622e-05
+        },
+        {
+          "end_to_end_seconds": 0.000140824,
+          "graph_only_seconds": 0.00011428,
+          "order_position": 12,
+          "qps": 142021.24637845822,
+          "repeat": 1,
+          "route_only_seconds": 3.9752e-05
+        },
+        {
+          "end_to_end_seconds": 0.000144839,
+          "graph_only_seconds": 0.000120008,
+          "order_position": 8,
+          "qps": 138084.35573291726,
+          "repeat": 2,
+          "route_only_seconds": 2.0468e-05
+        }
+      ],
+      "total_hits": 200
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+        "dim": 8,
+        "exact": true,
+        "hub_count": 32,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+        "name": "exact1_L64",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32"
+      },
+      "failed_queries": 0,
+      "failure_rate": 0.0,
+      "mean_graph_ndc": 192.0,
+      "mean_route_ndc": 32.0,
+      "mean_total_ndc": 224.0,
+      "name": "exact1_L64",
+      "plain_count_parity_queries": 20,
+      "queries": 20,
+      "recall_at_10": 1.0,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 0.000116758,
+          "graph_only_seconds": 0.000110568,
+          "order_position": 3,
+          "qps": 171294.472327378,
+          "repeat": 0,
+          "route_only_seconds": 2.982e-06
+        },
+        {
+          "end_to_end_seconds": 0.000118606,
+          "graph_only_seconds": 0.000103086,
+          "order_position": 13,
+          "qps": 168625.533278249,
+          "repeat": 1,
+          "route_only_seconds": 3.12e-06
+        },
+        {
+          "end_to_end_seconds": 0.000110652,
+          "graph_only_seconds": 0.000130861,
+          "order_position": 9,
+          "qps": 180746.84596753787,
+          "repeat": 2,
+          "route_only_seconds": 3.078e-06
+        }
+      ],
+      "total_hits": 200
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+        "dim": 8,
+        "exact": false,
+        "hub_count": 32,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/reviews/synthetic_duplicate_mapping.i32",
+        "name": "duplicate_slots_L64",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32"
+      },
+      "failed_queries": 0,
+      "failure_rate": 0.0,
+      "mean_graph_ndc": 192.0,
+      "mean_route_ndc": 24.2,
+      "mean_total_ndc": 216.2,
+      "name": "duplicate_slots_L64",
+      "plain_count_parity_queries": 20,
+      "queries": 20,
+      "recall_at_10": 1.0,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 0.000149203,
+          "graph_only_seconds": 0.000124535,
+          "order_position": 4,
+          "qps": 134045.56208655323,
+          "repeat": 0,
+          "route_only_seconds": 2.5078e-05
+        },
+        {
+          "end_to_end_seconds": 0.000159787,
+          "graph_only_seconds": 0.000147026,
+          "order_position": 0,
+          "qps": 125166.62807362301,
+          "repeat": 1,
+          "route_only_seconds": 2.1234e-05
+        },
+        {
+          "end_to_end_seconds": 0.000167498,
+          "graph_only_seconds": 0.000152828,
+          "order_position": 10,
+          "qps": 119404.41079893491,
+          "repeat": 2,
+          "route_only_seconds": 3.5554e-05
+        }
+      ],
+      "total_hits": 200
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+        "dim": 8,
+        "exact": true,
+        "hub_count": 32,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/reviews/synthetic_duplicate_mapping.i32",
+        "name": "duplicate_exact_L64",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32"
+      },
+      "failed_queries": 0,
+      "failure_rate": 0.0,
+      "mean_graph_ndc": 192.0,
+      "mean_route_ndc": 32.0,
+      "mean_total_ndc": 224.0,
+      "name": "duplicate_exact_L64",
+      "plain_count_parity_queries": 20,
+      "queries": 20,
+      "recall_at_10": 1.0,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 0.000130068,
+          "graph_only_seconds": 0.00016754,
+          "order_position": 5,
+          "qps": 153765.72254513024,
+          "repeat": 0,
+          "route_only_seconds": 3.179e-06
+        },
+        {
+          "end_to_end_seconds": 0.000133446,
+          "graph_only_seconds": 0.000141889,
+          "order_position": 1,
+          "qps": 149873.35701332372,
+          "repeat": 1,
+          "route_only_seconds": 3.001e-06
+        },
+        {
+          "end_to_end_seconds": 0.000126017,
+          "graph_only_seconds": 0.000125104,
+          "order_position": 11,
+          "qps": 158708.7456454288,
+          "repeat": 2,
+          "route_only_seconds": 2.747e-06
+        }
+      ],
+      "total_hits": 200
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+        "dim": 8,
+        "exact": false,
+        "hub_count": 32,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+        "name": "fast1_L128",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32"
+      },
+      "failed_queries": 0,
+      "failure_rate": 0.0,
+      "mean_graph_ndc": 192.0,
+      "mean_route_ndc": 24.2,
+      "mean_total_ndc": 216.2,
+      "name": "fast1_L128",
+      "plain_count_parity_queries": 20,
+      "queries": 20,
+      "recall_at_10": 1.0,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 0.000211142,
+          "graph_only_seconds": 0.000189451,
+          "order_position": 6,
+          "qps": 94722.98263727728,
+          "repeat": 0,
+          "route_only_seconds": 3.4195e-05
+        },
+        {
+          "end_to_end_seconds": 0.000239671,
+          "graph_only_seconds": 0.000172907,
+          "order_position": 2,
+          "qps": 83447.72625807878,
+          "repeat": 1,
+          "route_only_seconds": 2.844e-05
+        },
+        {
+          "end_to_end_seconds": 0.0002121,
+          "graph_only_seconds": 0.000191157,
+          "order_position": 12,
+          "qps": 94295.14380009429,
+          "repeat": 2,
+          "route_only_seconds": 2.2379e-05
+        }
+      ],
+      "total_hits": 200
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+        "dim": 8,
+        "exact": false,
+        "hub_count": 32,
+        "k": 3,
+        "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+        "name": "fast3_L128",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32"
+      },
+      "failed_queries": 0,
+      "failure_rate": 0.0,
+      "mean_graph_ndc": 192.0,
+      "mean_route_ndc": 24.2,
+      "mean_total_ndc": 216.2,
+      "name": "fast3_L128",
+      "plain_count_parity_queries": 20,
+      "queries": 20,
+      "recall_at_10": 1.0,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 0.000214247,
+          "graph_only_seconds": 0.000176738,
+          "order_position": 7,
+          "qps": 93350.19860254752,
+          "repeat": 0,
+          "route_only_seconds": 2.2046e-05
+        },
+        {
+          "end_to_end_seconds": 0.000206227,
+          "graph_only_seconds": 0.000179163,
+          "order_position": 3,
+          "qps": 96980.51176616059,
+          "repeat": 1,
+          "route_only_seconds": 4.0163e-05
+        },
+        {
+          "end_to_end_seconds": 0.000207584,
+          "graph_only_seconds": 0.0001989,
+          "order_position": 13,
+          "qps": 96346.53923231078,
+          "repeat": 2,
+          "route_only_seconds": 3.7521e-05
+        }
+      ],
+      "total_hits": 200
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+        "dim": 8,
+        "exact": false,
+        "hub_count": 32,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+        "name": "identity_slots_L128",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32"
+      },
+      "failed_queries": 0,
+      "failure_rate": 0.0,
+      "mean_graph_ndc": 192.0,
+      "mean_route_ndc": 24.2,
+      "mean_total_ndc": 216.2,
+      "name": "identity_slots_L128",
+      "plain_count_parity_queries": 20,
+      "queries": 20,
+      "recall_at_10": 1.0,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 0.000210389,
+          "graph_only_seconds": 0.000173646,
+          "order_position": 8,
+          "qps": 95062.00419223438,
+          "repeat": 0,
+          "route_only_seconds": 3.7912e-05
+        },
+        {
+          "end_to_end_seconds": 0.000208356,
+          "graph_only_seconds": 0.00017742,
+          "order_position": 4,
+          "qps": 95989.55633627062,
+          "repeat": 1,
+          "route_only_seconds": 2.4727e-05
+        },
+        {
+          "end_to_end_seconds": 0.000213959,
+          "graph_only_seconds": 0.000197432,
+          "order_position": 0,
+          "qps": 93475.85285031244,
+          "repeat": 2,
+          "route_only_seconds": 2.3861e-05
+        }
+      ],
+      "total_hits": 200
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+        "dim": 8,
+        "exact": true,
+        "hub_count": 32,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+        "name": "exact1_L128",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32"
+      },
+      "failed_queries": 0,
+      "failure_rate": 0.0,
+      "mean_graph_ndc": 192.0,
+      "mean_route_ndc": 32.0,
+      "mean_total_ndc": 224.0,
+      "name": "exact1_L128",
+      "plain_count_parity_queries": 20,
+      "queries": 20,
+      "recall_at_10": 1.0,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 0.000194573,
+          "graph_only_seconds": 0.000171467,
+          "order_position": 9,
+          "qps": 102789.1845220046,
+          "repeat": 0,
+          "route_only_seconds": 3.012e-06
+        },
+        {
+          "end_to_end_seconds": 0.000184428,
+          "graph_only_seconds": 0.00019772,
+          "order_position": 5,
+          "qps": 108443.40338777193,
+          "repeat": 1,
+          "route_only_seconds": 3.175e-06
+        },
+        {
+          "end_to_end_seconds": 0.000185926,
+          "graph_only_seconds": 0.000171948,
+          "order_position": 1,
+          "qps": 107569.67825909232,
+          "repeat": 2,
+          "route_only_seconds": 3.059e-06
+        }
+      ],
+      "total_hits": 200
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+        "dim": 8,
+        "exact": false,
+        "hub_count": 32,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/reviews/synthetic_duplicate_mapping.i32",
+        "name": "duplicate_slots_L128",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32"
+      },
+      "failed_queries": 0,
+      "failure_rate": 0.0,
+      "mean_graph_ndc": 192.0,
+      "mean_route_ndc": 24.2,
+      "mean_total_ndc": 216.2,
+      "name": "duplicate_slots_L128",
+      "plain_count_parity_queries": 20,
+      "queries": 20,
+      "recall_at_10": 1.0,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 0.000220715,
+          "graph_only_seconds": 0.000182832,
+          "order_position": 10,
+          "qps": 90614.59348028,
+          "repeat": 0,
+          "route_only_seconds": 4.2409e-05
+        },
+        {
+          "end_to_end_seconds": 0.000213003,
+          "graph_only_seconds": 0.000194455,
+          "order_position": 6,
+          "qps": 93895.39114472567,
+          "repeat": 1,
+          "route_only_seconds": 1.9753e-05
+        },
+        {
+          "end_to_end_seconds": 0.000226744,
+          "graph_only_seconds": 0.000225281,
+          "order_position": 2,
+          "qps": 88205.20057862611,
+          "repeat": 2,
+          "route_only_seconds": 0.0038025
+        }
+      ],
+      "total_hits": 200
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+        "dim": 8,
+        "exact": true,
+        "hub_count": 32,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/reviews/synthetic_duplicate_mapping.i32",
+        "name": "duplicate_exact_L128",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32"
+      },
+      "failed_queries": 0,
+      "failure_rate": 0.0,
+      "mean_graph_ndc": 192.0,
+      "mean_route_ndc": 32.0,
+      "mean_total_ndc": 224.0,
+      "name": "duplicate_exact_L128",
+      "plain_count_parity_queries": 20,
+      "queries": 20,
+      "recall_at_10": 1.0,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 0.000209306,
+          "graph_only_seconds": 0.000183605,
+          "order_position": 11,
+          "qps": 95553.87805414082,
+          "repeat": 0,
+          "route_only_seconds": 3.29e-06
+        },
+        {
+          "end_to_end_seconds": 0.000189654,
+          "graph_only_seconds": 0.000208328,
+          "order_position": 7,
+          "qps": 105455.19735940185,
+          "repeat": 1,
+          "route_only_seconds": 3.199e-06
+        },
+        {
+          "end_to_end_seconds": 0.000218602,
+          "graph_only_seconds": 0.000192517,
+          "order_position": 3,
+          "qps": 91490.4712674175,
+          "repeat": 2,
+          "route_only_seconds": 3.727e-06
+        }
+      ],
+      "total_hits": 200
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+        "dim": 8,
+        "exact": false,
+        "hub_count": 32,
+        "k": 3,
+        "legacy_heap_order": true,
+        "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+        "name": "fast3_legacy_heap_L64",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32"
+      },
+      "failed_queries": 0,
+      "failure_rate": 0.0,
+      "mean_graph_ndc": 192.0,
+      "mean_route_ndc": 24.2,
+      "mean_total_ndc": 216.2,
+      "name": "fast3_legacy_heap_L64",
+      "plain_count_parity_queries": 20,
+      "queries": 20,
+      "recall_at_10": 1.0,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 0.000168714,
+          "graph_only_seconds": 0.000125324,
+          "order_position": 12,
+          "qps": 118543.8078641962,
+          "repeat": 0,
+          "route_only_seconds": 4.8586e-05
+        },
+        {
+          "end_to_end_seconds": 0.00018607,
+          "graph_only_seconds": 0.000142295,
+          "order_position": 8,
+          "qps": 107486.42983823291,
+          "repeat": 1,
+          "route_only_seconds": 3.4334e-05
+        },
+        {
+          "end_to_end_seconds": 0.000150798,
+          "graph_only_seconds": 0.000129869,
+          "order_position": 4,
+          "qps": 132627.75368373585,
+          "repeat": 2,
+          "route_only_seconds": 2.6161e-05
+        }
+      ],
+      "total_hits": 200
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+        "dim": 8,
+        "exact": false,
+        "hub_count": 32,
+        "k": 3,
+        "legacy_heap_order": true,
+        "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+        "name": "fast3_legacy_heap_L128",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32"
+      },
+      "failed_queries": 0,
+      "failure_rate": 0.0,
+      "mean_graph_ndc": 192.0,
+      "mean_route_ndc": 24.2,
+      "mean_total_ndc": 216.2,
+      "name": "fast3_legacy_heap_L128",
+      "plain_count_parity_queries": 20,
+      "queries": 20,
+      "recall_at_10": 1.0,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 0.000215595,
+          "graph_only_seconds": 0.000180778,
+          "order_position": 13,
+          "qps": 92766.52983603516,
+          "repeat": 0,
+          "route_only_seconds": 2.3912e-05
+        },
+        {
+          "end_to_end_seconds": 0.000223281,
+          "graph_only_seconds": 0.000197492,
+          "order_position": 9,
+          "qps": 89573.2283535097,
+          "repeat": 1,
+          "route_only_seconds": 2.389e-05
+        },
+        {
+          "end_to_end_seconds": 0.000210105,
+          "graph_only_seconds": 0.000199088,
+          "order_position": 5,
+          "qps": 95190.49998810119,
+          "repeat": 2,
+          "route_only_seconds": 0.004372138
+        }
+      ],
+      "total_hits": 200
+    }
+  ],
+  "queries": 20,
+  "split": "synthetic",
+  "status": "COMPLETE",
+  "threads": 2,
+  "timing_contract": "Independent plain full-batch wall includes routing/mapping/original kernel/output; excludes GT/hash/JSON/count/load/build; route-only and graph-only are separate diagnostics"
+}

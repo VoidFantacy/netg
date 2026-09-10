@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "stage": "E1",
+  "status": "FAIL",
+  "decision": "TRIGGER_E1B",
+  "reason": "Dense routing NDC alone exceeds the paired Fast L64 total-NDC target on both datasets, so the preregistered all-target gate cannot pass.",
+  "selection_split": "drl_train_first_1000",
+  "heldout_accessed": false,
+  "inputs": {
+    "webvid_route": "webvid_route1k_count.json",
+    "webvid_fast": "webvid_fast1k_count.json",
+    "yandex_route": "yandex_route1k_count.json",
+    "yandex_fast": "yandex_fast1k_count.json"
+  },
+  "datasets": {
+    "webvid": {
+      "dense_routing_lower_bound_ndc": 1759.172,
+      "paired_fast_targets": {
+        "L64": {"routing_ndc": 121.172, "graph_ndc": 916.694, "total_ndc": 1037.866, "recall_at_10": 0.6614},
+        "L128": {"routing_ndc": 121.172, "graph_ndc": 1659.085, "total_ndc": 1780.257, "recall_at_10": 0.7551}
+      },
+      "L64_infeasible_before_graph_search": true
+    },
+    "yandex": {
+      "dense_routing_lower_bound_ndc": 1765.384,
+      "paired_fast_targets": {
+        "L64": {"routing_ndc": 115.384, "graph_ndc": 1647.742, "total_ndc": 1763.126, "recall_at_10": 0.8260},
+        "L128": {"routing_ndc": 115.384, "graph_ndc": 2871.153, "total_ndc": 2986.537, "recall_at_10": 0.8931}
+      },
+      "L64_infeasible_before_graph_search": true
+    }
+  },
+  "stopping_rule_applied": "A point is infeasible when routing NDC alone exceeds its paired Fast total-NDC budget. E1 requires all four dataset/target comparisons to pass.",
+  "omitted_work": "Dense graph/timing grid was not run after the lower-bound failure because it cannot reverse the failed total-NDC gate.",
+  "next_stage": "E1b fixed M16/efConstruction200/efSearch32 secondary Micro-HNSW diagnostic"
+}

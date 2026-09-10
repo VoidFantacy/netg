@@ -1,0 +1,22 @@
+{
+  "observed_utc": "2026-09-09T07:42:09.169831+00:00",
+  "cpu_model": "Intel(R) Xeon(R) 6982P-C",
+  "logical_cpus": 16,
+  "kernel": "5.15.0-187-generic",
+  "method_worker_threads": 1,
+  "max_authorized_threads": 16,
+  "cpu_only": true,
+  "build_cache_flags": [
+    "BUILD_TESTING:BOOL=OFF",
+    "FAISS_ENABLE_GPU:BOOL=OFF",
+    "FAISS_ENABLE_PYTHON:BOOL=OFF"
+  ],
+  "python": "/data/netg/ACSG/.venv_cpu/bin/python",
+  "blas": "/usr/lib/x86_64-linux-gnu/libopenblas.so",
+  "environment_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  }
+}

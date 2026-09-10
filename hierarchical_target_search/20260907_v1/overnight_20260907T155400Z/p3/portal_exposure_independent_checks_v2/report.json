@@ -1,0 +1,382 @@
+{
+  "status": "PASS",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/diagnose_portal_exposure.py",
+    "sha256": "e76ad3377df984af132596c3dc84f65c9ab3f86c90bbfdbbd1ec7581ce9a9e59"
+  },
+  "reviewer_script_sha256": "74df112074cdc2e1a6854c130dda239260605cffd11740ae9c03d1c80b7e4b77",
+  "checks": [
+    "Independent six-query fixture has valid oracle route shapes and GT-derived Recall",
+    "Three actual entry classes include shared seed first",
+    "Same returned set, changed order, changed set and equal Recall remain distinct",
+    "Zero raw sum and positive weighted score are independently reported",
+    "Positive-weight unsupported leaf is null without renormalization",
+    "Zero-weight unsupported leaf does not erase supported score",
+    "Correct paired signs and means with complete counts",
+    "Result equality cannot be inferred from equal Recall",
+    "Every fixed grouping retains empty bins and exhausts the six queries",
+    "Identical full route rejects changed result_ids",
+    "Identical full route rejects changed recall",
+    "Identical full route rejects changed routing_ndc",
+    "Identical full route rejects changed graph_ndc",
+    "Identical full route rejects changed total_ndc",
+    "Identical full route rejects changed routing_mac",
+    "Identical full route rejects changed graph_mac",
+    "Identical full route rejects changed total_mac",
+    "Identical full route rejects changed expanded",
+    "Identical full route rejects changed rejected",
+    "Identical full route rejects changed evicted_unexpanded",
+    "Same returned set with a different route still rejects changed Recall",
+    "Hidden full-route field cannot drift: regions",
+    "Hidden full-route field cannot drift: weights",
+    "Hidden full-route field cannot drift: shared_seed",
+    "Hidden full-route field cannot drift: fast_anchor_id",
+    "Hidden full-route field cannot drift: actual_entry_count",
+    "Paired query order mismatch",
+    "Paired query length mismatch",
+    "Compact arrays preserve null and integer exact deltas",
+    "Generated saved-file exact hash read",
+    "Generated saved-file digest tamper",
+    "Generated saved-file boundary escape",
+    "Frozen source stable after synthetic execution"
+  ],
+  "check_count": 33,
+  "queries": 6,
+  "source_fixture_is_independent_of_implementation_selftest": true,
+  "actual_data_read": false,
+  "ANN_calls": 0,
+  "new_confidence_intervals": false,
+  "per_query": {
+    "file": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/portal_exposure_independent_checks_v2/independent.per_query.npz",
+      "sha256": "a453f5bb497614fef3d054fdbdfac33b15e129d10922a04223e32fdbc08ae989"
+    },
+    "rows": 6,
+    "arrays": {
+      "query_id": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "route_class": {
+        "dtype": "uint8",
+        "shape": [
+          6
+        ]
+      },
+      "complete_ordered_route_equal": {
+        "dtype": "bool",
+        "shape": [
+          6
+        ]
+      },
+      "actual_entry_count_reference": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "actual_entry_count_candidate": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "result_order_equal": {
+        "dtype": "bool",
+        "shape": [
+          6
+        ]
+      },
+      "result_set_equal": {
+        "dtype": "bool",
+        "shape": [
+          6
+        ]
+      },
+      "reference_hit_count": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "candidate_hit_count": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "delta_recall_pp": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "active_leaves": {
+        "dtype": "int64",
+        "shape": [
+          6,
+          4
+        ]
+      },
+      "conditional_weights": {
+        "dtype": "float64",
+        "shape": [
+          6,
+          4
+        ]
+      },
+      "leaf_proxy_deltas": {
+        "dtype": "int64",
+        "shape": [
+          6,
+          4
+        ]
+      },
+      "leaf_target_support": {
+        "dtype": "int64",
+        "shape": [
+          6,
+          4
+        ]
+      },
+      "leaf_proxy_ratios": {
+        "dtype": "float64",
+        "shape": [
+          6,
+          4
+        ]
+      },
+      "sum_proxy_delta": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "sum_proxy_delta_sign": {
+        "dtype": "int8",
+        "shape": [
+          6
+        ]
+      },
+      "weighted_proxy_score": {
+        "dtype": "float64",
+        "shape": [
+          6
+        ]
+      },
+      "weighted_proxy_score_sign": {
+        "dtype": "int8",
+        "shape": [
+          6
+        ]
+      },
+      "missing_support_weight": {
+        "dtype": "float64",
+        "shape": [
+          6
+        ]
+      },
+      "missing_support_leaf_count": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "missing_positive_weight_support_leaf_count": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "routing_ndc_reference": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "routing_ndc_candidate": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "routing_ndc_delta": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "graph_ndc_reference": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "graph_ndc_candidate": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "graph_ndc_delta": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "total_ndc_reference": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "total_ndc_candidate": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "total_ndc_delta": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "routing_mac_reference": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "routing_mac_candidate": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "routing_mac_delta": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "graph_mac_reference": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "graph_mac_candidate": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "graph_mac_delta": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "total_mac_reference": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "total_mac_candidate": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "total_mac_delta": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "expanded_reference": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "expanded_candidate": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "expanded_delta": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "rejected_reference": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "rejected_candidate": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "rejected_delta": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "evicted_unexpanded_reference": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "evicted_unexpanded_candidate": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "evicted_unexpanded_delta": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "structure_lambda": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      },
+      "search_L": {
+        "dtype": "int64",
+        "shape": [
+          6
+        ]
+      }
+    },
+    "route_class_codes": {
+      "0": "same_ordered_actual_entries",
+      "1": "same_entry_set_changed_order",
+      "2": "changed_entry_set"
+    },
+    "sign_codes": {
+      "-1": "negative",
+      "0": "zero",
+      "1": "positive",
+      "2": "undefined"
+    },
+    "undefined_floats": "NaN only for weighted_proxy_score and unsupported leaf_proxy_ratios; not zero.",
+    "unit": "One row per dataset/lambda/L/pilot query; repeated query IDs across four cells are not independent samples."
+  }
+}

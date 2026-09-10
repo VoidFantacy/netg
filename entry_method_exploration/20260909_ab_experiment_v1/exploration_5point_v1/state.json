@@ -1,0 +1,46 @@
+{
+  "status": "COMPLETE",
+  "controller_pid": 16748,
+  "threads": 1,
+  "completed": [
+    {
+      "stage": "webvid2_5m_light_v1",
+      "seconds": 80.07022941800005,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/logs/webvid2_5m_light_v1.log"
+    },
+    {
+      "stage": "yandex_t2i_official10M_ip_v1",
+      "seconds": 85.08615894300056,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/logs/yandex_t2i_official10M_ip_v1.log"
+    },
+    {
+      "stage": "analyze",
+      "seconds": 5.0052650649995485,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/logs/analyze.log"
+    }
+  ],
+  "L": [
+    64,
+    128,
+    256,
+    400,
+    800
+  ],
+  "queries_per_dataset": 2000,
+  "one_fixed_joint_router_per_dataset": true,
+  "execution_sha256": {
+    "src/analyze.py": "6752c2c480e324cf85fab7f407ce57599748fb5ed71b160b692009d5b3a01305",
+    "src/prepare.py": "41b0968aac27093ae889345f5f109e9c6e6b753aeb9c0677a5d2c95c083120b7",
+    "src/quick.cpp": "3edbac54e7bd25bf546699cdd2f90aa392f0ad0676a73d44a7efe408184da935",
+    "src/run.py": "e8ec5577dab76c85e64e2aa414d515bb629524fe5bd871e0fb7013935963f746",
+    "bin/quick": "4ead4c86879a019ca3a81f9730aeda65c15577b700ef18f8f46ae78db841241e",
+    "protocol.md": "aeeb854a6c9c5c5e36e7bac9104eef98bf6f422897b912ac56b75f7cd25e33ee"
+  },
+  "updated_utc": "2026-09-09T13:19:00.040170+00:00",
+  "active_stage": null,
+  "active_process": null,
+  "active_log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/logs/analyze.log",
+  "conclusion": "EXPLORATORY_NO_OVERALL_FAST_GAIN",
+  "review_completed_utc": "2026-09-09T13:30:06.960423+00:00",
+  "next": "No automatic further experiments; completed the user-scoped exploration"
+}

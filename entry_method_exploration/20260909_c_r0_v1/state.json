@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "version": "20260909_c_r0_v1",
+  "direction": "C",
+  "stage": "R0_RESEARCH_AND_MECHANISM_AUDIT",
+  "status": "R0_CONDITIONAL_DIAGNOSTIC_DESIGN_ONLY_UNRUN",
+  "updated_date": "2026-09-09",
+  "decision": {
+    "bounded_same_state_diagnostic": "CONDITIONAL_GO_REQUIRES_SEPARATE_PROTOCOL_AND_AUTHORIZATION",
+    "deployable_method": "NOT_ESTABLISHED",
+    "ab_extension": "DEFER_UNTIL_AB_AND_C_INDEPENDENT_GATES_PASS",
+    "mainline_priority": "HIGH_RISK_KILL_SCREEN_NOT_CURRENT_MAINLINE"
+  },
+  "method_implemented": false,
+  "state_machine_implemented": false,
+  "pause_resume_implemented": false,
+  "branch_clone_implemented": false,
+  "injection_action_implemented": false,
+  "label_runner_implemented": false,
+  "controller_trained": false,
+  "new_labels_generated": false,
+  "ann_experiment_started": false,
+  "validation_accessed": false,
+  "heldout_accessed": false,
+  "execution_authorized": false,
+  "documentation_only": true,
+  "root_documents_modified": true,
+  "root_documents_modified_list": [
+    "../../summary.md",
+    "../../spec.md",
+    "../../s-target.md",
+    "../../s-experiment.md",
+    "../../experiment_history/09_research_designs_not_experiments.md"
+  ],
+  "core_question": "whether a learned one-shot candidate-specific remote intervention has positive incremental value over continuing from the exact same finite-beam state under the same preregistered remaining graph-NDC cap",
+  "evidence_assessment": {
+    "positive": [
+      "E13 early L10 trace improves detection of queries with reroute headroom",
+      "E15 full finite-beam trace has incremental predictive information over a fitted geometry model",
+      "E15 cost-constrained finite-candidate oracle has positive utility intervals"
+    ],
+    "negative": [
+      "E14 final v4 paid-trace frontier-topology chooser strongly loses Recall and adds NDC on WebVid; the final Yandex extension was not run",
+      "E16 query-only local utility Atlas has intervals crossing zero at all four dataset-by-L points"
+    ],
+    "unmeasured": [
+      "same-state finite-action oracle headroom",
+      "checkpoint-prefix state incremental value over query-only",
+      "in-place state reuse value over restart-and-merge",
+      "end-to-end Recall-QPS"
+    ]
+  },
+  "novelty_position": {
+    "candidate_level": "LOW_TO_MEDIUM_NARROW_METHOD_CANDIDATE",
+    "broad_dynamic_entry_claim": "COLLIDES_WITH_QING_2012",
+    "learned_live_state_control_claim": "COLLIDES_WITH_ANNIE_LAET_DARTH_AND_ADA_EF",
+    "learned_within_search_routing_claim": "COLLIDES_WITH_LEARNING_TO_ROUTE",
+    "first_of_kind_claim": "NOT_ESTABLISHED",
+    "targeted_search_exhaustive": false,
+    "defensible_unit": "paired same-state candidate-specific continue-versus-force-expand action value with abstention under one preregistered residual graph-NDC cap, per-branch actual NDC accounting, and a frozen NSG kernel"
+  },
+  "proposed_first_protocol": {
+    "locked": false,
+    "start_policy": "one frozen paired Fast3 build, subject to protocol approval",
+    "checkpoints_per_query": 1,
+    "candidate_generator": "frozen query-only and GT-free",
+    "maximum_candidates": 4,
+    "primary_eligibility": "candidate entry is not visited at checkpoint",
+    "actions": [
+      "continue",
+      "force_expand_each_eligible_candidate"
+    ],
+    "mechanism_control": "natural pool insertion without forced expansion",
+    "remaining_work": "same preregistered additional graph-distance-evaluation cap B for every branch",
+    "pool_capacity": "L remains pool capacity and is not a work budget",
+    "ground_truth": "offline branch scoring only",
+    "early_finished_queries": "included in unconditional mean with zero intervention gain"
+  },
+  "required_state": [
+    "base graph metric kernel and query identity",
+    "L K and initial entry identities",
+    "ordered retset including id distance and pending flag",
+    "num_ids and scheduler cursor",
+    "visited membership",
+    "expanded membership distinct from visited",
+    "consumed and remaining graph NDC",
+    "neighbor offset and scheduler update state if a cap cuts an expansion",
+    "bounded GT-free online history used by the controller"
+  ],
+  "gates": [
+    {
+      "name": "C0_PROTOCOL_LOCK",
+      "status": "NOT_AUTHORIZED_NOT_STARTED",
+      "purpose": "freeze policy checkpoint budget candidates action truncation split statistics resources and artifacts"
+    },
+    {
+      "name": "C1_STATE_MACHINE_PARITY",
+      "status": "NOT_IMPLEMENTED_NOT_RUN",
+      "purpose": "prove pause clone no-op resume and count-plain-trace equivalence to native search"
+    },
+    {
+      "name": "C2_FINITE_ACTION_ORACLE",
+      "status": "NOT_RUN",
+      "purpose": "measure unconditional same-state headroom before training"
+    },
+    {
+      "name": "C3_STATE_BY_REUSE_FACTORIAL",
+      "status": "NOT_RUN",
+      "purpose": "separate state information value from retained-state execution value"
+    },
+    {
+      "name": "C4_FULL_WALL_FRONTIER",
+      "status": "NOT_RUN",
+      "purpose": "measure complete independent-batch Recall-QPS including candidate state controller and injection costs"
+    }
+  ],
+  "ab_linkage": {
+    "current": "NO_LINKAGE",
+    "natural_interface": "frozen deployed AB supplies the time-zero entry and a fixed-work deduplicated shortlist; C acts only after the checkpoint",
+    "requires_relabeling": true,
+    "reason": "the initial policy changes the distribution of visited pool frontier and intervention values",
+    "required_factorial": "paired Fast versus frozen deployed AB crossed with no intervention versus policy-specific C",
+    "synergy_claim": "requires preregistered positive interaction plus AB+C superiority; a best but additive pipeline is not called synergy"
+  },
+  "next_stage": {
+    "name": "USER_REVIEW_THEN_OPTIONAL_C0_PROTOCOL",
+    "authorized": false,
+    "implementation_or_execution_authorized": false,
+    "stop_before_training_if": [
+      "pause-resume or clone parity fails",
+      "unconditional finite-action oracle lacks material headroom",
+      "headroom requires GT or full-H online candidate selection",
+      "headroom appears only after changing checkpoints candidates or action semantics post hoc"
+    ]
+  },
+  "evidence": [
+    "assessment.md",
+    "source_manifest.json",
+    "../../experiment_history/05_probe_reroute.md",
+    "../../experiment_history/06_finite_beam_and_atlas.md",
+    "../../entry_selection_research/20260908_v5/reviews/adaptive_intervention.md",
+    "../../ACSG/ACSG.h",
+    "../../ACSG/ACSG.cpp",
+    "../../faiss/faiss/impl/AuxIndexStructures.h"
+  ]
+}

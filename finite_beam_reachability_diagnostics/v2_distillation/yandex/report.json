@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "split": "drl_train",
+  "fit_rows": [
+    0,
+    1600
+  ],
+  "audit_rows": [
+    1600,
+    2000
+  ],
+  "heldout_accessed": false,
+  "validation_accessed": false,
+  "method": "local cost-first reachability utility atlas",
+  "frozen_parameters": {
+    "neighbors": 64,
+    "min_observations": 4,
+    "cost_limit": 0.005,
+    "confidence_margin_se": 1.0,
+    "cost_weight": 0.05
+  },
+  "online_inputs": [
+    "query vector",
+    "Fast geometry top-8 IDs",
+    "atlas_fit.npz"
+  ],
+  "online_graph_probes": 0,
+  "results": [
+    {
+      "search_L": 64,
+      "passed": false,
+      "mean_utility_delta": 4.772276672934422e-05,
+      "utility_delta_ci95": [
+        -0.005857069871595698,
+        0.004315655771098351
+      ],
+      "mean_recall_delta": 0.00024999999999999995,
+      "mean_graph_ndc_relative_delta": 0.004200739242362861,
+      "reroute_fraction": 0.11,
+      "mean_available_candidates": 6.845,
+      "min_available_candidates": 0
+    },
+    {
+      "search_L": 128,
+      "passed": false,
+      "mean_utility_delta": 0.0003132517303780986,
+      "utility_delta_ci95": [
+        -0.0005617204389180124,
+        0.0012840484628540627
+      ],
+      "mean_recall_delta": 0.0005000000000000001,
+      "mean_graph_ndc_relative_delta": 0.0038418761806373602,
+      "reroute_fraction": 0.1275,
+      "mean_available_candidates": 6.845,
+      "min_available_candidates": 0
+    }
+  ],
+  "train_internal_gate": "FAIL",
+  "sources": {
+    "trace": "finite_beam_reachability_diagnostics/v1/traces/yandex_train2k_top8_l64_128.json",
+    "trace_sha256": "4b49d604a1a11f6da084ee91c667e053e7088b104cb2275bc8ac84ec15accfc0",
+    "queries": "benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs",
+    "queries_sha256": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2"
+  },
+  "artifacts": {
+    "atlas": "finite_beam_reachability_diagnostics/v2_distillation/yandex/atlas_fit.npz",
+    "atlas_sha256": "9a807d43a77e5c89cef74213d3434a9f3d5dea8e975cc39bc8365be74efb6b2c",
+    "atlas_bytes": 1589006,
+    "routes": {
+      "64": {
+        "path": "finite_beam_reachability_diagnostics/v2_distillation/yandex/routes_train_audit_l64.npy",
+        "sha256": "2793a23d563540bdf371db453b821173134b99fe44efab0af1c179df6db6b0a5"
+      },
+      "128": {
+        "path": "finite_beam_reachability_diagnostics/v2_distillation/yandex/routes_train_audit_l128.npy",
+        "sha256": "906df189d96362895da8010f8d1281cea0c1a252521c827d7b5a070a294ce5a1"
+      }
+    }
+  }
+}

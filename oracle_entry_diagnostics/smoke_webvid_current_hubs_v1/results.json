@@ -1,0 +1,65 @@
+{
+  "artifact_version": "roargraph-webvid2.5m-ip-v1",
+  "candidate_count": 815,
+  "dataset": "webvid2_5m_light_v1",
+  "metric": "ip",
+  "num_queries": 1,
+  "num_runs": 1,
+  "oracle_definition": "single=exhaustive current-hub true-search best; top3=greedy union of single-entry GT-hit masks then true multi-entry replay",
+  "results": [
+    {
+      "methods": [
+        {
+          "mean_graph_latency_us": 131.572,
+          "mean_graph_ndc": 911.0,
+          "mean_recall": 1.0,
+          "method": "Medoid",
+          "samples": 1
+        },
+        {
+          "mean_graph_latency_us": 70.789,
+          "mean_graph_ndc": 582.0,
+          "mean_recall": 1.0,
+          "method": "Fast_Prototype_Top3",
+          "samples": 1
+        },
+        {
+          "mean_graph_latency_us": 49.104,
+          "mean_graph_ndc": 529.0,
+          "mean_recall": 1.0,
+          "method": "CurrentHub_Single_Oracle",
+          "samples": 1
+        },
+        {
+          "mean_graph_latency_us": 43.922,
+          "mean_graph_ndc": 531.0,
+          "mean_recall": 1.0,
+          "method": "CurrentHub_Diverse_Top3_GreedyProxy",
+          "samples": 1
+        }
+      ],
+      "search_L": 64,
+      "selected_diverse_top3_entry_ids": [
+        [
+          861524,
+          1952296,
+          454531
+        ]
+      ],
+      "selected_single_entry_ids": [
+        861524
+      ],
+      "top_k": 1
+    }
+  ],
+  "schema_version": 1,
+  "search_Ls": [
+    64
+  ],
+  "split": "validation",
+  "status": "complete",
+  "threads": 1,
+  "top_ks": [
+    1
+  ]
+}

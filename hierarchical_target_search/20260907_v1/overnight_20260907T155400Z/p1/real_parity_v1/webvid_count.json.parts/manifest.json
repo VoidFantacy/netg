@@ -1,0 +1,99 @@
+{
+  "aligned_rows_round": 0,
+  "artifact_version": "roargraph-webvid2.5m-ip-v1",
+  "base_nodes": 2505000,
+  "cache_condition": "same-process warmed; warmup before each L/method; no cache flushing",
+  "cpu_only": true,
+  "dataset": "webvid2_5m_light_v1",
+  "dim": 512,
+  "fast_hubs": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/webvid2_5m_light_v1/prototype.f32",
+  "fast_ids": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_cover_hub_ids.bin",
+  "fast_m": 3,
+  "heldout_accessed": false,
+  "hnsw": {
+    "M": 16,
+    "build_seconds": 0.052999872,
+    "ef_construction": 200,
+    "ef_search": 10,
+    "seed": 100
+  },
+  "index_file": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "measurement": "count",
+  "metric": "ip",
+  "model_file": "",
+  "model_manifest": null,
+  "normalization": "source_unit_norm_no_additional",
+  "num_queries": 512,
+  "oracle_is_deployment": false,
+  "parts_directory": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/real_parity_v1/webvid_count.json.parts",
+  "results": [],
+  "rounds": 1,
+  "routing_mac_definition": "one MAC per dimension per routing distance; excludes norm/softmax/scheduling scalar operations, which remain timed",
+  "schedule": [
+    {
+      "L": 64,
+      "method": "fast",
+      "method_index": 0,
+      "order": "AB",
+      "round": 0
+    },
+    {
+      "L": 64,
+      "method": "fast_unified",
+      "method_index": 1,
+      "order": "AB",
+      "round": 0
+    },
+    {
+      "L": 128,
+      "method": "fast",
+      "method_index": 0,
+      "order": "AB",
+      "round": 0
+    },
+    {
+      "L": 128,
+      "method": "fast_unified",
+      "method_index": 1,
+      "order": "AB",
+      "round": 0
+    }
+  ],
+  "schedule_prerecorded": true,
+  "schema_version": 1,
+  "search_Ls": [
+    64,
+    128
+  ],
+  "source_query_range": [
+    0,
+    512
+  ],
+  "source_query_type": "drl_train",
+  "split": "pilot",
+  "stage": "P1",
+  "status": "RUNNING",
+  "threads": 16,
+  "timer_contract": {
+    "fast_and_oracle_hnsw_query": "unchanged raw query",
+    "gt_scoring_inside": false,
+    "hash_inside": false,
+    "hnsw_internal_allocations_inside": true,
+    "json_inside": false,
+    "output_allocation_inside": false,
+    "query_normalization_applies_to": [
+      "geom_unified",
+      "geom_uniform",
+      "geom_probability"
+    ],
+    "query_normalization_inside": true,
+    "result_writes_inside": true,
+    "routing_inside": true,
+    "search_and_reset_inside": true,
+    "trace_inside": false,
+    "workspace_allocation_inside": false
+  },
+  "top_k": 10,
+  "trace_mode": false,
+  "warmup_queries": 128
+}

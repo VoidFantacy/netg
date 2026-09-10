@@ -1,0 +1,843 @@
+{
+  "status": "PASS",
+  "scope": "complete authorized experiment, raw outputs, preservation and delivery; not a performance GO",
+  "requirements": {
+    "fixed_unique_three_real_entries": "all 50 points checked, k3 except NSG medoid",
+    "actual_joint_search_supervision": "960000 labels independently scored; 880000 physical calls plus parity",
+    "full_and_rank8_same_objective": "12 fixed candidates; full objective optimized; independent gradient/folding tests passed",
+    "cal_only_selection_and_frozen_validation": "selection independently recomputed; frozen file hashes verified",
+    "one_model_five_L_single_thread": "100000 outputs verified; serialized router graph and entries identical across L",
+    "real_end_to_end_and_costs": "one plain wall per point, full count outside timer; complete costs.json with reused-label dependency",
+    "original_artifacts_preserved": "immutable_integrity.json verifies original base/graphs, source/libs, inputs and frozen weights",
+    "evidence_and_handoff": "report, plot visually inspected, 50-row raw table, 60 comparisons, four root docs and E23 history synchronized"
+  },
+  "metadata_correction": "v1 diagnostic warmup-count display only, retained and corrected in v2 before audit/validation",
+  "local_links_checked": 189,
+  "local_links": [
+    {
+      "document": "summary.md",
+      "target": "spec.md"
+    },
+    {
+      "document": "summary.md",
+      "target": "s-target.md"
+    },
+    {
+      "document": "summary.md",
+      "target": "s-experiment.md"
+    },
+    {
+      "document": "summary.md",
+      "target": "experiment_history/12_three_entry_rank_exploration.md"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/report.md"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/results/tables.md"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/figures/recall_qps.svg"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/results/summary.json"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/results/metrics.csv"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/results/comparisons.csv"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/results/costs.json"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/reviews/result_verification.json"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/models/frozen_before_validation.json"
+    },
+    {
+      "document": "spec.md",
+      "target": "summary.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "s-target.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "s-experiment.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "experiment_history/_maintenance/20260908_document_reorganization/source_before/spec.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/run/build_fast_entry_variants.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/test.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "ACSG/IndexACSG.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "ACSG/ACSG.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/datasets/DataLoader.hpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/datasets/settings.json"
+    },
+    {
+      "document": "spec.md",
+      "target": "ACSG/IndexACSG.h"
+    },
+    {
+      "document": "spec.md",
+      "target": "ACSG/ACSG.h"
+    },
+    {
+      "document": "spec.md",
+      "target": "ACSG/ACSG.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/run/build_fast_entry_variants.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/test.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/bench_per_query_recall.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/bench_entry_oracle.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/bench_target_basin_eval.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "ACSG/RegionalSearch.h"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/test_regional_search.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/bench_hierarchical_eval.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/bench_hierarchical_eval_p3.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/bench_hierarchical_portals.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "fast_router_diagnosis/20260908_v1/src/README.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_c_stage1_v1/src/state_machine.hpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_c_stage1_v1/src/c2.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "experiment_history/01_fast_and_legacy.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_c_stage1_v1/protocol.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "experiment_history/07_hierarchical_p2_p3.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_c_stage1_v1/src/native_reference.hpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_c_stage1_v1/results/c1_gate.json"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_c_stage1_v1/reviews/kernel_final_review.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_c_stage1_v1/config.locked.json"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_c_stage1_v1/src/score_c2.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "experiment_history/02_multiview_and_attention.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "experiment_history/07_hierarchical_p2_p3.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "hierarchical_target_search/20260907_v1/tools/env.sh"
+    },
+    {
+      "document": "spec.md",
+      "target": "hierarchical_target_search/20260907_v1/tools/roargraph-env.sh"
+    },
+    {
+      "document": "spec.md",
+      "target": "experiment_history/03_baselines.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/protocol.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/prepare.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/labels.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/train.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/benchmark.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/benchmark_single_thread.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/run_single_thread_eval.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/analyze_single_thread.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/evaluation_single_thread_amendment.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/benchmark_with_nsg.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/run_baseline_comparison_after_single.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/baseline_comparison_amendment.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/src/quick.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/protocol.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/prepare_eval.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/run_models_eval.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/execution_clarifications.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "s-target.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/protocol.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/src/prepare_fit.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/src/label_triples.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/src/train.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/src/evaluate.cpp"
+    },
+    {
+      "document": "s-target.md",
+      "target": "summary.md"
+    },
+    {
+      "document": "s-target.md",
+      "target": "spec.md"
+    },
+    {
+      "document": "s-target.md",
+      "target": "experiment_history/12_three_entry_rank_exploration.md"
+    },
+    {
+      "document": "s-target.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/protocol.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/README.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "summary.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "s-target.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "spec.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/12_three_entry_rank_exploration.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/01_fast_and_legacy.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/01_fast_and_legacy.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/01_fast_and_legacy.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/02_multiview_and_attention.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/02_multiview_and_attention.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/02_multiview_and_attention.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/04_utility_and_representation.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/04_utility_and_representation.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/04_utility_and_representation.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/04_utility_and_representation.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/04_utility_and_representation.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/05_probe_reroute.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/05_probe_reroute.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/05_probe_reroute.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/06_finite_beam_and_atlas.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/06_finite_beam_and_atlas.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/03_baselines.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/07_hierarchical_p2_p3.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/07_hierarchical_p2_p3.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/08_fast_router_diagnosis.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/10_c_state_intervention.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/11_ab_fixed_slot_exploration.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "s-target.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "entry_method_exploration/20260910_optimizer_research_v1/report.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/11_ab_fixed_slot_exploration.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/03_baselines.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/11_ab_fixed_slot_exploration.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/README.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/_maintenance/20260908_document_reorganization/"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "../s-experiment.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "../spec.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "../s-target.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "01_fast_and_legacy.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "02_multiview_and_attention.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "03_baselines.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "04_utility_and_representation.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "05_probe_reroute.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "06_finite_beam_and_atlas.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "07_hierarchical_p2_p3.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "08_fast_router_diagnosis.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "10_c_state_intervention.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "11_ab_fixed_slot_exploration.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "12_three_entry_rank_exploration.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "_maintenance/20260908_document_reorganization/source_before/spec.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "_maintenance/20260908_document_reorganization/source_before/summary.md"
+    },
+    {
+      "document": "experiment_history/12_three_entry_rank_exploration.md",
+      "target": "../entry_method_exploration/20260910_three_entry_rank_v1/report.md"
+    },
+    {
+      "document": "experiment_history/12_three_entry_rank_exploration.md",
+      "target": "../entry_method_exploration/20260910_three_entry_rank_v1/protocol.md"
+    },
+    {
+      "document": "experiment_history/12_three_entry_rank_exploration.md",
+      "target": "../entry_method_exploration/20260910_three_entry_rank_v1/state.json"
+    },
+    {
+      "document": "experiment_history/12_three_entry_rank_exploration.md",
+      "target": "../entry_method_exploration/20260910_three_entry_rank_v1/reviews/diagnostic_metadata_correction.json"
+    },
+    {
+      "document": "experiment_history/12_three_entry_rank_exploration.md",
+      "target": "../entry_method_exploration/20260910_three_entry_rank_v1/results/tables.md"
+    },
+    {
+      "document": "experiment_history/12_three_entry_rank_exploration.md",
+      "target": "../entry_method_exploration/20260910_three_entry_rank_v1/results/summary.json"
+    },
+    {
+      "document": "experiment_history/12_three_entry_rank_exploration.md",
+      "target": "../entry_method_exploration/20260910_three_entry_rank_v1/results/comparisons.csv"
+    },
+    {
+      "document": "experiment_history/12_three_entry_rank_exploration.md",
+      "target": "../entry_method_exploration/20260910_three_entry_rank_v1/figures/recall_qps.svg"
+    },
+    {
+      "document": "experiment_history/12_three_entry_rank_exploration.md",
+      "target": "../entry_method_exploration/20260910_three_entry_rank_v1/results/costs.json"
+    },
+    {
+      "document": "experiment_history/12_three_entry_rank_exploration.md",
+      "target": "../entry_method_exploration/20260910_three_entry_rank_v1/inputs/preflight.json"
+    },
+    {
+      "document": "experiment_history/12_three_entry_rank_exploration.md",
+      "target": "../entry_method_exploration/20260910_three_entry_rank_v1/reviews/labels_verified.json"
+    },
+    {
+      "document": "experiment_history/12_three_entry_rank_exploration.md",
+      "target": "../entry_method_exploration/20260910_three_entry_rank_v1/models/frozen_before_validation.json"
+    },
+    {
+      "document": "experiment_history/12_three_entry_rank_exploration.md",
+      "target": "../entry_method_exploration/20260910_three_entry_rank_v1/reviews/result_verification.json"
+    },
+    {
+      "document": "experiment_history/12_three_entry_rank_exploration.md",
+      "target": "../entry_method_exploration/20260910_three_entry_rank_v1/commands.md"
+    },
+    {
+      "document": "experiment_history/12_three_entry_rank_exploration.md",
+      "target": "../entry_method_exploration/20260910_three_entry_rank_v1/reviews/trainer_self_test.json"
+    },
+    {
+      "document": "experiment_history/12_three_entry_rank_exploration.md",
+      "target": "../entry_method_exploration/20260910_three_entry_rank_v1/reviews/synthetic_check.json"
+    },
+    {
+      "document": "experiment_history/12_three_entry_rank_exploration.md",
+      "target": "../entry_method_exploration/20260910_three_entry_rank_v1/reviews/model_behavior.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/README.md",
+      "target": "report.md"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/README.md",
+      "target": "results/tables.md"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/README.md",
+      "target": "figures/recall_qps.svg"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/README.md",
+      "target": "protocol.md"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/README.md",
+      "target": "config.locked.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/README.md",
+      "target": "commands.md"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/README.md",
+      "target": "state.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/README.md",
+      "target": "results/metrics.csv"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/README.md",
+      "target": "results/comparisons.csv"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/README.md",
+      "target": "results/costs.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/README.md",
+      "target": "inputs/preflight.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/README.md",
+      "target": "models/frozen_before_validation.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/README.md",
+      "target": "reviews/result_verification.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "target": "protocol.md"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "target": "config.locked.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "target": "commands.md"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "target": "results/tables.md"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "target": "results/metrics.csv"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "target": "results/comparisons.csv"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "target": "figures/recall_qps.png"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "target": "figures/recall_qps.svg"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "target": "models/jobs.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "target": "reviews/model_behavior.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "target": "results/summary.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "target": "reviews/model_behavior.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "target": "results/costs.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "target": "reviews/diagnostic_metadata_correction.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "target": "reviews/result_verification.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "target": "models/frozen_before_validation.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "target": "results/summary.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/commands.md",
+      "target": "reviews/pre_label_protocol_clarification.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/commands.md",
+      "target": "reviews/diagnostic_metadata_correction.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/commands.md",
+      "target": "reviews/v2_metadata_tie_check.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/commands.md",
+      "target": "models/frozen_before_validation.json"
+    },
+    {
+      "document": "entry_method_exploration/20260910_three_entry_rank_v1/results/tables.md",
+      "target": "../figures/recall_qps.svg"
+    }
+  ],
+  "active_experiment_processes": [],
+  "document_identities": [
+    {
+      "path": "/data/netg/ACSG/summary.md",
+      "bytes": 5182,
+      "mtime_ns": 1789032068676635678,
+      "sha256": "2dcca5d1b6c552108a1c63c28a38018ac5a3d0aba486deb117a3f02c8dce9958"
+    },
+    {
+      "path": "/data/netg/ACSG/spec.md",
+      "bytes": 31187,
+      "mtime_ns": 1789032068676635678,
+      "sha256": "d821e2f35946dbf876394784b5379b5a597ff959a0aa5289276b764e031692ca"
+    },
+    {
+      "path": "/data/netg/ACSG/s-target.md",
+      "bytes": 2860,
+      "mtime_ns": 1789032068676635678,
+      "sha256": "5dfe3e38e53ebac66f9e6e27d9376b135c71032be62c3aef68d362549af600bc"
+    },
+    {
+      "path": "/data/netg/ACSG/s-experiment.md",
+      "bytes": 11986,
+      "mtime_ns": 1789032068676635678,
+      "sha256": "474af49813e44f9fda88073cdcefca738e75757ed11b8ec6c78ae5b17ed2ce7c"
+    },
+    {
+      "path": "/data/netg/ACSG/experiment_history/README.md",
+      "bytes": 3960,
+      "mtime_ns": 1789030399385381605,
+      "sha256": "bb84872273a8edcae220306d17116e3182a2ca954fb8a837c4de05b86aa1febe"
+    },
+    {
+      "path": "/data/netg/ACSG/experiment_history/12_three_entry_rank_exploration.md",
+      "bytes": 7681,
+      "mtime_ns": 1789032279281550883,
+      "sha256": "3e1e227134bf655f43d2a08ed77f217f404ade7472dd44097bdd5e9ced310a68"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/README.md",
+      "bytes": 915,
+      "mtime_ns": 1789031726487148659,
+      "sha256": "93cf50e1164ccd29497732ad23651a80d7ff1117c63df01a0590344fb9ed9680"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/report.md",
+      "bytes": 10516,
+      "mtime_ns": 1789032068648635556,
+      "sha256": "2fef86e3391a338d5f06d2f41ca9bfca961d8c622a6e4a13a3487da7424be7ca"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/protocol.md",
+      "bytes": 5938,
+      "mtime_ns": 1789029800110792963,
+      "sha256": "a8290f73ef6ca4accdb5dfcd6a1d9ddbfeea1aec5479e4fbb80ebaadf04fe5ce"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/commands.md",
+      "bytes": 3217,
+      "mtime_ns": 1789032359453899280,
+      "sha256": "76e8bb9bf255d33ac4f53d2a16dac2ae6c9ab35836cb1f1e54ab568b35501298"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/results/tables.md",
+      "bytes": 3426,
+      "mtime_ns": 1789031286677237420,
+      "sha256": "a0db5c2543031861291e98a40f49f0d9d5fdbdc1de1162e9513938f884c3bdaf"
+    }
+  ]
+}

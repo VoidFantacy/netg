@@ -1,0 +1,52 @@
+{
+  "artifact_version": "roargraph-laion10m-unit-ip-acsg-v1",
+  "build_wall_seconds": 0.7039193070013425,
+  "dataset": "laion10m_acsg_v1",
+  "metric": "ip",
+  "purpose": "QGT-only fast entry routing; no ACO/DPC/probe-label/neural artifacts",
+  "qgt_only": true,
+  "schema_version": 2,
+  "sources": {
+    "aco_gt": "benches/datasets/LAION10M_acsg_v1/gt.aco_train.seed20260830.unit_ip.ivecs",
+    "aco_gt_sha256": "481b1dae0b22ac4e79658ec6b5c1ea5a86ff1aa0168afe168f5ab9635613f0f1",
+    "aco_queries": "benches/datasets/LAION10M_acsg_v1/query.aco_train.seed20260830.unit.fvecs",
+    "aco_queries_sha256": "8dba43b217c20708ce326e5882a40140bfb5ef1bab09bc18475982bb3621fca4",
+    "base": "benches/datasets/LAION10M_acsg_v1/base.roargraph_laion10m.unit.fvecs",
+    "router_gt": "benches/datasets/LAION10M_acsg_v1/gt.router_train.seed20260830.unit_ip.ivecs",
+    "router_gt_sha256": "40b38c6307e7ec77c61bc1741dfdeebbd13bb6d9c730e3904c7ffa7f5168b837",
+    "router_queries": "benches/datasets/LAION10M_acsg_v1/query.router_train.seed20260830.unit.fvecs",
+    "router_queries_sha256": "91e42033344d537f6c907ef08fabb987965884f0a3fb843a289edaf38e0dabca"
+  },
+  "target_hubs": 821,
+  "variants": {
+    "qgt_cover": {
+      "empty_clusters": 0,
+      "gt_candidates_per_query": 100,
+      "hubs_file": "fast_entry_variants/laion10m_acsg_v1_validation_seed20260828/qgt_cover_hubs.bin",
+      "hubs_sha256": "20cc330d5122ed8a20e92b1a46594a40b460b7cbdd817c96df1b9752cf9b784e",
+      "ids_file": "fast_entry_variants/laion10m_acsg_v1_validation_seed20260828/qgt_cover_hub_ids.bin",
+      "ids_sha256": "67dfa418cc4c7ba1112dc0d5043e9894a68fac90a6aee01bdd8e74c3b427da2b",
+      "kmeans_iterations": 25,
+      "method": "spherical-query-kmeans-representative-GT-cover",
+      "seed": 20260828,
+      "selected_hubs": 821,
+      "target_hubs": 821
+    },
+    "qgt_gt_basin_prototype": {
+      "hub_count": 821,
+      "hubs_file": "fast_entry_variants/laion10m_acsg_v1_validation_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+      "hubs_sha256": "9bd4f6ae981afb5280291cde76561b618c5a70f6fb19fd265e6c9c74133bafcb",
+      "hubs_with_assignments": 811,
+      "ids_file": "fast_entry_variants/laion10m_acsg_v1_validation_seed20260828/qgt_cover_hub_ids.bin",
+      "ids_sha256": "67dfa418cc4c7ba1112dc0d5043e9894a68fac90a6aee01bdd8e74c3b427da2b",
+      "max_queries_per_hub": 227,
+      "method": "QGT-Cover hubs plus GT-basin spherical query prototypes",
+      "min_queries_per_observed_hub": 1,
+      "prior_strength": 1.0,
+      "requires_aco_dpc": false,
+      "requires_neural_training": false,
+      "requires_probe_labels": false,
+      "train_queries": 30000
+    }
+  }
+}

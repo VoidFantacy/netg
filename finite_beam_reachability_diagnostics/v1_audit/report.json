@@ -1,0 +1,195 @@
+{
+  "schema_version": 2,
+  "status": "complete",
+  "heldout_accessed": false,
+  "validation_accessed": false,
+  "terminal_status": "NO_GO_NOT_LIGHTWEIGHT",
+  "stop_stage": "D",
+  "stage_e_triggered": false,
+  "protocol": "existing train-only traces; fit [0,1600), audit [1600,2000); no validation access",
+  "original_report_accepted": false,
+  "gate_components": {
+    "trace_incremental": true,
+    "trace_selector_cost_aligned": false,
+    "cost_constrained_top8_oracle_headroom": true
+  },
+  "corrected_status": "TRACE_INCREMENTAL_PASS_COST_ALIGNMENT_FAIL_COMPRESSION_UNTESTED",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "split": "drl_train",
+      "heldout_accessed": false,
+      "data_integrity": {
+        "passed": true,
+        "row_count": 32000,
+        "expected_row_count": 32000,
+        "duplicate_primary_keys": 0,
+        "query_range": [
+          0,
+          2000
+        ],
+        "search_Ls": [
+          64,
+          128
+        ],
+        "geometry_rank_layout_ok": true,
+        "controls_consistent_within_query_L": true,
+        "trace_invariant_failures": 0,
+        "recall_recompute_mismatches": 0,
+        "trace_ndc_recompute_mismatches": 0
+      },
+      "by_L": {
+        "64": {
+          "trace_vs_geometry": {
+            "mean_utility_delta": 0.02163977612995209,
+            "utility_delta_ci95": [
+              0.008839944061801622,
+              0.03558028787057755
+            ],
+            "mean_recall_delta": 0.0215,
+            "mean_ndc_delta_absolute": -11.19,
+            "geometry_pairwise_accuracy": 0.5357595509686764,
+            "trace_pairwise_accuracy": 0.5137606373347818,
+            "pair_count": 11046,
+            "positive_query_fraction": 0.24,
+            "top_decile_share_of_positive_gain": 0.9699958547398334,
+            "max_selected_entry_share": 0.0175
+          },
+          "trace_vs_rank0_cost_gate": {
+            "mean_recall_delta": 0.025249999999999998,
+            "mean_ndc_delta_relative": 0.009236297644396041,
+            "passes_0_5_percent_ndc": false
+          },
+          "cost_constrained_top8_oracle_vs_rank0": {
+            "mean_utility_delta": 0.03605831670675547,
+            "utility_delta_ci95": [
+              0.02420667046052611,
+              0.04972916183362405
+            ],
+            "mean_recall_delta": 0.03125,
+            "mean_per_query_relative_ndc": -0.08395582369620168
+          }
+        },
+        "128": {
+          "trace_vs_geometry": {
+            "mean_utility_delta": 0.014949337581011822,
+            "utility_delta_ci95": [
+              0.0037595671115588447,
+              0.027328094505498203
+            ],
+            "mean_recall_delta": 0.014249999999999999,
+            "mean_ndc_delta_absolute": -21.72,
+            "geometry_pairwise_accuracy": 0.5369121399927087,
+            "trace_pairwise_accuracy": 0.515311702515494,
+            "pair_count": 10972,
+            "positive_query_fraction": 0.2075,
+            "top_decile_share_of_positive_gain": 0.9916922440522506,
+            "max_selected_entry_share": 0.0225
+          },
+          "trace_vs_rank0_cost_gate": {
+            "mean_recall_delta": 0.012,
+            "mean_ndc_delta_relative": -0.0019347286741807634,
+            "passes_0_5_percent_ndc": true
+          },
+          "cost_constrained_top8_oracle_vs_rank0": {
+            "mean_utility_delta": 0.016216921592729357,
+            "utility_delta_ci95": [
+              0.010346609978971306,
+              0.02288112416915097
+            ],
+            "mean_recall_delta": 0.01325,
+            "mean_per_query_relative_ndc": -0.05237182941139257
+          }
+        }
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "split": "drl_train",
+      "heldout_accessed": false,
+      "data_integrity": {
+        "passed": true,
+        "row_count": 32000,
+        "expected_row_count": 32000,
+        "duplicate_primary_keys": 0,
+        "query_range": [
+          0,
+          2000
+        ],
+        "search_Ls": [
+          64,
+          128
+        ],
+        "geometry_rank_layout_ok": true,
+        "controls_consistent_within_query_L": true,
+        "trace_invariant_failures": 0,
+        "recall_recompute_mismatches": 0,
+        "trace_ndc_recompute_mismatches": 0
+      },
+      "by_L": {
+        "64": {
+          "trace_vs_geometry": {
+            "mean_utility_delta": 0.018344840481902453,
+            "utility_delta_ci95": [
+              0.003529941834052871,
+              0.03480314605547258
+            ],
+            "mean_recall_delta": 0.017750000000000002,
+            "mean_ndc_delta_absolute": -26.2675,
+            "geometry_pairwise_accuracy": 0.5081937852601415,
+            "trace_pairwise_accuracy": 0.5079251365630877,
+            "pair_count": 11167,
+            "positive_query_fraction": 0.215,
+            "top_decile_share_of_positive_gain": 0.9914463944107045,
+            "max_selected_entry_share": 0.015
+          },
+          "trace_vs_rank0_cost_gate": {
+            "mean_recall_delta": 0.019,
+            "mean_ndc_delta_relative": 0.019877127202019285,
+            "passes_0_5_percent_ndc": false
+          },
+          "cost_constrained_top8_oracle_vs_rank0": {
+            "mean_utility_delta": 0.024677697491784313,
+            "utility_delta_ci95": [
+              0.01431482465252436,
+              0.037013197654742924
+            ],
+            "mean_recall_delta": 0.02175,
+            "mean_per_query_relative_ndc": -0.05201904703709884
+          }
+        },
+        "128": {
+          "trace_vs_geometry": {
+            "mean_utility_delta": 0.01568896233490865,
+            "utility_delta_ci95": [
+              0.005948488813046316,
+              0.0273218280129801
+            ],
+            "mean_recall_delta": 0.01525,
+            "mean_ndc_delta_absolute": -41.5575,
+            "geometry_pairwise_accuracy": 0.510310202617895,
+            "trace_pairwise_accuracy": 0.5248341402187556,
+            "pair_count": 11154,
+            "positive_query_fraction": 0.25,
+            "top_decile_share_of_positive_gain": 0.9900736674578471,
+            "max_selected_entry_share": 0.0125
+          },
+          "trace_vs_rank0_cost_gate": {
+            "mean_recall_delta": 0.00875,
+            "mean_ndc_delta_relative": 0.01029745094707235,
+            "passes_0_5_percent_ndc": false
+          },
+          "cost_constrained_top8_oracle_vs_rank0": {
+            "mean_utility_delta": 0.006711812780284179,
+            "utility_delta_ci95": [
+              0.0025117503884793378,
+              0.012731189428422527
+            ],
+            "mean_recall_delta": 0.004999999999999999,
+            "mean_per_query_relative_ndc": -0.03242449788497872
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "version": "20260907_v1",
+  "stage": "P2",
+  "status": "RUNNING_P2",
+  "hypothesis": "Target regions and protected frontiers improve target coverage at useful wall cost",
+  "evidence": [
+    "source_before_manifest.json",
+    "dependencies/manifest.json",
+    "dependencies/README.md",
+    "dependencies/protected_after.json",
+    "dependencies/metis_smoke.json",
+    "dependencies/python_smoke.json",
+    "overnight_prompt.md",
+    "overnight_20260907T155400Z/source_before_manifest.json",
+    "overnight_20260907T155400Z/control/config.json"
+  ],
+  "next_action": "Finish Yandex P2; audit fixed comparisons/bootstrap and preselected traces before P2 gate",
+  "active_job": {
+    "registry": "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p2_eval_yandex.json",
+    "phase": "count then timing5rounds then trace16",
+    "expected_seconds": 120
+  },
+  "blockers": [],
+  "mechanism_revisions": 0,
+  "updated_utc": "2026-09-07T16:33:33.375597+00:00",
+  "plan_execution_authorized_now": true,
+  "dependency_preparation_authorized": true,
+  "implementation_state": {
+    "RegionalSearch.h": "DRAFT_UNTESTED",
+    "test_regional_search": "PASS",
+    "P0": "PASS",
+    "P1": "PASS",
+    "P2_P8": "NOT_STARTED",
+    "RegionalSearch_h": "VERIFIED",
+    "P2": "IN_PROGRESS",
+    "P3_P8": "NOT_STARTED"
+  },
+  "dependency_status": "READY_FOR_PLAN_RESUMPTION",
+  "next_session_deadline_beijing": "2026-09-08T07:00:00+08:00",
+  "next_session_deadline_utc": "2026-09-07T23:00:00Z",
+  "deadline_watchdog_started": true,
+  "report_contract": {
+    "filename": "实验总结.md",
+    "preferred_path": "/data/netg/ACSG/实验总结.md",
+    "write_after_research_deadline": true,
+    "opening": "Title followed by a concise 3-5 sentence paragraph, about 150 Chinese characters or fewer",
+    "body": "Detailed overnight implementation, verification, experiments, results, gates, evidence, resources, stop verification, reproduction and next action",
+    "after_deadline_allowed": "Review existing evidence and write handoff/report only; no new experiments or method development",
+    "overwrite_existing": false
+  },
+  "overnight_run": "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z",
+  "deadline_control": "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control",
+  "active_job_live_source": "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/watchdog_status.json"
+}

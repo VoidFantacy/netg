@@ -1,0 +1,187 @@
+{
+  "status": "PASS",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "dataset": "webvid2_5m_light_v1",
+      "dim": 512,
+      "base_rows": 2505000,
+      "H": 815,
+      "base_file": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+      "index_path": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "gap_definition": "float32 cosine highest minus second-highest, all fit GT1 targets only",
+      "gap_quantiles": [
+        1.430511474609375e-06,
+        0.002336114645004273,
+        0.0064857155084609985,
+        0.016201138496398926,
+        0.03402763605117798,
+        0.06438946723937988,
+        0.4409255385398865
+      ],
+      "top_ties": 0,
+      "temperature_scale": 0.016201138496398926,
+      "temperatures": [
+        0.0040502846240997314,
+        0.016201138496398926,
+        0.0648045539855957
+      ],
+      "source_fast_manifest": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/manifest.json",
+      "source_train": {
+        "base": {
+          "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+          "sha256": "6fb5b5510b29504de38271be7c343bd5e85a029f5755c7b3d74177cbf1ebbb18",
+          "seconds": 3.3459760789992288,
+          "bytes": 5140260000,
+          "mtime_ns": 1787713211996956145,
+          "verified_now_sha256": "6fb5b5510b29504de38271be7c343bd5e85a029f5755c7b3d74177cbf1ebbb18",
+          "verify_seconds": 3.375392969999666
+        },
+        "graph": {
+          "path": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+          "sha256": "0a95d309b4980e0f0b73b7ad1222ec611db1f97c32ba2b69f070f5a952b9129a",
+          "seconds": 3.742892901005689,
+          "bytes": 5791560103,
+          "mtime_ns": 1787714557628644919,
+          "verified_now_sha256": "0a95d309b4980e0f0b73b7ad1222ec611db1f97c32ba2b69f070f5a952b9129a",
+          "verify_seconds": 3.7295636240014574
+        },
+        "query_train": {
+          "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+          "sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855",
+          "seconds": 0.04746050000539981,
+          "bytes": 61560000,
+          "mtime_ns": 1787714655768896778,
+          "verified_now_sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855",
+          "verify_seconds": 0.04541790499933995
+        },
+        "gt_train": {
+          "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/gt.router_train.seed20260826.ip.ivecs",
+          "sha256": "1db08bf5b259a468558e6dfed19661d73bc6fe6947a3c862e526176242ace72c",
+          "seconds": 0.010282192000886425,
+          "bytes": 12120000,
+          "mtime_ns": 1787714956393668277,
+          "verified_now_sha256": "1db08bf5b259a468558e6dfed19661d73bc6fe6947a3c862e526176242ace72c",
+          "verify_seconds": 0.011699192000378389
+        }
+      },
+      "seconds": 7.556366003000221,
+      "GT_width": 100,
+      "fit_rows": [
+        10000,
+        30000
+      ],
+      "cal_rows": [
+        0,
+        1024
+      ],
+      "audit_rows_deferred": [
+        1024,
+        2048
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "dim": 200,
+      "base_rows": 10000000,
+      "H": 821,
+      "base_file": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+      "index_path": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "gap_definition": "float32 cosine highest minus second-highest, all fit GT1 targets only",
+      "gap_quantiles": [
+        9.5367431640625e-07,
+        0.006303372979164124,
+        0.017549224197864532,
+        0.043574050068855286,
+        0.08738891035318375,
+        0.1444773375988007,
+        0.5690096616744995
+      ],
+      "top_ties": 0,
+      "temperature_scale": 0.043574050068855286,
+      "temperatures": [
+        0.010893512517213821,
+        0.043574050068855286,
+        0.17429620027542114
+      ],
+      "source_fast_manifest": "/data/netg/ACSG/fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/manifest.json",
+      "source_train": {
+        "base": {
+          "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+          "sha256": "56d1baa271c79ea280d57ee1c7a8359438ffffc98a75cac799051b13fbdbe0ff",
+          "seconds": 5.127159784009564,
+          "bytes": 8040000000,
+          "mtime_ns": 1787650857757488152,
+          "verified_now_sha256": "56d1baa271c79ea280d57ee1c7a8359438ffffc98a75cac799051b13fbdbe0ff",
+          "verify_seconds": 5.250715223999578
+        },
+        "graph": {
+          "path": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+          "sha256": "fa6eb7dd4e8d9dc95d696947fc18bd167880fb336212cb7bd073e7acddd4bf2e",
+          "seconds": 6.770520377991488,
+          "bytes": 10640000103,
+          "mtime_ns": 1787655783830469960,
+          "verified_now_sha256": "fa6eb7dd4e8d9dc95d696947fc18bd167880fb336212cb7bd073e7acddd4bf2e",
+          "verify_seconds": 6.82888456100045
+        },
+        "query_train": {
+          "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs",
+          "sha256": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2",
+          "seconds": 0.015555849997326732,
+          "bytes": 24120000,
+          "mtime_ns": 1787650857777488221,
+          "verified_now_sha256": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2",
+          "verify_seconds": 0.015508249001868535
+        },
+        "gt_train": {
+          "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/gt.router_train.ip.ivecs",
+          "sha256": "5255cc604439ad9d2523dd7526dab85e61b40f0784fd630d5f297ef43af6bdcb",
+          "seconds": 0.007981212009326555,
+          "bytes": 12120000,
+          "mtime_ns": 1787652397758769544,
+          "verified_now_sha256": "5255cc604439ad9d2523dd7526dab85e61b40f0784fd630d5f297ef43af6bdcb",
+          "verify_seconds": 0.007810088001861004
+        }
+      },
+      "seconds": 12.52928478100148,
+      "GT_width": 100,
+      "fit_rows": [
+        10000,
+        30000
+      ],
+      "cal_rows": [
+        0,
+        1024
+      ],
+      "audit_rows_deferred": [
+        1024,
+        2048
+      ]
+    }
+  },
+  "seconds": 22.413557615998798,
+  "validation_opened": false,
+  "heldout_opened": false,
+  "single_or_triple_labels_opened": false,
+  "cpu": "x86_64",
+  "platform": "Linux-5.15.0-187-generic-x86_64-with-glibc2.35",
+  "cpus": 16,
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "free_disk_bytes": 14241054720
+}

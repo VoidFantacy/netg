@@ -1,0 +1,52 @@
+{
+  "artifact_version": "yandex-t2i-official-first10m-ip-v1",
+  "build_wall_seconds": 0.5188584339994122,
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "metric": "ip",
+  "purpose": "QGT-only fast entry routing; no ACO/DPC/probe-label/neural artifacts",
+  "qgt_only": true,
+  "schema_version": 2,
+  "sources": {
+    "aco_gt": "benches/datasets/YandexT2I_official10M_ip_v1/gt.aco_train.ip.ivecs",
+    "aco_gt_sha256": "1ec76a1eb5ab2724c712ae2308afc6285d3dbf9a542aed670f646cb9b2446d3e",
+    "aco_queries": "benches/datasets/YandexT2I_official10M_ip_v1/query.aco_train.fvecs",
+    "aco_queries_sha256": "d9146b417777e49d175f56071f6c1a90ccbd7a51c767f8cf0f1d088cc7dfe727",
+    "base": "benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+    "router_gt": "benches/datasets/YandexT2I_official10M_ip_v1/gt.router_train.ip.ivecs",
+    "router_gt_sha256": "5255cc604439ad9d2523dd7526dab85e61b40f0784fd630d5f297ef43af6bdcb",
+    "router_queries": "benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs",
+    "router_queries_sha256": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2"
+  },
+  "target_hubs": 821,
+  "variants": {
+    "qgt_cover": {
+      "empty_clusters": 0,
+      "gt_candidates_per_query": 100,
+      "hubs_file": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260830/qgt_cover_hubs.bin",
+      "hubs_sha256": "32adb667d84cf65f4484ee8a3a438b6a46768fce3e6cca225d6569ef604ea63a",
+      "ids_file": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260830/qgt_cover_hub_ids.bin",
+      "ids_sha256": "2966f9a972e84ffe4f594a4f23c4f8cdd4241bfb24e32a51612331ff79aa2139",
+      "kmeans_iterations": 25,
+      "method": "spherical-query-kmeans-representative-GT-cover",
+      "seed": 20260830,
+      "selected_hubs": 821,
+      "target_hubs": 821
+    },
+    "qgt_gt_basin_prototype": {
+      "hub_count": 821,
+      "hubs_file": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260830/qgt_gt_basin_prototype_hubs.bin",
+      "hubs_sha256": "cd5c04adfed37c7e63f2305f486a22208d3a830d4cfea0650d5ccb2c287d72c2",
+      "hubs_with_assignments": 821,
+      "ids_file": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260830/qgt_cover_hub_ids.bin",
+      "ids_sha256": "2966f9a972e84ffe4f594a4f23c4f8cdd4241bfb24e32a51612331ff79aa2139",
+      "max_queries_per_hub": 155,
+      "method": "QGT-Cover hubs plus GT-basin spherical query prototypes",
+      "min_queries_per_observed_hub": 4,
+      "prior_strength": 1.0,
+      "requires_aco_dpc": false,
+      "requires_neural_training": false,
+      "requires_probe_labels": false,
+      "train_queries": 30000
+    }
+  }
+}

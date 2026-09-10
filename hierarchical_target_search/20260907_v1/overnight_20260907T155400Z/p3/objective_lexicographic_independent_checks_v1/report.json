@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "status": "PASS_SUMMARY_AND_PURE_ALGEBRA_CHECKS",
+  "source_diagnosis": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_diagnosis_v1/diagnosis.json",
+    "sha256": "c3fa695d1d1e49e8aa6081025a7c5eb704c7d3466a0634ffa9ba38b38288ee8f"
+  },
+  "frozen_partition_source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partition_build_v4/source_snapshot.cpp",
+    "sha256": "78cd134726c61fda5b722887262b33176989b1c40163e00af7a7bc52c76a81b5"
+  },
+  "reviewer_script": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/check_objective_lexicographic_independent.py",
+    "sha256": "0123ad7ba356168c1294044f42d06609db2b3b2ebe821b79cc44b066c4c7b5bf"
+  },
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "N": 2505000,
+      "M": 49611457,
+      "Q": 20000,
+      "threshold_exact": "49611457/180000",
+      "threshold_decimal": 275.61920555555554,
+      "seen_nodes": 118811,
+      "seen_max_degree": 168,
+      "seen_condition_fraction": 1.0,
+      "fit_occurrences": 200000,
+      "condition_fit_occurrence_fraction": 1.0,
+      "all_nodes_condition_count": 2504983,
+      "all_nodes_exceptions": 17,
+      "exceptions_all_unseen": true,
+      "final_lambda1_vs_lambda0_changed_groups": [
+        {
+          "population": "all",
+          "node_count": 52305,
+          "condition_node_count": 52305,
+          "fit_target_occurrences": 50742,
+          "condition_fit_occurrences": 50742,
+          "total_degree": {
+            "mean": 27.965509989484755,
+            "min": 2,
+            "max": 207
+          }
+        },
+        {
+          "population": "seen",
+          "node_count": 28716,
+          "condition_node_count": 28716,
+          "fit_target_occurrences": 50742,
+          "condition_fit_occurrences": 50742,
+          "total_degree": {
+            "mean": 22.411094860008358,
+            "min": 2,
+            "max": 162
+          }
+        },
+        {
+          "population": "unseen",
+          "node_count": 23589,
+          "condition_node_count": 23589,
+          "fit_target_occurrences": 0,
+          "condition_fit_occurrences": 0,
+          "total_degree": {
+            "mean": 34.7271609648565,
+            "min": 2,
+            "max": 207
+          }
+        }
+      ],
+      "worst_seen_unit_DeltaS_pairwise_J_margin_exact": "2767351/1275723180000",
+      "worst_seen_unit_DeltaS_pairwise_J_margin_decimal": 2.1692409790656934e-06,
+      "all_group_count": 31,
+      "bound_histogram": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_diagnosis_v1/webvid2_5m_light_v1.total_degree_histogram.json",
+        "sha256": "afe42e4428d35dad09ed4070f68f011142835efeba4817e368653b8c49e87a3c",
+        "bytes": 2474
+      },
+      "histogram_conservation_condition_and_quantiles_recomputed": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "N": 10000000,
+      "M": 294844794,
+      "Q": 20000,
+      "threshold_exact": "49140799/30000",
+      "threshold_decimal": 1638.0266333333334,
+      "seen_nodes": 188913,
+      "seen_max_degree": 162,
+      "seen_condition_fraction": 1.0,
+      "fit_occurrences": 200000,
+      "condition_fit_occurrence_fraction": 1.0,
+      "all_nodes_condition_count": 10000000,
+      "all_nodes_exceptions": 0,
+      "exceptions_all_unseen": true,
+      "final_lambda1_vs_lambda0_changed_groups": [
+        {
+          "population": "all",
+          "node_count": 72107,
+          "condition_node_count": 72107,
+          "fit_target_occurrences": 23421,
+          "condition_fit_occurrences": 23421,
+          "total_degree": {
+            "mean": 67.22283550834177,
+            "min": 2,
+            "max": 162
+          }
+        },
+        {
+          "population": "seen",
+          "node_count": 22224,
+          "condition_node_count": 22224,
+          "fit_target_occurrences": 23421,
+          "condition_fit_occurrences": 23421,
+          "total_degree": {
+            "mean": 63.74545536357091,
+            "min": 2,
+            "max": 162
+          }
+        },
+        {
+          "population": "unseen",
+          "node_count": 49883,
+          "condition_node_count": 49883,
+          "fit_target_occurrences": 0,
+          "condition_fit_occurrences": 0,
+          "total_degree": {
+            "mean": 68.77208668283784,
+            "min": 2,
+            "max": 160
+          }
+        }
+      ],
+      "worst_seen_unit_DeltaS_pairwise_J_margin_exact": "44280799/8845343820000",
+      "worst_seen_unit_DeltaS_pairwise_J_margin_decimal": 5.006113939842307e-06,
+      "all_group_count": 31,
+      "bound_histogram": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_diagnosis_v1/yandex_t2i_official10M_ip_v1.total_degree_histogram.json",
+        "sha256": "1af69c3d5001577a7de6e331ff78bd06c92afc1adc210902fed9c2c1a5ca104a",
+        "bytes": 2632
+      },
+      "histogram_conservation_condition_and_quantiles_recomputed": true
+    }
+  ],
+  "pure_algebra_checks": {
+    "status": "PASS",
+    "generated_graph_nodes": 6,
+    "directed_nonself_slots": 506,
+    "synthetic_hyperedges": 3,
+    "label_states": 81,
+    "full_recount_pairwise_comparisons": 4374,
+    "all_candidate_subset_choice_comparisons": 1944,
+    "directed_cut_difference_identity_and_D_bound": true,
+    "integer_objective_vs_lexicographic_order": true,
+    "high_degree_unseen_DeltaS_zero": true,
+    "all_accepted_choices_DeltaS_negative_or_zero_and_DeltaC_negative": true,
+    "threshold_equality_and_above_threshold_counterexamples": true,
+    "stay_zero_tie_priority": true,
+    "improving_destination_ID_tie": true,
+    "actual_graph_GT_or_label_inputs_read": false
+  },
+  "access_scope": "Completed diagnosis JSON, its two bound tiny histograms, frozen partition source, and generated mathematical fixtures only.",
+  "actual_graph_GT_labels_count_rows_read": false,
+  "ANN_executed": false,
+  "new_CI_computed": false,
+  "P3_gate_status_unchanged": "NOPASS"
+}

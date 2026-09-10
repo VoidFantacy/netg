@@ -1,0 +1,186 @@
+{
+  "status": "COMPLETE",
+  "stages": {
+    "label_process": {
+      "seconds": 58.891391253000165,
+      "jobs": [
+        {
+          "dataset": "webvid2_5m_light_v1",
+          "argv": [
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/bin/label_triples",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/inputs/webvid2_5m_light_v1/fit/labels_config.json",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/labels/webvid2_5m_light_v1"
+          ],
+          "exit_code": 0,
+          "process_seconds": 22.706442145999972
+        },
+        {
+          "dataset": "yandex_t2i_official10M_ip_v1",
+          "argv": [
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/bin/label_triples",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/inputs/yandex_t2i_official10M_ip_v1/fit/labels_config.json",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/labels/yandex_t2i_official10M_ip_v1"
+          ],
+          "exit_code": 0,
+          "process_seconds": 36.18494910700019
+        }
+      ]
+    },
+    "training_process": {
+      "seconds": 137.44520360900015,
+      "jobs": [
+        {
+          "dataset": "webvid2_5m_light_v1",
+          "argv": [
+            "/data/netg/ACSG/.venv_cpu/bin/python",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/src/train.py",
+            "--dataset",
+            "webvid2_5m_light_v1"
+          ],
+          "exit_code": 0,
+          "process_seconds": 111.6307568960001
+        },
+        {
+          "dataset": "yandex_t2i_official10M_ip_v1",
+          "argv": [
+            "/data/netg/ACSG/.venv_cpu/bin/python",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/src/train.py",
+            "--dataset",
+            "yandex_t2i_official10M_ip_v1"
+          ],
+          "exit_code": 0,
+          "process_seconds": 25.814446713000052
+        }
+      ]
+    },
+    "fit_probe_and_cal_process": {
+      "seconds": 95.68142765499988,
+      "jobs": [
+        {
+          "dataset": "webvid2_5m_light_v1",
+          "split": "fit_probe",
+          "argv": [
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/diagnostics/webvid2_5m_light_v1_fit_probe.json",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/diagnostics/webvid2_5m_light_v1/fit_probe"
+          ],
+          "exit_code": 0,
+          "process_seconds": 20.369124372999977
+        },
+        {
+          "dataset": "webvid2_5m_light_v1",
+          "split": "cal",
+          "argv": [
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/diagnostics/webvid2_5m_light_v1_cal.json",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/diagnostics/webvid2_5m_light_v1/cal"
+          ],
+          "exit_code": 0,
+          "process_seconds": 20.450566356999843
+        },
+        {
+          "dataset": "yandex_t2i_official10M_ip_v1",
+          "split": "fit_probe",
+          "argv": [
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/diagnostics/yandex_t2i_official10M_ip_v1_fit_probe.json",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/diagnostics/yandex_t2i_official10M_ip_v1/fit_probe"
+          ],
+          "exit_code": 0,
+          "process_seconds": 27.435063609999816
+        },
+        {
+          "dataset": "yandex_t2i_official10M_ip_v1",
+          "split": "cal",
+          "argv": [
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/diagnostics/yandex_t2i_official10M_ip_v1_cal.json",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/diagnostics/yandex_t2i_official10M_ip_v1/cal"
+          ],
+          "exit_code": 0,
+          "process_seconds": 27.426673315000244
+        }
+      ]
+    },
+    "audit_process": {
+      "seconds": 29.04573461000018,
+      "jobs": [
+        {
+          "dataset": "webvid2_5m_light_v1",
+          "split": "audit",
+          "argv": [
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/bin/evaluate_v2",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/diagnostics/webvid2_5m_light_v1_audit.json",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/diagnostics/webvid2_5m_light_v1/audit"
+          ],
+          "exit_code": 0,
+          "process_seconds": 11.086760039000183
+        },
+        {
+          "dataset": "yandex_t2i_official10M_ip_v1",
+          "split": "audit",
+          "argv": [
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/bin/evaluate_v2",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/diagnostics/yandex_t2i_official10M_ip_v1_audit.json",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/diagnostics/yandex_t2i_official10M_ip_v1/audit"
+          ],
+          "exit_code": 0,
+          "process_seconds": 17.958974571
+        }
+      ]
+    },
+    "validation_process": {
+      "seconds": 381.64400685300006,
+      "jobs": [
+        {
+          "dataset": "webvid2_5m_light_v1",
+          "argv": [
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/bin/evaluate_v2",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/inputs/webvid2_5m_light_v1/validation/config.json",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/results/webvid2_5m_light_v1"
+          ],
+          "exit_code": 0,
+          "process_seconds": 187.5034386389998
+        },
+        {
+          "dataset": "yandex_t2i_official10M_ip_v1",
+          "argv": [
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/bin/evaluate_v2",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/inputs/yandex_t2i_official10M_ip_v1/validation/config.json",
+            "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/results/yandex_t2i_official10M_ip_v1"
+          ],
+          "exit_code": 0,
+          "process_seconds": 194.14056821400027
+        }
+      ]
+    }
+  },
+  "preflight_hash_seconds": 163.844301826,
+  "prepare_fit_seconds": 19.291615991999606,
+  "model_fit_core_seconds": {
+    "full": 7.348129171999972,
+    "rank8": 125.77859135300014
+  },
+  "fit_core_scope": "per-model objective optimization and gradient analysis; excludes shared input/SVD setup and export I/O; included within training_process",
+  "label_instrumented_seconds": 41.478497458999996,
+  "new_actual_dataset_search_calls": {
+    "labels": 880000,
+    "label_parity": 2304,
+    "fit_cal_audit": 141440,
+    "validation_including_warm_count_parity": 301600,
+    "total": 1325344
+  },
+  "logical_joint_labels": 960000,
+  "reused_single_label_dependency": {
+    "fit_query_entry_values_used": 32720000,
+    "new_single_label_calls": 0,
+    "historical_full_E22_batch_calls": 169857792,
+    "historical_full_E22_label_seconds": 6639.99,
+    "scope": "candidate proposal depends on old L128 all-H single labels for this build; direct from-scratch replication would need 32,720,000 such query-entry labels. Historical E22 totals include additional seeds/label-L and are not this method exclusive cost."
+  },
+  "full_from_scratch_offline_seconds": null,
+  "unknown_reason": "exact train GT, QGT/prototype, NSG and the necessary single-label subset are reused; their exclusive full rebuild cost was not newly measured",
+  "timing_scope": "query QPS comes only from each single-thread independent plain wall; all process totals include other work and are not QPS",
+  "build_process_seconds": 32.873872645999654,
+  "build_scope": "three standalone compiler invocations; not model/query performance"
+}

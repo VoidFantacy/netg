@@ -1342,17 +1342,17 @@ void ACSG::search_new(
         case 0: // 模式0: 随机选择入口点
             search_on_graph_new<false>(
                 *final_graph, dis, vt, pool_size, retset, 
-                std::vector<EnterPoint>(), mode, current_query);
+                std::vector<EnterPoint>(), mode, current_query, nullptr);
             break;
         case 1: // 模式1: 使用固定权重高的入口点 (Top-1)
             search_on_graph_new<false>(
                 *final_graph, dis, vt, pool_size, retset, 
-                top_enterpoints, mode, current_query);
+                top_enterpoints, mode, current_query, nullptr);
             break;
         case 2: // 模式2: 使用自定义入口点 (Neural Router)
             search_on_graph_new<false>(
                 *final_graph, dis, vt, pool_size, retset, 
-                custom_enterpoints, mode, current_query);
+                custom_enterpoints, mode, current_query, nullptr);
             break;
         default:
             FAISS_THROW_FMT("Invalid search mode: %d", mode);
@@ -1372,6 +1372,59 @@ void ACSG::search_new(
     }
 }
 
+void ACSG::search_new_traced(
+    DistanceComputer &dis,
+    int topk,
+    idx_t *I,
+    float *D,
+    VisitedTable &vt,
+    int mode,
+    const std::vector<EnterPoint> &custom_enterpoints,
+    SearchTrace &trace,
+    const int64_t* trace_gt,
+    int trace_gt_k,
+    std::vector<Neighbor> *retset_buf)
+{
+    FAISS_THROW_IF_NOT(is_built);
+    FAISS_THROW_IF_NOT(final_graph);
+    if (trace_gt_k < 0) FAISS_THROW_MSG("trace_gt_k must be non-negative");
+
+    trace = SearchTrace{};
+    trace.trace_gt = trace_gt;
+    trace.trace_gt_k = trace_gt_k;
+    const int pool_size = std::max(search_L, topk);
+    std::vector<Neighbor> retset_local;
+    std::vector<Neighbor> &retset = retset_buf ? *retset_buf : retset_local;
+    const int current_query = query_counter.fetch_add(1, std::memory_order_relaxed);
+
+    switch (mode) {
+        case 0:
+            search_on_graph_new<false>(*final_graph, dis, vt, pool_size, retset,
+                                       std::vector<EnterPoint>(), mode, current_query, &trace);
+            break;
+        case 1:
+            search_on_graph_new<false>(*final_graph, dis, vt, pool_size, retset,
+                                       top_enterpoints, mode, current_query, &trace);
+            break;
+        case 2:
+            search_on_graph_new<false>(*final_graph, dis, vt, pool_size, retset,
+                                       custom_enterpoints, mode, current_query, &trace);
+            break;
+        default:
+            FAISS_THROW_FMT("Invalid search mode: %d", mode);
+    }
+
+    for (size_t i = 0; i < static_cast<size_t>(topk); ++i) {
+        if (i < retset.size() && retset[i].id != -1) {
+            I[i] = retset[i].id;
+            D[i] = retset[i].distance;
+        } else {
+            I[i] = -1;
+            D[i] = std::numeric_limits<float>::max();
+        }
+    }
+}
+
 template <bool collect_fullset, class index_t>
 void ACSG::search_on_graph_new(const Graph<index_t> &graph,
                             DistanceComputer &dis,
@@ -1380,7 +1433,8 @@ void ACSG::search_on_graph_new(const Graph<index_t> &graph,
                             std::vector<Neighbor> &retset,
                             const std::vector<EnterPoint> &enterpoints,
                             int mode,
-                            int query_id)
+                            int query_id,
+                            SearchTrace* trace)
 {
     RandomGenerator gen(0x1234);
     retset.resize(L + 1); 
@@ -1396,6 +1450,21 @@ void ACSG::search_on_graph_new(const Graph<index_t> &graph,
     float first_enterpoint_distance = 0.0f;
     bool distance_recorded = false;
 
+    auto record_distance = [&](int id, bool neighbor) {
+        if (!trace) return;
+        ++trace->distance_evaluations;
+        if (neighbor) ++trace->evaluated_neighbor_count;
+        if (trace->first_topk_gt_evaluation_ndc != std::numeric_limits<uint64_t>::max() ||
+            !trace->trace_gt || trace->trace_gt_k <= 0) return;
+        for (int g = 0; g < trace->trace_gt_k; ++g) {
+            if (id == trace->trace_gt[g]) {
+                trace->first_topk_gt_evaluation_ndc = trace->distance_evaluations;
+                trace->first_topk_gt_expansion = trace->expanded_count;
+                break;
+            }
+        }
+    };
+
     switch (mode) {
         case 0: { // 模式0: 单点随机入口
             int init_count = 0;
@@ -1404,6 +1473,7 @@ void ACSG::search_on_graph_new(const Graph<index_t> &graph,
                 if (vt.get(node)) continue;
                 
                 vt.set(node);
+                record_distance(node, false);
                 float dist = dis(node);
                 
                 if (!distance_recorded && num_ids == 0) {
@@ -1423,6 +1493,7 @@ void ACSG::search_on_graph_new(const Graph<index_t> &graph,
                 int id = enterpoints[i].id;
                 if (!vt.get(id)) {
                     vt.set(id);
+                    record_distance(id, false);
                     float dist = dis(id);
                     
                     if (!distance_recorded && num_ids == 0) {
@@ -1452,6 +1523,7 @@ void ACSG::search_on_graph_new(const Graph<index_t> &graph,
                 
                 if (!vt.get(id)) {
                     vt.set(id);
+                    record_distance(id, false);
                     float dist = dis(id);
                     
                     if (!distance_recorded && num_ids == 0) {
@@ -1471,6 +1543,7 @@ void ACSG::search_on_graph_new(const Graph<index_t> &graph,
                     int node = gen.rand_int(ntotal);
                     if (!vt.get(node)) {
                         vt.set(node);
+                        record_distance(node, false);
                         retset[num_ids++] = Neighbor(node, dis(node), true);
                         init_count++;
                     }
@@ -1490,8 +1563,10 @@ void ACSG::search_on_graph_new(const Graph<index_t> &graph,
     }
     
     std::sort(retset.begin(), retset.begin() + num_ids);
+    if (trace && num_ids > 0) trace->initial_best_distance = retset[0].distance;
 
     int k = 0;
+    uint64_t current_stagnation = 0;
     while (k < L) { 
         if (k >= num_ids) break; 
 
@@ -1500,6 +1575,8 @@ void ACSG::search_on_graph_new(const Graph<index_t> &graph,
         if (retset[k].flag) {
             retset[k].flag = false;
             int n = retset[k].id;
+            if (trace) ++trace->expanded_count;
+            const float best_before_expansion = retset[0].distance;
 
             for (int m = 0; m < graph.K; m++) {
                 int id = (int)graph.at(n, m);
@@ -1507,22 +1584,72 @@ void ACSG::search_on_graph_new(const Graph<index_t> &graph,
                     continue;
                 }
                 vt.set(id);
+                record_distance(id, true);
                 float dist = dis(id);
                 Neighbor nn(id, dist, true);
                 
                 if (num_ids >= L && dist >= retset[L - 1].distance) {
+                    if (trace) ++trace->rejected_by_pool_bound_count;
                     continue;
                 }
-                
+                const float best_before_insert = retset[0].distance;
+                const float pool_before_insert = num_ids >= L
+                    ? retset[L - 1].distance : std::numeric_limits<float>::max();
                 int r = insert_into_pool(retset.data(), L, nn);
                 if (r < L) { 
+                    if (trace) {
+                        ++trace->accepted_insertion_count;
+                        if (retset[0].distance < best_before_insert) {
+                            ++trace->best_distance_improvement_count;
+                            trace->best_distance_improvement_sum +=
+                                static_cast<double>(best_before_insert - retset[0].distance);
+                        }
+                        if (num_ids >= L && retset[L - 1].distance < pool_before_insert) {
+                            ++trace->pool_bound_improvement_count;
+                            trace->pool_bound_improvement_sum +=
+                                static_cast<double>(pool_before_insert - retset[L - 1].distance);
+                        }
+                    }
                     updated_pos = std::min(updated_pos, r);
                     if (num_ids < L) num_ids++;
                 }
             }
+            if (trace) {
+                if (retset[0].distance < best_before_expansion) {
+                    if (current_stagnation > 0) {
+                        ++trace->stagnation_run_count;
+                        trace->stagnation_expansion_sum += current_stagnation;
+                        trace->max_stagnation_expansions = std::max(
+                            trace->max_stagnation_expansions, current_stagnation);
+                        current_stagnation = 0;
+                    }
+                } else {
+                    ++current_stagnation;
+                }
+            }
         }
 
+        if (trace && updated_pos <= k) {
+            ++trace->rewind_count;
+            const uint64_t span = static_cast<uint64_t>(k - updated_pos);
+            trace->rewind_span_sum += span;
+            trace->rewind_span_max = std::max(trace->rewind_span_max, span);
+        }
         k = (updated_pos <= k) ? updated_pos : (k + 1);
+    }
+    if (trace) {
+        if (current_stagnation > 0) {
+            ++trace->stagnation_run_count;
+            trace->stagnation_expansion_sum += current_stagnation;
+            trace->max_stagnation_expansions = std::max(trace->max_stagnation_expansions,
+                                                         current_stagnation);
+        }
+        if (num_ids > 0) {
+            trace->final_best_distance = retset[0].distance;
+            const int last = std::min(num_ids, L) - 1;
+            trace->final_pool_gap = retset[last].distance - retset[0].distance;
+            if (last >= 1) trace->final_frontier_gap = retset[1].distance - retset[0].distance;
+        }
     }
 }
 

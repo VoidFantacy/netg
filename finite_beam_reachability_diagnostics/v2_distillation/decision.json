@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "terminal_status": "NO_GO_NOT_PREDICTABLE",
+  "method": "local cost-first reachability utility atlas",
+  "online_graph_probes": 0,
+  "heldout_accessed": false,
+  "validation_accessed": false,
+  "gate": "FAIL",
+  "reason": "All four points preserve mean Recall and stay within the +0.5% mean graph-NDC limit, but every query-bootstrap 95% utility-delta interval crosses zero.",
+  "results": [
+    {"dataset": "webvid2_5m_light_v1", "L": 64, "utility_delta": 0.0017941140070347069, "ci95": [-0.00142023089664899, 0.006320175746348628], "recall_delta": 0.002, "ndc_relative_delta": 0.002139583322592342, "reroute_fraction": 0.09},
+    {"dataset": "webvid2_5m_light_v1", "L": 128, "utility_delta": 0.00038706712688106, "ci95": [-0.003998751024260557, 0.004587892738291444], "recall_delta": 0.00024999999999999973, "ndc_relative_delta": -0.0036971869869618645, "reroute_fraction": 0.18},
+    {"dataset": "yandex_t2i_official10M_ip_v1", "L": 64, "utility_delta": 0.00004772276672934422, "ci95": [-0.005857069871595698, 0.004315655771098351], "recall_delta": 0.00024999999999999995, "ndc_relative_delta": 0.004200739242362861, "reroute_fraction": 0.11},
+    {"dataset": "yandex_t2i_official10M_ip_v1", "L": 128, "utility_delta": 0.0003132517303780986, "ci95": [-0.0005617204389180124, 0.0012840484628540627], "recall_delta": 0.0005000000000000001, "ndc_relative_delta": 0.0038418761806373602, "reroute_fraction": 0.1275}
+  ],
+  "artifact_bytes": {
+    "webvid_atlas": 3585806,
+    "yandex_atlas": 1589006
+  },
+  "reports": [
+    "finite_beam_reachability_diagnostics/v2_distillation/webvid/report.json",
+    "finite_beam_reachability_diagnostics/v2_distillation/yandex/report.json"
+  ]
+}

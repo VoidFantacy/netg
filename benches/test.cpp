@@ -444,6 +444,7 @@ int main(int argc, char** argv) {
     program.add_argument("--search_Ls").default_value(std::string(""));
     program.add_argument("--top_k").default_value(1).scan<'i', int>(); 
     program.add_argument("--max_queries").default_value(10000).scan<'i', int>();
+    program.add_argument("--query_split").default_value(std::string("drl_test"));
 
     try { program.parse_args(argc, argv); } catch (...) { return 1; }
     
@@ -453,7 +454,15 @@ int main(int argc, char** argv) {
     int num_runs = program.get<int>("--num_runs");
     std::string onnx_path = program.get<std::string>("--drl_model_config");
     std::string test_scope = program.get<std::string>("--test_scope");
+    std::string query_split = program.get<std::string>("--query_split");
     int max_q = program.get<int>("--max_queries");
+
+    if (query_split != "drl_test" && query_split != "validation") {
+        std::cerr << "--query_split must be drl_test or validation" << std::endl;
+        return 2;
+    }
+    const std::string split_name =
+        query_split == "validation" ? "validation" : "held-out-test";
 
     std::string f_pca = program.get<std::string>("--cluster_pca");
     std::string f_geo = program.get<std::string>("--cluster_neural_geo");
@@ -466,8 +475,8 @@ int main(int argc, char** argv) {
     
     std::cout << "\n>>> Loading Data..." << std::endl;
     DataLoader data_loader(dataset);
-    auto [nq, xq] = data_loader.load_query("drl_test");
-    auto [k_gt, gt] = data_loader.load_gt("drl_test");
+    auto [nq, xq] = data_loader.load_query(query_split);
+    auto [k_gt, gt] = data_loader.load_gt(query_split);
     int d = data_loader.dim();
     
     if (max_q > 0 && nq > (size_t)max_q) { std::cout << "⚠️ Truncating queries to " << max_q << std::endl; nq = max_q; }
@@ -574,7 +583,7 @@ int main(int argc, char** argv) {
     
     json final_output;
     final_output["dataset"] = dataset;
-    final_output["split"] = "held-out-test";
+    final_output["split"] = split_name;
     final_output["metric"] = data_loader.metric_name();
     final_output["normalization"] = data_loader.normalization();
     final_output["artifact_version"] = data_loader.artifact_version();

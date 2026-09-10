@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "version": "20260909_b_r0_v1",
+  "direction": "B",
+  "stage": "R0_ASSESSMENT",
+  "status": "CLOSED_AT_R0_NOVELTY_COLLISION_UNRUN",
+  "superseded_for_current_planning_by": "../20260909_ab_joint_r0_v1",
+  "updated_date": "2026-09-09",
+  "method_implemented": false,
+  "candidate_set_generated": false,
+  "new_labels_generated": false,
+  "model_trained": false,
+  "ann_experiment_started": false,
+  "validation_accessed": false,
+  "heldout_accessed": false,
+  "root_documents_modified": true,
+  "root_documents_modified_list": ["s-target.md"],
+  "current_verdict": {
+    "original_b_formulation": "NOT_READY_HIGH_COLLISION",
+    "narrow_selector_aware_fixed_m_swap": "CONDITIONAL_DESIGN_NOT_PURSUED",
+    "novelty_claim": "NOT_READY"
+  },
+  "decision_required": [],
+  "decision_record": {
+    "date": "2026-09-09",
+    "decision": "CLOSE_B_AT_R0_AND_PROCEED_TO_A",
+    "reason": "NOVELTY_COLLISION",
+    "interpretation": "Research-priority closure without implementation or experiment; not an empirical NO_GO.",
+    "unapproved_choices": ["D2_CAPACITY", "D3_PROPOSAL_SOURCE", "D4_PILOT_DATA_SCALE_EXCEPTION", "D5_STATISTICAL_CONTRACT"]
+  },
+  "successor_decision": {
+    "date": "2026-09-09",
+    "decision": "REFRAME_A_AND_B_AS_A_JOINT_WITHIN_H_SLOT_ACTION_METHOD",
+    "interpretation": "The original H-out fixed-m tree-swap pilot remains closed and unrun. The successor uses a different first-stage mechanism and a less restrictive method-level novelty standard."
+  },
+  "proposed_scope": {
+    "datasets": [
+      "webvid2_5m_light_v1",
+      "yandex_t2i_official10M_ip_v1"
+    ],
+    "top_k": 10,
+    "search_L": [64, 128],
+    "q_prop_per_dataset": 4096,
+    "q_fit_per_dataset": 2048,
+    "q_fit_full_contract_per_dataset": 20000,
+    "q_fit_is_screening_exception_requiring_approval": true,
+    "q_audit_per_dataset": 1024,
+    "new_h_out_candidates_per_dataset": 64,
+    "pool_size_m": 32,
+    "tree_max_depth": 5,
+    "tree_min_leaf": 32,
+    "max_swap_rounds": 4,
+    "main_search_calls": 10838016,
+    "main_search_calls_basis": "FROM_ZERO; exact compatible reuse may reduce actual calls but savings cannot expand scope",
+    "parity_search_calls": 84672,
+    "hard_search_call_cap": 11100000,
+    "hard_search_call_cap_scope": "G0 plus fit/audit labels plus listed parity; includes failed/retried kernel calls; excludes separately authorized G3",
+    "search_wall_cap_seconds": 1800,
+    "search_wall_cap_scope": "cumulative across all G0, fit, audit and parity search jobs in this version",
+    "rss_cap_gib": 16,
+    "artifact_cap_gib": 1,
+    "minimum_data_free_gib": 10,
+    "statistics_recommended": {
+      "fit_bootstrap_draws": 10000,
+      "fit_mean_gain_min_pp": 0.05,
+      "fit_one_sided_lower_confidence": 0.90,
+      "fit_lower_bound_must_exceed_pp": 0.0,
+      "fit_role": "post-selection training stability heuristic, not inference",
+      "audit_main_family_size": 12,
+      "audit_bootstrap_draws": 20000,
+      "audit_familywise_confidence": 0.95,
+      "audit_correction": "Bonferroni-12",
+      "audit_each_comparator_four_point_mean_min_pp": 0.10,
+      "audit_each_point_mean_harm_floor_pp": -0.10,
+      "audit_per_dataset_each_comparator_requires_one_L_familywise_lower_bound_gt_pp": 0.0
+    },
+    "g3_status": "NOT_AUTHORIZED; requires a separate user-reviewed pure-wall protocol and budget after G2 PASS"
+  },
+  "blocking_condition": null,
+  "next_action": "Use ../20260909_ab_joint_r0_v1 for current theory. Do not implement or run this old B pilot.",
+  "reopen_condition": "Explicit user authorization plus a new version with refreshed evidence, source identities, protocol lock, budgets, and execution decisions.",
+  "evidence": [
+    "assessment/assessment.md",
+    "assessment/protocol_draft.md",
+    "source_manifest.json",
+    "../../s-target.md",
+    "../../experiment_history/08_fast_router_diagnosis.md",
+    "../../entry_selection_research/20260908_v5/reviews/joint_entry_design.md"
+  ]
+}

@@ -135,14 +135,18 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", default="webvid2_5m_light_v1")
     parser.add_argument("--seeds", default="20260828,20260829,20260830")
+    parser.add_argument("--variant-name")
+    parser.add_argument("--split", choices=("held-out-test", "validation"), default="held-out-test")
+    parser.add_argument("--status")
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
 
+    variant_name = args.variant_name or args.dataset
     seeds = [int(token) for token in args.seeds.split(",") if token]
     if len(set(seeds)) < 2:
         raise ValueError("multi-seed summary requires at least two unique seeds")
     seed_dirs = {
-        seed: ROOT / "fast_entry_variants" / f"{args.dataset}_seed{seed}"
+        seed: ROOT / "fast_entry_variants" / f"{variant_name}_seed{seed}"
         for seed in seeds
     }
     manifests = {seed: load(path / "manifest.json") for seed, path in seed_dirs.items()}
@@ -157,21 +161,43 @@ def main() -> None:
     tail = {seed: load(path / "per_query_r10.json") for seed, path in seed_dirs.items()}
     for top_k, documents in ((1, r1), (100, r100)):
         for seed, document in documents.items():
-            expected = (args.dataset, top_k, 10000, 3)
+            expected = (args.dataset, args.split, top_k, 10000, 3)
             observed = (
-                document["dataset"], document["top_k"],
+                document["dataset"], document["split"], document["top_k"],
                 document["num_queries"], document["num_runs"],
             )
             if observed != expected:
                 raise ValueError(f"evaluation contract mismatch seed={seed}: {observed}")
+    for seed, document in tail.items():
+        expected = (args.dataset, args.split, 10, 10000)
+        observed = (
+            document["dataset"], document["split"], document["top_k"],
+            document["num_queries"],
+        )
+        if observed != expected:
+            raise ValueError(f"tail contract mismatch seed={seed}: {observed}")
 
     raw_name = "2. Raw HNSW Routing (Ablation Baseline)"
     prototype_name = "5. Asym-Neural HNSW Routing (0ms inference)"
+    recall1 = {
+        "qgt_raw": aggregate_search(r1, raw_name),
+        "qgt_gt_basin_prototype": aggregate_search(r1, prototype_name),
+    }
+    recall100 = {
+        "qgt_raw": aggregate_search(r100, raw_name),
+        "qgt_gt_basin_prototype": aggregate_search(r100, prototype_name),
+    }
+    medoid_name = "0. Medoid (Baseline)"
+    if all(medoid_name in method_map(document) for document in r1.values()):
+        recall1["medoid"] = aggregate_search(r1, medoid_name)
+    if all(medoid_name in method_map(document) for document in r100.values()):
+        recall100["medoid"] = aggregate_search(r100, medoid_name)
+
     output = {
         "schema_version": 1,
-        "status": "exploratory-multiseed-held-out",
+        "status": args.status or f"exploratory-multiseed-{args.split}",
         "dataset": args.dataset,
-        "split": "held-out-test",
+        "split": args.split,
         "num_queries": 10000,
         "internal_runs_per_seed": 3,
         "clustering_seeds": seeds,
@@ -180,27 +206,22 @@ def main() -> None:
             prototype_name: "QGT-Cover plus closed-form GT-basin prototype; no neural network",
             "NETG_AsymHNSW in per-query files": "same closed-form prototype method; no neural network",
         },
-        "recall1": {
-            "qgt_raw": aggregate_search(r1, raw_name),
-            "qgt_gt_basin_prototype": aggregate_search(r1, prototype_name),
-        },
-        "recall100": {
-            "qgt_raw": aggregate_search(r100, raw_name),
-            "qgt_gt_basin_prototype": aggregate_search(r100, prototype_name),
-        },
+        "recall1": recall1,
+        "recall100": recall100,
         "tail_recall10": aggregate_tail(tail),
         "build_wall_seconds": {
             str(seed): manifest["build_wall_seconds"] for seed, manifest in manifests.items()
         },
         "limitations": [
-            "one dataset; Yandex-IP replication is still required",
-            "three clustering seeds share the same train/test split",
+            "validation split only; held-out test was not accessed" if args.split == "validation"
+            else "held-out test result; validation must remain separate",
+            "three clustering seeds share the same fixed data split",
             "exact train GT preparation cost is excluded",
             "internal QPS repetitions are not interleaved across methods or seeds",
         ],
     }
     output_path = args.output or (
-        ROOT / "fast_entry_variants" / f"{args.dataset}_multiseed_summary.json"
+        ROOT / "fast_entry_variants" / f"{variant_name}_multiseed_summary.json"
     )
     output_path.write_text(json.dumps(output, indent=2, sort_keys=True) + "\n")
     print(output_path)

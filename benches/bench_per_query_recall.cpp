@@ -180,6 +180,7 @@ int main(int argc, char** argv) {
     program.add_argument("--search_L").default_value(std::string("512,1024"));
     program.add_argument("--top_k").default_value(1).scan<'i', int>();
     program.add_argument("--max_queries").default_value(10000).scan<'i', int>();
+    program.add_argument("--query_split").default_value(std::string("drl_test"));
 
     try { program.parse_args(argc, argv); } catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;
@@ -193,8 +194,16 @@ int main(int argc, char** argv) {
     std::string trans_ids = program.get<std::string>("--transformed_ids");
     std::string raw_hubs = program.get<std::string>("--raw_hubs");
     std::string search_L_str = program.get<std::string>("--search_L");
+    std::string query_split = program.get<std::string>("--query_split");
     int top_k = program.get<int>("--top_k");
     int max_q = program.get<int>("--max_queries");
+
+    if (query_split != "drl_test" && query_split != "validation") {
+        std::cerr << "--query_split must be drl_test or validation" << std::endl;
+        return 2;
+    }
+    const std::string split_name =
+        query_split == "validation" ? "validation" : "held-out-test";
 
     // 解析 search_L 列表
     std::vector<int> search_Ls;
@@ -208,6 +217,7 @@ int main(int argc, char** argv) {
     std::cout << "📊 Per-Query Recall Distribution Benchmark" << std::endl;
     std::cout << "========================================" << std::endl;
     std::cout << "Dataset: " << dataset << std::endl;
+    std::cout << "Query split: " << split_name << std::endl;
     std::cout << "Top-K: " << top_k << std::endl;
     std::cout << "Search_L values: ";
     for (int L : search_Ls) std::cout << L << " ";
@@ -216,8 +226,8 @@ int main(int argc, char** argv) {
     // 加载数据
     std::cout << "\n>>> Loading Data..." << std::endl;
     DataLoader data_loader(dataset);
-    auto [nq, xq] = data_loader.load_query("drl_test");
-    auto [k_gt, gt] = data_loader.load_gt("drl_test");
+    auto [nq, xq] = data_loader.load_query(query_split);
+    auto [k_gt, gt] = data_loader.load_gt(query_split);
     int d = data_loader.dim();
 
     if (max_q > 0 && nq > (size_t)max_q) { 
@@ -239,7 +249,7 @@ int main(int argc, char** argv) {
     all_results["dataset"] = dataset;
     all_results["num_queries"] = nq;
     all_results["top_k"] = top_k;
-    all_results["split"] = "held-out-test";
+    all_results["split"] = split_name;
     all_results["metric"] = data_loader.metric_name();
     all_results["normalization"] = data_loader.normalization();
     all_results["artifact_version"] = data_loader.artifact_version();

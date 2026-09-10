@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "valid_three_query_artifact_core",
+      "status": "PASS"
+    },
+    {
+      "name": "default_requires_full10K_not_three_rows",
+      "status": "PASS",
+      "error": "Count rows must align every pilot ID in order"
+    },
+    {
+      "name": "query_order",
+      "status": "PASS",
+      "error": "Count rows must align every pilot ID in order"
+    },
+    {
+      "name": "missing_L_method",
+      "status": "PASS",
+      "error": "Missing/extra methods, L values, or rounds: count"
+    },
+    {
+      "name": "duplicate_cell",
+      "status": "PASS",
+      "error": "Duplicate evaluator result cell"
+    },
+    {
+      "name": "routing_MAC",
+      "status": "PASS",
+      "error": "Aligned count mean mismatch: routing_mac"
+    },
+    {
+      "name": "all_eight_invocation_output_keys_after_shadow_fix",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong_fast_ID_path",
+      "status": "PASS",
+      "error": "Command did not use frozen Fast raw file"
+    },
+    {
+      "name": "duplicate_flag",
+      "status": "PASS",
+      "error": "Repeated evaluator command flag"
+    },
+    {
+      "name": "wrong_measurement_order",
+      "status": "PASS",
+      "error": "Execution model/measurement order changed"
+    },
+    {
+      "name": "fixed_main_direction",
+      "status": "PASS"
+    },
+    {
+      "name": "exact_eight_contrast_family",
+      "status": "PASS"
+    },
+    {
+      "name": "all_eight_shared_draws_equal_independent_manual_indices",
+      "status": "PASS"
+    },
+    {
+      "name": "summarize_candidate_minus_reference_all16_cells",
+      "status": "PASS"
+    },
+    {
+      "name": "between_model_wall_descriptive_without_pairing_or_CI",
+      "status": "PASS"
+    },
+    {
+      "name": "summary_no_automatic_gate_or_deployment_claim",
+      "status": "PASS"
+    },
+    {
+      "name": "saved_npz_shared_draws_with_float_subtraction_tolerance",
+      "status": "PASS"
+    }
+  ],
+  "check_count": 17,
+  "source_sha256": "a840b060a61061df6e60ae6166cd9a090570ef6ec0002a3ec7c7deea14e4e03e",
+  "helper_sha256": "8219fc24ac771d585cc30f9ad628aa7d5c8e55025bfe60725511aafafb05acd8",
+  "review_check_sha256": "f5418e0554c31afe1282607515214cf388650a19c72972c601279f65e75b64b8",
+  "ANN_calls": 0,
+  "real_dataset_values_read": false,
+  "synthetic_query_count": 3,
+  "bootstrap_replicates": 10000,
+  "scope": "Independent pure artifact/contrast/shared-resampling checks; no full-dataset execution or performance result"
+}

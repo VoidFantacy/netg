@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "version": "20260907_v1",
+  "stage": "P0",
+  "status": "PAUSED_BY_USER",
+  "hypothesis": "Target regions and protected frontiers improve target coverage at useful wall cost",
+  "evidence": [
+    "source_before_manifest.json",
+    "dependencies/manifest.json",
+    "dependencies/README.md",
+    "dependencies/protected_after.json",
+    "dependencies/metis_smoke.json",
+    "dependencies/python_smoke.json",
+    "overnight_prompt.md"
+  ],
+  "next_action": "In new authorized conversation, read dependencies/README.md and overnight_prompt.md; finish P0 then audit draft P1 implementation",
+  "active_job": null,
+  "blockers": [],
+  "mechanism_revisions": 0,
+  "updated_utc": "2026-09-07T14:51:10.212239+00:00",
+  "plan_execution_authorized_now": false,
+  "dependency_preparation_authorized": true,
+  "implementation_state": {
+    "RegionalSearch.h": "DRAFT_UNTESTED",
+    "test_regional_search": "COMPILED_NOT_RUN",
+    "P0": "INCOMPLETE",
+    "P1": "NOT_PASSED",
+    "P2_P8": "NOT_STARTED"
+  },
+  "dependency_status": "READY_FOR_PLAN_RESUMPTION",
+  "next_session_deadline_beijing": "2026-09-08T07:00:00+08:00",
+  "next_session_deadline_utc": "2026-09-07T23:00:00Z",
+  "deadline_watchdog_started": false,
+  "report_contract": {
+    "filename": "实验总结.md",
+    "preferred_path": "/data/netg/ACSG/实验总结.md",
+    "write_after_research_deadline": true,
+    "opening": "Title followed by a concise 3-5 sentence paragraph, about 150 Chinese characters or fewer",
+    "body": "Detailed overnight implementation, verification, experiments, results, gates, evidence, resources, stop verification, reproduction and next action",
+    "after_deadline_allowed": "Review existing evidence and write handoff/report only; no new experiments or method development",
+    "overwrite_existing": false
+  }
+}

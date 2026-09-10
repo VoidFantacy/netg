@@ -1,0 +1,65 @@
+{
+  "threads": 1,
+  "queries_per_dataset": 2000,
+  "seed": 20260828,
+  "L": [
+    64,
+    128,
+    256,
+    400,
+    800
+  ],
+  "heldout_accessed": false,
+  "same_joint_model_across_all_L": true,
+  "joint_training_label_L": 128,
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "config": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/inputs/webvid2_5m_light_v1/config.json",
+      "sha256": {
+        "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin": "b9e549ee8406798db8a9ee191f4765277a505a5372587f379e7a3e88e780d2a0",
+        "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32": "47c58c28e48e85c5a4f0cad245ef66f451dde404afb0ad7231909ba1956e8e03",
+        "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/joint/candidate.W.f32": "7d6a8c97a13c77a2677158b1e20335d8a18689e1a8cd682d20e1f96d5c0e0d95",
+        "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/joint/candidate.mapping.i32": "050dadfbcd77e0bd1c4aa6c724631e1f2d8ce88c3e1bdcd39de40b57760e1c56",
+        "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/inputs/webvid2_5m_light_v1/queries.f32": "57850552affd37a4b09c9971998843891bed7edfef8bc3f9d1aa9d4c53c89a4a",
+        "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/inputs/webvid2_5m_light_v1/gt.i64": "c1198287da981a12ca09b17b403f18a9b6fd3f20676f1b2c3cd9c71c00daf6ac",
+        "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/inputs/webvid2_5m_light_v1/row_ids.i64": "55f385cf2332d9056aaed6f496e7bebd2df52c6a9547ce2144b309432d4b0290"
+      },
+      "source_validation_config": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/evaluation/validation/webvid2_5m_light_v1/seed20260828.json",
+      "source_config_sha256": "1b3024283608ba59b1e46ad8e706c734554a7aa4d1c20d0c74e6d7c567329b51",
+      "fixed_joint_W_sha256": "7d6a8c97a13c77a2677158b1e20335d8a18689e1a8cd682d20e1f96d5c0e0d95",
+      "fixed_joint_mapping_sha256": "050dadfbcd77e0bd1c4aa6c724631e1f2d8ce88c3e1bdcd39de40b57760e1c56",
+      "row_range": [
+        0,
+        2000
+      ],
+      "frozen_graph_source": "Original input preflight and linked source manifests; graph unchanged"
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "config": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/inputs/yandex_t2i_official10M_ip_v1/config.json",
+      "sha256": {
+        "/data/netg/ACSG/fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin": "d6ffa9769d457829c7c463457aae9042e5fba31008ca63402c46fbbb488f4f22",
+        "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/yandex_t2i_official10M_ip_v1/seed20260828/hub_ids.i32": "ec82834901aacf360049aad43c47065fcd5de90cc0b882d6dd0016de798e2240",
+        "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/yandex_t2i_official10M_ip_v1/seed20260828/L128/joint/candidate.W.f32": "bf3bcf1eefc77f837093d5b99379542cd9b5913a78c448460c5873309967db6f",
+        "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/yandex_t2i_official10M_ip_v1/seed20260828/L128/joint/candidate.mapping.i32": "05d034e1b8c1a2e619329571823300cb7d0d0c556d93418c5cbd78cdcacd9a33",
+        "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32": "1c43c201036a1f71fe081fc6bd96d0e186bab43ea2a482ef4ced4847ebf9d781",
+        "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/inputs/yandex_t2i_official10M_ip_v1/gt.i64": "a671dad8d245bb0b0c0615c9ccfa7aa5bc9fc4a27982d9cdf6c0af0c48e92e22",
+        "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/inputs/yandex_t2i_official10M_ip_v1/row_ids.i64": "55f385cf2332d9056aaed6f496e7bebd2df52c6a9547ce2144b309432d4b0290"
+      },
+      "source_validation_config": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/evaluation/validation/yandex_t2i_official10M_ip_v1/seed20260828.json",
+      "source_config_sha256": "ca9451bf246aa6fde05ddb739ed3086bc29a6bcc47a8db6c097efc0bef723837",
+      "fixed_joint_W_sha256": "bf3bcf1eefc77f837093d5b99379542cd9b5913a78c448460c5873309967db6f",
+      "fixed_joint_mapping_sha256": "05d034e1b8c1a2e619329571823300cb7d0d0c556d93418c5cbd78cdcacd9a33",
+      "row_range": [
+        0,
+        2000
+      ],
+      "frozen_graph_source": "Original input preflight and linked source manifests; graph unchanged"
+    }
+  },
+  "frozen_model_files_verified": 1051,
+  "configs": [
+    "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/inputs/webvid2_5m_light_v1/config.json",
+    "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/inputs/yandex_t2i_official10M_ip_v1/config.json"
+  ],
+  "status": "PREPARED"
+}

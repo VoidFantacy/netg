@@ -1,0 +1,40 @@
+{
+  "L": [
+    64,
+    128
+  ],
+  "dim": 8,
+  "gt_file": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/gt.i64",
+  "gt_k": 100,
+  "hub_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+  "index_path": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/synthetic_index.bin",
+  "pilot_count": 12,
+  "prototypes": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+  "queries_file": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/queries.f32",
+  "raw_hubs": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/raw_hubs.f32",
+  "row_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/row_ids.i64",
+  "threads": 1,
+  "dataset": "SYNTHETIC_ONLY",
+  "split": "synthetic",
+  "num_queries": 20,
+  "methods": [
+    {
+      "name": "exact_all_ties_L128",
+      "L": 128,
+      "seed": 20260828,
+      "hub_count": 32,
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/reviews/synthetic_inputs/all_tie_W.f32",
+      "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "k": 3,
+      "slot_labels": false,
+      "exact": true,
+      "legacy_heap_order": false,
+      "family": "test_exact",
+      "canonical_entry_order": true,
+      "hnsw_seed": 20260828
+    }
+  ],
+  "timing_repeats": 3,
+  "measure_wall": false
+}

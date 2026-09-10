@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "no_go",
+  "method": "confidence-attentive three-view target-basin ensemble",
+  "selection_split": "drl_train",
+  "heldout_accessed": false,
+  "validation_accessed": false,
+  "reference": "alpha=0 current three-view target-basin ensemble",
+  "gate": "one shared nonzero alpha must have nonnegative Recall and utility deltas at L64/L128 on both datasets",
+  "result": {
+    "webvid_only_pass": {
+      "alpha": -0.5,
+      "L64": {"recall_pp": 0.018, "ndc_percent": 0.035, "utility": 0.000163},
+      "L128": {"recall_pp": 0.065, "ndc_percent": 0.035, "utility": 0.000633}
+    },
+    "yandex_only_pass": {
+      "alpha": 0.5,
+      "L64": {"recall_pp": 0.039, "ndc_percent": 0.112, "utility": 0.000334},
+      "L128": {"recall_pp": 0.019, "ndc_percent": 0.001, "utility": 0.000189}
+    },
+    "shared_nonzero_alpha_passed": false
+  },
+  "decision": "Keep the uncalibrated alpha=0 ensemble. Do not add confidence attention, MAML, Reptile, or claim meta-learning."
+}

@@ -299,6 +299,7 @@ int main(int argc, char** argv) {
     program.add_argument("--top_ks").default_value(std::string("1,10,100"));
     program.add_argument("--num_runs").default_value(3).scan<'i', int>();
     program.add_argument("--threads").default_value(16).scan<'i', int>();
+    program.add_argument("--export_per_query").default_value(false).implicit_value(true);
     try { program.parse_args(argc, argv); }
     catch (const std::exception& e) { std::cerr << e.what() << '\n' << program; return 2; }
 
@@ -331,6 +332,7 @@ int main(int argc, char** argv) {
     const auto top_ks = parse_ints(program.get<std::string>("--top_ks"));
     const int runs = program.get<int>("--num_runs");
     const int threads = program.get<int>("--threads");
+    const bool export_per_query = program.get<bool>("--export_per_query");
 
     for (int k : top_ks) if (k < 1 || k > 100) throw std::runtime_error("top_k must be 1..100");
     omp_set_num_threads(threads);
@@ -673,6 +675,7 @@ int main(int argc, char** argv) {
                 std::vector<Aggregate> totals(method_count);
                 std::vector<std::string> names = {"Medoid", "Fast_Prototype_Top3"};
                 if (!extra_entries.empty()) names.push_back(extra_method);
+                std::vector<json> per_query_first_run(export_per_query ? nq : 0);
                 for (int run = 0; run < runs; ++run) {
                     #pragma omp parallel
                     {
@@ -684,10 +687,39 @@ int main(int argc, char** argv) {
                         for (int q = 0; q < nq; ++q) {
                             const float* query = queries.get() + q * loader.dim();
                             const int64_t* truth = gt.get() + q * gt_k;
-                            local[0].add(search_once(*index, dis, vt, retset, query, truth, k, {index->acsg.enterpoint}));
-                            local[1].add(search_once(*index, dis, vt, retset, query, truth, k, fast_entries[q]));
-                            if (method_count == 3)
-                                local[2].add(search_once(*index, dis, vt, retset, query, truth, k, extra_entries[q]));
+                            const bool capture = export_per_query && run == 0;
+                            std::vector<int> medoid_ids, fast_ids, extra_ids;
+                            const auto medoid = search_once(
+                                *index, dis, vt, retset, query, truth, k, {index->acsg.enterpoint},
+                                capture ? &medoid_ids : nullptr);
+                            const auto fast = search_once(
+                                *index, dis, vt, retset, query, truth, k, fast_entries[q],
+                                capture ? &fast_ids : nullptr);
+                            local[0].add(medoid);
+                            local[1].add(fast);
+                            SearchResult extra;
+                            if (method_count == 3) {
+                                extra = search_once(
+                                    *index, dis, vt, retset, query, truth, k, extra_entries[q],
+                                    capture ? &extra_ids : nullptr);
+                                local[2].add(extra);
+                            }
+                            if (capture) {
+                                json methods = json::array({
+                                    {{"method", names[0]}, {"entry_ids", std::vector<int>{index->acsg.enterpoint}},
+                                     {"recall", medoid.recall}, {"graph_ndc", medoid.ndc}, {"result_ids", medoid_ids}},
+                                    {{"method", names[1]}, {"entry_ids", fast_entries[q]},
+                                     {"recall", fast.recall}, {"graph_ndc", fast.ndc}, {"result_ids", fast_ids}}
+                                });
+                                if (method_count == 3) {
+                                    methods.push_back({
+                                        {"method", names[2]}, {"entry_ids", extra_entries[q]},
+                                        {"recall", extra.recall}, {"graph_ndc", extra.ndc},
+                                        {"result_ids", extra_ids}
+                                    });
+                                }
+                                per_query_first_run[q] = {{"query_id", q}, {"methods", std::move(methods)}};
+                            }
                         }
                         #pragma omp critical
                         for (int m = 0; m < method_count; ++m) {
@@ -704,6 +736,7 @@ int main(int argc, char** argv) {
                     method["method"] = names[m];
                     row["methods"].push_back(method);
                 }
+                if (export_per_query) row["per_query_first_run"] = std::move(per_query_first_run);
                 output["results"].push_back(row);
                 std::ofstream checkpoint(output_file);
                 checkpoint << output.dump(2);

@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "thread_contract": {
+    "environment": {
+      "MKL_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    },
+    "observed_openmp_threads": 1,
+    "openmp_dynamic": 0,
+    "openmp_max_threads": 1,
+    "policy": "All methods and baselines use one query thread; no conversion from parallel QPS",
+    "requested_threads": 1,
+    "status": "PASS"
+  },
+  "same_results_as_prior_kernel_files": 98,
+  "methods_checked": 14,
+  "configuration_2_threads_rejected": true,
+  "library_16_threads_rejected": true,
+  "new_binary_sha256": "9e8658bd1fee32c52ee056b254d651661b5786f84eda9abffc92c7468286950e"
+}

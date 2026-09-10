@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "purpose": "contract-correct standalone GATE baseline preparation",
+  "dataset": "webvid2_5m_light_v1",
+  "artifact_version": "roargraph-webvid2.5m-ip-v1",
+  "metric": "ip",
+  "normalization": "source_unit_norm_no_additional",
+  "method": "two-level HBKM with Sinkhorn balanced-assignment approximation",
+  "parameters": {
+    "k1": 32,
+    "k2": 16,
+    "target_hubs": 512,
+    "lambda": 0.01,
+    "max_iterations": 20,
+    "sinkhorn_iterations": 10,
+    "seed": 42
+  },
+  "observed": {
+    "hub_count": 512,
+    "unique_hub_ids": 512,
+    "cluster_size_min": 3677,
+    "cluster_size_max": 6035,
+    "cluster_size_mean": 4892.6,
+    "cluster_size_std": 305.5,
+    "build_wall_seconds_from_directory_and_output_timestamps": 318
+  },
+  "sources": {
+    "base": "benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+    "base_sha256": "6fb5b5510b29504de38271be7c343bd5e85a029f5755c7b3d74177cbf1ebbb18",
+    "frozen_gate_graph": "gate_baseline_artifacts/webvid2_5m_frozen_r64_v2/nsg.graph",
+    "frozen_gate_graph_sha256": "7964aa05de43954c7f280d922fe2005814fe51b97640e65b51938538291829e2"
+  },
+  "outputs": {
+    "hubs": "gate_baseline_artifacts/webvid2_5m_frozen_r64_v2/hbkm512_sinkhorn_seed42_v2/hubs.fvecs",
+    "hubs_sha256": "c401db1f0cb23ea66812a7b54b2579b974d0323c3688ad0659cd921e2d4c9479",
+    "hub_ids": "gate_baseline_artifacts/webvid2_5m_frozen_r64_v2/hbkm512_sinkhorn_seed42_v2/hub_ids.int32",
+    "hub_ids_sha256": "a0f3db4abd7cc7e4d4db852c396c8e9db7a9b810932e8d5d195d8b15f9d7b217"
+  },
+  "validation": {
+    "hub_vectors_exactly_match_base_at_hub_ids": true,
+    "note": "This is an explicit scalable approximation to Algorithm 2's sequential balanced assignment, not a claim of bitwise upstream reproduction."
+  }
+}

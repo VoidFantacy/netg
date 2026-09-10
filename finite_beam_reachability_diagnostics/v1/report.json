@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "heldout_accessed": false,
+  "selection_protocol": "train query rows [0,1600) fit; [1600,2000) evaluate; ridge alpha=1; lambda=0.05; 10k query-bootstrap",
+  "geometry_features": [
+    "prototype_distance",
+    "raw_entry_distance",
+    "geometry_rank",
+    "entry_prior"
+  ],
+  "trace_features": [
+    "distance_evaluations",
+    "evaluated_neighbor_count",
+    "expanded_count",
+    "accepted_insertion_count",
+    "rejected_by_pool_bound_count",
+    "rewind_count",
+    "rewind_span_sum",
+    "rewind_span_max",
+    "best_distance_improvement_count",
+    "best_distance_improvement_sum",
+    "pool_bound_improvement_count",
+    "pool_bound_improvement_sum",
+    "max_stagnation_expansions",
+    "stagnation_run_count",
+    "stagnation_expansion_sum",
+    "initial_best_distance",
+    "final_best_distance",
+    "final_frontier_gap",
+    "final_pool_gap"
+  ],
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "split": "drl_train",
+      "rows": 32000,
+      "by_L": {
+        "64": {
+          "geometry": {
+            "selected_mean_utility": 0.6158102368447307,
+            "rank0_mean_utility": 0.6140343395049174,
+            "utility_delta_vs_rank0": 0.0017758973398132197,
+            "utility_delta_ci95_lower": -0.010669711972103155,
+            "selected_mean_recall_at_10": 0.6692500000000001,
+            "rank0_mean_recall_at_10": 0.6655,
+            "recall_delta_vs_rank0": 0.00375,
+            "selected_mean_graph_ndc": 989.9625,
+            "rank0_mean_graph_ndc": 969.815,
+            "ndc_delta_relative_to_rank0": 0.020774580719002955,
+            "eval_queries": 400
+          },
+          "geometry_plus_trace": {
+            "selected_mean_utility": 0.6374500129746827,
+            "rank0_mean_utility": 0.6140343395049174,
+            "utility_delta_vs_rank0": 0.023415673469765304,
+            "utility_delta_ci95_lower": 0.009254257716717963,
+            "selected_mean_recall_at_10": 0.69075,
+            "rank0_mean_recall_at_10": 0.6655,
+            "recall_delta_vs_rank0": 0.025249999999999998,
+            "selected_mean_graph_ndc": 978.7725,
+            "rank0_mean_graph_ndc": 969.815,
+            "ndc_delta_relative_to_rank0": 0.009236297644396041,
+            "eval_queries": 400
+          }
+        },
+        "128": {
+          "geometry": {
+            "selected_mean_utility": 0.7080884743450241,
+            "rank0_mean_utility": 0.7111900439813644,
+            "utility_delta_vs_rank0": -0.0031015696363403226,
+            "utility_delta_ci95_lower": -0.014751911212631249,
+            "selected_mean_recall_at_10": 0.7597499999999999,
+            "rank0_mean_recall_at_10": 0.762,
+            "recall_delta_vs_rank0": -0.0022500000000000007,
+            "selected_mean_graph_ndc": 1716.3475,
+            "rank0_mean_graph_ndc": 1697.9125,
+            "ndc_delta_relative_to_rank0": 0.010857449956932497,
+            "eval_queries": 400
+          },
+          "geometry_plus_trace": {
+            "selected_mean_utility": 0.7230378119260359,
+            "rank0_mean_utility": 0.7111900439813644,
+            "utility_delta_vs_rank0": 0.011847767944671494,
+            "utility_delta_ci95_lower": 0.002204013564861874,
+            "selected_mean_recall_at_10": 0.774,
+            "rank0_mean_recall_at_10": 0.762,
+            "recall_delta_vs_rank0": 0.012,
+            "selected_mean_graph_ndc": 1694.6275,
+            "rank0_mean_graph_ndc": 1697.9125,
+            "ndc_delta_relative_to_rank0": -0.0019347286741807634,
+            "eval_queries": 400
+          }
+        }
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "split": "drl_train",
+      "rows": 32000,
+      "by_L": {
+        "64": {
+          "geometry": {
+            "selected_mean_utility": 0.7724322846020928,
+            "rank0_mean_utility": 0.7737859173580108,
+            "utility_delta_vs_rank0": -0.0013536327559179162,
+            "utility_delta_ci95_lower": -0.01841098116994075,
+            "selected_mean_recall_at_10": 0.8257500000000002,
+            "rank0_mean_recall_at_10": 0.8245,
+            "recall_delta_vs_rank0": 0.0012500000000000011,
+            "selected_mean_graph_ndc": 1653.535,
+            "rank0_mean_graph_ndc": 1595.5525,
+            "ndc_delta_relative_to_rank0": 0.03634007655655336,
+            "eval_queries": 400
+          },
+          "geometry_plus_trace": {
+            "selected_mean_utility": 0.7907771250839953,
+            "rank0_mean_utility": 0.7737859173580108,
+            "utility_delta_vs_rank0": 0.016991207725984534,
+            "utility_delta_ci95_lower": 0.0036321146339614464,
+            "selected_mean_recall_at_10": 0.8434999999999999,
+            "rank0_mean_recall_at_10": 0.8245,
+            "recall_delta_vs_rank0": 0.019,
+            "selected_mean_graph_ndc": 1627.2675,
+            "rank0_mean_graph_ndc": 1595.5525,
+            "ndc_delta_relative_to_rank0": 0.019877127202019285,
+            "eval_queries": 400
+          }
+        },
+        "128": {
+          "geometry": {
+            "selected_mean_utility": 0.8392082071648675,
+            "rank0_mean_utility": 0.8476295117884644,
+            "utility_delta_vs_rank0": -0.008421304623596707,
+            "utility_delta_ci95_lower": -0.0181752146392143,
+            "selected_mean_recall_at_10": 0.8915000000000001,
+            "rank0_mean_recall_at_10": 0.8980000000000001,
+            "recall_delta_vs_rank0": -0.006499999999999999,
+            "selected_mean_graph_ndc": 2850.7325,
+            "rank0_mean_graph_ndc": 2780.5425,
+            "ndc_delta_relative_to_rank0": 0.025243275368026286,
+            "eval_queries": 400
+          },
+          "geometry_plus_trace": {
+            "selected_mean_utility": 0.8548971694997763,
+            "rank0_mean_utility": 0.8476295117884644,
+            "utility_delta_vs_rank0": 0.007267657711311945,
+            "utility_delta_ci95_lower": 0.0005012358034895562,
+            "selected_mean_recall_at_10": 0.90675,
+            "rank0_mean_recall_at_10": 0.8980000000000001,
+            "recall_delta_vs_rank0": 0.00875,
+            "selected_mean_graph_ndc": 2809.175,
+            "rank0_mean_graph_ndc": 2780.5425,
+            "ndc_delta_relative_to_rank0": 0.01029745094707235,
+            "eval_queries": 400
+          }
+        }
+      }
+    }
+  ],
+  "gate_status": "NO_GO_TRACE_NOT_INCREMENTAL"
+}

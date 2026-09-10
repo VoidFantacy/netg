@@ -1,0 +1,154 @@
+{
+  "family": "joint",
+  "best_including_fast": 1,
+  "best_new_candidate": 1,
+  "checkpoints": [
+    {
+      "checkpoint": 0,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/reviews/trainer_e2e/joint/checkpoint_000.npz",
+      "temperature": 2.8171513080596924,
+      "round": -1,
+      "change": "Fast identity initialization",
+      "elapsed_seconds": 0.0012531879983725958,
+      "fit_hits": 0,
+      "cal_hits": 0,
+      "fit_recall": 0.0,
+      "cal_recall": 0.0,
+      "fit_failure": 1.0,
+      "cal_failure": 1.0,
+      "soft_regret": 0.8865693807601929,
+      "occupied_fit_slots": 8,
+      "mapped_actions": 8,
+      "pi_changed": 0,
+      "residual_norm": 0.0
+    },
+    {
+      "checkpoint": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/reviews/trainer_e2e/joint/checkpoint_001.npz",
+      "temperature": 2.8171513080596924,
+      "round": 0,
+      "change": {
+        "mapping_changed": true,
+        "continuous_accepted": true,
+        "continuous": {
+          "backtrack": 0,
+          "epoch": 1,
+          "fit_hit_gain": 0
+        }
+      },
+      "elapsed_seconds": 0.007425225998304086,
+      "fit_hits": 1280,
+      "cal_hits": 320,
+      "fit_recall": 1.0,
+      "cal_recall": 1.0,
+      "fit_failure": 0.0,
+      "cal_failure": 0.0,
+      "soft_regret": 0.8012394309043884,
+      "occupied_fit_slots": 8,
+      "mapped_actions": 8,
+      "pi_changed": 8,
+      "residual_norm": 0.004122909624129534
+    },
+    {
+      "checkpoint": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/reviews/trainer_e2e/joint/checkpoint_002.npz",
+      "temperature": 2.8171513080596924,
+      "round": 1,
+      "change": {
+        "mapping_changed": false,
+        "continuous_accepted": true,
+        "continuous": {
+          "backtrack": 0,
+          "epoch": 1,
+          "fit_hit_gain": 0
+        }
+      },
+      "elapsed_seconds": 0.029169217999879038,
+      "fit_hits": 1280,
+      "cal_hits": 320,
+      "fit_recall": 1.0,
+      "cal_recall": 1.0,
+      "fit_failure": 0.0,
+      "cal_failure": 0.0,
+      "soft_regret": 0.801154375076294,
+      "occupied_fit_slots": 8,
+      "mapped_actions": 8,
+      "pi_changed": 8,
+      "residual_norm": 0.008247083984315395
+    }
+  ],
+  "tau0": 2.8171513080596924,
+  "rank": 2,
+  "radius": 1.4142135623730951,
+  "elapsed_seconds": 0.029446090997225838,
+  "selection": "cal exact total hits; earliest checkpoint on ties",
+  "audit_used": false,
+  "selected": {
+    "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/reviews/trainer_e2e/joint/selected.W.f32",
+    "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/reviews/trainer_e2e/joint/selected.mapping.i32",
+    "W_sha256": "087fe069c564d18a348538872311c4ccea267113de0b75a317344d8e90456157",
+    "mapping_sha256": "f09d945dda2886f1798571718c7ef943c9e0bd0b92ccfcbfaf5497ccf7693d4d",
+    "checkpoint": 1,
+    "metrics": {
+      "checkpoint": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/reviews/trainer_e2e/joint/checkpoint_001.npz",
+      "temperature": 2.8171513080596924,
+      "round": 0,
+      "change": {
+        "mapping_changed": true,
+        "continuous_accepted": true,
+        "continuous": {
+          "backtrack": 0,
+          "epoch": 1,
+          "fit_hit_gain": 0
+        }
+      },
+      "elapsed_seconds": 0.007425225998304086,
+      "fit_hits": 1280,
+      "cal_hits": 320,
+      "fit_recall": 1.0,
+      "cal_recall": 1.0,
+      "fit_failure": 0.0,
+      "cal_failure": 0.0,
+      "soft_regret": 0.8012394309043884,
+      "occupied_fit_slots": 8,
+      "mapped_actions": 8,
+      "pi_changed": 8,
+      "residual_norm": 0.004122909624129534
+    }
+  },
+  "candidate": {
+    "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/reviews/trainer_e2e/joint/candidate.W.f32",
+    "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/reviews/trainer_e2e/joint/candidate.mapping.i32",
+    "W_sha256": "087fe069c564d18a348538872311c4ccea267113de0b75a317344d8e90456157",
+    "mapping_sha256": "f09d945dda2886f1798571718c7ef943c9e0bd0b92ccfcbfaf5497ccf7693d4d",
+    "checkpoint": 1,
+    "metrics": {
+      "checkpoint": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/reviews/trainer_e2e/joint/checkpoint_001.npz",
+      "temperature": 2.8171513080596924,
+      "round": 0,
+      "change": {
+        "mapping_changed": true,
+        "continuous_accepted": true,
+        "continuous": {
+          "backtrack": 0,
+          "epoch": 1,
+          "fit_hit_gain": 0
+        }
+      },
+      "elapsed_seconds": 0.007425225998304086,
+      "fit_hits": 1280,
+      "cal_hits": 320,
+      "fit_recall": 1.0,
+      "cal_recall": 1.0,
+      "fit_failure": 0.0,
+      "cal_failure": 0.0,
+      "soft_regret": 0.8012394309043884,
+      "occupied_fit_slots": 8,
+      "mapped_actions": 8,
+      "pi_changed": 8,
+      "residual_norm": 0.004122909624129534
+    }
+  }
+}

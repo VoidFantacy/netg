@@ -1,0 +1,350 @@
+{
+  "status": "PASS",
+  "decision": "C2_STATISTICS_FINAL_REVIEW_PASS_ACCEPT_STOP_C",
+  "reviewed_at_utc": "2026-09-09T07:35:25.386449+00:00",
+  "method_decision": "NO_GO_UNCONDITIONAL_HEADROOM_STOP_C",
+  "primary_all_four_pass": false,
+  "points": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 64,
+      "N": 2000,
+      "gain_hits": 196,
+      "mean_delta_pp": 0.98,
+      "corrected_ci_pp": [
+        0.62,
+        1.4100000000000001
+      ],
+      "gate_pass": true,
+      "coverage": {
+        "denominator": 2000,
+        "early_finished_fraction": 0.0,
+        "no_eligible_fraction": 0.0015,
+        "no_eligible_among_non_early_fraction_of_all": 0.0015,
+        "any_eligible_fraction": 0.9985,
+        "any_effective_force_fraction": 0.9985,
+        "all_force_no_op_fraction": 0.0015,
+        "oracle_strict_quality_gain_fraction": 0.0405,
+        "oracle_selected_effective_fraction": 0.0405,
+        "per_slot_eligible_fraction": [
+          0.9105,
+          0.924,
+          0.931,
+          0.95
+        ],
+        "per_slot_visited_fraction": [
+          0.0895,
+          0.076,
+          0.069,
+          0.05
+        ],
+        "per_slot_no_op_fraction": [
+          0.0895,
+          0.076,
+          0.069,
+          0.05
+        ]
+      },
+      "oracle_action_fractions": {
+        "continue": 0.9595,
+        "force_0": 0.0145,
+        "force_1": 0.012,
+        "force_2": 0.008,
+        "force_3": 0.006
+      },
+      "mechanism": {
+        "per_slot_force_minus_same_natural_mean": [
+          0.0021999999999999997,
+          0.00095,
+          0.001,
+          0.0013
+        ],
+        "natural_oracle_delta_vs_continue": 0.003,
+        "force_oracle_minus_natural_oracle": 0.0068000000000000005,
+        "force_oracle_winner_minus_its_same_candidate_natural": 0.007149999999999999
+      },
+      "continue_graph_ndc_mean": 918.8445,
+      "oracle_graph_ndc_mean": 922.654,
+      "oracle_vs_continue_NDC_ratio_minus_one": 0.004145968115388365,
+      "all_branch_suffix_NDC_min_max": [
+        98,
+        1856
+      ],
+      "actual_total_NDC_envelope_min_max": [
+        280,
+        2244
+      ],
+      "queries_with_unequal_branch_NDC": 1995,
+      "continue_cap_exhausted_count": 2,
+      "all_20000_bootstrap_values_exactly_reproduced": true
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 128,
+      "N": 2000,
+      "gain_hits": 127,
+      "mean_delta_pp": 0.635,
+      "corrected_ci_pp": [
+        0.36500000000000005,
+        0.975
+      ],
+      "gate_pass": true,
+      "coverage": {
+        "denominator": 2000,
+        "early_finished_fraction": 0.0,
+        "no_eligible_fraction": 0.0065,
+        "no_eligible_among_non_early_fraction_of_all": 0.0065,
+        "any_eligible_fraction": 0.9935,
+        "any_effective_force_fraction": 0.9935,
+        "all_force_no_op_fraction": 0.0065,
+        "oracle_strict_quality_gain_fraction": 0.029,
+        "oracle_selected_effective_fraction": 0.029,
+        "per_slot_eligible_fraction": [
+          0.878,
+          0.9005,
+          0.903,
+          0.9275
+        ],
+        "per_slot_visited_fraction": [
+          0.122,
+          0.0995,
+          0.097,
+          0.0725
+        ],
+        "per_slot_no_op_fraction": [
+          0.122,
+          0.0995,
+          0.097,
+          0.0725
+        ]
+      },
+      "oracle_action_fractions": {
+        "continue": 0.971,
+        "force_0": 0.0115,
+        "force_1": 0.0085,
+        "force_2": 0.0055,
+        "force_3": 0.0035
+      },
+      "mechanism": {
+        "per_slot_force_minus_same_natural_mean": [
+          0.0018,
+          0.00045,
+          0.00075,
+          0.00075
+        ],
+        "natural_oracle_delta_vs_continue": 0.00245,
+        "force_oracle_minus_natural_oracle": 0.0039,
+        "force_oracle_winner_minus_its_same_candidate_natural": 0.0041
+      },
+      "continue_graph_ndc_mean": 1644.6705,
+      "oracle_graph_ndc_mean": 1644.929,
+      "oracle_vs_continue_NDC_ratio_minus_one": 0.00015717433978434947,
+      "all_branch_suffix_NDC_min_max": [
+        155,
+        1856
+      ],
+      "actual_total_NDC_envelope_min_max": [
+        508,
+        3516
+      ],
+      "queries_with_unequal_branch_NDC": 1947,
+      "continue_cap_exhausted_count": 43,
+      "all_20000_bootstrap_values_exactly_reproduced": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "N": 2000,
+      "gain_hits": 46,
+      "mean_delta_pp": 0.22999999999999998,
+      "corrected_ci_pp": [
+        0.04,
+        0.495031250000011
+      ],
+      "gate_pass": false,
+      "coverage": {
+        "denominator": 2000,
+        "early_finished_fraction": 0.0,
+        "no_eligible_fraction": 0.0,
+        "no_eligible_among_non_early_fraction_of_all": 0.0,
+        "any_eligible_fraction": 1.0,
+        "any_effective_force_fraction": 1.0,
+        "all_force_no_op_fraction": 0.0,
+        "oracle_strict_quality_gain_fraction": 0.0045,
+        "oracle_selected_effective_fraction": 0.0045,
+        "per_slot_eligible_fraction": [
+          0.9935,
+          0.9935,
+          0.997,
+          0.9985
+        ],
+        "per_slot_visited_fraction": [
+          0.0065,
+          0.0065,
+          0.003,
+          0.0015
+        ],
+        "per_slot_no_op_fraction": [
+          0.0065,
+          0.0065,
+          0.003,
+          0.0015
+        ]
+      },
+      "oracle_action_fractions": {
+        "continue": 0.9955,
+        "force_0": 0.0015,
+        "force_1": 0.001,
+        "force_2": 0.0015,
+        "force_3": 0.0005
+      },
+      "mechanism": {
+        "per_slot_force_minus_same_natural_mean": [
+          0.0008,
+          0.00025,
+          0.0008500000000000001,
+          0.00035
+        ],
+        "natural_oracle_delta_vs_continue": 0.00045,
+        "force_oracle_minus_natural_oracle": 0.0018499999999999999,
+        "force_oracle_winner_minus_its_same_candidate_natural": 0.0018499999999999999
+      },
+      "continue_graph_ndc_mean": 1636.6005,
+      "oracle_graph_ndc_mean": 1637.428,
+      "oracle_vs_continue_NDC_ratio_minus_one": 0.0005056212557676965,
+      "all_branch_suffix_NDC_min_max": [
+        125,
+        1856
+      ],
+      "actual_total_NDC_envelope_min_max": [
+        327,
+        3318
+      ],
+      "queries_with_unequal_branch_NDC": 1977,
+      "continue_cap_exhausted_count": 25,
+      "all_20000_bootstrap_values_exactly_reproduced": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "N": 2000,
+      "gain_hits": 28,
+      "mean_delta_pp": 0.13999999999999999,
+      "corrected_ci_pp": [
+        0.005,
+        0.36
+      ],
+      "gate_pass": false,
+      "coverage": {
+        "denominator": 2000,
+        "early_finished_fraction": 0.0,
+        "no_eligible_fraction": 0.0,
+        "no_eligible_among_non_early_fraction_of_all": 0.0,
+        "any_eligible_fraction": 1.0,
+        "any_effective_force_fraction": 1.0,
+        "all_force_no_op_fraction": 0.0,
+        "oracle_strict_quality_gain_fraction": 0.003,
+        "oracle_selected_effective_fraction": 0.003,
+        "per_slot_eligible_fraction": [
+          0.9875,
+          0.9905,
+          0.9935,
+          0.9965
+        ],
+        "per_slot_visited_fraction": [
+          0.0125,
+          0.0095,
+          0.0065,
+          0.0035
+        ],
+        "per_slot_no_op_fraction": [
+          0.0125,
+          0.0095,
+          0.0065,
+          0.0035
+        ]
+      },
+      "oracle_action_fractions": {
+        "continue": 0.997,
+        "force_0": 0.0,
+        "force_1": 0.001,
+        "force_2": 0.0015,
+        "force_3": 0.0005
+      },
+      "mechanism": {
+        "per_slot_force_minus_same_natural_mean": [
+          -0.00045,
+          -0.00015000000000000001,
+          5e-05,
+          -0.00015000000000000001
+        ],
+        "natural_oracle_delta_vs_continue": 0.00045,
+        "force_oracle_minus_natural_oracle": 0.00095,
+        "force_oracle_winner_minus_its_same_candidate_natural": 0.00095
+      },
+      "continue_graph_ndc_mean": 2787.633,
+      "oracle_graph_ndc_mean": 2787.601,
+      "oracle_vs_continue_NDC_ratio_minus_one": -1.1479272917114258e-05,
+      "all_branch_suffix_NDC_min_max": [
+        102,
+        1856
+      ],
+      "actual_total_NDC_envelope_min_max": [
+        497,
+        4788
+      ],
+      "queries_with_unequal_branch_NDC": 1645,
+      "continue_cap_exhausted_count": 356,
+      "all_20000_bootstrap_values_exactly_reproduced": true
+    }
+  ],
+  "verification": {
+    "raw_rows": 8000,
+    "logical_branches": 72000,
+    "returned_ID_memberships_recomputed": 720000,
+    "saved_prefix_states_checked": 8000,
+    "physical_main_prefix_and_branch_executions": 154200,
+    "all_GT_hitcounts_equal_NPZ": true,
+    "all_oracle_choices_equal_NPZ": true,
+    "all_CSV_values_match": true,
+    "all_cost_coverage_mechanism_bookkeeping_summaries_match": true,
+    "both_raw_complete_before_scoring": true,
+    "validation_or_heldout_accessed": false,
+    "new_ANN_or_model_runs": 0,
+    "GT_rows_accessed_per_dataset": 2000
+  },
+  "resource_observations": {
+    "all_recorded_C2_command_wall_seconds": 122.37523961999977,
+    "max_recorded_C2_RSS_bytes": 10657427456,
+    "artifact_bytes_at_review": 307214674
+  },
+  "inputs": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "raw_sha256": "70403088cffad20c3bfc04199742e5018c560c6e13c5081c6d13cd5381fe039b",
+      "raw_rows": 4000,
+      "authorized_train_GT_top10_rows_read": 2000,
+      "sampled_GT_records_sha256": "abbff81ab1373f7b30c9162bd400fbb2174b655ac117e7f605445284659eb0ff",
+      "physical_prefix_and_branch_executions": 74596
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "raw_sha256": "112f804cde82a4169c781fed522efeb7d2308e8434cbe6ebaafd545ccb0f083a",
+      "raw_rows": 4000,
+      "authorized_train_GT_top10_rows_read": 2000,
+      "sampled_GT_records_sha256": "08e0f5d37abc2e8d453ffb864d9234b3db1b64b18f9ae93af997a53b2feca720",
+      "physical_prefix_and_branch_executions": 79604
+    }
+  ],
+  "report_sha256": "7f0c0621b136d591ecf66fca5509bf2d6c031bbe091afe57a70da9cee7956c64",
+  "audit_script_sha256": "e2c25371bb708a433307ca5f1d5d0c6310e54a446ab7cad42f6611a9061d1995",
+  "limitations": [
+    "2000 historical training-development queries per dataset, retained unconditionally",
+    "one fixed paired build, not build-level uncertainty",
+    "GT-privileged finite-action headroom, not a learned policy",
+    "common cap differs from actual equal work",
+    "natural-winner comparisons remain descriptive",
+    "bookkeeping/branch wall is not formal method QPS",
+    "C3/C4 remain unrun; no expansion or retuning follows this failure"
+  ]
+}

@@ -1,0 +1,291 @@
+{
+  "status": "COMPLETE_USER_SCOPED_EXPLORATION",
+  "created_utc": "2026-09-09T08:47:38.449240+00:00",
+  "authorization": "User requested full advancement of the recommended A+B experiment and final Fast-relative QPS, Recall, query-failure improvements. Supersedes completed prior research-only scope.",
+  "failure_definition": "Strict Recall@10<0.1 (hits==0), historical plot code and user clarification; local NETG PDF draft does not state threshold",
+  "scope": "User-final scope: two datasets, validation2000, seed20260828, NSG/Fast30K3/A+B, L64/128/256/400/800, one fixed query-only router, one single-thread warmup and timing per point",
+  "active_process": null,
+  "ann_search_calls": 169858752,
+  "model_fits": 12,
+  "next": "No automatic continuation of cancelled large matrices",
+  "controller_pid": 5513,
+  "controller_started_utc": "2026-09-09T08:57:57.139223+00:00",
+  "completed_datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "calls": 84311552,
+      "instrumented_only": true,
+      "parity_calls": 480,
+      "seconds": 3270.854129306,
+      "status": "COMPLETE"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "calls": 85546240,
+      "instrumented_only": true,
+      "parity_calls": 480,
+      "seconds": 3369.140361902,
+      "status": "COMPLETE"
+    }
+  ],
+  "active_dataset": null,
+  "command": [
+    "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/bin/benchmark_single_thread",
+    "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/single_thread_v1/inputs/validation/webvid2_5m_light_v1/seed20260829.json",
+    "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/single_thread_v1/results/validation/webvid2_5m_light_v1/seed20260829"
+  ],
+  "active_log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/st1_eval_validation_webvid2_5m_light_v1_seed20260829.log",
+  "updated_utc": "2026-09-09T13:30:06.960423+00:00",
+  "resource": {
+    "disk_free_bytes": 14796283904,
+    "mem_available_bytes": 123363844096
+  },
+  "label_progress": {
+    "L": 128,
+    "calls_done": 85546240,
+    "calls_per_second": 25391.119406927373,
+    "calls_total": 85546240,
+    "elapsed_seconds": 3369.140156013,
+    "eta_seconds": 0.0,
+    "hubs": 1940,
+    "queries": 22048,
+    "rows_complete": 22048,
+    "stage": "labels"
+  },
+  "completed_stages": [
+    {
+      "stage": "verify_full_labels",
+      "seconds": 10.00812837099511,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/verify_full_labels.log"
+    },
+    {
+      "stage": "train_webvid2_5m_light_v1_20260828_L64",
+      "seconds": 80.06569133800076,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/train_webvid2_5m_light_v1_20260828_L64.log"
+    },
+    {
+      "stage": "train_webvid2_5m_light_v1_20260828_L128",
+      "seconds": 60.04957706699497,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/train_webvid2_5m_light_v1_20260828_L128.log"
+    },
+    {
+      "stage": "train_webvid2_5m_light_v1_20260829_L64",
+      "seconds": 120.1002424870021,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/train_webvid2_5m_light_v1_20260829_L64.log"
+    },
+    {
+      "stage": "train_webvid2_5m_light_v1_20260829_L128",
+      "seconds": 130.10695462900185,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/train_webvid2_5m_light_v1_20260829_L128.log"
+    },
+    {
+      "stage": "train_webvid2_5m_light_v1_20260830_L64",
+      "seconds": 80.06708308200177,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/train_webvid2_5m_light_v1_20260830_L64.log"
+    },
+    {
+      "stage": "train_webvid2_5m_light_v1_20260830_L128",
+      "seconds": 90.07487703199877,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/train_webvid2_5m_light_v1_20260830_L128.log"
+    },
+    {
+      "stage": "train_yandex_t2i_official10M_ip_v1_20260828_L64",
+      "seconds": 80.06408852500317,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/train_yandex_t2i_official10M_ip_v1_20260828_L64.log"
+    },
+    {
+      "stage": "train_yandex_t2i_official10M_ip_v1_20260828_L128",
+      "seconds": 80.06314189499972,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/train_yandex_t2i_official10M_ip_v1_20260828_L128.log"
+    },
+    {
+      "stage": "train_yandex_t2i_official10M_ip_v1_20260829_L64",
+      "seconds": 70.05745337400003,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/train_yandex_t2i_official10M_ip_v1_20260829_L64.log"
+    },
+    {
+      "stage": "train_yandex_t2i_official10M_ip_v1_20260829_L128",
+      "seconds": 70.05898758699914,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/train_yandex_t2i_official10M_ip_v1_20260829_L128.log"
+    },
+    {
+      "stage": "train_yandex_t2i_official10M_ip_v1_20260830_L64",
+      "seconds": 90.07208544299647,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/train_yandex_t2i_official10M_ip_v1_20260830_L64.log"
+    },
+    {
+      "stage": "train_yandex_t2i_official10M_ip_v1_20260830_L128",
+      "seconds": 90.07355718899635,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/train_yandex_t2i_official10M_ip_v1_20260830_L128.log"
+    },
+    {
+      "stage": "prepare_calibration_check",
+      "seconds": 10.011052984002163,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/prepare_calibration_check.log"
+    },
+    {
+      "stage": "eval_calibration_check_webvid2_5m_light_v1_seed20260828",
+      "seconds": 10.007968685000378,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/eval_calibration_check_webvid2_5m_light_v1_seed20260828.log"
+    },
+    {
+      "stage": "eval_calibration_check_webvid2_5m_light_v1_seed20260829",
+      "seconds": 10.01049536299979,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/eval_calibration_check_webvid2_5m_light_v1_seed20260829.log"
+    },
+    {
+      "stage": "eval_calibration_check_webvid2_5m_light_v1_seed20260830",
+      "seconds": 10.01009486700059,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/eval_calibration_check_webvid2_5m_light_v1_seed20260830.log"
+    },
+    {
+      "stage": "eval_calibration_check_yandex_t2i_official10M_ip_v1_seed20260828",
+      "seconds": 20.01582630500343,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/eval_calibration_check_yandex_t2i_official10M_ip_v1_seed20260828.log"
+    },
+    {
+      "stage": "eval_calibration_check_yandex_t2i_official10M_ip_v1_seed20260829",
+      "seconds": 20.018821502002538,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/eval_calibration_check_yandex_t2i_official10M_ip_v1_seed20260829.log"
+    },
+    {
+      "stage": "eval_calibration_check_yandex_t2i_official10M_ip_v1_seed20260830",
+      "seconds": 20.01705959300307,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/eval_calibration_check_yandex_t2i_official10M_ip_v1_seed20260830.log"
+    },
+    {
+      "stage": "prepare_audit",
+      "seconds": 10.008553150000807,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/prepare_audit.log"
+    },
+    {
+      "stage": "eval_audit_webvid2_5m_light_v1_seed20260828",
+      "seconds": 10.00993069899414,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/eval_audit_webvid2_5m_light_v1_seed20260828.log"
+    },
+    {
+      "stage": "eval_audit_webvid2_5m_light_v1_seed20260829",
+      "seconds": 10.010533170003328,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/eval_audit_webvid2_5m_light_v1_seed20260829.log"
+    },
+    {
+      "stage": "eval_audit_webvid2_5m_light_v1_seed20260830",
+      "seconds": 10.010548710000876,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/eval_audit_webvid2_5m_light_v1_seed20260830.log"
+    },
+    {
+      "stage": "eval_audit_yandex_t2i_official10M_ip_v1_seed20260828",
+      "seconds": 20.02106813700084,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/eval_audit_yandex_t2i_official10M_ip_v1_seed20260828.log"
+    },
+    {
+      "stage": "eval_audit_yandex_t2i_official10M_ip_v1_seed20260829",
+      "seconds": 20.018017161004536,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/eval_audit_yandex_t2i_official10M_ip_v1_seed20260829.log"
+    },
+    {
+      "stage": "eval_audit_yandex_t2i_official10M_ip_v1_seed20260830",
+      "seconds": 20.01456674400106,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/eval_audit_yandex_t2i_official10M_ip_v1_seed20260830.log"
+    },
+    {
+      "stage": "prepare_validation",
+      "seconds": 10.00817842700053,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/prepare_validation.log"
+    },
+    {
+      "stage": "eval_validation_webvid2_5m_light_v1_seed20260828",
+      "seconds": 200.16960851299518,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/eval_validation_webvid2_5m_light_v1_seed20260828.log"
+    },
+    {
+      "stage": "eval_validation_webvid2_5m_light_v1_seed20260829",
+      "seconds": 200.1865537429985,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/eval_validation_webvid2_5m_light_v1_seed20260829.log"
+    },
+    {
+      "stage": "reboot_20260909T1210Z_eval_validation_webvid2_5m_light_v1_seed20260830",
+      "seconds": 220.202034471,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/reboot_20260909T1210Z_eval_validation_webvid2_5m_light_v1_seed20260830.log"
+    },
+    {
+      "stage": "st1_eval_calibration_check_webvid2_5m_light_v1_seed20260828",
+      "seconds": 40.03495947400006,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/st1_eval_calibration_check_webvid2_5m_light_v1_seed20260828.log"
+    },
+    {
+      "stage": "st1_eval_calibration_check_webvid2_5m_light_v1_seed20260829",
+      "seconds": 30.023384731999954,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/st1_eval_calibration_check_webvid2_5m_light_v1_seed20260829.log"
+    },
+    {
+      "stage": "st1_eval_calibration_check_webvid2_5m_light_v1_seed20260830",
+      "seconds": 30.025737324000033,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/st1_eval_calibration_check_webvid2_5m_light_v1_seed20260830.log"
+    },
+    {
+      "stage": "st1_eval_calibration_check_yandex_t2i_official10M_ip_v1_seed20260828",
+      "seconds": 90.0808700880001,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/st1_eval_calibration_check_yandex_t2i_official10M_ip_v1_seed20260828.log"
+    },
+    {
+      "stage": "st1_eval_calibration_check_yandex_t2i_official10M_ip_v1_seed20260829",
+      "seconds": 40.04282689499996,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/st1_eval_calibration_check_yandex_t2i_official10M_ip_v1_seed20260829.log"
+    },
+    {
+      "stage": "st1_eval_calibration_check_yandex_t2i_official10M_ip_v1_seed20260830",
+      "seconds": 40.03415926399998,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/st1_eval_calibration_check_yandex_t2i_official10M_ip_v1_seed20260830.log"
+    },
+    {
+      "stage": "st1_eval_audit_webvid2_5m_light_v1_seed20260828",
+      "seconds": 30.028212147999966,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/st1_eval_audit_webvid2_5m_light_v1_seed20260828.log"
+    },
+    {
+      "stage": "st1_eval_audit_webvid2_5m_light_v1_seed20260829",
+      "seconds": 30.019853441000123,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/st1_eval_audit_webvid2_5m_light_v1_seed20260829.log"
+    },
+    {
+      "stage": "st1_eval_audit_webvid2_5m_light_v1_seed20260830",
+      "seconds": 30.028864409000107,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/st1_eval_audit_webvid2_5m_light_v1_seed20260830.log"
+    },
+    {
+      "stage": "st1_eval_audit_yandex_t2i_official10M_ip_v1_seed20260828",
+      "seconds": 40.03606499500006,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/st1_eval_audit_yandex_t2i_official10M_ip_v1_seed20260828.log"
+    },
+    {
+      "stage": "st1_eval_audit_yandex_t2i_official10M_ip_v1_seed20260829",
+      "seconds": 40.03349881999998,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/st1_eval_audit_yandex_t2i_official10M_ip_v1_seed20260829.log"
+    },
+    {
+      "stage": "st1_eval_audit_yandex_t2i_official10M_ip_v1_seed20260830",
+      "seconds": 40.0336097039999,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/st1_eval_audit_yandex_t2i_official10M_ip_v1_seed20260830.log"
+    },
+    {
+      "stage": "st1_eval_validation_webvid2_5m_light_v1_seed20260828",
+      "seconds": 1661.492141431,
+      "log": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/logs/st1_eval_validation_webvid2_5m_light_v1_seed20260828.log"
+    }
+  ],
+  "active_stage": null,
+  "active_stage_seconds": 100.09701619299994,
+  "recovery_attempt": "reboot_20260909T1210Z",
+  "evaluation_threads": 1,
+  "offline_training_threads": 16,
+  "superseded_timing": "Original 16-thread results preserved and excluded from final comparison",
+  "pause_reason": "User says exploration does not need so many measurements or points",
+  "prior_controller_stop_error": "RuntimeError('interrupted 15')",
+  "current_execution": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/state.json",
+  "conclusion": "EXPLORATORY_NO_OVERALL_FAST_GAIN",
+  "final_report": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/report.md",
+  "original_training_scope": "Recommended low-rank fixed-slot router; frozen original NSG/raw IP; WebVid and official Yandex; CPU only; L64/128; Fast1 and Fast3 controls",
+  "ann_search_calls_note": "Legacy completed-label accounting; not a total over interrupted/cancelled evaluation passes",
+  "final_exploration_physical_graph_calls": 120960
+}

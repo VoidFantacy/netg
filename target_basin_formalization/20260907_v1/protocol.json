@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "protocol_version": "target-basin-formalization-20260907-v1",
+  "created_date": "2026-09-07",
+  "selection_split": "drl_train_then_validation",
+  "heldout_accessed": false,
+  "datasets": [
+    {
+      "key": "webvid2_5m_light_v1",
+      "artifact_version": "roargraph-webvid2.5m-ip-v1",
+      "metric": "ip",
+      "normalization": "source_unit_norm_no_additional",
+      "manifest_sha256": "1bad4d81fe3ef753c4df546ffca6b89709c626060221ad5227aea78c4ad83614",
+      "graph_info_sha256": "bf7494da189429714ecafa82f21723af1c9cb3308398ca48858ec3775695fae5",
+      "graph_sha256": "0a95d309b4980e0f0b73b7ad1222ec611db1f97c32ba2b69f070f5a952b9129a",
+      "graph_bytes": 5791560103,
+      "hub_budget": 815
+    },
+    {
+      "key": "yandex_t2i_official10M_ip_v1",
+      "artifact_version": "yandex-t2i-official-first10m-ip-v1",
+      "metric": "ip",
+      "normalization": "none",
+      "manifest_sha256": "84cd11015c2b98b4fc81d6f62b907351889a87d5b14126a17966104a0bb2000b",
+      "graph_info_sha256": "15518765ec986df46423d0310e9c2359ca1ad0637235e59b60ffb8c91ce6f016",
+      "graph_sha256": "fa6eb7dd4e8d9dc95d696947fc18bd167880fb336212cb7bd073e7acddd4bf2e",
+      "graph_bytes": 10640000103,
+      "hub_budget": 821
+    }
+  ],
+  "frozen_graph": {
+    "R": 64,
+    "L_build": 100,
+    "C": 512
+  },
+  "router": {
+    "backend": "dense_three_view_with_primary_micro_hnsw",
+    "stage": "E0_and_E1_dense",
+    "prototype_views": 3,
+    "top_per_view": 8,
+    "top_m": 3,
+    "anchor": "primary_view_rank0",
+    "duplicate_merge": "maximum_inner_product_score",
+    "tie_break": "score_desc_then_entry_id_asc",
+    "primary_hnsw": {
+      "M": 16,
+      "ef_construction": 200,
+      "ef_search": 10,
+      "random_seed": 100
+    }
+  },
+  "e1b_router": {
+    "backend": "hnsw_all",
+    "prototype_views": 3,
+    "top_per_view": 8,
+    "top_m": 3,
+    "anchor": "primary_view_rank0",
+    "duplicate_merge": "maximum_inner_product_score",
+    "tie_break": "score_desc_then_entry_id_asc",
+    "M": 16,
+    "ef_construction": 200,
+    "primary": {
+      "ef_search": 10,
+      "random_seed": 100
+    },
+    "secondary": {
+      "ef_search": 32,
+      "random_seeds": [101, 102],
+      "candidate_rerank": "exact_inner_product"
+    },
+    "parameter_scan": false
+  },
+  "prechange_source_sha256": {
+    "benches/bench_entry_oracle.cpp": "25f432983ed33f51843654e4241503946ae922fae3fc1b23feb2d6a587eec7f3",
+    "benches/CMakeLists.txt": "ddb22ca4eca8f6f4ba577f67bd8a280787736b0bb05a5a2caa71e80c7eb109b3",
+    "benches/datasets/settings.json": "6519ca075544828ae0ea85f55f1c8e6a662affc8bf1b67f39bb9eccc294a590a"
+  },
+  "resources_at_freeze": {
+    "cpu": "Intel Xeon 6982P-C",
+    "logical_cpus": 16,
+    "ram_gib": 123,
+    "available_ram_gib": 120,
+    "swap_gib": 0,
+    "data_available_gib": 22
+  },
+  "stages": {
+    "E0": "PASS",
+    "E1": "FAIL_TRIGGER_E1B",
+    "E1b": "NO_GO_ROUTING_COST",
+    "E2": "NOT_RUN",
+    "E3": "NOT_RUN",
+    "E4": "NOT_RUN"
+  },
+  "invariants": [
+    "E0-E3 must not load held-out query or GT",
+    "new outputs must not overwrite existing artifacts",
+    "timing and distance-counting runs are separate",
+    "three views form one ensemble instance",
+    "graph adjacency and dataset contracts remain frozen"
+  ]
+}

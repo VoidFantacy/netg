@@ -1,0 +1,132 @@
+{
+  "artifact_version": "roargraph-webvid2.5m-ip-v1",
+  "candidate_count": 815,
+  "dataset": "webvid2_5m_light_v1",
+  "metric": "ip",
+  "num_queries": 10000,
+  "num_runs": 3,
+  "oracle_definition": "skipped; router comparison only",
+  "results": [
+    {
+      "methods": [
+        {
+          "mean_graph_latency_us": 868.449092266667,
+          "mean_graph_ndc": 1581.1085,
+          "mean_recall": 0.597007,
+          "method": "Medoid",
+          "samples": 30000
+        },
+        {
+          "mean_graph_latency_us": 677.6059565333335,
+          "mean_graph_ndc": 1341.2723,
+          "mean_recall": 0.614366,
+          "method": "Fast_Prototype_Top3",
+          "samples": 30000
+        },
+        {
+          "mean_graph_latency_us": 627.2905530333334,
+          "mean_graph_ndc": 1489.6616,
+          "mean_recall": 0.606086,
+          "method": "GATE_Max200EarlyStop_Top3",
+          "samples": 30000
+        }
+      ],
+      "search_L": 100,
+      "top_k": 100
+    },
+    {
+      "methods": [
+        {
+          "mean_graph_latency_us": 1069.48988,
+          "mean_graph_ndc": 1893.0309,
+          "mean_recall": 0.6389460000000002,
+          "method": "Medoid",
+          "samples": 30000
+        },
+        {
+          "mean_graph_latency_us": 861.3493245666665,
+          "mean_graph_ndc": 1655.3978,
+          "mean_recall": 0.6554570000000002,
+          "method": "Fast_Prototype_Top3",
+          "samples": 30000
+        },
+        {
+          "mean_graph_latency_us": 781.8626583666663,
+          "mean_graph_ndc": 1800.5721,
+          "mean_recall": 0.6472910000000004,
+          "method": "GATE_Max200EarlyStop_Top3",
+          "samples": 30000
+        }
+      ],
+      "search_L": 128,
+      "top_k": 100
+    },
+    {
+      "methods": [
+        {
+          "mean_graph_latency_us": 1546.8002062,
+          "mean_graph_ndc": 2676.9411,
+          "mean_recall": 0.7108539999999999,
+          "method": "Medoid",
+          "samples": 30000
+        },
+        {
+          "mean_graph_latency_us": 1313.3487820000003,
+          "mean_graph_ndc": 2439.7695,
+          "mean_recall": 0.7222480000000001,
+          "method": "Fast_Prototype_Top3",
+          "samples": 30000
+        },
+        {
+          "mean_graph_latency_us": 1204.0706996666668,
+          "mean_graph_ndc": 2581.0149,
+          "mean_recall": 0.716622,
+          "method": "GATE_Max200EarlyStop_Top3",
+          "samples": 30000
+        }
+      ],
+      "search_L": 200,
+      "top_k": 100
+    },
+    {
+      "methods": [
+        {
+          "mean_graph_latency_us": 2792.872021833334,
+          "mean_graph_ndc": 4719.3147,
+          "mean_recall": 0.8016770000000006,
+          "method": "Medoid",
+          "samples": 30000
+        },
+        {
+          "mean_graph_latency_us": 2533.6597045,
+          "mean_graph_ndc": 4505.3522,
+          "mean_recall": 0.8098250000000006,
+          "method": "Fast_Prototype_Top3",
+          "samples": 30000
+        },
+        {
+          "mean_graph_latency_us": 2469.950786066667,
+          "mean_graph_ndc": 4632.8808,
+          "mean_recall": 0.8065260000000007,
+          "method": "GATE_Max200EarlyStop_Top3",
+          "samples": 30000
+        }
+      ],
+      "search_L": 400,
+      "top_k": 100
+    }
+  ],
+  "schema_version": 1,
+  "search_Ls": [
+    100,
+    128,
+    200,
+    400
+  ],
+  "split": "validation",
+  "status": "complete",
+  "threads": 16,
+  "top_ks": [
+    100
+  ]
+}

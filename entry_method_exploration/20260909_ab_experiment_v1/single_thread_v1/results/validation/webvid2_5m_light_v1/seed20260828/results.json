@@ -1,0 +1,1554 @@
+{
+  "dataset": "webvid2_5m_light_v1",
+  "methods": [
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/prototype.f32",
+        "dim": 512,
+        "exact": false,
+        "family": "fast20k_1",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+        "name": "fast20k_1_L64",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 484,
+      "failure_rate": 0.0484,
+      "mean_graph_ndc": 935.7377,
+      "mean_route_ndc": 127.8416,
+      "mean_total_ndc": 1063.5793,
+      "name": "fast20k_1_L64",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.65373,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 2.812110045,
+          "graph_only_seconds": 2.682734443,
+          "order_position": 0,
+          "qps": 3556.0486040652086,
+          "repeat": 0,
+          "route_only_seconds": 0.120561357
+        },
+        {
+          "end_to_end_seconds": 2.755709064,
+          "graph_only_seconds": 2.596004537,
+          "order_position": 19,
+          "qps": 3628.830100621972,
+          "repeat": 1,
+          "route_only_seconds": 0.120361716
+        },
+        {
+          "end_to_end_seconds": 2.83234129,
+          "graph_only_seconds": 2.629482517,
+          "order_position": 10,
+          "qps": 3530.6479608606774,
+          "repeat": 2,
+          "route_only_seconds": 0.120525472
+        }
+      ],
+      "total_hits": 65373
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+        "dim": 512,
+        "exact": false,
+        "family": "fast30k_1",
+        "hnsw_seed": 100,
+        "hub_count": 815,
+        "k": 1,
+        "legacy_heap_order": true,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+        "name": "fast30k_1_L64",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 464,
+      "failure_rate": 0.0464,
+      "mean_graph_ndc": 932.1725,
+      "mean_route_ndc": 122.0393,
+      "mean_total_ndc": 1054.2118,
+      "name": "fast30k_1_L64",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.65474,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 2.821135505,
+          "graph_only_seconds": 2.642896877,
+          "order_position": 1,
+          "qps": 3544.6719883807923,
+          "repeat": 0,
+          "route_only_seconds": 0.079349721
+        },
+        {
+          "end_to_end_seconds": 2.745555229,
+          "graph_only_seconds": 2.610964478,
+          "order_position": 20,
+          "qps": 3642.250534381802,
+          "repeat": 1,
+          "route_only_seconds": 0.079033136
+        },
+        {
+          "end_to_end_seconds": 2.771507747,
+          "graph_only_seconds": 2.616736,
+          "order_position": 11,
+          "qps": 3608.14434339014,
+          "repeat": 2,
+          "route_only_seconds": 0.079541157
+        }
+      ],
+      "total_hits": 65474
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/prototype.f32",
+        "dim": 512,
+        "exact": false,
+        "family": "fast20k_3",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 3,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+        "name": "fast20k_3_L64",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 468,
+      "failure_rate": 0.0468,
+      "mean_graph_ndc": 926.5762,
+      "mean_route_ndc": 127.8416,
+      "mean_total_ndc": 1054.4178,
+      "name": "fast20k_3_L64",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.65522,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 2.781718933,
+          "graph_only_seconds": 2.688507654,
+          "order_position": 2,
+          "qps": 3594.8994995031007,
+          "repeat": 0,
+          "route_only_seconds": 0.070084912
+        },
+        {
+          "end_to_end_seconds": 2.779710415,
+          "graph_only_seconds": 2.684344092,
+          "order_position": 21,
+          "qps": 3597.4970435904206,
+          "repeat": 1,
+          "route_only_seconds": 0.069836894
+        },
+        {
+          "end_to_end_seconds": 2.728212748,
+          "graph_only_seconds": 2.600392546,
+          "order_position": 12,
+          "qps": 3665.4032964734174,
+          "repeat": 2,
+          "route_only_seconds": 0.069919482
+        }
+      ],
+      "total_hits": 65522
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+        "dim": 512,
+        "exact": false,
+        "family": "fast30k_3",
+        "hnsw_seed": 100,
+        "hub_count": 815,
+        "k": 3,
+        "legacy_heap_order": true,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+        "name": "fast30k_3_L64",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 462,
+      "failure_rate": 0.0462,
+      "mean_graph_ndc": 922.3222,
+      "mean_route_ndc": 122.0393,
+      "mean_total_ndc": 1044.3615,
+      "name": "fast30k_3_L64",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.65505,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 2.893638765,
+          "graph_only_seconds": 2.734167711,
+          "order_position": 3,
+          "qps": 3455.8563843403585,
+          "repeat": 0,
+          "route_only_seconds": 0.067845001
+        },
+        {
+          "end_to_end_seconds": 2.757529338,
+          "graph_only_seconds": 2.574580136,
+          "order_position": 22,
+          "qps": 3626.434671862048,
+          "repeat": 1,
+          "route_only_seconds": 0.067903155
+        },
+        {
+          "end_to_end_seconds": 2.745140604,
+          "graph_only_seconds": 2.610382051,
+          "order_position": 13,
+          "qps": 3642.800658526852,
+          "repeat": 2,
+          "route_only_seconds": 0.067834579
+        }
+      ],
+      "total_hits": 65505
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/prototype.f32",
+        "dim": 512,
+        "exact": true,
+        "family": "fast20k_exact1",
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+        "name": "fast20k_exact1_L64",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 463,
+      "failure_rate": 0.0463,
+      "mean_graph_ndc": 932.8183,
+      "mean_route_ndc": 815.0,
+      "mean_total_ndc": 1747.8183,
+      "name": "fast20k_exact1_L64",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.65533,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 3.217720958,
+          "graph_only_seconds": 2.683459968,
+          "order_position": 4,
+          "qps": 3107.7896842290447,
+          "repeat": 0,
+          "route_only_seconds": 0.177100203
+        },
+        {
+          "end_to_end_seconds": 3.112126273,
+          "graph_only_seconds": 2.627627918,
+          "order_position": 23,
+          "qps": 3213.2372284368425,
+          "repeat": 1,
+          "route_only_seconds": 0.174221035
+        },
+        {
+          "end_to_end_seconds": 3.132023378,
+          "graph_only_seconds": 2.623956253,
+          "order_position": 14,
+          "qps": 3192.824188427881,
+          "repeat": 2,
+          "route_only_seconds": 0.174705143
+        }
+      ],
+      "total_hits": 65533
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L64/w_only/candidate.W.f32",
+        "dim": 512,
+        "exact": false,
+        "family": "w_only",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L64/w_only/candidate.mapping.i32",
+        "name": "w_only_L64",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 449,
+      "failure_rate": 0.0449,
+      "mean_graph_ndc": 931.9818,
+      "mean_route_ndc": 131.5547,
+      "mean_total_ndc": 1063.5365,
+      "name": "w_only_L64",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.656,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 2.812099908,
+          "graph_only_seconds": 2.657958108,
+          "order_position": 5,
+          "qps": 3556.0614228361906,
+          "repeat": 0,
+          "route_only_seconds": 0.071484997
+        },
+        {
+          "end_to_end_seconds": 2.773212205,
+          "graph_only_seconds": 2.675827229,
+          "order_position": 24,
+          "qps": 3605.926723519522,
+          "repeat": 1,
+          "route_only_seconds": 0.071487584
+        },
+        {
+          "end_to_end_seconds": 2.831711179,
+          "graph_only_seconds": 2.720003858,
+          "order_position": 15,
+          "qps": 3531.4335989348438,
+          "repeat": 2,
+          "route_only_seconds": 0.071496194
+        }
+      ],
+      "total_hits": 65600
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L64/w_only/candidate.W.f32",
+        "dim": 512,
+        "exact": true,
+        "family": "w_only_exact",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L64/w_only/candidate.mapping.i32",
+        "name": "w_only_exact_L64",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 429,
+      "failure_rate": 0.0429,
+      "mean_graph_ndc": 928.9273,
+      "mean_route_ndc": 815.0,
+      "mean_total_ndc": 1743.9273,
+      "name": "w_only_exact_L64",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.65784,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 3.224188146,
+          "graph_only_seconds": 2.635847824,
+          "order_position": 6,
+          "qps": 3101.555972285992,
+          "repeat": 0,
+          "route_only_seconds": 0.255904233
+        },
+        {
+          "end_to_end_seconds": 3.159331964,
+          "graph_only_seconds": 2.640679034,
+          "order_position": 25,
+          "qps": 3165.226102843303,
+          "repeat": 1,
+          "route_only_seconds": 0.255126446
+        },
+        {
+          "end_to_end_seconds": 3.126296568,
+          "graph_only_seconds": 2.649740263,
+          "order_position": 16,
+          "qps": 3198.672864998648,
+          "repeat": 2,
+          "route_only_seconds": 0.255131992
+        }
+      ],
+      "total_hits": 65784
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L64/mapping_only/candidate.W.f32",
+        "dim": 512,
+        "exact": false,
+        "family": "mapping_only",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L64/mapping_only/candidate.mapping.i32",
+        "name": "mapping_only_L64",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 573,
+      "failure_rate": 0.0573,
+      "mean_graph_ndc": 1062.5876,
+      "mean_route_ndc": 127.8416,
+      "mean_total_ndc": 1190.4292,
+      "name": "mapping_only_L64",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.64534,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 3.221710332,
+          "graph_only_seconds": 3.017848861,
+          "order_position": 7,
+          "qps": 3103.9413756953495,
+          "repeat": 0,
+          "route_only_seconds": 0.069584012
+        },
+        {
+          "end_to_end_seconds": 3.213351937,
+          "graph_only_seconds": 3.024517747,
+          "order_position": 26,
+          "qps": 3112.015177937853,
+          "repeat": 1,
+          "route_only_seconds": 0.069725283
+        },
+        {
+          "end_to_end_seconds": 3.202860452,
+          "graph_only_seconds": 3.038103696,
+          "order_position": 17,
+          "qps": 3122.209084618589,
+          "repeat": 2,
+          "route_only_seconds": 0.069589779
+        }
+      ],
+      "total_hits": 64534
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L64/mapping_only/candidate.W.f32",
+        "dim": 512,
+        "exact": true,
+        "family": "mapping_only_exact",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L64/mapping_only/candidate.mapping.i32",
+        "name": "mapping_only_exact_L64",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 565,
+      "failure_rate": 0.0565,
+      "mean_graph_ndc": 1061.9028,
+      "mean_route_ndc": 815.0,
+      "mean_total_ndc": 1876.9028,
+      "name": "mapping_only_exact_L64",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.64563,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 3.520209409,
+          "graph_only_seconds": 3.028671769,
+          "order_position": 8,
+          "qps": 2840.740091891505,
+          "repeat": 0,
+          "route_only_seconds": 0.255008742
+        },
+        {
+          "end_to_end_seconds": 3.593061912,
+          "graph_only_seconds": 3.050892507,
+          "order_position": 27,
+          "qps": 2783.141578107046,
+          "repeat": 1,
+          "route_only_seconds": 0.255027429
+        },
+        {
+          "end_to_end_seconds": 3.58052072,
+          "graph_only_seconds": 3.111613526,
+          "order_position": 18,
+          "qps": 2792.8898565346103,
+          "repeat": 2,
+          "route_only_seconds": 0.254895813
+        }
+      ],
+      "total_hits": 64563
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L64/joint/candidate.W.f32",
+        "dim": 512,
+        "exact": false,
+        "family": "joint",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L64/joint/candidate.mapping.i32",
+        "name": "joint_L64",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 573,
+      "failure_rate": 0.0573,
+      "mean_graph_ndc": 1062.5876,
+      "mean_route_ndc": 127.8416,
+      "mean_total_ndc": 1190.4292,
+      "name": "joint_L64",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.64534,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 3.153412905,
+          "graph_only_seconds": 3.077053606,
+          "order_position": 9,
+          "qps": 3171.167335601425,
+          "repeat": 0,
+          "route_only_seconds": 0.069317648
+        },
+        {
+          "end_to_end_seconds": 3.198435506,
+          "graph_only_seconds": 3.043381731,
+          "order_position": 0,
+          "qps": 3126.5285734981458,
+          "repeat": 1,
+          "route_only_seconds": 0.069479464
+        },
+        {
+          "end_to_end_seconds": 3.182402698,
+          "graph_only_seconds": 3.043327523,
+          "order_position": 19,
+          "qps": 3142.279890060601,
+          "repeat": 2,
+          "route_only_seconds": 0.06942336
+        }
+      ],
+      "total_hits": 64534
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L64/joint/candidate.W.f32",
+        "dim": 512,
+        "exact": true,
+        "family": "joint_exact",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L64/joint/candidate.mapping.i32",
+        "name": "joint_exact_L64",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 565,
+      "failure_rate": 0.0565,
+      "mean_graph_ndc": 1061.9028,
+      "mean_route_ndc": 815.0,
+      "mean_total_ndc": 1876.9028,
+      "name": "joint_exact_L64",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.64563,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 3.576208833,
+          "graph_only_seconds": 3.034004576,
+          "order_position": 10,
+          "qps": 2796.2572844526053,
+          "repeat": 0,
+          "route_only_seconds": 0.257734436
+        },
+        {
+          "end_to_end_seconds": 3.597077405,
+          "graph_only_seconds": 3.070018821,
+          "order_position": 1,
+          "qps": 2780.0346987528897,
+          "repeat": 1,
+          "route_only_seconds": 0.257825513
+        },
+        {
+          "end_to_end_seconds": 3.59394236,
+          "graph_only_seconds": 3.025583819,
+          "order_position": 20,
+          "qps": 2782.4597609851485,
+          "repeat": 2,
+          "route_only_seconds": 0.257790225
+        }
+      ],
+      "total_hits": 64563
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L64/staged/candidate.W.f32",
+        "dim": 512,
+        "exact": false,
+        "family": "staged",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L64/staged/candidate.mapping.i32",
+        "name": "staged_L64",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 545,
+      "failure_rate": 0.0545,
+      "mean_graph_ndc": 1053.3234,
+      "mean_route_ndc": 131.5547,
+      "mean_total_ndc": 1184.8781,
+      "name": "staged_L64",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.6464,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 3.144037662,
+          "graph_only_seconds": 2.996671627,
+          "order_position": 11,
+          "qps": 3180.623476895233,
+          "repeat": 0,
+          "route_only_seconds": 0.071788056
+        },
+        {
+          "end_to_end_seconds": 3.200936545,
+          "graph_only_seconds": 3.015328516,
+          "order_position": 2,
+          "qps": 3124.0856728698445,
+          "repeat": 1,
+          "route_only_seconds": 0.071815676
+        },
+        {
+          "end_to_end_seconds": 3.160156396,
+          "graph_only_seconds": 3.013841655,
+          "order_position": 21,
+          "qps": 3164.4003482414987,
+          "repeat": 2,
+          "route_only_seconds": 0.071820562
+        }
+      ],
+      "total_hits": 64640
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L64/staged/candidate.W.f32",
+        "dim": 512,
+        "exact": true,
+        "family": "staged_exact",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L64/staged/candidate.mapping.i32",
+        "name": "staged_exact_L64",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 542,
+      "failure_rate": 0.0542,
+      "mean_graph_ndc": 1051.8689,
+      "mean_route_ndc": 815.0,
+      "mean_total_ndc": 1866.8689,
+      "name": "staged_exact_L64",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.64701,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 3.539691417,
+          "graph_only_seconds": 3.083354259,
+          "order_position": 12,
+          "qps": 2825.1050224246146,
+          "repeat": 0,
+          "route_only_seconds": 0.256704932
+        },
+        {
+          "end_to_end_seconds": 3.545832525,
+          "graph_only_seconds": 2.993297022,
+          "order_position": 3,
+          "qps": 2820.2121587792703,
+          "repeat": 1,
+          "route_only_seconds": 0.256625416
+        },
+        {
+          "end_to_end_seconds": 3.549278089,
+          "graph_only_seconds": 3.001879726,
+          "order_position": 22,
+          "qps": 2817.47435654372,
+          "repeat": 2,
+          "route_only_seconds": 0.257303639
+        }
+      ],
+      "total_hits": 64701
+    },
+    {
+      "L": 64,
+      "configuration": {
+        "L": 64,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/prototype.f32",
+        "dim": 512,
+        "exact": false,
+        "family": "joint_selected",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+        "name": "joint_selected_L64",
+        "seed": 20260828,
+        "selected_fallback": true,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 484,
+      "failure_rate": 0.0484,
+      "mean_graph_ndc": 935.7377,
+      "mean_route_ndc": 127.8416,
+      "mean_total_ndc": 1063.5793,
+      "name": "joint_selected_L64",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.65373,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 2.926115588,
+          "graph_only_seconds": 2.670516275,
+          "order_position": 13,
+          "qps": 3417.4999924849176,
+          "repeat": 0,
+          "route_only_seconds": 0.069523681
+        },
+        {
+          "end_to_end_seconds": 2.811561086,
+          "graph_only_seconds": 2.6600178,
+          "order_position": 4,
+          "qps": 3556.742924702721,
+          "repeat": 1,
+          "route_only_seconds": 0.069543386
+        },
+        {
+          "end_to_end_seconds": 2.806840254,
+          "graph_only_seconds": 2.648631551,
+          "order_position": 23,
+          "qps": 3562.7250199754335,
+          "repeat": 2,
+          "route_only_seconds": 0.06962270499999999
+        }
+      ],
+      "total_hits": 65373
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/prototype.f32",
+        "dim": 512,
+        "exact": false,
+        "family": "fast20k_1",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+        "name": "fast20k_1_L128",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 226,
+      "failure_rate": 0.0226,
+      "mean_graph_ndc": 1667.9393,
+      "mean_route_ndc": 127.8416,
+      "mean_total_ndc": 1795.7809,
+      "name": "fast20k_1_L128",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.74346,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 4.965283902,
+          "graph_only_seconds": 4.863509289,
+          "order_position": 14,
+          "qps": 2013.9835299190106,
+          "repeat": 0,
+          "route_only_seconds": 0.069518577
+        },
+        {
+          "end_to_end_seconds": 5.129964474,
+          "graph_only_seconds": 4.920705458,
+          "order_position": 5,
+          "qps": 1949.3312381952373,
+          "repeat": 1,
+          "route_only_seconds": 0.069705513
+        },
+        {
+          "end_to_end_seconds": 5.079689349,
+          "graph_only_seconds": 4.915326222,
+          "order_position": 24,
+          "qps": 1968.6243218728769,
+          "repeat": 2,
+          "route_only_seconds": 0.069447754
+        }
+      ],
+      "total_hits": 74346
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+        "dim": 512,
+        "exact": false,
+        "family": "fast30k_1",
+        "hnsw_seed": 100,
+        "hub_count": 815,
+        "k": 1,
+        "legacy_heap_order": true,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+        "name": "fast30k_1_L128",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 223,
+      "failure_rate": 0.0223,
+      "mean_graph_ndc": 1664.3409,
+      "mean_route_ndc": 122.0393,
+      "mean_total_ndc": 1786.3802,
+      "name": "fast30k_1_L128",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.74364,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 5.037523976,
+          "graph_only_seconds": 4.896483087,
+          "order_position": 15,
+          "qps": 1985.102214429639,
+          "repeat": 0,
+          "route_only_seconds": 0.067317797
+        },
+        {
+          "end_to_end_seconds": 5.005342336,
+          "graph_only_seconds": 4.847842509,
+          "order_position": 6,
+          "qps": 1997.865346407347,
+          "repeat": 1,
+          "route_only_seconds": 0.0672377
+        },
+        {
+          "end_to_end_seconds": 5.090997575,
+          "graph_only_seconds": 4.900251585,
+          "order_position": 25,
+          "qps": 1964.2515740149413,
+          "repeat": 2,
+          "route_only_seconds": 0.067322707
+        }
+      ],
+      "total_hits": 74364
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/prototype.f32",
+        "dim": 512,
+        "exact": false,
+        "family": "fast20k_3",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 3,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+        "name": "fast20k_3_L128",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 222,
+      "failure_rate": 0.0222,
+      "mean_graph_ndc": 1660.1439,
+      "mean_route_ndc": 127.8416,
+      "mean_total_ndc": 1787.9855,
+      "name": "fast20k_3_L128",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.74535,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 5.097520079,
+          "graph_only_seconds": 4.928128552,
+          "order_position": 16,
+          "qps": 1961.7382266322998,
+          "repeat": 0,
+          "route_only_seconds": 0.070151626
+        },
+        {
+          "end_to_end_seconds": 4.967509663,
+          "graph_only_seconds": 4.860946389,
+          "order_position": 7,
+          "qps": 2013.081136909305,
+          "repeat": 1,
+          "route_only_seconds": 0.06991086
+        },
+        {
+          "end_to_end_seconds": 5.176336476,
+          "graph_only_seconds": 4.891979345,
+          "order_position": 26,
+          "qps": 1931.8682327481679,
+          "repeat": 2,
+          "route_only_seconds": 0.069895998
+        }
+      ],
+      "total_hits": 74535
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+        "dim": 512,
+        "exact": false,
+        "family": "fast30k_3",
+        "hnsw_seed": 100,
+        "hub_count": 815,
+        "k": 3,
+        "legacy_heap_order": true,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+        "name": "fast30k_3_L128",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 212,
+      "failure_rate": 0.0212,
+      "mean_graph_ndc": 1655.3978,
+      "mean_route_ndc": 122.0393,
+      "mean_total_ndc": 1777.4371,
+      "name": "fast30k_3_L128",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.74606,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 5.088613859,
+          "graph_only_seconds": 4.915896641,
+          "order_position": 17,
+          "qps": 1965.171710231747,
+          "repeat": 0,
+          "route_only_seconds": 0.06785291
+        },
+        {
+          "end_to_end_seconds": 4.9926489,
+          "graph_only_seconds": 4.810153635,
+          "order_position": 8,
+          "qps": 2002.944769458954,
+          "repeat": 1,
+          "route_only_seconds": 0.067850074
+        },
+        {
+          "end_to_end_seconds": 4.96482318,
+          "graph_only_seconds": 4.839713206,
+          "order_position": 27,
+          "qps": 2014.170422077348,
+          "repeat": 2,
+          "route_only_seconds": 0.067883812
+        }
+      ],
+      "total_hits": 74606
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/prototype.f32",
+        "dim": 512,
+        "exact": true,
+        "family": "fast20k_exact1",
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+        "name": "fast20k_exact1_L128",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 219,
+      "failure_rate": 0.0219,
+      "mean_graph_ndc": 1664.5222,
+      "mean_route_ndc": 815.0,
+      "mean_total_ndc": 2479.5222,
+      "name": "fast20k_exact1_L128",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.74392,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 5.419105981,
+          "graph_only_seconds": 4.849583767,
+          "order_position": 18,
+          "qps": 1845.3228327811144,
+          "repeat": 0,
+          "route_only_seconds": 0.255491462
+        },
+        {
+          "end_to_end_seconds": 5.397625697,
+          "graph_only_seconds": 4.819961404,
+          "order_position": 9,
+          "qps": 1852.6664428691304,
+          "repeat": 1,
+          "route_only_seconds": 0.255711921
+        },
+        {
+          "end_to_end_seconds": 5.39865249,
+          "graph_only_seconds": 4.911813756,
+          "order_position": 0,
+          "qps": 1852.3140762483122,
+          "repeat": 2,
+          "route_only_seconds": 0.255418076
+        }
+      ],
+      "total_hits": 74392
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/w_only/candidate.W.f32",
+        "dim": 512,
+        "exact": false,
+        "family": "w_only",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/w_only/candidate.mapping.i32",
+        "name": "w_only_L128",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 211,
+      "failure_rate": 0.0211,
+      "mean_graph_ndc": 1668.034,
+      "mean_route_ndc": 130.3931,
+      "mean_total_ndc": 1798.4271,
+      "name": "w_only_L128",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.74538,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 5.013480188,
+          "graph_only_seconds": 4.903081237,
+          "order_position": 19,
+          "qps": 1994.622422949924,
+          "repeat": 0,
+          "route_only_seconds": 0.070270342
+        },
+        {
+          "end_to_end_seconds": 4.91910304,
+          "graph_only_seconds": 4.803377316,
+          "order_position": 10,
+          "qps": 2032.8909394018303,
+          "repeat": 1,
+          "route_only_seconds": 0.070243893
+        },
+        {
+          "end_to_end_seconds": 5.128102271,
+          "graph_only_seconds": 4.941035318,
+          "order_position": 1,
+          "qps": 1950.03911223673,
+          "repeat": 2,
+          "route_only_seconds": 0.070237606
+        }
+      ],
+      "total_hits": 74538
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/w_only/candidate.W.f32",
+        "dim": 512,
+        "exact": true,
+        "family": "w_only_exact",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/w_only/candidate.mapping.i32",
+        "name": "w_only_exact_L128",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 204,
+      "failure_rate": 0.0204,
+      "mean_graph_ndc": 1664.463,
+      "mean_route_ndc": 815.0,
+      "mean_total_ndc": 2479.463,
+      "name": "w_only_exact_L128",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.74596,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 5.485402053,
+          "graph_only_seconds": 4.88681321,
+          "order_position": 20,
+          "qps": 1823.0204282894706,
+          "repeat": 0,
+          "route_only_seconds": 0.255211458
+        },
+        {
+          "end_to_end_seconds": 5.525511716,
+          "graph_only_seconds": 4.933051915,
+          "order_position": 11,
+          "qps": 1809.7871317589295,
+          "repeat": 1,
+          "route_only_seconds": 0.25521345
+        },
+        {
+          "end_to_end_seconds": 5.527846497,
+          "graph_only_seconds": 4.845260285,
+          "order_position": 2,
+          "qps": 1809.0227370508694,
+          "repeat": 2,
+          "route_only_seconds": 0.255226999
+        }
+      ],
+      "total_hits": 74596
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/mapping_only/candidate.W.f32",
+        "dim": 512,
+        "exact": false,
+        "family": "mapping_only",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/mapping_only/candidate.mapping.i32",
+        "name": "mapping_only_L128",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 303,
+      "failure_rate": 0.0303,
+      "mean_graph_ndc": 1804.9888,
+      "mean_route_ndc": 127.8416,
+      "mean_total_ndc": 1932.8304,
+      "name": "mapping_only_L128",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.73713,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 5.404640783,
+          "graph_only_seconds": 5.276173516,
+          "order_position": 21,
+          "qps": 1850.2617290411697,
+          "repeat": 0,
+          "route_only_seconds": 0.069690779
+        },
+        {
+          "end_to_end_seconds": 5.472288975,
+          "graph_only_seconds": 5.651417257,
+          "order_position": 12,
+          "qps": 1827.3888761512271,
+          "repeat": 1,
+          "route_only_seconds": 0.069595851
+        },
+        {
+          "end_to_end_seconds": 5.470846747,
+          "graph_only_seconds": 5.310105052,
+          "order_position": 3,
+          "qps": 1827.8706135359414,
+          "repeat": 2,
+          "route_only_seconds": 0.069546102
+        }
+      ],
+      "total_hits": 73713
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/mapping_only/candidate.W.f32",
+        "dim": 512,
+        "exact": true,
+        "family": "mapping_only_exact",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/mapping_only/candidate.mapping.i32",
+        "name": "mapping_only_exact_L128",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 290,
+      "failure_rate": 0.029,
+      "mean_graph_ndc": 1806.5848,
+      "mean_route_ndc": 815.0,
+      "mean_total_ndc": 2621.5848,
+      "name": "mapping_only_exact_L128",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.73801,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 5.847004826,
+          "graph_only_seconds": 5.328440304,
+          "order_position": 22,
+          "qps": 1710.2773638107478,
+          "repeat": 0,
+          "route_only_seconds": 0.255051813
+        },
+        {
+          "end_to_end_seconds": 5.971595201,
+          "graph_only_seconds": 5.422192662,
+          "order_position": 13,
+          "qps": 1674.5944196494438,
+          "repeat": 1,
+          "route_only_seconds": 0.255007108
+        },
+        {
+          "end_to_end_seconds": 5.921610464,
+          "graph_only_seconds": 5.417096538,
+          "order_position": 4,
+          "qps": 1688.729790788211,
+          "repeat": 2,
+          "route_only_seconds": 0.25493737
+        }
+      ],
+      "total_hits": 73801
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/joint/candidate.W.f32",
+        "dim": 512,
+        "exact": false,
+        "family": "joint",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/joint/candidate.mapping.i32",
+        "name": "joint_L128",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 303,
+      "failure_rate": 0.0303,
+      "mean_graph_ndc": 1804.9888,
+      "mean_route_ndc": 127.841,
+      "mean_total_ndc": 1932.8298,
+      "name": "joint_L128",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.73713,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 5.435517281,
+          "graph_only_seconds": 5.306027009,
+          "order_position": 23,
+          "qps": 1839.7513029634317,
+          "repeat": 0,
+          "route_only_seconds": 0.069296348
+        },
+        {
+          "end_to_end_seconds": 5.623383811,
+          "graph_only_seconds": 5.416136889,
+          "order_position": 14,
+          "qps": 1778.2887201188053,
+          "repeat": 1,
+          "route_only_seconds": 0.069432683
+        },
+        {
+          "end_to_end_seconds": 5.586247224,
+          "graph_only_seconds": 5.351217636,
+          "order_position": 5,
+          "qps": 1790.110533783279,
+          "repeat": 2,
+          "route_only_seconds": 0.069372645
+        }
+      ],
+      "total_hits": 73713
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/joint/candidate.W.f32",
+        "dim": 512,
+        "exact": true,
+        "family": "joint_exact",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/joint/candidate.mapping.i32",
+        "name": "joint_exact_L128",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 290,
+      "failure_rate": 0.029,
+      "mean_graph_ndc": 1806.5848,
+      "mean_route_ndc": 815.0,
+      "mean_total_ndc": 2621.5848,
+      "name": "joint_exact_L128",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.73801,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 5.821994947,
+          "graph_only_seconds": 5.269460595,
+          "order_position": 24,
+          "qps": 1717.6243007824787,
+          "repeat": 0,
+          "route_only_seconds": 0.25804598
+        },
+        {
+          "end_to_end_seconds": 5.948374012,
+          "graph_only_seconds": 5.563204254,
+          "order_position": 15,
+          "qps": 1681.1316806620464,
+          "repeat": 1,
+          "route_only_seconds": 0.257721806
+        },
+        {
+          "end_to_end_seconds": 5.968677532,
+          "graph_only_seconds": 5.391895734,
+          "order_position": 6,
+          "qps": 1675.4130117411744,
+          "repeat": 2,
+          "route_only_seconds": 0.257704496
+        }
+      ],
+      "total_hits": 73801
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/staged/candidate.W.f32",
+        "dim": 512,
+        "exact": false,
+        "family": "staged",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/staged/candidate.mapping.i32",
+        "name": "staged_L128",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 293,
+      "failure_rate": 0.0293,
+      "mean_graph_ndc": 1800.6908,
+      "mean_route_ndc": 130.3931,
+      "mean_total_ndc": 1931.0839,
+      "name": "staged_L128",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.7375,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 5.427097532,
+          "graph_only_seconds": 5.251212596,
+          "order_position": 25,
+          "qps": 1842.6055439462111,
+          "repeat": 0,
+          "route_only_seconds": 0.070278046
+        },
+        {
+          "end_to_end_seconds": 5.602288948,
+          "graph_only_seconds": 5.395113055,
+          "order_position": 16,
+          "qps": 1784.984689797189,
+          "repeat": 1,
+          "route_only_seconds": 0.070313193
+        },
+        {
+          "end_to_end_seconds": 5.626573454,
+          "graph_only_seconds": 5.430228358,
+          "order_position": 7,
+          "qps": 1777.2806276777349,
+          "repeat": 2,
+          "route_only_seconds": 0.070231557
+        }
+      ],
+      "total_hits": 73750
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/staged/candidate.W.f32",
+        "dim": 512,
+        "exact": true,
+        "family": "staged_exact",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/models/webvid2_5m_light_v1/seed20260828/L128/staged/candidate.mapping.i32",
+        "name": "staged_exact_L128",
+        "seed": 20260828,
+        "slot_labels": true,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 289,
+      "failure_rate": 0.0289,
+      "mean_graph_ndc": 1801.2152,
+      "mean_route_ndc": 815.0,
+      "mean_total_ndc": 2616.2152,
+      "name": "staged_exact_L128",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.73816,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 5.803489673,
+          "graph_only_seconds": 5.248512846,
+          "order_position": 26,
+          "qps": 1723.1011965996481,
+          "repeat": 0,
+          "route_only_seconds": 0.256453679
+        },
+        {
+          "end_to_end_seconds": 5.853258046,
+          "graph_only_seconds": 5.303080738,
+          "order_position": 17,
+          "qps": 1708.4502206141076,
+          "repeat": 1,
+          "route_only_seconds": 0.256360251
+        },
+        {
+          "end_to_end_seconds": 5.823279865,
+          "graph_only_seconds": 5.29350136,
+          "order_position": 8,
+          "qps": 1717.2453036481359,
+          "repeat": 2,
+          "route_only_seconds": 0.256440372
+        }
+      ],
+      "total_hits": 73816
+    },
+    {
+      "L": 128,
+      "configuration": {
+        "L": 128,
+        "W": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/prototype.f32",
+        "dim": 512,
+        "exact": false,
+        "family": "joint_selected",
+        "hnsw_seed": 20260828,
+        "hub_count": 815,
+        "k": 1,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+        "name": "joint_selected_L128",
+        "seed": 20260828,
+        "selected_fallback": true,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      },
+      "failed_queries": 226,
+      "failure_rate": 0.0226,
+      "mean_graph_ndc": 1667.9393,
+      "mean_route_ndc": 127.8416,
+      "mean_total_ndc": 1795.7809,
+      "name": "joint_selected_L128",
+      "plain_count_parity_queries": 10000,
+      "queries": 10000,
+      "recall_at_10": 0.74346,
+      "seed": 20260828,
+      "timings": [
+        {
+          "end_to_end_seconds": 4.97298006,
+          "graph_only_seconds": 4.993312459,
+          "order_position": 27,
+          "qps": 2010.866699513772,
+          "repeat": 0,
+          "route_only_seconds": 0.069650546
+        },
+        {
+          "end_to_end_seconds": 5.132975159,
+          "graph_only_seconds": 4.909107918,
+          "order_position": 18,
+          "qps": 1948.1878813433004,
+          "repeat": 1,
+          "route_only_seconds": 0.069416038
+        },
+        {
+          "end_to_end_seconds": 5.011378751,
+          "graph_only_seconds": 4.846224431,
+          "order_position": 9,
+          "qps": 1995.4588341590709,
+          "repeat": 2,
+          "route_only_seconds": 0.069419198
+        }
+      ],
+      "total_hits": 74346
+    }
+  ],
+  "queries": 10000,
+  "split": "validation",
+  "status": "COMPLETE",
+  "threads": 1,
+  "timing_contract": "Independent plain full-batch wall includes routing/mapping/original kernel/output; excludes GT/hash/JSON/count/load/build; route-only and graph-only are separate diagnostics"
+}

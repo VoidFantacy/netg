@@ -1,0 +1,29 @@
+{
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "dim": 200,
+  "hub_count": 821,
+  "base_count": 10000000,
+  "index_path": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "hub_ids": "/data/netg/ACSG/fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_cover_hub_ids.bin",
+  "prototypes": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/yandex_t2i_official10M_ip_v1/prototype.f32",
+  "queries_file": "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+  "row_ids": "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/inputs/yandex_t2i_official10M_ip_v1/row_ids.i64",
+  "num_queries": 2000,
+  "calibration_queries": 128,
+  "gt_train_path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/gt.router_train.ip.ivecs",
+  "gt_train_sha256": "5255cc604439ad9d2523dd7526dab85e61b40f0784fd630d5f297ef43af6bdcb",
+  "gt_k": 100,
+  "K": 10,
+  "L": [
+    64,
+    128
+  ],
+  "hnsw_seed": 20260828,
+  "hnsw_M": 16,
+  "ef_construction": 200,
+  "ef_search": 10,
+  "threads": 1,
+  "sample_seed": 20260909,
+  "query_split": "drl_train",
+  "identity_file": "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/inputs/yandex_t2i_official10M_ip_v1/identities.json"
+}

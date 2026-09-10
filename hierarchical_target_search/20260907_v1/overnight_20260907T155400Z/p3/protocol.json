@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "stage": "P3",
+  "status": "PREREGISTERED_BEFORE_IMPLEMENTATION_AND_DATA",
+  "created_utc": "2026-09-07T16:58:59.343451+00:00",
+  "upstream_P2": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P2.json",
+    "sha256": "6240cea60d790d030e0fdaf560b95d9e951260d4ba3d6701863b06c1c4cc895e"
+  },
+  "parent_protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/protocol.json",
+    "sha256": "857745551778adc1884a4198862b2f55fd72a642abe7d7622970e602d88ff48b"
+  },
+  "design_review": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/p3_feasibility_review.md",
+    "sha256": "df34cd98ced75c690ec541b3f761d19ef76c8a82c71d2c833c62c0758dd6b2d3"
+  },
+  "hypothesis": "Under equal portalcount/searchbudget, fitGTcooccurrence descent yields less targetfragmentation and better actualoracle search than graphonly hierarchy; portalproxy effect measured separately",
+  "mechanism_revision_number": 1,
+  "revision_scope": "Single planned hierarchy and partition representation refinement; no parameter or seed sweep",
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "fit_range": [
+    10000,
+    30000
+  ],
+  "fit_count": 20000,
+  "pilot_range": [
+    0,
+    10000
+  ],
+  "validation_heldout_allowed": false,
+  "cpu_only": true,
+  "initialization": {
+    "coarse_count": 16,
+    "leaves_per_coarse": 16,
+    "leaf_count": 256,
+    "metis": "Preparedv5.2.1/i64; symmetricdeduplicatedunion only forinitializer",
+    "seed": 2026090711,
+    "child_seed_rule": "samefixedseed forall16children",
+    "ncuts": 1,
+    "niter": 10,
+    "numbering": 0,
+    "coarse_initial_factor": 1.1,
+    "coarse_initial_integer_cap": "floor(11*N/(10*16))",
+    "coarse_final_integer_cap": "floor(6*N/(5*16))",
+    "leaf_final_integer_cap": "floor(6*N/(5*256))",
+    "child_metis_target_ub": "16*global_leaf_integer_cap/actual_coarse_node_count",
+    "metis_epsilon": "Conservativeroundingandcompensationoflibrary0.0000499, then strictintegercheck; no capacityrepairorrelaxation",
+    "canonicalization": "CoarseIDs ascendingminbaseID; withincoarse leafIDs ascendingminbaseID. Freeze canonical labels before branches; no relabelduringrefinement",
+    "identical_lambda_initialization": true,
+    "each_leaf_min_nodes": 3,
+    "no_old64region_reuse": true
+  },
+  "objective": {
+    "partition": "256leaflabels; coarse=leaf//16",
+    "J": "C/M + lambda*S/(9*Q)",
+    "C": "Originaldirected validnonself storededges crossing leaflabels; padding/self excluded; direction andduplicates preserved",
+    "M": "Alloriginaldirected validnonself storededges; reciprocal edges count2",
+    "S": "sum_fitq(distinct_leafregions(GT10(q))-1)",
+    "Q": 20000,
+    "lambdas": [
+      0,
+      1
+    ],
+    "coarse_objective_optimized": false,
+    "coarse_metrics": "reportonly, no extraweight",
+    "strict_move_test": "deltaC*(9*Q)+lambda*deltaS*M<0 using overflow-safe integer arithmetic",
+    "deltaCut": "out_to_old+in_from_old-out_to_new-in_from_new",
+    "deltaS": "sum_incident_fitq(1[count(q,new)==0]-1[count(q,old)==1])"
+  },
+  "refinement": {
+    "passes": 2,
+    "node_order": "ascendingglobalbaseID everypass",
+    "destination_candidates": "currentincoming/outgoingneighborleafIDs; lambda1 additionallycurrentleafIDsfromsamefitGT10query; sortedunique",
+    "selection": "feasiblemostnegativeexactintegerdelta; tieascendingdestinationleafID",
+    "commit": "immediateupdateoflabels/leafsizes/coarsesizes/GTcounts",
+    "allow_cross_coarse": true,
+    "capacity": "destinationleaf and ifchanged destinationcoarse finalhardcaps; sourceleaf retains>=3nodes",
+    "lambda0": "GT-freecandidategeneration/movedecisions; GTonlyposthocstructuremetrics",
+    "verification": "FullindependentdirectedC andGT S recomputationaftereachpass; everymoveacceptedstrictlynegative; commoninit andlambda0 referenceparitytests",
+    "checkpoints": "initial, eachcompletepass and progresscursor/INCOMPLETE onstop; no fullmovetracelog"
+  },
+  "portals": {
+    "per_leaf": 3,
+    "total": 768,
+    "max_total_webvid": 815,
+    "max_total_yandex": 821,
+    "candidate_limit": 8,
+    "candidates": "Top8distinctinregionbaseIDs byfitGT10frequency, tieascendingID; fillwithsmallestunselectedregionmembers upto8",
+    "frequency_rule": "First3frequencyorderedcandidates",
+    "query_limit_per_leaf": 128,
+    "queries": "FitquerieswithanyGT10inleaf; choose128smallest SHA256 of UTF8 dataset|seed|global_query_id|leaf_id, tieglobalqueryID; save orderbeforeprobe",
+    "query_selection_seed": 2026090711,
+    "proxy": "Singlecandidateentry, noFast/defaultseed, unifiedpool, originaldirectedNSG/rawIP/K10/L32; one search perleaf/candidate/query",
+    "mask": "10bit returnedtop10 intersection GT10 intersection targetleaf; scoreonlyafter GT-free search",
+    "greedy": "3stepsmaximize sum_q popcount(candidate_mask AND NOTcurrent_union); tiedgainascendingportalID; zerogainstillfills3",
+    "empty_fit_query_fallback": "frequencyfirst3; recordnoevidence",
+    "probe_calls_max_per_structure": 262144,
+    "probe_calls_max_per_dataset": 524288,
+    "probe_cache": "uint16masks withinputsource/fitrow/candidate/query/GTorderSHA; no repeatANN forgreedysteps",
+    "cost": "Separatefitextraction,candidatequeryselection,indexload,probes,GTscore,greedy,writewall andNDC; reusedexactGTcost nullifunknown"
+  },
+  "evaluation": {
+    "models": [
+      "lambda0_frequency3",
+      "lambda1_frequency3",
+      "lambda0_greedy3",
+      "lambda1_greedy3"
+    ],
+    "methods": [
+      "fast",
+      "oracle_unified",
+      "oracle_probability"
+    ],
+    "search_Ls": [
+      64,
+      128
+    ],
+    "K": 10,
+    "active_leaves": 4,
+    "oracle": "Globaltop4trueGTleafmass, tiesleafID; usesatmost4coarsebyconstruction; NOTP4hierarchicalinference",
+    "same_route_controls": true,
+    "fast": "Existingpaired20Kbest-firstHNSWfirstanchor+defaultsharedseedforallnewroutes; Fastm3control; modelportalentriesallconsumed",
+    "threads": 16,
+    "count_rounds": 1,
+    "timing_rounds": 5,
+    "warmup": 128,
+    "within_model_order": "forward/reverse/forward/reverse/forward",
+    "between_model_order": "Fixedlistedmodelorderforalltasks; betweenmodelswallcomparisonsdescriptive untiljointABBA scheduler available; no timingreplicateasRecall",
+    "purewall_contract": "Inheritparentprotocol; oracleadaptation/GTscoreoutside, router/search/reset/resultsinside",
+    "oracle_not_deployment": true
+  },
+  "P1_reacceptance": {
+    "required_before_real_P3_performance": true,
+    "items": [
+      "256region/3portalmodelshapeandIDvalidation",
+      "SingleportalL32proxyparityandsuffixisolation",
+      "14potentialseedactualconsumption/dedup/sharedownership",
+      "New64compatcount/plain IDs/NDC/routes versusP2savedprefix bothdatasets",
+      "256syntheticcount/plain/oracle/tie/crosscoarse",
+      "Timers/gates/outputcheckpoint/sourcebinaryhash"
+    ],
+    "kernel_default_unchanged": true
+  },
+  "analysis_and_gate": {
+    "family": "Fixedfour2x2contrasts perL: lambda1-lambda0 underfrequency andgreedy; greedy-frequency underlambda0and1. Alsowithinmodeloracleprotected-unified. Allreported, no bestcellselection",
+    "bootstrap_repetitions": 10000,
+    "seed": 2026090711,
+    "intervals": "Ordinarypairedquery95% exploratory; P5/P6 correctedsubstantialperformancegate remains unchanged",
+    "structure_gate": "Bothdatasets lambda1 final J evaluatedatlambda1 andfitGTfragmentation lowerthanlambda0; capacities/allnodecoverage/fullrecomputepass",
+    "search_gate": "Bothdatasets mainlambda1_greedy3 oracle_probability Recall improvesversuslambda0_greedy3 at bothfixedL64/128 withordinary95lower>0; fixedfrequencycontrols andportalcontrasts reported",
+    "cost_gate_scope": "No deployedperformanceclaim atP3; allwall/NDCcostreported; oracletradeoff onlyallowsnextP4hypothesis; P4 mustretainbenefitwithrealpredictioncost",
+    "failure": "Ifstructureorsearchtransferfails, P3NOPASS; do not startP4/P5/validation/heldout or tuneseeds/lambda/L. Preservefailure andfollowboundedplanwithnewmechanismevidence only"
+  },
+  "resources": {
+    "max_heavy_processes": 1,
+    "min_available_ram_gib_before_partition": 60,
+    "disk_free_gib_min": 10,
+    "artifact_gib_max": 8,
+    "deadline_utc": "2026-09-07T23:00:00Z",
+    "softclose_utc": "2026-09-07T22:59:00Z",
+    "alllongjobs": "control/stage_run.py plusidentitycheckedtaskctl",
+    "no_base_graph_copy": true
+  }
+}

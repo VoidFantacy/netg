@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "version": "20260909_ab_joint_r0_v1",
+  "direction": "A+B",
+  "stage": "R0_THEORY_REFRAMING",
+  "status": "R0_THEORY_REFORMULATED_DESIGN_ONLY_UNRUN",
+  "updated_date": "2026-09-09",
+  "method_implemented": false,
+  "label_runner_implemented": false,
+  "router_trainer_implemented": false,
+  "micro_index_implemented": false,
+  "end_to_end_evaluator_implemented": false,
+  "new_labels_generated": false,
+  "model_trained": false,
+  "ann_experiment_started": false,
+  "validation_accessed": false,
+  "heldout_accessed": false,
+  "execution_authorized": false,
+  "documentation_only": true,
+  "root_documents_modified": true,
+  "root_documents_modified_list": [
+    "../../summary.md",
+    "../../spec.md",
+    "../../s-target.md",
+    "../../s-experiment.md",
+    "../../experiment_history/09_research_designs_not_experiments.md"
+  ],
+  "novelty_position": {
+    "candidate_level": "MEDIUM_METHOD_SYSTEM_NOVELTY_CANDIDATE",
+    "method_system_contribution": "PLAUSIBLE_AND_DEFENSIBLE_IF_JOINT_MECHANISM_AND_END_TO_END_EVIDENCE_PASS",
+    "component_firsts": "NOT_CLAIMED",
+    "first_of_kind_claim": "NOT_ESTABLISHED",
+    "previous_component_novelty_standard": "RETRACTED_AS_TOO_STRICT_FOR_OVERALL_METHOD_JUDGMENT",
+    "performance": "UNTESTED"
+  },
+  "supersedes_for_current_planning": [
+    "../20260909_a_r0_v1",
+    "../20260909_b_r0_v1"
+  ],
+  "preserves_as_historical_evidence": [
+    "../20260909_a_r0_v1/assessment/assessment.md",
+    "../20260909_b_r0_v1/assessment/assessment.md"
+  ],
+  "core_contract": {
+    "problem": "jointly design routable query decision slots and their real entry actions under fixed router capacity using native finite-L search utility",
+    "candidate_set_first_stage": "existing H only",
+    "routing_slots_M": "equal to existing H count",
+    "slot_to_entry_mapping": "many-to-one allowed",
+    "active_pool": "range(slot_to_entry_mapping)",
+    "baseline_recoverability": "identity transform plus identity mapping recovers exact Fast1",
+    "primary_online_action": "single real entry ID",
+    "router_input": "query only",
+    "graph_search_query": "original raw query",
+    "main_utility": "native Recall@10 at separately modeled L64 and L128",
+    "quality_acceptance": "hard routed utility with ties preserved",
+    "affine_role": "constrained anchored ablation, not standalone novelty",
+    "affine_capacity": "identity-regularized diagonal or low-rank residual, per dataset",
+    "h_out_expansion": "conditional only after existing-H joint pass and remaining coverage bottleneck"
+  },
+  "minimum_factorial": [
+    "identity score plus identity mapping equals exact Fast1",
+    "constrained affine plus identity mapping",
+    "identity score plus utility remapping",
+    "constrained affine plus utility remapping"
+  ],
+  "required_quality_claims_before_deployment": [
+    "joint beats exact Fast1",
+    "joint exceeds the perfect-old-GT1-basin-label recovery reference, which is not a policy utility upper bound",
+    "joint beats affine-only and mapping-only",
+    "all WebVid/Yandex L64/L128 points satisfy the preregistered harm rule"
+  ],
+  "next_stage": {
+    "name": "PROTOCOL_DESIGN_AND_USER_REVIEW",
+    "authorized": false,
+    "implementation_or_execution_authorized": false,
+    "requirements": [
+      "freeze role-isolated query splits and exact utility identities",
+      "freeze a capacity-matched 2x2 model family and tie rules",
+      "freeze statistical family and stop conditions",
+      "freeze label-call, wall, RSS, disk and artifact caps",
+      "separate retrospective E20 screen from new audit",
+      "require exact quality pass before micro-index and full wall"
+    ]
+  },
+  "evidence": [
+    "theory.md",
+    "source_manifest.json",
+    "../../summary.md",
+    "../../spec.md",
+    "../../s-target.md",
+    "../../experiment_history/08_fast_router_diagnosis.md",
+    "../../entry_selection_research/20260908_v5/reviews/joint_entry_design.md",
+    "../../entry_selection_research/20260908_v5/reviews/utility_representation.md"
+  ]
+}

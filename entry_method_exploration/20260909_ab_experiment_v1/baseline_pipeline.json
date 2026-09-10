@@ -1,0 +1,18 @@
+{
+  "status": "CANCELED_BY_EXPLORATION_SCOPE_CHANGE",
+  "supervisor_pid": 8259,
+  "registered_pid": 5513,
+  "registered_start_ticks": "91040",
+  "execution_sha256": {
+    "src/benchmark_with_nsg.cpp": "469efb0d63e45225513af25514854f60472497a5a9ec782b689fc4c51dbaf93e",
+    "src/benchmark_single_thread_nsg.cpp": "58c022494cbe09f0b055c164cc40e200be3e8fc9ab4a10c84fd92fd01f5955ed",
+    "src/nsg_native_parity.cpp": "8f0235410779bc49e4420323b003c95f539b40ef67dcdf69f4ddaf06a4ab185d",
+    "src/run_baseline_comparison_after_single.py": "173d39d59ea47c89d8b37ca298657e0e700590d0ee7c0a96b3b4d9c7de24daa3",
+    "src/analyze_baseline_comparison.py": "0abd5a113a27a22793c8179db625860b6de1327882d79c6c68337c65449e52eb",
+    "baseline_comparison_amendment.md": "3b2eb0064735bcdd763a2955d83ca95ebf7269707cc026b9577eb15c5a131304"
+  },
+  "wait_mechanism": "pidfd process-exit event; no repeated experiment progress reads",
+  "next": "Compile and verify NSG extension after current evaluation finishes, then matched single-thread comparison",
+  "prior_stop_error": "RuntimeError('interrupted 15')",
+  "reason": "Stop oversized queued comparison while explaining and reducing scope"
+}

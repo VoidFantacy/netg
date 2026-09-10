@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "dataset": "webvid2_5m_light_v1",
+  "split": "drl_train",
+  "fit_rows": [
+    0,
+    1600
+  ],
+  "audit_rows": [
+    1600,
+    2000
+  ],
+  "heldout_accessed": false,
+  "validation_accessed": false,
+  "method": "local cost-first reachability utility atlas",
+  "frozen_parameters": {
+    "neighbors": 64,
+    "min_observations": 4,
+    "cost_limit": 0.005,
+    "confidence_margin_se": 1.0,
+    "cost_weight": 0.05
+  },
+  "online_inputs": [
+    "query vector",
+    "Fast geometry top-8 IDs",
+    "atlas_fit.npz"
+  ],
+  "online_graph_probes": 0,
+  "results": [
+    {
+      "search_L": 64,
+      "passed": false,
+      "mean_utility_delta": 0.0017941140070347069,
+      "utility_delta_ci95": [
+        -0.00142023089664899,
+        0.006320175746348628
+      ],
+      "mean_recall_delta": 0.002,
+      "mean_graph_ndc_relative_delta": 0.002139583322592342,
+      "reroute_fraction": 0.09,
+      "mean_available_candidates": 5.11,
+      "min_available_candidates": 0
+    },
+    {
+      "search_L": 128,
+      "passed": false,
+      "mean_utility_delta": 0.00038706712688106,
+      "utility_delta_ci95": [
+        -0.003998751024260557,
+        0.004587892738291444
+      ],
+      "mean_recall_delta": 0.00024999999999999973,
+      "mean_graph_ndc_relative_delta": -0.0036971869869618645,
+      "reroute_fraction": 0.18,
+      "mean_available_candidates": 5.11,
+      "min_available_candidates": 0
+    }
+  ],
+  "train_internal_gate": "FAIL",
+  "sources": {
+    "trace": "finite_beam_reachability_diagnostics/v1/traces/webvid_train2k_top8_l64_128.json",
+    "trace_sha256": "224e6444667c0bd6a0f655d9678a91ef755c297b2ff4ccd6cb9f6653d19c57f2",
+    "queries": "benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+    "queries_sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855"
+  },
+  "artifacts": {
+    "atlas": "finite_beam_reachability_diagnostics/v2_distillation/webvid/atlas_fit.npz",
+    "atlas_sha256": "4cbb581c7a273203b2a45ae9ed8f39a7658f249590bbb3d5e1e598729c064d22",
+    "atlas_bytes": 3585806,
+    "routes": {
+      "64": {
+        "path": "finite_beam_reachability_diagnostics/v2_distillation/webvid/routes_train_audit_l64.npy",
+        "sha256": "b5ec7489751c86ee2322b7e7ba3de05ece612a5c1e9b6cb5eb0a330ac20a76fa"
+      },
+      "128": {
+        "path": "finite_beam_reachability_diagnostics/v2_distillation/webvid/routes_train_audit_l128.npy",
+        "sha256": "c1c717a1fb583a354271f9dfc021eb499f2f7c9fe5cb46ca857f90f58e187e58"
+      }
+    }
+  }
+}

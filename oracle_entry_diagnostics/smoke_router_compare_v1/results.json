@@ -1,0 +1,48 @@
+{
+  "artifact_version": "roargraph-webvid2.5m-ip-v1",
+  "candidate_count": 815,
+  "dataset": "webvid2_5m_light_v1",
+  "metric": "ip",
+  "num_queries": 10,
+  "num_runs": 1,
+  "oracle_definition": "skipped; router comparison only",
+  "results": [
+    {
+      "methods": [
+        {
+          "mean_graph_latency_us": 323.7439,
+          "mean_graph_ndc": 1020.4,
+          "mean_recall": 0.61,
+          "method": "Medoid",
+          "samples": 10
+        },
+        {
+          "mean_graph_latency_us": 209.179,
+          "mean_graph_ndc": 891.3,
+          "mean_recall": 0.7300000000000001,
+          "method": "Fast_Prototype_Top3",
+          "samples": 10
+        },
+        {
+          "mean_graph_latency_us": 122.83429999999998,
+          "mean_graph_ndc": 891.3,
+          "mean_recall": 0.7300000000000001,
+          "method": "Smoke_Same_Fast",
+          "samples": 10
+        }
+      ],
+      "search_L": 64,
+      "top_k": 10
+    }
+  ],
+  "schema_version": 1,
+  "search_Ls": [
+    64
+  ],
+  "split": "validation",
+  "status": "complete",
+  "threads": 2,
+  "top_ks": [
+    10
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "dataset": "webvid2_5m_light_v1",
+  "dim": 512,
+  "hub_count": 815,
+  "base_count": 2505000,
+  "index_path": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "hub_ids": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_cover_hub_ids.bin",
+  "prototypes": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/webvid2_5m_light_v1/prototype.f32",
+  "queries_file": "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/inputs/webvid2_5m_light_v1/queries.f32",
+  "row_ids": "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/inputs/webvid2_5m_light_v1/row_ids.i64",
+  "num_queries": 2000,
+  "calibration_queries": 128,
+  "gt_train_path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/gt.router_train.seed20260826.ip.ivecs",
+  "gt_train_sha256": "1db08bf5b259a468558e6dfed19661d73bc6fe6947a3c862e526176242ace72c",
+  "gt_k": 100,
+  "K": 10,
+  "L": [
+    64,
+    128
+  ],
+  "hnsw_seed": 20260828,
+  "hnsw_M": 16,
+  "ef_construction": 200,
+  "ef_search": 10,
+  "threads": 1,
+  "sample_seed": 20260909,
+  "query_split": "drl_train",
+  "identity_file": "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/inputs/webvid2_5m_light_v1/identities.json"
+}

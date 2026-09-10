@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "decision": "C1_KERNEL_PARITY_REVIEW_PASS",
+  "reviewed_state_machine_sha256": "337cc3c52fb712b5f7ca0992b3625949530399520880ffd86dd59e2b49d1354a",
+  "reviewed_native_source_sha256": "931d74db432bb2a64aeaedd5200f933674b5e84fb0d129d5640189d76b008ba4",
+  "reviewed_reference_sha256": "39fc562545b83be71c0b34f34a2b06efda355e9e3793a9075da32f90c9782987",
+  "reviewed_parity_source_sha256": "6a4c3c9fef06752f5c3952ac85fc751ae4efacb4fc3ee1495f1c1f2a02711938",
+  "reviewed_parity_binary_sha256": "27ce34a3b55addf24c13767733076b2fe921fb47e1f9b112941f502fa50ac193",
+  "report": "reviews/kernel_final_review.md",
+  "parity_files": [
+    "results/c1_synthetic_v2.json",
+    "results/c1_webvid_v2.json",
+    "results/c1_yandex_v2.json",
+    "bin/parity_v2.build.json"
+  ],
+  "supplemental_files": [
+    "reviews/kernel_supplemental.cpp",
+    "reviews/kernel_supplemental_v1.json",
+    "reviews/kernel_supplemental_manifest.json",
+    "logs/review_kernel_supplemental_v1.command.json"
+  ],
+  "supplemental_conservative_search_execution_count": 5,
+  "GT_accessed_by_reviewer": false,
+  "validation_or_heldout_accessed_by_reviewer": false,
+  "raw_real_records_checked": 64,
+  "source_body_recovered_exactly_after_observer_removal": true,
+  "checks": [
+    "Actual unchanged native kernel versus mechanically extracted observer reference",
+    "Top-K IDs and float bits, NDC, expansion and evaluation order, full retset",
+    "Pause, clone, serialization, partial row resume, deterministic repetition and branch isolation",
+    "Duplicate, previsited, invalid and fallback entries; initial ties; pool bound and rewind",
+    "Forced candidate rejected, accepted then evicted, and retained with hand-computable action trajectories",
+    "Plain versus count/trace equality and shared legacy search_L isolation",
+    "Exact-cap zero-cost trailing natural termination and DC query rebinding"
+  ],
+  "limitations": [
+    "Engineering gate for the frozen version and tested domain, not exhaustive proof for arbitrary graphs or malformed external states",
+    "No GT quality, learner, equal-cost, Pareto, or formal QPS conclusion",
+    "C2 action accounting, offline scoring and statistics require their own evidence",
+    "C2 build state-machine SHA must equal the reviewed SHA; a state-machine change requires renewed C1 acceptance"
+  ]
+}

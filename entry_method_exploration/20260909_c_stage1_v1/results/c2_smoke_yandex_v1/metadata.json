@@ -1,0 +1,122 @@
+{
+  "C1_gate": {
+    "C2_authorized_by_user": true,
+    "C3_authorized": false,
+    "calls_upper_bound_before_C2": 17749,
+    "independent_review_sha256": "718aa068280661eea1f27ad70f50aa0c4634d6a2c492309f8740e44a5e36c439",
+    "parity_files": [
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/results/c1_synthetic_v2.json",
+        "sha256": "2ab928255667b6eccba3d550d138bfe4e694f67487961f5ffdb140d9b3c28796"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/results/c1_webvid_v2.json",
+        "sha256": "773565a2f578a4d92ab8fa5d73ccc7dc83b7bf003362b96b6c8d6dddf6a50237"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/results/c1_yandex_v2.json",
+        "sha256": "ff954c5025d5e8cd7d7d55d086afa10cc2ae0f76d186e2621fe5a477c6680140"
+      }
+    ],
+    "state_machine_sha256": "337cc3c52fb712b5f7ca0992b3625949530399520880ffd86dd59e2b49d1354a",
+    "status": "PASS",
+    "supplement_sha256": "6286fa00ced2e3624908e97c2d865abba180aae8709b564f0d5ef7461e984ee3",
+    "utc": "2026-09-09T07:24:08.247176+00:00"
+  },
+  "GT_accessed": false,
+  "N": 4,
+  "action_order": [
+    "continue",
+    "natural_0",
+    "natural_1",
+    "natural_2",
+    "natural_3",
+    "force_0",
+    "force_1",
+    "force_2",
+    "force_3"
+  ],
+  "config": {
+    "K": 10,
+    "L": [
+      64,
+      128
+    ],
+    "base_count": 10000000,
+    "calibration_queries": 128,
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "dim": 200,
+    "ef_construction": 200,
+    "ef_search": 10,
+    "gt_k": 100,
+    "gt_train_path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/gt.router_train.ip.ivecs",
+    "gt_train_sha256": "5255cc604439ad9d2523dd7526dab85e61b40f0784fd630d5f297ef43af6bdcb",
+    "hnsw_M": 16,
+    "hnsw_seed": 20260828,
+    "hub_count": 821,
+    "hub_ids": "/data/netg/ACSG/fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_cover_hub_ids.bin",
+    "identity_file": "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/inputs/yandex_t2i_official10M_ip_v1/identities.json",
+    "index_path": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+    "num_queries": 2000,
+    "prototypes": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/yandex_t2i_official10M_ip_v1/prototype.f32",
+    "queries_file": "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+    "query_split": "drl_train",
+    "row_ids": "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/inputs/yandex_t2i_official10M_ip_v1/row_ids.i64",
+    "sample_seed": 20260909,
+    "threads": 1
+  },
+  "count_plain_rule": "each physical branch executed once with count+external trace, once with plain DC; exact complete state comparison",
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "locked_config": {
+    "B": 1856,
+    "B_rule": "single global B=max(128,64*ceil(max_dataset_L percentile75(native graph NDC)/128))",
+    "K": 10,
+    "L": [
+      64,
+      128
+    ],
+    "bootstrap_repetitions": 20000,
+    "bootstrap_seed": 20260909,
+    "calibration_files": [
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/results/calibration_webvid2_5m_light_v1.json",
+        "sha256": "39e37f9af99fee41330e152285d1fef34ec6a82385379cd4f17a565f243e7074"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/results/calibration_yandex_t2i_official10M_ip_v1.json",
+        "sha256": "4210b20a275960894ea681b3f0d823471331d3959c1280a7172b512e1e94e20e"
+      }
+    ],
+    "candidate_generator": "independent paired HNSW top7, ranks 3:7 zero-based; remove initial/duplicate IDs without refill",
+    "checkpoint_completed_expansions": {
+      "128": 65,
+      "64": 33
+    },
+    "checkpoint_rule": "per L: max(1,floor(0.5 * min_dataset median native completed expansions)))",
+    "created_utc": "2026-09-09T07:04:52.099848+00:00",
+    "datasets": [
+      "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/inputs/webvid2_5m_light_v1/config.json",
+      "/data/netg/ACSG/entry_method_exploration/20260909_c_stage1_v1/inputs/yandex_t2i_official10M_ip_v1/config.json"
+    ],
+    "familywise_alpha": 0.05,
+    "locked_utc": "2026-09-09T07:06:08.583938+00:00",
+    "max_candidates": 4,
+    "minimum_mean_recall_gain": 0.005,
+    "primary_family_size": 4,
+    "resources": {
+      "cpu_only": true,
+      "max_distinct_queries_per_dataset": 2000,
+      "max_native_or_branch_calls": 200000,
+      "max_new_disk_gib": 5,
+      "max_rss_gib": 32,
+      "max_threads": 16,
+      "max_wall_seconds_per_stage": 7200,
+      "worker_threads": 1
+    },
+    "start_policy": "paired Fast20K direct HNSW top3; reverse maxheap to rank order"
+  },
+  "quality_scoring": false,
+  "schema_version": 1,
+  "split": "drl_train",
+  "status": "COMPLETE"
+}

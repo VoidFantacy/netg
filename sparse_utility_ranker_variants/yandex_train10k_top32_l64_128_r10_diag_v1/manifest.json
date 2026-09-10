@@ -1,0 +1,81 @@
+{
+  "batch_size": 256,
+  "cost_weight": 0.05,
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "learning_rate": 0.02,
+  "max_epochs": 50,
+  "method": "cost-aware listwise diagonal query-entry interaction reranker over Fast top-32",
+  "runs": [
+    {
+      "best_internal_dev_loss": 3.9263389110565186,
+      "epochs_run": 22,
+      "model": "sparse_utility_ranker_variants/yandex_train10k_top32_l64_128_r10_diag_v1/model_seed20260828.pt",
+      "model_sha256": "ad33d8b3d4c646726890dfa44bd238d59ea38c82b84c263a5424c3a7c02a0baf",
+      "routes": "sparse_utility_ranker_variants/yandex_train10k_top32_l64_128_r10_diag_v1/routes_seed20260828_top3.bin",
+      "routes_sha256": "42ff78996e5df887c108adfc4a62a41b0149b9bc334162faf6ecc1f47afb6c03",
+      "seed": 20260828,
+      "validation_mean_utility_fast_rank0": 0.8165686726570129,
+      "validation_mean_utility_predicted_top1": 0.8113564848899841,
+      "validation_mean_utility_shortlist_oracle": 0.8769205808639526,
+      "validation_top1_changed_fraction": 0.9315
+    },
+    {
+      "best_internal_dev_loss": 3.926476001739502,
+      "epochs_run": 24,
+      "model": "sparse_utility_ranker_variants/yandex_train10k_top32_l64_128_r10_diag_v1/model_seed20260829.pt",
+      "model_sha256": "d452dab6ca274e89f2a936a2dcda084a8af8699869c0ce7c993d12bb59c1add4",
+      "routes": "sparse_utility_ranker_variants/yandex_train10k_top32_l64_128_r10_diag_v1/routes_seed20260829_top3.bin",
+      "routes_sha256": "b12f2824a9b254065c254dbf7e126dc2632c1cd64e6a8fe7440573a0fe20a115",
+      "seed": 20260829,
+      "validation_mean_utility_fast_rank0": 0.8165686726570129,
+      "validation_mean_utility_predicted_top1": 0.8115153908729553,
+      "validation_mean_utility_shortlist_oracle": 0.8769205808639526,
+      "validation_top1_changed_fraction": 0.935
+    },
+    {
+      "best_internal_dev_loss": 3.9262661933898926,
+      "epochs_run": 24,
+      "model": "sparse_utility_ranker_variants/yandex_train10k_top32_l64_128_r10_diag_v1/model_seed20260830.pt",
+      "model_sha256": "91282bda7969d1dc2d1ac9ec86e7234915f9de8c9b9400c3d462d723b3f28687",
+      "routes": "sparse_utility_ranker_variants/yandex_train10k_top32_l64_128_r10_diag_v1/routes_seed20260830_top3.bin",
+      "routes_sha256": "9b854ea37fc5f8c92bfce8e283571a19eb49678845aec550dd997f46ad35ca80",
+      "seed": 20260830,
+      "validation_mean_utility_fast_rank0": 0.8165686726570129,
+      "validation_mean_utility_predicted_top1": 0.8116970062255859,
+      "validation_mean_utility_shortlist_oracle": 0.8769205808639526,
+      "validation_top1_changed_fraction": 0.9419
+    }
+  ],
+  "schema_version": 1,
+  "seeds": [
+    20260828,
+    20260829,
+    20260830
+  ],
+  "shortlist": 32,
+  "sources": {
+    "hub_ids": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_cover_hub_ids.bin",
+    "hub_ids_sha256": "ec82834901aacf360049aad43c47065fcd5de90cc0b882d6dd0016de798e2240",
+    "prototypes": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+    "prototypes_sha256": "d6ffa9769d457829c7c463457aae9042e5fba31008ca63402c46fbbb488f4f22",
+    "raw_hubs": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_cover_hubs.bin",
+    "raw_hubs_sha256": "280d9bcf1fc89f4f6ad942e0d01d9b0c0c2c45afeb3c9bfdf0b069a4325072fc",
+    "train_utility": "sparse_utility_datasets/yandex_train10k_top32_l64_128_r10_v1/results.json",
+    "train_utility_sha256": "baebcf831b54142186cd2dfced73606f28a964c2d349e48d2741a6e68659306e",
+    "validation_utility": "sparse_utility_datasets/yandex_validation10k_top32_l64_128_r10_v1/results.json",
+    "validation_utility_sha256": "c3eb75e0e5099b8ddefe960162c5e70eb7b00b703bcd77dab9d6124600404178"
+  },
+  "tail_weight": 1.0,
+  "target_temperature": 0.05,
+  "train_queries": 10000,
+  "train_split": "drl_train",
+  "utility_search_Ls": [
+    64,
+    128
+  ],
+  "utility_top_ks": [
+    10
+  ],
+  "validation_queries": 10000,
+  "validation_split": "validation"
+}

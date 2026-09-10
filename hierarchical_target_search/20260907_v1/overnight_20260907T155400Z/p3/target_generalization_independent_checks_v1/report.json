@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/diagnose_target_generalization.py",
+    "sha256": "798e9e3b4b61bc4380879b71aedaec1fae28cf1db38df3595ba2b210b498a5b5"
+  },
+  "reviewer_script_sha256": "b9a8c30845887dfa935ab098266b4df6c451454414d0786b6878fb48ca47ea60",
+  "checks": [
+    "24-row independent Counter oracle matches D/top4/coverage/subgroup contributions",
+    "Full-GT top4 is shared by support groups and does not independently rescue unseen leaves",
+    "One occupied high-ID leaf retains globally ordered zero-mass ties",
+    "Absolute contributions and conditional slot ratios have different denominators",
+    "Empty groups are null and all exact D and coverage bins remain",
+    "Transient movement return counted in any-pass but absent from final difference",
+    "Repeated unseen target across queries uses separate node and slot denominators",
+    "Pilot loader makes one bounded first-three-record read without suffix or parent hash",
+    "Rank99 tamper detected by full top100 values SHA",
+    "Second-record header tamper detected",
+    "Short physical prefix rejected",
+    "Duplicate GT IDs rejected",
+    "Negative GT ID rejected",
+    "Unsigned GT contract rejected",
+    "Saved result intersections reconstruct exact full and support-specific hits",
+    "Saved oracle integrity rejects altered regions",
+    "Saved oracle integrity rejects altered weights",
+    "Saved oracle integrity rejects altered recall",
+    "Saved oracle integrity rejects altered total_ndc",
+    "Saved oracle integrity rejects altered expanded",
+    "Saved oracle integrity rejects altered query_id",
+    "Paired signs, candidate-reference orientation and additive support contributions",
+    "All ten fixed comparisons are explicit and original eight retained",
+    "Frozen subject source stable"
+  ],
+  "check_count": 24,
+  "actual_data_read": false,
+  "ANN_calls": 0,
+  "new_confidence_intervals": false,
+  "fixture_scope": "Independent Python-Counter oracle, movement/support denominators, guarded generated physical prefix, GT-derived result hits and paired counters."
+}

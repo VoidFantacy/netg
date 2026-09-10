@@ -1,0 +1,794 @@
+{
+  "status": "ALL_EIGHT_PROFILES_BUILT_BEFORE_CAL",
+  "models": [
+    {
+      "name": "gt1_hard",
+      "family": "gt1_hard",
+      "K_gt": 1,
+      "temperature": null,
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_hard/W.f32",
+      "W_identity": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_hard/W.f32",
+        "bytes": 656800,
+        "mtime_ns": 1789040405341563264,
+        "sha256": "39c539d28c8a40c879a37dfeccc72a2a99b99ef26e4d38b35ed5e349e83c28f8"
+      },
+      "assignments_identity": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_hard/assignments.f64",
+        "bytes": 131360000,
+        "mtime_ns": 1789040405625564511,
+        "sha256": "ea79ee5603279c6ec870ba397536cb35f7bdae3658513f71e260dcad60337e28"
+      },
+      "profile_seconds": 0.14041548800014425,
+      "support": {
+        "mass": {
+          "min": 1.0,
+          "median": 22.0,
+          "mean": 24.360535931790498,
+          "p90": 42.0,
+          "max": 82.0
+        },
+        "squared_mass": {
+          "min": 1.0,
+          "median": 22.0,
+          "mean": 24.360535931790498,
+          "p90": 42.0,
+          "max": 82.0
+        },
+        "ess": {
+          "min": 1.0,
+          "median": 22.0,
+          "mean": 24.360535931790498,
+          "p90": 42.0,
+          "max": 82.0
+        },
+        "query_entropy": {
+          "min": -0.0,
+          "median": 0.0,
+          "mean": 0.0,
+          "p90": 0.0,
+          "max": -0.0
+        },
+        "query_effective_hubs": {
+          "min": 1.0,
+          "median": 1.0,
+          "mean": 1.0,
+          "p90": 1.0,
+          "max": 1.0
+        },
+        "query_max_weight": {
+          "min": 1.0,
+          "median": 1.0,
+          "mean": 1.0,
+          "p90": 1.0,
+          "max": 1.0
+        },
+        "query_inverse_concentration": {
+          "min": 1.0,
+          "median": 1.0,
+          "mean": 1.0,
+          "p90": 1.0,
+          "max": 1.0
+        }
+      },
+      "hubs_with_positive_mass": 821,
+      "prior_fraction": {
+        "min": 0.012048192771084338,
+        "median": 0.043478260869565216,
+        "mean": 0.05275692528224898,
+        "p90": 0.09090909090909091,
+        "max": 0.5
+      },
+      "cosine_to_P0": {
+        "min": 0.9999998182458408,
+        "median": 1.0,
+        "mean": 0.9999999730123331,
+        "p90": 1.0,
+        "max": 1.0
+      },
+      "max_abs_to_P0": 0.0,
+      "numerical_control": {
+        "bit_equal": true,
+        "max_abs": 0.0,
+        "reference_details": {
+          "method": "nearest-existing-hub-to-train-GT-vector then spherical query prototype",
+          "train_queries": 20000,
+          "hub_count": 821,
+          "hubs_with_assignments": 821,
+          "min_queries_per_observed_hub": 1,
+          "max_queries_per_hub": 82,
+          "prior_strength": 1.0,
+          "requires_aco_dpc": true,
+          "requires_probe_labels": false,
+          "requires_neural_training": false
+        },
+        "float64_reduction_max_abs": 7.450580596923828e-08
+      },
+      "fit_only": true,
+      "requires_search_labels": false,
+      "requires_gradient_training": false
+    },
+    {
+      "name": "gt1_soft_t0",
+      "family": "gt1_soft",
+      "K_gt": 1,
+      "temperature": 0.010893512517213821,
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_soft_t0/W.f32",
+      "W_identity": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_soft_t0/W.f32",
+        "bytes": 656800,
+        "mtime_ns": 1789040610974470822,
+        "sha256": "da3e61b3a5a912aca2c02edf5da844981882480222d82cceb62cf3946663985e"
+      },
+      "assignments_sha256": "b0d304601ab5ed8b985c62648ee69e42458444df6c63ea85c46af98cf54e599c",
+      "assignments_shape": [
+        20000,
+        821
+      ],
+      "assignments_storage": "statistics and exact float64 digest; recomputable from fit",
+      "profile_seconds": 0.02265612799965311,
+      "support": {
+        "mass": {
+          "min": 1.5925061501060755,
+          "median": 21.990466631360544,
+          "mean": 24.36053593179002,
+          "p90": 41.575698958094904,
+          "max": 77.32107130152986
+        },
+        "squared_mass": {
+          "min": 0.6783747656290908,
+          "median": 17.91390701193982,
+          "mean": 20.05183697158124,
+          "p90": 35.05795039046078,
+          "max": 65.3465353053461
+        },
+        "ess": {
+          "min": 3.3691540269283844,
+          "median": 26.832620385715106,
+          "mean": 29.764927869202786,
+          "p90": 49.99070104894562,
+          "max": 91.48990132805328
+        },
+        "query_entropy": {
+          "min": 1.7963114071650768e-21,
+          "median": 0.12440670662751688,
+          "mean": 0.3354019201357571,
+          "p90": 0.9664584091200288,
+          "max": 2.428315605254136
+        },
+        "query_effective_hubs": {
+          "min": 1.0,
+          "median": 1.1324763629950052,
+          "mean": 1.5483290997460986,
+          "p90": 2.6286184638022756,
+          "max": 11.339765343292262
+        },
+        "query_max_weight": {
+          "min": 0.141040648956496,
+          "median": 0.9763400674333953,
+          "mean": 0.8740117171613824,
+          "p90": 0.9999977377866056,
+          "max": 1.0
+        },
+        "query_inverse_concentration": {
+          "min": 1.0,
+          "median": 1.0485553139988681,
+          "mean": 1.3712387061522364,
+          "p90": 2.1428624719594134,
+          "max": 9.868713949854799
+        }
+      },
+      "hubs_with_positive_mass": 821,
+      "prior_fraction": {
+        "min": 0.012767956098941498,
+        "median": 0.043496289833279536,
+        "mean": 0.051401096101241286,
+        "p90": 0.08529571926040427,
+        "max": 0.38572714666813185
+      },
+      "cosine_to_P0": {
+        "min": 0.9573770008153392,
+        "median": 0.9975825567212091,
+        "mean": 0.9962351786317728,
+        "p90": 0.9992413163579078,
+        "max": 0.9998067390788961
+      },
+      "max_abs_to_P0": 0.0798930898308754,
+      "numerical_control": null,
+      "fit_only": true,
+      "requires_search_labels": false,
+      "requires_gradient_training": false
+    },
+    {
+      "name": "gt1_soft_t1",
+      "family": "gt1_soft",
+      "K_gt": 1,
+      "temperature": 0.043574050068855286,
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_soft_t1/W.f32",
+      "W_identity": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_soft_t1/W.f32",
+        "bytes": 656800,
+        "mtime_ns": 1789040611314472332,
+        "sha256": "ec3e1ba0f974cb6ae591b8544be370794d9e95c60257f80a3b88769107790fe4"
+      },
+      "assignments_sha256": "280f830a4ea2bd8b33f8fc589e615e433a5ca603a7dc07a5f26d5ad997175ca0",
+      "assignments_shape": [
+        20000,
+        821
+      ],
+      "assignments_storage": "statistics and exact float64 digest; recomputable from fit",
+      "profile_seconds": 0.019515387999490486,
+      "support": {
+        "mass": {
+          "min": 5.553220906536288,
+          "median": 22.911169691268952,
+          "mean": 24.360535931790505,
+          "p90": 37.95946039235954,
+          "max": 62.942151254225884
+        },
+        "squared_mass": {
+          "min": 0.3715168891508256,
+          "median": 6.444737086944071,
+          "mean": 8.00061749473326,
+          "p90": 15.976993248280422,
+          "max": 40.227365203848805
+        },
+        "ess": {
+          "min": 14.902375629061545,
+          "median": 79.1492188870623,
+          "mean": 90.71480863717115,
+          "p90": 149.73044850001634,
+          "max": 544.2810287330663
+        },
+        "query_entropy": {
+          "min": 0.00010266010931054401,
+          "median": 2.4203495988968573,
+          "mean": 2.3825655445632794,
+          "p90": 4.0385087994935605,
+          "max": 5.581990311701599
+        },
+        "query_effective_hubs": {
+          "min": 1.00010266537904,
+          "median": 11.249791743939282,
+          "mean": 21.692062880083434,
+          "p90": 56.74166649879699,
+          "max": 265.5997062729419
+        },
+        "query_max_weight": {
+          "min": 0.034789502712696825,
+          "median": 0.4196379983041716,
+          "mean": 0.47188318294995807,
+          "p90": 0.8861406116444318,
+          "max": 0.9999936229498843
+        },
+        "query_inverse_concentration": {
+          "min": 1.0000127542137263,
+          "median": 4.243195804596537,
+          "mean": 7.28834695648278,
+          "p90": 17.004159025052846,
+          "max": 112.95872761098096
+        }
+      },
+      "hubs_with_positive_mass": 821,
+      "prior_fraction": {
+        "min": 0.015639136006296173,
+        "median": 0.04182145887932639,
+        "mean": 0.04601552068444816,
+        "p90": 0.07024134175617919,
+        "max": 0.1525967175931127
+      },
+      "cosine_to_P0": {
+        "min": 0.8096813557959825,
+        "median": 0.9838771073302356,
+        "mean": 0.9764519574505562,
+        "p90": 0.9944352521874074,
+        "max": 0.9983294972503856
+      },
+      "max_abs_to_P0": 0.11524423956871033,
+      "numerical_control": null,
+      "fit_only": true,
+      "requires_search_labels": false,
+      "requires_gradient_training": false
+    },
+    {
+      "name": "gt1_soft_t2",
+      "family": "gt1_soft",
+      "K_gt": 1,
+      "temperature": 0.17429620027542114,
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_soft_t2/W.f32",
+      "W_identity": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_soft_t2/W.f32",
+        "bytes": 656800,
+        "mtime_ns": 1789040611650473823,
+        "sha256": "28c405bde9943124cea2fa13414921f2db11a5cd64b92ee2f9436edab173463c"
+      },
+      "assignments_sha256": "e24cc33e2d1399125beb9cb360d08f5cb6daddeb82e1ac1bf34fee163429d765",
+      "assignments_shape": [
+        20000,
+        821
+      ],
+      "assignments_storage": "statistics and exact float64 digest; recomputable from fit",
+      "profile_seconds": 0.018640027999936137,
+      "support": {
+        "mass": {
+          "min": 15.320194557629009,
+          "median": 24.230905608945612,
+          "mean": 24.360535931790498,
+          "p90": 28.114688509237727,
+          "max": 33.45808572226727
+        },
+        "squared_mass": {
+          "min": 0.01612005307941228,
+          "median": 0.04665244640735021,
+          "mean": 0.05153542873757961,
+          "p90": 0.07335956852376124,
+          "max": 0.1811624543057215
+        },
+        "ess": {
+          "min": 2877.448979331807,
+          "median": 12987.1317215514,
+          "mean": 12389.343687827897,
+          "p90": 15153.798109431325,
+          "max": 16106.445194272743
+        },
+        "query_entropy": {
+          "min": 5.618178943232847,
+          "median": 6.555502884489105,
+          "mean": 6.526815779100821,
+          "p90": 6.6015973570015145,
+          "max": 6.643059237843593
+        },
+        "query_effective_hubs": {
+          "min": 275.38743018767025,
+          "median": 703.1026403639285,
+          "mean": 686.1044077399047,
+          "p90": 736.2703370063481,
+          "max": 767.4391844679621
+        },
+        "query_max_weight": {
+          "min": 0.003605607045672859,
+          "median": 0.011662581724060966,
+          "mean": 0.014651227169474226,
+          "p90": 0.02510556127096656,
+          "max": 0.18435047742260385
+        },
+        "query_inverse_concentration": {
+          "min": 28.51850996834095,
+          "median": 553.0997291741908,
+          "mean": 521.3134823566182,
+          "p90": 638.981421006405,
+          "max": 715.7973156057062
+        }
+      },
+      "hubs_with_positive_mass": 821,
+      "prior_fraction": {
+        "min": 0.029020764765054455,
+        "median": 0.039633932110841485,
+        "mean": 0.03993154666270843,
+        "p90": 0.045667659652671624,
+        "max": 0.06127377933325812
+      },
+      "cosine_to_P0": {
+        "min": 0.4548873494204013,
+        "median": 0.7757618269575406,
+        "mean": 0.7621466109425453,
+        "p90": 0.8599735785365228,
+        "max": 0.9365331272240964
+      },
+      "max_abs_to_P0": 0.239587664604187,
+      "numerical_control": null,
+      "fit_only": true,
+      "requires_search_labels": false,
+      "requires_gradient_training": false
+    },
+    {
+      "name": "gt10_hard",
+      "family": "gt10_hard",
+      "K_gt": 10,
+      "temperature": null,
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "W_identity": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+        "bytes": 656800,
+        "mtime_ns": 1789040616102493581,
+        "sha256": "bbc5e447aad556618a75fe50a6543c7d3fae68c46f920d79e8913281a0c9bf16"
+      },
+      "assignments_sha256": "966164b92677dccdfd308ef3c416c226291737ac3b67ad2c94fd8c5c03ced0af",
+      "assignments_shape": [
+        20000,
+        821
+      ],
+      "assignments_storage": "statistics and exact float64 digest; recomputable from fit",
+      "profile_seconds": 0.019451952999588684,
+      "support": {
+        "mass": {
+          "min": 2.0000000000000004,
+          "median": 21.500000000000007,
+          "mean": 24.360535931790515,
+          "p90": 41.20000000000006,
+          "max": 81.99999999999991
+        },
+        "squared_mass": {
+          "min": 0.3200000000000002,
+          "median": 7.889999999999993,
+          "mean": 9.904287454323986,
+          "p90": 19.95999999999999,
+          "max": 48.63999999999997
+        },
+        "ess": {
+          "min": 9.38578680203046,
+          "median": 60.08182912154047,
+          "mean": 66.25593841818498,
+          "p90": 108.1637426900589,
+          "max": 198.8587943848062
+        },
+        "query_entropy": {
+          "min": 1.1102230246251564e-16,
+          "median": 1.2798542258336674,
+          "mean": 1.203028382637716,
+          "p90": 1.8866967846580787,
+          "max": 2.302585092994046
+        },
+        "query_effective_hubs": {
+          "min": 1.0,
+          "median": 3.5961154666243216,
+          "mean": 3.895419806386135,
+          "p90": 6.597539553864473,
+          "max": 10.000000000000002
+        },
+        "query_max_weight": {
+          "min": 0.1,
+          "median": 0.5,
+          "mean": 0.51925,
+          "p90": 0.8999999999999999,
+          "max": 0.9999999999999999
+        },
+        "query_inverse_concentration": {
+          "min": 1.0000000000000002,
+          "median": 3.1249999999999996,
+          "mean": 3.446117356019619,
+          "p90": 6.249999999999999,
+          "max": 10.0
+        }
+      },
+      "hubs_with_positive_mass": 821,
+      "prior_fraction": {
+        "min": 0.01204819277108435,
+        "median": 0.04444444444444443,
+        "mean": 0.051239831074464545,
+        "p90": 0.0869565217391305,
+        "max": 0.33333333333333326
+      },
+      "cosine_to_P0": {
+        "min": 0.8511339510218928,
+        "median": 0.9810017283686834,
+        "mean": 0.9741034330644964,
+        "p90": 0.9931431904050134,
+        "max": 0.9979725704902961
+      },
+      "max_abs_to_P0": 0.1304265558719635,
+      "numerical_control": null,
+      "fit_only": true,
+      "requires_search_labels": false,
+      "requires_gradient_training": false
+    },
+    {
+      "name": "gt10_soft_t0",
+      "family": "gt10_soft",
+      "K_gt": 10,
+      "temperature": 0.010893512517213821,
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt10_soft_t0/W.f32",
+      "W_identity": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt10_soft_t0/W.f32",
+        "bytes": 656800,
+        "mtime_ns": 1789040616430495037,
+        "sha256": "2ffd9aa59fbad754bd4b13a33a8f5ddfb919e1939d95a4ae34bc8ad8dd475f60"
+      },
+      "assignments_sha256": "b8ca7d81b550501a9bfa4419b3df45566026594cf9638b3358583a0a81f9860d",
+      "assignments_shape": [
+        20000,
+        821
+      ],
+      "assignments_storage": "statistics and exact float64 digest; recomputable from fit",
+      "profile_seconds": 0.01826561699999729,
+      "support": {
+        "mass": {
+          "min": 2.3166002284289093,
+          "median": 21.535429550579558,
+          "mean": 24.36053593178999,
+          "p90": 41.114931923147374,
+          "max": 81.62898362697415
+        },
+        "squared_mass": {
+          "min": 0.2666759598493748,
+          "median": 7.2925603319448955,
+          "mean": 9.276712681579284,
+          "p90": 19.136652904987997,
+          "max": 46.80660365224707
+        },
+        "ess": {
+          "min": 10.116082533527187,
+          "median": 65.97430777726143,
+          "mean": 72.53051979757203,
+          "p90": 119.41496375628499,
+          "max": 216.83614799341044
+        },
+        "query_entropy": {
+          "min": 3.0133171861262435e-16,
+          "median": 1.461040726624278,
+          "mean": 1.394749939957869,
+          "p90": 2.220883243338429,
+          "max": 3.1056807816892325
+        },
+        "query_effective_hubs": {
+          "min": 1.0000000000000002,
+          "median": 4.310443188503745,
+          "mean": 4.934635423439923,
+          "p90": 9.215466781918,
+          "max": 22.32441185398531
+        },
+        "query_max_weight": {
+          "min": 0.098828430907015,
+          "median": 0.45827944444241353,
+          "mean": 0.5038774466141912,
+          "p90": 0.8854458777357684,
+          "max": 0.9999999999999999
+        },
+        "query_inverse_concentration": {
+          "min": 1.0000000000000002,
+          "median": 3.286473308306843,
+          "mean": 3.8574039741671253,
+          "p90": 7.2340870664331955,
+          "max": 16.596903405038056
+        }
+      },
+      "hubs_with_positive_mass": 821,
+      "prior_fraction": {
+        "min": 0.012102290940845495,
+        "median": 0.04437457017429172,
+        "mean": 0.05082931256352392,
+        "p90": 0.0866533042112881,
+        "max": 0.30151357749670815
+      },
+      "cosine_to_P0": {
+        "min": 0.8479619925573327,
+        "median": 0.98062705867787,
+        "mean": 0.9736240785083163,
+        "p90": 0.993020257138683,
+        "max": 0.9979165494690553
+      },
+      "max_abs_to_P0": 0.12730512022972107,
+      "numerical_control": null,
+      "fit_only": true,
+      "requires_search_labels": false,
+      "requires_gradient_training": false
+    },
+    {
+      "name": "gt10_soft_t1",
+      "family": "gt10_soft",
+      "K_gt": 10,
+      "temperature": 0.043574050068855286,
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt10_soft_t1/W.f32",
+      "W_identity": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt10_soft_t1/W.f32",
+        "bytes": 656800,
+        "mtime_ns": 1789040616766496529,
+        "sha256": "2b007378ab75081aa6b4bdff1c834fe434a8936e55f51b9ab5ffaea25d351a66"
+      },
+      "assignments_sha256": "eb4fdfae246762032f0ae191e2d354b55d2424b3915401bce00ff1294ce52fc2",
+      "assignments_shape": [
+        20000,
+        821
+      ],
+      "assignments_storage": "statistics and exact float64 digest; recomputable from fit",
+      "profile_seconds": 0.01872390400058066,
+      "support": {
+        "mass": {
+          "min": 5.421146522011063,
+          "median": 22.30762761056203,
+          "mean": 24.36053593179051,
+          "p90": 38.099942963069154,
+          "max": 67.76268956730402
+        },
+        "squared_mass": {
+          "min": 0.22958213350312018,
+          "median": 3.7649082718711884,
+          "mean": 5.003192942617788,
+          "p90": 10.648571331869896,
+          "max": 31.042396301578602
+        },
+        "ess": {
+          "min": 20.14403406830313,
+          "median": 138.8518978756694,
+          "mean": 175.6091492086706,
+          "p90": 323.1026198428524,
+          "max": 1317.1755821895513
+        },
+        "query_entropy": {
+          "min": 0.0019140802244562234,
+          "median": 3.08628213255491,
+          "mean": 2.963762153913354,
+          "p90": 4.310462267970241,
+          "max": 5.773807038571604
+        },
+        "query_effective_hubs": {
+          "min": 1.0019159132453388,
+          "median": 21.895522838221915,
+          "mean": 31.83968903566252,
+          "p90": 74.47490834914149,
+          "max": 321.76035797340626
+        },
+        "query_max_weight": {
+          "min": 0.03174816194762053,
+          "median": 0.2841503752001755,
+          "mean": 0.34511721456246636,
+          "p90": 0.6763012560574206,
+          "max": 0.9998459092248482
+        },
+        "query_inverse_concentration": {
+          "min": 1.0003082505059844,
+          "median": 7.724374068329262,
+          "mean": 10.843643754209857,
+          "p90": 23.74311299591534,
+          "max": 148.5292932868386
+        }
+      },
+      "hubs_with_positive_mass": 821,
+      "prior_fraction": {
+        "min": 0.014542770305998765,
+        "median": 0.04290440952243644,
+        "mean": 0.046383129245667454,
+        "p90": 0.07135377480276452,
+        "max": 0.1557354277109388
+      },
+      "cosine_to_P0": {
+        "min": 0.8064215898237668,
+        "median": 0.9740555884099535,
+        "mean": 0.9655920716458366,
+        "p90": 0.9903723919671944,
+        "max": 0.9967241086081194
+      },
+      "max_abs_to_P0": 0.13606499135494232,
+      "numerical_control": null,
+      "fit_only": true,
+      "requires_search_labels": false,
+      "requires_gradient_training": false
+    },
+    {
+      "name": "gt10_soft_t2",
+      "family": "gt10_soft",
+      "K_gt": 10,
+      "temperature": 0.17429620027542114,
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt10_soft_t2/W.f32",
+      "W_identity": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt10_soft_t2/W.f32",
+        "bytes": 656800,
+        "mtime_ns": 1789040617106498037,
+        "sha256": "a8bf34ba7bc163ca37d1e6f17fddfe24230f0a4cfa1d892142187a9771197465"
+      },
+      "assignments_sha256": "608a1c1bdf30344b698a1246006e7c4c90c46fc5f1d6eb9ee45c256cf04a1222",
+      "assignments_shape": [
+        20000,
+        821
+      ],
+      "assignments_storage": "statistics and exact float64 digest; recomputable from fit",
+      "profile_seconds": 0.018902526000601938,
+      "support": {
+        "mass": {
+          "min": 15.271992452099296,
+          "median": 24.222934856413385,
+          "mean": 24.36053593179049,
+          "p90": 27.98332135785496,
+          "max": 33.66392573556727
+        },
+        "squared_mass": {
+          "min": 0.01488277255678377,
+          "median": 0.04274690850138311,
+          "mean": 0.04672543143182017,
+          "p90": 0.06605358444186513,
+          "max": 0.1780702096231661
+        },
+        "ess": {
+          "min": 3008.9701523926733,
+          "median": 14221.846627682933,
+          "mean": 13587.233584249358,
+          "p90": 16386.209541539374,
+          "max": 17356.608943643365
+        },
+        "query_entropy": {
+          "min": 5.9181751712535675,
+          "median": 6.586528993218468,
+          "mean": 6.558572859588789,
+          "p90": 6.628974307890912,
+          "max": 6.67033131656528
+        },
+        "query_effective_hubs": {
+          "min": 371.7327459636887,
+          "median": 725.2591166074722,
+          "mean": 707.8600574967371,
+          "p90": 756.7056254741509,
+          "max": 788.6568562625193
+        },
+        "query_max_weight": {
+          "min": 0.00302399005160993,
+          "median": 0.010208091488416574,
+          "mean": 0.01278130010191009,
+          "p90": 0.022185575698805048,
+          "max": 0.11499866032379856
+        },
+        "query_inverse_concentration": {
+          "min": 60.01888709151774,
+          "median": 595.3921206393475,
+          "mean": 561.9075517007219,
+          "p90": 680.6606165392184,
+          "max": 755.5694437734629
+        }
+      },
+      "hubs_with_positive_mass": 821,
+      "prior_fraction": {
+        "min": 0.028848434756884447,
+        "median": 0.03964645691283352,
+        "mean": 0.03993159562003961,
+        "p90": 0.04575812480264787,
+        "max": 0.06145528907684486
+      },
+      "cosine_to_P0": {
+        "min": 0.453907693040385,
+        "median": 0.7745444524574011,
+        "mean": 0.7618463913260216,
+        "p90": 0.8587204174098036,
+        "max": 0.9371385152925449
+      },
+      "max_abs_to_P0": 0.2394534796476364,
+      "numerical_control": null,
+      "fit_only": true,
+      "requires_search_labels": false,
+      "requires_gradient_training": false
+    }
+  ],
+  "total_stage_seconds": 7.361174449999453,
+  "shared_assignment_costs": [
+    {
+      "K_gt": 1,
+      "shared_target_assignment_seconds": 0.7648560689995065,
+      "targets": 20000,
+      "target_norms": {
+        "min": 0.8234179615974426,
+        "median": 0.9768984317779541,
+        "mean": 0.9730228792667389,
+        "p90": 0.9833012044429779,
+        "max": 0.991138219833374
+      },
+      "exact_highest_score_ties": 0
+    },
+    {
+      "K_gt": 10,
+      "shared_target_assignment_seconds": 4.094373150999672,
+      "targets": 200000,
+      "target_norms": {
+        "min": 0.816730797290802,
+        "median": 0.9769995212554932,
+        "mean": 0.9728204187873006,
+        "p90": 0.9834023296833039,
+        "max": 0.9919360876083374
+      },
+      "exact_highest_score_ties": 0
+    }
+  ],
+  "raw_hub_norms": {
+    "min": 0.8714631795883179,
+    "median": 0.977107048034668,
+    "mean": 0.9736759476772034,
+    "p90": 0.98319011926651,
+    "max": 0.9912704825401306
+  },
+  "raw_query_norms": {
+    "min": 0.9999998211860657,
+    "median": 1.0,
+    "mean": 0.9999999827086925,
+    "p90": 1.0,
+    "max": 1.0000001192092896
+  },
+  "zero_queries": 0,
+  "protocol_sha256": "03c2375cc14943ebed060b1751b27227770c167cc538785b9c15cb23f2d450f7"
+}

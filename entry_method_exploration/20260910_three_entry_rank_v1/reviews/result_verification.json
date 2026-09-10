@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "validation_outputs_verified": 50000,
+      "model_and_entries_fixed_across_five_L": true
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "split": "fit_probe",
+      "diagnostic_outputs_verified": 14336,
+      "QPS_reported": false
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "split": "cal",
+      "diagnostic_outputs_verified": 14336,
+      "QPS_reported": false
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "split": "audit",
+      "diagnostic_outputs_verified": 6144,
+      "QPS_reported": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "validation_outputs_verified": 50000,
+      "model_and_entries_fixed_across_five_L": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "split": "fit_probe",
+      "diagnostic_outputs_verified": 14336,
+      "QPS_reported": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "split": "cal",
+      "diagnostic_outputs_verified": 14336,
+      "QPS_reported": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "split": "audit",
+      "diagnostic_outputs_verified": 6144,
+      "QPS_reported": false
+    }
+  ],
+  "legacy_NSG_and_Fast30K_outputs_bit_identical": 40000,
+  "validation_query_outputs_verified": 100000,
+  "diagnostic_metadata_exception": "See diagnostic_metadata_correction.json for v1 warm_timed_queries field only",
+  "source_results": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/results/webvid2_5m_light_v1/results.json",
+      "bytes": 33059,
+      "mtime_ns": 1789031059736251226,
+      "sha256": "b62304f0ab863026e46df0291253c64e64ecde4838a4a3672c6a80e2f94cccf6"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260910_three_entry_rank_v1/results/yandex_t2i_official10M_ip_v1/results.json",
+      "bytes": 33622,
+      "mtime_ns": 1789031253773094432,
+      "sha256": "3edded4077334e2e02b6a38c6a8ef0cc48f03fb4c4b9ba7bd7eb52be55ac1422"
+    }
+  ]
+}

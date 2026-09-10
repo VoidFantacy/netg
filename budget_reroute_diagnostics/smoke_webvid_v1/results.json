@@ -1,0 +1,154 @@
+{
+  "artifact_version": "roargraph-webvid2.5m-ip-v1",
+  "budget_pairs": [
+    {
+      "queries": [
+        {
+          "baseline_graph_ndc": 582,
+          "baseline_recall": 0.8,
+          "oracle_reroute_entry_id": 1838620,
+          "oracle_reroute_merged_recall": 0.8,
+          "oracle_reroute_total_graph_ndc": 708,
+          "probe_graph_ndc": 246,
+          "probe_recall": 0.8,
+          "query_id": 0,
+          "restart_merged_recall": 0.8,
+          "restart_total_graph_ndc": 742
+        },
+        {
+          "baseline_graph_ndc": 989,
+          "baseline_recall": 0.5,
+          "oracle_reroute_entry_id": 1812465,
+          "oracle_reroute_merged_recall": 0.5,
+          "oracle_reroute_total_graph_ndc": 1007,
+          "probe_graph_ndc": 330,
+          "probe_recall": 0.2,
+          "query_id": 1,
+          "restart_merged_recall": 0.5,
+          "restart_total_graph_ndc": 1015
+        },
+        {
+          "baseline_graph_ndc": 910,
+          "baseline_recall": 0.9,
+          "oracle_reroute_entry_id": 761255,
+          "oracle_reroute_merged_recall": 0.9,
+          "oracle_reroute_total_graph_ndc": 700,
+          "probe_graph_ndc": 211,
+          "probe_recall": 0.0,
+          "query_id": 2,
+          "restart_merged_recall": 0.9,
+          "restart_total_graph_ndc": 975
+        },
+        {
+          "baseline_graph_ndc": 765,
+          "baseline_recall": 0.5,
+          "oracle_reroute_entry_id": 779075,
+          "oracle_reroute_merged_recall": 0.5,
+          "oracle_reroute_total_graph_ndc": 702,
+          "probe_graph_ndc": 206,
+          "probe_recall": 0.5,
+          "query_id": 3,
+          "restart_merged_recall": 0.5,
+          "restart_total_graph_ndc": 788
+        },
+        {
+          "baseline_graph_ndc": 1468,
+          "baseline_recall": 0.6,
+          "oracle_reroute_entry_id": 1774704,
+          "oracle_reroute_merged_recall": 0.6,
+          "oracle_reroute_total_graph_ndc": 1050,
+          "probe_graph_ndc": 341,
+          "probe_recall": 0.0,
+          "query_id": 4,
+          "restart_merged_recall": 0.6,
+          "restart_total_graph_ndc": 1718
+        },
+        {
+          "baseline_graph_ndc": 780,
+          "baseline_recall": 0.9,
+          "oracle_reroute_entry_id": 686250,
+          "oracle_reroute_merged_recall": 0.9,
+          "oracle_reroute_total_graph_ndc": 669,
+          "probe_graph_ndc": 129,
+          "probe_recall": 0.7,
+          "query_id": 5,
+          "restart_merged_recall": 0.9,
+          "restart_total_graph_ndc": 671
+        },
+        {
+          "baseline_graph_ndc": 981,
+          "baseline_recall": 0.5,
+          "oracle_reroute_entry_id": 1755826,
+          "oracle_reroute_merged_recall": 0.8,
+          "oracle_reroute_total_graph_ndc": 892,
+          "probe_graph_ndc": 267,
+          "probe_recall": 0.4,
+          "query_id": 6,
+          "restart_merged_recall": 0.5,
+          "restart_total_graph_ndc": 954
+        },
+        {
+          "baseline_graph_ndc": 502,
+          "baseline_recall": 0.9,
+          "oracle_reroute_entry_id": 791191,
+          "oracle_reroute_merged_recall": 0.8,
+          "oracle_reroute_total_graph_ndc": 516,
+          "probe_graph_ndc": 143,
+          "probe_recall": 0.8,
+          "query_id": 7,
+          "restart_merged_recall": 0.8,
+          "restart_total_graph_ndc": 518
+        },
+        {
+          "baseline_graph_ndc": 1161,
+          "baseline_recall": 0.7,
+          "oracle_reroute_entry_id": 609845,
+          "oracle_reroute_merged_recall": 0.7,
+          "oracle_reroute_total_graph_ndc": 774,
+          "probe_graph_ndc": 190,
+          "probe_recall": 0.0,
+          "query_id": 8,
+          "restart_merged_recall": 0.7,
+          "restart_total_graph_ndc": 1186
+        },
+        {
+          "baseline_graph_ndc": 775,
+          "baseline_recall": 1.0,
+          "oracle_reroute_entry_id": 2267384,
+          "oracle_reroute_merged_recall": 1.0,
+          "oracle_reroute_total_graph_ndc": 528,
+          "probe_graph_ndc": 109,
+          "probe_recall": 0.0,
+          "query_id": 9,
+          "restart_merged_recall": 1.0,
+          "restart_total_graph_ndc": 712
+        }
+      ],
+      "reroute_L": 46,
+      "target_L": 64
+    }
+  ],
+  "candidate_count": 815,
+  "dataset": "webvid2_5m_light_v1",
+  "metric": "ip",
+  "num_queries": 10,
+  "num_runs": 3,
+  "oracle_definition": "always-probe plus Fast restart or shortlist-oracle reroute; merged top-10; graph frozen",
+  "probe_L": 10,
+  "results": [],
+  "schema_version": 1,
+  "search_Ls": [
+    64,
+    128,
+    200,
+    400
+  ],
+  "split": "validation",
+  "status": "complete",
+  "threads": 2,
+  "top_ks": [
+    1,
+    10,
+    100
+  ]
+}

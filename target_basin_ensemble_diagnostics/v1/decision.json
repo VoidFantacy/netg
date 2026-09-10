@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "go_to_stability_tail_and_full_cost",
+  "method": "Fast-rank0-anchored three-seed target-basin ensemble",
+  "method_frozen": true,
+  "heldout_accessed": false,
+  "gate": {
+    "require_nonnegative_recall_and_utility_delta_at_both_L_on_both_datasets": true,
+    "passed": true
+  },
+  "validation_delta_vs_fast": {
+    "webvid": {
+      "L64": {"recall_pp": 0.871, "ndc_percent": -2.2783, "utility": 0.009849130},
+      "L128": {"recall_pp": 0.369, "ndc_percent": -1.3884, "utility": 0.004384193}
+    },
+    "yandex": {
+      "L64": {"recall_pp": 0.250, "ndc_percent": -1.7087, "utility": 0.003354374},
+      "L128": {"recall_pp": 0.209, "ndc_percent": -0.9920, "utility": 0.002586008}
+    }
+  },
+  "capacity": {
+    "prototype_views": 3,
+    "candidate_union_upper_bound": 24,
+    "webvid_prototype_bytes": 5007360,
+    "yandex_prototype_bytes": 1970400
+  },
+  "routing_replay": {
+    "implementation": "single-thread NumPy exact scoring reference including process and file I/O",
+    "webvid_validation_10k_wall_seconds": 0.81,
+    "yandex_validation_10k_wall_seconds": 0.75,
+    "route_checksums_match_evaluation": true
+  },
+  "cpp_online_validation": {
+    "reference_route_cell_mismatch_fraction": {"webvid": 0.026766667, "yandex": 0.012833333},
+    "effective_routing_wall_us_per_query_at_16_threads": {"webvid": 52.312884, "yandex": 19.101461},
+    "webvid": {
+      "L64": {"recall_pp": 0.822, "graph_ndc_percent": -2.1272},
+      "L128": {"recall_pp": 0.340, "graph_ndc_percent": -1.3142}
+    },
+    "yandex": {
+      "L64": {"recall_pp": 0.214, "graph_ndc_percent": -1.7040},
+      "L128": {"recall_pp": 0.148, "graph_ndc_percent": -0.9990}
+    }
+  },
+  "claim_boundary": "Online routing quality and throughput overhead are verified on one frozen three-view ensemble; routing NDC, tail metrics, complete offline cost, and independent ensemble repetitions remain required.",
+  "next_gate": "Run independent ensemble-build repetitions, tail metrics, routing NDC, and complete GT-inclusive cost before any held-out run."
+}

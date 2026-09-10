@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "version": "20260909_a_r0_v1",
+  "direction": "A",
+  "stage": "R0_ASSESSMENT",
+  "status": "SUPERSEDED_BY_AB_JOINT_REFORMULATION_UNRUN",
+  "historical_status": "R0_NOVELTY_NO_GO_AWAITING_USER_DECISION",
+  "updated_date": "2026-09-09",
+  "method_implemented": false,
+  "label_runner_implemented": false,
+  "facet_trainer_implemented": false,
+  "facet_index_implemented": false,
+  "end_to_end_evaluator_implemented": false,
+  "new_labels_generated": false,
+  "model_trained": false,
+  "ann_experiment_started": false,
+  "validation_accessed": false,
+  "heldout_accessed": false,
+  "root_documents_modified": true,
+  "root_documents_modified_list": ["s-target.md"],
+  "current_verdict": {
+    "standalone_algorithm_novelty": "NO_GO",
+    "systems_empirical_diagnostic": "OPTIONAL_ONLY_IF_USER_ACCEPTS_LOWER_NOVELTY",
+    "performance": "UNTESTED",
+    "implementation": "NOT_IMPLEMENTED_NOT_RUN",
+    "current_relevance": "HISTORICAL_COMPONENT_COLLISION_AUDIT; DOES_NOT_GOVERN_THE_AB_JOINT_METHOD"
+  },
+  "decision_required": [],
+  "decision_record": {
+    "date": "2026-09-09",
+    "decision": "SUPERSEDE_STANDALONE_A_WITH_AB_JOINT_REFORMULATION",
+    "reason": "COMPONENT_NOVELTY_WAS_TOO_STRICT_A_CRITERION_FOR_OVERALL_METHOD_NOVELTY",
+    "successor": "../20260909_ab_joint_r0_v1",
+    "interpretation": "The old component-collision evidence remains useful, but its binary closure-or-lower-novelty framing no longer governs current planning. No method experiment was run."
+  },
+  "optional_scope_if_reopened": {
+    "authorized": false,
+    "datasets": [
+      "webvid2_5m_light_v1",
+      "yandex_t2i_official10M_ip_v1"
+    ],
+    "top_k": 10,
+    "search_L": [64, 128],
+    "hub_counts": {
+      "webvid2_5m_light_v1": 815,
+      "yandex_t2i_official10M_ip_v1": 821
+    },
+    "q_fit_per_dataset": 20000,
+    "q_calibration_per_dataset": 1024,
+    "q_audit_per_dataset": 1024,
+    "facet_budgets_to_calibrate": ["2H", "4H"],
+    "max_reallocation_rounds": 4,
+    "reallocation_batch_fraction": 0.05,
+    "logical_label_cells_and_native_calls": 72141056,
+    "fit_label_calls": 65440000,
+    "calibration_and_audit_label_calls": 6701056,
+    "parity_calls": 78528,
+    "calibration_and_audit_fast3_calls": 8192,
+    "listed_quality_stage_from_zero_calls": 72227776,
+    "max_exact_fit_cells_potentially_reusable_after_full_identity_audit": 836002,
+    "reuse_savings_must_not_expand_scope": true,
+    "recommended_search_and_label_wall_cap_seconds": 14400,
+    "recommended_training_wall_cap_seconds": 28800,
+    "recommended_rss_cap_gib": 20,
+    "recommended_artifact_cap_gib_without_full_ids": 1,
+    "recommended_artifact_cap_gib_with_full_ids": 5,
+    "minimum_data_free_gib": 10,
+    "threads_max": 16,
+    "single_heavy_process": true,
+    "g3_deployment_and_wall_status": "NOT_AUTHORIZED; requires G2 exact-representation PASS and separate user review",
+    "formal_validation_and_heldout_status": "NOT_AUTHORIZED"
+  },
+  "required_strong_controls_if_reopened": [
+    "one facet per hub with tie-aware regret loss",
+    "equal-quota MProtSVM or maxout at the same total facet count",
+    "hard-ID maxout loss ablation",
+    "geometric query multi-prototype at the same total facet count",
+    "AMM or GAMM clone-prune control",
+    "adaptive-LVQ-style global-hard-cap add-remove control",
+    "Sparse Multi-Prototype-style fusion and sparsity control",
+    "fixed allocation versus adaptive allocation factorial controls",
+    "Fast1 and real Fast3",
+    "v4 utility tree before any paper-level claim",
+    "exact facet scan before any approximate micro-index"
+  ],
+  "reusable_implementation_observed": [
+    "native ACSG::search_new(mode=2) single-entry adapter",
+    "fast-router-diagnosis aligned hitcount, hitmask, graph-NDC and parity schemas",
+    "hierarchical evaluator split, warmup, method-order rotation and pure-wall structure"
+  ],
+  "implementation_gaps": [
+    "role-isolated resumable slim full-H label runner",
+    "facet trainer and deterministic tie-aware exact scorer",
+    "generic adaptive multi-prototype baselines",
+    "facet-to-hub raw-IP micro-index",
+    "A-specific end-to-end pure-wall evaluator"
+  ],
+  "blocking_condition": null,
+  "next_action": "Use ../20260909_ab_joint_r0_v1 for current theory. Do not implement or run the old standalone A protocol.",
+  "reopen_condition": "This standalone version is historical and must not be reopened; any execution must use a separately approved successor of the AB joint theory.",
+  "evidence": [
+    "assessment/assessment.md",
+    "assessment/protocol_draft.md",
+    "source_manifest.json",
+    "../../s-target.md",
+    "../../experiment_history/04_utility_and_representation.md",
+    "../../experiment_history/08_fast_router_diagnosis.md",
+    "../../entry_selection_research/20260908_v5/reviews/utility_representation.md",
+    "../../entry_selection_research/20260908_v5/reviews/independent_method_review.md",
+    "../../entry_selection_research/20260908_v5/reviews/independent_cost_review.md"
+  ]
+}

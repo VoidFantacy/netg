@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "prepared_utc": "2026-09-07T14:40:06.840747+00:00",
+  "status": "READY_FOR_PLAN_RESUMPTION",
+  "research_execution": "PAUSED_BY_USER",
+  "research_experiments_run_this_preparation": false,
+  "repos": {
+    "METIS": {
+      "path": "hierarchical_target_search/20260907_v1/tools/METIS",
+      "remote": "https://github.com/KarypisLab/METIS.git",
+      "commit": "f5ae915a84d3bbf1508b529af90292dd7085b9ec",
+      "status": "",
+      "submodules": [],
+      "idx_bits": 64,
+      "requested_tag": "v5.2.1"
+    },
+    "GKlib": {
+      "path": "hierarchical_target_search/20260907_v1/tools/GKlib",
+      "remote": "https://github.com/KarypisLab/GKlib.git",
+      "commit": "3b7d61b9f885063c89901f3901fb4426f9cfb58f",
+      "status": "",
+      "submodules": []
+    },
+    "LIRA": {
+      "path": "hierarchical_target_search/20260907_v1/tools/LIRA",
+      "remote": "https://github.com/SimoneZeng/LIRA-ANN-search.git",
+      "commit": "7beeee52d5b9a880f443876e24563713146ef581",
+      "status": "",
+      "submodules": []
+    },
+    "gp-ann": {
+      "path": "hierarchical_target_search/20260907_v1/tools/gp-ann",
+      "remote": "https://github.com/larsgottesbueren/gp-ann.git",
+      "commit": "df5efb4a6b303011c795666ed267f29d994b558c",
+      "status": "",
+      "submodules": [
+        "a9e4b1f6d92b4110d4d4a31ee2e7dee5a0761b05 external/KaMinPar (a9e4b1f)",
+        " 3882802dd5a336775360157debbf589efd4a024f external/KaMinPar/external/KaGen (3882802)",
+        " 6d22725504388864751603424060ab1eef1ab8a4 external/KaMinPar/external/KaGen/extlib/libmorton (6d22725)",
+        " 6f9771f2c014a703f151ac646d5f8074b6236c84 external/KaMinPar/external/KaGen/extlib/xxHash (6f9771f)",
+        " 3b6d48e8d5c1d9b3f9f10ac030a94008bfaf032b external/KaMinPar/external/googletest (3b6d48e)",
+        " f0873f85ff046c6dee35a85148a51bfab73af44a external/KaMinPar/external/kassert (f0873f8)",
+        " 4bc3b30e1fce71f88624b397a9513a8b6d7fadd5 external/KaMinPar/external/kassert/extern/doxygen-awesome-css (4bc3b30)",
+        " af29db7ec28d6df1c7f0f745186884091e602e07 external/KaMinPar/external/kassert/extern/googletest (af29db7)",
+        " 359b2ba87358224963986f709e593d799064ace6 external/hnswlib (359b2ba)",
+        "-f9b0856dde02248cc91a63077f7b6d5267004f25 external/message-queue",
+        " ea671f6fbae17e6d6cd25fe9b48134d3c0601787 external/parlaylib (ea671f6)"
+      ],
+      "build_flags": [
+        "Release",
+        "MIPS_DISTANCE=ON",
+        "KAMINPAR_BUILD_TESTS=OFF",
+        "KAMINPAR_BUILD_APPS=OFF",
+        "KAMINPAR_BUILD_WITH_DEBUG_SYMBOLS=OFF"
+      ],
+      "not_applied": "README removal of HNSW metric increments; source remains pristine, measurement adaptation is future work"
+    },
+    "RoarGraph": {
+      "path": "hierarchical_target_search/20260907_v1/tools/RoarGraph",
+      "remote": "https://github.com/matchyc/RoarGraph.git",
+      "commit": "7c9ef95dcb9b1022a2e3b8dfee55409ad73c605e",
+      "status": "",
+      "submodules": [
+        "77a36ae1eebe7fe60eca82466cb9d30e9a1b319b thirdparty/DiskANN (heads/master)",
+        " fe85bbdf4cb891a67a8e2109c1c22a33aa958c7e thirdparty/DiskANN/gperftools (fe85bbd)",
+        " 5eace6f74c9edff8e264c2d26a85365ad9ea149c thirdparty/robin-map (5eace6f)"
+      ],
+      "build_flags": [
+        "Release",
+        "MKL_ROOT=/data/netg/ACSG/hierarchical_target_search/20260907_v1/tools/mkl",
+        "OMP_PATH=/data/netg/ACSG/hierarchical_target_search/20260907_v1/tools/mkl-sysroot/usr/lib/llvm-14/lib"
+      ]
+    }
+  },
+  "binaries": {
+    "tools/local/bin/gpmetis": {
+      "sha256": "814788be6096eb0524b0d16cf497362b55a1b0e0bb2e7f2cd2f70cc96d3d44c1",
+      "bytes": 158352
+    },
+    "tools/local/lib/libmetis.so": {
+      "sha256": "6f64da5de95e1eda9c1c387c2195cf1fdf312e2738fc449bf818ae25735befa5",
+      "bytes": 307208
+    },
+    "tools/local/lib/libGKlib.a": {
+      "sha256": "9d5f025a640c46b43f99624268550e31395c89e807dc58c5c8683400cb5eb009",
+      "bytes": 400530
+    },
+    "tools/gp-ann/build/Partition": {
+      "sha256": "0e3fd8ddd7f44fee0ef35af931785ac5134e73d6e629cc3a953832f52aef1ca0",
+      "bytes": 5133168
+    },
+    "tools/gp-ann/build/SmallScaleQueries": {
+      "sha256": "939d5e7a31f1ad1cfdde13812e3d7b9fbc0005a0a8eb95ff1b8464a513fc3969",
+      "bytes": 1377544
+    },
+    "tools/RoarGraph/build/tests/test_build_roargraph": {
+      "sha256": "6c83e7f1a8dd7052ec5ecb6e1c46e29756bccde5829e513e15d962822415d7ed",
+      "bytes": 290944
+    },
+    "tools/RoarGraph/build/tests/test_search_roargraph": {
+      "sha256": "87ae499fe1a70b9d5e0f92e99289930b8a9306d199dfd4f746a34c699c159a33",
+      "bytes": 321880
+    },
+    "tools/RoarGraph/build/thirdparty/DiskANN/tests/utils/compute_groundtruth": {
+      "sha256": "5cc9b7007ee45f6aa009697fb0cc18fbd40412c24501ae66f56671ba01699050",
+      "bytes": 203968
+    }
+  },
+  "python": {
+    "primary": "/data/netg/ACSG/.venv_cpu/bin/python",
+    "overlay": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/tools/python/bin/python",
+    "overlay_design": "Own site-packages plus read-only .pth reference to existing .venv_cpu; Faiss 1.9.0 override confined to overlay",
+    "original_packages_unchanged": true,
+    "pip_check": "PASS",
+    "smoke": "dependencies/python_smoke.json"
+  },
+  "system_packages_added": {
+    "googletest": "1.11.0-3",
+    "libaio-dev": "0.3.112-13build1",
+    "libboost-program-options-dev": "1.74.0.3ubuntu7",
+    "libboost-program-options1.74-dev": "1.74.0-14ubuntu3",
+    "libboost-program-options1.74.0": "1.74.0-14ubuntu3",
+    "libeigen3-dev": "3.4.0-2ubuntu2",
+    "libgoogle-perftools-dev": "2.9.1-0ubuntu3",
+    "libgoogle-perftools4": "2.9.1-0ubuntu3",
+    "libgtest-dev": "1.11.0-3",
+    "liblzma-dev": "5.2.5-2ubuntu1.1",
+    "libtbb-dev": "2021.5.0-7ubuntu2",
+    "libtbb12": "2021.5.0-7ubuntu2",
+    "libtbbmalloc2": "2021.5.0-7ubuntu2",
+    "libtcmalloc-minimal4": "2.9.1-0ubuntu3",
+    "libunwind-dev": "1.3.2-2build2.1"
+  },
+  "existing_system_packages_changed": {},
+  "mkl": {
+    "installation": "local extracted Debian packages; no system BLAS changes",
+    "package_files": {
+      "libomp-14-dev_1%3a14.0.0-1ubuntu1.1_amd64.deb": {
+        "sha256": "ce3d72f3d7c1b499b156303c8415e729fe027da7ab2f45653e92e3e64593c402",
+        "bytes": 346780
+      },
+      "libomp5-14_1%3a14.0.0-1ubuntu1.1_amd64.deb": {
+        "sha256": "7b69ec021dd19555c16e250827f57be88381ff2fff9bdbd1b3a2d25d27558cea",
+        "bytes": 388556
+      },
+      "libmkl-locale_2020.4.304-2ubuntu3_amd64.deb": {
+        "sha256": "e7953d4e6dc2f591704ef071f6ea27b12ad287966cd22f0e725d044cc5f94830",
+        "bytes": 30684
+      },
+      "libmkl-intel-thread_2020.4.304-2ubuntu3_amd64.deb": {
+        "sha256": "974cceda3f803b47f0c313c4d8c8f04002d4ac4cdffbcfa92031200266f007d2",
+        "bytes": 9052528
+      },
+      "libmkl-def_2020.4.304-2ubuntu3_amd64.deb": {
+        "sha256": "2e0f23935468a330978bcce7a4a955e2ef1d31f2bbec5a4dc7ee72f373723902",
+        "bytes": 9921292
+      },
+      "libmkl-intel-ilp64_2020.4.304-2ubuntu3_amd64.deb": {
+        "sha256": "dc5a3dea77e1fb05e6d062336c59f7e977fdb8a702db7f519875a81a42f0243c",
+        "bytes": 1859614
+      },
+      "libmkl-vml-def_2020.4.304-2ubuntu3_amd64.deb": {
+        "sha256": "6588f9b2f5ed4b19c28cd83a0fa952ffeed190d9e48d013a66a50229872d854d",
+        "bytes": 2470388
+      },
+      "libmkl-dev_2020.4.304-2ubuntu3_amd64.deb": {
+        "sha256": "16a005f7644e60d8fad7850aa1438a07f0752376e85bee77597c4a58d0ff4d7f",
+        "bytes": 561292
+      },
+      "libmkl-core_2020.4.304-2ubuntu3_amd64.deb": {
+        "sha256": "fea863ce5fde5c741ac6dc26a0f18f9ab17e41a49bcdf600bfbe5aacf7ce2681",
+        "bytes": 15754874
+      }
+    }
+  },
+  "reused_gate": {
+    "path": "GATE",
+    "has_separate_git": false,
+    "binaries": [
+      "GATE/build/tests/test_gate_search",
+      "GATE/build/tests/test_gate_generate_samples_contract"
+    ],
+    "dependencies_resolved": true,
+    "graph2vec": "Existing gensim WL+Doc2Vec adapter; provide its CSV, never silently substitute mean pooling"
+  },
+  "limitations": [
+    "No regional search tests or ANN experiments run after user paused plan",
+    "LIRA original main programs assume CUDA; CPU/data-contract adaptation remains future implementation work",
+    "gp-ann original measurement and raw-IP handling require protocol audit before publication",
+    "GATE is an existing constrained project adapter, not an exact upstream reproduction",
+    "No performance or later-stage gate inferred from dependency smoke tests"
+  ],
+  "disk_free_bytes": 21508407296,
+  "archives_deleted": [],
+  "protection_checks": {
+    "ACSG/ACSG.cpp": true,
+    "ACSG/ACSG.h": true,
+    "ACSG/RegionalSearch.h": true,
+    "benches/test_regional_search.cpp": true,
+    "benches/CMakeLists.txt": true,
+    "target_basin_formalization/20260907_v1/gate.json": true,
+    "requirements-cpu.txt": true,
+    "original_python_packages_unchanged": true
+  },
+  "host": {
+    "cpu": "g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+    "python": "3.10.12",
+    "cmake": "cmake version 3.31.10"
+  }
+}

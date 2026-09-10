@@ -1,0 +1,171 @@
+{
+  "CSR_saved_to_disk": false,
+  "P3_stage_gate_passed": false,
+  "base_or_graph_copied": false,
+  "binary_sha256": "3f379668883907395d7c81ebe8515351b37922c19aa7e60177164ccf763b9c5e",
+  "compile_time_source_sha256": "78cd134726c61fda5b722887262b33176989b1c40163e00af7a7bc52c76a81b5",
+  "cpu_only": true,
+  "deadline_utc": "2026-09-07T23:00:00Z",
+  "heldout_accessed": false,
+  "metis_threads": 1,
+  "peak_rss_kib": 7100,
+  "phase": "DONE",
+  "pilot_accessed": false,
+  "schema_version": 1,
+  "search_graph_modified": false,
+  "softclose_utc": "2026-09-07T22:59:00Z",
+  "source_file": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partition_hierarchy.cpp",
+  "source_sha256": "78cd134726c61fda5b722887262b33176989b1c40163e00af7a7bc52c76a81b5",
+  "stage": "P3",
+  "status": "PASS_SYNTHETIC_HIERARCHY_TESTS",
+  "synthetic": true,
+  "tests": {
+    "cross_coarse_moves_exercised": 3,
+    "directed_delta_cases": 336,
+    "improving_moves_exercised": 11,
+    "performance_gate_passed": false,
+    "real_graph_GT_or_search_accessed": false,
+    "status": "PASS_SYNTHETIC_HIERARCHY_TESTS",
+    "tests": [
+      {
+        "PASS": true,
+        "cases": 336,
+        "incident_absent_destination": 250,
+        "incident_multiple_old": 644,
+        "incident_present_destination": 660,
+        "incident_singleton_old": 266,
+        "name": "exhaustive_directed_and_GT_delta"
+      },
+      {
+        "PASS": true,
+        "final_labels_sha256": "c1f2816ee1c3d178d082b13f68cff2069031232366b94af93c20ce443118570d",
+        "name": "lambda0_GT_free_brute_and_determinism",
+        "passes": [
+          {
+            "GT_S_updated_during_moves": false,
+            "accepted_moves": 3,
+            "all_moves_strictly_negative": true,
+            "cross_coarse_moves": 1,
+            "next_node_cursor": 48,
+            "sum_delta_C": -4,
+            "sum_delta_S": null,
+            "sum_exact_delta_numerator": "-468",
+            "wall_seconds": 7.29e-06
+          },
+          {
+            "GT_S_updated_during_moves": false,
+            "accepted_moves": 0,
+            "all_moves_strictly_negative": true,
+            "cross_coarse_moves": 0,
+            "next_node_cursor": 48,
+            "sum_delta_C": 0,
+            "sum_delta_S": null,
+            "sum_exact_delta_numerator": "0",
+            "wall_seconds": 4.859e-06
+          }
+        ]
+      },
+      {
+        "PASS": true,
+        "final_labels_sha256": "f625428c2159fc4f8285a91dea16dc52e2425b5c1b32853d69c5b403541f931e",
+        "name": "lambda1_brute_and_determinism",
+        "passes": [
+          {
+            "GT_S_updated_during_moves": true,
+            "accepted_moves": 6,
+            "all_moves_strictly_negative": true,
+            "cross_coarse_moves": 1,
+            "next_node_cursor": 48,
+            "sum_delta_C": 2,
+            "sum_delta_S": -6,
+            "sum_exact_delta_numerator": "-1200",
+            "wall_seconds": 2.059e-05
+          },
+          {
+            "GT_S_updated_during_moves": true,
+            "accepted_moves": 2,
+            "all_moves_strictly_negative": true,
+            "cross_coarse_moves": 1,
+            "next_node_cursor": 48,
+            "sum_delta_C": 5,
+            "sum_delta_S": -3,
+            "sum_exact_delta_numerator": "-132",
+            "wall_seconds": 1.2077e-05
+          }
+        ]
+      },
+      {
+        "PASS": true,
+        "name": "minimum3_leaf_coarse_caps_and_invalid_inputs"
+      },
+      {
+        "PASS": true,
+        "name": "ascending_leaf_tie_zero_rejection_GT_only_candidate"
+      },
+      {
+        "PASS": true,
+        "cases": [
+          {
+            "effective_ub": 1.0999996662139893,
+            "input_ubvec": 1.0999497175216675,
+            "target_rational": [
+              11,
+              10
+            ]
+          },
+          {
+            "effective_ub": 1.1999996900558472,
+            "input_ubvec": 1.1999497413635254,
+            "target_rational": [
+              6,
+              5
+            ]
+          },
+          {
+            "effective_ub": 1.0908961296081543,
+            "input_ubvec": 1.0908461809158325,
+            "target_rational": [
+              187872,
+              172218
+            ]
+          },
+          {
+            "effective_ub": 1.0909087657928467,
+            "input_ubvec": 1.090858817100525,
+            "target_rational": [
+              750000,
+              687500
+            ]
+          }
+        ],
+        "name": "global_integer_caps_and_conservative_METIS_epsilon"
+      },
+      {
+        "PASS": true,
+        "name": "symmetric_union_induced_subgraph_canonicalIDs"
+      },
+      {
+        "PASS": true,
+        "name": "strict_structure_failure_retains_actual_labels_and_diagnostics"
+      },
+      {
+        "PASS": true,
+        "name": "branch_manifest_initial_perpass_fullrecompute_and_stop_persistence"
+      },
+      {
+        "PASS": true,
+        "labels_sha256": "1a861a72eba1651e36ec4f1795622ed49cf666d6e85d8569c1e40404e00d3d3d",
+        "name": "full_common_16x16_METIS_global_caps",
+        "nodes": 4096
+      },
+      {
+        "PASS": true,
+        "lambda0_final_labels_sha256": "9dc052438dded41c5929ad8f5b8fcfb067fd5d08ae69de91ce0da9d21eabb090",
+        "lambda1_final_labels_sha256": "cd129734675e2c9c9f727ff688eeca69ebe293227bef4a6b441c36e404cb95e7",
+        "name": "full256_leaf_ID255_GT_state_two_branches_two_passes"
+      }
+    ]
+  },
+  "threads_preprocessing": 2,
+  "wall_seconds": 0.110681963
+}

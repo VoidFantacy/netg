@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/diagnose_objective_local_scale.py",
+    "sha256": "148e3ff29259857865e9916f5f3905f2f2d1ffd3c1d843bfd8909a16c18259c8"
+  },
+  "reviewer_script": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/check_objective_local_scale_independent.py",
+    "sha256": "7cc90f47b016009ecdb9148f24220e448fb0dc125232d69156491c9af2202f37"
+  },
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_protocol_v1.json",
+    "sha256": "abae80a4a2bbf6366e413b21a948a6fa4f27166e1160973cc223681e75cfff91"
+  },
+  "scope": "Tiny generated graph and numeric arrays plus hand-built mocked metadata; no actual graph, GT, labels, count rows or ANN.",
+  "checks": [
+    "directed duplicates and reciprocal arcs retain multiplicity",
+    "self arcs and only minus1 padding excluded",
+    "unaligned bounded blocks do not interpret vector suffix; exact conservation",
+    "full-file provenance hash includes uninterpreted suffix",
+    "bound-path positive fixture",
+    "bound-path tamper rejected: SHA256 mismatch: /data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_independent_checks_v1/tiny_graph.bin",
+    "invalid adjacency -2 rejected before mask: Invalid adjacency ID: only -1 padding and in-range node IDs allowed",
+    "invalid adjacency 4 rejected before mask: Invalid adjacency ID: only -1 padding and in-range node IDs allowed",
+    "short final adjacency block rejected: Short bounded adjacency row block",
+    "strict equality excluded and int32 inputs promoted before multiplication",
+    "integer one-unit boundary preserves strictness",
+    "int64 overflow rejected: D*9Q would overflow int64",
+    "negative total degree rejected: Invalid degree/M/Q for strict condition",
+    "decimal-rational inverted-CDF endpoint and p99 ranks",
+    "sparse large degree histogram has exact compact pair byte count",
+    "histogram complete artifact cap exact equality and one byte excess",
+    "histogram artifact includes metadata newline and reports only checksum binding",
+    "pair-only cap is insufficient and omitted histogram creates no file",
+    "empty quantile arrays return null",
+    "all 31 groups match independent Python masks counts weighted fractions means and quantiles",
+    "all ten frequency intervals retain endpoints and exhaust occurrences",
+    "all empty changed groups retained with null denominators",
+    "unseen unique node denominator remains distinct from zero occurrence denominator",
+    "all-base histogram matches independent Counter",
+    "saved movement discrepancy rejected: Final label movement count differs from completed target diagnosis: final_lambda1_vs_lambda0_leaf_difference/seen",
+    "full two-dataset metadata preflight accepts hand-built contract",
+    "gate reopening rejected before numerical reads: P3 NOPASS gate mismatch: P4_P8_authorized",
+    "fit count mismatch rejected: Frozen node/fit count differs",
+    "branch initialization mismatch rejected: Branches lack common initialization",
+    "pilot-contaminated fit manifest rejected: Fit manifest mismatch: pilot_accessed"
+  ],
+  "check_count": 30,
+  "actual_numerical_inputs_read": false,
+  "ANN_executed": false
+}

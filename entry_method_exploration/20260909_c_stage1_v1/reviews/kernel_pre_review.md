@@ -1,0 +1,26 @@
+# Independent C1 kernel pre-review
+
+Status: `PRE_REVIEW_ONLY_NOT_A_C1_PASS`. Reviewer read the complete current `AGENTS.md`, `summary.md`, `spec.md`, `s-target.md`, `s-experiment.md`, `ACSG/ACSG.h`, `ACSG/ACSG.cpp`, `faiss/faiss/impl/AuxIndexStructures.h`, and this version's `protocol.md` / `config.locked.json`. No GT or validation/held-out vectors were opened. The locked checkpoint counts are L64=33 and L128=65; B=1856. Implementation and executed parity evidence are still pending at this pre-review.
+
+## Native semantics that must survive
+
+- `search_new(mode=2)` uses only the first three input positions. Deduplicating the entire list and then taking three changes semantics. Already-visited entries are skipped without refill; an empty effective prefix uses the native seeded fallback. Invalid IDs cause undefined behavior in the native kernel and must only be tested against a safe new-API rejection, never sent to native.
+- Native initialization fills every one of L+1 slots with ID=-1, FLT_MAX, pending=false. It sorts only the `num_ids` initialized entries with distance-only `Neighbor::operator<`; adding an ID tie-breaker or stable sort changes tie behavior.
+- `insert_into_pool` operates with K=L even when `num_ids<L`. Keep its exact binary search, duplicate check, shift lengths, and scratch slot. Full pools reject `distance >= retset[L-1].distance`; accepted insertion requires r<L, and only that grows `num_ids` and contributes to `updated_pos`.
+- The native row clears its selected pending flag before scanning. Its scheduler cursor remains fixed throughout that row; neighbor insertions accumulate `updated_pos=min(updated_pos,r)`. Cursor rewind or increment happens once after the whole row. A pause inside a row must preserve both values plus current node and next neighbor offset.
+- Native `VisitedTable` means distance already evaluated, including rejected candidates. It does not mean expanded. New expanded membership must remain independent and must survive pool eviction. A forced node must not retain pending=true if it survives in retset.
+- A forced row must return to the saved native cursor, possibly rewound by accepted insertions; applying the native row's default cursor+1 would skip work. Natural insertion must rewind only when accepted and must pay its candidate distance even when rejected.
+- The cap is checked before each new legal, unvisited distance and before marking that ID visited. At an exhausted cap, padding and visited IDs can still be skipped for free and a row/search can naturally finish. A cap stop must preserve the first unevaluated neighbor offset. No re-evaluation or double charging is allowed after resume.
+- A checkpoint at the terminal row needs terminal-state canonicalization before eligibility is decided: a state with no remaining native pending work is early-finished even if a cached flag was not yet updated. Early-finished and illegal/visited/no-eligible injections must remain no-op, with zero extra candidate distance.
+- Output must remain retset top-K, not top-K over all visited distances. FLT_MAX / -1 missing-result values must match native exactly.
+
+## Evidence required before a C1 pass
+
+1. Compare against the actual unmodified native kernel for IDs, float distance bits, NDC, and traced expansion count. The expansion-order reference must be mechanically extracted from frozen native source, with only observer additions; inspect the extraction and saved source identities, then compare native/reference outputs before relying on reference order.
+2. Test pause/clone and serialize/deserialize/resume at multiple row boundaries and internal neighbor offsets without a final cap. Compare full evaluation and expansion sequences, not only the final top-K. At least the frozen first 16 train queries per dataset must exercise both L64 and L128.
+3. Repeat continue from the identical serialized checkpoint; interleave independent native/natural/force branches and verify the original checkpoint bytes and untouched branches do not change. Verify candidate distance is counted once and each forced row is expanded once.
+4. Exercise explicit fixtures for duplicate and previsited entry positions, seeded fallback, invalid IDs, full-pool rejection, ties at initialization and pool insertion, rewinds, partial rows, cap=0, cap exactly at the last new neighbor, zero-cost trailing scans, natural termination, and forced candidates rejected/accepted/evicted from the pool. Tests must assert their fixture actually reached the intended case.
+5. Establish plain/count/trace equality independently of wall timing. Record state bookkeeping / cloning / serialization separately; the cap's mandatory counter remains implementation overhead and this gate does not establish QPS.
+6. Prove query/DC and identity binding rejects mismatched query, L/K, base, graph, metric, or kernel; serialized state must include enough identity to reject mismatches rather than trusting a decorative identity string.
+
+This review is an implementation checklist, not method-quality evidence and not permission to start C2. The final independent review must inspect `state_machine.hpp`, parity tests, build/source identities, raw results and logs, and any retained failures.

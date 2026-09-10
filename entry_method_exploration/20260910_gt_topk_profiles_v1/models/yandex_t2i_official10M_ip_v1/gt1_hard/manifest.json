@@ -1,0 +1,107 @@
+{
+  "name": "gt1_hard",
+  "family": "gt1_hard",
+  "K_gt": 1,
+  "temperature": null,
+  "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_hard/W.f32",
+  "W_identity": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_hard/W.f32",
+    "bytes": 656800,
+    "mtime_ns": 1789040405341563264,
+    "sha256": "39c539d28c8a40c879a37dfeccc72a2a99b99ef26e4d38b35ed5e349e83c28f8"
+  },
+  "assignments_identity": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_hard/assignments.f64",
+    "bytes": 131360000,
+    "mtime_ns": 1789040405625564511,
+    "sha256": "ea79ee5603279c6ec870ba397536cb35f7bdae3658513f71e260dcad60337e28"
+  },
+  "profile_seconds": 0.14041548800014425,
+  "support": {
+    "mass": {
+      "min": 1.0,
+      "median": 22.0,
+      "mean": 24.360535931790498,
+      "p90": 42.0,
+      "max": 82.0
+    },
+    "squared_mass": {
+      "min": 1.0,
+      "median": 22.0,
+      "mean": 24.360535931790498,
+      "p90": 42.0,
+      "max": 82.0
+    },
+    "ess": {
+      "min": 1.0,
+      "median": 22.0,
+      "mean": 24.360535931790498,
+      "p90": 42.0,
+      "max": 82.0
+    },
+    "query_entropy": {
+      "min": -0.0,
+      "median": 0.0,
+      "mean": 0.0,
+      "p90": 0.0,
+      "max": -0.0
+    },
+    "query_effective_hubs": {
+      "min": 1.0,
+      "median": 1.0,
+      "mean": 1.0,
+      "p90": 1.0,
+      "max": 1.0
+    },
+    "query_max_weight": {
+      "min": 1.0,
+      "median": 1.0,
+      "mean": 1.0,
+      "p90": 1.0,
+      "max": 1.0
+    },
+    "query_inverse_concentration": {
+      "min": 1.0,
+      "median": 1.0,
+      "mean": 1.0,
+      "p90": 1.0,
+      "max": 1.0
+    }
+  },
+  "hubs_with_positive_mass": 821,
+  "prior_fraction": {
+    "min": 0.012048192771084338,
+    "median": 0.043478260869565216,
+    "mean": 0.05275692528224898,
+    "p90": 0.09090909090909091,
+    "max": 0.5
+  },
+  "cosine_to_P0": {
+    "min": 0.9999998182458408,
+    "median": 1.0,
+    "mean": 0.9999999730123331,
+    "p90": 1.0,
+    "max": 1.0
+  },
+  "max_abs_to_P0": 0.0,
+  "numerical_control": {
+    "bit_equal": true,
+    "max_abs": 0.0,
+    "reference_details": {
+      "method": "nearest-existing-hub-to-train-GT-vector then spherical query prototype",
+      "train_queries": 20000,
+      "hub_count": 821,
+      "hubs_with_assignments": 821,
+      "min_queries_per_observed_hub": 1,
+      "max_queries_per_hub": 82,
+      "prior_strength": 1.0,
+      "requires_aco_dpc": true,
+      "requires_probe_labels": false,
+      "requires_neural_training": false
+    },
+    "float64_reduction_max_abs": 7.450580596923828e-08
+  },
+  "fit_only": true,
+  "requires_search_labels": false,
+  "requires_gradient_training": false
+}

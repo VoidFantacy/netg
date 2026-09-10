@@ -1,0 +1,572 @@
+{
+  "schema_version": 1,
+  "stage": "E1b",
+  "artifact_validation": "PASS",
+  "method_gate": "FAIL",
+  "decision": "NO_GO_ROUTING_COST",
+  "reason": "All four equal-total-NDC Recall@10 comparisons are below paired Fast.",
+  "selection_split": "drl_train_first_10000",
+  "heldout_accessed": false,
+  "parameter_scan": false,
+  "router": {
+    "backend": "hnsw_all",
+    "prototype_views": 3,
+    "top_per_view": 8,
+    "top_m": 3,
+    "anchor": "primary_view_rank0",
+    "duplicate_merge": "maximum_inner_product_score",
+    "tie_break": "score_desc_then_entry_id_asc",
+    "M": 16,
+    "ef_construction": 200,
+    "primary": {
+      "ef_search": 10,
+      "random_seed": 100
+    },
+    "secondary": {
+      "ef_search": 32,
+      "random_seeds": [
+        101,
+        102
+      ],
+      "candidate_rerank": "exact_inner_product"
+    },
+    "parameter_scan": false
+  },
+  "datasets": {
+    "webvid": {
+      "provenance": {
+        "dataset": "webvid2_5m_light_v1",
+        "artifact_version": "roargraph-webvid2.5m-ip-v1",
+        "metric": "ip",
+        "normalization": "source_unit_norm_no_additional",
+        "dataset_manifest": "benches/datasets/WebVid2.5M_light_v1/manifest.json",
+        "dataset_manifest_sha256": "1bad4d81fe3ef753c4df546ffca6b89709c626060221ad5227aea78c4ad83614",
+        "base": {
+          "file": "base.webvid2_5m.fvecs",
+          "bytes": 5140260000,
+          "sha256": "6fb5b5510b29504de38271be7c343bd5e85a029f5755c7b3d74177cbf1ebbb18"
+        },
+        "selection_query": {
+          "file": "query.router_train.seed20260826.fvecs",
+          "rows_used": [
+            0,
+            10000
+          ],
+          "bytes": 61560000,
+          "sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855"
+        },
+        "selection_gt": {
+          "file": "gt.router_train.seed20260826.ip.ivecs",
+          "rows_used": [
+            0,
+            10000
+          ],
+          "bytes": 12120000,
+          "sha256": "1db08bf5b259a468558e6dfed19661d73bc6fe6947a3c862e526176242ace72c"
+        },
+        "graph": {
+          "file": "indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+          "bytes": 5791560103,
+          "sha256": "0a95d309b4980e0f0b73b7ad1222ec611db1f97c32ba2b69f070f5a952b9129a",
+          "info_sha256": "bf7494da189429714ecafa82f21723af1c9cb3308398ca48858ec3775695fae5",
+          "R": 64,
+          "L_build": 100,
+          "C": 512,
+          "hash_verified_now": true
+        },
+        "views": [
+          {
+            "seed": 20260828,
+            "manifest": "fast_entry_variants/webvid2_5m_light_v1_seed20260828/manifest.json",
+            "manifest_sha256": "0a49120276047739ca0cf943ac5cbc131b81f69fd0fee4ef7df856e55db6e752",
+            "prototype": "fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+            "prototype_sha256": "b9e549ee8406798db8a9ee191f4765277a505a5372587f379e7a3e88e780d2a0",
+            "entry_ids": "fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_cover_hub_ids.bin",
+            "entry_ids_sha256": "47c58c28e48e85c5a4f0cad245ef66f451dde404afb0ad7231909ba1956e8e03"
+          },
+          {
+            "seed": 20260829,
+            "manifest": "fast_entry_variants/webvid2_5m_light_v1_seed20260829/manifest.json",
+            "manifest_sha256": "c515ae546bb6fdbb33a7fbfdde5a9e191bb69da60da02c6d4d62e895d422a024",
+            "prototype": "fast_entry_variants/webvid2_5m_light_v1_seed20260829/qgt_gt_basin_prototype_hubs.bin",
+            "prototype_sha256": "c2f2866e161f89ebca1433150c91678f9247a8ecd7bf35508ba43e4ace491d26",
+            "entry_ids": "fast_entry_variants/webvid2_5m_light_v1_seed20260829/qgt_cover_hub_ids.bin",
+            "entry_ids_sha256": "fccfc631ea0d267c77e503ee9f1650ad065a5e9944b0a675dec851bc409f31d4"
+          },
+          {
+            "seed": 20260830,
+            "manifest": "fast_entry_variants/webvid2_5m_light_v1_seed20260830/manifest.json",
+            "manifest_sha256": "dcac4f75f0e60dafab88da845d5c2d8ffe759c79da081881468d98e49c5f6435",
+            "prototype": "fast_entry_variants/webvid2_5m_light_v1_seed20260830/qgt_gt_basin_prototype_hubs.bin",
+            "prototype_sha256": "bd7bcd8349294b96bcb5edcfbbc871c55813525ea35420a5cd1a6f7efcbdf635",
+            "entry_ids": "fast_entry_variants/webvid2_5m_light_v1_seed20260830/qgt_cover_hub_ids.bin",
+            "entry_ids_sha256": "749626f1b06a48661b99ebc634dfaa444ccf8a2a8ab0a9636d71469577150078"
+          }
+        ]
+      },
+      "route_diagnostics": {
+        "exact_top8_set_recall_by_view": {
+          "view1": {
+            "mean": 0.9201,
+            "min": 0.0,
+            "p01": 0.5,
+            "perfect_query_count": 6021,
+            "query_count": 10000
+          },
+          "view2": {
+            "mean": 0.9873125,
+            "min": 0.5,
+            "p01": 0.75,
+            "perfect_query_count": 9137,
+            "query_count": 10000
+          },
+          "view3": {
+            "mean": 0.9883375,
+            "min": 0.375,
+            "p01": 0.875,
+            "perfect_query_count": 9194,
+            "query_count": 10000
+          }
+        },
+        "dense_exact_reference_check_by_view": {
+          "view1": {
+            "mean": 0.9201,
+            "min": 0.0,
+            "p01": 0.5,
+            "perfect_query_count": 6021,
+            "query_count": 10000
+          },
+          "view2": {
+            "mean": 1.0,
+            "min": 1.0,
+            "p01": 1.0,
+            "perfect_query_count": 10000,
+            "query_count": 10000
+          },
+          "view3": {
+            "mean": 1.0,
+            "min": 1.0,
+            "p01": 1.0,
+            "perfect_query_count": 10000,
+            "query_count": 10000
+          }
+        },
+        "anchor_mismatch_count": 0,
+        "primary_candidate_mismatch_count": 0,
+        "final_route_order_change": {
+          "query_count": 247,
+          "query_fraction": 0.0247
+        },
+        "final_route_set_change": {
+          "query_count": 246,
+          "query_fraction": 0.0246
+        },
+        "final_route_cell_change": {
+          "cell_count": 409,
+          "cell_fraction": 0.013633333333333334
+        },
+        "dense_routing_ndc": {
+          "mean": 1760.2987,
+          "min": 1691,
+          "max": 1883
+        },
+        "hnsw_all_routing_ndc": {
+          "mean": 642.3368,
+          "min": 367,
+          "max": 945
+        },
+        "routing_ndc_reduction_fraction": 0.6350978387929276
+      },
+      "cost_gate": {
+        "status": "FAIL",
+        "selection_rule": "highest measured Recall among points with total_ndc <= paired Fast budget",
+        "interpolation_used_for_selection": false,
+        "refinement_trace": [
+          {
+            "round": 1,
+            "trigger": "lower measured cost slack > 2%",
+            "selection_uses_recall": false,
+            "expected_and_observed_search_Ls": [
+              20,
+              80
+            ],
+            "artifact": "target_basin_formalization/20260907_v1/pilot/hnsw/webvid_hnsw10k_count_refine1.json"
+          },
+          {
+            "round": 2,
+            "trigger": "lower measured cost slack > 2%",
+            "selection_uses_recall": false,
+            "expected_and_observed_search_Ls": [
+              22,
+              88
+            ],
+            "artifact": "target_basin_formalization/20260907_v1/pilot/hnsw/webvid_hnsw10k_count_refine2.json"
+          }
+        ],
+        "targets": {
+          "Fast_L64": {
+            "fast": {
+              "search_L": 64,
+              "top_k": 10,
+              "run": 0,
+              "recall_at_10": 0.6593799999999916,
+              "routing_ndc": 122.2987,
+              "graph_ndc": 916.7418,
+              "total_ndc": 1039.0405
+            },
+            "matched_hnsw_all": {
+              "search_L": 22,
+              "top_k": 10,
+              "run": 0,
+              "recall_at_10": 0.5124100000000019,
+              "routing_ndc": 642.3368,
+              "graph_ndc": 375.4415,
+              "total_ndc": 1017.7783
+            },
+            "total_ndc_slack": 21.26220000000012,
+            "total_ndc_slack_fraction": 0.020463302441050296,
+            "recall_delta": -0.14696999999998972,
+            "status": "FAIL"
+          },
+          "Fast_L128": {
+            "fast": {
+              "search_L": 128,
+              "top_k": 10,
+              "run": 0,
+              "recall_at_10": 0.7482999999999851,
+              "routing_ndc": 122.2987,
+              "graph_ndc": 1646.1674,
+              "total_ndc": 1768.4661
+            },
+            "matched_hnsw_all": {
+              "search_L": 80,
+              "top_k": 10,
+              "run": 0,
+              "recall_at_10": 0.6986999999999894,
+              "routing_ndc": 642.3368,
+              "graph_ndc": 1076.3071,
+              "total_ndc": 1718.6439
+            },
+            "total_ndc_slack": 49.822200000000066,
+            "total_ndc_slack_fraction": 0.028172550211734374,
+            "recall_delta": -0.04959999999999565,
+            "status": "FAIL"
+          }
+        }
+      }
+    },
+    "yandex": {
+      "provenance": {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "artifact_version": "yandex-t2i-official-first10m-ip-v1",
+        "metric": "ip",
+        "normalization": "none",
+        "dataset_manifest": "benches/datasets/YandexT2I_official10M_ip_v1/manifest.json",
+        "dataset_manifest_sha256": "84cd11015c2b98b4fc81d6f62b907351889a87d5b14126a17966104a0bb2000b",
+        "base": {
+          "file": "base.official_first10M.fvecs",
+          "bytes": 8040000000,
+          "sha256": "56d1baa271c79ea280d57ee1c7a8359438ffffc98a75cac799051b13fbdbe0ff"
+        },
+        "selection_query": {
+          "file": "query.router_train.fvecs",
+          "rows_used": [
+            0,
+            10000
+          ],
+          "bytes": 24120000,
+          "sha256": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2"
+        },
+        "selection_gt": {
+          "file": "gt.router_train.ip.ivecs",
+          "rows_used": [
+            0,
+            10000
+          ],
+          "bytes": 12120000,
+          "sha256": "5255cc604439ad9d2523dd7526dab85e61b40f0784fd630d5f297ef43af6bdcb"
+        },
+        "graph": {
+          "file": "indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+          "bytes": 10640000103,
+          "sha256": "fa6eb7dd4e8d9dc95d696947fc18bd167880fb336212cb7bd073e7acddd4bf2e",
+          "info_sha256": "15518765ec986df46423d0310e9c2359ca1ad0637235e59b60ffb8c91ce6f016",
+          "R": 64,
+          "L_build": 100,
+          "C": 512,
+          "hash_verified_now": true
+        },
+        "views": [
+          {
+            "seed": 20260828,
+            "manifest": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/manifest.json",
+            "manifest_sha256": "2d5821c25b64ab19aa3c64510222eac7c3835e82e4fe127405bc743250db7387",
+            "prototype": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+            "prototype_sha256": "d6ffa9769d457829c7c463457aae9042e5fba31008ca63402c46fbbb488f4f22",
+            "entry_ids": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_cover_hub_ids.bin",
+            "entry_ids_sha256": "ec82834901aacf360049aad43c47065fcd5de90cc0b882d6dd0016de798e2240"
+          },
+          {
+            "seed": 20260829,
+            "manifest": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260829/manifest.json",
+            "manifest_sha256": "c2708c90005d52962289373d681c504a6c1bf6af51810c499b26808ea7d990ab",
+            "prototype": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260829/qgt_gt_basin_prototype_hubs.bin",
+            "prototype_sha256": "ab7ded69962f0f26fda16a576f1ea0b14160b9ac98ef90a63d2d9c2e832c6ea2",
+            "entry_ids": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260829/qgt_cover_hub_ids.bin",
+            "entry_ids_sha256": "af80b1a51b79532a5fd99e1e7d82289ee677897cf469efff0eef07834319bfa3"
+          },
+          {
+            "seed": 20260830,
+            "manifest": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260830/manifest.json",
+            "manifest_sha256": "f4443413308959ff16c57ce38454047549162be3c6a42085749f9a2db5fdae02",
+            "prototype": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260830/qgt_gt_basin_prototype_hubs.bin",
+            "prototype_sha256": "cd5c04adfed37c7e63f2305f486a22208d3a830d4cfea0650d5ccb2c287d72c2",
+            "entry_ids": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260830/qgt_cover_hub_ids.bin",
+            "entry_ids_sha256": "2966f9a972e84ffe4f594a4f23c4f8cdd4241bfb24e32a51612331ff79aa2139"
+          }
+        ]
+      },
+      "route_diagnostics": {
+        "exact_top8_set_recall_by_view": {
+          "view1": {
+            "mean": 0.96105,
+            "min": 0.0,
+            "p01": 0.625,
+            "perfect_query_count": 7806,
+            "query_count": 10000
+          },
+          "view2": {
+            "mean": 0.9971875,
+            "min": 0.5,
+            "p01": 0.875,
+            "perfect_query_count": 9802,
+            "query_count": 10000
+          },
+          "view3": {
+            "mean": 0.997575,
+            "min": 0.375,
+            "p01": 0.875,
+            "perfect_query_count": 9831,
+            "query_count": 10000
+          }
+        },
+        "dense_exact_reference_check_by_view": {
+          "view1": {
+            "mean": 0.96105,
+            "min": 0.0,
+            "p01": 0.625,
+            "perfect_query_count": 7806,
+            "query_count": 10000
+          },
+          "view2": {
+            "mean": 1.0,
+            "min": 1.0,
+            "p01": 1.0,
+            "perfect_query_count": 10000,
+            "query_count": 10000
+          },
+          "view3": {
+            "mean": 1.0,
+            "min": 1.0,
+            "p01": 1.0,
+            "perfect_query_count": 10000,
+            "query_count": 10000
+          }
+        },
+        "anchor_mismatch_count": 0,
+        "primary_candidate_mismatch_count": 0,
+        "final_route_order_change": {
+          "query_count": 31,
+          "query_fraction": 0.0031
+        },
+        "final_route_set_change": {
+          "query_count": 31,
+          "query_fraction": 0.0031
+        },
+        "final_route_cell_change": {
+          "cell_count": 47,
+          "cell_fraction": 0.0015666666666666667
+        },
+        "dense_routing_ndc": {
+          "mean": 1766.112,
+          "min": 1704,
+          "max": 1875
+        },
+        "hnsw_all_routing_ndc": {
+          "mean": 549.3762,
+          "min": 325,
+          "max": 885
+        },
+        "routing_ndc_reduction_fraction": 0.6889346768494864
+      },
+      "cost_gate": {
+        "status": "FAIL",
+        "selection_rule": "highest measured Recall among points with total_ndc <= paired Fast budget",
+        "interpolation_used_for_selection": false,
+        "refinement_trace": [
+          {
+            "round": 1,
+            "trigger": "lower measured cost slack > 2%",
+            "selection_uses_recall": false,
+            "expected_and_observed_search_Ls": [
+              40,
+              112
+            ],
+            "artifact": "target_basin_formalization/20260907_v1/pilot/hnsw/yandex_hnsw10k_count_refine1.json"
+          },
+          {
+            "round": 2,
+            "trigger": "lower measured cost slack > 2%",
+            "selection_uses_recall": false,
+            "expected_and_observed_search_Ls": [
+              44,
+              104
+            ],
+            "artifact": "target_basin_formalization/20260907_v1/pilot/hnsw/yandex_hnsw10k_count_refine2.json"
+          }
+        ],
+        "targets": {
+          "Fast_L64": {
+            "fast": {
+              "search_L": 64,
+              "top_k": 10,
+              "run": 0,
+              "recall_at_10": 0.8279799999999805,
+              "routing_ndc": 116.112,
+              "graph_ndc": 1643.4079,
+              "total_ndc": 1759.5199
+            },
+            "matched_hnsw_all": {
+              "search_L": 44,
+              "top_k": 10,
+              "run": 0,
+              "recall_at_10": 0.7869499999999832,
+              "routing_ndc": 549.3762,
+              "graph_ndc": 1203.6982,
+              "total_ndc": 1753.0744
+            },
+            "total_ndc_slack": 6.445500000000038,
+            "total_ndc_slack_fraction": 0.0036632151759124964,
+            "recall_delta": -0.041029999999997346,
+            "status": "FAIL"
+          },
+          "Fast_L128": {
+            "fast": {
+              "search_L": 128,
+              "top_k": 10,
+              "run": 0,
+              "recall_at_10": 0.8962999999999782,
+              "routing_ndc": 116.112,
+              "graph_ndc": 2855.0955,
+              "total_ndc": 2971.2075
+            },
+            "matched_hnsw_all": {
+              "search_L": 104,
+              "top_k": 10,
+              "run": 0,
+              "recall_at_10": 0.8816699999999759,
+              "routing_ndc": 549.3762,
+              "graph_ndc": 2382.4791,
+              "total_ndc": 2931.8553
+            },
+            "total_ndc_slack": 39.35219999999981,
+            "total_ndc_slack_fraction": 0.013244514225277034,
+            "recall_delta": -0.014630000000002363,
+            "status": "FAIL"
+          }
+        }
+      }
+    }
+  },
+  "gate": {
+    "equal_total_ndc": "FAIL",
+    "equal_batch_wall": "NOT_RUN",
+    "equal_batch_wall_reason": "The E1 gate is conjunctive; timing cannot reverse failure of equal-total-NDC Recall.",
+    "next_stage": "NOT_RUN"
+  },
+  "smoke_tests": {
+    "evaluator_help": {
+      "command": [
+        "build/benches/bench_target_basin_eval",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_text": "--router_backend",
+      "expected_text_found": true,
+      "status": "PASS"
+    },
+    "evaluator_self_test": {
+      "command": [
+        "build/benches/bench_target_basin_eval",
+        "--self_test"
+      ],
+      "exit_code": 0,
+      "expected_text": "TARGET_BASIN_SELF_TEST_OK",
+      "expected_text_found": true,
+      "status": "PASS"
+    },
+    "reference_self_test": {
+      "command": [
+        "/usr/bin/python3.10",
+        "/data/netg/ACSG/benches/run/route_target_basin_reference.py",
+        "--self-test"
+      ],
+      "exit_code": 0,
+      "expected_text": "TARGET_BASIN_REFERENCE_SELF_TEST_OK",
+      "expected_text_found": true,
+      "status": "PASS"
+    },
+    "runner_help": {
+      "command": [
+        "/usr/bin/python3.10",
+        "/data/netg/ACSG/benches/run/run_target_basin_protocol.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_text": "--stage",
+      "expected_text_found": true,
+      "status": "PASS"
+    }
+  },
+  "provenance": {
+    "protocol": "target_basin_formalization/20260907_v1/protocol.json",
+    "protocol_sha256": "0835fc8d2db5975277f55bddae7993a7c6a4ecea5922764baf535a955bf0601c",
+    "source_and_binary_sha256": {
+      "benches/bench_target_basin_eval.cpp": "41a9f890bc4112cb844f62920188ed0c185ccda18900c0da6d87752d3af4b03d",
+      "benches/bench_entry_oracle.cpp": "e3fab831bd9c5425964ba6ef9b4cadcb0278f99a69d7fb765626c1882ac9f4a2",
+      "benches/run/route_target_basin_reference.py": "dfb997093da12acedff195de60cfb2db1bf0b21673dfb9234baf5ba3dc08e6b0",
+      "benches/run/audit_target_basin_e0.py": "20effd65671d3e08b968b720edb12f2ab5f2b13cc5111b5909ddedc8d856d539",
+      "benches/run/summarize_target_basin_e1b.py": "1b5ef6da2888e974ba5758c3db86ffe82757ff0c7d0643e5bdba8edcc6502762",
+      "benches/run/run_target_basin_protocol.py": "fd8abfc927c20f21d46339a37806a115b03dcc22b040609189c0e3613d0a78de",
+      "benches/CMakeLists.txt": "366fb338105ccd415834ef9d9165feaa6c52eeb611cc106522fc093a6a391bd7",
+      "build/benches/bench_target_basin_eval": "d96df57f8bf8df859b3ee646ad0e4d4c95c1e58a1402d55a6238d64a50331ed2",
+      "build/benches/bench_entry_oracle": "0f85de27a5737d691cf43c36817ceaac03dd3acd6de516822f6c6789c3024eb4",
+      "benches/datasets/settings.json": "6519ca075544828ae0ea85f55f1c8e6a662affc8bf1b67f39bb9eccc294a590a"
+    },
+    "input_artifact_sha256": {
+      "target_basin_formalization/20260907_v1/pilot/hnsw/webvid_dense_route10k_count.json": "83f78603039779e87294c6bec19ae2de726f191a77e4e1e68d5a649674d092b8",
+      "target_basin_formalization/20260907_v1/pilot/hnsw/webvid_hnsw_route10k_count.json": "4aa0f8e52b4e6232d9fd3a843e86b884a21f38a395f513609be8cd20f7b051b2",
+      "target_basin_formalization/20260907_v1/pilot/hnsw/webvid_fast10k_count.json": "29dce01d45899270f2f7d579140d130f3eb1aa9fa8fa0dbb36a41a93bb715e82",
+      "target_basin_formalization/20260907_v1/pilot/hnsw/webvid_hnsw10k_count_grid.json": "7ad0e6df21fda0d1f769dd3016482b28943cd9e20ffdb270c2ca37cd087d5eb9",
+      "target_basin_formalization/20260907_v1/pilot/hnsw/webvid_hnsw10k_count_refine1.json": "7d0c35fec86b6e2c3ac7c7d79200635581f898812c80abf602c951d79c57d49f",
+      "target_basin_formalization/20260907_v1/pilot/hnsw/webvid_hnsw10k_count_refine2.json": "0ea0af8adbed45f45d16b8f369330a3566970ac5ee59d265efbc344e819ed6e7",
+      "target_basin_formalization/20260907_v1/pilot/hnsw/yandex_dense_route10k_count.json": "bb252e78fe8192d67a746f6013b59d8ac0675336c68aa7c230760471de2f8f89",
+      "target_basin_formalization/20260907_v1/pilot/hnsw/yandex_hnsw_route10k_count.json": "c4e7fb57a9ef471a40f790fd7fd162ac1be57d78392e6277609421bb33d98ef4",
+      "target_basin_formalization/20260907_v1/pilot/hnsw/yandex_fast10k_count.json": "2580454bfb016680d692e235fcf7ec5f33d02acc5e521970d677de6dfde4a980",
+      "target_basin_formalization/20260907_v1/pilot/hnsw/yandex_hnsw10k_count_grid.json": "f0630e3992af19f935f970aef4d779deba5caadf4e0a4840ff573e1f7a5f38ea",
+      "target_basin_formalization/20260907_v1/pilot/hnsw/yandex_hnsw10k_count_refine1.json": "3b3e9c55a3b845f626303f8bbf0509a268373205e5624e8ac594914dfb0c9643",
+      "target_basin_formalization/20260907_v1/pilot/hnsw/yandex_hnsw10k_count_refine2.json": "e39638c0de318177c7e8d8f04442647d05b2fb14bef1753ea60da224ed03ce99"
+    },
+    "cpu": "x86_64",
+    "logical_cpus": 16,
+    "threads": 16,
+    "cache_condition": "not_applicable_to_count_gate"
+  },
+  "omitted_work": {
+    "timing": "NOT_RUN: cannot reverse equal-total-NDC failure",
+    "tail_and_stability": "NOT_RUN: E2 blocked",
+    "attribution_and_offline_break_even": "NOT_RUN: E3 blocked",
+    "heldout": "NOT_RUN: E4 blocked"
+  },
+  "figure": "target_basin_formalization/20260907_v1/figures/e1b_recall_vs_total_ndc.png"
+}

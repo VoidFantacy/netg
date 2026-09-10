@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "stage": "P3",
+  "status": "COMPLETE",
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "cpu_only": true,
+  "fit_range": [
+    10000,
+    30000
+  ],
+  "fit_count": 20000,
+  "heldout_accessed": false,
+  "pilot_accessed": false,
+  "validation_accessed": false,
+  "dim": 200,
+  "base_nodes": 10000000,
+  "queries_file": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/fit_inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+  "queries_sha256": "e86c597b26ee908f4d4d64674a2ea89837e75d1f824c1ce30671fbd3fc5424e8",
+  "gt10_file": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/fit_inputs/yandex_t2i_official10M_ip_v1/gt10.i32",
+  "gt10_sha256": "cb8e53681677bd035fd82982220fd7c65ccc388cab717c2ca3dca51eeb0d0f11",
+  "fit_query_values_sha256": "e86c597b26ee908f4d4d64674a2ea89837e75d1f824c1ce30671fbd3fc5424e8",
+  "fit_gt_values_sha256": "d52e630214fb7a4ffa240372d5055f8c0e7a1232992e7fc78b656638abed6e5d",
+  "query_dtype": "<f4",
+  "gt10_dtype": "<i4",
+  "gt10_shape": [
+    20000,
+    10
+  ],
+  "input_audit_path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+  "input_audit_sha256": "7da975cbb0e045265f405b08e230abb6442eba51621064699a4ad449c90ae58b",
+  "protocol_path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+  "protocol_sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f",
+  "p2_gate": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P2.json",
+    "sha256": "6240cea60d790d030e0fdaf560b95d9e951260d4ba3d6701863b06c1c4cc895e"
+  },
+  "graph_file": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "graph_sha256": "fa6eb7dd4e8d9dc95d696947fc18bd167880fb336212cb7bd073e7acddd4bf2e",
+  "base_sha256": "56d1baa271c79ea280d57ee1c7a8359438ffffc98a75cac799051b13fbdbe0ff",
+  "query_provenance": {
+    "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs",
+    "parent_sha256_inherited_from_P0": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2",
+    "parent_fully_read_or_rehashed": false,
+    "read_parent_row_range": [
+      10000,
+      30000
+    ],
+    "read_byte_range": [
+      8040000,
+      24120000
+    ],
+    "bytes_read": 16080000,
+    "fit_values_sha256": "e86c597b26ee908f4d4d64674a2ea89837e75d1f824c1ce30671fbd3fc5424e8"
+  },
+  "gt_provenance": {
+    "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/gt.router_train.ip.ivecs",
+    "parent_sha256_inherited_from_P0": "5255cc604439ad9d2523dd7526dab85e61b40f0784fd630d5f297ef43af6bdcb",
+    "parent_fully_read_or_rehashed": false,
+    "read_parent_row_range": [
+      10000,
+      30000
+    ],
+    "read_byte_range": [
+      4040000,
+      12120000
+    ],
+    "bytes_read": 8080000,
+    "fit_values_sha256": "d52e630214fb7a4ffa240372d5055f8c0e7a1232992e7fc78b656638abed6e5d"
+  },
+  "fit_extraction_seconds": 0.06746959200245328,
+  "cost_seconds": {
+    "read_validate": 0.046403370000916766,
+    "write": 0.009954121000191662,
+    "exact_GT_from_scratch": null
+  },
+  "exact_GT_cost_reason": "Existing exact GT reused; historical creation wall unavailable",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/prepare_inputs_and_plans.py",
+    "sha256": "b495889df634f2816fe70abe2c8737302d2726488938697c92e963c7a52ab934"
+  },
+  "created_utc": "2026-09-07T17:10:22.096118+00:00"
+}

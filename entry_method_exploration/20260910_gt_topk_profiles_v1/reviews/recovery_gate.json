@@ -1,0 +1,112 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "exact": false,
+      "queries": 32,
+      "new_old_P0_bits": true,
+      "E23_output_bits": true,
+      "fields": [
+        "ids.i32",
+        "distances.f32",
+        "entry_ids.i32",
+        "router_labels.i32",
+        "hits.u8",
+        "hitmask.u16",
+        "route_ndc.u32",
+        "graph_ndc.u32"
+      ]
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "exact": true,
+      "queries": 32,
+      "new_old_P0_bits": true,
+      "E23_output_bits": true,
+      "fields": [
+        "ids.i32",
+        "distances.f32",
+        "entry_ids.i32",
+        "router_labels.i32",
+        "hits.u8",
+        "hitmask.u16",
+        "route_ndc.u32",
+        "graph_ndc.u32"
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "exact": false,
+      "queries": 32,
+      "new_old_P0_bits": true,
+      "E23_output_bits": true,
+      "fields": [
+        "ids.i32",
+        "distances.f32",
+        "entry_ids.i32",
+        "router_labels.i32",
+        "hits.u8",
+        "hitmask.u16",
+        "route_ndc.u32",
+        "graph_ndc.u32"
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "exact": true,
+      "queries": 32,
+      "new_old_P0_bits": true,
+      "E23_output_bits": true,
+      "fields": [
+        "ids.i32",
+        "distances.f32",
+        "entry_ids.i32",
+        "router_labels.i32",
+        "hits.u8",
+        "hitmask.u16",
+        "route_ndc.u32",
+        "graph_ndc.u32"
+      ]
+    }
+  ],
+  "numeric_checks": [
+    {
+      "bit_equal": true,
+      "max_abs": 0.0,
+      "reference_details": {
+        "method": "nearest-existing-hub-to-train-GT-vector then spherical query prototype",
+        "train_queries": 20000,
+        "hub_count": 815,
+        "hubs_with_assignments": 802,
+        "min_queries_per_observed_hub": 1,
+        "max_queries_per_hub": 242,
+        "prior_strength": 1.0,
+        "requires_aco_dpc": true,
+        "requires_probe_labels": false,
+        "requires_neural_training": false
+      },
+      "float64_reduction_max_abs": 1.1920928955078125e-07
+    },
+    {
+      "bit_equal": true,
+      "max_abs": 0.0,
+      "reference_details": {
+        "method": "nearest-existing-hub-to-train-GT-vector then spherical query prototype",
+        "train_queries": 20000,
+        "hub_count": 821,
+        "hubs_with_assignments": 821,
+        "min_queries_per_observed_hub": 1,
+        "max_queries_per_hub": 82,
+        "prior_strength": 1.0,
+        "requires_aco_dpc": true,
+        "requires_probe_labels": false,
+        "requires_neural_training": false
+      },
+      "float64_reduction_max_abs": 7.450580596923828e-08
+    }
+  ],
+  "real_search_calls": 768,
+  "raw_validation_opened": false,
+  "heldout_opened": false
+}

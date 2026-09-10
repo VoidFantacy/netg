@@ -1,0 +1,13 @@
+{
+  "scope": "diagnostic verification.json only: checks[].warm_timed_queries incorrectly inherited n from the old quick reporter",
+  "correct_value": 0,
+  "reason": "measure_wall=false executes one plain and one count pass, with no timed warmup; results.json already correctly records warmup_queries=0 and warm_timed_parity_queries=0 and qps=null",
+  "affected_outputs": [
+    "entry_method_exploration/20260910_three_entry_rank_v1/diagnostics/webvid2_5m_light_v1/cal/verification.json",
+    "entry_method_exploration/20260910_three_entry_rank_v1/diagnostics/webvid2_5m_light_v1/fit_probe/verification.json",
+    "entry_method_exploration/20260910_three_entry_rank_v1/diagnostics/yandex_t2i_official10M_ip_v1/cal/verification.json",
+    "entry_method_exploration/20260910_three_entry_rank_v1/diagnostics/yandex_t2i_official10M_ip_v1/fit_probe/verification.json"
+  ],
+  "numeric_results_and_selection_unchanged": true,
+  "fix": "evaluate_v2 corrects metadata; original binary, source snapshot, outputs retained"
+}

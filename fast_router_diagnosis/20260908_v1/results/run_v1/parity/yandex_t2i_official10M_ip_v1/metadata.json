@@ -1,0 +1,1149 @@
+{
+  "K": 10,
+  "L": [
+    64,
+    128
+  ],
+  "all_single": {
+    "hitcount": {
+      "dtype": "uint8",
+      "shape": [
+        768,
+        821
+      ]
+    },
+    "hitmask": {
+      "bit_g": "exact GT rank g in [0,10) returned",
+      "dtype": "uint16",
+      "shape": [
+        768,
+        821
+      ]
+    },
+    "ids": {
+      "dtype": "int32",
+      "shape": [
+        768,
+        821,
+        10
+      ]
+    },
+    "ndc": {
+      "dtype": "uint32",
+      "shape": [
+        768,
+        821
+      ]
+    }
+  },
+  "array_contract": {
+    "byte_order": "little-endian native",
+    "invalid_entry_padding": -1,
+    "layout": "C row-major",
+    "local_id": "hub ordinal; real ID = hub_ids[local_id]",
+    "route_shapes": {
+      "basin_label_local.i32": [
+        768
+      ],
+      "exact.rank_distance.f32": [
+        768,
+        821
+      ],
+      "exact.rank_local.i32": [
+        768,
+        821
+      ],
+      "fast.route_ndc.u32": [
+        768
+      ],
+      "fast.top8_distance.f32": [
+        768,
+        8
+      ],
+      "fast.top8_local.i32": [
+        768,
+        8
+      ],
+      "pilot.entry_local.i32": [
+        512,
+        91,
+        3
+      ],
+      "seed100.route_ndc.u32": [
+        768
+      ],
+      "seed100.top8_distance.f32": [
+        768,
+        8
+      ],
+      "seed100.top8_local.i32": [
+        768,
+        8
+      ]
+    }
+  },
+  "dim": 200,
+  "exact_router": {
+    "distance": "same hnswlib::InnerProductSpace function as approximate",
+    "ranking": "distance ascending, then real base ID ascending",
+    "score_conversion": "inner product = 1 - distance"
+  },
+  "graph_search_calls_including_parity": 43680,
+  "gt_k": 100,
+  "hub_count": 821,
+  "index_ntotal": 10000000,
+  "index_path": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "instrumented_wall_seconds": 21.158395642,
+  "kernel": "original linked ACSG::search_new(mode=2), shared beam, max 3 entries",
+  "num_queries": 768,
+  "pilot": {
+    "hitcount": {
+      "dtype": "uint8",
+      "shape": [
+        512,
+        91
+      ]
+    },
+    "hitmask": {
+      "bit_g": "exact GT rank g in [0,10) returned",
+      "dtype": "uint16",
+      "shape": [
+        512,
+        91
+      ]
+    },
+    "ids": {
+      "dtype": "int32",
+      "shape": [
+        512,
+        91,
+        10
+      ]
+    },
+    "ndc": {
+      "dtype": "uint32",
+      "shape": [
+        512,
+        91
+      ]
+    }
+  },
+  "pilot_count": 512,
+  "query_contract": "unchanged raw query for HNSW, exact prototype distance and graph search",
+  "router": {
+    "M": 16,
+    "efConstruction": 200,
+    "efSearch": 10,
+    "labels": "real base ID, mapped to hub row ordinal in output",
+    "output_order": "searchKnn heap reversed, near to far",
+    "seed": 20260828,
+    "seed_control": 100
+  },
+  "schema_version": 1,
+  "status": "PARITY_ONLY_COMPLETE",
+  "threads": 16,
+  "timing_contract": "all times instrumented diagnostic including scoring/allocation/I/O; never QPS",
+  "variants": [
+    {
+      "column": 0,
+      "entry_count": 1,
+      "name": "fast_top1",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "column": 1,
+      "entry_count": 2,
+      "name": "fast_top2",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "column": 2,
+      "entry_count": 3,
+      "name": "fast_top3",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "column": 3,
+      "entry_count": 1,
+      "name": "exact_top1",
+      "route": "exact",
+      "route_ranks": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "column": 4,
+      "entry_count": 2,
+      "name": "exact_top2",
+      "route": "exact",
+      "route_ranks": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "column": 5,
+      "entry_count": 3,
+      "name": "exact_top3",
+      "route": "exact",
+      "route_ranks": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "column": 6,
+      "entry_count": 2,
+      "name": "c8_pair_0_1",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        1,
+        -1
+      ]
+    },
+    {
+      "column": 7,
+      "entry_count": 2,
+      "name": "c8_pair_0_2",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        2,
+        -1
+      ]
+    },
+    {
+      "column": 8,
+      "entry_count": 2,
+      "name": "c8_pair_0_3",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        3,
+        -1
+      ]
+    },
+    {
+      "column": 9,
+      "entry_count": 2,
+      "name": "c8_pair_0_4",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        4,
+        -1
+      ]
+    },
+    {
+      "column": 10,
+      "entry_count": 2,
+      "name": "c8_pair_0_5",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        5,
+        -1
+      ]
+    },
+    {
+      "column": 11,
+      "entry_count": 2,
+      "name": "c8_pair_0_6",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        6,
+        -1
+      ]
+    },
+    {
+      "column": 12,
+      "entry_count": 2,
+      "name": "c8_pair_0_7",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        7,
+        -1
+      ]
+    },
+    {
+      "column": 13,
+      "entry_count": 2,
+      "name": "c8_pair_1_2",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        2,
+        -1
+      ]
+    },
+    {
+      "column": 14,
+      "entry_count": 2,
+      "name": "c8_pair_1_3",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        3,
+        -1
+      ]
+    },
+    {
+      "column": 15,
+      "entry_count": 2,
+      "name": "c8_pair_1_4",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        4,
+        -1
+      ]
+    },
+    {
+      "column": 16,
+      "entry_count": 2,
+      "name": "c8_pair_1_5",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        5,
+        -1
+      ]
+    },
+    {
+      "column": 17,
+      "entry_count": 2,
+      "name": "c8_pair_1_6",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        6,
+        -1
+      ]
+    },
+    {
+      "column": 18,
+      "entry_count": 2,
+      "name": "c8_pair_1_7",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        7,
+        -1
+      ]
+    },
+    {
+      "column": 19,
+      "entry_count": 2,
+      "name": "c8_pair_2_3",
+      "route": "fast",
+      "route_ranks": [
+        2,
+        3,
+        -1
+      ]
+    },
+    {
+      "column": 20,
+      "entry_count": 2,
+      "name": "c8_pair_2_4",
+      "route": "fast",
+      "route_ranks": [
+        2,
+        4,
+        -1
+      ]
+    },
+    {
+      "column": 21,
+      "entry_count": 2,
+      "name": "c8_pair_2_5",
+      "route": "fast",
+      "route_ranks": [
+        2,
+        5,
+        -1
+      ]
+    },
+    {
+      "column": 22,
+      "entry_count": 2,
+      "name": "c8_pair_2_6",
+      "route": "fast",
+      "route_ranks": [
+        2,
+        6,
+        -1
+      ]
+    },
+    {
+      "column": 23,
+      "entry_count": 2,
+      "name": "c8_pair_2_7",
+      "route": "fast",
+      "route_ranks": [
+        2,
+        7,
+        -1
+      ]
+    },
+    {
+      "column": 24,
+      "entry_count": 2,
+      "name": "c8_pair_3_4",
+      "route": "fast",
+      "route_ranks": [
+        3,
+        4,
+        -1
+      ]
+    },
+    {
+      "column": 25,
+      "entry_count": 2,
+      "name": "c8_pair_3_5",
+      "route": "fast",
+      "route_ranks": [
+        3,
+        5,
+        -1
+      ]
+    },
+    {
+      "column": 26,
+      "entry_count": 2,
+      "name": "c8_pair_3_6",
+      "route": "fast",
+      "route_ranks": [
+        3,
+        6,
+        -1
+      ]
+    },
+    {
+      "column": 27,
+      "entry_count": 2,
+      "name": "c8_pair_3_7",
+      "route": "fast",
+      "route_ranks": [
+        3,
+        7,
+        -1
+      ]
+    },
+    {
+      "column": 28,
+      "entry_count": 2,
+      "name": "c8_pair_4_5",
+      "route": "fast",
+      "route_ranks": [
+        4,
+        5,
+        -1
+      ]
+    },
+    {
+      "column": 29,
+      "entry_count": 2,
+      "name": "c8_pair_4_6",
+      "route": "fast",
+      "route_ranks": [
+        4,
+        6,
+        -1
+      ]
+    },
+    {
+      "column": 30,
+      "entry_count": 2,
+      "name": "c8_pair_4_7",
+      "route": "fast",
+      "route_ranks": [
+        4,
+        7,
+        -1
+      ]
+    },
+    {
+      "column": 31,
+      "entry_count": 2,
+      "name": "c8_pair_5_6",
+      "route": "fast",
+      "route_ranks": [
+        5,
+        6,
+        -1
+      ]
+    },
+    {
+      "column": 32,
+      "entry_count": 2,
+      "name": "c8_pair_5_7",
+      "route": "fast",
+      "route_ranks": [
+        5,
+        7,
+        -1
+      ]
+    },
+    {
+      "column": 33,
+      "entry_count": 2,
+      "name": "c8_pair_6_7",
+      "route": "fast",
+      "route_ranks": [
+        6,
+        7,
+        -1
+      ]
+    },
+    {
+      "column": 34,
+      "entry_count": 3,
+      "name": "c8_triple_0_1_2",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "column": 35,
+      "entry_count": 3,
+      "name": "c8_triple_0_1_3",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "column": 36,
+      "entry_count": 3,
+      "name": "c8_triple_0_1_4",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        1,
+        4
+      ]
+    },
+    {
+      "column": 37,
+      "entry_count": 3,
+      "name": "c8_triple_0_1_5",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        1,
+        5
+      ]
+    },
+    {
+      "column": 38,
+      "entry_count": 3,
+      "name": "c8_triple_0_1_6",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        1,
+        6
+      ]
+    },
+    {
+      "column": 39,
+      "entry_count": 3,
+      "name": "c8_triple_0_1_7",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        1,
+        7
+      ]
+    },
+    {
+      "column": 40,
+      "entry_count": 3,
+      "name": "c8_triple_0_2_3",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "column": 41,
+      "entry_count": 3,
+      "name": "c8_triple_0_2_4",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "column": 42,
+      "entry_count": 3,
+      "name": "c8_triple_0_2_5",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        2,
+        5
+      ]
+    },
+    {
+      "column": 43,
+      "entry_count": 3,
+      "name": "c8_triple_0_2_6",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        2,
+        6
+      ]
+    },
+    {
+      "column": 44,
+      "entry_count": 3,
+      "name": "c8_triple_0_2_7",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        2,
+        7
+      ]
+    },
+    {
+      "column": 45,
+      "entry_count": 3,
+      "name": "c8_triple_0_3_4",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        3,
+        4
+      ]
+    },
+    {
+      "column": 46,
+      "entry_count": 3,
+      "name": "c8_triple_0_3_5",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        3,
+        5
+      ]
+    },
+    {
+      "column": 47,
+      "entry_count": 3,
+      "name": "c8_triple_0_3_6",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        3,
+        6
+      ]
+    },
+    {
+      "column": 48,
+      "entry_count": 3,
+      "name": "c8_triple_0_3_7",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        3,
+        7
+      ]
+    },
+    {
+      "column": 49,
+      "entry_count": 3,
+      "name": "c8_triple_0_4_5",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        4,
+        5
+      ]
+    },
+    {
+      "column": 50,
+      "entry_count": 3,
+      "name": "c8_triple_0_4_6",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        4,
+        6
+      ]
+    },
+    {
+      "column": 51,
+      "entry_count": 3,
+      "name": "c8_triple_0_4_7",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "column": 52,
+      "entry_count": 3,
+      "name": "c8_triple_0_5_6",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        5,
+        6
+      ]
+    },
+    {
+      "column": 53,
+      "entry_count": 3,
+      "name": "c8_triple_0_5_7",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        5,
+        7
+      ]
+    },
+    {
+      "column": 54,
+      "entry_count": 3,
+      "name": "c8_triple_0_6_7",
+      "route": "fast",
+      "route_ranks": [
+        0,
+        6,
+        7
+      ]
+    },
+    {
+      "column": 55,
+      "entry_count": 3,
+      "name": "c8_triple_1_2_3",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "column": 56,
+      "entry_count": 3,
+      "name": "c8_triple_1_2_4",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "column": 57,
+      "entry_count": 3,
+      "name": "c8_triple_1_2_5",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "column": 58,
+      "entry_count": 3,
+      "name": "c8_triple_1_2_6",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        2,
+        6
+      ]
+    },
+    {
+      "column": 59,
+      "entry_count": 3,
+      "name": "c8_triple_1_2_7",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        2,
+        7
+      ]
+    },
+    {
+      "column": 60,
+      "entry_count": 3,
+      "name": "c8_triple_1_3_4",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "column": 61,
+      "entry_count": 3,
+      "name": "c8_triple_1_3_5",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        3,
+        5
+      ]
+    },
+    {
+      "column": 62,
+      "entry_count": 3,
+      "name": "c8_triple_1_3_6",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        3,
+        6
+      ]
+    },
+    {
+      "column": 63,
+      "entry_count": 3,
+      "name": "c8_triple_1_3_7",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        3,
+        7
+      ]
+    },
+    {
+      "column": 64,
+      "entry_count": 3,
+      "name": "c8_triple_1_4_5",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "column": 65,
+      "entry_count": 3,
+      "name": "c8_triple_1_4_6",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        4,
+        6
+      ]
+    },
+    {
+      "column": 66,
+      "entry_count": 3,
+      "name": "c8_triple_1_4_7",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        4,
+        7
+      ]
+    },
+    {
+      "column": 67,
+      "entry_count": 3,
+      "name": "c8_triple_1_5_6",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        5,
+        6
+      ]
+    },
+    {
+      "column": 68,
+      "entry_count": 3,
+      "name": "c8_triple_1_5_7",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        5,
+        7
+      ]
+    },
+    {
+      "column": 69,
+      "entry_count": 3,
+      "name": "c8_triple_1_6_7",
+      "route": "fast",
+      "route_ranks": [
+        1,
+        6,
+        7
+      ]
+    },
+    {
+      "column": 70,
+      "entry_count": 3,
+      "name": "c8_triple_2_3_4",
+      "route": "fast",
+      "route_ranks": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "column": 71,
+      "entry_count": 3,
+      "name": "c8_triple_2_3_5",
+      "route": "fast",
+      "route_ranks": [
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "column": 72,
+      "entry_count": 3,
+      "name": "c8_triple_2_3_6",
+      "route": "fast",
+      "route_ranks": [
+        2,
+        3,
+        6
+      ]
+    },
+    {
+      "column": 73,
+      "entry_count": 3,
+      "name": "c8_triple_2_3_7",
+      "route": "fast",
+      "route_ranks": [
+        2,
+        3,
+        7
+      ]
+    },
+    {
+      "column": 74,
+      "entry_count": 3,
+      "name": "c8_triple_2_4_5",
+      "route": "fast",
+      "route_ranks": [
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "column": 75,
+      "entry_count": 3,
+      "name": "c8_triple_2_4_6",
+      "route": "fast",
+      "route_ranks": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "column": 76,
+      "entry_count": 3,
+      "name": "c8_triple_2_4_7",
+      "route": "fast",
+      "route_ranks": [
+        2,
+        4,
+        7
+      ]
+    },
+    {
+      "column": 77,
+      "entry_count": 3,
+      "name": "c8_triple_2_5_6",
+      "route": "fast",
+      "route_ranks": [
+        2,
+        5,
+        6
+      ]
+    },
+    {
+      "column": 78,
+      "entry_count": 3,
+      "name": "c8_triple_2_5_7",
+      "route": "fast",
+      "route_ranks": [
+        2,
+        5,
+        7
+      ]
+    },
+    {
+      "column": 79,
+      "entry_count": 3,
+      "name": "c8_triple_2_6_7",
+      "route": "fast",
+      "route_ranks": [
+        2,
+        6,
+        7
+      ]
+    },
+    {
+      "column": 80,
+      "entry_count": 3,
+      "name": "c8_triple_3_4_5",
+      "route": "fast",
+      "route_ranks": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "column": 81,
+      "entry_count": 3,
+      "name": "c8_triple_3_4_6",
+      "route": "fast",
+      "route_ranks": [
+        3,
+        4,
+        6
+      ]
+    },
+    {
+      "column": 82,
+      "entry_count": 3,
+      "name": "c8_triple_3_4_7",
+      "route": "fast",
+      "route_ranks": [
+        3,
+        4,
+        7
+      ]
+    },
+    {
+      "column": 83,
+      "entry_count": 3,
+      "name": "c8_triple_3_5_6",
+      "route": "fast",
+      "route_ranks": [
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "column": 84,
+      "entry_count": 3,
+      "name": "c8_triple_3_5_7",
+      "route": "fast",
+      "route_ranks": [
+        3,
+        5,
+        7
+      ]
+    },
+    {
+      "column": 85,
+      "entry_count": 3,
+      "name": "c8_triple_3_6_7",
+      "route": "fast",
+      "route_ranks": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "column": 86,
+      "entry_count": 3,
+      "name": "c8_triple_4_5_6",
+      "route": "fast",
+      "route_ranks": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "column": 87,
+      "entry_count": 3,
+      "name": "c8_triple_4_5_7",
+      "route": "fast",
+      "route_ranks": [
+        4,
+        5,
+        7
+      ]
+    },
+    {
+      "column": 88,
+      "entry_count": 3,
+      "name": "c8_triple_4_6_7",
+      "route": "fast",
+      "route_ranks": [
+        4,
+        6,
+        7
+      ]
+    },
+    {
+      "column": 89,
+      "entry_count": 3,
+      "name": "c8_triple_5_6_7",
+      "route": "fast",
+      "route_ranks": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "column": 90,
+      "entry_count": 3,
+      "name": "seed100_top3",
+      "route": "seed100",
+      "route_ranks": [
+        0,
+        1,
+        2
+      ]
+    }
+  ]
+}

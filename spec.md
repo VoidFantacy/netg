@@ -1,187 +1,129 @@
-# NETG / ACSG 当前实现规格
+# ACSG 代码架构与实现契约
 
-> 最后核对：2026-09-04。本文件只记录当前有效的代码入口、数据/metric 契约、artifact、评测协议和重跑依赖。研究判断与 go/no-go 见 `summary.md`；旧 ACO/Router 诊断与结果历史见 `aco_router_fast_entry.md`。
+> 架构与实现事实核对至2026-09-10（固定H的GT-topK画像模块及双数据集60点单线程比较已完成验收）。本文只维护已实现架构、接口、数据/metric、artifact、计量和变更依赖。当前实验结论见[summary.md](summary.md)，下一阶段目标见[s-target.md](s-target.md)，历史实验概览与复盘入口见[s-experiment.md](s-experiment.md)。未实现的研究设想不得写成现有API。
 
-## 权威性与工作区保护
+## 1. 文档职责与事实优先级
 
-实现事实的证据优先级：
+四个主文件都位于项目根目录`/data/netg/ACSG/`：
 
-1. 当前本地工作区源码、dataset config、manifest 和机器可读结果；
-2. 本文件；
-3. `summary.md`、历史日志、旧 README、旧结果和远端 Git 分支。
+| 文件 | 负责的唯一主问题 |
+|---|---|
+| `spec.md` | 代码怎样组织、接口/输入/输出/评测必须满足什么合同 |
+| `summary.md` | 当前最近实验做了什么、得到了什么、结论到哪里为止 |
+| `s-target.md` | 下一阶段先评估什么、探索哪些方向、如何进入/退出每个阶段 |
+| `s-experiment.md` | 过去做过哪些实验、状态与一句话结论、到哪里详细复盘 |
+| `experiment_history/` | 按实验家族保存详细复盘、版本修正和原始证据索引 |
 
-默认以本地工作区代码和实测 artifact 为最新权威状态。远端提交时间或分支指针较新，只说明
-Git 历史/上传动作较新，不得据此覆盖本地源码、文档或实验结论；只有用户明确指定以某个远端
-commit/branch 为准时，才允许反向同步远端内容。
+事实优先级为当前源码/配置/manifest/实测产物，高于说明文档或旧记忆。遇到历史实验不确定、结论冲突或疑似重复路线时，必须由`s-experiment.md`进入对应详细卡片，再读卡片指向的协议、配置、gate、结果和修正记录；证据仍不足则明确标为未确认，不能只据概览或旧摘要推断。
 
-工作区包含大量未提交源码、构建文件和历史 artifact。禁止擅自执行 `git reset --hard`、`git clean`，禁止删除或覆盖旧索引、日志、结果、`*.bak` 和论文材料。新 variant 必须写入隔离目录。
+未提交代码、旧日志/索引/模型/结果不得重置、清理或覆盖；新执行输出使用独立版本。旧报告中的spec章节号属于当时文档，完整版本保存在[本次整理前快照](experiment_history/_maintenance/20260908_document_reorganization/source_before/spec.md)，不能把旧编号套入本文件。
 
-## 当前主方法
-
-当前论文主线不是旧 Neural Router，而是：
+## 2. 已实现主链：Fast
 
 ```text
-frozen NSG
-  + independent 5K QGT-train queries and exact top-100 GT
-      -> spherical k-means
-      -> one unique GT base node per query cluster
-      -> QGT-Cover raw hubs
-  + independent 30K prototype-train queries and top-1 GT vectors
-      -> assign GT vector to nearest raw-hub basin
-      -> normalized query mean + raw-hub prior
-      -> closed-form prototypes
-  + online query
-      -> Micro-HNSW over prototypes
-      -> top-3 base entry IDs
-      -> original ACSG::search_new on frozen NSG
+正式数据manifest + 冻结NSG
+  ├─ 独立QGT 5K + exact GT100 → spherical k-means → 唯一真实base hub IDs
+  └─ 独立prototype-train + GT1 → GT目标与raw hub的cosine归属
+       → unit query累加 + unit raw-hub prior(weight=1) → normalize prototype
+在线 raw query → prototype Micro-HNSW → real base IDs → search_new(mode=2) → top-K
+评测层在搜索返回后读取GT并计算Recall
 ```
 
-Fast 主路径不读取 ACO weights、DPC centers、probe labels 或 Neural Router bins，不运行 optimizer/MLP，也不修改 NSG 邻接边。当前 Fast artifact 仍依赖 exact train GT。
+代码：[builder](benches/run/build_fast_entry_variants.py)、[EntryPointSearcher与评测入口](benches/test.cpp)、[索引包装](ACSG/IndexACSG.cpp)、[原搜索实现](ACSG/ACSG.cpp)。QGT是项目内Query Ground-Truth术语，QGT-Cover是启发式而非严格set cover；prototype是入口的query画像，不是节点原向量。
 
-当前通过 train-first 与双数据集 validation gate 的中等容量扩展是
-`Multi-view Target-Basin Routing`：复用三个独立 Fast build 作为 prototype views，固定
-seed-20260828 Fast rank-0，将三个 view 的 top-8 并集按最高 cosine 合并，再选两个补充入口。
-它仍搜索同一冻结 NSG，不读取在线 GT/probe/held-out。当前 `28/29/30` 三个 view 合起来是一个
-模型，不是三次独立方法重复。
+`choose_unique_gt_hubs`按每簇query到质心的cosine相似度排序，再逐query按GT100名次取第一个全局未使用的base ID；不是直接求质心GT1，也不是全簇GT投票。当前seed20260828使用25轮、`nredo=1`，两数据集空QGT簇均为0；不足H时实现会扫描全GT补齐，最终ID排序。随后`build_gt_basin_prototypes`独立按GT1真实向量到raw hub的cosine归属，计算`normalize(unit(hub)+Σ unit(query))`，不复用QGT簇，且是query之和加先验。相关只读核对见[四问题报告](entry_method_exploration/20260910_ood_hubs_clustering_router_research_v1/report.md)，源码行为未修改。
 
-固定的 C++ 任务名 `Asym-Neural/NETG_AsymHNSW` 在 Fast 结果中承载 closed-form prototype；读结果时必须结合 manifest，不得据槽名误报成神经网络。
+Fast的QGT-only分支不依赖ACO/DPC、逐hub probe标签、optimizer或Neural Router。通用`build_gt_basin_prototypes`内部元数据默认含`requires_aco_dpc=True`，QGT-only分支会覆盖为False；应读最终manifest及实际调用分支。`Asym-Neural/NETG_AsymHNSW`结果槽也可能承载闭式prototype，不能据名字判断在线有MLP。
 
-## 当前代码入口
+历史正式Fast使用30K prototype-train；最近诊断及后续拟议对照使用router_train后20K重建的paired Fast。两者必须分别标记，不能把旧30K模型接入20K拟合链。训练时对query/GT目标/hub作的normalize不等于在线额外归一化：现有Fast将raw query送入Micro-HNSW，主搜索仍使用数据manifest规定的原IP。当前Micro-HNSW使用`InnerProductDistance=1-q^Tp`，库不自动归一化；因现有prototype为单位向量，对固定非零query的排序与cosine等价，但数值本身不能泛称L2或已归一化cosine距离。
 
-| 目的 | 文件 |
+## 3. 模块与入口
+
+| 层/用途 | 代码或工具 | 实现边界 |
+|---|---|---|
+| 数据与配置 | [DataLoader](benches/datasets/DataLoader.hpp)、[settings](benches/datasets/settings.json)及各dataset manifest | manifest绑定split、metric、base和GT；文件名不能代替身份 |
+| 索引/原搜索 | [IndexACSG](ACSG/IndexACSG.h)、[ACSG接口](ACSG/ACSG.h)、[ACSG实现](ACSG/ACSG.cpp) | 存储/距离、冻结邻接、visited、候选pool和入口消费 |
+| Fast构建 | [build_fast_entry_variants.py](benches/run/build_fast_entry_variants.py) | QGT-only与其他历史变体按manifest分支区分 |
+| 路由与通用评测 | [test.cpp](benches/test.cpp)、[per-query评测](benches/bench_per_query_recall.cpp) | 搜索器load/reset、真实ID映射、split/计时实际实现须验收 |
+| oracle/trace诊断 | [bench_entry_oracle.cpp](benches/bench_entry_oracle.cpp) | GT只在诊断层；oracle不是部署路由 |
+| Three-view评测 | [bench_target_basin_eval.cpp](benches/bench_target_basin_eval.cpp)及对应protocol runner | 历史组件保留；接口分离不代表旧wall边界全部合格 |
+| 区域搜索组件 | [RegionalSearch.h](ACSG/RegionalSearch.h)、[test_regional_search.cpp](benches/test_regional_search.cpp) | 已实现独立队列语义，不能替代原kernel假称parity |
+| 区域评测/门户 | [P2](benches/bench_hierarchical_eval.cpp)、[P3](benches/bench_hierarchical_eval_p3.cpp)、[portals](benches/bench_hierarchical_portals.cpp) | 历史实现与实验状态分开，详见历史07 |
+| Fast根因诊断工具 | [诊断src说明](fast_router_diagnosis/20260908_v1/src/README.md) | 独立版本调用原kernel，工具验收不等于新方法 |
+| C stage1 独立状态机/诊断 | [state_machine.hpp](entry_method_exploration/20260909_c_stage1_v1/src/state_machine.hpp)、[C2 runner](entry_method_exploration/20260909_c_stage1_v1/src/c2.cpp) | 仅独立mode2状态机；C1验收通过，C2为有限动作oracle，不含learner或正式QPS |
+
+旧NETG链`NSG→ACO→DPC→probe labels→Router`仅作历史复现，详见[历史01](experiment_history/01_fast_and_legacy.md)。v4效用树、历史A/B独立R0及D稀疏标注仍未实现。新的A+B实验已独立实现自由低秩`W=P0+VZ`、slot→entry映射、联合trainer和micro-index，见本文件末节；它不是旧共享affine设计的原样实现。C R0本身保留设计未运行身份；新[C stage1](entry_method_exploration/20260909_c_stage1_v1/protocol.md)已独立实现状态机，不能将其验收写为已部署C策略。
+
+## 4. 正式数据集契约
+
+| 数据集 | WebVid-2.5M | Yandex official 10M/IP | LAION-10M/IP |
+| --- | --- | --- | --- |
+| key | `webvid2_5m_light_v1` | `yandex_t2i_official10M_ip_v1` | `laion10m_acsg_v1` |
+| artifact version | `roargraph-webvid2.5m-ip-v1` | `yandex-t2i-official-first10m-ip-v1` | `roargraph-laion10m-unit-ip-acsg-v1` |
+| base | 2,505,000 × 512 | first 10,000,000 × 200 | 10,004,480 × 512 |
+| metric | inner product | inner product | inner product |
+| normalization | source 近单位范数，不额外归一化 | none | base/query 逐行 L2-unit |
+| QGT / prototype / validation | 5K / 30K / 10K | learn `[0,5K)` / `[5K,35K)` / `[35K,45K)` | seed 20260830 去重抽取 5K / 30K / 10K |
+| held-out | public 10K | public 前 10K | public 10K |
+| manifest | `benches/datasets/WebVid2.5M_light_v1/manifest.json` | `benches/datasets/YandexT2I_official10M_ip_v1/manifest.json` | `benches/datasets/LAION10M_acsg_v1/manifest.json` |
+
+补充边界：
+
+- WebVid、Yandex 四个 split 的六组两两 overlap 均为 0；Yandex GT 必须对应 first-10M base 的 exact IP top-100。
+- LAION held-out GT 来自 DiskANN truthset top-100 IDs，并以 unit-normalized exact IP 抽样复核；未带 `.unit`／`.unit_ip` 的首轮 raw artifact 已失效，见 `INVALID_RAW_IP.md`。
+- LAION 与 WebVid public-query 源文件 MD5 相同，因此 LAION 只能算不同 base corpus/scale 的迁移控制，不是独立第三 query workload。
+- `sift10M`、`sift10M_skewed`、`deep10M`、`gist1M` 和旧 `yandex_t2i` 不属于当前正式协议。
+
+## 5. 冻结底图
+
+三个正式数据集均使用 `R=64, L_build=100, C=512`：
+
+| 数据集 | NSG |
 | --- | --- |
-| Fast variant 构建 | `benches/run/build_fast_entry_variants.py` |
-| Three-view reference routing | `benches/run/route_multiseed_target_basin_ensemble.py` |
-| Three-view C++ 在线/图搜索复验 | `benches/bench_entry_oracle.cpp` -> `build/benches/bench_entry_oracle` |
-| Meta-inspired confidence gate | `benches/run/route_confidence_attentive_target_basin.py` |
-| 单/多 seed 验证 | `benches/run/run_fast_entry_validation.sh`、`run_yandex_qgt_fast_light.sh` |
-| 双数据集正式复验 | `benches/run/run_two_dataset_fast_benchmark.sh` |
-| LAION 下载/准备/冻结图 | `download_laion10m_acsg_v1.sh`、`prepare_laion10m_acsg_v1.py`、`run_laion10m_acsg_v1.sh` |
-| LAION Fast validation / held-out | `benches/run/run_laion_fast_validation.sh`、`run_laion_fast_heldout.sh` |
-| Recall/QPS 搜索 | `benches/test.cpp` -> `build/benches/test` |
-| 逐 query Recall@10 | `benches/bench_per_query_recall.cpp` -> `build/benches/bench_per_query_recall` |
-| 汇总 | `summarize_fast_entry_multiseed.py`、`summarize_two_dataset_fast_benchmark.py` |
-| 绘图 | `benches/run/plot_two_dataset_qps_recall.py` |
-| 一键命令 | `command.md` |
+| WebVid | `indices/webvid2_5m_light_v1_index/acosp_nsg.json` |
+| Yandex | `indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json` |
+| LAION | `indices/laion10m_acsg_v1_index/acosp_nsg.json` |
 
-旧链仍保留用于历史复现：
+同目录 `.info` 必须匹配 dataset version、metric 和参数。不得把 RoarGraph 的 `L_pjpq=500` 当成重建 NSG `L_build=500` 的依据。WebVid 固定宽度图中的 `-1` 是未用 padding，不是坏边；导出 variable-degree 图时只过滤 padding。所有方法比较必须绑定相同图 checksum。
 
-```text
-NSG -> metric-aware ACO -> DPC -> probe labels -> Neural Router -> evaluation
-```
+这里的`acosp_nsg.json`实际是内嵌base向量的原生二进制索引，扩展名不代表JSON。核对元信息优先读`.info`和已有manifest；需要解析时使用对应索引加载实现，不能按后缀调用`json.load`或无界`read_text`。
 
-其入口是 `bench_ACO_TEST`、`kph_dpc_clustering`、`bench_generate_labels`、`train_router.py`。旧链不是当前默认方法，不得无条件重跑或覆盖 Fast artifact。
+## 6. 搜索接口与行为不变量
 
-## 构建环境
+原接口为`ACSG::search_new(dis, topk, I, D, visited, mode, custom_enterpoints, retset_buf)`；query通过DistanceComputer绑定，输出为真实base ID及距离。`mode=0/1/2`分别为随机、固定权重、自定义入口。`search_new_traced`调用相同搜索主体；可选`trace_gt`仅用于监督诊断，不能影响在线决策。
 
-当前服务器：Ubuntu 22.04、16 vCPU、约 123 GiB RAM、无 swap、无 GPU；项目位于 `/data/netg/ACSG`。Python 环境为 `.venv_cpu/`。
+- 原mode2代码常量`limit_heuristic=3`，只考虑输入前三个位置，再用visited去重；传入更多不等于消费更多。所有自定义ID应由调用方验证`0≤id<ntotal`，不能相信旧注释所称的越界自动兜底。
+- 初始种子在计算raw query–base距离后排序；同三唯一ID且无distance tie时，反转HNSW堆输出顺序不自动构成行为差异。任何顺序/去重/入口数变更都需结果与实际消费验收。
+- `search_L`是候选pool容量；实现分配`max(search_L,topk)`，但正式协议仍要求`L≥K`。L不是NDC预算，不保证逐query Recall随L单调。
+- 原kernel返回retset中的top-K，不得以RegionalSearch的独立global-topK替换。复用外部retset时需按其要求重置workspace/visited；并发状态、query计数/seed及fallback必须纳入可复现身份。
+- HNSW返回maxheap；路由器必须明确heap→排序→真实ID的映射，不能混用local index与base ID。实际ef/k/距离函数以调用代码和manifest为准。
 
-CPU 构建入口：
+区域组件另有共享/区域pool、全局visited与独立top-K、按概率分配容量和加权轮转；历史协议保存其完整定义：[详细07](experiment_history/07_hierarchical_p2_p3.md)。其成功实现不表示方法收益成立。
 
-```bash
-source .venv_cpu/bin/activate
-cmake -S . -B build -G Ninja \
-  -DFAISS_ENABLE_GPU=OFF \
-  -DFAISS_ENABLE_PYTHON=OFF \
-  -DBUILD_TESTING=OFF
-cmake --build build -j 16
-```
+原 `search_new` 仍不能从 `SearchTrace` 或 `retset_buf` 恢复搜索：`SearchTrace`只是聚合诊断且显式不含 routing state；外部 retset 每次仍被 resize 并重置；`num_ids`、游标`k`、`updated_pos`和stagnation均为调用内局部量。`VisitedTable`只标记“已经算过距离”，而仍留在pool的`Neighbor.flag`才标记待扩展；被pool淘汰后，现结构不能区分已扩展与已评分未扩展。`search_L`还是共享成员，不是每个分支冻结的state字段。
 
-使用根工程，不使用 `SSG/build`。大文件只写入 `/data`。
+纯入口层变更保持base、原图、metric与后续kernel；若新方向改变候选调度、强制扩展、预算截断或暂停恢复，即成为独立搜索过程版本，须新增版本化state-machine而不是覆盖原`search_new`。该state至少要保存有序retset及flag、有效长度、调度游标、彼此独立的visited/expanded、L/K/入口身份和graph-NDC；若cap可在邻接扫描中耗尽，还要保存当前扩展节点、neighbor offset及updated position。必须先验收pause/clone/no-op/resume的返回ID、距离、NDC和扩展顺序等价，再谈方法质量；count/plain/纯wall继续分离。原API没有这些能力；独立C实现与验收入口见下一小节。
 
-## 正式数据集契约
+### 6.1 C stage1 v1 独立API与语义
 
-### WebVid-2.5M
+实现位于 `entry_method_exploration/20260909_c_stage1_v1/src/`，命名空间 `cstage1`，不修改、替换或向原 `search_new` 加callback。当前仅支持原mode2入口语义，C阶段冻结K10/L64、128；非法初始ID由新API拒绝，原kernel对越界ID仍无安全保证，不运行原kernel的非法输入来假称parity。
 
-- dataset key：`webvid2_5m_light_v1`
-- artifact version：`roargraph-webvid2.5m-ip-v1`
-- base：2,505,000 × 512，`base.webvid2_5m.fvecs`
-- metric：inner product
-- normalization：source vectors 近单位范数，不额外归一化
-- QGT-train：5K，`query.aco_train.seed20260826.fvecs`
-- prototype-train：30K，`query.router_train.seed20260826.fvecs`
-- validation：10K，`query.validation.seed20260826.fvecs`
-- held-out：public 10K，`query.test.public10K.fvecs`
-- manifest：`benches/datasets/WebVid2.5M_light_v1/manifest.json`
+- `Engine::initialize`：保存raw query副本、query ID、L/K、初始入口与base/graph/metric/kernel身份；只消费入口前三位置，visited去重后不足不补到3，无入口时保留原固定seed fallback。
+- `Engine::resume`：到指定完成扩展数checkpoint、自然终止或graph-NDC cap。`State::set_additional_cap`保存prefix NDC及绝对limit，`remove_cap`仅供无cap parity；实际查询每L只有一个checkpoint。
+- `State`：全部L+1 retset槽的ID/float distance/pending、num_ids、cursor、updated_pos、当前row/node/neighbor offset、独立visited/expanded、query/入口/身份、NDC与remaining、started/completed扩展计数及最多16个历史扩展ID。visited/expanded是必要membership，不把全部suffix trace交给线上决策。
+- `State`按值深clone；`to_json/from_json`持久化有序pool、canonical membership及完整partial-row状态。每分支独立DistanceComputer，resume显式绑定state中的query；冻结base/graph只读共享。状态的L不读取共享`search_L`。
+- `Engine::inject(e,force=false)`支付candidate距离，按原pool bound自然插入并rewind；`force=true`对同一候选尝试插入后，不论是否留在pool，均清除其pending并独立记expanded、启动强制row；其后由`resume`实际扫描邻接行一次，再保留/rewind原cursor。每分支最多一个动作；已visited、非法槽与自然终态映射continue/no-op。
+- cap在下一次合法未visited距离计算前截断；未评分节点不标visited，保存当前row/offset/updated_pos。cap恰耗尽后仍可跳过visited/padding并自然结束；started expansion与completed row不能混用。返回原retset topK，不使用独立global-topK。
 
-manifest 记录训练源中排除的 duplicate 与 public-test overlap；最终四个输出 split 的六组两两 overlap 均为 0。
+L+1 scratch、初始化按distance-only排序、full-pool的`dist>=worst`拒绝、row内固定cursor与整row后的rewind均保持原规则。原kernel没有输出完整扩展顺序，C1用冻结源码机械提取且仅增observer的[reference](entry_method_exploration/20260909_c_stage1_v1/src/native_reference.hpp)，先对真实原kernel验ID/float bits/NDC/扩展数，再逐序验证state-machine；另有独立合成边界测试。证据：[C1 gate](entry_method_exploration/20260909_c_stage1_v1/results/c1_gate.json)、[独立kernel审阅](entry_method_exploration/20260909_c_stage1_v1/reviews/kernel_final_review.md)。
 
-### Yandex T2I official 10M/IP
+C2 [配置锁](entry_method_exploration/20260909_c_stage1_v1/config.locked.json)固定paired Fast3 direct top3、单独top7的后四槽去重不补位、checkpoint完成扩展33/65、单全局额外B=1856。最多9分支为continue＋四个natural＋四个force。每条训练query均保留完整prefix state、原始topK/距离、逐分支实际NDC/终止和plain wall；无资格分支明确alias同一continue结果及其计时，alias复制成本单列。候选真实距离计入B，路由两次调用成本另计。各物理branch的count/trace与独立plain完整state一致；GT在两数据集全部raw分支完成后由[独立评分脚本](entry_method_exploration/20260909_c_stage1_v1/src/score_c2.py)打开，不能进入搜索动作。
 
-- dataset key：`yandex_t2i_official10M_ip_v1`
-- artifact version：`yandex-t2i-official-first10m-ip-v1`
-- base：官方 `base.1B.fbin` 前 10,000,000 条，200d
-- metric：inner product
-- normalization：none
-- QGT-train：learn `[0,5000)`
-- prototype-train：learn `[5000,35000)`
-- validation：learn `[35000,45000)`
-- held-out：public `[0,100000)`；当前正式评测取前 10K
-- manifest：`benches/datasets/YandexT2I_official10M_ip_v1/manifest.json`
+clone、JSON序列化/恢复、状态初始化、prefix/suffix wall单列；初始化包含前三入口距离，resume包含图搜索，不能把它们称纯bookkeeping overhead。C2没有完整独立整批方法QPS；同cap不保证实际NDC或wall相等。C标签复用键还必须包含起始策略、query、完整prefix state、checkpoint、B、候选生成器及具体动作语义；静态single `u_L`、旧probe/restart标签不兼容。
 
-四个 split 的六组两两 overlap 均为 0，GT 为匹配 first-10M base 的 exact IP top-100。
+## 7. Artifact 与 provenance
 
-### LAION-10M/IP（数据、GT、冻结 NSG、Fast validation 与 held-out 已完成）
-
-- dataset key：`laion10m_acsg_v1`
-- artifact version：`roargraph-laion10m-unit-ip-acsg-v1`
-- base source：LAION-400M fp16 image shards `0..7,9,10`，严格按此顺序拼接
-- base target：`10,004,480 × 512`，`base.roargraph_laion10m.unit.fvecs`
-- metric：inner product
-- normalization：base 与所有 query 显式逐行 L2-unit normalization
-- historical query source：官方 `text_emb_0.npy`，`1,000,448 × 512` fp16
-- QGT-train / prototype-train / validation：固定 seed `20260830` 去重抽取
-  `5K / 30K / 10K`，并排除 public-test exact-row overlap
-- held-out：RoarGraph Zenodo `laion.query.10k.fbin` 的 public 10K
-- held-out GT：Zenodo `laion.gt.10k.ibin` 的 DiskANN truthset（top-500 IDs 后接
-  top-500 float distances）截取 IDs top-100，并以 unit-normalized base/query 的 exact-IP
-  抽样精确复算验证
-- manifest：`benches/datasets/LAION10M_acsg_v1/manifest.json`
-
-官方旧 `the-eye.eu` URL 当前证书失效且文件返回 404；下载脚本使用 LAION 官方部署地址
-`deploy.laion.ai/.../embeddings/{img_emb,text_emb}/`。image NPY 每个必须是
-`1,000,448 × 512, float16, 1,024,458,880 bytes`。公共 query/GT 固定 MD5 分别为
-`af1343dc16554d87c43326cf4024493d` 和 `d76a89a9e05ce4a18a5ebdaa3e159796`。
-
-LAION 与 WebVid public-query 源文件 MD5 相同。这不造成同一数据集内部 train/test 泄漏，
-但意味着二者不是独立 held-out query workload；结果解释必须限定为不同 base corpus/scale
-上的迁移。manifest、exact GT 与冻结 NSG 已通过终态验证；Fast validation 与 held-out
-正式复验均已完成。
-
-首轮 raw-vector 诊断已终态失败并保留：完整 base 上 first-32 public queries 的官方
-top-100 set recall，raw-IP 为 `0.994375`、raw-L2 为 `0.9909375`；explicit-unit cosine/IP
-为 `1.0`。因此不带 `.unit` / `.unit_ip` 的首轮 base/query/train-GT 禁止引用，原因见
-`benches/datasets/LAION10M_acsg_v1/INVALID_RAW_IP.md`。这不是容忍近似 GT，而是据官方 GT
-反推出并冻结正确预处理契约。
-
-### Legacy 配置边界
-
-`sift10M`、`sift10M_skewed`、`deep10M`、`gist1M` 和旧 `yandex_t2i` 的历史配置/结果不属于当前正式协议；其中部分旧配置曾共用 train/test query 或混用 custom-L2 语义。禁止把这些旧 key、旧 GT、旧图或旧结果并入当前 WebVid/Yandex artifact。
-
-## 冻结底图
-
-三个正式数据集当前共用参数：
-
-```text
-R=64, L_build=100, C=512
-```
-
-| 数据集 | NSG | info |
-| --- | --- | --- |
-| WebVid | `indices/webvid2_5m_light_v1_index/acosp_nsg.json` | 同目录 `.info` |
-| Yandex | `indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json` | 同目录 `.info` |
-| LAION | `indices/laion10m_acsg_v1_index/acosp_nsg.json` | 同目录 `.info` |
-
-实测构建 wall time 约 WebVid 14:40、Yandex 48:33。当前研究计划不要求重建 `L_build=500`；此前把 RoarGraph 的 `L_pjpq=500` 对应成 NSG `L_build=500` 不可靠。
-
-WebVid 固定宽度邻接数组共有 160,320,000 slots，其中 110,707,547 个 `-1` 是未使用的
-padding，而不是“少量坏边”；有效边 49,612,453，平均有效 degree `19.8`、范围 `1..64`，
-无零度节点。导出 GATE variable-degree NSG 时只过滤 padding，保留 49,995 个有效重复 slots；
-完整 parser 验证节点数、ID 范围与 exact EOF。该事实不改变 Fast/Formal 的同图比较。
-
-## Fast artifact
-
-每个 seed 的隔离目录：
+单 seed Fast 目录：
 
 ```text
 fast_entry_variants/<dataset>_seed<seed>/
@@ -194,582 +136,122 @@ fast_entry_variants/<dataset>_seed<seed>/
   per_query_r10.json
 ```
 
-正式 seeds：`20260828/20260829/20260830`。
+正式 Fast seeds 为 `20260828/20260829/20260830`；hub budget 为 WebVid 815、Yandex/LAION 821。manifest schema v2 至少记录 dataset/artifact version、split、metric、normalization、query/GT/base/graph path 与 checksum、seed、hub budget、参数、输出 checksum、代码版本、CPU/线程和时间。
 
-Hub budget：
+现有 manifest 的 base 字段只是路径，新正式批次必须补 base 与图 checksum。seed 位于 `variants.qgt_cover.seed`；不同 seed 只改变相同训练样本上的 k-means 初始化，不是 query bootstrap。builder 会写入已有目录，外层 runner 必须预先拒绝冲突。
 
-- WebVid：815
-- Yandex：821
+`build_wall_seconds` 只计已有 exact GT 后的 builder，不含 exact GT 和 evaluator 内构建的 Micro-HNSW。完整离线成本必须分项：
 
-`manifest.json` schema version 2 保存 dataset/artifact version、QGT/prototype query 与 GT 的路径/checksum、base、seed、hub budget、输出 checksum 和 build wall time。`--qgt-only --target-hubs` 路径不得读取 DPC/labels/ACO/Neural artifact。
+```text
+T_offline_single = T_exact_train_GT + T_QGT + T_prototype + T_router_index
+T_offline_ensemble = T_exact_train_GT + sum_views(T_QGT + T_prototype + T_router_index)
+```
 
-早期探索文件 `fast_entry_variants/webvid2_5m_light_v1/eval_qgt_vs_prototype_r1.json` 的 raw task 曾发生 vector/ID 错配，标记为 INVALID，禁止引用。
+三 view 共用 train GT 时只计一次；缺失阶段写 `null + reason`。不得把 post-GT 秒级时间称为完整训练。
 
-### Three-view target-basin ensemble（validation 诊断）
+已知无效 artifact：`fast_entry_variants/webvid2_5m_light_v1/eval_qgt_vs_prototype_r1.json` 的 raw task 曾发生 vector/ID 错配；LAION 首轮 raw-IP/raw-L2 也已失效。两者禁止进入新汇总。
 
-`benches/run/route_multiseed_target_basin_ensemble.py` 冻结 seed-20260828 Fast 的 rank-0，合并
-三个 QGT/GT-basin prototype 视角的 top-8 候选，再按各自 prototype cosine 选择另外两个入口。
-诊断 artifact 位于 `target_basin_ensemble_diagnostics/v1/`；路由不读取在线 GT、probe label 或
-held-out。`bench_entry_oracle` 的 `--ensemble_prototype_{hubs,ids}_{2,3}` 可执行同一冻结规则的
-C++ 在线版本，并记录批量 routing wall time 与 reference-route mismatch；结果中的 NDC/latency
-字段仍是 graph-only，routing NDC 与正式端到端计时必须另行补齐。
+## 8. 在线搜索与评测
 
-当前 `v1` validation 10K、Recall@10、`L=64/128` 相对 seed-20260828 Fast 的 Recall delta
-分别为 WebVid `+0.871/+0.369 pp`、Yandex `+0.250/+0.209 pp`，graph NDC 四点均下降。
-C++ 在线复验仍四点提高 Recall。完整判断与 claim boundary 见
-`target_basin_ensemble_diagnostics/v1/decision.json`。
+`benches/test.cpp` 的 `--query_split drl_test|validation` 显式选择 split，默认 `drl_test`；结果必须记录实际 split。`--test_scope comparison` 只运行 Medoid、Raw 和 prototype comparison slots。IP 数据的 Raw routing 使用 IP。
 
-### Confidence-attentive meta-inspired diagnostic（train-only no-go）
+Recall@K 为返回 top-K 与 exact top-K 的集合交集数除以 K；必须 `search_L >= K`，因此 Recall@100 首点为 `L=100`，禁止 `K=100/L=64`。
 
-`route_confidence_attentive_target_basin.py` 在 three-view score 上加入
-`alpha * (view_top1 - view_top2)`；`alpha=0` 必须逐字节复现当前 ensemble。非零 alpha 只用
-WebVid/Yandex `drl_train`、`L=64/128` 选择。WebVid 仅 `alpha=-0.5` 通过，Yandex 仅相反的
-`alpha=+0.5` 通过，没有共享非零 alpha 满足双数据集 gate，故未读取 validation/held-out。
-artifact 位于 `target_basin_meta_diagnostics/v1/`。该结果禁止表述为已实现元学习。
+正式 Fast 及所有方法基线比较统一单线程（2026-09-09用户明确要求）：评测配置`threads=1`，OpenMP/BLAS/MKL线程均限制为1，启动和结果验收均检查线程数。held-out 10K；Formal 每点 3 timing runs；Fast 3 build seeds × 每 seed 3 timing runs；Recall 方差来自 build seeds，QPS 方差来自 timing runs 与 seeds；跨 invocation QPS 优先使用同次 Medoid 归一化；tail 阈值固定 `0.1/0.2/0.5/0.8`。
 
-## 在线搜索与计时
+逐 query 数据必须按 query ID 保存未排序 aligned 数组。CDF/分位数可排序，但 rescued、newly_harmed、still_failed 和 paired bootstrap 只能使用 aligned 数据；timing runs 不是独立 Recall 样本。
 
-`benches/test.cpp`：
+计时／计数契约：
 
-- `--top_k 1` 测 Recall@1；`--top_k 100` 测 Recall@100。
-- `--query_split drl_test|validation` 显式选择 held-out 或 validation；默认仍是
-  `drl_test`。结果 JSON 同步记录 split，LAION validation 与 held-out 写入物理隔离目录。
-- `--test_scope comparison` 只运行 Medoid、Raw 和 prototype/Neural comparison slots。
-- Router 通过 Micro-HNSW 选择 top-3 entry IDs。
-- three-view ensemble 已有 Python reference 与 C++ 在线实现；在纳入主方法前仍须将三路
-  routing NDC/latency 纳入正式 total NDC/latency。
-- Raw routing metric 从 dataset config 读取；IP 数据使用 IP。
-- QPS 计时只包含当前进程的在线搜索，不包含后续 tail 汇总。
+- 分别记录 routing、graph、total 的 NDC 与 latency，`total_ndc = routing_ndc + graph_ndc`；
+- QPS 用单线程、单方法独立整批 wall；同机不并发运行训练、标签生成或其他性能测试，不由逐query latency均值或多线程吞吐换算；
+- tail、GT 评分、hash 和 JSON 写盘不进入计时；
+- 若计数 instrumentation 有开销，以结果一致的独立计数进程提供 NDC；
+- 固定 warm-up、轮换方法顺序，并记录线程、CPU 和 cache condition。
 
-`benches/bench_per_query_recall.cpp`：
+离线训练、标签生成、构建允许多线程并单独记成本；它们的线程配置不能传递给正式查询测试。已有16线程测量只保留历史身份，正式主表须用所有方法重新测得的单线程结果。
 
-- 固定生成逐 query Recall@10。
-- Medoid、Raw、prototype/Neural 均保存排序前的 `per_query_recalls_aligned`。
-- 排序数组只用于分位数/CDF；rescued、still-failed、newly-harmed 必须使用 aligned 数组。
+旧评测器是否满足此计时合同必须逐版本审查，不能仅据接口名判断。`bench_target_basin_eval`曾存在GT评分/工作区创建落在timer内的问题；纯wall已验收路径与旧问题范围见[正式化复盘](experiment_history/02_multiview_and_attention.md)、[区域搜索复盘](experiment_history/07_hierarchical_p2_p3.md)。计数文件的QPS不可发布。
 
-QPS 与 tail 是两个串行、独立进程；tail 阈值与转移统计不会污染 QPS 计时。
+## 9. 构建与环境
 
-## 当前权威结果
+本项目方法运行合同为CPU-only。2026-09-08现场核对16个逻辑CPU、约123GiB RAM、swap为0，主解释器`.venv_cpu/bin/python`存在；当前CMake cache为Ninja，GPU/Python Faiss/BUILD_TESTING开关均为OFF。工作区为`/data/netg/ACSG`。
 
-`fast_entry_benchmark_results/`：
+```bash
+source .venv_cpu/bin/activate
+cmake -S . -B build -G Ninja \
+  -DFAISS_ENABLE_GPU=OFF \
+  -DFAISS_ENABLE_PYTHON=OFF \
+  -DBUILD_TESTING=OFF
+cmake --build build -j 16
+```
 
-- `benchmark_summary.md`：权威可读报告
-- `benchmark_summary.json`：完整机器汇总
-- `search_metrics.csv`：Recall/QPS
-- `tail_metrics.csv`：Mean Recall@10、失败率与 rescued/harmed
-- `raw/<dataset>/`：原始 JSON 与 timing
-- `figures/{webvid,yandex}_qps_recall.{png,pdf}`
+必须配置根工程，不使用 `SSG/build`。复用旧命令前先运行目标程序的 `--help`；大文件只写入 `/data`。
 
-协议：
+历史比较工具位于`hierarchical_target_search/20260907_v1/tools/`，不是项目根的`tools/`：[通用局部环境](hierarchical_target_search/20260907_v1/tools/env.sh)、[RoarGraph局部环境](hierarchical_target_search/20260907_v1/tools/roargraph-env.sh)。主方法继续使用`.venv_cpu`；比较依赖与MKL/OpenMP局部环境隔离，不能把RoarGraph环境混入正常ACSG构建/计时。完整依赖版本与已完成smoke见[历史03](experiment_history/03_baselines.md)。该段所述2026-09-08比较依赖核查没有重新构建或安装；2026-09-09的C在独立版本bin中实际编译，链接既有CPU静态库，未改主build或安装依赖。
 
-- held-out 10K；
-- Formal 每点 3 timing runs；
-- Fast 3 build seeds × 每 seed 3 timing runs；
-- Recall 确定性方差来自 build seeds；
-- QPS 方差来自 timing runs 与 seeds；
-- 跨 invocation 比较优先使用同次 Medoid 归一化 QPS；
-- tail 阈值固定 `0.1/0.2/0.5/0.8`。
-
-LAION 首轮是单独的 validation gate，不属于上述 held-out 双数据集批次。权威输出：
-
-- `fast_entry_variants/laion10m_acsg_v1_validation_report.md`：可读报告；
-- `fast_entry_variants/laion10m_acsg_v1_validation_multiseed_summary.json`：机器汇总；
-- `fast_entry_variants/laion10m_acsg_v1_validation_seed{20260828,20260829,20260830}/`：
-  三个 seed 的 manifest、Recall/QPS、tail 和 `/usr/bin/time -v`。
-
-协议为独立 validation 10K、821 hubs、3 build seeds × 每 seed 3 timing runs；Recall@1
-使用 `L=64/128/200/400`，Recall@100 使用合法的 `L=100/128/200/400`，逐 query
-Recall@10 使用 `L=64/128/200/400`。held-out public 10K 未读取。
-
-validation gate 通过后，LAION held-out 使用同一冻结协议完成正式复验：
-
-- `fast_entry_variants/laion10m_acsg_v1_heldout_report.md`：可读报告；
-- `fast_entry_variants/laion10m_acsg_v1_heldout_multiseed_summary.json`：机器汇总；
-- `fast_entry_variants/laion10m_acsg_v1_heldout_seed{20260828,20260829,20260830}/`：
-  三个 seed 的隔离 artifact 和原始结果。
-
-held-out Fast artifact 与同 seed validation artifact checksum 完全一致；test split 不参与
-构建或调参。协议仍为 10K、821 hubs、3 build seeds × 每 seed 3 timing runs，`L` 和
-tail 阈值不变。
-
-## Artifact 重跑依赖
+## 10. 重跑依赖
 
 | 变化 | 可复用 | 必须重跑 |
 | --- | --- | --- |
-| base、metric、normalization、底图参数/后端 | 原始下载与兼容 checksum 记录 | GT（若语义变）、NSG、Fast hubs/prototypes、全部评测 |
-| QGT/prototype query split 或 train GT | 兼容 base 与冻结 NSG | Fast hubs/prototypes、全部评测 |
-| hub budget、QGT clustering、prototype 公式 | base、GT、NSG | Fast builder、全部评测 |
-| top-m、Micro-HNSW、search_L、top_k | NSG 与 Fast bins | 对应评测 |
-| 只改汇总/绘图且 schema 兼容 | 原始 JSON/CSV | 仅汇总/绘图 |
-
-所有新 artifact 必须记录 source checksum、split、metric、normalization、底图 checksum、seed、参数、代码版本、CPU/线程和生成时间。
-
-## 当前已知限制
-
-1. Three-view ensemble 当前只有一组 `28/29/30` 组合；尚缺三组独立 ensemble-build 稳定性。
-2. Fast 构建倍率未包含 exact train-GT 生成成本；论文必须补充 GT 成本和 break-even。
-3. Three-view 当前只报告 graph NDC/latency；routing NDC、total NDC、端到端 latency 与 tail
-   尚未达到正式结果要求。
-4. confidence margin 在两个数据集需要相反 alpha，不能作为可迁移的 view reliability signal。
-5. WebVid standalone GATE 已完成同图、raw-IP、独立 split 和 graph NDC/latency 适配；旧 GATE 日志仍禁止引用，Yandex 复制按 WebVid no-go gate 停止。
-6. `test.cpp` 的 legacy ACO-Max 在释放 weight 后仍会回退到 medoid；Fast comparison scope 不运行它，修复前不得作为有效 ACO 基线。
-7. LAION-10M Fast validation 与 held-out 10K×3 seeds×3 timing runs 均已完成；仍没有
-   完整的 RoarGraph/RobustVamana 同机端到端结果，且 LAION/WebVid public query 相同。
-8. current Fast/three-view 都依赖 exact train GT；需评估更少 GT 与 GT depth 消融。
-
-## 下一批实验冻结契约
-
-当前执行点已进入 three-view ensemble 的 P2 正式化。P0/P1 条款保留为论文完整性与 artifact
-审计要求，不再作为追加模块的入口；confidence attention 已 no-go，禁止借“元学习”名义重开。
-下一批只补独立 ensemble-build、tail、routing/total cost 与完整 offline cost。
-
-### 全阶段不变量
-
-- formulation、核心机制、hub budget、prototype 形式、top-m 和 objective 只能基于已有
-  train/validation 证据确定；现有 held-out 结果不得反向用于方法设计。
-- 快速机制 pilot 可使用一个明确记录的 build seed 和 validation 子集；正式 validation 使用
-  `20260828/20260829/20260830` 三个 build seeds。build seed 与每点 timing runs 是两层重复。
-- 所有新输出使用隔离的 variant/result 目录，不覆盖现有 Fast、oracle、GATE、reroute 或
-  LAION artifact；冻结 NSG 不允许添加、删除或重连边。
-- LAION 与 WebVid 共享 public query，只作为 corpus/scale control，不计作新的独立 query gate。
-
-### P0：论文方法骨架冻结
-
-P0 原则上不启动新的大规模实验。实现前必须先形成方法设计稿，至少冻结以下接口：
-
-```text
-problem: frozen graph G, historical query distribution Q, candidate budget M, online budget B
-output: candidate entry set H and query-conditioned policy pi(q)
-objective: expected_search_utility - lambda * online_cost - beta * tail_risk
-constraints: pi(q) subset of H, |H| <= M, cost(pi(q)) <= B
-core_mechanism: shared query-entry search utility u(q,e)
-```
-
-设计稿必须包含三层定义及数据流：
-
-1. `query_distribution_coverage`：怎样从训练 query/GT 在预算 `M` 下产生真实 base entries；
-2. `query_entry_utility`：怎样表示或估计 query-entry 在冻结图上的 quality/cost/risk；
-3. `budgeted_entry_policy`：怎样根据边际 utility 与预算产生 `pi(q)`。
-
-工作主轴固定为共享 `u(q,e)`：候选层以其做预算化 query coverage，表示层估计其搜索质量/
-成本效用，决策层按其 marginal utility/cost 产生 `pi(q)`。设计稿必须明确 `u` 的监督定义、
-tail weighting、cost normalization，以及 single utility 如何扩展到 entry set；其余模块标记为
-`supporting_component|system_acceleration|ablation`。若采用
-`F(H)=sum_q w(q) max_{e in H} u(q,e)`，必须验证非负性、单调性和次模条件后才能主张 greedy
-approximation，不能只凭形式写理论结论。
-
-`u(q,e)` 的实现不得原样恢复已 no-go 的 top-32 static geometry listwise ranker。设计稿必须
-给出新的可估计性来源（例如新的结构假设、可证明近似或与搜索过程一致的充分统计）；否则该
-formulation 不通过 P0，不进入代码实现。
-
-设计稿还要给出伪代码、离线/在线复杂度、可检验假设，以及 Fast v1 到新骨架的复用/失效
-映射。在这些内容冻结之前，不得把 mode-aware prototype、TailRisk-Cover 或 top-1/3/5 任一
-选择写成既定主方法。
-
-### P1：核心机制实现与小规模验证
-
-只实现 P0 选定的 `core_mechanism`。新 variant manifest 除通用 provenance 外至少记录：
-
-```text
-framework_version / core_mechanism / component_role
-objective_terms / constraint_terms
-selection_split / build_seed
-candidate_budget / online_budget / artifact_bytes
-heldout_accessed=false
-```
-
-先在 WebVid/Yandex validation 子集、单 seed 上验证 formulation 中的核心假设。入口数量、
-mode-aware representation、current/broad candidate pool 只能作为核心机制要求的组件选择逐步
-开启。Oracle 只用于上限或假设诊断；`greedy top-m` 必须标为 marginal-coverage proxy，不能
-称为组合穷举 oracle。若实现仍是多个没有共同 objective 的 heuristic，返回 P0 重构，不通过
-增加模块或搜索预算来掩盖。
-
-### P2：结构冻结与正式 validation
-
-当前冻结结构为三 view、每 view top-8、seed-20260828 rank-0 anchor、duplicate max-score merge、
-最终 top-3。现有 `28/29/30` 组合已通过 WebVid/Yandex validation 10K 的 Recall@10 与 graph-NDC
-gate；它只算一个 ensemble instance。正式比较必须另建三组互相独立的 three-view ensemble，
-并在每个点同时报告等 `search_L`、等总 NDC 和等端到端 latency，至少保存：
-
-```text
-Recall@1 / Recall@10 / Recall@100
-rescued / newly_harmed / P1 / P5 / bottom_cvar
-routing_ndc / graph_ndc / total_ndc
-routing_latency / graph_latency / total_latency
-seed_mean / seed_std / timing_mean / timing_std
-```
-
-继续条件：两个数据集同方向，并在至少两个 `L` 上同时改善 Recall 与 bottom-tail，且成本对齐后
-优势不消失。若结果依赖单个 seed、只在 WebVid 有微小正值，或 Yandex 退化，则停止该结构，
-不得直接运行 held-out。
-
-结构通过后再补强基线、归因消融和以下完整成本；这些不是 P0 前置项：
-
-成本报告必须拆分保存以下字段；缺失项写 `null + reason`，不得并入其他阶段：
-
-```text
-exact_gt_wall_seconds / exact_gt_cpu_seconds / exact_gt_peak_rss_bytes
-candidate_construction_wall_seconds
-utility_model_wall_seconds
-online_policy_index_wall_seconds
-entry_artifact_bytes / base_index_bytes / peak_rss_bytes
-routing_ndc / routing_latency
-graph_ndc / graph_latency
-total_ndc / total_latency
-cache_condition / threads / cpu_model
-```
-
-强基线与骨架化方法必须绑定相同 dataset artifact version、base checksum、metric、normalization、
-query split 和 GT checksum。主表只接受同机实测；外部论文数值单列。优先补已有
-HNSW/NSG/LSH-APG，再评估 RoarGraph/RobustVamana 的可复现端到端适配。
-
-归因消融至少覆盖 hub budget、QGT/prototype query count、GT supervision depth、prototype
-必要性、top-m、hardness strata 和监督成本。每个 artifact 记录相应参数、build seed 与底图
-checksum；Medoid、QGT-Raw、Fast baseline v1 和骨架化方法使用相同在线成本口径。
-
-独立 workload 也在 P2 接入：query 来源必须独立于 WebVid/LAION public query，具有可审计且
-无重叠的 train/validation/test、匹配的 GT/metric/normalization，并先确认磁盘、内存和强基线
-预算。条件未满足时不得为凑“第三任务”下载大文件或改变正式协议。
-
-### P3：冻结后的 held-out 复验
-
-骨架化后的方法只有在 P2 通过且比较口径冻结后，才能读取对应 held-out 一次。新 artifact 的
-manifest 必须额外记录 `selection_split`、`oracle_gate_source` 和
-`heldout_accessed=false|true`。test 结果不得触发返回 validation 调参；如实现、输入或预算
-发生实质变化，创建新的方法版本并重新走 P0--P2，而不是覆盖既有结果。
-
-## LAION 已完成流水线与终态复核
-
-启动命令：
-
-```bash
-setsid bash benches/run/run_laion10m_acsg_v1.sh \
-  > logs/laion10m_acsg_v1/pipeline.stdout.log 2>&1 < /dev/null &
-```
-
-2026-08-30 流水线已终态完成。prepare 以 wall
-`26:12`、max RSS `61,211,168 KiB`、exit 0 完成；manifest 记录 base
-`(10004480,512)`、六组 overlap=0、official first-32 set Recall@100=1.0。NSG 以 wall
-`1:04:22`、construction `3816.927s`、max RSS `76,627,580 KiB`、exit 0 完成；保存
-`10,004,480 × 512` vectors，图全连通，索引大小 `23,130,357,863 bytes`，SHA256
-`7040cd0a2b8f5d34b3e3affbbcb30ce19c947731a8a81c40ec64f0e0d99bb238`；`.info` SHA256
-`28c77e5e2b2e6b42d382c9ec9807cef6e4d397cca95f815f59c5b3f832e25f58`。若需复核终态，可运行：
-
-```bash
-tail -n 1 logs/laion10m_acsg_v1/build_nsg.time.txt
-cat indices/laion10m_acsg_v1_index/acosp_nsg.json.info
-test -f indices/laion10m_acsg_v1_index/acosp_nsg.json && echo NSG_PRESENT
-```
-
-阶段日志和 `/usr/bin/time -v` 分别在 `logs/laion10m_acsg_v1/{download,prepare,build_nsg}.{log,time.txt}`；
-顶层只记录 stage start/done。脚本以 `flock` 防止并发双跑，并自行刷新 PID；它可重入：
-完整且大小正确的下载会复用，`.part` 会续传，已有转换/GT 会复用。初始磁盘 93 GiB
-available；底图完成后约 22 GiB available，足够当前 Fast artifact/validation，因此
-`/data/netg.tar.gz` 暂未删除。若后续实际空间不足，用户已授权删除该单一压缩包，删除前仍应
-再次核对准确路径与 `df`。
-
-完成判据不是进程退出本身，而是同时满足：
-
-1. `manifest.json` 存在，unit-normalized base shape 为 `(10004480,512)`，六组 split overlap 均为 0；
-2. official GT sample `set_recall_at_100=1.0`，所有源/输出 checksum 已记录；
-3. NSG 与 `.info` 存在，`.info` 明确 `ip`、`R64/L_build100/C512` 和 artifact version；
-4. 日志无 traceback/FATAL，time 文件记录 exit status 0；
-5. Fast variants 与 validation 10K 已按 `L=64/128/200/400`、Recall@1/10/100
-   （Recall@100 首点 `L=100`）和 3-run 协议完成；结果见
-   `fast_entry_variants/laion10m_acsg_v1_validation_report.md`。
-
-## Git 核心源码快照
-
-当前普通 Git index/working tree 保留用户的历史脏状态，没有执行 `git add -A`、clean 或
-reset。为绕开本地 `main` 的大文件历史，使用独立临时 index 从 `origin/main` 生成：
-
-```text
-local ref: research/core-source-20260830
-base:      origin/main (92861d954b1cce41e134d85dc22d54c7ece61a52)
-snapshot:  221 files, 1,652,896 tree bytes
-content:   ACSG/MRNN/benches/GATE source, scripts, configs, tests, docs, faiss gitlink
-excluded:  data, GT, index, model, result, log, PDF/image, build
-```
-
-用户授权目标为 `https://github.com/VoidFantacy/netg.git`，本地 remote 名为
-`voidfantacy`。GitHub connector 已确认账号 `VoidFantacy` 具有 admin/push 权限，并将精确
-221-file source tree 上传到独立分支 `research/core-source-20260830`；remote/local tree SHA
-一致，`main` 未改动。CLI 本身仍没有 HTTPS/SSH credential，后续若不用 connector 可执行：
-
-```bash
-git push voidfantacy research/core-source-20260830:research/core-source-20260830
-```
-
-不得直接 push 本地 `main`：它的两个旧提交包含数 GB dataset/build blobs，会触发 GitHub
-大文件限制并污染远端历史。
-
-包含最终底图与上传终态交接的本地可搬运备份为
-`/data/netg/ACSG_core_source_20260830_v3.bundle`。
-
-## 冻结图 oracle evaluator（首个 pilot 已完成）
-
-新增 `benches/bench_entry_oracle.cpp`（`build/benches/bench_entry_oracle`）和
-`benches/run/run_webvid_entry_oracle_pilot.sh`，只读取既有 NSG、validation split、
-QGT hub IDs 与 Fast prototypes，不重建或修改 NSG。
-
-首个 pilot 固定为 WebVid validation 前 1K queries、current 815 hubs、
-`search_L=64/128/200/400`、Recall@1/10/100。single oracle 对每个 query/hub
-执行真实冻结图搜索并选择命中最多者；diverse top-3 是按这些单入口结果的 GT
-命中集合做边际覆盖贪心，再以真实三入口搜索复验，不是组合穷举 oracle。
-候选选择只执行一次；Medoid、当前 Fast prototype top-3、single oracle 和 diverse
-top-3 的最终搜索各执行 3 runs，并报告平均 Recall、graph NDC 和 graph latency。
-隔离输出为 `oracle_entry_diagnostics/webvid_validation_1k_current_hubs_v1/`。
-
-完成结果的 `status=complete`，共 12 个 `L×K` 点。每点聚合 3 runs 的 graph-only
-Recall、NDC 与 latency，并保存每条 validation query 的 single/top-3 selected entry IDs。
-关键结果是 single oracle 相对 Fast 在 Recall@1/10/100 的全部 12 个点均有正增益；
-greedy top-3 在全部 12 个点均弱于 single oracle。结果没有保存每个 run 的独立统计、
-搜索结果 ID 或逐 query recall，routing NDC/latency 也未计入；因此当前 JSON 只用于
-current-hub headroom gate，不是投稿级端到端结果。
-
-### Oracle-label prototype predictability gate
-
-`benches/run/build_search_aware_prototypes.py` 从已完成的独立 `drl_train` oracle JSON
-读取 `selected_single_entry_ids`，按 hub 聚合归一化 query，并加入 raw QGT hub prior；
-输出 prototype、IDs、checksum 和 manifest。`bench_entry_oracle` 新增：
-
-- `--skip_oracle`：只运行 Medoid/Fast/额外 prototype 对比；
-- `--extra_prototype_hubs/--extra_prototype_ids/--extra_method`；
-- `--extra_top_m=1..3`；Fast 基线仍固定 top-3。
-
-已完成 artifact：
-
-- train oracle：`oracle_entry_diagnostics/webvid_router_train5k_l64_r10_current_hubs_v1/results.json`
-- prototypes：`search_aware_entry_variants/webvid_train5k_l64_r10_prior1_v1/`
-- top-3 validation：`search_aware_entry_results/webvid_train5k_l64_r10_prior1_v1/validation_1k_3run.json`
-- top-1 validation：`search_aware_entry_results/webvid_train5k_l64_r10_prior1_top1_v1/validation_1k_3run.json`
-- decision report：`search_aware_entry_results/webvid_train5k_l64_r10_prior1_v1/analysis.md`
-
-该 gate 使用 prototype-train 前 5K、`L=64/Recall@10` hard labels，validation 前 1K、
-四个 `L`、三个 Recall@K、3 runs。hard-label centroid 已判定 no-go：top-3 仅有弱增益，
-top-1 对 Recall@1/100 退化。后续 artifact schema 必须保存 shortlist 内每个 candidate 的
-连续 Recall/NDC utility；不得只保存 argmax class。
-
-### Sparse continuous utility 与静态 ranker gate
-
-`bench_entry_oracle` 还新增：
-
-- `--generate_sparse_utility --utility_shortlist N`：对当前 Fast prototype top-N 的每个
-  single entry 保存 Recall、graph NDC，并保存 Medoid/Fast-top3 对照；
-- `--extra_routes FILE --extra_top_m M`：读取逐 validation-query 的 raw-int32 route matrix，
-  进行真实冻结图复验；不能与 `--extra_prototype_hubs` 同时使用。
-
-构建脚本：
-
-- `benches/run/build_utility_residual_prototypes.py`：signed query-centered continuous
-  utility residual 的闭式 prototype；
-- `benches/run/train_sparse_utility_ranker.py`：Fast top-32 上的三 seed、cost-aware
-  listwise diagonal interaction reranker。训练/early-stop 只用 prototype-train 的
-  80%/20%；validation utility 值只用于报告，route scoring 不读取它们。
-
-双数据集 sparse utility：
-
-- `sparse_utility_datasets/webvid_{train10k,validation10k}_top32_l64_128_r10_v1/`
-- `sparse_utility_datasets/yandex_{train10k,validation10k}_top32_l64_128_r10_v1/`
-
-模型与结果：
-
-- `utility_residual_entry_variants/webvid_train10k_top32_l64_128_r10_a025_c005_t1_v1/`
-- `utility_residual_entry_results/webvid_train10k_top32_l64_128_r10_a025_c005_t1_v1_validation10k/`
-- `sparse_utility_ranker_variants/{webvid,yandex}_train10k_top32_l64_128_r10_diag_v1/`
-- `sparse_utility_ranker_results/{webvid,yandex}_diag_v1_seed*/`
-- 完整判断：`sparse_utility_ranker_results/analysis.md`
-
-静态 ranker 已判定跨数据集 no-go：WebVid 等成本仅有小正增益，Yandex 等成本失败。
-当时的下一诊断是固定总预算的 early-probe trace + selective reroute；该分支后来也已按下节
-结果停止。当前不得继续扫 ranker 超参或无证据扩大成通用 MLP/双塔。
-
-### Basin Transition Graph v1 最小证伪
-
-新增只读诊断实现：
-
-- `benches/build_basin_transition_graph.cpp` / `build/benches/build_basin_transition_graph`：
-  加载既有 ACSG index 与一个 QGT hub-ID 文件，以全部 hubs 为初始源，在冻结 NSG 出边上执行
-  确定性 FIFO 多源 BFS；每个节点在首次发现时归入相应 basin，等 hop 冲突按 hub 文件顺序
-  决定。随后统计所有有效有向边的 `basin(source) -> basin(target)` 计数。它不修改邻接、向量、
-  hub 或搜索器。
-- `benches/run/run_basin_transition_falsification.py`：读取上述 transition matrix、seed
-  `20260828` 的 Fast prototypes、独立 prototype-train/validation query，以及现有 top-32
-  sparse utility。它在 top-32 内计算 `geometry_z + gamma * reachability_z`，只输出一个 entry。
-  reachability 使用带可选 self-stay 的 row-normalized transition matrix、1--4 步扩散和
-  top-32 prototype similarity soft target；不运行在线 probe，不读取 GT 作为 scorer 输入。
-
-隔离 artifact：
-
-```text
-basin_transition_diagnostics/
-  webvid_seed20260828_graph_bfs_v1/
-    manifest.json
-    transition_counts.u64
-    basin_sizes.u64
-  yandex_seed20260828_graph_bfs_v1/
-    manifest.json
-    transition_counts.u64
-    basin_sizes.u64
-  btg_falsification_v4/
-    report.json
-    analysis.md
-    {webvid,yandex}_validation_single_routes.int32
-    {webvid,yandex}_validation_individual_train_tuned_single_routes.int32
-```
-
-`v1/v2/v3` 结果目录保留早期选择规则与报告迭代，不覆盖；`v4` 是当前权威结果。最终 report 记录完整
-index、`.info`、hub IDs、prototypes、query、utility 和 transition artifact 的 path/bytes/SHA256，
-实现源码 SHA256、dataset/artifact version、normalization、build seed、candidate/online budget，
-并明确 `heldout_accessed=false`。
-
-图构造结果：
-
-| 数据集 | nodes / hubs | valid / cross-basin edges | max BFS hop | basin size range | build wall |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| WebVid | `2,505,000 / 815` | `49,612,453 / 35,681,779` | `8` | `1..65,012` | `32.66s` |
-| Yandex | `10,000,000 / 821` | `294,844,816 / 218,124,715` | `7` | `783..175,473` | `65.38s` |
-
-两图的全部节点均已标记，transition matrix 总和等于有效边数；utility candidate 顺序与由原
-prototype 精确重算的 geometry rank-0 在 train/validation 四个 split 上均 `100%` 一致。
-
-固定 utility 为两个预算的平均 Recall@10 减去
-`0.05 * candidate_graph_NDC / Fast_top3_graph_NDC`。主 gate 允许每个数据集仅用各自
-prototype-train utility 的末 2K 独立选参，然后在 WebVid/Yandex validation 10K 各评一次；
-要求两个数据集 utility delta 均大于 `0.0001`、`L=64/128` 均不降 Recall，且相对 rank-0
-平均 graph-NDC 增长不超过 `0.5%`。共享 train-only 配置另作更严格的 transfer 诊断。
-
-权威 `v4` 结论为 no-go：共享配置在 WebVid/Yandex 的 validation utility delta 分别为
-`-0.000081/-0.000049`。每数据集独立 train-only 最优配置下，WebVid utility `+0.001896`，
-`L=64/128` Recall delta `+0.163/+0.185 pp`、NDC delta `-0.327%/-0.131%`；Yandex utility
-`-0.001831`，Recall delta `-0.210/-0.102 pp`、NDC delta `+0.483%/+0.317%`。因此停止这一
-具体 `graph-BFS basin + edge-frequency diffusion` 定义，不继续扫其 horizon/temperature/gamma。
-该 gate 没有记录真实 beam expansion path，不能据此判定 node-level finite-beam barrier 失败。
-
-### Probe trace 与 budgeted reroute gate
-
-`bench_entry_oracle` 新增两个只读模式：
-
-- `--generate_probe_trace --probe_Ls ...`：保存 router top-32 距离，以及每个 probe L
-  的 top-10 IDs/distances、Recall 和 graph NDC；
-- `--generate_budget_reroute --probe_L P --budget_pairs target:reroute`：运行 Fast
-  baseline、probe+Fast restart、probe+每个 top-32 single alternate，将两次结果按距离
-  合并成 top-10，并保存每个 candidate 的 merged Recall/total NDC。
-
-budget reroute schema 现额外保存每个 candidate 的 7 维
-`candidate_topology_features`：probe-result membership、与 probe frontier 的一跳邻接、
-entry-neighbor/probe 的重叠比例、probe-neighbor union 重叠比例、rank-weighted hit、
-0/1/2/3-hop proxy 和有效 degree。它们只读取已加载的冻结 NSG 与实际 L10 结果，
-不修改邻接、不执行额外搜索，也不读取 validation GT。
-
-训练脚本：
-
-- `benches/run/train_probe_failure_detector.py`：router-only 与 GT-free probe trace 的
-  actionable-reroute detector；`--max-probe-L` 限制可用在线信息；
-- `benches/run/train_trace_conditioned_rerouter.py`：连续 merged utility alternate chooser，
-  包括 candidate-static、query-level trace、candidate-to-probe-result frontier affinity、
-  topology-only 和 frontier+topology；topology-aware report schema version 为 2。
-
-有效预算协议只允许 `max_probe_L=10`，并实际计入 L10 probe NDC。独立 L10/16/32
-搜索都作为特征、但只计 L10 成本的早期结果标记为 INVALID。有效 artifact：
-
-- trace：`probe_trace_datasets/{webvid,yandex}_{train10k,validation10k}_l10_16_32_v1/`
-- L10 detector：`probe_failure_detector_results/{webvid,yandex}_l10_only_gain01_v2/`
-- budget matrices：`budget_reroute_diagnostics/{webvid,yandex}_{train10k,validation10k}_probe10_top32_v2/`
-- WebVid chooser：`trace_conditioned_rerouter_results/webvid_probe10_top32_frontier_v3/`
-- topology matrices：`budget_reroute_diagnostics/webvid_{train10k,validation10k}_probe10_top32_topology_v3/`
-- topology chooser：`trace_conditioned_rerouter_results/webvid_probe10_top32_topology_v4/`
-- 决策：`probe_reroute_results/analysis.md`
-
-当前结论：L10 failure detector 跨数据集有效，learned-risk + oracle-alternate 在固定 NDC
-下有上限；但 frontier-conditioned 以及新增的一/二跳 topology-aware chooser 均在 WebVid
-严格失败。topology-only 和 frontier+topology 在两个预算、四个风险比例上全部降低 Recall、
-增加 NDC，故当前 probe-reroute 改进分支最终 no-go，未继续 Yandex chooser。不得为该分支
-实现 resumable search、更多通用模型或正式 held-out test。本次 topology gate 不是 GATE；
-standalone GATE 的独立适配与结果记录在下一节。
-
-## Standalone GATE WebVid 契约与 artifact
-
-本次只适配 WebVid validation；不读取 held-out test，不修改冻结图。主要代码：
-
-- `benches/export_gate_nsg.cpp`：ACSG 固定宽度图到 GATE variable-degree NSG；
-- `GATE/cluster/kmeans.py`：512-hub balanced HBKM 的 Sinkhorn scalable approximation；
-- `GATE/cluster/subgraph2json.py`：精确 hub IDs、CSR 图加载、topology-only 且硬上限 1000 nodes；
-- `GATE/cluster/graph2vec_embed.py`：确定性 WL(2)+PV-DBOW Graph2Vec；
-- `GATE/tests/test_gate_generate_samples_contract.cpp`：读取 exact GT、显式 `ip|l2` metric；
-- `GATE/cluster/model/train/{dataset.py,fusion.py,__main__.py}`：严格 CSV、batch-first、独立 validation、固定 seed、早停；
-- `GATE/cluster/model/train/export_routes.py`：exact dense-cosine top-3 raw-int32 graph routes。
-
-关键 artifact：
-
-```text
-gate_baseline_artifacts/webvid2_5m_frozen_r64_v2/
-  nsg.graph
-  hbkm512_sinkhorn_seed42_v2/
-    hubs.fvecs
-    hub_ids.int32
-    manifest.json
-    subgraphs_topology_h5_n1000_v4/{0..511}.json
-    graph2vec_wl2_d512_e10_mc5_seed42_v1/
-  gate_samples_router_train10k_ip_l64_k1_v1/
-  gate_samples_validation10k_ip_l64_k1_v1/
-  config_webvid_gate_uniquehub_max200_patience20_v4.json
-  models_webvid_gate_uniquehub_max200_patience20_v4/
-  routes_webvid_gate_max200_best_validation10k_top3_v1/
-  eval_gate_max200_best_validation10k_r1_r10_3run_v1/
-  eval_gate_max200_best_validation10k_r100_3run_v1/
-  analysis.md
-```
-
-图导出 SHA256 为
-`7964aa05de43954c7f280d922fe2005814fe51b97640e65b51938538291829e2`；
-512 个 topology v4 子图严格各 1,000 nodes、共 3,276,735 directed edges，组合校验
-`4d376e2224966c19264d693b76779008375fbdf906a9ca9644f8f4ebeb94ebab`。
-Graph2Vec shape `(512,512)`，独立两次运行 `.npy` SHA256 均为
-`07678e37bdbb0ac1d62179e5cf3d89e7445369269844304fc0a565e1f427917d`。
-
-训练样本固定 `L=64/K=1`：prototype-train 10K 中 915 no-hit，按原 GATE filter 最终
-8,150 usable queries、652,600 triplets；validation 10K 中 904 no-hit、8,146 usable。
-正式训练 `hidden=2024/batch=16384/lr=1e-5/max_epochs=200/patience=20/seed=42`，在
-epoch 88 早停，best epoch 68，usable validation RouteAcc `0.0963663`。batch 内唯一 hub
-合并仅减少相同 hub 的重复前向；dropout mask 因此按 hub 共享，属于明确记录的计算适配，
-不是作者私有训练产物的 bitwise reproduction。
-
-最终 validation 10K×3 的 `status=complete` 结果：Recall@1/10 使用
-`L=64/128/200/400`，Recall@100 使用合法的 `L=100/128/200/400`。GATE 相对 Fast
-在 12 点全部低 `0.330..3.230 pp`，graph NDC 全部高 `2.83..16.59%`；相对 Medoid
-全部高 `0.485..2.580 pp`。按 gate 不运行 Yandex。研究判断与完整表见 `summary.md` 和
-上述 `analysis.md`。
-
-候选层级：
-
-- current hubs：现有 QGT IDs；
-- broad candidates：仅从训练 GT、Medoid failure trace/frontier、QGT representatives 产生；
-- oracle split：只在 validation 上选择最佳 single/top-3/top-5；首个 pilot 只做 single/top-3；
-- held-out test 不得使用 oracle 选择结果调参。
-
-输出至少保存：
-
-```text
-query_id
-candidate_entry_ids
-selected_entry_ids
-top_m
-search_L
-Recall@1/10/100
-routing_ndc / routing_latency
-graph_ndc / graph_latency
-total_ndc / total_latency
-medoid_delta
-```
-
-Oracle 只改变初始入口集合，不得添加、删除或重连底图边。必须同时支持等 `search_L`、等总 NDC 和等端到端 latency 口径。
-
-若 broad diverse oracle 没有 headroom，只能说明当前数据集/底图/预算下 entry-only 已饱和；项目不自动转为 graph repair。
-
-## 历史与辅助材料
-
-- 旧 ACO/Router 诊断、Fast 方法形成过程：`aco_router_fast_entry.md`
-- 复现命令：`command.md`
-- 相关论文与 TailRisk-Cover 研究设计：`papers/related_work_2026-08-29/README.md`
-- 旧 neural graph/PCA/ONNX、SSG、LSH-APG、GATE 目录继续保留；除非明确进入对应基线任务，不得清理或覆盖。
+| base、metric、normalization、图参数/后端 | 原始下载与兼容 checksum | GT（语义受影响时）、NSG、Fast、全部评测 |
+| QGT/prototype split 或 train GT | 兼容 base 与 NSG | hubs/prototypes、全部评测 |
+| hub budget、clustering、prototype 公式 | base、GT、NSG | builder、全部评测 |
+| top-m、router backend/参数 | base、GT、NSG、兼容 prototype | 路由与下游评测 |
+| search_L、top_k、计时口径 | 上游 artifact | 对应评测 |
+| 只改兼容的汇总/绘图 | 原始 JSON/CSV | 汇总/绘图 |
+
+任何不兼容的 base、预处理、metric、图、split 或 GT 变化都会使下游 artifact 失效；不得靠文件名相似继续复用。
+
+效用标签的复用键还必须包含`query身份、real entry ID、L、K、base/metric/graph/kernel身份`。仅改变hub列表时，身份相同的旧single列可映射复用，新entry补测；旧全H不再是新池的完整矩阵。新ID映射、画像/embedding、路由模型/索引、覆盖参照及下游评测需重新生成或显式校验。图/kernel/metric改变会使对应旧效用失效；独立single标签不能充当原位干预标签。训练分区改变可保留缓存真值，但不能复用旧分区统计区间或淘汰结论。
+
+## 11. 记录、复盘与同步规则
+
+任何实验都要有独立版本目录、协议/配置、state/gate、实际命令与日志、代码/输入身份、原始aligned结果及计时边界。未测量写`null + reason`；未执行、实现通过、质量通过、完整性能通过分别记录，不以依赖smoke、模型训练loss或oracle替代方法验收。
+
+每次实验完成或停止：先保存原产物与修正版本，再更新`experiment_history/`详细卡片和`s-experiment.md`索引；随后以`summary.md`更新当前结论，以`s-target.md`更新下一阶段。只有架构、API、数据、artifact、计量或复用合同改变才修改本文的相应条款，避免再次累积实验流水账。发现实现和文档冲突时先报告并用当前证据修正。
+
+历史目录保存详细复盘与原证据入口，不搬走/覆盖原始大型模型、向量、图或结果。原`实验总结.md`、`总结.md`、`aco_router_fast_entry.md`和`readme.md`保留历史身份，由`s-experiment.md`分流；旧README或旧报告中的下一步/命令不覆盖当前合同。
+
+
+## A+B experiment v1：独立准备与标签接口（2026-09-09）
+
+新增版本 [entry_method_exploration/20260909_ab_experiment_v1](entry_method_exploration/20260909_ab_experiment_v1/protocol.md) 使用 [prepare.py](entry_method_exploration/20260909_ab_experiment_v1/src/prepare.py) 验证原数据和三 QGT hub/prototype manifest，按原 builder 重建 paired Fast20K。fit 20K、cal1024、audit1024 的 raw query、GT、row IDs独立落盘；不由该脚本读取validation/held-out。各自H的并集只用于共享相同真实入口的标签计算，每个模型仍受各自H约束。
+
+[labels.cpp](entry_method_exploration/20260909_ab_experiment_v1/src/labels.cpp) 复用该目录冻结的E20原kernel wrapper源码，并链接核验过的现有静态库，不修改原ACSG。模式 `labels config.json new_output [--parity-only]`；标签严格GT-free搜索后评分，按query×union_hub顺序输出hitcount.u8、hitmask.u16和ndc.u32，K10/L64或128，原raw-IP/NSG/mode2。少量完整返回IDs用于评分重放，逐块输出progress；该计数过程wall不是QPS。
+
+集合迷失定义沿用 `benches/run/plot_final_paper.py`：严格R@10<0.1等价hits=0，hits=1不失败。新增[train.py](entry_method_exploration/20260909_ab_experiment_v1/src/train.py)实现rank8的W=P0+VZ、全H多对一mapping、软遗憾提案/hard fit接受、QR与半径限制、校准选checkpoint。fit接受与保存W使用同一fold函数。标签中audit区域不进入训练张量。已通过ties/空槽/单调性/QR/fold以及已知最优映射的合成验收，双数据集全部12个模型已完成训练并冻结。
+
+新增[benchmark.cpp](entry_method_exploration/20260909_ab_experiment_v1/src/benchmark.cpp)以唯一slot label保存全部学习向量，另表返回真实ID；Fast real-ID backend保留。plain/count从同一序列化Micro-HNSW图加载，逐query核对路由和原kernel返回；正式wall边界包含路由/映射/search/output，排除GT/计数/hash/JSON和建图。route-only与graph-only另测。Fast30K恢复原seed100与heap弹出顺序，matched Fast20K采用与学习模型相同seed。
+
+正式单线程入口[benchmark_single_thread.cpp](entry_method_exploration/20260909_ab_experiment_v1/src/benchmark_single_thread.cpp)复用同一benchmark函数，启动前要求显式`threads=1`及OpenMP/OpenBLAS/MKL环境值1，禁止动态扩线程，并记录实际OpenMP team为1的`thread_contract.json`。[run_single_thread_eval.py](entry_method_exploration/20260909_ab_experiment_v1/src/run_single_thread_eval.py)复用已冻结模型和数据，仅生成1线程评测配置；[analyze_single_thread.py](entry_method_exploration/20260909_ab_experiment_v1/src/analyze_single_thread.py)只读取`single_thread_v1/results/`，逐批检查结果线程数、原配置及实际线程记录，拒绝混入16线程结果。原16线程记录保留但不进入正式性能主表。具体优先级见[单线程修订](entry_method_exploration/20260909_ab_experiment_v1/evaluation_single_thread_amendment.md)。
+
+用户另要求加入NSG基线：[benchmark_with_nsg.cpp](entry_method_exploration/20260909_ab_experiment_v1/src/benchmark_with_nsg.cpp)新增固定`index.acsg.enterpoint`的Policy，无Micro-HNSW、route NDC为0，搜索仍调用原kernel，定义与项目`NSG_Medoid`一致。原[排队控制器](entry_method_exploration/20260909_ab_experiment_v1/src/run_baseline_comparison_after_single.py)计划完整同批补测，后被用户缩减探索范围而取消，未执行。其NSG Policy由下述quick入口复用并在真实五点中验收，不启动旧队列。所有方法分别报告Recall@10、QPS、失败数量/率及两种基线的配对挽救/新增失败。来源与计时关系见[NSG比较修订](entry_method_exploration/20260909_ab_experiment_v1/baseline_comparison_amendment.md)。
+
+用户缩减为探索阶段后，上述大矩阵及队列停止。当前[quick.cpp](entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/src/quick.cpp)复用相同Policy、NSG固定入口与原kernel，放行L64/128/256/400/800并预留801槽retset。每点只执行一次2000query warmup和一次独立plain端到端wall；16条query的count/独立原kernel比较与GT评分全部在timer外，未采集全批NDC，不以0伪造NDC。启动前和实际OpenMP team均要求1线程。五点固定同一份入口模型，并检查每条query所选入口不随L改变；L只用于后续搜索。源/配置/输出位于[exploration_5point_v1](entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/protocol.md)，合成和真实两数据集五L验收均已完成：30个方法点、60000个query输出独立GT评分通过，三方法逐query入口跨五L一致。完整结果身份和范围见summary，单次wall不构成稳定性或显著性证明。
+
+[prepare_eval.py](entry_method_exploration/20260909_ab_experiment_v1/src/prepare_eval.py)要求12个dataset/seed/L的模型全部冻结才读取evaluation；原[run_models_eval.py](entry_method_exploration/20260909_ab_experiment_v1/src/run_models_eval.py)已完成训练和部分旧16线程评测，此后单线程大矩阵和NSG队列也已取消，最终由五点quick入口完成用户指定探索。完整执行状态以state与各complete/results.json为准。实现澄清见[execution_clarifications.md](entry_method_exploration/20260909_ab_experiment_v1/execution_clarifications.md)，推进目标见[s-target.md](s-target.md)。
+
+## 三入口排序 v1：固定入口、真实组合监督（2026-09-10）
+
+独立版本[20260910_three_entry_rank_v1](entry_method_exploration/20260910_three_entry_rank_v1/protocol.md)复用原raw-IP/NSG和seed20260828的H及paired Fast20K；不改原ACSG源码、原标签或模型。[prepare_fit.py](entry_method_exploration/20260910_three_entry_rank_v1/src/prepare_fit.py)从旧隔离输入复制fit20K、cal1024、audit1024，只有fit读取旧single列来提议组合，不能用single收益替代新标签。
+
+[label_triples.cpp](entry_method_exploration/20260910_three_entry_rank_v1/src/label_triples.cpp)接口为`config.json new_output`，每query四个context×六个第三入口；三个真实ID升序后调用原kernel，GT只在返回后评分。按query/context/option输出hits.u8、masks.u16、graph_ndc.u32和完整ids.i32；相同有序三元组缓存复用并分别记录逻辑/实际调用。组合标签的复用键还包括完整三入口集合及顺序；旧single缓存不兼容。双数据集96万逻辑标签的完整ID→GT10评分、三个入口消费及plain/count/repeat验收已通过。
+
+[train.py](entry_method_exploration/20260910_three_entry_rank_v1/src/train.py)只读fit；W=P0+τD，τ为fit Fast top1–top8中位差。训练固定pairwise logistic，按query归一化真实联合hit差权重，锚定λ||D||²/(2H)。Full为自由H×d；Rank8为(VZ)ᵀ，以共同fit目标初始梯度的右奇异方向初始化V、Z=0。二者均float64 LBFGS，最终导出不归一化float32 W，真实ID映射不变。Full记录强凸目标梯度残差上界；rank8同一上界是相对无约束最优值的界，不是其约束最优证书。cal只选择预定λ，audit/validation不进入目标。
+
+[evaluate.cpp](entry_method_exploration/20260910_three_entry_rank_v1/src/evaluate.cpp)支持原NSG、唯一真实ID标签的HNSW direct3及精确top3。matched Fast20K和学习模型使用相同HNSW参数/seed，并在调用原kernel前对三个真实ID升序；原Fast30K保留legacy heap顺序。所有查询配置、数值库和实际OpenMP team均要求单线程。`measure_wall=false`用于诊断，只做plain/count真实结果而不输出QPS；正式点一轮warmup、一次独立plain端到端wall，另做全量count与ID/距离bits/入口parity，GT/hash/I/O/建图均在timer外。每个方法点另16query与冻结原wrapper比较。合成五L/精确top3/三唯一入口和多线程配置拒绝验收已通过；真实50点的100000个query输出独立GT复核通过，四个路由模型在五L下序列化HNSW图及逐query入口均一致。NSG/原Fast30K的40000个query输出与E22逐位回归通过。cal诊断v1的warmup计数元数据错误由独立evaluate_v2修正，数值结果/模型选择不变，原件保留；正式validation使用v2。实测性能与范围见summary。
+
+## 固定 H 的 GT-topK画像 v1（2026-09-10）
+
+独立[E24版本](entry_method_exploration/20260910_gt_topk_profiles_v1/protocol.md)实现从fit exact GT闭式构建GT1/GT10×硬/软画像，不修改原Fast builder或原ACSG。原Fast链仍为第2节；该画像分支是额外的独立实现，不表示所有新画像性能通过。
+
+- [initialize.py](entry_method_exploration/20260910_gt_topk_profiles_v1/src/initialize.py)：核验原base/图/训练query/GT hash、H真实ID与raw向量、E23 fit/cal原行及GT100列宽；不运行旧prepare_fit的single提议/训练标签路径。仅用fit GT1 cosine最高/次高间隔确定T尺度。
+- [build_profiles.py](entry_method_exploration/20260910_gt_topk_profiles_v1/src/build_profiles.py)接口`recover|candidates`。先以原builder float32逐位恢复GT1硬，真实搜索恢复PASS后才允许其它候选。每GT目标对全部H作cosine硬argmax（ties升序真实ID）或stable softmax，K_gt名次等权平均，a每query总质量1；p=unit(unit(raw_hub)+sum a*unit(query))。其它加权累加float64，导出float32。K_gt与Recall@10的K分别命名；无新的归一化预处理/正式metric变更。
+- 每数据集8份画像，T表在cal前锁定；fit query/GT/目标/hub不接受cal/audit/validation样本。manifest保存W/hash、K_gt/T、支持质量/ESS/熵、画像变化和成本。GT1硬保留dense归属，后续候选保留完整支持统计和float64归属矩阵digest，可按fit重算以控制存储；无梯度/搜索训练标签依赖。
+- [evaluate.cpp](entry_method_exploration/20260910_gt_topk_profiles_v1/src/evaluate.cpp)复用E23 GT-free Policy与原kernel，支持原NSG、HNSW direct3、exact3；matched统一真实ID升序，原Fast30K保留legacy seed100/heap。新版本增加/proc进程线程数及冻结CPU affinity检查、启动前预计调用cap、实际调用记账、policy构建/加载时间，以及协议内L128独立route-only/graph-only warmup和wall；不得相加代替独立端到端wall。
+- [jobs.py](entry_method_exploration/20260910_gt_topk_profiles_v1/src/jobs.py)逐job预留完整调用、拒绝已有输出，强制OMP/OpenBLAS/MKL1和taskset CPU15，记录actual team/process threads、RSS、时间/磁盘上限。正常调用543296、仅身份/parity修复预留8192；失败job按预留全额记账，不能通过重启规避上限。
+- [run_development.py](entry_method_exploration/20260910_gt_topk_profiles_v1/src/run_development.py)只按cal HNSW hits、graph NDC和固定ties选族/T，exact和QPS不参与选择；audit只有冻结候选。两数据集cal主候选均严格胜Fast才能进入validation。[run_validation.py](entry_method_exploration/20260910_gt_topk_profiles_v1/src/run_validation.py)先验证并写入冻结文件，再核对/复制历史validation前2K，六方法五L、原值全保留。
+- [analyze.py](entry_method_exploration/20260910_gt_topk_profiles_v1/src/analyze.py)独立评分所有返回ID/mask/NDC、三入口及row alignment；query bootstrap仅描述，不使用timing轮作Recall样本。[frontier.py](entry_method_exploration/20260910_gt_topk_profiles_v1/src/frontier.py)仅处理实测非支配点和明确标记的事后插值，无新搜索或模型选择。
+
+实际GT1硬恢复逐位通过；全部116点169408输出独立评分，三条基线60000个validation输出E23逐位回归、各画像五L相同图与入口、单线程/预算/冻结身份检查均已通过。模型选择只用cal，audit/validation均有历史使用披露，held-out未读取。结果与方法判断见summary及[E24报告](entry_method_exploration/20260910_gt_topk_profiles_v1/report.md)；实现验收不升级为性能GO。

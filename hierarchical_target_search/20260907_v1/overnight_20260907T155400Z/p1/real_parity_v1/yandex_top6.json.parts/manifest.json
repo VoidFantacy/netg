@@ -1,0 +1,85 @@
+{
+  "aligned_rows_round": 0,
+  "artifact_version": "yandex-t2i-official-first10m-ip-v1",
+  "base_nodes": 10000000,
+  "cache_condition": "same-process warmed; warmup before each L/method; no cache flushing",
+  "cpu_only": true,
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "dim": 200,
+  "fast_hubs": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/yandex_t2i_official10M_ip_v1/prototype.f32",
+  "fast_ids": "/data/netg/ACSG/fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_cover_hub_ids.bin",
+  "fast_m": 6,
+  "heldout_accessed": false,
+  "hnsw": {
+    "M": 16,
+    "build_seconds": 0.045499327,
+    "ef_construction": 200,
+    "ef_search": 10,
+    "seed": 100
+  },
+  "index_file": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "measurement": "count",
+  "metric": "ip",
+  "model_file": "",
+  "model_manifest": null,
+  "normalization": "none",
+  "num_queries": 32,
+  "oracle_is_deployment": false,
+  "parts_directory": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/real_parity_v1/yandex_top6.json.parts",
+  "results": [],
+  "rounds": 1,
+  "routing_mac_definition": "one MAC per dimension per routing distance; excludes norm/softmax/scheduling scalar operations, which remain timed",
+  "schedule": [
+    {
+      "L": 64,
+      "method": "fast_unified",
+      "method_index": 0,
+      "order": "AB",
+      "round": 0
+    },
+    {
+      "L": 128,
+      "method": "fast_unified",
+      "method_index": 0,
+      "order": "AB",
+      "round": 0
+    }
+  ],
+  "schedule_prerecorded": true,
+  "schema_version": 1,
+  "search_Ls": [
+    64,
+    128
+  ],
+  "source_query_range": [
+    0,
+    32
+  ],
+  "source_query_type": "drl_train",
+  "split": "pilot",
+  "stage": "P1",
+  "status": "RUNNING",
+  "threads": 16,
+  "timer_contract": {
+    "fast_and_oracle_hnsw_query": "unchanged raw query",
+    "gt_scoring_inside": false,
+    "hash_inside": false,
+    "hnsw_internal_allocations_inside": true,
+    "json_inside": false,
+    "output_allocation_inside": false,
+    "query_normalization_applies_to": [
+      "geom_unified",
+      "geom_uniform",
+      "geom_probability"
+    ],
+    "query_normalization_inside": true,
+    "result_writes_inside": true,
+    "routing_inside": true,
+    "search_and_reset_inside": true,
+    "trace_inside": false,
+    "workspace_allocation_inside": false
+  },
+  "top_k": 10,
+  "trace_mode": false,
+  "warmup_queries": 32
+}

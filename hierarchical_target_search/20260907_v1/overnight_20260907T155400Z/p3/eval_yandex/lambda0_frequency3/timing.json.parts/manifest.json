@@ -1,0 +1,368 @@
+{
+  "aligned_rows_round": 0,
+  "artifact_version": "yandex-t2i-official-first10m-ip-v1",
+  "base_nodes": 10000000,
+  "cache_condition": "same-process warmed; warmup before each L/method; no cache flushing",
+  "cpu_only": true,
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "dim": 200,
+  "evaluator_provenance": {
+    "binary_path": "/data/netg/ACSG/build/benches/bench_hierarchical_eval_p3",
+    "binary_sha256": "2f234d1276fdafebe0ab706ebccc37f4c52312ca16ca09b512530f404b0ce580",
+    "source_hash_scope": "source file present at execution; root build manifest binds compiled source",
+    "source_path": "/data/netg/ACSG/benches/bench_hierarchical_eval_p3.cpp",
+    "source_sha256": "cf40032dc469c08840e409af23bd503e1ad6571184351a2694776247e21d1316"
+  },
+  "fast_hubs": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/yandex_t2i_official10M_ip_v1/prototype.f32",
+  "fast_ids": "/data/netg/ACSG/fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_cover_hub_ids.bin",
+  "fast_m": 3,
+  "heldout_accessed": false,
+  "hnsw": {
+    "M": 16,
+    "build_seconds": 0.043587691,
+    "ef_construction": 200,
+    "ef_search": 10,
+    "seed": 100
+  },
+  "index_file": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "measurement": "timing",
+  "metric": "ip",
+  "model_file": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/yandex_t2i_official10M_ip_v1/lambda0/frequency3/model.json",
+  "model_manifest": {
+    "ANN_probe_selection_required_by_this_rule": false,
+    "active_regions": 4,
+    "audit": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+      "sha256": "7da975cbb0e045265f405b08e230abb6442eba51621064699a4ad449c90ae58b"
+    },
+    "base_nodes": 10000000,
+    "base_sha256": "56d1baa271c79ea280d57ee1c7a8359438ffffc98a75cac799051b13fbdbe0ff",
+    "coarse_count": 16,
+    "cpu_only": true,
+    "created_utc": "2026-09-07T17:39:45.938802+00:00",
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "dim": 200,
+    "finalizer_source": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/finalize_portal_models.py",
+      "sha256": "d1945203dc99e7027ebdc9a414a6b1303df5da0988b491dcc15ac1b30f537a7e"
+    },
+    "fit_count": 20000,
+    "fit_gt_values_sha256": "d52e630214fb7a4ffa240372d5055f8c0e7a1232992e7fc78b656638abed6e5d",
+    "fit_manifest": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/fit_inputs/yandex_t2i_official10M_ip_v1/manifest.json",
+      "sha256": "89f4c8db94ba5de56fa2af09ed7547bb17bfaa14246b0383a4462e187711d788"
+    },
+    "fit_query_values_sha256": "e86c597b26ee908f4d4d64674a2ea89837e75d1f824c1ce30671fbd3fc5424e8",
+    "fit_range": [
+      10000,
+      30000
+    ],
+    "gate": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P2.json",
+      "sha256": "6240cea60d790d030e0fdaf560b95d9e951260d4ba3d6701863b06c1c4cc895e"
+    },
+    "graph_file": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+    "graph_sha256": "fa6eb7dd4e8d9dc95d696947fc18bd167880fb336212cb7bd073e7acddd4bf2e",
+    "gt10_sha256": "cb8e53681677bd035fd82982220fd7c65ccc388cab717c2ca3dca51eeb0d0f11",
+    "heldout_accessed": false,
+    "independent_cache_verification": "PASS_ALL_256_LEAVES",
+    "input_audit_sha256": "7da975cbb0e045265f405b08e230abb6442eba51621064699a4ad449c90ae58b",
+    "labels_file": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/lambda0/pass2.regions.u16",
+    "labels_sha256": "efcbdd333cec86759907a6af7f5a363c4c1ecb4af8d16fdabbb7f0b56526f19c",
+    "lambda": 0,
+    "leaves_per_coarse": 16,
+    "model_name": "lambda0_frequency3",
+    "online_performance_improvement_confirmed": false,
+    "oracle_diagnostic_only": true,
+    "parent_rule": "leaf_id // 16",
+    "partition_manifest": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/lambda0/manifest.json",
+      "sha256": "bb290cc31fa9a9c45ff561114108e0f664a30a9b94684c6caf558c4e5f76f750"
+    },
+    "pilot_accessed": false,
+    "plan": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/yandex_t2i_official10M_ip_v1/lambda0/plan.json",
+      "sha256": "4cec078cf78a4396d55fef5439f445a7a387b0e17f8b38c0506fbc73c9f4dc41"
+    },
+    "portal_rule": "frequency3",
+    "portals_file": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/yandex_t2i_official10M_ip_v1/lambda0/frequency3/portals.i32",
+    "portals_per_region": 3,
+    "portals_sha256": "4ce8d4282b42ab6fee83330971879aaf2039583d7b7daeca6bd3274f59315cb8",
+    "probe_cache_shared_between_portal_rules": true,
+    "probe_complete": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/complete.json",
+      "sha256": "74db1515972cc600ab0bc6fc35a93c8958a10739a0cc0b256c5ded9cee4ca121"
+    },
+    "protocol": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+      "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+    },
+    "protocol_sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f",
+    "region_count": 256,
+    "schema_version": 2,
+    "stage": "P3",
+    "status": "COMPLETE",
+    "total_portals": 768,
+    "validation_accessed": false
+  },
+  "model_sha256": "52ccc75f6958dc039ca690af8b64840c749eadae2f90d2beeed383465653493f",
+  "normalization": "none",
+  "num_queries": 10000,
+  "oracle_is_deployment": false,
+  "oracle_selection": "GT10 mass; global top four leaf IDs; mass ties by ascending leaf ID; at most four parents by leaf_id // 16",
+  "parts_directory": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/eval_yandex/lambda0_frequency3/timing.json.parts",
+  "portals_per_region": 3,
+  "region_count": 256,
+  "results": [],
+  "rounds": 5,
+  "routing_mac_definition": "one MAC per dimension per routing distance; excludes norm/softmax/scheduling scalar operations, which remain timed",
+  "schedule": [
+    {
+      "L": 64,
+      "method": "fast",
+      "method_index": 0,
+      "order": "AB",
+      "round": 0
+    },
+    {
+      "L": 64,
+      "method": "oracle_unified",
+      "method_index": 1,
+      "order": "AB",
+      "round": 0
+    },
+    {
+      "L": 64,
+      "method": "oracle_probability",
+      "method_index": 2,
+      "order": "AB",
+      "round": 0
+    },
+    {
+      "L": 64,
+      "method": "oracle_probability",
+      "method_index": 2,
+      "order": "BA",
+      "round": 1
+    },
+    {
+      "L": 64,
+      "method": "oracle_unified",
+      "method_index": 1,
+      "order": "BA",
+      "round": 1
+    },
+    {
+      "L": 64,
+      "method": "fast",
+      "method_index": 0,
+      "order": "BA",
+      "round": 1
+    },
+    {
+      "L": 64,
+      "method": "fast",
+      "method_index": 0,
+      "order": "AB",
+      "round": 2
+    },
+    {
+      "L": 64,
+      "method": "oracle_unified",
+      "method_index": 1,
+      "order": "AB",
+      "round": 2
+    },
+    {
+      "L": 64,
+      "method": "oracle_probability",
+      "method_index": 2,
+      "order": "AB",
+      "round": 2
+    },
+    {
+      "L": 64,
+      "method": "oracle_probability",
+      "method_index": 2,
+      "order": "BA",
+      "round": 3
+    },
+    {
+      "L": 64,
+      "method": "oracle_unified",
+      "method_index": 1,
+      "order": "BA",
+      "round": 3
+    },
+    {
+      "L": 64,
+      "method": "fast",
+      "method_index": 0,
+      "order": "BA",
+      "round": 3
+    },
+    {
+      "L": 64,
+      "method": "fast",
+      "method_index": 0,
+      "order": "AB",
+      "round": 4
+    },
+    {
+      "L": 64,
+      "method": "oracle_unified",
+      "method_index": 1,
+      "order": "AB",
+      "round": 4
+    },
+    {
+      "L": 64,
+      "method": "oracle_probability",
+      "method_index": 2,
+      "order": "AB",
+      "round": 4
+    },
+    {
+      "L": 128,
+      "method": "fast",
+      "method_index": 0,
+      "order": "AB",
+      "round": 0
+    },
+    {
+      "L": 128,
+      "method": "oracle_unified",
+      "method_index": 1,
+      "order": "AB",
+      "round": 0
+    },
+    {
+      "L": 128,
+      "method": "oracle_probability",
+      "method_index": 2,
+      "order": "AB",
+      "round": 0
+    },
+    {
+      "L": 128,
+      "method": "oracle_probability",
+      "method_index": 2,
+      "order": "BA",
+      "round": 1
+    },
+    {
+      "L": 128,
+      "method": "oracle_unified",
+      "method_index": 1,
+      "order": "BA",
+      "round": 1
+    },
+    {
+      "L": 128,
+      "method": "fast",
+      "method_index": 0,
+      "order": "BA",
+      "round": 1
+    },
+    {
+      "L": 128,
+      "method": "fast",
+      "method_index": 0,
+      "order": "AB",
+      "round": 2
+    },
+    {
+      "L": 128,
+      "method": "oracle_unified",
+      "method_index": 1,
+      "order": "AB",
+      "round": 2
+    },
+    {
+      "L": 128,
+      "method": "oracle_probability",
+      "method_index": 2,
+      "order": "AB",
+      "round": 2
+    },
+    {
+      "L": 128,
+      "method": "oracle_probability",
+      "method_index": 2,
+      "order": "BA",
+      "round": 3
+    },
+    {
+      "L": 128,
+      "method": "oracle_unified",
+      "method_index": 1,
+      "order": "BA",
+      "round": 3
+    },
+    {
+      "L": 128,
+      "method": "fast",
+      "method_index": 0,
+      "order": "BA",
+      "round": 3
+    },
+    {
+      "L": 128,
+      "method": "fast",
+      "method_index": 0,
+      "order": "AB",
+      "round": 4
+    },
+    {
+      "L": 128,
+      "method": "oracle_unified",
+      "method_index": 1,
+      "order": "AB",
+      "round": 4
+    },
+    {
+      "L": 128,
+      "method": "oracle_probability",
+      "method_index": 2,
+      "order": "AB",
+      "round": 4
+    }
+  ],
+  "schedule_prerecorded": true,
+  "schema_version": 1,
+  "search_Ls": [
+    64,
+    128
+  ],
+  "source_query_range": [
+    0,
+    10000
+  ],
+  "source_query_type": "drl_train",
+  "split": "pilot",
+  "stage": "P3",
+  "status": "RUNNING",
+  "threads": 16,
+  "timer_contract": {
+    "fast_and_oracle_hnsw_query": "unchanged raw query",
+    "gt_scoring_inside": false,
+    "hash_inside": false,
+    "hnsw_internal_allocations_inside": true,
+    "json_inside": false,
+    "output_allocation_inside": false,
+    "query_normalization_applies_to": [
+      "geom_unified",
+      "geom_uniform",
+      "geom_probability"
+    ],
+    "query_normalization_inside": true,
+    "result_writes_inside": true,
+    "routing_inside": true,
+    "search_and_reset_inside": true,
+    "trace_inside": false,
+    "workspace_allocation_inside": false
+  },
+  "top_k": 10,
+  "trace_mode": false,
+  "warmup_queries": 128
+}

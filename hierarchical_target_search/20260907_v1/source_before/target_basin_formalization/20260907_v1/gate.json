@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "execution_status": "COMPLETE",
+  "overall_decision": "NO_GO_ROUTING_COST",
+  "selected_method": "Fast v1",
+  "heldout_accessed": false,
+  "protocol": "target_basin_formalization/20260907_v1/protocol.json",
+  "protocol_sha256": "0835fc8d2db5975277f55bddae7993a7c6a4ecea5922764baf535a955bf0601c",
+  "stages": {
+    "E0": {
+      "status": "PASS",
+      "evidence": "target_basin_formalization/20260907_v1/audit/report.json"
+    },
+    "E1": {
+      "status": "FAIL",
+      "decision": "TRIGGER_E1B",
+      "evidence": "target_basin_formalization/20260907_v1/pilot/dense/report.json"
+    },
+    "E1b": {
+      "status": "FAIL",
+      "decision": "NO_GO_ROUTING_COST",
+      "evidence": "target_basin_formalization/20260907_v1/pilot/hnsw/report.json"
+    },
+    "E2": {
+      "status": "NOT_RUN",
+      "reason": "blocked by E1b"
+    },
+    "E3": {
+      "status": "NOT_RUN",
+      "reason": "blocked by E1b"
+    },
+    "E4": {
+      "status": "NOT_RUN",
+      "reason": "blocked by E1b"
+    }
+  },
+  "stopping_rule": "E1b failure terminates Multi-view formalization, retains Fast v1, and forbids held-out access."
+}

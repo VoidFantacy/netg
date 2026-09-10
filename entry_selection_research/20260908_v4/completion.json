@@ -1,0 +1,70 @@
+{
+  "status": "RESEARCH_OBJECTIVE_COMPLETE_NOT_METHOD_VALIDATED",
+  "completed_utc": "2026-09-08T04:57:49.483447+00:00",
+  "requirements": [
+    {
+      "requirement": "Investigate a new actual-search entry predictor",
+      "evidence": "report.md; method.md",
+      "finding": "Recommendation changes the deployed decision structure and targets measured native-search Recall, with explicit hypotheses and failure modes.",
+      "status": "PROVEN_FOR_RESEARCH_SCOPE"
+    },
+    {
+      "requirement": "Respect heavy offline and light online boundary",
+      "evidence": "method.md; minimum_gate.md",
+      "finding": "Query-only high-capacity reference and bounded single-path tree; full offline and online cost accounting; no claimed QPS without measurement.",
+      "status": "PROVEN_FOR_RESEARCH_SCOPE"
+    },
+    {
+      "requirement": "Audit prior failures and avoid relabeling an old method",
+      "evidence": "reviews/local_failure_audit.md; reviews/graph_entry_literature.md",
+      "finding": "Current source/config/results and primary author code distinguish old ranker, NETG, atlas, GATE and LRSG.",
+      "status": "PROVEN_FOR_RESEARCH_SCOPE"
+    },
+    {
+      "requirement": "Compare mechanisms and choose a concrete method",
+      "evidence": "reviews/policy_compilation_literature.md; report.md",
+      "finding": "Compared action tree, filter tree, low-rank student and prototype network; one recommendation with precise update rules.",
+      "status": "PROVEN_FOR_RESEARCH_SCOPE"
+    },
+    {
+      "requirement": "Provide a falsifiable validation plan",
+      "evidence": "minimum_gate.md",
+      "finding": "Split isolation, full-action label arithmetic, finite capacity, controls, diagnostic and deployment gates, stop and resource boundaries; explicitly not implemented or run.",
+      "status": "PROVEN_FOR_RESEARCH_SCOPE"
+    },
+    {
+      "requirement": "Synchronize project handoff",
+      "evidence": "source_after/summary.md; source_after/spec.md; source_after/s-target.md",
+      "finding": "Current method and design status agree; stale fixed-anchor triple current-plan sentence corrected; historical versions retained.",
+      "status": "PROVEN_FOR_RESEARCH_SCOPE"
+    },
+    {
+      "requirement": "Independently check design and sources",
+      "evidence": "reviews/independent_design_review.md; reviews/independent_literature_review.md; reviews/resolution.json",
+      "finding": "Local numerical/technical review passes; all identified source and wording corrections verified against current text.",
+      "status": "PROVEN_FOR_RESEARCH_SCOPE"
+    },
+    {
+      "requirement": "Preserve scope and historical artifacts",
+      "evidence": "document_checks.json; source_before/protected_manifest.json; state.json",
+      "finding": "155 protected files unchanged; no training, new search, GT, environment install or raw evaluation data reads during this research task.",
+      "status": "PROVEN_FOR_RESEARCH_SCOPE"
+    }
+  ],
+  "unresolved_required_research_work": [],
+  "future_work_not_executed": [
+    "Implementation",
+    "New model/search experiments",
+    "Formal end-to-end validation"
+  ],
+  "checks": {
+    "checked_utc": "2026-09-08T04:57:49.483447+00:00",
+    "protected_files_checked": 155,
+    "protected_changed": [],
+    "local_links_checked": 106,
+    "missing_links": [],
+    "source_files_checked": 42,
+    "source_failures": [],
+    "scope": "Protected small historical/core-source identities, primary-source download hashes, delivered local links and corrected design text; no method test, raw-data revalidation, training or ANN search."
+  }
+}

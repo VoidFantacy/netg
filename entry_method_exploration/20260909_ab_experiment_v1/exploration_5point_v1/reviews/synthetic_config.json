@@ -1,0 +1,193 @@
+{
+  "L": [
+    64,
+    128
+  ],
+  "dim": 8,
+  "gt_file": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/gt.i64",
+  "gt_k": 100,
+  "hub_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+  "index_path": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/synthetic_index.bin",
+  "pilot_count": 12,
+  "prototypes": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+  "queries_file": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/queries.f32",
+  "raw_hubs": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/raw_hubs.f32",
+  "row_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/row_ids.i64",
+  "threads": 1,
+  "dataset": "SYNTHETIC_ONLY",
+  "split": "synthetic",
+  "num_queries": 20,
+  "methods": [
+    {
+      "family": "nsg_medoid",
+      "seed": 20260828,
+      "k": 1,
+      "L": 64,
+      "name": "nsg_medoid_L64"
+    },
+    {
+      "name": "fast30k_3_L64",
+      "L": 64,
+      "seed": 20260828,
+      "hub_count": 32,
+      "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+      "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "k": 3,
+      "slot_labels": false,
+      "exact": false,
+      "legacy_heap_order": true,
+      "family": "fast30k_3"
+    },
+    {
+      "name": "joint_L64",
+      "L": 64,
+      "seed": 20260828,
+      "hub_count": 32,
+      "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+      "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "k": 1,
+      "slot_labels": true,
+      "exact": false,
+      "family": "joint"
+    },
+    {
+      "family": "nsg_medoid",
+      "seed": 20260828,
+      "k": 1,
+      "L": 128,
+      "name": "nsg_medoid_L128"
+    },
+    {
+      "name": "fast30k_3_L128",
+      "L": 128,
+      "seed": 20260828,
+      "hub_count": 32,
+      "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+      "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "k": 3,
+      "slot_labels": false,
+      "exact": false,
+      "legacy_heap_order": true,
+      "family": "fast30k_3"
+    },
+    {
+      "name": "joint_L128",
+      "L": 128,
+      "seed": 20260828,
+      "hub_count": 32,
+      "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+      "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "k": 1,
+      "slot_labels": true,
+      "exact": false,
+      "family": "joint"
+    },
+    {
+      "family": "nsg_medoid",
+      "seed": 20260828,
+      "k": 1,
+      "L": 256,
+      "name": "nsg_medoid_L256"
+    },
+    {
+      "name": "fast30k_3_L256",
+      "L": 256,
+      "seed": 20260828,
+      "hub_count": 32,
+      "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+      "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "k": 3,
+      "slot_labels": false,
+      "exact": false,
+      "legacy_heap_order": true,
+      "family": "fast30k_3"
+    },
+    {
+      "name": "joint_L256",
+      "L": 256,
+      "seed": 20260828,
+      "hub_count": 32,
+      "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+      "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "k": 1,
+      "slot_labels": true,
+      "exact": false,
+      "family": "joint"
+    },
+    {
+      "family": "nsg_medoid",
+      "seed": 20260828,
+      "k": 1,
+      "L": 400,
+      "name": "nsg_medoid_L400"
+    },
+    {
+      "name": "fast30k_3_L400",
+      "L": 400,
+      "seed": 20260828,
+      "hub_count": 32,
+      "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+      "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "k": 3,
+      "slot_labels": false,
+      "exact": false,
+      "legacy_heap_order": true,
+      "family": "fast30k_3"
+    },
+    {
+      "name": "joint_L400",
+      "L": 400,
+      "seed": 20260828,
+      "hub_count": 32,
+      "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+      "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "k": 1,
+      "slot_labels": true,
+      "exact": false,
+      "family": "joint"
+    },
+    {
+      "family": "nsg_medoid",
+      "seed": 20260828,
+      "k": 1,
+      "L": 800,
+      "name": "nsg_medoid_L800"
+    },
+    {
+      "name": "fast30k_3_L800",
+      "L": 800,
+      "seed": 20260828,
+      "hub_count": 32,
+      "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+      "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "k": 3,
+      "slot_labels": false,
+      "exact": false,
+      "legacy_heap_order": true,
+      "family": "fast30k_3"
+    },
+    {
+      "name": "joint_L800",
+      "L": 800,
+      "seed": 20260828,
+      "hub_count": 32,
+      "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+      "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "k": 1,
+      "slot_labels": true,
+      "exact": false,
+      "family": "joint"
+    }
+  ],
+  "timing_repeats": 3
+}

@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "stage": "E0",
+  "status": "PASS",
+  "protocol": "target_basin_formalization/20260907_v1/protocol.json",
+  "heldout_accessed": false,
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "query_split": "drl_train",
+  "queries_per_dataset": 128,
+  "checks": [
+    {
+      "name": "webvid.route_is_gt_free_and_anchor_preserved",
+      "status": "PASS",
+      "details": {
+        "queries": 128,
+        "split": "drl_train"
+      }
+    },
+    {
+      "name": "webvid.python_cpp_merge_parity",
+      "status": "PASS",
+      "details": {
+        "schema_version": 1,
+        "status": "PASS",
+        "source": "target_basin_formalization/20260907_v1/audit/webvid_route128.json",
+        "dataset": "webvid2_5m_light_v1",
+        "split": "drl_train",
+        "heldout_accessed": false,
+        "gt_loaded": false,
+        "num_queries": 128,
+        "route_cells": 384,
+        "route_cell_mismatch_count": 0,
+        "route_cell_mismatch_fraction": 0.0,
+        "route_row_mismatch_count": 0,
+        "rank0_mismatch_count": 0,
+        "rank0_preserved": true,
+        "tie_break": "score_desc_then_entry_id_asc",
+        "duplicate_merge": "maximum_score",
+        "mismatch_examples": []
+      }
+    },
+    {
+      "name": "webvid.fixed_query_route_repeatability",
+      "status": "PASS",
+      "details": {
+        "queries": 128
+      }
+    },
+    {
+      "name": "webvid.count_switch_preserves_routes",
+      "status": "PASS",
+      "details": {
+        "queries": 128
+      }
+    },
+    {
+      "name": "webvid.new_legacy_search_parity",
+      "status": "PASS",
+      "details": {
+        "query_budget_cells": 256,
+        "mismatches": {
+          "entry_ids": 0,
+          "result_ids": 0,
+          "graph_ndc": 0,
+          "recall": 0
+        },
+        "examples": []
+      }
+    },
+    {
+      "name": "webvid.count_switch_preserves_search",
+      "status": "PASS",
+      "details": {
+        "query_budget_cells": 256,
+        "mismatches": {
+          "entry_ids": 0,
+          "result_ids": 0,
+          "recall": 0
+        }
+      }
+    },
+    {
+      "name": "yandex.route_is_gt_free_and_anchor_preserved",
+      "status": "PASS",
+      "details": {
+        "queries": 128,
+        "split": "drl_train"
+      }
+    },
+    {
+      "name": "yandex.python_cpp_merge_parity",
+      "status": "PASS",
+      "details": {
+        "schema_version": 1,
+        "status": "PASS",
+        "source": "target_basin_formalization/20260907_v1/audit/yandex_route128.json",
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "split": "drl_train",
+        "heldout_accessed": false,
+        "gt_loaded": false,
+        "num_queries": 128,
+        "route_cells": 384,
+        "route_cell_mismatch_count": 0,
+        "route_cell_mismatch_fraction": 0.0,
+        "route_row_mismatch_count": 0,
+        "rank0_mismatch_count": 0,
+        "rank0_preserved": true,
+        "tie_break": "score_desc_then_entry_id_asc",
+        "duplicate_merge": "maximum_score",
+        "mismatch_examples": []
+      }
+    },
+    {
+      "name": "yandex.fixed_query_route_repeatability",
+      "status": "PASS",
+      "details": {
+        "queries": 128
+      }
+    },
+    {
+      "name": "yandex.count_switch_preserves_routes",
+      "status": "PASS",
+      "details": {
+        "queries": 128
+      }
+    },
+    {
+      "name": "yandex.new_legacy_search_parity",
+      "status": "PASS",
+      "details": {
+        "query_budget_cells": 256,
+        "mismatches": {
+          "entry_ids": 0,
+          "result_ids": 0,
+          "graph_ndc": 0,
+          "recall": 0
+        },
+        "examples": []
+      }
+    },
+    {
+      "name": "yandex.count_switch_preserves_search",
+      "status": "PASS",
+      "details": {
+        "query_budget_cells": 256,
+        "mismatches": {
+          "entry_ids": 0,
+          "result_ids": 0,
+          "recall": 0
+        }
+      }
+    },
+    {
+      "name": "synthetic_cpp_merge_tests",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout": "TARGET_BASIN_SELF_TEST_OK\n",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "synthetic_python_merge_tests",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout": "TARGET_BASIN_REFERENCE_SELF_TEST_OK\n",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "reject_K_greater_than_L",
+      "status": "PASS",
+      "details": {
+        "exit_code": 2,
+        "stdout": "",
+        "stderr": "ERROR: search_L must be >= top_k\nUsage: bench_target_basin_eval [-h] [--dataset VAR] [--index_file VAR] [--view1_hubs VAR] [--view1_ids VAR] [--view2_hubs VAR] [--view2_ids VAR] [--view3_hubs VAR] [--view3_ids VAR] [--routes_file VAR] [--output_file VAR] [--method VAR] [--measurement VAR] [--query_type VAR] [--max_queries VAR] [--search_Ls VAR] [--top_ks VAR] [--num_runs VAR] [--warmup_runs VAR] [--threads VAR] [--hnsw_seed VAR] [--route_only] [--export_route_details] [--allow_heldout] [--self_test]\n\nOptional arguments:\n  -h, --help            \tshows help message and exits \n  -v, --version         \tprints version information and exits \n  --dataset             \t[default: \"\"]\n  --index_file          \t[default: \"\"]\n  --view1_hubs          \t[default: \"\"]\n  --view1_ids           \t[default: \"\"]\n  --view2_hubs          \t[default: \"\"]\n  --view2_ids           \t[default: \"\"]\n  --view3_hubs          \t[default: \"\"]\n  --view3_ids           \t[default: \"\"]\n  --routes_file         \t[default: \"\"]\n  --output_file         \t[default: \"\"]\n  --method              \t[default: \"ensemble\"]\n  --measurement         \t[default: \"count\"]\n  --query_type          \t[default: \"drl_train\"]\n  --max_queries         \t[default: 128]\n  --search_Ls           \t[default: \"64,128\"]\n  --top_ks              \t[default: \"10\"]\n  --num_runs            \t[default: 1]\n  --warmup_runs         \t[default: 0]\n  --threads             \t[default: 16]\n  --hnsw_seed           \t[default: 100]\n  --route_only          \t\n  --export_route_details\t\n  --allow_heldout       \t\n  --self_test           \t\n"
+      }
+    },
+    {
+      "name": "reject_implicit_heldout_access",
+      "status": "PASS",
+      "details": {
+        "exit_code": 2,
+        "stdout": "",
+        "stderr": "ERROR: held-out access requires explicit --allow_heldout\nUsage: bench_target_basin_eval [-h] [--dataset VAR] [--index_file VAR] [--view1_hubs VAR] [--view1_ids VAR] [--view2_hubs VAR] [--view2_ids VAR] [--view3_hubs VAR] [--view3_ids VAR] [--routes_file VAR] [--output_file VAR] [--method VAR] [--measurement VAR] [--query_type VAR] [--max_queries VAR] [--search_Ls VAR] [--top_ks VAR] [--num_runs VAR] [--warmup_runs VAR] [--threads VAR] [--hnsw_seed VAR] [--route_only] [--export_route_details] [--allow_heldout] [--self_test]\n\nOptional arguments:\n  -h, --help            \tshows help message and exits \n  -v, --version         \tprints version information and exits \n  --dataset             \t[default: \"\"]\n  --index_file          \t[default: \"\"]\n  --view1_hubs          \t[default: \"\"]\n  --view1_ids           \t[default: \"\"]\n  --view2_hubs          \t[default: \"\"]\n  --view2_ids           \t[default: \"\"]\n  --view3_hubs          \t[default: \"\"]\n  --view3_ids           \t[default: \"\"]\n  --routes_file         \t[default: \"\"]\n  --output_file         \t[default: \"\"]\n  --method              \t[default: \"ensemble\"]\n  --measurement         \t[default: \"count\"]\n  --query_type          \t[default: \"drl_train\"]\n  --max_queries         \t[default: 128]\n  --search_Ls           \t[default: \"64,128\"]\n  --top_ks              \t[default: \"10\"]\n  --num_runs            \t[default: 1]\n  --warmup_runs         \t[default: 0]\n  --threads             \t[default: 16]\n  --hnsw_seed           \t[default: 100]\n  --route_only          \t\n  --export_route_details\t\n  --allow_heldout       \t\n  --self_test           \t\n"
+      }
+    }
+  ],
+  "metrics": {
+    "webvid": {
+      "queries": 128,
+      "routing_ndc": {
+        "min": 1707,
+        "max": 1838,
+        "mean": 1758.6484375,
+        "exact_per_query": 1638
+      },
+      "reference_route_cell_mismatch_fraction": 0.0,
+      "new_legacy_search_parity": {
+        "query_budget_cells": 256,
+        "mismatches": {
+          "entry_ids": 0,
+          "result_ids": 0,
+          "graph_ndc": 0,
+          "recall": 0
+        },
+        "examples": []
+      }
+    },
+    "yandex": {
+      "queries": 128,
+      "routing_ndc": {
+        "min": 1724,
+        "max": 1842,
+        "mean": 1764.7890625,
+        "exact_per_query": 1650
+      },
+      "reference_route_cell_mismatch_fraction": 0.0,
+      "new_legacy_search_parity": {
+        "query_budget_cells": 256,
+        "mismatches": {
+          "entry_ids": 0,
+          "result_ids": 0,
+          "graph_ndc": 0,
+          "recall": 0
+        },
+        "examples": []
+      }
+    }
+  },
+  "current_source_and_binary_sha256": {
+    "benches/bench_target_basin_eval.cpp": "2551149066e39e440b519b2e9622b83866cf023e9282c8056ace7d0f49c4cd23",
+    "benches/bench_entry_oracle.cpp": "e3fab831bd9c5425964ba6ef9b4cadcb0278f99a69d7fb765626c1882ac9f4a2",
+    "benches/run/route_target_basin_reference.py": "dfb997093da12acedff195de60cfb2db1bf0b21673dfb9234baf5ba3dc08e6b0",
+    "benches/CMakeLists.txt": "366fb338105ccd415834ef9d9165feaa6c52eeb611cc106522fc093a6a391bd7",
+    "build/benches/bench_target_basin_eval": "30844a4875f17866c8020839cdf94901f4d0528a5a48b579b24946f7f21b4192",
+    "build/benches/bench_entry_oracle": "0f85de27a5737d691cf43c36817ceaac03dd3acd6de516822f6c6789c3024eb4",
+    "benches/datasets/settings.json": "6519ca075544828ae0ea85f55f1c8e6a662affc8bf1b67f39bb9eccc294a590a"
+  }
+}

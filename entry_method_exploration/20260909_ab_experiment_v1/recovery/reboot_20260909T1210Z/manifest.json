@@ -1,0 +1,41 @@
+{
+  "status": "STOPPED_REQUIRES_INSPECTION",
+  "attempt": "reboot_20260909T1210Z",
+  "started_utc": "2026-09-09T12:09:20.393901+00:00",
+  "boot_id": "bb813751-993a-4ae7-85d5-6f5c2308681c",
+  "controller_pid": 3541,
+  "source_sha256": "fcda442e6df49269e9601478308935176fba583de6ea17362cad310907af5372",
+  "frozen_sources_and_models_verified": true,
+  "frozen_model_files_checked": 1051,
+  "policy": "Reuse complete labels and frozen models; preserve complete invocations; archive and rerun interrupted whole invocation with three fresh rotated timing rounds. No model reselection.",
+  "completed_reused": [
+    "results/calibration_check/webvid2_5m_light_v1/seed20260828",
+    "results/calibration_check/webvid2_5m_light_v1/seed20260829",
+    "results/calibration_check/webvid2_5m_light_v1/seed20260830",
+    "results/calibration_check/yandex_t2i_official10M_ip_v1/seed20260828",
+    "results/calibration_check/yandex_t2i_official10M_ip_v1/seed20260829",
+    "results/calibration_check/yandex_t2i_official10M_ip_v1/seed20260830",
+    "results/audit/webvid2_5m_light_v1/seed20260828",
+    "results/audit/webvid2_5m_light_v1/seed20260829",
+    "results/audit/webvid2_5m_light_v1/seed20260830",
+    "results/audit/yandex_t2i_official10M_ip_v1/seed20260828",
+    "results/audit/yandex_t2i_official10M_ip_v1/seed20260829",
+    "results/audit/yandex_t2i_official10M_ip_v1/seed20260830",
+    "results/validation/webvid2_5m_light_v1/seed20260828",
+    "results/validation/webvid2_5m_light_v1/seed20260829"
+  ],
+  "incomplete_archived": [
+    {
+      "original": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/results/validation/webvid2_5m_light_v1/seed20260830",
+      "preserved": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/recovery/reboot_20260909T1210Z/interrupted_results/validation/webvid2_5m_light_v1/seed20260830"
+    }
+  ],
+  "newly_completed": [
+    {
+      "result": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/results/validation/webvid2_5m_light_v1/seed20260830",
+      "seconds": 220.20374415700002
+    }
+  ],
+  "timing_scope_note": "Validation WebVid builds 20260828/29 completed before reboot; all other formal invocations complete after reboot. Each build comparison uses methods timed together in the same invocation. Heldout all after reboot.",
+  "error": "RuntimeError('interrupted 15')"
+}

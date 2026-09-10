@@ -1,0 +1,1925 @@
+{
+  "audit": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+    "sha256": "7da975cbb0e045265f405b08e230abb6442eba51621064699a4ad449c90ae58b"
+  },
+  "binary": {
+    "path": "/data/netg/ACSG/build/benches/bench_hierarchical_portals",
+    "sha256": "b745e4732e881cf826d101c86dfc2d962fa7c92be8210c6b882eb56cb5fd61af"
+  },
+  "calls_completed": 242400,
+  "complete_leaves": 256,
+  "cost_interpretation": "Batch wall includes OpenMP scheduling, query setup, search, and post-search scoring. Probe/score sums are thread-seconds, not wall time. Whole-process wall including final manifest comes from external stage_run.",
+  "cost_seconds": {
+    "GT_score_thread_seconds_sum": 0.10037696199999994,
+    "artifact_write_before_final_manifest": 0.8807343040000007,
+    "greedy_wall": 0.003503128999999999,
+    "independent_candidate_query_verification": 0.217526164,
+    "index_load": 10.972568193,
+    "input_read_hash_validation": 0.284887994,
+    "probe_and_score_batch_wall": 4.669691774000004,
+    "probe_thread_seconds_sum": 67.37036810899998,
+    "program_wall_before_final_manifest": 17.143767482,
+    "upstream": {
+      "candidate_query_selection": 0.2580252740008291,
+      "fit_extraction": 0.06746959200245328
+    },
+    "workspace_allocation": 0.050013607
+  },
+  "cpu_only": true,
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "exact_GT_cost_reason": "Previously computed GT reused; original computation cost is not reconstructed",
+  "exact_GT_cost_seconds": null,
+  "expanded": 9989829,
+  "fit_count": 20000,
+  "fit_manifest": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/fit_inputs/yandex_t2i_official10M_ip_v1/manifest.json",
+    "sha256": "89f4c8db94ba5de56fa2af09ed7547bb17bfaa14246b0383a4462e187711d788"
+  },
+  "fit_range": [
+    10000,
+    30000
+  ],
+  "frequency_portals": {
+    "bytes": 3072,
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/portals_frequency.i32",
+    "sha256": "4ce8d4282b42ab6fee83330971879aaf2039583d7b7daeca6bd3274f59315cb8"
+  },
+  "gate": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P2.json",
+    "sha256": "6240cea60d790d030e0fdaf560b95d9e951260d4ba3d6701863b06c1c4cc895e"
+  },
+  "graph_MAC": 52602982800,
+  "greedy_portals": {
+    "bytes": 3072,
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/portals_greedy.i32",
+    "sha256": "46347c376cf4546c9bc2ad1e5876abee1f119bc9b69265c2c8377668e8350118"
+  },
+  "heldout_accessed": false,
+  "index_checksum_verification": "Inherited full P0 SHA256; this program verified bound path, current bytes and loaded shape, without a repeated full index hash",
+  "inputs": {
+    "gt10": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/fit_inputs/yandex_t2i_official10M_ip_v1/gt10.i32",
+      "sha256": "cb8e53681677bd035fd82982220fd7c65ccc388cab717c2ca3dca51eeb0d0f11"
+    },
+    "index": {
+      "bytes": 10640000103,
+      "fully_rehashed_by_this_planner": false,
+      "path": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "sha256": "fa6eb7dd4e8d9dc95d696947fc18bd167880fb336212cb7bd073e7acddd4bf2e",
+      "sha256_inherited_from_P0": true
+    },
+    "labels": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/lambda0/pass2.regions.u16",
+      "sha256": "efcbdd333cec86759907a6af7f5a363c4c1ecb4af8d16fdabbb7f0b56526f19c"
+    },
+    "queries": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/fit_inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+      "sha256": "e86c597b26ee908f4d4d64674a2ea89837e75d1f824c1ce30671fbd3fc5424e8"
+    }
+  },
+  "mask_layout": "little-endian uint16, candidate-major, query-contiguous; bits follow saved GT10 order and are restricted to target leaf",
+  "ndc": 263014914,
+  "online_QPS_publishable": false,
+  "partition_manifest": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/lambda0/manifest.json",
+    "sha256": "bb290cc31fa9a9c45ff561114108e0f664a30a9b94684c6caf558c4e5f76f750"
+  },
+  "peak_rss_kib": 10525676,
+  "pilot_accessed": false,
+  "plan": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/yandex_t2i_official10M_ip_v1/lambda0/plan.json",
+  "plan_sha256": "4cec078cf78a4396d55fef5439f445a7a387b0e17f8b38c0506fbc73c9f4dc41",
+  "planned_calls": 242400,
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+  },
+  "regions": [
+    {
+      "checkpoint_write_wall": 0.002982601,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_000.json",
+      "region": 0,
+      "sha256": "47153c974be9ab8769ac56666b70aaa374406e1c43e99056da1f9747455f4bd5",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003090327,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_001.json",
+      "region": 1,
+      "sha256": "d12c9aabe5cb080f37337f3d5c41178772bc35c8bf91802f8d5fb3eed097e322",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031009799999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_002.json",
+      "region": 2,
+      "sha256": "07bf7ac45120ac51d2ba14d951c5c8bc130c7864568f5c7ad2815be268c097bd",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0030638180000000003,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_003.json",
+      "region": 3,
+      "sha256": "8980cd75ecf5a70d4a1e98e596a73a5ed58a8701b43b88c49be09e807e8b5e8d",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003267512,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_004.json",
+      "region": 4,
+      "sha256": "0cd0a82827eb3fcba558b46027400c9f8ea8f8d8f7f9c048f400b4c218b09507",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00310509,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_005.json",
+      "region": 5,
+      "sha256": "5d90c5ef5043543fb1a68562bafad884851f5ccbc1a5707088e0ca3ee487867c",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0029461549999999998,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_006.json",
+      "region": 6,
+      "sha256": "f144b43685f976ef656b467e6797c55486629e6dd395f5c00637c6284adec489",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003188715,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_007.json",
+      "region": 7,
+      "sha256": "f88d4e090e81a986dd952b5ff72c3a784177a43c90c9c1536785ee8c4a917e89",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003188197,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_008.json",
+      "region": 8,
+      "sha256": "03df4f01f1887638ac17a7413462d9e3e7632804562123871a3dee0536816c3a",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003114408,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_009.json",
+      "region": 9,
+      "sha256": "91a06e55ffc5dd19bdf9a1b2b45bda697ef7d7e9c4ac81dcd9e13097b90213bd",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003118674,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_010.json",
+      "region": 10,
+      "sha256": "24141c63376195b7248f66945239d1158024078413303dc5f4daec8bb9f55213",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003140234,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_011.json",
+      "region": 11,
+      "sha256": "8df242c38e53bf0907e2fcbacf734df274c4fb79c416fc9b8ca3d97eeb5d5572",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003096442,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_012.json",
+      "region": 12,
+      "sha256": "34b2f98c0278dbb89a2c3e2e1137f8b76533d5df2c2e6038e16065ea1e2da2f0",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003226246,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_013.json",
+      "region": 13,
+      "sha256": "df0207cb221b778e900c5844e097a28955e347768698906031c6ffa964f81438",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00312536,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_014.json",
+      "region": 14,
+      "sha256": "1778c061112368fa4975bd2457a74950e96db53bc955bdfd7abfc8a1cb399f96",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00311206,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_015.json",
+      "region": 15,
+      "sha256": "a24992bfe725a577ae95d54ac912be377770ff7b64e11fea462bf3b6b0b6bd9f",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003110429,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_016.json",
+      "region": 16,
+      "sha256": "4f8ee82e705043661b227124165f33c045c1ea65f1ec0e6496b71c4026407bdd",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031606969999999996,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_017.json",
+      "region": 17,
+      "sha256": "837f894cb4acc2a74fe1ed01dc714b61cdbad7d303b641b5217f4b8c4e241e37",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003114522,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_018.json",
+      "region": 18,
+      "sha256": "8c58106b5e0580010850b7cc09e0d2791136d5d94353c8f02c17c1b0e0e10485",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.005496776,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_019.json",
+      "region": 19,
+      "sha256": "4b820291b189e351b7836abe53fb4946c9632ea7c52b2c9589fda76a0fa86351",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0032685880000000002,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_020.json",
+      "region": 20,
+      "sha256": "aa1c6c6e33b67705f947fb4b6ecde3bd38cda745f2aadce8a4cb9dc68d605a13",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003692287,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_021.json",
+      "region": 21,
+      "sha256": "b2717f052dfcd21e5288008b30c088b90dd23bb3ec650cc58dc0bd63f9511ddd",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003308447,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_022.json",
+      "region": 22,
+      "sha256": "4d7679659215875b95a8ef8136bc81062f308e6d5670d7df4381b8ed3c925087",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003160703,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_023.json",
+      "region": 23,
+      "sha256": "7161c07f2763886789071410fec6b7e925bea7546f53666d2e024ea7ddaf4956",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003069337,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_024.json",
+      "region": 24,
+      "sha256": "c89cd9aba3de976850b80a612d87d93e8bdb3663ed2f8e4d8fef2c65bfb9c825",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003119064,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_025.json",
+      "region": 25,
+      "sha256": "12d89e1aec2d0603f5e892276261b13a360c61602fbe8032b934777d17b6031a",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.004498503,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_026.json",
+      "region": 26,
+      "sha256": "7498edd992d8830883092aa49aa4b96016c3073a77ff624bd9d196a78d38d4de",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003145742,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_027.json",
+      "region": 27,
+      "sha256": "d2fecfa1244e574d650e161a69752292f4a44f67d7ff07dd2f721497383c50c3",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003069132,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_028.json",
+      "region": 28,
+      "sha256": "fe0447fec0b1b46d44dcad9af13d90238b413a40b1cfdbec343f9687dec2e6ce",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003203871,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_029.json",
+      "region": 29,
+      "sha256": "bc4c9866b54156424f69f84c6f114468513b13b24187e44a45f941a704f275e7",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003390233,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_030.json",
+      "region": 30,
+      "sha256": "bcc558979feb4a2d8460a6a27d28afc4cf7e1fae95dceca920f802e6985f0b9e",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003176742,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_031.json",
+      "region": 31,
+      "sha256": "070ec2a0e1745c04c63e6c9e191db4283f3ddccbd5bb000441dead1e3a62218a",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003124927,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_032.json",
+      "region": 32,
+      "sha256": "2b81e4ad997b0d40c2f1f611c53744c9aa967ebe37da0785bce8347e39e5e1ab",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003095334,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_033.json",
+      "region": 33,
+      "sha256": "1f8210b18e3db833cccafac0d165324d39063716d897f56571f2fb074f68a684",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003174165,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_034.json",
+      "region": 34,
+      "sha256": "95538db0c6dff5e9221f65ac655180d9e173bf84e63b89d6f541798fd18ec454",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003129684,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_035.json",
+      "region": 35,
+      "sha256": "ac4c6d2f1d9cbeb9bd8a598d70230abc1e9ea8db2a179b81098c47f7235b2193",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003122761,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_036.json",
+      "region": 36,
+      "sha256": "9b9978e611977cf12728b3d6a0929d60d5aa12463bb75f683a6e8827e01c83d1",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003153295,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_037.json",
+      "region": 37,
+      "sha256": "b3e20b0268815667e6b0ea55e48fbfe63c9e241be5e48e09d9e6b0be92710642",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0032553269999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_038.json",
+      "region": 38,
+      "sha256": "5de222f7a65bc3696e6da4cb2a26fe2ef09f92ce93bd90f3aceef69e16f43982",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003139266,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_039.json",
+      "region": 39,
+      "sha256": "36e11c786e0852bf09a1524706c89c7d79e754992a0c1ecb12a47beaaf6795a2",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0032204029999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_040.json",
+      "region": 40,
+      "sha256": "1ef0214b20cc095b8fe0e92ead1e71992f8ff004a44ccbf8a4a8cf1966477c35",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003127814,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_041.json",
+      "region": 41,
+      "sha256": "ca628a1b34dc2514b343e4fd09f8720f5f2444ebe0d047d90bfc0a72444dbbda",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003175049,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_042.json",
+      "region": 42,
+      "sha256": "15702cc7a0de9974016b7895b1f2a157a1a4c4927bed97fdcce3ea367ba1f1a7",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003204334,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_043.json",
+      "region": 43,
+      "sha256": "b217fcc8771dba04c0a01d9a63b0252b61f89a2938118d848d0b8f95352587fb",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003148606,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_044.json",
+      "region": 44,
+      "sha256": "c741bd113ea7effb3096fbf48cc573ea84122ef329d63cc921c2d90860a330d0",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003347775,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_045.json",
+      "region": 45,
+      "sha256": "686a6ad3092f594e6002440dd53d84b5c56d34907d07c1beb825c873cd135782",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003181733,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_046.json",
+      "region": 46,
+      "sha256": "384c93af999f3aa1c9ab7474d53f0b180ff42d8f7391f2802ce3666efbd39e5f",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003224766,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_047.json",
+      "region": 47,
+      "sha256": "f1773074f49a74b2df093345fb598d9c59326808fcc2a17442cb809fae2f7eeb",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003297112,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_048.json",
+      "region": 48,
+      "sha256": "2bc3bf6b5fb59215b50c276cb5724c32446faf51b6d2ba22a2c5b1f446d79a35",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003147055,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_049.json",
+      "region": 49,
+      "sha256": "1ef6f5ca68ee77abfcb6783e084bf362fab66420168a8889df5944aec6c692fb",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003097639,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_050.json",
+      "region": 50,
+      "sha256": "acbd9c94e3dfcbcc16999b35d9d4d852d45e63c4f917c4fc51a8e292dd89e26d",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003220327,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_051.json",
+      "region": 51,
+      "sha256": "ce339b7bfa985e14161497ed4603363c2a95fee3f9263ad07817f9dbc6ec46c4",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003244309,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_052.json",
+      "region": 52,
+      "sha256": "382f86b6082a5b862a2284666b653648380a4750bd89527b2fbfd1004827ec02",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003137829,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_053.json",
+      "region": 53,
+      "sha256": "778332575643c453101d924a0578f094306c7d62e1007a41272c3e2e4d3f45bc",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0035183209999999996,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_054.json",
+      "region": 54,
+      "sha256": "c9ac25ef6c4fe2991c5c972a67f6db22a86f04b3819596ac08d51bfb341d6eb1",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0032998990000000002,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_055.json",
+      "region": 55,
+      "sha256": "f9ddc77a0e2f44171b304fba4066a78d8afc5734f7181716e448bb8f795f4b99",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00323283,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_056.json",
+      "region": 56,
+      "sha256": "761b84c8c92869ab858763e80e471dd9b866c04dfc4a44f4845c1e13f69abc6a",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003139276,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_057.json",
+      "region": 57,
+      "sha256": "c39fcb0d57d9a8f0260d41aa257e7bcdf0c179c03c781787b9da3248c479e197",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003231636,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_058.json",
+      "region": 58,
+      "sha256": "88765109dfb66aae045abbd5dbdb73d1d1ccaa658dfaaa87133884cbab36020d",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00325779,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_059.json",
+      "region": 59,
+      "sha256": "c1b42d7f17d2166bc8e7d31c7fa4146e6fd0fb93a3a93634dfb58a759e51e605",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003197531,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_060.json",
+      "region": 60,
+      "sha256": "487522e2330a92ea1b8446a39b5adf906788e170b2f4597c4506bd9a5e563911",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003124825,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_061.json",
+      "region": 61,
+      "sha256": "a241fa11e42f01349cb5aea9020a781c8c9e634c220d7b807c417057ca0097a6",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003265516,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_062.json",
+      "region": 62,
+      "sha256": "b81ee8c2d33d8dee2096a474ccfae4d1fc7104ce26b4a91f01fcf83fbcb83fc0",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003148629,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_063.json",
+      "region": 63,
+      "sha256": "d8e34bbbb2e6a0eee97d5ed42f7b075c6e32cf5c23a45f53d11406d18230317d",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003233935,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_064.json",
+      "region": 64,
+      "sha256": "abba59e70fa10023fa5a92a4592fa004a672895ded1ba24ff2b86a3d15070b8c",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003128818,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_065.json",
+      "region": 65,
+      "sha256": "eb0f0a47140edcaa90d0e61b89f5b48ab41a22ca0ff82cd112fe7551506beaf8",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0030569209999999998,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_066.json",
+      "region": 66,
+      "sha256": "c0a323e540d8f47db2642f7f623cc7035327f165f4db5024e96b2c640dddfe89",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031251679999999998,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_067.json",
+      "region": 67,
+      "sha256": "6978c4760e121b3538003f9bd52d045a8394bdd50951bf2122272537800c15a1",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003016674,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_068.json",
+      "region": 68,
+      "sha256": "f23220b15df7fe7731e8ade1d724cc29398ed831990826d769bb49831d706038",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031136740000000003,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_069.json",
+      "region": 69,
+      "sha256": "c32a8f934fd832de7c72014223508b2bdb730e9195b16fcfe451a157a2205556",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003154291,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_070.json",
+      "region": 70,
+      "sha256": "a27c511b721544eb3c15ffeea4679d38ccd02baa8791e657113c20410d150b96",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003148673,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_071.json",
+      "region": 71,
+      "sha256": "418f301fd5c9b1bd6cbf1a2285d74aded2fd296bcc4c35e243e47ff4aa972f78",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003070153,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_072.json",
+      "region": 72,
+      "sha256": "f261fa96679a297d0ef3fd64396cbd780cc17fc0d023854fb3cfbcc8e114ad8b",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031306290000000002,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_073.json",
+      "region": 73,
+      "sha256": "f594dc4c328b07d1fb2c25fd29b285a502ef3069ba38787d785e81844618f24b",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00315597,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_074.json",
+      "region": 74,
+      "sha256": "5a876329f5f62b8ed1da944c86614d9b3c246fccd93268e7d8b600d9dcf51181",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0032945270000000002,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_075.json",
+      "region": 75,
+      "sha256": "3679ae63657ed30a4dfc9e4c9844bc1e1645e08921fbe1387bd2b2330e00172e",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031748999999999996,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_076.json",
+      "region": 76,
+      "sha256": "1a1d43c3914f8c4ce01c8448c4871ea4e63e59c585c798d85aef9331e7dd6606",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003229012,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_077.json",
+      "region": 77,
+      "sha256": "695ace687395dfb6599980f79a17615cd7020f6885d56d0d4f74e77ba8849ed0",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003094982,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_078.json",
+      "region": 78,
+      "sha256": "6e784a77926c77b04f68b408dc53eef6b716fd67796a1ff9b9e8e843fb2e8371",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00321968,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_079.json",
+      "region": 79,
+      "sha256": "23c54afbbfb61488f33990893ea6a0330b5fa5a372dddb7d5f73ead4e09e5ea9",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003578892,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_080.json",
+      "region": 80,
+      "sha256": "dd404bc7a9e5425e03b87b1fc7b3a47bd19b062d8ae095cc8213278be7d8c4c3",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031583379999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_081.json",
+      "region": 81,
+      "sha256": "4dca8efd4078058906f73bcf3380f9bd41af5a5a7b1cb7b3acb2bcca79f6f415",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0034021769999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_082.json",
+      "region": 82,
+      "sha256": "529fb2c6d735b36c810323f7c5985b5e0d88c67af5c42f82e40f3d8a43ec3043",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003257754,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_083.json",
+      "region": 83,
+      "sha256": "c1c1dc3ab816934a7b6867e73c1e063c27542812819b929ce50075adf18fe393",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031795969999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_084.json",
+      "region": 84,
+      "sha256": "709cd2b06a08293cd478c52a32488dfb458cca26baac658f286ddd613bad2037",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0028824980000000003,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_085.json",
+      "region": 85,
+      "sha256": "cd4c1caeac87cb7a480ad4d96eb496114e30c0fb482b0c40b65eab738eac298a",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00316465,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_086.json",
+      "region": 86,
+      "sha256": "9d7b9f09bbd573ea0b3d3fe5cb768a618d743fd1fd37ffd32da052c08ac5f9f7",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003467285,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_087.json",
+      "region": 87,
+      "sha256": "6f2b35df100db43546d4d1cdfd19f32f76dfef11000e04d9e8f96d110f28a858",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.006894345,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_088.json",
+      "region": 88,
+      "sha256": "f6dd80b7036109785dae16b1d618ed39646a446480d3d6cc3b22d0d61651a00e",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.006561689,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_089.json",
+      "region": 89,
+      "sha256": "ed674b10200ad5dcca07b86c11a9d51c4c4e79bcbe2e6823d9ced4796aa9dfb2",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.006840576,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_090.json",
+      "region": 90,
+      "sha256": "d2dceb3bf58bef04373c1f3f58ed3ade01931e0001f44597977555500046263e",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003167993,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_091.json",
+      "region": 91,
+      "sha256": "765c26ebdaa7714b116f792e47556776495bf56642fb9405c7aabca6585d428c",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003215264,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_092.json",
+      "region": 92,
+      "sha256": "d8c73b0675f51ec37903dc998b33bb746df124978857dbe78f84ab6976786f7d",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.006676072,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_093.json",
+      "region": 93,
+      "sha256": "6c9d1e9ef04d4a8f50a22bc69bd65f6d9bf3a97bf7afb286228dda1d2dec31db",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00675509,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_094.json",
+      "region": 94,
+      "sha256": "91a02bc8d3fe91caf452b449f3f0522186c89e61a15cc4ee88555aabf7e083ba",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.006773094,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_095.json",
+      "region": 95,
+      "sha256": "0cc60bb4fb40dfd14ddca288a6794ef0ab28f37a9d7418ea8ce1c5014d1360d9",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0032141429999999996,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_096.json",
+      "region": 96,
+      "sha256": "084f5638dfdbacf9adec3e9ea1fbc2b8418c72d512b8b230870fed311e53aa0c",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003183824,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_097.json",
+      "region": 97,
+      "sha256": "d69cb1a225c89a9ef351a2c53f5c33672c6e284dc1232f6fa1bc45ed0ea31dd4",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003196903,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_098.json",
+      "region": 98,
+      "sha256": "c64674cae99c8715a635cae608455fc2a564046ed96f4b5fa66a38c1a34f9ff9",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003183685,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_099.json",
+      "region": 99,
+      "sha256": "408b665753121a40ac9c3078bb9cf0e9c3b7b2760a54b9212b7b1ea9c47405de",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031671719999999998,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_100.json",
+      "region": 100,
+      "sha256": "4db94d3b11d87802e0e7fa7ef4b868635b0493fa16d732e8aa5bc12be73103b4",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003184353,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_101.json",
+      "region": 101,
+      "sha256": "593b8e3000e5c7b26eac6e6be49de63f810bc01c548f4f57122ee58e36b5089e",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003239597,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_102.json",
+      "region": 102,
+      "sha256": "456adbae11b2dad4721ae12234b427321272ba5ba0cc3679d27f2dce22cdbeb9",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003199783,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_103.json",
+      "region": 103,
+      "sha256": "b3c4dfd04cd2fc91ea9de8fbc306b31a081402bed85b931ae55781de523b3dde",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003431095,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_104.json",
+      "region": 104,
+      "sha256": "3adaa3ab682cefbcc9fffe86f4ec9753e283653546b5c18163297d9e0b422514",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003178155,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_105.json",
+      "region": 105,
+      "sha256": "b9e640bdea2390d72b982144762a9a1e6439dad453b6f6cde4cceb2b81cc8957",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031793349999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_106.json",
+      "region": 106,
+      "sha256": "5d77c9a68c091c2e81592827ab225e2acce6ce8e20949f344b25be7bd84ce5c3",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003165359,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_107.json",
+      "region": 107,
+      "sha256": "2edd83d7ec9e76b58d1770063a87e4ed2bca83bb2ddf0dbd85585b213df8c024",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031801390000000002,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_108.json",
+      "region": 108,
+      "sha256": "4477cd5813225913cc8b583a7fad3e10563066d4ffa0b6108361bd3b82281c1c",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003336404,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_109.json",
+      "region": 109,
+      "sha256": "98bac3522d86ed4036291e2c206f93de04df52da2235fcde0d151683c578da0e",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003197751,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_110.json",
+      "region": 110,
+      "sha256": "a671e222e92ab7975bfdb98395aaf584bcac9e1de762d4addf6f3f95b85f068a",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003224937,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_111.json",
+      "region": 111,
+      "sha256": "2b6e00923e6899e70eca3e9fb08eed5623ae8259b026c606141f93d5b9a5d698",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003174341,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_112.json",
+      "region": 112,
+      "sha256": "f297b9d1d0dc99d6a9e0d4387338e6b4d559972488a57ef811025b70009a1731",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031955810000000003,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_113.json",
+      "region": 113,
+      "sha256": "582e5e1fbbd8a7cbc6ef86803ee543a5cd5fcb1a9286e1e1a682b36e20c2742e",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003072955,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_114.json",
+      "region": 114,
+      "sha256": "eaf196770f5b78fc5111a9b3e4faf4626bfd7b3e48417b36c08e427bcc960ec6",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003163767,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_115.json",
+      "region": 115,
+      "sha256": "912e48ce7a246a68aaac1b49754a61f9d3498ac1469bc438cb45043d53ab1101",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003089618,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_116.json",
+      "region": 116,
+      "sha256": "efd91759372a889ee038ddae8189528364e7aa1829b22b7fc6ddb60dffe283e7",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003249767,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_117.json",
+      "region": 117,
+      "sha256": "f623889f18bb0e161c524c323e150fb13e58a3a1fc4beabd8c72e6f622319956",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00320078,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_118.json",
+      "region": 118,
+      "sha256": "a796d33a9625f2fc7200c27ffea96daa83bf08ea20eede01eab9ded828bacb96",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003177194,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_119.json",
+      "region": 119,
+      "sha256": "66895978ed7e5082dc363a1e2083768f9102c720b6e3fd8c49e34af25f4419e3",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003353699,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_120.json",
+      "region": 120,
+      "sha256": "fa9c99e3b9ea55865b646cc2b514b0f27c666727b694f53f55c99a004c921cc0",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.002930174,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_121.json",
+      "region": 121,
+      "sha256": "afff2b1ba265e1abdb10363ee8fde7051133553b5208f1ca0b00fa0328eb03f4",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003153585,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_122.json",
+      "region": 122,
+      "sha256": "59f0d8c28542e0a135a4772db2b717b1977960a7b174ea4a52b6d9d3fb77b1db",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003243322,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_123.json",
+      "region": 123,
+      "sha256": "699fd2fd742a690cc0ee481bdd9b8df5c3ca4b4f8ff6644d73792f2ddc8cbeb8",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0033561999999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_124.json",
+      "region": 124,
+      "sha256": "8aadc4a524ff9302c432365e994bb6d7d22017623b36ff4b6df509b19c3aec80",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003243501,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_125.json",
+      "region": 125,
+      "sha256": "02017c6243a15819b00d6b3339a0b3e08c5ae78f433fed90c4bb4472d4aa8fa7",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003204095,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_126.json",
+      "region": 126,
+      "sha256": "f59a4d08c1daf26ae36edbd3d494e878c5e830d8cde920cafc68f2b147fe6386",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003273312,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_127.json",
+      "region": 127,
+      "sha256": "d6876592ed99530112d0cc43c6205e5eee59007769183c28e2e45fbba59a12b3",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003334798,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_128.json",
+      "region": 128,
+      "sha256": "7e3cb69616b7a5bf8e5f8760f15c51e3c3d1a786a6d52cf56f6b2d0950dd296a",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00317846,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_129.json",
+      "region": 129,
+      "sha256": "6f6c1620ec47b1a5c7a26438b1f9b3e5b629a944df88e7a1f3e475c213b94396",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003815883,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_130.json",
+      "region": 130,
+      "sha256": "283f05056e7957e1b54d3376bdd6128078968d7958904cbfe7d21b903da3cfd4",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0033857130000000003,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_131.json",
+      "region": 131,
+      "sha256": "f50a7f9a35a4edeca56a78c80b9c62188f597b495d884ff4ef437816d6f0ee1b",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0030873589999999996,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_132.json",
+      "region": 132,
+      "sha256": "9fd549b5fe0e5d8a91c20abb28e4c228c2c751bb8f862c7edf292883ae3664fb",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003189188,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_133.json",
+      "region": 133,
+      "sha256": "b1d4e71d853880fefd489d76ecfbfaeb505d8f8a297a1e97d181c2d367eaa30a",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003142728,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_134.json",
+      "region": 134,
+      "sha256": "4d52ce6c17b6849361b56508a9738e5c0a5d9d3b10710f38d7f9bd86a1db2d3e",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003358577,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_135.json",
+      "region": 135,
+      "sha256": "c9a293c2b664f6c3d4af58467c359acc4dd9ea7b21e9922535af8e3bcbbe68c4",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00321337,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_136.json",
+      "region": 136,
+      "sha256": "bde885fa7584fe339eb010b39b83b59011c51d568eec1262b74e28679095410f",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0032727060000000002,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_137.json",
+      "region": 137,
+      "sha256": "866f4e72baf99d06b2ff58cea885f461915553058bc5efde9bbdc5a70d2a11e4",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0032827990000000003,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_138.json",
+      "region": 138,
+      "sha256": "b1dae8ec6f3b196640591530a6e8ee6f3ecc4f0428ac380e179a494cf6cd773c",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003231888,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_139.json",
+      "region": 139,
+      "sha256": "05d7c1c25a25d6cfedcda02fd4695c5a515e6d61fb7d5ce58e1c4b3c6dfdbcaf",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003179618,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_140.json",
+      "region": 140,
+      "sha256": "a9aa0c3cd0de208ad4a9189bd935ea4ae9869e0b54537140171dac565e7974da",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003150982,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_141.json",
+      "region": 141,
+      "sha256": "82ef2e8be8fb3c9509b9315b86e1a0a295296f4cef84a3588fc35f546aab0cf1",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003182879,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_142.json",
+      "region": 142,
+      "sha256": "70c067f952b51430de97189bddae4f1b7959f198579d10273347ab585414134e",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0033243699999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_143.json",
+      "region": 143,
+      "sha256": "09f0c62b2bcac8b58c0dbec90ea11e3e22e5d44e04d0e85690e4e6e306445754",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00320376,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_144.json",
+      "region": 144,
+      "sha256": "253c452c929ff2e6b1616f9c2e350a70b1e54d6d948331b66e0a291c22c90aea",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003296,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_145.json",
+      "region": 145,
+      "sha256": "09be83a6e1ddf25ed55bcbcc52b777ae71fddedb20be5412f4e92e147e007462",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003196865,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_146.json",
+      "region": 146,
+      "sha256": "adc0b39d55ca7aa6ddd27c7c9d8fba94257d057389219fc71166e063e426f128",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0034054130000000004,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_147.json",
+      "region": 147,
+      "sha256": "6594e9987d020da5af4c0e5e5704435462acb512bf747507f6cfbad8ea08a7d3",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003167199,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_148.json",
+      "region": 148,
+      "sha256": "f48c126f59252b4ba88a87c410f6a981a372613d264a9dacc8de596da75615d7",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003216899,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_149.json",
+      "region": 149,
+      "sha256": "77efb253324bd18b42a29595ec3cbd4b2eda81def8d7af8c886a84cd7d012169",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0033164989999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_150.json",
+      "region": 150,
+      "sha256": "679b4fda4b302ac2fa7c5028afade4d806112f760bb341acfed5e8c9f9caeec8",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0033594000000000002,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_151.json",
+      "region": 151,
+      "sha256": "31fef01e4f9c8366f50dcba37e0e7dc580646b7f65cba13b79763fb3bca8053b",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00318091,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_152.json",
+      "region": 152,
+      "sha256": "cdc47bec75ab70e07ff9c8fd0c7c1ba0f6a02b32c656d5be6df316ac13652cee",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003183488,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_153.json",
+      "region": 153,
+      "sha256": "1c837aae5b66ca0aba3a0d14e7060c5998deb459f2c31d6b857fa130143e922a",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003110911,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_154.json",
+      "region": 154,
+      "sha256": "e2cea113d17935bae75fa6fc26369624146eed6d096b826e06cc621fae98bd9a",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003158007,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_155.json",
+      "region": 155,
+      "sha256": "ab6e80377f58bbbcd8c9c98f46ad62d6c75e343c79f8279778f83601ecc4c367",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003244325,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_156.json",
+      "region": 156,
+      "sha256": "88a79308aaaf409582b36623c61bd90b6f2277ee533492a2746755add95d44ea",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003029904,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_157.json",
+      "region": 157,
+      "sha256": "18c077ef86a00b38f3d6a9bc9588087c1c122a039c1b57df12811d2e23c38209",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003184848,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_158.json",
+      "region": 158,
+      "sha256": "fbff05a0e86441cff88dd654cd6ab48990a2efad22d1f62a86aa18d47c0786ab",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0030998519999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_159.json",
+      "region": 159,
+      "sha256": "073315d243ae30f2818726da66d5098ae79c0aa91ed82ff2267bea05b8d56211",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031664849999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_160.json",
+      "region": 160,
+      "sha256": "8cb1c9a1fb336eff439db94809be28a3ad3f97f03aa7bd604ee7a02419bc1bc0",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003440568,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_161.json",
+      "region": 161,
+      "sha256": "d88b0cdcc318c19e2a122d927bf4b87bee997b219b555b3c63bd47a35fb405ac",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0033902010000000002,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_162.json",
+      "region": 162,
+      "sha256": "3e15e715c54e9253351a3c55993c9eaf224a4d63f2af2778149d4ac773183301",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0035199059999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_163.json",
+      "region": 163,
+      "sha256": "b53e362ae065eb352c7cb2b3cd874632e7875c86f0d844aa673de7145d660a20",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003280971,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_164.json",
+      "region": 164,
+      "sha256": "5c592ee37e96b9eae1c5296fd3058f133fbc4a0923def905b358d2f2756620f2",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003230391,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_165.json",
+      "region": 165,
+      "sha256": "c1bef0d2cc14b16d74fab1488282a3af332c5332f2ef35388e5521a595928970",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003111558,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_166.json",
+      "region": 166,
+      "sha256": "c41cad05d63e70d498f4de43deffff87248d38501bc2c84c39aeb07b8d3713ea",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003262205,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_167.json",
+      "region": 167,
+      "sha256": "31daced610f7da7cf71d0c9716f0395e099717dce5dab0af4af196ecfaf3b979",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00329211,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_168.json",
+      "region": 168,
+      "sha256": "d12c05c97aeed100d4ba536b3c6702db1587f97b9fa143c13a3f020e99cba493",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003195814,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_169.json",
+      "region": 169,
+      "sha256": "5ca7236f2c254524a5c3332255d081c1e194d05da7d0b0ef279a0f1a9d02888c",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003464664,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_170.json",
+      "region": 170,
+      "sha256": "cf4eefb5ea98ffcd7eacde3193958448e18e573b58ef2fb8f01287f8b722e793",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0032903669999999998,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_171.json",
+      "region": 171,
+      "sha256": "9fc3775ecf2c0496b27ea1f9d9d4da4e1bf0a244180a1616c7624ef2d04a81b1",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00355225,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_172.json",
+      "region": 172,
+      "sha256": "b5dc271641dac79dfcf229869996e6ad89026dd667638176ab5cba891dff9639",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00317787,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_173.json",
+      "region": 173,
+      "sha256": "838eac82590a0441a359693d1239db946726d697f5bf1380509a241f27b64e4c",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0036376110000000002,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_174.json",
+      "region": 174,
+      "sha256": "475e8001c7216a6483190edb9886a29bf23295cfcc2f0c9585463b09d07becc0",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003344494,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_175.json",
+      "region": 175,
+      "sha256": "9112b11640807f587637d8c5eb67126fce8f00b8525d6b75839bbc5ea11f55d8",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003150717,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_176.json",
+      "region": 176,
+      "sha256": "3dc8fe5e3baa10127aeb5807c9b4e182b411c6e35c2c32858750cec62a0f9433",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003164666,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_177.json",
+      "region": 177,
+      "sha256": "e772eb5b6621184d76e6857f05f3e27ad3fcbbddc7d133bffe07b59705e1b155",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003162011,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_178.json",
+      "region": 178,
+      "sha256": "85ee6514527044e0b00fab61e7d5ff447b9301884a5e32e15fae85a303ed9af9",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003401629,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_179.json",
+      "region": 179,
+      "sha256": "36de6e91d0e4edb4170fa31a8768bba5eb7274223cc6e1f5a0bbb9b2453da608",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0032479089999999998,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_180.json",
+      "region": 180,
+      "sha256": "181ccebf39508cac6232194d3d3aadcc8d7c28b9f96b02f731947bd3285937b1",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00337239,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_181.json",
+      "region": 181,
+      "sha256": "555f8c696a39a63b2e07ec0a782aaa8d4e66454cdd2a50d1f4060768a2665375",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003215918,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_182.json",
+      "region": 182,
+      "sha256": "13bc37478697449c60b889d236fa837f8eaebda18b5724db9147118a1f4fec46",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003280096,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_183.json",
+      "region": 183,
+      "sha256": "5ea476cabbafcd43975663f50cdf29b6e9cf02e491ec71031e45981ad75dfaf0",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00315496,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_184.json",
+      "region": 184,
+      "sha256": "7d94ce80edac4fb16084c1a6de1564be9de6e6c36b7c990a01ae788dff4eb4ec",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003261777,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_185.json",
+      "region": 185,
+      "sha256": "028873c5454b4f9ec2dca091084b95f31235a7379dceb5368c26d548f14a3e55",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003409605,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_186.json",
+      "region": 186,
+      "sha256": "6171b45cd1bbd58b96d073ff3e9b3b458244b1b7aaf7dd68769350d6f2985e59",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003412971,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_187.json",
+      "region": 187,
+      "sha256": "1757b10b45dc69acf29a178d3483b7a72e1554cb8c35fac31baf69c61091d84b",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003320208,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_188.json",
+      "region": 188,
+      "sha256": "cc005d408dc82417b62b22381601deba22ff59d9c438c381ad74d928f6e4155c",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031799339999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_189.json",
+      "region": 189,
+      "sha256": "f8443bdc96fda5445efedab25567988e1328b9a867ba7ec0b17194011bd6b823",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031827739999999998,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_190.json",
+      "region": 190,
+      "sha256": "da70c35f59a8fbc391b8d7e3eb809d2f33addb1d472663221e4c8c48c0d8ddf6",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0033050149999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_191.json",
+      "region": 191,
+      "sha256": "59c4befe508401763b80af18ef8dac50c511420f0f109503def29b6a5f2ace1e",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003411676,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_192.json",
+      "region": 192,
+      "sha256": "d593b342c10ba57e0c0034211cb7236139ca4341aacac4e6842cdcc1ccb588f0",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003200037,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_193.json",
+      "region": 193,
+      "sha256": "175d2f29778cc9874c8006e4badf2ad14f976bab9fab1704260e9a07c84ea587",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003186791,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_194.json",
+      "region": 194,
+      "sha256": "8a0bf187c8c8c662c2dcaeb3715d3108bc31d777f84035668f75dcbe231ff117",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003246886,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_195.json",
+      "region": 195,
+      "sha256": "6c91de4efbbf32cea71230bacf935dd4f95d4d73d2967464a16e4ce1d540ccf7",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0033801739999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_196.json",
+      "region": 196,
+      "sha256": "629a7de913204d65e6e7ef4ed1d33d934b1e9b9262867888710ec300ee435f9d",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003276728,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_197.json",
+      "region": 197,
+      "sha256": "83bd14d8c0cc7d2481078e5497f376bb1a4be11215bc983be7cbd9c02705b169",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003207036,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_198.json",
+      "region": 198,
+      "sha256": "cd9fb6cf050f9a3d7c874fb3d17f484a6ceba8287448d96333800fb182872a08",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003282424,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_199.json",
+      "region": 199,
+      "sha256": "c976d4b511bf884459e7997f0d39e4d16e16c822193c6b557b3998f6815e0ee2",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003131477,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_200.json",
+      "region": 200,
+      "sha256": "9a011e9342495804f2fc5f6685a8442d7ec3caf20c03fcb573b7ca8d9a9f91f2",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003377104,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_201.json",
+      "region": 201,
+      "sha256": "d61f5f45bb118fb0df152212ee00efa922f5588f1ab4b249e34d5e4dbcb09c93",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031956190000000002,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_202.json",
+      "region": 202,
+      "sha256": "7f32f1182b0e8a9607546b42d1507deac97caba696ffbb293e7516ef82a6357f",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003236668,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_203.json",
+      "region": 203,
+      "sha256": "0e0e07525c3a2f91f918701a55cf5d408eed867792761783accf23159d262388",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031969489999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_204.json",
+      "region": 204,
+      "sha256": "0d700444e47cd48a5b7818cd012d1b494e927aa5107fd4735641968c644eede6",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0034693199999999997,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_205.json",
+      "region": 205,
+      "sha256": "1a2ab2019fec59c8fa5e414c38c01dbac6e71252b778c2527529b3969b3893e5",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003187498,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_206.json",
+      "region": 206,
+      "sha256": "661015a9e6fa394c40a9a454ec51ff06fb7d9e9773a7aad68a55e5a86999c03f",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003180051,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_207.json",
+      "region": 207,
+      "sha256": "9b8cf9e7aacd01f1b0fe610fc0d811a77832393158612254430ddb29fd02ad98",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003207491,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_208.json",
+      "region": 208,
+      "sha256": "76561f7eec7bc1492c3e37137e1f1d6671073eebbe39ab3d0367bb01c3fa919e",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003373018,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_209.json",
+      "region": 209,
+      "sha256": "0a33bc8ca14b6b1cb8a6b1fec7dcb78d410ab1a38eba08fd9f47ca58d469106d",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00323342,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_210.json",
+      "region": 210,
+      "sha256": "1ddfd75f5c795bcfbd3a3c4965c188e29ada12c92d4169ce8a0971c4df3d478d",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003191846,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_211.json",
+      "region": 211,
+      "sha256": "6932d659193620143a678de1cf1dc02122ffea1210de5e4752b31daee5548f3e",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003246148,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_212.json",
+      "region": 212,
+      "sha256": "b796409c30ece5bcd15fbce783cdb565a60b147e1f29c701648351740a3f1de4",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0032002660000000002,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_213.json",
+      "region": 213,
+      "sha256": "6556eb884c93fbd33983bbb59756a4775d964847a08df43f25c3c3520ea5fbd4",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003217621,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_214.json",
+      "region": 214,
+      "sha256": "0aa069ce6a2b17378230c68e34434a2027187b6efc6e6ad19746517e7415e588",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003162466,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_215.json",
+      "region": 215,
+      "sha256": "19f1e42991a95da78ab593589ece39edb4eb428fb2d333dbd998d6bc389730cc",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003158415,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_216.json",
+      "region": 216,
+      "sha256": "4af46002b68e3684d183fd9a80375e1f68a2c1747db6fc14ddd87acdd7969215",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003221665,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_217.json",
+      "region": 217,
+      "sha256": "fdff9a6c1fea50a1eee18cb6158460f4c09d5c6de93d2154269389048ac506d1",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00335707,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_218.json",
+      "region": 218,
+      "sha256": "5c8744d0786b7467b5186b87606ed6846070d8d1004a6d1da504100758b5ae86",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003223085,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_219.json",
+      "region": 219,
+      "sha256": "6c98ec0e425b40d05b078a4cfcc29e5eceb8cd5f4aefee98366cba2bc868461f",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003214952,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_220.json",
+      "region": 220,
+      "sha256": "479b8b70f3048c175cb2bfa0442c9c2f4c484ee220711d87d4e0842fe76b8897",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00308462,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_221.json",
+      "region": 221,
+      "sha256": "30425a26712a6859c0a17471f4f4802da59df933969b90cf80534b60fe16b842",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003189882,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_222.json",
+      "region": 222,
+      "sha256": "b55879abe7fa3bcdc9b0da16a7dd5625ce771b0eb3db68d81f7394a67921586f",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003432773,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_223.json",
+      "region": 223,
+      "sha256": "69b18a35dda275559fb9910ab33632cca9f73e17c8e2fa7378dc8af8c6329cf4",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.005084005,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_224.json",
+      "region": 224,
+      "sha256": "6bd7ad5227dc5eb06b87b31fab9a825f68cf9fec4e70f2ada6a9df59122ea1e2",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00408271,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_225.json",
+      "region": 225,
+      "sha256": "a7dbaabe92239f8c9fdf14d4709c92d7ae662e0fe497eb369322c37f7a59fa5f",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003355783,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_226.json",
+      "region": 226,
+      "sha256": "7b4eb7eb1e73f2a2d9887a497471fa895981e4fd5999a8f765c358e155848ece",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.006641592,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_227.json",
+      "region": 227,
+      "sha256": "249409b071772b15922e4b8e6d87c41412bbbffab14d99a5c603afdfe7c2146c",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.005828053,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_228.json",
+      "region": 228,
+      "sha256": "56768dd6064d0ae19944c0e6cd254e5d2d91ca6b0810a66689ead300ea08fd42",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.005780888,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_229.json",
+      "region": 229,
+      "sha256": "bf81e4198a156add34c8921794b518f3135e59ffcd772280a6c60c9139870a94",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.006772955999999999,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_230.json",
+      "region": 230,
+      "sha256": "5a7f08cd21f4b56596b83f7df671a291f2ae0b948908d297836c12c51491c09d",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003175685,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_231.json",
+      "region": 231,
+      "sha256": "f0f8fa4f02fd970ff3767ce243cc56ebd90cc5e9e71eff425aed63aeaed6a64c",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003039254,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_232.json",
+      "region": 232,
+      "sha256": "0380679130474fd6f3e63a27262222bf1e6c343df713ac0b3d7871791c56bdde",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003356372,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_233.json",
+      "region": 233,
+      "sha256": "6647762861f150f22cab638b4107cf03c0da611c88fc07955e83b7205aab1583",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003103505,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_234.json",
+      "region": 234,
+      "sha256": "a765811f393004e30f846fa65d47c7d312e22e836e3bcd2626c3f536a5bcf902",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0066801529999999994,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_235.json",
+      "region": 235,
+      "sha256": "b788d7be81a8839ea3e5db26a31c96bea5c8b87af05693f855245a3261118db4",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003207883,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_236.json",
+      "region": 236,
+      "sha256": "3b0f4566f8735f627046419365c6d35aaacfba06384da87fa727d697cb8f6ef2",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0030771730000000003,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_237.json",
+      "region": 237,
+      "sha256": "eab27657585a9963270b2cc492e86d8679f7e0c2ea712bf3997353fe79369a2f",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031266980000000002,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_238.json",
+      "region": 238,
+      "sha256": "387922234eb72f5938c34e7035cbb7743ea5534e124a182009c6dad7b18fa0d8",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003094522,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_239.json",
+      "region": 239,
+      "sha256": "0942ce913185f19a7cdb2abf9f2e452c9eb96ebcb4b3785d49880ce09085b45e",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0031581160000000003,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_240.json",
+      "region": 240,
+      "sha256": "8586336d76185b8c984ffba01a8352ade289c55dd9fb2ab2ad26179c9c170f77",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.006967323,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_241.json",
+      "region": 241,
+      "sha256": "42887d0bd5e31924400737ccf260bcf2d84df83235523af7f69998f8862bf3d2",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003906569,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_242.json",
+      "region": 242,
+      "sha256": "adab3be0bc6125421f277c2d2941cf11469f0310448bd764e576f2d3340aef11",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003199936,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_243.json",
+      "region": 243,
+      "sha256": "09e67a9b5a1287ed62796df5066f7b0fadb479ce433eba6f6e907a05cfc3d760",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0032314089999999998,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_244.json",
+      "region": 244,
+      "sha256": "4fbca4414090a8dfc3d5a0c945145baef083d19c77318d9cb803b7635038a255",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003365188,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_245.json",
+      "region": 245,
+      "sha256": "bf0becd4f08de37f11a5487f932d19feba249ed601ebab512e9c34cb80040ebb",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003149381,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_246.json",
+      "region": 246,
+      "sha256": "9700af20546f6507dc793cd0651afa879b93ab00aa4ef58875059d7b5e306135",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003305019,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_247.json",
+      "region": 247,
+      "sha256": "311abec7c7f83cd88fb29b05b27a21417ac146281a83ce2247e3a9cf151a46f1",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00317768,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_248.json",
+      "region": 248,
+      "sha256": "32ac7bef50944d0a8315307e9b1570e821186c6b64984b0481a614bbdcf61864",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003159682,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_249.json",
+      "region": 249,
+      "sha256": "5525ad45587c5c3f8147afe89f7540390094692989b313e0b08297cb4c007c00",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003177183,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_250.json",
+      "region": 250,
+      "sha256": "b85baa0293b7f0eab2ddb9858f0e31ae02421ed79f603c0477e1fe06ca5dfde7",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003469967,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_251.json",
+      "region": 251,
+      "sha256": "7ab6e107dde2c3d50e482972bfdb779f80a00ce09963f818b04023140e41dca1",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.006925187,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_252.json",
+      "region": 252,
+      "sha256": "c1e24744a8baf402c78e5330f08d76e04c031e37dd659966ccf652ab7d406a97",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.00577658,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_253.json",
+      "region": 253,
+      "sha256": "8ff550352ab5efb49cd80d59982585e125106d6b6f97f2b2867caaa977116aab",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.003173348,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_254.json",
+      "region": 254,
+      "sha256": "2e518492f841e3d041915639422e84d0f58b53fdef82cbe8652bb0c4ce9bb432",
+      "status": "COMPLETE"
+    },
+    {
+      "checkpoint_write_wall": 0.0032190639999999998,
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/leaf_255.json",
+      "region": 255,
+      "sha256": "006e2be3eaee661d3cf9a9c803b132f0cd605488c5c0fbbf4933342020d1716b",
+      "status": "COMPLETE"
+    }
+  ],
+  "schema_version": 1,
+  "search_contract": {
+    "Fast": false,
+    "GT_argument": false,
+    "K": 10,
+    "L": 32,
+    "default_seed": false,
+    "raw_query_IP": true,
+    "score_after_search": true,
+    "single_portal": true
+  },
+  "source_binding": [
+    {
+      "path": "/data/netg/ACSG/benches/bench_hierarchical_portals.cpp",
+      "sha256": "9137ae4ebc3b4a3c437fb171b0ffc1b5857d5ea1b610a674a59bf46c8af78385"
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/RegionalSearch.h",
+      "sha256": "320e29c9407d5907ece7ef64113edeb8b2d5157fa8796aaf94e470eb6771e14e"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/prober_build_manifest_v2.json",
+      "sha256": "0aff8f1faeb6afa1c795539bfdd2ffef9f21fe115dfe99db54ac2102fdb186e8"
+    },
+    {
+      "path": "/data/netg/ACSG/build/benches/bench_hierarchical_portals",
+      "sha256": "b745e4732e881cf826d101c86dfc2d962fa7c92be8210c6b882eb56cb5fd61af"
+    }
+  ],
+  "stage": "P3_PORTAL_PROBES",
+  "status": "COMPLETE",
+  "structure_lambda": 0,
+  "threads": 16,
+  "validation_accessed": false
+}
