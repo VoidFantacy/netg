@@ -1,0 +1,49 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "arms": [
+    "graph_rl"
+  ],
+  "seeds": [
+    20260921,
+    20260922
+  ],
+  "steps": 200,
+  "population": 8,
+  "sigma": 0.3,
+  "deterministic_radii": [
+    0.25,
+    0.5,
+    1.0
+  ],
+  "train_queries": 4096,
+  "monitor_queries": 1024,
+  "gradient_updates": 800,
+  "decision_steps": 800,
+  "NSG_hard_cap": 600000,
+  "per_run_reservation": 150000,
+  "fixed_NSG_per_run": 15744,
+  "builds_per_run": 4806,
+  "logical_constructions_per_run": 2403,
+  "HNSW_per_run": 9026816,
+  "HNSW_expected": 36107264,
+  "builds_expected": 19224,
+  "builds_cap": 25000,
+  "topology_installations_expected": 9612,
+  "score_vectors_fixed": true,
+  "native_instances_per_dataset": 2,
+  "selection": "original J over three deterministic Adam-direction radii and no-op; fixed original P online scores",
+  "gaussian_candidates_eligible_for_commit": false,
+  "momentum_updated_on_rejection": true,
+  "monitor_selection": "same nonzero feasible checkpoint rule as E53",
+  "conservative_projection_seconds": 1526.8507468300468,
+  "E53_seconds": 816.273179896998,
+  "projection_latest_finish_epoch": 1789218600,
+  "training_stop": 1789218900,
+  "latest_launch": 1789218000,
+  "threads": 1,
+  "output_bytes": 402653184,
+  "minimum_free_bytes": 7516192768
+}

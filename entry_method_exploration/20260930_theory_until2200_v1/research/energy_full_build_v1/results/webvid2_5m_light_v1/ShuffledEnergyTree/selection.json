@@ -1,0 +1,118 @@
+{
+  "method": "ShuffledEnergyTree",
+  "temperature": 0.01631888747215271,
+  "tree": {
+    "children_left": [
+      1,
+      2,
+      -1,
+      -1,
+      5,
+      -1,
+      -1
+    ],
+    "children_right": [
+      4,
+      3,
+      -1,
+      -1,
+      6,
+      -1,
+      -1
+    ],
+    "feature": [
+      4,
+      4,
+      -2,
+      -2,
+      0,
+      -2,
+      -2
+    ],
+    "threshold": [
+      2.8485567569732666,
+      2.510380983352661,
+      -2.0,
+      -2.0,
+      1.0001147389411926,
+      -2.0,
+      -2.0
+    ],
+    "values": [
+      5.649636414252112e-05,
+      9.530952246843251e-05,
+      4.4542977865262005e-05,
+      0.00020517149789873112,
+      3.1101648275002364e-05,
+      1.8913381671053957e-05,
+      5.36808334122709e-05
+    ],
+    "samples": [
+      1024,
+      405,
+      277,
+      128,
+      619,
+      402,
+      217
+    ],
+    "scale": 0.0004365648504560357,
+    "input_cast": "float32"
+  },
+  "feature_names": [
+    "query_norm",
+    "mean_top10_distance_per_qnorm",
+    "gap10_11_per_qnorm",
+    "spread1_10_per_qnorm",
+    "assignment_entropy",
+    "assignment_l2_squared",
+    "approx_tangent_leverage",
+    "weighted_inverse_resultant"
+  ],
+  "approx_assignment_sha256": "5769e746bcd85c83c2cb5cc0b1ae8609e4491421c0b24239dd4f4030f83f394a",
+  "seconds": 3.210586664999937,
+  "tree_count": 1,
+  "exact_fit_labels_read": 1024,
+  "approx_labels_read": 20000,
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "threadpools": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 8,
+      "prefix": "libopenblas",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so",
+      "version": "0.3.23.dev",
+      "threading_layer": "pthreads",
+      "architecture": "Cooperlake"
+    },
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 8,
+      "prefix": "libscipy_openblas",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/scipy.libs/libscipy_openblas-68440149.so",
+      "version": "0.3.28",
+      "threading_layer": "pthreads",
+      "architecture": "SkylakeX"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 8,
+      "prefix": "libgomp",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/scikit_learn.libs/libgomp-a34b3233.so.1.0.0",
+      "version": null
+    }
+  ],
+  "old_reference_inputs_read": false
+}

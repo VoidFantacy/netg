@@ -1,0 +1,176 @@
+[
+  {
+    "kind": "smoke",
+    "dataset": "webvid2_5m_light_v1",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/bin/experiment",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/reviews/config_smoke_webvid2_5m_light_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/results/webvid2_5m_light_v1/smoke"
+    ],
+    "started_unix": 1789911267.55746,
+    "pid": 115562,
+    "pgid": 115562,
+    "exit_code": 0,
+    "finished_unix": 1789911272.8735456,
+    "seconds": 5.3160858154296875,
+    "complete": {
+      "feature_distance_calls": 4032,
+      "linked_parity_queries": 4,
+      "mode": "labels",
+      "n": 64,
+      "router_calls": 1728,
+      "search_calls": 1608,
+      "seconds": 5.187613429,
+      "status": "PASS",
+      "threads": 1
+    }
+  },
+  {
+    "kind": "smoke",
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/bin/experiment",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/reviews/config_smoke_yandex_t2i_official10M_ip_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/results/yandex_t2i_official10M_ip_v1/smoke"
+    ],
+    "started_unix": 1789911272.8814077,
+    "pid": 115583,
+    "pgid": 115583,
+    "exit_code": 0,
+    "finished_unix": 1789911286.0035672,
+    "seconds": 13.122159481048584,
+    "complete": {
+      "feature_distance_calls": 4032,
+      "linked_parity_queries": 4,
+      "mode": "labels",
+      "n": 64,
+      "router_calls": 1728,
+      "search_calls": 1608,
+      "seconds": 12.921851606,
+      "status": "PASS",
+      "threads": 1
+    }
+  },
+  {
+    "kind": "labels",
+    "dataset": "webvid2_5m_light_v1",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/bin/experiment",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/reviews/config_labels_webvid2_5m_light_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/results/webvid2_5m_light_v1/labels"
+    ],
+    "started_unix": 1789911286.0105567,
+    "pid": 115643,
+    "pgid": 115643,
+    "exit_code": 0,
+    "finished_unix": 1789911391.7445467,
+    "seconds": 105.73399019241333,
+    "complete": {
+      "feature_distance_calls": 630000,
+      "linked_parity_queries": 64,
+      "mode": "labels",
+      "n": 10000,
+      "router_calls": 270000,
+      "search_calls": 250128,
+      "seconds": 105.611376119,
+      "status": "PASS",
+      "threads": 1
+    }
+  },
+  {
+    "kind": "labels",
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/bin/experiment",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/reviews/config_labels_yandex_t2i_official10M_ip_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/results/yandex_t2i_official10M_ip_v1/labels"
+    ],
+    "started_unix": 1789911391.7515087,
+    "pid": 115989,
+    "pgid": 115989,
+    "exit_code": 0,
+    "finished_unix": 1789911519.758038,
+    "seconds": 128.00652956962585,
+    "complete": {
+      "feature_distance_calls": 630000,
+      "linked_parity_queries": 64,
+      "mode": "labels",
+      "n": 10000,
+      "router_calls": 270000,
+      "search_calls": 250128,
+      "seconds": 127.767085773,
+      "status": "PASS",
+      "threads": 1
+    }
+  },
+  {
+    "kind": "accept",
+    "dataset": "webvid2_5m_light_v1",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/bin/experiment",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/reviews/config_accept_webvid2_5m_light_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/results/webvid2_5m_light_v1/accept"
+    ],
+    "started_unix": 1789911523.0556617,
+    "pid": 116416,
+    "pgid": 116416,
+    "exit_code": 0,
+    "finished_unix": 1789911658.4115767,
+    "seconds": 135.35591530799866,
+    "complete": {
+      "feature_distance_calls": 503808,
+      "linked_parity_queries": 512,
+      "mode": "evaluate",
+      "n": 4096,
+      "router_calls": 335872,
+      "search_calls": 328192,
+      "seconds": 135.236986615,
+      "status": "PASS",
+      "threads": 1
+    }
+  },
+  {
+    "kind": "accept",
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/bin/experiment",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/reviews/config_accept_yandex_t2i_official10M_ip_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/results/yandex_t2i_official10M_ip_v1/accept"
+    ],
+    "started_unix": 1789911658.4210274,
+    "pid": 116872,
+    "pgid": 116872,
+    "exit_code": 0,
+    "finished_unix": 1789911822.147589,
+    "seconds": 163.72656202316284,
+    "complete": {
+      "feature_distance_calls": 503808,
+      "linked_parity_queries": 512,
+      "mode": "evaluate",
+      "n": 4096,
+      "router_calls": 335872,
+      "search_calls": 328192,
+      "seconds": 163.484659123,
+      "status": "PASS",
+      "threads": 1
+    }
+  }
+]

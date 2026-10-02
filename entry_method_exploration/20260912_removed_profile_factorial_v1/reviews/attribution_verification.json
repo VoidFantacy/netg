@@ -1,0 +1,114 @@
+{
+  "status": "PASS",
+  "metrics_checked": 8,
+  "credit_queries_all_three_channels": 2048,
+  "E41_CF_regression": 4096,
+  "cases": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "negative_row": 3282,
+      "target_hub": 1627796,
+      "hits": {
+        "C": 9,
+        "F": 0,
+        "S": 9,
+        "R": 9
+      },
+      "entries": {
+        "C": [
+          1621105,
+          1627796,
+          2038756
+        ],
+        "F": [
+          42091,
+          1621105,
+          2038756
+        ],
+        "S": [
+          1427523,
+          1621105,
+          2038756
+        ],
+        "R": [
+          1621105,
+          1627796,
+          2038756
+        ]
+      },
+      "target_row_change_sufficient": false,
+      "target_row_change_necessary_in_full_background": true,
+      "target_marginal_alone": 0,
+      "target_marginal_with_rest": -9,
+      "interaction": -9,
+      "target_removed_in_S": true,
+      "target_removed_in_R": false,
+      "S_C_same_output_bits": true,
+      "E41_target_control": "different partition; not a conflicting replication",
+      "R_minus_F_changed_hits": [
+        {
+          "row": 2279,
+          "C": 5,
+          "F": 4,
+          "S": 4,
+          "R": 5
+        },
+        {
+          "row": 3282,
+          "C": 9,
+          "F": 0,
+          "S": 9,
+          "R": 9
+        }
+      ],
+      "R_preserves_all_F_gains": true,
+      "R_never_worse_than_F": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "negative_row": 3962,
+      "target_hub": 8309868,
+      "hits": {
+        "C": 10,
+        "F": 0,
+        "S": 0,
+        "R": 0
+      },
+      "entries": {
+        "C": [
+          3885569,
+          8309868,
+          9780357
+        ],
+        "F": [
+          3885569,
+          9339959,
+          9780357
+        ],
+        "S": [
+          3885569,
+          9339959,
+          9780357
+        ],
+        "R": [
+          3885569,
+          9339959,
+          9780357
+        ]
+      },
+      "target_row_change_sufficient": true,
+      "target_row_change_necessary_in_full_background": false,
+      "target_marginal_alone": -10,
+      "target_marginal_with_rest": 0,
+      "interaction": 10,
+      "target_removed_in_S": true,
+      "target_removed_in_R": true,
+      "S_C_same_output_bits": false,
+      "E41_target_control": "different partition; not a conflicting replication",
+      "R_minus_F_changed_hits": [],
+      "R_preserves_all_F_gains": true,
+      "R_never_worse_than_F": true
+    }
+  ],
+  "new_search": 0
+}

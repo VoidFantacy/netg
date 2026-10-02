@@ -1,0 +1,59 @@
+{
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "dimension": 200,
+  "H": 821,
+  "n": 16,
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+  "GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt.i32",
+  "rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/source_rows.i64",
+  "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/hub_ids.i32",
+  "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "base_n": 10000000,
+  "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+  "threads": 1,
+  "methods": [
+    {
+      "name": "GT101",
+      "route": "exact",
+      "entry_count": 1,
+      "representation": "GT10",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "normalize_W": false
+    },
+    {
+      "name": "GT103",
+      "route": "exact",
+      "entry_count": 3,
+      "representation": "GT10",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "normalize_W": false
+    },
+    {
+      "name": "PrimaryFirst3",
+      "route": "exact",
+      "entry_count": 3,
+      "representation": "GT10",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "normalize_W": false
+    }
+  ],
+  "reference": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/yandex_t2i_official10M_ip_v1",
+  "reference_method": "GT10-hard",
+  "reference_E106": "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1",
+  "E106_family": "Hard",
+  "deadline_unix": 1789890600,
+  "seconds_cap": 600,
+  "max_search_calls": 450000,
+  "smoke": true,
+  "K_L": {
+    "1": [
+      128
+    ],
+    "100": [
+      128
+    ]
+  },
+  "expected_search_calls": 256,
+  "reference_E107": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial",
+  "reference_initial_order": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1"
+}

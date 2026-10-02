@@ -1,0 +1,1 @@
+第一次接续核验发现history83属于E94旧封存，不应原位追加。已保留新增完整文字为history83_session12_addendum.md，原history83从本会话source_before逐字恢复，原实验seal不改。第一次失败与原resume_inspect_v12.py及final_seal.json保留；v2仅将该新报告依赖解析到保存的追加版本，其余原seal逐条核验。不是ANN失败或结果变化。下一命令为src/resume_inspect_v12_v2.py。

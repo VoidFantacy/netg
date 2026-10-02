@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "stage": "P3_PIPELINE_INDEPENDENT_REVIEW",
+  "status": "REQUIRES_ONE_PROVENANCE_FIX",
+  "created_utc": "2026-09-07T17:29:11.242328+00:00",
+  "reviewer": "p1_evaluator independent source review",
+  "sources": {
+    "finalizer": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/finalize_portal_models.py",
+      "sha256": "d1945203dc99e7027ebdc9a414a6b1303df5da0988b491dcc15ac1b30f537a7e"
+    },
+    "evaluation_runner": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/run_p3_evaluation.py",
+      "sha256": "84a3567f23304d8399faad1f2f5dd4485b86299febd5157105691b545cca746e"
+    },
+    "evaluator": {
+      "path": "/data/netg/ACSG/benches/bench_hierarchical_eval_p3.cpp",
+      "sha256": "cf40032dc469c08840e409af23bd503e1ad6571184351a2694776247e21d1316"
+    },
+    "prober": {
+      "path": "/data/netg/ACSG/benches/bench_hierarchical_portals.cpp",
+      "sha256": "9137ae4ebc3b4a3c437fb171b0ffc1b5857d5ea1b610a674a59bf46c8af78385"
+    },
+    "P3_protocol": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+      "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+    },
+    "finalizer_selftest_log": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/logs/p3_finalizer_selftest_v1.log",
+      "sha256": "11ddb52e56b980a8a970c7fd8f51fb7c9b9e28113e05b3ddebf2e879d7d03753"
+    }
+  },
+  "scope": {
+    "review_mode": "read-only source and existing metadata/log evidence",
+    "actual_dataset_vectors_or_GT_read": false,
+    "ANN_calls_by_reviewer": 0,
+    "new_experiments_by_reviewer": 0,
+    "changed_reviewed_sources": false
+  },
+  "finalizer": {
+    "status": "PASS_SOURCE_AND_EXISTING_SYNTHETIC_SELFTEST",
+    "schema2_interface": "All required evaluator fields present; labels/portals absolute paths and checksums match; no geometry prototype/temperature fields needed.",
+    "confirmed": [
+      "Requires complete 256-leaf probe and frozen plan/fit/partition/protocol/audit/source/binary bindings.",
+      "Revalidates candidate-major uint16 masks, GT10 rank order, target-leaf bit support, leaf membership, complete call counts and aggregate NDC/expansion/MAC.",
+      "Independently rebuilds greedy marginal coverage using Python sets; validates per-leaf choices/gains and final 768-ID C++ arrays.",
+      "Writes both frequency3 and greedy3 models for each fixed lambda; does not choose based on pilot outcomes.",
+      "Retains zero-query frequency fallback, zero marginal gains, and negative greedy-minus-frequency proxy differences.",
+      "Costs separate finalizer work from reused probe cache; neither mask audit nor proxy improvement is called online improvement."
+    ],
+    "existing_selftest": {
+      "status": "PASS",
+      "source_sha256": "d1945203dc99e7027ebdc9a414a6b1303df5da0988b491dcc15ac1b30f537a7e",
+      "real_data_accessed": false,
+      "ANN_calls": 0,
+      "cases": "set-greedy example, zero-gain ties, empty-query fallback, negative proxy contrast, wrong target bits, outside-GT10 bits, query shape, partial probe, missing leaf"
+    },
+    "needed_fixes": []
+  },
+  "evaluation_runner": {
+    "status": "ONE_INPUT_BINDING_FIX_REQUIRED",
+    "confirmed": [
+      "Fixed model order lambda0_frequency3, lambda1_frequency3, lambda0_greedy3, lambda1_greedy3 matches preregistration.",
+      "Each model uses Fast plus two oracle methods, pilot0:10000, L64/128, K10, m3, 16 threads, count1 then timing5, warmup128.",
+      "Requires P2 PASS and planned P1_P3_REACCEPTANCE PASS with evaluator source/binary and P3 protocol hashes.",
+      "Checks model identities, fit fingerprints, graph/audit/protocol bindings, actual labels/portal hashes, and same labels between portal rules for each lambda.",
+      "Eight sequential subprocesses inherit controller process group; deadline checked between cells; outputs/logs isolated; interrupted job retains INCOMPLETE execution state.",
+      "Between-model timing explicitly descriptive; runner completion is measurement completion, not P3 scientific gate PASS."
+    ],
+    "needed_fixes": [
+      {
+        "id": "R1_FAST_RAW_BINDING",
+        "severity": "required_before_real_P3_performance",
+        "file": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/run_p3_evaluation.py",
+        "lines": [
+          65,
+          71,
+          113,
+          118
+        ],
+        "finding": "Runner validates paired Fast manifest fit fingerprints but never checks actual hubs_file and ids_file bytes against the manifest hubs_sha256 and ids_sha256. The C++ evaluator validates Fast raw shape/IDs/finiteness, not these hashes.",
+        "impact": "A substituted same-shape prototype/ID file could silently change the matched Fast baseline while the output retains a 20K fit manifest. No evidence of such a substitution was observed; this is a missing input-contract enforcement.",
+        "required_change": "At preflight verify Fast input_audit_sha256 equals supplied audit SHA; hash actual hubs_file and ids_file against recorded hashes and record their bindings. Before each count/timing cell recheck Fast manifest and these small raw files against the frozen bindings.",
+        "verification": "Read-only check the added conditions and saved bindings; no additional ANN or performance run is needed to validate this change."
+      }
+    ]
+  },
+  "downstream_checks": "The result-analysis stage must verify full 10K count/plain query alignment and all fixed model/method/L contrasts before P3 gate; this review does not replace those future artifact checks."
+}

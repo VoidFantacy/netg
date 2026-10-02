@@ -1,0 +1,41 @@
+[
+  {
+    "argv": [
+      "g++",
+      "-O3",
+      "-march=native",
+      "-std=c++17",
+      "-pthread",
+      "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/router_work_identity_v1/evaluate.cpp",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/router_work_identity_v1/evaluate"
+    ],
+    "kind": "compile",
+    "started_unix": 1789899460.6993234,
+    "timeout_seconds": 120,
+    "pid": 74344,
+    "pgid": 74344,
+    "exit_code": 0,
+    "seconds": 5.070057153701782,
+    "finished_unix": 1789899465.769382
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/router_work_identity_v1/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/router_work_identity_v1/config.locked.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/router_work_identity_v1/results"
+    ],
+    "kind": "routing",
+    "started_unix": 1789899465.7700536,
+    "timeout_seconds": 120,
+    "pid": 74370,
+    "pgid": 74370,
+    "exit_code": 0,
+    "seconds": 0.5645787715911865,
+    "finished_unix": 1789899466.334634
+  }
+]

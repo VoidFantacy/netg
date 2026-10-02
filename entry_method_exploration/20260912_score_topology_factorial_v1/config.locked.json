@@ -1,0 +1,42 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "steps": [
+    20,
+    40,
+    60,
+    80,
+    100,
+    120,
+    140,
+    160,
+    180,
+    200
+  ],
+  "seed": 20260921,
+  "arm": "rl",
+  "states": 500,
+  "normal_builds": 340,
+  "topology_installations": 340,
+  "physical_graphs": 100,
+  "NSG_hard_cap": 60000,
+  "per_dataset_reserved_NSG": 30000,
+  "endpoint_normal_NSG_expected": 1333,
+  "parity_NSG_expected": 4800,
+  "HNSW_expected": 2051200,
+  "HNSW_hard_cap": 2200000,
+  "train_queries": 4096,
+  "optimizer_updates": 0,
+  "threads": 1,
+  "query_stop_epoch": 1789213200,
+  "latest_launch_epoch": 1789212600,
+  "followup_gate": {
+    "gain_fraction_min": 0.75,
+    "loss_fraction_max": 0.5,
+    "best_static_net_sum_nonworse": true,
+    "positive_gain_required": true,
+    "both_datasets_required": true
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "version": "E97_L2_R1_R100",
+  "datasets": [
+    "gist1m_l2_v1",
+    "deep10m_l2_v1",
+    "sift10m_bigann_l2_v1",
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "metric": "per_dataset_native_L2_or_IP",
+  "K": [
+    1,
+    100
+  ],
+  "L": {
+    "1": [
+      32,
+      48,
+      64,
+      96,
+      128,
+      160,
+      200,
+      256,
+      320,
+      400,
+      512,
+      640,
+      800,
+      1000,
+      1250,
+      1500
+    ],
+    "100": [
+      100,
+      112,
+      128,
+      160,
+      200,
+      256,
+      320,
+      400,
+      512,
+      640,
+      800,
+      900,
+      1000,
+      1120,
+      1250,
+      1500
+    ]
+  },
+  "methods": [
+    "NSG",
+    "GT10-hard",
+    "GT10-soft-t1",
+    "GATE",
+    "HNSW"
+  ],
+  "qgt_rows": 5000,
+  "fit_rows": 20000,
+  "gate_train_rows": 10000,
+  "monitor_rows": 1024,
+  "cal_rows": 1024,
+  "gt_k": 100,
+  "gt10_hubs": 800,
+  "gate_hubs": 512,
+  "seed": 20260828,
+  "NSG": {
+    "R": 64,
+    "L": 100,
+    "C": 512,
+    "backend": "original IndexACSG add(build_type=1), includes faiss NSG and original connectivity pass"
+  },
+  "query_threads": 1,
+  "offline_threads": 16,
+  "repeats": 3,
+  "max_rss_gib": 96,
+  "min_free_gib": 2,
+  "created_unix": 1789434048.5342908,
+  "excluded_datasets": [
+    "laion10m_acsg_v1"
+  ],
+  "scope_amendment": "User explicitly requests all five datasets, excluding LAION, with fresh K1/K100 measurements and new figures."
+}

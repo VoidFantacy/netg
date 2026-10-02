@@ -1,0 +1,25 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "models": [
+    "baseline",
+    "zero_mass2",
+    "sham_mass2"
+  ],
+  "weight_ratio": 2,
+  "random_query_seed": 20260913,
+  "threads": 1,
+  "query_cpu": 15,
+  "per_dataset_NSG_reserved": 45000,
+  "total_NSG_cap": 90000,
+  "per_dataset_HNSW": 66528,
+  "per_dataset_builds": 3,
+  "candidate_selection": "zero_mass2 only; cal net hits>0, failures nonincreasing, totalNDC<=baseline*1.01; sham excluded; audit descriptive",
+  "latest_launch": 1789268100,
+  "query_stop": 1789268700,
+  "session_safe_exit": 1789269269,
+  "day_deadline": 1789304400,
+  "final_validation_access": false
+}

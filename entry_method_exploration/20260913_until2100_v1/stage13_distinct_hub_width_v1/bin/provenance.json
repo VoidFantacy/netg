@@ -1,0 +1,61 @@
+{
+  "builds": [
+    {
+      "argv": [
+        "c++",
+        "-std=c++17",
+        "-O3",
+        "-march=native",
+        "-fopenmp",
+        "-fPIC",
+        "-Wall",
+        "-Wextra",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/benches",
+        "-I/data/netg/ACSG/build/_deps/json-src/include",
+        "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage13_distinct_hub_width_v1/src/evaluate.cpp",
+        "/data/netg/ACSG/ACSG/ACSG.cpp",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "/data/netg/ACSG/build/ACSG/libACSG.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "/usr/lib/x86_64-linux-gnu/libopenblas.so",
+        "-lm",
+        "-ldl",
+        "-lpthread",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage13_distinct_hub_width_v1/bin/evaluate"
+      ],
+      "seconds": 14.347443116999784,
+      "returncode": 0,
+      "binary": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage13_distinct_hub_width_v1/bin/evaluate",
+        "bytes": 3482840,
+        "mtime_ns": 1789276174812593324,
+        "sha256": "8e01a6819198da6d901513c7496da751396313fa80909de7f4be8efe96d5416c"
+      }
+    },
+    {
+      "argv": [
+        "c++",
+        "-std=c++17",
+        "-O3",
+        "-march=native",
+        "-I/data/netg/ACSG/benches",
+        "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage13_distinct_hub_width_v1/src/synthetic.cpp",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage13_distinct_hub_width_v1/bin/synthetic"
+      ],
+      "seconds": 2.269016431999262,
+      "returncode": 0,
+      "binary": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage13_distinct_hub_width_v1/bin/synthetic",
+        "bytes": 103432,
+        "mtime_ns": 1789276177080609294,
+        "sha256": "b13fbf8bcadc038b18c3fcceb17044fd2732e753d0aa316299d8472a51ccac9e"
+      }
+    }
+  ],
+  "seconds": 16.616459548999046
+}

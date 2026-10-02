@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "branch": "STOP_CAPABILITY_PILOT",
+  "requirements": [
+    {
+      "requirement": "theory, counterexamples and prior-work distinction",
+      "status": "COMPLETE",
+      "evidence": [
+        "research.md",
+        "theory_bounds.md",
+        "prior_work_addendum.md"
+      ]
+    },
+    {
+      "requirement": "freeze roles, controls, costs and stop rules before fitting",
+      "status": "COMPLETE",
+      "evidence": [
+        "config.locked.json",
+        "protocol.md",
+        "reviews/pretraining_freeze.json"
+      ]
+    },
+    {
+      "requirement": "complete all two-dataset query-out controls",
+      "status": "COMPLETE",
+      "evidence": [
+        "reviews/training_complete.json",
+        "analysis/results.json",
+        "training.log"
+      ]
+    },
+    {
+      "requirement": "audit errors before attributing a negative result",
+      "status": "COMPLETE_WITH_STATED_SCOPE",
+      "evidence": [
+        "reviews/preflight.json",
+        "reviews/independent_audit.json",
+        "reviews/label_return_audit.json"
+      ]
+    },
+    {
+      "requirement": "conditional native, fresh source and paid full-wall stage",
+      "status": "NOT_TRIGGERED_BY_FROZEN_GATE",
+      "evidence": [
+        "analysis/results.json",
+        "decision.md"
+      ]
+    },
+    {
+      "requirement": "report all outcomes, costs, limits and stopping boundary",
+      "status": "COMPLETE",
+      "evidence": [
+        "report.md",
+        "decision.md",
+        "figures/oof_utility.png"
+      ]
+    },
+    {
+      "requirement": "preserve source/default and synchronize role-separated documents",
+      "status": "COMPLETE",
+      "evidence": [
+        "reviews/source_identity.json",
+        "source_after/"
+      ]
+    }
+  ],
+  "source_files_verified": 920,
+  "completed_model_runs": 48,
+  "prediction_files": 72,
+  "checked_local_links": 37,
+  "active_experiment_processes": [],
+  "new_bytes": 723561433,
+  "free_bytes": 12400795648,
+  "figure_nonblank": true,
+  "figure_visual_review": "Inspected rendered PNG; labels, intervals, zero lines and both panels legible.",
+  "default_changed": false,
+  "new_search_calls": 0,
+  "native_performance_measured": false,
+  "fresh_blind_test": false,
+  "seconds": 0.5158555009993506
+}

@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "figures": 3,
+  "formats": [
+    "png",
+    "svg"
+  ],
+  "workbook_sheets": 8,
+  "sources": [
+    [
+      "Protocol",
+      "/data/netg/ACSG/entry_method_exploration/20260911_direct_reward_policy_v1/protocol.md"
+    ],
+    [
+      "Deployment plan",
+      "/data/netg/ACSG/entry_method_exploration/20260911_direct_reward_policy_v1/deployment_plan.md"
+    ],
+    [
+      "Configuration repair",
+      "/data/netg/ACSG/entry_method_exploration/20260911_direct_reward_policy_v1/configuration_repair.md"
+    ],
+    [
+      "Complete-action labels",
+      "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/labels"
+    ],
+    [
+      "Frozen reward scales",
+      "/data/netg/ACSG/entry_method_exploration/20260911_direct_reward_policy_v1/reviews/reward_scales.json"
+    ],
+    [
+      "Report",
+      "/data/netg/ACSG/entry_method_exploration/20260911_direct_reward_policy_v1/report.md"
+    ],
+    [
+      "Expected reward",
+      "Exact softmax expectation over 56 complete C8 triples; not stochastic online evaluation"
+    ],
+    [
+      "Cached utility",
+      "Frozen float32 model selects C8 action, then reads existing real L128/K10 labels"
+    ],
+    [
+      "Real retrieval",
+      "Fit20K/cal1024/audit1024: full candidate routing and original NSG; raw IDs independently rescored"
+    ],
+    [
+      "Cost",
+      "route NDC includes two HNSW proposals, H anchor scores and 8 model scores; graph NDC separate"
+    ],
+    [
+      "No QPS",
+      "Prelocked development gate failed; validation and wall repetitions were not run"
+    ],
+    [
+      "Limits",
+      "Historical split use; one H/seed/lambda/temperature; new reward has larger displacement than teacher"
+    ]
+  ]
+}

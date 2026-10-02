@@ -1,0 +1,45 @@
+{
+  "status": "STOP_FULL_FEEDBACK_BUDGET_EXPANSION",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "arms": [
+        {
+          "arm": "rl",
+          "passing_seeds": [
+            20260921,
+            20260922
+          ],
+          "passed": true
+        },
+        {
+          "arm": "es",
+          "passing_seeds": [],
+          "passed": false
+        }
+      ],
+      "passed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "arms": [
+        {
+          "arm": "rl",
+          "passing_seeds": [
+            20260922
+          ],
+          "passed": true
+        },
+        {
+          "arm": "es",
+          "passing_seeds": [
+            20260922
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "scope": "historically used train/monitor, checkpoint selection only; no development/QPS or default replacement"
+}

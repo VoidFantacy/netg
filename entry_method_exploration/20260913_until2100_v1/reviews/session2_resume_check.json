@@ -1,0 +1,317 @@
+{
+  "status": "PASS_SESSION2_READ_ONLY_RESUME",
+  "epoch": 1789268021.4587674,
+  "checked_files": 2642,
+  "free_GiB": 7.525714874267578,
+  "active_native_or_training": [],
+  "stages": [
+    {
+      "stage": "stage1_support_v1",
+      "state": {
+        "status": "COMPLETE_VERIFIED_FIXED_ACTION_SUPPORT",
+        "gate": "STOP_SAME_LOCAL_ACTION_CONTINUOUS_EXPANSION",
+        "new_NSG": 17830,
+        "optimizer_updates": 0,
+        "next_action": "Write report/figures, freeze artifacts and synchronized root documents; evaluate any distinct next direction under new protocol"
+      },
+      "complete_jobs": 2,
+      "failed_jobs": 0
+    },
+    {
+      "stage": "stage2_missing_targets_v1",
+      "state": {
+        "status": "COMPLETE_VERIFIED_MISSING_TARGET_DEVELOPMENT",
+        "selection": [
+          {
+            "dataset": "webvid2_5m_light_v1",
+            "selected": "baseline",
+            "rules": {
+              "net_positive": false,
+              "failures_nonincreasing": false,
+              "total_NDC_within_one_percent": true
+            },
+            "source": "cal only; frozen rule; audit not an argument",
+            "sham_selectable": false
+          },
+          {
+            "dataset": "yandex_t2i_official10M_ip_v1",
+            "selected": "baseline",
+            "rules": {
+              "net_positive": false,
+              "failures_nonincreasing": false,
+              "total_NDC_within_one_percent": true
+            },
+            "source": "cal only; frozen rule; audit not an argument",
+            "sham_selectable": false
+          }
+        ],
+        "next_action": "Report all fit/cal/audit gains and damage; no formal QPS claim",
+        "formal_QPS_points": 0
+      },
+      "complete_jobs": 2,
+      "failed_jobs": 0
+    },
+    {
+      "stage": "stage3_missing_factorial_v1",
+      "state": {
+        "status": "COMPLETE_MISSING_FACTORIAL_NO_CAL_GO",
+        "native_pids": [],
+        "formal_QPS_points": 0,
+        "selected": {
+          "webvid2_5m_light_v1": "C",
+          "yandex_t2i_official10M_ip_v1": "C"
+        },
+        "next": "End current session safely; successor owns new independent protocol"
+      },
+      "complete_jobs": 2,
+      "failed_jobs": 0
+    },
+    {
+      "stage": "stage4_zero_hit_mass_v1",
+      "state": {
+        "status": "COMPLETE_ZERO_MASS_FIT_SIGNAL_NO_CAL_GO",
+        "selection": [
+          {
+            "dataset": "webvid2_5m_light_v1",
+            "selected": "baseline",
+            "rules": {
+              "net_positive": false,
+              "failures_nonincreasing": true,
+              "total_NDC_within_one_percent": true
+            },
+            "source": "cal only; frozen rule; audit not an argument",
+            "sham_selectable": false
+          },
+          {
+            "dataset": "yandex_t2i_official10M_ip_v1",
+            "selected": "baseline",
+            "rules": {
+              "net_positive": false,
+              "failures_nonincreasing": false,
+              "total_NDC_within_one_percent": true
+            },
+            "source": "cal only; frozen rule; audit not an argument",
+            "sham_selectable": false
+          }
+        ],
+        "next_action": "Report all fit/cal/audit gains and damage; no formal QPS claim",
+        "formal_QPS_points": 0
+      },
+      "complete_jobs": 2,
+      "failed_jobs": 0
+    },
+    {
+      "stage": "stage5_frozen_pool_aux_v1",
+      "state": {
+        "status": "COMPLETE_FIXED_POOL_AUX_NO_GATE_PASS",
+        "selection": {
+          "webvid2_5m_light_v1": {
+            "best_all": "baseline",
+            "best_new": "E62_topology",
+            "candidates": [
+              {
+                "model": "E61_missing",
+                "rules": {
+                  "net_positive": true,
+                  "both_halves_nonnegative": false,
+                  "failures_nonincreasing": false,
+                  "total_NDC_within_one_percent": true
+                },
+                "passed": false,
+                "net_hits": 7,
+                "failure_count": 177,
+                "total_NDC": 1757.9255533199196,
+                "halves_net_hits": [
+                  24,
+                  -17
+                ],
+                "fixed_rank": 0
+              },
+              {
+                "model": "E62_score",
+                "rules": {
+                  "net_positive": false,
+                  "both_halves_nonnegative": false,
+                  "failures_nonincreasing": false,
+                  "total_NDC_within_one_percent": true
+                },
+                "passed": false,
+                "net_hits": -60,
+                "failure_count": 180,
+                "total_NDC": 1757.50930583501,
+                "halves_net_hits": [
+                  -56,
+                  -4
+                ],
+                "fixed_rank": 1
+              },
+              {
+                "model": "E62_topology",
+                "rules": {
+                  "net_positive": true,
+                  "both_halves_nonnegative": true,
+                  "failures_nonincreasing": false,
+                  "total_NDC_within_one_percent": true
+                },
+                "passed": false,
+                "net_hits": 38,
+                "failure_count": 173,
+                "total_NDC": 1756.144366197183,
+                "halves_net_hits": [
+                  31,
+                  7
+                ],
+                "fixed_rank": 2
+              },
+              {
+                "model": "E63_zero_mass",
+                "rules": {
+                  "net_positive": false,
+                  "both_halves_nonnegative": false,
+                  "failures_nonincreasing": false,
+                  "total_NDC_within_one_percent": true
+                },
+                "passed": false,
+                "net_hits": -2,
+                "failure_count": 172,
+                "total_NDC": 1756.2313883299798,
+                "halves_net_hits": [
+                  6,
+                  -8
+                ],
+                "fixed_rank": 3
+              }
+            ],
+            "sham_selectable": false
+          },
+          "yandex_t2i_official10M_ip_v1": {
+            "best_all": "baseline",
+            "best_new": "E63_zero_mass",
+            "candidates": [
+              {
+                "model": "E61_missing",
+                "rules": {
+                  "net_positive": false,
+                  "both_halves_nonnegative": false,
+                  "failures_nonincreasing": false,
+                  "total_NDC_within_one_percent": true
+                },
+                "passed": false,
+                "net_hits": -74,
+                "failure_count": 164,
+                "total_NDC": 2971.41134305835,
+                "halves_net_hits": [
+                  -38,
+                  -36
+                ],
+                "fixed_rank": 0
+              },
+              {
+                "model": "E62_score",
+                "rules": {
+                  "net_positive": false,
+                  "both_halves_nonnegative": false,
+                  "failures_nonincreasing": false,
+                  "total_NDC_within_one_percent": true
+                },
+                "passed": false,
+                "net_hits": -78,
+                "failure_count": 164,
+                "total_NDC": 2975.135563380282,
+                "halves_net_hits": [
+                  -21,
+                  -57
+                ],
+                "fixed_rank": 1
+              },
+              {
+                "model": "E62_topology",
+                "rules": {
+                  "net_positive": false,
+                  "both_halves_nonnegative": false,
+                  "failures_nonincreasing": false,
+                  "total_NDC_within_one_percent": true
+                },
+                "passed": false,
+                "net_hits": -24,
+                "failure_count": 158,
+                "total_NDC": 2969.8094818913482,
+                "halves_net_hits": [
+                  -30,
+                  6
+                ],
+                "fixed_rank": 2
+              },
+              {
+                "model": "E63_zero_mass",
+                "rules": {
+                  "net_positive": false,
+                  "both_halves_nonnegative": false,
+                  "failures_nonincreasing": true,
+                  "total_NDC_within_one_percent": true
+                },
+                "passed": false,
+                "net_hits": -18,
+                "failure_count": 154,
+                "total_NDC": 2972.4763581488933,
+                "halves_net_hits": [
+                  -23,
+                  5
+                ],
+                "fixed_rank": 3
+              }
+            ],
+            "sham_selectable": false
+          }
+        },
+        "new_NSG": 222880,
+        "QPS_points": 0,
+        "day_goal_complete": false
+      },
+      "complete_jobs": 2,
+      "failed_jobs": 1
+    },
+    {
+      "stage": "stage6_development_wall_v1",
+      "state": {
+        "status": "COMPLETE_DEVELOPMENT_WALL_LOCAL_WEB_SIGNAL_NO_REPLACEMENT",
+        "formal_development_QPS_points": 45,
+        "final_validation_QPS_points": 0,
+        "day_goal_complete": false,
+        "native_pids": [],
+        "member_delta_comparisons": 35
+      },
+      "complete_jobs": 2,
+      "failed_jobs": 0
+    }
+  ],
+  "campaign_state": {
+    "status": "E65_NATIVE_SAFE_BOUNDARY",
+    "started_at": 1789260691.0363264,
+    "writer": "authorized independent research session",
+    "day_goal_complete": false,
+    "session_safe_exit_deadline": 1789269269,
+    "day_deadline": 1789304400,
+    "native_pids": [],
+    "next_action": "E65 frozen development wall comparison, final validation still excluded",
+    "stage": "E65",
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "pid_scope": "Sandbox process namespace; tool session managed until process exit",
+    "last_dataset": "yandex_t2i_official10M_ip_v1",
+    "last_native_status": "COMPLETE",
+    "stage1_status": "STOP_SAME_LOCAL_ACTION_CONTINUOUS_EXPANSION",
+    "stage1_NSG": 17830,
+    "stage2_status": "NO_CAL_GO",
+    "total_new_NSG": 297366,
+    "stage3_status": "NO_CAL_GO",
+    "total_HNSW": 1326816,
+    "total_builds": 342,
+    "formal_QPS_points": 0,
+    "session_safe_boundary_epoch": 1789264695.8011076,
+    "stage4_status": "NO_CAL_GO_FIT_SIGNAL",
+    "stage5_status": "NO_AUX_GATE_PASS"
+  },
+  "next_design": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/next_stage_design_session2.md",
+  "next_action": "Use a new independent version and prospective protocol. Never rerun completed stage1..6 runners.",
+  "data_roles": "All fit/cal/audit/aux7952 are historical and exposed; E64 aux is selection training; E65 is development wall only; final E34 inputs excluded today."
+}

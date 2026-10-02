@@ -1,0 +1,1344 @@
+[
+  {
+    "dataset": "deep10m_l2_v1",
+    "K": 1,
+    "target": 0.9,
+    "methods": {
+      "GATE": {
+        "recall": 0.941,
+        "qps_mean": 8319.88393756794,
+        "qps_min": 8212.03773787743,
+        "qps_max": 8494.63512823841,
+        "route_ndc_mean": 292.0111,
+        "graph_ndc_mean": 1259.3407,
+        "L": 32
+      },
+      "GT10-hard": {
+        "recall": 0.9413,
+        "qps_mean": 8689.35153491704,
+        "qps_min": 8421.15038074682,
+        "qps_max": 8842.426066375581,
+        "route_ndc_mean": 131.1481,
+        "graph_ndc_mean": 1247.3239,
+        "L": 32
+      },
+      "GT10-soft-t1": {
+        "recall": 0.9413,
+        "qps_mean": 8804.336532630272,
+        "qps_min": 8725.770628060107,
+        "qps_max": 8907.252174983525,
+        "route_ndc_mean": 124.5111,
+        "graph_ndc_mean": 1245.9629,
+        "L": 32
+      },
+      "HNSW": {
+        "recall": 0.9342,
+        "qps_mean": 7414.02897728503,
+        "qps_min": 7290.838510952681,
+        "qps_max": 7485.5237773804,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 1303.7428,
+        "L": 32
+      },
+      "NSG": {
+        "recall": 0.9433,
+        "qps_mean": 7497.139241631335,
+        "qps_min": 7106.9467006167315,
+        "qps_max": 7893.69105267801,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 1460.8145,
+        "L": 32
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "deep10m_l2_v1",
+    "K": 1,
+    "target": 0.95,
+    "methods": {
+      "GATE": {
+        "recall": 0.965,
+        "qps_mean": 6069.898445341234,
+        "qps_min": 6011.770221278389,
+        "qps_max": 6178.6918563069285,
+        "route_ndc_mean": 292.0111,
+        "graph_ndc_mean": 1714.2727,
+        "L": 48
+      },
+      "GT10-hard": {
+        "recall": 0.9661,
+        "qps_mean": 6418.480704586066,
+        "qps_min": 6384.018935449598,
+        "qps_max": 6477.862845929188,
+        "route_ndc_mean": 131.1481,
+        "graph_ndc_mean": 1701.9304,
+        "L": 48
+      },
+      "GT10-soft-t1": {
+        "recall": 0.9662,
+        "qps_mean": 6363.014563821532,
+        "qps_min": 6315.825020477073,
+        "qps_max": 6451.313990956845,
+        "route_ndc_mean": 124.5111,
+        "graph_ndc_mean": 1700.7584,
+        "L": 48
+      },
+      "HNSW": {
+        "recall": 0.9617,
+        "qps_mean": 5419.364204804401,
+        "qps_min": 5375.472759457706,
+        "qps_max": 5451.669540268939,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 1734.399,
+        "L": 48
+      },
+      "NSG": {
+        "recall": 0.9666,
+        "qps_mean": 5744.571582023123,
+        "qps_min": 5677.930235220098,
+        "qps_max": 5809.953372631715,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 1916.0559,
+        "L": 48
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "deep10m_l2_v1",
+    "K": 1,
+    "target": 0.99,
+    "methods": {
+      "GATE": {
+        "recall": 0.9904,
+        "qps_mean": 2667.631910388575,
+        "qps_min": 2587.161467244299,
+        "qps_max": 2715.079440764575,
+        "route_ndc_mean": 292.0111,
+        "graph_ndc_mean": 3772.4285,
+        "L": 128
+      },
+      "GT10-hard": {
+        "recall": 0.9908,
+        "qps_mean": 2753.3855199424993,
+        "qps_min": 2701.582224395764,
+        "qps_max": 2816.7477766793636,
+        "route_ndc_mean": 131.1481,
+        "graph_ndc_mean": 3762.3234,
+        "L": 128
+      },
+      "GT10-soft-t1": {
+        "recall": 0.9907,
+        "qps_mean": 2799.2507625810545,
+        "qps_min": 2760.02993581461,
+        "qps_max": 2824.8390023405814,
+        "route_ndc_mean": 124.5111,
+        "graph_ndc_mean": 3761.4252,
+        "L": 128
+      },
+      "HNSW": {
+        "recall": 0.9906,
+        "qps_mean": 2447.4916065349094,
+        "qps_min": 2439.7982311651176,
+        "qps_max": 2451.477232086126,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 3696.2761,
+        "L": 128
+      },
+      "NSG": {
+        "recall": 0.9911,
+        "qps_mean": 2550.1911561185752,
+        "qps_min": 2433.6297921684463,
+        "qps_max": 2647.5442186799,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 3976.3071,
+        "L": 128
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "deep10m_l2_v1",
+    "K": 100,
+    "target": 0.9,
+    "methods": {
+      "GATE": {
+        "recall": 0.926156,
+        "qps_mean": 3431.916248139674,
+        "qps_min": 3422.3500311466023,
+        "qps_max": 3444.712786575379,
+        "route_ndc_mean": 292.0111,
+        "graph_ndc_mean": 3084.5423,
+        "L": 100
+      },
+      "GT10-hard": {
+        "recall": 0.9260160000000001,
+        "qps_mean": 3465.630628515415,
+        "qps_min": 3392.7738225723406,
+        "qps_max": 3506.4725008106057,
+        "route_ndc_mean": 131.1481,
+        "graph_ndc_mean": 3074.117,
+        "L": 100
+      },
+      "GT10-soft-t1": {
+        "recall": 0.926021,
+        "qps_mean": 3503.607504834504,
+        "qps_min": 3495.968258873597,
+        "qps_max": 3512.356427588361,
+        "route_ndc_mean": 124.5111,
+        "graph_ndc_mean": 3073.1426,
+        "L": 100
+      },
+      "HNSW": {
+        "recall": 0.9152410000000001,
+        "qps_mean": 3011.8156209295794,
+        "qps_min": 2997.5249307753015,
+        "qps_max": 3033.1504784412705,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 3038.7512,
+        "L": 100
+      },
+      "NSG": {
+        "recall": 0.9264600000000001,
+        "qps_mean": 3298.4909630677284,
+        "qps_min": 3271.084144118969,
+        "qps_max": 3325.2591662518835,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 3288.3303,
+        "L": 100
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "deep10m_l2_v1",
+    "K": 100,
+    "target": 0.95,
+    "methods": {
+      "GATE": {
+        "recall": 0.9601130000000001,
+        "qps_mean": 2296.600186853399,
+        "qps_min": 2274.6167513703012,
+        "qps_max": 2314.1895218773875,
+        "route_ndc_mean": 292.0111,
+        "graph_ndc_mean": 4526.7887,
+        "L": 160
+      },
+      "GT10-hard": {
+        "recall": 0.9598260000000001,
+        "qps_mean": 2339.5250445661673,
+        "qps_min": 2323.1450089066047,
+        "qps_max": 2350.525126446523,
+        "route_ndc_mean": 131.1481,
+        "graph_ndc_mean": 4517.2971,
+        "L": 160
+      },
+      "GT10-soft-t1": {
+        "recall": 0.959832,
+        "qps_mean": 2338.3139895568443,
+        "qps_min": 2315.0625270411024,
+        "qps_max": 2367.1029171695354,
+        "route_ndc_mean": 124.5111,
+        "graph_ndc_mean": 4516.4136,
+        "L": 160
+      },
+      "HNSW": {
+        "recall": 0.954083,
+        "qps_mean": 2018.0898308489188,
+        "qps_min": 2005.9066613570396,
+        "qps_max": 2036.2034887075006,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 4419.6765,
+        "L": 160
+      },
+      "NSG": {
+        "recall": 0.960283,
+        "qps_mean": 2211.95921062776,
+        "qps_min": 2168.8325099470594,
+        "qps_max": 2234.2316068583773,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 4731.0308,
+        "L": 160
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "deep10m_l2_v1",
+    "K": 100,
+    "target": 0.99,
+    "methods": {
+      "GATE": {
+        "recall": 0.993096,
+        "qps_mean": 848.6975283653111,
+        "qps_min": 834.3732251298799,
+        "qps_max": 859.6985497588958,
+        "route_ndc_mean": 292.0111,
+        "graph_ndc_mean": 11624.0754,
+        "L": 512
+      },
+      "GT10-hard": {
+        "recall": 0.993087,
+        "qps_mean": 853.2059606380641,
+        "qps_min": 849.7873496002893,
+        "qps_max": 859.2436004140689,
+        "route_ndc_mean": 131.1481,
+        "graph_ndc_mean": 11619.9475,
+        "L": 512
+      },
+      "GT10-soft-t1": {
+        "recall": 0.993081,
+        "qps_mean": 852.7963943429908,
+        "qps_min": 828.638847603496,
+        "qps_max": 867.7918382863079,
+        "route_ndc_mean": 124.5111,
+        "graph_ndc_mean": 11619.2126,
+        "L": 512
+      },
+      "HNSW": {
+        "recall": 0.99234,
+        "qps_mean": 727.2237299797242,
+        "qps_min": 722.9629225138837,
+        "qps_max": 734.4520979648453,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 11257.3188,
+        "L": 512
+      },
+      "NSG": {
+        "recall": 0.993124,
+        "qps_mean": 818.2091458225024,
+        "qps_min": 786.9724228156407,
+        "qps_max": 842.2160168691253,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 11830.8395,
+        "L": 512
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "gist1m_l2_v1",
+    "K": 1,
+    "target": 0.9,
+    "methods": {
+      "GATE": {
+        "recall": 0.926,
+        "qps_mean": 1143.785005063748,
+        "qps_min": 1140.131635380134,
+        "qps_max": 1146.8928937978408,
+        "route_ndc_mean": 302.78,
+        "graph_ndc_mean": 2905.449,
+        "L": 96
+      },
+      "GT10-hard": {
+        "recall": 0.923,
+        "qps_mean": 1228.9884653657946,
+        "qps_min": 1228.8949398692612,
+        "qps_max": 1229.1733401816316,
+        "route_ndc_mean": 126.737,
+        "graph_ndc_mean": 2786.213,
+        "L": 96
+      },
+      "GT10-soft-t1": {
+        "recall": 0.922,
+        "qps_mean": 1229.4097155114582,
+        "qps_min": 1228.3356778248858,
+        "qps_max": 1230.1123946560347,
+        "route_ndc_mean": 120.385,
+        "graph_ndc_mean": 2786.951,
+        "L": 96
+      },
+      "HNSW": {
+        "recall": 0.915,
+        "qps_mean": 965.5143662661047,
+        "qps_min": 962.4562931754284,
+        "qps_max": 969.704886250121,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 2983.545,
+        "L": 96
+      },
+      "NSG": {
+        "recall": 0.926,
+        "qps_mean": 1220.2298527478083,
+        "qps_min": 1217.4242887121895,
+        "qps_max": 1221.8178846720723,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 2922.496,
+        "L": 96
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "gist1m_l2_v1",
+    "K": 1,
+    "target": 0.95,
+    "methods": {
+      "GATE": {
+        "recall": 0.958,
+        "qps_mean": 768.0023006504247,
+        "qps_min": 766.5472024570474,
+        "qps_max": 770.3221076703691,
+        "route_ndc_mean": 302.78,
+        "graph_ndc_mean": 4357.459,
+        "L": 160
+      },
+      "GT10-hard": {
+        "recall": 0.959,
+        "qps_mean": 804.3548429473466,
+        "qps_min": 801.9807667432716,
+        "qps_max": 806.2277975647847,
+        "route_ndc_mean": 126.737,
+        "graph_ndc_mean": 4244.709,
+        "L": 160
+      },
+      "GT10-soft-t1": {
+        "recall": 0.958,
+        "qps_mean": 805.0396274876175,
+        "qps_min": 803.8807342445657,
+        "qps_max": 806.1599286379492,
+        "route_ndc_mean": 120.385,
+        "graph_ndc_mean": 4245.883,
+        "L": 160
+      },
+      "HNSW": {
+        "recall": 0.952,
+        "qps_mean": 521.882947760514,
+        "qps_min": 520.1865661395863,
+        "qps_max": 525.1317497664388,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 5354.92,
+        "L": 200
+      },
+      "NSG": {
+        "recall": 0.95,
+        "qps_mean": 966.2375421949256,
+        "qps_min": 963.1562296779754,
+        "qps_max": 970.0007979323565,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 3664.039,
+        "L": 128
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "gist1m_l2_v1",
+    "K": 1,
+    "target": 0.99,
+    "methods": {
+      "GATE": {
+        "recall": 0.99,
+        "qps_mean": 176.59097581489485,
+        "qps_min": 176.09703951052788,
+        "qps_max": 177.23940647941333,
+        "route_ndc_mean": 302.78,
+        "graph_ndc_mean": 18365.545,
+        "L": 1000
+      },
+      "GT10-hard": {
+        "recall": 0.991,
+        "qps_mean": 213.27841075975732,
+        "qps_min": 212.60442295846383,
+        "qps_max": 213.96844847277384,
+        "route_ndc_mean": 126.737,
+        "graph_ndc_mean": 15407.948,
+        "L": 800
+      },
+      "GT10-soft-t1": {
+        "recall": 0.99,
+        "qps_mean": 178.57382515106198,
+        "qps_min": 178.2751519185657,
+        "qps_max": 179.0815744791427,
+        "route_ndc_mean": 120.385,
+        "graph_ndc_mean": 18277.104,
+        "L": 1000
+      },
+      "NSG": {
+        "recall": 0.992,
+        "qps_mean": 213.6271793180151,
+        "qps_min": 213.28780581695628,
+        "qps_max": 213.97249201353398,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 15509.804,
+        "L": 800
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "gist1m_l2_v1",
+    "K": 100,
+    "target": 0.9,
+    "methods": {
+      "GATE": {
+        "recall": 0.91667,
+        "qps_mean": 532.899703021801,
+        "qps_min": 532.7118146236868,
+        "qps_max": 533.0293545102201,
+        "route_ndc_mean": 302.78,
+        "graph_ndc_mean": 6350.685,
+        "L": 256
+      },
+      "GT10-hard": {
+        "recall": 0.91667,
+        "qps_mean": 548.6442894970022,
+        "qps_min": 546.4182879281128,
+        "qps_max": 550.0053761375501,
+        "route_ndc_mean": 126.737,
+        "graph_ndc_mean": 6242.027,
+        "L": 256
+      },
+      "GT10-soft-t1": {
+        "recall": 0.9167000000000001,
+        "qps_mean": 550.7278419523092,
+        "qps_min": 550.4186469367297,
+        "qps_max": 551.0105468961842,
+        "route_ndc_mean": 120.385,
+        "graph_ndc_mean": 6241.751,
+        "L": 256
+      },
+      "HNSW": {
+        "recall": 0.9172899999999999,
+        "qps_mean": 429.0433177761931,
+        "qps_min": 428.9863320789142,
+        "qps_max": 429.13135603825884,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 6528.737,
+        "L": 256
+      },
+      "NSG": {
+        "recall": 0.91676,
+        "qps_mean": 550.4257204223204,
+        "qps_min": 549.3719983103734,
+        "qps_max": 551.2501379344985,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 6364.258,
+        "L": 256
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "gist1m_l2_v1",
+    "K": 100,
+    "target": 0.95,
+    "methods": {
+      "GATE": {
+        "recall": 0.95038,
+        "qps_mean": 367.3516451773575,
+        "qps_min": 365.41367542716546,
+        "qps_max": 368.9702573831912,
+        "route_ndc_mean": 302.78,
+        "graph_ndc_mean": 9045.894,
+        "L": 400
+      },
+      "GT10-hard": {
+        "recall": 0.95038,
+        "qps_mean": 376.397584040263,
+        "qps_min": 376.2035200640309,
+        "qps_max": 376.60339308871255,
+        "route_ndc_mean": 126.737,
+        "graph_ndc_mean": 8942.729,
+        "L": 400
+      },
+      "GT10-soft-t1": {
+        "recall": 0.95037,
+        "qps_mean": 376.36678380060266,
+        "qps_min": 374.8706224952584,
+        "qps_max": 377.1261142777477,
+        "route_ndc_mean": 120.385,
+        "graph_ndc_mean": 8942.295,
+        "L": 400
+      },
+      "HNSW": {
+        "recall": 0.95139,
+        "qps_mean": 291.84038670798986,
+        "qps_min": 291.768825205065,
+        "qps_max": 291.887277308659,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 9307.755,
+        "L": 400
+      },
+      "NSG": {
+        "recall": 0.9503400000000001,
+        "qps_mean": 376.3946751982412,
+        "qps_min": 376.0192251620827,
+        "qps_max": 376.70993011824737,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 9057.18,
+        "L": 400
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "gist1m_l2_v1",
+    "K": 100,
+    "target": 0.99,
+    "methods": {
+      "GATE": {
+        "recall": 0.9921500000000001,
+        "qps_mean": 129.62352796166127,
+        "qps_min": 129.40008987506533,
+        "qps_max": 129.76565346964153,
+        "route_ndc_mean": 302.78,
+        "graph_ndc_mean": 24883.181,
+        "L": 1500
+      },
+      "GT10-hard": {
+        "recall": 0.9921500000000001,
+        "qps_mean": 130.4040333318267,
+        "qps_min": 130.20881946321362,
+        "qps_max": 130.61838266962238,
+        "route_ndc_mean": 126.737,
+        "graph_ndc_mean": 24801.772,
+        "L": 1500
+      },
+      "GT10-soft-t1": {
+        "recall": 0.9921500000000001,
+        "qps_mean": 130.86348237646655,
+        "qps_min": 130.68465080875077,
+        "qps_max": 130.97167541271241,
+        "route_ndc_mean": 120.385,
+        "graph_ndc_mean": 24801.912,
+        "L": 1500
+      },
+      "HNSW": {
+        "recall": 0.9913500000000001,
+        "qps_mean": 102.82093980200209,
+        "qps_min": 102.6270891664281,
+        "qps_max": 102.94120258434918,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 25599.723,
+        "L": 1500
+      },
+      "NSG": {
+        "recall": 0.9921500000000001,
+        "qps_mean": 131.0515026980706,
+        "qps_min": 130.92460150759217,
+        "qps_max": 131.24893792293034,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 24890.268,
+        "L": 1500
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "sift10m_bigann_l2_v1",
+    "K": 1,
+    "target": 0.9,
+    "methods": {
+      "GATE": {
+        "recall": 0.9573,
+        "qps_mean": 7199.842263971924,
+        "qps_min": 7147.335244491706,
+        "qps_max": 7228.23697474227,
+        "route_ndc_mean": 291.8998,
+        "graph_ndc_mean": 1298.018,
+        "L": 32
+      },
+      "GT10-hard": {
+        "recall": 0.9588,
+        "qps_mean": 7588.22310694001,
+        "qps_min": 7536.387243295078,
+        "qps_max": 7641.994470197779,
+        "route_ndc_mean": 125.1106,
+        "graph_ndc_mean": 1281.7184,
+        "L": 32
+      },
+      "GT10-soft-t1": {
+        "recall": 0.9591,
+        "qps_mean": 7661.980553243793,
+        "qps_min": 7639.794676209232,
+        "qps_max": 7704.63358289353,
+        "route_ndc_mean": 121.0755,
+        "graph_ndc_mean": 1281.2205,
+        "L": 32
+      },
+      "HNSW": {
+        "recall": 0.955,
+        "qps_mean": 6711.660496545835,
+        "qps_min": 6645.108018034981,
+        "qps_max": 6763.012584523869,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 1323.443,
+        "L": 32
+      },
+      "NSG": {
+        "recall": 0.959,
+        "qps_mean": 7227.792450693866,
+        "qps_min": 7131.411151550928,
+        "qps_max": 7332.520161735743,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 1428.3187,
+        "L": 32
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "sift10m_bigann_l2_v1",
+    "K": 1,
+    "target": 0.95,
+    "methods": {
+      "GATE": {
+        "recall": 0.9573,
+        "qps_mean": 7199.842263971924,
+        "qps_min": 7147.335244491706,
+        "qps_max": 7228.23697474227,
+        "route_ndc_mean": 291.8998,
+        "graph_ndc_mean": 1298.018,
+        "L": 32
+      },
+      "GT10-hard": {
+        "recall": 0.9588,
+        "qps_mean": 7588.22310694001,
+        "qps_min": 7536.387243295078,
+        "qps_max": 7641.994470197779,
+        "route_ndc_mean": 125.1106,
+        "graph_ndc_mean": 1281.7184,
+        "L": 32
+      },
+      "GT10-soft-t1": {
+        "recall": 0.9591,
+        "qps_mean": 7661.980553243793,
+        "qps_min": 7639.794676209232,
+        "qps_max": 7704.63358289353,
+        "route_ndc_mean": 121.0755,
+        "graph_ndc_mean": 1281.2205,
+        "L": 32
+      },
+      "HNSW": {
+        "recall": 0.955,
+        "qps_mean": 6711.660496545835,
+        "qps_min": 6645.108018034981,
+        "qps_max": 6763.012584523869,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 1323.443,
+        "L": 32
+      },
+      "NSG": {
+        "recall": 0.959,
+        "qps_mean": 7227.792450693866,
+        "qps_min": 7131.411151550928,
+        "qps_max": 7332.520161735743,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 1428.3187,
+        "L": 32
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "sift10m_bigann_l2_v1",
+    "K": 1,
+    "target": 0.99,
+    "methods": {
+      "GATE": {
+        "recall": 0.9945,
+        "qps_mean": 3026.769648463409,
+        "qps_min": 3002.2906721251065,
+        "qps_max": 3040.3731755981566,
+        "route_ndc_mean": 291.8998,
+        "graph_ndc_mean": 3154.0108,
+        "L": 96
+      },
+      "GT10-hard": {
+        "recall": 0.9946,
+        "qps_mean": 3120.538111609476,
+        "qps_min": 3102.8342336337696,
+        "qps_max": 3135.2523496455847,
+        "route_ndc_mean": 125.1106,
+        "graph_ndc_mean": 3139.463,
+        "L": 96
+      },
+      "GT10-soft-t1": {
+        "recall": 0.9946,
+        "qps_mean": 3128.006499690319,
+        "qps_min": 3115.367789043543,
+        "qps_max": 3135.783446768831,
+        "route_ndc_mean": 121.0755,
+        "graph_ndc_mean": 3139.0467,
+        "L": 96
+      },
+      "HNSW": {
+        "recall": 0.993,
+        "qps_mean": 2809.4469346371566,
+        "qps_min": 2798.3159915693614,
+        "qps_max": 2828.444835203275,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 3045.353,
+        "L": 96
+      },
+      "NSG": {
+        "recall": 0.9944,
+        "qps_mean": 3028.3964995081856,
+        "qps_min": 3007.5046757404516,
+        "qps_max": 3040.325696130651,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 3284.7375,
+        "L": 96
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "sift10m_bigann_l2_v1",
+    "K": 100,
+    "target": 0.9,
+    "methods": {
+      "GATE": {
+        "recall": 0.9405519999999999,
+        "qps_mean": 2919.0223788873313,
+        "qps_min": 2909.881269243605,
+        "qps_max": 2931.726098933305,
+        "route_ndc_mean": 291.8998,
+        "graph_ndc_mean": 3264.1052,
+        "L": 100
+      },
+      "GT10-hard": {
+        "recall": 0.940611,
+        "qps_mean": 3012.347629895748,
+        "qps_min": 2986.845223364509,
+        "qps_max": 3028.4031230604655,
+        "route_ndc_mean": 125.1106,
+        "graph_ndc_mean": 3249.4267,
+        "L": 100
+      },
+      "GT10-soft-t1": {
+        "recall": 0.940603,
+        "qps_mean": 3015.928589877037,
+        "qps_min": 2996.612535096693,
+        "qps_max": 3026.979231908506,
+        "route_ndc_mean": 121.0755,
+        "graph_ndc_mean": 3249.2228,
+        "L": 100
+      },
+      "HNSW": {
+        "recall": 0.927266,
+        "qps_mean": 2693.8180141122593,
+        "qps_min": 2679.5211097064757,
+        "qps_max": 2714.657254260805,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 3147.0184,
+        "L": 100
+      },
+      "NSG": {
+        "recall": 0.940648,
+        "qps_mean": 2922.6765061073606,
+        "qps_min": 2912.587336527129,
+        "qps_max": 2932.3188512570055,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 3394.6776,
+        "L": 100
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "sift10m_bigann_l2_v1",
+    "K": 100,
+    "target": 0.95,
+    "methods": {
+      "GATE": {
+        "recall": 0.950166,
+        "qps_mean": 2654.429390132087,
+        "qps_min": 2635.870697703479,
+        "qps_max": 2666.18749873841,
+        "route_ndc_mean": 291.8998,
+        "graph_ndc_mean": 3590.5208,
+        "L": 112
+      },
+      "GT10-hard": {
+        "recall": 0.950199,
+        "qps_mean": 2738.6781684080233,
+        "qps_min": 2733.195884775205,
+        "qps_max": 2744.271745127483,
+        "route_ndc_mean": 125.1106,
+        "graph_ndc_mean": 3576.0555,
+        "L": 112
+      },
+      "GT10-soft-t1": {
+        "recall": 0.950181,
+        "qps_mean": 2726.938231337645,
+        "qps_min": 2707.123322413341,
+        "qps_max": 2744.2778618415796,
+        "route_ndc_mean": 121.0755,
+        "graph_ndc_mean": 3575.7547,
+        "L": 112
+      },
+      "HNSW": {
+        "recall": 0.964864,
+        "qps_mean": 1807.2316146378791,
+        "qps_min": 1805.7867593128021,
+        "qps_max": 1808.0763983212744,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 4619.3563,
+        "L": 160
+      },
+      "NSG": {
+        "recall": 0.9501539999999999,
+        "qps_mean": 2661.7670554331767,
+        "qps_min": 2653.5380853206484,
+        "qps_max": 2667.353540789074,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 3720.6762,
+        "L": 112
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "sift10m_bigann_l2_v1",
+    "K": 100,
+    "target": 0.99,
+    "methods": {
+      "GATE": {
+        "recall": 0.9927030000000001,
+        "qps_mean": 1077.6466859989202,
+        "qps_min": 1076.9860021333448,
+        "qps_max": 1078.6921882535923,
+        "route_ndc_mean": 291.8998,
+        "graph_ndc_mean": 8674.8563,
+        "L": 320
+      },
+      "GT10-hard": {
+        "recall": 0.992705,
+        "qps_mean": 1089.268321428119,
+        "qps_min": 1086.6590893269129,
+        "qps_max": 1091.267857598206,
+        "route_ndc_mean": 125.1106,
+        "graph_ndc_mean": 8663.3379,
+        "L": 320
+      },
+      "GT10-soft-t1": {
+        "recall": 0.992701,
+        "qps_mean": 1089.5992248666125,
+        "qps_min": 1086.4553350512595,
+        "qps_max": 1092.005144613141,
+        "route_ndc_mean": 121.0755,
+        "graph_ndc_mean": 8663.0548,
+        "L": 320
+      },
+      "HNSW": {
+        "recall": 0.9902599999999999,
+        "qps_mean": 983.6264244709506,
+        "qps_min": 982.8403181472784,
+        "qps_max": 984.910777261648,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 8187.1843,
+        "L": 320
+      },
+      "NSG": {
+        "recall": 0.992707,
+        "qps_mean": 1075.6988798413347,
+        "qps_min": 1072.9369953870957,
+        "qps_max": 1077.1952445703116,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 8805.8422,
+        "L": 320
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "webvid2_5m_light_v1",
+    "K": 1,
+    "target": 0.9,
+    "methods": {
+      "GATE": {
+        "recall": 0.9034,
+        "qps_mean": 507.83960604408827,
+        "qps_min": 507.58360832835984,
+        "qps_max": 508.291508485231,
+        "route_ndc_mean": 298.0612,
+        "graph_ndc_mean": 8515.53,
+        "L": 800
+      },
+      "GT10-hard": {
+        "recall": 0.9073,
+        "qps_mean": 521.3441785812769,
+        "qps_min": 521.2628432193982,
+        "qps_max": 521.4646483937365,
+        "route_ndc_mean": 118.1512,
+        "graph_ndc_mean": 8391.5197,
+        "L": 800
+      },
+      "GT10-soft-t1": {
+        "recall": 0.9075,
+        "qps_mean": 520.7882889490202,
+        "qps_min": 520.4528074617739,
+        "qps_max": 521.3987635163678,
+        "route_ndc_mean": 111.9535,
+        "graph_ndc_mean": 8393.6184,
+        "L": 800
+      },
+      "HNSW": {
+        "recall": 0.9095,
+        "qps_mean": 283.97804627286655,
+        "qps_min": 283.08667057115827,
+        "qps_max": 284.5776823452983,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 13986.4502,
+        "L": 1250
+      },
+      "NSG": {
+        "recall": 0.9065,
+        "qps_mean": 416.67933711092866,
+        "qps_min": 416.24862376851803,
+        "qps_max": 417.0784815308693,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 10445.2985,
+        "L": 1000
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "webvid2_5m_light_v1",
+    "K": 1,
+    "target": 0.95,
+    "methods": {},
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "webvid2_5m_light_v1",
+    "K": 1,
+    "target": 0.99,
+    "methods": {},
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "webvid2_5m_light_v1",
+    "K": 100,
+    "target": 0.9,
+    "methods": {
+      "GATE": {
+        "recall": 0.9063169999999999,
+        "qps_mean": 335.2473275140969,
+        "qps_min": 334.71522139201,
+        "qps_max": 335.7611327155782,
+        "route_ndc_mean": 298.0612,
+        "graph_ndc_mean": 12661.2035,
+        "L": 1250
+      },
+      "GT10-hard": {
+        "recall": 0.906596,
+        "qps_mean": 340.44298742946256,
+        "qps_min": 339.99298743111865,
+        "qps_max": 340.70825812268805,
+        "route_ndc_mean": 118.1512,
+        "graph_ndc_mean": 12550.7198,
+        "L": 1250
+      },
+      "GT10-soft-t1": {
+        "recall": 0.906868,
+        "qps_mean": 340.46108295332226,
+        "qps_min": 340.2494239790418,
+        "qps_max": 340.68841836006465,
+        "route_ndc_mean": 111.9535,
+        "graph_ndc_mean": 12552.3682,
+        "L": 1250
+      },
+      "HNSW": {
+        "recall": 0.9037179999999999,
+        "qps_mean": 284.4108659858441,
+        "qps_min": 283.79012773069365,
+        "qps_max": 284.8539164690325,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 13986.4502,
+        "L": 1250
+      },
+      "NSG": {
+        "recall": 0.904456,
+        "qps_mean": 337.7973974031807,
+        "qps_min": 337.52532797149127,
+        "qps_max": 338.0448330131637,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 12727.3058,
+        "L": 1250
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "webvid2_5m_light_v1",
+    "K": 100,
+    "target": 0.95,
+    "methods": {},
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "webvid2_5m_light_v1",
+    "K": 100,
+    "target": 0.99,
+    "methods": {},
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "K": 1,
+    "target": 0.9,
+    "methods": {
+      "GATE": {
+        "recall": 0.9043,
+        "qps_mean": 2268.1332135103953,
+        "qps_min": 2264.8367616073024,
+        "qps_max": 2271.638600769765,
+        "route_ndc_mean": 289.999,
+        "graph_ndc_mean": 2939.3923,
+        "L": 128
+      },
+      "GT10-hard": {
+        "recall": 0.9105,
+        "qps_mean": 2406.1569449020403,
+        "qps_min": 2404.807963728193,
+        "qps_max": 2407.2703303913004,
+        "route_ndc_mean": 107.3433,
+        "graph_ndc_mean": 2851.7983,
+        "L": 128
+      },
+      "GT10-soft-t1": {
+        "recall": 0.909,
+        "qps_mean": 2404.911963729799,
+        "qps_min": 2403.9987655822133,
+        "qps_max": 2406.352421954128,
+        "route_ndc_mean": 97.3835,
+        "graph_ndc_mean": 2854.9298,
+        "L": 128
+      },
+      "HNSW": {
+        "recall": 0.9008,
+        "qps_mean": 2091.0785788451462,
+        "qps_min": 2084.4249227813584,
+        "qps_max": 2095.1335080490167,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 3132.1369,
+        "L": 128
+      },
+      "NSG": {
+        "recall": 0.9007,
+        "qps_mean": 2194.803784619973,
+        "qps_min": 2188.6710281199926,
+        "qps_max": 2200.0085273650525,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 3164.3008,
+        "L": 128
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "K": 1,
+    "target": 0.95,
+    "methods": {
+      "GATE": {
+        "recall": 0.9559,
+        "qps_mean": 1058.762971712062,
+        "qps_min": 1054.9539566975502,
+        "qps_max": 1061.3953394931784,
+        "route_ndc_mean": 289.999,
+        "graph_ndc_mean": 6156.5874,
+        "L": 320
+      },
+      "GT10-hard": {
+        "recall": 0.9502,
+        "qps_mean": 1332.8005764433804,
+        "qps_min": 1331.4097051354593,
+        "qps_max": 1334.4975765987747,
+        "route_ndc_mean": 107.3433,
+        "graph_ndc_mean": 5039.4363,
+        "L": 256
+      },
+      "GT10-soft-t1": {
+        "recall": 0.9577,
+        "qps_mean": 1082.2449046295792,
+        "qps_min": 1079.3518573048273,
+        "qps_max": 1087.2716174265836,
+        "route_ndc_mean": 97.3835,
+        "graph_ndc_mean": 6067.6795,
+        "L": 320
+      },
+      "HNSW": {
+        "recall": 0.9525,
+        "qps_mean": 959.6780119990585,
+        "qps_min": 958.7939285763956,
+        "qps_max": 960.4957863790873,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 6423.4847,
+        "L": 320
+      },
+      "NSG": {
+        "recall": 0.9539,
+        "qps_mean": 1029.269609400519,
+        "qps_min": 1024.9489092845981,
+        "qps_max": 1033.6524745616157,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 6404.1091,
+        "L": 320
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "K": 1,
+    "target": 0.99,
+    "methods": {
+      "GATE": {
+        "recall": 0.9915,
+        "qps_mean": 257.06438512045406,
+        "qps_min": 255.6203833367373,
+        "qps_max": 258.0318044949442,
+        "route_ndc_mean": 289.999,
+        "graph_ndc_mean": 22028.8551,
+        "L": 1500
+      },
+      "GT10-hard": {
+        "recall": 0.9922,
+        "qps_mean": 257.3094523424406,
+        "qps_min": 255.4799136682041,
+        "qps_max": 258.9431700389873,
+        "route_ndc_mean": 107.3433,
+        "graph_ndc_mean": 21943.0974,
+        "L": 1500
+      },
+      "GT10-soft-t1": {
+        "recall": 0.99,
+        "qps_mean": 306.2276995207454,
+        "qps_min": 305.0378309629222,
+        "qps_max": 307.46767025143225,
+        "route_ndc_mean": 97.3835,
+        "graph_ndc_mean": 18856.3463,
+        "L": 1250
+      },
+      "NSG": {
+        "recall": 0.9912,
+        "qps_mean": 254.63116413597092,
+        "qps_min": 254.25968915543945,
+        "qps_max": 255.15133312485307,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 22291.7514,
+        "L": 1500
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "K": 100,
+    "target": 0.9,
+    "methods": {
+      "GATE": {
+        "recall": 0.9072549999999999,
+        "qps_mean": 1195.1066465358574,
+        "qps_min": 1191.8269276608728,
+        "qps_max": 1197.5048244373827,
+        "route_ndc_mean": 289.999,
+        "graph_ndc_mean": 5136.3445,
+        "L": 256
+      },
+      "GT10-hard": {
+        "recall": 0.9098050000000001,
+        "qps_mean": 1241.6448883429337,
+        "qps_min": 1237.2461441343312,
+        "qps_max": 1246.488355143805,
+        "route_ndc_mean": 107.3433,
+        "graph_ndc_mean": 5039.4363,
+        "L": 256
+      },
+      "GT10-soft-t1": {
+        "recall": 0.908773,
+        "qps_mean": 1231.5635441016486,
+        "qps_min": 1225.9458649823605,
+        "qps_max": 1237.3411037457165,
+        "route_ndc_mean": 97.3835,
+        "graph_ndc_mean": 5042.4481,
+        "L": 256
+      },
+      "HNSW": {
+        "recall": 0.902784,
+        "qps_mean": 1088.1764595693883,
+        "qps_min": 1085.243673156576,
+        "qps_max": 1092.384694800613,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 5377.4153,
+        "L": 256
+      },
+      "NSG": {
+        "recall": 0.904817,
+        "qps_mean": 1160.900368534007,
+        "qps_min": 1157.6376108815664,
+        "qps_max": 1165.3978508084551,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 5378.8,
+        "L": 256
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "K": 100,
+    "target": 0.95,
+    "methods": {
+      "GATE": {
+        "recall": 0.9515640000000001,
+        "qps_mean": 661.3728047165247,
+        "qps_min": 658.4575207450034,
+        "qps_max": 663.1161486903778,
+        "route_ndc_mean": 289.999,
+        "graph_ndc_mean": 9042.6864,
+        "L": 512
+      },
+      "GT10-hard": {
+        "recall": 0.95333,
+        "qps_mean": 677.000838173011,
+        "qps_min": 673.9770534027782,
+        "qps_max": 679.5955710364917,
+        "route_ndc_mean": 107.3433,
+        "graph_ndc_mean": 8952.9347,
+        "L": 512
+      },
+      "GT10-soft-t1": {
+        "recall": 0.9531459999999999,
+        "qps_mean": 665.839640754483,
+        "qps_min": 656.9212939271097,
+        "qps_max": 675.7615875749419,
+        "route_ndc_mean": 97.3835,
+        "graph_ndc_mean": 8963.3122,
+        "L": 512
+      },
+      "HNSW": {
+        "recall": 0.950001,
+        "qps_mean": 603.4418466690826,
+        "qps_min": 602.3321549449405,
+        "qps_max": 605.3643228772283,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 9376.6046,
+        "L": 512
+      },
+      "NSG": {
+        "recall": 0.9509439999999999,
+        "qps_mean": 649.0053520699727,
+        "qps_min": 646.1850900539263,
+        "qps_max": 651.3075788019707,
+        "route_ndc_mean": 0.0,
+        "graph_ndc_mean": 9303.0629,
+        "L": 512
+      }
+    },
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  },
+  {
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "K": 100,
+    "target": 0.99,
+    "methods": {},
+    "scope": "fastest measured feasible point; not equal achieved Recall or significance"
+  }
+]

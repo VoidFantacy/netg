@@ -1,0 +1,170 @@
+[
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/.venv_cpu/bin/python",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/src/prepare.py"
+    ],
+    "kind": "prepare",
+    "started_unix": 1789885417.2264144,
+    "timeout_seconds": 300,
+    "reserved_calls": 0,
+    "pid": 24102,
+    "pgid": 24102,
+    "exit_code": 0,
+    "finished_unix": 1789885427.1056762,
+    "seconds": 9.879262208938599
+  },
+  {
+    "argv": [
+      "g++",
+      "-O3",
+      "-march=native",
+      "-std=c++17",
+      "-fopenmp",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+      "-I/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/src/common",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/src/evaluate.cpp",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+      "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+      "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "-lopenblas",
+      "-lz",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/bin/evaluate"
+    ],
+    "kind": "compile",
+    "started_unix": 1789885427.1196053,
+    "timeout_seconds": 120,
+    "reserved_calls": 0,
+    "pid": 24142,
+    "pgid": 24142,
+    "exit_code": 0,
+    "finished_unix": 1789885435.3481333,
+    "seconds": 8.228528022766113
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/reviews/smoke_webvid2_5m_light_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/reviews/smoke_webvid2_5m_light_v1"
+    ],
+    "kind": "smoke",
+    "started_unix": 1789885435.3537107,
+    "timeout_seconds": 300,
+    "reserved_calls": 384,
+    "pid": 24178,
+    "pgid": 24178,
+    "exit_code": 0,
+    "finished_unix": 1789885440.175385,
+    "seconds": 4.821674346923828,
+    "complete": {
+      "NSG_calls": 384,
+      "auxiliary_profile_distances": 192,
+      "cpu": 15,
+      "exact_profile_distances": 52160,
+      "formal_QPS": false,
+      "maxrss_kib": 5681688,
+      "seconds": 4.704577677,
+      "status": "PASS",
+      "threads": 1
+    }
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/reviews/smoke_yandex_t2i_official10M_ip_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/reviews/smoke_yandex_t2i_official10M_ip_v1"
+    ],
+    "kind": "smoke",
+    "started_unix": 1789885440.1952126,
+    "timeout_seconds": 300,
+    "reserved_calls": 384,
+    "pid": 24194,
+    "pgid": 24194,
+    "exit_code": 0,
+    "finished_unix": 1789885452.778249,
+    "seconds": 12.583036422729492,
+    "complete": {
+      "NSG_calls": 384,
+      "auxiliary_profile_distances": 192,
+      "cpu": 15,
+      "exact_profile_distances": 52544,
+      "formal_QPS": false,
+      "maxrss_kib": 10409476,
+      "seconds": 12.356614912,
+      "status": "PASS",
+      "threads": 1
+    }
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/reviews/main_webvid2_5m_light_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/results/main_webvid2_5m_light_v1"
+    ],
+    "kind": "main",
+    "started_unix": 1789885452.7998235,
+    "timeout_seconds": 300,
+    "reserved_calls": 32768,
+    "pid": 24247,
+    "pgid": 24247,
+    "exit_code": 0,
+    "finished_unix": 1789885469.299139,
+    "seconds": 16.4993155002594,
+    "complete": {
+      "NSG_calls": 32768,
+      "auxiliary_profile_distances": 24576,
+      "cpu": 15,
+      "exact_profile_distances": 6676480,
+      "formal_QPS": false,
+      "maxrss_kib": 5681496,
+      "seconds": 16.344638519,
+      "status": "PASS",
+      "threads": 1
+    }
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/reviews/main_yandex_t2i_official10M_ip_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/results/main_yandex_t2i_official10M_ip_v1"
+    ],
+    "kind": "main",
+    "started_unix": 1789885469.3202589,
+    "timeout_seconds": 300,
+    "reserved_calls": 32768,
+    "pid": 24305,
+    "pgid": 24305,
+    "exit_code": 0,
+    "finished_unix": 1789885494.934611,
+    "seconds": 25.614352703094482,
+    "complete": {
+      "NSG_calls": 32768,
+      "auxiliary_profile_distances": 24576,
+      "cpu": 15,
+      "exact_profile_distances": 6725632,
+      "formal_QPS": false,
+      "maxrss_kib": 10409452,
+      "seconds": 25.404389261,
+      "status": "PASS",
+      "threads": 1
+    }
+  }
+]

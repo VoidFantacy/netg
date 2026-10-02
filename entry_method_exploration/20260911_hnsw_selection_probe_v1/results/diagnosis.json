@@ -1,0 +1,190 @@
+[
+  {
+    "dataset": "webvid2_5m_light_v1",
+    "n": 128,
+    "topology": {
+      "nodes": 815,
+      "directed_edges": 7530,
+      "strong_components": 1,
+      "largest_component": 815,
+      "start_internal_id": 166,
+      "reachable_from_start": 815,
+      "can_reach_start": 815,
+      "mean_outdegree": 9.239263803680982,
+      "min_outdegree": 1,
+      "mean_indegree": 9.239263803680982,
+      "min_indegree": 1,
+      "max_directed_hops": 7,
+      "median_directed_hops": 4.0,
+      "upper_maxlevel": 2,
+      "graph_file": "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/inputs/webvid2_5m_light_v1/base.hnsw"
+    },
+    "nonconstant_queries": 92,
+    "ann1_suboptimal_queries": 71,
+    "single_gap_recall_pp": 10.46875,
+    "visited_recoverable_gap_pp": 8.203125,
+    "unvisited_gap_pp": 2.265625,
+    "suboptimal_but_optimum_seen": 46,
+    "suboptimal_and_no_optimum_seen": 25,
+    "A0_any_seen_queries": 103,
+    "A0_any_seen_ef40_queries": 115,
+    "A0_in_ann3_queries": 65,
+    "A0_in_exact3_queries": 67,
+    "A0_in_ann3_nonconstant": 29,
+    "A0_seen_nonconstant": 67,
+    "A0_size_median": 97.5,
+    "A0_size_mean": 317.6640625,
+    "best_A0_exact_rank_median": 2.5,
+    "best_A0_exact_rank_p90": 220.69999999999993,
+    "best_A0_hops_median": 1.0,
+    "visited_unique_mean": 103.4140625,
+    "visited_unique_ef40_mean": 239.5703125,
+    "visited_unique_efH_mean": 815.0,
+    "exact_top3_set_match_queries": 112,
+    "ef40_exact_top3_set_match_queries": 123,
+    "efH_exact_top3_set_match_queries": 128,
+    "mean_route_NDC_ef10": 112.8203125,
+    "mean_route_NDC_ef40": 252.84375,
+    "mean_route_NDC_efH": 837.703125,
+    "exact3_vs_ann3": {
+      "delta_recall_pp": 0.15625,
+      "helped": 1,
+      "harmed": 0,
+      "unchanged": 127
+    },
+    "ef40_vs_ann3": {
+      "delta_recall_pp": 0.15625,
+      "helped": 1,
+      "harmed": 0,
+      "unchanged": 127
+    },
+    "C8_oracle_vs_ann3": {
+      "delta_recall_pp": 3.671875,
+      "helped": 24,
+      "harmed": 0,
+      "unchanged": 104
+    },
+    "exact1_vs_ann1": {
+      "delta_recall_pp": 0.234375,
+      "helped": 2,
+      "harmed": 0,
+      "unchanged": 126
+    },
+    "total_NDC_means": {
+      "ann3": 1774.53125,
+      "exact3": 2473.9453125,
+      "ef40_3": 1913.4375
+    },
+    "NSG_NDC_means": {
+      "ann3": 1661.7109375,
+      "exact3": 1658.9453125,
+      "ef40_3": 1660.59375
+    },
+    "C8_oracle_delta_95pct_bootstrap_pp": [
+      2.03125,
+      5.78125
+    ],
+    "exact3_delta_95pct_bootstrap_pp": [
+      0.0,
+      0.46875
+    ],
+    "C8_oracle_below_fullH_single_queries": 59,
+    "C8_oracle_above_fullH_single_queries": 2,
+    "all56_triples_mean_NDC": 94924.7421875,
+    "QPS": null
+  },
+  {
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "n": 128,
+    "topology": {
+      "nodes": 821,
+      "directed_edges": 9055,
+      "strong_components": 1,
+      "largest_component": 821,
+      "start_internal_id": 166,
+      "reachable_from_start": 821,
+      "can_reach_start": 821,
+      "mean_outdegree": 11.02923264311815,
+      "min_outdegree": 2,
+      "mean_indegree": 11.02923264311815,
+      "min_indegree": 2,
+      "max_directed_hops": 5,
+      "median_directed_hops": 3.0,
+      "upper_maxlevel": 2,
+      "graph_file": "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/inputs/yandex_t2i_official10M_ip_v1/base.hnsw"
+    },
+    "nonconstant_queries": 65,
+    "ann1_suboptimal_queries": 46,
+    "single_gap_recall_pp": 6.015625,
+    "visited_recoverable_gap_pp": 5.703125,
+    "unvisited_gap_pp": 0.3125,
+    "suboptimal_but_optimum_seen": 42,
+    "suboptimal_and_no_optimum_seen": 4,
+    "A0_any_seen_queries": 124,
+    "A0_any_seen_ef40_queries": 127,
+    "A0_in_ann3_queries": 90,
+    "A0_in_exact3_queries": 90,
+    "A0_in_ann3_nonconstant": 27,
+    "A0_seen_nonconstant": 61,
+    "A0_size_median": 818.0,
+    "A0_size_mean": 534.2890625,
+    "best_A0_exact_rank_median": 1.0,
+    "best_A0_exact_rank_p90": 32.19999999999999,
+    "best_A0_hops_median": 0.0,
+    "visited_unique_mean": 97.765625,
+    "visited_unique_ef40_mean": 212.8359375,
+    "visited_unique_efH_mean": 821.0,
+    "exact_top3_set_match_queries": 124,
+    "ef40_exact_top3_set_match_queries": 128,
+    "efH_exact_top3_set_match_queries": 128,
+    "mean_route_NDC_ef10": 106.890625,
+    "mean_route_NDC_ef40": 225.59375,
+    "mean_route_NDC_efH": 842.3984375,
+    "exact3_vs_ann3": {
+      "delta_recall_pp": 0.078125,
+      "helped": 1,
+      "harmed": 1,
+      "unchanged": 126
+    },
+    "ef40_vs_ann3": {
+      "delta_recall_pp": 0.078125,
+      "helped": 1,
+      "harmed": 1,
+      "unchanged": 126
+    },
+    "C8_oracle_vs_ann3": {
+      "delta_recall_pp": 2.8125,
+      "helped": 14,
+      "harmed": 0,
+      "unchanged": 114
+    },
+    "exact1_vs_ann1": {
+      "delta_recall_pp": -0.78125,
+      "helped": 0,
+      "harmed": 2,
+      "unchanged": 126
+    },
+    "total_NDC_means": {
+      "ann3": 2984.703125,
+      "exact3": 3689.5625,
+      "ef40_3": 3094.15625
+    },
+    "NSG_NDC_means": {
+      "ann3": 2877.8125,
+      "exact3": 2868.5625,
+      "ef40_3": 2868.5625
+    },
+    "C8_oracle_delta_95pct_bootstrap_pp": [
+      0.9375,
+      5.3125
+    ],
+    "exact3_delta_95pct_bootstrap_pp": [
+      -2.109375,
+      2.34375
+    ],
+    "C8_oracle_below_fullH_single_queries": 34,
+    "C8_oracle_above_fullH_single_queries": 0,
+    "all56_triples_mean_NDC": 162828.578125,
+    "QPS": null
+  }
+]

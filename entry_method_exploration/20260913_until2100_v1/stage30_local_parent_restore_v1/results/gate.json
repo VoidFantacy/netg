@@ -1,0 +1,45 @@
+{
+  "status": "COMPLETE_LOCAL_PARENT_RESTORE",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "passed": false,
+      "rules": {
+        "baseline10_net": false,
+        "baseline10_halves": false,
+        "baseline10_failures": false,
+        "baseline10_cost": true,
+        "compact10_net": true,
+        "compact10_halves": true,
+        "compact10_failures": true,
+        "compact10_cost": true,
+        "random10_net": false,
+        "random10_halves": false,
+        "random10_failures": true,
+        "nonzero_update": true,
+        "merged_training": true
+      }
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "passed": false,
+      "rules": {
+        "baseline10_net": true,
+        "baseline10_halves": true,
+        "baseline10_failures": true,
+        "baseline10_cost": true,
+        "compact10_net": false,
+        "compact10_halves": false,
+        "compact10_failures": false,
+        "compact10_cost": true,
+        "random10_net": false,
+        "random10_halves": false,
+        "random10_failures": false,
+        "nonzero_update": true,
+        "merged_training": true
+      }
+    }
+  },
+  "wall_measurement_allowed": false,
+  "selection_feedback": "historically exposed auxiliary acceptance counts as training information",
+  "old_gates_unchanged": true,
+  "not_performance_GO": true
+}

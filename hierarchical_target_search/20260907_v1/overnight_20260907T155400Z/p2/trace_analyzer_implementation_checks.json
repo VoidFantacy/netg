@@ -1,0 +1,24 @@
+{
+  "status": "PASS_SYNTHETIC_ANALYZER_READY_FOR_PARENT_CONTROLLED_ANALYSIS",
+  "created_utc": "2026-09-07T16:41:03.476683+00:00",
+  "source": "analyze_traces.py",
+  "source_sha256": "86cd04bef327ed7d35c072f1f59562487aa9dd595eeff5e668f02c9dc9d0bdd3",
+  "final_test": "trace_analyzer_selftest_v5.json",
+  "test_output": "trace_analyzer_selftest_v5.stdout",
+  "review_initial": "trace_analysis_review_v1.md",
+  "usage": "analyze_traces.md",
+  "implemented_review_fixes": [
+    "Resolve relative parts_directory against evaluator cwd",
+    "Separate query-ID union from full registered dataset/L/comparison matrix coverage",
+    "Bind discovery parent to current expansion and enforce seed/admission sequence",
+    "Bind evictions to pending same-queue incoming candidate and immediate acceptance",
+    "Require CPU-only and no-heldout input flags"
+  ],
+  "preserved_failure": {
+    "record": "trace_analyzer_selftest_v3.json",
+    "stderr": "trace_analyzer_selftest_v3.stderr",
+    "reason": "The new admission-state variable shared a name with a scheduler local; corrected variable naming; v4/v5 pass"
+  },
+  "real_trace_analysis_run_by_this_agent": false,
+  "real_search_or_training_run_by_this_agent": false
+}

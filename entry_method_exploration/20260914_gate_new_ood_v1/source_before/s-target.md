@@ -1,0 +1,25 @@
+# ACSG 当前分支已停止
+
+2026-09-14，状态：**STOP_CURRENT_FIXED_H_PROFILE_GRAPH_BRANCH**。用户要求持续推进到“有更好的方法，或停止当前分支”。本轮已完成方法比较和E95实际验证；没有得到可替换GT10的新方法，现停止当前分支。默认保持Web GT10-soft-t1 / Yandex GT10-hard。[停止决定](entry_method_exploration/20260914_query_moment_graph_v1/decision.md) · [完整证据](entry_method_exploration/20260914_query_moment_graph_v1/report.md) · [复盘87](experiment_history/87_query_moment_graph_and_branch_stop.md)。
+
+## 停止范围
+
+结束当前固定H815/821、围绕GT10的参数扰动型RL、多画像/目标分组、补边、父画像恢复和组合局部修补，以及E95 full/diag查询统计构图。没有待执行的训练、ANN、构图、QPS、依赖安装或后台会话；不恢复9月13日旧runner，不追加尺度、seed、步长、簇数、ef或训练预算来延续本分支。
+
+E95使用原P评分恒定、查询统计仅作用离线构图，已经实际检验一个不同于局部扰动的闭式方案。两集各7952 query、两L、两半的四个候选–数据集组合全部未过冻结开发门；条件wall未启动。原E50/E52/E53/E56/E60/E89/E90诊断/对照和E94完整性能结论也已完成，不能重新列为待做首步。
+
+此停止是当前分支的投入决策，不证明全部离线画像学习、图构造或RL无解，不终止整个ACSG。原GT10、Web局部正信号与所有负点分开保留。
+
+## 重新开启研究的条件
+
+当前没有必须补跑的研究产物或实验。若以后出现实质不同的研究问题，可另立新分支；先说明新的表示/动作、真实三入口联合收益、原GT10收益保留及可迁移依据。仅换优化器名称、超参数或对已有compact退化作修复，不满足重新立项的依据。不得把一般图非加性当作多步RL必然有效的证明。
+
+新分支须在执行前冻结数据角色、预算、完整线上流程、简单对照、接受/停止条件和版本身份。相同候选/反馈数不等于相同训练wall，几何排名或未知三元组不等于已测联合效用。新方案改变base/metric/图/kernel/输入时依spec重建受影响产物。
+
+## 数据、性能与封存
+
+P-fit含历史train/monitor；aux/cal/audit反复使用，接受反馈计开发/训练信息。E94历史validation有既往暴露；不能按其最终坏例选动作/子集或调参。E95未打开E94最终载荷用于新实验，held-out保持未开。不得把旧开发集改名为新盲集。
+
+如未来新分支进入性能阶段，继续同机单线程、数值库单线程、方法串行，以完整线上wall比较Recall–QPS和零命中失败；保留五L全点和每轮计时，单L、NDC、插值或monitor均不构成性能GO。时间重复和跨L不增加独立query数。
+
+原模型、NSG/base/GT、全部raw/日志/计时/选择/封存保持。9月13日限时任务早已结束；其历史state和交接不要求恢复。当前根文档可继续演进，旧snapshot/seal不改。旧下一阶段计划已保存在[E95 source_before](entry_method_exploration/20260914_query_moment_graph_v1/source_before/s-target.md)；本轮[方法比较](entry_method_exploration/20260914_query_moment_graph_v1/research.md)、[冻结最小实验](entry_method_exploration/20260914_query_moment_graph_v1/protocol.md)、[结果](entry_method_exploration/20260914_query_moment_graph_v1/report.md)及[完成核验](entry_method_exploration/20260914_query_moment_graph_v1/reviews/completion_audit.json)已经接续该计划。

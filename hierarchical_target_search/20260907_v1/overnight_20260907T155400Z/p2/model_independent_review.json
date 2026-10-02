@@ -1,0 +1,76 @@
+{
+  "status": "PASS_SOURCE_REVIEW_AFTER_ROOT_FIXES",
+  "reviewed_utc": "2026-09-07T16:32:09.996147+00:00",
+  "source_sha256": "9806f701e20f7887da5928326ac572ffc85517fbaeacc076c1609a1c754d924d",
+  "protocol_sha256": "857745551778adc1884a4198862b2f55fd72a642abe7d7622970e602d88ff48b",
+  "checks": [
+    {
+      "name": "fit_only_20k",
+      "status": "PASS",
+      "evidence_line": 117,
+      "detail": "query/GT slice exactly10000:30000;shape and audited raw-value SHA checks precede fitting"
+    },
+    {
+      "name": "query_images",
+      "status": "PASS",
+      "evidence_line": 33,
+      "detail": "float64 normalized fit queries weighted by each GT10 region fraction, summed and normalized;no model optimizer or pilot label fitting"
+    },
+    {
+      "name": "frequency_portals",
+      "status": "PASS",
+      "evidence_line": 40,
+      "detail": "Two distinct in-region target IDs ranked by descending fit GT10 occurrence;np.lexsort secondary ID ascending"
+    },
+    {
+      "name": "portal_fallback",
+      "status": "PASS",
+      "evidence_line": 43,
+      "detail": "Missing slots filled from ascending region-member IDs, skipping selected IDs;affected regions logged"
+    },
+    {
+      "name": "profile_fallback",
+      "status": "PASS",
+      "evidence_line": 52,
+      "detail": "Low-norm query sum uses normalized portal-vector sum;second low-norm case clears all components and uses coordinate0 exactly;new cancellation selftest included"
+    },
+    {
+      "name": "protocol_and_partition_binding",
+      "status": "PASS",
+      "evidence_line": 108,
+      "detail": "Fixed P2 counts/temp/seed/fit range asserted;completed partition must match dataset,graph,labels path/count/bytes/SHA and coverage/capacity"
+    },
+    {
+      "name": "shape_and_outputs",
+      "status": "PASS",
+      "evidence_line": 119,
+      "detail": "Labels uint16 length matches graph n;minimum2 per region;query20000xd;GT rows20000 cols>=10;base rows n anddim d;new output directory;model/profiles/portals with hashes"
+    },
+    {
+      "name": "cost_boundary",
+      "status": "PASS",
+      "evidence_line": 142,
+      "detail": "Initialization/validation now reported separately and included in total command work;post-existing-partition/GT subcost remains explicitly named;exactGT null with reason"
+    }
+  ],
+  "review_findings_resolved_by_root": [
+    "Partition report was read but not validated against actual labels and P0 graph;current code binds all fields and checks coverage/capacity",
+    "Coordinate0 fallback previously retained tiny residual coordinates;current code zeroes the vector before coordinate0 assignment",
+    "Added explicit fit/base shape and fixed protocol checks",
+    "Added initialization-validation and whole model-command work timing"
+  ],
+  "schema_note": "Earlier partition source used COMPLETE_GRAPH_PARTITION;latest actual partition source/schema uses COMPLETE and the builder correctly checks COMPLETE. No assumption based on a stale schema is retained.",
+  "statistical_interpretation": [
+    "Profiles and frequency portals are preregistered fit-only heuristics;neither optimizes measured online search utility.",
+    "fit_mean_distinct_gt10_regions and fit_top4_oracle_target_mass describe training target concentration only;they do not establish pilot oracle search gain or P2 PASS.",
+    "No query from pilot/validation/heldout influences profile/portal computation. read_fvecs/read_ivecs load the parent router_train file,then slice before all fitting and hash checking.",
+    "Fallback incidence should be reported per dataset;not silently pooled with learned region profiles.",
+    "Zero/tiny query vectors are left zero by epsilon normalization;the current P0 audited source is authoritative. A near-zero cancelling portal fallback is covered synthetically."
+  ],
+  "limitations": [
+    "Review verifies current source against protocol and small existing logs;no large data were read and no new model was fit by this reviewer.",
+    "Base and GT identity rely on current P0 checks plus fit-value hashes;no redundant full base/GT checksum scan was performed.",
+    "This is model-construction correctness review,not a new-method performance gate."
+  ],
+  "unresolved_blockers": []
+}

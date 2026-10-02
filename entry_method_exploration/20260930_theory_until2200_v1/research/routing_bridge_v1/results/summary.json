@@ -1,0 +1,2879 @@
+{
+  "status": "COMPUTED_PENDING_AUDIT",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "models": [
+        {
+          "method": "GT10-soft-t1",
+          "exact_top3_disagrees_with_router": 580,
+          "near_float_boundary": 136,
+          "disagreement_away_from_float_boundary": 562,
+          "gap3_4_quantiles": [
+            1.1839560724036247e-06,
+            3.79580916462785e-05,
+            0.00038993522472324793,
+            0.002966055652898897,
+            0.013763522405606299,
+            0.13028009986698708
+          ],
+          "score_computations": 3338240
+        },
+        {
+          "method": "ApproxTarget10",
+          "exact_top3_disagrees_with_router": 588,
+          "near_float_boundary": 129,
+          "disagreement_away_from_float_boundary": 571,
+          "gap3_4_quantiles": [
+            4.488931693025222e-08,
+            4.463103692022991e-05,
+            0.0004102196319245577,
+            0.003000289945647161,
+            0.014210220049663547,
+            0.12954915846848825
+          ],
+          "score_computations": 3338240
+        },
+        {
+          "method": "HybridFixedTemperature",
+          "exact_top3_disagrees_with_router": 583,
+          "near_float_boundary": 120,
+          "disagreement_away_from_float_boundary": 563,
+          "gap3_4_quantiles": [
+            2.0424619868730787e-06,
+            4.161215104110938e-05,
+            0.00041660373915847204,
+            0.0030232469596136458,
+            0.014243270369003358,
+            0.12927398430892978
+          ],
+          "score_computations": 3338240
+        },
+        {
+          "method": "ApproxPilotTemperature",
+          "exact_top3_disagrees_with_router": 582,
+          "near_float_boundary": 117,
+          "disagreement_away_from_float_boundary": 559,
+          "gap3_4_quantiles": [
+            5.493248922405769e-08,
+            3.74069036636282e-05,
+            0.00042233344120362615,
+            0.0030490781540321588,
+            0.014266054355853264,
+            0.1288603412503101
+          ],
+          "score_computations": 3338240
+        },
+        {
+          "method": "HybridPilotTemperature",
+          "exact_top3_disagrees_with_router": 587,
+          "near_float_boundary": 110,
+          "disagreement_away_from_float_boundary": 565,
+          "gap3_4_quantiles": [
+            7.581110639254263e-08,
+            4.223540360747125e-05,
+            0.0004164956376738749,
+            0.003057647401518815,
+            0.014242126824758145,
+            0.12858996295223557
+          ],
+          "score_computations": 3338240
+        }
+      ],
+      "comparisons": [
+        {
+          "method": "ApproxTarget10",
+          "reference": "GT10-soft-t1",
+          "score_risk": 0.15523578550975106,
+          "covariance_risk": 0.15523578550975103,
+          "unweighted_chord_sum": 1.8321238882009234,
+          "score_risk_per_chord": 0.08472996095377958,
+          "norm_certificate": 18,
+          "posthoc_score_certificate": 1668,
+          "exact_changes": 879,
+          "actual_changes": 1111,
+          "near_float_boundary_either": 257,
+          "category_counts": [
+            2906,
+            311,
+            79,
+            800
+          ],
+          "points": [
+            {
+              "K": 1,
+              "L": 1000,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 2906,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 2823,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 83,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 311,
+                  "output_changes": 4,
+                  "rescues": 3,
+                  "damages": 1,
+                  "positive_queries": 3,
+                  "negative_queries": 1
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 298,
+                  "output_changes": 4,
+                  "rescues": 3,
+                  "damages": 1,
+                  "positive_queries": 3,
+                  "negative_queries": 1
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 13,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 79,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 66,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 13,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 800,
+                  "output_changes": 9,
+                  "rescues": 0,
+                  "damages": 6,
+                  "positive_queries": 0,
+                  "negative_queries": 6
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 652,
+                  "output_changes": 8,
+                  "rescues": 0,
+                  "damages": 5,
+                  "positive_queries": 0,
+                  "negative_queries": 5
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 148,
+                  "output_changes": 1,
+                  "rescues": 0,
+                  "damages": 1,
+                  "positive_queries": 0,
+                  "negative_queries": 1
+                }
+              ]
+            },
+            {
+              "K": 100,
+              "L": 1250,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 2906,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 2823,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 83,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 311,
+                  "output_changes": 27,
+                  "rescues": 142,
+                  "damages": 46,
+                  "positive_queries": 16,
+                  "negative_queries": 9
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 298,
+                  "output_changes": 25,
+                  "rescues": 139,
+                  "damages": 45,
+                  "positive_queries": 15,
+                  "negative_queries": 8
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 13,
+                  "output_changes": 2,
+                  "rescues": 3,
+                  "damages": 1,
+                  "positive_queries": 1,
+                  "negative_queries": 1
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 79,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 66,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 13,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 800,
+                  "output_changes": 90,
+                  "rescues": 33,
+                  "damages": 140,
+                  "positive_queries": 16,
+                  "negative_queries": 55
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 652,
+                  "output_changes": 82,
+                  "rescues": 31,
+                  "damages": 128,
+                  "positive_queries": 14,
+                  "negative_queries": 51
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 148,
+                  "output_changes": 8,
+                  "rescues": 2,
+                  "damages": 12,
+                  "positive_queries": 2,
+                  "negative_queries": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "method": "HybridFixedTemperature",
+          "reference": "GT10-soft-t1",
+          "score_risk": 0.11999862858243199,
+          "covariance_risk": 0.11999862858243193,
+          "unweighted_chord_sum": 1.4741112449216385,
+          "score_risk_per_chord": 0.08140405209975243,
+          "norm_certificate": 27,
+          "posthoc_score_certificate": 1946,
+          "exact_changes": 826,
+          "actual_changes": 1060,
+          "near_float_boundary_either": 244,
+          "category_counts": [
+            2957,
+            313,
+            79,
+            747
+          ],
+          "points": [
+            {
+              "K": 1,
+              "L": 1000,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 2957,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 2869,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 88,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 313,
+                  "output_changes": 4,
+                  "rescues": 4,
+                  "damages": 0,
+                  "positive_queries": 4,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 302,
+                  "output_changes": 4,
+                  "rescues": 4,
+                  "damages": 0,
+                  "positive_queries": 4,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 11,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 79,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 68,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 11,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 747,
+                  "output_changes": 10,
+                  "rescues": 2,
+                  "damages": 5,
+                  "positive_queries": 2,
+                  "negative_queries": 5
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 613,
+                  "output_changes": 9,
+                  "rescues": 1,
+                  "damages": 5,
+                  "positive_queries": 1,
+                  "negative_queries": 5
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 134,
+                  "output_changes": 1,
+                  "rescues": 1,
+                  "damages": 0,
+                  "positive_queries": 1,
+                  "negative_queries": 0
+                }
+              ]
+            },
+            {
+              "K": 100,
+              "L": 1250,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 2957,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 2869,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 88,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 313,
+                  "output_changes": 27,
+                  "rescues": 195,
+                  "damages": 32,
+                  "positive_queries": 15,
+                  "negative_queries": 10
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 302,
+                  "output_changes": 26,
+                  "rescues": 195,
+                  "damages": 31,
+                  "positive_queries": 15,
+                  "negative_queries": 9
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 11,
+                  "output_changes": 1,
+                  "rescues": 0,
+                  "damages": 1,
+                  "positive_queries": 0,
+                  "negative_queries": 1
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 79,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 68,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 11,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 747,
+                  "output_changes": 85,
+                  "rescues": 53,
+                  "damages": 130,
+                  "positive_queries": 16,
+                  "negative_queries": 50
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 613,
+                  "output_changes": 75,
+                  "rescues": 45,
+                  "damages": 128,
+                  "positive_queries": 12,
+                  "negative_queries": 48
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 134,
+                  "output_changes": 10,
+                  "rescues": 8,
+                  "damages": 2,
+                  "positive_queries": 4,
+                  "negative_queries": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "method": "HybridFixedTemperature",
+          "reference": "ApproxTarget10",
+          "score_risk": 0.006364356283506075,
+          "covariance_risk": 0.006364356283506073,
+          "unweighted_chord_sum": 0.11439625645196624,
+          "score_risk_per_chord": 0.05563430553497526,
+          "norm_certificate": 849,
+          "posthoc_score_certificate": 3642,
+          "exact_changes": 205,
+          "actual_changes": 288,
+          "near_float_boundary_either": 212,
+          "category_counts": [
+            3767,
+            124,
+            41,
+            164
+          ],
+          "points": [
+            {
+              "K": 1,
+              "L": 1000,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 3767,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 3663,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 104,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 124,
+                  "output_changes": 2,
+                  "rescues": 2,
+                  "damages": 0,
+                  "positive_queries": 2,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 122,
+                  "output_changes": 2,
+                  "rescues": 2,
+                  "damages": 0,
+                  "positive_queries": 2,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 2,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 41,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 21,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 20,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 164,
+                  "output_changes": 3,
+                  "rescues": 3,
+                  "damages": 0,
+                  "positive_queries": 3,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 78,
+                  "output_changes": 2,
+                  "rescues": 2,
+                  "damages": 0,
+                  "positive_queries": 2,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 86,
+                  "output_changes": 1,
+                  "rescues": 1,
+                  "damages": 0,
+                  "positive_queries": 1,
+                  "negative_queries": 0
+                }
+              ]
+            },
+            {
+              "K": 100,
+              "L": 1250,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 3767,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 3663,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 104,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 124,
+                  "output_changes": 9,
+                  "rescues": 76,
+                  "damages": 5,
+                  "positive_queries": 4,
+                  "negative_queries": 5
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 122,
+                  "output_changes": 9,
+                  "rescues": 76,
+                  "damages": 5,
+                  "positive_queries": 4,
+                  "negative_queries": 5
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 2,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 41,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 21,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 20,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 164,
+                  "output_changes": 15,
+                  "rescues": 37,
+                  "damages": 11,
+                  "positive_queries": 8,
+                  "negative_queries": 5
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 78,
+                  "output_changes": 10,
+                  "rescues": 29,
+                  "damages": 9,
+                  "positive_queries": 6,
+                  "negative_queries": 3
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 86,
+                  "output_changes": 5,
+                  "rescues": 8,
+                  "damages": 2,
+                  "positive_queries": 2,
+                  "negative_queries": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "method": "ApproxPilotTemperature",
+          "reference": "GT10-soft-t1",
+          "score_risk": 0.16302958142646976,
+          "covariance_risk": 0.1630295814264698,
+          "unweighted_chord_sum": 1.8900686857433004,
+          "score_risk_per_chord": 0.08625590310880989,
+          "norm_certificate": 15,
+          "posthoc_score_certificate": 1604,
+          "exact_changes": 884,
+          "actual_changes": 1127,
+          "near_float_boundary_either": 246,
+          "category_counts": [
+            2892,
+            320,
+            77,
+            807
+          ],
+          "points": [
+            {
+              "K": 1,
+              "L": 1000,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 2892,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 2810,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 82,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 320,
+                  "output_changes": 6,
+                  "rescues": 4,
+                  "damages": 2,
+                  "positive_queries": 4,
+                  "negative_queries": 2
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 309,
+                  "output_changes": 6,
+                  "rescues": 4,
+                  "damages": 2,
+                  "positive_queries": 4,
+                  "negative_queries": 2
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 11,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 77,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 67,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 10,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 807,
+                  "output_changes": 9,
+                  "rescues": 0,
+                  "damages": 6,
+                  "positive_queries": 0,
+                  "negative_queries": 6
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 664,
+                  "output_changes": 8,
+                  "rescues": 0,
+                  "damages": 5,
+                  "positive_queries": 0,
+                  "negative_queries": 5
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 143,
+                  "output_changes": 1,
+                  "rescues": 0,
+                  "damages": 1,
+                  "positive_queries": 0,
+                  "negative_queries": 1
+                }
+              ]
+            },
+            {
+              "K": 100,
+              "L": 1250,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 2892,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 2810,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 82,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 320,
+                  "output_changes": 25,
+                  "rescues": 131,
+                  "damages": 103,
+                  "positive_queries": 13,
+                  "negative_queries": 10
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 309,
+                  "output_changes": 24,
+                  "rescues": 131,
+                  "damages": 102,
+                  "positive_queries": 13,
+                  "negative_queries": 9
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 11,
+                  "output_changes": 1,
+                  "rescues": 0,
+                  "damages": 1,
+                  "positive_queries": 0,
+                  "negative_queries": 1
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 77,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 67,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 10,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 807,
+                  "output_changes": 91,
+                  "rescues": 34,
+                  "damages": 138,
+                  "positive_queries": 17,
+                  "negative_queries": 54
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 664,
+                  "output_changes": 81,
+                  "rescues": 29,
+                  "damages": 129,
+                  "positive_queries": 12,
+                  "negative_queries": 51
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 143,
+                  "output_changes": 10,
+                  "rescues": 5,
+                  "damages": 9,
+                  "positive_queries": 5,
+                  "negative_queries": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "method": "ApproxPilotTemperature",
+          "reference": "ApproxTarget10",
+          "score_risk": 0.0007291122129736087,
+          "covariance_risk": 0.0007291122129736084,
+          "unweighted_chord_sum": 0.008016474262636563,
+          "score_risk_per_chord": 0.09095173128315,
+          "norm_certificate": 1704,
+          "posthoc_score_certificate": 3834,
+          "exact_changes": 61,
+          "actual_changes": 142,
+          "near_float_boundary_either": 176,
+          "category_counts": [
+            3945,
+            90,
+            9,
+            52
+          ],
+          "points": [
+            {
+              "K": 1,
+              "L": 1000,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 3945,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 3825,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 120,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 90,
+                  "output_changes": 2,
+                  "rescues": 1,
+                  "damages": 1,
+                  "positive_queries": 1,
+                  "negative_queries": 1
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 86,
+                  "output_changes": 2,
+                  "rescues": 1,
+                  "damages": 1,
+                  "positive_queries": 1,
+                  "negative_queries": 1
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 4,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 9,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 1,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 8,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 52,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 8,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 44,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                }
+              ]
+            },
+            {
+              "K": 100,
+              "L": 1250,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 3945,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 3825,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 120,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 90,
+                  "output_changes": 6,
+                  "rescues": 2,
+                  "damages": 68,
+                  "positive_queries": 1,
+                  "negative_queries": 4
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 86,
+                  "output_changes": 5,
+                  "rescues": 2,
+                  "damages": 65,
+                  "positive_queries": 1,
+                  "negative_queries": 3
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 4,
+                  "output_changes": 1,
+                  "rescues": 0,
+                  "damages": 3,
+                  "positive_queries": 0,
+                  "negative_queries": 1
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 9,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 1,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 8,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 52,
+                  "output_changes": 1,
+                  "rescues": 1,
+                  "damages": 0,
+                  "positive_queries": 1,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 8,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 44,
+                  "output_changes": 1,
+                  "rescues": 1,
+                  "damages": 0,
+                  "positive_queries": 1,
+                  "negative_queries": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "method": "HybridPilotTemperature",
+          "reference": "GT10-soft-t1",
+          "score_risk": 0.12656240370812477,
+          "covariance_risk": 0.12656240370812477,
+          "unweighted_chord_sum": 1.5227293002105737,
+          "score_risk_per_chord": 0.08311549773858218,
+          "norm_certificate": 25,
+          "posthoc_score_certificate": 1898,
+          "exact_changes": 846,
+          "actual_changes": 1088,
+          "near_float_boundary_either": 235,
+          "category_counts": [
+            2931,
+            319,
+            77,
+            769
+          ],
+          "points": [
+            {
+              "K": 1,
+              "L": 1000,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 2931,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 2848,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 83,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 319,
+                  "output_changes": 6,
+                  "rescues": 4,
+                  "damages": 2,
+                  "positive_queries": 4,
+                  "negative_queries": 2
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 309,
+                  "output_changes": 6,
+                  "rescues": 4,
+                  "damages": 2,
+                  "positive_queries": 4,
+                  "negative_queries": 2
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 10,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 77,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 64,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 13,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 769,
+                  "output_changes": 9,
+                  "rescues": 1,
+                  "damages": 5,
+                  "positive_queries": 1,
+                  "negative_queries": 5
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 640,
+                  "output_changes": 8,
+                  "rescues": 0,
+                  "damages": 5,
+                  "positive_queries": 0,
+                  "negative_queries": 5
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 129,
+                  "output_changes": 1,
+                  "rescues": 1,
+                  "damages": 0,
+                  "positive_queries": 1,
+                  "negative_queries": 0
+                }
+              ]
+            },
+            {
+              "K": 100,
+              "L": 1250,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 2931,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 2848,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 83,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 319,
+                  "output_changes": 32,
+                  "rescues": 142,
+                  "damages": 106,
+                  "positive_queries": 16,
+                  "negative_queries": 13
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 309,
+                  "output_changes": 31,
+                  "rescues": 142,
+                  "damages": 105,
+                  "positive_queries": 16,
+                  "negative_queries": 12
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 10,
+                  "output_changes": 1,
+                  "rescues": 0,
+                  "damages": 1,
+                  "positive_queries": 0,
+                  "negative_queries": 1
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 77,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 64,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 13,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 769,
+                  "output_changes": 81,
+                  "rescues": 29,
+                  "damages": 128,
+                  "positive_queries": 14,
+                  "negative_queries": 48
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 640,
+                  "output_changes": 73,
+                  "rescues": 22,
+                  "damages": 127,
+                  "positive_queries": 11,
+                  "negative_queries": 47
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 129,
+                  "output_changes": 8,
+                  "rescues": 7,
+                  "damages": 1,
+                  "positive_queries": 3,
+                  "negative_queries": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "method": "HybridPilotTemperature",
+          "reference": "ApproxTarget10",
+          "score_risk": 0.006282585265806445,
+          "covariance_risk": 0.006282585265806445,
+          "unweighted_chord_sum": 0.11740409751955938,
+          "score_risk_per_chord": 0.05351248720054062,
+          "norm_certificate": 664,
+          "posthoc_score_certificate": 3542,
+          "exact_changes": 214,
+          "actual_changes": 321,
+          "near_float_boundary_either": 213,
+          "category_counts": [
+            3732,
+            150,
+            43,
+            171
+          ],
+          "points": [
+            {
+              "K": 1,
+              "L": 1000,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 3732,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 3622,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 110,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 150,
+                  "output_changes": 2,
+                  "rescues": 1,
+                  "damages": 1,
+                  "positive_queries": 1,
+                  "negative_queries": 1
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 146,
+                  "output_changes": 2,
+                  "rescues": 1,
+                  "damages": 1,
+                  "positive_queries": 1,
+                  "negative_queries": 1
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 4,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 43,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 27,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 16,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 171,
+                  "output_changes": 2,
+                  "rescues": 2,
+                  "damages": 0,
+                  "positive_queries": 2,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 88,
+                  "output_changes": 1,
+                  "rescues": 1,
+                  "damages": 0,
+                  "positive_queries": 1,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 83,
+                  "output_changes": 1,
+                  "rescues": 1,
+                  "damages": 0,
+                  "positive_queries": 1,
+                  "negative_queries": 0
+                }
+              ]
+            },
+            {
+              "K": 100,
+              "L": 1250,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 3732,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 3622,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 110,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 150,
+                  "output_changes": 11,
+                  "rescues": 5,
+                  "damages": 64,
+                  "positive_queries": 4,
+                  "negative_queries": 7
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 146,
+                  "output_changes": 11,
+                  "rescues": 5,
+                  "damages": 64,
+                  "positive_queries": 4,
+                  "negative_queries": 7
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 4,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 43,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 27,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 16,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 171,
+                  "output_changes": 16,
+                  "rescues": 20,
+                  "damages": 13,
+                  "positive_queries": 8,
+                  "negative_queries": 5
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 88,
+                  "output_changes": 12,
+                  "rescues": 15,
+                  "damages": 9,
+                  "positive_queries": 7,
+                  "negative_queries": 3
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 83,
+                  "output_changes": 4,
+                  "rescues": 5,
+                  "damages": 4,
+                  "positive_queries": 1,
+                  "negative_queries": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "models": [
+        {
+          "method": "GT10-hard",
+          "exact_top3_disagrees_with_router": 270,
+          "near_float_boundary": 20,
+          "disagreement_away_from_float_boundary": 269,
+          "gap3_4_quantiles": [
+            1.582136107680654e-06,
+            9.702308617156874e-05,
+            0.0010885558465745515,
+            0.007872930272606993,
+            0.02997222877094985,
+            0.16184194777933852
+          ],
+          "score_computations": 3362816
+        },
+        {
+          "method": "ApproxTarget10",
+          "exact_top3_disagrees_with_router": 255,
+          "near_float_boundary": 24,
+          "disagreement_away_from_float_boundary": 253,
+          "gap3_4_quantiles": [
+            1.3061495549582247e-06,
+            0.0001066183271330179,
+            0.0010796172072138899,
+            0.00776609666681316,
+            0.030008913850863544,
+            0.16308688036969854
+          ],
+          "score_computations": 3362816
+        },
+        {
+          "method": "HybridFixedTemperature",
+          "exact_top3_disagrees_with_router": 252,
+          "near_float_boundary": 22,
+          "disagreement_away_from_float_boundary": 248,
+          "gap3_4_quantiles": [
+            1.8063504902965377e-06,
+            8.456255337518371e-05,
+            0.0010850796931534679,
+            0.007808879556928328,
+            0.030310973492829296,
+            0.16122304404028825
+          ],
+          "score_computations": 3362816
+        }
+      ],
+      "comparisons": [
+        {
+          "method": "ApproxTarget10",
+          "reference": "GT10-hard",
+          "score_risk": 0.03603121912745785,
+          "covariance_risk": 0.03603121912745784,
+          "unweighted_chord_sum": 1.6908402996831415,
+          "score_risk_per_chord": 0.021309652445715893,
+          "norm_certificate": 47,
+          "posthoc_score_certificate": 2470,
+          "exact_changes": 742,
+          "actual_changes": 875,
+          "near_float_boundary_either": 44,
+          "category_counts": [
+            3185,
+            169,
+            36,
+            706
+          ],
+          "points": [
+            {
+              "K": 1,
+              "L": 128,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 3185,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 3168,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 17,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 169,
+                  "output_changes": 11,
+                  "rescues": 5,
+                  "damages": 6,
+                  "positive_queries": 5,
+                  "negative_queries": 6
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 169,
+                  "output_changes": 11,
+                  "rescues": 5,
+                  "damages": 6,
+                  "positive_queries": 5,
+                  "negative_queries": 6
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 0,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 36,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 35,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 1,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 706,
+                  "output_changes": 16,
+                  "rescues": 8,
+                  "damages": 3,
+                  "positive_queries": 8,
+                  "negative_queries": 3
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 680,
+                  "output_changes": 16,
+                  "rescues": 8,
+                  "damages": 3,
+                  "positive_queries": 8,
+                  "negative_queries": 3
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 26,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                }
+              ]
+            },
+            {
+              "K": 100,
+              "L": 256,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 3185,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 3168,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 17,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 169,
+                  "output_changes": 26,
+                  "rescues": 97,
+                  "damages": 137,
+                  "positive_queries": 12,
+                  "negative_queries": 9
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 169,
+                  "output_changes": 26,
+                  "rescues": 97,
+                  "damages": 137,
+                  "positive_queries": 12,
+                  "negative_queries": 9
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 0,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 36,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 35,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 1,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 706,
+                  "output_changes": 53,
+                  "rescues": 152,
+                  "damages": 179,
+                  "positive_queries": 22,
+                  "negative_queries": 18
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 680,
+                  "output_changes": 51,
+                  "rescues": 151,
+                  "damages": 179,
+                  "positive_queries": 21,
+                  "negative_queries": 18
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 26,
+                  "output_changes": 2,
+                  "rescues": 1,
+                  "damages": 0,
+                  "positive_queries": 1,
+                  "negative_queries": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "method": "HybridFixedTemperature",
+          "reference": "GT10-hard",
+          "score_risk": 0.03186540953135929,
+          "covariance_risk": 0.031865409531359294,
+          "unweighted_chord_sum": 1.5540847331888166,
+          "score_risk_per_chord": 0.020504293524571764,
+          "norm_certificate": 58,
+          "posthoc_score_certificate": 2523,
+          "exact_changes": 704,
+          "actual_changes": 846,
+          "near_float_boundary_either": 42,
+          "category_counts": [
+            3216,
+            176,
+            34,
+            670
+          ],
+          "points": [
+            {
+              "K": 1,
+              "L": 128,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 3216,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 3197,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 19,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 176,
+                  "output_changes": 12,
+                  "rescues": 5,
+                  "damages": 5,
+                  "positive_queries": 5,
+                  "negative_queries": 5
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 175,
+                  "output_changes": 12,
+                  "rescues": 5,
+                  "damages": 5,
+                  "positive_queries": 5,
+                  "negative_queries": 5
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 1,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 34,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 33,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 1,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 670,
+                  "output_changes": 14,
+                  "rescues": 9,
+                  "damages": 3,
+                  "positive_queries": 9,
+                  "negative_queries": 3
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 649,
+                  "output_changes": 13,
+                  "rescues": 8,
+                  "damages": 3,
+                  "positive_queries": 8,
+                  "negative_queries": 3
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 21,
+                  "output_changes": 1,
+                  "rescues": 1,
+                  "damages": 0,
+                  "positive_queries": 1,
+                  "negative_queries": 0
+                }
+              ]
+            },
+            {
+              "K": 100,
+              "L": 256,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 3216,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 3197,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 19,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 176,
+                  "output_changes": 30,
+                  "rescues": 115,
+                  "damages": 172,
+                  "positive_queries": 13,
+                  "negative_queries": 12
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 175,
+                  "output_changes": 30,
+                  "rescues": 115,
+                  "damages": 172,
+                  "positive_queries": 13,
+                  "negative_queries": 12
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 1,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 34,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 33,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 1,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 670,
+                  "output_changes": 48,
+                  "rescues": 211,
+                  "damages": 135,
+                  "positive_queries": 20,
+                  "negative_queries": 15
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 649,
+                  "output_changes": 46,
+                  "rescues": 211,
+                  "damages": 133,
+                  "positive_queries": 20,
+                  "negative_queries": 14
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 21,
+                  "output_changes": 2,
+                  "rescues": 0,
+                  "damages": 2,
+                  "positive_queries": 0,
+                  "negative_queries": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "method": "HybridFixedTemperature",
+          "reference": "ApproxTarget10",
+          "score_risk": 0.002196589237632391,
+          "covariance_risk": 0.00219658923763239,
+          "unweighted_chord_sum": 0.1036967530526684,
+          "score_risk_per_chord": 0.021182815979944192,
+          "norm_certificate": 1167,
+          "posthoc_score_certificate": 3654,
+          "exact_changes": 182,
+          "actual_changes": 255,
+          "near_float_boundary_either": 45,
+          "category_counts": [
+            3818,
+            96,
+            23,
+            159
+          ],
+          "points": [
+            {
+              "K": 1,
+              "L": 128,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 3818,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 3798,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 20,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 96,
+                  "output_changes": 7,
+                  "rescues": 3,
+                  "damages": 1,
+                  "positive_queries": 3,
+                  "negative_queries": 1
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 94,
+                  "output_changes": 7,
+                  "rescues": 3,
+                  "damages": 1,
+                  "positive_queries": 3,
+                  "negative_queries": 1
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 2,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 23,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 21,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 2,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 159,
+                  "output_changes": 2,
+                  "rescues": 1,
+                  "damages": 1,
+                  "positive_queries": 1,
+                  "negative_queries": 1
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 138,
+                  "output_changes": 2,
+                  "rescues": 1,
+                  "damages": 1,
+                  "positive_queries": 1,
+                  "negative_queries": 1
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 21,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                }
+              ]
+            },
+            {
+              "K": 100,
+              "L": 256,
+              "groups": [
+                {
+                  "category": 0,
+                  "numeric_group": "all",
+                  "n": 3818,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "away",
+                  "n": 3798,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 0,
+                  "numeric_group": "near",
+                  "n": 20,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "all",
+                  "n": 96,
+                  "output_changes": 15,
+                  "rescues": 131,
+                  "damages": 79,
+                  "positive_queries": 5,
+                  "negative_queries": 7
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "away",
+                  "n": 94,
+                  "output_changes": 15,
+                  "rescues": 131,
+                  "damages": 79,
+                  "positive_queries": 5,
+                  "negative_queries": 7
+                },
+                {
+                  "category": 1,
+                  "numeric_group": "near",
+                  "n": 2,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "all",
+                  "n": 23,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "away",
+                  "n": 21,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 2,
+                  "numeric_group": "near",
+                  "n": 2,
+                  "output_changes": 0,
+                  "rescues": 0,
+                  "damages": 0,
+                  "positive_queries": 0,
+                  "negative_queries": 0
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "all",
+                  "n": 159,
+                  "output_changes": 11,
+                  "rescues": 41,
+                  "damages": 7,
+                  "positive_queries": 5,
+                  "negative_queries": 4
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "away",
+                  "n": 138,
+                  "output_changes": 8,
+                  "rescues": 41,
+                  "damages": 3,
+                  "positive_queries": 5,
+                  "negative_queries": 2
+                },
+                {
+                  "category": 3,
+                  "numeric_group": "near",
+                  "n": 21,
+                  "output_changes": 3,
+                  "rescues": 0,
+                  "damages": 4,
+                  "positive_queries": 0,
+                  "negative_queries": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "seconds": 2.0697250880002684,
+  "new_real_NSG": 0,
+  "new_router_calls": 0,
+  "new_GT": 0,
+  "new_models": 0,
+  "default_changed": false,
+  "category_labels": [
+    "same_exact_same_actual",
+    "same_exact_changed_actual",
+    "changed_exact_same_actual",
+    "changed_exact_changed_actual"
+  ]
+}

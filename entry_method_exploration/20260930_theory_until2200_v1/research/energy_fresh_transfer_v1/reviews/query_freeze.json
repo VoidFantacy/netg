@@ -1,0 +1,427 @@
+{
+  "status": "ALL_FOUR_CASES_FROZEN_BEFORE_GT",
+  "unix": 1790752991.2176638,
+  "seconds": 13.562133501000062,
+  "cases": {
+    "webvid2_5m_light_v1_b0": {
+      "status": "PASS_SOURCE_AND_DEDUP",
+      "case": "webvid2_5m_light_v1_b0",
+      "dataset": "webvid2_5m_light_v1",
+      "n": 4096,
+      "dimension": 512,
+      "source": {
+        "source": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/source/webvid.query.train.2.5M.fbin",
+        "source_rows": [
+          2370000,
+          2390000
+        ],
+        "source_stat": {
+          "bytes": 5120000008,
+          "mtime_ns": 1787714604500765209
+        },
+        "slice_sha256": "668f9241a54d47fc8692f1e9f7df8c2e396210bfa646eebe4f06a02af66c329e",
+        "inherited_full_source_sha256": "cb48e2b8d90492fce20c2303b5a5ca10b49875f6a75967733d2bc7b73bd8c2b9"
+      },
+      "excluded_files": [
+        {
+          "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.aco_train.seed20260826.fvecs",
+          "rows": 5000,
+          "sha256": "b4322c37b2d4ab10e965bc5731f523341d1a974d5e40aa0cd881b4fbe28a572e"
+        },
+        {
+          "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+          "rows": 30000,
+          "sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855"
+        },
+        {
+          "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.test.public10K.fvecs",
+          "rows": 10000,
+          "sha256": "96b11dda1628f15e704512438e1dc773a8f19b2426e03c71aedcacf11f18910d"
+        },
+        {
+          "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.validation.seed20260826.fvecs",
+          "rows": 10000,
+          "sha256": "a59d61a48bf160679626a5a0a71f9d28d32d3528bda94d92ddf6ab03e132b96a"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/candidate_source.f32",
+          "rows": 20000,
+          "sha256": "57029d23477724275baed1e6578e5e783d243f80cdcddc0e4f5a25fe8e048eb6"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/queries.f32",
+          "rows": 20000,
+          "sha256": "4eef43d019981b7ce8a57eb9969736c0443d4622412ed482868ba80cd8b078b6"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_web_fresh_check_v1/inputs/webvid2_5m_light_v1/candidate_source.f32",
+          "rows": 20000,
+          "sha256": "7335078c72b00609b08fe75c996e3a366d652346fbff849bc7b83c3fd87c9379"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/fresh_transfer_v1/inputs/webvid2_5m_light_v1_b0/candidate_source.f32",
+          "rows": 20000,
+          "sha256": "8f751cf4b443973bd1d62783f79bd8bb52ad70878832c8aac3aa0d78edd8d90f"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/fresh_transfer_v1/inputs/webvid2_5m_light_v1_b1/candidate_source.f32",
+          "rows": 20000,
+          "sha256": "4668ee4e62d7ff67c24a7af47457ff9b5e39505eff89e5aa2945cd4ecbcb3d27"
+        }
+      ],
+      "duplicates_skipped": 105,
+      "invalid_skipped": 0,
+      "new_vs_known_inputs_byte_overlap": 0,
+      "selected_queries_unique": true,
+      "selection": "first eligible source rows; no GT or model outputs",
+      "seconds": 0.14747989600073197,
+      "unix": 1790752978.4823704,
+      "files": {
+        "queries.f32": "be2fbdf76883e765ef0b755b6187a696c9814b5ab17b62e3275eba7f95b79add",
+        "candidate_source.f32": "668f9241a54d47fc8692f1e9f7df8c2e396210bfa646eebe4f06a02af66c329e",
+        "source_rows.i64": "91ce015648880d30d2f727e90f60a9fca8be389812b0d1683a37e2f12d9d640e"
+      },
+      "scope": "no known registered/exposed byte overlap; not semantic independence or exhaustive unregistered exposure"
+    },
+    "webvid2_5m_light_v1_b1": {
+      "status": "PASS_SOURCE_AND_DEDUP",
+      "case": "webvid2_5m_light_v1_b1",
+      "dataset": "webvid2_5m_light_v1",
+      "n": 4096,
+      "dimension": 512,
+      "source": {
+        "source": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/source/webvid.query.train.2.5M.fbin",
+        "source_rows": [
+          2390000,
+          2410000
+        ],
+        "source_stat": {
+          "bytes": 5120000008,
+          "mtime_ns": 1787714604500765209
+        },
+        "slice_sha256": "7da0a031765e1935e61f8e029bdbe44b043e8b8c7dfc75af0be403b626322b2d",
+        "inherited_full_source_sha256": "cb48e2b8d90492fce20c2303b5a5ca10b49875f6a75967733d2bc7b73bd8c2b9"
+      },
+      "excluded_files": [
+        {
+          "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.aco_train.seed20260826.fvecs",
+          "rows": 5000,
+          "sha256": "b4322c37b2d4ab10e965bc5731f523341d1a974d5e40aa0cd881b4fbe28a572e"
+        },
+        {
+          "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+          "rows": 30000,
+          "sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855"
+        },
+        {
+          "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.test.public10K.fvecs",
+          "rows": 10000,
+          "sha256": "96b11dda1628f15e704512438e1dc773a8f19b2426e03c71aedcacf11f18910d"
+        },
+        {
+          "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.validation.seed20260826.fvecs",
+          "rows": 10000,
+          "sha256": "a59d61a48bf160679626a5a0a71f9d28d32d3528bda94d92ddf6ab03e132b96a"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/candidate_source.f32",
+          "rows": 20000,
+          "sha256": "57029d23477724275baed1e6578e5e783d243f80cdcddc0e4f5a25fe8e048eb6"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/queries.f32",
+          "rows": 20000,
+          "sha256": "4eef43d019981b7ce8a57eb9969736c0443d4622412ed482868ba80cd8b078b6"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_web_fresh_check_v1/inputs/webvid2_5m_light_v1/candidate_source.f32",
+          "rows": 20000,
+          "sha256": "7335078c72b00609b08fe75c996e3a366d652346fbff849bc7b83c3fd87c9379"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/fresh_transfer_v1/inputs/webvid2_5m_light_v1_b0/candidate_source.f32",
+          "rows": 20000,
+          "sha256": "8f751cf4b443973bd1d62783f79bd8bb52ad70878832c8aac3aa0d78edd8d90f"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/fresh_transfer_v1/inputs/webvid2_5m_light_v1_b1/candidate_source.f32",
+          "rows": 20000,
+          "sha256": "4668ee4e62d7ff67c24a7af47457ff9b5e39505eff89e5aa2945cd4ecbcb3d27"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/inputs/webvid2_5m_light_v1_b0/candidate_source.f32",
+          "rows": 20000,
+          "sha256": "668f9241a54d47fc8692f1e9f7df8c2e396210bfa646eebe4f06a02af66c329e"
+        }
+      ],
+      "duplicates_skipped": 84,
+      "invalid_skipped": 0,
+      "new_vs_known_inputs_byte_overlap": 0,
+      "selected_queries_unique": true,
+      "selection": "first eligible source rows; no GT or model outputs",
+      "seconds": 0.14350593799827038,
+      "unix": 1790752978.7450604,
+      "files": {
+        "queries.f32": "02ba5cf0440317ae5d20fa7fb545c60632266eed6996196d9fd71126af92b9fc",
+        "candidate_source.f32": "7da0a031765e1935e61f8e029bdbe44b043e8b8c7dfc75af0be403b626322b2d",
+        "source_rows.i64": "9a7f86b426d1d7c29765f9a81f8d209dd4eb6c9aa66c2c752dc9a83279c7a6e7"
+      },
+      "scope": "no known registered/exposed byte overlap; not semantic independence or exhaustive unregistered exposure"
+    },
+    "yandex_t2i_official10M_ip_v1_b0": {
+      "status": "PASS_SOURCE_AND_DEDUP",
+      "case": "yandex_t2i_official10M_ip_v1_b0",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "n": 4096,
+      "dimension": 200,
+      "source": {
+        "url": "https://storage.yandexcloud.net/yandex-research/ann-datasets/T2I/query.learn.50M.fbin",
+        "range": [
+          1648000008,
+          1664000007
+        ],
+        "status": 206,
+        "headers": {
+          "Server": "nginx",
+          "Date": "Wed, 30 Sep 2026 07:23:01 GMT",
+          "Content-Type": "application/octet-stream",
+          "Content-Length": "16000000",
+          "Connection": "close",
+          "Accept-Ranges": "bytes",
+          "Content-Range": "bytes 1648000008-1664000007/40000000008",
+          "Etag": "\"159b543eb212a228837a7a8908a3075d-4769\"",
+          "Last-Modified": "Sat, 01 May 2021 18:54:01 GMT",
+          "X-Amz-Request-Id": "51bff7bf46ca3784"
+        },
+        "sha256": "482dcd2096e9b4039db86a2af07153f7f5c2cc72a120c1bf5bb33849f6afbe48",
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "PASS",
+            "bytes": 16000000,
+            "unix": 1790752986.0092652
+          }
+        ],
+        "header_verification": {
+          "url": "https://storage.yandexcloud.net/yandex-research/ann-datasets/T2I/query.learn.50M.fbin",
+          "range": [
+            0,
+            12807
+          ],
+          "status": 206,
+          "headers": {
+            "Server": "nginx",
+            "Date": "Wed, 30 Sep 2026 07:23:00 GMT",
+            "Content-Type": "application/octet-stream",
+            "Content-Length": "12808",
+            "Connection": "close",
+            "Accept-Ranges": "bytes",
+            "Content-Range": "bytes 0-12807/40000000008",
+            "Etag": "\"159b543eb212a228837a7a8908a3075d-4769\"",
+            "Last-Modified": "Sat, 01 May 2021 18:54:01 GMT",
+            "X-Amz-Request-Id": "6131ec6c25f412eb"
+          },
+          "sha256": "9be20a2058aa1b6b2960ddeee6aeb95ab796ee7f9ba718060e339e2505eb9a0c",
+          "attempts": [
+            {
+              "attempt": 0,
+              "status": "PASS",
+              "bytes": 12808,
+              "unix": 1790752980.6102953
+            }
+          ]
+        },
+        "local_prefix_bytes_match": true,
+        "source_rows": [
+          2060000,
+          2080000
+        ]
+      },
+      "excluded_files": [
+        {
+          "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.aco_train.fvecs",
+          "rows": 5000,
+          "sha256": "d9146b417777e49d175f56071f6c1a90ccbd7a51c767f8cf0f1d088cc7dfe727"
+        },
+        {
+          "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs",
+          "rows": 30000,
+          "sha256": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2"
+        },
+        {
+          "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.test.public100K.fvecs",
+          "rows": 100000,
+          "sha256": "d5c1079755a1bef7db62f63f1e8b041e3035024e072ac5db79ddfb66689b42a2"
+        },
+        {
+          "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.validation.fvecs",
+          "rows": 10000,
+          "sha256": "f84e695822f4b0fd303782f9ff5c8c92e5149bbd7f46d500250f40030e35871b"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/candidate_source.f32",
+          "rows": 20000,
+          "sha256": "bb183d57494a848c397486977199e0c57ed50fdaeec1333db25ab9cf108f6086"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/queries.f32",
+          "rows": 20000,
+          "sha256": "e86c597b26ee908f4d4d64674a2ea89837e75d1f824c1ce30671fbd3fc5424e8"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/fresh_transfer_v1/inputs/yandex_t2i_official10M_ip_v1_b0/candidate_source.f32",
+          "rows": 20000,
+          "sha256": "395c72c4df41d9ac6cdab8a7c5c33d6f2e26afc561bc110a5a79876f7e637714"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/fresh_transfer_v1/inputs/yandex_t2i_official10M_ip_v1_b1/candidate_source.f32",
+          "rows": 20000,
+          "sha256": "6115cdd81a5b2b329471ca511e8d220bdfe2392822bdf97faca17addb51e426b"
+        }
+      ],
+      "duplicates_skipped": 0,
+      "invalid_skipped": 0,
+      "new_vs_known_inputs_byte_overlap": 0,
+      "selected_queries_unique": true,
+      "selection": "first eligible source rows; no GT or model outputs",
+      "seconds": 5.4367301689999294,
+      "unix": 1790752986.0472727,
+      "files": {
+        "queries.f32": "511a1004ff560108c05ce96a31b9e579b6d9b58a408b8b96d2b132d4d2ebe9d5",
+        "candidate_source.f32": "482dcd2096e9b4039db86a2af07153f7f5c2cc72a120c1bf5bb33849f6afbe48",
+        "source_rows.i64": "3e54c2db51106ae3daa709e5584ffdaa99ec959b773ea647e893a7109b706d9d"
+      },
+      "scope": "no known registered/exposed byte overlap; not semantic independence or exhaustive unregistered exposure"
+    },
+    "yandex_t2i_official10M_ip_v1_b1": {
+      "status": "PASS_SOURCE_AND_DEDUP",
+      "case": "yandex_t2i_official10M_ip_v1_b1",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "n": 4096,
+      "dimension": 200,
+      "source": {
+        "url": "https://storage.yandexcloud.net/yandex-research/ann-datasets/T2I/query.learn.50M.fbin",
+        "range": [
+          1664000008,
+          1680000007
+        ],
+        "status": 206,
+        "headers": {
+          "Server": "nginx",
+          "Date": "Wed, 30 Sep 2026 07:23:06 GMT",
+          "Content-Type": "application/octet-stream",
+          "Content-Length": "16000000",
+          "Connection": "close",
+          "Accept-Ranges": "bytes",
+          "Content-Range": "bytes 1664000008-1680000007/40000000008",
+          "Etag": "\"159b543eb212a228837a7a8908a3075d-4769\"",
+          "Last-Modified": "Sat, 01 May 2021 18:54:01 GMT",
+          "X-Amz-Request-Id": "e30e02d30f086ed2"
+        },
+        "sha256": "e6991e4c22b23e1c4bbc001ed4885ba4f21b47b1e2c1c1152e8574570624278a",
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "PASS",
+            "bytes": 16000000,
+            "unix": 1790752991.1162963
+          }
+        ],
+        "header_verification": {
+          "url": "https://storage.yandexcloud.net/yandex-research/ann-datasets/T2I/query.learn.50M.fbin",
+          "range": [
+            0,
+            12807
+          ],
+          "status": 206,
+          "headers": {
+            "Server": "nginx",
+            "Date": "Wed, 30 Sep 2026 07:23:00 GMT",
+            "Content-Type": "application/octet-stream",
+            "Content-Length": "12808",
+            "Connection": "close",
+            "Accept-Ranges": "bytes",
+            "Content-Range": "bytes 0-12807/40000000008",
+            "Etag": "\"159b543eb212a228837a7a8908a3075d-4769\"",
+            "Last-Modified": "Sat, 01 May 2021 18:54:01 GMT",
+            "X-Amz-Request-Id": "6131ec6c25f412eb"
+          },
+          "sha256": "9be20a2058aa1b6b2960ddeee6aeb95ab796ee7f9ba718060e339e2505eb9a0c",
+          "attempts": [
+            {
+              "attempt": 0,
+              "status": "PASS",
+              "bytes": 12808,
+              "unix": 1790752980.6102953
+            }
+          ]
+        },
+        "local_prefix_bytes_match": true,
+        "source_rows": [
+          2080000,
+          2100000
+        ]
+      },
+      "excluded_files": [
+        {
+          "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.aco_train.fvecs",
+          "rows": 5000,
+          "sha256": "d9146b417777e49d175f56071f6c1a90ccbd7a51c767f8cf0f1d088cc7dfe727"
+        },
+        {
+          "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs",
+          "rows": 30000,
+          "sha256": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2"
+        },
+        {
+          "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.test.public100K.fvecs",
+          "rows": 100000,
+          "sha256": "d5c1079755a1bef7db62f63f1e8b041e3035024e072ac5db79ddfb66689b42a2"
+        },
+        {
+          "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.validation.fvecs",
+          "rows": 10000,
+          "sha256": "f84e695822f4b0fd303782f9ff5c8c92e5149bbd7f46d500250f40030e35871b"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/candidate_source.f32",
+          "rows": 20000,
+          "sha256": "bb183d57494a848c397486977199e0c57ed50fdaeec1333db25ab9cf108f6086"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/queries.f32",
+          "rows": 20000,
+          "sha256": "e86c597b26ee908f4d4d64674a2ea89837e75d1f824c1ce30671fbd3fc5424e8"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/fresh_transfer_v1/inputs/yandex_t2i_official10M_ip_v1_b0/candidate_source.f32",
+          "rows": 20000,
+          "sha256": "395c72c4df41d9ac6cdab8a7c5c33d6f2e26afc561bc110a5a79876f7e637714"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/fresh_transfer_v1/inputs/yandex_t2i_official10M_ip_v1_b1/candidate_source.f32",
+          "rows": 20000,
+          "sha256": "6115cdd81a5b2b329471ca511e8d220bdfe2392822bdf97faca17addb51e426b"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/inputs/yandex_t2i_official10M_ip_v1_b0/candidate_source.f32",
+          "rows": 20000,
+          "sha256": "482dcd2096e9b4039db86a2af07153f7f5c2cc72a120c1bf5bb33849f6afbe48"
+        }
+      ],
+      "duplicates_skipped": 0,
+      "invalid_skipped": 0,
+      "new_vs_known_inputs_byte_overlap": 0,
+      "selected_queries_unique": true,
+      "selection": "first eligible source rows; no GT or model outputs",
+      "seconds": 5.061404209998727,
+      "unix": 1790752991.1544862,
+      "files": {
+        "queries.f32": "4314019b7666a85311ce9e307d8fcd6f4a995ef4a49333cb6f5f12140ccc0c63",
+        "candidate_source.f32": "e6991e4c22b23e1c4bbc001ed4885ba4f21b47b1e2c1c1152e8574570624278a",
+        "source_rows.i64": "2d921a7676897b438ef656b86c264ceff96a3d8c1a8c5d464d55a080e108d120"
+      },
+      "scope": "no known registered/exposed byte overlap; not semantic independence or exhaustive unregistered exposure"
+    }
+  }
+}

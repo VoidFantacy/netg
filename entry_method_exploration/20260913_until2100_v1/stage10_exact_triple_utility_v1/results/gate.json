@@ -1,0 +1,37 @@
+{
+  "status": "EXACT_TRIPLE_DIAGNOSIS_COMPLETE",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "passed": false,
+      "rules": {
+        "exact_P_positive": false,
+        "exact_P_halves": false,
+        "exact_P_failure": false,
+        "exact_P_graph_cost": true,
+        "baseline_positive": true,
+        "baseline_halves": true,
+        "baseline_failure": true,
+        "baseline_graph_cost": true,
+        "mode_nonnegative": true
+      },
+      "scope": "historical auxiliary quality only; no QPS or utility oracle"
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "passed": true,
+      "rules": {
+        "exact_P_positive": true,
+        "exact_P_halves": true,
+        "exact_P_failure": true,
+        "exact_P_graph_cost": true,
+        "baseline_positive": true,
+        "baseline_halves": true,
+        "baseline_failure": true,
+        "baseline_graph_cost": true,
+        "mode_nonnegative": true
+      },
+      "scope": "historical auxiliary quality only; no QPS or utility oracle"
+    }
+  },
+  "next_width_diagnosis_supported": true,
+  "not_performance_GO": true
+}

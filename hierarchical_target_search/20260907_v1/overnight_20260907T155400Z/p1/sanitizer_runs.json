@@ -1,0 +1,36 @@
+{
+  "runs": [
+    {
+      "name": "sanitizer_help",
+      "argv": [
+        "timeout",
+        "120s",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/test_regional_search_sanitized",
+        "--help"
+      ],
+      "start_utc": "2026-09-07T16:04:38.254534+00:00",
+      "end_utc": "2026-09-07T16:04:38.273933+00:00",
+      "wall_seconds": 0.019391683003050275,
+      "exit_code": 0
+    },
+    {
+      "name": "synthetic_sanitized",
+      "argv": [
+        "timeout",
+        "120s",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/test_regional_search_sanitized"
+      ],
+      "start_utc": "2026-09-07T16:04:38.273956+00:00",
+      "end_utc": "2026-09-07T16:04:38.439286+00:00",
+      "wall_seconds": 0.16534942499856697,
+      "exit_code": 0
+    }
+  ],
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "ASAN_OPTIONS": "detect_leaks=1:halt_on_error=1",
+    "UBSAN_OPTIONS": "halt_on_error=1:print_stacktrace=1"
+  },
+  "scope": "New header and synthetic suite instrumented; pre-existing static libraries were linked without rebuilding."
+}

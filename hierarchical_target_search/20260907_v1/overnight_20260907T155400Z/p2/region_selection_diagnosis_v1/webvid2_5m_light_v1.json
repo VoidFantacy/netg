@@ -1,0 +1,344 @@
+{
+  "dataset": "webvid2_5m_light_v1",
+  "status": "COMPLETE_DATASET_DIAGNOSIS",
+  "query_range": [
+    0,
+    10000
+  ],
+  "GT_absolute_mass_computed_from_ids": true,
+  "no_oracle_mass_inference_from_weights": true,
+  "fit_data_changed": false,
+  "evidence": {
+    "count": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/webvid_eval/count.json",
+      "sha256": "2b9a16a3225082ae38ec22dd6b1d8fbe5ad7b852ef5625359ccd4b4465655d6a"
+    },
+    "model": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/webvid_model/model.json",
+      "sha256": "57e5b0567b56e09dc71f32ff3f8a89586639fdc979c2ed25fcba855779f943fa"
+    },
+    "pilot_GT_prefix": {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/gt.router_train.seed20260826.ip.ivecs",
+      "parent_sha256_inherited_from_P0": "1db08bf5b259a468558e6dfed19661d73bc6fe6947a3c862e526176242ace72c",
+      "parent_file_fully_read_or_rehashed": false,
+      "read_parent_row_range": [
+        0,
+        10000
+      ],
+      "bytes_read": 4040004,
+      "pilot_gt_values_sha256": "fbff79becb313325efef8e7a8b59a187505435ab8faa83b8e733aa8789db557e",
+      "used_gt_ranks": [
+        0,
+        10
+      ]
+    },
+    "labels": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/webvid_partition_strict_v3/regions.u16",
+      "sha256": "f58310c916282d1e0291fb2bf0a36d29b2dc44276c7e9bb8dceb198ff9422548"
+    }
+  },
+  "by_L": [
+    {
+      "L": 64,
+      "selection_metrics": {
+        "geometry_absolute_gt10_mass": {
+          "mean": 0.62539,
+          "min": 0.0,
+          "max": 1.0,
+          "q25": 0.4,
+          "median": 0.7,
+          "q75": 0.9
+        },
+        "oracle_absolute_gt10_mass": {
+          "mean": 0.94691,
+          "min": 0.4,
+          "max": 1.0,
+          "q25": 0.9,
+          "median": 1.0,
+          "q75": 1.0
+        },
+        "absolute_mass_gap": {
+          "mean": 0.32152,
+          "min": 0.0,
+          "max": 1.0,
+          "q25": 0.1,
+          "median": 0.2,
+          "q75": 0.5
+        },
+        "gt10_distinct_regions": {
+          "mean": 3.5731,
+          "min": 1.0,
+          "max": 10.0,
+          "q25": 2.0,
+          "median": 3.0,
+          "q75": 5.0
+        },
+        "top4_overlap_count": {
+          "mean": 1.5201,
+          "min": 0.0,
+          "max": 4.0,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 2.0
+        },
+        "intersection_absolute_gt10_mass": {
+          "mean": 0.61245,
+          "min": 0.0,
+          "max": 1.0,
+          "q25": 0.3,
+          "median": 0.7,
+          "q75": 0.9
+        },
+        "intersection_fraction_of_oracle_top4_mass": {
+          "mean": 0.6344050793650794,
+          "min": 0.0,
+          "max": 1.0,
+          "q25": 0.375,
+          "median": 0.7142857142857143,
+          "q75": 0.9
+        }
+      },
+      "bins_by_actual_geometry_absolute_mass": [
+        {
+          "geometry_absolute_mass_bin": [
+            0.0,
+            0.25
+          ],
+          "interval": "[low,high)",
+          "query_count": 1910,
+          "mean_geometry_absolute_mass": 0.09172774869109947,
+          "mean_oracle_absolute_mass": 0.9097905759162302,
+          "mean_distinct_GT10_regions": 4.199476439790576,
+          "mean_recall_deltas_pp": {
+            "geom_uniform_minus_unified_recall_pp": -7.554973821989528,
+            "geom_probability_minus_unified_recall_pp": -7.554973821989528,
+            "oracle_probability_minus_unified_recall_pp": 9.162303664921465,
+            "oracle_unified_minus_geom_unified_recall_pp": 1.0994764397905759
+          },
+          "causal_interpretation_allowed": false,
+          "confidence_intervals": null,
+          "reason_no_bin_CI": "Fixed descriptive stratification; no new significance or gate claim"
+        },
+        {
+          "geometry_absolute_mass_bin": [
+            0.25,
+            0.5
+          ],
+          "interval": "[low,high)",
+          "query_count": 1162,
+          "mean_geometry_absolute_mass": 0.3510327022375214,
+          "mean_oracle_absolute_mass": 0.8707401032702238,
+          "mean_distinct_GT10_regions": 5.094664371772805,
+          "mean_recall_deltas_pp": {
+            "geom_uniform_minus_unified_recall_pp": -0.5421686746987953,
+            "geom_probability_minus_unified_recall_pp": -0.5421686746987953,
+            "oracle_probability_minus_unified_recall_pp": 9.182444061962133,
+            "oracle_unified_minus_geom_unified_recall_pp": 1.351118760757315
+          },
+          "causal_interpretation_allowed": false,
+          "confidence_intervals": null,
+          "reason_no_bin_CI": "Fixed descriptive stratification; no new significance or gate claim"
+        },
+        {
+          "geometry_absolute_mass_bin": [
+            0.5,
+            0.75
+          ],
+          "interval": "[low,high)",
+          "query_count": 2310,
+          "mean_geometry_absolute_mass": 0.6085281385281385,
+          "mean_oracle_absolute_mass": 0.9206493506493506,
+          "mean_distinct_GT10_regions": 4.488744588744589,
+          "mean_recall_deltas_pp": {
+            "geom_uniform_minus_unified_recall_pp": -0.38095238095238104,
+            "geom_probability_minus_unified_recall_pp": -0.38095238095238104,
+            "oracle_probability_minus_unified_recall_pp": 7.45021645021645,
+            "oracle_unified_minus_geom_unified_recall_pp": 0.6666666666666666
+          },
+          "causal_interpretation_allowed": false,
+          "confidence_intervals": null,
+          "reason_no_bin_CI": "Fixed descriptive stratification; no new significance or gate claim"
+        },
+        {
+          "geometry_absolute_mass_bin": [
+            0.75,
+            1.0
+          ],
+          "interval": "[low,high]",
+          "query_count": 4618,
+          "mean_geometry_absolute_mass": 0.9235816370723258,
+          "mean_oracle_absolute_mass": 0.9945647466435685,
+          "mean_distinct_GT10_regions": 2.4731485491554785,
+          "mean_recall_deltas_pp": {
+            "geom_uniform_minus_unified_recall_pp": -8.319618882633174,
+            "geom_probability_minus_unified_recall_pp": -8.308791684711997,
+            "oracle_probability_minus_unified_recall_pp": 1.8947596362061498,
+            "oracle_unified_minus_geom_unified_recall_pp": 0.12992637505413598
+          },
+          "causal_interpretation_allowed": false,
+          "confidence_intervals": null,
+          "reason_no_bin_CI": "Fixed descriptive stratification; no new significance or gate claim"
+        }
+      ],
+      "overall_recall_deltas_pp": {
+        "geom_uniform_minus_unified_recall_pp": -5.436,
+        "geom_probability_minus_unified_recall_pp": -5.431,
+        "oracle_probability_minus_unified_recall_pp": 5.413,
+        "oracle_unified_minus_geom_unified_recall_pp": 0.581
+      }
+    },
+    {
+      "L": 128,
+      "selection_metrics": {
+        "geometry_absolute_gt10_mass": {
+          "mean": 0.62539,
+          "min": 0.0,
+          "max": 1.0,
+          "q25": 0.4,
+          "median": 0.7,
+          "q75": 0.9
+        },
+        "oracle_absolute_gt10_mass": {
+          "mean": 0.94691,
+          "min": 0.4,
+          "max": 1.0,
+          "q25": 0.9,
+          "median": 1.0,
+          "q75": 1.0
+        },
+        "absolute_mass_gap": {
+          "mean": 0.32152,
+          "min": 0.0,
+          "max": 1.0,
+          "q25": 0.1,
+          "median": 0.2,
+          "q75": 0.5
+        },
+        "gt10_distinct_regions": {
+          "mean": 3.5731,
+          "min": 1.0,
+          "max": 10.0,
+          "q25": 2.0,
+          "median": 3.0,
+          "q75": 5.0
+        },
+        "top4_overlap_count": {
+          "mean": 1.5201,
+          "min": 0.0,
+          "max": 4.0,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 2.0
+        },
+        "intersection_absolute_gt10_mass": {
+          "mean": 0.61245,
+          "min": 0.0,
+          "max": 1.0,
+          "q25": 0.3,
+          "median": 0.7,
+          "q75": 0.9
+        },
+        "intersection_fraction_of_oracle_top4_mass": {
+          "mean": 0.6344050793650794,
+          "min": 0.0,
+          "max": 1.0,
+          "q25": 0.375,
+          "median": 0.7142857142857143,
+          "q75": 0.9
+        }
+      },
+      "bins_by_actual_geometry_absolute_mass": [
+        {
+          "geometry_absolute_mass_bin": [
+            0.0,
+            0.25
+          ],
+          "interval": "[low,high)",
+          "query_count": 1910,
+          "mean_geometry_absolute_mass": 0.09172774869109947,
+          "mean_oracle_absolute_mass": 0.9097905759162302,
+          "mean_distinct_GT10_regions": 4.199476439790576,
+          "mean_recall_deltas_pp": {
+            "geom_uniform_minus_unified_recall_pp": -6.602094240837697,
+            "geom_probability_minus_unified_recall_pp": -6.638743455497382,
+            "oracle_probability_minus_unified_recall_pp": 8.115183246073299,
+            "oracle_unified_minus_geom_unified_recall_pp": 1.12565445026178
+          },
+          "causal_interpretation_allowed": false,
+          "confidence_intervals": null,
+          "reason_no_bin_CI": "Fixed descriptive stratification; no new significance or gate claim"
+        },
+        {
+          "geometry_absolute_mass_bin": [
+            0.25,
+            0.5
+          ],
+          "interval": "[low,high)",
+          "query_count": 1162,
+          "mean_geometry_absolute_mass": 0.3510327022375214,
+          "mean_oracle_absolute_mass": 0.8707401032702238,
+          "mean_distinct_GT10_regions": 5.094664371772805,
+          "mean_recall_deltas_pp": {
+            "geom_uniform_minus_unified_recall_pp": -0.6024096385542171,
+            "geom_probability_minus_unified_recall_pp": -0.5765920826161793,
+            "oracle_probability_minus_unified_recall_pp": 8.666092943201377,
+            "oracle_unified_minus_geom_unified_recall_pp": 0.8261617900172117
+          },
+          "causal_interpretation_allowed": false,
+          "confidence_intervals": null,
+          "reason_no_bin_CI": "Fixed descriptive stratification; no new significance or gate claim"
+        },
+        {
+          "geometry_absolute_mass_bin": [
+            0.5,
+            0.75
+          ],
+          "interval": "[low,high)",
+          "query_count": 2310,
+          "mean_geometry_absolute_mass": 0.6085281385281385,
+          "mean_oracle_absolute_mass": 0.9206493506493506,
+          "mean_distinct_GT10_regions": 4.488744588744589,
+          "mean_recall_deltas_pp": {
+            "geom_uniform_minus_unified_recall_pp": 0.0735930735930736,
+            "geom_probability_minus_unified_recall_pp": 0.06060606060606061,
+            "oracle_probability_minus_unified_recall_pp": 6.917748917748917,
+            "oracle_unified_minus_geom_unified_recall_pp": 0.6103896103896104
+          },
+          "causal_interpretation_allowed": false,
+          "confidence_intervals": null,
+          "reason_no_bin_CI": "Fixed descriptive stratification; no new significance or gate claim"
+        },
+        {
+          "geometry_absolute_mass_bin": [
+            0.75,
+            1.0
+          ],
+          "interval": "[low,high]",
+          "query_count": 4618,
+          "mean_geometry_absolute_mass": 0.9235816370723258,
+          "mean_oracle_absolute_mass": 0.9945647466435685,
+          "mean_distinct_GT10_regions": 2.4731485491554785,
+          "mean_recall_deltas_pp": {
+            "geom_uniform_minus_unified_recall_pp": -5.075790385448246,
+            "geom_probability_minus_unified_recall_pp": -5.021654395842356,
+            "oracle_probability_minus_unified_recall_pp": 2.375487223906453,
+            "oracle_unified_minus_geom_unified_recall_pp": 0.205716760502382
+          },
+          "causal_interpretation_allowed": false,
+          "confidence_intervals": null,
+          "reason_no_bin_CI": "Fixed descriptive stratification; no new significance or gate claim"
+        }
+      ],
+      "overall_recall_deltas_pp": {
+        "geom_uniform_minus_unified_recall_pp": -3.658,
+        "geom_probability_minus_unified_recall_pp": -3.64,
+        "oracle_probability_minus_unified_recall_pp": 5.252,
+        "oracle_unified_minus_geom_unified_recall_pp": 0.547
+      }
+    }
+  ],
+  "per_query_csv": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/region_selection_diagnosis_v1/per_query_webvid2_5m_light_v1.csv",
+    "sha256": "425dac64be8cdfa6ed5b27a9dd77d1dc467f92dbe7bf36feadfa007e60037fb5"
+  }
+}

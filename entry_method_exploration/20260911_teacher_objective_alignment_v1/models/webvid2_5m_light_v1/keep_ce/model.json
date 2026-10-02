@@ -1,0 +1,41 @@
+{
+  "status": "TRAINED_FIT_ONLY",
+  "dataset": "webvid2_5m_light_v1",
+  "cell": "keep_ce",
+  "teacher": "keep",
+  "loss": "ce",
+  "lambda_anchor": 100,
+  "temperature": 0.05,
+  "margin": 0.1,
+  "seed": 20260911,
+  "epochs": 80,
+  "parameter_count": 262144,
+  "first": {
+    "data_loss": 11.137194260129641,
+    "drift": 1.9111035273340296e-16,
+    "objective": 11.137194260129661,
+    "gradient_norm": 4.375723652323991,
+    "epoch": 0,
+    "seconds": 0.4571831226348877
+  },
+  "last": {
+    "data_loss": 10.337158098108022,
+    "drift": 0.003698525245537122,
+    "objective": 10.707010622661734,
+    "gradient_norm": 0.4713262471329375,
+    "epoch": 80,
+    "seconds": 38.26440763473511
+  },
+  "objective_decreased": true,
+  "training_seconds": 38.40496253967285,
+  "export_seconds": 0.0056917667388916016,
+  "W": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260911_teacher_objective_alignment_v1/models/webvid2_5m_light_v1/keep_ce/W.f32",
+    "bytes": 1669120,
+    "mtime_ns": 1789093235233018789,
+    "sha256": "f08f82fd919b5f80eb60a613676877f4a6ec65e4463eede549317ee913106fdd"
+  },
+  "cal_used": false,
+  "audit_used": false,
+  "validation_used": false
+}

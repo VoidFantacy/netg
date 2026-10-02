@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "script_sha256": "ada6e148069d1544ece96dcac44e5afb2939a06bd0e717c48c587ad405c9e77e",
+  "test_script_sha256": "a197094fdc0fdb67401a6550d78beaacf5982f96d2876035ec7cc94d36bc3572",
+  "cpp_exact_comparison_cases": 1075,
+  "equal_capacity_rejected_mismatch_fields": [
+    "result_ids",
+    "recall",
+    "routing_ndc",
+    "graph_ndc",
+    "total_ndc",
+    "routing_mac",
+    "graph_mac",
+    "total_mac",
+    "expanded",
+    "rejected",
+    "evicted_unexpanded"
+  ],
+  "synthetic_paired_queries": 4,
+  "synthetic_Ls": [
+    64,
+    128
+  ],
+  "source_sha256": "320e29c9407d5907ece7ef64113edeb8b2d5157fa8796aaf94e470eb6771e14e",
+  "read_boundary": "Only synthetic model/count and newly emitted CSV opened by diagnosis",
+  "synthetic_read_paths": [
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/capacity_diagnosis_synthetic_tests_v1/fixture/count.json",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/capacity_diagnosis_synthetic_tests_v1/fixture/model.json",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/capacity_diagnosis_synthetic_tests_v1/synthetic_diagnosis/per_query_webvid2_5m_light_v1.csv"
+  ],
+  "checks": [
+    "allocator tie ID and roundoff saturation",
+    "capacity conservation",
+    "C++ parity",
+    "same-capacity equality required for every saved exact field",
+    "different-capacity changes permitted",
+    "route change rejected",
+    "model/count SHA binding",
+    "positive main-analysis gate",
+    "conditional entropy/concentration known cases",
+    "synthetic end-to-end CSV and strata"
+  ],
+  "real_data_diagnosis_run": false
+}

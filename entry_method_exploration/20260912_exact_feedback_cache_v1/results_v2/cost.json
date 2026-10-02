@@ -1,0 +1,58 @@
+{
+  "NSG_calls": 3061,
+  "HNSW_calls": 742528,
+  "builds": 181,
+  "failed_attempt_counters": {
+    "NSG_calls": 0,
+    "HNSW_calls": 4096,
+    "builds": 1,
+    "source": "trace and native control-flow reconstruction"
+  },
+  "normal_new_NSG": 1333,
+  "parity_NSG": 1728,
+  "reused_current_seed_NSG": 81920,
+  "cold_all_contexts_normal_NSG": 83253,
+  "logical_full_rows": 737280,
+  "full_candidate_rows": 655360,
+  "optimizer_updates": 0,
+  "new_GT": 0,
+  "QPS_points": 0,
+  "datasets": [
+    {
+      "status": "PASS",
+      "dataset": "webvid2_5m_light_v1",
+      "seconds": 14.987039272000402,
+      "load_seconds": 4.054278385003272,
+      "peak_RSS_KiB": 5715344,
+      "invalid_batches_rejected": 4,
+      "normal_new_NSG": 971,
+      "NSG_calls": 1835,
+      "HNSW_calls": 369216,
+      "builds": 90,
+      "actual_threads": 1,
+      "build_seconds": 4.560726837999999
+    },
+    {
+      "status": "PASS",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "seconds": 19.4224609970006,
+      "load_seconds": 10.656636323001294,
+      "peak_RSS_KiB": 10442600,
+      "invalid_batches_rejected": 4,
+      "normal_new_NSG": 362,
+      "NSG_calls": 1226,
+      "HNSW_calls": 369216,
+      "builds": 90,
+      "actual_threads": 1,
+      "build_seconds": 3.9871975409999996
+    }
+  ],
+  "components": {
+    "build_seconds": 9.821107783001935,
+    "route_seconds": 4.116553958974691,
+    "change_mask_seconds": 0.012829830007831333,
+    "new_NSG_seconds": 0.5776661179843359,
+    "assemble_seconds": 0.006684088992187753,
+    "seconds": 19.253403185975912
+  }
+}

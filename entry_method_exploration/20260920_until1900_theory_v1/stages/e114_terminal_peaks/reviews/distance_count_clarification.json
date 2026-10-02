@@ -1,0 +1,26 @@
+{
+  "status": "CORRECTED_ACCOUNTING_ONLY",
+  "original_numeric_summary_preserved": true,
+  "no_reexecution": true,
+  "NSG_calls": 0,
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "original_field_reference_inner_products": 70995,
+      "original_semantics": "Logical neighbor, peak and GT references per unique query/peak; GT term counted per peak",
+      "actual_primary_dot_products": 70032,
+      "cached_GT_duplicate_count": 963,
+      "independent_fsum_dot_products": 341,
+      "interpretation": "Main loop actually computes GT score once per query, not once per peak; no rerun or numerical result change"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "original_field_reference_inner_products": 138264,
+      "original_semantics": "Logical neighbor, peak and GT references per unique query/peak; GT term counted per peak",
+      "actual_primary_dot_products": 137844,
+      "cached_GT_duplicate_count": 420,
+      "independent_fsum_dot_products": 514,
+      "interpretation": "Main loop actually computes GT score once per query, not once per peak; no rerun or numerical result change"
+    }
+  ]
+}

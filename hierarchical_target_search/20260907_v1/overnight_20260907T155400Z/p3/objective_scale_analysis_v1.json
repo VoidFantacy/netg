@@ -1,0 +1,71 @@
+{
+  "status": "COMPLETE_POSTHOC_ALGEBRA_ONLY",
+  "created_utc": "2026-09-07T18:11:20.037298+00:00",
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+  },
+  "gate": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P3.json",
+    "sha256": "3e154f9db332ec9a404b85d85061459967911be797e4350c191b1d9774dbc4f2"
+  },
+  "scope": "Conditional mathematical consequence of the exact frozen objective, using existing N/M/Q metadata. No graph/GT/query arrays opened, no new empirical experiment.",
+  "equations": [
+    "DeltaJ = DeltaC/M + DeltaS/(9Q)",
+    "For DeltaS=-k with integer k>=1, strict improvement iff DeltaC < k*M/(9Q)",
+    "For an individual node u, DeltaC <= D(u) = nonself_valid_out_slots(u)+nonself_valid_in_slots(u)",
+    "Thus any feasible candidate move with DeltaS<=-1 and D(u)<M/(9Q) is strictly improving regardless of the direction of its cut change.",
+    "Sum_u D(u)=2M, so #nodes with D(u)>=ceil(M/(9Q)) <= floor(2M/ceil(M/(9Q)))."
+  ],
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "partition_manifest": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/manifest.json",
+        "sha256": "b01a0ee73b29d51247587de501d63ac0ec6b4c723b62786ff71dc2aff0cb8de7"
+      },
+      "N": 2505000,
+      "M_directed_valid_nonself": 49611457,
+      "Q_fit": 20000,
+      "one_fragmentation_unit_graph_edge_threshold_exact": "49611457/180000",
+      "threshold_edges": 275.61920555555554,
+      "mean_total_in_plus_out_degree": 39.609945708582835,
+      "threshold_over_mean_degree_exact": "167/24",
+      "threshold_over_mean_degree": 6.958333333333333,
+      "ceil_threshold": 276,
+      "global_max_nodes_degree_at_least_threshold": 359503,
+      "global_min_nodes_below_threshold": 2145497,
+      "global_min_fraction_below_threshold": 0.8564858283433133,
+      "fit_target_degree_distribution_measured": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "partition_manifest": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/manifest.json",
+        "sha256": "230d507fada6662711aa6859816a8278994c5f48b15983ed6daaf313e6b75a4d"
+      },
+      "N": 10000000,
+      "M_directed_valid_nonself": 294844794,
+      "Q_fit": 20000,
+      "one_fragmentation_unit_graph_edge_threshold_exact": "49140799/30000",
+      "threshold_edges": 1638.0266333333334,
+      "mean_total_in_plus_out_degree": 58.9689588,
+      "threshold_over_mean_degree_exact": "250/9",
+      "threshold_over_mean_degree": 27.77777777777778,
+      "ceil_threshold": 1639,
+      "global_max_nodes_degree_at_least_threshold": 359786,
+      "global_min_nodes_below_threshold": 9640214,
+      "global_min_fraction_below_threshold": 0.9640214,
+      "fit_target_degree_distribution_measured": false
+    }
+  ],
+  "confirmed": "The globally normalized graph and fit-GT terms have unequal local scales; equal lambda=1 does not imply comparable per-node penalties.",
+  "limits": [
+    "This sufficient condition concerns feasible candidate moves; it does not assert such a move exists or is selected.",
+    "Nodes absent from fit GT have DeltaS=0 and remain graph-only; a global degree bound does not bound the degree distribution of fit targets, which may be hubs.",
+    "No actual fit-target degree distribution or changed-node cut loss is measured by this derivation.",
+    "This is a mechanism hypothesis for observed fit-to-pilot nontransfer, not proof of its cause.",
+    "The P3 NOPASS gate remains fixed; this derivation does not authorize lambda tuning or another representation revision."
+  ],
+  "possible_falsifiable_followup": "Only if the frozen target-support diagnosis warrants it, separately preregister a read-only graph-degree/fit-incidence audit to test whether the sufficient local-dominance condition covers actual fit targets and changing labels. Do not infer it from global average degree."
+}

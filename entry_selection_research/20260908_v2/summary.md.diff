@@ -1,0 +1,40 @@
+--- before/summary.md
++++ after/summary.md
+@@ -6,7 +6,7 @@
+ 
+ ### 当前主要方向：改进入口选择方法
+ 
+-2026-09-08 用户明确将入口选择列为新的主要方向：在有限历史查询和CPU成本约束下，固定原NSG与搜索语义，研究怎样低成本选出真正改善搜索的少量入口。Fast v1保留为基线，候选池构造、查询到入口的表示/短名单/排序和入口组合均可研究，算法尚未选定。优先解释“已有好入口为什么选不中”，不预设必须重建候选池或换神经模型。[方向记录](entry_selection_research/20260908_v1/direction.md)区分事实、假设和未来验证。
++2026-09-08 用户明确将入口选择列为新的主要方向：在有限历史查询和CPU成本约束下，固定原NSG与搜索语义，研究怎样低成本选出真正改善搜索的少量入口。Fast v1保留为基线，候选池构造、查询到入口的表示/短名单/排序和入口组合均可研究。2026-09-08本次调研已完成，唯一优先证伪推荐为固定一个Fast view的C8、保留主入口、直接学习真实三入口组合效用；尚无新实现或性能GO。优先解释“已有好入口为什么选不中”，不预设必须重建候选池或换神经模型。[方向记录](entry_selection_research/20260908_v1/direction.md)区分事实、假设和未来验证。
+ 
+ 已有WebVid validation 1K、815现有候选、K10/L64诊断中，Fast Top-3 Recall为65.23%，免费穷举选择的单入口oracle为80.24%，graph NDC为923.564→913.376。这支持该历史候选池存在选择空间，不证明当前入口是唯一瓶颈。它使用旧30K Fast与旧评测、排除选择成本，不能视为新paired20K/双数据集/端到端收益；命中并集贪心三入口也不是最佳联合搜索。[原始诊断](oracle_entry_diagnostics/webvid_validation_1k_current_hubs_v1/results.json)。
+ 
+@@ -14,7 +14,9 @@
+ 
+ 此前基于14篇核心论文的[文献复审](research_direction_review/20260908_v1/report.md)仍支持暂停硬区域、GT集中度/门户代理/静态容量组合；但其“先做P2六点成本筛查，再优先改搜索过程”的R0–R2建议现已被入口方向替代，未运行、不自动排队。强基线、公平成本、split隔离及最终性能门槛继续保留。
+ 
+-本轮只更新方向和文档，状态`DIRECTION_SET_RESEARCH_PENDING`，未运行新实验。下一对话按[调研指令](entry_selection_research/20260908_v1/next_dialogue_prompt.md)复核源码/已有证据、定向读原论文与作者实现，比较2–3个方向，提出一个推荐及有界最小gate草案；只调研设计，不自动转入实现或实验。原P3 NOPASS、旧gate/state/CLOSED和夜间报告不变；完整计划见[s-target.md](s-target.md)。
++入口调研已按原[调研指令](entry_selection_research/20260908_v1/next_dialogue_prompt.md)完成，当前状态`RESEARCH_COMPLETE_DESIGN_ONLY`，报告在[20260908_v2](entry_selection_research/20260908_v2/report.md)。比较了搜索效用候选覆盖、独立single utility排序和真实组合选择；最后一项只推荐先做有界证伪，不能称已验证新算法。主方法固定三入口，C8含anchor的21个triple是真实搜索标签；29个一至三入口集合仅作基数诊断。旧ranker已用真实single Recall/NDC，换模型名不构成新机制。GATE作者release无在线query MLP，Fast相对它的优势不能笼统归因于免去在线神经推理。
++
++[最小gate草案](entry_selection_research/20260908_v2/minimum_gate.md)先分池/短名单/排序损失，再查组合空间、固定40维模型可预测性和完整成本；主模型须同时胜过single可加与真实triple标签的无pair对照。拟议双数据集、20K paired、D1/D2分离、300万搜索调用/4小时硬上限，命令未实现未执行。全部旧状态保留，旧v1的pending记录作为历史交接不覆盖；本轮没有新实验、源码/环境修改或原始validation/held-out访问，不自动转入实现/实验。原P3 NOPASS及Multi-view成本否决不变。
+ 
+ ### 已停止的历史版本：目标邻域驱动的分层搜索
+ 
+@@ -87,7 +89,7 @@
+ 
+ ## 5. 当前决策
+ 
+-最新决策为第1节的入口选择主线：[方向记录](entry_selection_research/20260908_v1/direction.md)、[计划](s-target.md)、[下一对话指令](entry_selection_research/20260908_v1/next_dialogue_prompt.md)。下一项是入口方法调研、候选机制比较与最小证伪设计；不先跑旧R0b，也不把搜索控制当作已经选定的新算法。本轮没有新实验GO。
++最新决策为第1节的入口选择主线及已完成的[调研报告](entry_selection_research/20260908_v2/report.md)、[唯一推荐](entry_selection_research/20260908_v2/recommendation.md)、[新台账](entry_selection_research/20260908_v2/state.json)。调研与最小证伪设计已交付；下一项是审阅方案，未来实现/实验另立任务与版本。本轮没有新实验GO，不先跑旧R0b，不恢复旧夜间计划。
+ 
+ 旧 Multi-view 批次按 gate 终止，E2–E4 不是欠账，不续扫 HNSW。已结束的分层搜索夜间版本曾获恢复授权，并按其冻结旧协议通过 P0/P1/P2；P3固定结构与门户诊断已完成但搜索收益gate未通过；门户暴露、目标泛化、实际局部目标尺度诊断及完整23查询trace均已完成。07:00停止核验通过，[实验总结](实验总结.md)已完成并通过文档复核，P4预测模型不启动。
+ 
+@@ -103,7 +105,7 @@
+ 
+ - 实现与复现：`spec.md`
+ - 本批协议与终局：`s-target.md`
+-- 新主线与调研接续：`entry_selection_research/20260908_v1/{direction.md,next_dialogue_prompt.md,state.json}`
++- 当前入口调研交付：`entry_selection_research/20260908_v2/{report.md,related_work.md,recommendation.md,minimum_gate.md,protocol_draft.json,state.json}`；原方向/提示/state保留于v1
+ - Fast：`fast_entry_benchmark_results/benchmark_summary.md`
+ - Three-view：`target_basin_ensemble_diagnostics/v1/decision.json`
+ - Multi-view 正式化终局：`target_basin_formalization/20260907_v1/{gate.json,report.md}`

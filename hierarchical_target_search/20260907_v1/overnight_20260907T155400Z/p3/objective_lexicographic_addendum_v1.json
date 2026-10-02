@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE_PURE_MATH_ADDENDUM",
+  "stage": "P3_POST_NOGO_LOCAL_LEXICOGRAPHIC_COMPARISON",
+  "created_utc": "2026-09-07T18:54:41.291372+00:00",
+  "source_diagnosis": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_diagnosis_v1/diagnosis.json",
+    "sha256": "c3fa695d1d1e49e8aa6081025a7c5eb704c7d3466a0634ffa9ba38b38288ee8f"
+  },
+  "frozen_partition_source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partition_build_v4/source_snapshot.cpp",
+    "sha256": "78cd134726c61fda5b722887262b33176989b1c40163e00af7a7bc52c76a81b5"
+  },
+  "independent_checks": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_lexicographic_independent_checks_v1/report.json",
+    "sha256": "730fe489aa2028f3ea8f001156e7645bb54059f1f8d0c18e4e1b7c91d5b684c5"
+  },
+  "kind": "Posthoc exact algebra applied to completed descriptive degree summaries; no new experimental cells or metrics.",
+  "definitions": {
+    "C": "Original directed valid nonself crossing slots; duplicate and reciprocal slots retained.",
+    "S": "Sum over frozen fit GT10 queries of number of distinct leaf IDs minus one; integer.",
+    "J_lambda1": "C/M + S/(9Q), with lambda1=1, M and Q fixed.",
+    "D_u": "Number of original directed nonself incoming plus outgoing slots incident to u.",
+    "n_r": "Count those incident slots whose other endpoint currently has leaf label r; other endpoints exclude u.",
+    "options": "Same considered feasible destination set plus current-label stay, at one fixed current label state."
+  },
+  "proof": [
+    {
+      "step": 1,
+      "statement": "sum_r n_r = D(u), n_r >= 0; each incident slot contributes to exactly one neighbor-label count."
+    },
+    {
+      "step": 2,
+      "statement": "If old is the current leaf, incident cut after placing u in a is D(u)-n_a, so DeltaC(a)=n_old-n_a. The formula includes a=old (stay), giving zero."
+    },
+    {
+      "step": 3,
+      "statement": "For two distinct destinations a,b, DeltaC(a)-DeltaC(b)=n_b-n_a, whose absolute value is at most n_a+n_b <= D(u). Thus the pairwise bound is D, not 2D."
+    },
+    {
+      "step": 4,
+      "statement": "If DeltaS(a)<=DeltaS(b)-1, J(a)-J(b) <= D(u)/M-1/(9Q). Therefore D(u)*9Q<M makes every lower-DeltaS destination strictly preferable regardless of its cut disadvantage."
+    },
+    {
+      "step": 5,
+      "statement": "If DeltaS(a)=DeltaS(b), the objective order is exactly DeltaC(a) versus DeltaC(b). With both equal the objective ties. Hence pairwise comparison is lexicographic in (DeltaS,DeltaC)."
+    },
+    {
+      "step": 6,
+      "statement": "The frozen source uses exact signed __int128 scores 9Q*DeltaC+M*DeltaS, starts with stay score zero, scans candidate IDs ascending and replaces only on a strict smaller score. Stay wins exact zero ties; the smallest ID wins exact tied strictly improving moves."
+    }
+  ],
+  "dataset_application": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "N": 2505000,
+      "M": 49611457,
+      "Q": 20000,
+      "threshold_exact": "49611457/180000",
+      "threshold_decimal": 275.61920555555554,
+      "seen_nodes": 118811,
+      "seen_max_degree": 168,
+      "seen_condition_fraction": 1.0,
+      "fit_occurrences": 200000,
+      "condition_fit_occurrence_fraction": 1.0,
+      "all_nodes_condition_count": 2504983,
+      "all_nodes_exceptions": 17,
+      "exceptions_all_unseen": true,
+      "final_lambda1_vs_lambda0_changed_groups": [
+        {
+          "population": "all",
+          "node_count": 52305,
+          "condition_node_count": 52305,
+          "fit_target_occurrences": 50742,
+          "condition_fit_occurrences": 50742,
+          "total_degree": {
+            "mean": 27.965509989484755,
+            "min": 2,
+            "max": 207
+          }
+        },
+        {
+          "population": "seen",
+          "node_count": 28716,
+          "condition_node_count": 28716,
+          "fit_target_occurrences": 50742,
+          "condition_fit_occurrences": 50742,
+          "total_degree": {
+            "mean": 22.411094860008358,
+            "min": 2,
+            "max": 162
+          }
+        },
+        {
+          "population": "unseen",
+          "node_count": 23589,
+          "condition_node_count": 23589,
+          "fit_target_occurrences": 0,
+          "condition_fit_occurrences": 0,
+          "total_degree": {
+            "mean": 34.7271609648565,
+            "min": 2,
+            "max": 207
+          }
+        }
+      ],
+      "worst_seen_unit_DeltaS_pairwise_J_margin_exact": "2767351/1275723180000",
+      "worst_seen_unit_DeltaS_pairwise_J_margin_decimal": 2.1692409790656934e-06,
+      "all_group_count": 31,
+      "bound_histogram": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_diagnosis_v1/webvid2_5m_light_v1.total_degree_histogram.json",
+        "sha256": "afe42e4428d35dad09ed4070f68f011142835efeba4817e368653b8c49e87a3c",
+        "bytes": 2474
+      },
+      "histogram_conservation_condition_and_quantiles_recomputed": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "N": 10000000,
+      "M": 294844794,
+      "Q": 20000,
+      "threshold_exact": "49140799/30000",
+      "threshold_decimal": 1638.0266333333334,
+      "seen_nodes": 188913,
+      "seen_max_degree": 162,
+      "seen_condition_fraction": 1.0,
+      "fit_occurrences": 200000,
+      "condition_fit_occurrence_fraction": 1.0,
+      "all_nodes_condition_count": 10000000,
+      "all_nodes_exceptions": 0,
+      "exceptions_all_unseen": true,
+      "final_lambda1_vs_lambda0_changed_groups": [
+        {
+          "population": "all",
+          "node_count": 72107,
+          "condition_node_count": 72107,
+          "fit_target_occurrences": 23421,
+          "condition_fit_occurrences": 23421,
+          "total_degree": {
+            "mean": 67.22283550834177,
+            "min": 2,
+            "max": 162
+          }
+        },
+        {
+          "population": "seen",
+          "node_count": 22224,
+          "condition_node_count": 22224,
+          "fit_target_occurrences": 23421,
+          "condition_fit_occurrences": 23421,
+          "total_degree": {
+            "mean": 63.74545536357091,
+            "min": 2,
+            "max": 162
+          }
+        },
+        {
+          "population": "unseen",
+          "node_count": 49883,
+          "condition_node_count": 49883,
+          "fit_target_occurrences": 0,
+          "condition_fit_occurrences": 0,
+          "total_degree": {
+            "mean": 68.77208668283784,
+            "min": 2,
+            "max": 160
+          }
+        }
+      ],
+      "worst_seen_unit_DeltaS_pairwise_J_margin_exact": "44280799/8845343820000",
+      "worst_seen_unit_DeltaS_pairwise_J_margin_decimal": 5.006113939842307e-06,
+      "all_group_count": 31,
+      "bound_histogram": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_diagnosis_v1/yandex_t2i_official10M_ip_v1.total_degree_histogram.json",
+        "sha256": "1af69c3d5001577a7de6e331ff78bd06c92afc1adc210902fed9c2c1a5ca104a",
+        "bytes": 2632
+      },
+      "histogram_conservation_condition_and_quantiles_recomputed": true
+    }
+  ],
+  "conclusions": [
+    "Every fit-seen node in both frozen datasets satisfies D(u)*9Q<M. Since D, M, Q and fit membership are label-independent, the local pairwise ranking theorem holds at every current label state on these fixed inputs, within the considered feasible set.",
+    "For unseen nodes, DeltaS is identically zero under any label state because they occur in no fit GT row. Their objective comparison is cut-only regardless of degree, including the 17 WebVid degree-bound exceptions.",
+    "Combining seen and unseen cases, the existing lambda1 updater has local (DeltaS,DeltaC) lexicographic ranking on all nodes under the same candidate/feasibility mechanism, with the stated stay/ID tie rule.",
+    "With stay available, any move admitted by this ranking must have DeltaS<0, or DeltaS=0 and DeltaC<0. This is a rule-level consequence, not a replay or tally of actual accepted moves."
+  ],
+  "implementation_evidence": [
+    {
+      "source_lines": [
+        244,
+        246
+      ],
+      "contract": "256 leaves, GT width 10, signed __int128 exact comparator type."
+    },
+    {
+      "source_lines": [
+        301,
+        304
+      ],
+      "contract": "Nonstay, source minimum size, destination leaf capacity, and cross-coarse destination capacity define feasible moves."
+    },
+    {
+      "source_lines": [
+        474,
+        485
+      ],
+      "contract": "Integer objective and normalized reporting use 9Q*C+M*S for lambda1."
+    },
+    {
+      "source_lines": [
+        498,
+        527
+      ],
+      "contract": "Original incident slot degree counts, GT query incidence/presence, ascending candidate IDs, exact score and strict replacement."
+    }
+  ],
+  "interpretation_limits": [
+    "All comparisons refer to the same node, same current labeling, same frozen original directed graph and fit set, and the same considered feasible destinations plus stay. This does not compare lambda0 and lambda1 trajectories at different states.",
+    "DeltaS is the integer change in the sum of distinct fit-GT leaf counts minus one. The result relies on lambda1=1 and the frozen M/(9Q) normalization.",
+    "The actual updater considers graph-neighbor and GT-cooccurrence regions, filters leaf/coarse capacities and source minimum size, and initializes stay at exact zero score. It does not optimize over all possible global partitions.",
+    "Equal DeltaS leaves graph cut decisive; exact equal improving scores choose smaller destination ID, but exact zero ties with stay retain the current label.",
+    "Graph adjacency still supplies candidates, graph cut resolves equal-DeltaS choices, and capacity/feasibility plus update ordering affect the available choices and later states. Graph structure is not irrelevant.",
+    "This is a local comparison theorem and its mathematical consequences. It does not reconstruct actual accepted moves, separate realized DeltaC/DeltaS costs, establish global lexicographic optimality, or identify the cause of Recall harm.",
+    "No graph, fit GT, labels or count rows are reread by this addendum; no ANN, CI, parameter tuning, new representation revision or gate reopening is performed or authorized."
+  ],
+  "P3_gate_status_unchanged": "NOPASS",
+  "P4_authorized": false,
+  "new_method_revision": false,
+  "new_CI_computed": false
+}

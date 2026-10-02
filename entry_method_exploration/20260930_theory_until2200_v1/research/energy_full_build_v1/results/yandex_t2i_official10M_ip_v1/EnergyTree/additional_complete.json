@@ -1,0 +1,55 @@
+{
+  "status": "COMPLETE_UNVALIDATED",
+  "seconds": 81.43597936700098,
+  "new_GT": 1024,
+  "base_load_flat_build_seconds": 9.558946959999957,
+  "search_seconds": 71.71454094299952,
+  "batch_seconds": [
+    18.144627225001386,
+    18.170965183999215,
+    17.40493796699957,
+    17.99401056699935
+  ],
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "faiss_threads": 8,
+  "threadpools": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 8,
+      "prefix": "libopenblas",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so",
+      "version": "0.3.23.dev",
+      "threading_layer": "pthreads",
+      "architecture": "Cooperlake"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 8,
+      "prefix": "libgomp",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/faiss_cpu.libs/libgomp-e985bcbb.so.1.0.0",
+      "version": null
+    },
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 8,
+      "prefix": "libopenblas",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/faiss_cpu.libs/libopenblaso-r0-d77a1985.3.15.so",
+      "version": "0.3.15",
+      "threading_layer": "openmp",
+      "architecture": "Prescott"
+    }
+  ],
+  "maxrss_GiB": 15.07437515258789
+}

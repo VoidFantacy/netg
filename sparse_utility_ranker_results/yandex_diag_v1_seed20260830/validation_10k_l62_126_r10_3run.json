@@ -1,0 +1,76 @@
+{
+  "artifact_version": "yandex-t2i-official-first10m-ip-v1",
+  "candidate_count": 821,
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "metric": "ip",
+  "num_queries": 10000,
+  "num_runs": 3,
+  "oracle_definition": "skipped; router comparison only",
+  "results": [
+    {
+      "methods": [
+        {
+          "mean_graph_latency_us": 603.2243505333333,
+          "mean_graph_ndc": 1890.6669,
+          "mean_recall": 0.8154499999999992,
+          "method": "Medoid",
+          "samples": 30000
+        },
+        {
+          "mean_graph_latency_us": 430.94770056666664,
+          "mean_graph_ndc": 1620.2061,
+          "mean_recall": 0.8297799999999989,
+          "method": "Fast_Prototype_Top3",
+          "samples": 30000
+        },
+        {
+          "mean_graph_latency_us": 344.689158,
+          "mean_graph_ndc": 1674.7126,
+          "mean_recall": 0.8321099999999987,
+          "method": "SparseUtility_DiagonalRanker_Top3",
+          "samples": 30000
+        }
+      ],
+      "search_L": 62,
+      "top_k": 10
+    },
+    {
+      "methods": [
+        {
+          "mean_graph_latency_us": 1040.8269865333334,
+          "mean_graph_ndc": 3131.6315,
+          "mean_recall": 0.8904499999999983,
+          "method": "Medoid",
+          "samples": 30000
+        },
+        {
+          "mean_graph_latency_us": 816.4185055000003,
+          "mean_graph_ndc": 2841.0033,
+          "mean_recall": 0.8976499999999985,
+          "method": "Fast_Prototype_Top3",
+          "samples": 30000
+        },
+        {
+          "mean_graph_latency_us": 606.1330302000001,
+          "mean_graph_ndc": 2895.3045,
+          "mean_recall": 0.8991499999999985,
+          "method": "SparseUtility_DiagonalRanker_Top3",
+          "samples": 30000
+        }
+      ],
+      "search_L": 126,
+      "top_k": 10
+    }
+  ],
+  "schema_version": 1,
+  "search_Ls": [
+    62,
+    126
+  ],
+  "split": "validation",
+  "status": "complete",
+  "threads": 16,
+  "top_ks": [
+    10
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "all_queries": 7952,
+      "any_failure_queries": 251,
+      "changed_failure_queries": 140,
+      "all_five_zero_queries": 111,
+      "failures": {
+        "P": 171,
+        "compact": 182,
+        "E75_preserved": 184,
+        "E77_shrink": 182,
+        "E78_mass": 182
+      },
+      "transitions_vs_compact": {
+        "E75_preserved": {
+          "rescued": 8,
+          "new_failure": 10
+        },
+        "E77_shrink": {
+          "rescued": 38,
+          "new_failure": 38
+        },
+        "E78_mass": {
+          "rescued": 2,
+          "new_failure": 2
+        }
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "all_queries": 7952,
+      "any_failure_queries": 203,
+      "changed_failure_queries": 97,
+      "all_five_zero_queries": 106,
+      "failures": {
+        "P": 156,
+        "compact": 143,
+        "E75_preserved": 146,
+        "E77_shrink": 149,
+        "E78_mass": 146
+      },
+      "transitions_vs_compact": {
+        "E75_preserved": {
+          "rescued": 5,
+          "new_failure": 8
+        },
+        "E77_shrink": {
+          "rescued": 22,
+          "new_failure": 28
+        },
+        "E78_mass": {
+          "rescued": 1,
+          "new_failure": 4
+        }
+      }
+    }
+  ],
+  "independently_scored_cached_rows": 79520,
+  "total_unique_dataset_source_queries": 454,
+  "new_NSG": 0,
+  "new_HNSW": 0,
+  "actual_threads": 1,
+  "cpu": 15,
+  "seconds": 1.507601342000271
+}

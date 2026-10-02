@@ -1,0 +1,27 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "arms": [
+    "rl",
+    "es"
+  ],
+  "seeds": [
+    20260921,
+    20260922
+  ],
+  "steps": 200,
+  "contexts": 1600,
+  "candidates": 12800,
+  "new_NSG": 0,
+  "optimizer_updates": 0,
+  "threads": 1,
+  "followup_gate": {
+    "rl_positive_candidate_step_fraction_min": 0.2,
+    "mean_quality_null_fraction_on_positive_steps_min": 0.5,
+    "J_best_net_sum_above_mean": true,
+    "J_best_selected_coefficients_within_2": true,
+    "both_datasets": true
+  }
+}

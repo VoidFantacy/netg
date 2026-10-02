@@ -1,0 +1,41 @@
+{
+  "dataset": "webvid2_5m_light_v1",
+  "status": "COMPLETE",
+  "pid": 4,
+  "started_epoch": 1789272746.5074077,
+  "reserved_NSG": 20552,
+  "native": {
+    "NSG": 20552,
+    "HNSW": 0,
+    "builds": 0,
+    "actual_threads": 1
+  },
+  "load_seconds": 4.402658459001032,
+  "operation_seconds": [
+    {
+      "stage": "baseline_replay",
+      "begin": 0,
+      "end": 128,
+      "seconds": 0.15162589800092974,
+      "normal_NSG": 256
+    },
+    {
+      "stage": "baseline_replay",
+      "begin": 128,
+      "end": 7952,
+      "seconds": 8.720642755000881,
+      "normal_NSG": 15648
+    },
+    {
+      "stage": "missing",
+      "begin": 0,
+      "end": 2308,
+      "seconds": 2.561600114999237,
+      "normal_NSG": 4616
+    }
+  ],
+  "invalid_batches_rejected": 21,
+  "elapsed_seconds": 15.906617386999642,
+  "max_RSS_GiB": 5.447822570800781,
+  "completed_epoch": 1789272762.4190085
+}

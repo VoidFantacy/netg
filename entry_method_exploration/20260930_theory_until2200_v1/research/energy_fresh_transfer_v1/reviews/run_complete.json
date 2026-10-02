@@ -1,0 +1,165 @@
+{
+  "status": "COMPUTED_PENDING_INDEPENDENT_AUDIT",
+  "seconds": 1906.2561443449995,
+  "jobs": {
+    "compile": {
+      "exit_code": 0,
+      "seconds": 8.015314066000428,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "-fopenmp",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+        "-I/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/src/common",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/src/evaluate.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "-lopenblas",
+        "-lz",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/bin/evaluate"
+      ],
+      "maxrss_bytes": 3121152,
+      "max_threads": 1,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 7.601319,
+      "system_cpu_seconds": 0.282931
+    },
+    "prepare_inputs": {
+      "exit_code": 0,
+      "seconds": 13.825899764997303,
+      "argv": [
+        "taskset",
+        "-c",
+        "14",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/prepare_inputs.py"
+      ],
+      "maxrss_bytes": 175861760,
+      "max_threads": 1,
+      "affinity_samples": [
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 1.451115999999999,
+      "system_cpu_seconds": 0.458663
+    },
+    "exact_gt": {
+      "exit_code": 0,
+      "seconds": 767.1316028360015,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/exact_gt.py"
+      ],
+      "maxrss_bytes": 16132005888,
+      "max_threads": 15,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 5745.570303,
+      "system_cpu_seconds": 82.147055
+    },
+    "webvid2_5m_light_v1_b0": {
+      "exit_code": 0,
+      "seconds": 448.88222666300135,
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/bin/evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/inputs/webvid2_5m_light_v1_b0.evaluate.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/results/webvid2_5m_light_v1_b0"
+      ],
+      "maxrss_bytes": 5834866688,
+      "max_threads": 1,
+      "affinity_samples": [
+        "14",
+        "15"
+      ],
+      "single_thread_samples": 2236,
+      "user_cpu_seconds": 446.3350710000004,
+      "system_cpu_seconds": 2.4959719999999948
+    },
+    "yandex_t2i_official10M_ip_v1_b0": {
+      "exit_code": 0,
+      "seconds": 110.15358518500216,
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/bin/evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/inputs/yandex_t2i_official10M_ip_v1_b0.evaluate.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/results/yandex_t2i_official10M_ip_v1_b0"
+      ],
+      "maxrss_bytes": 10648100864,
+      "max_threads": 1,
+      "affinity_samples": [
+        "14",
+        "15"
+      ],
+      "single_thread_samples": 548,
+      "user_cpu_seconds": 105.82344999999987,
+      "system_cpu_seconds": 4.182101000000003
+    },
+    "webvid2_5m_light_v1_b1": {
+      "exit_code": 0,
+      "seconds": 448.29060384400145,
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/bin/evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/inputs/webvid2_5m_light_v1_b1.evaluate.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/results/webvid2_5m_light_v1_b1"
+      ],
+      "maxrss_bytes": 5834854400,
+      "max_threads": 1,
+      "affinity_samples": [
+        "14",
+        "15"
+      ],
+      "single_thread_samples": 2233,
+      "user_cpu_seconds": 445.62132399999973,
+      "system_cpu_seconds": 2.5199620000000067
+    },
+    "yandex_t2i_official10M_ip_v1_b1": {
+      "exit_code": 0,
+      "seconds": 109.95024020799974,
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/bin/evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/inputs/yandex_t2i_official10M_ip_v1_b1.evaluate.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/results/yandex_t2i_official10M_ip_v1_b1"
+      ],
+      "maxrss_bytes": 10648043520,
+      "max_threads": 1,
+      "affinity_samples": [
+        "14",
+        "15"
+      ],
+      "single_thread_samples": 547,
+      "user_cpu_seconds": 105.55793600000015,
+      "system_cpu_seconds": 4.2919160000000005
+    }
+  },
+  "default_changed": false
+}

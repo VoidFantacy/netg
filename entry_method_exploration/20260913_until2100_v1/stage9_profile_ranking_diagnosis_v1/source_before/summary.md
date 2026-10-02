@@ -1,0 +1,15 @@
+# ACSG 当前结果摘要
+
+2026-09-13，第三串行会话完成E66多画像开发与E67完整wall。双集E66开发门失败保持；当前原GT10默认未替换，整日21:00目标未完成。今日共有100个历史开发性能点、500轮独立wall，E34最终validation仍待晚间冻结对照。
+
+E66：固定3H、原P+两GT10加权模态、7slot去重3真实hub。Web合格478/815hub，fit−496/aux−106命中、aux失败+13；Y合格623/821hub，fit+164/aux+49、失败−4，但两半−14/+63。双集相对duplicate控制有增量，但单画像扩为3H的近似路由损伤不能忽略。该训练/开发局部信号不当完整性能GO。
+
+webvid2_5m_light_v1：L64/128/256/400/800相对匹配GT10的ΔRecall=+0.2197/+0.0391/-0.0586/+0.1953/+0.0732 pp，QPS中位变化=-2.471%/-0.962%/-1.507%/-1.470%/-0.184%，失败净新增=+3/+4/+2/-1/+0；4/5个QPS交叉范围跨零。全部曲线为本批独立完整wall，不能与E65拼接。
+
+yandex_t2i_official10M_ip_v1：L64/128/256/400/800相对匹配GT10的ΔRecall=+0.4199/+0.0879/+0.1074/-0.0098/+0.1123 pp，QPS中位变化=-2.298%/-1.099%/+0.305%/-0.407%/+0.141%，失败净新增=-7/-2/-1/+0/+0；4/5个QPS交叉范围跨零。全部曲线为本批独立完整wall，不能与E65拼接。
+
+E67原始112640返回独立评分、五轮/plain/count/880原kernelparity及全部基线恢复通过；失败严格zero GT10，GT成员增损与逐query净命中正负分列。E66新增337248 NSG/336960 HNSW/4build，E67新增789360 NSG/645120 HNSW；合成另1图/15路由。所有ANN单方法CPU15实际线程1；GT/count/hash/build/load在wall外。
+
+P-fit含旧train/monitor；cal/audit及aux7952均历史暴露，辅助反馈计训练。E67为aux的已观察子集，不能称最终泛化；E34最终与held-out未进入本会话。E63 fit局部正值、E64 Web拓扑+38且失败+2、E65 Web局部曲线正/Y混合均保留原批身份。
+
+[E67完整报告与图](entry_method_exploration/20260913_until2100_v1/stage8_multimode_wall_v1/report.md) · [E66机制/控制](entry_method_exploration/20260913_until2100_v1/stage7_multimode_index_v1/report.md) · [下一阶段](s-target.md)。

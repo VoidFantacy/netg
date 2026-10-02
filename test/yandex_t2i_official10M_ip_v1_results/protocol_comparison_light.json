@@ -1,0 +1,222 @@
+{
+  "warning": "Protocols differ in base identity, metric, GT, and query split; deltas are not a leakage-only causal estimate.",
+  "before": {
+    "artifact": "Yandex-T2I-derived-10M/custom-L2",
+    "split": "public-query reused by ACO/Router/test",
+    "provenance": "historical-unverified"
+  },
+  "after": {
+    "artifact": "yandex-t2i-official-first10m-ip-v1",
+    "metric": "ip",
+    "split": "held-out-test",
+    "num_queries": 10000
+  },
+  "rows": [
+    {
+      "method": "NSG_Medoid",
+      "search_L": 64,
+      "old_custom_l2_recall_at_1": 0.7797999978065491,
+      "new_official_ip_recall_at_1": 0.8352000117301941,
+      "old_custom_l2_mean_recall_at_10": 0.763607919216156,
+      "new_official_ip_mean_recall_at_10": 0.8104962110519409,
+      "old_custom_l2_tail_rate_recall_lt_0_1": 0.069,
+      "new_official_ip_tail_rate_recall_lt_0_1": 0.0499
+    },
+    {
+      "method": "NSG_Medoid",
+      "search_L": 128,
+      "old_custom_l2_recall_at_1": 0.8525999784469604,
+      "new_official_ip_recall_at_1": 0.9006999731063843,
+      "new_official_ip_recall_at_100": 0.8274567127227783,
+      "old_custom_l2_mean_recall_at_10": 0.844459593296051,
+      "new_official_ip_mean_recall_at_10": 0.8856730461120605,
+      "old_custom_l2_tail_rate_recall_lt_0_1": 0.0405,
+      "new_official_ip_tail_rate_recall_lt_0_1": 0.029
+    },
+    {
+      "method": "NSG_Medoid",
+      "search_L": 200,
+      "old_custom_l2_recall_at_1": 0.8838000297546387,
+      "new_official_ip_recall_at_1": 0.9294000267982483,
+      "new_official_ip_recall_at_100": 0.8806697130203247,
+      "old_custom_l2_mean_recall_at_10": 0.881834089756012,
+      "new_official_ip_mean_recall_at_10": 0.9199541807174683,
+      "old_custom_l2_tail_rate_recall_lt_0_1": 0.029,
+      "new_official_ip_tail_rate_recall_lt_0_1": 0.0192
+    },
+    {
+      "method": "NETG_AsymHNSW",
+      "search_L": 64,
+      "old_custom_l2_recall_at_1": 0.805899977684021,
+      "new_official_ip_recall_at_1": 0.8540999889373779,
+      "old_custom_l2_mean_recall_at_10": 0.7855574488639832,
+      "new_official_ip_mean_recall_at_10": 0.8294862508773804,
+      "old_custom_l2_tail_rate_recall_lt_0_1": 0.0416,
+      "new_official_ip_tail_rate_recall_lt_0_1": 0.0301
+    },
+    {
+      "method": "NETG_AsymHNSW",
+      "search_L": 128,
+      "old_custom_l2_recall_at_1": 0.8702999949455261,
+      "new_official_ip_recall_at_1": 0.9126999974250793,
+      "new_official_ip_recall_at_100": 0.8375169038772583,
+      "old_custom_l2_mean_recall_at_10": 0.8587406277656555,
+      "new_official_ip_mean_recall_at_10": 0.8976342082023621,
+      "old_custom_l2_tail_rate_recall_lt_0_1": 0.0254,
+      "new_official_ip_tail_rate_recall_lt_0_1": 0.018
+    },
+    {
+      "method": "NETG_AsymHNSW",
+      "search_L": 200,
+      "old_custom_l2_recall_at_1": 0.8974000215530396,
+      "new_official_ip_recall_at_1": 0.9373000264167786,
+      "new_official_ip_recall_at_100": 0.8874446153640747,
+      "old_custom_l2_mean_recall_at_10": 0.8931542038917542,
+      "new_official_ip_mean_recall_at_10": 0.9277556538581848,
+      "old_custom_l2_tail_rate_recall_lt_0_1": 0.0176,
+      "new_official_ip_tail_rate_recall_lt_0_1": 0.0122
+    }
+  ],
+  "new_protocol_paired_tail_analysis": [
+    {
+      "search_L": 64,
+      "threshold_recall_lt": 0.1,
+      "num_queries": 10000,
+      "nsg_failed": 499,
+      "netg_failed": 301,
+      "nsg_failure_rate": 0.0499,
+      "netg_failure_rate": 0.0301,
+      "failure_rate_change_percentage_points": -1.9800000000000002,
+      "rescued": 329,
+      "still_failed": 170,
+      "newly_harmed": 131,
+      "net_rescued": 198
+    },
+    {
+      "search_L": 64,
+      "threshold_recall_lt": 0.2,
+      "num_queries": 10000,
+      "nsg_failed": 633,
+      "netg_failed": 415,
+      "nsg_failure_rate": 0.0633,
+      "netg_failure_rate": 0.0415,
+      "failure_rate_change_percentage_points": -2.18,
+      "rescued": 392,
+      "still_failed": 241,
+      "newly_harmed": 174,
+      "net_rescued": 218
+    },
+    {
+      "search_L": 128,
+      "threshold_recall_lt": 0.1,
+      "num_queries": 10000,
+      "nsg_failed": 290,
+      "netg_failed": 180,
+      "nsg_failure_rate": 0.029,
+      "netg_failure_rate": 0.018,
+      "failure_rate_change_percentage_points": -1.0999999999999999,
+      "rescued": 182,
+      "still_failed": 108,
+      "newly_harmed": 72,
+      "net_rescued": 110
+    },
+    {
+      "search_L": 128,
+      "threshold_recall_lt": 0.2,
+      "num_queries": 10000,
+      "nsg_failed": 350,
+      "netg_failed": 233,
+      "nsg_failure_rate": 0.035,
+      "netg_failure_rate": 0.0233,
+      "failure_rate_change_percentage_points": -1.17,
+      "rescued": 206,
+      "still_failed": 144,
+      "newly_harmed": 89,
+      "net_rescued": 117
+    },
+    {
+      "search_L": 200,
+      "threshold_recall_lt": 0.1,
+      "num_queries": 10000,
+      "nsg_failed": 192,
+      "netg_failed": 122,
+      "nsg_failure_rate": 0.0192,
+      "netg_failure_rate": 0.0122,
+      "failure_rate_change_percentage_points": -0.7000000000000001,
+      "rescued": 122,
+      "still_failed": 70,
+      "newly_harmed": 52,
+      "net_rescued": 70
+    },
+    {
+      "search_L": 200,
+      "threshold_recall_lt": 0.2,
+      "num_queries": 10000,
+      "nsg_failed": 241,
+      "netg_failed": 165,
+      "nsg_failure_rate": 0.0241,
+      "netg_failure_rate": 0.0165,
+      "failure_rate_change_percentage_points": -0.76,
+      "rescued": 140,
+      "still_failed": 101,
+      "newly_harmed": 64,
+      "net_rescued": 76
+    },
+    {
+      "search_L": 400,
+      "threshold_recall_lt": 0.1,
+      "num_queries": 10000,
+      "nsg_failed": 95,
+      "netg_failed": 63,
+      "nsg_failure_rate": 0.0095,
+      "netg_failure_rate": 0.0063,
+      "failure_rate_change_percentage_points": -0.32,
+      "rescued": 57,
+      "still_failed": 38,
+      "newly_harmed": 25,
+      "net_rescued": 32
+    },
+    {
+      "search_L": 400,
+      "threshold_recall_lt": 0.2,
+      "num_queries": 10000,
+      "nsg_failed": 122,
+      "netg_failed": 87,
+      "nsg_failure_rate": 0.0122,
+      "netg_failure_rate": 0.0087,
+      "failure_rate_change_percentage_points": -0.35000000000000003,
+      "rescued": 65,
+      "still_failed": 57,
+      "newly_harmed": 30,
+      "net_rescued": 35
+    },
+    {
+      "search_L": 800,
+      "threshold_recall_lt": 0.1,
+      "num_queries": 10000,
+      "nsg_failed": 46,
+      "netg_failed": 33,
+      "nsg_failure_rate": 0.0046,
+      "netg_failure_rate": 0.0033,
+      "failure_rate_change_percentage_points": -0.13,
+      "rescued": 24,
+      "still_failed": 22,
+      "newly_harmed": 11,
+      "net_rescued": 13
+    },
+    {
+      "search_L": 800,
+      "threshold_recall_lt": 0.2,
+      "num_queries": 10000,
+      "nsg_failed": 57,
+      "netg_failed": 42,
+      "nsg_failure_rate": 0.0057,
+      "netg_failure_rate": 0.0042,
+      "failure_rate_change_percentage_points": -0.15,
+      "rescued": 28,
+      "still_failed": 29,
+      "newly_harmed": 13,
+      "net_rescued": 15
+    }
+  ]
+}

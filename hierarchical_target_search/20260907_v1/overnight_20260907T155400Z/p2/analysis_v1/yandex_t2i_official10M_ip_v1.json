@@ -1,0 +1,1764 @@
+{
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "audit_status": "PASS",
+  "evidence": {
+    "count": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_eval/count.json",
+      "sha256": "96c4f629f318addd5499666ab02bed67063fd3dba449418e863c9bd211033d87"
+    },
+    "timing": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_eval/timing.json",
+      "sha256": "eae7fc08ed7b934501b78ca31e6ad8ed3385c57524ca05e0267cc8bd82c03aa8"
+    },
+    "model": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_model/model.json",
+      "sha256": "47b57609fe3c52c413aadbb8514e08a70351e4fb7c0f0e62623c71fb9cb78aaa"
+    },
+    "paired_fast20k": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/yandex_t2i_official10M_ip_v1/manifest.json",
+      "sha256": "483542c85c8afd5cbb65327cb1b6ac31869445aff916965f90469dffad0179c2"
+    },
+    "model_files": {
+      "labels_file": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_partition_strict_v3/regions.u16",
+        "sha256": "9ab025c8c4830ef06a1e12fd48e172d340628bec2066c40aea2ef2d172c070d3"
+      },
+      "prototypes_file": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_model/profiles.f32",
+        "sha256": "36e5a00764adeaae39aaae165a8f153762ca6ea39b0cb3ded827803a3b4b8151"
+      },
+      "portals_file": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_model/portals.i32",
+        "sha256": "abe5ab3948828ca5d7ec3861f87e7775e0022c6025fc8970dc75bb6a995454f4"
+      }
+    },
+    "graph_sha256_from_audited_model": "fa6eb7dd4e8d9dc95d696947fc18bd167880fb336212cb7bd073e7acddd4bf2e",
+    "graph_rehashed_by_analysis": false
+  },
+  "measurements": [
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "fast",
+      "L": 64,
+      "num_queries": 10000,
+      "recall": 0.8283200000000001,
+      "qps_mean_of_five": 27390.685431392845,
+      "qps_median_of_five": 27694.21847408423,
+      "qps_rounds": [
+        27455.428774561093,
+        25958.09127943193,
+        27887.068516182044,
+        27958.620112704943,
+        27694.21847408423
+      ],
+      "batch_wall_us_rounds": [
+        364226.692,
+        385236.337,
+        358589.143,
+        357671.443,
+        361086.196
+      ],
+      "qps_pooled_queries_over_total_wall": 27370.117950390184,
+      "actual_entries_min": 3,
+      "actual_entries_mean": 3.0,
+      "actual_entries_max": 3,
+      "oracle_diagnostic_only": false,
+      "deployment_frontier_eligible": true,
+      "result_hash": 10750474238630130086,
+      "route_hash": 513412436309809277,
+      "mean_routing_ndc": 119.3133,
+      "mean_graph_ndc": 1649.6048,
+      "mean_total_ndc": 1768.9181,
+      "mean_routing_mac": 23862.66,
+      "mean_graph_mac": 329920.96,
+      "mean_total_mac": 353783.62
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "geom_unified",
+      "L": 64,
+      "num_queries": 10000,
+      "recall": 0.8251900000000001,
+      "qps_mean_of_five": 25327.738680943927,
+      "qps_median_of_five": 25860.46501476171,
+      "qps_rounds": [
+        22754.900952273718,
+        25812.975334486277,
+        25860.46501476171,
+        25901.306676371576,
+        26309.045426826364
+      ],
+      "batch_wall_us_rounds": [
+        439465.767,
+        387402.067,
+        386690.649,
+        386080.908,
+        380097.409
+      ],
+      "qps_pooled_queries_over_total_wall": 25255.882499128165,
+      "actual_entries_min": 9,
+      "actual_entries_mean": 9.9983,
+      "actual_entries_max": 10,
+      "oracle_diagnostic_only": false,
+      "deployment_frontier_eligible": true,
+      "result_hash": 2306947631563337067,
+      "route_hash": 7025188725005052185,
+      "mean_routing_ndc": 183.3133,
+      "mean_graph_ndc": 1661.4363,
+      "mean_total_ndc": 1844.7496,
+      "mean_routing_mac": 36662.66,
+      "mean_graph_mac": 332287.26,
+      "mean_total_mac": 368949.92
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "geom_uniform",
+      "L": 64,
+      "num_queries": 10000,
+      "recall": 0.75337,
+      "qps_mean_of_five": 16123.879597626667,
+      "qps_median_of_five": 16408.63413992857,
+      "qps_rounds": [
+        16234.374970118604,
+        16408.63413992857,
+        16487.656932775,
+        14928.31004537866,
+        16560.42189993249
+      ],
+      "batch_wall_us_rounds": [
+        615976.902,
+        609435.247,
+        606514.318,
+        669868.188,
+        603849.35
+      ],
+      "qps_pooled_queries_over_total_wall": 16099.72035413634,
+      "actual_entries_min": 9,
+      "actual_entries_mean": 9.9983,
+      "actual_entries_max": 10,
+      "oracle_diagnostic_only": false,
+      "deployment_frontier_eligible": true,
+      "result_hash": 12012476624368284097,
+      "route_hash": 7025188725005052185,
+      "mean_routing_ndc": 183.3133,
+      "mean_graph_ndc": 2684.4897,
+      "mean_total_ndc": 2867.803,
+      "mean_routing_mac": 36662.66,
+      "mean_graph_mac": 536897.94,
+      "mean_total_mac": 573560.6
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "geom_probability",
+      "L": 64,
+      "num_queries": 10000,
+      "recall": 0.7565200000000001,
+      "qps_mean_of_five": 16508.936039661567,
+      "qps_median_of_five": 16466.771125385756,
+      "qps_rounds": [
+        16455.24607239975,
+        16357.776743308343,
+        16466.771125385756,
+        16579.658470409155,
+        16685.22778680483
+      ],
+      "batch_wall_us_rounds": [
+        607708.931,
+        611330.021,
+        607283.597,
+        603148.733,
+        599332.543
+      ],
+      "qps_pooled_queries_over_total_wall": 16508.16721350383,
+      "actual_entries_min": 9,
+      "actual_entries_mean": 9.9983,
+      "actual_entries_max": 10,
+      "oracle_diagnostic_only": false,
+      "deployment_frontier_eligible": true,
+      "result_hash": 3355785167306782395,
+      "route_hash": 7025188725005052185,
+      "mean_routing_ndc": 183.3133,
+      "mean_graph_ndc": 2681.2101,
+      "mean_total_ndc": 2864.5234,
+      "mean_routing_mac": 36662.66,
+      "mean_graph_mac": 536242.02,
+      "mean_total_mac": 572904.68
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "oracle_unified",
+      "L": 64,
+      "num_queries": 10000,
+      "recall": 0.8309300000000001,
+      "qps_mean_of_five": 26677.789904101526,
+      "qps_median_of_five": 26724.073754092882,
+      "qps_rounds": [
+        26397.971708676007,
+        26297.61194147209,
+        26724.073754092882,
+        26942.586049635465,
+        27026.7060666312
+      ],
+      "batch_wall_us_rounds": [
+        378816.983,
+        380262.665,
+        374194.447,
+        371159.62,
+        370004.394
+      ],
+      "qps_pooled_queries_over_total_wall": 26674.66040085723,
+      "actual_entries_min": 9,
+      "actual_entries_mean": 9.999,
+      "actual_entries_max": 10,
+      "oracle_diagnostic_only": true,
+      "deployment_frontier_eligible": false,
+      "result_hash": 8237570360339030550,
+      "route_hash": 1794033254275547529,
+      "mean_routing_ndc": 119.3133,
+      "mean_graph_ndc": 1649.5918,
+      "mean_total_ndc": 1768.9051,
+      "mean_routing_mac": 23862.66,
+      "mean_graph_mac": 329918.36,
+      "mean_total_mac": 353781.02
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "oracle_probability",
+      "L": 64,
+      "num_queries": 10000,
+      "recall": 0.8624800000000001,
+      "qps_mean_of_five": 19062.904348596825,
+      "qps_median_of_five": 19047.86042936274,
+      "qps_rounds": [
+        19004.54472211894,
+        18954.438055339328,
+        19131.543883125138,
+        19047.86042936274,
+        19176.13465303799
+      ],
+      "batch_wall_us_rounds": [
+        526189.927,
+        527580.927,
+        522696.969,
+        524993.347,
+        521481.528
+      ],
+      "qps_pooled_queries_over_total_wall": 19062.559025069484,
+      "actual_entries_min": 9,
+      "actual_entries_mean": 9.999,
+      "actual_entries_max": 10,
+      "oracle_diagnostic_only": true,
+      "deployment_frontier_eligible": false,
+      "result_hash": 6458828838256466972,
+      "route_hash": 1794033254275547529,
+      "mean_routing_ndc": 119.3133,
+      "mean_graph_ndc": 2352.7171,
+      "mean_total_ndc": 2472.0304,
+      "mean_routing_mac": 23862.66,
+      "mean_graph_mac": 470543.42,
+      "mean_total_mac": 494406.08
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "fast",
+      "L": 128,
+      "num_queries": 10000,
+      "recall": 0.89655,
+      "qps_mean_of_five": 15947.72775718172,
+      "qps_median_of_five": 15920.084892770124,
+      "qps_rounds": [
+        15915.627869816492,
+        16004.067978014924,
+        15920.084892770124,
+        16029.383861084472,
+        15869.474184222578
+      ],
+      "batch_wall_us_rounds": [
+        628313.258,
+        624841.135,
+        628137.354,
+        623854.297,
+        630140.601
+      ],
+      "qps_pooled_queries_over_total_wall": 15947.505176197372,
+      "actual_entries_min": 3,
+      "actual_entries_mean": 3.0,
+      "actual_entries_max": 3,
+      "oracle_diagnostic_only": false,
+      "deployment_frontier_eligible": true,
+      "result_hash": 979258111494587301,
+      "route_hash": 513412436309809277,
+      "mean_routing_ndc": 119.3133,
+      "mean_graph_ndc": 2862.0093,
+      "mean_total_ndc": 2981.3226,
+      "mean_routing_mac": 23862.66,
+      "mean_graph_mac": 572401.86,
+      "mean_total_mac": 596264.52
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "geom_unified",
+      "L": 128,
+      "num_queries": 10000,
+      "recall": 0.8946200000000001,
+      "qps_mean_of_five": 14633.794052562507,
+      "qps_median_of_five": 14900.80526484788,
+      "qps_rounds": [
+        13571.99478050939,
+        14935.66585897274,
+        14961.053281370563,
+        14900.80526484788,
+        14799.451077111968
+      ],
+      "batch_wall_us_rounds": [
+        736811.365,
+        669538.278,
+        668402.138,
+        671104.67,
+        675700.737
+      ],
+      "qps_pooled_queries_over_total_wall": 14613.229372684096,
+      "actual_entries_min": 9,
+      "actual_entries_mean": 9.9983,
+      "actual_entries_max": 10,
+      "oracle_diagnostic_only": false,
+      "deployment_frontier_eligible": true,
+      "result_hash": 7650850123046797084,
+      "route_hash": 7025188725005052185,
+      "mean_routing_ndc": 183.3133,
+      "mean_graph_ndc": 2874.9728,
+      "mean_total_ndc": 3058.2861,
+      "mean_routing_mac": 36662.66,
+      "mean_graph_mac": 574994.56,
+      "mean_total_mac": 611657.22
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "geom_uniform",
+      "L": 128,
+      "num_queries": 10000,
+      "recall": 0.8554299999999999,
+      "qps_mean_of_five": 9924.228648751703,
+      "qps_median_of_five": 10115.940288809206,
+      "qps_rounds": [
+        10289.179583797892,
+        10115.940288809206,
+        9475.53678070171,
+        10240.831766582509,
+        9499.654823867199
+      ],
+      "batch_wall_us_rounds": [
+        971894.787,
+        988538.852,
+        1055349.183,
+        976483.183,
+        1052669.827
+      ],
+      "qps_pooled_queries_over_total_wall": 9910.928833395714,
+      "actual_entries_min": 9,
+      "actual_entries_mean": 9.9983,
+      "actual_entries_max": 10,
+      "oracle_diagnostic_only": false,
+      "deployment_frontier_eligible": true,
+      "result_hash": 17529182815338765531,
+      "route_hash": 7025188725005052185,
+      "mean_routing_ndc": 183.3133,
+      "mean_graph_ndc": 4221.596,
+      "mean_total_ndc": 4404.9093,
+      "mean_routing_mac": 36662.66,
+      "mean_graph_mac": 844319.2,
+      "mean_total_mac": 880981.86
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "geom_probability",
+      "L": 128,
+      "num_queries": 10000,
+      "recall": 0.85974,
+      "qps_mean_of_five": 10033.053629463746,
+      "qps_median_of_five": 10118.972534464454,
+      "qps_rounds": [
+        10352.011668125024,
+        10245.262864000206,
+        9914.857391592019,
+        9534.163689137018,
+        10118.972534464454
+      ],
+      "batch_wall_us_rounds": [
+        965995.82,
+        976060.852,
+        1008587.376,
+        1048859.693,
+        988242.627
+      ],
+      "qps_pooled_queries_over_total_wall": 10024.567472152587,
+      "actual_entries_min": 9,
+      "actual_entries_mean": 9.9983,
+      "actual_entries_max": 10,
+      "oracle_diagnostic_only": false,
+      "deployment_frontier_eligible": true,
+      "result_hash": 10147257405557499075,
+      "route_hash": 7025188725005052185,
+      "mean_routing_ndc": 183.3133,
+      "mean_graph_ndc": 4214.951,
+      "mean_total_ndc": 4398.2643,
+      "mean_routing_mac": 36662.66,
+      "mean_graph_mac": 842990.2,
+      "mean_total_mac": 879652.86
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "oracle_unified",
+      "L": 128,
+      "num_queries": 10000,
+      "recall": 0.8982400000000001,
+      "qps_mean_of_five": 14984.612786406758,
+      "qps_median_of_five": 15283.04350159542,
+      "qps_rounds": [
+        15283.413651187255,
+        13847.812890833748,
+        15211.094103181165,
+        15297.699785236206,
+        15283.04350159542
+      ],
+      "batch_wall_us_rounds": [
+        654304.086,
+        722135.696,
+        657414.906,
+        653693.048,
+        654319.933
+      ],
+      "qps_pooled_queries_over_total_wall": 14961.693565491089,
+      "actual_entries_min": 9,
+      "actual_entries_mean": 9.999,
+      "actual_entries_max": 10,
+      "oracle_diagnostic_only": true,
+      "deployment_frontier_eligible": false,
+      "result_hash": 10421055201273941762,
+      "route_hash": 1794033254275547529,
+      "mean_routing_ndc": 119.3133,
+      "mean_graph_ndc": 2856.2593,
+      "mean_total_ndc": 2975.5726,
+      "mean_routing_mac": 23862.66,
+      "mean_graph_mac": 571251.86,
+      "mean_total_mac": 595114.52
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "oracle_probability",
+      "L": 128,
+      "num_queries": 10000,
+      "recall": 0.9318300000000002,
+      "qps_mean_of_five": 11779.953242675456,
+      "qps_median_of_five": 11833.663003406391,
+      "qps_rounds": [
+        11882.197131463181,
+        11851.934137635766,
+        11716.25138124645,
+        11833.663003406391,
+        11615.720559625484
+      ],
+      "batch_wall_us_rounds": [
+        841595.194,
+        843744.142,
+        853515.316,
+        845046.88,
+        860902.253
+      ],
+      "qps_pooled_queries_over_total_wall": 11779.107476460187,
+      "actual_entries_min": 9,
+      "actual_entries_mean": 9.999,
+      "actual_entries_max": 10,
+      "oracle_diagnostic_only": true,
+      "deployment_frontier_eligible": false,
+      "result_hash": 12823098252241398474,
+      "route_hash": 1794033254275547529,
+      "mean_routing_ndc": 119.3133,
+      "mean_graph_ndc": 3635.6719,
+      "mean_total_ndc": 3754.9852,
+      "mean_routing_mac": 23862.66,
+      "mean_graph_mac": 727134.38,
+      "mean_total_mac": 750997.04
+    }
+  ],
+  "fixed_comparisons": [
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "uniform_protection",
+      "family": "primary_queue",
+      "candidate": "geom_uniform",
+      "reference": "geom_unified",
+      "recall_delta_pp": -7.182000000000001,
+      "paired_query_bootstrap95_pp": [
+        -7.6240000000000006,
+        -6.731000000000001
+      ],
+      "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+      "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_NEGATIVE",
+      "query_improved": 1321,
+      "query_harmed": 5377,
+      "query_equal": 3302,
+      "qps_pairing": {
+        "pairs": [
+          {
+            "round": 0,
+            "candidate_qps": 16234.374970118604,
+            "reference_qps": 22754.900952273718,
+            "candidate_batch_wall_us": 615976.902,
+            "reference_batch_wall_us": 439465.767,
+            "qps_ratio": 0.7134452048008775
+          },
+          {
+            "round": 1,
+            "candidate_qps": 16408.63413992857,
+            "reference_qps": 25812.975334486277,
+            "candidate_batch_wall_us": 609435.247,
+            "reference_batch_wall_us": 387402.067,
+            "qps_ratio": 0.6356738782455096
+          },
+          {
+            "round": 2,
+            "candidate_qps": 16487.656932775,
+            "reference_qps": 25860.46501476171,
+            "candidate_batch_wall_us": 606514.318,
+            "reference_batch_wall_us": 386690.649,
+            "qps_ratio": 0.6375622759824114
+          },
+          {
+            "round": 3,
+            "candidate_qps": 14928.31004537866,
+            "reference_qps": 25901.306676371576,
+            "candidate_batch_wall_us": 669868.188,
+            "reference_batch_wall_us": 386080.908,
+            "qps_ratio": 0.5763535497225314
+          },
+          {
+            "round": 4,
+            "candidate_qps": 16560.42189993249,
+            "reference_qps": 26309.045426826364,
+            "candidate_batch_wall_us": 603849.35,
+            "reference_batch_wall_us": 380097.409,
+            "qps_ratio": 0.6294573456111198
+          }
+        ],
+        "mean_paired_ratio": 0.63849845087249,
+        "median_paired_ratio": 0.6356738782455096,
+        "min_paired_ratio": 0.5763535497225314,
+        "max_paired_ratio": 0.7134452048008775,
+        "candidate_faster_rounds": 0,
+        "ratio_of_mean_qps": 0.6366095213134026,
+        "ratio_CI": null,
+        "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+      },
+      "mean_graph_ndc_delta": 1023.0534,
+      "mean_total_ndc_delta": 1023.0533999999998,
+      "oracle_involved": false,
+      "matched_cost_or_recall_claim": false,
+      "p2_gate_automatically_passed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "probability_protection",
+      "family": "primary_queue",
+      "candidate": "geom_probability",
+      "reference": "geom_unified",
+      "recall_delta_pp": -6.866999999999999,
+      "paired_query_bootstrap95_pp": [
+        -7.309,
+        -6.421
+      ],
+      "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+      "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_NEGATIVE",
+      "query_improved": 1325,
+      "query_harmed": 5299,
+      "query_equal": 3376,
+      "qps_pairing": {
+        "pairs": [
+          {
+            "round": 0,
+            "candidate_qps": 16455.24607239975,
+            "reference_qps": 22754.900952273718,
+            "candidate_batch_wall_us": 607708.931,
+            "reference_batch_wall_us": 439465.767,
+            "qps_ratio": 0.7231517336380894
+          },
+          {
+            "round": 1,
+            "candidate_qps": 16357.776743308343,
+            "reference_qps": 25812.975334486277,
+            "candidate_batch_wall_us": 611330.021,
+            "reference_batch_wall_us": 387402.067,
+            "qps_ratio": 0.633703652188218
+          },
+          {
+            "round": 2,
+            "candidate_qps": 16466.771125385756,
+            "reference_qps": 25860.46501476171,
+            "candidate_batch_wall_us": 607283.597,
+            "reference_batch_wall_us": 386690.649,
+            "qps_ratio": 0.6367546413409878
+          },
+          {
+            "round": 3,
+            "candidate_qps": 16579.658470409155,
+            "reference_qps": 25901.306676371576,
+            "candidate_batch_wall_us": 603148.733,
+            "reference_batch_wall_us": 386080.908,
+            "qps_ratio": 0.6401089596585458
+          },
+          {
+            "round": 4,
+            "candidate_qps": 16685.22778680483,
+            "reference_qps": 26309.045426826364,
+            "candidate_batch_wall_us": 599332.543,
+            "reference_batch_wall_us": 380097.409,
+            "qps_ratio": 0.634201185033932
+          }
+        ],
+        "mean_paired_ratio": 0.6535840343719546,
+        "median_paired_ratio": 0.6367546413409878,
+        "min_paired_ratio": 0.633703652188218,
+        "max_paired_ratio": 0.7231517336380894,
+        "candidate_faster_rounds": 0,
+        "ratio_of_mean_qps": 0.6518124751532813,
+        "ratio_CI": null,
+        "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+      },
+      "mean_graph_ndc_delta": 1019.7737999999997,
+      "mean_total_ndc_delta": 1019.7737999999999,
+      "oracle_involved": false,
+      "matched_cost_or_recall_claim": false,
+      "p2_gate_automatically_passed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "oracle_protection",
+      "family": "primary_queue",
+      "candidate": "oracle_probability",
+      "reference": "oracle_unified",
+      "recall_delta_pp": 3.1550000000000002,
+      "paired_query_bootstrap95_pp": [
+        2.7710000000000004,
+        3.54
+      ],
+      "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+      "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_POSITIVE",
+      "query_improved": 2134,
+      "query_harmed": 2217,
+      "query_equal": 5649,
+      "qps_pairing": {
+        "pairs": [
+          {
+            "round": 0,
+            "candidate_qps": 19004.54472211894,
+            "reference_qps": 26397.971708676007,
+            "candidate_batch_wall_us": 526189.927,
+            "reference_batch_wall_us": 378816.983,
+            "qps_ratio": 0.719924429492167
+          },
+          {
+            "round": 1,
+            "candidate_qps": 18954.438055339328,
+            "reference_qps": 26297.61194147209,
+            "candidate_batch_wall_us": 527580.927,
+            "reference_batch_wall_us": 380262.665,
+            "qps_ratio": 0.720766512850075
+          },
+          {
+            "round": 2,
+            "candidate_qps": 19131.543883125138,
+            "reference_qps": 26724.073754092882,
+            "candidate_batch_wall_us": 522696.969,
+            "reference_batch_wall_us": 374194.447,
+            "qps_ratio": 0.7158917483602244
+          },
+          {
+            "round": 3,
+            "candidate_qps": 19047.86042936274,
+            "reference_qps": 26942.586049635465,
+            "candidate_batch_wall_us": 524993.347,
+            "reference_batch_wall_us": 371159.62,
+            "qps_ratio": 0.7069796638775311
+          },
+          {
+            "round": 4,
+            "candidate_qps": 19176.13465303799,
+            "reference_qps": 27026.7060666312,
+            "candidate_batch_wall_us": 521481.528,
+            "reference_batch_wall_us": 370004.394,
+            "qps_ratio": 0.7095254081559721
+          }
+        ],
+        "mean_paired_ratio": 0.714617552547194,
+        "median_paired_ratio": 0.7158917483602244,
+        "min_paired_ratio": 0.7069796638775311,
+        "max_paired_ratio": 0.720766512850075,
+        "candidate_faster_rounds": 0,
+        "ratio_of_mean_qps": 0.7145608544456689,
+        "ratio_CI": null,
+        "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+      },
+      "mean_graph_ndc_delta": 703.1252999999999,
+      "mean_total_ndc_delta": 703.1253000000002,
+      "oracle_involved": true,
+      "matched_cost_or_recall_claim": false,
+      "p2_gate_automatically_passed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "oracle_selection_unified",
+      "family": "diagnostic_route_portal",
+      "candidate": "oracle_unified",
+      "reference": "geom_unified",
+      "recall_delta_pp": 0.5740000000000001,
+      "paired_query_bootstrap95_pp": [
+        0.38297499999999995,
+        0.771
+      ],
+      "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+      "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_POSITIVE",
+      "query_improved": 211,
+      "query_harmed": 125,
+      "query_equal": 9664,
+      "qps_pairing": {
+        "pairs": [
+          {
+            "round": 0,
+            "candidate_qps": 26397.971708676007,
+            "reference_qps": 22754.900952273718,
+            "candidate_batch_wall_us": 378816.983,
+            "reference_batch_wall_us": 439465.767,
+            "qps_ratio": 1.16010048841976
+          },
+          {
+            "round": 1,
+            "candidate_qps": 26297.61194147209,
+            "reference_qps": 25812.975334486277,
+            "candidate_batch_wall_us": 380262.665,
+            "reference_batch_wall_us": 387402.067,
+            "qps_ratio": 1.018774922329017
+          },
+          {
+            "round": 2,
+            "candidate_qps": 26724.073754092882,
+            "reference_qps": 25860.46501476171,
+            "candidate_batch_wall_us": 374194.447,
+            "reference_batch_wall_us": 386690.649,
+            "qps_ratio": 1.0333949423894042
+          },
+          {
+            "round": 3,
+            "candidate_qps": 26942.586049635465,
+            "reference_qps": 25901.306676371576,
+            "candidate_batch_wall_us": 371159.62,
+            "reference_batch_wall_us": 386080.908,
+            "qps_ratio": 1.0402018085911393
+          },
+          {
+            "round": 4,
+            "candidate_qps": 27026.7060666312,
+            "reference_qps": 26309.045426826364,
+            "candidate_batch_wall_us": 370004.394,
+            "reference_batch_wall_us": 380097.409,
+            "qps_ratio": 1.02727809497311
+          }
+        ],
+        "mean_paired_ratio": 1.0559500513404863,
+        "median_paired_ratio": 1.0333949423894042,
+        "min_paired_ratio": 1.018774922329017,
+        "max_paired_ratio": 1.16010048841976,
+        "candidate_faster_rounds": 5,
+        "ratio_of_mean_qps": 1.0533032672266691,
+        "ratio_CI": null,
+        "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+      },
+      "mean_graph_ndc_delta": -11.844500000000153,
+      "mean_total_ndc_delta": -75.84450000000015,
+      "oracle_involved": true,
+      "matched_cost_or_recall_claim": false,
+      "p2_gate_automatically_passed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "oracle_selection_protected",
+      "family": "diagnostic_route_portal",
+      "candidate": "oracle_probability",
+      "reference": "geom_probability",
+      "recall_delta_pp": 10.595999999999998,
+      "paired_query_bootstrap95_pp": [
+        10.279,
+        10.919
+      ],
+      "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+      "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_POSITIVE",
+      "query_improved": 5556,
+      "query_harmed": 567,
+      "query_equal": 3877,
+      "qps_pairing": {
+        "pairs": [
+          {
+            "round": 0,
+            "candidate_qps": 19004.54472211894,
+            "reference_qps": 16455.24607239975,
+            "candidate_batch_wall_us": 526189.927,
+            "reference_batch_wall_us": 607708.931,
+            "qps_ratio": 1.1549231557220592
+          },
+          {
+            "round": 1,
+            "candidate_qps": 18954.438055339328,
+            "reference_qps": 16357.776743308343,
+            "candidate_batch_wall_us": 527580.927,
+            "reference_batch_wall_us": 611330.021,
+            "qps_ratio": 1.158741701441379
+          },
+          {
+            "round": 2,
+            "candidate_qps": 19131.543883125138,
+            "reference_qps": 16466.771125385756,
+            "candidate_batch_wall_us": 522696.969,
+            "reference_batch_wall_us": 607283.597,
+            "qps_ratio": 1.1618272785507582
+          },
+          {
+            "round": 3,
+            "candidate_qps": 19047.86042936274,
+            "reference_qps": 16579.658470409155,
+            "candidate_batch_wall_us": 524993.347,
+            "reference_batch_wall_us": 603148.733,
+            "qps_ratio": 1.1488692884330973
+          },
+          {
+            "round": 4,
+            "candidate_qps": 19176.13465303799,
+            "reference_qps": 16685.22778680483,
+            "candidate_batch_wall_us": 521481.528,
+            "reference_batch_wall_us": 599332.543,
+            "qps_ratio": 1.149288154651568
+          }
+        ],
+        "mean_paired_ratio": 1.1547299157597724,
+        "median_paired_ratio": 1.1549231557220592,
+        "min_paired_ratio": 1.1488692884330973,
+        "max_paired_ratio": 1.1618272785507582,
+        "candidate_faster_rounds": 5,
+        "ratio_of_mean_qps": 1.1547021747979112,
+        "ratio_CI": null,
+        "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+      },
+      "mean_graph_ndc_delta": -328.49299999999994,
+      "mean_total_ndc_delta": -392.49299999999994,
+      "oracle_involved": true,
+      "matched_cost_or_recall_claim": false,
+      "p2_gate_automatically_passed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "geometric_bundle_vs_fast",
+      "family": "diagnostic_bundle",
+      "candidate": "geom_unified",
+      "reference": "fast",
+      "recall_delta_pp": -0.31299999999999994,
+      "paired_query_bootstrap95_pp": [
+        -0.578025,
+        -0.05
+      ],
+      "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+      "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_NEGATIVE",
+      "query_improved": 431,
+      "query_harmed": 461,
+      "query_equal": 9108,
+      "qps_pairing": {
+        "pairs": [
+          {
+            "round": 0,
+            "candidate_qps": 22754.900952273718,
+            "reference_qps": 27455.428774561093,
+            "candidate_batch_wall_us": 439465.767,
+            "reference_batch_wall_us": 364226.692,
+            "qps_ratio": 0.8287942300634306
+          },
+          {
+            "round": 1,
+            "candidate_qps": 25812.975334486277,
+            "reference_qps": 25958.09127943193,
+            "candidate_batch_wall_us": 387402.067,
+            "reference_batch_wall_us": 385236.337,
+            "qps_ratio": 0.9944096064928842
+          },
+          {
+            "round": 2,
+            "candidate_qps": 25860.46501476171,
+            "reference_qps": 27887.068516182044,
+            "candidate_batch_wall_us": 386690.649,
+            "reference_batch_wall_us": 358589.143,
+            "qps_ratio": 0.9273281987224883
+          },
+          {
+            "round": 3,
+            "candidate_qps": 25901.306676371576,
+            "reference_qps": 27958.620112704943,
+            "candidate_batch_wall_us": 386080.908,
+            "reference_batch_wall_us": 357671.443,
+            "qps_ratio": 0.9264157734523356
+          },
+          {
+            "round": 4,
+            "candidate_qps": 26309.045426826364,
+            "reference_qps": 27694.21847408423,
+            "candidate_batch_wall_us": 380097.409,
+            "reference_batch_wall_us": 361086.196,
+            "qps_ratio": 0.9499833133563929
+          }
+        ],
+        "mean_paired_ratio": 0.9253862244175064,
+        "median_paired_ratio": 0.9273281987224883,
+        "min_paired_ratio": 0.8287942300634306,
+        "max_paired_ratio": 0.9944096064928842,
+        "candidate_faster_rounds": 0,
+        "ratio_of_mean_qps": 0.9246843692314268,
+        "ratio_CI": null,
+        "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+      },
+      "mean_graph_ndc_delta": 11.831500000000005,
+      "mean_total_ndc_delta": 75.8315,
+      "oracle_involved": false,
+      "matched_cost_or_recall_claim": false,
+      "p2_gate_automatically_passed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "oracle_bundle_vs_fast",
+      "family": "diagnostic_bundle",
+      "candidate": "oracle_unified",
+      "reference": "fast",
+      "recall_delta_pp": 0.261,
+      "paired_query_bootstrap95_pp": [
+        -0.0030000000000000074,
+        0.528
+      ],
+      "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+      "recall_evidence_sign": "INTERVAL_INCLUDES_ZERO_NOT_AN_EQUIVALENCE_TEST",
+      "query_improved": 487,
+      "query_harmed": 431,
+      "query_equal": 9082,
+      "qps_pairing": {
+        "pairs": [
+          {
+            "round": 0,
+            "candidate_qps": 26397.971708676007,
+            "reference_qps": 27455.428774561093,
+            "candidate_batch_wall_us": 378816.983,
+            "reference_batch_wall_us": 364226.692,
+            "qps_ratio": 0.9614845910960649
+          },
+          {
+            "round": 1,
+            "candidate_qps": 26297.61194147209,
+            "reference_qps": 25958.09127943193,
+            "candidate_batch_wall_us": 380262.665,
+            "reference_batch_wall_us": 385236.337,
+            "qps_ratio": 1.0130795696180166
+          },
+          {
+            "round": 2,
+            "candidate_qps": 26724.073754092882,
+            "reference_qps": 27887.068516182044,
+            "candidate_batch_wall_us": 374194.447,
+            "reference_batch_wall_us": 358589.143,
+            "qps_ratio": 0.9582962704948959
+          },
+          {
+            "round": 3,
+            "candidate_qps": 26942.586049635465,
+            "reference_qps": 27958.620112704943,
+            "candidate_batch_wall_us": 371159.62,
+            "reference_batch_wall_us": 357671.443,
+            "qps_ratio": 0.9636593630524787
+          },
+          {
+            "round": 4,
+            "candidate_qps": 27026.7060666312,
+            "reference_qps": 27694.21847408423,
+            "candidate_batch_wall_us": 370004.394,
+            "reference_batch_wall_us": 361086.196,
+            "qps_ratio": 0.9758970484009982
+          }
+        ],
+        "mean_paired_ratio": 0.974483368532491,
+        "median_paired_ratio": 0.9636593630524787,
+        "min_paired_ratio": 0.9582962704948959,
+        "max_paired_ratio": 1.0130795696180166,
+        "candidate_faster_rounds": 1,
+        "ratio_of_mean_qps": 0.9739730672648936,
+        "ratio_CI": null,
+        "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+      },
+      "mean_graph_ndc_delta": -0.013000000000147338,
+      "mean_total_ndc_delta": -0.013000000000147338,
+      "oracle_involved": true,
+      "matched_cost_or_recall_claim": false,
+      "p2_gate_automatically_passed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "uniform_protection",
+      "family": "primary_queue",
+      "candidate": "geom_uniform",
+      "reference": "geom_unified",
+      "recall_delta_pp": -3.9189999999999996,
+      "paired_query_bootstrap95_pp": [
+        -4.289,
+        -3.542975
+      ],
+      "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+      "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_NEGATIVE",
+      "query_improved": 1078,
+      "query_harmed": 3975,
+      "query_equal": 4947,
+      "qps_pairing": {
+        "pairs": [
+          {
+            "round": 0,
+            "candidate_qps": 10289.179583797892,
+            "reference_qps": 13571.99478050939,
+            "candidate_batch_wall_us": 971894.787,
+            "reference_batch_wall_us": 736811.365,
+            "qps_ratio": 0.7581184453868257
+          },
+          {
+            "round": 1,
+            "candidate_qps": 10115.940288809206,
+            "reference_qps": 14935.66585897274,
+            "candidate_batch_wall_us": 988538.852,
+            "reference_batch_wall_us": 669538.278,
+            "qps_ratio": 0.6773009241320139
+          },
+          {
+            "round": 2,
+            "candidate_qps": 9475.53678070171,
+            "reference_qps": 14961.053281370563,
+            "candidate_batch_wall_us": 1055349.183,
+            "reference_batch_wall_us": 668402.138,
+            "qps_ratio": 0.633346904291866
+          },
+          {
+            "round": 3,
+            "candidate_qps": 10240.831766582509,
+            "reference_qps": 14900.80526484788,
+            "candidate_batch_wall_us": 976483.183,
+            "reference_batch_wall_us": 671104.67,
+            "qps_ratio": 0.6872670023237872
+          },
+          {
+            "round": 4,
+            "candidate_qps": 9499.654823867199,
+            "reference_qps": 14799.451077111968,
+            "candidate_batch_wall_us": 1052669.827,
+            "reference_batch_wall_us": 675700.737,
+            "qps_ratio": 0.6418923765732671
+          }
+        ],
+        "mean_paired_ratio": 0.679585130541552,
+        "median_paired_ratio": 0.6773009241320139,
+        "min_paired_ratio": 0.633346904291866,
+        "max_paired_ratio": 0.7581184453868257,
+        "candidate_faster_rounds": 0,
+        "ratio_of_mean_qps": 0.678171950015511,
+        "ratio_CI": null,
+        "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+      },
+      "mean_graph_ndc_delta": 1346.6231999999995,
+      "mean_total_ndc_delta": 1346.6232000000005,
+      "oracle_involved": false,
+      "matched_cost_or_recall_claim": false,
+      "p2_gate_automatically_passed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "probability_protection",
+      "family": "primary_queue",
+      "candidate": "geom_probability",
+      "reference": "geom_unified",
+      "recall_delta_pp": -3.4879999999999995,
+      "paired_query_bootstrap95_pp": [
+        -3.852025,
+        -3.115
+      ],
+      "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+      "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_NEGATIVE",
+      "query_improved": 1097,
+      "query_harmed": 3851,
+      "query_equal": 5052,
+      "qps_pairing": {
+        "pairs": [
+          {
+            "round": 0,
+            "candidate_qps": 10352.011668125024,
+            "reference_qps": 13571.99478050939,
+            "candidate_batch_wall_us": 965995.82,
+            "reference_batch_wall_us": 736811.365,
+            "qps_ratio": 0.7627479847687126
+          },
+          {
+            "round": 1,
+            "candidate_qps": 10245.262864000206,
+            "reference_qps": 14935.66585897274,
+            "candidate_batch_wall_us": 976060.852,
+            "reference_batch_wall_us": 669538.278,
+            "qps_ratio": 0.6859595655620047
+          },
+          {
+            "round": 2,
+            "candidate_qps": 9914.857391592019,
+            "reference_qps": 14961.053281370563,
+            "candidate_batch_wall_us": 1008587.376,
+            "reference_batch_wall_us": 668402.138,
+            "qps_ratio": 0.6627111878505209
+          },
+          {
+            "round": 3,
+            "candidate_qps": 9534.163689137018,
+            "reference_qps": 14900.80526484788,
+            "candidate_batch_wall_us": 1048859.693,
+            "reference_batch_wall_us": 671104.67,
+            "qps_ratio": 0.6398421776324281
+          },
+          {
+            "round": 4,
+            "candidate_qps": 10118.972534464454,
+            "reference_qps": 14799.451077111968,
+            "candidate_batch_wall_us": 988242.627,
+            "reference_batch_wall_us": 675700.737,
+            "qps_ratio": 0.683739719922039
+          }
+        ],
+        "mean_paired_ratio": 0.687000127147141,
+        "median_paired_ratio": 0.683739719922039,
+        "min_paired_ratio": 0.6398421776324281,
+        "max_paired_ratio": 0.7627479847687126,
+        "candidate_faster_rounds": 0,
+        "ratio_of_mean_qps": 0.6856085027181907,
+        "ratio_CI": null,
+        "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+      },
+      "mean_graph_ndc_delta": 1339.9782,
+      "mean_total_ndc_delta": 1339.9782,
+      "oracle_involved": false,
+      "matched_cost_or_recall_claim": false,
+      "p2_gate_automatically_passed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "oracle_protection",
+      "family": "primary_queue",
+      "candidate": "oracle_probability",
+      "reference": "oracle_unified",
+      "recall_delta_pp": 3.359,
+      "paired_query_bootstrap95_pp": [
+        3.045,
+        3.6769999999999996
+      ],
+      "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+      "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_POSITIVE",
+      "query_improved": 1687,
+      "query_harmed": 1088,
+      "query_equal": 7225,
+      "qps_pairing": {
+        "pairs": [
+          {
+            "round": 0,
+            "candidate_qps": 11882.197131463181,
+            "reference_qps": 15283.413651187255,
+            "candidate_batch_wall_us": 841595.194,
+            "reference_batch_wall_us": 654304.086,
+            "qps_ratio": 0.7774570133773839
+          },
+          {
+            "round": 1,
+            "candidate_qps": 11851.934137635766,
+            "reference_qps": 13847.812890833748,
+            "candidate_batch_wall_us": 843744.142,
+            "reference_batch_wall_us": 722135.696,
+            "qps_ratio": 0.8558704707427763
+          },
+          {
+            "round": 2,
+            "candidate_qps": 11716.25138124645,
+            "reference_qps": 15211.094103181165,
+            "candidate_batch_wall_us": 853515.316,
+            "reference_batch_wall_us": 657414.906,
+            "qps_ratio": 0.7702438300474505
+          },
+          {
+            "round": 3,
+            "candidate_qps": 11833.663003406391,
+            "reference_qps": 15297.699785236206,
+            "candidate_batch_wall_us": 845046.88,
+            "reference_batch_wall_us": 653693.048,
+            "qps_ratio": 0.7735583237701558
+          },
+          {
+            "round": 4,
+            "candidate_qps": 11615.720559625484,
+            "reference_qps": 15283.04350159542,
+            "candidate_batch_wall_us": 860902.253,
+            "reference_batch_wall_us": 654319.933,
+            "qps_ratio": 0.7600397498320869
+          }
+        ],
+        "mean_paired_ratio": 0.7874338775539707,
+        "median_paired_ratio": 0.7735583237701558,
+        "min_paired_ratio": 0.7600397498320869,
+        "max_paired_ratio": 0.8558704707427763,
+        "candidate_faster_rounds": 0,
+        "ratio_of_mean_qps": 0.7861366463444155,
+        "ratio_CI": null,
+        "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+      },
+      "mean_graph_ndc_delta": 779.4125999999997,
+      "mean_total_ndc_delta": 779.4126000000001,
+      "oracle_involved": true,
+      "matched_cost_or_recall_claim": false,
+      "p2_gate_automatically_passed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "oracle_selection_unified",
+      "family": "diagnostic_route_portal",
+      "candidate": "oracle_unified",
+      "reference": "geom_unified",
+      "recall_delta_pp": 0.36200000000000004,
+      "paired_query_bootstrap95_pp": [
+        0.19300000000000006,
+        0.5369999999999999
+      ],
+      "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+      "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_POSITIVE",
+      "query_improved": 136,
+      "query_harmed": 88,
+      "query_equal": 9776,
+      "qps_pairing": {
+        "pairs": [
+          {
+            "round": 0,
+            "candidate_qps": 15283.413651187255,
+            "reference_qps": 13571.99478050939,
+            "candidate_batch_wall_us": 654304.086,
+            "reference_batch_wall_us": 736811.365,
+            "qps_ratio": 1.1260992874190916
+          },
+          {
+            "round": 1,
+            "candidate_qps": 13847.812890833748,
+            "reference_qps": 14935.66585897274,
+            "candidate_batch_wall_us": 722135.696,
+            "reference_batch_wall_us": 669538.278,
+            "qps_ratio": 0.9271640796995031
+          },
+          {
+            "round": 2,
+            "candidate_qps": 15211.094103181165,
+            "reference_qps": 14961.053281370563,
+            "candidate_batch_wall_us": 657414.906,
+            "reference_batch_wall_us": 668402.138,
+            "qps_ratio": 1.0167127819885484
+          },
+          {
+            "round": 3,
+            "candidate_qps": 15297.699785236206,
+            "reference_qps": 14900.80526484788,
+            "candidate_batch_wall_us": 653693.048,
+            "reference_batch_wall_us": 671104.67,
+            "qps_ratio": 1.0266357766130014
+          },
+          {
+            "round": 4,
+            "candidate_qps": 15283.04350159542,
+            "reference_qps": 14799.451077111968,
+            "candidate_batch_wall_us": 654319.933,
+            "reference_batch_wall_us": 675700.737,
+            "qps_ratio": 1.0326763757631086
+          }
+        ],
+        "mean_paired_ratio": 1.0258576602966507,
+        "median_paired_ratio": 1.0266357766130014,
+        "min_paired_ratio": 0.9271640796995031,
+        "max_paired_ratio": 1.1260992874190916,
+        "candidate_faster_rounds": 4,
+        "ratio_of_mean_qps": 1.0239731905877696,
+        "ratio_CI": null,
+        "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+      },
+      "mean_graph_ndc_delta": -18.71349999999984,
+      "mean_total_ndc_delta": -82.71349999999984,
+      "oracle_involved": true,
+      "matched_cost_or_recall_claim": false,
+      "p2_gate_automatically_passed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "oracle_selection_protected",
+      "family": "diagnostic_route_portal",
+      "candidate": "oracle_probability",
+      "reference": "geom_probability",
+      "recall_delta_pp": 7.209000000000001,
+      "paired_query_bootstrap95_pp": [
+        6.938999999999999,
+        7.487025
+      ],
+      "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+      "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_POSITIVE",
+      "query_improved": 4169,
+      "query_harmed": 424,
+      "query_equal": 5407,
+      "qps_pairing": {
+        "pairs": [
+          {
+            "round": 0,
+            "candidate_qps": 11882.197131463181,
+            "reference_qps": 10352.011668125024,
+            "candidate_batch_wall_us": 841595.194,
+            "reference_batch_wall_us": 965995.82,
+            "qps_ratio": 1.1478152761409424
+          },
+          {
+            "round": 1,
+            "candidate_qps": 11851.934137635766,
+            "reference_qps": 10245.262864000206,
+            "candidate_batch_wall_us": 843744.142,
+            "reference_batch_wall_us": 976060.852,
+            "qps_ratio": 1.156820893222865
+          },
+          {
+            "round": 2,
+            "candidate_qps": 11716.25138124645,
+            "reference_qps": 9914.857391592019,
+            "candidate_batch_wall_us": 853515.316,
+            "reference_batch_wall_us": 1008587.376,
+            "qps_ratio": 1.1816863237167734
+          },
+          {
+            "round": 3,
+            "candidate_qps": 11833.663003406391,
+            "reference_qps": 9534.163689137018,
+            "candidate_batch_wall_us": 845046.88,
+            "reference_batch_wall_us": 1048859.693,
+            "qps_ratio": 1.2411852144818285
+          },
+          {
+            "round": 4,
+            "candidate_qps": 11615.720559625484,
+            "reference_qps": 10118.972534464454,
+            "candidate_batch_wall_us": 860902.253,
+            "reference_batch_wall_us": 988242.627,
+            "qps_ratio": 1.1479150200342199
+          }
+        ],
+        "mean_paired_ratio": 1.175084545519326,
+        "median_paired_ratio": 1.156820893222865,
+        "min_paired_ratio": 1.1478152761409424,
+        "max_paired_ratio": 1.2411852144818285,
+        "candidate_faster_rounds": 5,
+        "ratio_of_mean_qps": 1.174114449870142,
+        "ratio_CI": null,
+        "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+      },
+      "mean_graph_ndc_delta": -579.2791000000002,
+      "mean_total_ndc_delta": -643.2790999999997,
+      "oracle_involved": true,
+      "matched_cost_or_recall_claim": false,
+      "p2_gate_automatically_passed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "geometric_bundle_vs_fast",
+      "family": "diagnostic_bundle",
+      "candidate": "geom_unified",
+      "reference": "fast",
+      "recall_delta_pp": -0.19299999999999998,
+      "paired_query_bootstrap95_pp": [
+        -0.404,
+        0.011999999999999993
+      ],
+      "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+      "recall_evidence_sign": "INTERVAL_INCLUDES_ZERO_NOT_AN_EQUIVALENCE_TEST",
+      "query_improved": 224,
+      "query_harmed": 246,
+      "query_equal": 9530,
+      "qps_pairing": {
+        "pairs": [
+          {
+            "round": 0,
+            "candidate_qps": 13571.99478050939,
+            "reference_qps": 15915.627869816492,
+            "candidate_batch_wall_us": 736811.365,
+            "reference_batch_wall_us": 628313.258,
+            "qps_ratio": 0.8527464258100851
+          },
+          {
+            "round": 1,
+            "candidate_qps": 14935.66585897274,
+            "reference_qps": 16004.067978014924,
+            "candidate_batch_wall_us": 669538.278,
+            "reference_batch_wall_us": 624841.135,
+            "qps_ratio": 0.9332418407301276
+          },
+          {
+            "round": 2,
+            "candidate_qps": 14961.053281370563,
+            "reference_qps": 15920.084892770124,
+            "candidate_batch_wall_us": 668402.138,
+            "reference_batch_wall_us": 628137.354,
+            "qps_ratio": 0.9397596421213124
+          },
+          {
+            "round": 3,
+            "candidate_qps": 14900.80526484788,
+            "reference_qps": 16029.383861084472,
+            "candidate_batch_wall_us": 671104.67,
+            "reference_batch_wall_us": 623854.297,
+            "qps_ratio": 0.9295931393235575
+          },
+          {
+            "round": 4,
+            "candidate_qps": 14799.451077111968,
+            "reference_qps": 15869.474184222578,
+            "candidate_batch_wall_us": 675700.737,
+            "reference_batch_wall_us": 630140.601,
+            "qps_ratio": 0.9325734996201432
+          }
+        ],
+        "mean_paired_ratio": 0.9175829095210452,
+        "median_paired_ratio": 0.9325734996201432,
+        "min_paired_ratio": 0.8527464258100851,
+        "max_paired_ratio": 0.9397596421213124,
+        "candidate_faster_rounds": 0,
+        "ratio_of_mean_qps": 0.9176099739959813,
+        "ratio_CI": null,
+        "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+      },
+      "mean_graph_ndc_delta": 12.96349999999984,
+      "mean_total_ndc_delta": 76.96349999999984,
+      "oracle_involved": false,
+      "matched_cost_or_recall_claim": false,
+      "p2_gate_automatically_passed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "oracle_bundle_vs_fast",
+      "family": "diagnostic_bundle",
+      "candidate": "oracle_unified",
+      "reference": "fast",
+      "recall_delta_pp": 0.16900000000000004,
+      "paired_query_bootstrap95_pp": [
+        -0.04799999999999998,
+        0.38800000000000007
+      ],
+      "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+      "recall_evidence_sign": "INTERVAL_INCLUDES_ZERO_NOT_AN_EQUIVALENCE_TEST",
+      "query_improved": 264,
+      "query_harmed": 238,
+      "query_equal": 9498,
+      "qps_pairing": {
+        "pairs": [
+          {
+            "round": 0,
+            "candidate_qps": 15283.413651187255,
+            "reference_qps": 15915.627869816492,
+            "candidate_batch_wall_us": 654304.086,
+            "reference_batch_wall_us": 628313.258,
+            "qps_ratio": 0.960277142453914
+          },
+          {
+            "round": 1,
+            "candidate_qps": 13847.812890833748,
+            "reference_qps": 16004.067978014924,
+            "candidate_batch_wall_us": 722135.696,
+            "reference_batch_wall_us": 624841.135,
+            "qps_ratio": 0.865268312397619
+          },
+          {
+            "round": 2,
+            "candidate_qps": 15211.094103181165,
+            "reference_qps": 15920.084892770124,
+            "candidate_batch_wall_us": 657414.906,
+            "reference_batch_wall_us": 628137.354,
+            "qps_ratio": 0.9554656401417221
+          },
+          {
+            "round": 3,
+            "candidate_qps": 15297.699785236206,
+            "reference_qps": 16029.383861084472,
+            "candidate_batch_wall_us": 653693.048,
+            "reference_batch_wall_us": 623854.297,
+            "qps_ratio": 0.9543535745235585
+          },
+          {
+            "round": 4,
+            "candidate_qps": 15283.04350159542,
+            "reference_qps": 15869.474184222578,
+            "candidate_batch_wall_us": 654319.933,
+            "reference_batch_wall_us": 630140.601,
+            "qps_ratio": 0.9630466217204483
+          }
+        ],
+        "mean_paired_ratio": 0.9396822582474524,
+        "median_paired_ratio": 0.9554656401417221,
+        "min_paired_ratio": 0.865268312397619,
+        "max_paired_ratio": 0.9630466217204483,
+        "candidate_faster_rounds": 0,
+        "ratio_of_mean_qps": 0.9396080127878254,
+        "ratio_CI": null,
+        "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+      },
+      "mean_graph_ndc_delta": -5.75,
+      "mean_total_ndc_delta": -5.75,
+      "oracle_involved": true,
+      "matched_cost_or_recall_claim": false,
+      "p2_gate_automatically_passed": false
+    }
+  ],
+  "bootstrap_draws": {
+    "path": "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/analysis_v1/bootstrap_yandex_t2i_official10M_ip_v1.npz",
+    "sha256": "65354f8e6b0b2877a9eb6475de456b7842ac37c48f3b2159d2f672ba1c6ade13"
+  },
+  "observed_pilot_frontier": [
+    {
+      "method": "fast",
+      "L": 64,
+      "recall": 0.8283200000000001,
+      "qps_mean_of_five": 27390.685431392845
+    },
+    {
+      "method": "fast",
+      "L": 128,
+      "recall": 0.89655,
+      "qps_mean_of_five": 15947.72775718172
+    }
+  ],
+  "frontier_interpretation": "Descriptive measured pilot points only; no matched-cost bootstrap, no formal performance gate, no oracle points",
+  "model_fit_diagnostics": {
+    "fit_queries": 20000,
+    "fit_target_region_mass": [
+      133.69999999999985,
+      204.29999999999936,
+      257.59999999999917,
+      273.1999999999995,
+      287.49999999999943,
+      268.59999999999906,
+      78.1000000000001,
+      242.19999999999936,
+      217.09999999999928,
+      118.1999999999998,
+      205.1999999999996,
+      395.0000000000002,
+      220.19999999999902,
+      121.29999999999961,
+      228.49999999999855,
+      139.69999999999976,
+      146.19999999999968,
+      135.3999999999997,
+      361.6000000000012,
+      262.0999999999993,
+      314.39999999999986,
+      303.5999999999994,
+      165.69999999999933,
+      307.8999999999996,
+      622.0000000000022,
+      1026.400000000001,
+      480.3000000000044,
+      435.40000000000214,
+      90.39999999999996,
+      95.49999999999987,
+      297.19999999999936,
+      97.99999999999996,
+      266.3999999999997,
+      391.50000000000017,
+      315.09999999999985,
+      380.000000000001,
+      395.40000000000094,
+      458.8000000000002,
+      311.6999999999998,
+      296.6999999999999,
+      160.49999999999918,
+      317.7000000000001,
+      376.00000000000097,
+      433.20000000000033,
+      155.3999999999999,
+      166.19999999999987,
+      152.49999999999974,
+      233.39999999999927,
+      269.7999999999996,
+      243.29999999999907,
+      343.30000000000047,
+      312.6,
+      633.5000000000015,
+      548.600000000005,
+      312.4000000000001,
+      607.5000000000039,
+      376.90000000000026,
+      540.7000000000025,
+      627.0000000000003,
+      316.4000000000001,
+      354.30000000000064,
+      589.4000000000041,
+      269.29999999999944,
+      311.9999999999998
+    ],
+    "distinct_gt10_targets": 188913,
+    "portal_fallbacks": [],
+    "profile_fallbacks": [],
+    "fit_mean_distinct_gt10_regions": 2.38485,
+    "fit_top4_oracle_target_mass": 0.9864799999999999
+  },
+  "model_region_sizes": [
+    170596,
+    132979,
+    133506,
+    130208,
+    180642,
+    171344,
+    130208,
+    187499,
+    130208,
+    187497,
+    133593,
+    185303,
+    175503,
+    185156,
+    187497,
+    137152,
+    167608,
+    130208,
+    155600,
+    132577,
+    132978,
+    132367,
+    132979,
+    179965,
+    141249,
+    187499,
+    130209,
+    149608,
+    182060,
+    130209,
+    187499,
+    175277,
+    145776,
+    187214,
+    130208,
+    187213,
+    130208,
+    178167,
+    130209,
+    154209,
+    130208,
+    178324,
+    167866,
+    149878,
+    130208,
+    153618,
+    130209,
+    187497,
+    171887,
+    187499,
+    181367,
+    130208,
+    177645,
+    130208,
+    130208,
+    187498,
+    132145,
+    157047,
+    143218,
+    187499,
+    136145,
+    187499,
+    130208,
+    151924
+  ],
+  "cost": {
+    "model": {
+      "initialization_validation_seconds": 0.058827602999372175,
+      "total_model_command_work_seconds": 0.18144935300006182,
+      "load_seconds": 0.05576302299959934,
+      "profile_and_portal_compute_seconds": 0.052214855000784155,
+      "post_existing_partition_and_GT_wall_seconds": 0.1226220819989976,
+      "exact_GT_seconds": null,
+      "exact_GT_reason": "Audited existing GT reused; this task did not compute exact GT"
+    },
+    "paired_fast20k": {
+      "exact_train_GT_seconds": null,
+      "exact_train_GT_reason": "Compatible preexisting exact GT reused; historical compute time unavailable in this invocation",
+      "qgt_hub_seconds": null,
+      "qgt_hub_reason": "Audited independent 5K QGT raw hubs reused",
+      "prototype_seconds": 0.06592642900068313,
+      "router_index_seconds": null,
+      "router_index_reason": "Measured separately by evaluator during index initialization"
+    },
+    "count_peak_rss_kib": 11052300,
+    "timing_peak_rss_kib": 10906596,
+    "index_bytes": 10640000103,
+    "router_index_build_seconds": 0.044810059,
+    "routing_only_plain": [
+      {
+        "batch_wall_us": 10416.432,
+        "method": "fast",
+        "num_queries": 10000
+      },
+      {
+        "batch_wall_us": 13009.89,
+        "method": "geom_unified",
+        "num_queries": 10000
+      },
+      {
+        "batch_wall_us": 13003.998,
+        "method": "geom_uniform",
+        "num_queries": 10000
+      },
+      {
+        "batch_wall_us": 13205.38,
+        "method": "geom_probability",
+        "num_queries": 10000
+      },
+      {
+        "batch_wall_us": 10406.418,
+        "method": "oracle_unified",
+        "num_queries": 10000
+      },
+      {
+        "batch_wall_us": 10353.309,
+        "method": "oracle_probability",
+        "num_queries": 10000
+      }
+    ],
+    "partition": null,
+    "partition_reason": "Read the checksum-bound model partition_report separately; this analysis does not invent missing offline timings"
+  },
+  "gate_assessment": {
+    "status": "REQUIRES_MECHANISM_REVIEW",
+    "automatic_GO": false,
+    "candidate_protection_evidence": "Read all three primary_queue contrasts at both fixed L values; signs concern same-L Recall only.",
+    "structure_route_potential_evidence": "Oracle selection and Fast bundle contrasts change selected portals/regions/seeds; they cannot by themselves isolate portal quality or graph connectivity.",
+    "required_additional_evidence": [
+      "Prespecified competition traces for mechanism interpretation",
+      "Localized prediction or portal bottleneck before oracle-only potential can justify a revision"
+    ],
+    "P5_P6_P7_status": "NOT_EVALUATED_BY_THIS_SCRIPT"
+  }
+}

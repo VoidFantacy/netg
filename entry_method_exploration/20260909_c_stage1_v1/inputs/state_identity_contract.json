@@ -1,0 +1,35 @@
+{
+  "scope": "Explicit expansion of identities already bound in every serialized state by its graph/base SHA. Reads only 20-byte index headers; no search, no changes to saved states. GT paths/hashes in original provenance metadata are not GT values or decision features.",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "graph_sha256": "0a95d309b4980e0f0b73b7ad1222ec611db1f97c32ba2b69f070f5a952b9129a",
+      "base_sha256": "6fb5b5510b29504de38271be7c343bd5e85a029f5755c7b3d74177cbf1ebbb18",
+      "native_binary_header": {
+        "version": 1,
+        "N": 2505000,
+        "d": 512,
+        "faiss_metric_enum": 0
+      },
+      "metric": "INNER_PRODUCT",
+      "distance_computer_order": "negative inner product; smaller is better",
+      "normalization": "no additional query/base normalization",
+      "native_source_sha256": "931d74db432bb2a64aeaedd5200f933674b5e84fb0d129d5640189d76b008ba4"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "graph_sha256": "fa6eb7dd4e8d9dc95d696947fc18bd167880fb336212cb7bd073e7acddd4bf2e",
+      "base_sha256": "56d1baa271c79ea280d57ee1c7a8359438ffffc98a75cac799051b13fbdbe0ff",
+      "native_binary_header": {
+        "version": 1,
+        "N": 10000000,
+        "d": 200,
+        "faiss_metric_enum": 0
+      },
+      "metric": "INNER_PRODUCT",
+      "distance_computer_order": "negative inner product; smaller is better",
+      "normalization": "no additional query/base normalization",
+      "native_source_sha256": "931d74db432bb2a64aeaedd5200f933674b5e84fb0d129d5640189d76b008ba4"
+    }
+  ]
+}

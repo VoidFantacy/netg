@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "physical": 1771,
+      "missing_sibling_edges": 1362,
+      "appended_edges_per_arm": 1359,
+      "changed_nodes": 1139,
+      "capacity_limited_nodes": 2,
+      "old_edges": 15834,
+      "new_edges": 17193,
+      "plan_seconds": null
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "physical": 2067,
+      "missing_sibling_edges": 1286,
+      "appended_edges_per_arm": 1285,
+      "changed_nodes": 1263,
+      "capacity_limited_nodes": 1,
+      "old_edges": 23063,
+      "new_edges": 24348,
+      "plan_seconds": null
+    }
+  ],
+  "installs": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "model": "sibling10",
+      "seconds": null,
+      "seconds_reason": "completed all four installs before failed metadata serialization; durations not persisted",
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage24_sibling_links_v1/models/webvid2_5m_light_v1/sibling10/graph.hnsw",
+        "bytes": 3889472,
+        "mtime_ns": 1789287991584008692,
+        "sha256": "26a4f6b5cf629b4b68f9e4addee78771d2ef873a06713c725fc55b0c7c907f26"
+      },
+      "all_W_labels_header_upper_levels_unchanged": true,
+      "old_edge_prefix_bytes_preserved": true,
+      "only_count_and_unused_slots_changed": true,
+      "source_roundtrip_exact": true
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "model": "neighbor10",
+      "seconds": null,
+      "seconds_reason": "completed all four installs before failed metadata serialization; durations not persisted",
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage24_sibling_links_v1/models/webvid2_5m_light_v1/neighbor10/graph.hnsw",
+        "bytes": 3889472,
+        "mtime_ns": 1789287991624008976,
+        "sha256": "c845e0f6f41b0b08449bbc6b184c600663f3dea367ad9ff09f46cfa25631a6c8"
+      },
+      "all_W_labels_header_upper_levels_unchanged": true,
+      "old_edge_prefix_bytes_preserved": true,
+      "only_count_and_unused_slots_changed": true,
+      "source_roundtrip_exact": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "sibling10",
+      "seconds": null,
+      "seconds_reason": "completed all four installs before failed metadata serialization; durations not persisted",
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage24_sibling_links_v1/models/yandex_t2i_official10M_ip_v1/sibling10/graph.hnsw",
+        "bytes": 1959640,
+        "mtime_ns": 1789287991924011102,
+        "sha256": "a58b910ba3be83f200af64ab6c36fc5395d84b2d1321766c1c83f5b96fee0c51"
+      },
+      "all_W_labels_header_upper_levels_unchanged": true,
+      "old_edge_prefix_bytes_preserved": true,
+      "only_count_and_unused_slots_changed": true,
+      "source_roundtrip_exact": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "neighbor10",
+      "seconds": null,
+      "seconds_reason": "completed all four installs before failed metadata serialization; durations not persisted",
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage24_sibling_links_v1/models/yandex_t2i_official10M_ip_v1/neighbor10/graph.hnsw",
+        "bytes": 1959640,
+        "mtime_ns": 1789287991964011385,
+        "sha256": "8abf7c144c9f14bb443976d362ffa7e95d55598fab04d034af7f96a9d998b580"
+      },
+      "all_W_labels_header_upper_levels_unchanged": true,
+      "old_edge_prefix_bytes_preserved": true,
+      "only_count_and_unused_slots_changed": true,
+      "source_roundtrip_exact": true
+    }
+  ],
+  "builds": 0,
+  "new_GT": 0,
+  "gradient_updates": 0,
+  "preparation_seconds": null,
+  "successful_recovery_verification_seconds": 3.2973179280015756,
+  "installs_performed_in": "src/resume_prepare.py",
+  "no_reinstall_in_recovery": true
+}

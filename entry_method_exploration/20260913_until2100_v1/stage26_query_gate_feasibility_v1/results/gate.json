@@ -1,0 +1,41 @@
+{
+  "status": "COMPLETE_QUERY_GATE_CACHE_FEASIBILITY",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "passed": false,
+      "rules": {
+        "baseline10_hits": false,
+        "baseline10_failures": false,
+        "baseline10_blocks": false,
+        "compact10_hits": true,
+        "compact10_failures": true,
+        "compact10_blocks": false,
+        "shuffle_gate_hits": true,
+        "shuffle_gate_failures": false,
+        "shuffle_gate_blocks": false,
+        "gain_retention75": false,
+        "loss_avoidance25": true
+      }
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "passed": false,
+      "rules": {
+        "baseline10_hits": true,
+        "baseline10_failures": true,
+        "baseline10_blocks": false,
+        "compact10_hits": false,
+        "compact10_failures": false,
+        "compact10_blocks": false,
+        "shuffle_gate_hits": false,
+        "shuffle_gate_failures": false,
+        "shuffle_gate_blocks": false,
+        "gain_retention75": false,
+        "loss_avoidance25": true
+      }
+    }
+  },
+  "native_implementation_feasible": false,
+  "wall_measurement_allowed": false,
+  "old_gates_unchanged": true,
+  "new_final_feedback": false
+}

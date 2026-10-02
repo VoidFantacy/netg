@@ -1,0 +1,177 @@
+{
+  "anchor": {
+    "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+    "name": "GT10-hard"
+  },
+  "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+  "dimension": 200,
+  "base_n": 10000000,
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "threads": 1,
+  "max_search_calls": 3000000,
+  "seconds_cap": 7200,
+  "mode": "evaluate",
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260920_entry_id_pilot_v1/inputs/yandex_t2i_official10M_ip_v1/audit/queries.f32",
+  "gt": "/data/netg/ACSG/entry_method_exploration/20260920_entry_id_pilot_v1/inputs/yandex_t2i_official10M_ip_v1/audit/gt.i64",
+  "n": 4096,
+  "models": [
+    {
+      "name": "GT10",
+      "edits": []
+    },
+    {
+      "name": "Cost",
+      "edits": [
+        [
+          200787,
+          1648080
+        ],
+        [
+          761309,
+          8487446
+        ],
+        [
+          1142397,
+          3708389
+        ],
+        [
+          1437437,
+          1984533
+        ],
+        [
+          1498250,
+          985638
+        ],
+        [
+          1539880,
+          641963
+        ],
+        [
+          1587298,
+          55879
+        ],
+        [
+          2560628,
+          2187643
+        ],
+        [
+          4272678,
+          3854503
+        ],
+        [
+          4486293,
+          4360728
+        ],
+        [
+          4622596,
+          8227416
+        ],
+        [
+          6224989,
+          3554111
+        ],
+        [
+          6252991,
+          5538114
+        ],
+        [
+          8254665,
+          7548258
+        ],
+        [
+          8806991,
+          5662568
+        ],
+        [
+          9482166,
+          8491437
+        ]
+      ]
+    },
+    {
+      "name": "RecallControl",
+      "edits": [
+        [
+          373313,
+          3576770
+        ],
+        [
+          1027687,
+          3247913
+        ],
+        [
+          1233069,
+          6172246
+        ],
+        [
+          1430657,
+          3176331
+        ],
+        [
+          1437437,
+          1984533
+        ],
+        [
+          1539880,
+          9858532
+        ],
+        [
+          2121105,
+          4204675
+        ],
+        [
+          2339092,
+          346646
+        ],
+        [
+          3324761,
+          3130156
+        ],
+        [
+          3430268,
+          7168586
+        ],
+        [
+          3520645,
+          5139600
+        ],
+        [
+          4423343,
+          1331280
+        ],
+        [
+          5300781,
+          8676042
+        ],
+        [
+          8046169,
+          6519322
+        ],
+        [
+          9064423,
+          5429961
+        ],
+        [
+          9971116,
+          12101
+        ]
+      ]
+    }
+  ],
+  "points": [
+    {
+      "K": 1,
+      "L": 128
+    },
+    {
+      "K": 100,
+      "L": 128
+    }
+  ],
+  "repeats": 3,
+  "dataset_order": 1,
+  "audit_reference": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/yandex_t2i_official10M_ip_v1"
+}

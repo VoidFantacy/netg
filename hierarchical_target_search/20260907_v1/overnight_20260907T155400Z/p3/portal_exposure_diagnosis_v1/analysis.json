@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE",
+  "stage": "P3_POST_NOGO_PORTAL_EXPOSURE",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/diagnose_portal_exposure.py",
+    "sha256": "e76ad3377df984af132596c3dc84f65c9ab3f86c90bbfdbbd1ec7581ce9a9e59"
+  },
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/diagnosis_protocol_v1.json",
+    "sha256": "4bdd1cd92b42d85f89bd69aec980068c9bed0d5aee90917d5ce2ad8db9823959"
+  },
+  "upstream_P3": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P3.json",
+    "sha256": "3e154f9db332ec9a404b85d85061459967911be797e4350c191b1d9774dbc4f2"
+  },
+  "prior_analysis": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analysis_v1/analysis.json",
+    "sha256": "63da6a71425b0dbd6e186db1c608a564b9847c58168b6b56059a9ed2d2f901ae"
+  },
+  "P3_helper": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analyze_p3.py",
+    "sha256": "a840b060a61061df6e60ae6166cd9a090570ef6ec0002a3ec7c7deea14e4e03e"
+  },
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "summary": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/portal_exposure_diagnosis_v1/webvid2_5m_light_v1.json",
+        "sha256": "2564b11e574cef05dd802c86ec96f348e5f4a317db3892d6c5d813f97cd2257a"
+      },
+      "per_query": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/portal_exposure_diagnosis_v1/webvid2_5m_light_v1.per_query.npz",
+        "sha256": "0583050f817768f8fe551d282d9eb8df6d7af2e3eb9ddab946fc8ad75992d51f"
+      },
+      "cells": 4,
+      "same_ordered_route_queries_checked": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "summary": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/portal_exposure_diagnosis_v1/yandex_t2i_official10M_ip_v1.json",
+        "sha256": "35c663941cd5fce3e3754fc81de6e6d70be7a1c298c653f33d00506526150cdb"
+      },
+      "per_query": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/portal_exposure_diagnosis_v1/yandex_t2i_official10M_ip_v1.per_query.npz",
+        "sha256": "6dd289d1a966f503d09aa0d465b4ffd37de0199ab332d75bbeb5e1de2c2a584f"
+      },
+      "cells": 4,
+      "same_ordered_route_queries_checked": 0
+    }
+  ],
+  "wall_seconds": 12.00029078299849,
+  "normalization": "Per-leaf delta/support; conditional-weighted sum without renormalization. Any positive-weight unsupported leaf => undefined; zero-weight unsupported leaf contributes nothing.",
+  "raw_sum": "All four active leaves, including leaves whose saved conditional weight is zero; raw-sum and weighted-score signs are separate.",
+  "limitations": [
+    "Cached fit hits are correlated regional proxy counts, not population Recall.",
+    "Same Recall does not imply identical top10 IDs or trajectories.",
+    "Only saved oracle_probability counters are used; Fast unmeasured zero sentinels are excluded.",
+    "Identical-route integrity is conditional on inherited frozen graph/labels and verified saved evaluator outputs.",
+    "Post-hoc descriptive groups do not reopen P3, select a model, establish connectivity failure or authorize an auxiliary graph."
+  ],
+  "raw_GT_labels_query_base_graph_read": false,
+  "ANN_calls": 0,
+  "new_confidence_intervals": false,
+  "stage_gate_reopened": false,
+  "P4_authorized": false,
+  "model_or_auxgraph_change_authorized": false
+}

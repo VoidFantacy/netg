@@ -1,0 +1,22 @@
+--- labels.cpp
++++ labels_without_router.cpp
+@@ -1,10 +1,17 @@
+ #include "base_engine.hpp"
+ #include <ctime>
++
++struct Teacher {
++ acsg::IndexACSGFlat& idx;std::vector<uint8_t> spans;ResearchKernel kernel;std::unique_ptr<faiss::DistanceComputer>plain;ActualCount count;faiss::VisitedTable vt;std::vector<acsg::EnterPoint>ep;std::vector<acsg::Neighbor>legacy;uint64_t calls=0;
++ explicit Teacher(acsg::IndexACSGFlat&i):idx(i),spans(make_spans(*i.acsg.final_graph,i.ntotal)),kernel(*i.acsg.final_graph,spans,i.ntotal),plain(acsg::storage_distance_computer(i.storage)),count(acsg::storage_distance_computer(i.storage)),vt(i.ntotal){ep.reserve(3);legacy.reserve(1501);}
++ void search(const float*q,const std::array<int32_t,3>&e,int K,int L,faiss::idx_t*I,float*D,bool counting,bool original=false){ep.clear();for(int h:e)if(h>=0)ep.emplace_back(h,1);vt.advance();auto&dis=counting?static_cast<faiss::DistanceComputer&>(count):*plain;dis.set_query(q);if(original){idx.acsg.search_L=L;idx.acsg.search_new(dis,K,I,D,vt,2,ep,&legacy);}else kernel.search<true,false,true>(dis,vt,ep,L,K,I,D);++calls;}
++};
++
+ int main(int argc,char**argv){try{
+  require(argc==3,"labels config output");threads();auto c=read_json(argv[1]);fs::path out=argv[2];require(!fs::exists(out),"fresh labels");fs::create_directories(out);auto begin=Clock::now();size_t n=c["n"],d=c["dimension"];auto idx=load_nsg(c["index"]);require(idx->ntotal==c["base_n"]&&idx->d==d&&idx->metric_type==0,"dataset contract");Fvecs base(c["base"]);std::vector<float>vv(d);for(int j=0;j<32;++j){size_t id=(base.n-1)*j/31;idx->storage->reconstruct(id,vv.data());require(!memcmp(vv.data(),base.row(id),4*d),"base graph bytes");}
+- auto q=read_raw<float>(c["queries"].get<std::string>());require(q.size()==n*d,"query dimensions");Route route(c["anchor"],d);Engine e(*idx,route);std::array<int32_t,3>entry{idx->acsg.enterpoint,-1,-1};int L=c["L"];std::vector<int32_t>ids(n*100);std::vector<float>dist(n*100);std::array<faiss::idx_t,100>I;std::array<float,100>D;auto t=Clock::now();
++ auto q=read_raw<float>(c["queries"].get<std::string>());require(q.size()==n*d,"query dimensions");Teacher e(*idx);std::array<int32_t,3>entry{idx->acsg.enterpoint,-1,-1};int L=c["L"];std::vector<int32_t>ids(n*100);std::vector<float>dist(n*100);std::array<faiss::idx_t,100>I;std::array<float,100>D;auto t=Clock::now();
+  for(size_t i=0;i<n;++i){e.search(q.data()+i*d,entry,100,L,I.data(),D.data(),false);for(int k=0;k<100;++k){require(I[k]>=0&&I[k]<idx->ntotal&&std::isfinite(D[k]),"valid labels");ids[i*100+k]=I[k];dist[i*100+k]=D[k];}if((i+1)%1000==0){require(std::time(nullptr)<c["deadline_unix"].get<double>(),"deadline");threads();std::cout<<i+1<<"/"<<n<<std::endl;}}
+  double label_seconds=seconds(t);write_raw(out/"ids.i32",ids);write_raw(out/"distances.f32",dist);uint64_t checks=0;
+  for(size_t i=0;i<16;++i){e.search(q.data()+i*d,entry,100,L,I.data(),D.data(),true);uint64_t ndc=e.count.count;for(int k=0;k<100;++k)require(I[k]==ids[i*100+k]&&!memcmp(&D[k],&dist[i*100+k],4),"teacher counted bits");e.search(q.data()+i*d,entry,100,L,I.data(),D.data(),true,true);require(e.count.count==ndc,"teacher linked NDC");for(int k=0;k<100;++k)require(I[k]==ids[i*100+k]&&!memcmp(&D[k],&dist[i*100+k],4),"teacher linked bits");checks+=2;}
+- require(route.calls==0&&e.calls==n+32,"no GT10 route in teacher");resources(out);write_json(out/"complete.json",{{"status","PASS"},{"n",n},{"K",100},{"L",L},{"entry",entry[0]},{"label_loop_seconds",label_seconds},{"whole_process_seconds",seconds(begin)},{"new_NSG_calls",e.calls},{"GT10_route_calls",route.calls},{"native_parity_checks",checks},{"threads",process_threads()},{"cpu",15},{"exact_GT_generated",false}});return 0;
++ require(e.calls==n+32,"no GT10 route in teacher");resources(out);write_json(out/"complete.json",{{"status","PASS"},{"n",n},{"K",100},{"L",L},{"entry",entry[0]},{"label_loop_seconds",label_seconds},{"whole_process_seconds",seconds(begin)},{"new_NSG_calls",e.calls},{"GT10_route_calls",0},{"GT10_files_read",0},{"native_parity_checks",checks},{"threads",process_threads()},{"cpu",15},{"exact_GT_generated",false}});return 0;
+  }catch(const std::exception&e){std::cerr<<e.what()<<std::endl;return 1;}}

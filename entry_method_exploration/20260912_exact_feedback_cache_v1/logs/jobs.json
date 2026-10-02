@@ -1,0 +1,52 @@
+[
+  {
+    "dataset": "webvid2_5m_light_v1",
+    "status": "FAILED",
+    "reserved": 4000,
+    "reserved_builds": 90,
+    "pid": 23593,
+    "started_at": 1789207764.7103014,
+    "ended_observed_epoch": 1789207873.7069635,
+    "reservation_retained": true,
+    "actual_NSG_reconstructed": 0,
+    "actual_HNSW_reconstructed": 4096,
+    "builds_reconstructed": 1,
+    "evidence": "Trace fails in empty search_entries result read for first C after full route; native rejects invalid batches before search and empty explicit search iterates zero times; only C topology exists"
+  },
+  {
+    "name": "cache_v2_webvid2_5m_light_v1",
+    "dataset": "webvid2_5m_light_v1",
+    "status": "COMPLETE",
+    "reserved": 2000,
+    "reserved_builds": 90,
+    "pid": 23731,
+    "started_at": 1789207892.4524803,
+    "actual": 1835,
+    "native": {
+      "NSG_calls": 1835,
+      "HNSW_calls": 369216,
+      "builds": 90,
+      "actual_threads": 1,
+      "build_seconds": 4.560726837999999
+    },
+    "completed_at": 1789207907.4413118
+  },
+  {
+    "name": "cache_v2_yandex_t2i_official10M_ip_v1",
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "status": "COMPLETE",
+    "reserved": 2000,
+    "reserved_builds": 90,
+    "pid": 23803,
+    "started_at": 1789207978.64364,
+    "actual": 1226,
+    "native": {
+      "NSG_calls": 1226,
+      "HNSW_calls": 369216,
+      "builds": 90,
+      "actual_threads": 1,
+      "build_seconds": 3.9871975409999996
+    },
+    "completed_at": 1789207998.0679767
+  }
+]

@@ -1,0 +1,699 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE",
+  "scope": "P3_SAVED_STRUCTURE_EVIDENCE",
+  "created_utc": "2026-09-07T17:50:47.127659+00:00",
+  "argv": [
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analyze_structure.py",
+    "--partition-manifest",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/manifest.json",
+    "--partition-manifest",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/manifest.json",
+    "--protocol",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "--output",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/structure_analysis_v1"
+  ],
+  "script_sha256": "42de37c79b330c96708eeabd488142884eb3fd4f9900db00405f1421950de64c",
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+  },
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "status": "PASS_SAVED_STRUCTURE_EVIDENCE_AUDIT",
+      "nodes": 2505000,
+      "partition_manifest": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/manifest.json",
+        "sha256": "b01a0ee73b29d51247587de501d63ac0ec6b4c723b62786ff71dc2aff0cb8de7"
+      },
+      "common_initial_labels_sha256": "2fc6112d684f4a3d8c59e16e553f47a93103355f17ca8117bc72813e3136999a",
+      "saved_label_evidence": [
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/regions.u16",
+          "sha256": "2fc6112d684f4a3d8c59e16e553f47a93103355f17ca8117bc72813e3136999a",
+          "rows": 2505000,
+          "regions": 256
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/coarse_raw.u16",
+          "sha256": "01b3e59e00bfd22fa3dc6f743f7108dd42f1ea029945b7d03c8828894151ea25",
+          "rows": 2505000,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/coarse_canonical.u16",
+          "sha256": "e1b56aa291650a982b1209cf73cf04f3a50474dff5937c2e7e0832cbbd699ec6",
+          "rows": 2505000,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/child_00_raw.u16",
+          "sha256": "3526c85edaf08c47830f100bbb795ee1de36bf77153d1e885cf2b1e5ea4bba4a",
+          "rows": 142329,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/child_01_raw.u16",
+          "sha256": "f6183005db8796cc93b72a618214014bf9574039ce3108dee001b1b18dc58f52",
+          "rows": 142329,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/child_02_raw.u16",
+          "sha256": "6eb73caf70c06d4ba634bcd336d7cfdd88b0f45abaae1e69a46322cf3c6bcfb8",
+          "rows": 171550,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/child_03_raw.u16",
+          "sha256": "d9a6ed74a0daa16d00c5980794e75fc13d72de0515472fd6d8f4bf8ef601d464",
+          "rows": 171010,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/child_04_raw.u16",
+          "sha256": "842bc71f016f9023aa1d97fddcfd218b41c34a6e3daebe2f5ee77f3f9354fdff",
+          "rows": 163092,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/child_05_raw.u16",
+          "sha256": "11bae7a37c96273afaa95798977f05db5f05d53c8a3f019bad7fcc2db28ffdc7",
+          "rows": 162045,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/child_06_raw.u16",
+          "sha256": "0690bc7df78a849cb24e1c72db936c80d62ed39e18fed2d8256869a64bacc72c",
+          "rows": 159621,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/child_07_raw.u16",
+          "sha256": "778e889620f7adaf4485af2338c58239d31915c68cb30036d1391679c91e99fd",
+          "rows": 142329,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/child_08_raw.u16",
+          "sha256": "ba626ac21f77628f9e6182d8cb5e9b365ae661b2c00513dda55699580a9af006",
+          "rows": 171551,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/child_09_raw.u16",
+          "sha256": "f6202a7160c4bdd58ab4e028aaec3afef624b4c8d14dcecb0459ac918194994b",
+          "rows": 162064,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/child_10_raw.u16",
+          "sha256": "94e0f1ef3b37dc44d56fab570395800cc53ea4c1593ca63d9637ee01f898448e",
+          "rows": 147620,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/child_11_raw.u16",
+          "sha256": "1f73362e85a727677d0ac64795787edf028ba209e36828a5c7fe1fbaaedaffdf",
+          "rows": 168883,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/child_12_raw.u16",
+          "sha256": "a930e911d9f20563e8e14ebed229f072cb1f15b40c9317f068f8b8c1e83ecad2",
+          "rows": 170228,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/child_13_raw.u16",
+          "sha256": "312949d0a9a8b653806a148b8b3fed9ac129840821d10f29c8c5664e6e0ab8ac",
+          "rows": 142329,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/child_14_raw.u16",
+          "sha256": "99633ebed3b066e1ba06c5a2f300241f4fbb64db30edf45858a8a83065b8f846",
+          "rows": 143611,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/initial/child_15_raw.u16",
+          "sha256": "773b6db55a858c223da765a0c3f0ac5da7592f6c5d0f64f56ffe82fb73e773ec",
+          "rows": 144409,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/lambda0/pass1.regions.u16",
+          "sha256": "f5eeb94c11fd08bc97ae4752893f0b6393169db352e430b48a9ce3a49ae57976",
+          "rows": 2505000,
+          "regions": 256
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/lambda0/pass2.regions.u16",
+          "sha256": "25405e70f68a5856fda36de75054e120ec95ee7f231af040e9bacd128e4ca348",
+          "rows": 2505000,
+          "regions": 256
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/lambda1/pass1.regions.u16",
+          "sha256": "38efedb5e707c92cb0b2ef2333a46b9990f9ce8d49f9288ce3f89b225441af70",
+          "rows": 2505000,
+          "regions": 256
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/lambda1/pass2.regions.u16",
+          "sha256": "0773916bc8da59de451cebc8cb4ba66d911e9fe9c67467d2be4449145ea9e4ce",
+          "rows": 2505000,
+          "regions": 256
+        }
+      ],
+      "initial": {
+        "M": 49611457,
+        "C": 19781976,
+        "S": 68627,
+        "Q": 20000,
+        "coarse_C": 8268073,
+        "coarse_S": 34383,
+        "numerator0": 3560755680000,
+        "numerator1": 6965441139539,
+        "denominator": 8930062260000
+      },
+      "branches": [
+        {
+          "lambda": 0,
+          "final": {
+            "M": 49611457,
+            "C": 19156978,
+            "S": 66657,
+            "Q": 20000,
+            "coarse_C": 8439720,
+            "coarse_S": 34119,
+            "numerator0": 3448256040000,
+            "numerator1": 6755206929249,
+            "denominator": 8930062260000
+          },
+          "passes": [
+            {
+              "pass": 1,
+              "accepted_moves": 91586,
+              "cross_coarse_moves": 64110,
+              "labels_sha256": "f5eeb94c11fd08bc97ae4752893f0b6393169db352e430b48a9ce3a49ae57976",
+              "C": 19276987,
+              "S": 67052,
+              "J_at_lambda1": 0.7610702900926919,
+              "exact_delta_numerator": "-90898020000",
+              "refinement_seconds": 0.725905541,
+              "full_recompute_and_label_snapshot_seconds": 0.456833955
+            },
+            {
+              "pass": 2,
+              "accepted_moves": 34043,
+              "cross_coarse_moves": 23900,
+              "labels_sha256": "25405e70f68a5856fda36de75054e120ec95ee7f231af040e9bacd128e4ca348",
+              "C": 19156978,
+              "S": 66657,
+              "J_at_lambda1": 0.7564568681124738,
+              "exact_delta_numerator": "-21601620000",
+              "refinement_seconds": 0.718547811,
+              "full_recompute_and_label_snapshot_seconds": 0.458075329
+            }
+          ],
+          "wall_seconds": 2.417139968,
+          "final_labels_sha256": "25405e70f68a5856fda36de75054e120ec95ee7f231af040e9bacd128e4ca348"
+        },
+        {
+          "lambda": 1,
+          "final": {
+            "M": 49611457,
+            "C": 19348257,
+            "S": 32055,
+            "Q": 20000,
+            "coarse_C": 8645109,
+            "coarse_S": 19108,
+            "numerator0": 3482686260000,
+            "numerator1": 5072981514135,
+            "denominator": 8930062260000
+          },
+          "passes": [
+            {
+              "pass": 1,
+              "accepted_moves": 121871,
+              "cross_coarse_moves": 82438,
+              "labels_sha256": "38efedb5e707c92cb0b2ef2333a46b9990f9ce8d49f9288ce3f89b225441af70",
+              "C": 19470606,
+              "S": 34863,
+              "J_at_lambda1": 0.5861452197076843,
+              "exact_delta_numerator": "-1731127834148",
+              "refinement_seconds": 0.770247891,
+              "full_recompute_and_label_snapshot_seconds": 0.458762906
+            },
+            {
+              "pass": 2,
+              "accepted_moves": 40758,
+              "cross_coarse_moves": 27917,
+              "labels_sha256": "0773916bc8da59de451cebc8cb4ba66d911e9fe9c67467d2be4449145ea9e4ce",
+              "C": 19348257,
+              "S": 32055,
+              "J_at_lambda1": 0.5680790756474524,
+              "exact_delta_numerator": "-161331791256",
+              "refinement_seconds": 0.762875488,
+              "full_recompute_and_label_snapshot_seconds": 0.456497943
+            }
+          ],
+          "wall_seconds": 2.503564959,
+          "final_labels_sha256": "0773916bc8da59de451cebc8cb4ba66d911e9fe9c67467d2be4449145ea9e4ce"
+        }
+      ],
+      "lambda1_minus_lambda0_final": {
+        "exact_J_at_lambda1_numerator_difference": "-1682225415114",
+        "common_denominator": "8930062260000",
+        "J_at_lambda1_difference": -0.1883777924650214,
+        "C_difference": 191279,
+        "leaf_cut_fraction_difference": 0.0038555408683119304,
+        "S_fit_fragmentation_difference": -34602,
+        "normalized_fit_fragmentation_difference": -0.19223333333333334,
+        "mean_distinct_fit_leaf_regions_difference": -1.7301,
+        "J_at_lambda1_strictly_lower": true,
+        "fit_fragmentation_strictly_lower": true,
+        "registered_structure_condition_met": true
+      },
+      "cost": {
+        "total_partition_wall_seconds": 40.033169924,
+        "peak_rss_kib": 6401504,
+        "nonoverlapping_measured_phase_seconds": {
+          "symmetric_CSR_measured_subtotal": 1.396349945,
+          "coarse_METIS_and_cut_verification": 18.351234173,
+          "children_METIS_and_cut_verification_sum": 10.288798558,
+          "incoming_CSR": 1.910748161,
+          "fit_GT10_load_and_validation": 0.006140075,
+          "initial_full_objective": 0.393703758,
+          "lambda0_branch": 2.417139968,
+          "GT_incidence_build_for_lambda1": 0.005012027,
+          "lambda1_branch": 2.503564959
+        },
+        "symmetric_CSR_detail_seconds": {
+          "count_seconds": 0.367579656,
+          "fill_seconds": 0.847608036,
+          "sort_unique_seconds": 0.114386614,
+          "compact_seconds": 0.066775639
+        },
+        "child_METIS_and_cut_verification_seconds_in_coarse_ID_order": [
+          0.373471298,
+          0.23467599,
+          0.864678531,
+          0.74037775,
+          0.801322769,
+          0.754652003,
+          0.797090876,
+          0.375665228,
+          0.895378442,
+          0.696828648,
+          0.479434725,
+          0.86063435,
+          0.853854942,
+          0.484718635,
+          0.571955347,
+          0.504059024
+        ],
+        "branch_detail": [
+          {
+            "lambda": 0,
+            "branch_wall_seconds": 2.417139968,
+            "refinement_seconds": 1.444453352,
+            "full_recompute_and_label_snapshot_seconds": 0.9149092839999999,
+            "other_branch_recording_seconds_by_subtraction": 0.057777331999999904
+          },
+          {
+            "lambda": 1,
+            "branch_wall_seconds": 2.503564959,
+            "refinement_seconds": 1.533123379,
+            "full_recompute_and_label_snapshot_seconds": 0.915260849,
+            "other_branch_recording_seconds_by_subtraction": 0.055180731000000094
+          }
+        ],
+        "full_initializer_wall_seconds": null,
+        "full_initializer_missing_reason": "Induced CSR construction, initial canonicalization and label/report writes were not separately timed.",
+        "unitemized_total_seconds_by_subtraction": 2.7604782999999955,
+        "unitemized_includes": [
+          "induced CSR construction",
+          "initial canonicalization/labels/JSON",
+          "branch initial copies/hashes and lambda1 GT-count setup",
+          "metadata/source/binary IO and other setup"
+        ],
+        "reused_exact_GT_cost_seconds": null,
+        "reused_exact_GT_cost_reason": "Not measured by this partition invocation; not zero.",
+        "complete_training_cost_claimed": false
+      },
+      "objective_full_graph_GT_recomputation_by_this_analyzer": false,
+      "objective_recomputation_evidence": "Verified saved independently recomputed C/S and exact incremental algebra; raw graph and GT are not opened.",
+      "P3_gate_passed": false,
+      "search_gate_evaluated": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "status": "PASS_SAVED_STRUCTURE_EVIDENCE_AUDIT",
+      "nodes": 10000000,
+      "partition_manifest": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/manifest.json",
+        "sha256": "230d507fada6662711aa6859816a8278994c5f48b15983ed6daaf313e6b75a4d"
+      },
+      "common_initial_labels_sha256": "247600b91274d5eef5793ef73f1345c675514582a68c3ee01cfb93ed4e9f291a",
+      "saved_label_evidence": [
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/regions.u16",
+          "sha256": "247600b91274d5eef5793ef73f1345c675514582a68c3ee01cfb93ed4e9f291a",
+          "rows": 10000000,
+          "regions": 256
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/coarse_raw.u16",
+          "sha256": "8afd2445bafe9c6e08e5c92191163f8891ddfa3883b4ea97f48c7a3ea5c732ef",
+          "rows": 10000000,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/coarse_canonical.u16",
+          "sha256": "58febac45d93b16358e8f0fe14eaccd7770fd7ab86496e384e497751676f8c9e",
+          "rows": 10000000,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/child_00_raw.u16",
+          "sha256": "445f38a06c9df2b95036f896fa3259406f5fe8108fb94f5091a7564911f1a3e3",
+          "rows": 605705,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/child_01_raw.u16",
+          "sha256": "61fe653cd04992c8de6b9734345c4a02e9ce996ee5dbeaae270192104c9e4a53",
+          "rows": 677707,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/child_02_raw.u16",
+          "sha256": "3c4c3f6423e8a76df5c6e9ddf3bce3b459b01d8aeec4c0c41c5b5b884405bfbc",
+          "rows": 589887,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/child_03_raw.u16",
+          "sha256": "7e380e8ee048677dae4d73dbe7b6d7e8699e68bf7188b36c51aa57e231607a81",
+          "rows": 684632,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/child_04_raw.u16",
+          "sha256": "c78b429493ea88c8e980127112f3011340722b5cf1a27ac60ece76173ad3134c",
+          "rows": 686684,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/child_05_raw.u16",
+          "sha256": "f72b55ed1bd2fc6ceb0766f6430bbda81ea1c39591040716d706a0194ad41769",
+          "rows": 665597,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/child_06_raw.u16",
+          "sha256": "bec5f81950a9de9c3807a0bb8251985867777b1445424991e63c86dc82d0a6ce",
+          "rows": 576604,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/child_07_raw.u16",
+          "sha256": "1673e18fab87abaddd187ef0b5a9a527a64ac692efc48cfcc171b48c1528a5a8",
+          "rows": 568181,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/child_08_raw.u16",
+          "sha256": "f7b9b25d0c0897411db059a9a2e22186c8cc29dffb1fdbc38353d4d20c9f8c9e",
+          "rows": 611260,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/child_09_raw.u16",
+          "sha256": "7653eea12797341c4c63c674ff2b6ae6ff2319d1076154647c8b54b19566b49e",
+          "rows": 568181,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/child_10_raw.u16",
+          "sha256": "09bfda007f158f40fdf8d03b1b3da80fdcdc1e68d6c1358ef41b89b1a3de5a6e",
+          "rows": 569635,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/child_11_raw.u16",
+          "sha256": "7e491cfeb101118bfb4a38152cbfd618d31e17c1b83f045b6a9bc09f240447db",
+          "rows": 686683,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/child_12_raw.u16",
+          "sha256": "177e88792fd479671d47423dcb6e2a5a2ad46d130f59ccb02420d56a94ac8c60",
+          "rows": 679843,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/child_13_raw.u16",
+          "sha256": "7e5b847672338a4849fd8fdf8d71e7021a805f0fe9794d421ec10d499b35cc7e",
+          "rows": 570951,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/child_14_raw.u16",
+          "sha256": "90e08df0d93d5f7572f13849da40751c5a85f0dd783cdf5b42b87266b9f43a42",
+          "rows": 570951,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/child_15_raw.u16",
+          "sha256": "f7893fa8a0da5774b441943fdb1688b6649d4e28f5166f3467f670ab91b1d68c",
+          "rows": 687499,
+          "regions": 16
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/lambda0/pass1.regions.u16",
+          "sha256": "edb15b24c728dbb527e512da76aeed44e70578943b340281f4a8cddea7110c14",
+          "rows": 10000000,
+          "regions": 256
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/lambda0/pass2.regions.u16",
+          "sha256": "efcbdd333cec86759907a6af7f5a363c4c1ecb4af8d16fdabbb7f0b56526f19c",
+          "rows": 10000000,
+          "regions": 256
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/lambda1/pass1.regions.u16",
+          "sha256": "4ebefa41fbfbc35b023e7cbb1b6272fdfc1a72a1593745cef9416fc8cded01bb",
+          "rows": 10000000,
+          "regions": 256
+        },
+        {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/lambda1/pass2.regions.u16",
+          "sha256": "e6d36a21adef6bce7a8e7ec146f3a1a1bf223c04b81f8d21c6538716889a04c7",
+          "rows": 10000000,
+          "regions": 256
+        }
+      ],
+      "initial": {
+        "M": 294844794,
+        "C": 101893518,
+        "S": 42281,
+        "Q": 20000,
+        "coarse_C": 41172735,
+        "coarse_S": 16098,
+        "numerator0": 18340833240000,
+        "numerator1": 30807165975114,
+        "denominator": 53072062920000
+      },
+      "branches": [
+        {
+          "lambda": 0,
+          "final": {
+            "M": 294844794,
+            "C": 97237126,
+            "S": 40185,
+            "Q": 20000,
+            "coarse_C": 41829426,
+            "coarse_S": 16026,
+            "numerator0": 17502682680000,
+            "numerator1": 29351020726890,
+            "denominator": 53072062920000
+          },
+          "passes": [
+            {
+              "pass": 1,
+              "accepted_moves": 335701,
+              "cross_coarse_moves": 220804,
+              "labels_sha256": "edb15b24c728dbb527e512da76aeed44e70578943b340281f4a8cddea7110c14",
+              "C": 97990291,
+              "S": 40478,
+              "J_at_lambda1": 0.5572231099459964,
+              "exact_delta_numerator": "-702580860000",
+              "refinement_seconds": 3.84879196,
+              "full_recompute_and_label_snapshot_seconds": 2.908729299
+            },
+            {
+              "pass": 2,
+              "accepted_moves": 129038,
+              "cross_coarse_moves": 87438,
+              "labels_sha256": "efcbdd333cec86759907a6af7f5a363c4c1ecb4af8d16fdabbb7f0b56526f19c",
+              "C": 97237126,
+              "S": 40185,
+              "J_at_lambda1": 0.5530408865231652,
+              "exact_delta_numerator": "-135569700000",
+              "refinement_seconds": 3.783704293,
+              "full_recompute_and_label_snapshot_seconds": 2.884668853
+            }
+          ],
+          "wall_seconds": 13.64655889,
+          "final_labels_sha256": "efcbdd333cec86759907a6af7f5a363c4c1ecb4af8d16fdabbb7f0b56526f19c"
+        },
+        {
+          "lambda": 1,
+          "final": {
+            "M": 294844794,
+            "C": 97587173,
+            "S": 19296,
+            "Q": 20000,
+            "coarse_C": 42111836,
+            "coarse_S": 8037,
+            "numerator0": 17565691140000,
+            "numerator1": 23255016285024,
+            "denominator": 53072062920000
+          },
+          "passes": [
+            {
+              "pass": 1,
+              "accepted_moves": 359393,
+              "cross_coarse_moves": 231396,
+              "labels_sha256": "4ebefa41fbfbc35b023e7cbb1b6272fdfc1a72a1593745cef9416fc8cded01bb",
+              "C": 98327901,
+              "S": 20184,
+              "J_at_lambda1": 0.44562370861192824,
+              "exact_delta_numerator": "-7156996473018",
+              "refinement_seconds": 3.866390563,
+              "full_recompute_and_label_snapshot_seconds": 2.888215028
+            },
+            {
+              "pass": 2,
+              "accepted_moves": 131164,
+              "cross_coarse_moves": 87795,
+              "labels_sha256": "e6d36a21adef6bce7a8e7ec146f3a1a1bf223c04b81f8d21c6538716889a04c7",
+              "C": 97587173,
+              "S": 19296,
+              "J_at_lambda1": 0.43817811114819954,
+              "exact_delta_numerator": "-395153217072",
+              "refinement_seconds": 3.849123439,
+              "full_recompute_and_label_snapshot_seconds": 2.884993634
+            }
+          ],
+          "wall_seconds": 13.703657142,
+          "final_labels_sha256": "e6d36a21adef6bce7a8e7ec146f3a1a1bf223c04b81f8d21c6538716889a04c7"
+        }
+      ],
+      "lambda1_minus_lambda0_final": {
+        "exact_J_at_lambda1_numerator_difference": "-6096004441866",
+        "common_denominator": "53072062920000",
+        "J_at_lambda1_difference": -0.11486277537496559,
+        "C_difference": 350047,
+        "leaf_cut_fraction_difference": 0.0011872246250344172,
+        "S_fit_fragmentation_difference": -20889,
+        "normalized_fit_fragmentation_difference": -0.11605,
+        "mean_distinct_fit_leaf_regions_difference": -1.04445,
+        "J_at_lambda1_strictly_lower": true,
+        "fit_fragmentation_strictly_lower": true,
+        "registered_structure_condition_met": true
+      },
+      "cost": {
+        "total_partition_wall_seconds": 262.250181346,
+        "peak_rss_kib": 37355416,
+        "nonoverlapping_measured_phase_seconds": {
+          "symmetric_CSR_measured_subtotal": 9.957602082,
+          "coarse_METIS_and_cut_verification": 124.342736055,
+          "children_METIS_and_cut_verification_sum": 69.54501769000001,
+          "incoming_CSR": 13.098918925,
+          "fit_GT10_load_and_validation": 0.00596729,
+          "initial_full_objective": 2.629438602,
+          "lambda0_branch": 13.64655889,
+          "GT_incidence_build_for_lambda1": 0.014684218,
+          "lambda1_branch": 13.703657142
+        },
+        "symmetric_CSR_detail_seconds": {
+          "count_seconds": 2.315892626,
+          "fill_seconds": 6.466127931,
+          "sort_unique_seconds": 0.81476874,
+          "compact_seconds": 0.360812785
+        },
+        "child_METIS_and_cut_verification_seconds_in_coarse_ID_order": [
+          2.892544954,
+          6.498405177,
+          4.016690393,
+          4.622050035,
+          4.755342667,
+          6.504171845,
+          5.234981653,
+          2.138186406,
+          3.727146427,
+          3.382953765,
+          2.752843074,
+          6.247003534,
+          5.964997619,
+          3.095421449,
+          2.668461069,
+          5.043817623
+        ],
+        "branch_detail": [
+          {
+            "lambda": 0,
+            "branch_wall_seconds": 13.64655889,
+            "refinement_seconds": 7.632496252999999,
+            "full_recompute_and_label_snapshot_seconds": 5.793398152,
+            "other_branch_recording_seconds_by_subtraction": 0.22066448500000035
+          },
+          {
+            "lambda": 1,
+            "branch_wall_seconds": 13.703657142,
+            "refinement_seconds": 7.715514002,
+            "full_recompute_and_label_snapshot_seconds": 5.773208662,
+            "other_branch_recording_seconds_by_subtraction": 0.21493447800000087
+          }
+        ],
+        "full_initializer_wall_seconds": null,
+        "full_initializer_missing_reason": "Induced CSR construction, initial canonicalization and label/report writes were not separately timed.",
+        "unitemized_total_seconds_by_subtraction": 15.305600451999965,
+        "unitemized_includes": [
+          "induced CSR construction",
+          "initial canonicalization/labels/JSON",
+          "branch initial copies/hashes and lambda1 GT-count setup",
+          "metadata/source/binary IO and other setup"
+        ],
+        "reused_exact_GT_cost_seconds": null,
+        "reused_exact_GT_cost_reason": "Not measured by this partition invocation; not zero.",
+        "complete_training_cost_claimed": false
+      },
+      "objective_full_graph_GT_recomputation_by_this_analyzer": false,
+      "objective_recomputation_evidence": "Verified saved independently recomputed C/S and exact incremental algebra; raw graph and GT are not opened.",
+      "P3_gate_passed": false,
+      "search_gate_evaluated": false
+    }
+  ],
+  "reads_graph_GT_base_queryvectors_pilot_validation_heldout": false,
+  "performs_search_refit_or_parameter_selection": false,
+  "P3_gate_passed": false,
+  "limitations": [
+    "Raw C/S are not recomputed here; this audits saved full-recompute evidence and exact integer algebra.",
+    "Every initial/coarse/child/pass label is freshly hashed and its structural role is checked.",
+    "Source/binary/audit/fit/graph identities are inherited from the accepted partition manifests; this script does not reopen those inputs.",
+    "Structure conditions are necessary only; paired oracle search transfer remains required before P3 can pass.",
+    "No pilot/validation/held-out data, new CI, tuning or performance claim is used."
+  ],
+  "both_datasets_structure_conditions_met": true,
+  "stage_interpretation": "STRUCTURE_CONDITION_MET_SEARCH_PENDING",
+  "wall_seconds": 0.8315417370031355
+}

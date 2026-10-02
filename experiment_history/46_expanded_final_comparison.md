@@ -1,0 +1,99 @@
+# 46. E57 扩展池最终比较
+
+2026-09-12，`COMPLETE_EXPANDED_POOL_FINAL_COMPARISON`，19候选/集固定选型与最终三指标比较完成。
+
+扩展到19候选/集后，固定cal规则仍选中WebVid的E52 seed21拓扑单独部署、Yandex的E53 seed22联合RL。两个数据集均未改选，故最终整组45点/225轮计时完全继承E55；本次新增88768 NSG用于全部19候选的fit/cal，未重复最终测速。纯构图RL的cal ΔRecall：WebVid两seed−0.0195/−0.0684 pp，Yandex−0.0488/+0.0684 pp，均未胜过原选中者；这与训练monitor局部正值并存，迁移问题仍在。
+
+最终新候选仍没有超过匹配GT10起点：WebVid五L的Recall变化依次−0.120/−0.045/−0.065/−0.025/−0.005 pp，Yandex−0.075/−0.075/−0.050/−0.050/−0.050 pp；两集全部QPS变化都落在五轮波动包络内。L128 WebVid相对soft起点得到27个命中、损失36个，救回4个零命中查询但新增2个；Yandex相对hard起点没有新增命中、损失15个，损伤落在2个查询且均变为零命中。不能把失败率偶然改善等同整体Recall提升，也不能因平均差小忽略稀疏严重损伤。
+
+NSG到Fast/FastGT的原有收益明确保留；本轮没有证据把这一优势归于新RL。WebVid当前匹配起点GT10-soft、Yandex GT10-hard继续保留，未替换默认。E52是贪心候选接受对照，不能把其拓扑部署叫作RL训练成果；E53是联合RL，E56是纯离线构图RL，方法身份分别保留。
+
+
+## 选择与测量来源
+
+- WebVid：`E52_20260921_T`，cal ΔRecall +0.1172pp；含默认best_all=`E52_20260921_T`；最终矩阵完整复用E55。
+- Yandex：`E53_20260922_A`，cal ΔRecall +0.0879pp；含默认best_all=`E53_20260922_A`；最终矩阵完整复用E55。
+
+原E55池17模型加E56两个seed，顺序与原cal规则在E56训练前已约定，未按monitor或最终validation删候选。全部19模型重新fit128恢复并cal1024评估，原17模型cal五字段全量逐位恢复。cal原U/低totalNDC/固定序选出best_all与best_new；最终矩阵和选择先冻结，然后才测有改选的数据集。未改选数据集完整继承E55同组结果及全部五轮原始时间，不重复测速，也不把一组方法的不同批次结果拼在一起。全部模型始终静态一次HNSW再原NSG；纯构图模型查询画像P固定，construction_W没有进入查询配置。
+
+## L128代表点
+
+| 数据集 | 方法 | L | Recall@10 % | QPS中位数 | 五轮QPS范围 | 零命中失败率 %（条数） |
+|---|---|---:|---:|---:|---:|---:|
+| WebVid | NSG | 128 | 70.9400 | 2121.37 | 2105.02–2124.23 | 5.15 (103) |
+| WebVid | Fast30K | 128 | 73.9900 | 2299.65 | 2281.28–2306.25 | 2.70 (54) |
+| WebVid | FastGT10-hard | 128 | 74.1750 | 2315.05 | 2304.59–2322.65 | 2.45 (49) |
+| WebVid | GT10-soft匹配起点 | 128 | 74.1900 | 2320.38 | 2305.80–2323.76 | 2.55 (51) |
+| WebVid | cal选中候选 | 128 | 74.1450 | 2321.73 | 2302.17–2323.99 | 2.45 (49) |
+| Yandex | NSG | 128 | 88.6600 | 2068.63 | 2063.97–2072.18 | 2.95 (59) |
+| Yandex | Fast30K | 128 | 89.8300 | 2283.00 | 2278.40–2286.82 | 1.85 (37) |
+| Yandex | FastGT10-hard | 128 | 90.0550 | 2281.23 | 2271.87–2284.64 | 1.60 (32) |
+| Yandex | cal选中候选 | 128 | 89.9800 | 2282.81 | 2282.03–2288.40 | 1.70 (34) |
+
+
+QPS同机CPU15、实际进程/OMP/BLAS/MKL1线程、五轮纯端到端wall中位数；失败为GT10零命中。L128只作紧凑展示，完整五L与波动范围如下。
+
+## 全部最终实测点
+
+| 数据集 | 方法 | L | Recall@10 % | QPS中位数 | 五轮QPS范围 | 零命中失败率 %（条数） |
+|---|---|---:|---:|---:|---:|---:|
+| WebVid | NSG | 64 | 61.3350 | 3639.61 | 3624.75–3652.40 | 9.75 (195) |
+| WebVid | Fast30K | 64 | 64.4950 | 4167.26 | 4141.21–4173.19 | 5.70 (114) |
+| WebVid | FastGT10-hard | 64 | 65.2450 | 4214.99 | 4188.37–4221.93 | 5.00 (100) |
+| WebVid | GT10-soft匹配起点 | 64 | 65.4850 | 4217.73 | 4187.11–4225.88 | 5.20 (104) |
+| WebVid | cal选中候选 | 64 | 65.3650 | 4227.31 | 4200.60–4236.97 | 5.20 (104) |
+| WebVid | NSG | 128 | 70.9400 | 2121.37 | 2105.02–2124.23 | 5.15 (103) |
+| WebVid | Fast30K | 128 | 73.9900 | 2299.65 | 2281.28–2306.25 | 2.70 (54) |
+| WebVid | FastGT10-hard | 128 | 74.1750 | 2315.05 | 2304.59–2322.65 | 2.45 (49) |
+| WebVid | GT10-soft匹配起点 | 128 | 74.1900 | 2320.38 | 2305.80–2323.76 | 2.55 (51) |
+| WebVid | cal选中候选 | 128 | 74.1450 | 2321.73 | 2302.17–2323.99 | 2.45 (49) |
+| WebVid | NSG | 256 | 79.1400 | 1180.79 | 1178.55–1182.46 | 2.25 (45) |
+| WebVid | Fast30K | 256 | 81.2650 | 1237.78 | 1234.42–1238.35 | 1.20 (24) |
+| WebVid | FastGT10-hard | 256 | 81.2700 | 1243.75 | 1234.02–1245.45 | 1.20 (24) |
+| WebVid | GT10-soft匹配起点 | 256 | 81.5000 | 1242.43 | 1231.94–1243.80 | 1.05 (21) |
+| WebVid | cal选中候选 | 256 | 81.4350 | 1239.45 | 1234.99–1243.94 | 1.10 (22) |
+| WebVid | NSG | 400 | 83.2800 | 781.98 | 777.04–786.03 | 1.25 (25) |
+| WebVid | Fast30K | 400 | 85.0800 | 810.41 | 806.46–810.87 | 0.50 (10) |
+| WebVid | FastGT10-hard | 400 | 85.1100 | 812.71 | 809.17–814.89 | 0.50 (10) |
+| WebVid | GT10-soft匹配起点 | 400 | 85.2250 | 812.06 | 810.21–812.64 | 0.45 (9) |
+| WebVid | cal选中候选 | 400 | 85.2000 | 812.84 | 810.82–813.53 | 0.45 (9) |
+| WebVid | NSG | 800 | 88.9700 | 404.05 | 403.90–405.35 | 0.40 (8) |
+| WebVid | Fast30K | 800 | 89.7900 | 413.06 | 412.71–413.64 | 0.20 (4) |
+| WebVid | FastGT10-hard | 800 | 89.9000 | 413.64 | 411.24–414.15 | 0.20 (4) |
+| WebVid | GT10-soft匹配起点 | 800 | 89.9000 | 413.28 | 412.60–413.42 | 0.15 (3) |
+| WebVid | cal选中候选 | 800 | 89.8950 | 412.14 | 411.55–415.26 | 0.15 (3) |
+| Yandex | NSG | 64 | 81.4400 | 3522.77 | 3499.93–3535.35 | 4.85 (97) |
+| Yandex | Fast30K | 64 | 83.4600 | 4028.49 | 3991.11–4034.06 | 2.45 (49) |
+| Yandex | FastGT10-hard | 64 | 83.5750 | 4039.26 | 4037.98–4043.41 | 2.20 (44) |
+| Yandex | cal选中候选 | 64 | 83.5000 | 4042.77 | 4008.99–4044.18 | 2.30 (46) |
+| Yandex | NSG | 128 | 88.6600 | 2068.63 | 2063.97–2072.18 | 2.95 (59) |
+| Yandex | Fast30K | 128 | 89.8300 | 2283.00 | 2278.40–2286.82 | 1.85 (37) |
+| Yandex | FastGT10-hard | 128 | 90.0550 | 2281.23 | 2271.87–2284.64 | 1.60 (32) |
+| Yandex | cal选中候选 | 128 | 89.9800 | 2282.81 | 2282.03–2288.40 | 1.70 (34) |
+| Yandex | NSG | 256 | 93.4400 | 1171.23 | 1164.90–1173.42 | 1.75 (35) |
+| Yandex | Fast30K | 256 | 93.9100 | 1250.60 | 1249.31–1253.03 | 1.20 (24) |
+| Yandex | FastGT10-hard | 256 | 94.0150 | 1250.23 | 1243.54–1252.42 | 1.15 (23) |
+| Yandex | cal选中候选 | 256 | 93.9650 | 1250.03 | 1245.21–1252.70 | 1.20 (24) |
+| Yandex | NSG | 400 | 95.5400 | 780.57 | 779.44–782.74 | 1.30 (26) |
+| Yandex | Fast30K | 400 | 95.9050 | 828.33 | 825.88–828.88 | 0.90 (18) |
+| Yandex | FastGT10-hard | 400 | 95.9300 | 827.81 | 825.45–827.99 | 0.90 (18) |
+| Yandex | cal选中候选 | 400 | 95.8800 | 827.71 | 822.08–829.48 | 0.95 (19) |
+| Yandex | NSG | 800 | 97.8300 | 414.21 | 412.81–415.06 | 0.65 (13) |
+| Yandex | Fast30K | 800 | 98.1600 | 429.51 | 428.16–429.86 | 0.30 (6) |
+| Yandex | FastGT10-hard | 800 | 98.1350 | 429.47 | 428.61–430.20 | 0.30 (6) |
+| Yandex | cal选中候选 | 800 | 98.0850 | 429.47 | 428.10–430.14 | 0.35 (7) |
+
+
+## 比较身份、数据与核验
+
+NSG原固定入口；Fast30K原GT1闭式画像/seed100/legacy heap；FastGT明确E24 GT10-hard/20K/seed20260828/sorted3，WebVid另soft匹配起点，Yandex FastGT即匹配起点。Fast与FastGT还有训练量和seed区别。历史validation2000与router_train的fit/monitor/cal/audit属于不同源分区，复制SHA与实际query字节零重叠；局部row IDs不能跨源直接比较。历史validation曾用于研究，不能称全项目新盲测。0原完整validation/held-out访问、0新GT/训练。
+
+本阶段实际新增88768 NSG，其中38 fit点+38 cal点固定88768，新增最终0点/0轮；完整交付仍45最终点/225可用wall轮，其余明确继承E55。新job进程累计70.772s。独立121可用点/133776行集合评分、hitmask/失败与收益损伤、4864 fit返回恢复、34816原17模型cal五字段回归、2048更早默认cal回归，1936可用原kernel parity、五L图/入口一致全部通过。可用历史parity与本轮新增调用分开，线程/串行/GT时序/选择冻结/源SHA和调用账通过。
+
+公共Recall域内log-QPS插值只作描述，不冒充实测同Recall点；五轮范围与稀疏query不确定性保留。默认代码配置没有自动替换。
+
+本轮19候选的最终模型与性能证据冻结，不再用最终validation回流训练、改seed或选checkpoint。剩余时间仅追溯E52/E53/E56已接受动作：同一真实修改在train与历史monitor上分别带来多少收益/损伤，是否集中于少数查询；该固定轨迹诊断不能改写本轮最终选择。21:40停止新查询，22:00交付。
+
+[协议](../entry_method_exploration/20260912_expanded_final_comparison_v1/protocol.md)、[最终45点](../entry_method_exploration/20260912_expanded_final_comparison_v1/results/final_points.csv)、[五轮计时](../entry_method_exploration/20260912_expanded_final_comparison_v1/results/timings.csv)、[配对收益/损伤](../entry_method_exploration/20260912_expanded_final_comparison_v1/results/paired_comparisons.csv)、[逐query](../entry_method_exploration/20260912_expanded_final_comparison_v1/results/query_results.csv)、[选型](../entry_method_exploration/20260912_expanded_final_comparison_v1/results/cal_selection.json)、[整组测量来源](../entry_method_exploration/20260912_expanded_final_comparison_v1/results/final_sources.json)、[调用范围](../entry_method_exploration/20260912_expanded_final_comparison_v1/results/deployment_complete.json)、[独立输出验收](../entry_method_exploration/20260912_expanded_final_comparison_v1/reviews/output_verification.json)、[合同验收](../entry_method_exploration/20260912_expanded_final_comparison_v1/reviews/contract_verification.json)。
+
+[Recall–QPS](../entry_method_exploration/20260912_expanded_final_comparison_v1/figures/recall_qps.svg)、[失败率–QPS](../entry_method_exploration/20260912_expanded_final_comparison_v1/figures/failure_qps.svg)、[三指标全部L](../entry_method_exploration/20260912_expanded_final_comparison_v1/figures/three_metrics_by_L.svg)，同名PNG/PDF可导出。

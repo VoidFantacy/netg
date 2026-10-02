@@ -1,0 +1,96 @@
+{
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "dimension": 200,
+  "H": 821,
+  "n": 4096,
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+  "GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt.i32",
+  "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/hub_ids.i32",
+  "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "base_n": 10000000,
+  "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+  "K_L": {
+    "1": [
+      64,
+      128,
+      256,
+      400,
+      800
+    ],
+    "100": [
+      128,
+      256,
+      400,
+      800
+    ]
+  },
+  "methods": [
+    {
+      "name": "NSGFixed1",
+      "entry_count": 1,
+      "forced": false,
+      "entries": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1/NSGFixed1/entries.i32",
+      "reference_results": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1/NSGFixed1"
+    },
+    {
+      "name": "UnitHub1",
+      "entry_count": 1,
+      "forced": false,
+      "entries": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1/UnitHub1/entries.i32",
+      "reference_results": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1/UnitHub1"
+    },
+    {
+      "name": "UnitHub3",
+      "entry_count": 3,
+      "forced": false,
+      "entries": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1/UnitHub3/entries.i32",
+      "reference_results": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1/UnitHub3"
+    },
+    {
+      "name": "GT11",
+      "entry_count": 1,
+      "forced": false,
+      "entries": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1/GT11/entries.i32",
+      "reference_results": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1/GT11"
+    },
+    {
+      "name": "GT13",
+      "entry_count": 3,
+      "forced": false,
+      "entries": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1/GT13/entries.i32",
+      "reference_results": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1/GT13"
+    },
+    {
+      "name": "GT101",
+      "entry_count": 1,
+      "forced": false,
+      "entries": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1/GT101/entries.i32",
+      "reference_results": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1/GT101"
+    },
+    {
+      "name": "GT103",
+      "entry_count": 3,
+      "forced": false,
+      "entries": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1/GT103/entries.i32",
+      "reference_results": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1/GT103"
+    },
+    {
+      "name": "DefaultANN",
+      "entry_count": 3,
+      "forced": false,
+      "entries": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1/DefaultANN/entries.i32",
+      "reference_results": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1/DefaultANN"
+    },
+    {
+      "name": "PrimaryFirst3",
+      "entry_count": 3,
+      "forced": true,
+      "entries": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/results/main_yandex_t2i_official10M_ip_v1/PrimaryFirst3/entries.i32",
+      "primary": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/results/main_yandex_t2i_official10M_ip_v1/PrimaryFirst3/primary.i32",
+      "reference_results": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/results/main_yandex_t2i_official10M_ip_v1/PrimaryFirst3"
+    }
+  ],
+  "GT_IP": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt_ip.f32",
+  "deadline_unix": 1789890600,
+  "seconds_cap": 300
+}

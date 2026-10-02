@@ -1,0 +1,52 @@
+{
+  "status": "PASS_INPUT_ALIGNMENT",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "query_GT_row_bit_alignment": true,
+      "rank_membership_E121_exact": true,
+      "source_positions": [
+        2048,
+        6144
+      ],
+      "n": 4096,
+      "states": 51,
+      "old_rank_query_rows": 10000,
+      "folds": [
+        1024,
+        1024,
+        1024,
+        1024
+      ],
+      "new_response_values_read": false,
+      "historical_exposure": true,
+      "heldout": false
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "query_GT_row_bit_alignment": true,
+      "rank_membership_E121_exact": true,
+      "source_positions": [
+        2048,
+        6144
+      ],
+      "n": 4096,
+      "states": 52,
+      "old_rank_query_rows": 10000,
+      "folds": [
+        1024,
+        1024,
+        1024,
+        1024
+      ],
+      "new_response_values_read": false,
+      "historical_exposure": true,
+      "heldout": false
+    }
+  },
+  "missing": "Matched 4096-query four-action target-budget complete response/time; existing 256 subset is insufficient.",
+  "E121_action_family": "default dynamic3 or one static real hub in full H",
+  "this_action_family": "default dynamic3 or this query actual rank1/rank2/rank3",
+  "old_shuffle_outer_not_used": true,
+  "new_NSG": 0,
+  "new_ANN": 0,
+  "new_GT": 0
+}

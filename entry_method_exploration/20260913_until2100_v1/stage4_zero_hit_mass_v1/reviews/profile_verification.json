@@ -1,0 +1,59 @@
+{
+  "status": "PASS_INDEPENDENT_STREAMING_PROFILE_REFERENCE",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "checks": [
+        {
+          "model": "baseline",
+          "full_profile_max_abs": 2.977009283533505e-08,
+          "sample_assignment_max_abs": 1.1102230246251565e-16,
+          "profiles_checked": 815
+        },
+        {
+          "model": "zero_mass2",
+          "full_profile_max_abs": 2.9772007970052528e-08,
+          "sample_assignment_max_abs": 1.6653345369377348e-16,
+          "profiles_checked": 815
+        },
+        {
+          "model": "sham_mass2",
+          "full_profile_max_abs": 2.9797655343166696e-08,
+          "sample_assignment_max_abs": 1.6653345369377348e-16,
+          "profiles_checked": 815
+        }
+      ],
+      "independent_zero_hit_rows": 20000,
+      "random_identity_replay": true,
+      "total_mass": 20000
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "checks": [
+        {
+          "model": "baseline",
+          "full_profile_max_abs": 1.435400409643961e-08,
+          "sample_assignment_max_abs": 0.0,
+          "profiles_checked": 821
+        },
+        {
+          "model": "zero_mass2",
+          "full_profile_max_abs": 1.4724554964207215e-08,
+          "sample_assignment_max_abs": 2.220446049250313e-16,
+          "profiles_checked": 821
+        },
+        {
+          "model": "sham_mass2",
+          "full_profile_max_abs": 1.4072607135151571e-08,
+          "sample_assignment_max_abs": 1.1102230246251565e-16,
+          "profiles_checked": 821
+        }
+      ],
+      "independent_zero_hit_rows": 20000,
+      "random_identity_replay": true,
+      "total_mass": 20000
+    }
+  ],
+  "seconds": 15.699434286000724,
+  "new_native_calls": 0
+}

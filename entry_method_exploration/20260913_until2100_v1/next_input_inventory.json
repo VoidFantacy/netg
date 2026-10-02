@@ -1,0 +1,77 @@
+{
+  "status": "EXISTING_HISTORICAL_DEVELOPMENT_SOURCES",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "config": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage3_missing_factorial_v1/inputs/webvid2_5m_light_v1/config.json",
+        "bytes": 2542,
+        "mtime_ns": 1789263806558284125,
+        "sha256": "f6e1bd2417bd56105d4bbaa5756f8f9e4dbc87592ebe22f86b70e84d2b11eb82"
+      },
+      "E61_input_audit": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage2_missing_targets_v1/reviews/input_audit.json",
+        "bytes": 2104,
+        "mtime_ns": 1789262294525734199,
+        "sha256": "d2699aa0dd499f611985a0022cdaa484e0a99da2f5ff09a47c9f885250ba4aac"
+      },
+      "baseline_output": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage3_missing_factorial_v1/results/webvid2_5m_light_v1/C/raw.npz",
+        "bytes": 1640524,
+        "mtime_ns": 1789263822662377183,
+        "sha256": "6c9ef3022afce129fa8d43790ef1fdfb7cc17afdd4ffdc07b739d9d244b5b97a"
+      },
+      "baseline_model": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage3_missing_factorial_v1/models/webvid2_5m_light_v1/C/W.f32",
+        "bytes": 1669120,
+        "mtime_ns": 1789262409850354248,
+        "sha256": "897f61a0cfaa6ccba01e626c3c3d946e6622c04f43cd2b0fccc50356b0de7834"
+      },
+      "all_GT10_assignment_source": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage2_missing_targets_v1/reviews/profile_verification.json",
+        "bytes": 1969,
+        "mtime_ns": 1789262750768236960,
+        "sha256": "b750d65a174b0d4c03fa50dd246c3b0c0570b89fee30cc9ec5cc01187d84f34c"
+      },
+      "builder_reference": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage2_missing_targets_v1/src/build.py",
+      "roles": "router_train local10000:30000 fit; 0:1024 cal;1024:2048 audit; all exposed. Do not compare numeric row IDs across source namespaces"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "config": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage3_missing_factorial_v1/inputs/yandex_t2i_official10M_ip_v1/config.json",
+        "bytes": 2638,
+        "mtime_ns": 1789263806562284147,
+        "sha256": "9c8d6ff84bf9a55f08f9cf045317722c5a6488c876a70e99de9290e69c2e81fd"
+      },
+      "E61_input_audit": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage2_missing_targets_v1/reviews/input_audit.json",
+        "bytes": 2104,
+        "mtime_ns": 1789262294525734199,
+        "sha256": "d2699aa0dd499f611985a0022cdaa484e0a99da2f5ff09a47c9f885250ba4aac"
+      },
+      "baseline_output": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage3_missing_factorial_v1/results/yandex_t2i_official10M_ip_v1/C/raw.npz",
+        "bytes": 1692605,
+        "mtime_ns": 1789263930006997481,
+        "sha256": "566e20ff1bcd036393892f283b28826e73ee165a657272e3c93e0b18a17f530c"
+      },
+      "baseline_model": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage3_missing_factorial_v1/models/yandex_t2i_official10M_ip_v1/C/W.f32",
+        "bytes": 656800,
+        "mtime_ns": 1789262413622374528,
+        "sha256": "bbc5e447aad556618a75fe50a6543c7d3fae68c46f920d79e8913281a0c9bf16"
+      },
+      "all_GT10_assignment_source": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage2_missing_targets_v1/reviews/profile_verification.json",
+        "bytes": 1969,
+        "mtime_ns": 1789262750768236960,
+        "sha256": "b750d65a174b0d4c03fa50dd246c3b0c0570b89fee30cc9ec5cc01187d84f34c"
+      },
+      "builder_reference": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage2_missing_targets_v1/src/build.py",
+      "roles": "router_train local10000:30000 fit; 0:1024 cal;1024:2048 audit; all exposed. Do not compare numeric row IDs across source namespaces"
+    }
+  ],
+  "new_GT_required": false,
+  "final_validation_training_allowed": false
+}

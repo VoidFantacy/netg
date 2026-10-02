@@ -1,0 +1,60 @@
+{
+  "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+  "base_n": 2505000,
+  "baseline_reference": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/results/webvid2_5m_light_v1/evaluation",
+  "dataset": "webvid2_5m_light_v1",
+  "dataset_order": 0,
+  "dimension": 512,
+  "formal": false,
+  "gt": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/gt.i32",
+  "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "max_search_calls": 210000,
+  "methods": [
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+      "name": "GT10-soft-t1"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/models/webvid2_5m_light_v1/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/models/webvid2_5m_light_v1/router.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+      "name": "ApproxTarget10"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/models/webvid2_5m_light_v1/HybridFixedTemperature/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/models/webvid2_5m_light_v1/HybridFixedTemperature/router.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+      "name": "HybridFixedTemperature"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/models/webvid2_5m_light_v1/ApproxPilotTemperature/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/models/webvid2_5m_light_v1/ApproxPilotTemperature/router.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+      "name": "ApproxPilotTemperature"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/models/webvid2_5m_light_v1/HybridPilotTemperature/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/models/webvid2_5m_light_v1/HybridPilotTemperature/router.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+      "name": "HybridPilotTemperature"
+    }
+  ],
+  "n": 4096,
+  "normalize_anchor": false,
+  "points": [
+    {
+      "K": 1,
+      "L": 1000
+    },
+    {
+      "K": 100,
+      "L": 1250
+    }
+  ],
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/queries.f32",
+  "repeats": 3,
+  "seconds_cap": 1800,
+  "threads": 1
+}

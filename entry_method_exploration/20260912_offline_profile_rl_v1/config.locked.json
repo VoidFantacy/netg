@@ -1,0 +1,36 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "arms": [
+    "rl",
+    "es"
+  ],
+  "seeds": [
+    20260921,
+    20260922
+  ],
+  "steps": 200,
+  "population": 8,
+  "batch": 128,
+  "rank": 16,
+  "sigma": 0.3,
+  "NSG_hard_cap": 2800000,
+  "HNSW_build_hard_cap": 15000,
+  "threads": 1,
+  "training_L": 128,
+  "curve_L": [
+    64,
+    128,
+    256,
+    400,
+    800
+  ],
+  "protocol": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260912_offline_profile_rl_v1/protocol.md",
+    "bytes": 6637,
+    "mtime_ns": 1789185180172966149,
+    "sha256": "891b7abf347702008491a37cc4bf72c158830f7f81ffd08e9e257e1cf362ee4f"
+  }
+}

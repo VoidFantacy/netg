@@ -1,0 +1,64 @@
+{
+  "status": "PASS_CONSUMED_IDENTITY_WITH_REPORTED_UNUSED_TIE_ORDER_DIFFERENCE",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "generated_rows": 815,
+      "ordered_ID_different_positions": 2,
+      "ordered_ID_different_rows": 1,
+      "distance_bit_different_positions": 1768,
+      "distance_bit_different_rows": 27,
+      "all_changed_rows_within_short_tail": true,
+      "last_batch_size": 47,
+      "top100_set_identity": true,
+      "consumed_prefix_ID_identity": true,
+      "consumed_prefix_positions_checked": 829,
+      "max_distance_discrepancy": 1.4901161193847656e-07,
+      "float64_new_max_error": 7.265333679118413e-08,
+      "float64_old_max_error": 1.1860576110134247e-07,
+      "float64_score_checks": 2700,
+      "ID_mismatch_examples": [
+        {
+          "row": 4755,
+          "rank_zero_based": 68,
+          "new_id": 1728660,
+          "old_id": 1962963,
+          "new_score": 0.2952181100845337,
+          "old_score": 0.2952181100845337,
+          "float64_new_id_score": 0.2952180873120779,
+          "float64_old_id_score": 0.2952180677087419
+        },
+        {
+          "row": 4755,
+          "rank_zero_based": 69,
+          "new_id": 1962963,
+          "old_id": 1728660,
+          "new_score": 0.2952180504798889,
+          "old_score": 0.2952181100845337,
+          "float64_new_id_score": 0.2952180677087419,
+          "float64_old_id_score": 0.2952180873120779
+        }
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "generated_rows": 821,
+      "ordered_ID_different_positions": 0,
+      "ordered_ID_different_rows": 0,
+      "distance_bit_different_positions": 0,
+      "distance_bit_different_rows": 0,
+      "all_changed_rows_within_short_tail": true,
+      "last_batch_size": 53,
+      "top100_set_identity": true,
+      "consumed_prefix_ID_identity": true,
+      "consumed_prefix_positions_checked": 821,
+      "max_distance_discrepancy": 0.0,
+      "float64_new_max_error": 0.0,
+      "float64_old_max_error": 0.0,
+      "float64_score_checks": 0,
+      "ID_mismatch_examples": []
+    }
+  },
+  "seconds": 0.03064470200024516,
+  "new_GT": 0,
+  "new_ANN": 0,
+  "new_NSG": 0
+}

@@ -1,0 +1,185 @@
+{
+  "status": "PASS",
+  "seconds": 942.966286279996,
+  "jobs": {
+    "compile_labels": {
+      "exit_code": 0,
+      "seconds": 7.509824595996179,
+      "max_threads": 1,
+      "maxrss_bytes": 3088384,
+      "argv": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "-fopenmp",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+        "-I/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/src/common",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/src/labels.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "-lopenblas",
+        "-lz",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/bin/labels"
+      ]
+    },
+    "compile_evaluate": {
+      "exit_code": 0,
+      "seconds": 8.009853748997557,
+      "max_threads": 1,
+      "maxrss_bytes": 1007616,
+      "argv": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "-fopenmp",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+        "-I/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/src/common",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/src/evaluate.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "-lopenblas",
+        "-lz",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/bin/evaluate"
+      ]
+    },
+    "compile_build_router": {
+      "exit_code": 0,
+      "seconds": 4.505483300999913,
+      "max_threads": 1,
+      "maxrss_bytes": 3084288,
+      "argv": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "-fopenmp",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+        "-I/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/src/common",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/src/build_router.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "-lopenblas",
+        "-lz",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/bin/build_router"
+      ]
+    },
+    "webvid2_5m_light_v1_labels": {
+      "exit_code": 0,
+      "seconds": 64.59137737000128,
+      "max_threads": 1,
+      "maxrss_bytes": 5849616384,
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/bin/labels",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/inputs/webvid2_5m_light_v1/labels.json",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/results/webvid2_5m_light_v1/labels"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1_labels": {
+      "exit_code": 0,
+      "seconds": 28.039838081997004,
+      "max_threads": 1,
+      "maxrss_bytes": 10647887872,
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/bin/labels",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/labels.json",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/results/yandex_t2i_official10M_ip_v1/labels"
+      ]
+    },
+    "profiles": {
+      "exit_code": 0,
+      "seconds": 6.008322829999088,
+      "max_threads": 8,
+      "maxrss_bytes": 6720630784,
+      "argv": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/src/profiles.py"
+      ]
+    },
+    "webvid2_5m_light_v1_router": {
+      "exit_code": 0,
+      "seconds": 0.5010327409981983,
+      "max_threads": 1,
+      "maxrss_bytes": 4096,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/bin/build_router",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/inputs/webvid2_5m_light_v1/evaluate.json",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/models/webvid2_5m_light_v1/router_build.json"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1_router": {
+      "exit_code": 0,
+      "seconds": 0.5010097109989147,
+      "max_threads": 1,
+      "maxrss_bytes": 4096,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/bin/build_router",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/evaluate.json",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/models/yandex_t2i_official10M_ip_v1/router_build.json"
+      ]
+    },
+    "webvid2_5m_light_v1_evaluate": {
+      "exit_code": 0,
+      "seconds": 665.948096535998,
+      "max_threads": 1,
+      "maxrss_bytes": 5817180160,
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/bin/evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/inputs/webvid2_5m_light_v1/evaluate.json",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/results/webvid2_5m_light_v1/evaluation"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1_evaluate": {
+      "exit_code": 0,
+      "seconds": 157.22223268900416,
+      "max_threads": 1,
+      "maxrss_bytes": 10647924736,
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/bin/evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/evaluate.json",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/results/yandex_t2i_official10M_ip_v1/evaluation"
+      ]
+    }
+  },
+  "new_NSG_calls": 531968,
+  "new_ANN_calls": 491520,
+  "candidate_profile_fits": 2,
+  "candidate_graph_builds": 2,
+  "exact_control_profile_reconstructions": 2,
+  "complete_wall_points": 24,
+  "wall_rounds": 72,
+  "new_exact_GT": 0,
+  "new_source_payloads": 0,
+  "default_changed": false
+}

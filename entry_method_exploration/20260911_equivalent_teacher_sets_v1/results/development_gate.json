@@ -1,0 +1,53 @@
+{
+  "status": "STOP_FURTHER_MODEL_EXPANSION",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "fit_gain_pp": 0.12299999999999534,
+      "fit_graph_ndc_pct": -0.06265614582290358,
+      "matched_multi_minus_single_pp": 0.009999999999998899,
+      "dev_mean_gain_pp": {
+        "cal": 0.06347656249999778,
+        "audit": -0.18554687500000333
+      },
+      "conditions": {
+        "fit_effect": false,
+        "fit_cost": true,
+        "matched_effect": true,
+        "cal_effect": true,
+        "audit_effect": false
+      },
+      "passed": false,
+      "fit_reference": "GT10 hard",
+      "matched_methods": [
+        "single",
+        "multi_matched"
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "fit_gain_pp": -0.008500000000000174,
+      "fit_graph_ndc_pct": 0.02020761119465586,
+      "matched_multi_minus_single_pp": 0.004000000000004,
+      "dev_mean_gain_pp": {
+        "cal": -0.07812500000000111,
+        "audit": 0.03417968750000222
+      },
+      "conditions": {
+        "fit_effect": false,
+        "fit_cost": true,
+        "matched_effect": true,
+        "cal_effect": false,
+        "audit_effect": true
+      },
+      "passed": false,
+      "fit_reference": "GT10 hard",
+      "matched_methods": [
+        "single",
+        "multi_matched"
+      ]
+    }
+  ],
+  "formal_curves_still_required_by_user": true,
+  "additional_training_permitted_by_this_runner": false
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "stage": "P1_P3_REAL_MODEL_REACCEPTANCE",
+  "status": "PASS",
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "model": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/yandex_t2i_official10M_ip_v1/lambda0/frequency3/model.json",
+  "model_sha256": "52ccc75f6958dc039ca690af8b64840c749eadae2f90d2beeed383465653493f",
+  "structure_lambda": 0,
+  "portal_rule": "frequency3",
+  "aligned_count_plain_rows": 192,
+  "traces_checked": 16,
+  "discovered_node_owner_checks": 42093,
+  "source_sha256": "cf40032dc469c08840e409af23bd503e1ad6571184351a2694776247e21d1316",
+  "binary_sha256": "2f234d1276fdafebe0ab706ebccc37f4c52312ca16ca09b512530f404b0ce580",
+  "fast_inputs": {
+    "manifest": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/yandex_t2i_official10M_ip_v1/manifest.json",
+      "sha256": "483542c85c8afd5cbb65327cb1b6ac31869445aff916965f90469dffad0179c2"
+    },
+    "hubs": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/yandex_t2i_official10M_ip_v1/prototype.f32",
+      "sha256": "39c539d28c8a40c879a37dfeccc72a2a99b99ef26e4d38b35ed5e349e83c28f8"
+    },
+    "ids": {
+      "path": "/data/netg/ACSG/fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_cover_hub_ids.bin",
+      "sha256": "ec82834901aacf360049aad43c47065fcd5de90cc0b882d6dd0016de798e2240"
+    }
+  },
+  "p2_compatibility": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/p2_compatibility_v2/compatibility.json",
+    "sha256": "8c1b411004fa4e4224efa1c229ef03350f2714dd0342a1cb1bfc225460fcc968"
+  },
+  "same_Fast_as_accepted_P2_prefix": true,
+  "five_timing_rounds_stable": true,
+  "all_actual_seeds_consumed": true,
+  "scope": "First32 pilot correctness only; four traced queries per method/L; no new performance gate or deployment claim",
+  "heldout_accessed": false,
+  "validation_accessed": false
+}

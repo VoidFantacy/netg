@@ -1,0 +1,77 @@
+{
+  "status": "STOP_CACHE_UTILITY_GATE",
+  "passing_cells": [],
+  "by_dataset": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "single",
+      "candidate_gain_pp": 0.194500000000005,
+      "old_cell_gain_pp": 0.09399999999999409,
+      "graph_ndc_change_pct": -0.14261524477737764,
+      "full_exact_worst_delta_pp": 0.1599999999999966,
+      "known_fraction": 0.99955,
+      "conditions": {
+        "candidate_gain_ge_point20": false,
+        "improves_old_cell": true,
+        "candidate_cost_le_1pct": true,
+        "full_exact_known_ge_995": true,
+        "full_exact_worst_delta_ge_point20": false
+      },
+      "passed": false
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "multi",
+      "candidate_gain_pp": 0.2115000000000009,
+      "old_cell_gain_pp": 0.09099999999999397,
+      "graph_ndc_change_pct": -0.14065821832617287,
+      "full_exact_worst_delta_pp": 0.16100000000000136,
+      "known_fraction": 0.9993,
+      "conditions": {
+        "candidate_gain_ge_point20": true,
+        "improves_old_cell": true,
+        "candidate_cost_le_1pct": true,
+        "full_exact_known_ge_995": true,
+        "full_exact_worst_delta_ge_point20": false
+      },
+      "passed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "single",
+      "candidate_gain_pp": -0.0040000000000048885,
+      "old_cell_gain_pp": -0.00549999999999784,
+      "graph_ndc_change_pct": -0.024072568456579013,
+      "full_exact_worst_delta_pp": -0.0040000000000048885,
+      "known_fraction": 1.0,
+      "conditions": {
+        "candidate_gain_ge_point20": false,
+        "improves_old_cell": false,
+        "candidate_cost_le_1pct": true,
+        "full_exact_known_ge_995": true,
+        "full_exact_worst_delta_ge_point20": false
+      },
+      "passed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "multi",
+      "candidate_gain_pp": -0.0040000000000048885,
+      "old_cell_gain_pp": -0.002500000000011937,
+      "graph_ndc_change_pct": -0.028816707829515398,
+      "full_exact_worst_delta_pp": -0.0040000000000048885,
+      "known_fraction": 1.0,
+      "conditions": {
+        "candidate_gain_ge_point20": false,
+        "improves_old_cell": false,
+        "candidate_cost_le_1pct": true,
+        "full_exact_known_ge_995": true,
+        "full_exact_worst_delta_ge_point20": false
+      },
+      "passed": false
+    }
+  ],
+  "gate_scope": "fit-only cached real L128 labels and exact known-coverage bounds; no HNSW/QPS",
+  "new_labels": 0,
+  "real_search_calls": 0
+}

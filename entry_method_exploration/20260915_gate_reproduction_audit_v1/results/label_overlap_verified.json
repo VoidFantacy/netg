@@ -1,0 +1,70 @@
+{
+  "status": "CONFIRMED_OVERLAPPING_POSITIVE_NEGATIVE_LABELS",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "training_queries_with_positive_negative_overlap": 875,
+      "overlap_query_hub_pairs": 1314,
+      "accepted_positive_query_hub_pairs": 14736,
+      "triplets": 624350,
+      "triplets_with_negative_also_positive": 2525,
+      "conflicting_negative_fraction": 0.004044205974213182,
+      "identical_positive_negative_query_triplets": 57
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "training_queries_with_positive_negative_overlap": 449,
+      "overlap_query_hub_pairs": 623,
+      "accepted_positive_query_hub_pairs": 16626,
+      "triplets": 714600,
+      "triplets_with_negative_also_positive": 1783,
+      "conflicting_negative_fraction": 0.0024951021550517773,
+      "identical_positive_negative_query_triplets": 30
+    },
+    {
+      "dataset": "laion10m_acsg_v1",
+      "training_queries_with_positive_negative_overlap": 799,
+      "overlap_query_hub_pairs": 1137,
+      "accepted_positive_query_hub_pairs": 14837,
+      "triplets": 707750,
+      "triplets_with_negative_also_positive": 2630,
+      "conflicting_negative_fraction": 0.003716001412928294,
+      "identical_positive_negative_query_triplets": 62
+    }
+  ],
+  "synthetic_fixture": {
+    "hubs": 512,
+    "successful_hubs": 10,
+    "successful_hop": 1,
+    "positive_hubs": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "negative_hubs": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "proposed_minimal_repair": "Remove positive hubs from each negative set before usability filtering and triplet pairing. Reuse compatible hop caches; regenerate triples and retrain only in a successor version.",
+  "new_training": 0,
+  "new_ANN": 0,
+  "new_graph_build": 0,
+  "new_GT": 0,
+  "new_QPS": 0
+}

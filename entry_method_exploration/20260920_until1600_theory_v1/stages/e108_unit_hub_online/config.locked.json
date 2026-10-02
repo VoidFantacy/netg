@@ -1,0 +1,117 @@
+{
+  "version": "E108_unit_hub_online_v1",
+  "created_unix": 1789883288.8739743,
+  "parent_timebox": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1",
+  "reference_E107": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "dimension": 512,
+      "H": 815,
+      "base_n": 2505000,
+      "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "index_stat": {
+        "bytes": 5791560103,
+        "mtime_ns": 1787714557628644919
+      },
+      "fit_input": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1",
+      "assignments": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_mechanism_v1/results/webvid2_5m_light_v1_fit_assignments.npz",
+      "families": [
+        "hard",
+        "soft"
+      ],
+      "family_models": {
+        "hard": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt10_hard/W.f32",
+        "soft": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32"
+      },
+      "GT1": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt1_hard/W.f32",
+      "default": {
+        "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+        "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+        "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+        "name": "GT10-soft-t1"
+      },
+      "evaluation_queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/queries.f32",
+      "evaluation_GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/gt.i32",
+      "evaluation_manifest": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/gt_manifest.json",
+      "evaluation_reference": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/webvid2_5m_light_v1",
+      "source_rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/source_rows.i64",
+      "unit_W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/webvid2_5m_light_v1.UnitHub.W.f32"
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "dimension": 200,
+      "H": 821,
+      "base_n": 10000000,
+      "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "index_stat": {
+        "bytes": 10640000103,
+        "mtime_ns": 1787655783830469960
+      },
+      "fit_input": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1",
+      "assignments": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_mechanism_v1/results/yandex_t2i_official10M_ip_v1_fit_assignments.npz",
+      "families": [
+        "hard"
+      ],
+      "family_models": {
+        "hard": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+        "soft": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt10_soft_t1/W.f32"
+      },
+      "GT1": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_hard/W.f32",
+      "default": {
+        "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+        "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+        "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+        "name": "GT10-hard"
+      },
+      "evaluation_queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+      "evaluation_GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt.i32",
+      "evaluation_manifest": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt_manifest.json",
+      "evaluation_reference": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/yandex_t2i_official10M_ip_v1",
+      "source_rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/source_rows.i64",
+      "unit_W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/yandex_t2i_official10M_ip_v1.UnitHub.W.f32"
+    }
+  },
+  "n": 4096,
+  "K_L": {
+    "1": [
+      64,
+      128,
+      256,
+      400,
+      800
+    ],
+    "100": [
+      128,
+      256,
+      400,
+      800
+    ]
+  },
+  "repeats": 3,
+  "threads": 1,
+  "cpu": 15,
+  "graph_seed": 20260920,
+  "M": 16,
+  "efConstruction": 200,
+  "efSearch": 10,
+  "methods": [
+    "GT10Default",
+    "GT10Rebuilt",
+    "UnitHub"
+  ],
+  "new_graphs": 4,
+  "max_NSG_calls": 1120000,
+  "expected_NSG_calls": 1106688,
+  "max_new_bytes": 600000000,
+  "min_free_gib": 4,
+  "max_rss_gib": 40,
+  "job_seconds_cap": 1800,
+  "deadline_unix": 1789890600,
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 20260920,
+  "analysis_scope": "Full nine valid K/L points, paired query quality, all three plain-wall repeats, route versus E107 exact and graph rebuild control; no interpolation, no default replacement, no seed/ef grid",
+  "stop_rules": [
+    "Stop on source/input/kernel parity failure, resource/deadline violation.",
+    "After complete fixed matrix close this baseline comparison, no seed/ef/repeat tuning.",
+    "Independent new-data validation and full required recall range needed before any default replacement."
+  ]
+}

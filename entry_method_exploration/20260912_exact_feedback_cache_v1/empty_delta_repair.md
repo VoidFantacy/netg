@@ -1,0 +1,5 @@
+# E46 empty delta repair before continuation
+
+The first WebVid attempt reached C at step20, routed 4096 queries and found zero changed entries. e46_search executed zero NSG calls; ctypes then tried to dereference a null pointer for a zero-length output. The traceback and sole saved C topology establish NSG=0, HNSW=4096, builds=1 by control-flow reconstruction; these are not captured final native counters. The failed attempt and its full 4000-call reservation remain.
+
+The original frozen sources, output and protocol remain. native_cached_v2.py returns an empty typed ndarray when the native length is zero; the C++ binary/kernel and all nonempty paths are unchanged. run_v2.py adds an explicit empty-result/zero-call check, writes results_v2, and reserves 2000 per dataset with native cap2000. Failed4000+new2000+new2000=8000 remains below hard10000. No automatic replay of the failed job or budget release occurs. New totals: NSG3061, HNSW742528 including failed4096, builds181 including failed1. All canonical analysis uses analyze_verify_v2.py/results_v2, and the new sources plus repair are frozen before new queries.

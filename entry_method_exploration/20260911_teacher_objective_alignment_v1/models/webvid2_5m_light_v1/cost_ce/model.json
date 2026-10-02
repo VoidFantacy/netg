@@ -1,0 +1,50 @@
+{
+  "status": "TRAINED_FIT_ONLY",
+  "dataset": "webvid2_5m_light_v1",
+  "cell": "cost_ce",
+  "teacher": "cost",
+  "loss": "ce",
+  "lambda_anchor": 100,
+  "temperature": 0.05,
+  "margin": 0.1,
+  "seed": 20260911,
+  "epochs": 80,
+  "parameter_count": 262144,
+  "first": {
+    "data_loss": 11.38707452359863,
+    "drift": 1.9111035273340296e-16,
+    "objective": 11.387074523598649,
+    "gradient_norm": 4.169062486405951,
+    "epoch": 0,
+    "seconds": 0.5169568061828613
+  },
+  "last": {
+    "data_loss": 10.6554054734962,
+    "drift": 0.0033940851984918573,
+    "objective": 10.994813993345387,
+    "gradient_norm": 0.46827559125065016,
+    "epoch": 80,
+    "seconds": 42.4054811000824
+  },
+  "objective_decreased": true,
+  "training_seconds": 42.557257890701294,
+  "export_seconds": 0.007204532623291016,
+  "W": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260911_teacher_objective_alignment_v1/models/webvid2_5m_light_v1/cost_ce/W.f32",
+    "bytes": 1669120,
+    "mtime_ns": 1789093196804920456,
+    "sha256": "1a65b9c69b5499c9c114a954543f0b54d78c5d97430970a5b842f0b955fba7d5"
+  },
+  "cal_used": false,
+  "audit_used": false,
+  "validation_used": false,
+  "E28_recovery": {
+    "bit_equal": true,
+    "original": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/models/webvid2_5m_light_v1/linear_r100/W.f32",
+      "bytes": 1669120,
+      "mtime_ns": 1789090089917201974,
+      "sha256": "1a65b9c69b5499c9c114a954543f0b54d78c5d97430970a5b842f0b955fba7d5"
+    }
+  }
+}

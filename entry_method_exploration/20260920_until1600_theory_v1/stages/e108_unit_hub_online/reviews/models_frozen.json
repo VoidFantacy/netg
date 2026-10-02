@@ -1,0 +1,110 @@
+{
+  "created_unix": 1789883514.44919,
+  "files": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/yandex_t2i_official10M_ip_v1/GT10Rebuilt.hnsw",
+      "bytes": 779404,
+      "sha256": "7e73d67cc166f5cdcf611a55922903ca861d7a5fd614669de7d5c08aa6b1530d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/yandex_t2i_official10M_ip_v1/UnitHub.hnsw",
+      "bytes": 779404,
+      "sha256": "84d5e87ac20e7d62186074785bc7677476b29af8c3e8892550fe8ba93a056dab"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/webvid2_5m_light_v1/GT10Rebuilt.hnsw",
+      "bytes": 1790860,
+      "sha256": "f5f3277e1743c781db2947ec6fc3b0cccf4898b4cb4e8e0e8a0c4e51cddd2624"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/webvid2_5m_light_v1/UnitHub.hnsw",
+      "bytes": 1790860,
+      "sha256": "c380e5d7f7035dfc87adc996f39f421d20e8086f2791dc862292321a3c35790d"
+    }
+  ],
+  "configs": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "dimension": 512,
+      "H": 815,
+      "base_n": 2505000,
+      "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+      "queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/queries.f32",
+      "GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/gt.i32",
+      "source_rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/source_rows.i64",
+      "methods": [
+        {
+          "name": "GT10Default",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+          "new_graph": false
+        },
+        {
+          "name": "GT10Rebuilt",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/webvid2_5m_light_v1/GT10Rebuilt.hnsw",
+          "new_graph": true
+        },
+        {
+          "name": "UnitHub",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/webvid2_5m_light_v1.UnitHub.W.f32",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/webvid2_5m_light_v1/UnitHub.hnsw",
+          "new_graph": true
+        }
+      ],
+      "threads": 1,
+      "dataset_order": 0,
+      "reference": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/webvid2_5m_light_v1",
+      "reference_method": "GT10-soft-t1",
+      "max_search_calls": 1120000,
+      "seconds_cap": 1800,
+      "deadline_unix": 1789890600
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "dimension": 200,
+      "H": 821,
+      "base_n": 10000000,
+      "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+      "queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+      "GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt.i32",
+      "source_rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/source_rows.i64",
+      "methods": [
+        {
+          "name": "GT10Default",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+          "new_graph": false
+        },
+        {
+          "name": "GT10Rebuilt",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/yandex_t2i_official10M_ip_v1/GT10Rebuilt.hnsw",
+          "new_graph": true
+        },
+        {
+          "name": "UnitHub",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/yandex_t2i_official10M_ip_v1.UnitHub.W.f32",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/yandex_t2i_official10M_ip_v1/UnitHub.hnsw",
+          "new_graph": true
+        }
+      ],
+      "threads": 1,
+      "dataset_order": 1,
+      "reference": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/yandex_t2i_official10M_ip_v1",
+      "reference_method": "GT10-hard",
+      "max_search_calls": 1120000,
+      "seconds_cap": 1800,
+      "deadline_unix": 1789890600
+    }
+  ],
+  "query_payload_access": false
+}

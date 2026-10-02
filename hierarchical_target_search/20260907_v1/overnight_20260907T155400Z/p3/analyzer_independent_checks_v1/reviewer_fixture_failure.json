@@ -1,0 +1,10 @@
+{
+  "status": "REVIEW_FIXTURE_ASSERTION_NEEDS_TOLERANCE",
+  "reviewed_source_sha256": "6597bba24b591d24018507f94280644e92d39bf6fecbdf77fe7481ce5c3e00a6",
+  "cause": "Independent review fixture expected bitwise equality for algebraically equal differences built through separate floating-point additions/subtractions; observed max absolute difference was 5.551115123125783e-17. This does not imply different query-index draws.",
+  "already_passed": "Bootstrap output for an explicitly identical 8-row delta matrix was bitwise equal to independent direct RNG query-index resampling.",
+  "correction": "Retain exact comparison for direct same-delta bootstrap test; use absolute tolerance 1e-15 for semantically equal deltas recomputed through model Recall subtraction.",
+  "ANN_calls": 0,
+  "real_dataset_values_read": false,
+  "partial_bootstrap_npz_retained": true
+}

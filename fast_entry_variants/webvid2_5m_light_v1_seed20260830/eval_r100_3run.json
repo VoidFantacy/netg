@@ -1,0 +1,70 @@
+{
+    "artifact_version": "roargraph-webvid2.5m-ip-v1",
+    "dataset": "webvid2_5m_light_v1",
+    "metric": "ip",
+    "normalization": "source_unit_norm_no_additional",
+    "num_queries": 10000,
+    "num_runs": 3,
+    "results": [
+        {
+            "method_name": "2. Raw HNSW Routing (Ablation Baseline)",
+            "performance": [
+                {
+                    "qps": 2705.649396092917,
+                    "qps_std": 14.51017664892183,
+                    "recall": 0.6175913214683533,
+                    "search_L": 100
+                },
+                {
+                    "qps": 2165.3869920783286,
+                    "qps_std": 6.534857268051081,
+                    "recall": 0.6583908200263977,
+                    "search_L": 128
+                },
+                {
+                    "qps": 1438.5076065699025,
+                    "qps_std": 6.231070113603557,
+                    "recall": 0.7258772253990173,
+                    "search_L": 200
+                },
+                {
+                    "qps": 748.167988308856,
+                    "qps_std": 1.2646830926207648,
+                    "recall": 0.8128177523612976,
+                    "search_L": 400
+                }
+            ]
+        },
+        {
+            "method_name": "5. Asym-Neural HNSW Routing (0ms inference)",
+            "performance": [
+                {
+                    "qps": 2674.692078534302,
+                    "qps_std": 4.855871841057428,
+                    "recall": 0.6173424124717712,
+                    "search_L": 100
+                },
+                {
+                    "qps": 2128.9252365941516,
+                    "qps_std": 4.813424696561333,
+                    "recall": 0.6578288078308105,
+                    "search_L": 128
+                },
+                {
+                    "qps": 1413.2158022610483,
+                    "qps_std": 23.69015278813289,
+                    "recall": 0.7267633080482483,
+                    "search_L": 200
+                },
+                {
+                    "qps": 739.1091692116212,
+                    "qps_std": 7.049390825414359,
+                    "recall": 0.8127018809318542,
+                    "search_L": 400
+                }
+            ]
+        }
+    ],
+    "split": "held-out-test",
+    "top_k": 100
+}

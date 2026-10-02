@@ -1,0 +1,257 @@
+{
+  "status": "PREPARATION_ONLY_NO_SELECTION_NO_FINAL_PAYLOAD",
+  "created_at": 1789292800.2074194,
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "num_queries": 2000,
+      "dim": 512,
+      "gt_k": 100,
+      "index_path": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "base_count": 2505000,
+      "query_cpu": 15,
+      "threads": 1,
+      "timing_repeats": 5,
+      "Ls": [
+        64,
+        128,
+        256,
+        400,
+        800
+      ],
+      "inputs": {
+        "queries_file": {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_rl_benchmark_v1/inputs/webvid2_5m_light_v1/queries.f32",
+          "bytes": 4096000,
+          "mtime_ns": 1789041149608861352,
+          "access": "stat only; payload not opened or hashed"
+        },
+        "gt_file": {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_rl_benchmark_v1/inputs/webvid2_5m_light_v1/gt.i64",
+          "bytes": 1600000,
+          "mtime_ns": 1789041149612861369,
+          "access": "stat only; payload not opened or hashed"
+        },
+        "row_ids": {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_rl_benchmark_v1/inputs/webvid2_5m_light_v1/row_ids.i64",
+          "bytes": 16000,
+          "mtime_ns": 1789041149612861369,
+          "access": "stat only; payload not opened or hashed"
+        }
+      },
+      "required_baselines": [
+        {
+          "L": 64,
+          "component_wall": false,
+          "dim": 512,
+          "exact": false,
+          "family": "nsg",
+          "fixed_entry": 1103413,
+          "hub_count": 0,
+          "k": 1,
+          "model_name": "nsg",
+          "name": "nsg_L64",
+          "seed": 20260828,
+          "reference_graph": true,
+          "ef_search": 10
+        },
+        {
+          "L": 64,
+          "W": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+          "canonical_entry_order": false,
+          "component_wall": false,
+          "dim": 512,
+          "exact": false,
+          "family": "fast30k_3",
+          "hnsw_seed": 100,
+          "hub_count": 815,
+          "k": 3,
+          "legacy_heap_order": true,
+          "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+          "model_name": "fast30k",
+          "name": "fast30k_L64",
+          "seed": 20260828,
+          "slot_labels": false,
+          "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+          "graph_file": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/results/validation_webvid2_5m_light_v1/fast30k_hnsw_L64.hnsw",
+          "reference_graph": true,
+          "ef_search": 10
+        },
+        {
+          "L": 64,
+          "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt10_hard/W.f32",
+          "canonical_entry_order": true,
+          "component_wall": false,
+          "dim": 512,
+          "exact": false,
+          "family": "profile",
+          "hnsw_seed": 20260828,
+          "hub_count": 815,
+          "k": 3,
+          "mapping": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+          "model_name": "gt10_hard",
+          "name": "gt10_hard_L64",
+          "seed": 20260828,
+          "slot_labels": false,
+          "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+          "graph_file": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/results/validation_webvid2_5m_light_v1/gt10_hard_hnsw_L64.hnsw",
+          "reference_graph": true,
+          "ef_search": 10
+        },
+        {
+          "name": "baseline_soft_L64",
+          "family": "profile",
+          "model_name": "baseline_soft",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage3_missing_factorial_v1/models/webvid2_5m_light_v1/C/W.f32",
+          "mapping": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+          "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+          "hub_count": 815,
+          "dim": 512,
+          "k": 3,
+          "seed": 20260828,
+          "hnsw_seed": 20260828,
+          "slot_labels": false,
+          "canonical_entry_order": true,
+          "graph_file": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage3_missing_factorial_v1/results/webvid2_5m_light_v1/C/graph.hnsw",
+          "L": 64,
+          "component_wall": false,
+          "reference_graph": true,
+          "ef_search": 10
+        }
+      ],
+      "unfilled_roles": [
+        "best_all",
+        "best_new"
+      ],
+      "final_selection_frozen": false,
+      "execution_ready": false
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "num_queries": 2000,
+      "dim": 200,
+      "gt_k": 100,
+      "index_path": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "base_count": 10000000,
+      "query_cpu": 15,
+      "threads": 1,
+      "timing_repeats": 5,
+      "Ls": [
+        64,
+        128,
+        256,
+        400,
+        800
+      ],
+      "inputs": {
+        "queries_file": {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_rl_benchmark_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+          "bytes": 1600000,
+          "mtime_ns": 1789041389893927767,
+          "access": "stat only; payload not opened or hashed"
+        },
+        "gt_file": {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_rl_benchmark_v1/inputs/yandex_t2i_official10M_ip_v1/gt.i64",
+          "bytes": 1600000,
+          "mtime_ns": 1789041389893927767,
+          "access": "stat only; payload not opened or hashed"
+        },
+        "row_ids": {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_rl_benchmark_v1/inputs/yandex_t2i_official10M_ip_v1/row_ids.i64",
+          "bytes": 16000,
+          "mtime_ns": 1789041389897927783,
+          "access": "stat only; payload not opened or hashed"
+        }
+      },
+      "required_baselines": [
+        {
+          "L": 64,
+          "component_wall": false,
+          "dim": 200,
+          "exact": false,
+          "family": "nsg",
+          "fixed_entry": 6474461,
+          "hub_count": 0,
+          "k": 1,
+          "model_name": "nsg",
+          "name": "nsg_L64",
+          "seed": 20260828,
+          "reference_graph": true,
+          "ef_search": 10
+        },
+        {
+          "L": 64,
+          "W": "/data/netg/ACSG/fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+          "canonical_entry_order": false,
+          "component_wall": false,
+          "dim": 200,
+          "exact": false,
+          "family": "fast30k_3",
+          "hnsw_seed": 100,
+          "hub_count": 821,
+          "k": 3,
+          "legacy_heap_order": true,
+          "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/yandex_t2i_official10M_ip_v1/seed20260828/hub_ids.i32",
+          "model_name": "fast30k",
+          "name": "fast30k_L64",
+          "seed": 20260828,
+          "slot_labels": false,
+          "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/yandex_t2i_official10M_ip_v1/seed20260828/hub_ids.i32",
+          "graph_file": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/results/validation_yandex_t2i_official10M_ip_v1/fast30k_hnsw_L64.hnsw",
+          "reference_graph": true,
+          "ef_search": 10
+        },
+        {
+          "L": 64,
+          "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+          "canonical_entry_order": true,
+          "component_wall": false,
+          "dim": 200,
+          "exact": false,
+          "family": "profile",
+          "hnsw_seed": 20260828,
+          "hub_count": 821,
+          "k": 3,
+          "mapping": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/hub_ids.i32",
+          "model_name": "gt10_hard",
+          "name": "gt10_hard_L64",
+          "seed": 20260828,
+          "slot_labels": false,
+          "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/hub_ids.i32",
+          "graph_file": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/results/validation_yandex_t2i_official10M_ip_v1/gt10_hard_hnsw_L64.hnsw",
+          "reference_graph": true,
+          "ef_search": 10
+        }
+      ],
+      "unfilled_roles": [
+        "best_all",
+        "best_new"
+      ],
+      "final_selection_frozen": false,
+      "execution_ready": false
+    }
+  },
+  "estimates": [
+    {
+      "distinct_added_configurations_per_dataset": 1,
+      "points": 45,
+      "NSG": 630720,
+      "HNSW": 490000,
+      "whole_wall_batches": 225,
+      "raw_array_bytes_if_all_added_models_multi_profile": 11470000,
+      "output_reserve_MiB": 64,
+      "scope": "Examples, not frozen final matrix; aliases and actual supported configurations determine exact totals."
+    },
+    {
+      "distinct_added_configurations_per_dataset": 2,
+      "points": 55,
+      "NSG": 770880,
+      "HNSW": 630000,
+      "whole_wall_batches": 275,
+      "raw_array_bytes_if_all_added_models_multi_profile": 14890000,
+      "output_reserve_MiB": 64,
+      "scope": "Examples, not frozen final matrix; aliases and actual supported configurations determine exact totals."
+    }
+  ],
+  "NSG_calls": 0,
+  "HNSW_calls": 0,
+  "final_payload_opened": false
+}

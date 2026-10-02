@@ -1,0 +1,27 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "ef_values": [
+    10,
+    30
+  ],
+  "models": [
+    "baseline",
+    "duplicate3P",
+    "mode3P"
+  ],
+  "threads": 1,
+  "CPU": 15,
+  "NSG_expected": 194304,
+  "HNSW_expected": 193920,
+  "builds": 0,
+  "NSG_hard_cap": 200000,
+  "output_cap_MiB": 48,
+  "free_min_GiB": 7,
+  "latest_launch": 1789274700,
+  "query_hard_stop": 1789275300,
+  "per_job_seconds": 600,
+  "quality_gate": "mode30 beats both P10 and P30 in full hits, halves nonnegative, failure nonincrease; >=mode10 hits; quality only no speed claim"
+}

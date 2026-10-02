@@ -1,0 +1,38 @@
+{
+  "models": [
+    "C",
+    "A",
+    "S",
+    "T"
+  ],
+  "sources": {
+    "C": [
+      "baseline",
+      "baseline"
+    ],
+    "A": [
+      "missing_lambda05",
+      "missing_lambda05"
+    ],
+    "S": [
+      "missing_lambda05",
+      "baseline"
+    ],
+    "T": [
+      "baseline",
+      "missing_lambda05"
+    ]
+  },
+  "threads": 1,
+  "CPU": 15,
+  "total_NSG_cap": 90000,
+  "per_dataset_NSG_cap": 45000,
+  "per_dataset_HNSW": 88704,
+  "builds": 4,
+  "installations": 2,
+  "latest_launch": 1789264200,
+  "query_stop": 1789264800,
+  "selection": "cal S/T net>0; zero-hit count<=C; totalNDC<=C*1.01; order by net desc, NDC asc, S first; otherwise C",
+  "audit_selectable": false,
+  "final_validation_access": false
+}

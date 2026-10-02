@@ -1,0 +1,73 @@
+{
+    "dataset": "sift100K_env_smoke",
+    "results": [
+        {
+            "method_name": "0. Medoid (Baseline)",
+            "performance": [
+                {
+                    "qps": 28820.92639046055,
+                    "qps_std": 0.0,
+                    "recall": 1.0,
+                    "search_L": 32
+                },
+                {
+                    "qps": 17923.61305625877,
+                    "qps_std": 0.0,
+                    "recall": 1.0,
+                    "search_L": 64
+                }
+            ]
+        },
+        {
+            "method_name": "1. ACO-Max (Global)",
+            "performance": [
+                {
+                    "qps": 30806.494779261837,
+                    "qps_std": 0.0,
+                    "recall": 1.0,
+                    "search_L": 32
+                },
+                {
+                    "qps": 17909.714104457747,
+                    "qps_std": 0.0,
+                    "recall": 1.0,
+                    "search_L": 64
+                }
+            ]
+        },
+        {
+            "method_name": "2. Raw HNSW Routing (Ablation Baseline)",
+            "performance": [
+                {
+                    "qps": 34862.24436888905,
+                    "qps_std": 0.0,
+                    "recall": 1.0,
+                    "search_L": 32
+                },
+                {
+                    "qps": 19850.36674445827,
+                    "qps_std": 0.0,
+                    "recall": 1.0,
+                    "search_L": 64
+                }
+            ]
+        },
+        {
+            "method_name": "5. Asym-Neural HNSW Routing (0ms inference)",
+            "performance": [
+                {
+                    "qps": 34683.48931510081,
+                    "qps_std": 0.0,
+                    "recall": 1.0,
+                    "search_L": 32
+                },
+                {
+                    "qps": 19904.486926170684,
+                    "qps_std": 0.0,
+                    "recall": 1.0,
+                    "search_L": 64
+                }
+            ]
+        }
+    ]
+}

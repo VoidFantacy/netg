@@ -1,0 +1,26 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "distinct_width": 10,
+  "models": [
+    "baseline",
+    "duplicate3P",
+    "mode3P"
+  ],
+  "threads": 1,
+  "CPU": 15,
+  "NSG_expected": 194304,
+  "HNSW_expected": 193920,
+  "builds": 0,
+  "synthetic_build_cap": 4,
+  "synthetic_HNSW_cap": 1000,
+  "NSG_hard_cap": 200000,
+  "output_cap_MiB": 64,
+  "free_min_GiB": 7,
+  "latest_launch": 1789277700,
+  "query_hard_stop": 1789278300,
+  "per_job_seconds": 600,
+  "quality_gate": "modeD10 beats P10 full; >=mode10/mode30 full; all three nonnegative halves/no failure increase; routeNDC < mode30"
+}

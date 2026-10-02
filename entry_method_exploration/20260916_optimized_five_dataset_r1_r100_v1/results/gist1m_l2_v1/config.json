@@ -1,0 +1,201 @@
+{
+  "base": "/data/netg/ACSG/benches/datasets/GIST1M/gist_base.fvecs",
+  "base_n": 1000000,
+  "dataset": "gist1m_l2_v1",
+  "dataset_order": 4,
+  "dimension": 960,
+  "eval_configs": {
+    "1": "/data/netg/ACSG/entry_method_exploration/20260916_optimized_five_dataset_r1_r100_v1/inputs/gist1m_l2_v1/eval_k1.json",
+    "100": "/data/netg/ACSG/entry_method_exploration/20260916_optimized_five_dataset_r1_r100_v1/inputs/gist1m_l2_v1/eval_k100.json"
+  },
+  "expected_points": 160,
+  "expected_wall_rounds": 480,
+  "formal": true,
+  "gt": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/test.gt.ivecs",
+  "hnsw_complete": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/gist1m_l2_v1/hnsw/complete.json",
+  "hnsw_topology": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/gist1m_l2_v1/hnsw/full.topology.gz",
+  "index": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/gist1m_l2_v1/nsg/graph.nsg",
+  "kernel": "span-batch4 (NSG methods); original full HNSW",
+  "max_real_search_calls": 800000,
+  "methods": [
+    {
+      "name": "NSG"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/gist1m_l2_v1/gt10_hard/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/gt10.ids.i32",
+      "name": "GT10-hard"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/gist1m_l2_v1/gt10_soft_t1/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/gt10.ids.i32",
+      "name": "GT10-soft-t1"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/gist1m_l2_v1/gate_disjoint_labels_v1/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/gate.ids.i32",
+      "name": "GATE"
+    },
+    {
+      "name": "HNSW"
+    }
+  ],
+  "metric_id": 1,
+  "n": 1000,
+  "points": [
+    {
+      "K": 1,
+      "L": 32
+    },
+    {
+      "K": 1,
+      "L": 48
+    },
+    {
+      "K": 1,
+      "L": 64
+    },
+    {
+      "K": 1,
+      "L": 96
+    },
+    {
+      "K": 1,
+      "L": 128
+    },
+    {
+      "K": 1,
+      "L": 160
+    },
+    {
+      "K": 1,
+      "L": 200
+    },
+    {
+      "K": 1,
+      "L": 256
+    },
+    {
+      "K": 1,
+      "L": 320
+    },
+    {
+      "K": 1,
+      "L": 400
+    },
+    {
+      "K": 1,
+      "L": 512
+    },
+    {
+      "K": 1,
+      "L": 640
+    },
+    {
+      "K": 1,
+      "L": 800
+    },
+    {
+      "K": 1,
+      "L": 1000
+    },
+    {
+      "K": 1,
+      "L": 1250
+    },
+    {
+      "K": 1,
+      "L": 1500
+    },
+    {
+      "K": 100,
+      "L": 100
+    },
+    {
+      "K": 100,
+      "L": 112
+    },
+    {
+      "K": 100,
+      "L": 128
+    },
+    {
+      "K": 100,
+      "L": 160
+    },
+    {
+      "K": 100,
+      "L": 200
+    },
+    {
+      "K": 100,
+      "L": 256
+    },
+    {
+      "K": 100,
+      "L": 320
+    },
+    {
+      "K": 100,
+      "L": 400
+    },
+    {
+      "K": 100,
+      "L": 512
+    },
+    {
+      "K": 100,
+      "L": 640
+    },
+    {
+      "K": 100,
+      "L": 800
+    },
+    {
+      "K": 100,
+      "L": 900
+    },
+    {
+      "K": 100,
+      "L": 1000
+    },
+    {
+      "K": 100,
+      "L": 1120
+    },
+    {
+      "K": 100,
+      "L": 1250
+    },
+    {
+      "K": 100,
+      "L": 1500
+    }
+  ],
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/test.fvecs",
+  "reference_results": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/gist1m_l2_v1",
+  "source_e97_freeze_sha256": "a79ff11003ec97609fa484e64e84a2d241f0927d4e78c45a522ada043a56d800",
+  "threads": 1,
+  "variants": [
+    {
+      "kernel": "span-batch4",
+      "method": "NSG"
+    },
+    {
+      "kernel": "span-batch4",
+      "method": "GT10-hard"
+    },
+    {
+      "kernel": "span-batch4",
+      "method": "GT10-soft-t1"
+    },
+    {
+      "kernel": "span-batch4",
+      "method": "GATE"
+    },
+    {
+      "kernel": "reference",
+      "method": "HNSW"
+    }
+  ]
+}

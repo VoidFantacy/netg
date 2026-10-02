@@ -1,0 +1,52 @@
+[
+  {
+    "argv": [
+      "g++",
+      "-O3",
+      "-march=native",
+      "-std=c++17",
+      "-fopenmp",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+      "-I/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/src/common",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/inspect.cpp",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+      "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+      "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "-lopenblas",
+      "-lz",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/inspect"
+    ],
+    "started_unix": 1789886253.2913318,
+    "exit_code": 0,
+    "seconds": 7.426166772842407
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/inspect",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1"
+    ],
+    "started_unix": 1789886260.717804,
+    "exit_code": 0,
+    "seconds": 0.01580977439880371
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/inspect",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1"
+    ],
+    "started_unix": 1789886261.4500074,
+    "exit_code": 0,
+    "seconds": 0.01593184471130371
+  }
+]

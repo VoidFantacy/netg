@@ -1,0 +1,45 @@
+{
+    "artifact_version": "roargraph-laion10m-unit-ip-acsg-v1",
+    "dataset": "laion10m_acsg_v1",
+    "metric": "ip",
+    "normalization": "explicit_l2_unit_all_base_and_queries",
+    "num_queries": 100,
+    "num_runs": 1,
+    "results": [
+        {
+            "method_name": "0. Medoid (Baseline)",
+            "performance": [
+                {
+                    "qps": 1998.7523388150648,
+                    "qps_std": 0.0,
+                    "recall": 0.7699999809265137,
+                    "search_L": 64
+                }
+            ]
+        },
+        {
+            "method_name": "2. Raw HNSW Routing (Ablation Baseline)",
+            "performance": [
+                {
+                    "qps": 2288.7995351722802,
+                    "qps_std": 0.0,
+                    "recall": 0.7599999904632568,
+                    "search_L": 64
+                }
+            ]
+        },
+        {
+            "method_name": "5. Asym-Neural HNSW Routing (0ms inference)",
+            "performance": [
+                {
+                    "qps": 2395.8534485195783,
+                    "qps_std": 0.0,
+                    "recall": 0.7699999809265137,
+                    "search_L": 64
+                }
+            ]
+        }
+    ],
+    "split": "validation",
+    "top_k": 1
+}

@@ -1,0 +1,2754 @@
+{
+  "status": "COMPUTED_PENDING_AUDIT",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "n": 20000,
+      "m": 2048,
+      "replications": 16,
+      "baseline": {
+        "chord2_sum": 1.8321238760835545,
+        "chord2_mean": 0.0022480047559307417,
+        "angle_degrees_quantiles": [
+          0.12087899270993727,
+          0.9797102989153064,
+          3.2262133757353615,
+          12.22483643432359,
+          21.889020055697138
+        ],
+        "tangent_risk": 1.1711729472229488,
+        "nonpositive_radial_hubs": 0,
+        "minimum_resultant_norm": 1.0013693024618202,
+        "minimum_radial_ratio": 0.29792420688267096
+      },
+      "theory": {
+        "B": 1.1711729472229488,
+        "V": 3.485492967404747e-05,
+        "uniform_replacement_expected_tangent_ratio": 0.8603944070677103,
+        "unbiased_expected_tangent_ratio": 5.217423159380942,
+        "shrink_oracle_gamma": 0.16083833677802434,
+        "shrink_oracle_expected_tangent_ratio": 0.8391616632219756
+      },
+      "aggregates": {
+        "UniformReplacement": {
+          "chord_ratio_mean": 0.8127604896707774,
+          "chord_ratio_min": 0.7593822853831644,
+          "chord_ratio_max": 0.8790830494568105,
+          "seeds_improved": 16,
+          "tangent_ratio_mean": 0.8640040616314242,
+          "seed0_chord_ratio": 0.8045914674328308,
+          "seeds_with_radial_flip": 0
+        },
+        "UnbiasedCorrection": {
+          "chord_ratio_mean": 2.884535430451167,
+          "chord_ratio_min": 2.295479504093695,
+          "chord_ratio_max": 3.6297160023482005,
+          "seeds_improved": 0,
+          "tangent_ratio_mean": 5.065893456912766,
+          "seed0_chord_ratio": 2.50669604982061,
+          "seeds_with_radial_flip": 0
+        },
+        "ExactSubset": {
+          "chord_ratio_mean": 28.814950099405053,
+          "chord_ratio_min": 27.434197014142494,
+          "chord_ratio_max": 29.966485140232695,
+          "seeds_improved": 0,
+          "tangent_ratio_mean": 52.93744702283566,
+          "seed0_chord_ratio": 28.992682104787846,
+          "seeds_with_radial_flip": 0
+        },
+        "ShrinkOracle": {
+          "chord_ratio_mean": 0.7671397199887013,
+          "chord_ratio_min": 0.7016732488028877,
+          "chord_ratio_max": 0.8483958014018812,
+          "seeds_improved": 16,
+          "tangent_ratio_mean": 0.8428754505198426,
+          "seed0_chord_ratio": 0.753875135372705,
+          "seeds_with_radial_flip": 0
+        }
+      },
+      "all_replications": [
+        {
+          "rep": 0,
+          "seed": 2026093002,
+          "selected_sha256": "67bd699b29c4c63acf808976782605a945c69420e08a76c91f5326a907147b4f",
+          "correction_sum_sha256": "4e11380f93e67e7ba82724ecebef532fab2e9d13174ac761dbce47e872fce44b",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.474111237976793,
+              "chord2_mean": 0.0018087254453702983,
+              "angle_degrees_quantiles": [
+                0.10749698991462317,
+                0.9286198022551819,
+                3.0327824333916924,
+                10.483120034982521,
+                21.888853906086933
+              ],
+              "tangent_risk": 1.018872417575404,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013743295132995,
+              "minimum_radial_ratio": 0.36297147441716443,
+              "chord_risk_ratio_to_approx": 0.8045914674328308,
+              "tangent_risk_ratio_to_approx": 0.8699589757356714,
+              "hubs_chord_better_than_approx": 733
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 4.5925776829606715,
+              "chord2_mean": 0.005635064641669536,
+              "angle_degrees_quantiles": [
+                0.17387157736817851,
+                2.111353590595564,
+                6.300748353765577,
+                15.444023564227958,
+                24.56620580896708
+              ],
+              "tangent_risk": 4.885608744193634,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0014184115010616,
+              "minimum_radial_ratio": 0.6116377180007367,
+              "chord_risk_ratio_to_approx": 2.50669604982061,
+              "tangent_risk_ratio_to_approx": 4.171551909372776,
+              "hubs_chord_better_than_approx": 56
+            },
+            "ExactSubset": {
+              "chord2_sum": 53.11818511588222,
+              "chord2_mean": 0.06517568725875118,
+              "angle_degrees_quantiles": [
+                3.0431689689182617,
+                12.652225632189996,
+                20.775172488649318,
+                31.825939658367947,
+                46.91126712250466
+              ],
+              "tangent_risk": 58.41837520375914,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0000150712144038,
+              "minimum_radial_ratio": 0.22153154969661326,
+              "chord_risk_ratio_to_approx": 28.992682104787846,
+              "tangent_risk_ratio_to_approx": 49.880229339551505,
+              "hubs_chord_better_than_approx": 2
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.3811926351020547,
+              "chord2_mean": 0.0016947148896957727,
+              "angle_degrees_quantiles": [
+                0.11855325881455665,
+                0.9287987783225413,
+                3.021668810605634,
+                9.823034032607797,
+                21.88875908785441
+              ],
+              "tangent_risk": 0.9864260408400786,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013771985609317,
+              "minimum_radial_ratio": 0.4000930967479357,
+              "chord_risk_ratio_to_approx": 0.753875135372705,
+              "tangent_risk_ratio_to_approx": 0.842254803766654,
+              "hubs_chord_better_than_approx": 680
+            }
+          },
+          "pilot_temperature": 0.01589798927307129,
+          "pilot_temperature_relative_error": -0.018711600014716168
+        },
+        {
+          "rep": 1,
+          "seed": 2026094002,
+          "selected_sha256": "1ac8314eab2eef2de84580c40931a4a62ec1ce9b6340dc2b61b2a82610e59551",
+          "correction_sum_sha256": "8f2539147f9c3863da1a8d7b2acd07c672d8b8c8e76162d560cb4a566367703e",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.5742524332883536,
+              "chord2_mean": 0.0019315980776544216,
+              "angle_degrees_quantiles": [
+                0.10082244781268859,
+                0.9242046723990683,
+                2.9363165584060242,
+                10.750148808959466,
+                21.888778919500297
+              ],
+              "tangent_risk": 1.0567566502301728,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.001374827471313,
+              "minimum_radial_ratio": 0.39361482721994356,
+              "chord_risk_ratio_to_approx": 0.8592499960502449,
+              "tangent_risk_ratio_to_approx": 0.9023062330255522,
+              "hubs_chord_better_than_approx": 717
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 4.2056028065104964,
+              "chord2_mean": 0.005160248842344168,
+              "angle_degrees_quantiles": [
+                0.15420922356123287,
+                2.072578806705067,
+                6.435151332155493,
+                15.252274542349635,
+                23.230114368986477
+              ],
+              "tangent_risk": 4.899346998091405,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.001423287062734,
+              "minimum_radial_ratio": 0.6421816914157578,
+              "chord_risk_ratio_to_approx": 2.295479504093695,
+              "tangent_risk_ratio_to_approx": 4.183282246835186,
+              "hubs_chord_better_than_approx": 59
+            },
+            "ExactSubset": {
+              "chord2_sum": 51.36335868053879,
+              "chord2_mean": 0.06302252598839116,
+              "angle_degrees_quantiles": [
+                3.016417174730401,
+                12.428567277152343,
+                20.4894183747555,
+                31.471291349242215,
+                42.48480296085527
+              ],
+              "tangent_risk": 62.20285019820628,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0000242290496881,
+              "minimum_radial_ratio": 0.19196660594026962,
+              "chord_risk_ratio_to_approx": 28.034872178149786,
+              "tangent_risk_ratio_to_approx": 53.11158385761886,
+              "hubs_chord_better_than_approx": 5
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.5154513874619413,
+              "chord2_mean": 0.0018594495551680261,
+              "angle_degrees_quantiles": [
+                0.10247186158103526,
+                0.9269560168365986,
+                2.9275363620673676,
+                10.68353180658236,
+                21.888641307869303
+              ],
+              "tangent_risk": 1.0422001356155792,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013779808299446,
+              "minimum_radial_ratio": 0.4482242090340807,
+              "chord_risk_ratio_to_approx": 0.8271555254775953,
+              "tangent_risk_ratio_to_approx": 0.8898772278567515,
+              "hubs_chord_better_than_approx": 655
+            }
+          },
+          "pilot_temperature": 0.01618131995201111,
+          "pilot_temperature_relative_error": -0.0012232809683234702
+        },
+        {
+          "rep": 2,
+          "seed": 2026095002,
+          "selected_sha256": "84e32f4ce0eb17f28f08fe7b4481ef3d4304133466b95eadb0232cf7cb9ab595",
+          "correction_sum_sha256": "663cc6238666d36866ddb9a0e61e528a8a4edb4672b89a7e9383d5d5d7afd85a",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.4269742400169714,
+              "chord2_mean": 0.0017508886380576336,
+              "angle_degrees_quantiles": [
+                0.12062527023655986,
+                0.9332421988641986,
+                3.005494655343834,
+                10.609695411302395,
+                17.78410956738266
+              ],
+              "tangent_risk": 0.9855146162232415,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0014572946102072,
+              "minimum_radial_ratio": 0.37111129707205903,
+              "chord_risk_ratio_to_approx": 0.7788634047318609,
+              "tangent_risk_ratio_to_approx": 0.8414765885431909,
+              "hubs_chord_better_than_approx": 737
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 6.017013161720852,
+              "chord2_mean": 0.007382838235240309,
+              "angle_degrees_quantiles": [
+                0.11955309106578571,
+                2.1789503955334477,
+                6.2449808396955815,
+                18.65207641790831,
+                44.8575659077528
+              ],
+              "tangent_risk": 6.802475879402966,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0022354136874663,
+              "minimum_radial_ratio": 0.5370541133166348,
+              "chord_risk_ratio_to_approx": 3.2841737615379696,
+              "tangent_risk_ratio_to_approx": 5.80825905817992,
+              "hubs_chord_better_than_approx": 55
+            },
+            "ExactSubset": {
+              "chord2_sum": 53.1456035185146,
+              "chord2_mean": 0.06520932947057007,
+              "angle_degrees_quantiles": [
+                3.0383923092162464,
+                12.496100555694547,
+                21.081205009599223,
+                35.11395008027768,
+                47.06664591681009
+              ],
+              "tangent_risk": 61.23338829605382,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0000130610435112,
+              "minimum_radial_ratio": 0.24377501794518966,
+              "chord_risk_ratio_to_approx": 29.00764746984329,
+              "tangent_risk_ratio_to_approx": 52.2838137964582,
+              "hubs_chord_better_than_approx": 4
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.3417889443612856,
+              "chord2_mean": 0.001646366802897283,
+              "angle_degrees_quantiles": [
+                0.12049238291637587,
+                0.9359084996981977,
+                2.9201880289412703,
+                10.01234026860826,
+                17.79341322276122
+              ],
+              "tangent_risk": 0.9575148139259616,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0015075819672576,
+              "minimum_radial_ratio": 0.4128782094186519,
+              "chord_risk_ratio_to_approx": 0.7323680248245905,
+              "tangent_risk_ratio_to_approx": 0.817569101298312,
+              "hubs_chord_better_than_approx": 673
+            }
+          },
+          "pilot_temperature": 0.017156273126602173,
+          "pilot_temperature_relative_error": 0.05895478459217829
+        },
+        {
+          "rep": 3,
+          "seed": 2026096002,
+          "selected_sha256": "4afdc0dbd333859eef5e4594681fbde99eb770281516fba4845a74e4a5ad29d6",
+          "correction_sum_sha256": "793b822d00c5bd5ae6e7854a017857d8bcbeccbad5e18bc498878cf512fa10b7",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.4493432168229654,
+              "chord2_mean": 0.0017783352353656018,
+              "angle_degrees_quantiles": [
+                0.043833524853753324,
+                0.927078296638064,
+                2.8916131613802434,
+                10.751329475803967,
+                19.609935128269754
+              ],
+              "tangent_risk": 1.002856703896379,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0370677434212583,
+              "minimum_radial_ratio": 0.3797834160292998,
+              "chord_risk_ratio_to_approx": 0.7910727193409861,
+              "tangent_risk_ratio_to_approx": 0.8562840409474309,
+              "hubs_chord_better_than_approx": 729
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 4.715462038487894,
+              "chord2_mean": 0.0057858429920096864,
+              "angle_degrees_quantiles": [
+                0.14955582244701893,
+                1.9722528686347884,
+                5.8522305623279784,
+                17.71127519816534,
+                30.06716572950614
+              ],
+              "tangent_risk": 5.600677546185765,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0498742428430674,
+              "minimum_radial_ratio": 0.5870650700456158,
+              "chord_risk_ratio_to_approx": 2.5737681278232762,
+              "tangent_risk_ratio_to_approx": 4.7821097297934765,
+              "hubs_chord_better_than_approx": 60
+            },
+            "ExactSubset": {
+              "chord2_sum": 52.42806076181671,
+              "chord2_mean": 0.06432890891020455,
+              "angle_degrees_quantiles": [
+                2.7435806519670454,
+                12.607515944362767,
+                20.994700581125926,
+                31.107214499861485,
+                54.49111713882282
+              ],
+              "tangent_risk": 62.1284456942017,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0000638025693083,
+              "minimum_radial_ratio": 0.2450974673462585,
+              "chord_risk_ratio_to_approx": 28.616002141672713,
+              "tangent_risk_ratio_to_approx": 53.048053954387235,
+              "hubs_chord_better_than_approx": 3
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.3469206801174542,
+              "chord2_mean": 0.0016526634111870605,
+              "angle_degrees_quantiles": [
+                0.10838189090825323,
+                0.9362599308864505,
+                2.833022607654001,
+                10.333191487909746,
+                19.500822202656675
+              ],
+              "tangent_risk": 0.9703959003898703,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0468370161812393,
+              "minimum_radial_ratio": 0.42649939290911865,
+              "chord_risk_ratio_to_approx": 0.7351690012340779,
+              "tangent_risk_ratio_to_approx": 0.8285675507540068,
+              "hubs_chord_better_than_approx": 672
+            }
+          },
+          "pilot_temperature": 0.015720278024673462,
+          "pilot_temperature_relative_error": -0.02968065928405872
+        },
+        {
+          "rep": 4,
+          "seed": 2026097002,
+          "selected_sha256": "7ea8c31cc46764c57bd8de09c05fc78dd1bdf247a205641e61222e890656b88a",
+          "correction_sum_sha256": "d5d43cbda8cb1824e5f96cedc81a025669b54882e46fc9ccfd9735a356b27c05",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.446863331231716,
+              "chord2_mean": 0.0017752924309591609,
+              "angle_degrees_quantiles": [
+                0.09832722080299967,
+                0.9167501349258093,
+                3.0332545288655393,
+                10.712874111177905,
+                21.88971089699228
+              ],
+              "tangent_risk": 0.9879652594323577,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0014589354189172,
+              "minimum_radial_ratio": 0.4135586164984686,
+              "chord_risk_ratio_to_approx": 0.7897191615255886,
+              "tangent_risk_ratio_to_approx": 0.8435690576485668,
+              "hubs_chord_better_than_approx": 742
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 5.718882509176232,
+              "chord2_mean": 0.0070170337535904685,
+              "angle_degrees_quantiles": [
+                0.20327354030355227,
+                2.1571477974274793,
+                6.656222624907345,
+                20.25232873154852,
+                32.48128345058057
+              ],
+              "tangent_risk": 6.67958698685444,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.00225163608068,
+              "minimum_radial_ratio": 0.6253699737188578,
+              "chord_risk_ratio_to_approx": 3.121449692256191,
+              "tangent_risk_ratio_to_approx": 5.70333100904771,
+              "hubs_chord_better_than_approx": 51
+            },
+            "ExactSubset": {
+              "chord2_sum": 51.89372028077505,
+              "chord2_mean": 0.0636732764181289,
+              "angle_degrees_quantiles": [
+                2.961979859909642,
+                12.419973259071782,
+                20.975485402906727,
+                31.17309925033256,
+                42.3157043646502
+              ],
+              "tangent_risk": 60.314364110001044,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0000425861452649,
+              "minimum_radial_ratio": 0.19330147044585932,
+              "chord_risk_ratio_to_approx": 28.324351294250818,
+              "tangent_risk_ratio_to_approx": 51.49910971988954,
+              "hubs_chord_better_than_approx": 3
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.3612874734225655,
+              "chord2_mean": 0.0016702913784325958,
+              "angle_degrees_quantiles": [
+                0.10688207094342031,
+                0.9263441436907474,
+                3.022463567562283,
+                9.938361561737974,
+                21.890105407160316
+              ],
+              "tangent_risk": 0.9598265867319731,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0015101612489279,
+              "minimum_radial_ratio": 0.4795496572431561,
+              "chord_risk_ratio_to_approx": 0.7430106070843452,
+              "tangent_risk_ratio_to_approx": 0.819542996623928,
+              "hubs_chord_better_than_approx": 681
+            }
+          },
+          "pilot_temperature": 0.01751723885536194,
+          "pilot_temperature_relative_error": 0.08123505389794339
+        },
+        {
+          "rep": 5,
+          "seed": 2026098002,
+          "selected_sha256": "45ac6e7075fae5bc2bcb5c204215199a82b83cb7c049eb0065807d21ba261be8",
+          "correction_sum_sha256": "ca7f3010f11b2551ddc139dfce7d27c677bd45ae400331f5da30f972e9fea201",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.4986966858113921,
+              "chord2_mean": 0.001838891639032383,
+              "angle_degrees_quantiles": [
+                0.04440141926332551,
+                0.9123280946103065,
+                2.891136560426891,
+                11.095240437906698,
+                19.048135219833625
+              ],
+              "tangent_risk": 1.008635640197253,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.001375035456312,
+              "minimum_radial_ratio": 0.4198062035842918,
+              "chord_risk_ratio_to_approx": 0.8180105643375414,
+              "tangent_risk_ratio_to_approx": 0.8612183559984888,
+              "hubs_chord_better_than_approx": 745
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 6.65008935130469,
+              "chord2_mean": 0.008159618835956674,
+              "angle_degrees_quantiles": [
+                0.1978649645806183,
+                2.2543503267839777,
+                7.1849237081838355,
+                18.25589074390585,
+                44.41011735843815
+              ],
+              "tangent_risk": 6.939027571015169,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.001425307070661,
+              "minimum_radial_ratio": 0.5379439786567447,
+              "chord_risk_ratio_to_approx": 3.6297160023482005,
+              "tangent_risk_ratio_to_approx": 5.924853018052363,
+              "hubs_chord_better_than_approx": 43
+            },
+            "ExactSubset": {
+              "chord2_sum": 53.49539654830724,
+              "chord2_mean": 0.06563852337215613,
+              "angle_degrees_quantiles": [
+                3.3207831764856,
+                12.592405656354797,
+                21.414164804267102,
+                32.682651886705834,
+                53.102108044985826
+              ],
+              "tangent_risk": 68.11321998244617,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0001050828034292,
+              "minimum_radial_ratio": 0.17805544645825105,
+              "chord_risk_ratio_to_approx": 29.198569620009454,
+              "tangent_risk_ratio_to_approx": 58.15812271275071,
+              "hubs_chord_better_than_approx": 5
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.4267936750557275,
+              "chord2_mean": 0.0017506670859579478,
+              "angle_degrees_quantiles": [
+                0.09893060428866991,
+                0.9249918937117604,
+                2.847489447311796,
+                11.052015695144371,
+                18.65545810195034
+              ],
+              "tangent_risk": 0.99289624025781,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013783073930633,
+              "minimum_radial_ratio": 0.4893626603267467,
+              "chord_risk_ratio_to_approx": 0.7787648497358801,
+              "tangent_risk_ratio_to_approx": 0.847779350276265,
+              "hubs_chord_better_than_approx": 693
+            }
+          },
+          "pilot_temperature": 0.016492903232574463,
+          "pilot_temperature_relative_error": 0.018008903278025068
+        },
+        {
+          "rep": 6,
+          "seed": 2026099002,
+          "selected_sha256": "284bed2c2ee96e11cf8897e7de987b2b54c80ce9cddc8ee74bcfacd97b48254a",
+          "correction_sum_sha256": "3aa5e6b9e86c9eb906528304728d4e2c43a8bfabaedf351dd0acc1b7d058384b",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.4609698655922712,
+              "chord2_mean": 0.0017926010620764063,
+              "angle_degrees_quantiles": [
+                0.10002021202673664,
+                0.9351697376370448,
+                2.8475533618618396,
+                10.635178891994126,
+                18.977167941633052
+              ],
+              "tangent_risk": 0.9952703022048293,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.001398082573247,
+              "minimum_radial_ratio": 0.3765464929808406,
+              "chord_risk_ratio_to_approx": 0.7974187142385362,
+              "tangent_risk_ratio_to_approx": 0.849806430864703,
+              "hubs_chord_better_than_approx": 736
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 5.293631395063911,
+              "chord2_mean": 0.006495253245477191,
+              "angle_degrees_quantiles": [
+                0.16836457841671312,
+                2.194406277802404,
+                6.699529777148984,
+                16.481330912501917,
+                27.012935130114684
+              ],
+              "tangent_risk": 5.9195411518292875,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0016511496859326,
+              "minimum_radial_ratio": 0.5573627635200552,
+              "chord_risk_ratio_to_approx": 2.8893414163565505,
+              "tangent_risk_ratio_to_approx": 5.054369780198161,
+              "hubs_chord_better_than_approx": 50
+            },
+            "ExactSubset": {
+              "chord2_sum": 53.95872354626598,
+              "chord2_mean": 0.06620702275615457,
+              "angle_degrees_quantiles": [
+                3.3279142913363082,
+                12.515257833990697,
+                21.649518036783984,
+                31.442728770489893,
+                44.5575119905547
+              ],
+              "tangent_risk": 60.79923178757131,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0000422709103993,
+              "minimum_radial_ratio": 0.1564421001770113,
+              "chord_risk_ratio_to_approx": 29.451460270039718,
+              "tangent_risk_ratio_to_approx": 51.91311149368389,
+              "hubs_chord_better_than_approx": 4
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.3591202862083973,
+              "chord2_mean": 0.0016676322530164384,
+              "angle_degrees_quantiles": [
+                0.09950625835429133,
+                0.935376387592808,
+                2.7527242789452577,
+                10.335501044969469,
+                18.55553085151865
+              ],
+              "tangent_risk": 0.9625947691448534,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.001414515294843,
+              "minimum_radial_ratio": 0.4214152003369245,
+              "chord_risk_ratio_to_approx": 0.7418277246152837,
+              "tangent_risk_ratio_to_approx": 0.8219065949459728,
+              "hubs_chord_better_than_approx": 685
+            }
+          },
+          "pilot_temperature": 0.01602071523666382,
+          "pilot_temperature_relative_error": -0.011136455612376306
+        },
+        {
+          "rep": 7,
+          "seed": 2026100002,
+          "selected_sha256": "451190ff5be92b71e13de77b3b3aeac8e86825eb6e18e4af36dae6d01e178851",
+          "correction_sum_sha256": "d528202e441c85eb162491a32bd57e6fb256949ce1912b5787567377dd77a2aa",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.5370933013279062,
+              "chord2_mean": 0.0018860040507090875,
+              "angle_degrees_quantiles": [
+                0.10629177439270661,
+                0.9241022208871822,
+                3.0014207280064755,
+                11.61372399302734,
+                18.199243699207194
+              ],
+              "tangent_risk": 1.0366407278606498,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013699697658083,
+              "minimum_radial_ratio": 0.3497377323932202,
+              "chord_risk_ratio_to_approx": 0.8389679985032882,
+              "tangent_risk_ratio_to_approx": 0.8851303561260547,
+              "hubs_chord_better_than_approx": 742
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 5.677125858246979,
+              "chord2_mean": 0.006965798599076047,
+              "angle_degrees_quantiles": [
+                0.14540432177296475,
+                2.186219218056821,
+                6.415217452434615,
+                17.052160561470227,
+                38.85650036569332
+              ],
+              "tangent_risk": 5.201793934092032,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013758199515201,
+              "minimum_radial_ratio": 0.5394465041648242,
+              "chord_risk_ratio_to_approx": 3.0986583016333507,
+              "tangent_risk_ratio_to_approx": 4.44152500826319,
+              "hubs_chord_better_than_approx": 60
+            },
+            "ExactSubset": {
+              "chord2_sum": 50.262847370790624,
+              "chord2_mean": 0.06167220536293328,
+              "angle_degrees_quantiles": [
+                3.27712867782369,
+                12.427122033697673,
+                20.91860745324234,
+                31.27044655337719,
+                43.26622268442972
+              ],
+              "tangent_risk": 60.63845952090958,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0000482244902555,
+              "minimum_radial_ratio": 0.164981369461476,
+              "chord_risk_ratio_to_approx": 27.434197014142494,
+              "tangent_risk_ratio_to_approx": 51.7758369203231,
+              "hubs_chord_better_than_approx": 6
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.4573226021874544,
+              "chord2_mean": 0.0017881258922545452,
+              "angle_degrees_quantiles": [
+                0.12134491944995443,
+                0.9301246296637873,
+                2.8817632366602997,
+                11.263709474772533,
+                17.38022606486486
+              ],
+              "tangent_risk": 1.015828410487421,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013703505963332,
+              "minimum_radial_ratio": 0.3793070317432418,
+              "chord_risk_ratio_to_approx": 0.7954279845436569,
+              "tangent_risk_ratio_to_approx": 0.8673598659328015,
+              "hubs_chord_better_than_approx": 679
+            }
+          },
+          "pilot_temperature": 0.015962868928909302,
+          "pilot_temperature_relative_error": -0.01470696442367836
+        },
+        {
+          "rep": 8,
+          "seed": 2026101002,
+          "selected_sha256": "bab38389332b4608ccbd002fc1facddeda5436129b659a9689ad12bce99dd8ae",
+          "correction_sum_sha256": "28f4954e979502b6bac64b30e0a10c23a6e4088090ae59b796b2464c736c7b75",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.4110638077693156,
+              "chord2_mean": 0.0017313666352997738,
+              "angle_degrees_quantiles": [
+                0.08386394465100935,
+                0.9031600086824727,
+                2.9378314009792077,
+                10.33297455414827,
+                19.591975991491815
+              ],
+              "tangent_risk": 0.9667291794346955,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0014332013129104,
+              "minimum_radial_ratio": 0.3826515921904311,
+              "chord_risk_ratio_to_approx": 0.7701792581764071,
+              "tangent_risk_ratio_to_approx": 0.825436739917,
+              "hubs_chord_better_than_approx": 743
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 5.097705286120589,
+              "chord2_mean": 0.006254853111804404,
+              "angle_degrees_quantiles": [
+                0.14007185112357512,
+                2.1763530260414434,
+                5.938919146302346,
+                17.536842188607082,
+                26.267119729186295
+              ],
+              "tangent_risk": 6.598358659198794,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0019958215627949,
+              "minimum_radial_ratio": 0.6864095470040893,
+              "chord_risk_ratio_to_approx": 2.7824020813580113,
+              "tangent_risk_ratio_to_approx": 5.633974619072811,
+              "hubs_chord_better_than_approx": 60
+            },
+            "ExactSubset": {
+              "chord2_sum": 51.93419215422484,
+              "chord2_mean": 0.06372293515855808,
+              "angle_degrees_quantiles": [
+                2.8828702724570814,
+                12.522173053612345,
+                20.91252273488746,
+                30.837072684844898,
+                46.80963672403657
+              ],
+              "tangent_risk": 62.66876799865755,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0000053075590958,
+              "minimum_radial_ratio": 0.28262149843226786,
+              "chord_risk_ratio_to_approx": 28.346441434539965,
+              "tangent_risk_ratio_to_approx": 53.50940537625626,
+              "hubs_chord_better_than_approx": 5
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.3077171770167535,
+              "chord2_mean": 0.0016045609533947896,
+              "angle_degrees_quantiles": [
+                0.09384420952371614,
+                0.9225311386985299,
+                2.8895984291443675,
+                9.158586949567075,
+                19.471925427219908
+              ],
+              "tangent_risk": 0.9277923761681384,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0014696938133665,
+              "minimum_radial_ratio": 0.43100439958238723,
+              "chord_risk_ratio_to_approx": 0.71377115602696,
+              "tangent_risk_ratio_to_approx": 0.7921907506214967,
+              "hubs_chord_better_than_approx": 681
+            }
+          },
+          "pilot_temperature": 0.016264885663986206,
+          "pilot_temperature_relative_error": 0.0039347338214192895
+        },
+        {
+          "rep": 9,
+          "seed": 2026102002,
+          "selected_sha256": "cc8dfd1dd8e9c1ed795ecec625d290c2a45861bda7f3c0a68c32439baab1dcd9",
+          "correction_sum_sha256": "5c53a12514c704f2cf2d109f589ed66fc98b2a1a3a3e02fd8129a9005c8fc7be",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.534694181548975,
+              "chord2_mean": 0.001883060345458865,
+              "angle_degrees_quantiles": [
+                0.0814307173240386,
+                0.9150779638144386,
+                2.920345085959744,
+                11.301966623489161,
+                19.56111843300053
+              ],
+              "tangent_risk": 1.0096256276436268,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013879501178944,
+              "minimum_radial_ratio": 0.3595392181555059,
+              "chord_risk_ratio_to_approx": 0.8376585238491727,
+              "tangent_risk_ratio_to_approx": 0.8620636516900614,
+              "hubs_chord_better_than_approx": 738
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 5.317868938562176,
+              "chord2_mean": 0.006524992562652977,
+              "angle_degrees_quantiles": [
+                0.1402507905881219,
+                2.1746873971843037,
+                6.6014427670994165,
+                18.547663830898575,
+                25.81323795761432
+              ],
+              "tangent_risk": 5.859747967462669,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.001551656344834,
+              "minimum_radial_ratio": 0.6623542422509537,
+              "chord_risk_ratio_to_approx": 2.9025706219876004,
+              "tangent_risk_ratio_to_approx": 5.003315677122779,
+              "hubs_chord_better_than_approx": 50
+            },
+            "ExactSubset": {
+              "chord2_sum": 53.714882777992514,
+              "chord2_mean": 0.06590783162943867,
+              "angle_degrees_quantiles": [
+                3.072558626140857,
+                12.33594102369389,
+                21.820085670051895,
+                33.19689848019232,
+                50.05877879808055
+              ],
+              "tangent_risk": 63.911220134907246,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0000250188083002,
+              "minimum_radial_ratio": 0.08424371279105504,
+              "chord_risk_ratio_to_approx": 29.3183684133937,
+              "tangent_risk_ratio_to_approx": 54.57026674536128,
+              "hubs_chord_better_than_approx": 5
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.457378187582216,
+              "chord2_mean": 0.0017881940951929032,
+              "angle_degrees_quantiles": [
+                0.09015880312481835,
+                0.9169350271465605,
+                2.869706962887902,
+                10.86627140308012,
+                19.423738695506785
+              ],
+              "tangent_risk": 0.9830484007765403,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013985946865134,
+              "minimum_radial_ratio": 0.3947020968600342,
+              "chord_risk_ratio_to_approx": 0.7954583238648607,
+              "tangent_risk_ratio_to_approx": 0.8393708231628095,
+              "hubs_chord_better_than_approx": 681
+            }
+          },
+          "pilot_temperature": 0.01676437258720398,
+          "pilot_temperature_relative_error": 0.03476509326367694
+        },
+        {
+          "rep": 10,
+          "seed": 2026103002,
+          "selected_sha256": "54451d24d5c2b736a0ef63284e075f546ccbba61b715b816b78ec2dd9b82f959",
+          "correction_sum_sha256": "7c064b9fe580d2445107a2b252fdb46acc9ec1100a25e676e49b4077434cc157",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.3912824161253912,
+              "chord2_mean": 0.0017070949891109094,
+              "angle_degrees_quantiles": [
+                0.047522621538092814,
+                0.9186399165839063,
+                2.870137940434375,
+                9.995514043698504,
+                18.616806383939547
+              ],
+              "tangent_risk": 0.9858536371795726,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.001369808581961,
+              "minimum_radial_ratio": 0.3844861091164736,
+              "chord_risk_ratio_to_approx": 0.7593822853831644,
+              "tangent_risk_ratio_to_approx": 0.8417660598438514,
+              "hubs_chord_better_than_approx": 717
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 5.531454080330563,
+              "chord2_mean": 0.006787060221264494,
+              "angle_degrees_quantiles": [
+                0.14932957804577285,
+                2.0241678790267215,
+                6.681527803822104,
+                16.172186763918997,
+                45.29884221588831
+              ],
+              "tangent_risk": 6.384440380006337,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013742458922057,
+              "minimum_radial_ratio": 0.5959083395667726,
+              "chord_risk_ratio_to_approx": 3.0191485153039395,
+              "tangent_risk_ratio_to_approx": 5.451321596135683,
+              "hubs_chord_better_than_approx": 62
+            },
+            "ExactSubset": {
+              "chord2_sum": 54.90231290772336,
+              "chord2_mean": 0.067364801113771,
+              "angle_degrees_quantiles": [
+                3.308903832460093,
+                12.387698878044658,
+                22.04116518039749,
+                33.112413307977455,
+                51.62801884593512
+              ],
+              "tangent_risk": 63.7673048927905,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0000041433717264,
+              "minimum_radial_ratio": 0.14458648177460523,
+              "chord_risk_ratio_to_approx": 29.966485140232695,
+              "tangent_risk_ratio_to_approx": 54.447385455746456,
+              "hubs_chord_better_than_approx": 4
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.285552312340887,
+              "chord2_mean": 0.0015773648004182661,
+              "angle_degrees_quantiles": [
+                0.09989287339659154,
+                0.929387636147659,
+                2.8267047322672583,
+                9.095700209983724,
+                17.12946459843889
+              ],
+              "tangent_risk": 0.953635226322701,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013700974269961,
+              "minimum_radial_ratio": 0.4338858512540261,
+              "chord_risk_ratio_to_approx": 0.7016732488028877,
+              "tangent_risk_ratio_to_approx": 0.814256535368182,
+              "hubs_chord_better_than_approx": 674
+            }
+          },
+          "pilot_temperature": 0.01686343550682068,
+          "pilot_temperature_relative_error": 0.04087965858504106
+        },
+        {
+          "rep": 11,
+          "seed": 2026104002,
+          "selected_sha256": "62ada03afabbe66ad0376b76214b9bc766b6634dfad2ca948d9e2c88a2a14de2",
+          "correction_sum_sha256": "8fdc2ad4a1908d7616c1706478044d7184fea2b7bcfc47b237cfb4f5617d8937",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.5273375453711318,
+              "chord2_mean": 0.0018740337980013887,
+              "angle_degrees_quantiles": [
+                0.043581133414817425,
+                0.9238333005061818,
+                3.018261506734838,
+                10.747144487646665,
+                21.886845246331674
+              ],
+              "tangent_risk": 1.031240850627711,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013754423047976,
+              "minimum_radial_ratio": 0.3930248425728326,
+              "chord_risk_ratio_to_approx": 0.8336431642581121,
+              "tangent_risk_ratio_to_approx": 0.8805196987114152,
+              "hubs_chord_better_than_approx": 738
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 4.8219861046651555,
+              "chord2_mean": 0.005916547367687307,
+              "angle_degrees_quantiles": [
+                0.12458691949690148,
+                2.0235546269572424,
+                6.05503505171286,
+                16.832837742203928,
+                33.275944353933475
+              ],
+              "tangent_risk": 5.972548925308136,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0014292901150457,
+              "minimum_radial_ratio": 0.6467225405912381,
+              "chord_risk_ratio_to_approx": 2.6319105206864557,
+              "tangent_risk_ratio_to_approx": 5.099630195070736,
+              "hubs_chord_better_than_approx": 55
+            },
+            "ExactSubset": {
+              "chord2_sum": 53.50783414577756,
+              "chord2_mean": 0.06565378422794792,
+              "angle_degrees_quantiles": [
+                3.316856853870779,
+                12.556620834883732,
+                21.235855404075398,
+                32.01047240291705,
+                43.431882273557235
+              ],
+              "tangent_risk": 62.35648537244104,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0000371808514679,
+              "minimum_radial_ratio": 0.23325669031549862,
+              "chord_risk_ratio_to_approx": 29.205358242565318,
+              "tangent_risk_ratio_to_approx": 53.2427644613026,
+              "hubs_chord_better_than_approx": 3
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.4575567321908638,
+              "chord2_mean": 0.0017884131683323483,
+              "angle_degrees_quantiles": [
+                0.0977970081717698,
+                0.9413522222490488,
+                3.031888142407887,
+                10.455007249799257,
+                21.885604384426063
+              ],
+              "tangent_risk": 1.0159699647062261,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013789465284688,
+              "minimum_radial_ratio": 0.44729752788792887,
+              "chord_risk_ratio_to_approx": 0.795555776122854,
+              "tangent_risk_ratio_to_approx": 0.8674807312747997,
+              "hubs_chord_better_than_approx": 676
+            }
+          },
+          "pilot_temperature": 0.016378194093704224,
+          "pilot_temperature_relative_error": 0.010928589823773871
+        },
+        {
+          "rep": 12,
+          "seed": 2026105002,
+          "selected_sha256": "c07add41f4065f9303b321226f863b3627fd24f96bae60a7199f8f8e343e01c7",
+          "correction_sum_sha256": "dd2f71eec2ab645637922352c67a910b0e6bfd6a0a325a8c9e30b2af7f042d86",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.509158150216793,
+              "chord2_mean": 0.0018517277916770467,
+              "angle_degrees_quantiles": [
+                0.06479477213955741,
+                0.9158637207531661,
+                2.869020180745805,
+                11.227854075539014,
+                21.887243261654252
+              ],
+              "tangent_risk": 1.0266255482178206,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013773533758765,
+              "minimum_radial_ratio": 0.352521393364917,
+              "chord_risk_ratio_to_approx": 0.8237205845725071,
+              "tangent_risk_ratio_to_approx": 0.8765789464759455,
+              "hubs_chord_better_than_approx": 744
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 5.5576521409668285,
+              "chord2_mean": 0.006819205080940894,
+              "angle_degrees_quantiles": [
+                0.18689300960602404,
+                2.095920051988793,
+                6.9970558005682895,
+                17.65907161289168,
+                35.07669735844812
+              ],
+              "tangent_risk": 6.420927507392117,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0014479611986757,
+              "minimum_radial_ratio": 0.5675415175381228,
+              "chord_risk_ratio_to_approx": 3.033447799854648,
+              "tangent_risk_ratio_to_approx": 5.482475942274139,
+              "hubs_chord_better_than_approx": 49
+            },
+            "ExactSubset": {
+              "chord2_sum": 52.560987519037155,
+              "chord2_mean": 0.06449200922581245,
+              "angle_degrees_quantiles": [
+                3.2887086264280003,
+                12.624278288734372,
+                20.396852962572865,
+                32.98922848971344,
+                50.68668397132863
+              ],
+              "tangent_risk": 58.69816886746399,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0000138622626336,
+              "minimum_radial_ratio": 0.12851526329114774,
+              "chord_risk_ratio_to_approx": 28.688555509354703,
+              "tangent_risk_ratio_to_approx": 50.119129720889966,
+              "hubs_chord_better_than_approx": 3
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.436631588241692,
+              "chord2_mean": 0.0017627381450818307,
+              "angle_degrees_quantiles": [
+                0.10604602688528648,
+                0.9240277853839441,
+                2.82734823191223,
+                10.138232511456456,
+                21.886229561101473
+              ],
+              "tangent_risk": 1.013887878918206,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013819483094588,
+              "minimum_radial_ratio": 0.3836792915170859,
+              "chord_risk_ratio_to_approx": 0.7841345265980115,
+              "tangent_risk_ratio_to_approx": 0.8657029530286773,
+              "hubs_chord_better_than_approx": 702
+            }
+          },
+          "pilot_temperature": 0.016147643327713013,
+          "pilot_temperature_relative_error": -0.0033019388543468198
+        },
+        {
+          "rep": 13,
+          "seed": 2026106002,
+          "selected_sha256": "9d235eeccbe7f82e916894c2f3648dd2d08f8b10c6d89215444961c5e035c241",
+          "correction_sum_sha256": "6114fdd4cca898cbeba2c95386cc29f95a0f0ab270d222c36e560173c3d42dd1",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.4810049878812097,
+              "chord2_mean": 0.0018171840342100733,
+              "angle_degrees_quantiles": [
+                0.0016053078842272373,
+                0.9300297660437914,
+                2.9147995670045397,
+                10.83076397426583,
+                21.888542581925115
+              ],
+              "tangent_risk": 1.0025124637895357,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013857450964443,
+              "minimum_radial_ratio": 0.39011696993703987,
+              "chord_risk_ratio_to_approx": 0.8083541769277549,
+              "tangent_risk_ratio_to_approx": 0.8559901133019372,
+              "hubs_chord_better_than_approx": 726
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 5.218837223733399,
+              "chord2_mean": 0.0064034812561146,
+              "angle_degrees_quantiles": [
+                0.12558387700286563,
+                2.04980069087412,
+                6.234264070016732,
+                20.641425465993564,
+                33.825245871478316
+              ],
+              "tangent_risk": 6.513644893884488,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.001530169550821,
+              "minimum_radial_ratio": 0.6563139216640986,
+              "chord_risk_ratio_to_approx": 2.8485176640399787,
+              "tangent_risk_ratio_to_approx": 5.561642206071659,
+              "hubs_chord_better_than_approx": 58
+            },
+            "ExactSubset": {
+              "chord2_sum": 51.59550048631736,
+              "chord2_mean": 0.0633073625598986,
+              "angle_degrees_quantiles": [
+                3.2364264160446705,
+                12.600071819972607,
+                20.476731281245957,
+                32.23635756233109,
+                43.21246805063322
+              ],
+              "tangent_risk": 61.92172542587605,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0000144945112177,
+              "minimum_radial_ratio": 0.23401517708522754,
+              "chord_risk_ratio_to_approx": 28.161578570009496,
+              "tangent_risk_ratio_to_approx": 52.87154691602384,
+              "hubs_chord_better_than_approx": 2
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.3951799371273759,
+              "chord2_mean": 0.0017118772234691727,
+              "angle_degrees_quantiles": [
+                0.11892304627723103,
+                0.9382226216168152,
+                2.9083976133600227,
+                10.676021583685174,
+                21.888270100382876
+              ],
+              "tangent_risk": 0.9794504513401601,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013951317764265,
+              "minimum_radial_ratio": 0.4427301704826243,
+              "chord_risk_ratio_to_approx": 0.761509609333724,
+              "tangent_risk_ratio_to_approx": 0.8362987325335719,
+              "hubs_chord_better_than_approx": 673
+            }
+          },
+          "pilot_temperature": 0.01620161533355713,
+          "pilot_temperature_relative_error": 2.9432324049949443e-05
+        },
+        {
+          "rep": 14,
+          "seed": 2026107002,
+          "selected_sha256": "469dc76880168d66c38a9de88359bad59a71bf6c29e5b46df18730ead7054563",
+          "correction_sum_sha256": "feec07fa98a78b22f1b25dda518e5d3e4a16dee0219c1043cebefc79f80962f0",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.4918119336597297,
+              "chord2_mean": 0.0018304440903800364,
+              "angle_degrees_quantiles": [
+                0.1204094315277592,
+                0.9193424111770822,
+                2.906567996636536,
+                10.754794351341578,
+                19.16112578938599
+              ],
+              "tangent_risk": 1.0137784670512762,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013852090517004,
+              "minimum_radial_ratio": 0.3610916861714627,
+              "chord_risk_ratio_to_approx": 0.8142527659476314,
+              "tangent_risk_ratio_to_approx": 0.8656095322685844,
+              "hubs_chord_better_than_approx": 728
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 5.027361473356146,
+              "chord2_mean": 0.006168541685099566,
+              "angle_degrees_quantiles": [
+                0.12209950124153571,
+                2.159015575616023,
+                6.531424032827261,
+                18.011515490591247,
+                22.899771542612566
+              ],
+              "tangent_risk": 5.705799311650045,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.001524824896868,
+              "minimum_radial_ratio": 0.6729361573037387,
+              "chord_risk_ratio_to_approx": 2.7440073998178014,
+              "tangent_risk_ratio_to_approx": 4.871867408805395,
+              "hubs_chord_better_than_approx": 47
+            },
+            "ExactSubset": {
+              "chord2_sum": 53.944863766689,
+              "chord2_mean": 0.06619001689164294,
+              "angle_degrees_quantiles": [
+                3.032148157753471,
+                12.307335103479605,
+                21.824800156103763,
+                32.67872071040031,
+                50.90781046313396
+              ],
+              "tangent_risk": 60.26801744008526,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0000120337712548,
+              "minimum_radial_ratio": 0.190116676736429,
+              "chord_risk_ratio_to_approx": 29.443895399695574,
+              "tangent_risk_ratio_to_approx": 51.45953685404963,
+              "hubs_chord_better_than_approx": 4
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.4036601339995374,
+              "chord2_mean": 0.0017222823730055673,
+              "angle_degrees_quantiles": [
+                0.12020171669886373,
+                0.9265575351892412,
+                2.8596950264994434,
+                9.545416383043003,
+                18.847385434318863
+              ],
+              "tangent_risk": 0.9875344856329744,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013942886676162,
+              "minimum_radial_ratio": 0.39714053800835053,
+              "chord_risk_ratio_to_approx": 0.7661382247799073,
+              "tangent_risk_ratio_to_approx": 0.8432012436545665,
+              "hubs_chord_better_than_approx": 684
+            }
+          },
+          "pilot_temperature": 0.016015470027923584,
+          "pilot_temperature_relative_error": -0.011460211176925084
+        },
+        {
+          "rep": 15,
+          "seed": 2026108002,
+          "selected_sha256": "b4a91be4411c99a78b548a03112cf05089c5c07f699ef1a8db24b7c627cc69bc",
+          "correction_sum_sha256": "0df9c64205574f873ffcd58ef891ba05325fdd2b4adace32d06844b66a67679d",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.6105890439701627,
+              "chord2_mean": 0.0019761828760370094,
+              "angle_degrees_quantiles": [
+                0.10324140524840769,
+                0.9227437880735947,
+                2.9210960219478492,
+                12.056703798294679,
+                21.834811934734127
+              ],
+              "tangent_risk": 1.0614928408110478,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.001372415276624,
+              "minimum_radial_ratio": 0.32463011331775216,
+              "chord_risk_ratio_to_approx": 0.8790830494568105,
+              "tangent_risk_ratio_to_approx": 0.9063502050043324,
+              "hubs_chord_better_than_approx": 737
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 5.113969685410006,
+              "chord2_mean": 0.006274809429950927,
+              "angle_degrees_quantiles": [
+                0.18211136357308252,
+                2.0003595598496267,
+                6.225742022957087,
+                15.36074426595518,
+                49.74289256607261
+              ],
+              "tangent_risk": 4.545071467432361,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.001399706332757,
+              "minimum_radial_ratio": 0.4167183452666152,
+              "chord_risk_ratio_to_approx": 2.791279428300394,
+              "tangent_risk_ratio_to_approx": 3.880785906308289,
+              "hubs_chord_better_than_approx": 54
+            },
+            "ExactSubset": {
+              "chord2_sum": 52.8544594637661,
+              "chord2_mean": 0.06485209750155349,
+              "angle_degrees_quantiles": [
+                3.088839974353848,
+                12.225839327387183,
+                21.02998760812933,
+                33.543549992065,
+                49.595436664262095
+              ],
+              "tangent_risk": 64.54246864571991,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0000117434265543,
+              "minimum_radial_ratio": 0.19531603869175695,
+              "chord_risk_ratio_to_approx": 28.848736787793303,
+              "tangent_risk_ratio_to_approx": 55.10925504107752,
+              "hubs_chord_better_than_approx": 3
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.5543662041174282,
+              "chord2_mean": 0.001907197796463102,
+              "angle_degrees_quantiles": [
+                0.10694778637501332,
+                0.9293795995751457,
+                2.90035106658085,
+                11.369245616155832,
+                21.80401528377345
+              ],
+              "tangent_risk": 1.0454451271766232,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0013741917745838,
+              "minimum_radial_ratio": 0.3398708238081397,
+              "chord_risk_ratio_to_approx": 0.8483958014018812,
+              "tangent_risk_ratio_to_approx": 0.8926479472186855,
+              "hubs_chord_better_than_approx": 693
+            }
+          },
+          "pilot_temperature": 0.016197770833969116,
+          "pilot_temperature_relative_error": -0.00020786578860232385
+        }
+      ],
+      "full_temperature": 0.016201138496398926,
+      "seconds": 5.243090787000256,
+      "pilot_temperature_range": [
+        0.015720278024673462,
+        0.01751723885536194
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "n": 20000,
+      "m": 2048,
+      "replications": 16,
+      "baseline": {
+        "chord2_sum": 1.6908403103154082,
+        "chord2_mean": 0.002059488806717915,
+        "angle_degrees_quantiles": [
+          0.3176244509701451,
+          2.0822234204776993,
+          3.7758825327798644,
+          6.088825704307516,
+          12.541135104146367
+        ],
+        "tangent_risk": 1.6042482618337375,
+        "nonpositive_radial_hubs": 0,
+        "minimum_resultant_norm": 1.9110900968903661,
+        "minimum_radial_ratio": 0.6554499488401497
+      },
+      "theory": {
+        "B": 1.6042482618337375,
+        "V": 7.258998662524092e-05,
+        "uniform_replacement_expected_tangent_ratio": 0.8888655721400821,
+        "unbiased_expected_tangent_ratio": 7.9326450481493165,
+        "shrink_oracle_gamma": 0.1119489238192871,
+        "shrink_oracle_expected_tangent_ratio": 0.888051076180713
+      },
+      "aggregates": {
+        "UniformReplacement": {
+          "chord_ratio_mean": 0.8855618918024466,
+          "chord_ratio_min": 0.8603448605110682,
+          "chord_ratio_max": 0.9191197620612884,
+          "seeds_improved": 16,
+          "tangent_ratio_mean": 0.8901379419050004,
+          "seed0_chord_ratio": 0.9191197620612884,
+          "seeds_with_radial_flip": 0
+        },
+        "UnbiasedCorrection": {
+          "chord_ratio_mean": 7.478608107139155,
+          "chord_ratio_min": 5.516193486039784,
+          "chord_ratio_max": 8.980228238182473,
+          "seeds_improved": 0,
+          "tangent_ratio_mean": 8.008350369799563,
+          "seed0_chord_ratio": 5.516193486039784,
+          "seeds_with_radial_flip": 0
+        },
+        "ExactSubset": {
+          "chord_ratio_mean": 91.26743736044226,
+          "chord_ratio_min": 87.90656805952699,
+          "chord_ratio_max": 93.67266129494946,
+          "seeds_improved": 0,
+          "tangent_ratio_mean": 112.39774771894221,
+          "seed0_chord_ratio": 92.23703191267576,
+          "seeds_with_radial_flip": 0
+        },
+        "ShrinkOracle": {
+          "chord_ratio_mean": 0.8844830077024906,
+          "chord_ratio_min": 0.858997707613085,
+          "chord_ratio_max": 0.9178624392311273,
+          "seeds_improved": 16,
+          "tangent_ratio_mean": 0.8895174587342916,
+          "seed0_chord_ratio": 0.9178624392311273,
+          "seeds_with_radial_flip": 0
+        }
+      },
+      "all_replications": [
+        {
+          "rep": 0,
+          "seed": 2026093003,
+          "selected_sha256": "dc28deb088fa86eab531c27a84d01cddd0698909931fb1d966c6d5c97b60e337",
+          "correction_sum_sha256": "564f0fad3a8c26768d579892aa40cab0889b2729c81a5f87351c437ac500a148",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.554084743700733,
+              "chord2_mean": 0.0018929168619984567,
+              "angle_degrees_quantiles": [
+                0.0,
+                1.944826726764959,
+                3.631622492158074,
+                5.835563550714842,
+                11.785653930447499
+              ],
+              "tangent_risk": 1.481214290215166,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.675686031077123,
+              "chord_risk_ratio_to_approx": 0.9191197620612884,
+              "tangent_risk_ratio_to_approx": 0.9233073991441091,
+              "hubs_chord_better_than_approx": 491
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 9.327002305695341,
+              "chord2_mean": 0.01136053874018921,
+              "angle_degrees_quantiles": [
+                0.3176244509701451,
+                3.919606804905923,
+                8.86264811877241,
+                18.01693687319474,
+                36.18487157298336
+              ],
+              "tangent_risk": 9.040933559153197,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.6903827824552563,
+              "chord_risk_ratio_to_approx": 5.516193486039784,
+              "tangent_risk_ratio_to_approx": 5.635619981173581,
+              "hubs_chord_better_than_approx": 7
+            },
+            "ExactSubset": {
+              "chord2_sum": 155.9580916618009,
+              "chord2_mean": 0.18996113478903884,
+              "angle_degrees_quantiles": [
+                8.13120993329534,
+                23.360605391489337,
+                33.719665158526354,
+                43.76342149310415,
+                54.86123805491498
+              ],
+              "tangent_risk": 184.08868411525253,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.598480381727696,
+              "minimum_radial_ratio": 0.14756104823472457,
+              "chord_risk_ratio_to_approx": 92.23703191267576,
+              "tangent_risk_ratio_to_approx": 114.75074556404991,
+              "hubs_chord_better_than_approx": 0
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.5519588115764167,
+              "chord2_mean": 0.001890327419703309,
+              "angle_degrees_quantiles": [
+                0.21502503084642588,
+                1.9478278435505991,
+                3.6132865633548987,
+                5.829169131606716,
+                11.720133351694436
+              ],
+              "tangent_risk": 1.4800288268185926,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.6775730702146394,
+              "chord_risk_ratio_to_approx": 0.9178624392311273,
+              "tangent_risk_ratio_to_approx": 0.9225684465612849,
+              "hubs_chord_better_than_approx": 489
+            }
+          }
+        },
+        {
+          "rep": 1,
+          "seed": 2026094003,
+          "selected_sha256": "159218941dacafdcd8bb3c0a34263a98c7e1dbe642ed756e06932ddbeb29fbb0",
+          "correction_sum_sha256": "a01c4692402d4832856da5a709599ec94c8e06d36ce27061cc6cb4d27f22a3bd",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.5267028630845965,
+              "chord2_mean": 0.0018595649976669872,
+              "angle_degrees_quantiles": [
+                0.0,
+                1.9229137256781568,
+                3.5625729392351544,
+                5.849129992379805,
+                12.46273509843891
+              ],
+              "tangent_risk": 1.4511395176994535,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.626949614235127,
+              "chord_risk_ratio_to_approx": 0.9029255180223414,
+              "tangent_risk_ratio_to_approx": 0.9045604425593874,
+              "hubs_chord_better_than_approx": 529
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 12.38446463534278,
+              "chord2_mean": 0.015084609787262827,
+              "angle_degrees_quantiles": [
+                0.41319957293423676,
+                4.387625392135698,
+                10.014572872839723,
+                24.455342119862305,
+                44.17978976873076
+              ],
+              "tangent_risk": 11.909199562950548,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.3771263687129736,
+              "chord_risk_ratio_to_approx": 7.324443686247693,
+              "tangent_risk_ratio_to_approx": 7.423539015923711,
+              "hubs_chord_better_than_approx": 1
+            },
+            "ExactSubset": {
+              "chord2_sum": 158.38551169202248,
+              "chord2_mean": 0.1929177974324269,
+              "angle_degrees_quantiles": [
+                8.266927515233048,
+                23.759288889280977,
+                34.12819738482797,
+                44.02367427379812,
+                52.66470844805574
+              ],
+              "tangent_risk": 174.7501169318667,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 0.9999999976389802,
+              "minimum_radial_ratio": 0.16644325767231286,
+              "chord_risk_ratio_to_approx": 93.67266129494946,
+              "tangent_risk_ratio_to_approx": 108.92959717601215,
+              "hubs_chord_better_than_approx": 0
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.526077696428798,
+              "chord2_mean": 0.0018588035279278904,
+              "angle_degrees_quantiles": [
+                0.13758710773912616,
+                1.9170830882088372,
+                3.5691100199295813,
+                5.845804379377473,
+                12.46273509843891
+              ],
+              "tangent_risk": 1.4509152700376717,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.6242919235713813,
+              "chord_risk_ratio_to_approx": 0.902555780766857,
+              "tangent_risk_ratio_to_approx": 0.9044206589192134,
+              "hubs_chord_better_than_approx": 522
+            }
+          }
+        },
+        {
+          "rep": 2,
+          "seed": 2026095003,
+          "selected_sha256": "ab9f0fff17c2e51de75138a04c8e2322a84ffe1d67550591adfdc9b6eb1f9abd",
+          "correction_sum_sha256": "08a4d50aacaf74a4f5fa784325c99c10b24b031b5a5450246e45bf26e649d238",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.4957531297315496,
+              "chord2_mean": 0.0018218673930956756,
+              "angle_degrees_quantiles": [
+                0.2937134716769247,
+                1.902824699599555,
+                3.5293303742113658,
+                5.875133915552653,
+                12.541135104146367
+              ],
+              "tangent_risk": 1.4249717463989047,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.6554499488401497,
+              "chord_risk_ratio_to_approx": 0.8846211677154379,
+              "tangent_risk_ratio_to_approx": 0.8882488953237757,
+              "hubs_chord_better_than_approx": 556
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 12.390768215027222,
+              "chord2_mean": 0.015092287716232914,
+              "angle_degrees_quantiles": [
+                0.3609878437258853,
+                4.56547900602127,
+                10.488030543931758,
+                20.950454391679607,
+                40.81723327278517
+              ],
+              "tangent_risk": 12.669382398412958,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.5032353597860939,
+              "chord_risk_ratio_to_approx": 7.3281717613627615,
+              "tangent_risk_ratio_to_approx": 7.897395122579849,
+              "hubs_chord_better_than_approx": 3
+            },
+            "ExactSubset": {
+              "chord2_sum": 154.0595947904833,
+              "chord2_mean": 0.18764871472653263,
+              "angle_degrees_quantiles": [
+                8.766196258377944,
+                23.573761284812797,
+                33.35630035496362,
+                42.51109943786889,
+                51.87961396783015
+              ],
+              "tangent_risk": 171.36028206658355,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0000000100967918,
+              "minimum_radial_ratio": 0.07472827608128356,
+              "chord_risk_ratio_to_approx": 91.11421927346002,
+              "tangent_risk_ratio_to_approx": 106.81656084246588,
+              "hubs_chord_better_than_approx": 0
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.4934651425932637,
+              "chord2_mean": 0.001819080563450991,
+              "angle_degrees_quantiles": [
+                0.29515592732681134,
+                1.9021719098483632,
+                3.528956363135258,
+                5.872490704374826,
+                12.541135104146367
+              ],
+              "tangent_risk": 1.423516997431307,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.6554499488401497,
+              "chord_risk_ratio_to_approx": 0.8832680019999486,
+              "tangent_risk_ratio_to_approx": 0.8873420849489684,
+              "hubs_chord_better_than_approx": 544
+            }
+          }
+        },
+        {
+          "rep": 3,
+          "seed": 2026096003,
+          "selected_sha256": "b5ee61df529cf6db5c838e718e5a7fdccb83cf33575bb2f63316c3293326b2b6",
+          "correction_sum_sha256": "cc3ce0e90b0e0b2f0d7f387f9c5614d364fc8c595f0d0498b456cdbcf35c1696",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.4713861231039311,
+              "chord2_mean": 0.0017921877260705617,
+              "angle_degrees_quantiles": [
+                0.0,
+                1.9286700927509002,
+                3.5294268940463223,
+                5.8752088287864455,
+                9.960709711039332
+              ],
+              "tangent_risk": 1.4127382055484938,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9668022710734314,
+              "minimum_radial_ratio": 0.7398456907661577,
+              "chord_risk_ratio_to_approx": 0.8702099861987912,
+              "tangent_risk_ratio_to_approx": 0.8806231798148636,
+              "hubs_chord_better_than_approx": 545
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 13.13618467570939,
+              "chord2_mean": 0.016000224939962716,
+              "angle_degrees_quantiles": [
+                0.3176244509701451,
+                4.388605722607821,
+                10.92533158648869,
+                21.991334086364095,
+                48.06397383650675
+              ],
+              "tangent_risk": 13.611145907167064,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 2.572567950323828,
+              "minimum_radial_ratio": 0.49355617573150345,
+              "chord_risk_ratio_to_approx": 7.769027385713898,
+              "tangent_risk_ratio_to_approx": 8.484438619000796,
+              "hubs_chord_better_than_approx": 5
+            },
+            "ExactSubset": {
+              "chord2_sum": 154.94683949183047,
+              "chord2_mean": 0.18872940254790557,
+              "angle_degrees_quantiles": [
+                8.5196527020383,
+                23.509827318728593,
+                33.51220267335695,
+                47.25219742257358,
+                61.44245791336885
+              ],
+              "tangent_risk": 181.60391821457296,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 0.9999999788833027,
+              "minimum_radial_ratio": 0.06776582174725186,
+              "chord_risk_ratio_to_approx": 91.63895522630804,
+              "tangent_risk_ratio_to_approx": 113.20187936933803,
+              "hubs_chord_better_than_approx": 0
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.468591983485764,
+              "chord2_mean": 0.0017887843891422216,
+              "angle_degrees_quantiles": [
+                0.042068779722783875,
+                1.9322105421061044,
+                3.4984752580503575,
+                5.87453683318795,
+                9.78444467772569
+              ],
+              "tangent_risk": 1.411406532093063,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.972175746983189,
+              "minimum_radial_ratio": 0.7477156957497872,
+              "chord_risk_ratio_to_approx": 0.8685574708186451,
+              "tangent_risk_ratio_to_approx": 0.8797930879350018,
+              "hubs_chord_better_than_approx": 535
+            }
+          }
+        },
+        {
+          "rep": 4,
+          "seed": 2026097003,
+          "selected_sha256": "a1a1da2a8a1e05a234a386b56729c5a74a7e47e6fcb01f7caa0594c67974f56c",
+          "correction_sum_sha256": "c2db1913eff430f5776bd1530c13120c27afa2ca22e9963efc43eb4e9787a860",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.5301291366173158,
+              "chord2_mean": 0.0018637382906422847,
+              "angle_degrees_quantiles": [
+                0.2842204477006046,
+                1.9314466185157178,
+                3.556346623836742,
+                5.849933312819953,
+                12.072228706818178
+              ],
+              "tangent_risk": 1.4583064097431284,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9602601517666982,
+              "minimum_radial_ratio": 0.6738512165047404,
+              "chord_risk_ratio_to_approx": 0.9049518912474275,
+              "tangent_risk_ratio_to_approx": 0.9090278882871968,
+              "hubs_chord_better_than_approx": 529
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 10.92625636813078,
+              "chord2_mean": 0.013308473042790231,
+              "angle_degrees_quantiles": [
+                0.4111619665012719,
+                4.409410030545887,
+                9.806284596565837,
+                21.261336853006963,
+                36.231848459074754
+              ],
+              "tangent_risk": 11.340581937295987,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 2.5233339532368335,
+              "minimum_radial_ratio": 0.6902247841180438,
+              "chord_risk_ratio_to_approx": 6.462027372704761,
+              "tangent_risk_ratio_to_approx": 7.0690941091206945,
+              "hubs_chord_better_than_approx": 3
+            },
+            "ExactSubset": {
+              "chord2_sum": 150.64645550851532,
+              "chord2_mean": 0.1834914196206033,
+              "angle_degrees_quantiles": [
+                8.722805208236469,
+                23.19261305780437,
+                33.229273791383704,
+                41.23317542388106,
+                45.60267843138935
+              ],
+              "tangent_risk": 179.30230035908824,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.5403437064362935,
+              "minimum_radial_ratio": 0.14926941833143545,
+              "chord_risk_ratio_to_approx": 89.09561393199446,
+              "tangent_risk_ratio_to_approx": 111.76717757770021,
+              "hubs_chord_better_than_approx": 0
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.5290966096742882,
+              "chord2_mean": 0.0018624806451574764,
+              "angle_degrees_quantiles": [
+                0.2849224043001818,
+                1.9304893133955374,
+                3.5494208193578025,
+                5.84603438536014,
+                12.035680912946688
+              ],
+              "tangent_risk": 1.4579899381944716,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9650420149179153,
+              "minimum_radial_ratio": 0.6755671569647745,
+              "chord_risk_ratio_to_approx": 0.9043412321942168,
+              "tangent_risk_ratio_to_approx": 0.9088306173558915,
+              "hubs_chord_better_than_approx": 518
+            }
+          }
+        },
+        {
+          "rep": 5,
+          "seed": 2026098003,
+          "selected_sha256": "865558c9ca78d3db9de491483a8ef32efb1571f9d8560b716215c2aed488c297",
+          "correction_sum_sha256": "62880b7e1365d63a01b4ac77dd0bb0cf025e3f5c81dc68216c4b2b5eb9e17a80",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.495396779349492,
+              "chord2_mean": 0.0018214333487813544,
+              "angle_degrees_quantiles": [
+                0.0,
+                1.9100761480275332,
+                3.6110843987538015,
+                6.032034001694967,
+                12.43547959762627
+              ],
+              "tangent_risk": 1.4270489673497129,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9668022710734314,
+              "minimum_radial_ratio": 0.7243231181337131,
+              "chord_risk_ratio_to_approx": 0.8844104142930811,
+              "tangent_risk_ratio_to_approx": 0.8895437204454398,
+              "hubs_chord_better_than_approx": 555
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 12.56294739429338,
+              "chord2_mean": 0.015302006570393885,
+              "angle_degrees_quantiles": [
+                0.4111619665012719,
+                4.555765080395639,
+                10.968062958395237,
+                20.462187069144292,
+                36.79256899066038
+              ],
+              "tangent_risk": 13.24906773061748,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 2.572567950323828,
+              "minimum_radial_ratio": 0.6778358988108294,
+              "chord_risk_ratio_to_approx": 7.430002299832736,
+              "tangent_risk_ratio_to_approx": 8.258739028006252,
+              "hubs_chord_better_than_approx": 2
+            },
+            "ExactSubset": {
+              "chord2_sum": 152.690549120648,
+              "chord2_mean": 0.1859811804149184,
+              "angle_degrees_quantiles": [
+                8.857639214651744,
+                23.284056155431337,
+                33.190865026824675,
+                41.15857907511776,
+                53.964442602163736
+              ],
+              "tangent_risk": 177.6988874786611,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.5681534771889178,
+              "minimum_radial_ratio": 0.08550240898398893,
+              "chord_risk_ratio_to_approx": 90.30453567325067,
+              "tangent_risk_ratio_to_approx": 110.76769830845397,
+              "hubs_chord_better_than_approx": 0
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.4938884527374447,
+              "chord2_mean": 0.0018195961665498717,
+              "angle_degrees_quantiles": [
+                0.11177333691554381,
+                1.9115464604601644,
+                3.6057673279163875,
+                6.046542137640077,
+                12.435670560217297
+              ],
+              "tangent_risk": 1.4264541360430032,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.972175746983189,
+              "minimum_radial_ratio": 0.7240935014937206,
+              "chord_risk_ratio_to_approx": 0.8835183568924826,
+              "tangent_risk_ratio_to_approx": 0.889172935373789,
+              "hubs_chord_better_than_approx": 544
+            }
+          }
+        },
+        {
+          "rep": 6,
+          "seed": 2026099003,
+          "selected_sha256": "8a1dd4e3f0a2d5c162e2b287bc1b5a50690eb43694b9f17896e6a294044a80aa",
+          "correction_sum_sha256": "02483d4a72290d2fb4794e17c1f259ea4ed46ba08df68e7e44c242aa55276327",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.5144734793839891,
+              "chord2_mean": 0.0018446692806138724,
+              "angle_degrees_quantiles": [
+                0.3142671244231604,
+                1.918735435858457,
+                3.611167933243337,
+                5.885687197714258,
+                12.541135104146367
+              ],
+              "tangent_risk": 1.4354591353630481,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9602601517666982,
+              "minimum_radial_ratio": 0.6554499488401497,
+              "chord_risk_ratio_to_approx": 0.8956927925981847,
+              "tangent_risk_ratio_to_approx": 0.8947861559296597,
+              "hubs_chord_better_than_approx": 544
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 13.837261071470941,
+              "chord2_mean": 0.016854154776456687,
+              "angle_degrees_quantiles": [
+                0.3176244509701451,
+                4.41714190825643,
+                10.16389964535743,
+                23.28900565682856,
+                73.53975023604374
+              ],
+              "tangent_risk": 12.96941315215566,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 2.5233339532368335,
+              "minimum_radial_ratio": 0.2486874777732192,
+              "chord_risk_ratio_to_approx": 8.183659324333087,
+              "tangent_risk_ratio_to_approx": 8.084417767940081,
+              "hubs_chord_better_than_approx": 2
+            },
+            "ExactSubset": {
+              "chord2_sum": 148.63596881653316,
+              "chord2_mean": 0.18104259295558242,
+              "angle_degrees_quantiles": [
+                8.826003854826652,
+                23.037597948923075,
+                32.76278576990359,
+                43.44154678247761,
+                50.76014619912096
+              ],
+              "tangent_risk": 173.13548463105738,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 0.9999999547776554,
+              "minimum_radial_ratio": 0.06904041728568812,
+              "chord_risk_ratio_to_approx": 87.90656805952699,
+              "tangent_risk_ratio_to_approx": 107.92312433809634,
+              "hubs_chord_better_than_approx": 0
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.5139297395245486,
+              "chord2_mean": 0.0018440069908946999,
+              "angle_degrees_quantiles": [
+                0.3138867147633173,
+                1.9151730255814998,
+                3.5842600309519366,
+                5.881653724428438,
+                12.541135104146367
+              ],
+              "tangent_risk": 1.4352176964028867,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9650420149179153,
+              "minimum_radial_ratio": 0.6554499488401497,
+              "chord_risk_ratio_to_approx": 0.8953712129338466,
+              "tangent_risk_ratio_to_approx": 0.8946356561810201,
+              "hubs_chord_better_than_approx": 534
+            }
+          }
+        },
+        {
+          "rep": 7,
+          "seed": 2026100003,
+          "selected_sha256": "981715f2c31fc11b75d5bb7e4638683a27170900b414fc5f0db978e47752fad3",
+          "correction_sum_sha256": "465c8f55b4d0ba8e9282d7798d8af2ab17710590835523b326031b3e2b07ac24",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.525510922694417,
+              "chord2_mean": 0.0018581131823318113,
+              "angle_degrees_quantiles": [
+                0.2924748022162537,
+                1.9578284795222984,
+                3.5419922150945156,
+                5.919879014551061,
+                12.671419644430074
+              ],
+              "tangent_risk": 1.4493316264450613,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9730414225258284,
+              "minimum_radial_ratio": 0.6633115437791928,
+              "chord_risk_ratio_to_approx": 0.9022205783642864,
+              "tangent_risk_ratio_to_approx": 0.9034335027350452,
+              "hubs_chord_better_than_approx": 542
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 10.660637760772964,
+              "chord2_mean": 0.01298494246135562,
+              "angle_degrees_quantiles": [
+                0.41319957293423676,
+                4.2186783273022455,
+                10.082595048792983,
+                21.228696183287283,
+                30.663049915108445
+              ],
+              "tangent_risk": 11.421948299764638,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 2.618808389133238,
+              "minimum_radial_ratio": 0.6233928622186423,
+              "chord_risk_ratio_to_approx": 6.304934709525784,
+              "tangent_risk_ratio_to_approx": 7.119813417599574,
+              "hubs_chord_better_than_approx": 5
+            },
+            "ExactSubset": {
+              "chord2_sum": 156.38972396652474,
+              "chord2_mean": 0.19048687450246618,
+              "angle_degrees_quantiles": [
+                7.001515628912114,
+                23.952012842384132,
+                33.76839902635806,
+                43.69812881598852,
+                49.39219296814488
+              ],
+              "tangent_risk": 182.83139378076373,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 0.9999999971356118,
+              "minimum_radial_ratio": 0.12283769996092364,
+              "chord_risk_ratio_to_approx": 92.49230871326453,
+              "tangent_risk_ratio_to_approx": 113.96702002455538,
+              "hubs_chord_better_than_approx": 0
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.5240537806444006,
+              "chord2_mean": 0.0018563383442684537,
+              "angle_degrees_quantiles": [
+                0.2929420889270445,
+                1.958164712943688,
+                3.5385978989394826,
+                5.919879014551061,
+                12.691319883025518
+              ],
+              "tangent_risk": 1.4483795278947074,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.978977183457878,
+              "minimum_radial_ratio": 0.6640446470132847,
+              "chord_risk_ratio_to_approx": 0.90135879263495,
+              "tangent_risk_ratio_to_approx": 0.9028400169429736,
+              "hubs_chord_better_than_approx": 532
+            }
+          }
+        },
+        {
+          "rep": 8,
+          "seed": 2026101003,
+          "selected_sha256": "89fc1c8d6da69c10178ad3edbe84c7b2b7ff151062870e3cc48af2ea7f193466",
+          "correction_sum_sha256": "47450189674f3c22ecf106afb7d7df2387b21b643c3f79017d18b69c1f34f1e7",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.4963079270741346,
+              "chord2_mean": 0.0018225431511256207,
+              "angle_degrees_quantiles": [
+                0.0,
+                1.925401259726503,
+                3.587024139862604,
+                5.639628363171649,
+                12.541118861973295
+              ],
+              "tangent_risk": 1.4167082673687923,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.8800389412419802,
+              "minimum_radial_ratio": 0.6662255784064322,
+              "chord_risk_ratio_to_approx": 0.8849492870175388,
+              "tangent_risk_ratio_to_approx": 0.8830978976716625,
+              "hubs_chord_better_than_approx": 586
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 12.972231365861651,
+              "chord2_mean": 0.015800525415178623,
+              "angle_degrees_quantiles": [
+                0.3176244509701451,
+                4.739812569991319,
+                10.270866728930416,
+                22.997318695272646,
+                54.76498448085822
+              ],
+              "tangent_risk": 13.787486259266307,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.8326714285996364,
+              "minimum_radial_ratio": 0.5405338173231566,
+              "chord_risk_ratio_to_approx": 7.6720618066184025,
+              "tangent_risk_ratio_to_approx": 8.594359481185604,
+              "hubs_chord_better_than_approx": 4
+            },
+            "ExactSubset": {
+              "chord2_sum": 154.56590074217837,
+              "chord2_mean": 0.18826540894297,
+              "angle_degrees_quantiles": [
+                9.294881516935037,
+                23.231056155214674,
+                33.27996766502384,
+                45.521184045778334,
+                57.4093849772639
+              ],
+              "tangent_risk": 176.07767322473396,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 0.9999999699874289,
+              "minimum_radial_ratio": 0.1303040908637344,
+              "chord_risk_ratio_to_approx": 91.41365970470964,
+              "tangent_risk_ratio_to_approx": 109.75712264351667,
+              "hubs_chord_better_than_approx": 0
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.4953528277178392,
+              "chord2_mean": 0.0018213798145162476,
+              "angle_degrees_quantiles": [
+                0.16506231981017142,
+                1.9280557206031523,
+                3.5998202149479757,
+                5.623053157849918,
+                12.544678686029682
+              ],
+              "tangent_risk": 1.4159106454662325,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.8773887337020705,
+              "minimum_radial_ratio": 0.6672304188930853,
+              "chord_risk_ratio_to_approx": 0.884384420335293,
+              "tangent_risk_ratio_to_approx": 0.8826007041128251,
+              "hubs_chord_better_than_approx": 571
+            }
+          }
+        },
+        {
+          "rep": 9,
+          "seed": 2026102003,
+          "selected_sha256": "1d9d441e0ad83518469eab2a74c5b59f192984ec180cb2a78d466c504781b337",
+          "correction_sum_sha256": "bd92fdb72e50b9abd8105c9ca8c4898e7bed69eb7d433fa6a42b298f8bff163b",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.5216427235764725,
+              "chord2_mean": 0.0018534016121516108,
+              "angle_degrees_quantiles": [
+                0.30938217507139876,
+                1.9464068351253285,
+                3.520432505068963,
+                6.039627164756251,
+                12.541135104146367
+              ],
+              "tangent_risk": 1.43765425731528,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9602601517666982,
+              "minimum_radial_ratio": 0.6554499488401497,
+              "chord_risk_ratio_to_approx": 0.8999328406670327,
+              "tangent_risk_ratio_to_approx": 0.8961544740412982,
+              "hubs_chord_better_than_approx": 541
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 12.752012030883776,
+              "chord2_mean": 0.015532292364048449,
+              "angle_degrees_quantiles": [
+                0.41319957293423676,
+                4.129647321305884,
+                10.475172828332061,
+                19.19160356315395,
+                73.53975023604374
+              ],
+              "tangent_risk": 12.164898213739175,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 2.5233339532368335,
+              "minimum_radial_ratio": 0.2486874777732192,
+              "chord_risk_ratio_to_approx": 7.541819267666398,
+              "tangent_risk_ratio_to_approx": 7.582927470237104,
+              "hubs_chord_better_than_approx": 3
+            },
+            "ExactSubset": {
+              "chord2_sum": 155.03669172925044,
+              "chord2_mean": 0.1888388449808166,
+              "angle_degrees_quantiles": [
+                8.278807093639545,
+                23.547027745455267,
+                33.59750204998866,
+                41.69944178285815,
+                45.93455142003285
+              ],
+              "tangent_risk": 188.8423636959319,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.5472014314125095,
+              "minimum_radial_ratio": 0.07182021243718092,
+              "chord_risk_ratio_to_approx": 91.69209580787083,
+              "tangent_risk_ratio_to_approx": 117.71392756883867,
+              "hubs_chord_better_than_approx": 0
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.5205884548445243,
+              "chord2_mean": 0.0018521174845852915,
+              "angle_degrees_quantiles": [
+                0.31028184463069786,
+                1.943486576852088,
+                3.527081895215121,
+                6.054617941344666,
+                12.541135104146367
+              ],
+              "tangent_risk": 1.4366338535603376,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9650420149179153,
+              "minimum_radial_ratio": 0.6554499488401497,
+              "chord_risk_ratio_to_approx": 0.8993093230435669,
+              "tangent_risk_ratio_to_approx": 0.8955184105471256,
+              "hubs_chord_better_than_approx": 535
+            }
+          }
+        },
+        {
+          "rep": 10,
+          "seed": 2026103003,
+          "selected_sha256": "ba268b11d4ed77432a58c5811ca03f8115cab501bd79e6f98271b2121672b159",
+          "correction_sum_sha256": "8e4a3dd390a18025ff12d1be70ac6f842e08a10a0c55fe7e011bbd0b0b40e4bd",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.4621001140754206,
+              "chord2_mean": 0.0017808771182404636,
+              "angle_degrees_quantiles": [
+                0.3176244509701451,
+                1.9056237786772126,
+                3.5227702938225542,
+                5.522222777612262,
+                12.46273509843891
+              ],
+              "tangent_risk": 1.3953664845158782,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9602601517666982,
+              "minimum_radial_ratio": 0.7267854630408672,
+              "chord_risk_ratio_to_approx": 0.8647180370348998,
+              "tangent_risk_ratio_to_approx": 0.8697946058055274,
+              "hubs_chord_better_than_approx": 531
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 14.04329207919665,
+              "chord2_mean": 0.017105106064794946,
+              "angle_degrees_quantiles": [
+                0.3176244509701451,
+                4.396010649759277,
+                10.595575536573227,
+                26.34861732885564,
+                46.77059308567996
+              ],
+              "tangent_risk": 14.847909981444847,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 2.5233339532368335,
+              "minimum_radial_ratio": 0.5746131706388099,
+              "chord_risk_ratio_to_approx": 8.305510575730848,
+              "tangent_risk_ratio_to_approx": 9.255369218522905,
+              "hubs_chord_better_than_approx": 1
+            },
+            "ExactSubset": {
+              "chord2_sum": 153.34367231376223,
+              "chord2_mean": 0.18677670196560564,
+              "angle_degrees_quantiles": [
+                9.437352923536379,
+                23.369735070491604,
+                33.22947747777485,
+                43.53267618242448,
+                49.13218535884244
+              ],
+              "tangent_risk": 181.4007335956946,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 0.9999999971356118,
+              "minimum_radial_ratio": 0.08844307290859695,
+              "chord_risk_ratio_to_approx": 90.69080703733495,
+              "tangent_risk_ratio_to_approx": 113.0752252698995,
+              "hubs_chord_better_than_approx": 0
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.4598235745317143,
+              "chord2_mean": 0.0017781042320727336,
+              "angle_degrees_quantiles": [
+                0.3176244509701451,
+                1.9139308222277687,
+                3.5227702938225542,
+                5.535192401705801,
+                12.46273509843891
+              ],
+              "tangent_risk": 1.3940898330103606,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9650420149179153,
+              "minimum_radial_ratio": 0.7267854630408672,
+              "chord_risk_ratio_to_approx": 0.8633716416776224,
+              "tangent_risk_ratio_to_approx": 0.8689988115784804,
+              "hubs_chord_better_than_approx": 522
+            }
+          }
+        },
+        {
+          "rep": 11,
+          "seed": 2026104003,
+          "selected_sha256": "0a31a9ad7bceb0d14669aae65102c3973605974408d0b22a638f4b939b34e03e",
+          "correction_sum_sha256": "63c7b3be545a12cd57a5610e38ec9d0a16e4d0096677e2ceeca8bcf3334dcf4f",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.5027953113115755,
+              "chord2_mean": 0.0018304449589665963,
+              "angle_degrees_quantiles": [
+                0.29346992026614005,
+                1.9144489049900393,
+                3.5764227543412956,
+                5.872290026250122,
+                12.562167769584889
+              ],
+              "tangent_risk": 1.4249614516065292,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.6607472265766811,
+              "chord_risk_ratio_to_approx": 0.888786068171775,
+              "tangent_risk_ratio_to_approx": 0.8882424781172745,
+              "hubs_chord_better_than_approx": 553
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 12.847566179252619,
+              "chord2_mean": 0.015648679877286988,
+              "angle_degrees_quantiles": [
+                0.44660889726811254,
+                4.437764916002563,
+                10.158906870753892,
+                26.38236535986274,
+                42.26285923601717
+              ],
+              "tangent_risk": 13.192083750565182,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.5696769626361693,
+              "chord_risk_ratio_to_approx": 7.598332084273554,
+              "tangent_risk_ratio_to_approx": 8.22321835367673,
+              "hubs_chord_better_than_approx": 2
+            },
+            "ExactSubset": {
+              "chord2_sum": 157.7425694614867,
+              "chord2_mean": 0.19213467656697528,
+              "angle_degrees_quantiles": [
+                8.586954839175045,
+                23.919882095393422,
+                33.47923274872754,
+                44.00684725267769,
+                53.50469555385491
+              ],
+              "tangent_risk": 185.2194543472147,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 0.9999999839276748,
+              "minimum_radial_ratio": 0.07472957499656208,
+              "chord_risk_ratio_to_approx": 93.29241117516386,
+              "tangent_risk_ratio_to_approx": 115.4556054407062,
+              "hubs_chord_better_than_approx": 0
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.5017146591392467,
+              "chord2_mean": 0.001829128695662907,
+              "angle_degrees_quantiles": [
+                0.29250373132086116,
+                1.9131585329427092,
+                3.568391838025697,
+                5.868676728144557,
+                12.565712261742922
+              ],
+              "tangent_risk": 1.4241283706471535,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.6612412041309363,
+              "chord_risk_ratio_to_approx": 0.8881469468036979,
+              "tangent_risk_ratio_to_approx": 0.8877231813356009,
+              "hubs_chord_better_than_approx": 542
+            }
+          }
+        },
+        {
+          "rep": 12,
+          "seed": 2026105003,
+          "selected_sha256": "bf066c1eeede852037021303688081c1a0f7782ab2ac3979b8326645a7f71e28",
+          "correction_sum_sha256": "937e4fe1b03bcbcb01317dbb773068f6517a7ea4f9030c25b874af4a70596f79",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.466525426094623,
+              "chord2_mean": 0.001786267266863122,
+              "angle_degrees_quantiles": [
+                0.3142671244231604,
+                1.9159405979316533,
+                3.4735786327805687,
+                5.73169516851689,
+                12.625427585320288
+              ],
+              "tangent_risk": 1.4041922488171803,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9350402092177512,
+              "minimum_radial_ratio": 0.7035263725834069,
+              "chord_risk_ratio_to_approx": 0.8673352635063795,
+              "tangent_risk_ratio_to_approx": 0.8752961011234739,
+              "hubs_chord_better_than_approx": 567
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 13.817437151920027,
+              "chord2_mean": 0.01683000871123024,
+              "angle_degrees_quantiles": [
+                0.3176244509701451,
+                4.7838341706291345,
+                11.00798280920106,
+                24.164721483626845,
+                46.01240952514695
+              ],
+              "tangent_risk": 14.69940242026431,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 2.3941884645738654,
+              "minimum_radial_ratio": 0.5746131706388099,
+              "chord_risk_ratio_to_approx": 8.171935024036973,
+              "tangent_risk_ratio_to_approx": 9.162797785089786,
+              "hubs_chord_better_than_approx": 4
+            },
+            "ExactSubset": {
+              "chord2_sum": 154.56665662104257,
+              "chord2_mean": 0.18826632962368156,
+              "angle_degrees_quantiles": [
+                8.161233058987222,
+                23.45118331143768,
+                33.610526129749964,
+                41.76786575179783,
+                46.703736269605834
+              ],
+              "tangent_risk": 184.64611288759903,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 0.9999999671058662,
+              "minimum_radial_ratio": 0.11407052117880523,
+              "chord_risk_ratio_to_approx": 91.41410674802863,
+              "tangent_risk_ratio_to_approx": 115.09821595601365,
+              "hubs_chord_better_than_approx": 0
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.4646253472892425,
+              "chord2_mean": 0.0017839529199625366,
+              "angle_degrees_quantiles": [
+                0.3138867147633173,
+                1.922842194644892,
+                3.4750743345000403,
+                5.7338325791172124,
+                12.641645114763033
+              ],
+              "tangent_risk": 1.4034590998114018,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.937621261673538,
+              "minimum_radial_ratio": 0.7080095572301659,
+              "chord_risk_ratio_to_approx": 0.8662115152767043,
+              "tangent_risk_ratio_to_approx": 0.8748390964171446,
+              "hubs_chord_better_than_approx": 557
+            }
+          }
+        },
+        {
+          "rep": 13,
+          "seed": 2026106003,
+          "selected_sha256": "4a0236ecef9d5f896aea8064a0348b65077b2bc9a0219b9f0e26dcc8c9db4321",
+          "correction_sum_sha256": "53cd439b4bf5b9fb96e99ce7fcfda306736fb1372eac90347d3dcaf210ab6979",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.460766765357632,
+              "chord2_mean": 0.0017792530637729988,
+              "angle_degrees_quantiles": [
+                1.2074182697257333e-06,
+                1.936308156150198,
+                3.5241704512099696,
+                5.575738674870763,
+                9.835649456635608
+              ],
+              "tangent_risk": 1.4139917349289668,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.7110622503358655,
+              "chord_risk_ratio_to_approx": 0.863929465394128,
+              "tangent_risk_ratio_to_approx": 0.8814045609827884,
+              "hubs_chord_better_than_approx": 526
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 11.778260464753124,
+              "chord2_mean": 0.014346236863280298,
+              "angle_degrees_quantiles": [
+                0.3176244509701451,
+                4.361777022313248,
+                10.244722671032148,
+                21.32205512211741,
+                34.42965877199864
+              ],
+              "tangent_risk": 12.332429612376693,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.6458460490755892,
+              "chord_risk_ratio_to_approx": 6.965921259918399,
+              "tangent_risk_ratio_to_approx": 7.68735731605537,
+              "hubs_chord_better_than_approx": 1
+            },
+            "ExactSubset": {
+              "chord2_sum": 152.8906433571611,
+              "chord2_mean": 0.1862249005568345,
+              "angle_degrees_quantiles": [
+                8.97873239530788,
+                23.56829668310946,
+                33.75954875894642,
+                42.61299920393773,
+                46.706852994475796
+              ],
+              "tangent_risk": 182.1972942422366,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 0.9999999633642499,
+              "minimum_radial_ratio": 0.08057443160841837,
+              "chord_risk_ratio_to_approx": 90.4228757880991,
+              "tangent_risk_ratio_to_approx": 113.57175730019232,
+              "hubs_chord_better_than_approx": 0
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.4561155499929588,
+              "chord2_mean": 0.0017735877588221179,
+              "angle_degrees_quantiles": [
+                0.0582665679898617,
+                1.9297017792851654,
+                3.5241704512099696,
+                5.5573373749441854,
+                9.615172979052174
+              ],
+              "tangent_risk": 1.4112394955757648,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.716248164695219,
+              "chord_risk_ratio_to_approx": 0.8611786347353737,
+              "tangent_risk_ratio_to_approx": 0.8796889665709509,
+              "hubs_chord_better_than_approx": 517
+            }
+          }
+        },
+        {
+          "rep": 14,
+          "seed": 2026107003,
+          "selected_sha256": "dc7440556a264f1e9c100a1dd47f21432d05db454fcfae5986fb471f1f873acf",
+          "correction_sum_sha256": "fa53109f6993b62030dd672e2c4ec064a90e71fc7a07547e5b1ca0123465326e",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.454705770924801,
+              "chord2_mean": 0.0017718706101398306,
+              "angle_degrees_quantiles": [
+                0.29145812096905444,
+                1.9003910103972863,
+                3.5065042791998686,
+                5.919879014551061,
+                10.435266133206007
+              ],
+              "tangent_risk": 1.4022661198157942,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.6447120356387449,
+              "chord_risk_ratio_to_approx": 0.8603448605110682,
+              "tangent_risk_ratio_to_approx": 0.8740954584005175,
+              "hubs_chord_better_than_approx": 546
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 15.184131900951645,
+              "chord2_mean": 0.018494679538308946,
+              "angle_degrees_quantiles": [
+                0.44660889726811254,
+                4.511253241999201,
+                10.79427092698349,
+                26.100098511521576,
+                57.23737336873747
+              ],
+              "tangent_risk": 14.87673039573801,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.369417252663947,
+              "chord_risk_ratio_to_approx": 8.980228238182473,
+              "tangent_risk_ratio_to_approx": 9.273334277285207,
+              "hubs_chord_better_than_approx": 2
+            },
+            "ExactSubset": {
+              "chord2_sum": 155.55307232750403,
+              "chord2_mean": 0.1894678103867284,
+              "angle_degrees_quantiles": [
+                9.049816187673336,
+                23.193124025115832,
+                33.51563268182735,
+                42.7484164785297,
+                46.78387009501581
+              ],
+              "tangent_risk": 181.02498610775393,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 0.9999999976389802,
+              "minimum_radial_ratio": 0.181694430147672,
+              "chord_risk_ratio_to_approx": 91.9974946057959,
+              "tangent_risk_ratio_to_approx": 112.8410049831272,
+              "hubs_chord_better_than_approx": 0
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.452427950500733,
+              "chord2_mean": 0.001769096163825497,
+              "angle_degrees_quantiles": [
+                0.29131661265045394,
+                1.9051059768818415,
+                3.4985588659791005,
+                5.919879014551061,
+                10.293383796002653
+              ],
+              "tangent_risk": 1.4015869462120032,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.6437107122487221,
+              "chord_risk_ratio_to_approx": 0.858997707613085,
+              "tangent_risk_ratio_to_approx": 0.873672098986673,
+              "hubs_chord_better_than_approx": 538
+            }
+          }
+        },
+        {
+          "rep": 15,
+          "seed": 2026108003,
+          "selected_sha256": "b12b0a3bb2df9c587f71953d4de31beea7026b00b142b5c223ffc433e4fa2c5d",
+          "correction_sum_sha256": "c21f1f9cb86ea85e6f85784409b8b68abd34d65fc7c70e3040688cec534f70c4",
+          "methods": {
+            "UniformReplacement": {
+              "chord2_sum": 1.4792186869392978,
+              "chord2_mean": 0.0018017279987080363,
+              "angle_degrees_quantiles": [
+                0.0,
+                1.9044263113471191,
+                3.532133191377657,
+                6.035931680904435,
+                11.663690141480775
+              ],
+              "tangent_risk": 1.4126854743623278,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.6509454980654659,
+              "chord_risk_ratio_to_approx": 0.874842336035486,
+              "tangent_risk_ratio_to_approx": 0.8805903100979872,
+              "hubs_chord_better_than_approx": 547
+            },
+            "UnbiasedCorrection": {
+              "chord2_sum": 13.701659242377628,
+              "chord2_mean": 0.016688988114954482,
+              "angle_degrees_quantiles": [
+                0.4111619665012719,
+                4.455278050896671,
+                10.949058133351441,
+                25.609350932542142,
+                38.20917627778892
+              ],
+              "tangent_risk": 13.445501393592235,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.5965891645759787,
+              "chord_risk_ratio_to_approx": 8.10346143203892,
+              "tangent_risk_ratio_to_approx": 8.381184953395767,
+              "hubs_chord_better_than_approx": 4
+            },
+            "ExactSubset": {
+              "chord2_sum": 153.68665213081238,
+              "chord2_mean": 0.1871944605734621,
+              "angle_degrees_quantiles": [
+                8.584222015877721,
+                23.117596232508856,
+                33.13608789991252,
+                45.47335687021466,
+                61.07216331336898
+              ],
+              "tangent_risk": 180.84257691522873,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.0000000038934431,
+              "minimum_radial_ratio": 0.0729764281642408,
+              "chord_risk_ratio_to_approx": 90.89365281464326,
+              "tangent_risk_ratio_to_approx": 112.72730114010936,
+              "hubs_chord_better_than_approx": 0
+            },
+            "ShrinkOracle": {
+              "chord2_sum": 1.4766017907169688,
+              "chord2_mean": 0.0017985405489853456,
+              "angle_degrees_quantiles": [
+                0.11177333691554381,
+                1.9098428126650946,
+                3.527081895215121,
+                6.031568340930032,
+                11.594696358833634
+              ],
+              "tangent_risk": 1.4111522235250507,
+              "nonpositive_radial_hubs": 0,
+              "minimum_resultant_norm": 1.9110900968903661,
+              "minimum_radial_ratio": 0.6505254525840676,
+              "chord_risk_ratio_to_approx": 0.8732946462824301,
+              "tangent_risk_ratio_to_approx": 0.8796345659817214,
+              "hubs_chord_better_than_approx": 541
+            }
+          }
+        }
+      ],
+      "full_temperature": null,
+      "seconds": 1.9092462620001243
+    }
+  },
+  "seconds": 7.254982603999906,
+  "methods": [
+    "UniformReplacement",
+    "UnbiasedCorrection",
+    "ExactSubset",
+    "ShrinkOracle"
+  ],
+  "new_GT": 0,
+  "new_searches": 0,
+  "new_candidate_profiles_exported": 0,
+  "new_performance_points": 0,
+  "profile_vectors_in_memory_only": 128,
+  "selection": "fixed seed0 for any next candidate, never best seed"
+}

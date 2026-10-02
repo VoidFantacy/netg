@@ -1,0 +1,41 @@
+{
+  "status": "FROZEN_TEMPERATURE_MODELS_AND_PRIMARY_FULL_COST_REPRODUCED",
+  "dataset": "webvid2_5m_light_v1",
+  "methods": {
+    "HybridRectifiedCDF": {
+      "temperature": 0.016385257244110107,
+      "profile_sha256": "ab8eb1862225ffc7a2225c61ed73aa200050bb20f8ad8a2e95429912f640f92e",
+      "assignment_sha256": "a7d4f6e4bac32f05a58e120dd9c2a38d046810b3748f532b77bb31b08ca8d3e2",
+      "W_bit_independent_recovery": true,
+      "minimum_resultant_norm": 1.0013947070536258,
+      "graph_all_labels_vectors": 815
+    },
+    "HybridApproxMedian": {
+      "temperature": 0.01631888747215271,
+      "profile_sha256": "a1a8bdbdb29a1016d86c7c08fdc809db54a2969d9d134a58c0dcf45dfe0cb441",
+      "assignment_sha256": "7500ec54a54cc2b3e61c0c8efa7109af963b2718dcf6c84982dcb66249ff26a9",
+      "W_bit_independent_recovery": true,
+      "minimum_resultant_norm": 1.0013873799774793,
+      "graph_all_labels_vectors": 815
+    }
+  },
+  "primary": "HybridRectifiedCDF",
+  "primary_complete_build_wall_seconds": 121.43196683499991,
+  "control_incremental_wall_seconds": 3.007318578000195,
+  "job_wall_seconds": {
+    "webvid2_5m_light_v1_exact": 53.5035808749999,
+    "webvid2_5m_light_v1_teacher": 64.72031613400031,
+    "webvid2_5m_light_v1_profile": 3.005935438000961,
+    "webvid2_5m_light_v1_router": 0.20079110900041997,
+    "webvid2_5m_light_v1_control_profile": 2.8058672580009443,
+    "webvid2_5m_light_v1_control_router": 0.20086027199977252
+  },
+  "new_exact_GT": 2863,
+  "new_teacher_NSG": 20032,
+  "new_audit_ANN": 1024,
+  "new_profiles": 2,
+  "new_graphs": 2,
+  "new_online_performance": false,
+  "default_changed": false,
+  "scope": "primary from query/base/index only; includes loads and I/O, excludes public bottom index original construction, embedding, tool preparation and audits; control only incremental"
+}

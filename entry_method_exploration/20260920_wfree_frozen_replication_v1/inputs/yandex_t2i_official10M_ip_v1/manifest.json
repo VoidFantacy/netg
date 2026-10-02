@@ -1,0 +1,90 @@
+{
+  "status": "PASS_SOURCE_AND_DEDUP",
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "n": 4096,
+  "dimension": 200,
+  "source": {
+    "url": "https://storage.yandexcloud.net/yandex-research/ann-datasets/T2I/query.learn.50M.fbin",
+    "range": [
+      1600000008,
+      1616000007
+    ],
+    "status": 206,
+    "headers": {
+      "Server": "nginx",
+      "Date": "Sun, 20 Sep 2026 02:36:01 GMT",
+      "Content-Type": "application/octet-stream",
+      "Content-Length": "16000000",
+      "Connection": "close",
+      "Accept-Ranges": "bytes",
+      "Content-Range": "bytes 1600000008-1616000007/40000000008",
+      "Etag": "\"159b543eb212a228837a7a8908a3075d-4769\"",
+      "Last-Modified": "Sat, 01 May 2021 18:54:01 GMT",
+      "X-Amz-Request-Id": "2d17221b94b3081d"
+    },
+    "sha256": "bb183d57494a848c397486977199e0c57ed50fdaeec1333db25ab9cf108f6086",
+    "header_verification": {
+      "url": "https://storage.yandexcloud.net/yandex-research/ann-datasets/T2I/query.learn.50M.fbin",
+      "range": [
+        0,
+        12807
+      ],
+      "status": 206,
+      "headers": {
+        "Server": "nginx",
+        "Date": "Sun, 20 Sep 2026 02:35:59 GMT",
+        "Content-Type": "application/octet-stream",
+        "Content-Length": "12808",
+        "Connection": "close",
+        "Accept-Ranges": "bytes",
+        "Content-Range": "bytes 0-12807/40000000008",
+        "Etag": "\"159b543eb212a228837a7a8908a3075d-4769\"",
+        "Last-Modified": "Sat, 01 May 2021 18:54:01 GMT",
+        "X-Amz-Request-Id": "73cc8487207d67d0"
+      },
+      "sha256": "9be20a2058aa1b6b2960ddeee6aeb95ab796ee7f9ba718060e339e2505eb9a0c"
+    },
+    "local_prefix_bytes_match": true,
+    "source_rows": [
+      2000000,
+      2020000
+    ]
+  },
+  "excluded_files": [
+    {
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.aco_train.fvecs",
+      "rows": 5000,
+      "sha256": "d9146b417777e49d175f56071f6c1a90ccbd7a51c767f8cf0f1d088cc7dfe727"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs",
+      "rows": 30000,
+      "sha256": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.test.public100K.fvecs",
+      "rows": 100000,
+      "sha256": "d5c1079755a1bef7db62f63f1e8b041e3035024e072ac5db79ddfb66689b42a2"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.validation.fvecs",
+      "rows": 10000,
+      "sha256": "f84e695822f4b0fd303782f9ff5c8c92e5149bbd7f46d500250f40030e35871b"
+    }
+  ],
+  "duplicates_skipped": 0,
+  "invalid_skipped": 0,
+  "new_rows_unique": true,
+  "new_vs_all_known_formal_splits_byte_overlap": 0,
+  "selection": "source order, no labels or model outputs",
+  "created_unix": 1789871765.1670837,
+  "seconds": 6.70561408996582,
+  "files": {
+    "remote_prefix.bin": "9be20a2058aa1b6b2960ddeee6aeb95ab796ee7f9ba718060e339e2505eb9a0c",
+    "queries.f32": "c79e79c090ca845f66ab723e0aae621a14d81cc5a813c58c393ad2b1eac4948f",
+    "queries.fvecs": "17c664c8e9209e2aab09656c29b3b661723c321387c75cf77de2700bee083eff",
+    "candidate_source.f32": "bb183d57494a848c397486977199e0c57ed50fdaeec1333db25ab9cf108f6086",
+    "source_rows.i64": "9e1e633d35bd2c60c22c94159ee93f4ccb1994243d844c4f4a25b31b74660f3d"
+  },
+  "scope": "new source rows and no byte duplicates against all four registered splits; not a claim of semantic independence or exhaustive unregistered historical exposure"
+}

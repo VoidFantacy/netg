@@ -1,0 +1,177 @@
+{
+  "anchor": {
+    "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+    "name": "GT10-soft-t1"
+  },
+  "audit_reference": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/webvid2_5m_light_v1",
+  "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+  "base_n": 2505000,
+  "dataset": "webvid2_5m_light_v1",
+  "dataset_order": 0,
+  "dimension": 512,
+  "gt": "/data/netg/ACSG/entry_method_exploration/20260920_entry_id_pilot_v1/inputs/webvid2_5m_light_v1/audit/gt.i64",
+  "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "max_search_calls": 3000000,
+  "mode": "evaluate",
+  "models": [
+    {
+      "edits": [],
+      "name": "GT10"
+    },
+    {
+      "edits": [
+        [
+          172133,
+          2030673
+        ],
+        [
+          445987,
+          1320380
+        ],
+        [
+          541027,
+          720692
+        ],
+        [
+          551689,
+          235208
+        ],
+        [
+          552500,
+          1739091
+        ],
+        [
+          614660,
+          1388019
+        ],
+        [
+          620342,
+          14756
+        ],
+        [
+          929935,
+          187638
+        ],
+        [
+          1188444,
+          582650
+        ],
+        [
+          1830781,
+          1701870
+        ],
+        [
+          2019351,
+          837654
+        ],
+        [
+          2057114,
+          746591
+        ],
+        [
+          2074280,
+          1759723
+        ],
+        [
+          2221460,
+          769908
+        ],
+        [
+          2426387,
+          1233883
+        ],
+        [
+          2481013,
+          1366170
+        ]
+      ],
+      "name": "Cost"
+    },
+    {
+      "edits": [
+        [
+          551689,
+          235208
+        ],
+        [
+          588652,
+          1718000
+        ],
+        [
+          803973,
+          550683
+        ],
+        [
+          813436,
+          1888946
+        ],
+        [
+          909313,
+          811841
+        ],
+        [
+          929935,
+          1396290
+        ],
+        [
+          932606,
+          940272
+        ],
+        [
+          1143386,
+          2379151
+        ],
+        [
+          1444189,
+          552563
+        ],
+        [
+          1476177,
+          1418711
+        ],
+        [
+          1528528,
+          1437958
+        ],
+        [
+          1809078,
+          1575082
+        ],
+        [
+          1817477,
+          1317491
+        ],
+        [
+          1937441,
+          134852
+        ],
+        [
+          2158603,
+          1574403
+        ],
+        [
+          2410760,
+          2379363
+        ]
+      ],
+      "name": "RecallControl"
+    }
+  ],
+  "n": 4096,
+  "points": [
+    {
+      "K": 1,
+      "L": 128
+    },
+    {
+      "K": 100,
+      "L": 128
+    }
+  ],
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260920_entry_id_pilot_v1/inputs/webvid2_5m_light_v1/audit/queries.f32",
+  "repeats": 3,
+  "seconds_cap": 7200,
+  "threads": 1
+}

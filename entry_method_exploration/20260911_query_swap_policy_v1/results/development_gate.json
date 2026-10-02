@@ -1,0 +1,63 @@
+{
+  "status": "STOP_DUAL_DEVELOPMENT_GATE",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "points": [
+        {
+          "phase": "cal",
+          "method": "rl_20260918",
+          "recall_delta_pp": -0.17578125,
+          "total_NDC_change_pct": 0.21618286330360448,
+          "recall_pass": false,
+          "NDC_pass": true,
+          "pass_point": false
+        },
+        {
+          "phase": "audit",
+          "method": "rl_20260918",
+          "recall_delta_pp": -0.46875,
+          "total_NDC_change_pct": 0.38762299036272374,
+          "recall_pass": false,
+          "NDC_pass": true,
+          "pass_point": false
+        }
+      ],
+      "mean_RL_minus_random_utility": 0.026818782544990483,
+      "mean_RL_minus_exact_utility": -0.018747583625823936,
+      "random_pass": true,
+      "development_pass": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "points": [
+        {
+          "phase": "cal",
+          "method": "rl_20260918",
+          "recall_delta_pp": 0.72265625,
+          "total_NDC_change_pct": 0.7798161235718748,
+          "recall_pass": true,
+          "NDC_pass": true,
+          "pass_point": true
+        },
+        {
+          "phase": "audit",
+          "method": "rl_20260918",
+          "recall_delta_pp": 0.390625,
+          "total_NDC_change_pct": 0.2831639973218003,
+          "recall_pass": true,
+          "NDC_pass": true,
+          "pass_point": true
+        }
+      ],
+      "mean_RL_minus_random_utility": 0.091434025202051,
+      "mean_RL_minus_exact_utility": 0.007277207456706936,
+      "random_pass": true,
+      "development_pass": true
+    }
+  ],
+  "full_frontier_run": false,
+  "default_replaced": false,
+  "conclusion": "QUERY_SWAP_POLICY_COMPLETE_YANDEX_SIGNAL_WEBVID_AND_COST_NO_GO",
+  "single_L_wall_is_not_frontier": true
+}

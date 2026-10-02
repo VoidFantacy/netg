@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "dataset": "webvid2_5m_light_v1",
+  "raw_drifts": {
+    "single": 0.00022196702947550675,
+    "multi": 0.00023355158952226353
+  },
+  "target_drift": 0.00022196702947550675,
+  "matched_smaller": "single",
+  "matched_larger": "multi",
+  "cal_used": false,
+  "audit_used": false,
+  "validation_used": false,
+  "optimizer_steps": 0,
+  "NSG_calls": 0,
+  "alpha": 0.9748813241239869,
+  "actual_drift": 0.00022196702778588668,
+  "relative_error": 7.612031720578838e-09,
+  "canonical_models": [
+    {
+      "name": "single",
+      "W": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/models/webvid2_5m_light_v1/single/W.f32",
+        "bytes": 1669120,
+        "mtime_ns": 1789098726446738198,
+        "sha256": "eadc42dc8648e81863a503c5d6de4fdaf714d101d16ffa71b963d0c3c7a534c9"
+      }
+    },
+    {
+      "name": "multi",
+      "W": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/models/webvid2_5m_light_v1/multi/W.f32",
+        "bytes": 1669120,
+        "mtime_ns": 1789098733982756443,
+        "sha256": "8a89db5d21ce4a17b80feb6214c3ab93b290de6987701136e1e1678015816e85"
+      }
+    },
+    {
+      "name": "multi_matched",
+      "W": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/models/webvid2_5m_light_v1/multi_matched/W.f32",
+        "bytes": 1669120,
+        "mtime_ns": 1789098854691050288,
+        "sha256": "b7974dc0b2223a0def2f5c3874f60e2951ea88276743810ae0366202239723a0"
+      }
+    }
+  ],
+  "aliases": {
+    "single_matched": "single"
+  }
+}

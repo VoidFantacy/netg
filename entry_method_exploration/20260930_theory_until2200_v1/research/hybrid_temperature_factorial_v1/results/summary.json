@@ -1,0 +1,749 @@
+{
+  "status": "COMPUTED_PENDING_AUDIT",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "points": [
+        {
+          "K": 1,
+          "L": 1000,
+          "methods": [
+            {
+              "method": "GT10-soft-t1",
+              "recall": 0.904541015625,
+              "QPS": 430.6587434375258,
+              "seconds": [
+                9.368425762,
+                9.480104516,
+                9.684502401
+              ],
+              "QPS_each_round": [
+                437.2132633653462,
+                432.0627471023126,
+                422.94377453786956
+              ],
+              "graph_ndc_mean": 10234.59521484375,
+              "route_ndc_mean": 112.258544921875
+            },
+            {
+              "method": "ApproxTarget10",
+              "recall": 0.903564453125,
+              "QPS": 431.52672491361045,
+              "seconds": [
+                9.430171533,
+                9.427204658,
+                9.618264576
+              ],
+              "QPS_each_round": [
+                434.3505296448143,
+                434.487225916338,
+                425.85644922063744
+              ],
+              "graph_ndc_mean": 10234.263916015625,
+              "route_ndc_mean": 111.0693359375
+            },
+            {
+              "method": "HybridFixedTemperature",
+              "recall": 0.90478515625,
+              "QPS": 432.8040410800888,
+              "seconds": [
+                9.390096701,
+                9.481986603,
+                9.519518515
+              ],
+              "QPS_each_round": [
+                436.20424053394424,
+                431.9769866268393,
+                430.2738624380941
+              ],
+              "graph_ndc_mean": 10235.508544921875,
+              "route_ndc_mean": 112.136474609375
+            },
+            {
+              "method": "ApproxPilotTemperature",
+              "recall": 0.903564453125,
+              "QPS": 432.5499822131632,
+              "seconds": [
+                9.405495901,
+                9.410643177,
+                9.59213859
+              ],
+              "QPS_each_round": [
+                435.49006273709716,
+                435.2518656759607,
+                427.01634902045345
+              ],
+              "graph_ndc_mean": 10233.746826171875,
+              "route_ndc_mean": 113.039794921875
+            },
+            {
+              "method": "HybridPilotTemperature",
+              "recall": 0.904052734375,
+              "QPS": 433.23330264304343,
+              "seconds": [
+                9.370429052,
+                9.431447419,
+                9.561594031
+              ],
+              "QPS_each_round": [
+                437.11979219625596,
+                434.29177071468973,
+                428.38045484050105
+              ],
+              "graph_ndc_mean": 10233.58203125,
+              "route_ndc_mean": 111.5234375
+            }
+          ],
+          "comparisons": [
+            {
+              "method": "ApproxTarget10",
+              "reference": "GT10-soft-t1",
+              "delta_recall_pp": -0.09765625,
+              "descriptive_95_interval_pp": [
+                -0.244140625,
+                0.048828125
+              ],
+              "positive_queries": 3,
+              "negative_queries": 7,
+              "rescue_members": 3,
+              "damage_members": 7,
+              "entry_set_changes": 1111,
+              "entry_order_changes": 1111,
+              "output_id_changes": 13,
+              "QPS_change_pct": 0.20154739438387193
+            },
+            {
+              "method": "HybridFixedTemperature",
+              "reference": "GT10-soft-t1",
+              "delta_recall_pp": 0.0244140625,
+              "descriptive_95_interval_pp": [
+                -0.1220703125,
+                0.1953125
+              ],
+              "positive_queries": 6,
+              "negative_queries": 5,
+              "rescue_members": 6,
+              "damage_members": 5,
+              "entry_set_changes": 1060,
+              "entry_order_changes": 1060,
+              "output_id_changes": 14,
+              "QPS_change_pct": 0.49814329216659736
+            },
+            {
+              "method": "HybridFixedTemperature",
+              "reference": "ApproxTarget10",
+              "delta_recall_pp": 0.1220703125,
+              "descriptive_95_interval_pp": [
+                0.0244140625,
+                0.244140625
+              ],
+              "positive_queries": 5,
+              "negative_queries": 0,
+              "rescue_members": 5,
+              "damage_members": 0,
+              "entry_set_changes": 288,
+              "entry_order_changes": 288,
+              "output_id_changes": 5,
+              "QPS_change_pct": 0.29599931886814534
+            },
+            {
+              "method": "ApproxPilotTemperature",
+              "reference": "GT10-soft-t1",
+              "delta_recall_pp": -0.09765625,
+              "descriptive_95_interval_pp": [
+                -0.2685546875,
+                0.0732421875
+              ],
+              "positive_queries": 4,
+              "negative_queries": 8,
+              "rescue_members": 4,
+              "damage_members": 8,
+              "entry_set_changes": 1127,
+              "entry_order_changes": 1127,
+              "output_id_changes": 15,
+              "QPS_change_pct": 0.4391502098718636
+            },
+            {
+              "method": "ApproxPilotTemperature",
+              "reference": "ApproxTarget10",
+              "delta_recall_pp": 0.0,
+              "descriptive_95_interval_pp": [
+                -0.0732421875,
+                0.0732421875
+              ],
+              "positive_queries": 1,
+              "negative_queries": 1,
+              "rescue_members": 1,
+              "damage_members": 1,
+              "entry_set_changes": 142,
+              "entry_order_changes": 142,
+              "output_id_changes": 2,
+              "QPS_change_pct": 0.23712489643779033
+            },
+            {
+              "method": "HybridPilotTemperature",
+              "reference": "GT10-soft-t1",
+              "delta_recall_pp": -0.048828125,
+              "descriptive_95_interval_pp": [
+                -0.2197265625,
+                0.1220703125
+              ],
+              "positive_queries": 5,
+              "negative_queries": 7,
+              "rescue_members": 5,
+              "damage_members": 7,
+              "entry_set_changes": 1088,
+              "entry_order_changes": 1088,
+              "output_id_changes": 15,
+              "QPS_change_pct": 0.5978188634851556
+            },
+            {
+              "method": "HybridPilotTemperature",
+              "reference": "ApproxTarget10",
+              "delta_recall_pp": 0.048828125,
+              "descriptive_95_interval_pp": [
+                -0.048828125,
+                0.146484375
+              ],
+              "positive_queries": 3,
+              "negative_queries": 1,
+              "rescue_members": 3,
+              "damage_members": 1,
+              "entry_set_changes": 321,
+              "entry_order_changes": 321,
+              "output_id_changes": 4,
+              "QPS_change_pct": 0.39547440075111684
+            }
+          ],
+          "interaction": {
+            "temperature_by_replacement_delta_pp": -0.0732421875,
+            "descriptive_95_interval_pp": [
+              -0.1708984375,
+              0.0
+            ]
+          }
+        },
+        {
+          "K": 100,
+          "L": 1250,
+          "methods": [
+            {
+              "method": "GT10-soft-t1",
+              "recall": 0.9058154296875,
+              "QPS": 342.713510582565,
+              "seconds": [
+                11.836095436,
+                12.029486108,
+                11.989439109
+              ],
+              "QPS_each_round": [
+                346.0600687234945,
+                340.4966731933816,
+                341.6339966166803
+              ],
+              "graph_ndc_mean": 12522.674560546875,
+              "route_ndc_mean": 112.258544921875
+            },
+            {
+              "method": "ApproxTarget10",
+              "recall": 0.90578857421875,
+              "QPS": 341.69054161801927,
+              "seconds": [
+                11.947562828,
+                11.995139725,
+                12.019662521
+              ],
+              "QPS_each_round": [
+                342.8314258704478,
+                341.4716371717796,
+                340.77495876807905
+              ],
+              "graph_ndc_mean": 12522.81884765625,
+              "route_ndc_mean": 111.0693359375
+            },
+            {
+              "method": "HybridFixedTemperature",
+              "recall": 0.906025390625,
+              "QPS": 342.8637265486144,
+              "seconds": [
+                11.97293755,
+                11.788134605,
+                12.078239643
+              ],
+              "QPS_each_round": [
+                342.1048496156234,
+                347.4680377557497,
+                339.12226624629494
+              ],
+              "graph_ndc_mean": 12523.49365234375,
+              "route_ndc_mean": 112.136474609375
+            },
+            {
+              "method": "ApproxPilotTemperature",
+              "recall": 0.9056298828125,
+              "QPS": 342.0665855462756,
+              "seconds": [
+                12.026647018,
+                11.860913474,
+                12.035270089
+              ],
+              "QPS_each_round": [
+                340.57705309465,
+                345.3359649725744,
+                340.3330352962883
+              ],
+              "graph_ndc_mean": 12522.072021484375,
+              "route_ndc_mean": 113.039794921875
+            },
+            {
+              "method": "HybridPilotTemperature",
+              "recall": 0.90566162109375,
+              "QPS": 343.9025962234023,
+              "seconds": [
+                11.91392713,
+                11.888837977,
+                11.92828239
+              ],
+              "QPS_each_round": [
+                343.7993161537828,
+                344.52483984760084,
+                343.3855660085526
+              ],
+              "graph_ndc_mean": 12521.91259765625,
+              "route_ndc_mean": 111.5234375
+            }
+          ],
+          "comparisons": [
+            {
+              "method": "ApproxTarget10",
+              "reference": "GT10-soft-t1",
+              "delta_recall_pp": -0.0026855468749999983,
+              "descriptive_95_interval_pp": [
+                -0.0380859375,
+                0.04394531249999999
+              ],
+              "positive_queries": 32,
+              "negative_queries": 64,
+              "rescue_members": 175,
+              "damage_members": 186,
+              "entry_set_changes": 1111,
+              "entry_order_changes": 1111,
+              "output_id_changes": 117,
+              "QPS_change_pct": -0.29849099406872304
+            },
+            {
+              "method": "HybridFixedTemperature",
+              "reference": "GT10-soft-t1",
+              "delta_recall_pp": 0.020996093750000003,
+              "descriptive_95_interval_pp": [
+                -0.0224609375,
+                0.07763671875
+              ],
+              "positive_queries": 31,
+              "negative_queries": 60,
+              "rescue_members": 248,
+              "damage_members": 162,
+              "entry_set_changes": 1060,
+              "entry_order_changes": 1060,
+              "output_id_changes": 112,
+              "QPS_change_pct": 0.043831352255141454
+            },
+            {
+              "method": "HybridFixedTemperature",
+              "reference": "ApproxTarget10",
+              "delta_recall_pp": 0.023681640625,
+              "descriptive_95_interval_pp": [
+                0.00048828125,
+                0.05981445312499999
+              ],
+              "positive_queries": 12,
+              "negative_queries": 10,
+              "rescue_members": 113,
+              "damage_members": 16,
+              "entry_set_changes": 288,
+              "entry_order_changes": 288,
+              "output_id_changes": 24,
+              "QPS_change_pct": 0.34334720681459263
+            },
+            {
+              "method": "ApproxPilotTemperature",
+              "reference": "GT10-soft-t1",
+              "delta_recall_pp": -0.0185546875,
+              "descriptive_95_interval_pp": [
+                -0.066168212890625,
+                0.032958984375
+              ],
+              "positive_queries": 30,
+              "negative_queries": 64,
+              "rescue_members": 165,
+              "damage_members": 241,
+              "entry_set_changes": 1127,
+              "entry_order_changes": 1127,
+              "output_id_changes": 116,
+              "QPS_change_pct": -0.18876554799072132
+            },
+            {
+              "method": "ApproxPilotTemperature",
+              "reference": "ApproxTarget10",
+              "delta_recall_pp": -0.015869140624999997,
+              "descriptive_95_interval_pp": [
+                -0.0458984375,
+                0.00048828125
+              ],
+              "positive_queries": 2,
+              "negative_queries": 4,
+              "rescue_members": 3,
+              "damage_members": 68,
+              "entry_set_changes": 142,
+              "entry_order_changes": 142,
+              "output_id_changes": 7,
+              "QPS_change_pct": 0.11005394719900696
+            },
+            {
+              "method": "HybridPilotTemperature",
+              "reference": "GT10-soft-t1",
+              "delta_recall_pp": -0.015380859375,
+              "descriptive_95_interval_pp": [
+                -0.063232421875,
+                0.03637695312499999
+              ],
+              "positive_queries": 30,
+              "negative_queries": 61,
+              "rescue_members": 171,
+              "damage_members": 234,
+              "entry_set_changes": 1088,
+              "entry_order_changes": 1088,
+              "output_id_changes": 113,
+              "QPS_change_pct": 0.3469619971550264
+            },
+            {
+              "method": "HybridPilotTemperature",
+              "reference": "ApproxTarget10",
+              "delta_recall_pp": -0.012695312499999998,
+              "descriptive_95_interval_pp": [
+                -0.044189453125,
+                0.00537109375
+              ],
+              "positive_queries": 12,
+              "negative_queries": 12,
+              "rescue_members": 25,
+              "damage_members": 77,
+              "entry_set_changes": 321,
+              "entry_order_changes": 321,
+              "output_id_changes": 27,
+              "QPS_change_pct": 0.6473853782748007
+            }
+          ],
+          "interaction": {
+            "temperature_by_replacement_delta_pp": -0.020507812499999997,
+            "descriptive_95_interval_pp": [
+              -0.05615234374999999,
+              0.00244140625
+            ]
+          }
+        }
+      ],
+      "geometry": {
+        "ApproxTarget10": {
+          "chord2_sum": 1.832123885716171,
+          "chord2_mean": 0.002248004767749903,
+          "angle_degrees_quantiles": [
+            0.9797103911439884,
+            3.2262134049319053,
+            12.224835939163587,
+            21.88901967341253
+          ],
+          "chord_ratio_to_approx": 1.0
+        },
+        "HybridFixedTemperature": {
+          "chord2_sum": 1.4741112446644262,
+          "chord2_mean": 0.0018087254535759832,
+          "angle_degrees_quantiles": [
+            0.9286199464562885,
+            3.032782530184648,
+            10.483120022247222,
+            21.88885354364343
+          ],
+          "chord_ratio_to_approx": 0.8045914668528003
+        },
+        "ApproxPilotTemperature": {
+          "chord2_sum": 1.8900686813672753,
+          "chord2_mean": 0.002319102676524264,
+          "angle_degrees_quantiles": [
+            1.0190210949043264,
+            3.3495663619418483,
+            12.450255478118947,
+            21.897773862114324
+          ],
+          "chord_ratio_to_approx": 1.0316271165410051
+        },
+        "HybridPilotTemperature": {
+          "chord2_sum": 1.5227292971920852,
+          "chord2_mean": 0.0018683795057571598,
+          "angle_degrees_quantiles": [
+            0.9512144148660543,
+            3.109365170407782,
+            10.948972033143798,
+            21.89763752579298
+          ],
+          "chord_ratio_to_approx": 0.8311279106526442
+        }
+      }
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "points": [
+        {
+          "K": 1,
+          "L": 128,
+          "methods": [
+            {
+              "method": "GT10-hard",
+              "recall": 0.90625,
+              "QPS": 2383.016955853318,
+              "seconds": [
+                1.711162641,
+                1.727831854,
+                1.717494203
+              ],
+              "QPS_each_round": [
+                2393.6941479778366,
+                2370.6010457658804,
+                2384.869767155773
+              ],
+              "graph_ndc_mean": 2858.8896484375,
+              "route_ndc_mean": 107.01416015625
+            },
+            {
+              "method": "ApproxTarget10",
+              "recall": 0.9072265625,
+              "QPS": 2386.2476887097246,
+              "seconds": [
+                1.712939807,
+                1.721039139,
+                1.715528399
+              ],
+              "QPS_each_round": [
+                2391.2107029456174,
+                2379.957496132225,
+                2387.6025616291763
+              ],
+              "graph_ndc_mean": 2856.637451171875,
+              "route_ndc_mean": 106.609130859375
+            },
+            {
+              "method": "HybridFixedTemperature",
+              "recall": 0.90771484375,
+              "QPS": 2381.4429735430003,
+              "seconds": [
+                1.708355046,
+                1.725512483,
+                1.72602928
+              ],
+              "QPS_each_round": [
+                2397.6280630835563,
+                2373.7875213041852,
+                2373.0767765422843
+              ],
+              "graph_ndc_mean": 2860.08544921875,
+              "route_ndc_mean": 106.650634765625
+            }
+          ],
+          "comparisons": [
+            {
+              "method": "ApproxTarget10",
+              "reference": "GT10-hard",
+              "delta_recall_pp": 0.09765625,
+              "descriptive_95_interval_pp": [
+                -0.1220703125,
+                0.3173828125
+              ],
+              "positive_queries": 13,
+              "negative_queries": 9,
+              "rescue_members": 13,
+              "damage_members": 9,
+              "entry_set_changes": 875,
+              "entry_order_changes": 875,
+              "output_id_changes": 27,
+              "QPS_change_pct": 0.1355732215195138
+            },
+            {
+              "method": "HybridFixedTemperature",
+              "reference": "GT10-hard",
+              "delta_recall_pp": 0.146484375,
+              "descriptive_95_interval_pp": [
+                -0.0732421875,
+                0.3662109375
+              ],
+              "positive_queries": 14,
+              "negative_queries": 8,
+              "rescue_members": 14,
+              "damage_members": 8,
+              "entry_set_changes": 846,
+              "entry_order_changes": 846,
+              "output_id_changes": 26,
+              "QPS_change_pct": -0.066049983675176
+            },
+            {
+              "method": "HybridFixedTemperature",
+              "reference": "ApproxTarget10",
+              "delta_recall_pp": 0.048828125,
+              "descriptive_95_interval_pp": [
+                -0.0732421875,
+                0.1708984375
+              ],
+              "positive_queries": 4,
+              "negative_queries": 2,
+              "rescue_members": 4,
+              "damage_members": 2,
+              "entry_set_changes": 255,
+              "entry_order_changes": 255,
+              "output_id_changes": 9,
+              "QPS_change_pct": -0.20135022820376713
+            }
+          ],
+          "interaction": null
+        },
+        {
+          "K": 100,
+          "L": 256,
+          "methods": [
+            {
+              "method": "GT10-hard",
+              "recall": 0.9104443359375,
+              "QPS": 1316.0816090831454,
+              "seconds": [
+                3.100376199,
+                3.11186067,
+                3.124570146
+              ],
+              "QPS_each_round": [
+                1321.1299974890564,
+                1316.2543038920826,
+                1310.900318638582
+              ],
+              "graph_ndc_mean": 5054.202392578125,
+              "route_ndc_mean": 107.01416015625
+            },
+            {
+              "method": "ApproxTarget10",
+              "recall": 0.91028076171875,
+              "QPS": 1313.4955952484795,
+              "seconds": [
+                3.13551968,
+                3.115746245,
+                3.103923422
+              ],
+              "QPS_each_round": [
+                1306.322529603769,
+                1314.6128336263148,
+                1319.6201848822545
+              ],
+              "graph_ndc_mean": 5052.732421875,
+              "route_ndc_mean": 106.609130859375
+            },
+            {
+              "method": "HybridFixedTemperature",
+              "recall": 0.91049072265625,
+              "QPS": 1312.7070632345444,
+              "seconds": [
+                3.127719896,
+                3.100942214,
+                3.13214682
+              ],
+              "QPS_each_round": [
+                1309.5801849898135,
+                1320.888851623083,
+                1307.729246229907
+              ],
+              "graph_ndc_mean": 5056.265380859375,
+              "route_ndc_mean": 106.650634765625
+            }
+          ],
+          "comparisons": [
+            {
+              "method": "ApproxTarget10",
+              "reference": "GT10-hard",
+              "delta_recall_pp": -0.016357421875,
+              "descriptive_95_interval_pp": [
+                -0.09375,
+                0.06006469726562447
+              ],
+              "positive_queries": 34,
+              "negative_queries": 27,
+              "rescue_members": 249,
+              "damage_members": 316,
+              "entry_set_changes": 875,
+              "entry_order_changes": 875,
+              "output_id_changes": 79,
+              "QPS_change_pct": -0.19649342539383996
+            },
+            {
+              "method": "HybridFixedTemperature",
+              "reference": "GT10-hard",
+              "delta_recall_pp": 0.004638671875,
+              "descriptive_95_interval_pp": [
+                -0.0810546875,
+                0.0922912597656245
+              ],
+              "positive_queries": 33,
+              "negative_queries": 27,
+              "rescue_members": 326,
+              "damage_members": 307,
+              "entry_set_changes": 846,
+              "entry_order_changes": 846,
+              "output_id_changes": 78,
+              "QPS_change_pct": -0.2564085559216833
+            },
+            {
+              "method": "HybridFixedTemperature",
+              "reference": "ApproxTarget10",
+              "delta_recall_pp": 0.02099609375,
+              "descriptive_95_interval_pp": [
+                -0.02490234375,
+                0.07764282226562447
+              ],
+              "positive_queries": 10,
+              "negative_queries": 11,
+              "rescue_members": 172,
+              "damage_members": 86,
+              "entry_set_changes": 255,
+              "entry_order_changes": 255,
+              "output_id_changes": 26,
+              "QPS_change_pct": -0.06003309160590442
+            }
+          ],
+          "interaction": null
+        }
+      ],
+      "geometry": {
+        "ApproxTarget10": {
+          "chord2_sum": 1.690840299365844,
+          "chord2_mean": 0.002059488793381052,
+          "angle_degrees_quantiles": [
+            2.0822233601747415,
+            3.775882470992364,
+            6.0888256313600415,
+            12.541135092746021
+          ],
+          "chord_ratio_to_approx": 1.0
+        },
+        "HybridFixedTemperature": {
+          "chord2_sum": 1.5540847330973868,
+          "chord2_mean": 0.001892916849083297,
+          "angle_degrees_quantiles": [
+            1.9448265084936005,
+            3.63162248217524,
+            5.835563624422844,
+            11.785653939216227
+          ],
+          "chord_ratio_to_approx": 0.919119761742284
+        }
+      }
+    }
+  },
+  "default_changed": false,
+  "n_return_vectors_rescored": 65536,
+  "new_GT": 0,
+  "new_source_validation": false,
+  "cold_start_wall_measured": false,
+  "seconds": 8.321281425999587
+}

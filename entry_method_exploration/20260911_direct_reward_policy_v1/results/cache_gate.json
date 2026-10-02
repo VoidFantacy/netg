@@ -1,0 +1,38 @@
+{
+  "status": "PASS_REAL_DEVELOPMENT_ALLOWED",
+  "by_dataset": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "conditions": {
+        "greedy_gain_anchor_ge_point20": true,
+        "greedy_gain_teacher_ge_point05": true,
+        "greedy_cost_le_1pct": true,
+        "expected_cost_le_1pct": true
+      },
+      "passed": true,
+      "reward_gain_anchor_pp": 1.1269999999999953,
+      "reward_gain_teacher_pp": 0.9154999999999944,
+      "greedy_graph_ndc_change_pct": 0.08684610662583747,
+      "expected_graph_ndc_change_pct": -0.018272054165058282
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "conditions": {
+        "greedy_gain_anchor_ge_point20": true,
+        "greedy_gain_teacher_ge_point05": true,
+        "greedy_cost_le_1pct": true,
+        "expected_cost_le_1pct": true
+      },
+      "passed": true,
+      "reward_gain_anchor_pp": 0.3009999999999877,
+      "reward_gain_teacher_pp": 0.3049999999999926,
+      "greedy_graph_ndc_change_pct": 0.03378142342422841,
+      "expected_graph_ndc_change_pct": 0.023900887756789224
+    }
+  ],
+  "prerequisites_passed": true,
+  "scope": "fit-only complete C8 real-label cache; no online QPS",
+  "NSG_calls": 0,
+  "new_labels": 0,
+  "heldout_access": false
+}

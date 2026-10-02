@@ -1,0 +1,159 @@
+{
+  "status": "PASS",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "config": {
+        "dataset": "webvid2_5m_light_v1",
+        "n": 2048,
+        "dimension": 512,
+        "H": 815,
+        "base_n": 2505000,
+        "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+        "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+        "queries": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/webvid2_5m_light_v1/queries.f32",
+        "GT": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/webvid2_5m_light_v1/gt.i32",
+        "source_rows": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/webvid2_5m_light_v1/source_rows.i64",
+        "fit_indices": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/webvid2_5m_light_v1/fit_indices.i64",
+        "coverage_counts": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/webvid2_5m_light_v1/coverage_counts.i32",
+        "target_mean": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/webvid2_5m_light_v1/target_mean.f32",
+        "unit_W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/webvid2_5m_light_v1.UnitHub.W.f32",
+        "GT10_W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+        "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+        "threads": 1,
+        "methods": [
+          "GT10Exact",
+          "UnitHubExact",
+          "TargetMean",
+          "Coverage"
+        ],
+        "deadline_unix": 1789890600,
+        "seconds_cap": 300,
+        "max_search_calls": 70000
+      },
+      "files": [
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/webvid2_5m_light_v1/coverage_counts.i32",
+          "bytes": 6676480,
+          "sha256": "718b669ea761fecf618842d25bc827d49e68ca1313caffa03419a0eb17bb1e75"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/webvid2_5m_light_v1/queries.f32",
+          "bytes": 4194304,
+          "sha256": "5fddfec19ce2c1261aaadebd12eeb62408b2727f297447cd1bbefd1211287696"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/webvid2_5m_light_v1/fit_indices.i64",
+          "bytes": 16384,
+          "sha256": "0c39dedbc1724fd22b9d35f0e57fc43a27b7be86e0b76428d785a943252a7c54"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/webvid2_5m_light_v1/target_mean.f32",
+          "bytes": 4194304,
+          "sha256": "38e354bd2f6867f2f0bfb4a45650eb2772c0b25ffa25656d3eed0d60a419a05d"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/webvid2_5m_light_v1/gt.i32",
+          "bytes": 819200,
+          "sha256": "d43b861c31348e56a00e06ceed2dc76c53f264f081220360eb1b7adc3b802b00"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/webvid2_5m_light_v1/source_rows.i64",
+          "bytes": 16384,
+          "sha256": "68f46128148e7c5057a90228d31b68ba66938136aefa35273a70c265e6f235e9"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/webvid2_5m_light_v1/config.json",
+          "bytes": 1844,
+          "sha256": "d8dcb5ca95864ba4fd727811ec07f288c888f0c7eee1eebae577937fe3c1361a"
+        }
+      ],
+      "mean_independent_max_abs": 5.402865177472904e-08,
+      "stored_hub_independent_max_score_gap": 0.0,
+      "independent_checks": 320,
+      "coverage_row_sum": 10,
+      "source_rows": "prelocked systematic fit indices +10000",
+      "seconds": 3.8263025283813477,
+      "privileged_fit_diagnostic": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "config": {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "n": 2048,
+        "dimension": 200,
+        "H": 821,
+        "base_n": 10000000,
+        "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+        "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+        "queries": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+        "GT": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/yandex_t2i_official10M_ip_v1/gt.i32",
+        "source_rows": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/yandex_t2i_official10M_ip_v1/source_rows.i64",
+        "fit_indices": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/yandex_t2i_official10M_ip_v1/fit_indices.i64",
+        "coverage_counts": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/yandex_t2i_official10M_ip_v1/coverage_counts.i32",
+        "target_mean": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/yandex_t2i_official10M_ip_v1/target_mean.f32",
+        "unit_W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/yandex_t2i_official10M_ip_v1.UnitHub.W.f32",
+        "GT10_W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+        "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/hub_ids.i32",
+        "threads": 1,
+        "methods": [
+          "GT10Exact",
+          "UnitHubExact",
+          "TargetMean",
+          "Coverage"
+        ],
+        "deadline_unix": 1789890600,
+        "seconds_cap": 300,
+        "max_search_calls": 70000
+      },
+      "files": [
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/yandex_t2i_official10M_ip_v1/coverage_counts.i32",
+          "bytes": 6725632,
+          "sha256": "0098bd543aa7eb75e651441e9a40e4579b42ec3fd4eb7b05cf3c1bbe132b476b"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+          "bytes": 1638400,
+          "sha256": "2508dc92d50b460addaf164d7dbc5502b20e36351eee4c092e79ac295db05b40"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/yandex_t2i_official10M_ip_v1/fit_indices.i64",
+          "bytes": 16384,
+          "sha256": "0c39dedbc1724fd22b9d35f0e57fc43a27b7be86e0b76428d785a943252a7c54"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/yandex_t2i_official10M_ip_v1/target_mean.f32",
+          "bytes": 1638400,
+          "sha256": "70508b9008520b7ecf2d8ab8963d908e69ead0c2bf82f9b85a0eb578dc8a9c29"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/yandex_t2i_official10M_ip_v1/gt.i32",
+          "bytes": 819200,
+          "sha256": "86c1d60397e6c9311ed1d836751e2c5cc71f3a91a893bd78f8dda8eeed72a8f0"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/yandex_t2i_official10M_ip_v1/source_rows.i64",
+          "bytes": 16384,
+          "sha256": "68f46128148e7c5057a90228d31b68ba66938136aefa35273a70c265e6f235e9"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/inputs/yandex_t2i_official10M_ip_v1/config.json",
+          "bytes": 1956,
+          "sha256": "d3e6bebae0e5a394b2995ca3653cc4a272c8f37d28ff2644f8647f421e7321d3"
+        }
+      ],
+      "mean_independent_max_abs": 1.0124708516023873e-08,
+      "stored_hub_independent_max_score_gap": 0.0,
+      "independent_checks": 320,
+      "coverage_row_sum": 10,
+      "source_rows": "prelocked systematic fit indices +10000",
+      "seconds": 5.727571487426758,
+      "privileged_fit_diagnostic": true
+    }
+  ],
+  "seconds": 9.652666091918945,
+  "new_GT": 0,
+  "new_training": 0,
+  "heldout_access": false
+}

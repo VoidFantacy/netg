@@ -1,0 +1,105 @@
+{
+  "version": "E109_perfect_proxy_gate_v1",
+  "created_unix": 1789884042.830613,
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "dimension": 512,
+      "H": 815,
+      "base_n": 2505000,
+      "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "index_stat": {
+        "bytes": 5791560103,
+        "mtime_ns": 1787714557628644919
+      },
+      "fit_input": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1",
+      "assignments": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_mechanism_v1/results/webvid2_5m_light_v1_fit_assignments.npz",
+      "families": [
+        "hard",
+        "soft"
+      ],
+      "family_models": {
+        "hard": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt10_hard/W.f32",
+        "soft": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32"
+      },
+      "GT1": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt1_hard/W.f32",
+      "default": {
+        "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+        "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+        "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+        "name": "GT10-soft-t1"
+      },
+      "evaluation_queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/queries.f32",
+      "evaluation_GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/gt.i32",
+      "evaluation_manifest": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/gt_manifest.json",
+      "evaluation_reference": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/webvid2_5m_light_v1",
+      "source_rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/source_rows.i64",
+      "unit_W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/webvid2_5m_light_v1.UnitHub.W.f32"
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "dimension": 200,
+      "H": 821,
+      "base_n": 10000000,
+      "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "index_stat": {
+        "bytes": 10640000103,
+        "mtime_ns": 1787655783830469960
+      },
+      "fit_input": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1",
+      "assignments": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_mechanism_v1/results/yandex_t2i_official10M_ip_v1_fit_assignments.npz",
+      "families": [
+        "hard"
+      ],
+      "family_models": {
+        "hard": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+        "soft": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt10_soft_t1/W.f32"
+      },
+      "GT1": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_hard/W.f32",
+      "default": {
+        "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+        "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+        "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+        "name": "GT10-hard"
+      },
+      "evaluation_queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+      "evaluation_GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt.i32",
+      "evaluation_manifest": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt_manifest.json",
+      "evaluation_reference": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/yandex_t2i_official10M_ip_v1",
+      "source_rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/source_rows.i64",
+      "unit_W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/yandex_t2i_official10M_ip_v1.UnitHub.W.f32"
+    }
+  },
+  "reference_E107": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial",
+  "wait_for_E108": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/reviews/analysis_complete.json",
+  "fit_total_n": 20000,
+  "n": 2048,
+  "row_selection": "floor(i*20000/2048)",
+  "methods": [
+    "GT10Exact",
+    "UnitHubExact",
+    "TargetMean",
+    "Coverage"
+  ],
+  "K": [
+    1,
+    100
+  ],
+  "L": 128,
+  "threads": 1,
+  "cpu": 15,
+  "expected_NSG_calls": 66304,
+  "max_NSG_calls": 70000,
+  "max_new_bytes": 100000000,
+  "min_free_gib": 4,
+  "max_rss_gib": 40,
+  "job_seconds_cap": 300,
+  "deadline_unix": 1789890600,
+  "bootstrap_replicates": 20000,
+  "bootstrap_seed": 20260920,
+  "CI_level": 0.996875,
+  "minimum_promise_pp": 1.0,
+  "priority": [
+    "Coverage",
+    "TargetMean"
+  ],
+  "gate": "Both datasets: both K mean >= 0 versus both controls; some common K gains >=1pp with adjusted interval lower >0 versus both controls. Only a fit information gate, never search-utility upper bound."
+}

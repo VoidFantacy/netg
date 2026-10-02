@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "validation_source": [
+        "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.validation.seed20260826.fvecs",
+        "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/gt.validation.seed20260826.ip.ivecs"
+      ],
+      "train_source": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+      "source_namespace_distinct": true,
+      "validation_vector_unique": 2000,
+      "phase_checks": [
+        {
+          "phase": "train_monitor",
+          "queries": 5120,
+          "exact_vector_overlap": 0
+        },
+        {
+          "phase": "cal",
+          "queries": 1024,
+          "exact_vector_overlap": 0
+        },
+        {
+          "phase": "audit",
+          "queries": 1024,
+          "exact_vector_overlap": 0
+        }
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "validation_source": [
+        "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.validation.fvecs",
+        "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/gt.validation.ip.ivecs"
+      ],
+      "train_source": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs",
+      "source_namespace_distinct": true,
+      "validation_vector_unique": 2000,
+      "phase_checks": [
+        {
+          "phase": "train_monitor",
+          "queries": 5120,
+          "exact_vector_overlap": 0
+        },
+        {
+          "phase": "cal",
+          "queries": 1024,
+          "exact_vector_overlap": 0
+        },
+        {
+          "phase": "audit",
+          "queries": 1024,
+          "exact_vector_overlap": 0
+        }
+      ]
+    }
+  ],
+  "warning": "Local row IDs use different source namespaces; exact vectors and source provenance jointly verified"
+}

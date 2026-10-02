@@ -1,0 +1,9 @@
+--- before/spec.md
++++ spec.md
+@@ -1,4 +1,6 @@
+ # ACSG 代码架构与实现契约
++
++2026-09-20独立[E116入口身份工具](entry_method_exploration/20260920_entry_id_pilot_v1/report.md)已实现并完成验证：`workflow.py`在旧fit20K中固定提议/选择角色，用实际GT10小图输出提出H外候选、两半真实效用/时间筛选及模型冻结；`experiment.cpp`提供route、labels、evaluate三种配置模式，原小图label不改，外部绑定映射后升序三个真实ID，再调用逐字E105 span+batch4内核。labels保存meta/入口/完整K100返回、距离bits、K1/K100命中、两次plain时间及独立NDC；K1训练标签复用仅限同L输出前缀并经实际K1验收，正式审计两个K分别调用。evaluate实际路由/映射/原搜索/输出全纳入wall，CPU15/线程1、三轮、预热/plain/count一致，全部默认恢复E105且新入口抽样链接E99。模型、输入、角色、映射与成本验收见[协议](entry_method_exploration/20260920_entry_id_pilot_v1/protocol.md)、[独立核验](entry_method_exploration/20260920_entry_id_pilot_v1/reviews/completion_audit.json)。生产API/源/图/画像不变；新入口的旧单入口标签不可代替真实组合标签，时间标签不是QPS。方法门失败、原件封存，无待运行runner。
+ 
+ 2026-09-20 **理论研究工具版本已封存**：E112图标签/H选择、E113比较记录、E114终点审查、E115评分/完整小图状态交叉、后继工作计数和两项合成反例均与生产隔离。真实指标K1/K100、CPU15/线程1；E115缓存路由诊断不计QPS，人工L1例子不计真实评测。原图/GT/默认和E99 API保持，输入、代码、结果、计数修正及完整身份在[综合报告](entry_method_exploration/20260920_until1900_theory_v1/report.md) · [记录116](experiment_history/116_theory_synthesis_1900.md)。
+ 

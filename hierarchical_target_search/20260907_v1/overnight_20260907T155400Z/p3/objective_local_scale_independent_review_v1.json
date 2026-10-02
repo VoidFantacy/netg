@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "status": "PASS_SOURCE_AND_SYNTHETIC_REVIEW",
+  "stage": "P3_POST_NOGO_OBJECTIVE_LOCAL_SCALE_INDEPENDENT_REVIEW",
+  "created_utc": "2026-09-07T18:45:54.177014+00:00",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/diagnose_objective_local_scale.py",
+    "sha256": "148e3ff29259857865e9916f5f3905f2f2d1ffd3c1d843bfd8909a16c18259c8"
+  },
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_protocol_v1.json",
+    "sha256": "abae80a4a2bbf6366e413b21a948a6fa4f27166e1160973cc223681e75cfff91"
+  },
+  "independent_checks": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_independent_checks_v1/report.json",
+    "sha256": "15ffd5948d9555974e2b377903ac47ab035032af467e73229e21b5f273ea2959"
+  },
+  "independent_check_script": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/check_objective_local_scale_independent.py",
+    "sha256": "7cc90f47b016009ecdb9148f24220e448fb0dc125232d69156491c9af2202f37"
+  },
+  "author_synthetic_evidence": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_synthetic_v3/result.json",
+    "sha256": "4d33aa339b27ecfbadd3e9bbfdc6353c6a5d97be153435d5bcc286c1af3c58bb"
+  },
+  "author_test_source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/test_objective_local_scale.py",
+    "sha256": "28a618aa85066e90d9ed1feaacb7d5176551ea067d8db7ef8c2036bc5ea481bb"
+  },
+  "source_review": [
+    {
+      "area": "Preflight and identity",
+      "result": "PASS",
+      "detail": "Exact frozen protocol; P3 NOPASS, P0, target diagnosis/completion, algebra/review, partition, fit GT and saved label bindings cross-checked. M/Q/N/common initialization fixed; no gate reopening."
+    },
+    {
+      "area": "Access boundary",
+      "result": "PASS",
+      "detail": "Only streaming full native-file SHA reads uninterpreted vector bytes for identity. Bound P0 header parser seeks over payload. Numerical original-graph reads use bounded adjacency blocks only; no query/base arrays, pilot GT, validation, heldout or ANN calls."
+    },
+    {
+      "area": "Directed degree",
+      "result": "PASS",
+      "detail": "Only -1 padding and self arcs excluded; duplicate and reciprocal original arcs retained. Other invalid IDs rejected before valid mask; in/out int64 arrays sum to M and total to 2M; P0 slot counts and partition M compared."
+    },
+    {
+      "area": "Local condition",
+      "result": "PASS",
+      "detail": "Int64 multiplication occurs after signed/nonnegative and overflow guards. D*9Q<M excludes equality and uses exact fixed Q=20000. No floating threshold classification."
+    },
+    {
+      "area": "Support and labels",
+      "result": "PASS",
+      "detail": "Existing fit GT10 rehashed and row uniqueness/range checked; f(u) counts rows containing u. Three frozen label arrays rehashed and capacity/minimum/range checked. Support/max/total occurrence and final-state movement counts cross-checked against completed target diagnosis."
+    },
+    {
+      "area": "Fixed groups and denominators",
+      "result": "PASS",
+      "detail": "All 3 support, 10 exact frequency intervals and 18 movement cells retained. Changed/unchanged and frequency totals exhaust populations; occurrence weighting uses sum f(u), with zero denominator null."
+    },
+    {
+      "area": "Degree summaries",
+      "result": "PASS",
+      "detail": "Means/min/max and sparse unique-degree empirical quantiles retain exact decimal-rational ceil(p*n)-1 ranks; no interpolation or dense allocation indexed by degree maximum."
+    },
+    {
+      "area": "Histogram artifact",
+      "result": "PASS",
+      "detail": "Root clarification implemented: cap covers the entire compact standalone JSON including metadata/newline; output descriptors bind path/hash/bytes and contain no duplicate pair arrays. Cap omission creates no artifact."
+    },
+    {
+      "area": "Completion and resources",
+      "result": "PASS",
+      "detail": "New exclusive output root, input/source bindings and INCOMPLETE invocation retained. Deadline checked during hash, scan and fixed groups. Datasets sequential; complete marker written only after both finished; failures preserve evidence."
+    },
+    {
+      "area": "Scientific scope",
+      "result": "PASS",
+      "detail": "Finite descriptive coverage of a sufficient condition only; no actual move replay, model selection, threshold sweep, fresh CI, router/portal/graph change or P4 authorization."
+    }
+  ],
+  "findings": [],
+  "blocking_findings": 0,
+  "independent_checks_passed": 30,
+  "review_scope": {
+    "source_and_protocol_read": true,
+    "tiny_generated_fixtures_executed": true,
+    "mocked_two_dataset_metadata_preflight": true,
+    "actual_graph_read": false,
+    "actual_fit_GT_read": false,
+    "actual_labels_read": false,
+    "actual_count_rows_read": false,
+    "ANN_executed": false
+  },
+  "interpretation_limits": [
+    "PASS applies to reviewed implementation and synthetic checks; actual full-data completion and integrity checks remain the root-controlled execution obligation.",
+    "Condition coverage does not demonstrate a feasible DeltaS-reducing candidate exists or is chosen; final label differences are not accepted-move trajectories.",
+    "No actual DeltaC/DeltaS reconstruction or causal explanation of retrieval harm follows from degree/support association.",
+    "P3 remains NOPASS; no second representation revision, P4 or auxiliary graph is authorized."
+  ],
+  "P3_gate_status_unchanged": "NOPASS",
+  "P4_authorized": false,
+  "new_method_revision": false
+}

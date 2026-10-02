@@ -1,0 +1,76 @@
+{
+  "mode": "evaluate",
+  "dataset": "webvid2_5m_light_v1",
+  "split": "audit",
+  "dim": 512,
+  "num_queries": 512,
+  "hub_count": 815,
+  "L": 128,
+  "K": 10,
+  "threads": 1,
+  "query_cpu": 15,
+  "index_path": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "queries_file": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/inputs/webvid2_5m_light_v1/audit/queries.f32",
+  "row_ids": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/inputs/webvid2_5m_light_v1/audit/row_ids.i64",
+  "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+  "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+  "graph_file": "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/inputs/webvid2_5m_light_v1/base.hnsw",
+  "policy": {
+    "name": "gt10_soft",
+    "family": "profile",
+    "model_name": "gt10_soft",
+    "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+    "mapping": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+    "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+    "hub_count": 815,
+    "dim": 512,
+    "k": 3,
+    "seed": 20260828,
+    "hnsw_seed": 20260828,
+    "slot_labels": false,
+    "canonical_entry_order": true
+  },
+  "projection": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/inputs/webvid2_5m_light_v1/projection.f64",
+  "hub_projection": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/inputs/webvid2_5m_light_v1/hub_projection.f64",
+  "pair_cosine": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/inputs/webvid2_5m_light_v1/pair_cosine.f32",
+  "gt_file": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/inputs/webvid2_5m_light_v1/audit/gt.i64",
+  "methods": [
+    {
+      "name": "base",
+      "kind": "base"
+    },
+    {
+      "name": "random",
+      "kind": "random"
+    },
+    {
+      "name": "rl_20260917",
+      "kind": "model",
+      "arm": "rl",
+      "seed": 20260917,
+      "model": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/models/webvid2_5m_light_v1/rl_20260917/selected/model.json"
+    },
+    {
+      "name": "rl_20260918",
+      "kind": "model",
+      "arm": "rl",
+      "seed": 20260918,
+      "model": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/models/webvid2_5m_light_v1/rl_20260918/selected/model.json"
+    },
+    {
+      "name": "exact_20260917",
+      "kind": "model",
+      "arm": "exact",
+      "seed": 20260917,
+      "model": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/models/webvid2_5m_light_v1/exact_20260917/selected/model.json"
+    },
+    {
+      "name": "exact_20260918",
+      "kind": "model",
+      "arm": "exact",
+      "seed": 20260918,
+      "model": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/models/webvid2_5m_light_v1/exact_20260918/selected/model.json"
+    }
+  ],
+  "measure_wall": false
+}

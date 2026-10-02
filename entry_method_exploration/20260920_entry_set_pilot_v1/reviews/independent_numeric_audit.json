@@ -1,0 +1,185 @@
+{
+  "status": "PASS",
+  "seconds": 1.1684799194335938,
+  "features": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "role": "fit",
+      "all_feature_rows": 10000,
+      "independent_vector_pairs": 192
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "role": "accept",
+      "all_feature_rows": 4096,
+      "independent_vector_pairs": 192
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "role": "fit",
+      "all_feature_rows": 10000,
+      "independent_vector_pairs": 192
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "role": "accept",
+      "all_feature_rows": 4096,
+      "independent_vector_pairs": 192
+    }
+  ],
+  "models": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "role": "fit",
+      "method": "CostTree",
+      "actions": [
+        7200,
+        2800,
+        0,
+        0
+      ],
+      "leaves": 3
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "role": "fit",
+      "method": "RecallTree",
+      "actions": [
+        7200,
+        2800,
+        0,
+        0
+      ],
+      "leaves": 3
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "role": "fit",
+      "method": "ShuffledTree",
+      "actions": [
+        9000,
+        1000,
+        0,
+        0
+      ],
+      "leaves": 2
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "role": "accept",
+      "method": "CostTree",
+      "actions": [
+        2959,
+        1137,
+        0,
+        0
+      ],
+      "leaves": 3
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "role": "accept",
+      "method": "RecallTree",
+      "actions": [
+        2959,
+        1137,
+        0,
+        0
+      ],
+      "leaves": 3
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "role": "accept",
+      "method": "ShuffledTree",
+      "actions": [
+        3680,
+        416,
+        0,
+        0
+      ],
+      "leaves": 2
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "role": "fit",
+      "method": "CostTree",
+      "actions": [
+        800,
+        7600,
+        1600,
+        0
+      ],
+      "leaves": 4
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "role": "fit",
+      "method": "RecallTree",
+      "actions": [
+        0,
+        4900,
+        2700,
+        2400
+      ],
+      "leaves": 4
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "role": "fit",
+      "method": "ShuffledTree",
+      "actions": [
+        2700,
+        4900,
+        2400,
+        0
+      ],
+      "leaves": 4
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "role": "accept",
+      "method": "CostTree",
+      "actions": [
+        340,
+        3098,
+        658,
+        0
+      ],
+      "leaves": 4
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "role": "accept",
+      "method": "RecallTree",
+      "actions": [
+        0,
+        2025,
+        1112,
+        959
+      ],
+      "leaves": 4
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "role": "accept",
+      "method": "ShuffledTree",
+      "actions": [
+        1102,
+        2013,
+        981,
+        0
+      ],
+      "leaves": 4
+    }
+  ],
+  "input_files_checked": 24,
+  "native_calls_independently_counted": {
+    "search_calls": 1159856,
+    "router_calls": 1215200,
+    "feature_distance_calls": 2275680
+  },
+  "all_source_model_and_protected_hashes_unchanged": true,
+  "acceptance_returns_independently_rescored": true,
+  "no_active_native_processes": true
+}

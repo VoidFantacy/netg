@@ -1,0 +1,12 @@
+#include <sys/time.h>
+#include <signal.h>
+#include <ucontext.h>
+#include <dlfcn.h>
+static uintptr_t pcs[200000];
+static volatile sig_atomic_t pc_count=0;
+static void sample_handler(int,siginfo_t*,void* ctx){int i=pc_count;if(i<200000){pcs[i]=((ucontext_t*)ctx)->uc_mcontext.gregs[REG_RIP];pc_count=i+1;}}
+static void sampler(bool on){struct itimerval t{};if(on){pc_count=0;struct sigaction a{};a.sa_sigaction=sample_handler;a.sa_flags=SA_SIGINFO;sigemptyset(&a.sa_mask);require(sigaction(SIGPROF,&a,nullptr)==0,"sigaction");t.it_interval.tv_usec=1000;t.it_value.tv_usec=1000;}require(setitimer(ITIMER_PROF,&t,nullptr)==0,"setitimer");}
+static json saved_samples(){std::map<uintptr_t,size_t> hist;for(int i=0;i<pc_count;++i)++hist[pcs[i]];json a=json::array();for(auto [pc,n]:hist){Dl_info d{};dladdr((void*)pc,&d);a.push_back({{"pc",pc},{"count",n},{"file",d.dli_fname?d.dli_fname:""},{"symbol",d.dli_sname?d.dli_sname:""},{"base",uintptr_t(d.dli_fbase)}});}return {{"samples",pc_count},{"histogram",a}};}
+static void reference(const Batch& b,const fs::path& path){require(b.ids==read_raw<int32_t>(path/"ids.i32"),"E97 result IDs mismatch");auto dist=read_raw<float>(path/"distances.f32");require(dist.size()==b.dist.size()&&!memcmp(dist.data(),b.dist.data(),dist.size()*4),"E97 distance bits mismatch");require(b.entries==read_raw<int32_t>(path/"entry_ids.i32"),"E97 entries mismatch");}
+static json stages(Worker& w,Router& router,HNSW& full,const std::vector<float>& q,size_t d,Batch& b,bool hnsw){double route=0,setup=0,graph=0,output=0;auto all=Clock::now();for(size_t i=0;i<b.n;++i){const float* query=q.data()+i*d;if(hnsw){auto t=Clock::now();auto heap=full.searchKnn(query,b.k);graph+=seconds(t);t=Clock::now();for(int j=int(b.k)-1;j>=0;--j){b.ids[i*b.k+j]=heap.top().second;b.dist[i*b.k+j]=heap.top().first;heap.pop();}output+=seconds(t);}else{auto t=Clock::now();auto entries=router.route(query);route+=seconds(t);t=Clock::now();std::copy(entries.begin(),entries.end(),b.entries.begin()+i*3);w.ep.clear();for(int id:entries)w.ep.emplace_back(id,1.);w.vt.advance();w.plain->set_query(query);setup+=seconds(t);t=Clock::now();w.index.acsg.search_new(*w.plain,b.k,w.ids.data(),b.dist.data()+i*b.k,w.vt,2,w.ep,&w.ret);graph+=seconds(t);t=Clock::now();for(size_t j=0;j<b.k;++j)b.ids[i*b.k+j]=w.ids[j];output+=seconds(t);}}
+ return {{"wall_seconds",seconds(all)},{"route_seconds",route},{"setup_seconds",setup},{"graph_seconds",graph},{"output_seconds",output},{"parity",true}};}

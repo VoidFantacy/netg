@@ -1,0 +1,59 @@
+[
+  {
+    "name": "build",
+    "argv": [
+      "g++",
+      "-I/usr/include/x86_64-linux-gnu/openblas-pthread",
+      "-O3",
+      "-march=native",
+      "-std=c++17",
+      "-fopenmp",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+      "-I/data/netg/ACSG/entry_method_exploration/20260922_knn_three_point_timing_v1/src/common",
+      "/data/netg/ACSG/entry_method_exploration/20260922_knn_three_point_timing_v1/src/benchmark.cpp",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+      "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+      "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "-lopenblas",
+      "-lz",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20260922_knn_three_point_timing_v1/bin/benchmark"
+    ],
+    "started_unix": 1790052376.971513,
+    "pid": 47951,
+    "exit_code": 0,
+    "seconds": 8.715007305145264,
+    "actual_max_threads": 0,
+    "maxrss_kib": 0
+  },
+  {
+    "name": "webvid2_5m_light_v1",
+    "argv": [
+      "/data/netg/ACSG/entry_method_exploration/20260922_knn_three_point_timing_v1/bin/benchmark",
+      "/data/netg/ACSG/entry_method_exploration/20260922_knn_three_point_timing_v1/reviews/webvid2_5m_light_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260922_knn_three_point_timing_v1/results/webvid2_5m_light_v1"
+    ],
+    "started_unix": 1790052385.6906507,
+    "pid": 47985,
+    "exit_code": 0,
+    "seconds": 391.6450333595276,
+    "actual_max_threads": 1,
+    "maxrss_kib": 5738220
+  },
+  {
+    "name": "yandex_t2i_official10M_ip_v1",
+    "argv": [
+      "/data/netg/ACSG/entry_method_exploration/20260922_knn_three_point_timing_v1/bin/benchmark",
+      "/data/netg/ACSG/entry_method_exploration/20260922_knn_three_point_timing_v1/reviews/yandex_t2i_official10M_ip_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260922_knn_three_point_timing_v1/results/yandex_t2i_official10M_ip_v1"
+    ],
+    "started_unix": 1790052777.3364446,
+    "pid": 49277,
+    "exit_code": 0,
+    "seconds": 106.58251404762268,
+    "actual_max_threads": 1,
+    "maxrss_kib": 10430388
+  }
+]

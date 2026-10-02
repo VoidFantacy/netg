@@ -1,0 +1,148 @@
+{
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "anchor": {
+        "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+        "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+        "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+        "name": "GT10-soft-t1"
+      },
+      "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+      "dimension": 512,
+      "base_n": 2505000,
+      "fit_source": {
+        "dataset": "webvid2_5m_light_v1",
+        "split": "fit",
+        "dim": 512,
+        "num_queries": 20000,
+        "gt_k": 100,
+        "index_path": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+        "queries_file": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/queries.f32",
+        "gt_file": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/gt.i64",
+        "row_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/row_ids.i64",
+        "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+        "hub_count": 815,
+        "threads": 1,
+        "L": 128
+      },
+      "index_stat": {
+        "bytes": 5791560103,
+        "mtime_ns": 1787714557628644919
+      },
+      "E116_labels": "/data/netg/ACSG/entry_method_exploration/20260920_entry_id_pilot_v1/results/webvid2_5m_light_v1/labels",
+      "E116_routes": "/data/netg/ACSG/entry_method_exploration/20260920_entry_id_pilot_v1/results/webvid2_5m_light_v1/route_proposal"
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "anchor": {
+        "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+        "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+        "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+        "name": "GT10-hard"
+      },
+      "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+      "dimension": 200,
+      "base_n": 10000000,
+      "fit_source": {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "split": "fit",
+        "dim": 200,
+        "num_queries": 20000,
+        "gt_k": 100,
+        "index_path": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+        "queries_file": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/queries.f32",
+        "gt_file": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/gt.i64",
+        "row_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/row_ids.i64",
+        "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/hub_ids.i32",
+        "hub_count": 821,
+        "threads": 1,
+        "L": 128
+      },
+      "index_stat": {
+        "bytes": 10640000103,
+        "mtime_ns": 1787655783830469960
+      },
+      "E116_labels": "/data/netg/ACSG/entry_method_exploration/20260920_entry_id_pilot_v1/results/yandex_t2i_official10M_ip_v1/labels",
+      "E116_routes": "/data/netg/ACSG/entry_method_exploration/20260920_entry_id_pilot_v1/results/yandex_t2i_official10M_ip_v1/route_proposal"
+    }
+  },
+  "threads": 1,
+  "cpu": 15,
+  "min_free_gib": 6,
+  "maxrss_gib": 40,
+  "created_unix": 1789910732.980237,
+  "experiment": "E117",
+  "fit_positions": [
+    0,
+    10000
+  ],
+  "accept_positions": [
+    15904,
+    20000
+  ],
+  "fit_n": 10000,
+  "accept_n": 4096,
+  "actions": [
+    "GT10-three",
+    "rank1-single",
+    "rank2-single",
+    "rank3-single"
+  ],
+  "training_K": 100,
+  "training_L": 128,
+  "label_repeats": 4,
+  "label_block_size": 256,
+  "features": [
+    "profile_gap12_scaled",
+    "profile_gap23_scaled",
+    "base_gap12_scaled",
+    "base_gap13_scaled",
+    "base_gap23_scaled",
+    "base_best_profile_rank"
+  ],
+  "tree_depth": 2,
+  "min_leaf": 512,
+  "split_quantiles": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "cost_weight": 0.1,
+  "shuffle_seed": 20260920,
+  "bootstrap_seed": 20260920,
+  "bootstrap_reps": 20000,
+  "repeats": 3,
+  "points": [
+    {
+      "K": 1,
+      "L": 128
+    },
+    {
+      "K": 100,
+      "L": 128
+    }
+  ],
+  "methods": [
+    "GT10",
+    "Single1",
+    "Single2",
+    "Single3",
+    "Feature3",
+    "CostTree",
+    "RecallTree",
+    "ShuffledTree"
+  ],
+  "max_search_calls": 3000000,
+  "seconds_cap": 7200,
+  "job_seconds_cap": 2400,
+  "max_new_bytes": 1600000000,
+  "new_gt": false,
+  "heldout_access": false
+}

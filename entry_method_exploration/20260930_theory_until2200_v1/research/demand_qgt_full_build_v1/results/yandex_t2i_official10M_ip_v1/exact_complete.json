@@ -1,0 +1,112 @@
+{
+  "input_and_split_seconds": 0.02169189100004587,
+  "GT": {
+    "qgt_demand": {
+      "n": 821,
+      "computed_queries": 821,
+      "logical_consumed_rows": 821,
+      "first_representatives": 821,
+      "fallback_batches": 0,
+      "overlap_checks": 0,
+      "search_seconds": 58.005085492000035,
+      "batches": [
+        {
+          "phase": "representative_prefetch",
+          "n": 256,
+          "seconds": 17.452084587000172
+        },
+        {
+          "phase": "representative_prefetch",
+          "n": 256,
+          "seconds": 17.877850077999938
+        },
+        {
+          "phase": "representative_prefetch",
+          "n": 256,
+          "seconds": 18.158878350000123
+        },
+        {
+          "phase": "representative_prefetch",
+          "n": 53,
+          "seconds": 4.516272476999802
+        }
+      ],
+      "whole_phase_seconds": 58.02508433499952
+    },
+    "selected2048": {
+      "n": 2048,
+      "search_seconds": 147.0685842489993,
+      "batch_seconds": [
+        18.247319969999808,
+        18.52171952000026,
+        18.377589751000414,
+        18.331527315999665,
+        18.46356207899953,
+        18.10532608199992,
+        18.495186342000125,
+        18.526353188999565
+      ],
+      "whole_phase_seconds": 147.07518783100022
+    }
+  },
+  "new_GT": 2869,
+  "qgt_cluster_plan_seconds": 0.1897307319995889,
+  "base_load_flat_build_seconds": 9.516907047000132,
+  "qgt_selector_replay_seconds": 0.010229669999716862,
+  "qgt_H_details": {
+    "method": "spherical-query-kmeans-representative-GT-cover",
+    "target_hubs": 821,
+    "selected_hubs": 821,
+    "empty_clusters": 0,
+    "kmeans_iterations": 25,
+    "seed": 20260828,
+    "gt_candidates_per_query": 100
+  },
+  "status": "COMPLETE_UNVALIDATED",
+  "seconds": 214.98450320699976,
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "threads": 15,
+  "faiss_threads": 8,
+  "threadpools": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 8,
+      "prefix": "libopenblas",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so",
+      "version": "0.3.23.dev",
+      "threading_layer": "pthreads",
+      "architecture": "Cooperlake"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 8,
+      "prefix": "libgomp",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/faiss_cpu.libs/libgomp-e985bcbb.so.1.0.0",
+      "version": null
+    },
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 8,
+      "prefix": "libopenblas",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/faiss_cpu.libs/libopenblaso-r0-d77a1985.3.15.so",
+      "version": "0.3.15",
+      "threading_layer": "openmp",
+      "architecture": "Prescott"
+    }
+  ],
+  "numpy_version": "1.26.4",
+  "faiss_version": "1.15.0",
+  "maxrss_GiB": 15.105205535888672
+}

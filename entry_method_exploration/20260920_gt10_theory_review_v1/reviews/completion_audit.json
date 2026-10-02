@@ -1,0 +1,47 @@
+{
+  "status": "PASS_RESEARCH_REVIEW_COMPLETE",
+  "created_unix": 1789877816.5914595,
+  "new_experiment_id": null,
+  "new_search": 0,
+  "new_training": 0,
+  "new_GT": 0,
+  "new_graph_builds": 0,
+  "new_QPS": 0,
+  "raw_query_GT_payload_access": false,
+  "protected_source_and_prior_report_SHA_checks": 23,
+  "spec_and_AGENTS_unchanged": true,
+  "local_links_checked": 751,
+  "historical_aggregate_deltas_checked": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 64,
+      "historical_K": 10,
+      "delta_pp": 0.2849999999999966
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 128,
+      "historical_K": 10,
+      "delta_pp": -0.08499999999999375
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "historical_K": 10,
+      "delta_pp": 0.33499999999999375
+    }
+  ],
+  "symbolic_review": [
+    "Closed-form optimum applies to fixed weights and nonzero vectors; numerical safeguards excluded.",
+    "ESS covariance interpretation states fixed-weight independent equal-covariance conditions.",
+    "Uniform-weight counterexample requires nonzero query mean for a unique direction.",
+    "Normalization bound requires nonzero sums; top3 bound concerns exact scores only.",
+    "Coverage bridge uses hard assignment; soft and evaluation-K differences are separated.",
+    "Regret bound assumes uniform utility-score approximation on the same action family, unestablished for actual GT10."
+  ],
+  "formal_proof_checker_used": false,
+  "new_retrieval_guarantee_established": false,
+  "default_changed": false,
+  "pending_experiments": [],
+  "next_scope": "Theory, identifiability and transferable search utility before selecting a method."
+}

@@ -1,0 +1,24 @@
+--- original_ACSG_search_on_graph_new
++++ first_discovery_depth_observer
+@@ -1,4 +1,5 @@
+ {
++    uint32_t current_depth = 0;
+     RandomGenerator gen(0x1234);
+     retset.resize(L + 1); 
+     
+@@ -14,6 +15,7 @@
+     bool distance_recorded = false;
+ 
+     auto record_distance = [&](int id, bool neighbor) {
++        depth[id] = neighbor ? current_depth + 1 : 0;
+         if (!trace) return;
+         ++trace->distance_evaluations;
+         if (neighbor) ++trace->evaluated_neighbor_count;
+@@ -138,6 +140,7 @@
+         if (retset[k].flag) {
+             retset[k].flag = false;
+             int n = retset[k].id;
++            current_depth = depth[n];
+             if (trace) ++trace->expanded_count;
+             const float best_before_expansion = retset[0].distance;
+ 

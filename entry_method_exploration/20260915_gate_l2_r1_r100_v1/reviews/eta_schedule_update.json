@@ -1,0 +1,82 @@
+{
+  "status": "ETA_BASED_SCHEDULE_VERIFIED",
+  "unix": 1789483150.6055384,
+  "next_actual_inspection_beijing": "2026-09-16T06:00:00+08:00",
+  "timer_ticks_before_deadline": "deferred without experiment file/process inspection",
+  "defer_branch_real_execution": "PASS",
+  "compile": "PASS",
+  "benchmark_sources_and_parameters_changed": false,
+  "goal_complete": false,
+  "eta": {
+    "created_unix": 1789482998.5915217,
+    "created_beijing": "2026-09-15T22:36:38.591522+08:00",
+    "method": "ETA only; no new retrieval evaluation and no Recall interpolation",
+    "sift_K100_total_predicted_seconds": 7476.095829157479,
+    "sift_K100_elapsed_seconds": 5176.810314416885,
+    "sift_K100_remaining_seconds": 2299.2855147405935,
+    "sift_shared_L_K100_K1_median_wall_ratio": 0.992633309049794,
+    "sift_calibration_points": 50,
+    "remaining_web_yandex_stages": [
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "K": 1,
+        "predicted_seconds": 6459.634724535594,
+        "source": "E96 same-machine wall curves; both GT10 profiles use old GT10 runtime; interpolate runtime only for new budgets; one warmup + three timings + count",
+        "prior_stage_overhead_seconds": 11.655474363928079
+      },
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "K": 100,
+        "predicted_seconds": 8105.191390464902,
+        "source": "E96 same-machine wall curves; both GT10 profiles use old GT10 runtime; interpolate runtime only for new budgets; one warmup + three timings + count",
+        "prior_stage_overhead_seconds": 11.655474363928079
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "K": 1,
+        "predicted_seconds": 6266.833803843103,
+        "source": "E96 same-machine wall curves; both GT10 profiles use old GT10 runtime; interpolate runtime only for new budgets; one warmup + three timings + count",
+        "prior_stage_overhead_seconds": 46.33405971310094
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "K": 100,
+        "predicted_seconds": 7834.724421354253,
+        "source": "E96 same-machine wall curves; both GT10 profiles use old GT10 runtime; interpolate runtime only for new budgets; one warmup + three timings + count",
+        "prior_stage_overhead_seconds": 46.33405971310094
+      }
+    ],
+    "predicted_remaining_test_seconds": 30965.669854938445,
+    "assumptions": [
+      "same machine, same frozen graphs, same query counts",
+      "K100 same-L wall approximately K1 on already completed new datasets",
+      "corrected GATE and alternate fixed GT10 may change wall; no new Web/Y timing exists yet",
+      "range is engineering uncertainty, not statistical confidence interval",
+      "plot verification and interpretation add time after evaluation"
+    ],
+    "predicted_test_finish_beijing": "2026-09-16T07:12:44.261377+08:00",
+    "uncertainty_factor": 0.2,
+    "plausible_test_finish_window_beijing": [
+      "2026-09-16T05:29:31.127406+08:00",
+      "2026-09-16T08:55:57.395348+08:00"
+    ]
+  },
+  "files": {
+    "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/ops/hourly_check.py": {
+      "sha256": "c2442eb55a3671853b6875e6644d3ad11473c5f805b1ba35b8f5b8366db329b6",
+      "bytes": 7573
+    },
+    "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/ops/hourly_config.json": {
+      "sha256": "47b408ec95dab024339ef3937ab03ae75f849597b0c6c86764a0ae56966ce57b",
+      "bytes": 816
+    },
+    "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/ops/hourly_review_prompt.md": {
+      "sha256": "7bfec2b40220432ab3d8fb090189b71a06f0fc318a331d5c8aaa43221b547493",
+      "bytes": 4826
+    },
+    "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/ops/acsg-e97-hourly-check.timer": {
+      "sha256": "5a9f51b472dd7be39cd9f882ad2957999605d839dcecb606d09fc4a90ce9d60b",
+      "bytes": 199
+    }
+  }
+}

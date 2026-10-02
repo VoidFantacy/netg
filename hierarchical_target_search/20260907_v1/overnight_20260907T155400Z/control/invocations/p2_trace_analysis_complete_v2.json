@@ -1,0 +1,46 @@
+{
+  "stage": "P2",
+  "split": "pilot",
+  "measurement": "analysis",
+  "output": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_analysis_complete_v2",
+  "command": [
+    "/data/netg/ACSG/.venv_cpu/bin/python",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/analyze_traces.py",
+    "--inputs",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/webvid_eval/trace.json",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_eval/trace.json",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_completion_v1/webvid2_5m_light_v1/q157.json",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_completion_v1/webvid2_5m_light_v1/q631.json",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_completion_v1/webvid2_5m_light_v1/q2003.json",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_completion_v1/webvid2_5m_light_v1/q4093.json",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_completion_v1/webvid2_5m_light_v1/q6007.json",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_completion_v1/webvid2_5m_light_v1/q8009.json",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_completion_v1/webvid2_5m_light_v1/q9967.json",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_completion_v1/yandex_t2i_official10M_ip_v1/q157.json",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_completion_v1/yandex_t2i_official10M_ip_v1/q631.json",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_completion_v1/yandex_t2i_official10M_ip_v1/q2003.json",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_completion_v1/yandex_t2i_official10M_ip_v1/q4093.json",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_completion_v1/yandex_t2i_official10M_ip_v1/q6007.json",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_completion_v1/yandex_t2i_official10M_ip_v1/q8009.json",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_completion_v1/yandex_t2i_official10M_ip_v1/q9967.json",
+    "--model",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/webvid_model/model.json",
+    "--model",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_model/model.json",
+    "--protocol",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/protocol.json",
+    "--output",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_analysis_complete_v2"
+  ],
+  "oracle": true,
+  "upstream_gates": [
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P0.json",
+      "sha256": "693b6947c97ac8835ba34da51300b8958866d3b9c8acdbc4234a24d2bea00c85"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P1.json",
+      "sha256": "d09316b50e6fc8b0fb28f498687494e6c768c918ed169c5bc334adff136b9261"
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+[
+  {
+    "dataset": "webvid2_5m_light_v1",
+    "fit_queries": 10000,
+    "candidates": 5064,
+    "all_candidates": {
+      "support": {
+        "n": 5064,
+        "min": 6.0,
+        "q25": 24.0,
+        "median": 37.0,
+        "q75": 56.0,
+        "max": 493.0
+      },
+      "nonzero_r1_events": {
+        "n": 5064,
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 1.0,
+        "max": 37.0
+      },
+      "nonzero_r100_events": {
+        "n": 5064,
+        "min": 0.0,
+        "q25": 3.0,
+        "median": 6.0,
+        "q75": 11.0,
+        "max": 223.0
+      },
+      "no_r1_effect_candidates": 2867
+    },
+    "models": {
+      "Cost": {
+        "edits": 16,
+        "fit_support": {
+          "n": 16,
+          "min": 19.0,
+          "q25": 36.5,
+          "median": 45.5,
+          "q75": 50.5,
+          "max": 144.0
+        },
+        "fit_r1_response": {
+          "n": 16,
+          "min": 0.0,
+          "q25": 0.0,
+          "median": 0.5,
+          "q75": 1.25,
+          "max": 8.0
+        },
+        "fit_r100_response": {
+          "n": 16,
+          "min": 3.0,
+          "q25": 7.0,
+          "median": 8.0,
+          "q75": 13.25,
+          "max": 22.0
+        },
+        "k1_zero_response_edits": 8,
+        "four_negative_timing_signs": 0,
+        "single_audit_r1_positive_edits": 1,
+        "single_audit_r1_negative_edits": 3,
+        "single_audit_r100_positive_edits": 4,
+        "single_audit_r100_negative_edits": 8,
+        "fit_multi_edit_queries": 54,
+        "audit_multi_edit_queries": 19
+      },
+      "RecallControl": {
+        "edits": 16,
+        "fit_support": {
+          "n": 16,
+          "min": 20.0,
+          "q25": 31.25,
+          "median": 50.0,
+          "q75": 62.25,
+          "max": 159.0
+        },
+        "fit_r1_response": {
+          "n": 16,
+          "min": 1.0,
+          "q25": 2.0,
+          "median": 2.0,
+          "q75": 2.5,
+          "max": 7.0
+        },
+        "fit_r100_response": {
+          "n": 16,
+          "min": 4.0,
+          "q25": 9.75,
+          "median": 13.0,
+          "q75": 16.0,
+          "max": 43.0
+        },
+        "k1_zero_response_edits": 0,
+        "four_negative_timing_signs": 0,
+        "single_audit_r1_positive_edits": 3,
+        "single_audit_r1_negative_edits": 4,
+        "single_audit_r100_positive_edits": 4,
+        "single_audit_r100_negative_edits": 12,
+        "fit_multi_edit_queries": 27,
+        "audit_multi_edit_queries": 9
+      }
+    },
+    "fit_measured_action_oracle": [
+      {
+        "n": 10000,
+        "positive": 556,
+        "negative": 0,
+        "nonzero": 556,
+        "net": 556.0,
+        "mean": 0.0556
+      },
+      {
+        "n": 10000,
+        "positive": 5604,
+        "negative": 0,
+        "nonzero": 5604,
+        "net": 25078.0,
+        "mean": 2.5078
+      }
+    ]
+  },
+  {
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "fit_queries": 10000,
+    "candidates": 6192,
+    "all_candidates": {
+      "support": {
+        "n": 6192,
+        "min": 5.0,
+        "q25": 24.0,
+        "median": 34.0,
+        "q75": 48.0,
+        "max": 150.0
+      },
+      "nonzero_r1_events": {
+        "n": 6192,
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 1.0,
+        "max": 19.0
+      },
+      "nonzero_r100_events": {
+        "n": 6192,
+        "min": 0.0,
+        "q25": 2.0,
+        "median": 4.0,
+        "q75": 6.0,
+        "max": 37.0
+      },
+      "no_r1_effect_candidates": 4454
+    },
+    "models": {
+      "Cost": {
+        "edits": 16,
+        "fit_support": {
+          "n": 16,
+          "min": 24.0,
+          "q25": 31.25,
+          "median": 40.5,
+          "q75": 53.75,
+          "max": 85.0
+        },
+        "fit_r1_response": {
+          "n": 16,
+          "min": 0.0,
+          "q25": 0.0,
+          "median": 0.5,
+          "q75": 1.0,
+          "max": 4.0
+        },
+        "fit_r100_response": {
+          "n": 16,
+          "min": 2.0,
+          "q25": 4.75,
+          "median": 5.5,
+          "q75": 6.0,
+          "max": 12.0
+        },
+        "k1_zero_response_edits": 8,
+        "four_negative_timing_signs": 1,
+        "single_audit_r1_positive_edits": 2,
+        "single_audit_r1_negative_edits": 1,
+        "single_audit_r100_positive_edits": 5,
+        "single_audit_r100_negative_edits": 10,
+        "fit_multi_edit_queries": 21,
+        "audit_multi_edit_queries": 10
+      },
+      "RecallControl": {
+        "edits": 16,
+        "fit_support": {
+          "n": 16,
+          "min": 21.0,
+          "q25": 41.25,
+          "median": 48.0,
+          "q75": 70.0,
+          "max": 92.0
+        },
+        "fit_r1_response": {
+          "n": 16,
+          "min": 2.0,
+          "q25": 2.0,
+          "median": 2.5,
+          "q75": 3.25,
+          "max": 11.0
+        },
+        "fit_r100_response": {
+          "n": 16,
+          "min": 4.0,
+          "q25": 5.75,
+          "median": 7.5,
+          "q75": 14.5,
+          "max": 23.0
+        },
+        "k1_zero_response_edits": 0,
+        "four_negative_timing_signs": 0,
+        "single_audit_r1_positive_edits": 2,
+        "single_audit_r1_negative_edits": 1,
+        "single_audit_r100_positive_edits": 9,
+        "single_audit_r100_negative_edits": 6,
+        "fit_multi_edit_queries": 19,
+        "audit_multi_edit_queries": 11
+      }
+    },
+    "fit_measured_action_oracle": [
+      {
+        "n": 10000,
+        "positive": 296,
+        "negative": 0,
+        "nonzero": 296,
+        "net": 296.0,
+        "mean": 0.0296
+      },
+      {
+        "n": 10000,
+        "positive": 4219,
+        "negative": 0,
+        "nonzero": 4219,
+        "net": 20415.0,
+        "mean": 2.0415
+      }
+    ]
+  }
+]

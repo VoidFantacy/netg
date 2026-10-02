@@ -1,0 +1,34 @@
+{
+  "selection": {
+    "webvid2_5m_light_v1": {
+      "rl": {
+        "model": "rl_20260921",
+        "mean_U": 0.0038898169781141786,
+        "total_NDC": 1755.9931640625,
+        "seed": 20260921
+      },
+      "es": {
+        "model": "es_20260921",
+        "mean_U": 0.006818160735690878,
+        "total_NDC": 1757.728515625,
+        "seed": 20260921
+      }
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "rl": {
+        "model": "rl_20260922",
+        "mean_U": 0.007777384547445455,
+        "total_NDC": 2972.5654296875,
+        "seed": 20260922
+      },
+      "es": {
+        "model": "es_20260922",
+        "mean_U": 0.003933029766278981,
+        "total_NDC": 2970.5927734375,
+        "seed": 20260922
+      }
+    }
+  },
+  "rule": "cal mean U then lower total NDC then smaller seed",
+  "audit_prepared": false
+}

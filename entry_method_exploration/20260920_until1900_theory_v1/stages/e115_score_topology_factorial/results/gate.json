@@ -1,0 +1,101 @@
+{
+  "decision": "STOP_CROSS_SCORE_TOPOLOGY_CANDIDATE",
+  "candidate": "B_U_GP",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "primary": [
+        {
+          "dataset": "webvid2_5m_light_v1",
+          "K": 1,
+          "L": 128,
+          "baseline_recall": 0.753173828125,
+          "candidate_recall": 0.752197265625,
+          "delta_recall_pp": -0.09765625,
+          "baseline_failed": 1011,
+          "candidate_failed": 1015,
+          "rescued_zero": 111,
+          "newly_zero": 115,
+          "same_entries": 174,
+          "CI98_75_low_pp": -1.025390625,
+          "CI98_75_high_pp": 0.8056640625
+        },
+        {
+          "dataset": "webvid2_5m_light_v1",
+          "K": 100,
+          "L": 128,
+          "baseline_recall": 0.65540771484375,
+          "candidate_recall": 0.65392578125,
+          "delta_recall_pp": -0.148193359375,
+          "baseline_failed": 5,
+          "candidate_failed": 11,
+          "rescued_zero": 4,
+          "newly_zero": 10,
+          "same_entries": 174,
+          "CI98_75_low_pp": -0.5380874633789062,
+          "CI98_75_high_pp": 0.2348663330078133
+        }
+      ],
+      "mean_by_K_delta_pp": {
+        "1": 0.1123046875,
+        "100": -0.01519775390625
+      },
+      "tests": {
+        "primary_both_nonnegative": false,
+        "some_gain_at_least_point5pp": false,
+        "some_corrected_lower_positive": false,
+        "both_K_mean_across_L_nonnegative": false
+      },
+      "pass_quality_gate": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "primary": [
+        {
+          "dataset": "yandex_t2i_official10M_ip_v1",
+          "K": 1,
+          "L": 128,
+          "baseline_recall": 0.90625,
+          "candidate_recall": 0.9033203125,
+          "delta_recall_pp": -0.29296875,
+          "baseline_failed": 384,
+          "candidate_failed": 396,
+          "rescued_zero": 52,
+          "newly_zero": 64,
+          "same_entries": 262,
+          "CI98_75_low_pp": -0.9521484375,
+          "CI98_75_high_pp": 0.3662109375
+        },
+        {
+          "dataset": "yandex_t2i_official10M_ip_v1",
+          "K": 100,
+          "L": 128,
+          "baseline_recall": 0.83791748046875,
+          "candidate_recall": 0.83443603515625,
+          "delta_recall_pp": -0.34814453125,
+          "baseline_failed": 24,
+          "candidate_failed": 43,
+          "rescued_zero": 11,
+          "newly_zero": 30,
+          "same_entries": 262,
+          "CI98_75_low_pp": -0.7978546142578135,
+          "CI98_75_high_pp": 0.07519531249999993
+        }
+      ],
+      "mean_by_K_delta_pp": {
+        "1": -0.1611328125,
+        "100": -0.1673583984375
+      },
+      "tests": {
+        "primary_both_nonnegative": false,
+        "some_gain_at_least_point5pp": false,
+        "some_corrected_lower_positive": false,
+        "both_K_mean_across_L_nonnegative": false
+      },
+      "pass_quality_gate": false
+    }
+  ],
+  "formal_QPS": false,
+  "default_changed": false,
+  "multiple_interval_scope": "Four B-versus-A primary intervals are the prelocked gate; other factorial CIs are descriptive, not a simultaneous global claim."
+}

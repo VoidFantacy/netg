@@ -1,0 +1,257 @@
+{
+  "status": "COMPLETE",
+  "stage": "P3_PORTAL_SUITE",
+  "dataset": "webvid2_5m_light_v1",
+  "started_utc": "2026-09-07T17:38:27.443723+00:00",
+  "cpu_only": true,
+  "fit_range": [
+    10000,
+    30000
+  ],
+  "pilot_accessed": false,
+  "validation_accessed": false,
+  "heldout_accessed": false,
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+  },
+  "partition": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/manifest.json",
+    "sha256": "b01a0ee73b29d51247587de501d63ac0ec6b4c723b62786ff71dc2aff0cb8de7"
+  },
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/build_portal_suite.py",
+    "sha256": "44194bbbf8bcc99130debf099102aaea886d231c6d8a4a448b0622968139917c"
+  },
+  "frozen_sources": [
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/prepare_inputs_and_plans.py",
+      "sha256": "9be15acb7994057c719eb07501ce947f6bc831ae0cbd0e2a3770052b5ad6e016"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/finalize_portal_models.py",
+      "sha256": "d1945203dc99e7027ebdc9a414a6b1303df5da0988b491dcc15ac1b30f537a7e"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/bench_hierarchical_portals.cpp",
+      "sha256": "9137ae4ebc3b4a3c437fb171b0ffc1b5857d5ea1b610a674a59bf46c8af78385"
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/RegionalSearch.h",
+      "sha256": "320e29c9407d5907ece7ef64113edeb8b2d5157fa8796aaf94e470eb6771e14e"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/prober_build_manifest_v2.json",
+      "sha256": "0aff8f1faeb6afa1c795539bfdd2ffef9f21fe115dfe99db54ac2102fdb186e8"
+    },
+    {
+      "path": "/data/netg/ACSG/build/benches/bench_hierarchical_portals",
+      "sha256": "b745e4732e881cf826d101c86dfc2d962fa7c92be8210c6b882eb56cb5fd61af"
+    }
+  ],
+  "fixed_branches": [
+    0,
+    1
+  ],
+  "fixed_rules": [
+    "frequency3",
+    "greedy3"
+  ],
+  "invocations": [
+    {
+      "name": "lambda0_plan",
+      "status": "COMPLETE",
+      "command": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/prepare_inputs_and_plans.py",
+        "plan",
+        "--dataset",
+        "webvid2_5m_light_v1",
+        "--protocol",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+        "--gate",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P2.json",
+        "--audit",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+        "--fit-manifest",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/fit_inputs/webvid2_5m_light_v1/manifest.json",
+        "--partition",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/lambda0/manifest.json",
+        "--output",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/webvid2_5m_light_v1/lambda0",
+        "--source-binding",
+        "/data/netg/ACSG/benches/bench_hierarchical_portals.cpp",
+        "--source-binding",
+        "/data/netg/ACSG/ACSG/RegionalSearch.h",
+        "--source-binding",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/prober_build_manifest_v2.json",
+        "--source-binding",
+        "/data/netg/ACSG/build/benches/bench_hierarchical_portals"
+      ],
+      "started_utc": "2026-09-07T17:38:27.447012+00:00",
+      "pid": 42853,
+      "pgid": 42852,
+      "returncode": 0,
+      "wall_seconds": 0.3360747069964418,
+      "ended_utc": "2026-09-07T17:38:27.783275+00:00",
+      "artifact": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/webvid2_5m_light_v1/lambda0/plan.json",
+        "sha256": "f612de09ef4d8d9083f0c842b230d93b8375028d38543c229f56095afeddd55e"
+      }
+    },
+    {
+      "name": "lambda0_probes",
+      "status": "COMPLETE",
+      "command": [
+        "/data/netg/ACSG/build/benches/bench_hierarchical_portals",
+        "--plan",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/webvid2_5m_light_v1/lambda0/plan.json",
+        "--output",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/webvid2_5m_light_v1/lambda0",
+        "--threads",
+        "16"
+      ],
+      "started_utc": "2026-09-07T17:38:27.789225+00:00",
+      "pid": 42860,
+      "pgid": 42852,
+      "returncode": 0,
+      "wall_seconds": 9.472282062997692,
+      "ended_utc": "2026-09-07T17:38:37.261727+00:00",
+      "artifact": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/webvid2_5m_light_v1/lambda0/complete.json",
+        "sha256": "d847bdd474d02dae4a4fc2b77352ee0599dc405ad6f3b3c5bc6425a45f880c8b"
+      }
+    },
+    {
+      "name": "lambda0_finalize",
+      "status": "COMPLETE",
+      "command": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/finalize_portal_models.py",
+        "--plan",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/webvid2_5m_light_v1/lambda0/plan.json",
+        "--probe-complete",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/webvid2_5m_light_v1/lambda0/complete.json",
+        "--output",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/webvid2_5m_light_v1/lambda0"
+      ],
+      "started_utc": "2026-09-07T17:38:37.265889+00:00",
+      "pid": 42886,
+      "pgid": 42852,
+      "returncode": 0,
+      "wall_seconds": 0.6806382050053799,
+      "ended_utc": "2026-09-07T17:38:37.946967+00:00",
+      "artifact": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/webvid2_5m_light_v1/lambda0/complete.json",
+        "sha256": "26ff3b0198e3aae0b64ec1bf9e562e63dfc1addd46c2d49d1806735550466987"
+      }
+    },
+    {
+      "name": "lambda1_plan",
+      "status": "COMPLETE",
+      "command": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/prepare_inputs_and_plans.py",
+        "plan",
+        "--dataset",
+        "webvid2_5m_light_v1",
+        "--protocol",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+        "--gate",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P2.json",
+        "--audit",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+        "--fit-manifest",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/fit_inputs/webvid2_5m_light_v1/manifest.json",
+        "--partition",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/lambda1/manifest.json",
+        "--output",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/webvid2_5m_light_v1/lambda1",
+        "--source-binding",
+        "/data/netg/ACSG/benches/bench_hierarchical_portals.cpp",
+        "--source-binding",
+        "/data/netg/ACSG/ACSG/RegionalSearch.h",
+        "--source-binding",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/prober_build_manifest_v2.json",
+        "--source-binding",
+        "/data/netg/ACSG/build/benches/bench_hierarchical_portals"
+      ],
+      "started_utc": "2026-09-07T17:38:37.950632+00:00",
+      "pid": 42893,
+      "pgid": 42852,
+      "returncode": 0,
+      "wall_seconds": 0.29998092300229473,
+      "ended_utc": "2026-09-07T17:38:38.250880+00:00",
+      "artifact": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/webvid2_5m_light_v1/lambda1/plan.json",
+        "sha256": "c4b93a94d251f88c92e774c1a379b66cb88de28a4b018e17f72463f958c1fee1"
+      }
+    },
+    {
+      "name": "lambda1_probes",
+      "status": "COMPLETE",
+      "command": [
+        "/data/netg/ACSG/build/benches/bench_hierarchical_portals",
+        "--plan",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/webvid2_5m_light_v1/lambda1/plan.json",
+        "--output",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/webvid2_5m_light_v1/lambda1",
+        "--threads",
+        "16"
+      ],
+      "started_utc": "2026-09-07T17:38:38.256006+00:00",
+      "pid": 42894,
+      "pgid": 42852,
+      "returncode": 0,
+      "wall_seconds": 8.557682452003064,
+      "ended_utc": "2026-09-07T17:38:46.813963+00:00",
+      "artifact": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/webvid2_5m_light_v1/lambda1/complete.json",
+        "sha256": "02c8f3b8f361cade1bb7431193404909c62a0082ecfd4d84939cd1b9e0fb91af"
+      }
+    },
+    {
+      "name": "lambda1_finalize",
+      "status": "COMPLETE",
+      "command": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/finalize_portal_models.py",
+        "--plan",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/webvid2_5m_light_v1/lambda1/plan.json",
+        "--probe-complete",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/webvid2_5m_light_v1/lambda1/complete.json",
+        "--output",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/webvid2_5m_light_v1/lambda1"
+      ],
+      "started_utc": "2026-09-07T17:38:46.818314+00:00",
+      "pid": 42916,
+      "pgid": 42852,
+      "returncode": 0,
+      "wall_seconds": 0.6221908959996654,
+      "ended_utc": "2026-09-07T17:38:47.440826+00:00",
+      "artifact": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/webvid2_5m_light_v1/lambda1/complete.json",
+        "sha256": "b4d7d1ec55c1e3fc7143708e721daefce0cb4e2c52db74ebb8f9954d5e83b9e4"
+      }
+    }
+  ],
+  "models": {
+    "lambda0_frequency3": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/webvid2_5m_light_v1/lambda0/frequency3/model.json",
+      "sha256": "ceaaf5bc76b5ab6610d86d5fbce04a9ac37ebf06a1b57adb3934e5c7f4ce9daa"
+    },
+    "lambda0_greedy3": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/webvid2_5m_light_v1/lambda0/greedy3/model.json",
+      "sha256": "376e0bf512f2310b63617efeefe747a6a15ef6fc0ecab8d39dab6c96bd85b5fb"
+    },
+    "lambda1_frequency3": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/webvid2_5m_light_v1/lambda1/frequency3/model.json",
+      "sha256": "0039cdb03ab6f412c9e5881a80d96b88196261a2ef643cf6d568e755fe81ba44"
+    },
+    "lambda1_greedy3": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/webvid2_5m_light_v1/lambda1/greedy3/model.json",
+      "sha256": "d3109d9880dd188f7558a8776cdd4bb6b6856a21c82ace74e0c6c3558e56e4dc"
+    }
+  },
+  "ended_utc": "2026-09-07T17:38:47.441880+00:00"
+}

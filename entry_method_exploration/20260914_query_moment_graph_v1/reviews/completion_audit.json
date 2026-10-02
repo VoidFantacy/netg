@@ -1,0 +1,296 @@
+{
+  "status": "PASS_OBJECTIVE_STOP_BRANCH_VERIFIED",
+  "objective": "持续推进，最后给出结论，要么有更好的方法，要么停止当前分支",
+  "requirements": [
+    {
+      "requirement": "Make substantive progress beyond a status restatement",
+      "evidence": [
+        "research.md",
+        "protocol.md",
+        "logs/jobs.json",
+        "results/construction.json"
+      ],
+      "verified": "Three mechanism families assessed and E95 actually ran six builds and four serial query jobs."
+    },
+    {
+      "requirement": "Obtain a better method or stop the current branch",
+      "evidence": [
+        "decision.json",
+        "decision.md",
+        "results/gate.json",
+        "results/aux_paired.csv",
+        "../../s-target.md"
+      ],
+      "verified": "Stop alternative explicitly adopted; all four new development gates failed, supported by older results and scoped to the current branch."
+    },
+    {
+      "requirement": "Freeze hypothesis and gates before testing",
+      "evidence": [
+        "reviews/preconstruction_freeze.json",
+        "reviews/prebuild_freeze.json",
+        "reviews/prequery_freeze.json",
+        "reviews/analysis_source_freeze.json"
+      ],
+      "verified": "All original hashes rechecked; no post-outcome changes to construction or gates."
+    },
+    {
+      "requirement": "Verify actual construction and complete scoped experiment",
+      "evidence": [
+        "results/construction.json",
+        "reviews/preflight_verification.json",
+        "reviews/aux_verification.json",
+        "logs/jobs.json"
+      ],
+      "verified": "2 datasets, 3 policies, 2 L, 128 preflight and 7952 main; 96960 independently scored outputs, 16160 original baseline rows, 384 original kernel checks."
+    },
+    {
+      "requirement": "Protect data, defaults and preserve old work",
+      "evidence": [
+        "reviews/protected_before.json",
+        "reviews/large_asset_stat.json",
+        "source_before",
+        "root_after"
+      ],
+      "verified": "Small inputs/source/models SHA unchanged; fit prefix SHA stable; large graph size/mtime unchanged with inherited identity. All online P/labels match originals; GT10 defaults unchanged."
+    },
+    {
+      "requirement": "Respect single-thread query and finite budget",
+      "evidence": [
+        "logs/jobs.json",
+        "results/cost.json"
+      ],
+      "verified": "6 builds, 194304 NSG/193920 HNSW; CPU15/process and numerical-library 1 thread; no retries, no new GT, compiler, dependencies or wall/QPS."
+    },
+    {
+      "requirement": "Do not run conditional performance phase after failed gate",
+      "evidence": [
+        "results/gate.json",
+        "results/cost.json",
+        "state.json"
+      ],
+      "verified": "All four gates fail; no conditional wall is required or pending."
+    },
+    {
+      "requirement": "Synchronize architecture, results, target, history and close handoff",
+      "evidence": [
+        "root_after",
+        "report.md",
+        "decision.md"
+      ],
+      "verified": "Root documents and history87 synchronized, local links and scoped whitespace checked; original before snapshots preserved."
+    },
+    {
+      "requirement": "Leave no live or queued native work",
+      "evidence": [
+        "logs/jobs.json",
+        "state.json",
+        "decision.json"
+      ],
+      "verified": "All ten launched native handles completed with exit0 and original PIDs no longer refer to this experiment; no successor queue."
+    }
+  ],
+  "recomputed_comparisons": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "model": "full",
+      "L": 64,
+      "group": "full",
+      "net_hits": -1898,
+      "delta_failures": 225
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "model": "full",
+      "L": 64,
+      "group": "half0",
+      "net_hits": -946,
+      "delta_failures": 109
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "model": "full",
+      "L": 64,
+      "group": "half1",
+      "net_hits": -952,
+      "delta_failures": 116
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "model": "full",
+      "L": 128,
+      "group": "full",
+      "net_hits": -1188,
+      "delta_failures": 130
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "model": "full",
+      "L": 128,
+      "group": "half0",
+      "net_hits": -587,
+      "delta_failures": 63
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "model": "full",
+      "L": 128,
+      "group": "half1",
+      "net_hits": -601,
+      "delta_failures": 67
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "model": "diag",
+      "L": 64,
+      "group": "full",
+      "net_hits": -3066,
+      "delta_failures": 359
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "model": "diag",
+      "L": 64,
+      "group": "half0",
+      "net_hits": -1596,
+      "delta_failures": 176
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "model": "diag",
+      "L": 64,
+      "group": "half1",
+      "net_hits": -1470,
+      "delta_failures": 183
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "model": "diag",
+      "L": 128,
+      "group": "full",
+      "net_hits": -1614,
+      "delta_failures": 165
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "model": "diag",
+      "L": 128,
+      "group": "half0",
+      "net_hits": -839,
+      "delta_failures": 82
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "model": "diag",
+      "L": 128,
+      "group": "half1",
+      "net_hits": -775,
+      "delta_failures": 83
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "full",
+      "L": 64,
+      "group": "full",
+      "net_hits": -44,
+      "delta_failures": 23
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "full",
+      "L": 64,
+      "group": "half0",
+      "net_hits": -16,
+      "delta_failures": 12
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "full",
+      "L": 64,
+      "group": "half1",
+      "net_hits": -28,
+      "delta_failures": 11
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "full",
+      "L": 128,
+      "group": "full",
+      "net_hits": -188,
+      "delta_failures": 28
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "full",
+      "L": 128,
+      "group": "half0",
+      "net_hits": -69,
+      "delta_failures": 13
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "full",
+      "L": 128,
+      "group": "half1",
+      "net_hits": -119,
+      "delta_failures": 15
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "diag",
+      "L": 64,
+      "group": "full",
+      "net_hits": -38,
+      "delta_failures": 3
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "diag",
+      "L": 64,
+      "group": "half0",
+      "net_hits": -31,
+      "delta_failures": 4
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "diag",
+      "L": 64,
+      "group": "half1",
+      "net_hits": -7,
+      "delta_failures": -1
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "diag",
+      "L": 128,
+      "group": "full",
+      "net_hits": -53,
+      "delta_failures": 3
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "diag",
+      "L": 128,
+      "group": "half0",
+      "net_hits": -48,
+      "delta_failures": 5
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "diag",
+      "L": 128,
+      "group": "half1",
+      "net_hits": -5,
+      "delta_failures": -2
+    }
+  ],
+  "protected_small_files": 21,
+  "large_asset_check": "stat + inherited identity, not new full hash",
+  "local_links_checked": 654,
+  "missing_links": [],
+  "whitespace_checks": "PASS",
+  "live_native_pids": [],
+  "scientific_superiority_claimed": false,
+  "objective_stop_alternative_complete": true,
+  "pending_required_work": [],
+  "new_QPS_points": 0
+}

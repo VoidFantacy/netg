@@ -1,0 +1,29 @@
+{
+  "experiment": "E95",
+  "models": [
+    "identity",
+    "full",
+    "diag"
+  ],
+  "main": "full",
+  "backup": "diag",
+  "N_fit": 20000,
+  "N_aux": 7952,
+  "halves": 3976,
+  "L": [
+    64,
+    128
+  ],
+  "seed": 20260828,
+  "threads": 1,
+  "CPU": 15,
+  "eigen_floor": 1e-06,
+  "NSG_expected": 194304,
+  "HNSW_expected": 193920,
+  "builds_expected": 6,
+  "NSG_hard_cap": 200000,
+  "QPS": null,
+  "gate": "protocol.md; all full/half net>=0 and new_zero<=0, graph<=1.01, signal recall>=.10pp or route<=.90 at one L",
+  "final_payload_access": false,
+  "heldout_access": false
+}

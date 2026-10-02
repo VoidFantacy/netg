@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "protected_files": 8996,
+  "local_links": 388,
+  "artifact_bytes": 309710067,
+  "verification": {
+    "status": "PASS",
+    "states": 500,
+    "independent_set_scores": 2048000,
+    "endpoint_bit_recovery_rows": 737280,
+    "cache_identity_rows": 2048000,
+    "new_patch_rows": 2725,
+    "physical_graphs": 100,
+    "three_way_parity_rows": 1600,
+    "query_interaction_cells": 655360,
+    "invalid_topologies_rejected": 8,
+    "new_search": 0,
+    "seconds": 12.696639746998699
+  },
+  "cost": {
+    "NSG_calls": 7525,
+    "HNSW_calls": 2051200,
+    "builds": 340,
+    "topology_installations": 340,
+    "causal_installations": 320,
+    "no_op_installations": 20,
+    "states": 500,
+    "historical_C_seed_NSG": 81920,
+    "endpoint_new_NSG": 1333,
+    "parity_NSG": 4800,
+    "optimizer_updates": 0,
+    "new_GT": 0,
+    "new_development_queries": 0,
+    "QPS_points": 0,
+    "datasets": [
+      {
+        "status": "PASS",
+        "dataset": "webvid2_5m_light_v1",
+        "seconds": 28.588490663998527,
+        "peak_RSS_KiB": 5715296,
+        "normal_new_NSG": 1986,
+        "endpoint_normal_NSG": 971,
+        "states": 250,
+        "topology_installations": 170,
+        "invalid_topologies_rejected": 4,
+        "NSG_calls": 4386,
+        "HNSW_calls": 1025600,
+        "builds": 170,
+        "actual_threads": 1,
+        "build_seconds": 8.562331806
+      },
+      {
+        "status": "PASS",
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "seconds": 30.4323832150003,
+        "peak_RSS_KiB": 10442476,
+        "normal_new_NSG": 739,
+        "endpoint_normal_NSG": 362,
+        "states": 250,
+        "topology_installations": 170,
+        "invalid_topologies_rejected": 4,
+        "NSG_calls": 3139,
+        "HNSW_calls": 1025600,
+        "builds": 170,
+        "actual_threads": 1,
+        "build_seconds": 7.534877652999998
+      }
+    ]
+  },
+  "seconds": 11.484606097001233
+}

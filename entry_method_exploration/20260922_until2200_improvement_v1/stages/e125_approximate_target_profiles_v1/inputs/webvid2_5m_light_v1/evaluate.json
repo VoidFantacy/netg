@@ -1,0 +1,58 @@
+{
+  "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+  "base_n": 2505000,
+  "dimension": 512,
+  "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "dataset": "webvid2_5m_light_v1",
+  "n": 4096,
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/queries.f32",
+  "gt": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/gt.i32",
+  "formal": false,
+  "threads": 1,
+  "repeats": 3,
+  "normalize_anchor": false,
+  "dataset_order": 0,
+  "points": [
+    {
+      "K": 1,
+      "L": 800
+    },
+    {
+      "K": 1,
+      "L": 1000
+    },
+    {
+      "K": 1,
+      "L": 1250
+    },
+    {
+      "K": 100,
+      "L": 1120
+    },
+    {
+      "K": 100,
+      "L": 1250
+    },
+    {
+      "K": 100,
+      "L": 1400
+    }
+  ],
+  "methods": [
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+      "name": "GT10-soft-t1"
+    },
+    {
+      "name": "ApproxTarget10",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/models/webvid2_5m_light_v1/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/models/webvid2_5m_light_v1/router.hnsw"
+    }
+  ],
+  "baseline_reference": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/webvid2_5m_light_v1",
+  "max_search_calls": 260000,
+  "seconds_cap": 2700
+}

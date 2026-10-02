@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "status": "PASS_EXISTING_EVIDENCE_FINAL_REPORT_REVIEW",
+  "created_utc": "2026-09-07T23:12:46.941225+00:00",
+  "reviewed_report": {
+    "path": "/data/netg/ACSG/实验总结.md",
+    "sha256": "4bda0c093a3169fbe2f376d756ac2f718e2f5f7b83b83b55646ba40444651d54",
+    "bytes": 29024
+  },
+  "review_scope": "Post-deadline documentation and existing small JSON evidence only; no experiments, compilation, method development, raw data, NPZ, ANN or new statistical estimates.",
+  "findings": [],
+  "substantive_issue_count": 0,
+  "blocking_issue_count": 0,
+  "checks": [
+    {
+      "area": "Opening and report timing",
+      "status": "PASS",
+      "detail": "Opening is exactly four Chinese sentences and 104 characters. Report creation metadata is 2026-09-07 23:06:00 UTC, after the 23:00 deadline and recorded stop check."
+    },
+    {
+      "area": "P2/P3 measurement tables",
+      "status": "PASS",
+      "detail": "All 12 selected P2 and 8 selected P3 rows match stored Recall, five-round arithmetic mean QPS, routing NDC, graph NDC and total NDC at the report display precision. NDC components are independently rounded from stored values."
+    },
+    {
+      "area": "Fixed primary confidence intervals",
+      "status": "PASS",
+      "detail": "All four lambda1_greedy3 minus lambda0_greedy3 oracle_probability deltas and ordinary95 intervals match exactly at display precision. WebVid intervals are negative; Yandex does not demonstrate improvement or equivalence; no primary lower bound is positive."
+    },
+    {
+      "area": "Full fixed contrast context",
+      "status": "PASS",
+      "detail": "All 8 P3 portal CIs contain zero. All 16 same-route oracle protection contrasts have positive Recall CI lower bounds, higher total NDC and lower mean QPS. All 12 real P2 geom cells are dominated by paired Fast at the same L in Recall, QPS and total NDC. The 72-measurement/60-comparison accounting is accurate."
+    },
+    {
+      "area": "Measurement interpretation",
+      "status": "PASS",
+      "detail": "Oracle is explicitly diagnostic and excluded from deployable points. Five wall rounds are not independent Recall samples; cross-model wall is descriptive; unadjusted pilot intervals are not formal final validation. Fast unmeasured counters and nested bootstrap completion caveat are explicitly separated."
+    },
+    {
+      "area": "Portal diagnosis",
+      "status": "PASS",
+      "detail": "8 cells each have 10000 changed entry sets; final-set equality range 68.34%-93.36%, absent same-route samples and six undefined WebVid-lambda1 weighted-query values agree with the saved interpretation. No exploration or causal identity is inferred."
+    },
+    {
+      "area": "M4 and fit support",
+      "status": "PASS",
+      "detail": "Fit/pilot leaf counts, M4 changes +1.808/-0.004 pp, seen slot shares 57.258%/10.163%, and WebVid seen/unseen Recall contributions match saved summaries. M4 is explicitly not a Recall upper bound; seen is base-target fit incidence, not duplicate-query leakage. Subgroup means remain descriptive."
+    },
+    {
+      "area": "Local lambda1 ordering",
+      "status": "PASS",
+      "detail": "Seen counts, degree maxima 168/162, thresholds and 100% condition coverage agree with saved review. Fixed current labeling/candidate feasibility, integer DeltaS, D pairwise cut bound, stay zero-tie retention and ID ties for improving moves are stated. Graph/capacity effects, no global optimum and no standalone Recall-causality claim are preserved. Final wording now explicitly conditions the >=1 DeltaS gap on unequal integer values."
+    },
+    {
+      "area": "P0 validation integrity access",
+      "status": "PASS",
+      "detail": "Report correctly discloses validation query/GT headers and full SHA, query row fingerprint duplicate/overlap and finite checks, GT range/row-duplicate checks; fitting/selection/ANN evaluation excluded and heldout unopened."
+    },
+    {
+      "area": "Offline costs and sharing",
+      "status": "PASS",
+      "detail": "26 displayed cost values reconcile: 24 values from measurement-table cost records plus two P2 partition walls from existing manifests. P3 partition wall includes common initialization and both lambda branches; frequency/greedy share one probe per lambda. Exact-GT/hub/graph historical costs remain unknown, no zero substitution or invented complete training/break-even sum."
+    },
+    {
+      "area": "Timeline and stop scope",
+      "status": "PASS",
+      "detail": "Control start 23:53:57, first registered audit 00:01:04, P3 NOPASS 02:00:52, last registered diagnosis end 02:46:07, early close 03:02:48 and final 07:00:00.312/07:01:24 checks match UTC-to-Asia/Shanghai conversion. Recorded waiting is not training; no deadline-interrupted job is reported."
+    },
+    {
+      "area": "Final resources and preservation wording",
+      "status": "PASS",
+      "detail": "Updated paragraph matches 34 nonoverlapping registered heavy intervals; rusage/polling RSS distinction; 3.335661 GiB RUN logical size and 16.665653 GiB disk availability at the saved snapshot; seven scoped protected sources. It links the completed final protection/resource report and does not claim a whole-night universal upper bound."
+    },
+    {
+      "area": "Completion boundary",
+      "status": "PASS",
+      "detail": "P4-P8 and formal performance validation remain unrun; dependency/smoke availability is not baseline reproduction. Current deadline execution/report delivery completion is explicitly distinct from the unfinished long-term research goal."
+    }
+  ],
+  "known_edits_verified": [
+    {
+      "edit": "Resource paragraph changed from pending to completed snapshot and linked final report",
+      "classification": "Requested known finalization, not an issue"
+    },
+    {
+      "edit": "DeltaS gap qualified by unequal integer values",
+      "classification": "Nonblocking precision suggestion applied; no remaining issue",
+      "prior_fully_checked_report_sha256": "4d739582ad4459d3dbf745800209aeaa8ad29c50447778ed591521ec29d14e27",
+      "known_edit_reversal_reproduces_prior_sha256": true
+    }
+  ],
+  "input_evidence": [
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/measurement_tables_v1.json",
+      "sha256": "749be4c4e61ebf04b2ef7b82136eeac30c47f73c3823478938a72cbf5ff3aa55",
+      "bytes": 431870
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/measurement_tables_independent_review_v1.json",
+      "sha256": "691592d5609bd29d7c747c3817c8f05f468b27f79bda9c2961208b63595f670a",
+      "bytes": 1179
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/report_creation_v1.json",
+      "sha256": "bd452e772482ea1c7da923469b7ecebe52b4ceb6188e707cc6032648ba2fb051",
+      "bytes": 270
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/final_protection_resources_v1.json",
+      "sha256": "d31573b40e9680010c0ea6d23df83447260e3d73ca2206ce799bc8e44e753f01",
+      "bytes": 64117
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/validation_access_scope_addendum_v1.json",
+      "sha256": "4b14724a17d7fe6503f5f9651fbe17dfaea194da8348e2c60d27747a515eab92",
+      "bytes": 4240
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/webvid_partition_strict_v3/manifest.json",
+      "sha256": "229b8c5a512f3fc3e597b76c30183df57022829c34333129a946ba7932d685ed",
+      "bytes": 4728
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_partition_strict_v3/manifest.json",
+      "sha256": "98e5d1549cf3bef28bb493d1d47190c5654af54d4eed36b995dc4626c27153f6",
+      "bytes": 4819
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/target_generalization_interpretation_review_v1.json",
+      "sha256": "e3476a2ea51a93f5b8d2836100befc95339dceaa40a1f0ff3998be72b1de0780",
+      "bytes": 10326
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_interpretation_review_v1.json",
+      "sha256": "d082cc50449b5183c3e933f1ddfc36bc99b858af6bfb01404b4e39674345dfbf",
+      "bytes": 8935
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/portal_exposure_interpretation_review_v1.json",
+      "sha256": "772140e184a3d261c672c8d49246cc384b17d508c96e1b4b73feddd7e99daaf5",
+      "bytes": 19937
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/config.json",
+      "sha256": "3220fbb4c8bc4f60a29bd8b158cae886d560f440f30e91fab0ac363940817498",
+      "bytes": 481
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/CLOSED.json",
+      "sha256": "eb4afcbde8a4ca8107cf947e52596e0cda0e4be2b1e89dac78ee0a800eb1f6af",
+      "bytes": 592
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p0_full_audit.json",
+      "sha256": "66fc3dbbf158a61aeb101f97151dd18d350323f5cd56320ae0286b447dd7b1c8",
+      "bytes": 1125
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_objective_local_scale_diagnosis_v1.json",
+      "sha256": "fb541be5136cbc79efdc01a40b3632e4fb75f28417a3e007ecd174ae89c3908f",
+      "bytes": 1385
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/stop_verification.json",
+      "sha256": "e0e4dc5843f6c0f08bd41c32bc50bec3eeba1bb4257d7c75a5cae24186ab9706",
+      "bytes": 215
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/final_process_verification_v1.json",
+      "sha256": "9a2b8b8f757d447dbe93c1d46c3648e51f05e562b685917b45c44d1fd9928f1c",
+      "bytes": 15725
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P3.json",
+      "sha256": "3e154f9db332ec9a404b85d85061459967911be797e4350c191b1d9774dbc4f2",
+      "bytes": 4914
+    }
+  ],
+  "access": {
+    "report_read": true,
+    "small_existing_JSON_read": true,
+    "raw_data": false,
+    "NPZ": false,
+    "GT": false,
+    "labels": false,
+    "graph": false,
+    "ANN": false,
+    "experiments": false,
+    "compilation": false,
+    "method_development": false,
+    "new_CI": false
+  },
+  "report_handoffs_or_gate_modified_by_reviewer": false,
+  "link_existence_review_owned_by_root": true,
+  "P3_gate_status_unchanged": "NOPASS",
+  "P4_authorized": false,
+  "long_term_research_complete": false
+}

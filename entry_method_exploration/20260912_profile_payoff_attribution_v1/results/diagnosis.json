@@ -1,0 +1,704 @@
+{
+  "status": "PAYOFF_ATTRIBUTION_ANALYZED",
+  "contexts": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "context": "zero",
+      "center_recall_pct": 75.625,
+      "ceiling_hits": 95,
+      "ceiling_pp": 0.927734375,
+      "positive_queries": 35,
+      "recoverable_residual_fraction": 0.03806089743589743,
+      "vulnerable_queries": 32,
+      "bidirectional_queries": 0,
+      "best_static_action": "action3",
+      "best_static_net_hits": 19,
+      "best_static_pp": 0.185546875,
+      "best_static_gain": 41,
+      "best_static_loss": 22,
+      "best_static_capture": 0.2,
+      "ceiling_static_gap": 76,
+      "uncovered_gain": 54,
+      "collateral_loss": 22,
+      "best_noncenter_action": "action3",
+      "best_noncenter_net": 19,
+      "average_action_gain": 32.25,
+      "average_action_loss": 32.5,
+      "average_action_net": -0.25,
+      "mixed_actions": 8,
+      "best_reward_action": "action3",
+      "cross_half": [
+        {
+          "selection_half": 0,
+          "action": "action6",
+          "selection_net": 26,
+          "other_net": -22
+        },
+        {
+          "selection_half": 1,
+          "action": "action3",
+          "selection_net": 6,
+          "other_net": 13
+        }
+      ],
+      "entry_change_events": 1833,
+      "entry_change_hit_gain": 91,
+      "entry_change_hit_loss": 82,
+      "entry_change_no_hit": 1660,
+      "single_swap_events": 1620,
+      "single_swap_margin_crossed": 1267,
+      "single_swap_positive_action_margin": 1455,
+      "grouped_conflicts": {
+        "single_swap": {
+          "groups": 1596,
+          "mixed_groups": 0,
+          "mixed_events": 0,
+          "most_balanced_examples": []
+        },
+        "full_transition": {
+          "groups": 1831,
+          "mixed_groups": 0,
+          "mixed_events": 0,
+          "most_balanced_examples": []
+        },
+        "added_hub": {
+          "groups": 1506,
+          "mixed_groups": 4,
+          "mixed_events": 23,
+          "most_balanced_examples": [
+            {
+              "dataset": "webvid2_5m_light_v1",
+              "context": "zero",
+              "kind": "added_hub",
+              "action": "action6",
+              "key": "616223",
+              "events": 9,
+              "unique_queries": 9,
+              "helped": 4,
+              "harmed": 1,
+              "gross_gain": 10,
+              "loss": 6,
+              "positive_rows": "3209;3229;487;1410",
+              "negative_rows": "1361",
+              "closest_conflict_cosine": 0.7664657189044738,
+              "closest_positive_row": 1410,
+              "closest_negative_row": 1361
+            },
+            {
+              "dataset": "webvid2_5m_light_v1",
+              "context": "zero",
+              "kind": "added_hub",
+              "action": "action6",
+              "key": "1356160",
+              "events": 10,
+              "unique_queries": 10,
+              "helped": 2,
+              "harmed": 2,
+              "gross_gain": 6,
+              "loss": 3,
+              "positive_rows": "1416;2720",
+              "negative_rows": "613;2875",
+              "closest_conflict_cosine": 0.6829997447298817,
+              "closest_positive_row": 2720,
+              "closest_negative_row": 613
+            },
+            {
+              "dataset": "webvid2_5m_light_v1",
+              "context": "zero",
+              "kind": "added_hub",
+              "action": "action3",
+              "key": "2496277",
+              "events": 2,
+              "unique_queries": 2,
+              "helped": 1,
+              "harmed": 1,
+              "gross_gain": 3,
+              "loss": 7,
+              "positive_rows": "3223",
+              "negative_rows": "344",
+              "closest_conflict_cosine": 0.513363734055621,
+              "closest_positive_row": 3223,
+              "closest_negative_row": 344
+            }
+          ]
+        },
+        "removed_hub": {
+          "groups": 1519,
+          "mixed_groups": 10,
+          "mixed_events": 32,
+          "most_balanced_examples": [
+            {
+              "dataset": "webvid2_5m_light_v1",
+              "context": "zero",
+              "kind": "removed_hub",
+              "action": "action4",
+              "key": "2237268",
+              "events": 3,
+              "unique_queries": 3,
+              "helped": 1,
+              "harmed": 1,
+              "gross_gain": 3,
+              "loss": 8,
+              "positive_rows": "668",
+              "negative_rows": "2275",
+              "closest_conflict_cosine": 0.6107895685978283,
+              "closest_positive_row": 668,
+              "closest_negative_row": 2275
+            },
+            {
+              "dataset": "webvid2_5m_light_v1",
+              "context": "zero",
+              "kind": "removed_hub",
+              "action": "action4",
+              "key": "2469313",
+              "events": 3,
+              "unique_queries": 3,
+              "helped": 1,
+              "harmed": 2,
+              "gross_gain": 5,
+              "loss": 2,
+              "positive_rows": "1416",
+              "negative_rows": "72;500",
+              "closest_conflict_cosine": 0.6950072784186889,
+              "closest_positive_row": 1416,
+              "closest_negative_row": 500
+            },
+            {
+              "dataset": "webvid2_5m_light_v1",
+              "context": "zero",
+              "kind": "removed_hub",
+              "action": "action7",
+              "key": "2469313",
+              "events": 4,
+              "unique_queries": 4,
+              "helped": 1,
+              "harmed": 2,
+              "gross_gain": 5,
+              "loss": 2,
+              "positive_rows": "1416",
+              "negative_rows": "72;500",
+              "closest_conflict_cosine": 0.6950072784186889,
+              "closest_positive_row": 1416,
+              "closest_negative_row": 500
+            }
+          ]
+        }
+      },
+      "pair_preferences": {
+        "all_positive_pairs": {
+          "pairs": 595,
+          "best_incompatible": 262,
+          "improvement_incompatible": 262,
+          "median_query_cosine": 0.5173265028988798
+        },
+        "nearest5_all": {
+          "pairs": 13,
+          "best_incompatible": 5,
+          "improvement_incompatible": 5,
+          "median_query_cosine": 0.7720139022775077
+        },
+        "nearest5_positive": {
+          "pairs": 156,
+          "best_incompatible": 69,
+          "improvement_incompatible": 69,
+          "median_query_cosine": 0.6254575655877614
+        }
+      }
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "context": "selected",
+      "center_recall_pct": 75.9375,
+      "ceiling_hits": 42,
+      "ceiling_pp": 0.41015625,
+      "positive_queries": 26,
+      "recoverable_residual_fraction": 0.017045454545454544,
+      "vulnerable_queries": 41,
+      "bidirectional_queries": 1,
+      "best_static_action": "center",
+      "best_static_net_hits": 0,
+      "best_static_pp": 0.0,
+      "best_static_gain": 0,
+      "best_static_loss": 0,
+      "best_static_capture": 0.0,
+      "ceiling_static_gap": 42,
+      "uncovered_gain": 42,
+      "collateral_loss": 0,
+      "best_noncenter_action": "action0",
+      "best_noncenter_net": -11,
+      "average_action_gain": 12.25,
+      "average_action_loss": 42.25,
+      "average_action_net": -30.0,
+      "mixed_actions": 8,
+      "best_reward_action": "center",
+      "cross_half": [
+        {
+          "selection_half": 0,
+          "action": "action5",
+          "selection_net": 4,
+          "other_net": -34
+        },
+        {
+          "selection_half": 1,
+          "action": "center",
+          "selection_net": 0,
+          "other_net": 0
+        }
+      ],
+      "entry_change_events": 1782,
+      "entry_change_hit_gain": 58,
+      "entry_change_hit_loss": 104,
+      "entry_change_no_hit": 1620,
+      "single_swap_events": 1585,
+      "single_swap_margin_crossed": 1275,
+      "single_swap_positive_action_margin": 1460,
+      "grouped_conflicts": {
+        "single_swap": {
+          "groups": 1552,
+          "mixed_groups": 0,
+          "mixed_events": 0,
+          "most_balanced_examples": []
+        },
+        "full_transition": {
+          "groups": 1780,
+          "mixed_groups": 0,
+          "mixed_events": 0,
+          "most_balanced_examples": []
+        },
+        "added_hub": {
+          "groups": 1485,
+          "mixed_groups": 12,
+          "mixed_events": 40,
+          "most_balanced_examples": [
+            {
+              "dataset": "webvid2_5m_light_v1",
+              "context": "selected",
+              "kind": "added_hub",
+              "action": "action3",
+              "key": "42091",
+              "events": 3,
+              "unique_queries": 3,
+              "helped": 1,
+              "harmed": 1,
+              "gross_gain": 4,
+              "loss": 9,
+              "positive_rows": "707",
+              "negative_rows": "3282",
+              "closest_conflict_cosine": 0.5617936054847574,
+              "closest_positive_row": 707,
+              "closest_negative_row": 3282
+            },
+            {
+              "dataset": "webvid2_5m_light_v1",
+              "context": "selected",
+              "kind": "added_hub",
+              "action": "action0",
+              "key": "2496277",
+              "events": 3,
+              "unique_queries": 3,
+              "helped": 2,
+              "harmed": 1,
+              "gross_gain": 4,
+              "loss": 7,
+              "positive_rows": "3223;2875",
+              "negative_rows": "344",
+              "closest_conflict_cosine": 0.513363734055621,
+              "closest_positive_row": 3223,
+              "closest_negative_row": 344
+            },
+            {
+              "dataset": "webvid2_5m_light_v1",
+              "context": "selected",
+              "kind": "added_hub",
+              "action": "action3",
+              "key": "1825048",
+              "events": 2,
+              "unique_queries": 2,
+              "helped": 1,
+              "harmed": 1,
+              "gross_gain": 1,
+              "loss": 1,
+              "positive_rows": "613",
+              "negative_rows": "3209",
+              "closest_conflict_cosine": 0.6573247443544503,
+              "closest_positive_row": 613,
+              "closest_negative_row": 3209
+            }
+          ]
+        },
+        "removed_hub": {
+          "groups": 1409,
+          "mixed_groups": 6,
+          "mixed_events": 37,
+          "most_balanced_examples": [
+            {
+              "dataset": "webvid2_5m_light_v1",
+              "context": "selected",
+              "kind": "removed_hub",
+              "action": "action5",
+              "key": "1627796",
+              "events": 3,
+              "unique_queries": 3,
+              "helped": 1,
+              "harmed": 2,
+              "gross_gain": 3,
+              "loss": 10,
+              "positive_rows": "256",
+              "negative_rows": "2279;3282",
+              "closest_conflict_cosine": 0.64997593865357,
+              "closest_positive_row": 256,
+              "closest_negative_row": 2279
+            },
+            {
+              "dataset": "webvid2_5m_light_v1",
+              "context": "selected",
+              "kind": "removed_hub",
+              "action": "action1",
+              "key": "609770",
+              "events": 5,
+              "unique_queries": 5,
+              "helped": 1,
+              "harmed": 2,
+              "gross_gain": 1,
+              "loss": 7,
+              "positive_rows": "2720",
+              "negative_rows": "4090;1361",
+              "closest_conflict_cosine": 0.7868633853649118,
+              "closest_positive_row": 2720,
+              "closest_negative_row": 1361
+            },
+            {
+              "dataset": "webvid2_5m_light_v1",
+              "context": "selected",
+              "kind": "removed_hub",
+              "action": "action6",
+              "key": "609770",
+              "events": 7,
+              "unique_queries": 7,
+              "helped": 1,
+              "harmed": 1,
+              "gross_gain": 1,
+              "loss": 6,
+              "positive_rows": "2720",
+              "negative_rows": "1361",
+              "closest_conflict_cosine": 0.7868633853649118,
+              "closest_positive_row": 2720,
+              "closest_negative_row": 1361
+            }
+          ]
+        }
+      },
+      "pair_preferences": {
+        "all_positive_pairs": {
+          "pairs": 325,
+          "best_incompatible": 174,
+          "improvement_incompatible": 174,
+          "median_query_cosine": 0.4744459883243084
+        },
+        "nearest5_all": {
+          "pairs": 7,
+          "best_incompatible": 4,
+          "improvement_incompatible": 4,
+          "median_query_cosine": 0.750193115593331
+        },
+        "nearest5_positive": {
+          "pairs": 113,
+          "best_incompatible": 64,
+          "improvement_incompatible": 64,
+          "median_query_cosine": 0.5957236515744713
+        }
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "context": "zero",
+      "center_recall_pct": 90.1953125,
+      "ceiling_hits": 66,
+      "ceiling_pp": 0.64453125,
+      "positive_queries": 15,
+      "recoverable_residual_fraction": 0.06573705179282868,
+      "vulnerable_queries": 14,
+      "bidirectional_queries": 0,
+      "best_static_action": "action4",
+      "best_static_net_hits": 15,
+      "best_static_pp": 0.146484375,
+      "best_static_gain": 36,
+      "best_static_loss": 21,
+      "best_static_capture": 0.22727272727272727,
+      "ceiling_static_gap": 51,
+      "uncovered_gain": 30,
+      "collateral_loss": 21,
+      "best_noncenter_action": "action4",
+      "best_noncenter_net": 15,
+      "average_action_gain": 18.625,
+      "average_action_loss": 20.0,
+      "average_action_net": -1.375,
+      "mixed_actions": 8,
+      "best_reward_action": "action4",
+      "cross_half": [
+        {
+          "selection_half": 0,
+          "action": "action5",
+          "selection_net": 15,
+          "other_net": -11
+        },
+        {
+          "selection_half": 1,
+          "action": "action4",
+          "selection_net": 12,
+          "other_net": 3
+        }
+      ],
+      "entry_change_events": 1482,
+      "entry_change_hit_gain": 30,
+      "entry_change_hit_loss": 40,
+      "entry_change_no_hit": 1412,
+      "single_swap_events": 1414,
+      "single_swap_margin_crossed": 1186,
+      "single_swap_positive_action_margin": 1277,
+      "grouped_conflicts": {
+        "single_swap": {
+          "groups": 1406,
+          "mixed_groups": 0,
+          "mixed_events": 0,
+          "most_balanced_examples": []
+        },
+        "full_transition": {
+          "groups": 1480,
+          "mixed_groups": 0,
+          "mixed_events": 0,
+          "most_balanced_examples": []
+        },
+        "added_hub": {
+          "groups": 1290,
+          "mixed_groups": 3,
+          "mixed_events": 7,
+          "most_balanced_examples": [
+            {
+              "dataset": "yandex_t2i_official10M_ip_v1",
+              "context": "zero",
+              "kind": "added_hub",
+              "action": "action0",
+              "key": "9339959",
+              "events": 2,
+              "unique_queries": 2,
+              "helped": 1,
+              "harmed": 1,
+              "gross_gain": 8,
+              "loss": 10,
+              "positive_rows": "3349",
+              "negative_rows": "3962",
+              "closest_conflict_cosine": 0.47079685088135115,
+              "closest_positive_row": 3349,
+              "closest_negative_row": 3962
+            },
+            {
+              "dataset": "yandex_t2i_official10M_ip_v1",
+              "context": "zero",
+              "kind": "added_hub",
+              "action": "action0",
+              "key": "1587298",
+              "events": 3,
+              "unique_queries": 3,
+              "helped": 1,
+              "harmed": 1,
+              "gross_gain": 8,
+              "loss": 5,
+              "positive_rows": "3349",
+              "negative_rows": "3537",
+              "closest_conflict_cosine": 0.8368823671183152,
+              "closest_positive_row": 3349,
+              "closest_negative_row": 3537
+            },
+            {
+              "dataset": "yandex_t2i_official10M_ip_v1",
+              "context": "zero",
+              "kind": "added_hub",
+              "action": "action0",
+              "key": "6068360",
+              "events": 2,
+              "unique_queries": 2,
+              "helped": 1,
+              "harmed": 1,
+              "gross_gain": 1,
+              "loss": 1,
+              "positive_rows": "2409",
+              "negative_rows": "3778",
+              "closest_conflict_cosine": 0.6959166674255773,
+              "closest_positive_row": 2409,
+              "closest_negative_row": 3778
+            }
+          ]
+        },
+        "removed_hub": {
+          "groups": 1290,
+          "mixed_groups": 2,
+          "mixed_events": 5,
+          "most_balanced_examples": [
+            {
+              "dataset": "yandex_t2i_official10M_ip_v1",
+              "context": "zero",
+              "kind": "removed_hub",
+              "action": "action0",
+              "key": "794788",
+              "events": 3,
+              "unique_queries": 3,
+              "helped": 1,
+              "harmed": 1,
+              "gross_gain": 8,
+              "loss": 5,
+              "positive_rows": "3349",
+              "negative_rows": "3537",
+              "closest_conflict_cosine": 0.8368823671183152,
+              "closest_positive_row": 3349,
+              "closest_negative_row": 3537
+            },
+            {
+              "dataset": "yandex_t2i_official10M_ip_v1",
+              "context": "zero",
+              "kind": "removed_hub",
+              "action": "action0",
+              "key": "6936607",
+              "events": 2,
+              "unique_queries": 2,
+              "helped": 1,
+              "harmed": 1,
+              "gross_gain": 8,
+              "loss": 5,
+              "positive_rows": "3349",
+              "negative_rows": "3537",
+              "closest_conflict_cosine": 0.8368823671183152,
+              "closest_positive_row": 3349,
+              "closest_negative_row": 3537
+            }
+          ]
+        }
+      },
+      "pair_preferences": {
+        "all_positive_pairs": {
+          "pairs": 105,
+          "best_incompatible": 57,
+          "improvement_incompatible": 57,
+          "median_query_cosine": 0.29607298765347667
+        },
+        "nearest5_all": {
+          "pairs": 5,
+          "best_incompatible": 3,
+          "improvement_incompatible": 3,
+          "median_query_cosine": 0.5718544653620822
+        },
+        "nearest5_positive": {
+          "pairs": 57,
+          "best_incompatible": 35,
+          "improvement_incompatible": 35,
+          "median_query_cosine": 0.3551143008596758
+        }
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "context": "selected",
+      "center_recall_pct": 90.1953125,
+      "ceiling_hits": 68,
+      "ceiling_pp": 0.6640625,
+      "positive_queries": 17,
+      "recoverable_residual_fraction": 0.06772908366533864,
+      "vulnerable_queries": 9,
+      "bidirectional_queries": 0,
+      "best_static_action": "action3",
+      "best_static_net_hits": 15,
+      "best_static_pp": 0.146484375,
+      "best_static_gain": 42,
+      "best_static_loss": 27,
+      "best_static_capture": 0.22058823529411764,
+      "ceiling_static_gap": 53,
+      "uncovered_gain": 26,
+      "collateral_loss": 27,
+      "best_noncenter_action": "action3",
+      "best_noncenter_net": 15,
+      "average_action_gain": 21.125,
+      "average_action_loss": 23.25,
+      "average_action_net": -2.125,
+      "mixed_actions": 8,
+      "best_reward_action": "action3",
+      "cross_half": [
+        {
+          "selection_half": 0,
+          "action": "action2",
+          "selection_net": 19,
+          "other_net": -5
+        },
+        {
+          "selection_half": 1,
+          "action": "action3",
+          "selection_net": 7,
+          "other_net": 8
+        }
+      ],
+      "entry_change_events": 1411,
+      "entry_change_hit_gain": 39,
+      "entry_change_hit_loss": 27,
+      "entry_change_no_hit": 1345,
+      "single_swap_events": 1334,
+      "single_swap_margin_crossed": 1124,
+      "single_swap_positive_action_margin": 1222,
+      "grouped_conflicts": {
+        "single_swap": {
+          "groups": 1325,
+          "mixed_groups": 0,
+          "mixed_events": 0,
+          "most_balanced_examples": []
+        },
+        "full_transition": {
+          "groups": 1411,
+          "mixed_groups": 0,
+          "mixed_events": 0,
+          "most_balanced_examples": []
+        },
+        "added_hub": {
+          "groups": 1225,
+          "mixed_groups": 0,
+          "mixed_events": 0,
+          "most_balanced_examples": []
+        },
+        "removed_hub": {
+          "groups": 1264,
+          "mixed_groups": 0,
+          "mixed_events": 0,
+          "most_balanced_examples": []
+        }
+      },
+      "pair_preferences": {
+        "all_positive_pairs": {
+          "pairs": 136,
+          "best_incompatible": 62,
+          "improvement_incompatible": 62,
+          "median_query_cosine": 0.28749510103538517
+        },
+        "nearest5_all": {
+          "pairs": 4,
+          "best_incompatible": 1,
+          "improvement_incompatible": 1,
+          "median_query_cosine": 0.5710289346716726
+        },
+        "nearest5_positive": {
+          "pairs": 60,
+          "best_incompatible": 25,
+          "improvement_incompatible": 25,
+          "median_query_cosine": 0.3724493563058764
+        }
+      }
+    }
+  ],
+  "existing_outputs_scored": 36864,
+  "same_entry_outputs_checked": 26260,
+  "new_NSG": 0,
+  "new_HNSW": 0,
+  "new_builds": 0,
+  "optimizer_updates": 0,
+  "new_GT": 0,
+  "query_similarity_pairs_evaluated": 2097152,
+  "actual_threads": 1,
+  "seconds": 0.7459179809993657,
+  "peak_RSS_KiB": 138788
+}

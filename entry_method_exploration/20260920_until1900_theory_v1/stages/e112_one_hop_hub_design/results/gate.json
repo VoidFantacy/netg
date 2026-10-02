@@ -1,0 +1,27 @@
+{
+  "status": "STOP_ONE_HOP_H_DESIGN_INFORMATION_GATE",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "clauses": {
+        "F_gain_over_original_at_least_2pp": true,
+        "both_CI_lower_positive": true,
+        "conditional_GT1_rescue_at_least_1pp": true
+      },
+      "pass_all": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "clauses": {
+        "F_gain_over_original_at_least_2pp": false,
+        "both_CI_lower_positive": false,
+        "conditional_GT1_rescue_at_least_1pp": false
+      },
+      "pass_all": false
+    }
+  ],
+  "new_NSGruns": 0,
+  "actual_deployable_Recall_improvement_proven": false,
+  "coverage_score_is_conditional": true,
+  "baseline_oracle_choice_is_privileged": true
+}

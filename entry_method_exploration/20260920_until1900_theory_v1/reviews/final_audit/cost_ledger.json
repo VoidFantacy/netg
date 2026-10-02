@@ -1,0 +1,1136 @@
+{
+  "status": "PASS",
+  "measured_unix": 1789902015.5333493,
+  "scope": "19:00 extension; old phase separately identified",
+  "real_NSG_calls": 328448,
+  "synthetic_calls": 12,
+  "synthetic_graphs": 2,
+  "ANN_calls": 98560,
+  "combined_real_NSG_calls": 3125504,
+  "combined_synthetic_calls": 18,
+  "combined_ANN_calls": "not aggregated; 98560 is extension only",
+  "ordinary_router_graph_builds": 0,
+  "hybrid_router_copies": 4,
+  "before_serialization_copies": 4,
+  "new_GT": 0,
+  "new_bottom_graphs": 0,
+  "new_gradient_or_profile_training": 0,
+  "new_formal_QPS": false,
+  "heldout_payload_access": false,
+  "new_graph_derived_labels": true,
+  "new_offline_H_optimization": true,
+  "old_model_score_residual_calculations": true,
+  "stages": [
+    {
+      "stage": "e112_one_hop_hub_design",
+      "complete": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/complete.json",
+        "bytes": 667,
+        "sha256": "31271702a82b260bb621fd4f9c9efcd924a6a58b85ab6ad301d9e363cd8ca238"
+      },
+      "NSG_calls": 0,
+      "ANN_calls": 0,
+      "decision": "STOP_ONE_HOP_H_DESIGN_INFORMATION_GATE"
+    },
+    {
+      "stage": "e113_comparison_support",
+      "complete": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/complete.json",
+        "bytes": 667,
+        "sha256": "be9371b6f9577046a6b7375ea4d2a3404c32003d25c550bdf4a3e9ac3577b991"
+      },
+      "NSG_calls": 32768,
+      "ANN_calls": 0,
+      "decision": "STOP_EXACT_PAIR_FEATURE_DICTIONARY"
+    },
+    {
+      "stage": "e114_terminal_peaks",
+      "complete": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e114_terminal_peaks/complete.json",
+        "bytes": 705,
+        "sha256": "36141cdfaf73f6d1a41cf1100b5762a5a7cac09e9bc8eb53b08b99a3bec75c58"
+      },
+      "NSG_calls": 0,
+      "ANN_calls": 0,
+      "decision": "TERMINAL_LOCAL_OPTIMA_VERIFIED"
+    },
+    {
+      "stage": "e115_score_topology_factorial",
+      "complete": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/complete.json",
+        "bytes": 803,
+        "sha256": "291f4d537110a4044280323921b9c35e628f567a365e566863625eaa0376331c"
+      },
+      "NSG_calls": 295680,
+      "ANN_calls": 33024,
+      "decision": "STOP_CROSS_SCORE_TOPOLOGY_CANDIDATE"
+    }
+  ],
+  "E112": {
+    "NSG_calls": 0,
+    "ANN_calls": 0,
+    "new_GT": 0,
+    "new_graphs": 0,
+    "gradient_or_profile_training": 0,
+    "new_graph_derived_labels": true,
+    "new_offline_H_optimization": true,
+    "label_process_seconds_including_load": 49.734423875808716,
+    "compile_seconds": 8.678883075714111,
+    "max_rss_gib": 10.168956756591797,
+    "analysis_success_seconds": 4.4455273151397705,
+    "analysis_failures": [
+      {
+        "version": 1,
+        "elapsed_file_clock_seconds": 4.017478704452515,
+        "exact_process_wall_available": false
+      },
+      {
+        "version": 2,
+        "elapsed_file_clock_seconds": 4.0365612506866455,
+        "exact_process_wall_available": false
+      }
+    ]
+  },
+  "E113": {
+    "NSG_calls": 32768,
+    "ANN_calls": 0,
+    "new_GT": 0,
+    "new_graphs": 0,
+    "new_gradient_or_profile_training": 0,
+    "fit_trace_process_seconds": 39.59696626663208,
+    "compile_seconds": 8.578236103057861,
+    "analysis_seconds": 5.6597559452056885,
+    "max_rss_gib": 10.147327423095703,
+    "source_query_count": 4096,
+    "distinct_query_action_count": 8192,
+    "formal_QPS": false
+  },
+  "E114": {
+    "native_seconds": 4.842997312545776,
+    "process_seconds": 4.971104145050049
+  },
+  "E115": {
+    "status": "PASS",
+    "NSG_calls": 295680,
+    "ANN_calls": 33024,
+    "seconds": 336.2716648578644,
+    "new_GT": 0,
+    "new_training": 0,
+    "ordinary_graph_builds": 0,
+    "hybrid_router_copies": 4,
+    "formal_QPS": false
+  },
+  "router_work": {
+    "ANN_calls": 65536,
+    "GT_read": false,
+    "NSG_calls": 0,
+    "all_entry_distance_NDC_parity": true,
+    "cpu": 15,
+    "formal_QPS": false,
+    "maxrss_kib": 23584,
+    "rows": 32768,
+    "seconds": 0.55036035,
+    "status": "PASS",
+    "threads": 1
+  },
+  "job_records": [
+    {
+      "stage": "e112_one_hop_hub_design",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "-fopenmp",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+        "-I/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/src/common",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/src/design.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "-lopenblas",
+        "-lz",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/bin/design"
+      ],
+      "kind": "compile",
+      "started_unix": 1789890872.2064037,
+      "timeout_seconds": 120,
+      "pid": 43987,
+      "pgid": 43987,
+      "exit_code": 0,
+      "finished_unix": 1789890880.8852866,
+      "seconds": 8.678883075714111
+    },
+    {
+      "stage": "e112_one_hop_hub_design",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/bin/design",
+        "select",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/reviews/select_webvid2_5m_light_v1.json",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/results/QGT_webvid2_5m_light_v1"
+      ],
+      "kind": "select",
+      "started_unix": 1789890880.9450283,
+      "timeout_seconds": 900,
+      "pid": 44031,
+      "pgid": 44031,
+      "exit_code": 0,
+      "finished_unix": 1789890888.3205624,
+      "seconds": 7.375534296035767,
+      "complete": {
+        "ANN_calls": 0,
+        "GT_distance_checks": 10000,
+        "H": 815,
+        "NSG_calls": 0,
+        "all_base_sparse_nonzero": 5705427,
+        "cpu": 15,
+        "graph_derived_labels": true,
+        "graph_slots_scanned": 160320000,
+        "greedy_steps": 815,
+        "lazy_recomputations": 10057,
+        "maxrss_kib": 5783776,
+        "mode": "select",
+        "n": 5000,
+        "new_GT": 0,
+        "new_graphs": 0,
+        "new_training": 0,
+        "seconds": 7.256595935,
+        "status": "PASS",
+        "strict_GT1_queries": 4999,
+        "threads": 1
+      }
+    },
+    {
+      "stage": "e112_one_hop_hub_design",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/bin/design",
+        "select",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/reviews/select_yandex_t2i_official10M_ip_v1.json",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/results/QGT_yandex_t2i_official10M_ip_v1"
+      ],
+      "kind": "select",
+      "started_unix": 1789890888.3778422,
+      "timeout_seconds": 900,
+      "pid": 44048,
+      "pgid": 44048,
+      "exit_code": 0,
+      "finished_unix": 1789890913.1317754,
+      "seconds": 24.753933668136597,
+      "complete": {
+        "ANN_calls": 0,
+        "GT_distance_checks": 10000,
+        "H": 821,
+        "NSG_calls": 0,
+        "all_base_sparse_nonzero": 11100794,
+        "cpu": 15,
+        "graph_derived_labels": true,
+        "graph_slots_scanned": 640000000,
+        "greedy_steps": 821,
+        "lazy_recomputations": 3303,
+        "maxrss_kib": 10662924,
+        "mode": "select",
+        "n": 5000,
+        "new_GT": 0,
+        "new_graphs": 0,
+        "new_training": 0,
+        "seconds": 24.543996535,
+        "status": "PASS",
+        "strict_GT1_queries": 5000,
+        "threads": 1
+      }
+    },
+    {
+      "stage": "e112_one_hop_hub_design",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/bin/design",
+        "evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/reviews/evaluate_webvid2_5m_light_v1.json",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/results/development_webvid2_5m_light_v1"
+      ],
+      "kind": "evaluate",
+      "started_unix": 1789890913.1905608,
+      "timeout_seconds": 300,
+      "pid": 44134,
+      "pgid": 44134,
+      "exit_code": 0,
+      "finished_unix": 1789890918.162206,
+      "seconds": 4.971645355224609,
+      "complete": {
+        "ANN_calls": 0,
+        "GT_distance_checks": 8192,
+        "H": 815,
+        "NSG_calls": 0,
+        "all_base_sparse_nonzero": 0,
+        "cpu": 15,
+        "graph_derived_labels": true,
+        "graph_slots_scanned": 0,
+        "greedy_steps": 0,
+        "lazy_recomputations": 0,
+        "maxrss_kib": 5687304,
+        "mode": "evaluate",
+        "n": 4096,
+        "new_GT": 0,
+        "new_graphs": 0,
+        "new_training": 0,
+        "seconds": 4.832402616,
+        "status": "PASS",
+        "strict_GT1_queries": 4095,
+        "threads": 1
+      }
+    },
+    {
+      "stage": "e112_one_hop_hub_design",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/bin/design",
+        "evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/reviews/evaluate_yandex_t2i_official10M_ip_v1.json",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/results/development_yandex_t2i_official10M_ip_v1"
+      ],
+      "kind": "evaluate",
+      "started_unix": 1789890918.225377,
+      "timeout_seconds": 300,
+      "pid": 44152,
+      "pgid": 44152,
+      "exit_code": 0,
+      "finished_unix": 1789890930.8586874,
+      "seconds": 12.633310556411743,
+      "complete": {
+        "ANN_calls": 0,
+        "GT_distance_checks": 8192,
+        "H": 821,
+        "NSG_calls": 0,
+        "all_base_sparse_nonzero": 0,
+        "cpu": 15,
+        "graph_derived_labels": true,
+        "graph_slots_scanned": 0,
+        "greedy_steps": 0,
+        "lazy_recomputations": 0,
+        "maxrss_kib": 10403220,
+        "mode": "evaluate",
+        "n": 4096,
+        "new_GT": 0,
+        "new_graphs": 0,
+        "new_training": 0,
+        "seconds": 12.422134667,
+        "status": "PASS",
+        "strict_GT1_queries": 4096,
+        "threads": 1
+      }
+    },
+    {
+      "stage": "e113_comparison_support",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "-fopenmp",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+        "-I/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/src/common",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/src/evaluate.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "-lopenblas",
+        "-lz",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/bin/evaluate"
+      ],
+      "kind": "compile",
+      "started_unix": 1789893366.5395155,
+      "timeout_seconds": 120,
+      "pid": 52939,
+      "pgid": 52939,
+      "exit_code": 0,
+      "finished_unix": 1789893375.1177516,
+      "seconds": 8.578236103057861
+    },
+    {
+      "stage": "e113_comparison_support",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/bin/evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/reviews/webvid2_5m_light_v1.json",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/results/webvid2_5m_light_v1"
+      ],
+      "kind": "fit_trace",
+      "started_unix": 1789893375.1826222,
+      "timeout_seconds": 900,
+      "pid": 52983,
+      "pgid": 52983,
+      "exit_code": 0,
+      "finished_unix": 1789893389.873511,
+      "seconds": 14.69088888168335,
+      "complete": {
+        "ANN_calls": 0,
+        "K1_K100_comparison_parity": true,
+        "NSG_calls": 16384,
+        "actions": 2,
+        "all_historical_outputs_restored": true,
+        "cpu": 15,
+        "maxrss_kib": 5951964,
+        "n": 2048,
+        "seconds": 14.540374178,
+        "status": "PASS",
+        "threads": 1,
+        "trace_control_parity": true,
+        "unique_query_action_pairs": 19481998
+      }
+    },
+    {
+      "stage": "e113_comparison_support",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/bin/evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/reviews/yandex_t2i_official10M_ip_v1.json",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/results/yandex_t2i_official10M_ip_v1"
+      ],
+      "kind": "fit_trace",
+      "started_unix": 1789893389.9347093,
+      "timeout_seconds": 900,
+      "pid": 53034,
+      "pgid": 53034,
+      "exit_code": 0,
+      "finished_unix": 1789893414.8407867,
+      "seconds": 24.90607738494873,
+      "complete": {
+        "ANN_calls": 0,
+        "K1_K100_comparison_parity": true,
+        "NSG_calls": 16384,
+        "actions": 2,
+        "all_historical_outputs_restored": true,
+        "cpu": 15,
+        "maxrss_kib": 10640244,
+        "n": 2048,
+        "seconds": 24.697640243,
+        "status": "PASS",
+        "threads": 1,
+        "trace_control_parity": true,
+        "unique_query_action_pairs": 26369480
+      }
+    },
+    {
+      "stage": "e114_terminal_peaks",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e114_terminal_peaks/src/analyze.py"
+      ],
+      "started_unix": 1789895067.51091,
+      "kind": "readonly_graph_numeric_audit",
+      "NSG_calls": 0,
+      "pid": 58988,
+      "pgid": 58988,
+      "exit_code": 0,
+      "seconds": 4.971104145050049,
+      "finished_unix": 1789895072.4820151
+    },
+    {
+      "stage": "e115_score_topology_factorial",
+      "argv": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "-fopenmp",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+        "-I/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/common",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/evaluate.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "-lopenblas",
+        "-lz",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/bin/evaluate"
+      ],
+      "kind": "compile",
+      "started_unix": 1789898161.1716993,
+      "timeout_seconds": 120,
+      "reserved_NSG": 0,
+      "reserved_ANN": 0,
+      "pid": 69722,
+      "pgid": 69722,
+      "exit_code": 0,
+      "finished_unix": 1789898169.6996822,
+      "seconds": 8.52798318862915
+    },
+    {
+      "stage": "e115_score_topology_factorial",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/bin/evaluate",
+        "prepare",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/prepare_config.json",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/hybrids_prepared.json"
+      ],
+      "kind": "serialization",
+      "started_unix": 1789898169.7003076,
+      "timeout_seconds": 60,
+      "reserved_NSG": 0,
+      "reserved_ANN": 0,
+      "pid": 69760,
+      "pgid": 69760,
+      "exit_code": 0,
+      "finished_unix": 1789898169.7324176,
+      "seconds": 0.03211021423339844
+    },
+    {
+      "stage": "e115_score_topology_factorial",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/bin/evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/smoke_webvid2_5m_light_v1.json",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/smoke_webvid2_5m_light_v1"
+      ],
+      "kind": "smoke",
+      "started_unix": 1789898169.7592838,
+      "timeout_seconds": 120,
+      "reserved_NSG": 384,
+      "reserved_ANN": 128,
+      "pid": 69761,
+      "pgid": 69761,
+      "exit_code": 0,
+      "finished_unix": 1789898174.58065,
+      "seconds": 4.821366310119629,
+      "complete": {
+        "ANN_calls": 128,
+        "NSG_calls": 384,
+        "cpu": 15,
+        "formal_QPS": false,
+        "maxrss_kib": 5688056,
+        "ordinary_graph_builds": 0,
+        "points": 8,
+        "seconds": 4.672612609,
+        "status": "PASS",
+        "threads": 1
+      }
+    },
+    {
+      "stage": "e115_score_topology_factorial",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/bin/evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/smoke_yandex_t2i_official10M_ip_v1.json",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/smoke_yandex_t2i_official10M_ip_v1"
+      ],
+      "kind": "smoke",
+      "started_unix": 1789898174.6176183,
+      "timeout_seconds": 120,
+      "reserved_NSG": 384,
+      "reserved_ANN": 128,
+      "pid": 69777,
+      "pgid": 69777,
+      "exit_code": 0,
+      "finished_unix": 1789898187.201174,
+      "seconds": 12.583555936813354,
+      "complete": {
+        "ANN_calls": 128,
+        "NSG_calls": 384,
+        "cpu": 15,
+        "formal_QPS": false,
+        "maxrss_kib": 10398532,
+        "ordinary_graph_builds": 0,
+        "points": 8,
+        "seconds": 12.36075307,
+        "status": "PASS",
+        "threads": 1
+      }
+    },
+    {
+      "stage": "e115_score_topology_factorial",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/bin/evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/main_webvid2_5m_light_v1.json",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/results/main_webvid2_5m_light_v1"
+      ],
+      "kind": "main",
+      "started_unix": 1789898187.2375019,
+      "timeout_seconds": 900,
+      "reserved_NSG": 147456,
+      "reserved_ANN": 16384,
+      "pid": 69852,
+      "pgid": 69852,
+      "exit_code": 0,
+      "finished_unix": 1789898331.8452296,
+      "seconds": 144.60772800445557,
+      "complete": {
+        "ANN_calls": 16384,
+        "NSG_calls": 147456,
+        "cpu": 15,
+        "formal_QPS": false,
+        "maxrss_kib": 5691516,
+        "ordinary_graph_builds": 0,
+        "points": 36,
+        "seconds": 144.489981829,
+        "status": "PASS",
+        "threads": 1
+      }
+    },
+    {
+      "stage": "e115_score_topology_factorial",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/bin/evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/main_yandex_t2i_official10M_ip_v1.json",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/results/main_yandex_t2i_official10M_ip_v1"
+      ],
+      "kind": "main",
+      "started_unix": 1789898331.8861902,
+      "timeout_seconds": 900,
+      "reserved_NSG": 147456,
+      "reserved_ANN": 16384,
+      "pid": 70332,
+      "pgid": 70332,
+      "exit_code": 0,
+      "finished_unix": 1789898497.23152,
+      "seconds": 165.34532976150513,
+      "complete": {
+        "ANN_calls": 16384,
+        "NSG_calls": 147456,
+        "cpu": 15,
+        "formal_QPS": false,
+        "maxrss_kib": 10398388,
+        "ordinary_graph_builds": 0,
+        "points": 36,
+        "seconds": 165.117158843,
+        "status": "PASS",
+        "threads": 1
+      }
+    },
+    {
+      "stage": "router_work_identity",
+      "argv": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "-pthread",
+        "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/router_work_identity_v1/evaluate.cpp",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/router_work_identity_v1/evaluate"
+      ],
+      "kind": "compile",
+      "started_unix": 1789899460.6993234,
+      "timeout_seconds": 120,
+      "pid": 74344,
+      "pgid": 74344,
+      "exit_code": 0,
+      "seconds": 5.070057153701782,
+      "finished_unix": 1789899465.769382
+    },
+    {
+      "stage": "router_work_identity",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/router_work_identity_v1/evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/router_work_identity_v1/config.locked.json",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/router_work_identity_v1/results"
+      ],
+      "kind": "routing",
+      "started_unix": 1789899465.7700536,
+      "timeout_seconds": 120,
+      "pid": 74370,
+      "pgid": 74370,
+      "exit_code": 0,
+      "seconds": 0.5645787715911865,
+      "finished_unix": 1789899466.334634
+    },
+    {
+      "stage": "synthetic_xor_entry",
+      "argv": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "-fopenmp",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+        "-I/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/src/common",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/xor_entry_expressivity_v1/verify.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "-lopenblas",
+        "-lz",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/xor_entry_expressivity_v1/verify"
+      ],
+      "kind": "compile",
+      "started_unix": 1789900493.7093694,
+      "timeout_seconds": 120,
+      "pid": 78090,
+      "pgid": 78090,
+      "exit_code": 0,
+      "seconds": 7.723150730133057,
+      "finished_unix": 1789900501.4325209
+    },
+    {
+      "stage": "synthetic_xor_entry",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/xor_entry_expressivity_v1/verify",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/xor_entry_expressivity_v1/result.json"
+      ],
+      "kind": "synthetic",
+      "started_unix": 1789900501.4371123,
+      "timeout_seconds": 30,
+      "pid": 78135,
+      "pgid": 78135,
+      "exit_code": 0,
+      "seconds": 0.003761768341064453,
+      "finished_unix": 1789900501.4408743
+    },
+    {
+      "stage": "synthetic_query_branch",
+      "finished_unix": 1789892730.6286178,
+      "finish_derived_from_recorded_elapsed": true,
+      "kind": "compile",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "-fopenmp",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+        "-I/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/src/common",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/query_branch_stability_v1/verify.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "-lopenblas",
+        "-lz",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/query_branch_stability_v1/verify"
+      ],
+      "pid": 50745,
+      "started_unix": 1789892723.0555873,
+      "seconds": 7.573030471801758,
+      "exit_code": 0
+    },
+    {
+      "stage": "synthetic_query_branch",
+      "finished_unix": 1789892730.6330051,
+      "finish_derived_from_recorded_elapsed": true,
+      "kind": "synthetic",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/query_branch_stability_v1/verify",
+        "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/query_branch_stability_v1/result.json"
+      ],
+      "pid": 50790,
+      "started_unix": 1789892730.6288307,
+      "seconds": 0.004174470901489258,
+      "exit_code": 0
+    }
+  ],
+  "additional_analyses": [
+    {
+      "name": "source_support_v1",
+      "seconds": 0.899561882019043
+    },
+    {
+      "name": "objective_quantization_v1",
+      "seconds": 0.12760138511657715
+    },
+    {
+      "name": "score_anchor_geometry_v1",
+      "seconds": 0.4109952449798584
+    }
+  ],
+  "old_phase_actual_directory_bytes": 506870495,
+  "old_phase_audit_bytes_scope": "The old audit measured before writing its final identity/document/receipt files; actual directory bytes are measured separately here. Its sealed files remain SHA-identical.",
+  "XOR": {
+    "ANN_calls": 0,
+    "K": 1,
+    "L": 1,
+    "base": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        10.0
+      ],
+      [
+        -1.0,
+        0.0,
+        10.0
+      ],
+      [
+        1.0,
+        0.0,
+        10.0
+      ],
+      [
+        -1.0,
+        0.0,
+        10.0
+      ],
+      [
+        0.0,
+        1.0,
+        20.0
+      ],
+      [
+        0.0,
+        -1.0,
+        20.0
+      ],
+      [
+        0.0,
+        -1.0,
+        20.0
+      ],
+      [
+        0.0,
+        1.0,
+        20.0
+      ],
+      [
+        0.0,
+        -1.0,
+        20.0
+      ],
+      [
+        0.0,
+        1.0,
+        20.0
+      ],
+      [
+        0.0,
+        1.0,
+        20.0
+      ],
+      [
+        0.0,
+        -1.0,
+        20.0
+      ],
+      [
+        0.0,
+        0.0,
+        100.0
+      ]
+    ],
+    "cpu": 15,
+    "edges": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        14,
+        -1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        14,
+        -1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        14,
+        -1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        14,
+        -1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "four_profiles_match_optimal": true,
+    "nonlinear_features_match_optimal": true,
+    "observations": [
+      {
+        "GT1": 14,
+        "GT1_margin": 79.0,
+        "distance": -100.0,
+        "distance_calls": 7,
+        "hit": true,
+        "optimal_entry": 0,
+        "query": [
+          -1,
+          -1,
+          1
+        ],
+        "returned": 14,
+        "seed": 0
+      },
+      {
+        "GT1": 14,
+        "GT1_margin": 79.0,
+        "distance": -21.0,
+        "distance_calls": 6,
+        "hit": false,
+        "optimal_entry": 0,
+        "query": [
+          -1,
+          -1,
+          1
+        ],
+        "returned": 13,
+        "seed": 1
+      },
+      {
+        "GT1": 14,
+        "GT1_margin": 79.0,
+        "distance": -21.0,
+        "distance_calls": 6,
+        "hit": false,
+        "optimal_entry": 1,
+        "query": [
+          -1,
+          1,
+          1
+        ],
+        "returned": 9,
+        "seed": 0
+      },
+      {
+        "GT1": 14,
+        "GT1_margin": 79.0,
+        "distance": -100.0,
+        "distance_calls": 7,
+        "hit": true,
+        "optimal_entry": 1,
+        "query": [
+          -1,
+          1,
+          1
+        ],
+        "returned": 14,
+        "seed": 1
+      },
+      {
+        "GT1": 14,
+        "GT1_margin": 79.0,
+        "distance": -21.0,
+        "distance_calls": 6,
+        "hit": false,
+        "optimal_entry": 1,
+        "query": [
+          1,
+          -1,
+          1
+        ],
+        "returned": 7,
+        "seed": 0
+      },
+      {
+        "GT1": 14,
+        "GT1_margin": 79.0,
+        "distance": -100.0,
+        "distance_calls": 7,
+        "hit": true,
+        "optimal_entry": 1,
+        "query": [
+          1,
+          -1,
+          1
+        ],
+        "returned": 14,
+        "seed": 1
+      },
+      {
+        "GT1": 14,
+        "GT1_margin": 79.0,
+        "distance": -100.0,
+        "distance_calls": 7,
+        "hit": true,
+        "optimal_entry": 0,
+        "query": [
+          1,
+          1,
+          1
+        ],
+        "returned": 14,
+        "seed": 0
+      },
+      {
+        "GT1": 14,
+        "GT1_margin": 79.0,
+        "distance": -21.0,
+        "distance_calls": 6,
+        "hit": false,
+        "optimal_entry": 0,
+        "query": [
+          1,
+          1,
+          1
+        ],
+        "returned": 11,
+        "seed": 1
+      }
+    ],
+    "real_NSG_calls": 0,
+    "same_unique_GT1": true,
+    "scope": "Artificial directed graph; two fixed one-entry actions only; not an impossibility result for current multi-entry WFree",
+    "status": "PASS",
+    "strongly_connected": true,
+    "synthetic_calls": 8,
+    "synthetic_graphs": 1,
+    "threads": 1
+  },
+  "geometry_arithmetic": {
+    "status": "PASS_EXACT_RATIONAL_EXAMPLE",
+    "created_unix": 1789900293.8083766,
+    "unit_vectors": 6,
+    "pair_identities": 36,
+    "comparison_sign_identities": 216,
+    "mean_covariance_identity": true,
+    "alpha": "3/5",
+    "source": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/routing_geometry_scope.md",
+      "sha256": "acb8a070ebe9b5185d046457b598fc9327973bbda9ae7d4ede68cf98dbc94cb5"
+    },
+    "scope": "Arithmetic example supports algebra only; no HNSW construction or actual runtime equivalence test",
+    "NSG_calls": 0,
+    "ANN_calls": 0,
+    "synthetic_kernel_calls": 0,
+    "new_graphs": 0,
+    "new_training": 0
+  },
+  "net_gain_plot": {
+    "status": "COMPLETE",
+    "pid": 80500,
+    "seconds": 0.2370741367340088,
+    "source": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/primary_L128.json",
+      "bytes": 2579,
+      "sha256": "53f23f06fb73b691776cbef2b4da9aa10c5baff7788d5407634ae70386aa3766"
+    },
+    "plot_source": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/plot_net_gain.py",
+      "bytes": 3943,
+      "sha256": "e60305f7add21691dc0aa27f68020aa940d47c70c10fd3b7eb1f56d39fa7adbe"
+    },
+    "outputs": [
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/net_gain_figure_v1/data.json",
+        "bytes": 445,
+        "sha256": "3e7063f90510bc144a4aa30003c7822d0ba9e8e1633c39052a877615d2748bec"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/net_gain_figure_v1/net_gain.png",
+        "bytes": 142120,
+        "sha256": "e6654090169e24de5019faef7d183660f9b9834615a15194d39fc89a9a437cce"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/net_gain_figure_v1/net_gain.pdf",
+        "bytes": 31726,
+        "sha256": "2f61f2df4b64a47ab42deda07d934f73089430d96fa4b6a6222a06877954a982"
+      }
+    ],
+    "NSG_calls": 0,
+    "ANN_calls": 0,
+    "new_training": 0,
+    "new_QPS": false,
+    "visual_review": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/net_gain_figure_v1/visual_review.json",
+      "bytes": 965,
+      "sha256": "334d0cdd0867520fcb8ed6ca409361c88b86b9daecd037bf6e12d8c73fef4b1c"
+    }
+  },
+  "max_native_rss_GiB": 10.168956756591797
+}

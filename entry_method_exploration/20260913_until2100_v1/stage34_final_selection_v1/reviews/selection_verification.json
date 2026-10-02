@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "independent_set_mask_rows": 326032,
+  "eligible_rows": 41,
+  "catalog_records": 77,
+  "excluded_records": 36,
+  "final_payload_access": false,
+  "new_ANN": 0,
+  "method_selection_feedback_role": "historically exposed auxiliary training",
+  "selected": {
+    "webvid2_5m_light_v1": {
+      "best_new_inventory": "E92_composed10",
+      "best_all_inventory": "E62_C",
+      "passing_count": 0,
+      "fallback_without_gate": true,
+      "selection_score": {
+        "dataset": "webvid2_5m_light_v1",
+        "name": "E92_composed10",
+        "catalog_index": 76,
+        "anchor": false,
+        "net_hits": 38,
+        "half1": 45,
+        "half2": -7,
+        "failure_count": 172,
+        "failure_delta": 1,
+        "total_NDC": 1758.977615694165,
+        "total_NDC_relative": 0.0019403591698803346,
+        "development_gate_pass": false,
+        "raw_path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage33_composed_repair_v1/results/aux/composed10_L128",
+        "config_path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage33_composed_repair_v1/inputs/aux.json",
+        "overall_quality_rank": 1
+      },
+      "ranking_names": [
+        "E92_composed10",
+        "E62_T",
+        "E90_supported10",
+        "E62_A",
+        "E70_mode3P30",
+        "E77_shrink10",
+        "E63_zero_mass2",
+        "E79_target10",
+        "E84_shortcut10",
+        "E72_mode3PD10",
+        "E80_conditional10",
+        "E89_restore10",
+        "E86_utility10",
+        "E87_utility10",
+        "E73_compact10",
+        "E78_mass10",
+        "E62_S",
+        "E83_sibling10",
+        "E81_joint10",
+        "E66_mode3P",
+        "E75_preserved10"
+      ],
+      "tie_rule": "net_hits descending; failure_count ascending; total_NDC ascending; original catalog index ascending"
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "best_new_inventory": "E73_compact10",
+      "best_all_inventory": "E73_compact10",
+      "passing_count": 8,
+      "fallback_without_gate": false,
+      "selection_score": {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "name": "E73_compact10",
+        "catalog_index": 31,
+        "anchor": false,
+        "net_hits": 120,
+        "half1": 39,
+        "half2": 81,
+        "failure_count": 143,
+        "failure_delta": -13,
+        "total_NDC": 2993.7464788732395,
+        "total_NDC_relative": 0.007245177412918302,
+        "development_gate_pass": true,
+        "raw_path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage14_compact_modes_v1/results/yandex_t2i_official10M_ip_v1/aux/compact10_L128",
+        "config_path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage14_compact_modes_v1/inputs/yandex_t2i_official10M_ip_v1/aux.json",
+        "overall_quality_rank": 1
+      },
+      "ranking_names": [
+        "E73_compact10",
+        "E83_sibling10",
+        "E86_utility10",
+        "E84_shortcut10",
+        "E75_preserved10",
+        "E89_restore10",
+        "E78_mass10",
+        "E77_shrink10"
+      ],
+      "tie_rule": "net_hits descending; failure_count ascending; total_NDC ascending; original catalog index ascending"
+    }
+  }
+}

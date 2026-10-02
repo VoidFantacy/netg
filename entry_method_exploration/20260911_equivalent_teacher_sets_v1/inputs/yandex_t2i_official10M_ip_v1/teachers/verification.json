@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "logical_labels_verified": 1120000,
+  "new_label_calls": 0,
+  "statistics": [
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "group": "all",
+      "queries": 20000,
+      "maxhit_ties_mean": 50.00305,
+      "maxhit_ties_median": 56.0,
+      "equivalent_mean": 13.27575,
+      "equivalent_median": 15.0,
+      "multiple_fraction": 0.9243,
+      "all56_fraction": 0.0,
+      "baseline_recall_pct": 90.079,
+      "teacher_recall_pct": 92.929,
+      "baseline_graph_ndc": 2862.28785,
+      "teacher_graph_ndc": 2822.88965
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "group": "headroom",
+      "queries": 2161,
+      "maxhit_ties_mean": 13.821378991207775,
+      "maxhit_ties_median": 10.0,
+      "equivalent_mean": 8.158260064784821,
+      "equivalent_median": 6.0,
+      "multiple_fraction": 0.8195279962980102,
+      "all56_fraction": 0.0,
+      "baseline_recall_pct": 58.00092549745489,
+      "teacher_recall_pct": 84.37760296159185,
+      "baseline_graph_ndc": 3000.8894030541414,
+      "teacher_graph_ndc": 3263.8630263766777
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "group": "no_headroom",
+      "queries": 17839,
+      "maxhit_ties_mean": 54.38606424126913,
+      "maxhit_ties_median": 56.0,
+      "equivalent_mean": 13.895678008856999,
+      "equivalent_median": 15.0,
+      "multiple_fraction": 0.9369919838555972,
+      "all56_fraction": 0.0,
+      "baseline_recall_pct": 93.96490834688043,
+      "teacher_recall_pct": 93.96490834688043,
+      "baseline_graph_ndc": 2845.4977857503222,
+      "teacher_graph_ndc": 2769.4705420707437
+    }
+  ],
+  "source_files": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/labels/yandex_t2i_official10M_ip_v1/ids.i32",
+      "bytes": 44800000,
+      "mtime_ns": 1789089994204976100,
+      "sha256": "b5fbef0124501ecfb6f9367ab632d872a0f6b815aac5022cd346a706bf9d969a"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/labels/yandex_t2i_official10M_ip_v1/hits.u8",
+      "bytes": 1120000,
+      "mtime_ns": 1789089994204976100,
+      "sha256": "ed64309710735f65e86b5747990f5d59c5d2867a583e7670396bc9d9eed52263"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/labels/yandex_t2i_official10M_ip_v1/masks.u16",
+      "bytes": 2240000,
+      "mtime_ns": 1789089994204976100,
+      "sha256": "1c17e5f350e193ec82c3cd5b4cf350e4e6f36f07c0af81e4c4aed5b78227a83c"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/labels/yandex_t2i_official10M_ip_v1/graph_ndc.u32",
+      "bytes": 4480000,
+      "mtime_ns": 1789089994204976100,
+      "sha256": "a93a11caebe6b73aa80d273f5a6f48d7a7ad95cc9d3fe1e318b285586337a0a7"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/labels/yandex_t2i_official10M_ip_v1/teacher_slot.i32",
+      "bytes": 80000,
+      "mtime_ns": 1789090244649567132,
+      "sha256": "a1632e89cd275f05e7a7866f8796dcc456c4ca020de9d567e3341f9b0c8f2099"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/labels/yandex_t2i_official10M_ip_v1/teacher.i32",
+      "bytes": 240000,
+      "mtime_ns": 1789090244649567132,
+      "sha256": "6111fe5f5b56bc587b6791769760d11030886f1add84674b862ee4c4be047e46"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/inputs/yandex_t2i_official10M_ip_v1/proposals/triples.i32",
+      "bytes": 13440000,
+      "mtime_ns": 1789089932052829426,
+      "sha256": "cee070b2eb2d8a39430144bd96d9c9f0755613f630c991116122b379b636507c"
+    }
+  ],
+  "teacher_files": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/inputs/yandex_t2i_official10M_ip_v1/teachers/headroom.u8",
+      "bytes": 20000,
+      "mtime_ns": 1789098471190120231,
+      "sha256": "bd259822de036b5d0aa3132d3bf2b911ffae8666261c45ebcb3343b580527243"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/inputs/yandex_t2i_official10M_ip_v1/teachers/teacher_slot.i32",
+      "bytes": 80000,
+      "mtime_ns": 1789098471190120231,
+      "sha256": "a1632e89cd275f05e7a7866f8796dcc456c4ca020de9d567e3341f9b0c8f2099"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/inputs/yandex_t2i_official10M_ip_v1/teachers/single.u8",
+      "bytes": 1120000,
+      "mtime_ns": 1789098471190120231,
+      "sha256": "70154e778eaf9bddf147328916de8ef9f429fe4937fa62f2f9b8e175bd455373"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/inputs/yandex_t2i_official10M_ip_v1/teachers/multi.u8",
+      "bytes": 1120000,
+      "mtime_ns": 1789098471190120231,
+      "sha256": "a55dcfb22fd766d48306d18599fc9aed526ac80b4e22b8b1564d099c27925f5b"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/inputs/yandex_t2i_official10M_ip_v1/teachers/baseline_slot.i32",
+      "bytes": 80000,
+      "mtime_ns": 1789098471190120231,
+      "sha256": "b44f2da36deb69c57aa3c90cbd748e23816c07790d2124fdff13705fa59439dd"
+    }
+  ]
+}

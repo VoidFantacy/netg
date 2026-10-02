@@ -1,0 +1,9 @@
+--- before/summary.md
++++ summary.md
+@@ -1,4 +1,6 @@
+ # ACSG 当前结果摘要
++
++2026-09-20 **E116入口身份pilot完成并停止**：固定GT10画像/小图及主搜索，双集各16个H外绑定编辑；各4096条本轮选择外、历史已曝光query，L128实际K1/K100、12点/36轮单线程完整wall。Cost相对默认Web ΔR1/R100为−0.073242/+0.000977pp、ΔQPS +0.179/−0.789%；Y +0.024414/−0.007324pp、ΔQPS +0.422/−0.305%。四主召回区间均跨0，RecallControl也无稳定增益；K1救回/新增失败Web1/4、Y3/2。1,711,520真实NSG、控制器8.08分钟，0新GT/图/画像梯度训练，有离散绑定选择。原默认逐字恢复与独立验收通过，`STOP_ENTRY_ID_PILOT`，不追加调参或条件五预算扩测，Web soft/Y hard及生产E99保持。[报告](entry_method_exploration/20260920_entry_id_pilot_v1/report.md) · [记录117](experiment_history/117_entry_id_pilot.md)。以下为历史阶段。
+ 
+ 2026-09-20 **入口研究范围与历史排重补充完成**：按用户纠正，主搜索保持不变，距离剪枝/早停退出本轮推荐。理论上区分逐query最优与一组查询可共用的入口；冻结GT10路由后选择H外入口身份仅保留为有条件候选，明确继承旧设计及E22/E112风险，尚无有效性证据。[理论报告](entry_method_exploration/20260920_entry_id_theory_v3/report.md)。本轮0新标签、训练、ANN、NSG、GT、构图或性能评测，默认Web soft/Y hard及生产E99保持；详细后续边界见[s-target.md](s-target.md)。
+ 

@@ -1,0 +1,32 @@
+{
+  "status": "COMPLETE_WIDTH_QUALITY_CONTROL",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "passed": false,
+      "rules": {
+        "baseline10_positive": true,
+        "baseline10_halves": false,
+        "baseline10_failures": false,
+        "baseline30_positive": false,
+        "baseline30_halves": false,
+        "baseline30_failures": false,
+        "mode10_nonnegative": true
+      }
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "passed": true,
+      "rules": {
+        "baseline10_positive": true,
+        "baseline10_halves": true,
+        "baseline10_failures": true,
+        "baseline30_positive": true,
+        "baseline30_halves": true,
+        "baseline30_failures": true,
+        "mode10_nonnegative": true
+      }
+    }
+  },
+  "full_development_wall_supported": true,
+  "old_E66_gate_unchanged": true,
+  "not_performance_GO": true
+}

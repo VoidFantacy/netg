@@ -1,0 +1,43 @@
+{
+  "status": "INCOMPLETE",
+  "argv": [
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analyze_p3.py",
+    "--dataset-eval",
+    "webvid2_5m_light_v1",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/eval_webvid",
+    "--dataset-eval",
+    "yandex_t2i_official10M_ip_v1",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/eval_yandex",
+    "--p1-gate",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P1_P3_reacceptance.json",
+    "--protocol",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "--output",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analysis_v1"
+  ],
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analyze_p3.py",
+    "sha256": "a840b060a61061df6e60ae6166cd9a090570ef6ec0002a3ec7c7deea14e4e03e"
+  },
+  "P2_helper": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/analyze_p2.py",
+    "sha256": "8219fc24ac771d585cc30f9ad628aa7d5c8e55025bfe60725511aafafb05acd8"
+  },
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+  },
+  "p1_gate": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P1_P3_reacceptance.json",
+    "sha256": "02b5e08c84625b37b12304d91ae03416d9c00085663e474f1cb8f27005ece7eb"
+  },
+  "bootstrap_repetitions": 10000,
+  "seed": 2026090711,
+  "bootstrap_chunk": 64,
+  "rng_order": "Fixed DATASETS order, then L64,L128; one RNG stream",
+  "unit_of_resampling": "Paired pilot query IDs; every fixed comparison within one dataset/L uses the same query-index draws",
+  "bootstrap_npz_content": "Replicate mean Recall differences, not raw index matrices; seed/RNG/chunk/helper hashes reproduce samples",
+  "comparison_selection": "Exactly eight fixed contrasts per L per dataset; no winner/model/working-point selection",
+  "reads_query_GT_base_graph_contents": false,
+  "validation_or_heldout_accessed": false
+}

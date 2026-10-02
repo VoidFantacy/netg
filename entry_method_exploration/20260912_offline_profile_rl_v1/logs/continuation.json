@@ -1,0 +1,50 @@
+{
+  "status": "ANALYSIS_COMPLETE_REPORT_AUDIT_PENDING",
+  "events": [
+    {
+      "stage": "audit_training",
+      "status": "COMPLETE",
+      "start": 1789187200.965691,
+      "argv": [
+        "taskset",
+        "-c",
+        "8",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260912_offline_profile_rl_v1/src/audit_training.py"
+      ],
+      "pid": 9662,
+      "exit_code": 0,
+      "seconds": 82.95933699607849
+    },
+    {
+      "stage": "deploy",
+      "status": "COMPLETE",
+      "start": 1789187283.9252765,
+      "argv": [
+        "taskset",
+        "-c",
+        "8",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260912_offline_profile_rl_v1/src/deploy.py"
+      ],
+      "pid": 9749,
+      "exit_code": 0,
+      "seconds": 459.6785612106323
+    },
+    {
+      "stage": "analyze",
+      "status": "COMPLETE",
+      "start": 1789187743.7535336,
+      "argv": [
+        "taskset",
+        "-c",
+        "8",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260912_offline_profile_rl_v1/src/analyze.py"
+      ],
+      "pid": 10218,
+      "exit_code": 0,
+      "seconds": 12.478732585906982
+    }
+  ]
+}

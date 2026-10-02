@@ -1,0 +1,29 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "arms": [
+    "rl",
+    "es"
+  ],
+  "seeds": [
+    20260921,
+    20260922
+  ],
+  "steps": 200,
+  "population": 8,
+  "batch": 128,
+  "rank": 16,
+  "sigma": 0.3,
+  "NSG_hard_cap": 2200000,
+  "NSG_expected": 1992256,
+  "build_hard_cap": 15000,
+  "expected_builds": 14510,
+  "per_run_NSG": 247680,
+  "deadline": "2026-09-12T20:00:00+08:00",
+  "training_stop_epoch": 1789212900,
+  "latest_training_launch_epoch": 1789209300,
+  "representation": "independent H x 16 normalized local coefficients with frozen P/B/scales",
+  "threads": 1
+}

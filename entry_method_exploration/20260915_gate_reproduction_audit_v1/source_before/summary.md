@@ -1,0 +1,9 @@
+# ACSG 当前结果摘要
+
+2026-09-15 E96已完成：WebVid/Yandex/LAION完整底库、各10000公开query，GATE（release10适配）、当前GT10、NSG、全量HNSW，16预算至1500；192点576次单线程wall及逐query评分、配对、身份/线程审计通过。正式阶段4.758小时，图表已检查，原始结果全部保留。[报告与图](entry_method_exploration/20260914_gate_new_ood_v1/report.md) · [完整CSV](entry_method_exploration/20260914_gate_new_ood_v1/results/metrics.csv) · [复盘88](experiment_history/88_gate_three_dataset_comparison.md)。
+
+Web/Y上，GT10在全部16预算均有高于GATE的Recall和平均QPS；LAION高预算有取舍：L1500 GATE96.287%/145.86QPS/0.03%零命中，GT10 96.154%/148.94QPS/0.06%。全量HNSW与GT10也有前沿交叉，不能称任何方法全条件最快。Web/Y最大预算的GT10分别93.506%/192.05QPS/0.04%、99.007%/206.44QPS/0.13%。主失败定义为Recall@10=0，GT1漏失另报。默认Web软/Y硬保持，LAION本轮cal选择soft-t1；没有按public结果追加训练。
+
+最终GATE训练639.97/751.71/1331.11秒，标签151.23/200.82/230.21秒；历史GT/NSG/继承画像成本未知，不能当零。LAION特征已含HBKM，不重复计费。旧采样错误、环境重启和存储保护恢复均已隔离记录；所有正式点在同一boot一次完成。按用户授权删除原netg.tar.gz后，LAION索引已校验恢复项目目录；原base/NSG/GT/模型不变。Web/LAION公开query同源，结论不是三套全新盲测。E95停止结论作为历史边界保留。
+
+E95查询统计构图的四组开发门均失败，因此停止当时的固定H画像/小图增强分支；这个判断不等于全部离线入口学习或RL无解。[E95复盘](experiment_history/87_query_moment_graph_and_branch_stop.md)。E94为该旧分支的五L五轮最终矩阵，与本轮E96的三数据集16预算比较分开保存。[E94复盘](experiment_history/83_frozen_final_comparison.md)。当前没有待恢复的实验进程。

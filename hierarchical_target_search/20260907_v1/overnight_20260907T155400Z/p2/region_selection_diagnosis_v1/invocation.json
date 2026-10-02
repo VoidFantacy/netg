@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "status": "INCOMPLETE",
+  "scope": "P2_PILOT_SELECTION_DIAGNOSIS",
+  "created_utc": "2026-09-07T16:45:03.022697+00:00",
+  "argv": [
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/diagnose_region_selection.py",
+    "--analysis",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/analysis_v1/analysis.json",
+    "--audit",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+    "--input",
+    "webvid2_5m_light_v1",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/webvid_eval/count.json",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/webvid_model/model.json",
+    "--input",
+    "yandex_t2i_official10M_ip_v1",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_eval/count.json",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_model/model.json",
+    "--output",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/region_selection_diagnosis_v1"
+  ],
+  "script_sha256": "4e27553cd50d8bcb477f09e41628dd23f68d127b9dd94e6bd0f8db8bf7025d8e",
+  "analysis": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/analysis_v1/analysis.json",
+    "sha256": "e73a8d8c16a5bebb2404596b63d621b1780b1aab0f9eb29efce5281edfc04c1f"
+  },
+  "P0_audit": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+    "sha256": "7da975cbb0e045265f405b08e230abb6442eba51621064699a4ad449c90ae58b"
+  },
+  "oracle_precondition": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 64,
+      "contrast": "oracle_protection",
+      "paired_query_bootstrap95_pp": [
+        5.009975,
+        5.826
+      ]
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 128,
+      "contrast": "oracle_protection",
+      "paired_query_bootstrap95_pp": [
+        4.917000000000001,
+        5.596025
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "oracle_protection",
+      "paired_query_bootstrap95_pp": [
+        2.7710000000000004,
+        3.54
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "oracle_protection",
+      "paired_query_bootstrap95_pp": [
+        3.045,
+        3.6769999999999996
+      ]
+    }
+  ],
+  "fixed_geometry_mass_bins": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "bin_convention": "[0,.25),[.25,.5),[.5,.75),[.75,1]",
+  "reads_pilot_GT_prefix_only": true,
+  "reads_base_graph_queryvectors_validation_heldout": false,
+  "model_training_or_search_run": false,
+  "P2_or_formal_performance_gate_passed": false,
+  "limitations": [
+    "Bins describe associations in historically used development pilot; not randomized strata or causal effects.",
+    "Positive pointwise95% oracle-protection intervals authorize this bounded diagnosis, not P2 GO or formal performance gain.",
+    "Oracle/geometric selection changes selected portals, order and possibly deduplicated entry count; their gap does not isolate portal quality or connectivity.",
+    "Absolute top4 target mass is not an upper bound on search Recall because cross-region graph edges remain traversable.",
+    "GT file prefix fingerprint is freshly checked; full parent GT checksum and query-vector identity are inherited from P0 and aligned count provenance.",
+    "No fit samples, model, partition, thresholds or parameters are modified; no new confidence claim is made from bins."
+  ]
+}

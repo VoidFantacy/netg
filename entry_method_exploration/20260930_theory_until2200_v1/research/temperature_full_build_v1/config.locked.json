@@ -1,0 +1,30 @@
+{
+  "seconds_cap": 1800,
+  "deadline_unix": 1790775000,
+  "max_new_bytes": 262144000,
+  "teacher_binary": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/bin/labels_without_router",
+  "router_binary": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/bin/build_router",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "dataset": "webvid2_5m_light_v1",
+      "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+      "base_n": 2505000,
+      "dimension": 512,
+      "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "qgt_queries": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.aco_train.seed20260826.fvecs",
+      "fit_queries": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/queries.f32",
+      "fit_n": 20000,
+      "pilot_n": 2048,
+      "pilot_seed": 2026093002,
+      "H": 815,
+      "soft": true,
+      "L": 1250,
+      "selector_source": "/data/netg/ACSG/benches/run/build_fast_entry_variants.py",
+      "output": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/temperature_full_build_v1/results/webvid2_5m_light_v1"
+    }
+  },
+  "expected_total_exact_queries": 2863,
+  "total_teacher_calls": 20032,
+  "primary": "HybridRectifiedCDF",
+  "control": "HybridApproxMedian"
+}

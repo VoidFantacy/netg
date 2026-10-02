@@ -1,0 +1,17 @@
+{
+  "status": "PASS_CURRENT_READINESS_NOT_FINAL_STOP_VERIFICATION",
+  "at": "2026-09-07T18:22:23.504143+00:00",
+  "watchdog_identity_matches": true,
+  "watchdog_pid": 34655,
+  "job_status_counts": {
+    "COMPLETE": 49,
+    "FAILED": 2,
+    "LAUNCH_FAILED": 1
+  },
+  "active_registered_job_statuses": [],
+  "deadline_utc": "2026-09-07T23:00:00+00:00",
+  "final_verification_required_after_deadline": true,
+  "final_scan_contract": "After deadline verify watchdog stop_verification; scan /proc for every registered ACSG_OVERNIGHT_JOB_TOKEN regardless of PGID, compare recorded leader PID/start_ticks and watchdog identity; expose only matching task records, never environment contents. Exclude zombies from running tasks and do not signal unrelated identities.",
+  "report_path_currently_exists": false,
+  "no_post_deadline_research_allowed": true
+}

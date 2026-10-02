@@ -1,0 +1,103 @@
+{
+  "status": "PASS_INDEPENDENT_STDLIB_OLD_RESPONSE_CLASS_AUDIT",
+  "implementation": "struct/zipfile/ast/Counter/set/Fraction; no NumPy or main-script import",
+  "cpu_affinity": [
+    0
+  ],
+  "actual_process_threads": 1,
+  "main_pair_point_units": 36,
+  "query_pair_checks": 147456,
+  "all_main_fields_compared": 828,
+  "numeric_tolerance": 1e-09,
+  "main_input_files_verified_before_after": 114,
+  "main_identity_manifest_reused_and_all_hashes_verified": true,
+  "main_and_audit_control_identities_before_after_equal": true,
+  "control_identities": {
+    "/data/netg/ACSG/entry_method_exploration/20261002_theory_until1300_v1/response_class_input_identity.json": {
+      "bytes": 33254,
+      "sha256": "8e4abc72ae44f42e6f1dbfd50b5978aa0e1538b5bcda01d5ce451ba2af7d1d23"
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261002_theory_until1300_v1/response_class_check.json": {
+      "bytes": 35450,
+      "sha256": "b8e2ce1c9050b2e5abdc35cde35a399a3f9fc638692ced073def97850600bc1a"
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261002_theory_until1300_v1/response_class_independent_audit.py": {
+      "bytes": 11381,
+      "sha256": "3f334b131c70b13908794f84c5a0d96178f783f031ee140d22635aad42cea24c"
+    }
+  },
+  "aggregate_pair_query_counts": {
+    "same_ordered_return_n": 135928,
+    "same_return_set_n": 136092,
+    "same_saved_hit_count_n": 137514,
+    "same_hit_count_but_different_return_set_n": 1422,
+    "same_return_set_same_graphNDC_n": 24849,
+    "same_return_set_different_graphNDC_n": 111243,
+    "same_return_set_same_totalNDC_n": 7095,
+    "same_return_set_different_totalNDC_n": 128997
+  },
+  "focused_old_cells": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "L": 1000,
+      "left": "Default3",
+      "right": "TargetBank1",
+      "n": 4096,
+      "same_ordered_return_n": 3998,
+      "same_return_set_n": 3998,
+      "same_saved_hit_count_n": 4018,
+      "same_hit_count_but_different_return_set_n": 20,
+      "same_return_set_same_graphNDC_n": 1111,
+      "same_return_set_different_graphNDC_n": 2887,
+      "same_return_set_same_totalNDC_n": 7,
+      "same_return_set_different_totalNDC_n": 3991,
+      "same_return_set_pct": 97.607421875,
+      "replaced_output_members": {
+        "mean": 0.02392578125,
+        "max": 1,
+        "p50": 0.0,
+        "p90": 0.0,
+        "p99": 1.0
+      },
+      "mean_symmetric_difference_recall_bound_pp": 2.392578125,
+      "old_right_minus_left_recall_pp": 0.537109375,
+      "same_set_implies_same_saved_hits": true,
+      "saved_hit_difference_within_symmetric_difference_bound": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "L": 256,
+      "left": "Default3",
+      "right": "TargetBank1",
+      "n": 4096,
+      "same_ordered_return_n": 3417,
+      "same_return_set_n": 3420,
+      "same_saved_hit_count_n": 3509,
+      "same_hit_count_but_different_return_set_n": 89,
+      "same_return_set_same_graphNDC_n": 15,
+      "same_return_set_different_graphNDC_n": 3405,
+      "same_return_set_same_totalNDC_n": 4,
+      "same_return_set_different_totalNDC_n": 3416,
+      "same_return_set_pct": 83.49609375,
+      "replaced_output_members": {
+        "mean": 2.305419921875,
+        "max": 100,
+        "p50": 0.0,
+        "p90": 1.0,
+        "p99": 100.0
+      },
+      "mean_symmetric_difference_recall_bound_pp": 2.305419921875,
+      "old_right_minus_left_recall_pp": -0.159423828125,
+      "same_set_implies_same_saved_hits": true,
+      "saved_hit_difference_within_symmetric_difference_bound": true
+    }
+  ],
+  "new_vector_scores": 0,
+  "new_ANN_NSG_GT_calls": 0,
+  "query_base_GT_vectors_opened": false,
+  "new_models_graphs": 0,
+  "seconds_for_readonly_audit_only": 2.0792393080000693,
+  "interpretation": "Saved terminal K-ID equivalence only; not live-pool convergence, trace, cross-query or wall equivalence."
+}

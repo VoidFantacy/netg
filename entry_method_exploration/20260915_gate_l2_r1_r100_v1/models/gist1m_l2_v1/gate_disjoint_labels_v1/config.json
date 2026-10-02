@@ -1,0 +1,23 @@
+{
+  "dim": 960,
+  "hidden": 2024,
+  "fusion_heads": 8,
+  "hidden_heads": 4,
+  "layers": 2,
+  "feedforward": 2048,
+  "fusion_dropout": 0.0,
+  "hidden_attention_dropout": 0.1,
+  "relu_dropout": 0.05,
+  "batch_size": 16384,
+  "max_epochs": 200,
+  "patience": 20,
+  "learning_rate": 1e-05,
+  "margin": 1,
+  "seed": 42,
+  "threads": 16,
+  "batch_first": true,
+  "unique_hub_forward": true,
+  "label_rule": "disjoint_positive_negative_v1",
+  "graph_features_sha256": "2239bcee0c69e9e86de2a16c1c6bb3b89856cbcd9db581c90d99ca6655c4f35d",
+  "sampling": "release fixed10, 5near+5far, <=5hop/1000nodes"
+}

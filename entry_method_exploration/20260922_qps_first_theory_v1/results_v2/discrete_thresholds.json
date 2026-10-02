@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "scope": "Descriptive selection among three recorded configurations only; no new L, timing or fitting",
+  "constraint": "Each selected measured Recall >= .90; not equal exact Recall",
+  "comparisons": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "methods": {
+        "DefaultGT10": {
+          "L": 1000,
+          "recall": 0.904541015625,
+          "qps_median": 414.2598683695074,
+          "time_us": 2413.9437014160153
+        },
+        "TargetKNN": {
+          "L": 1000,
+          "recall": 0.9072265625,
+          "qps_median": 332.1992806855236,
+          "time_us": 3010.2413164062505
+        }
+      },
+      "qps_change_pct": -19.808963877424933
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "methods": {
+        "DefaultGT10": {
+          "L": 1250,
+          "recall": 0.9058154296875,
+          "qps_median": 336.7573129565491,
+          "time_us": 2969.497503173828
+        },
+        "TargetKNN": {
+          "L": 1120,
+          "recall": 0.900263671875,
+          "qps_median": 302.1769187975269,
+          "time_us": 3309.3195998535157
+        }
+      },
+      "qps_change_pct": -10.268639411398306
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "methods": {
+        "DefaultGT10": {
+          "L": 128,
+          "recall": 0.90625,
+          "qps_median": 2361.0238679839777,
+          "time_us": 423.5450617675781
+        },
+        "TargetKNN": {
+          "L": 128,
+          "recall": 0.908203125,
+          "qps_median": 1404.407667426886,
+          "time_us": 712.0439621582032
+        }
+      },
+      "qps_change_pct": -40.51700677528193
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "methods": {
+        "DefaultGT10": {
+          "L": 256,
+          "recall": 0.9104443359375,
+          "qps_median": 1304.257099311641,
+          "time_us": 766.7199975585938
+        },
+        "TargetKNN": {
+          "L": 256,
+          "recall": 0.91122802734375,
+          "qps_median": 940.6090641640906,
+          "time_us": 1063.1409350585936
+        }
+      },
+      "qps_change_pct": -27.881622062051726
+    }
+  ],
+  "new_searches": 0,
+  "new_training": 0
+}

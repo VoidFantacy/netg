@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "status": "INCOMPLETE",
+  "scope": "P2_SAVED_CAPACITY_DIAGNOSIS",
+  "created_utc": "2026-09-07T16:56:11.079432+00:00",
+  "argv": [
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/diagnose_saved_capacities.py",
+    "--analysis",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/analysis_v1/analysis.json",
+    "--input",
+    "webvid2_5m_light_v1",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/webvid_eval/count.json",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/webvid_model/model.json",
+    "--input",
+    "yandex_t2i_official10M_ip_v1",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_eval/count.json",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_model/model.json",
+    "--output",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/saved_capacity_diagnosis_v1"
+  ],
+  "script_sha256": "ada6e148069d1544ece96dcac44e5afb2939a06bd0e717c48c587ad405c9e77e",
+  "analysis": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/analysis_v1/analysis.json",
+    "sha256": "e73a8d8c16a5bebb2404596b63d621b1780b1aab0f9eb29efce5281edfc04c1f"
+  },
+  "source": {
+    "path": "/data/netg/ACSG/ACSG/RegionalSearch.h",
+    "sha256": "320e29c9407d5907ece7ef64113edeb8b2d5157fa8796aaf94e470eb6771e14e"
+  },
+  "source_manifest": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/source_and_log_manifest.json",
+    "sha256": "fba432fc6b09b67286a3ce5f7d03252e28b76061702ea42b2a1236dada934783"
+  },
+  "oracle_precondition": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 64,
+      "paired_query_bootstrap95_pp": [
+        5.009975,
+        5.826
+      ]
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 128,
+      "paired_query_bootstrap95_pp": [
+        4.917000000000001,
+        5.596025
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "paired_query_bootstrap95_pp": [
+        2.7710000000000004,
+        3.54
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "paired_query_bootstrap95_pp": [
+        3.045,
+        3.6769999999999996
+      ]
+    }
+  ],
+  "allocator": {
+    "shared": "floor(L/4)",
+    "min_per_active_region": 4,
+    "remaining": "largest remainder using binary64; tied fractions use ascending region ID",
+    "capacity_order": "shared followed by saved selected-region order",
+    "scheduler_weight": "integer queue capacity"
+  },
+  "reads_GT_base_graph_labels_queryvectors_validation_heldout": false,
+  "model_training_or_search_run": false,
+  "confidence_intervals": null,
+  "P2_or_formal_performance_gate_passed": false,
+  "limitations": [
+    "All weight and regional-capacity probabilities are conditional on the selected four regions; they do not measure absolute GT mass.",
+    "Capacity concentration concerns retention and scheduler weights together and does not isolate their causal effects.",
+    "Oracle and geometric routes select different regions/portals; concentration differences alone do not identify a correct deployment calibration.",
+    "Equal-capacity equivalence is checked from saved outputs/counters; no search is replayed.",
+    "Main-analysis input identity is freshly checked; model arrays, GT, graph and vectors are not read or rehashed.",
+    "Fixed descriptive output only; no model, parameters, partitions, confidence intervals or gates are changed."
+  ]
+}

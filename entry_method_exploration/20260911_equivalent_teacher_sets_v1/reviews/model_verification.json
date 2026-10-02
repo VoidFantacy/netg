@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "models": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "single",
+      "status": "PASS",
+      "data_loss": 0.5114547237519198,
+      "drift": 0.00022196703543414084,
+      "numpy_forward": true,
+      "alignment_all_groups": true
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "multi",
+      "status": "PASS",
+      "data_loss": 0.5033087154966934,
+      "drift": 0.00023355159115319012,
+      "numpy_forward": true,
+      "alignment_all_groups": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "single",
+      "status": "PASS",
+      "data_loss": 0.9181627405566385,
+      "drift": 0.00012577257470334135,
+      "numpy_forward": true,
+      "alignment_all_groups": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "multi",
+      "status": "PASS",
+      "data_loss": 0.9120171663357838,
+      "drift": 0.00013116400824533526,
+      "numpy_forward": true,
+      "alignment_all_groups": true
+    }
+  ],
+  "matching": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "status": "PASS",
+      "canonical_models": 3,
+      "alpha": 0.9748813241239869,
+      "target": 0.00022196702947550675,
+      "relative_error": 7.612031720578838e-09
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "status": "PASS",
+      "canonical_models": 3,
+      "alpha": 0.9792313925101259,
+      "target": 0.00012577257639187242,
+      "relative_error": 6.459953600114686e-09
+    }
+  ],
+  "NSG_calls": 0,
+  "optimizer_steps": 0
+}

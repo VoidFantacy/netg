@@ -1,0 +1,37 @@
+{
+  "status": "PASS_COMPLETE_BOOTSTRAP_ARTIFACTS",
+  "created_utc": "2026-09-07T18:00:52.867543+00:00",
+  "analysis": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analysis_v1/analysis.json",
+    "sha256": "63da6a71425b0dbd6e186db1c608a564b9847c58168b6b56059a9ed2d2f901ae"
+  },
+  "complete_marker": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analysis_v1/complete.json",
+    "sha256": "75b72c6213c2ee4910d9ffe419100ccc0c66a5b9f2f65e7326d465212a5ac611"
+  },
+  "checks": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "bound_npz": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analysis_v1/bootstrap_webvid2_5m_light_v1.npz",
+        "sha256": "8c676b8ef0adf61aa3fe76fefe345ec3eba37feacfdff19db2bc8fd5784e5d8c"
+      },
+      "checked_contrasts": 16,
+      "draws_per_contrast": 10000,
+      "saved_draw_quantiles_match_report": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "bound_npz": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analysis_v1/bootstrap_yandex_t2i_official10M_ip_v1.npz",
+        "sha256": "47acf1d3c598df648a0dd420ff87325874b48b298ae319aff0e979000ec9fb8b"
+      },
+      "checked_contrasts": 16,
+      "draws_per_contrast": 10000,
+      "saved_draw_quantiles_match_report": true
+    }
+  ],
+  "new_bootstrap_runs": 0,
+  "new_ANN_calls": 0,
+  "metadata_caveat": "The nested bootstrap.status and immutable invocation.json status retain INCOMPLETE from launch metadata because the analyzer copied the initial invocation object. They are not live completion state. Top-level analysis.status, complete.json, both dataset reports and all 32 bound finite 10000-draw arrays establish actual completion. Original artifacts preserved."
+}

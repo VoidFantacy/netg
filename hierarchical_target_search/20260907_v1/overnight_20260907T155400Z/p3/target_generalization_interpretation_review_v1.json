@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "status": "PASS_SUMMARY_INTERPRETATION_REVIEW_P3_REMAINS_NOPASS",
+  "created_utc": "2026-09-07T18:32:36.310622+00:00",
+  "reviewer": "p1_evaluator",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/target_generalization_diagnosis_v1/diagnosis.json",
+    "sha256": "124c65ee713dc3c3de57968ef98675be8566c1dbf2e3e24411c974434e3c0a0c"
+  },
+  "review_scope": "Read only the completed target-generalization diagnosis summary JSON; did not open its NPZ, GT, labels, count rows, graph, query or base artifacts. Checked all40 contrast and440 stratum summary totals/algebra, not a new empirical rerun.",
+  "checks": {
+    "all_search_contrast_cells": 40,
+    "all_search_support_strata": 440,
+    "candidate_minus_reference_support_decomposition": true,
+    "stratum_weighted_means_match_all_queries": true,
+    "structure_seen_unseen_coverage_contributions_sum": true,
+    "node_vs_slot_movement_denominators_checked": true
+  },
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "fit_and_pilot_concentration": {
+        "fit": {
+          "D_lambda0": 4.33285,
+          "D_lambda1": 2.60275,
+          "D_delta": -1.7300999999999997,
+          "M4_lambda0": 0.89955,
+          "M4_lambda1": 0.992775,
+          "M4_delta_pp": 9.3225,
+          "M4_seen_contribution_delta_pp": 9.3225,
+          "M4_unseen_contribution_delta_pp": 0.0
+        },
+        "pilot": {
+          "D_lambda0": 4.3194,
+          "D_lambda1": 4.0209,
+          "D_delta": -0.29849999999999977,
+          "M4_lambda0": 0.89985,
+          "M4_lambda1": 0.9179299999999999,
+          "M4_delta_pp": 1.8079999999999874,
+          "M4_seen_contribution_delta_pp": 1.976,
+          "M4_unseen_contribution_delta_pp": -0.16799999999999593
+        }
+      },
+      "pilot_seen_target_slot_share": 0.57258,
+      "pilot_queries_with_zero_seen_targets": 554,
+      "unique_base_population": {
+        "all": 2505000,
+        "seen": 118811,
+        "unseen": 2386189
+      },
+      "final_lambda1_vs_lambda0_label_difference": {
+        "unique_nodes": {
+          "all": {
+            "changed": 52305,
+            "denominator": 2505000,
+            "rate": 0.020880239520958084
+          },
+          "seen": {
+            "changed": 28716,
+            "denominator": 118811,
+            "rate": 0.24169479256971155
+          },
+          "unseen": {
+            "changed": 23589,
+            "denominator": 2386189,
+            "rate": 0.009885637726097974
+          }
+        },
+        "pilot_target_slots": {
+          "all": {
+            "changed": 16293,
+            "denominator": 100000,
+            "rate": 0.16293
+          },
+          "seen": {
+            "changed": 15463,
+            "denominator": 57258,
+            "rate": 0.2700583324600929
+          },
+          "unseen": {
+            "changed": 830,
+            "denominator": 42742,
+            "rate": 0.01941883861307379
+          }
+        }
+      },
+      "main_greedy_search_difference": [
+        {
+          "L": 64,
+          "recall_delta_pp": -0.866,
+          "seen_recall_contribution_delta_pp": -0.87,
+          "unseen_recall_contribution_delta_pp": 0.004,
+          "seen_conditional_target_hit_delta": -0.015194383317615006,
+          "unseen_conditional_target_hit_delta": 9.358476440035563e-05
+        },
+        {
+          "L": 128,
+          "recall_delta_pp": -0.79,
+          "seen_recall_contribution_delta_pp": -0.753,
+          "unseen_recall_contribution_delta_pp": -0.037,
+          "seen_conditional_target_hit_delta": -0.013151000733521953,
+          "unseen_conditional_target_hit_delta": -0.0008656590707032895
+        }
+      ],
+      "all_11_bins_present": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "fit_and_pilot_concentration": {
+        "fit": {
+          "D_lambda0": 3.00925,
+          "D_lambda1": 1.9648,
+          "D_delta": -1.04445,
+          "M4_lambda0": 0.965385,
+          "M4_lambda1": 0.9996299999999999,
+          "M4_delta_pp": 3.424499999999986,
+          "M4_seen_contribution_delta_pp": 3.424499999999986,
+          "M4_unseen_contribution_delta_pp": 0.0
+        },
+        "pilot": {
+          "D_lambda0": 3.0181,
+          "D_lambda1": 3.0193,
+          "D_delta": 0.0011999999999998678,
+          "M4_lambda0": 0.96511,
+          "M4_lambda1": 0.9650700000000001,
+          "M4_delta_pp": -0.003999999999992898,
+          "M4_seen_contribution_delta_pp": 0.010000000000000286,
+          "M4_unseen_contribution_delta_pp": -0.014000000000002899
+        }
+      },
+      "pilot_seen_target_slot_share": 0.10163,
+      "pilot_queries_with_zero_seen_targets": 5189,
+      "unique_base_population": {
+        "all": 10000000,
+        "seen": 188913,
+        "unseen": 9811087
+      },
+      "final_lambda1_vs_lambda0_label_difference": {
+        "unique_nodes": {
+          "all": {
+            "changed": 72107,
+            "denominator": 10000000,
+            "rate": 0.0072107
+          },
+          "seen": {
+            "changed": 22224,
+            "denominator": 188913,
+            "rate": 0.11764145400263613
+          },
+          "unseen": {
+            "changed": 49883,
+            "denominator": 9811087,
+            "rate": 0.005084349980792139
+          }
+        },
+        "pilot_target_slots": {
+          "all": {
+            "changed": 1631,
+            "denominator": 100000,
+            "rate": 0.01631
+          },
+          "seen": {
+            "changed": 1091,
+            "denominator": 10163,
+            "rate": 0.1073501918724786
+          },
+          "unseen": {
+            "changed": 540,
+            "denominator": 89837,
+            "rate": 0.006010886383116088
+          }
+        }
+      },
+      "main_greedy_search_difference": [
+        {
+          "L": 64,
+          "recall_delta_pp": -0.095,
+          "seen_recall_contribution_delta_pp": -0.019,
+          "unseen_recall_contribution_delta_pp": -0.076,
+          "seen_conditional_target_hit_delta": -0.0018695267145527896,
+          "unseen_conditional_target_hit_delta": -0.0008459766020681901
+        },
+        {
+          "L": 128,
+          "recall_delta_pp": -0.017,
+          "seen_recall_contribution_delta_pp": -0.008,
+          "unseen_recall_contribution_delta_pp": -0.009,
+          "seen_conditional_target_hit_delta": -0.0007871691429695956,
+          "unseen_conditional_target_hit_delta": -0.00010018143971860146
+        }
+      ],
+      "all_11_bins_present": true
+    }
+  ],
+  "supported_interpretations": [
+    "WebVid has observed pilot concentration transfer: lambda1 lowers pilot mean D by0.2985 and increases absolute top4 mass by1.808pp, though the fit gain is much larger. A claim of no pilot concentration transfer is false for this dataset.",
+    "WebVid main greedy3 oracle_probability net losses are -0.866/-0.790pp; seen-target contributions are -0.870/-0.753pp, unseen contributions+0.004/-0.037pp. These are descriptive additive net hit differences, so an all-unseen failure explanation is contradicted.",
+    "WebVid seen-target absolute selected-leaf coverage contribution itself increases1.976pp while the corresponding seen-target retrieval contribution falls in both main search cells. Abstract target membership/concentration does not guarantee better finite-budget joint search.",
+    "Yandex fit mean D drops3.00925→1.96480, while aggregate pilot D changes3.0181→3.0193 and M4 changes-0.004pp. Report these small observed differences; they do not prove statistical equivalence or that every subgroup is unchanged.",
+    "Pilot seen target-slot share differs sharply:57.258% WebVid and10.163% Yandex; counts of queries with no seenGT target are554 and5189. These describe target-support exposure, not query overlap/leakage.",
+    "Final lambda1-versuslambda0 label differences occur for24.1695%/11.7641% of seen unique nodes versus0.9886%/0.5084% of unseen unique nodes. This supports empirically checking whether the algebraic degree condition covers actual fit targets and changed-label populations. It does not show why particular sequential moves were accepted."
+  ],
+  "unsupported_interpretations": [
+    "All P3 failure arises from targets absent from fit.",
+    "No pilot target concentration transferred on either dataset.",
+    "Seen-target losses have their own confirmed statistical interval; this diagnostic computes no subgroup CI.",
+    "The existing Yandex inconclusive main search contrasts have become confirmed algorithmic regression because a descriptive subgroup mean is negative.",
+    "M4 is an upper bound on Recall: cross-region edges and shared search can retrieve targets outside the four active leaves.",
+    "Endpoint label differences identify actual single-move deltaC/deltaS or isolate a label-only causal effect. The lambda pipeline also changes candidates/portals/oracle choices/queue assignments.",
+    "Fit-to-pilot differences prove memorization or connectivity failure, or authorize a model/auxiliary-graph revision."
+  ],
+  "bounded_degree_audit_feasibility": {
+    "supported_next_question": "Among actual fit-target and frozen changed-label populations, what fraction satisfies the fixed sufficient bound D(u)*9Q<M, and how does that relate descriptively to fit incidence?",
+    "evidence_justification": "Global Markov arithmetic cannot locate fit-target degrees; target diagnosis shows both finite support exposure differences and different label-change rates across support groups. A degree/incidence audit addresses that specific missing empirical premise.",
+    "permitted_claim_if_condition_common": "The sufficient local degree condition applies to that observed population, conditional on a feasible candidate with net deltaS<=-1.",
+    "claims_still_unavailable": "No proof that the condition caused actual accepted moves, search loss, poor paths, or a connectivity bottleneck. Final labels do not replay sequential moves.",
+    "implementation_boundary": "Requires separate frozen protocol and root-controlled run. Keep fixedlambda1 objective and threshold, no parameter optimization, new ANN, pilot/validation/heldout reads, graph edits or gate reopening.",
+    "this_reviewer_executed_graph_audit": false
+  },
+  "P3_gate_status_unchanged": "NOPASS",
+  "P4_authorized": false,
+  "new_CI_or_model": false
+}

@@ -1,0 +1,214 @@
+{
+  "status": "PASS",
+  "unix": 1789391806.3951442,
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "gate_W_sha256": "38e304b14ba78e42b4ce25f49fae81cae94dce772a886c30514e5d2b483bb8a1",
+      "gt10_W_sha256": "897f61a0cfaa6ccba01e626c3c3d946e6622c04f43cd2b0fccc50356b0de7834",
+      "full_hnsw_topology_sha256": "2306a943b7162ac3cc79c0b8d5218d7bfbedc865713cf58e2e0d97bf8b4433dc",
+      "training": {
+        "status": "COMPLETE",
+        "epochs": 33,
+        "training_seconds": 639.9729926586151,
+        "best": {
+          "epoch": 12,
+          "monitor_route_accuracy": 0.07117437571287155,
+          "embedding_sha256": "38e304b14ba78e42b4ce25f49fae81cae94dce772a886c30514e5d2b483bb8a1"
+        },
+        "stop": "patience20",
+        "model_parameters": 66233480,
+        "threads": 16,
+        "checkpoint_sha256": "578610dea2a9770f871e7d889267ee913d9b03daab32d82900e48f5b75dad6e9"
+      },
+      "hnsw": {
+        "M": 32,
+        "base_sha256": "6fb5b5510b29504de38271be7c343bd5e85a029f5755c7b3d74177cbf1ebbb18",
+        "build_seconds": 262.851833479,
+        "dim": 512,
+        "efConstruction": 200,
+        "full_identity_digest": 14838743223576554457,
+        "load_seconds": 4.204657395,
+        "nodes": 2505000,
+        "roundtrip_queries": 128,
+        "save_seconds": 12.477697189,
+        "seed": 20260828,
+        "status": "PASS",
+        "threads": 16,
+        "topology_bytes": 195860252,
+        "verification_seconds": 13.967773081
+      },
+      "reuse": {
+        "status": "PASS",
+        "hub_count": 512,
+        "induced_subgraphs_checked": 512,
+        "edges_checked": 3276735,
+        "HBKM": [
+          32,
+          16
+        ],
+        "g2v_source_sha256": "994cd3bbd9ae29146c1e1c160ec3b92fb95b05a26ff668555b05ede3ef914459",
+        "GT10_mapping_matches_frozen_E24": true
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "gate_W_sha256": "b0832b866c133c07b61802b07fa8780361d41b9b27c8eeeeffffbedef593920b",
+      "gt10_W_sha256": "bbc5e447aad556618a75fe50a6543c7d3fae68c46f920d79e8913281a0c9bf16",
+      "full_hnsw_topology_sha256": "ffd05283eb57fe317d0cac2f799aa5a14c539aee88de10bf17e79ab0f40ca5ac",
+      "training": {
+        "status": "COMPLETE",
+        "epochs": 45,
+        "training_seconds": 751.705099105835,
+        "best": {
+          "epoch": 24,
+          "monitor_route_accuracy": 0.09751243889331818,
+          "embedding_sha256": "b0832b866c133c07b61802b07fa8780361d41b9b27c8eeeeffffbedef593920b"
+        },
+        "stop": "patience20",
+        "model_parameters": 60409064,
+        "threads": 16,
+        "checkpoint_sha256": "2ad74c582eb4bcd9317a4689766a49ac3423003e37552dad718482fb48313449"
+      },
+      "hnsw": {
+        "M": 32,
+        "base_sha256": "56d1baa271c79ea280d57ee1c7a8359438ffffc98a75cac799051b13fbdbe0ff",
+        "build_seconds": 1083.028325477,
+        "checkpoint_write_seconds_this_attempt": 358.17751893699995,
+        "dim": 200,
+        "efConstruction": 200,
+        "full_identity_digest": 2114972672094460869,
+        "load_seconds": 12.187785264,
+        "nodes": 10000000,
+        "resumed_from_count": 0,
+        "roundtrip_queries": 128,
+        "save_seconds": 62.171432877,
+        "seed": 20260828,
+        "status": "PASS",
+        "threads": 16,
+        "topology_bytes": 1126079529,
+        "verification_seconds": 28.932375012999998
+      }
+    },
+    {
+      "dataset": "laion10m_acsg_v1",
+      "gate_W_sha256": "5d26e2c0485284ae7e63d12eb79011f58a7b5e8b6468aede2d5ed0730d130c0f",
+      "gt10_W_sha256": "ee482e6691def1f849ddb0a43eb3c4716e439287386beec8e0a79b19acd60fa2",
+      "full_hnsw_topology_sha256": "101f34287b6289716e24e3bdeb53ebc9b78cb642c6cfa088013088764b4eb8af",
+      "training": {
+        "status": "COMPLETE",
+        "epochs": 63,
+        "training_seconds": 1331.1072490215302,
+        "best": {
+          "epoch": 42,
+          "monitor_route_accuracy": 0.05937136337161064,
+          "embedding_sha256": "5d26e2c0485284ae7e63d12eb79011f58a7b5e8b6468aede2d5ed0730d130c0f"
+        },
+        "stop": "patience20",
+        "model_parameters": 66233480,
+        "threads": 16,
+        "checkpoint_sha256": "7abd9b9c14f5fbe5774da75d003f82ad86581deb85fbc089dfd9d0f29351a608"
+      },
+      "hnsw": {
+        "M": 32,
+        "base_sha256": "9699ad29076d1a1aeb1a2536b55e73654e8611784f2844e9b8d1ae2cd7be6c5f",
+        "build_seconds": 1528.856385939,
+        "checkpoint_write_seconds_this_attempt": 0.0,
+        "dim": 512,
+        "efConstruction": 200,
+        "full_identity_digest": 12557154200217260084,
+        "load_seconds": 16.355405581,
+        "nodes": 10004480,
+        "resumed_from_count": 10004480,
+        "roundtrip_queries": 128,
+        "save_seconds": 49.480043508,
+        "seed": 20260828,
+        "status": "PASS",
+        "threads": 16,
+        "topology_bytes": 861523785,
+        "verification_seconds": 55.887752477999996
+      }
+    }
+  ],
+  "protected_sources": [
+    {
+      "path": "/data/netg/ACSG/ACSG/ACSG.cpp",
+      "sha256": "931d74db432bb2a64aeaedd5200f933674b5e84fb0d129d5640189d76b008ba4"
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/ACSG.h",
+      "sha256": "d45ce4c40e4e295696df985d2e2f59efa88b7c79e3b6245ac2d92ccbc7df056b"
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/IndexACSG.cpp",
+      "sha256": "84dde43523f0641e8bdb322181e03ca038795e4560c08e8aff3c5a53d522f8c7"
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/IndexACSG.h",
+      "sha256": "211446c585293d2e9a7dc25cf5494319b2380fc63260d7600608fa4b09e6e5d1"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/run/build_fast_entry_variants.py",
+      "sha256": "391870a4be2ffe32aa3e3ac11faff26ac0dc8f7dec03b22973ae430c5b1bfd24"
+    },
+    {
+      "path": "/data/netg/ACSG/GATE/cluster/kmeans.py",
+      "sha256": "6edfaed1a29cea729004378cba7409e0e8a358cb27a699d22bb32e92cdcfb57f"
+    },
+    {
+      "path": "/data/netg/ACSG/GATE/cluster/subgraph2json.py",
+      "sha256": "80e14bfec79eaa772c51304e8676548cc3cde1258cde45e228d6b5ace537f785"
+    },
+    {
+      "path": "/data/netg/ACSG/GATE/cluster/graph2vec_embed.py",
+      "sha256": "078f8f1e33aac02018786f08cc8a8e48abecacfbd78a4aefb992ca8595352bec"
+    },
+    {
+      "path": "/data/netg/ACSG/GATE/cluster/model/train/dataset.py",
+      "sha256": "c454959445a03f2de5552b4aa8182d2282d3b9bff6e89962f20b7c12b4525827"
+    },
+    {
+      "path": "/data/netg/ACSG/build/ACSG/libACSG.a",
+      "sha256": "a2f5edf3b6527a76f43ae44531eeaa815d34a284f886e735bcc336ae82464b00"
+    },
+    {
+      "path": "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "sha256": "9598573889c47b4a7665a601e25d5ada3026250c76c99ead886fa05abe174ff8"
+    },
+    {
+      "path": "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+      "sha256": "a778d6d3bcbbebcc9c200a0b0d959d73b81a9cd4213cff9f9d5e515bf133285b"
+    }
+  ],
+  "all_models_frozen_before_test": true,
+  "source_hashes": {
+    "src/resume_hbkm.py": "2598103719ffd54be15f1f5bd93d2d4936fd2bf622f8e7963b34b9e75e013092",
+    "src/prepare.py": "a602239e4d547d17877dacde800f8e2272b45527f3c0803f5fabeeab974c4853",
+    "src/common.py": "90a381ae9d73416fa08aadb577aa5d450b020bc0f377fcd5a68693427566cf4b",
+    "src/train_gate.py": "9254b12dfa5a19f60378de82afec8b70619d33ae503ffd52342d48db4f2f6d6e",
+    "src/acquire.py": "9becd5c4eefd2f54154103002771061d9bee57c580a1a0f7bc5d06b424ea7685",
+    "src/verify.py": "890cc58964d43ec452257720600bca2cdb51df2f461dc5659d25026a119a9208",
+    "src/analyze.py": "6c80099d3666a9a0ef4ec3de2a2d02b709288346e298ae3d19b89e1b2da90aef",
+    "src/evaluation_smoke.py": "ab0bfdc2679e9149fed0e2c649dac07564a5b895799d1fb2ed4948d8b6ad4be7",
+    "src/profiles.py": "df12e2b06fc52dc20e36a851cc16200d6f6144ab165b2d49493b130fc7865406",
+    "src/generate_observer.py": "a4071f6aa0a3ceb149ec4d8c7f49f58e8e52258b2316dc7335f76fc19479a7a8",
+    "src/supervise.py": "59e578b313bd9e3dfb0c3bd2f930d673a826992573e66e50eb1a93d756f31f86",
+    "src/labels.cpp": "49e0c4238078943259900c1b4c449cf364613290ee51dc2a71c92cde3af47bcf",
+    "src/build_hnsw.cpp": "ec4887d23914a8a10df5947282899ee65af6bb766a1ceb511f310bf618dda8c2",
+    "src/make_smoke_nsg.cpp": "2bb1a69aed331edcd4ef4daefe1daf8e4ef84e26ab65d63ecaf1ea375d178f6e",
+    "src/checkpoint_test.cpp": "54e3cf039db855f073dca60678af7e32f42b6822a48cbbe0e59a9a08ddad323e",
+    "src/evaluate.cpp": "56e37c1fbb4274e00f2abba7a412c10825ef55c823d83bb6c7be3c58cd9a6d75",
+    "src/topology.hpp": "ed10c79446c81998212b8f4da21a810f283ba0b4872f8b11d38db5b45b30c1b1",
+    "src/observer.hpp": "dd706af245ad05a32cc871d6e19f60f701d44f55a522007b05c018a86f9fe642",
+    "src/native_common.hpp": "e8042cd3855bf33b4e41893e101bea938195cc7159eecc8ea567d72443e5538c",
+    "src/checkpoint.hpp": "6a860bd2568e9b55e7ea3c2c759e54e36f5b0223b69f16676bc09f995239272b",
+    "bin/evaluate": "c06b00ac28c0262ac98568e811b4e9a7f2bdd63c3a47fdc850cb90953adcdbb0",
+    "bin/evaluate.next": "8a4a2287dfa7ce88adaa49422d4331eaa1c46b78216fddadc60829b1eacf4ef9",
+    "bin/build_hnsw": "3c61a4b4a16989cd743440f36af31f108a353153c77c650d49aab475ad81c5fe",
+    "bin/build_hnsw.initial": "0c01973fa9d8f9f239c1d437f33e639c881c6f56a7684831249d208fadbe1e5a",
+    "bin/evaluate.initial": "ff5bd11718fc6acbfcdc74eeffd772e86c8011fae6159168ad79b1d6bd5f99c9",
+    "bin/labels": "d210028cd736391cb5706c6193e83d7e2ba9aea8b9b2578f8d09a103846ec370",
+    "bin/make_smoke_nsg": "8709725bd1bf094fe00c7e949cdd690a45f05a45f8db5c59247c96b125cff399",
+    "bin/checkpoint_test": "f33c7c4421c618cbd93213fea2770abb85c8b4b315320aeabcd80347fe854e8b"
+  }
+}

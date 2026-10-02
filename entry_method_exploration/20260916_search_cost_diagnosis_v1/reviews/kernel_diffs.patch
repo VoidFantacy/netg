@@ -1,0 +1,64 @@
+--- ACSG.original.cpp
++++ ACSG.prefetch.cpp
+@@ -1,3 +1,5 @@
++extern const float* diagnosis_base;
++extern __SIZE_TYPE__ diagnosis_dim;
+ #include <faiss/impl/DistanceComputer.h>
+ #include <faiss/impl/NSG.h>
+ #include <ACSG/ACSG.h>
+@@ -1579,6 +1581,13 @@
+             const float best_before_expansion = retset[0].distance;
+ 
+             for (int m = 0; m < graph.K; m++) {
++                if (m + 1 < graph.K) {
++                    int next_id = (int)graph.at(n, m + 1);
++                    if (next_id >= 0 && next_id < ntotal) {
++                        __builtin_prefetch(vt.visited.data() + next_id, 0, 3);
++                        __builtin_prefetch(diagnosis_base + size_t(next_id) * diagnosis_dim, 0, 3);
++                    }
++                }
+                 int id = (int)graph.at(n, m);
+                 if (id < 0 || id >= ntotal || vt.get(id)) {
+                     continue;
+--- ACSG.original.cpp
++++ ACSG.active_pool.cpp
+@@ -1595,7 +1595,7 @@
+                 const float best_before_insert = retset[0].distance;
+                 const float pool_before_insert = num_ids >= L
+                     ? retset[L - 1].distance : std::numeric_limits<float>::max();
+-                int r = insert_into_pool(retset.data(), L, nn);
++                int r = insert_into_pool(retset.data(), std::min(L, num_ids), nn);
+                 if (r < L) { 
+                     if (trace) {
+                         ++trace->accepted_insertion_count;
+--- ACSG.original.cpp
++++ ACSG.combined.cpp
+@@ -1,3 +1,5 @@
++extern const float* diagnosis_base;
++extern __SIZE_TYPE__ diagnosis_dim;
+ #include <faiss/impl/DistanceComputer.h>
+ #include <faiss/impl/NSG.h>
+ #include <ACSG/ACSG.h>
+@@ -1579,6 +1581,13 @@
+             const float best_before_expansion = retset[0].distance;
+ 
+             for (int m = 0; m < graph.K; m++) {
++                if (m + 1 < graph.K) {
++                    int next_id = (int)graph.at(n, m + 1);
++                    if (next_id >= 0 && next_id < ntotal) {
++                        __builtin_prefetch(vt.visited.data() + next_id, 0, 3);
++                        __builtin_prefetch(diagnosis_base + size_t(next_id) * diagnosis_dim, 0, 3);
++                    }
++                }
+                 int id = (int)graph.at(n, m);
+                 if (id < 0 || id >= ntotal || vt.get(id)) {
+                     continue;
+@@ -1595,7 +1604,7 @@
+                 const float best_before_insert = retset[0].distance;
+                 const float pool_before_insert = num_ids >= L
+                     ? retset[L - 1].distance : std::numeric_limits<float>::max();
+-                int r = insert_into_pool(retset.data(), L, nn);
++                int r = insert_into_pool(retset.data(), std::min(L, num_ids), nn);
+                 if (r < L) { 
+                     if (trace) {
+                         ++trace->accepted_insertion_count;

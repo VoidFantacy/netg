@@ -1,0 +1,328 @@
+{
+  "build_wall_seconds": 16.57646594100015,
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "limitations": [
+    "single clustering seed and one internal search run",
+    "exact train GT preparation cost is excluded",
+    "QPS is a single run and is not a stable speed claim"
+  ],
+  "method_aliases": {
+    "2. Raw HNSW Routing (Ablation Baseline)": "QGT-Cover raw hubs",
+    "5. Asym-Neural HNSW Routing (0ms inference)": "QGT-Cover plus closed-form GT-basin prototype; no neural network",
+    "NETG_AsymHNSW": "same closed-form prototype in the per-query file; no neural network"
+  },
+  "num_queries": 10000,
+  "num_runs": {
+    "recall1": 1,
+    "recall100": 1
+  },
+  "recall1": {
+    "qgt_gt_basin_prototype": {
+      "128": {
+        "qps": 2101.2995605855867,
+        "qps_std": 0.0,
+        "recall": 0.9125999808311462,
+        "search_L": 128
+      },
+      "200": {
+        "qps": 1428.5132223716698,
+        "qps_std": 0.0,
+        "recall": 0.9372000098228455,
+        "search_L": 200
+      },
+      "400": {
+        "qps": 764.2086614370211,
+        "qps_std": 0.0,
+        "recall": 0.965499997138977,
+        "search_L": 400
+      },
+      "64": {
+        "qps": 3734.368588935201,
+        "qps_std": 0.0,
+        "recall": 0.8539999723434448,
+        "search_L": 64
+      },
+      "800": {
+        "qps": 393.00784312099427,
+        "qps_std": 0.0,
+        "recall": 0.9835000038146973,
+        "search_L": 800
+      }
+    },
+    "qgt_raw": {
+      "128": {
+        "qps": 2089.0629697819527,
+        "qps_std": 0.0,
+        "recall": 0.9117000102996826,
+        "search_L": 128
+      },
+      "200": {
+        "qps": 1421.1884754455364,
+        "qps_std": 0.0,
+        "recall": 0.9362999796867371,
+        "search_L": 200
+      },
+      "400": {
+        "qps": 756.5631682729559,
+        "qps_std": 0.0,
+        "recall": 0.965499997138977,
+        "search_L": 400
+      },
+      "64": {
+        "qps": 3669.000076479206,
+        "qps_std": 0.0,
+        "recall": 0.8522999882698059,
+        "search_L": 64
+      },
+      "800": {
+        "qps": 394.5378939375311,
+        "qps_std": 0.0,
+        "recall": 0.984000027179718,
+        "search_L": 800
+      }
+    }
+  },
+  "recall100": {
+    "qgt_gt_basin_prototype": {
+      "100": {
+        "qps": 2540.069768238568,
+        "qps_std": 0.0,
+        "recall": 0.8046044707298279,
+        "search_L": 100
+      },
+      "128": {
+        "qps": 2053.52023037006,
+        "qps_std": 0.0,
+        "recall": 0.8381650447845459,
+        "search_L": 128
+      },
+      "200": {
+        "qps": 1407.9731659327842,
+        "qps_std": 0.0,
+        "recall": 0.8880499005317688,
+        "search_L": 200
+      },
+      "400": {
+        "qps": 742.2065176851695,
+        "qps_std": 0.0,
+        "recall": 0.9404986500740051,
+        "search_L": 400
+      },
+      "800": {
+        "qps": 386.1217988499917,
+        "qps_std": 0.0,
+        "recall": 0.9709015488624573,
+        "search_L": 800
+      }
+    },
+    "qgt_raw": {
+      "100": {
+        "qps": 2527.0812150280376,
+        "qps_std": 0.0,
+        "recall": 0.8042884469032288,
+        "search_L": 100
+      },
+      "128": {
+        "qps": 2040.691938027635,
+        "qps_std": 0.0,
+        "recall": 0.8372336030006409,
+        "search_L": 128
+      },
+      "200": {
+        "qps": 1390.739591842265,
+        "qps_std": 0.0,
+        "recall": 0.8875263929367065,
+        "search_L": 200
+      },
+      "400": {
+        "qps": 745.937114277923,
+        "qps_std": 0.0,
+        "recall": 0.9410143494606018,
+        "search_L": 400
+      },
+      "800": {
+        "qps": 387.0204696921808,
+        "qps_std": 0.0,
+        "recall": 0.9711596965789795,
+        "search_L": 800
+      }
+    }
+  },
+  "schema_version": 1,
+  "seed": 20260829,
+  "split": "held-out-test",
+  "status": "exploratory-single-seed-held-out",
+  "tail_recall10": {
+    "128": {
+      "fast_mean_recall10": 0.8974740505218506,
+      "medoid_mean_recall10": 0.8856730461120605,
+      "thresholds": {
+        "0.1": {
+          "fast_failed": 153,
+          "medoid_failed": 290,
+          "net_rescued": 137,
+          "newly_harmed": 68,
+          "rescued": 205
+        },
+        "0.2": {
+          "fast_failed": 221,
+          "medoid_failed": 350,
+          "net_rescued": 129,
+          "newly_harmed": 98,
+          "rescued": 227
+        },
+        "0.5": {
+          "fast_failed": 469,
+          "medoid_failed": 602,
+          "net_rescued": 133,
+          "newly_harmed": 154,
+          "rescued": 287
+        },
+        "0.8": {
+          "fast_failed": 1314,
+          "medoid_failed": 1432,
+          "net_rescued": 118,
+          "newly_harmed": 156,
+          "rescued": 274
+        }
+      }
+    },
+    "200": {
+      "fast_mean_recall10": 0.9286460876464844,
+      "medoid_mean_recall10": 0.9199541807174683,
+      "thresholds": {
+        "0.1": {
+          "fast_failed": 104,
+          "medoid_failed": 192,
+          "net_rescued": 88,
+          "newly_harmed": 45,
+          "rescued": 133
+        },
+        "0.2": {
+          "fast_failed": 151,
+          "medoid_failed": 241,
+          "net_rescued": 90,
+          "newly_harmed": 65,
+          "rescued": 155
+        },
+        "0.5": {
+          "fast_failed": 296,
+          "medoid_failed": 408,
+          "net_rescued": 112,
+          "newly_harmed": 87,
+          "rescued": 199
+        },
+        "0.8": {
+          "fast_failed": 867,
+          "medoid_failed": 948,
+          "net_rescued": 81,
+          "newly_harmed": 110,
+          "rescued": 191
+        }
+      }
+    },
+    "400": {
+      "fast_mean_recall10": 0.9605281949043274,
+      "medoid_mean_recall10": 0.9572177529335022,
+      "thresholds": {
+        "0.1": {
+          "fast_failed": 59,
+          "medoid_failed": 95,
+          "net_rescued": 36,
+          "newly_harmed": 26,
+          "rescued": 62
+        },
+        "0.2": {
+          "fast_failed": 86,
+          "medoid_failed": 122,
+          "net_rescued": 36,
+          "newly_harmed": 36,
+          "rescued": 72
+        },
+        "0.5": {
+          "fast_failed": 156,
+          "medoid_failed": 195,
+          "net_rescued": 39,
+          "newly_harmed": 54,
+          "rescued": 93
+        },
+        "0.8": {
+          "fast_failed": 439,
+          "medoid_failed": 462,
+          "net_rescued": 23,
+          "newly_harmed": 62,
+          "rescued": 85
+        }
+      }
+    },
+    "64": {
+      "fast_mean_recall10": 0.8297158479690552,
+      "medoid_mean_recall10": 0.8104962110519409,
+      "thresholds": {
+        "0.1": {
+          "fast_failed": 267,
+          "medoid_failed": 499,
+          "net_rescued": 232,
+          "newly_harmed": 135,
+          "rescued": 367
+        },
+        "0.2": {
+          "fast_failed": 387,
+          "medoid_failed": 633,
+          "net_rescued": 246,
+          "newly_harmed": 183,
+          "rescued": 429
+        },
+        "0.5": {
+          "fast_failed": 915,
+          "medoid_failed": 1146,
+          "net_rescued": 231,
+          "newly_harmed": 275,
+          "rescued": 506
+        },
+        "0.8": {
+          "fast_failed": 2349,
+          "medoid_failed": 2528,
+          "net_rescued": 179,
+          "newly_harmed": 257,
+          "rescued": 436
+        }
+      }
+    },
+    "800": {
+      "fast_mean_recall10": 0.9799896478652954,
+      "medoid_mean_recall10": 0.9781792163848877,
+      "thresholds": {
+        "0.1": {
+          "fast_failed": 28,
+          "medoid_failed": 46,
+          "net_rescued": 18,
+          "newly_harmed": 13,
+          "rescued": 31
+        },
+        "0.2": {
+          "fast_failed": 41,
+          "medoid_failed": 57,
+          "net_rescued": 16,
+          "newly_harmed": 17,
+          "rescued": 33
+        },
+        "0.5": {
+          "fast_failed": 77,
+          "medoid_failed": 100,
+          "net_rescued": 23,
+          "newly_harmed": 24,
+          "rescued": 47
+        },
+        "0.8": {
+          "fast_failed": 184,
+          "medoid_failed": 200,
+          "net_rescued": 16,
+          "newly_harmed": 26,
+          "rescued": 42
+        }
+      }
+    }
+  },
+  "target_hubs": 821
+}

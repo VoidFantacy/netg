@@ -1,0 +1,230 @@
+{
+  "component": "P1 regional search synthetic correctness",
+  "status": "SYNTHETIC_SEARCH_PASS",
+  "full_P1_gate": "PENDING_OTHER_GATES",
+  "generated_utc": "2026-09-07T16:06:06.709929+00:00",
+  "tested_source": {
+    "ACSG/RegionalSearch.h": {
+      "sha256": "320e29c9407d5907ece7ef64113edeb8b2d5157fa8796aaf94e470eb6771e14e",
+      "bytes": 9788
+    },
+    "benches/test_regional_search.cpp": {
+      "sha256": "a9fbf880b20e5cdc6fe003b05827ac1993d8ef18ef75a41e125843e4a746597a",
+      "bytes": 25375
+    },
+    "build/benches/test_regional_search": {
+      "sha256": "114bdf0e01c5bed3e460d4c47c680734ca381921efca97a768dea60a8435fad8",
+      "bytes": 359400
+    }
+  },
+  "synthetic_result": "synthetic_final.stdout",
+  "sanitizer_result": "synthetic_sanitized.stdout",
+  "actual_run_metadata": [
+    "verification_runs.json",
+    "sanitizer_build.json",
+    "sanitizer_build_retry.json",
+    "sanitizer_runs.json"
+  ],
+  "fixes": [
+    "Stable discovery-order result ties instead of node-ID ties, restoring legacy unified-pool parity",
+    "Missing result distances now use maxfloat, matching legacy",
+    "Reject non-finite route weight totals, non-finite distances, invalid region counts, shared seeds, graph dimensions, null outputs, and empty region maps; avoid signed reserve-size addition"
+  ],
+  "remaining_gates": [
+    "Full-data same-entry legacy IDs/distances/NDC parity with the exact production distance kernel",
+    "New evaluator count/plain route and result identity on both datasets",
+    "Pure wall timer audit: no GT scoring, tracing, hashing, serialization or workspace creation inside timer",
+    "Full-data actual HNSW top-m entry order/count/dedup and fair shared-seed initialization",
+    "Parent integrates source and evidence changes into spec.md, summary.md and stage/state documents"
+  ],
+  "failures_preserved": [
+    {
+      "kind": "correctness regression",
+      "evidence": "synthetic_ties_before_20260907T1559.stderr",
+      "cause": "Global result node-ID tie break changed same-distance returned IDs; fixed and covered by 800 tied-distance queries"
+    },
+    {
+      "kind": "sanitizer compile configuration",
+      "evidence": "sanitizer_build.log",
+      "cause": "Manual isolated compiler invocation omitted -Ibenches; corrected without source changes; retry and run PASS"
+    }
+  ],
+  "resource_scope": "CPU-only synthetic in-memory tests; no real base, GT, graph or split data read; existing static libraries reused; sanitized header and test source only",
+  "filename_timestamp_note": "Earlier suffixes were handwritten labels, not actual execution time. Actual start/end UTC are in run metadata; filesystem mtime is recorded in source_and_log_manifest.json.",
+  "sanitized_binary_bytes": 13862400,
+  "checks": [
+    {
+      "name": "legacy_shared_unique_and_tied_distance_parity",
+      "queries": 1200,
+      "status": "PASS",
+      "tied_queries": 800,
+      "unique_queries": 400
+    },
+    {
+      "name": "count_plain_and_single_region_parity",
+      "status": "PASS"
+    },
+    {
+      "name": "protected_bridge_cross_region_and_empty_regions",
+      "regional_ndc": 43,
+      "shared_ndc": 42,
+      "status": "PASS"
+    },
+    {
+      "name": "trace_replay_duplicates_shared_visited_epoch_wrap",
+      "status": "PASS",
+      "trace_events": 94
+    },
+    {
+      "name": "preallocated_search_storage_retained",
+      "queries": 520,
+      "status": "PASS"
+    },
+    {
+      "name": "capacity_and_invalid_inputs",
+      "status": "PASS"
+    },
+    {
+      "name": "global_topk_includes_rejected_regional_candidates",
+      "status": "PASS"
+    },
+    {
+      "name": "hnsw_top_m_actual_consumption_order_and_dedup",
+      "records": [
+        {
+          "consumed_entry_ids": [
+            63,
+            61,
+            59
+          ],
+          "heap_pop_order": [
+            59,
+            61,
+            63
+          ],
+          "m": 3,
+          "ndc": 3
+        },
+        {
+          "consumed_entry_ids": [
+            63,
+            61,
+            59,
+            57
+          ],
+          "heap_pop_order": [
+            57,
+            59,
+            61,
+            63
+          ],
+          "m": 4,
+          "ndc": 4
+        },
+        {
+          "consumed_entry_ids": [
+            63,
+            61,
+            59,
+            57,
+            55,
+            53
+          ],
+          "heap_pop_order": [
+            53,
+            55,
+            57,
+            59,
+            61,
+            63
+          ],
+          "m": 6,
+          "ndc": 6
+        },
+        {
+          "consumed_entry_ids": [
+            63,
+            61,
+            59,
+            57,
+            55,
+            53,
+            51,
+            49
+          ],
+          "heap_pop_order": [
+            49,
+            51,
+            53,
+            55,
+            57,
+            59,
+            61,
+            63
+          ],
+          "m": 8,
+          "ndc": 8
+        },
+        {
+          "consumed_entry_ids": [
+            63,
+            61,
+            59,
+            57,
+            55,
+            53,
+            51,
+            49,
+            47,
+            45,
+            43,
+            41,
+            39,
+            37,
+            35,
+            33,
+            31,
+            29
+          ],
+          "heap_pop_order": [
+            29,
+            31,
+            33,
+            35,
+            37,
+            39,
+            41,
+            43,
+            45,
+            47,
+            49,
+            51,
+            53,
+            55,
+            57,
+            59,
+            61,
+            63
+          ],
+          "m": 18,
+          "ndc": 18
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_short_results_ids_distances_ndc",
+      "status": "PASS"
+    },
+    {
+      "name": "random_multiregion_trace_and_count_plain",
+      "queries": 300,
+      "status": "PASS",
+      "trace_events": 43595
+    },
+    {
+      "name": "singleton_zero_degree_minimum_capacity",
+      "status": "PASS"
+    }
+  ]
+}

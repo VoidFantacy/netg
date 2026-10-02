@@ -1,0 +1,182 @@
+[
+  {
+    "argv": [
+      "g++",
+      "-O3",
+      "-march=native",
+      "-std=c++17",
+      "-fopenmp",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+      "-I/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/common",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/evaluate.cpp",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+      "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+      "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "-lopenblas",
+      "-lz",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/bin/evaluate"
+    ],
+    "kind": "compile",
+    "started_unix": 1789898161.1716993,
+    "timeout_seconds": 120,
+    "reserved_NSG": 0,
+    "reserved_ANN": 0,
+    "pid": 69722,
+    "pgid": 69722,
+    "exit_code": 0,
+    "finished_unix": 1789898169.6996822,
+    "seconds": 8.52798318862915
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/bin/evaluate",
+      "prepare",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/prepare_config.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/hybrids_prepared.json"
+    ],
+    "kind": "serialization",
+    "started_unix": 1789898169.7003076,
+    "timeout_seconds": 60,
+    "reserved_NSG": 0,
+    "reserved_ANN": 0,
+    "pid": 69760,
+    "pgid": 69760,
+    "exit_code": 0,
+    "finished_unix": 1789898169.7324176,
+    "seconds": 0.03211021423339844
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/smoke_webvid2_5m_light_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/smoke_webvid2_5m_light_v1"
+    ],
+    "kind": "smoke",
+    "started_unix": 1789898169.7592838,
+    "timeout_seconds": 120,
+    "reserved_NSG": 384,
+    "reserved_ANN": 128,
+    "pid": 69761,
+    "pgid": 69761,
+    "exit_code": 0,
+    "finished_unix": 1789898174.58065,
+    "seconds": 4.821366310119629,
+    "complete": {
+      "ANN_calls": 128,
+      "NSG_calls": 384,
+      "cpu": 15,
+      "formal_QPS": false,
+      "maxrss_kib": 5688056,
+      "ordinary_graph_builds": 0,
+      "points": 8,
+      "seconds": 4.672612609,
+      "status": "PASS",
+      "threads": 1
+    }
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/smoke_yandex_t2i_official10M_ip_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/smoke_yandex_t2i_official10M_ip_v1"
+    ],
+    "kind": "smoke",
+    "started_unix": 1789898174.6176183,
+    "timeout_seconds": 120,
+    "reserved_NSG": 384,
+    "reserved_ANN": 128,
+    "pid": 69777,
+    "pgid": 69777,
+    "exit_code": 0,
+    "finished_unix": 1789898187.201174,
+    "seconds": 12.583555936813354,
+    "complete": {
+      "ANN_calls": 128,
+      "NSG_calls": 384,
+      "cpu": 15,
+      "formal_QPS": false,
+      "maxrss_kib": 10398532,
+      "ordinary_graph_builds": 0,
+      "points": 8,
+      "seconds": 12.36075307,
+      "status": "PASS",
+      "threads": 1
+    }
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/main_webvid2_5m_light_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/results/main_webvid2_5m_light_v1"
+    ],
+    "kind": "main",
+    "started_unix": 1789898187.2375019,
+    "timeout_seconds": 900,
+    "reserved_NSG": 147456,
+    "reserved_ANN": 16384,
+    "pid": 69852,
+    "pgid": 69852,
+    "exit_code": 0,
+    "finished_unix": 1789898331.8452296,
+    "seconds": 144.60772800445557,
+    "complete": {
+      "ANN_calls": 16384,
+      "NSG_calls": 147456,
+      "cpu": 15,
+      "formal_QPS": false,
+      "maxrss_kib": 5691516,
+      "ordinary_graph_builds": 0,
+      "points": 36,
+      "seconds": 144.489981829,
+      "status": "PASS",
+      "threads": 1
+    }
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/main_yandex_t2i_official10M_ip_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/results/main_yandex_t2i_official10M_ip_v1"
+    ],
+    "kind": "main",
+    "started_unix": 1789898331.8861902,
+    "timeout_seconds": 900,
+    "reserved_NSG": 147456,
+    "reserved_ANN": 16384,
+    "pid": 70332,
+    "pgid": 70332,
+    "exit_code": 0,
+    "finished_unix": 1789898497.23152,
+    "seconds": 165.34532976150513,
+    "complete": {
+      "ANN_calls": 16384,
+      "NSG_calls": 147456,
+      "cpu": 15,
+      "formal_QPS": false,
+      "maxrss_kib": 10398388,
+      "ordinary_graph_builds": 0,
+      "points": 36,
+      "seconds": 165.117158843,
+      "status": "PASS",
+      "threads": 1
+    }
+  }
+]

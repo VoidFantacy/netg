@@ -1,0 +1,41 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "arm": "rl",
+  "seed": 20260921,
+  "steps": [
+    20,
+    40,
+    60,
+    80,
+    100,
+    120,
+    140,
+    160,
+    180,
+    200
+  ],
+  "population": 8,
+  "train_queries": 4096,
+  "batch": 128,
+  "sigma": 0.3,
+  "NSG_hard_cap": 760000,
+  "NSG_expected": 739008,
+  "HNSW_expected": 738432,
+  "builds_expected": 180,
+  "per_dataset_NSG": 369504,
+  "query_stop_epoch": 1789213200,
+  "latest_launch_epoch": 1789212300,
+  "timeout_seconds": 900,
+  "threads": 1,
+  "gate": {
+    "min_quality_contexts": 4,
+    "variance_ratio_max": 0.5,
+    "nonworse_fraction_min": 0.6,
+    "variance_epsilon": 1e-18
+  },
+  "estimator": "GT-free anchor-entry strata, fixed near quota 64, population weighting",
+  "optimizer_updates": 0
+}

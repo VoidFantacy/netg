@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "aligned_rows": 4096,
+      "points": 6,
+      "empty_candidate_queries": 2,
+      "covered": 1383,
+      "physical_total": 439624,
+      "unique_total": 336369,
+      "checks": [
+        "struct_ID_read",
+        "Counter_physical",
+        "set_union_unique",
+        "Fraction_quantiles",
+        "all_group_hit_events",
+        "all_old_NDC",
+        "route_invariance_across_K_L"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "aligned_rows": 4096,
+      "points": 6,
+      "empty_candidate_queries": 0,
+      "covered": 1873,
+      "physical_total": 355684,
+      "unique_total": 349738,
+      "checks": [
+        "struct_ID_read",
+        "Counter_physical",
+        "set_union_unique",
+        "Fraction_quantiles",
+        "all_group_hit_events",
+        "all_old_NDC",
+        "route_invariance_across_K_L"
+      ]
+    }
+  },
+  "consumed_files_verified": 95,
+  "independence": "same agent, separate Counter/set/struct/Fraction implementation",
+  "no_vectors_GT_new_search_or_model": true
+}

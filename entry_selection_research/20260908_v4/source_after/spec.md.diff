@@ -1,0 +1,42 @@
+--- source_before/spec.md
++++ current/spec.md
+@@ -1,6 +1,6 @@
+ # NETG / ACSG 当前实现规格
+ 
+-> 最后核对：2026-09-08。本文件只记录当前实现、数据/metric 契约、artifact、评测口径和重跑依赖。研究结论见 [summary.md](summary.md)，当前任务与验证顺序统一从 [s-target.md](s-target.md) 阅读，历史过程见 `aco_router_fast_entry.md`。用户授权的Fast根因诊断已完成，输入、执行与独立统计复核通过，契约/产物见第18节；第16–17节保留历史调研设计，不覆盖本轮实验及结论。
++> 最后核对：2026-09-08。本文件只记录当前实现、数据/metric 契约、artifact、评测口径和重跑依赖。研究结论见 [summary.md](summary.md)，当前任务与验证顺序统一从 [s-target.md](s-target.md) 阅读，历史过程见 `aco_router_fast_entry.md`。Fast根因诊断已完成，契约/产物见第18节；新效用树调研已完成但未实现未训练，设计身份/边界见第20节。第16–17节保留历史设计，不覆盖当前方案。
+ 
+ ## 1. 权威性与保护边界
+ 
+@@ -196,13 +196,13 @@
+ - WebVid GATE 已同图适配但弱于 Fast；按 gate 未复制到 Yandex。仍缺 RoarGraph/RobustVamana 同机端到端比较。
+ - 本批未读取 Multi-view held-out，且失败后不得返回调参；若未来提出新方法，必须另立协议，不能沿用本批 validation/test 授权。
+ 
+-旧 Multi-view 已按 E0 → E1 → E1b 提前终止；当前 `s-target.md` 正文为固定主入口三入口联合选择的方案与验证顺序，原R0–R2成本筛查及已停止分层搜索P0–P8由已有调研前快照完整保留，当前文件只留历史状态与链接，不自动排队。旧 oracle、utility ranker、BTG、probe-reroute、finite-beam 和 GATE 细节保留在各自 artifact，不作为新方案 GO 证据。
++旧 Multi-view 已按 E0 → E1 → E1b 提前终止；当前 `s-target.md` 正文为第20节真实效用树的拟议方案与验证顺序。固定主入口三入口联合选择是第17节历史提案，已被第18节诊断撤下其默认限制；原R0–R2及已停止分层P0–P8由快照保留，不自动排队。旧oracle、utility ranker、BTG、probe-reroute、finite-beam和GATE细节保留，不作为新方案GO证据。
+ 
+ ## 12. 辅助入口
+ 
+ - 当前研究结论：`summary.md`
+ - 当前方案、入口选择流程与下一步：[s-target.md](s-target.md)；其中链接到完整历史快照
+-- 已执行的入口调研指令：`entry_selection_research/20260908_v1/next_dialogue_prompt.md`；当前报告与未运行gate：`entry_selection_research/20260908_v2/{report.md,minimum_gate.md,state.json}`
++- 历史入口调研指令：`entry_selection_research/20260908_v1/next_dialogue_prompt.md`；当前报告、方法与未运行gate：`entry_selection_research/20260908_v4/{report.md,method.md,minimum_gate.md,state.json}`
+ - 历史方法与失败分支：`aco_router_fast_entry.md`、对应 `*_diagnostics/`
+ - 复现命令：`command.md`
+ - 相关工作历史提案：`papers/related_work_2026-08-29/README.md`
+@@ -324,3 +324,15 @@
+ 未来可在离线使用重教师、丰富训练信号、复杂入口表示及预计算，并独立检验其样本外效用与压缩后在线效用；不要求训练模型本身轻量，也不强制teacher/student结构。GT/完整搜索标签/轨迹若仅用于训练，不能作为当前query免费在线输入；部署输入和计算图必须另行明确。最终在线wall包括query特征提取、模型推理、候选检索/打分、入口选择和主图搜索；离线另计GT/搜索标签生成、重模型训练、压缩/蒸馏、入口预计算和路由索引。只有实测的端到端Recall–QPS能验证在线收益。
+ 
+ 两个已有诊断对照的定义保持：exact prototype对全部既有画像用同一距离函数精确排序，不使用目标query的GT；GT1 basin则用已知真实GT1向量与raw hubs的cosine选一个hub，是原builder几何标签的oracle，既不直接使用GT1节点作入口，也不按真实搜索效用选最优hub。该解释不改变原矩阵/统计。
++
++## 20. 真实效用斜切树调研（20260908_v4，仅设计，未实现未运行）
++
++交付目录[entry_selection_research/20260908_v4](entry_selection_research/20260908_v4)：report记录推荐与备选，method定义逐行收益目标/TAO式更新/多叶同hub及在线契约，minimum_gate是拟议验证草案，reviews保存本地源码、原论文/作者代码及独立审查，sources保留只读引用副本，source_before保存本轮前交接与受保护文件身份。状态`RESEARCH_COMPLETE_DESIGN_ONLY`、新接口身份`DRAFT_NOT_IMPLEMENTED_NOT_RUN`、`method_go=false`；没有新方法代码、配置、模型、搜索、GT或依赖安装，原始validation/held-out未访问。
++
++拟议动作是原NSG/raw-IP、K10、L64/128的单入口；两个L分别建模型，叶子可从815/821现有hubs中选任意真实base ID，不要求叶到hub一一对应。主训练目标为sum真实Recall regret，NDC只作累计Recall同分时次序。分支比较当前两棵子树实际输出的收益差，用绝对差加权二分类，并对真实经验目标执行接受检查；代理损失下降不等于真实目标改善。节点更新后重算受影响路径与叶支持量，不准在线遍历两个子树或使用目标GT。
++
++拟议student范围是depth8/10×每节点64非零/全维、min_leaf32，query-only单路径，原图搜索和初始化语义不变。在线完整计时包含所有query处理、节点推理、ID映射/初始化及搜索。query-only重模型是可学习性参照，不是理论上界；学生直接优化实测效用，未规定必须蒸馏教师。任何未来教师软标签/新特征/回退/组合都需另建对照与成本契约。
++
++草案使用后20K拟合、前10K历史开发池中1024校准/1024审计，排除本轮诊断512不改变历史开发属性。全H标签算术为72,141,056次；拟议首轮≤80M搜索、CPU16线程/80GiB、搜索wall4h/模型拟合8h。具体模型、统计、资源、计时匹配点和可执行入口尚须在实现轮另冻结，不把草案当实验已授权或已通过。正式三独立构建及held-out10K×3另列预算，原强基线、双数据集、相邻点和尾部要求不降低。
++
++旧v2/v3/diagnosis交付保持历史身份；本轮发现第11节仍把固定anchor三入口写作当前方案，已按现有诊断与新推荐修正。文档变更不触发已有数据重跑；未来改图/base/hubs/split/metric或标签kernel时按第10节重建相应全动作标签、模型与下游结果。

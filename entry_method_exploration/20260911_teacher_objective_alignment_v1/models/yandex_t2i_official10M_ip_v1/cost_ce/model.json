@@ -1,0 +1,50 @@
+{
+  "status": "TRAINED_FIT_ONLY",
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "cell": "cost_ce",
+  "teacher": "cost",
+  "loss": "ce",
+  "lambda_anchor": 100,
+  "temperature": 0.05,
+  "margin": 0.1,
+  "seed": 20260911,
+  "epochs": 80,
+  "parameter_count": 40000,
+  "first": {
+    "data_loss": 6.36464226063927,
+    "drift": 9.073510151009346e-18,
+    "objective": 6.364642260639271,
+    "gradient_norm": 1.7204778208435245,
+    "epoch": 0,
+    "seconds": 0.42957520484924316
+  },
+  "last": {
+    "data_loss": 6.216524102392916,
+    "drift": 0.000727993025581672,
+    "objective": 6.289323404951083,
+    "gradient_norm": 0.26873626279540147,
+    "epoch": 80,
+    "seconds": 35.54848265647888
+  },
+  "objective_decreased": true,
+  "training_seconds": 35.66383481025696,
+  "export_seconds": 0.0024678707122802734,
+  "W": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260911_teacher_objective_alignment_v1/models/yandex_t2i_official10M_ip_v1/cost_ce/W.f32",
+    "bytes": 656800,
+    "mtime_ns": 1789093285973148625,
+    "sha256": "85356291b957b2a7a18c2341ff462d9f5455a2462d86b1b1653787d00f1ac20a"
+  },
+  "cal_used": false,
+  "audit_used": false,
+  "validation_used": false,
+  "E28_recovery": {
+    "bit_equal": true,
+    "original": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/models/yandex_t2i_official10M_ip_v1/linear_r100/W.f32",
+      "bytes": 656800,
+      "mtime_ns": 1789090322341750479,
+      "sha256": "85356291b957b2a7a18c2341ff462d9f5455a2462d86b1b1653787d00f1ac20a"
+    }
+  }
+}

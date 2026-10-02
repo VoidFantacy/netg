@@ -1,0 +1,105 @@
+{
+  "version": "E106_conditional_mechanism_v1",
+  "created_unix": 1789878315.175178,
+  "authorization": "Active user goal: 按解释机制 → 推导改进 → 实验检验 走吧; conditional bounded experiments included.",
+  "fit_n": 20000,
+  "evaluation_n": 4096,
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "dimension": 512,
+      "H": 815,
+      "base_n": 2505000,
+      "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "index_stat": {
+        "bytes": 5791560103,
+        "mtime_ns": 1787714557628644919
+      },
+      "fit_input": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1",
+      "assignments": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_mechanism_v1/results/webvid2_5m_light_v1_fit_assignments.npz",
+      "families": [
+        "hard",
+        "soft"
+      ],
+      "family_models": {
+        "hard": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt10_hard/W.f32",
+        "soft": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32"
+      },
+      "GT1": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt1_hard/W.f32",
+      "default": {
+        "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+        "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+        "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+        "name": "GT10-soft-t1"
+      },
+      "evaluation_queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/queries.f32",
+      "evaluation_GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/gt.i32",
+      "evaluation_manifest": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/gt_manifest.json",
+      "evaluation_reference": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/webvid2_5m_light_v1",
+      "source_rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/source_rows.i64"
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "dimension": 200,
+      "H": 821,
+      "base_n": 10000000,
+      "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "index_stat": {
+        "bytes": 10640000103,
+        "mtime_ns": 1787655783830469960
+      },
+      "fit_input": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1",
+      "assignments": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_mechanism_v1/results/yandex_t2i_official10M_ip_v1_fit_assignments.npz",
+      "families": [
+        "hard"
+      ],
+      "family_models": {
+        "hard": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+        "soft": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt10_soft_t1/W.f32"
+      },
+      "GT1": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_hard/W.f32",
+      "default": {
+        "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+        "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+        "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+        "name": "GT10-hard"
+      },
+      "evaluation_queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+      "evaluation_GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt.i32",
+      "evaluation_manifest": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt_manifest.json",
+      "evaluation_reference": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/yandex_t2i_official10M_ip_v1",
+      "source_rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/source_rows.i64"
+    }
+  },
+  "permutation_seeds": [
+    20260920,
+    20260921,
+    20260922,
+    20260923
+  ],
+  "conditioning": "hard GT1 nearest original hub; permute complete GT10 weight rows inside each group",
+  "K": [
+    1,
+    100
+  ],
+  "L": 128,
+  "threads": 1,
+  "cpu": 15,
+  "new_model_graphs": 0,
+  "max_NSG_calls": 400000,
+  "max_new_bytes": 2147483648,
+  "min_free_gib": 4,
+  "max_rss_gib": 40,
+  "prepare_seconds": 1800,
+  "search_seconds": 3600,
+  "bootstrap_replicates": 20000,
+  "bootstrap_seed": 20260920,
+  "CI_main": 0.9875,
+  "candidate_gate": {
+    "comparison": "GroupMeanExact versus matched GT10Exact; Web soft and Y hard",
+    "both_K_mean_nonnegative": true,
+    "each_dataset_some_gain_pp": 0.5,
+    "each_dataset_some_CI_lower_gt_zero": true
+  },
+  "if_candidate_pass": "Freeze a separate actual ANN and full-wall replication protocol before new graph builds or test access.",
+  "if_candidate_fail": "Stop GroupMean candidate; complete mechanism interpretation without adding shrinkage parameters or new seeds.",
+  "mechanism_scope": "Four prelocked permutations are paired diagnostic controls, not a calibrated conditional-independence p-value; historical exposed queries are not blind tests."
+}

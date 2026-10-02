@@ -1,0 +1,257 @@
+{
+  "status": "COMPLETE",
+  "stage": "P3_PORTAL_SUITE",
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "started_utc": "2026-09-07T17:39:27.427856+00:00",
+  "cpu_only": true,
+  "fit_range": [
+    10000,
+    30000
+  ],
+  "pilot_accessed": false,
+  "validation_accessed": false,
+  "heldout_accessed": false,
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+  },
+  "partition": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/manifest.json",
+    "sha256": "230d507fada6662711aa6859816a8278994c5f48b15983ed6daaf313e6b75a4d"
+  },
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/build_portal_suite.py",
+    "sha256": "44194bbbf8bcc99130debf099102aaea886d231c6d8a4a448b0622968139917c"
+  },
+  "frozen_sources": [
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/prepare_inputs_and_plans.py",
+      "sha256": "9be15acb7994057c719eb07501ce947f6bc831ae0cbd0e2a3770052b5ad6e016"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/finalize_portal_models.py",
+      "sha256": "d1945203dc99e7027ebdc9a414a6b1303df5da0988b491dcc15ac1b30f537a7e"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/bench_hierarchical_portals.cpp",
+      "sha256": "9137ae4ebc3b4a3c437fb171b0ffc1b5857d5ea1b610a674a59bf46c8af78385"
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/RegionalSearch.h",
+      "sha256": "320e29c9407d5907ece7ef64113edeb8b2d5157fa8796aaf94e470eb6771e14e"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/prober_build_manifest_v2.json",
+      "sha256": "0aff8f1faeb6afa1c795539bfdd2ffef9f21fe115dfe99db54ac2102fdb186e8"
+    },
+    {
+      "path": "/data/netg/ACSG/build/benches/bench_hierarchical_portals",
+      "sha256": "b745e4732e881cf826d101c86dfc2d962fa7c92be8210c6b882eb56cb5fd61af"
+    }
+  ],
+  "fixed_branches": [
+    0,
+    1
+  ],
+  "fixed_rules": [
+    "frequency3",
+    "greedy3"
+  ],
+  "invocations": [
+    {
+      "name": "lambda0_plan",
+      "status": "COMPLETE",
+      "command": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/prepare_inputs_and_plans.py",
+        "plan",
+        "--dataset",
+        "yandex_t2i_official10M_ip_v1",
+        "--protocol",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+        "--gate",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P2.json",
+        "--audit",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+        "--fit-manifest",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/fit_inputs/yandex_t2i_official10M_ip_v1/manifest.json",
+        "--partition",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/lambda0/manifest.json",
+        "--output",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/yandex_t2i_official10M_ip_v1/lambda0",
+        "--source-binding",
+        "/data/netg/ACSG/benches/bench_hierarchical_portals.cpp",
+        "--source-binding",
+        "/data/netg/ACSG/ACSG/RegionalSearch.h",
+        "--source-binding",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/prober_build_manifest_v2.json",
+        "--source-binding",
+        "/data/netg/ACSG/build/benches/bench_hierarchical_portals"
+      ],
+      "started_utc": "2026-09-07T17:39:27.431607+00:00",
+      "pid": 42997,
+      "pgid": 42981,
+      "returncode": 0,
+      "wall_seconds": 0.36311578499589814,
+      "ended_utc": "2026-09-07T17:39:27.794960+00:00",
+      "artifact": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/yandex_t2i_official10M_ip_v1/lambda0/plan.json",
+        "sha256": "4cec078cf78a4396d55fef5439f445a7a387b0e17f8b38c0506fbc73c9f4dc41"
+      }
+    },
+    {
+      "name": "lambda0_probes",
+      "status": "COMPLETE",
+      "command": [
+        "/data/netg/ACSG/build/benches/bench_hierarchical_portals",
+        "--plan",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/yandex_t2i_official10M_ip_v1/lambda0/plan.json",
+        "--output",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0",
+        "--threads",
+        "16"
+      ],
+      "started_utc": "2026-09-07T17:39:27.801230+00:00",
+      "pid": 43004,
+      "pgid": 42981,
+      "returncode": 0,
+      "wall_seconds": 17.36818978699739,
+      "ended_utc": "2026-09-07T17:39:45.169661+00:00",
+      "artifact": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/complete.json",
+        "sha256": "74db1515972cc600ab0bc6fc35a93c8958a10739a0cc0b256c5ded9cee4ca121"
+      }
+    },
+    {
+      "name": "lambda0_finalize",
+      "status": "COMPLETE",
+      "command": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/finalize_portal_models.py",
+        "--plan",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/yandex_t2i_official10M_ip_v1/lambda0/plan.json",
+        "--probe-complete",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/complete.json",
+        "--output",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/yandex_t2i_official10M_ip_v1/lambda0"
+      ],
+      "started_utc": "2026-09-07T17:39:45.173847+00:00",
+      "pid": 43048,
+      "pgid": 42981,
+      "returncode": 0,
+      "wall_seconds": 0.7912444460016559,
+      "ended_utc": "2026-09-07T17:39:45.965363+00:00",
+      "artifact": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/yandex_t2i_official10M_ip_v1/lambda0/complete.json",
+        "sha256": "90fab73d9f96118e865edacf7aa1583fe43083d40791a7d09960458d58970884"
+      }
+    },
+    {
+      "name": "lambda1_plan",
+      "status": "COMPLETE",
+      "command": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/prepare_inputs_and_plans.py",
+        "plan",
+        "--dataset",
+        "yandex_t2i_official10M_ip_v1",
+        "--protocol",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+        "--gate",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P2.json",
+        "--audit",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+        "--fit-manifest",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/fit_inputs/yandex_t2i_official10M_ip_v1/manifest.json",
+        "--partition",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/lambda1/manifest.json",
+        "--output",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/yandex_t2i_official10M_ip_v1/lambda1",
+        "--source-binding",
+        "/data/netg/ACSG/benches/bench_hierarchical_portals.cpp",
+        "--source-binding",
+        "/data/netg/ACSG/ACSG/RegionalSearch.h",
+        "--source-binding",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/prober_build_manifest_v2.json",
+        "--source-binding",
+        "/data/netg/ACSG/build/benches/bench_hierarchical_portals"
+      ],
+      "started_utc": "2026-09-07T17:39:45.969026+00:00",
+      "pid": 43049,
+      "pgid": 42981,
+      "returncode": 0,
+      "wall_seconds": 0.3225388969949563,
+      "ended_utc": "2026-09-07T17:39:46.291815+00:00",
+      "artifact": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/yandex_t2i_official10M_ip_v1/lambda1/plan.json",
+        "sha256": "6c8ba38ed39e78660a60a5360e1d89dfe0e72f184f9f39223b3e056244122ab1"
+      }
+    },
+    {
+      "name": "lambda1_probes",
+      "status": "COMPLETE",
+      "command": [
+        "/data/netg/ACSG/build/benches/bench_hierarchical_portals",
+        "--plan",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/yandex_t2i_official10M_ip_v1/lambda1/plan.json",
+        "--output",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda1",
+        "--threads",
+        "16"
+      ],
+      "started_utc": "2026-09-07T17:39:46.297370+00:00",
+      "pid": 43050,
+      "pgid": 42981,
+      "returncode": 0,
+      "wall_seconds": 16.76929231399845,
+      "ended_utc": "2026-09-07T17:40:03.066942+00:00",
+      "artifact": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda1/complete.json",
+        "sha256": "6ef152c34c41e9667cffb251d305834c826cbacfda66de94ae01e1a5efd5035c"
+      }
+    },
+    {
+      "name": "lambda1_finalize",
+      "status": "COMPLETE",
+      "command": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/finalize_portal_models.py",
+        "--plan",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/yandex_t2i_official10M_ip_v1/lambda1/plan.json",
+        "--probe-complete",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda1/complete.json",
+        "--output",
+        "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/yandex_t2i_official10M_ip_v1/lambda1"
+      ],
+      "started_utc": "2026-09-07T17:40:03.071223+00:00",
+      "pid": 43092,
+      "pgid": 42981,
+      "returncode": 0,
+      "wall_seconds": 0.801179793998017,
+      "ended_utc": "2026-09-07T17:40:03.872693+00:00",
+      "artifact": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/yandex_t2i_official10M_ip_v1/lambda1/complete.json",
+        "sha256": "35575e3be6223bd102295d91f6aef2cfca8f43235172b2db9927f7b2dce0afaa"
+      }
+    }
+  ],
+  "models": {
+    "lambda0_frequency3": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/yandex_t2i_official10M_ip_v1/lambda0/frequency3/model.json",
+      "sha256": "52ccc75f6958dc039ca690af8b64840c749eadae2f90d2beeed383465653493f"
+    },
+    "lambda0_greedy3": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/yandex_t2i_official10M_ip_v1/lambda0/greedy3/model.json",
+      "sha256": "f971984b8f28d312540d95c3e8172ccee0f4adda9b0c990ced83677530dea425"
+    },
+    "lambda1_frequency3": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/yandex_t2i_official10M_ip_v1/lambda1/frequency3/model.json",
+      "sha256": "0f2ab7f063dee88943ef018c75097d3f5316361dc1fa466f8dfc28f10ca2b841"
+    },
+    "lambda1_greedy3": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/yandex_t2i_official10M_ip_v1/lambda1/greedy3/model.json",
+      "sha256": "032236e08ba30876f8056216226a0e34344bfca6724b71d3337bddbbe59af4e4"
+    }
+  },
+  "ended_utc": "2026-09-07T17:40:03.873725+00:00"
+}

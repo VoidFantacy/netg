@@ -1,0 +1,47 @@
+{
+  "L": [
+    32,
+    48,
+    64,
+    96,
+    128,
+    160,
+    200,
+    256,
+    320,
+    400,
+    512,
+    640,
+    800,
+    1000,
+    1250,
+    1500
+  ],
+  "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+  "dataset_order": 1,
+  "formal": true,
+  "hnsw_complete": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/models/yandex_t2i_official10M_ip_v1/hnsw/complete.json",
+  "hnsw_topology": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/models/yandex_t2i_official10M_ip_v1/hnsw/full.topology.gz",
+  "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "methods": [
+    {
+      "name": "NSG"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "name": "GT10"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/models/yandex_t2i_official10M_ip_v1/gate_release10_v2/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/inputs/yandex_t2i_official10M_ip_v1/gate.ids.i32",
+      "name": "GATE"
+    },
+    {
+      "name": "HNSW"
+    }
+  ],
+  "n": 10000,
+  "queries": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.test.public100K.fvecs",
+  "threads": 1
+}

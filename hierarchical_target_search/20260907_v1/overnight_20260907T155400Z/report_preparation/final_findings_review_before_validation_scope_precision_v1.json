@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "status": "REVIEW_COMPLETE_WITH_ONE_DOCUMENTATION_FINDING",
+  "created_utc": "2026-09-07T19:01:00.982271+00:00",
+  "reviewer": "p0_audit",
+  "scope": "Final finite read-only review of current_findings numbers, terminology and evidence boundaries against completed small JSON summaries; handoffs checked only for current-state consistency.",
+  "reviewed_current_findings": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/current_findings.md",
+    "sha256": "16e3bc50cc6f968e09b74aa2daec32b6b046502cf3a1c5820737d7f728fdcd8f",
+    "bytes": 10242
+  },
+  "reviewed_sources": [
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/analysis_v1/analysis.json",
+      "sha256": "e73a8d8c16a5bebb2404596b63d621b1780b1aab0f9eb29efce5281edfc04c1f",
+      "bytes": 134043
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analysis_v1/analysis.json",
+      "sha256": "63da6a71425b0dbd6e186db1c608a564b9847c58168b6b56059a9ed2d2f901ae",
+      "bytes": 210730
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/structure_analysis_v1/analysis.json",
+      "sha256": "8b0cec717a14382c5917504e560bcffd732146c517ea9a699b0bb1812463088e",
+      "bytes": 32321
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/portal_exposure_interpretation_review_v1.json",
+      "sha256": "772140e184a3d261c672c8d49246cc384b17d508c96e1b4b73feddd7e99daaf5",
+      "bytes": 19937
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/target_generalization_interpretation_review_v1.json",
+      "sha256": "e3476a2ea51a93f5b8d2836100befc95339dceaa40a1f0ff3998be72b1de0780",
+      "bytes": 10326
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_descriptive_review_v1.json",
+      "sha256": "eb569ecc610903a35990c35bfac2dea3edb2294630be34ab5d7f3fd806af10d2",
+      "bytes": 5190
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_lexicographic_addendum_v1.md",
+      "sha256": "42245d744702c8bc6ed02893b378b15bd6c0cd5b87e1656cde394d01d113cfe0",
+      "bytes": 4069
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_interpretation_review_v1.json",
+      "sha256": "d082cc50449b5183c3e933f1ddfc36bc99b858af6bfb01404b4e39674345dfbf",
+      "bytes": 8935
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_completion_addendum_v1.json",
+      "sha256": "995dae5027b9c7137a677a6f8b219324b5b44560b0f992e11768749d18a44b4d",
+      "bytes": 1801
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/measurement_tables_independent_review_v1.json",
+      "sha256": "691592d5609bd29d7c747c3817c8f05f468b27f79bda9c2961208b63595f670a",
+      "bytes": 1179
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+      "sha256": "7da975cbb0e045265f405b08e230abb6442eba51621064699a4ad449c90ae58b",
+      "bytes": 21106
+    }
+  ],
+  "current_handoff_bindings": [
+    {
+      "path": "/data/netg/ACSG/summary.md",
+      "sha256": "62b1fd031e22b0499d2f713964ae117a9360bb73c2a24987bdf3836821ead810",
+      "scope": "current-state consistency only"
+    },
+    {
+      "path": "/data/netg/ACSG/spec.md",
+      "sha256": "2a494804931b2de74e849ea5cf1014fbb1629ff8e70ea6634b1da1ec99f26a56",
+      "scope": "current-state consistency only"
+    },
+    {
+      "path": "/data/netg/ACSG/s-target.md",
+      "sha256": "d8a7c571bc5c426e4283e010c3da8584537895afd2232a6688ba59051c22c17d",
+      "scope": "current-state consistency only"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/state.json",
+      "sha256": "4377e1d9f39cdd564117697e16a060fbf8c7c185d5fff2d5a05161c07708af83",
+      "scope": "current-state consistency only"
+    }
+  ],
+  "substantive_findings": [
+    {
+      "id": "F1",
+      "severity": "medium_documentation_provenance",
+      "path": "/data/netg/ACSG/s-target.md",
+      "line": 162,
+      "current_text": "输入访问口径澄清：validation未用于拟合/选择或ANN性能评测，但P0已读取其query/GT做文件头、全SHA、查询逐行指纹去重/跨split重叠及finite检查、GT ID范围/行内重复检查；held-out文件未打开。此前笼统的“validation/held-out未读”由此收窄，既有日志保留，详见[P0访问补充](hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/validation_access_scope_addendum_v1.json)。",
+      "problem": "Current-state row says validation/held-out was unread, but completed P0 audit records validation query/GT headers and full-file SHA256 checks for both datasets. No validation performance evaluation was run; hashing is not model fitting or performance evaluation.",
+      "evidence_path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+      "evidence_json_pointers": [
+        "/datasets/0/files/validation_query_path",
+        "/datasets/0/files/validation_gt_path",
+        "/datasets/1/files/validation_query_path",
+        "/datasets/1/files/validation_gt_path"
+      ],
+      "recommended_text": "P3 NOPASS；P4–P8 NOT_STARTED；validation未做性能评测（P0仅核验文件头/SHA），held-out未读。",
+      "impact": "Avoids overstating the input-read boundary in the current handoff. It does not change the P3 gate or indicate validation leakage into fitting/evaluation."
+    }
+  ],
+  "finding_count": 1,
+  "verified": [
+    {
+      "topic": "P2 comparisons and scope",
+      "result": "PASS",
+      "detail": "All four real-probability and oracle-probability Recall differences match completed means; oracle lower bounds are positive with higher total NDC and lower mean QPS; all real method cells are dominated by same-L paired Fast in Recall/QPS."
+    },
+    {
+      "topic": "P3 primary comparison and gate",
+      "result": "PASS",
+      "detail": "Primary is fixed oracle_probability lambda1_greedy3 minus lambda0_greedy3. Four means/CIs match source rounding; all lower bounds fail positivity. All 8 portal CIs include zero; all 16 protection cells raise Recall/NDC and lower QPS. No equivalence or deployment gain is claimed."
+    },
+    {
+      "topic": "Portal, M4 and seen contributions",
+      "result": "PASS",
+      "detail": "All 8 actual-entry-set cells changed; identical returned sets range68.34–93.36%; six undefined weighted-exposure queries per WebVid lambda1 cell retained. Pilot D/M4 shifts, target-slot shares and seen/unseen main-Recall contributions match the completed summaries. M4 is not claimed to bound Recall; target-ID exposure is not query leakage."
+    },
+    {
+      "topic": "Strict local condition and lexicographic/stay limit",
+      "result": "PASS",
+      "detail": "M/Q, fit support/max-degree counts, all-base exceptions and changed-node coverage match completed summary. Current text includes same node/state/candidate/feasibility constraints, pairwise cut difference bound D, integer score, stay zero-tie priority and improving leaf-ID tie rule; no global optimum, realized-move or causal-failure inference."
+    },
+    {
+      "topic": "Measurement and full cost",
+      "result": "PASS",
+      "detail": "Five wall rounds are not five Recall samples; exploratory unadjusted CIs and descriptive cross-model wall limits retained. Fast frontier zero sentinels are unmeasured. Exact GT/original NSG cost is reused/unknown; no complete training-time claim or double-counted shared portal probe cost."
+    },
+    {
+      "topic": "Stage/status and unrun scope",
+      "result": "PASS_WITH_DOCUMENTATION_PRECISION_FINDING",
+      "detail": "Current finding and summary/spec/state consistently show P3 NOPASS, one representation revision, P4–P8 not started, no validation performance evaluation, no held-out access, no active heavy job, preserve deadline control, create final report after stop, and long-term goal incomplete. The s-target validation-unread phrase is the sole precision issue if still present."
+    }
+  ],
+  "links": "Root reports41/41 links already checked; not repeated in this review.",
+  "raw_graph_GT_labels_count_rows_or_vectors_read": false,
+  "experiments_or_new_statistics_run": false,
+  "edited_handoffs_current_findings_gate_or_final_report": false,
+  "P3_gate_reopened": false,
+  "next_action": "Root may apply the one documentation precision correction; reviewer becomes idle and waits for deadline without new research."
+}

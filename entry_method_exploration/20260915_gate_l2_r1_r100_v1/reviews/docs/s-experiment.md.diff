@@ -1,0 +1,16 @@
+--- before/s-experiment.md
++++ after/s-experiment.md
+@@ -1,10 +1,12 @@
+ # ACSG 历史实验概览与复盘索引
++
++E97（2026-09-15启动，2026-09-16完成）：GATE disjoint-label修复；WebVid/Yandex/Deep/BIGANN-SIFT/GIST五方法Recall@1/100，共800点、2400次单线程wall，正式阶段15.826小时。[详细复盘](experiment_history/90_gate_disjoint_five_datasets_r1_r100.md)、[逐集分析](entry_method_exploration/20260915_gate_l2_r1_r100_v1/analysis.md)、[Yandex前缀修正与等待中断](experiment_history/90a_yandex_test_prefix_fix.md)。旧默认不变。
+ 
+ 2026-09-15 E96后续GATE审查完成（0新训练/ANN/QPS）：核心合理适配保留，确认约0.25%–0.40%实际triplet存在正负语义冲突，后继先排除交集。新三集建议GT10-hard主线/soft-t1辅助；旧数据接入须修split/L2/K，未来只测Recall@1/100。见[89 审查记录](experiment_history/89_gate_reproduction_audit.md)，不是新的性能实验，E96封存不改。
+ 
+ 2026-09-15最新完成E96：三数据集、四方法、16预算至1500、192点576轮单线程；Web/Y GT10在全部预算支配GATE的Recall/平均QPS，LAION高预算存在质量速度取舍，默认未替换。见[复盘88](experiment_history/88_gate_three_dataset_comparison.md)及[完整报告](entry_method_exploration/20260914_gate_new_ood_v1/report.md)。E95固定H增强分支停止结论保留，E94是更早的旧分支最终矩阵。
+ 
+-> 更新截至2026-09-15。本文负责历史概览与复盘索引；原协议、源码、配置和实测产物决定实现与结论，原始证据保留原处。当前结果见[summary](summary.md)，实现合同见[spec](spec.md)，后续任务见[s-target](s-target.md)。
++> 更新截至2026-09-16。本文负责历史概览与复盘索引；原协议、源码、配置和实测产物决定实现与结论，原始证据保留原处。当前结果见[summary](summary.md)，实现合同见[spec](spec.md)，后续任务见[s-target](s-target.md)。
+ 
+ ## 1. 已执行的实验与诊断
+ 

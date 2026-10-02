@@ -1,0 +1,1 @@
+首版FontProperties得到字体名但未注册字体，matplotlib回退导致缺字。保留首版及图，仅增加fontManager.addfont后重绘；数据未变。

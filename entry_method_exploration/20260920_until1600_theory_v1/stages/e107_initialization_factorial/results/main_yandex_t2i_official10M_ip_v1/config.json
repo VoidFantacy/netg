@@ -1,0 +1,104 @@
+{
+  "E106_family": "Hard",
+  "GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt.i32",
+  "H": 821,
+  "K_L": {
+    "1": [
+      64,
+      128,
+      256,
+      400,
+      800
+    ],
+    "100": [
+      128,
+      256,
+      400,
+      800
+    ]
+  },
+  "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+  "base_n": 10000000,
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "deadline_unix": 1789890600.0,
+  "dimension": 200,
+  "expected_search_calls": 589824,
+  "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/hub_ids.i32",
+  "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "max_search_calls": 1200000,
+  "methods": [
+    {
+      "entry_count": 1,
+      "name": "NSGFixed1",
+      "representation": "fixed",
+      "route": "fixed"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/yandex_t2i_official10M_ip_v1.UnitHub.W.f32",
+      "entry_count": 1,
+      "name": "UnitHub1",
+      "normalize_W": false,
+      "representation": "UnitHub",
+      "route": "exact"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/yandex_t2i_official10M_ip_v1.UnitHub.W.f32",
+      "entry_count": 3,
+      "name": "UnitHub3",
+      "normalize_W": false,
+      "representation": "UnitHub",
+      "route": "exact"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_hard/W.f32",
+      "entry_count": 1,
+      "name": "GT11",
+      "normalize_W": false,
+      "representation": "GT1",
+      "route": "exact"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_hard/W.f32",
+      "entry_count": 3,
+      "name": "GT13",
+      "normalize_W": false,
+      "representation": "GT1",
+      "route": "exact"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "entry_count": 1,
+      "name": "GT101",
+      "normalize_W": false,
+      "representation": "GT10",
+      "route": "exact"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "entry_count": 3,
+      "name": "GT103",
+      "normalize_W": false,
+      "representation": "GT10",
+      "route": "exact"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "entry_count": 3,
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "name": "DefaultANN",
+      "normalize_W": false,
+      "representation": "GT10",
+      "route": "ann"
+    }
+  ],
+  "n": 4096,
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+  "reference": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/yandex_t2i_official10M_ip_v1",
+  "reference_E106": "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1",
+  "reference_method": "GT10-hard",
+  "rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/source_rows.i64",
+  "seconds_cap": 1500,
+  "smoke": false,
+  "threads": 1
+}

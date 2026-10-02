@@ -1,0 +1,13 @@
+{
+  "epoch": 1789302998.5698822,
+  "failed_command": "python3 -B session14_closeout_v1/src/closeout.py",
+  "actual_exit_code": 1,
+  "error": "FileNotFoundError: reviews/review_208_pdf_visual_complete.json",
+  "cause": "Postseal schema stores paths relative to session13_report_v1; original checker assumed absolute paths.",
+  "failure_scope": "Failed at postseal check before any handoff/root_after/closeout/final seal writes; no ANN, training or report change.",
+  "original_source": "src/closeout.py",
+  "original_work_freeze": "work_freeze.json",
+  "corrected_source": "src/closeout_v2.py",
+  "correction": "Resolve relative postseal paths against their owning session13 directory; preserve size/SHA strict checks; absolute input records unchanged.",
+  "failed_elapsed_seconds": null
+}

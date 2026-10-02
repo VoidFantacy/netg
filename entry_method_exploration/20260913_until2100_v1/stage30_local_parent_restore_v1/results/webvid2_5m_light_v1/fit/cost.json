@@ -1,0 +1,105 @@
+{
+  "dataset": "webvid2_5m_light_v1",
+  "status": "COMPLETE",
+  "pid": 3,
+  "reserved_NSG": 32768,
+  "started_at": 1789294561.7147415,
+  "completed_actions": 32,
+  "accepted_actions": 13,
+  "actual_NSG": 14442,
+  "actual_HNSW": 1400512,
+  "actual_threads": 1,
+  "affinity": [
+    15
+  ],
+  "returncode": 0,
+  "vector_installs": 3,
+  "installs": [
+    {
+      "kind": "single_action_regression",
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage30_local_parent_restore_v1/models/webvid2_5m_light_v1/first_action_regression/graph.hnsw",
+        "bytes": 3889472,
+        "mtime_ns": 1789294568797679965,
+        "sha256": "a09d009b426739e1700c1d4696ae4f3c7a5817992298480e3146b75716165680"
+      },
+      "W": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage30_local_parent_restore_v1/models/webvid2_5m_light_v1/first_action_regression/W.f32",
+        "bytes": 3627008,
+        "mtime_ns": 1789294568801679993,
+        "sha256": "ce61b5e0f56b667eb6ea62b53c4663bb2dd840125ab109554f2bfd9c9ee07aa1"
+      }
+    },
+    {
+      "kind": "restore10",
+      "seconds": 0.015487871998629998,
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage30_local_parent_restore_v1/models/webvid2_5m_light_v1/restore10/graph.hnsw",
+        "bytes": 3889472,
+        "mtime_ns": 1789294591797837634,
+        "sha256": "23de9f8fa3237885d8d33ea5db6ad34c871a86ed9bcd2d7d9c1a55b26ade84e9"
+      },
+      "W": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage30_local_parent_restore_v1/models/webvid2_5m_light_v1/restore10/W.f32",
+        "bytes": 3627008,
+        "mtime_ns": 1789294591801837660,
+        "sha256": "d53170cc72bd18028c2cf9abfc0a0b2b2f0ba3766e8c1350c88ddd022d4d5214"
+      },
+      "groups": 13
+    },
+    {
+      "kind": "random10",
+      "seconds": 0.0140263249995769,
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage30_local_parent_restore_v1/models/webvid2_5m_light_v1/random10/graph.hnsw",
+        "bytes": 3889472,
+        "mtime_ns": 1789294593689850603,
+        "sha256": "7913c66470e1a3c532f82e7147c63a77df0adc84ec802bb0160003951349b525"
+      },
+      "W": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage30_local_parent_restore_v1/models/webvid2_5m_light_v1/random10/W.f32",
+        "bytes": 3627008,
+        "mtime_ns": 1789294593689850603,
+        "sha256": "11c54da628e1983e59c213ab54f1b360f6664d22223eaadf47a97be4cd79ed38"
+      },
+      "groups": 13
+    }
+  ],
+  "union": [
+    {
+      "model": "restore10",
+      "groups": 13,
+      "net_hits": 224,
+      "half_net_hits": [
+        95,
+        129
+      ],
+      "failure_delta": -27,
+      "rescued": 43,
+      "new_failed": 16,
+      "gain_hits": 525,
+      "loss_hits": 301,
+      "total_ndc_relative": -5.692947792745873e-05,
+      "accepted": true
+    },
+    {
+      "model": "random10",
+      "groups": 13,
+      "net_hits": -31,
+      "half_net_hits": [
+        -21,
+        -10
+      ],
+      "failure_delta": 7,
+      "rescued": 8,
+      "new_failed": 15,
+      "gain_hits": 128,
+      "loss_hits": 159,
+      "total_ndc_relative": 0.0003568603302017692,
+      "accepted": false
+    }
+  ],
+  "seconds": 33.49935720000212,
+  "max_RSS_GiB": 5.624275207519531,
+  "completed_at": 1789294595.2142975
+}

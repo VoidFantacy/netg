@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "stage": "P3_PIPELINE_INDEPENDENT_REVIEW",
+  "status": "PASS_REVIEWED_SOURCE_WITH_R1_FIXED",
+  "created_utc": "2026-09-07T17:35:46.713385+00:00",
+  "previous_review": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/pipeline_independent_review_v1.json",
+    "sha256": "be475848e245ce801d31549184e10094da148b832e3b21db12bd488494d2db33"
+  },
+  "sources": {
+    "evaluation_runner": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/run_p3_evaluation.py",
+      "sha256": "03eccddc76efa3c2e19a2f747f4e93213ebab57a4ce643984c5d392189729d08"
+    },
+    "model_acceptance_runner": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/run_p3_model_acceptance.py",
+      "sha256": "23bf699c17dd953e62fc4cb401357b2bbb22b4263a36f9c96f299c5203f9f3c3"
+    },
+    "finalizer": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/finalize_portal_models.py",
+      "sha256": "d1945203dc99e7027ebdc9a414a6b1303df5da0988b491dcc15ac1b30f537a7e"
+    },
+    "P3_protocol": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+      "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+    }
+  },
+  "source_snapshot": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/root_source_versions/fast_binding_r1_before_v1/manifest.json",
+    "sha256": "80155994137dcc1a3fa16858b2ca8e28bb2b3c404532c69ea6b1faf3082387ce"
+  },
+  "fixed_findings": [
+    {
+      "id": "R1_FAST_RAW_BINDING",
+      "status": "FIXED_IN_BOTH_RUNNERS",
+      "implementation": [
+        "Preflight checks Fast input_audit_sha256 against the exact supplied/model-bound audit.",
+        "Actual hubs/IDs SHA256 must match their paired Fast manifest; absolute or manifest-relative raw paths resolve before use.",
+        "Frozen bindings of manifest, hubs and IDs are saved in execution metadata; acceptance report carries them too.",
+        "Both subprocess commands use the checked resolved raw paths.",
+        "Each count/timing/trace cell verifies the frozen manifest and raw hashes before launching and after successful completion.",
+        "Acceptance additionally checks the Fast fit fingerprints and original accepted P2 raw paths."
+      ],
+      "compatibility": "No protocol, model family, order, query count, L/K/m, thread count or measurement schedule changed; acceptance optional --fast-manifest defaults to the existing paired20K path."
+    }
+  ],
+  "validation": {
+    "help_commands": "PASS for both Python CLIs",
+    "synthetic_checks": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/fast_binding_r1_checks_v1/report.json",
+      "sha256": "15d9958ebc02a711b1e2e91923896c997e5b88631d9f65ad86d5c0219829793b"
+    },
+    "synthetic_case_count": 16,
+    "cases": "valid absolute/relative path binding; wrong input audit; preflight hubs/IDs mismatch; frozen hubs/IDs/manifest mutation; restored original files; both runners",
+    "ANN_calls": 0,
+    "real_data_accessed": false
+  },
+  "finalizer_review": "Prior source and synthetic-selftest findings remain valid at unchanged d1945203 source.",
+  "remaining_required_source_fixes": [],
+  "limits": "This follows the R1 source/input-binding fix only. It does not grant P1 real-model or P3 performance PASS, and future full10K artifact alignment/gates remain required."
+}

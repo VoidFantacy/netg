@@ -1,0 +1,16 @@
+# ACSG 当前结果摘要
+
+当前执行：E97 已获用户授权，范围为 WebVid、Yandex、Deep、SIFT、GIST，排除 LAION。独立目录修正 GATE 正负标签重叠，重训并新测 Recall@1/100 与单线程端到端 QPS，完成后重新画五集图。五集GATE均已完成修正后的重训：WebVid38轮/679.69秒、Yandex52轮/896.80秒、GIST24轮/862.05秒、Deep27轮/576.71秒、SIFT60轮/1360.96秒。各集NSG、入口特征、标签及GT10-hard/soft画像均已准备；37项离线准备均已完成，五集模型冻结核验PASS；测试GT现已全部完成，已进入GIST的Recall@1正式单线程测试。14:09曾因Yandex声明1万条却引用10万条公开查询而被前置检查拦住；15:19完成固定前1万条的接入修正，15:20恢复，181个原冻结产物SHA不变。详见[接入修正](experiment_history/90a_yandex_test_prefix_fix.md)。用户可关闭会话，独立后台服务将继续五集全部测试、CSV汇总与自动绘图，完成后等待人工检查。尚无新正式 Recall/QPS 结论。历史 E96 Recall@10 不计入新结果。见[执行协议](entry_method_exploration/20260915_gate_l2_r1_r100_v1/protocol.md)与[实时状态](entry_method_exploration/20260915_gate_l2_r1_r100_v1/state.json)。
+
+
+2026-09-15 GATE后续检查完成：按用户接受合理适配的标准，核心流程成立，模型/导出/源码和保存计时核验通过；确认沿用release的正负标签存在交集，实际triplet中占0.25%–0.40%，后继应排除交集再训练。全部子图触及1000节点上限，影响未量化。无需因论文/代码不一致推翻E96，但其结果仅对应当前受限适配，不能据此否定完整GATE。[详细审查](entry_method_exploration/20260915_gate_reproduction_audit_v1/report.md) · [记录89](experiment_history/89_gate_reproduction_audit.md)。
+
+上述 GATE 审查阶段（E97执行前）为0新训练/ANN/图/GT/QPS，当时未启动Deep/SIFT/GIST；建议GT10-hard统一主线、soft-t1辅助，不宣称已测最优。审查发现的旧配置训练/测试同路径、SIFT实际11164866行、E96仅IP/K10等接入问题由E97独立版本处理。后续新开发与正式比较只测Recall@1、Recall@100，旧Recall@10与Web软/Y硬默认保持历史身份。
+
+2026-09-15 E96已完成：WebVid/Yandex/LAION完整底库、各10000公开query，GATE（release10适配）、当前GT10、NSG、全量HNSW，16预算至1500；192点576次单线程wall及逐query评分、配对、身份/线程审计通过。正式阶段4.758小时，图表已检查，原始结果全部保留。[报告与图](entry_method_exploration/20260914_gate_new_ood_v1/report.md) · [完整CSV](entry_method_exploration/20260914_gate_new_ood_v1/results/metrics.csv) · [复盘88](experiment_history/88_gate_three_dataset_comparison.md)。
+
+Web/Y上，GT10在全部16预算均有高于GATE的Recall和平均QPS；LAION高预算有取舍：L1500 GATE96.287%/145.86QPS/0.03%零命中，GT10 96.154%/148.94QPS/0.06%。全量HNSW与GT10也有前沿交叉，不能称任何方法全条件最快。Web/Y最大预算的GT10分别93.506%/192.05QPS/0.04%、99.007%/206.44QPS/0.13%。主失败定义为Recall@10=0，GT1漏失另报。默认Web软/Y硬保持，LAION本轮cal选择soft-t1；没有按public结果追加训练。
+
+最终GATE训练639.97/751.71/1331.11秒，标签151.23/200.82/230.21秒；历史GT/NSG/继承画像成本未知，不能当零。LAION特征已含HBKM，不重复计费。旧采样错误、环境重启和存储保护恢复均已隔离记录；所有正式点在同一boot一次完成。按用户授权删除原netg.tar.gz后，LAION索引已校验恢复项目目录；原base/NSG/GT/模型不变。Web/LAION公开query同源，结论不是三套全新盲测。E95停止结论作为历史边界保留。
+
+E95查询统计构图的四组开发门均失败，因此停止当时的固定H画像/小图增强分支；这个判断不等于全部离线入口学习或RL无解。[E95复盘](experiment_history/87_query_moment_graph_and_branch_stop.md)。E94为该旧分支的五L五轮最终矩阵，与E96的三数据集16预算比较分开保存。[E94复盘](experiment_history/83_frozen_final_comparison.md)。这些旧分支没有待恢复的实验进程；当前执行的是新的E97。

@@ -1,0 +1,38 @@
+{
+  "status": "COMPLETE_DISTINCT_QUALITY_CONTROL",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "passed": false,
+      "rules": {
+        "baseline10_hits": false,
+        "baseline10_halves": false,
+        "baseline10_failures": false,
+        "mode3P10_hits": true,
+        "mode3P10_halves": true,
+        "mode3P10_failures": true,
+        "mode3P30_hits": false,
+        "mode3P30_halves": false,
+        "mode3P30_failures": true,
+        "route_cheaper_than_mode30": true
+      }
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "passed": false,
+      "rules": {
+        "baseline10_hits": true,
+        "baseline10_halves": true,
+        "baseline10_failures": true,
+        "mode3P10_hits": true,
+        "mode3P10_halves": true,
+        "mode3P10_failures": true,
+        "mode3P30_hits": false,
+        "mode3P30_halves": false,
+        "mode3P30_failures": false,
+        "route_cheaper_than_mode30": true
+      }
+    }
+  },
+  "full_development_wall_supported": false,
+  "old_E66_E70_gates_unchanged": true,
+  "not_performance_GO": true
+}

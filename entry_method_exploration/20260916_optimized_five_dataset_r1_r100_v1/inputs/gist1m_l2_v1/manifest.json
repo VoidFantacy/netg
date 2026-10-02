@@ -1,0 +1,90 @@
+{
+  "dataset": "gist1m_l2_v1",
+  "metric_id": 1,
+  "metric": "squared_L2",
+  "normalization": "none; preserve supplied vectors",
+  "shape": [
+    1000000,
+    960
+  ],
+  "test_rows": 1000,
+  "paths": {
+    "base_path": "/data/netg/ACSG/benches/datasets/GIST1M/gist_base.fvecs",
+    "query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/test.fvecs",
+    "gt_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/test.gt.ivecs",
+    "index": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/gist1m_l2_v1/nsg/graph.nsg",
+    "qgt_query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/qgt.fvecs",
+    "fit_query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/fit.fvecs",
+    "gate_train_query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/gate_train.fvecs",
+    "gate_monitor_query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/gate_monitor.fvecs",
+    "cal_query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/cal.fvecs"
+  },
+  "identities": {
+    "base_path": {
+      "path": "/data/netg/ACSG/benches/datasets/GIST1M/gist_base.fvecs",
+      "bytes": 3844000000,
+      "sha256": "73418110328f5aa522d9f6b0cd9115a6c515dc44e3c48420e506ddeddbdbdbc0"
+    },
+    "qgt_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/qgt.fvecs",
+      "bytes": 19220000,
+      "sha256": "58a40514c449bf2d46d6018680945729e728855bc25e5083382316b0c4c55fee"
+    },
+    "fit_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/fit.fvecs",
+      "bytes": 76880000,
+      "sha256": "ee96c87859e616a6f2abdde0770ec0e1105cb7685b8e8c0ec265dd5179138a00"
+    },
+    "gate_train_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/gate_train.fvecs",
+      "bytes": 38440000,
+      "sha256": "629dda3182f10c5ad0b024540d5f6e5d8080855832726f0b464ea4e32da12df6"
+    },
+    "gate_monitor_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/gate_monitor.fvecs",
+      "bytes": 3936256,
+      "sha256": "4dc2776e8e2dbbf24a75e10334366dfab460d5452ed7fb98c67c84102953c33e"
+    },
+    "cal_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/cal.fvecs",
+      "bytes": 3936256,
+      "sha256": "6af8c2a471f13c35374de8a72d67f979deb40d99473de112ac23ff3074bfd5fc"
+    },
+    "test_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/test.fvecs",
+      "bytes": 3844000,
+      "sha256": "0d1d620049de12da455ed7201e97cbab372c4d54d0e6dedbc8c503f62c911299"
+    }
+  },
+  "sources": {
+    "base": "existing original local GIST1M file; original download hash unavailable",
+    "reference": "http://corpus-texmex.irisa.fr/",
+    "learn": "/data/netg/ACSG/benches/datasets/GIST1M/gist_learn.fvecs",
+    "test": "/data/netg/ACSG/benches/datasets/GIST1M/gist_query.fvecs"
+  },
+  "split_bounds": {
+    "qgt": [
+      0,
+      5000
+    ],
+    "fit": [
+      5000,
+      25000
+    ],
+    "gate_train": [
+      5000,
+      15000
+    ],
+    "gate_monitor": [
+      25000,
+      26024
+    ],
+    "cal": [
+      26024,
+      27048
+    ]
+  },
+  "source_rows": "unique learn rows after excluding exact test/learn duplicates",
+  "learn_candidates_examined": 27222,
+  "preparation_seconds": 34.232691287994385
+}

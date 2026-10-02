@@ -1,0 +1,74 @@
+{
+  "status": "STOP_ROUTER_STATE_TABLE_V1",
+  "selected": null,
+  "candidate_gates": {
+    "StateCost": {
+      "pass": false,
+      "checks": {
+        "webvid2_5m_light_v1.positive_u": false,
+        "webvid2_5m_light_v1.recall_floor": false,
+        "yandex_t2i_official10M_ip_v1.positive_u": false,
+        "yandex_t2i_official10M_ip_v1.recall_floor": false,
+        "beats_GlobalCost": false,
+        "beats_ShuffleCost": true
+      },
+      "contrasts": {
+        "GlobalCost": {
+          "dataset_mean_differences": {
+            "webvid2_5m_light_v1": -0.01166773583282366,
+            "yandex_t2i_official10M_ip_v1": -0.011384986586623999
+          },
+          "equal_dataset_interval": [
+            -0.014802938282660348,
+            -0.008230750851414554
+          ]
+        },
+        "ShuffleCost": {
+          "dataset_mean_differences": {
+            "webvid2_5m_light_v1": 0.005191977910014831,
+            "yandex_t2i_official10M_ip_v1": 0.005357876559972087
+          },
+          "equal_dataset_interval": [
+            0.0015149400915780726,
+            0.009014770208179366
+          ]
+        }
+      }
+    },
+    "StateRecall": {
+      "pass": false,
+      "checks": {
+        "webvid2_5m_light_v1.positive_u": false,
+        "webvid2_5m_light_v1.recall_floor": false,
+        "yandex_t2i_official10M_ip_v1.positive_u": false,
+        "yandex_t2i_official10M_ip_v1.recall_floor": false,
+        "beats_GlobalRecall": false,
+        "beats_ShuffleRecall": false
+      },
+      "contrasts": {
+        "GlobalRecall": {
+          "dataset_mean_differences": {
+            "webvid2_5m_light_v1": -0.026394514778044498,
+            "yandex_t2i_official10M_ip_v1": -0.008295054550830738
+          },
+          "equal_dataset_interval": [
+            -0.021106278313648634,
+            -0.01363765543608428
+          ]
+        },
+        "ShuffleRecall": {
+          "dataset_mean_differences": {
+            "webvid2_5m_light_v1": 0.002516172298217204,
+            "yandex_t2i_official10M_ip_v1": 0.0039097776172929075
+          },
+          "equal_dataset_interval": [
+            -0.0007537582329058667,
+            0.007273353600054069
+          ]
+        }
+      }
+    }
+  },
+  "default_changed": false,
+  "new_searches": 0
+}

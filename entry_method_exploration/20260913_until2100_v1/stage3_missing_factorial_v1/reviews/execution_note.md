@@ -1,0 +1,5 @@
+# E62 调度修正
+
+首次分析在Yandex原生进程尚未退出时提前启动，完成WebVid静态重评分后因Yandex query_complete.json尚不存在退出。原始analyze.log保留；没有生成选型或汇总产物，没有启动第二个原生/训练进程，没有改动任何查询输出。加入双dataset jobs=COMPLETE前置检查，确认原生工具session返回exit_code=0后重跑分析。
+
+Yandex部分原生阶段与Python只读评分短暂重叠，故17.330秒仅作实际发生的操作耗时记录，不能描述为严格独占机器时间或性能比较。E62全部正式QPS点为0；单原生CPU15线程1及NSG/cache计数仍成立。最终正式性能测量必须完全串行且排除此种重叠。

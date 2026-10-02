@@ -1,0 +1,471 @@
+{
+  "anchor": {
+    "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+    "name": "GT10-soft-t1"
+  },
+  "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+  "base_n": 2505000,
+  "dataset": "webvid2_5m_light_v1",
+  "dataset_order": 0,
+  "dimension": 512,
+  "gt": "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/inputs/webvid2_5m_light_v1/accept/gt.i64",
+  "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "max_search_calls": 3000000,
+  "methods": [
+    {
+      "action": 0,
+      "name": "GT10"
+    },
+    {
+      "action": 1,
+      "name": "Single1"
+    },
+    {
+      "action": 2,
+      "name": "Single2"
+    },
+    {
+      "action": 3,
+      "name": "Single3"
+    },
+    {
+      "action": 0,
+      "features": true,
+      "name": "Feature3"
+    },
+    {
+      "features": true,
+      "name": "CostTree",
+      "tree": [
+        {
+          "action": 0,
+          "feature": 3,
+          "left": 1,
+          "right": 2,
+          "support": 10000,
+          "threshold": -0.04877284765759111,
+          "training_value": 0.32662072738375203
+        },
+        {
+          "action": 1,
+          "estimates": {
+            "K100_nonzero": [
+              0,
+              459,
+              352,
+              143
+            ],
+            "K1_nonzero": [
+              0,
+              56,
+              43,
+              13
+            ],
+            "delta_recall": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.016,
+                -0.0018200000000000002
+              ],
+              [
+                0.007,
+                -0.002549999999999999
+              ],
+              [
+                -0.009,
+                -0.003360000000000001
+              ]
+            ],
+            "delta_seconds": [
+              -6.142834999999994e-07,
+              4.766795249999998e-06,
+              5.222725500000004e-06,
+              3.625939749999996e-06
+            ]
+          },
+          "feature": -1,
+          "support": 1000,
+          "training_value": 5.885111884944621
+        },
+        {
+          "action": 0,
+          "feature": 0,
+          "left": 3,
+          "right": 4,
+          "support": 9000,
+          "threshold": 0.02259738064284519,
+          "training_value": 0.17135018405076258
+        },
+        {
+          "action": 0,
+          "estimates": {
+            "K100_nonzero": [
+              0,
+              1494,
+              2187,
+              2755
+            ],
+            "K1_nonzero": [
+              0,
+              188,
+              285,
+              393
+            ],
+            "delta_recall": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -0.004722222222222222,
+                -0.0005236111111111101
+              ],
+              [
+                -0.011805555555555555,
+                -0.0030486111111111096
+              ],
+              [
+                -0.015416666666666667,
+                -0.00245972222222222
+              ]
+            ],
+            "delta_seconds": [
+              -1.9781076388888845e-08,
+              3.16546704861112e-06,
+              7.946975486111108e-06,
+              1.3546431944444487e-05
+            ]
+          },
+          "feature": -1,
+          "support": 7200,
+          "training_value": 0.036000011470310615
+        },
+        {
+          "action": 1,
+          "estimates": {
+            "K100_nonzero": [
+              0,
+              237,
+              512,
+              609
+            ],
+            "K1_nonzero": [
+              0,
+              22,
+              65,
+              82
+            ],
+            "delta_recall": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.0033333333333333335,
+                -0.0001888888888888886
+              ],
+              [
+                -0.020555555555555556,
+                -0.004055555555555555
+              ],
+              [
+                -0.017777777777777778,
+                -0.0032499999999999994
+              ]
+            ],
+            "delta_seconds": [
+              -2.974856944444424e-07,
+              2.1428388888888964e-07,
+              1.2462370277777763e-05,
+              1.7950835555555574e-05
+            ]
+          },
+          "feature": -1,
+          "support": 1800,
+          "training_value": 2.7325050216398257
+        }
+      ]
+    },
+    {
+      "features": true,
+      "name": "RecallTree",
+      "tree": [
+        {
+          "action": 0,
+          "feature": 3,
+          "left": 1,
+          "right": 2,
+          "support": 10000,
+          "threshold": -0.04877284765759111,
+          "training_value": 0.0
+        },
+        {
+          "action": 1,
+          "estimates": {
+            "K100_nonzero": [
+              0,
+              459,
+              352,
+              143
+            ],
+            "K1_nonzero": [
+              0,
+              56,
+              43,
+              13
+            ],
+            "delta_recall": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.016,
+                -0.0018200000000000002
+              ],
+              [
+                0.007,
+                -0.002549999999999999
+              ],
+              [
+                -0.009,
+                -0.003360000000000001
+              ]
+            ],
+            "delta_seconds": [
+              -6.142834999999994e-07,
+              4.766795249999998e-06,
+              5.222725500000004e-06,
+              3.625939749999996e-06
+            ]
+          },
+          "feature": -1,
+          "support": 1000,
+          "training_value": 7.089999999999999
+        },
+        {
+          "action": 0,
+          "feature": 0,
+          "left": 3,
+          "right": 4,
+          "support": 9000,
+          "threshold": 0.02259738064284519,
+          "training_value": 0.0
+        },
+        {
+          "action": 0,
+          "estimates": {
+            "K100_nonzero": [
+              0,
+              1494,
+              2187,
+              2755
+            ],
+            "K1_nonzero": [
+              0,
+              188,
+              285,
+              393
+            ],
+            "delta_recall": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -0.004722222222222222,
+                -0.0005236111111111101
+              ],
+              [
+                -0.011805555555555555,
+                -0.0030486111111111096
+              ],
+              [
+                -0.015416666666666667,
+                -0.00245972222222222
+              ]
+            ],
+            "delta_seconds": [
+              -1.9781076388888845e-08,
+              3.16546704861112e-06,
+              7.946975486111108e-06,
+              1.3546431944444487e-05
+            ]
+          },
+          "feature": -1,
+          "support": 7200,
+          "training_value": 0.0
+        },
+        {
+          "action": 1,
+          "estimates": {
+            "K100_nonzero": [
+              0,
+              237,
+              512,
+              609
+            ],
+            "K1_nonzero": [
+              0,
+              22,
+              65,
+              82
+            ],
+            "delta_recall": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.0033333333333333335,
+                -0.0001888888888888886
+              ],
+              [
+                -0.020555555555555556,
+                -0.004055555555555555
+              ],
+              [
+                -0.017777777777777778,
+                -0.0032499999999999994
+              ]
+            ],
+            "delta_seconds": [
+              -2.974856944444424e-07,
+              2.1428388888888964e-07,
+              1.2462370277777763e-05,
+              1.7950835555555574e-05
+            ]
+          },
+          "feature": -1,
+          "support": 1800,
+          "training_value": 2.830000000000003
+        }
+      ]
+    },
+    {
+      "features": true,
+      "name": "ShuffledTree",
+      "tree": [
+        {
+          "action": 0,
+          "feature": 0,
+          "left": 1,
+          "right": 2,
+          "support": 10000,
+          "threshold": 0.0009481461329476585,
+          "training_value": 0.32662072738375325
+        },
+        {
+          "action": 1,
+          "estimates": {
+            "K100_nonzero": [
+              0,
+              290,
+              290,
+              380
+            ],
+            "K1_nonzero": [
+              0,
+              45,
+              37,
+              56
+            ],
+            "delta_recall": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -0.001,
+                -0.0004700000000000007
+              ],
+              [
+                0.007,
+                -0.0012700000000000014
+              ],
+              [
+                -0.006,
+                -0.00352
+              ]
+            ],
+            "delta_seconds": [
+              -9.243757499999997e-07,
+              7.986948249999998e-06,
+              7.505044000000002e-06,
+              9.28821899999999e-06
+            ]
+          },
+          "feature": -1,
+          "support": 1000,
+          "training_value": 1.7072529642424232
+        },
+        {
+          "action": 0,
+          "estimates": {
+            "K100_nonzero": [
+              0,
+              1900,
+              2761,
+              3127
+            ],
+            "K1_nonzero": [
+              0,
+              221,
+              356,
+              432
+            ],
+            "delta_recall": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                -0.0012222222222222222,
+                -0.0006066666666666618
+              ],
+              [
+                -0.013555555555555555,
+                -0.0033922222222222275
+              ],
+              [
+                -0.01622222222222222,
+                -0.0025999999999999994
+              ]
+            ],
+            "delta_seconds": [
+              -4.0867305555556356e-08,
+              2.2174356388888963e-06,
+              8.596463499999978e-06,
+              1.3798170527777804e-05
+            ]
+          },
+          "feature": -1,
+          "support": 9000,
+          "training_value": 0.3852390804326108
+        }
+      ]
+    }
+  ],
+  "mode": "evaluate",
+  "n": 4096,
+  "points": [
+    {
+      "K": 1,
+      "L": 128
+    },
+    {
+      "K": 100,
+      "L": 128
+    }
+  ],
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/inputs/webvid2_5m_light_v1/accept/queries.f32",
+  "repeats": 3,
+  "row_ids": "/data/netg/ACSG/entry_method_exploration/20260920_entry_set_pilot_v1/inputs/webvid2_5m_light_v1/accept/row_ids.i64",
+  "seconds_cap": 2400,
+  "threads": 1
+}

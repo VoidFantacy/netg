@@ -1,0 +1,152 @@
+{
+    "artifact_version": "yandex-t2i-official-first10m-ip-v1",
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "metric": "ip",
+    "normalization": "none",
+    "num_queries": 10000,
+    "num_runs": 1,
+    "results": [
+        {
+            "method_name": "0. Medoid (Baseline)",
+            "performance": [
+                {
+                    "qps": 2252.2765885066065,
+                    "qps_std": 0.0,
+                    "recall": 0.7918142676353455,
+                    "search_L": 100
+                },
+                {
+                    "qps": 1882.3726408040868,
+                    "qps_std": 0.0,
+                    "recall": 0.8274567127227783,
+                    "search_L": 128
+                },
+                {
+                    "qps": 1318.1547233437147,
+                    "qps_std": 0.0,
+                    "recall": 0.8806697130203247,
+                    "search_L": 200
+                },
+                {
+                    "qps": 717.3564549731907,
+                    "qps_std": 0.0,
+                    "recall": 0.9378125071525574,
+                    "search_L": 400
+                },
+                {
+                    "qps": 377.71709584674795,
+                    "qps_std": 0.0,
+                    "recall": 0.9695764780044556,
+                    "search_L": 800
+                }
+            ]
+        },
+        {
+            "method_name": "1. ACO-Max (Global)",
+            "performance": [
+                {
+                    "qps": 2286.2050532035105,
+                    "qps_std": 0.0,
+                    "recall": 0.7918142676353455,
+                    "search_L": 100
+                },
+                {
+                    "qps": 1879.5307941129927,
+                    "qps_std": 0.0,
+                    "recall": 0.8274567127227783,
+                    "search_L": 128
+                },
+                {
+                    "qps": 1318.972154360427,
+                    "qps_std": 0.0,
+                    "recall": 0.8806697130203247,
+                    "search_L": 200
+                },
+                {
+                    "qps": 717.3741066089292,
+                    "qps_std": 0.0,
+                    "recall": 0.9378125071525574,
+                    "search_L": 400
+                },
+                {
+                    "qps": 378.5038232530383,
+                    "qps_std": 0.0,
+                    "recall": 0.9695764780044556,
+                    "search_L": 800
+                }
+            ]
+        },
+        {
+            "method_name": "2. Raw HNSW Routing (Ablation Baseline)",
+            "performance": [
+                {
+                    "qps": 2485.2004721356025,
+                    "qps_std": 0.0,
+                    "recall": 0.8036895990371704,
+                    "search_L": 100
+                },
+                {
+                    "qps": 2034.341146947921,
+                    "qps_std": 0.0,
+                    "recall": 0.8376325368881226,
+                    "search_L": 128
+                },
+                {
+                    "qps": 1398.326207221537,
+                    "qps_std": 0.0,
+                    "recall": 0.8877696394920349,
+                    "search_L": 200
+                },
+                {
+                    "qps": 750.773343899245,
+                    "qps_std": 0.0,
+                    "recall": 0.941288948059082,
+                    "search_L": 400
+                },
+                {
+                    "qps": 389.4046935953396,
+                    "qps_std": 0.0,
+                    "recall": 0.9707254767417908,
+                    "search_L": 800
+                }
+            ]
+        },
+        {
+            "method_name": "5. Asym-Neural HNSW Routing (0ms inference)",
+            "performance": [
+                {
+                    "qps": 2452.4040295262266,
+                    "qps_std": 0.0,
+                    "recall": 0.8039288520812988,
+                    "search_L": 100
+                },
+                {
+                    "qps": 2002.0576163168157,
+                    "qps_std": 0.0,
+                    "recall": 0.8375169038772583,
+                    "search_L": 128
+                },
+                {
+                    "qps": 1386.0616780514604,
+                    "qps_std": 0.0,
+                    "recall": 0.8874446153640747,
+                    "search_L": 200
+                },
+                {
+                    "qps": 748.4569509683572,
+                    "qps_std": 0.0,
+                    "recall": 0.9406487345695496,
+                    "search_L": 400
+                },
+                {
+                    "qps": 388.4044321895073,
+                    "qps_std": 0.0,
+                    "recall": 0.9708834886550903,
+                    "search_L": 800
+                }
+            ]
+        }
+    ],
+    "split": "held-out-test",
+    "top_k": 100
+}

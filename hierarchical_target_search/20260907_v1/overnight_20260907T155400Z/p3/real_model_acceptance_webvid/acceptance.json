@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "stage": "P1_P3_REAL_MODEL_REACCEPTANCE",
+  "status": "PASS",
+  "dataset": "webvid2_5m_light_v1",
+  "model": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/webvid2_5m_light_v1/lambda0/frequency3/model.json",
+  "model_sha256": "ceaaf5bc76b5ab6610d86d5fbce04a9ac37ebf06a1b57adb3934e5c7f4ce9daa",
+  "structure_lambda": 0,
+  "portal_rule": "frequency3",
+  "aligned_count_plain_rows": 192,
+  "traces_checked": 16,
+  "discovered_node_owner_checks": 22423,
+  "source_sha256": "cf40032dc469c08840e409af23bd503e1ad6571184351a2694776247e21d1316",
+  "binary_sha256": "2f234d1276fdafebe0ab706ebccc37f4c52312ca16ca09b512530f404b0ce580",
+  "fast_inputs": {
+    "manifest": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/webvid2_5m_light_v1/manifest.json",
+      "sha256": "5cf6bdf1cc698ba130db9b13d488874c23d2c234975c7d8c606e5d0645e30975"
+    },
+    "hubs": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/webvid2_5m_light_v1/prototype.f32",
+      "sha256": "1d6481e5d8abdeb23634b3565bce840873a9a12cff0553b26138ce77c53bf5ae"
+    },
+    "ids": {
+      "path": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_cover_hub_ids.bin",
+      "sha256": "47c58c28e48e85c5a4f0cad245ef66f451dde404afb0ad7231909ba1956e8e03"
+    }
+  },
+  "p2_compatibility": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/p2_compatibility_v2/compatibility.json",
+    "sha256": "8c1b411004fa4e4224efa1c229ef03350f2714dd0342a1cb1bfc225460fcc968"
+  },
+  "same_Fast_as_accepted_P2_prefix": true,
+  "five_timing_rounds_stable": true,
+  "all_actual_seeds_consumed": true,
+  "scope": "First32 pilot correctness only; four traced queries per method/L; no new performance gate or deployment claim",
+  "heldout_accessed": false,
+  "validation_accessed": false
+}

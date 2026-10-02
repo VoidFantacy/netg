@@ -1,0 +1,135 @@
+{
+  "status": "PASS",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "source_model": {
+        "name": "compact10_L128",
+        "family": "profile",
+        "model_name": "compact10",
+        "W": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage14_compact_modes_v1/models/webvid2_5m_light_v1/W.f32",
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage14_compact_modes_v1/models/webvid2_5m_light_v1/mapping.i32",
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage14_compact_modes_v1/models/webvid2_5m_light_v1/tie_ids.i32",
+        "hub_count": 1771,
+        "dim": 512,
+        "k": 3,
+        "seed": 20260828,
+        "hnsw_seed": 20260828,
+        "slot_labels": true,
+        "canonical_entry_order": true,
+        "L": 128,
+        "component_wall": false,
+        "unique_hub_count": 815,
+        "multi_profile": true,
+        "graph_file": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage14_compact_modes_v1/models/webvid2_5m_light_v1/graph.hnsw",
+        "variable_profiles": true,
+        "ef_search": 10,
+        "reference_graph": true
+      },
+      "child_count": 956,
+      "primary_count": 815,
+      "dim": 512,
+      "formula": "rho^(1/d), no renormalization",
+      "uniform_mean_log_scale": -0.0016053246996033247,
+      "mass_scale_min": 0.9937696973107442,
+      "mass_scale_max": 0.9999187126834499,
+      "construction_seconds": 0.5416311529988889,
+      "independent_scalar_bytes": true,
+      "parent_bytes_unchanged": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "source_model": {
+        "name": "compact10_L128",
+        "family": "profile",
+        "model_name": "compact10",
+        "W": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage14_compact_modes_v1/models/yandex_t2i_official10M_ip_v1/W.f32",
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage14_compact_modes_v1/models/yandex_t2i_official10M_ip_v1/mapping.i32",
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage14_compact_modes_v1/models/yandex_t2i_official10M_ip_v1/tie_ids.i32",
+        "hub_count": 2067,
+        "dim": 200,
+        "k": 3,
+        "seed": 20260828,
+        "hnsw_seed": 20260828,
+        "slot_labels": true,
+        "canonical_entry_order": true,
+        "L": 128,
+        "component_wall": false,
+        "unique_hub_count": 821,
+        "multi_profile": true,
+        "graph_file": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage14_compact_modes_v1/models/yandex_t2i_official10M_ip_v1/graph.hnsw",
+        "variable_profiles": true,
+        "ef_search": 10,
+        "reference_graph": true
+      },
+      "child_count": 1246,
+      "primary_count": 821,
+      "dim": 200,
+      "formula": "rho^(1/d), no renormalization",
+      "uniform_mean_log_scale": -0.0038552148285909706,
+      "mass_scale_min": 0.9873853705945533,
+      "mass_scale_max": 0.9995888940360392,
+      "construction_seconds": 0.2555422549994546,
+      "independent_scalar_bytes": true,
+      "parent_bytes_unchanged": true
+    }
+  ],
+  "installs": [
+    {
+      "seconds": 0.03413057500074501,
+      "all_nonvector_bytes_identical": true,
+      "patch_roundtrip_exact": true,
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage19_child_mass_norm_v1/models/webvid2_5m_light_v1/mass10/graph.hnsw",
+        "bytes": 3889472,
+        "mtime_ns": 1789281567954377742,
+        "sha256": "125983c47d060bf1161a10c684e4509d6d44a032d553f82e560d7da81403186a"
+      },
+      "dataset": "webvid2_5m_light_v1",
+      "model": "mass10"
+    },
+    {
+      "seconds": 0.034074107999913394,
+      "all_nonvector_bytes_identical": true,
+      "patch_roundtrip_exact": true,
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage19_child_mass_norm_v1/models/webvid2_5m_light_v1/uniform10/graph.hnsw",
+        "bytes": 3889472,
+        "mtime_ns": 1789281567994378023,
+        "sha256": "9bacfb3aae3a0664ebce04ce4fe3c425daab566ee1a5f08e08187cc5b52a4fec"
+      },
+      "dataset": "webvid2_5m_light_v1",
+      "model": "uniform10"
+    },
+    {
+      "seconds": 0.028430029000446666,
+      "all_nonvector_bytes_identical": true,
+      "patch_roundtrip_exact": true,
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage19_child_mass_norm_v1/models/yandex_t2i_official10M_ip_v1/mass10/graph.hnsw",
+        "bytes": 1959640,
+        "mtime_ns": 1789281568026378248,
+        "sha256": "437b436f81d433fb14368e787c0f0ba12941d76519adea8685755359199a592a"
+      },
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "mass10"
+    },
+    {
+      "seconds": 0.02748664999671746,
+      "all_nonvector_bytes_identical": true,
+      "patch_roundtrip_exact": true,
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage19_child_mass_norm_v1/models/yandex_t2i_official10M_ip_v1/uniform10/graph.hnsw",
+        "bytes": 1959640,
+        "mtime_ns": 1789281568058378473,
+        "sha256": "64f354cfd25040f5c73d1109974d75ff935e9615802c7fceba7887891c012754"
+      },
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "uniform10"
+    }
+  ],
+  "invalid_input_rejections": 4,
+  "builds": 0,
+  "new_GT": 0,
+  "gradient_updates": 0
+}

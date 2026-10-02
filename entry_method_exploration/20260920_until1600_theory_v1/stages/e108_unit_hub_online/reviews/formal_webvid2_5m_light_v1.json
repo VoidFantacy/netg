@@ -1,0 +1,82 @@
+{
+  "dataset": "webvid2_5m_light_v1",
+  "dimension": 512,
+  "H": 815,
+  "base_n": 2505000,
+  "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/queries.f32",
+  "GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/gt.i32",
+  "source_rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/source_rows.i64",
+  "methods": [
+    {
+      "name": "GT10Default",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+      "new_graph": false
+    },
+    {
+      "name": "GT10Rebuilt",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/webvid2_5m_light_v1/GT10Rebuilt.hnsw",
+      "new_graph": true
+    },
+    {
+      "name": "UnitHub",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/webvid2_5m_light_v1.UnitHub.W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/webvid2_5m_light_v1/UnitHub.hnsw",
+      "new_graph": true
+    }
+  ],
+  "threads": 1,
+  "dataset_order": 0,
+  "reference": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/webvid2_5m_light_v1",
+  "reference_method": "GT10-soft-t1",
+  "max_search_calls": 1120000,
+  "seconds_cap": 1800,
+  "deadline_unix": 1789890600,
+  "smoke": false,
+  "n": 4096,
+  "points": [
+    {
+      "K": 1,
+      "L": 64
+    },
+    {
+      "K": 1,
+      "L": 128
+    },
+    {
+      "K": 1,
+      "L": 256
+    },
+    {
+      "K": 1,
+      "L": 400
+    },
+    {
+      "K": 1,
+      "L": 800
+    },
+    {
+      "K": 100,
+      "L": 128
+    },
+    {
+      "K": 100,
+      "L": 256
+    },
+    {
+      "K": 100,
+      "L": 400
+    },
+    {
+      "K": 100,
+      "L": 800
+    }
+  ],
+  "expected_search_calls": 552960
+}

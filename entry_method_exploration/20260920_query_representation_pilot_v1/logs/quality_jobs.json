@@ -1,0 +1,170 @@
+[
+  {
+    "dataset": "webvid2_5m_light_v1",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/bin/quality",
+      "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/inputs/webvid2_5m_light_v1/quality.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/results/webvid2_5m_light_v1/quality"
+    ],
+    "config": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/inputs/webvid2_5m_light_v1/quality.json",
+      "bytes": 6301,
+      "mtime_ns": 1789869695083407230,
+      "sha256": "b5eae689caabd13e3ad786e399df7fe6e4562c08529b9a2da0b1f658dda8a2de"
+    },
+    "reserve_main_calls": 40960,
+    "started": 1789869695.0857697,
+    "status": "FINISHED",
+    "runner": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/src/run_quality.py",
+      "bytes": 2847,
+      "mtime_ns": 1789869601891414353,
+      "sha256": "ece9c6d95cf55da386a03118aab11e25e91c33d6be706ad0731e4f434032b524"
+    },
+    "pid": 5424,
+    "exit_code": 0,
+    "wall_seconds": 21.94036841392517,
+    "result": {
+      "exact_profile_distances": 8345600,
+      "formal": false,
+      "graph_builds": 1,
+      "main_search_calls": 40960,
+      "maxrss_kib": 5678508,
+      "models": [
+        {
+          "M": 16,
+          "ef": 10,
+          "ef_construction": 200,
+          "family": "Identity",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+          "graph_build_seconds": 0.0,
+          "graph_seed": 0,
+          "graph_seed_note": "inherited original graph"
+        },
+        {
+          "M": 16,
+          "ef": 10,
+          "ef_construction": 200,
+          "family": "QLinear",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+          "graph_build_seconds": 0.0,
+          "graph_seed": 0,
+          "graph_seed_note": "inherited original graph"
+        },
+        {
+          "M": 16,
+          "ef": 10,
+          "ef_construction": 200,
+          "family": "QMLP",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+          "graph_build_seconds": 0.0,
+          "graph_seed": 0,
+          "graph_seed_note": "inherited original graph"
+        },
+        {
+          "M": 16,
+          "ef": 10,
+          "ef_construction": 200,
+          "family": "WFree",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/results/webvid2_5m_light_v1/quality/WFree.hnsw",
+          "graph_build_seconds": 0.078922083,
+          "graph_seed": 20260920,
+          "graph_seed_note": "new frozen seed"
+        }
+      ],
+      "n": 2560,
+      "note": "Encodings/routes cached for quality diagnostics only; not an online timing result.",
+      "router_calls": 10240,
+      "status": "PASS",
+      "threads": 1,
+      "wall_seconds": 21.768615573
+    }
+  },
+  {
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/bin/quality",
+      "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/inputs/yandex_t2i_official10M_ip_v1/quality.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/results/yandex_t2i_official10M_ip_v1/quality"
+    ],
+    "config": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/inputs/yandex_t2i_official10M_ip_v1/quality.json",
+      "bytes": 6522,
+      "mtime_ns": 1789869717023405553,
+      "sha256": "1bc9eda02567b4f738ff5fd078776fa286a6dce6e3b4a0e1c8c2fa10b64c74ea"
+    },
+    "reserve_main_calls": 40960,
+    "started": 1789869717.0275447,
+    "status": "FINISHED",
+    "runner": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/src/run_quality.py",
+      "bytes": 2847,
+      "mtime_ns": 1789869601891414353,
+      "sha256": "ece9c6d95cf55da386a03118aab11e25e91c33d6be706ad0731e4f434032b524"
+    },
+    "pid": 5433,
+    "exit_code": 0,
+    "wall_seconds": 31.401904582977295,
+    "result": {
+      "exact_profile_distances": 8407040,
+      "formal": false,
+      "graph_builds": 1,
+      "main_search_calls": 40960,
+      "maxrss_kib": 10400784,
+      "models": [
+        {
+          "M": 16,
+          "ef": 10,
+          "ef_construction": 200,
+          "family": "Identity",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+          "graph_build_seconds": 0.0,
+          "graph_seed": 0,
+          "graph_seed_note": "inherited original graph"
+        },
+        {
+          "M": 16,
+          "ef": 10,
+          "ef_construction": 200,
+          "family": "QLinear",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+          "graph_build_seconds": 0.0,
+          "graph_seed": 0,
+          "graph_seed_note": "inherited original graph"
+        },
+        {
+          "M": 16,
+          "ef": 10,
+          "ef_construction": 200,
+          "family": "QMLP",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+          "graph_build_seconds": 0.0,
+          "graph_seed": 0,
+          "graph_seed_note": "inherited original graph"
+        },
+        {
+          "M": 16,
+          "ef": 10,
+          "ef_construction": 200,
+          "family": "WFree",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/results/yandex_t2i_official10M_ip_v1/quality/WFree.hnsw",
+          "graph_build_seconds": 0.053137261,
+          "graph_seed": 20260920,
+          "graph_seed_note": "new frozen seed"
+        }
+      ],
+      "n": 2560,
+      "note": "Encodings/routes cached for quality diagnostics only; not an online timing result.",
+      "router_calls": 10240,
+      "status": "PASS",
+      "threads": 1,
+      "wall_seconds": 31.153871558
+    }
+  }
+]

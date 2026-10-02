@@ -1,0 +1,158 @@
+[
+  {
+    "name": "native_parity_webvid2_5m_light_v1",
+    "reserved_calls": 256,
+    "status": "COMPLETE",
+    "start": 1789115191.1223056,
+    "actual_calls": 128,
+    "seconds": 0.06790781021118164,
+    "route_calls": 128
+  },
+  {
+    "name": "baseline_webvid2_5m_light_v1",
+    "reserved_calls": 20000,
+    "status": "COMPLETE",
+    "start": 1789115191.1904616,
+    "actual_calls": 20000,
+    "seconds": 9.585758924484253,
+    "original_default_full_fit_parity": true
+  },
+  {
+    "name": "train_webvid2_5m_light_v1_20260911",
+    "reserved_calls": 104800,
+    "status": "COMPLETE",
+    "start": 1789115200.776838,
+    "actual_calls": 104800,
+    "seconds": 53.569279193878174,
+    "updates": 600,
+    "selected_step": 600,
+    "training_seconds": 53.56908655166626
+  },
+  {
+    "name": "train_webvid2_5m_light_v1_20260912",
+    "reserved_calls": 104800,
+    "status": "COMPLETE",
+    "start": 1789115254.3462698,
+    "actual_calls": 104800,
+    "seconds": 53.1715304851532,
+    "updates": 600,
+    "selected_step": 400,
+    "training_seconds": 53.171037435531616
+  },
+  {
+    "name": "native_parity_yandex_t2i_official10M_ip_v1",
+    "reserved_calls": 256,
+    "status": "COMPLETE",
+    "start": 1789115318.5578585,
+    "actual_calls": 128,
+    "seconds": 0.06231212615966797,
+    "route_calls": 128
+  },
+  {
+    "name": "baseline_yandex_t2i_official10M_ip_v1",
+    "reserved_calls": 20000,
+    "status": "COMPLETE",
+    "start": 1789115318.6204364,
+    "actual_calls": 20000,
+    "seconds": 10.08466124534607,
+    "original_default_full_fit_parity": true
+  },
+  {
+    "name": "train_yandex_t2i_official10M_ip_v1_20260911",
+    "reserved_calls": 104800,
+    "status": "COMPLETE",
+    "start": 1789115328.7057974,
+    "actual_calls": 104800,
+    "seconds": 55.577611207962036,
+    "updates": 600,
+    "selected_step": 300,
+    "training_seconds": 55.57738161087036
+  },
+  {
+    "name": "train_yandex_t2i_official10M_ip_v1_20260912",
+    "reserved_calls": 104800,
+    "status": "COMPLETE",
+    "start": 1789115384.283604,
+    "actual_calls": 104800,
+    "seconds": 55.88607144355774,
+    "updates": 600,
+    "selected_step": 100,
+    "training_seconds": 55.88556694984436
+  },
+  {
+    "name": "cal_webvid2_5m_light_v1",
+    "reserved_calls": 10320,
+    "status": "COMPLETE",
+    "start": 1789115545.3788633,
+    "actual_calls": 10320,
+    "seconds": 9.358661413192749,
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/inputs/webvid2_5m_light_v1/eval_cal.json",
+      "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/results/cal_webvid2_5m_light_v1"
+    ],
+    "rss_peak_kib": 5715048,
+    "process_threads_max": 1,
+    "pid": 16941
+  },
+  {
+    "name": "cal_yandex_t2i_official10M_ip_v1",
+    "reserved_calls": 10320,
+    "status": "COMPLETE",
+    "start": 1789115554.7862334,
+    "actual_calls": 10320,
+    "seconds": 16.644554138183594,
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/inputs/yandex_t2i_official10M_ip_v1/eval_cal.json",
+      "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/results/cal_yandex_t2i_official10M_ip_v1"
+    ],
+    "rss_peak_kib": 10399220,
+    "process_threads_max": 1,
+    "pid": 16949
+  },
+  {
+    "name": "audit_webvid2_5m_light_v1",
+    "reserved_calls": 10320,
+    "status": "COMPLETE",
+    "start": 1789115571.4847429,
+    "actual_calls": 10320,
+    "seconds": 9.379382610321045,
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/inputs/webvid2_5m_light_v1/eval_audit.json",
+      "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/results/audit_webvid2_5m_light_v1"
+    ],
+    "rss_peak_kib": 5715008,
+    "process_threads_max": 1,
+    "pid": 16954
+  },
+  {
+    "name": "audit_yandex_t2i_official10M_ip_v1",
+    "reserved_calls": 10320,
+    "status": "COMPLETE",
+    "start": 1789115580.9142458,
+    "actual_calls": 10320,
+    "seconds": 16.67694091796875,
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/inputs/yandex_t2i_official10M_ip_v1/eval_audit.json",
+      "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/results/audit_yandex_t2i_official10M_ip_v1"
+    ],
+    "rss_peak_kib": 10399064,
+    "process_threads_max": 1,
+    "pid": 16957
+  }
+]

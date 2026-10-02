@@ -1,0 +1,1 @@
+2026-09-12，冻结协议的“仅训练池、不读取monitor/cal/audit”描述实验响应范围。实际复用原native会加载原5120query文件，其中包括历史monitor1024；checkpoint也含这些历史返回。所有本轮route/search索引均0:4096，0新monitor/cal/audit搜索或评分，绝不把物理文件整体加载写成只读了4096字节。原validation/held-out文件未读/hash。此说明不改输入、查询日程、冻结源码或预算。

@@ -1,0 +1,40 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "steps": [
+    20,
+    40,
+    60,
+    80,
+    100,
+    120,
+    140,
+    160,
+    180,
+    200
+  ],
+  "seed": 20260921,
+  "arm": "rl",
+  "query_rows": "E37 train 0:4096",
+  "sigma": 0.3,
+  "NSG_hard_cap": 170000,
+  "NSG_expected": 167040,
+  "HNSW_expected": 166080,
+  "builds_expected": 60,
+  "per_dataset_NSG": 83520,
+  "continuous_training_updates": 0,
+  "counterfactual_single_steps": 20,
+  "historical_update_replays": 20,
+  "threads": 1,
+  "query_stop_epoch": 1789213200,
+  "latest_launch_epoch": 1789212600,
+  "gate": {
+    "full_net_hits_strictly_positive": true,
+    "full_mean_delta_U_strictly_positive": true,
+    "full_vs_batch_net_nonnegative": true,
+    "full_vs_batch_mean_U_strictly_positive": true,
+    "graph_NDC_increase_max_pct": 1.0
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "seconds": 3.5906009674072266,
+  "gate": {
+    "status": "STOP_PROXY_OBJECTIVES_BEFORE_TRAINING",
+    "selected_object": null,
+    "decisions": [
+      {
+        "family": "Coverage",
+        "datasets": [
+          {
+            "dataset": "webvid2_5m_light_v1",
+            "both_K_both_controls_mean_nonnegative": false,
+            "qualifying_K": [],
+            "passed": false
+          },
+          {
+            "dataset": "yandex_t2i_official10M_ip_v1",
+            "both_K_both_controls_mean_nonnegative": true,
+            "qualifying_K": [],
+            "passed": false
+          }
+        ],
+        "passed": false
+      },
+      {
+        "family": "TargetMean",
+        "datasets": [
+          {
+            "dataset": "webvid2_5m_light_v1",
+            "both_K_both_controls_mean_nonnegative": false,
+            "qualifying_K": [],
+            "passed": false
+          },
+          {
+            "dataset": "yandex_t2i_official10M_ip_v1",
+            "both_K_both_controls_mean_nonnegative": true,
+            "qualifying_K": [
+              1
+            ],
+            "passed": true
+          }
+        ],
+        "passed": false
+      }
+    ],
+    "CI_level": 0.996875,
+    "primary_contrasts": 16,
+    "fit_only": true,
+    "search_utility_upper_bound": false,
+    "deployable_method": false,
+    "new_training": 0,
+    "new_formal_QPS": false,
+    "default_changed": false
+  },
+  "new_search": 0
+}

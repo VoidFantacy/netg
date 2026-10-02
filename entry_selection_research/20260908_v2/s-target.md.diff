@@ -1,0 +1,33 @@
+--- before/s-target.md
++++ after/s-target.md
+@@ -1,21 +1,21 @@
+ # ACSG 研究计划：入口选择方法为主要方向
+ 
+-> 2026-09-08 用户指定新主线；状态 `DIRECTION_SET_RESEARCH_PENDING`。本轮只更新方向与交接；下一对话具体调研入口选择方法，不运行实验。实现契约见 spec.md，研究判断见 summary.md；[方向记录](entry_selection_research/20260908_v1/direction.md)、[接续台账](entry_selection_research/20260908_v1/state.json)、[下一对话指令](entry_selection_research/20260908_v1/next_dialogue_prompt.md)。
++> 2026-09-08 入口调研已完成；状态 `RESEARCH_COMPLETE_DESIGN_ONLY`。本轮没有新实验或方法源码修改。实现契约见spec.md第17节，研究判断见summary.md；[当前报告](entry_selection_research/20260908_v2/report.md)、[唯一推荐](entry_selection_research/20260908_v2/recommendation.md)、[最小gate草案](entry_selection_research/20260908_v2/minimum_gate.md)、[当前台账](entry_selection_research/20260908_v2/state.json)。原v1方向/提示/state保留。
+ 
+ ## 当前决策与优先级
+ 
+-**主要方向：固定原 NSG 和搜索语义，改进低成本入口选择，改善完整路由加搜索的 Recall–QPS 前沿。** Fast v1 保留为基线，其候选构造、查询表示、短名单/排序和少量入口组合均可研究。现有候选池是否需要重建、哪种算法值得实现尚未确定；搜索停止/保留/调度、区域配额和辅助图不作为当前主要方向。
++**主要方向：固定原 NSG 和搜索语义，改进低成本入口选择，改善完整路由加搜索的 Recall–QPS 前沿。** Fast v1 保留为基线，其候选构造、查询表示、短名单/排序和少量入口组合均可研究。调研比较候选池覆盖、single效用排序、真实入口组合后，唯一优先证伪推荐为固定单view C8、保留Fast主入口、预测21种真实三入口组合的效用；没有已通过实验的新算法。搜索停止/保留/调度、区域配额和辅助图不作为当前主要方向。
+ 
+ 旧 WebVid 1K/815候选的单入口 oracle 支持“池中存在更好入口”的历史潜力，但免费选择、旧30K Fast和旧评测不构成新协议的部署收益。应先分清候选池、短名单/排序与入口组合的缺口；不把单入口命中并集当成最佳联合入口，不未经证明假设共享 beam 收益单调或子模。详见[证据与限制](entry_selection_research/20260908_v1/direction.md)。
+ 
+-| 顺序 | 下一对话必须完成 | 边界 |
++| 已完成交付 | 当前结果 | 下一步边界 |
+ | --- | --- | --- |
+-| 1. 当前方法与文献 | 读真实调用链、oracle和失败分支；定向读入口选择原论文与作者实现 | 已有 GATE/NETG 使用真实搜索监督；概念重合必须说明，不能只换模型名 |
+-| 2. 候选机制比较 | 比较2–3个实质不同方向，说明可预测信息、标签/训练/路由成本、CPU/raw-IP可行性；推荐一个或明确证据不足 | 不预设重建池、神经模型或联合选择；不复活旧 ranker/probe/Multi-view 失败配置 |
+-| 3. 最小证伪设计 | 区分池/选择/组合损失，写固定数据/预算、对照、接口与命令草案、gate、停止条件和artifact格式 | 只设计，不运行；新协议另立版本，不继承旧实验GO |
+-| 4. 研究交付 | 保存调研报告、比较表、唯一推荐及gate草案，同步三份交接 | 调研完成后汇报，不自动进入训练或性能实验 |
+-
+-下一轮允许只读源码/已保存结果、联网查一手文献和写隔离调研文档；不启动训练、构图、ANN性能评测、扫描、新GT或依赖安装，不改方法源码，不读取原始validation/held-out查询和GT。当前是研究方向确定，方法未选定，也未通过新实验gate。
++| 当前实现和已有失败核查 | 真实single监督→top3部署错位是事实，是否导致失败仍是假设；旧oracle不是联合穷举 | 不复活static/probe/Multi-view，不改方法源码 |
++| 原论文与作者实现 | GATE/旧NETG重合、PSP等候选先例、GPU/分片/改图边界分别记录 | “学习入口/真实监督/图感知/小导航层”不作创新；GATE公开路径无在线query MLP |
++| 三方案与唯一推荐 | C：固定m3的真实组合选择，40维廉价模型只作可预测性证伪 | 29个可变m集合只诊断，不靠少选入口冒认交互收益 |
++| 有界gate草案 | 20K paired；D1/D2各512分离；fit2048；300万调用/4小时/8GiB；完整成本同时对Fast和可加模型比较 | 命令/API未实现未运行；通过pilot也不自动启动正式实验 |
++
++本轮调研设计已交付。下一项是审阅[报告与方案](entry_selection_research/20260908_v2/report.md)，未来若另立执行任务，使用新目录冻结minimum_gate与实现/输入身份，不能调用旧带deadline的paired builder或夜间runner。原始validation/held-out不在最小gate访问范围，历史使用如实披露。当前没有新实验GO、待续重任务或自动排队。
+ 
+ 继承CPU、双数据集raw-IP、冻结图/base/GT、20K fit与历史10K pilot隔离、paired Fast同20K、真实API无GT、独立count/纯wall、完整离线与在线成本。强基线可比性仍需前置设计；最终保留双数据集至少两个相邻工作点同Recall QPS ≥+10%或同QPS Recall@10 ≥+1 pp且校正区间支持、三独立构建和冻结后的held-out 10K×3。新实验的样本/匹配/统计/资源须另行冻结，旧区域六点不是入口调研的前置门槛。
+ 

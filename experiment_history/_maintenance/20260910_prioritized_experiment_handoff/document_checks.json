@@ -1,0 +1,982 @@
+{
+  "status": "PASS",
+  "scope": "detailed documentation of all discussed experimental directions and priorities",
+  "state": "NEXT_EXPERIMENT_DIRECTION_DEFINED_UNRUN",
+  "requirements": {
+    "priority_1_soft_GT_images": [
+      "GT1＋硬归属",
+      "GT10＋软归属",
+      "最多3个",
+      "matched Fast20K"
+    ],
+    "priority_2_utility_portals_and_connectivity": [
+      "2A：先固定H",
+      "2B：如果确需改变真实入口",
+      "连通性怎样进入",
+      "三入口联合评分",
+      "候选池"
+    ],
+    "priority_3_OOD_micrograph": [
+      "3A：优先保分数",
+      "3B：query感知",
+      "3C：重建NSG",
+      "A=I",
+      "不重建边"
+    ],
+    "clustering_alternatives": [
+      "受约束的球面k-means",
+      "vMF混合模型",
+      "query–GT目标关系",
+      "最小支持"
+    ],
+    "rank_comparison": [
+      "r∈{4,8,16,32}",
+      "rank和λ只用cal",
+      "同尺寸W"
+    ],
+    "raw_IP_norm_ablation": [
+      "Yandex raw-IP范数",
+      "target–hub cosine",
+      "主图raw-IP和GT不改"
+    ],
+    "handoff_and_evidence": [
+      "从结果决定下一方向",
+      "可复制的新对话启动指令",
+      "成本",
+      "产物",
+      "单线程",
+      "停止条件"
+    ]
+  },
+  "modified_documents": [
+    "experiment_history/09_research_designs_not_experiments.md",
+    "s-experiment.md",
+    "s-target.md",
+    "summary.md"
+  ],
+  "new_experiments": 0,
+  "spec_unchanged": true,
+  "local_links_checked": 219,
+  "local_links": [
+    {
+      "document": "AGENTS.md",
+      "target": "spec.md"
+    },
+    {
+      "document": "AGENTS.md",
+      "target": "summary.md"
+    },
+    {
+      "document": "AGENTS.md",
+      "target": "s-target.md"
+    },
+    {
+      "document": "AGENTS.md",
+      "target": "s-experiment.md"
+    },
+    {
+      "document": "AGENTS.md",
+      "target": "experiment_history/README.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../s-target.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "10_c_state_intervention.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../s-target.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../research_direction_review/20260908_v1/report.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v1/direction.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v2/report.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v3/clarification.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v4/report.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v5/report.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_method_exploration/20260909_b_r0_v1/README.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_method_exploration/20260909_a_r0_v1/README.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_method_exploration/20260909_ab_joint_r0_v1/README.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_method_exploration/20260909_c_r0_v1/README.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "10_c_state_intervention.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "08_fast_router_diagnosis.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "10_c_state_intervention.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../research_direction_review/20260908_v1/report.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../research_direction_review/20260908_v1/reviews/local_hypothesis_audit.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v1/next_dialogue_prompt.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v1/state.json"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v2/recommendation.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v2/minimum_gate.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v2/state.json"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v3/clarification.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v3/state.json"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v4/method.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v4/minimum_gate.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v4/reviews/local_failure_audit.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v4/state.json"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v5/reviews/joint_entry_design.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v5/reviews/utility_representation.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v5/reviews/adaptive_intervention.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v5/reviews/active_supervision.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v5/reviews/independent_method_review.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v5/reviews/independent_cost_review.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v5/state.json"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_method_exploration/20260909_b_r0_v1/assessment/assessment.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_method_exploration/20260909_a_r0_v1/assessment/assessment.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_method_exploration/20260909_ab_joint_r0_v1/theory.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_method_exploration/20260909_ab_joint_r0_v1/state.json"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_method_exploration/20260909_c_r0_v1/assessment.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_method_exploration/20260909_c_r0_v1/state.json"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_selection_research/20260908_v5/reviews/adaptive_intervention.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_method_exploration/20260910_ood_hubs_clustering_router_research_v1/README.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_method_exploration/20260910_ood_hubs_clustering_router_research_v1/report.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_method_exploration/20260910_ood_hubs_clustering_router_research_v1/papers.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../entry_method_exploration/20260910_ood_hubs_clustering_router_research_v1/local_evidence.json"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "../s-target.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "./_maintenance/20260910_gt_topk_handoff/README.md"
+    },
+    {
+      "document": "experiment_history/09_research_designs_not_experiments.md",
+      "target": "./_maintenance/20260910_prioritized_experiment_handoff/README.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "../s-experiment.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "../spec.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "../s-target.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "01_fast_and_legacy.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "02_multiview_and_attention.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "03_baselines.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "04_utility_and_representation.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "05_probe_reroute.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "06_finite_beam_and_atlas.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "07_hierarchical_p2_p3.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "08_fast_router_diagnosis.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "10_c_state_intervention.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "11_ab_fixed_slot_exploration.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "12_three_entry_rank_exploration.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "_maintenance/20260908_document_reorganization/source_before/spec.md"
+    },
+    {
+      "document": "experiment_history/README.md",
+      "target": "_maintenance/20260908_document_reorganization/source_before/summary.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/README.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "summary.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "s-target.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "spec.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/12_three_entry_rank_exploration.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/01_fast_and_legacy.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/01_fast_and_legacy.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/01_fast_and_legacy.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/02_multiview_and_attention.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/02_multiview_and_attention.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/02_multiview_and_attention.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/04_utility_and_representation.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/04_utility_and_representation.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/04_utility_and_representation.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/04_utility_and_representation.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/04_utility_and_representation.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/05_probe_reroute.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/05_probe_reroute.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/05_probe_reroute.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/06_finite_beam_and_atlas.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/06_finite_beam_and_atlas.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/03_baselines.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/07_hierarchical_p2_p3.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/07_hierarchical_p2_p3.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/08_fast_router_diagnosis.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/10_c_state_intervention.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/11_ab_fixed_slot_exploration.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "s-target.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "entry_method_exploration/20260910_ood_hubs_clustering_router_research_v1/report.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "s-target.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "entry_method_exploration/20260910_optimizer_research_v1/report.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/11_ab_fixed_slot_exploration.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/03_baselines.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/11_ab_fixed_slot_exploration.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/09_research_designs_not_experiments.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/README.md"
+    },
+    {
+      "document": "s-experiment.md",
+      "target": "experiment_history/_maintenance/20260908_document_reorganization/"
+    },
+    {
+      "document": "s-target.md",
+      "target": "summary.md"
+    },
+    {
+      "document": "s-target.md",
+      "target": "experiment_history/12_three_entry_rank_exploration.md"
+    },
+    {
+      "document": "s-target.md",
+      "target": "entry_method_exploration/20260910_ood_hubs_clustering_router_research_v1/report.md"
+    },
+    {
+      "document": "s-target.md",
+      "target": "entry_method_exploration/20260910_ood_hubs_clustering_router_research_v1/papers.md"
+    },
+    {
+      "document": "s-target.md",
+      "target": "entry_method_exploration/20260910_ood_hubs_clustering_router_research_v1/local_evidence.json"
+    },
+    {
+      "document": "s-target.md",
+      "target": "AGENTS.md"
+    },
+    {
+      "document": "s-target.md",
+      "target": "summary.md"
+    },
+    {
+      "document": "s-target.md",
+      "target": "spec.md"
+    },
+    {
+      "document": "s-target.md",
+      "target": "s-experiment.md"
+    },
+    {
+      "document": "s-target.md",
+      "target": "entry_method_exploration/20260910_ood_hubs_clustering_router_research_v1/report.md"
+    },
+    {
+      "document": "s-target.md",
+      "target": "experiment_history/08_fast_router_diagnosis.md"
+    },
+    {
+      "document": "s-target.md",
+      "target": "experiment_history/04_utility_and_representation.md"
+    },
+    {
+      "document": "s-target.md",
+      "target": "experiment_history/05_probe_reroute.md"
+    },
+    {
+      "document": "s-target.md",
+      "target": "experiment_history/12_three_entry_rank_exploration.md"
+    },
+    {
+      "document": "s-target.md",
+      "target": "benches/run/build_fast_entry_variants.py"
+    },
+    {
+      "document": "s-target.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/src/prepare_fit.py"
+    },
+    {
+      "document": "s-target.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/protocol.md"
+    },
+    {
+      "document": "s-target.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/src/evaluate.cpp"
+    },
+    {
+      "document": "s-target.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/reviews/final_audit.json"
+    },
+    {
+      "document": "spec.md",
+      "target": "summary.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "s-target.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "s-experiment.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "experiment_history/_maintenance/20260908_document_reorganization/source_before/spec.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/run/build_fast_entry_variants.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/test.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "ACSG/IndexACSG.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "ACSG/ACSG.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260910_ood_hubs_clustering_router_research_v1/report.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/datasets/DataLoader.hpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/datasets/settings.json"
+    },
+    {
+      "document": "spec.md",
+      "target": "ACSG/IndexACSG.h"
+    },
+    {
+      "document": "spec.md",
+      "target": "ACSG/ACSG.h"
+    },
+    {
+      "document": "spec.md",
+      "target": "ACSG/ACSG.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/run/build_fast_entry_variants.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/test.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/bench_per_query_recall.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/bench_entry_oracle.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/bench_target_basin_eval.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "ACSG/RegionalSearch.h"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/test_regional_search.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/bench_hierarchical_eval.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/bench_hierarchical_eval_p3.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "benches/bench_hierarchical_portals.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "fast_router_diagnosis/20260908_v1/src/README.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_c_stage1_v1/src/state_machine.hpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_c_stage1_v1/src/c2.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "experiment_history/01_fast_and_legacy.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_c_stage1_v1/protocol.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "experiment_history/07_hierarchical_p2_p3.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_c_stage1_v1/src/native_reference.hpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_c_stage1_v1/results/c1_gate.json"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_c_stage1_v1/reviews/kernel_final_review.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_c_stage1_v1/config.locked.json"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_c_stage1_v1/src/score_c2.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "experiment_history/02_multiview_and_attention.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "experiment_history/07_hierarchical_p2_p3.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "hierarchical_target_search/20260907_v1/tools/env.sh"
+    },
+    {
+      "document": "spec.md",
+      "target": "hierarchical_target_search/20260907_v1/tools/roargraph-env.sh"
+    },
+    {
+      "document": "spec.md",
+      "target": "experiment_history/03_baselines.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/protocol.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/prepare.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/labels.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/train.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/benchmark.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/benchmark_single_thread.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/run_single_thread_eval.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/analyze_single_thread.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/evaluation_single_thread_amendment.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/benchmark_with_nsg.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/run_baseline_comparison_after_single.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/baseline_comparison_amendment.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/src/quick.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/exploration_5point_v1/protocol.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/prepare_eval.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/src/run_models_eval.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260909_ab_experiment_v1/execution_clarifications.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "s-target.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/protocol.md"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/src/prepare_fit.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/src/label_triples.cpp"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/src/train.py"
+    },
+    {
+      "document": "spec.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/src/evaluate.cpp"
+    },
+    {
+      "document": "summary.md",
+      "target": "spec.md"
+    },
+    {
+      "document": "summary.md",
+      "target": "s-target.md"
+    },
+    {
+      "document": "summary.md",
+      "target": "s-experiment.md"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_ood_hubs_clustering_router_research_v1/report.md"
+    },
+    {
+      "document": "summary.md",
+      "target": "s-target.md"
+    },
+    {
+      "document": "summary.md",
+      "target": "s-target.md"
+    },
+    {
+      "document": "summary.md",
+      "target": "experiment_history/12_three_entry_rank_exploration.md"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/report.md"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/results/tables.md"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/figures/recall_qps.svg"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/results/summary.json"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/results/metrics.csv"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/results/comparisons.csv"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/results/costs.json"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/reviews/result_verification.json"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/models/frozen_before_validation.json"
+    },
+    {
+      "document": "summary.md",
+      "target": "entry_method_exploration/20260910_three_entry_rank_v1/reviews/final_audit.json"
+    },
+    {
+      "document": "experiment_history/_maintenance/20260910_prioritized_experiment_handoff/README.md",
+      "target": "../../../s-target.md"
+    },
+    {
+      "document": "experiment_history/_maintenance/20260910_prioritized_experiment_handoff/README.md",
+      "target": "source_before.json"
+    },
+    {
+      "document": "experiment_history/_maintenance/20260910_prioritized_experiment_handoff/README.md",
+      "target": "document_checks.json"
+    }
+  ],
+  "protected_snapshot_files": [
+    "AGENTS.md",
+    "spec.md",
+    "experiment_history/README.md",
+    "benches/run/build_fast_entry_variants.py",
+    "entry_method_exploration/20260910_ood_hubs_clustering_router_research_v1/state.json",
+    "entry_method_exploration/20260910_ood_hubs_clustering_router_research_v1/report.md",
+    "entry_method_exploration/20260910_three_entry_rank_v1/results/summary.json"
+  ],
+  "previous_research_files_unchanged": 56,
+  "document_identities": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "f280fbd008508074615da003728198d4065d88a569479742563c90dfeac9bc59"
+    },
+    {
+      "path": "experiment_history/09_research_designs_not_experiments.md",
+      "sha256": "2975ad85d85362af120106f8e2a0988441e53af904452dedb3c7c94862ecbc55"
+    },
+    {
+      "path": "experiment_history/README.md",
+      "sha256": "6251d566d307841d1c15dd8e7a49ba4ac9367301bc3eee859e2e1397e6621b1c"
+    },
+    {
+      "path": "s-experiment.md",
+      "sha256": "89213a8265397cdf0632998d0a49f5ed508f580212162af9237d910cf11907a2"
+    },
+    {
+      "path": "s-target.md",
+      "sha256": "44e1ff6690decff6611cf6879bbb5780db3d847d9018ab665068dbeaac2cb1af"
+    },
+    {
+      "path": "spec.md",
+      "sha256": "fcaf1da00ef8e05185018dd7386f9e78b94537474c35eb13f1d066d92a94cfdd"
+    },
+    {
+      "path": "summary.md",
+      "sha256": "1fd0779ebb3d5b69a8cff9fef4dc6542a9e0022b135298b80fb8a9530b2c330d"
+    },
+    {
+      "path": "experiment_history/_maintenance/20260910_prioritized_experiment_handoff/README.md",
+      "sha256": "64cb488dd6bb732b940723b785f2256b3ee24564a81c516c07c59438952238f3"
+    }
+  ]
+}

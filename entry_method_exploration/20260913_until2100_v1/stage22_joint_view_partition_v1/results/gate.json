@@ -1,0 +1,37 @@
+{
+  "status": "COMPLETE_JOINT_VIEW_PARTITION",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "passed": false,
+      "rules": {
+        "baseline10_hits": false,
+        "baseline10_halves": false,
+        "baseline10_failures": false,
+        "compact10_hits": false,
+        "compact10_halves": false,
+        "compact10_failures": true,
+        "conditional_hits": false,
+        "conditional_halves": false,
+        "conditional_failures": true
+      }
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "passed": false,
+      "rules": {
+        "baseline10_hits": true,
+        "baseline10_halves": false,
+        "baseline10_failures": true,
+        "compact10_hits": false,
+        "compact10_halves": false,
+        "compact10_failures": false,
+        "conditional_hits": true,
+        "conditional_halves": true,
+        "conditional_failures": true
+      }
+    }
+  },
+  "wall_measurement_allowed": false,
+  "selection_feedback": "historical auxiliary training",
+  "old_gates_unchanged": true,
+  "not_performance_GO": true
+}

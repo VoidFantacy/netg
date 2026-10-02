@@ -1,0 +1,3 @@
+独立verify初次启动因一处多余右括号发生SyntaxError，未执行统计、搜索或训练。原源码保存在source_before/verify_syntax_error.py，原日志logs/verify.log保留；只删除该括号后运行logs/verify_v2.log。查询runner、冻结输入、原始结果和主分析均未变，新增NSG/训练调用0。
+
+图表人工检查发现log横轴minor标签与128/256/512/1024重叠，关闭minor locator；原绘图源码和第一张原图三格式保留在source_before及figures/first_render。实际首轮绘图CPU9单线程，主分析/独立评分CPU8单线程；两者在全部搜索完成后执行，查询始终CPU15串行单线程。协议所写分析CPU8未覆盖该绘图位置差异，单独记录，不将任何分析/绘图耗时当性能结果。

@@ -1,0 +1,176 @@
+[
+  {
+    "dataset": "webvid2_5m_light_v1",
+    "status": "COMPLETE",
+    "pid": 2,
+    "reserved_NSG": 16384,
+    "started_at": 1789292113.7159812,
+    "completed_edges": 53,
+    "accepted_edges": 16,
+    "actual_NSG": 314,
+    "actual_HNSW": 2240256,
+    "actual_threads": 1,
+    "affinity": [
+      15
+    ],
+    "returncode": 0,
+    "edge_installs": 3,
+    "installs": [
+      {
+        "kind": "single_edge_regression",
+        "graph": {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage28_utility_proposals_v1/models/webvid2_5m_light_v1/first_edge_regression.hnsw",
+          "bytes": 3889472,
+          "mtime_ns": 1789292119840842894,
+          "sha256": "028e0bc458c31122179dce9234c0dec0e1d62e58c53c32b21a94fe22da0c7ff9"
+        }
+      },
+      {
+        "kind": "utility10",
+        "seconds": 0.005493378001119709,
+        "graph": {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage28_utility_proposals_v1/models/webvid2_5m_light_v1/utility10/graph.hnsw",
+          "bytes": 3889472,
+          "mtime_ns": 1789292148413039659,
+          "sha256": "ab5d720d89fff3ad5d72de4f864a800ae5dc33dc0a0f43fd13f7939446571209"
+        },
+        "edges": 16
+      },
+      {
+        "kind": "neighbor10",
+        "seconds": 0.007403368999803206,
+        "graph": {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage28_utility_proposals_v1/models/webvid2_5m_light_v1/neighbor10/graph.hnsw",
+          "bytes": 3889472,
+          "mtime_ns": 1789292149301045775,
+          "sha256": "5ff1d2ebf6295c50aa043c18088b634192644f19e49bb611e71d1cdce7475371"
+        },
+        "edges": 16
+      }
+    ],
+    "union": [
+      {
+        "model": "utility10",
+        "edges": 16,
+        "net_hits": 94,
+        "half_net_hits": [
+          41,
+          53
+        ],
+        "failure_delta": -4,
+        "rescued": 4,
+        "new_failed": 0,
+        "gain_hits": 99,
+        "loss_hits": 5,
+        "total_ndc_relative": 5.877599293002689e-05,
+        "accepted": true
+      },
+      {
+        "model": "neighbor10",
+        "edges": 16,
+        "net_hits": -4,
+        "half_net_hits": [
+          -4,
+          0
+        ],
+        "failure_delta": 0,
+        "rescued": 0,
+        "new_failed": 0,
+        "gain_hits": 1,
+        "loss_hits": 5,
+        "total_ndc_relative": 6.283832593578786e-05,
+        "accepted": false
+      }
+    ],
+    "seconds": 36.48140223600058,
+    "max_RSS_GiB": 5.623100280761719,
+    "completed_at": 1789292150.1977384
+  },
+  {
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "status": "COMPLETE",
+    "pid": 2,
+    "reserved_NSG": 16384,
+    "started_at": 1789292189.3134654,
+    "completed_edges": 9,
+    "accepted_edges": 0,
+    "actual_NSG": 100,
+    "actual_HNSW": 480256,
+    "actual_threads": 1,
+    "affinity": [
+      15
+    ],
+    "returncode": 0,
+    "edge_installs": 3,
+    "installs": [
+      {
+        "kind": "single_edge_regression",
+        "graph": {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage28_utility_proposals_v1/models/yandex_t2i_official10M_ip_v1/first_edge_regression.hnsw",
+          "bytes": 1959640,
+          "mtime_ns": 1789292202089409307,
+          "sha256": "16aa9fa0b44372a778475bf76d44b53c9b8d92489c4095e64e80252401f16a88"
+        }
+      },
+      {
+        "kind": "utility10",
+        "seconds": 0.0029729960006079637,
+        "graph": {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage28_utility_proposals_v1/models/yandex_t2i_official10M_ip_v1/utility10/graph.hnsw",
+          "bytes": 1959640,
+          "mtime_ns": 1789292205049429692,
+          "sha256": "c2870a8b72fe3b1ccf8967eaec2f7d320f611fba120a8f88560a2476c48e07bb"
+        },
+        "edges": 0
+      },
+      {
+        "kind": "neighbor10",
+        "seconds": 0.0026483580004423857,
+        "graph": {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage28_utility_proposals_v1/models/yandex_t2i_official10M_ip_v1/neighbor10/graph.hnsw",
+          "bytes": 1959640,
+          "mtime_ns": 1789292205641433769,
+          "sha256": "c2870a8b72fe3b1ccf8967eaec2f7d320f611fba120a8f88560a2476c48e07bb"
+        },
+        "edges": 0
+      }
+    ],
+    "union": [
+      {
+        "model": "utility10",
+        "edges": 0,
+        "net_hits": 0,
+        "half_net_hits": [
+          0,
+          0
+        ],
+        "failure_delta": 0,
+        "rescued": 0,
+        "new_failed": 0,
+        "gain_hits": 0,
+        "loss_hits": 0,
+        "total_ndc_relative": 0.0,
+        "accepted": false
+      },
+      {
+        "model": "neighbor10",
+        "edges": 0,
+        "net_hits": 0,
+        "half_net_hits": [
+          0,
+          0
+        ],
+        "failure_delta": 0,
+        "rescued": 0,
+        "new_failed": 0,
+        "gain_hits": 0,
+        "loss_hits": 0,
+        "total_ndc_relative": 0.0,
+        "accepted": false
+      }
+    ],
+    "seconds": 16.920091562999005,
+    "max_RSS_GiB": 10.026687622070312,
+    "completed_at": 1789292206.2339869
+  }
+]

@@ -1,0 +1,295 @@
+{
+  "status": "PASS",
+  "implementation": "Independent Decimal barycentric interpolation; no analyze.py import",
+  "verified_points": 24,
+  "verified_matched_L": 12,
+  "verified_current_thresholds": 4,
+  "old_input_hashes_verified": 4,
+  "sensitivity_envelopes": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "combinations": 729,
+      "range": {
+        "baseline_time_us": [
+          2229.602830584247,
+          2244.808388082182
+        ],
+        "candidate_time_us": [
+          2754.6842207157842,
+          2764.9554226309315
+        ],
+        "credit_us": [
+          87.97471568704363,
+          92.68752895233071
+        ],
+        "combined_penalty_us": [
+          602.1027786838105,
+          623.7878906358505
+        ],
+        "matched_excess_us": [
+          509.8758326336024,
+          535.3525920466843
+        ],
+        "zero_charge_gain_pct": [
+          4.106184262718533,
+          4.3085311847275864
+        ],
+        "charge_budget_for_5pct_us": [
+          -18.238038815159904,
+          -14.166917434343329
+        ],
+        "qps_change_pct": [
+          -19.362069553269016,
+          -18.509411307446157
+        ]
+      }
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "combinations": 729,
+      "range": {
+        "baseline_time_us": [
+          2692.2120059356353,
+          2717.112494373157
+        ],
+        "candidate_time_us": [
+          3285.644386414439,
+          3308.1620292588455
+        ],
+        "credit_us": [
+          44.01095525038078,
+          51.61115565470313
+        ],
+        "combined_penalty_us": [
+          617.3723835052008,
+          662.7316427643755
+        ],
+        "matched_excess_us": [
+          568.5318920412822,
+          615.9500233232102
+        ],
+        "zero_charge_gain_pct": [
+          1.6494178705317633,
+          1.9509549719467176
+        ],
+        "charge_budget_for_5pct_us": [
+          -85.14537609055346,
+          -76.81939397144798
+        ],
+        "qps_change_pct": [
+          -18.619100814152276,
+          -17.303512650123103
+        ]
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "combinations": 729,
+      "range": {
+        "baseline_time_us": [
+          398.0211003228957,
+          401.09627503780246
+        ],
+        "candidate_time_us": [
+          678.2183486415502,
+          684.5008268636924
+        ],
+        "credit_us": [
+          6.749537228220499,
+          7.348627463789263
+        ],
+        "combined_penalty_us": [
+          284.0412138512541,
+          293.6587509853002
+        ],
+        "matched_excess_us": [
+          277.12207360374776,
+          286.4797265407968
+        ],
+        "zero_charge_gain_pct": [
+          1.718404813951469,
+          1.873502921813684
+        ],
+        "charge_budget_for_5pct_us": [
+          -12.2756422514412,
+          -11.679401407058473
+        ],
+        "qps_change_pct": [
+          -41.852356534529754,
+          -40.86030319864015
+        ]
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "combinations": 729,
+      "range": {
+        "baseline_time_us": [
+          697.7153896053879,
+          704.319359540304
+        ],
+        "candidate_time_us": [
+          986.0019430740318,
+          994.0499888296907
+        ],
+        "credit_us": [
+          5.815709247979343,
+          6.35072712383988
+        ],
+        "combined_penalty_us": [
+          287.94153557546815,
+          302.24208355438157
+        ],
+        "matched_excess_us": [
+          281.6825835337277,
+          296.33459922430274
+        ],
+        "zero_charge_gain_pct": [
+          0.8393366236935637,
+          0.9111846476769033
+        ],
+        "charge_budget_for_5pct_us": [
+          -27.456159783984177,
+          -27.140963327324794
+        ],
+        "qps_change_pct": [
+          -29.810834722022552,
+          -28.568157041915505
+        ]
+      }
+    }
+  ],
+  "sensitivity_scope": "Exhaustive recorded-sample combinations, not confidence intervals or new timing",
+  "synthetic_checks": [
+    {
+      "name": "recall_improves_but_matched_recall_slower",
+      "status": "PASS",
+      "evidence": {
+        "baseline": [
+          [
+            0.9,
+            100
+          ],
+          [
+            0.91,
+            105
+          ]
+        ],
+        "candidate": [
+          0.91,
+          115
+        ]
+      }
+    },
+    {
+      "name": "perfect_action_prediction_still_too_expensive",
+      "status": "PASS",
+      "evidence": {
+        "default_us": 100,
+        "perfect_choice_us": 90.0,
+        "scorer_us": 15,
+        "complete_candidate_us": 105.0
+      }
+    },
+    {
+      "name": "small_average_mse_large_selection_regret",
+      "status": "PASS",
+      "evidence": {
+        "actions": 1000,
+        "mse": "0.0000144",
+        "regret": "0.11"
+      }
+    },
+    {
+      "name": "monotone_recall_does_not_preserve_action_preference",
+      "status": "PASS",
+      "evidence": {
+        "default_low_target": [
+          0.8,
+          0.9
+        ],
+        "alternative_low_target": [
+          0.82,
+          0.899
+        ]
+      }
+    },
+    {
+      "name": "all_fallback_still_pays_gate",
+      "status": "PASS",
+      "evidence": {
+        "upgrade_fraction": 0,
+        "gate_us": 2,
+        "net_saving_us": -2
+      }
+    },
+    {
+      "name": "xor_information_complementarity",
+      "status": "PASS",
+      "evidence": {
+        "single_bit_value": 0,
+        "both_bit_value": 0.5,
+        "each_bit_cost": 0.1,
+        "note": "Predict XOR of two independent fair bits; either single bit leaves Bayes error .5."
+      }
+    },
+    {
+      "name": "high_win_probability_negative_expected_gain",
+      "status": "PASS",
+      "evidence": {
+        "win_probability": 0.9,
+        "expected_gain": "-0.0091"
+      }
+    },
+    {
+      "name": "mean_relative_time_wrong_objective",
+      "status": "PASS",
+      "evidence": {
+        "mean_time_delta_us": 1.01,
+        "mean_relative_delta": -0.0097
+      }
+    },
+    {
+      "name": "single_lagrange_weight_misses_discrete_optimum",
+      "status": "PASS",
+      "evidence": {
+        "mu_lower_bound": "1E+2",
+        "mu_upper_bound": "1E+1"
+      }
+    },
+    {
+      "name": "mean_inverse_is_not_throughput",
+      "status": "PASS",
+      "evidence": {
+        "latencies": [
+          1,
+          9
+        ],
+        "mean_inverse": 0.5555555555555556,
+        "complete_throughput": 0.2
+      }
+    },
+    {
+      "name": "uniform_error_margin_and_budget_bounds",
+      "status": "PASS",
+      "evidence": {
+        "finite_trials": 5000
+      }
+    },
+    {
+      "name": "nonnegative_voi_bounded_by_perfect_information",
+      "status": "PASS",
+      "evidence": {
+        "finite_trials": 1000
+      }
+    }
+  ],
+  "synthetic_scope": "Arithmetic only, no ANN or training",
+  "new_searches": 0,
+  "new_training": 0,
+  "analysis_wall_seconds": 0.06637823100027163
+}

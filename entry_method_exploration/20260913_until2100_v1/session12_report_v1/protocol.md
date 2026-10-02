@@ -1,0 +1,1 @@
+第12串行会话，仅E94既有最终返回的描述性补充。所有模型/选择/参数/L冻结，不做训练、ANN、构图、新GT或新QPS。预先固定Web composed10相对compact10与baseline_soft、Y compact10相对gt10_hard，五L全2000行逐返回独立GT10集合评分并核对原paired.csv；保存15组成员增损/零命中转换及短报告。历史validation已观察，不用于新选择。累计新输出上限4MiB，free>=6.45GiB并余72MiB；20:00前安全退出，day_goal_complete=false。原E94与第11会话所有seal/source/raw不改。

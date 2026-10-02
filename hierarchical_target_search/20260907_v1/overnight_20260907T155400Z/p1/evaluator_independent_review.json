@@ -1,0 +1,124 @@
+{
+  "reviewer": "independent P1 search agent",
+  "reviewed_utc": "2026-09-07T16:12:03.842899+00:00",
+  "status": "SOURCE_AND_SYNTHETIC_PASS",
+  "full_P1_gate": "PENDING_PARENT_REAL_DATA_AND_INTEGRATED_GATE",
+  "source_sha256": "ec770d5921831ac3937ab117b87a1750164f51164b48f3461183192c6d8e2079",
+  "binary_sha256": "80082b52af916ac1d0b869b711ed18a564641c5dfedaebec6dfe21df9c6fb57e",
+  "checks": [
+    {
+      "name": "raw_ip_and_same_entry_legacy_unified",
+      "status": "PASS_SOURCE_AND_SYNTHETIC_SCOPE",
+      "details": "Both kernels use storage_distance_computer(index.storage), which wraps similarity distance as negative inner product; original query feeds graph distance. Both receive the same best-first HNSW route. Self-test explicitly compares IDs, distances, NDC and complete route.",
+      "evidence": {
+        "file": "benches/bench_hierarchical_eval.cpp",
+        "line": 338
+      }
+    },
+    {
+      "name": "hnsw_top_m_consumption",
+      "status": "PASS_SOURCE_AND_SYNTHETIC_SCOPE",
+      "details": "HNSW maxheap is drained into descending indices, giving best-first entries. Legacy mode rejects m != 3. Unified self-test uses an edgeless graph and verifies m=3/4/6/8 actual graph distance calls and returned seed IDs, rather than trusting route metadata.",
+      "evidence": {
+        "file": "benches/bench_hierarchical_eval.cpp",
+        "line": 348
+      }
+    },
+    {
+      "name": "count_plain_hnsw_and_routes",
+      "status": "PASS_SOURCE_AND_SYNTHETIC_SCOPE",
+      "details": "Count/plain HNSW use the same underlying IP kernel, insertion order and seed. 40 synthetic queries x 7 methods check IDs, distances, complete route including active counts/shared seed/weights/anchor. New search also checks its NDC against an independent DistanceComputer wrapper.",
+      "evidence": {
+        "file": "benches/bench_hierarchical_eval.cpp",
+        "line": 296
+      }
+    },
+    {
+      "name": "pure_batch_wall_boundary",
+      "status": "PASS_SOURCE_AND_SYNTHETIC_SCOPE",
+      "details": "Workspace, normalized query buffers, visited state, legacy queues, output IDs/distances and row buffers are allocated before batch(). The steady-clock boundary encloses OpenMP scheduling, route work, necessary query normalization, deduplication, search/reset and output writes; scoring, hashing, trace replay and JSON are after batch() returns. HNSW internal allocations remain timed as real routing cost.",
+      "evidence": {
+        "file": "benches/bench_hierarchical_eval.cpp",
+        "line": 490
+      }
+    },
+    {
+      "name": "gt_free_real_search_and_routing",
+      "status": "PASS_SOURCE_AND_SYNTHETIC_SCOPE",
+      "details": "route_online/online_query accept query/model/optional precomputed diagnostic region route, never GT. Real methods pass a null diagnostic pointer and do not inspect GT. RegionalSearch.h has no GT input or dependency.",
+      "evidence": {
+        "file": "benches/bench_hierarchical_eval.cpp",
+        "line": 198
+      }
+    },
+    {
+      "name": "oracle_train_only_adapter",
+      "status": "PASS_SOURCE_AND_SYNTHETIC_SCOPE",
+      "details": "GT10-to-region mass is built before timing in a separate adapter. Oracle is rejected on validation/heldout and marked non-deployment. Event-to-GT association happens only after traced search returns.",
+      "evidence": {
+        "file": "benches/bench_hierarchical_eval.cpp",
+        "line": 454
+      }
+    },
+    {
+      "name": "paired_method_route_fairness",
+      "status": "PASS_SOURCE_AND_SYNTHETIC_SCOPE",
+      "details": "Geometric unified/uniform/probability methods retain the same Fast anchor, default shared seed, region choice, weights and portal entries. Oracle unified/probability routes likewise match. The synthetic self-test now asserts those paired routes.",
+      "evidence": {
+        "file": "benches/bench_hierarchical_eval.cpp",
+        "line": 341
+      }
+    },
+    {
+      "name": "thread_state_and_warmup",
+      "status": "PASS_SOURCE_AND_SYNTHETIC_SCOPE",
+      "details": "Every worker owns search/legacy visited tables, candidate buffers, normalized storage and distance objects. Reset/advance happens per query. The fixed default warmup=128 and threads=16 exercises all active workers for the planned workloads before recorded batches. Warmup is outside recorded wall.",
+      "evidence": {
+        "file": "benches/bench_hierarchical_eval.cpp",
+        "line": 509
+      }
+    },
+    {
+      "name": "preregistered_order_and_repeat_identity",
+      "status": "PASS_SOURCE_AND_SYNTHETIC_SCOPE",
+      "details": "Method order is recorded before measurement, forward on even rounds and reversed on odd rounds; pilot/validation requires five rounds and heldout three. Result and complete route hashes are compared across repeated rounds, outside timing. Timing repeats are not new Recall samples.",
+      "evidence": {
+        "file": "benches/bench_hierarchical_eval.cpp",
+        "line": 465
+      }
+    },
+    {
+      "name": "complete_outputs_and_trace_isolation",
+      "status": "PASS_SOURCE_AND_SYNTHETIC_SCOPE",
+      "details": "Every batch writes all nq x K result IDs/distances into preallocated buffers. Aligned query-ID rows are saved for round zero, later rounds reference it. New output/parts files use exclusive creation; started/checkpoint records mark unfinished outputs. Trace replays independently after batch wall, checks IDs/NDC, then annotates GT and writes events.",
+      "evidence": {
+        "file": "benches/bench_hierarchical_eval.cpp",
+        "line": 518
+      }
+    }
+  ],
+  "executed_evidence": {
+    "build_job": "control/jobs/p1_evaluator_build_v4.json",
+    "selftest_job": "control/jobs/p1_evaluator_selftest_v2.json",
+    "selftest_log": "logs/p1_evaluator_selftest_v2.log",
+    "cli_audit": "p1/evaluator_cli_audit/report.json",
+    "selftest_count_plain_checks": 280
+  },
+  "required_interpretation_boundaries": [
+    "Legacy parity means the old and new graph-search kernels given identical corrected best-first entries. Historical benches/test.cpp drained HNSW worst-first. Existing Fast default source is unchanged; new paired Fast20K uses corrected best-first routing and must be labelled as such, not byte-identical historical end-to-end behavior.",
+    "bench_hierarchical_eval itself checks heldout P6 freeze and oracle split restrictions, but does not validate every upstream gate. All real-data tasks must run through control/stage_run.py, whose verified source requires each earlier stage gate, validation after P5, heldout after P6 plus freeze, and taskctl supervision.",
+    "The default 128-query warmup/16-thread protocol warms active workers. Arbitrary CLI warmup values below min(threads,nq) do not guarantee that property.",
+    "Native HNSW internal allocations and built-in metric atomics remain in its actual route implementation and therefore in wall time for all compared methods; count-specific external counters are absent from plain routing.",
+    "Source/synthetic review does not establish published QPS, full-data ID/NDC parity, or algorithmic improvement. Both real workloads remain separate parent-run checks."
+  ],
+  "review_feedback_resolved": [
+    "Expanded count/plain comparisons to full route, shared seed, probabilities and anchor",
+    "Added same-entry legacy/unified result and NDC self-test",
+    "Asserted geometric and oracle paired routes remain identical",
+    "Verified actual top-m via edgeless graph distance calls",
+    "Asserted regional stats match independent distance count",
+    "Clarified query normalization applies only to geometric region routing; raw Fast/oracle HNSW query unchanged"
+  ],
+  "unresolved_blockers": [],
+  "new_experiments_run_by_reviewer": false
+}

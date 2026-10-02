@@ -1,0 +1,68 @@
+{
+  "status": "FROZEN_BEFORE_COMPLETION_RUNNER_AND_NEW_TRACES",
+  "stage": "P2_TRACE_COMPLETION",
+  "created_utc": "2026-09-07T18:05:07.918974+00:00",
+  "parent_protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/protocol.json",
+    "sha256": "857745551778adc1884a4198862b2f55fd72a642abe7d7622970e602d88ff48b"
+  },
+  "original_analysis": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/analysis_v1/analysis.json",
+    "sha256": "e73a8d8c16a5bebb2404596b63d621b1780b1aab0f9eb29efce5281edfc04c1f"
+  },
+  "original_trace_analysis": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_analysis_v1/report.json",
+    "sha256": "af4490cfe36829aa5c3ea7a7b0e39f5e3a6d0ed927e16fb2165da563548f43e2"
+  },
+  "P3_negative_gate": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P3.json",
+    "sha256": "3e154f9db332ec9a404b85d85061459967911be797e4350c191b1d9774dbc4f2"
+  },
+  "query_ids": [
+    157,
+    631,
+    2003,
+    4093,
+    6007,
+    8009,
+    9967
+  ],
+  "reason": "Complete the remaining original preselected mechanism diagnostics after the broad hierarchy branch failed. IDs were registered before P2 outcomes; no result-driven selection. The earlier first16 subset remains preserved.",
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "methods": [
+    "geom_unified",
+    "geom_uniform",
+    "geom_probability",
+    "oracle_unified",
+    "oracle_probability"
+  ],
+  "Ls": [
+    64,
+    128
+  ],
+  "K": 10,
+  "threads": 1,
+  "measurement": "trace",
+  "rounds": 1,
+  "per_invocation_queries": 1,
+  "warmup": 1,
+  "evaluator_binary_sha256": "80082b52af916ac1d0b869b711ed18a564641c5dfedaebec6dfe21df9c6fb57e",
+  "evaluator_source_sha256": "ec770d5921831ac3937ab117b87a1750164f51164b48f3461183192c6d8e2079",
+  "acceptance": "Each saved trace query/route/result/NDC/queuecounter must match the already completed full10K count row at the same globalqueryID; then replay all23 fixed queries per method/L/dataset using frozen analyzer.",
+  "unchanged": "No refit, portals, routing, queue, graph, parameter, model or split change; no new wall QPS/CI; P3 NOPASS immutable.",
+  "input_loader_scope": "Unchanged accepted evaluator loads parent drl_train query/GT files but only the specified pilot row is searched/scored; no validation or heldout path.",
+  "expected_new_trace_files": 140,
+  "expected_total_trace_files": 460,
+  "expected_total_trace_pairs": 276,
+  "resources": {
+    "single_heavy_process": true,
+    "min_ram_gib": 16,
+    "min_free_disk_gib": 10,
+    "artifact_gib_limit": 8,
+    "softclose_utc": "2026-09-07T22:59:00Z",
+    "hard_deadline_utc": "2026-09-07T23:00:00Z"
+  }
+}

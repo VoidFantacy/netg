@@ -1,0 +1,308 @@
+{
+  "status": "STOP_WFREE_REPLICATION",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L128_quality_pass": false,
+      "full_wall_pass": false,
+      "pass_both": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L128_quality_pass": false,
+      "full_wall_pass": false,
+      "pass_both": false
+    }
+  ],
+  "primary": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "L": 128,
+      "delta_recall_pp": -0.0244140625,
+      "delta_qps_pct": -5.898814553390519,
+      "baseline_failed": 1011,
+      "WFree_failed": 1012,
+      "rescued": 125,
+      "newly_harmed": 126,
+      "same_entries": 31,
+      "first_half_delta_pp": 0.29296875,
+      "second_half_delta_pp": -0.341796875,
+      "delta_graph_ndc_pct": 4.099419983478847,
+      "baseline_recall": 0.753173828125,
+      "WFree_recall": 0.7529296875,
+      "CI95": [
+        -0.8056640625,
+        0.732421875
+      ],
+      "CI98_75": [
+        -1.0009765625,
+        0.927734375
+      ],
+      "bootstrap_replicates": 20000
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "L": 128,
+      "delta_recall_pp": -0.05126953125,
+      "delta_qps_pct": -5.757841498370331,
+      "baseline_failed": 5,
+      "WFree_failed": 5,
+      "rescued": 2,
+      "newly_harmed": 2,
+      "same_entries": 31,
+      "first_half_delta_pp": 0.02783203125,
+      "second_half_delta_pp": -0.13037109375,
+      "delta_graph_ndc_pct": 4.099419983478847,
+      "baseline_recall": 0.65540771484375,
+      "WFree_recall": 0.65489501953125,
+      "CI95": [
+        -0.334967041015625,
+        0.2314453125
+      ],
+      "CI98_75": [
+        -0.40942535400390623,
+        0.309326171875
+      ],
+      "bootstrap_replicates": 20000
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "L": 128,
+      "delta_recall_pp": 0.0,
+      "delta_qps_pct": -3.2685522394673705,
+      "baseline_failed": 384,
+      "WFree_failed": 384,
+      "rescued": 63,
+      "newly_harmed": 63,
+      "same_entries": 104,
+      "first_half_delta_pp": 0.1953125,
+      "second_half_delta_pp": -0.1953125,
+      "delta_graph_ndc_pct": 1.6405533999452881,
+      "baseline_recall": 0.90625,
+      "WFree_recall": 0.90625,
+      "CI95": [
+        -0.537109375,
+        0.537109375
+      ],
+      "CI98_75": [
+        -0.68359375,
+        0.68359375
+      ],
+      "bootstrap_replicates": 20000
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "L": 128,
+      "delta_recall_pp": -0.337646484375,
+      "delta_qps_pct": -3.3981541237225965,
+      "baseline_failed": 24,
+      "WFree_failed": 34,
+      "rescued": 8,
+      "newly_harmed": 18,
+      "same_entries": 104,
+      "first_half_delta_pp": -0.20703125,
+      "second_half_delta_pp": -0.46826171875,
+      "delta_graph_ndc_pct": 1.6405533999452881,
+      "baseline_recall": 0.83791748046875,
+      "WFree_recall": 0.834541015625,
+      "CI95": [
+        -0.656256103515625,
+        -0.025872802734375533
+      ],
+      "CI98_75": [
+        -0.7360977172851563,
+        0.05224761962890678
+      ],
+      "bootstrap_replicates": 20000
+    }
+  ],
+  "thresholds": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "target": 0.9,
+      "baseline_reachable": true,
+      "WFree_reachable": true,
+      "baseline_L": 1000,
+      "WFree_L": 1000,
+      "baseline_recall": 0.904541015625,
+      "WFree_recall": 0.908203125,
+      "baseline_qps": 395.5977417930657,
+      "WFree_qps": 391.1411373549849,
+      "delta_qps_pct": -1.1265495141304593,
+      "all_three_rounds_gain": false
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "target": 0.95,
+      "baseline_reachable": false,
+      "WFree_reachable": false,
+      "baseline_L": null,
+      "WFree_L": null,
+      "baseline_recall": null,
+      "WFree_recall": null,
+      "baseline_qps": null,
+      "WFree_qps": null,
+      "delta_qps_pct": null,
+      "all_three_rounds_gain": null
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "target": 0.99,
+      "baseline_reachable": false,
+      "WFree_reachable": false,
+      "baseline_L": null,
+      "WFree_L": null,
+      "baseline_recall": null,
+      "WFree_recall": null,
+      "baseline_qps": null,
+      "WFree_qps": null,
+      "delta_qps_pct": null,
+      "all_three_rounds_gain": null
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "target": 0.9,
+      "baseline_reachable": true,
+      "WFree_reachable": true,
+      "baseline_L": 1250,
+      "WFree_L": 1250,
+      "baseline_recall": 0.9058154296875,
+      "WFree_recall": 0.9066552734375,
+      "baseline_qps": 317.3070537454018,
+      "WFree_qps": 315.6322717928869,
+      "delta_qps_pct": -0.5278111320710432,
+      "all_three_rounds_gain": false
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "target": 0.95,
+      "baseline_reachable": false,
+      "WFree_reachable": false,
+      "baseline_L": null,
+      "WFree_L": null,
+      "baseline_recall": null,
+      "WFree_recall": null,
+      "baseline_qps": null,
+      "WFree_qps": null,
+      "delta_qps_pct": null,
+      "all_three_rounds_gain": null
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "target": 0.99,
+      "baseline_reachable": false,
+      "WFree_reachable": false,
+      "baseline_L": null,
+      "WFree_L": null,
+      "baseline_recall": null,
+      "WFree_recall": null,
+      "baseline_qps": null,
+      "WFree_qps": null,
+      "delta_qps_pct": null,
+      "all_three_rounds_gain": null
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "target": 0.9,
+      "baseline_reachable": true,
+      "WFree_reachable": true,
+      "baseline_L": 128,
+      "WFree_L": 128,
+      "baseline_recall": 0.90625,
+      "WFree_recall": 0.90625,
+      "baseline_qps": 2268.109470096235,
+      "WFree_qps": 2193.975127217833,
+      "delta_qps_pct": -3.2685522394673705,
+      "all_three_rounds_gain": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "target": 0.95,
+      "baseline_reachable": true,
+      "WFree_reachable": true,
+      "baseline_L": 320,
+      "WFree_L": 320,
+      "baseline_recall": 0.9541015625,
+      "WFree_recall": 0.956787109375,
+      "baseline_qps": 1034.999537518016,
+      "WFree_qps": 1013.3906213299709,
+      "delta_qps_pct": -2.087818922109319,
+      "all_three_rounds_gain": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "target": 0.99,
+      "baseline_reachable": true,
+      "WFree_reachable": true,
+      "baseline_L": 1500,
+      "WFree_L": 1500,
+      "baseline_recall": 0.99072265625,
+      "WFree_recall": 0.99072265625,
+      "baseline_qps": 266.6526447039453,
+      "WFree_qps": 263.7054907705379,
+      "delta_qps_pct": -1.1052408411998171,
+      "all_three_rounds_gain": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "target": 0.9,
+      "baseline_reachable": true,
+      "WFree_reachable": true,
+      "baseline_L": 256,
+      "WFree_L": 256,
+      "baseline_recall": 0.9104443359375,
+      "WFree_recall": 0.90944091796875,
+      "baseline_qps": 1256.0719576906574,
+      "WFree_qps": 1233.4809246617046,
+      "delta_qps_pct": -1.798546085726438,
+      "all_three_rounds_gain": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "target": 0.95,
+      "baseline_reachable": true,
+      "WFree_reachable": true,
+      "baseline_L": 512,
+      "WFree_L": 512,
+      "baseline_recall": 0.95296142578125,
+      "WFree_recall": 0.95329833984375,
+      "baseline_qps": 686.5238971542608,
+      "WFree_qps": 676.7144211871763,
+      "delta_qps_pct": -1.4288615454969844,
+      "all_three_rounds_gain": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "target": 0.99,
+      "baseline_reachable": false,
+      "WFree_reachable": false,
+      "baseline_L": null,
+      "WFree_L": null,
+      "baseline_recall": null,
+      "WFree_recall": null,
+      "baseline_qps": null,
+      "WFree_qps": null,
+      "delta_qps_pct": null,
+      "all_three_rounds_gain": null
+    }
+  ],
+  "default_changed": false,
+  "training_runs": 0,
+  "graph_builds": 0
+}

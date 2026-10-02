@@ -1,0 +1,77 @@
+{
+  "schema_version": 2,
+  "status": "COMPLETE",
+  "stage": "P3",
+  "dataset": "webvid2_5m_light_v1",
+  "model_name": "lambda1_greedy3",
+  "lambda": 1,
+  "portal_rule": "greedy3",
+  "oracle_diagnostic_only": true,
+  "parent_rule": "leaf_id // 16",
+  "region_count": 256,
+  "coarse_count": 16,
+  "leaves_per_coarse": 16,
+  "active_regions": 4,
+  "portals_per_region": 3,
+  "total_portals": 768,
+  "dim": 512,
+  "base_nodes": 2505000,
+  "fit_range": [
+    10000,
+    30000
+  ],
+  "fit_count": 20000,
+  "cpu_only": true,
+  "pilot_accessed": false,
+  "validation_accessed": false,
+  "heldout_accessed": false,
+  "fit_query_values_sha256": "4eef43d019981b7ce8a57eb9969736c0443d4622412ed482868ba80cd8b078b6",
+  "fit_gt_values_sha256": "911ce1e55ee134f835103ee3e8e51ce54ee5740b40fbff5aeaab5f0786334610",
+  "gt10_sha256": "b6bcf289ecd873d9bc258883941d943ce1c4f9b72d4e9fc7e2465d0ccaeb7c3a",
+  "fit_manifest": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/fit_inputs/webvid2_5m_light_v1/manifest.json",
+    "sha256": "6bc924ceb640ba4691488d75f805b0a6812ecd6ef2652ef77f7ed2b2c5b63540"
+  },
+  "labels_file": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/lambda1/pass2.regions.u16",
+  "labels_sha256": "0773916bc8da59de451cebc8cb4ba66d911e9fe9c67467d2be4449145ea9e4ce",
+  "portals_file": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/webvid2_5m_light_v1/lambda1/greedy3/portals.i32",
+  "portals_sha256": "429b9644b2c5788ec3b146444d9461ac1dcab17009dcf5cfe02272413fdfcb80",
+  "graph_file": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "graph_sha256": "0a95d309b4980e0f0b73b7ad1222ec611db1f97c32ba2b69f070f5a952b9129a",
+  "base_sha256": "6fb5b5510b29504de38271be7c343bd5e85a029f5755c7b3d74177cbf1ebbb18",
+  "input_audit_sha256": "7da975cbb0e045265f405b08e230abb6442eba51621064699a4ad449c90ae58b",
+  "protocol_sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f",
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+  },
+  "audit": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+    "sha256": "7da975cbb0e045265f405b08e230abb6442eba51621064699a4ad449c90ae58b"
+  },
+  "gate": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P2.json",
+    "sha256": "6240cea60d790d030e0fdaf560b95d9e951260d4ba3d6701863b06c1c4cc895e"
+  },
+  "partition_manifest": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/lambda1/manifest.json",
+    "sha256": "d021589d1f193d7bfc1fd6d4b0c94069f27cbad95a3d6531637fd35ac8d2d1de"
+  },
+  "plan": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/webvid2_5m_light_v1/lambda1/plan.json",
+    "sha256": "c4b93a94d251f88c92e774c1a379b66cb88de28a4b018e17f72463f958c1fee1"
+  },
+  "probe_complete": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/webvid2_5m_light_v1/lambda1/complete.json",
+    "sha256": "02c8f3b8f361cade1bb7431193404909c62a0082ecfd4d84939cd1b9e0fb91af"
+  },
+  "finalizer_source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/finalize_portal_models.py",
+    "sha256": "d1945203dc99e7027ebdc9a414a6b1303df5da0988b491dcc15ac1b30f537a7e"
+  },
+  "independent_cache_verification": "PASS_ALL_256_LEAVES",
+  "probe_cache_shared_between_portal_rules": true,
+  "ANN_probe_selection_required_by_this_rule": true,
+  "online_performance_improvement_confirmed": false,
+  "created_utc": "2026-09-07T17:38:47.418062+00:00"
+}

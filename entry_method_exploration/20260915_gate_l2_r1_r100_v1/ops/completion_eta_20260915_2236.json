@@ -1,0 +1,54 @@
+{
+  "created_unix": 1789482998.5915217,
+  "created_beijing": "2026-09-15T22:36:38.591522+08:00",
+  "method": "ETA only; no new retrieval evaluation and no Recall interpolation",
+  "sift_K100_total_predicted_seconds": 7476.095829157479,
+  "sift_K100_elapsed_seconds": 5176.810314416885,
+  "sift_K100_remaining_seconds": 2299.2855147405935,
+  "sift_shared_L_K100_K1_median_wall_ratio": 0.992633309049794,
+  "sift_calibration_points": 50,
+  "remaining_web_yandex_stages": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "predicted_seconds": 6459.634724535594,
+      "source": "E96 same-machine wall curves; both GT10 profiles use old GT10 runtime; interpolate runtime only for new budgets; one warmup + three timings + count",
+      "prior_stage_overhead_seconds": 11.655474363928079
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "predicted_seconds": 8105.191390464902,
+      "source": "E96 same-machine wall curves; both GT10 profiles use old GT10 runtime; interpolate runtime only for new budgets; one warmup + three timings + count",
+      "prior_stage_overhead_seconds": 11.655474363928079
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "predicted_seconds": 6266.833803843103,
+      "source": "E96 same-machine wall curves; both GT10 profiles use old GT10 runtime; interpolate runtime only for new budgets; one warmup + three timings + count",
+      "prior_stage_overhead_seconds": 46.33405971310094
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "predicted_seconds": 7834.724421354253,
+      "source": "E96 same-machine wall curves; both GT10 profiles use old GT10 runtime; interpolate runtime only for new budgets; one warmup + three timings + count",
+      "prior_stage_overhead_seconds": 46.33405971310094
+    }
+  ],
+  "predicted_remaining_test_seconds": 30965.669854938445,
+  "assumptions": [
+    "same machine, same frozen graphs, same query counts",
+    "K100 same-L wall approximately K1 on already completed new datasets",
+    "corrected GATE and alternate fixed GT10 may change wall; no new Web/Y timing exists yet",
+    "range is engineering uncertainty, not statistical confidence interval",
+    "plot verification and interpretation add time after evaluation"
+  ],
+  "predicted_test_finish_beijing": "2026-09-16T07:12:44.261377+08:00",
+  "uncertainty_factor": 0.2,
+  "plausible_test_finish_window_beijing": [
+    "2026-09-16T05:29:31.127406+08:00",
+    "2026-09-16T08:55:57.395348+08:00"
+  ]
+}

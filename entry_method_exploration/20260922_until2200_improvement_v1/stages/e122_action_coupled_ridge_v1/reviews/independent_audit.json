@@ -1,0 +1,281 @@
+{
+  "reviewer": "same agent, independently implemented numerical and action audit",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "status": "PASS",
+      "checked": {
+        "actions": 49152,
+        "values": 147456,
+        "spectral_mode_direct_solves": 72
+      },
+      "maximum_errors": {
+        "affine_prediction": 3.3306690738754696e-16,
+        "independent_direct_solve": 1.7208456881689926e-15,
+        "coupled_mode_direct_solve": 8.881784197001252e-15
+      },
+      "calibration": [
+        {
+          "method": "Default",
+          "K": 1,
+          "selected_predicted_u": 0.0,
+          "selected_actual_u": 0.0,
+          "selection_optimism": 0.0,
+          "positive_actual_switches": 0,
+          "negative_actual_switches": 0,
+          "mse_relative_to_global": 1.0365354943461955
+        },
+        {
+          "method": "Default",
+          "K": 100,
+          "selected_predicted_u": 0.0,
+          "selected_actual_u": 0.0,
+          "selection_optimism": 0.0,
+          "positive_actual_switches": 0,
+          "negative_actual_switches": 0,
+          "mse_relative_to_global": 1.063579754449865
+        },
+        {
+          "method": "GlobalCost",
+          "K": 1,
+          "selected_predicted_u": 0.0,
+          "selected_actual_u": 0.0,
+          "selection_optimism": 0.0,
+          "positive_actual_switches": 0,
+          "negative_actual_switches": 0,
+          "mse_relative_to_global": 1.0
+        },
+        {
+          "method": "GlobalCost",
+          "K": 100,
+          "selected_predicted_u": 0.0,
+          "selected_actual_u": 0.0,
+          "selection_optimism": 0.0,
+          "positive_actual_switches": 0,
+          "negative_actual_switches": 0,
+          "mse_relative_to_global": 1.0
+        },
+        {
+          "method": "Independent",
+          "K": 1,
+          "selected_predicted_u": 0.02359795161388066,
+          "selected_actual_u": -0.01416386292761347,
+          "selection_optimism": 0.03776181454149413,
+          "positive_actual_switches": 685,
+          "negative_actual_switches": 2410,
+          "mse_relative_to_global": 0.9856276734781342
+        },
+        {
+          "method": "Independent",
+          "K": 100,
+          "selected_predicted_u": 0.007873747126826536,
+          "selected_actual_u": -0.006867570627728304,
+          "selection_optimism": 0.014741317754554839,
+          "positive_actual_switches": 813,
+          "negative_actual_switches": 1908,
+          "mse_relative_to_global": 0.9769083597862076
+        },
+        {
+          "method": "FunctionSmooth",
+          "K": 1,
+          "selected_predicted_u": 0.0157729202490388,
+          "selected_actual_u": -0.006852614431485227,
+          "selection_optimism": 0.02262553468052403,
+          "positive_actual_switches": 596,
+          "negative_actual_switches": 1967,
+          "mse_relative_to_global": 0.9844927246697944
+        },
+        {
+          "method": "FunctionSmooth",
+          "K": 100,
+          "selected_predicted_u": 0.004669475632596206,
+          "selected_actual_u": -0.0037992069469562086,
+          "selection_optimism": 0.008468682579552415,
+          "positive_actual_switches": 660,
+          "negative_actual_switches": 1325,
+          "mse_relative_to_global": 0.9758641276602831
+        },
+        {
+          "method": "PermutedFunction",
+          "K": 1,
+          "selected_predicted_u": 0.012217310770158408,
+          "selected_actual_u": -0.005483880612444005,
+          "selection_optimism": 0.017701191382602413,
+          "positive_actual_switches": 447,
+          "negative_actual_switches": 1704,
+          "mse_relative_to_global": 0.9852703319170164
+        },
+        {
+          "method": "PermutedFunction",
+          "K": 100,
+          "selected_predicted_u": 0.0034561634208722337,
+          "selected_actual_u": -0.002642875629030283,
+          "selection_optimism": 0.006099039049902517,
+          "positive_actual_switches": 516,
+          "negative_actual_switches": 1109,
+          "mse_relative_to_global": 0.977523047392241
+        },
+        {
+          "method": "CoefficientSmooth",
+          "K": 1,
+          "selected_predicted_u": 0.014766686052063358,
+          "selected_actual_u": -0.004018082490914111,
+          "selection_optimism": 0.018784768542977465,
+          "positive_actual_switches": 607,
+          "negative_actual_switches": 1853,
+          "mse_relative_to_global": 0.9840308043759614
+        },
+        {
+          "method": "CoefficientSmooth",
+          "K": 100,
+          "selected_predicted_u": 0.004350710744851564,
+          "selected_actual_u": -0.003249030566972515,
+          "selection_optimism": 0.007599741311824078,
+          "positive_actual_switches": 632,
+          "negative_actual_switches": 1245,
+          "mse_relative_to_global": 0.9752261010102022
+        }
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "status": "PASS",
+      "checked": {
+        "actions": 49152,
+        "values": 147456,
+        "spectral_mode_direct_solves": 72
+      },
+      "maximum_errors": {
+        "affine_prediction": 3.3306690738754696e-16,
+        "independent_direct_solve": 6.522560269672795e-16,
+        "coupled_mode_direct_solve": 6.772360450213455e-15
+      },
+      "calibration": [
+        {
+          "method": "Default",
+          "K": 1,
+          "selected_predicted_u": 0.0,
+          "selected_actual_u": 0.0,
+          "selection_optimism": 0.0,
+          "positive_actual_switches": 0,
+          "negative_actual_switches": 0,
+          "mse_relative_to_global": 1.016137199865255
+        },
+        {
+          "method": "Default",
+          "K": 100,
+          "selected_predicted_u": 0.0,
+          "selected_actual_u": 0.0,
+          "selection_optimism": 0.0,
+          "positive_actual_switches": 0,
+          "negative_actual_switches": 0,
+          "mse_relative_to_global": 1.0385685357159427
+        },
+        {
+          "method": "GlobalCost",
+          "K": 1,
+          "selected_predicted_u": 0.0,
+          "selected_actual_u": 0.0,
+          "selection_optimism": 0.0,
+          "positive_actual_switches": 0,
+          "negative_actual_switches": 0,
+          "mse_relative_to_global": 1.0
+        },
+        {
+          "method": "GlobalCost",
+          "K": 100,
+          "selected_predicted_u": 0.0,
+          "selected_actual_u": 0.0,
+          "selection_optimism": 0.0,
+          "positive_actual_switches": 0,
+          "negative_actual_switches": 0,
+          "mse_relative_to_global": 1.0
+        },
+        {
+          "method": "Independent",
+          "K": 1,
+          "selected_predicted_u": 0.03953208135546614,
+          "selected_actual_u": -0.016491246091546584,
+          "selection_optimism": 0.05602332744701272,
+          "positive_actual_switches": 541,
+          "negative_actual_switches": 3394,
+          "mse_relative_to_global": 1.0010927867986654
+        },
+        {
+          "method": "Independent",
+          "K": 100,
+          "selected_predicted_u": 0.02075308211584334,
+          "selected_actual_u": -0.011462703336325982,
+          "selection_optimism": 0.03221578545216932,
+          "positive_actual_switches": 717,
+          "negative_actual_switches": 2970,
+          "mse_relative_to_global": 0.9905213466101009
+        },
+        {
+          "method": "FunctionSmooth",
+          "K": 1,
+          "selected_predicted_u": 0.025341946899690077,
+          "selected_actual_u": -0.012027242531032718,
+          "selection_optimism": 0.0373691894307228,
+          "positive_actual_switches": 469,
+          "negative_actual_switches": 3039,
+          "mse_relative_to_global": 0.9981407117420236
+        },
+        {
+          "method": "FunctionSmooth",
+          "K": 100,
+          "selected_predicted_u": 0.01225173347077009,
+          "selected_actual_u": -0.007011331528077775,
+          "selection_optimism": 0.019263064998847865,
+          "positive_actual_switches": 603,
+          "negative_actual_switches": 2400,
+          "mse_relative_to_global": 0.9876508622535095
+        },
+        {
+          "method": "PermutedFunction",
+          "K": 1,
+          "selected_predicted_u": 0.021716479833440126,
+          "selected_actual_u": -0.01314212616190287,
+          "selection_optimism": 0.034858605995342996,
+          "positive_actual_switches": 420,
+          "negative_actual_switches": 2917,
+          "mse_relative_to_global": 0.9982965517066402
+        },
+        {
+          "method": "PermutedFunction",
+          "K": 100,
+          "selected_predicted_u": 0.009333318591389134,
+          "selected_actual_u": -0.007682780158919762,
+          "selection_optimism": 0.017016098750308895,
+          "positive_actual_switches": 516,
+          "negative_actual_switches": 2172,
+          "mse_relative_to_global": 0.9885484421063505
+        },
+        {
+          "method": "CoefficientSmooth",
+          "K": 1,
+          "selected_predicted_u": 0.027717283631317407,
+          "selected_actual_u": -0.01289748522458603,
+          "selection_optimism": 0.04061476885590344,
+          "positive_actual_switches": 510,
+          "negative_actual_switches": 3120,
+          "mse_relative_to_global": 0.9983385642806945
+        },
+        {
+          "method": "CoefficientSmooth",
+          "K": 100,
+          "selected_predicted_u": 0.013673470112052218,
+          "selected_actual_u": -0.009038643013811918,
+          "selection_optimism": 0.022712113125864138,
+          "positive_actual_switches": 631,
+          "negative_actual_switches": 2526,
+          "mse_relative_to_global": 0.98767017792838
+        }
+      ]
+    }
+  },
+  "protected_files_verified": 205,
+  "status": "PASS",
+  "wall_seconds": 4.7700715259998105,
+  "new_fits": 0,
+  "new_searches": 0,
+  "scope": "Independent computation, not an independent person; descriptive post-hoc calibration only."
+}

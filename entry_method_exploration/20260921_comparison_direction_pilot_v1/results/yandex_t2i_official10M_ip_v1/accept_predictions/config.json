@@ -1,0 +1,82 @@
+{
+  "anchor": {
+    "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+    "name": "GT10-hard"
+  },
+  "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+  "base_n": 10000000,
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "dimension": 200,
+  "direction_samples_per_query": 64,
+  "features": [
+    {
+      "directions": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/yandex_t2i_official10M_ip_v1/graph_directions.f32",
+      "kind": "relu",
+      "m": 32,
+      "name": "graph"
+    },
+    {
+      "directions": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/yandex_t2i_official10M_ip_v1/random_directions.f32",
+      "kind": "relu",
+      "m": 32,
+      "name": "random"
+    },
+    {
+      "directions": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/yandex_t2i_official10M_ip_v1/graph_directions.f32",
+      "kind": "linear",
+      "m": 32,
+      "name": "linear"
+    },
+    {
+      "kind": "raw",
+      "name": "raw"
+    }
+  ],
+  "gt": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/inputs/yandex_t2i_official10M_ip_v1/accept/gt.i64",
+  "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+  "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "label_block": 128,
+  "label_repeats": 3,
+  "max_search_calls": 60000000,
+  "mode": "predict",
+  "models": [
+    {
+      "model": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/yandex_t2i_official10M_ip_v1/GraphCost/model.json",
+      "name": "GraphCost",
+      "type": "learned"
+    },
+    {
+      "model": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/yandex_t2i_official10M_ip_v1/GraphRecall/model.json",
+      "name": "GraphRecall",
+      "type": "learned"
+    },
+    {
+      "model": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/yandex_t2i_official10M_ip_v1/RandomCost/model.json",
+      "name": "RandomCost",
+      "type": "learned"
+    },
+    {
+      "model": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/yandex_t2i_official10M_ip_v1/GraphLinearCost/model.json",
+      "name": "GraphLinearCost",
+      "type": "learned"
+    },
+    {
+      "model": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/yandex_t2i_official10M_ip_v1/RawLinearCost/model.json",
+      "name": "RawLinearCost",
+      "type": "learned"
+    },
+    {
+      "model": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/yandex_t2i_official10M_ip_v1/ShuffledCost/model.json",
+      "name": "ShuffledCost",
+      "type": "learned"
+    }
+  ],
+  "n": 4096,
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/inputs/yandex_t2i_official10M_ip_v1/accept/queries.f32",
+  "save_all_scores": false,
+  "seconds_cap": 18000,
+  "threads": 1,
+  "trace_single_actions": 8
+}

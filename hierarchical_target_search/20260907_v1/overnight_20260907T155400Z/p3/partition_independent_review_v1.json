@@ -1,0 +1,24 @@
+{
+  "status": "PASS_SOURCE_AND_SYNTHETIC_EVIDENCE",
+  "reviewer": "root independent source review",
+  "created_utc": "2026-09-07T17:32:20.863765+00:00",
+  "readiness_sha256": "90b4175e4212d6bec45f713203edc83ec3d090a8ae90521137498083be65ebf2",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partition_hierarchy.cpp",
+    "sha256": "78cd134726c61fda5b722887262b33176989b1c40163e00af7a7bc52c76a81b5"
+  },
+  "release_binary": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partition_build_v4/partition_hierarchy",
+    "sha256": "3f379668883907395d7c81ebe8515351b37922c19aa7e60177164ccf763b9c5e"
+  },
+  "checks": [
+    "Original directed edges and duplicates for objective; symmetric CSR only initialization",
+    "Common deterministic 16x16 initialization and strict integer size caps",
+    "Exact int128 objective move delta, stable tie order, immediate updates",
+    "Lambda0 move path receives no GT index; index built only after lambda0 completes",
+    "Independent full objective and all size/count checks after each pass",
+    "Failed and partial labels persisted; caught stop performs checkpoint only",
+    "Source/binary/protocol/fit/audit contract bindings"
+  ],
+  "scientific_gate_passed": false
+}

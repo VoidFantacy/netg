@@ -1,0 +1,89 @@
+{
+  "dataset": "deep10m_l2_v1",
+  "metric_id": 1,
+  "metric": "squared_L2",
+  "normalization": "none; preserve supplied vectors",
+  "shape": [
+    10000000,
+    96
+  ],
+  "test_rows": 10000,
+  "paths": {
+    "base_path": "/data/netg/ACSG/benches/datasets/DEEP10M/base.10M.fvecs",
+    "query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/test.fvecs",
+    "gt_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/test.gt.ivecs",
+    "index": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/deep10m_l2_v1/nsg/graph.nsg",
+    "qgt_query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/qgt.fvecs",
+    "fit_query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/fit.fvecs",
+    "gate_train_query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/gate_train.fvecs",
+    "gate_monitor_query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/gate_monitor.fvecs",
+    "cal_query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/cal.fvecs"
+  },
+  "identities": {
+    "base_path": {
+      "path": "/data/netg/ACSG/benches/datasets/DEEP10M/base.10M.fvecs",
+      "bytes": 3880000000,
+      "sha256": "f7883babe9782ea1b7e8487853fe5fdf0d3bf8e0111c8fe48a508b15fce45aa9"
+    },
+    "qgt_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/qgt.fvecs",
+      "bytes": 1940000,
+      "sha256": "3486d68539214dc59079b91dad261c3f22baf4979f702222c2ae6448d1bfeb54"
+    },
+    "fit_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/fit.fvecs",
+      "bytes": 7760000,
+      "sha256": "a4e321ac838525a4667e5d3502cdd98ed3ce50850c932aa244851870d7e2dcfa"
+    },
+    "gate_train_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/gate_train.fvecs",
+      "bytes": 3880000,
+      "sha256": "604f097938063c383d43dbb3ec4503b04684714379eb09f821eff7c28a0ffca8"
+    },
+    "gate_monitor_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/gate_monitor.fvecs",
+      "bytes": 397312,
+      "sha256": "9fb1010bcb6b1d62fd88547621ae5de1db96f9a3655c460401f5852ce9b9b27a"
+    },
+    "cal_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/cal.fvecs",
+      "bytes": 397312,
+      "sha256": "9cf5969f15c9abb2c6f294db02c416dc963ada6d22cbddab7341bc03d2137032"
+    },
+    "test_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/test.fvecs",
+      "bytes": 3880000,
+      "sha256": "0359efc4a332e6f79ebeade7665aa314e10b122fea1d54b3878f97c9bb5ba574"
+    }
+  },
+  "sources": {
+    "base": "https://storage.yandexcloud.net/yandex-research/ann-datasets/DEEP/base.10M.fbin",
+    "learn": "https://storage.yandexcloud.net/yandex-research/ann-datasets/DEEP/learn.350M.fbin",
+    "test": "https://storage.yandexcloud.net/yandex-research/ann-datasets/DEEP/query.public.10K.fbin"
+  },
+  "split_bounds": {
+    "qgt": [
+      0,
+      5000
+    ],
+    "fit": [
+      5000,
+      25000
+    ],
+    "gate_train": [
+      5000,
+      15000
+    ],
+    "gate_monitor": [
+      25000,
+      26024
+    ],
+    "cal": [
+      26024,
+      27048
+    ]
+  },
+  "source_rows": "unique learn rows after excluding exact test/learn duplicates",
+  "learn_candidates_examined": 27050,
+  "preparation_seconds": 49.479652643203735
+}

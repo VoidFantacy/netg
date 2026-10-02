@@ -1,0 +1,58 @@
+{
+  "K": 100,
+  "L": [
+    100,
+    112,
+    128,
+    160,
+    200,
+    256,
+    320,
+    400,
+    512,
+    640,
+    800,
+    900,
+    1000,
+    1120,
+    1250,
+    1500
+  ],
+  "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "dataset_order": 1,
+  "formal": true,
+  "gt": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/public_test10k.gt.ivecs",
+  "hnsw_complete": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/hnsw/complete.json",
+  "hnsw_topology": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/hnsw/full.topology.gz",
+  "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "kernel": "span-batch4 (NSG methods); original full HNSW",
+  "methods": [
+    {
+      "name": "NSG"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "name": "GT10-hard"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_soft_t1/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "name": "GT10-soft-t1"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gate_disjoint_labels_v1/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gate.ids.i32",
+      "name": "GATE"
+    },
+    {
+      "name": "HNSW"
+    }
+  ],
+  "metric_id": 0,
+  "n": 10000,
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/public_test10k.fvecs",
+  "source_e97_freeze_sha256": "a79ff11003ec97609fa484e64e84a2d241f0927d4e78c45a522ada043a56d800",
+  "threads": 1
+}

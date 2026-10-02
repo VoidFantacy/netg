@@ -1,0 +1,35 @@
+{
+  "stage": "P2",
+  "split": "fit",
+  "measurement": "build",
+  "output": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/webvid_model",
+  "command": [
+    "env",
+    "OPENBLAS_NUM_THREADS=16",
+    "OMP_NUM_THREADS=16",
+    "MKL_NUM_THREADS=16",
+    ".venv_cpu/bin/python",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/build_p2_model.py",
+    "--dataset",
+    "webvid2_5m_light_v1",
+    "--audit",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+    "--labels",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/webvid_partition_strict_v3/regions.u16",
+    "--partition-report",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/webvid_partition_strict_v3/manifest.json",
+    "--output",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/webvid_model"
+  ],
+  "oracle": false,
+  "upstream_gates": [
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P0.json",
+      "sha256": "693b6947c97ac8835ba34da51300b8958866d3b9c8acdbc4234a24d2bea00c85"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P1.json",
+      "sha256": "d09316b50e6fc8b0fb28f498687494e6c768c918ed169c5bc334adff136b9261"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "status": "PASS",
+  "label": {
+    "status": "PASS",
+    "minimal_overlap_fixture": true,
+    "all_fail_filtered": true,
+    "all_ties_filtered": true,
+    "ordinary_hard_negatives_retained": true
+  },
+  "native": [
+    {
+      "metric_id": 0,
+      "K": 1,
+      "method": "NSG",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 0,
+      "K": 1,
+      "method": "GT10-hard",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 0,
+      "K": 1,
+      "method": "GT10-soft-t1",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 0,
+      "K": 1,
+      "method": "GATE",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 0,
+      "K": 1,
+      "method": "HNSW",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 0,
+      "K": 100,
+      "method": "NSG",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 0,
+      "K": 100,
+      "method": "GT10-hard",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 0,
+      "K": 100,
+      "method": "GT10-soft-t1",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 0,
+      "K": 100,
+      "method": "GATE",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 0,
+      "K": 100,
+      "method": "HNSW",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 1,
+      "K": 1,
+      "method": "NSG",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 1,
+      "K": 1,
+      "method": "GT10-hard",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 1,
+      "K": 1,
+      "method": "GT10-soft-t1",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 1,
+      "K": 1,
+      "method": "GATE",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 1,
+      "K": 1,
+      "method": "HNSW",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 1,
+      "K": 100,
+      "method": "NSG",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 1,
+      "K": 100,
+      "method": "GT10-hard",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 1,
+      "K": 100,
+      "method": "GT10-soft-t1",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 1,
+      "K": 100,
+      "method": "GATE",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    },
+    {
+      "metric_id": 1,
+      "K": 100,
+      "method": "HNSW",
+      "exact_recall": 1.0,
+      "plain_count_bit_parity": true
+    }
+  ],
+  "low_L_rejected": true,
+  "code": {
+    "labels.cpp": "fe4dc78732a509d23f5da38143cc65eb305d0695a989c88679f14544c93ff321",
+    "build_hnsw.cpp": "77667416a09662184fa578d594edf3baff3136aaecce87a98cc3d138f207e5fc",
+    "resume_hbkm.py": "2598103719ffd54be15f1f5bd93d2d4936fd2bf622f8e7963b34b9e75e013092",
+    "reuse_ip.py": "311acfeb2ab4153a053ed82b6817e0b978bbe53bdefbf1df7bd4c1d880af2046",
+    "prepare.py": "a602239e4d547d17877dacde800f8e2272b45527f3c0803f5fabeeab974c4853",
+    "prepare_data.py": "68b249c3418770f77a59fe0713f74596f7c57e1a1109a41859b6a55837e01dc0",
+    "compile_native.py": "353006ae0fcc434da14a9cdfe467ee12e3c7a0337fd74137a4fd9bb515804814",
+    "common.py": "6f4915cae625a182cc6df18bb8bffda04017d06e31016794691155cd242ed38e",
+    "topology.hpp": "08d9cd2d8d5bf32200858c7bb1b50b1ca831f6749984c1da30f3e6526c9482dc",
+    "verify_changes.py": "b30d7fcf475c5130ecac6b9aee7c7a1143cc576615688a8aa37be38a91ee6787",
+    "build_profiles.py": "9019e7a84c8a95b81d46043b741de58b29ff52a2a2530c0e703205015b3275c6",
+    "observer.hpp": "dd706af245ad05a32cc871d6e19f60f701d44f55a522007b05c018a86f9fe642",
+    "native_common.hpp": "8f2b1d35e59f8a49396675753c592e9f30d5f548b18cac1dfe04500bd8a4e25a",
+    "build_nsg.cpp": "9e7732ef3927b47ef59e15eab7753502e084885e077d58ccbf1dcd3433090758",
+    "make_smoke_nsg.cpp": "2bb1a69aed331edcd4ef4daefe1daf8e4ef84e26ab65d63ecaf1ea375d178f6e",
+    "train_gate.py": "0fcee3b06fefb35827f07eb88db13bcb4047f38dac5a3f3c0c81a42f237180d0",
+    "checkpoint.hpp": "6a860bd2568e9b55e7ea3c2c759e54e36f5b0223b69f16676bc09f995239272b",
+    "evaluate.cpp": "2018023f9a7673ea036aef0b45db3ba9c0d02a65298789794f92f4dd606ea51a"
+  }
+}

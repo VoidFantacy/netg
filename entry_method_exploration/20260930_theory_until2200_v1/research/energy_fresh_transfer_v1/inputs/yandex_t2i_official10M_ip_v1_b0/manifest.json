@@ -1,0 +1,125 @@
+{
+  "status": "PASS_SOURCE_AND_DEDUP",
+  "case": "yandex_t2i_official10M_ip_v1_b0",
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "n": 4096,
+  "dimension": 200,
+  "source": {
+    "url": "https://storage.yandexcloud.net/yandex-research/ann-datasets/T2I/query.learn.50M.fbin",
+    "range": [
+      1648000008,
+      1664000007
+    ],
+    "status": 206,
+    "headers": {
+      "Server": "nginx",
+      "Date": "Wed, 30 Sep 2026 07:23:01 GMT",
+      "Content-Type": "application/octet-stream",
+      "Content-Length": "16000000",
+      "Connection": "close",
+      "Accept-Ranges": "bytes",
+      "Content-Range": "bytes 1648000008-1664000007/40000000008",
+      "Etag": "\"159b543eb212a228837a7a8908a3075d-4769\"",
+      "Last-Modified": "Sat, 01 May 2021 18:54:01 GMT",
+      "X-Amz-Request-Id": "51bff7bf46ca3784"
+    },
+    "sha256": "482dcd2096e9b4039db86a2af07153f7f5c2cc72a120c1bf5bb33849f6afbe48",
+    "attempts": [
+      {
+        "attempt": 0,
+        "status": "PASS",
+        "bytes": 16000000,
+        "unix": 1790752986.0092652
+      }
+    ],
+    "header_verification": {
+      "url": "https://storage.yandexcloud.net/yandex-research/ann-datasets/T2I/query.learn.50M.fbin",
+      "range": [
+        0,
+        12807
+      ],
+      "status": 206,
+      "headers": {
+        "Server": "nginx",
+        "Date": "Wed, 30 Sep 2026 07:23:00 GMT",
+        "Content-Type": "application/octet-stream",
+        "Content-Length": "12808",
+        "Connection": "close",
+        "Accept-Ranges": "bytes",
+        "Content-Range": "bytes 0-12807/40000000008",
+        "Etag": "\"159b543eb212a228837a7a8908a3075d-4769\"",
+        "Last-Modified": "Sat, 01 May 2021 18:54:01 GMT",
+        "X-Amz-Request-Id": "6131ec6c25f412eb"
+      },
+      "sha256": "9be20a2058aa1b6b2960ddeee6aeb95ab796ee7f9ba718060e339e2505eb9a0c",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "PASS",
+          "bytes": 12808,
+          "unix": 1790752980.6102953
+        }
+      ]
+    },
+    "local_prefix_bytes_match": true,
+    "source_rows": [
+      2060000,
+      2080000
+    ]
+  },
+  "excluded_files": [
+    {
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.aco_train.fvecs",
+      "rows": 5000,
+      "sha256": "d9146b417777e49d175f56071f6c1a90ccbd7a51c767f8cf0f1d088cc7dfe727"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs",
+      "rows": 30000,
+      "sha256": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.test.public100K.fvecs",
+      "rows": 100000,
+      "sha256": "d5c1079755a1bef7db62f63f1e8b041e3035024e072ac5db79ddfb66689b42a2"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.validation.fvecs",
+      "rows": 10000,
+      "sha256": "f84e695822f4b0fd303782f9ff5c8c92e5149bbd7f46d500250f40030e35871b"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/candidate_source.f32",
+      "rows": 20000,
+      "sha256": "bb183d57494a848c397486977199e0c57ed50fdaeec1333db25ab9cf108f6086"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/queries.f32",
+      "rows": 20000,
+      "sha256": "e86c597b26ee908f4d4d64674a2ea89837e75d1f824c1ce30671fbd3fc5424e8"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/fresh_transfer_v1/inputs/yandex_t2i_official10M_ip_v1_b0/candidate_source.f32",
+      "rows": 20000,
+      "sha256": "395c72c4df41d9ac6cdab8a7c5c33d6f2e26afc561bc110a5a79876f7e637714"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/fresh_transfer_v1/inputs/yandex_t2i_official10M_ip_v1_b1/candidate_source.f32",
+      "rows": 20000,
+      "sha256": "6115cdd81a5b2b329471ca511e8d220bdfe2392822bdf97faca17addb51e426b"
+    }
+  ],
+  "duplicates_skipped": 0,
+  "invalid_skipped": 0,
+  "new_vs_known_inputs_byte_overlap": 0,
+  "selected_queries_unique": true,
+  "selection": "first eligible source rows; no GT or model outputs",
+  "seconds": 5.4367301689999294,
+  "unix": 1790752986.0472727,
+  "files": {
+    "queries.f32": "511a1004ff560108c05ce96a31b9e579b6d9b58a408b8b96d2b132d4d2ebe9d5",
+    "candidate_source.f32": "482dcd2096e9b4039db86a2af07153f7f5c2cc72a120c1bf5bb33849f6afbe48",
+    "source_rows.i64": "3e54c2db51106ae3daa709e5584ffdaa99ec959b773ea647e893a7109b706d9d"
+  },
+  "scope": "no known registered/exposed byte overlap; not semantic independence or exhaustive unregistered exposure"
+}

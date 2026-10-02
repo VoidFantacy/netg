@@ -1,0 +1,21 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "threads": 1,
+  "CPU": 15,
+  "NSG_expected": 129536,
+  "HNSW_expected": 129280,
+  "builds": 0,
+  "vector_installs": 4,
+  "NSG_hard_cap": 132000,
+  "output_cap_MiB": 40,
+  "free_min_GiB": 7,
+  "evening_reserve_MiB": 32,
+  "latest_launch": 1789282200,
+  "query_hard_stop": 1789282800,
+  "per_job_seconds": 600,
+  "quality_gate": "mass vs P/compact full>0 halves>=0 failures<=0; vs uniform full>=0 halves>=0 failures<=0",
+  "wall_measurement": "only if one dataset passes, separate E79"
+}

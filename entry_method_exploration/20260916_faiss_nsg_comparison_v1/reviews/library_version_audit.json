@@ -1,0 +1,36 @@
+{
+  "retrieved_at": "2026-09-16T14:19:45.728444+08:00",
+  "measured_vendored_version": "1.9.0",
+  "official_tag_search_code_matches_ignoring_comments_whitespace": {
+    "NSG.cpp:void NSG::search(": true,
+    "NSG.cpp:template <bool collect_fullset, class index_t>": true,
+    "IndexNSG.cpp:void IndexNSG::search(": true
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/facebookresearch/faiss/v1.9.0/faiss/impl/NSG.cpp",
+      "file": "reviews/upstream/v1.9.0_impl_NSG.cpp",
+      "sha256": "9a220d3293ec39faf21df3bb4ac3aa1fbab684e14b9722c90ec145b43a8ad391",
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/facebookresearch/faiss/v1.9.0/faiss/IndexNSG.cpp",
+      "file": "reviews/upstream/v1.9.0_IndexNSG.cpp",
+      "sha256": "d6ec6e0ef9714898f69468e48b9c95c76bbf0a1444d32653bc7631206e5294f9",
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/facebookresearch/faiss/main/faiss/impl/NSG.cpp",
+      "file": "reviews/upstream/main_impl_NSG.cpp",
+      "sha256": "8e2ced4f140e801b84ea47d3874f92d3f13a6927e421e9b92b2b4880a7d11f43",
+      "executed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/facebookresearch/faiss/main/faiss/impl/NSG.h",
+      "file": "reviews/upstream/main_impl_NSG.h",
+      "sha256": "8144fe82038cd93bae3a6f71f3c222b2e9b318823112d762cb227c23823b91a0",
+      "executed": false
+    }
+  ],
+  "current_upstream_observation": "main uses get_neighbors which stops at first negative padding; search still fills initial L and uses scalar dis(id). VisitedTable API also differs. Current main was inspected, not built or benchmarked."
+}

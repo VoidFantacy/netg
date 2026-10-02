@@ -1,0 +1,80 @@
+{
+  "synthetic": {
+    "geometric_counterexamples": [
+      {
+        "error": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "chord2": 0.0
+      },
+      {
+        "error": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "chord2": 0.21114561800016823
+      },
+      {
+        "error": [
+          -3.0,
+          0.0,
+          0.0
+        ],
+        "chord2": 4.0
+      },
+      {
+        "error": [
+          -1.999999,
+          1e-06,
+          0.0
+        ],
+        "chord2": 0.5857864376850762
+      }
+    ],
+    "srs_subsets": 20,
+    "srs_MSE": 39.498388054029554,
+    "replacement_enumeration": [
+      {
+        "method": "uniform",
+        "enumerated_MSE": 98.74597013507388,
+        "formula_MSE": 98.74597013507386
+      },
+      {
+        "method": "oracle",
+        "enumerated_MSE": 92.42304579485106,
+        "formula_MSE": 92.42304579485108
+      }
+    ]
+  },
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "explicit_variance_hubs": 16,
+      "explicit_query_energies": 32,
+      "control_variate_direct_checks": 16,
+      "max_variance_abs_error": 4.912791094074942e-20,
+      "max_energy_abs_error": 3.2526065174565133e-19,
+      "max_control_variate_error": 8.012931681025681e-19
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "explicit_variance_hubs": 16,
+      "explicit_query_energies": 32,
+      "control_variate_direct_checks": 16,
+      "max_variance_abs_error": 1.3552527156068805e-19,
+      "max_energy_abs_error": 4.336808689942018e-19,
+      "max_control_variate_error": 6.776263578034403e-19
+    }
+  },
+  "status": "PASS",
+  "seconds": 11.27718648400014,
+  "independent_scope": "independent formula and explicit projections; same verified weight reconstruction, same agent",
+  "source_identities_checked": 20,
+  "new_searches": 0,
+  "new_GT": 0,
+  "audit_source": {
+    "bytes": 5578,
+    "sha256": "91840e4c1165ce028db068493f3425f3961af76ac6e1b2c2b6b4faa61660c16c"
+  }
+}

@@ -1,0 +1,373 @@
+{
+  "dataset": "webvid2_5m_light_v1",
+  "split": "validation2000_gt_profiles",
+  "dim": 512,
+  "num_queries": 2000,
+  "gt_k": 100,
+  "index_path": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "queries_file": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/webvid2_5m_light_v1/validation/queries.f32",
+  "gt_file": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/webvid2_5m_light_v1/validation/gt.i64",
+  "row_ids": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/webvid2_5m_light_v1/validation/row_ids.i64",
+  "timing_repeats": 3,
+  "dataset_order": 0,
+  "export_features": true,
+  "policies": {
+    "A0": {
+      "dataset": "webvid2_5m_light_v1",
+      "dim": 512,
+      "hub_count": 815,
+      "k": 3,
+      "seed": 20260828,
+      "hnsw_seed": 20260828,
+      "mapping": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+      "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+      "slot_labels": false,
+      "exact": false,
+      "legacy_heap_order": false,
+      "canonical_entry_order": true,
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt1_hard/W.f32",
+      "family": "fast20k",
+      "name": "fast20k"
+    },
+    "A1": {
+      "dataset": "webvid2_5m_light_v1",
+      "dim": 512,
+      "hub_count": 815,
+      "k": 3,
+      "seed": 20260828,
+      "hnsw_seed": 20260828,
+      "mapping": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+      "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+      "slot_labels": false,
+      "exact": false,
+      "legacy_heap_order": false,
+      "canonical_entry_order": true,
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+      "family": "e24",
+      "name": "e24"
+    },
+    "hub_features": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/webvid2_5m_light_v1/hub_features.f64",
+    "primary_E24": "gt10_soft_t1"
+  },
+  "methods": [
+    {
+      "name": "nsg_L64",
+      "family": "nsg",
+      "kind": "nsg",
+      "L": 64,
+      "component_wall": false
+    },
+    {
+      "name": "fast30k_L64",
+      "family": "fast30k",
+      "kind": "fast30k",
+      "L": 64,
+      "component_wall": false,
+      "direct": {
+        "L": 128,
+        "W": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+        "canonical_entry_order": false,
+        "component_wall": true,
+        "dim": 512,
+        "exact": false,
+        "family": "fast30k_3",
+        "hnsw_seed": 100,
+        "hub_count": 815,
+        "k": 3,
+        "legacy_heap_order": true,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+        "model_name": "fast30k_3",
+        "name": "fast30k_3_L128",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      }
+    },
+    {
+      "name": "fast20k_L64",
+      "family": "fast20k",
+      "kind": "fast20k",
+      "L": 64,
+      "component_wall": false
+    },
+    {
+      "name": "e24_L64",
+      "family": "e24",
+      "kind": "e24",
+      "L": 64,
+      "component_wall": false
+    },
+    {
+      "name": "base_gate_L64",
+      "family": "base_gate",
+      "kind": "base_gate",
+      "L": 64,
+      "component_wall": false,
+      "model_path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/models/webvid2_5m_light_v1/base_gate.json"
+    },
+    {
+      "name": "dual_gate_L64",
+      "family": "dual_gate",
+      "kind": "dual_gate",
+      "L": 64,
+      "component_wall": false,
+      "model_path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/models/webvid2_5m_light_v1/dual_gate.json"
+    },
+    {
+      "name": "nsg_L128",
+      "family": "nsg",
+      "kind": "nsg",
+      "L": 128,
+      "component_wall": true
+    },
+    {
+      "name": "fast30k_L128",
+      "family": "fast30k",
+      "kind": "fast30k",
+      "L": 128,
+      "component_wall": true,
+      "direct": {
+        "L": 128,
+        "W": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+        "canonical_entry_order": false,
+        "component_wall": true,
+        "dim": 512,
+        "exact": false,
+        "family": "fast30k_3",
+        "hnsw_seed": 100,
+        "hub_count": 815,
+        "k": 3,
+        "legacy_heap_order": true,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+        "model_name": "fast30k_3",
+        "name": "fast30k_3_L128",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      }
+    },
+    {
+      "name": "fast20k_L128",
+      "family": "fast20k",
+      "kind": "fast20k",
+      "L": 128,
+      "component_wall": true
+    },
+    {
+      "name": "e24_L128",
+      "family": "e24",
+      "kind": "e24",
+      "L": 128,
+      "component_wall": true
+    },
+    {
+      "name": "base_gate_L128",
+      "family": "base_gate",
+      "kind": "base_gate",
+      "L": 128,
+      "component_wall": true,
+      "model_path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/models/webvid2_5m_light_v1/base_gate.json"
+    },
+    {
+      "name": "dual_gate_L128",
+      "family": "dual_gate",
+      "kind": "dual_gate",
+      "L": 128,
+      "component_wall": true,
+      "model_path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/models/webvid2_5m_light_v1/dual_gate.json"
+    },
+    {
+      "name": "nsg_L256",
+      "family": "nsg",
+      "kind": "nsg",
+      "L": 256,
+      "component_wall": false
+    },
+    {
+      "name": "fast30k_L256",
+      "family": "fast30k",
+      "kind": "fast30k",
+      "L": 256,
+      "component_wall": false,
+      "direct": {
+        "L": 128,
+        "W": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+        "canonical_entry_order": false,
+        "component_wall": true,
+        "dim": 512,
+        "exact": false,
+        "family": "fast30k_3",
+        "hnsw_seed": 100,
+        "hub_count": 815,
+        "k": 3,
+        "legacy_heap_order": true,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+        "model_name": "fast30k_3",
+        "name": "fast30k_3_L128",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      }
+    },
+    {
+      "name": "fast20k_L256",
+      "family": "fast20k",
+      "kind": "fast20k",
+      "L": 256,
+      "component_wall": false
+    },
+    {
+      "name": "e24_L256",
+      "family": "e24",
+      "kind": "e24",
+      "L": 256,
+      "component_wall": false
+    },
+    {
+      "name": "base_gate_L256",
+      "family": "base_gate",
+      "kind": "base_gate",
+      "L": 256,
+      "component_wall": false,
+      "model_path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/models/webvid2_5m_light_v1/base_gate.json"
+    },
+    {
+      "name": "dual_gate_L256",
+      "family": "dual_gate",
+      "kind": "dual_gate",
+      "L": 256,
+      "component_wall": false,
+      "model_path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/models/webvid2_5m_light_v1/dual_gate.json"
+    },
+    {
+      "name": "nsg_L400",
+      "family": "nsg",
+      "kind": "nsg",
+      "L": 400,
+      "component_wall": false
+    },
+    {
+      "name": "fast30k_L400",
+      "family": "fast30k",
+      "kind": "fast30k",
+      "L": 400,
+      "component_wall": false,
+      "direct": {
+        "L": 128,
+        "W": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+        "canonical_entry_order": false,
+        "component_wall": true,
+        "dim": 512,
+        "exact": false,
+        "family": "fast30k_3",
+        "hnsw_seed": 100,
+        "hub_count": 815,
+        "k": 3,
+        "legacy_heap_order": true,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+        "model_name": "fast30k_3",
+        "name": "fast30k_3_L128",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      }
+    },
+    {
+      "name": "fast20k_L400",
+      "family": "fast20k",
+      "kind": "fast20k",
+      "L": 400,
+      "component_wall": false
+    },
+    {
+      "name": "e24_L400",
+      "family": "e24",
+      "kind": "e24",
+      "L": 400,
+      "component_wall": false
+    },
+    {
+      "name": "base_gate_L400",
+      "family": "base_gate",
+      "kind": "base_gate",
+      "L": 400,
+      "component_wall": false,
+      "model_path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/models/webvid2_5m_light_v1/base_gate.json"
+    },
+    {
+      "name": "dual_gate_L400",
+      "family": "dual_gate",
+      "kind": "dual_gate",
+      "L": 400,
+      "component_wall": false,
+      "model_path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/models/webvid2_5m_light_v1/dual_gate.json"
+    },
+    {
+      "name": "nsg_L800",
+      "family": "nsg",
+      "kind": "nsg",
+      "L": 800,
+      "component_wall": false
+    },
+    {
+      "name": "fast30k_L800",
+      "family": "fast30k",
+      "kind": "fast30k",
+      "L": 800,
+      "component_wall": false,
+      "direct": {
+        "L": 128,
+        "W": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+        "canonical_entry_order": false,
+        "component_wall": true,
+        "dim": 512,
+        "exact": false,
+        "family": "fast30k_3",
+        "hnsw_seed": 100,
+        "hub_count": 815,
+        "k": 3,
+        "legacy_heap_order": true,
+        "mapping": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32",
+        "model_name": "fast30k_3",
+        "name": "fast30k_3_L128",
+        "seed": 20260828,
+        "slot_labels": false,
+        "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260909_ab_experiment_v1/inputs/webvid2_5m_light_v1/seed20260828/hub_ids.i32"
+      }
+    },
+    {
+      "name": "fast20k_L800",
+      "family": "fast20k",
+      "kind": "fast20k",
+      "L": 800,
+      "component_wall": false
+    },
+    {
+      "name": "e24_L800",
+      "family": "e24",
+      "kind": "e24",
+      "L": 800,
+      "component_wall": false
+    },
+    {
+      "name": "base_gate_L800",
+      "family": "base_gate",
+      "kind": "base_gate",
+      "L": 800,
+      "component_wall": false,
+      "model_path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/models/webvid2_5m_light_v1/base_gate.json"
+    },
+    {
+      "name": "dual_gate_L800",
+      "family": "dual_gate",
+      "kind": "dual_gate",
+      "L": 800,
+      "component_wall": false,
+      "model_path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/models/webvid2_5m_light_v1/dual_gate.json"
+    }
+  ],
+  "threads": 1,
+  "query_cpu": 15,
+  "real_call_cap": 444480,
+  "protocol_sha256": "16c148cc2952b8ec37fd99b414122471af3d26fcecf211574501be247564f33d"
+}

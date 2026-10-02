@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "checks": {
+    "synthetic": {
+      "default_and_real_ID_ties": true,
+      "rank_gradient_check": true,
+      "scalar_forward_max_error": 8.881784197001252e-16,
+      "author_tabm_shape": true
+    },
+    "datasets": {
+      "webvid2_5m_light_v1": {
+        "n": 4096,
+        "H": 815,
+        "all_top1_and_K100_masks_verified": true,
+        "four_roles_row_and_byte_disjoint": true,
+        "outer_response_invariance": true,
+        "cluster_counts": [
+          27,
+          30,
+          74,
+          179,
+          11,
+          36,
+          83,
+          54,
+          18,
+          219,
+          62,
+          26,
+          57,
+          76,
+          48,
+          24
+        ],
+        "raw_response_shapes": {
+          "recall": [
+            4096,
+            816,
+            2
+          ],
+          "seconds": [
+            4096,
+            816,
+            2
+          ],
+          "masks": [
+            4096,
+            816,
+            2
+          ]
+        }
+      },
+      "yandex_t2i_official10M_ip_v1": {
+        "n": 4096,
+        "H": 821,
+        "all_top1_and_K100_masks_verified": true,
+        "four_roles_row_and_byte_disjoint": true,
+        "outer_response_invariance": true,
+        "cluster_counts": [
+          76,
+          71,
+          76,
+          49,
+          42,
+          35,
+          53,
+          20,
+          85,
+          87,
+          63,
+          111,
+          46,
+          62,
+          64,
+          84
+        ],
+        "raw_response_shapes": {
+          "recall": [
+            4096,
+            822,
+            2
+          ],
+          "seconds": [
+            4096,
+            822,
+            2
+          ],
+          "masks": [
+            4096,
+            822,
+            2
+          ]
+        }
+      }
+    }
+  },
+  "seconds": 3.352864312000065
+}

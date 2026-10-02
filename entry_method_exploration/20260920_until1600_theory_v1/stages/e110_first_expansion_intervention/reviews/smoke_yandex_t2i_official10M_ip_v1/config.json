@@ -1,0 +1,59 @@
+{
+  "E106_family": "Hard",
+  "GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt.i32",
+  "H": 821,
+  "K_L": {
+    "1": [
+      128
+    ],
+    "100": [
+      128
+    ]
+  },
+  "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+  "base_n": 10000000,
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "deadline_unix": 1789890600,
+  "dimension": 200,
+  "expected_search_calls": 256,
+  "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/hub_ids.i32",
+  "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "max_search_calls": 450000,
+  "methods": [
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "entry_count": 1,
+      "name": "GT101",
+      "normalize_W": false,
+      "representation": "GT10",
+      "route": "exact"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "entry_count": 3,
+      "name": "GT103",
+      "normalize_W": false,
+      "representation": "GT10",
+      "route": "exact"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "entry_count": 3,
+      "name": "PrimaryFirst3",
+      "normalize_W": false,
+      "representation": "GT10",
+      "route": "exact"
+    }
+  ],
+  "n": 16,
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+  "reference": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/yandex_t2i_official10M_ip_v1",
+  "reference_E106": "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1",
+  "reference_E107": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial",
+  "reference_initial_order": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1",
+  "reference_method": "GT10-hard",
+  "rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/source_rows.i64",
+  "seconds_cap": 600,
+  "smoke": true,
+  "threads": 1
+}

@@ -1,0 +1,231 @@
+{
+  "status": "PASS_EXISTING_SCOPE_VERIFIED",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "groups": {
+        "profile_fit": {
+          "count": 20000,
+          "minimum_id": 10000,
+          "maximum_id": 29999
+        },
+        "RL_train": {
+          "count": 4096,
+          "minimum_id": 10005,
+          "maximum_id": 29999
+        },
+        "monitor": {
+          "count": 1024,
+          "minimum_id": 10003,
+          "maximum_id": 29963
+        },
+        "cal": {
+          "count": 1024,
+          "minimum_id": 0,
+          "maximum_id": 1023
+        },
+        "audit": {
+          "count": 1024,
+          "minimum_id": 1024,
+          "maximum_id": 2047
+        }
+      },
+      "same_source_ID_intersections": [
+        {
+          "left": "profile_fit",
+          "right": "RL_train",
+          "count": 4096
+        },
+        {
+          "left": "profile_fit",
+          "right": "monitor",
+          "count": 1024
+        },
+        {
+          "left": "profile_fit",
+          "right": "cal",
+          "count": 0
+        },
+        {
+          "left": "profile_fit",
+          "right": "audit",
+          "count": 0
+        },
+        {
+          "left": "RL_train",
+          "right": "monitor",
+          "count": 0
+        },
+        {
+          "left": "RL_train",
+          "right": "cal",
+          "count": 0
+        },
+        {
+          "left": "RL_train",
+          "right": "audit",
+          "count": 0
+        },
+        {
+          "left": "monitor",
+          "right": "cal",
+          "count": 0
+        },
+        {
+          "left": "monitor",
+          "right": "audit",
+          "count": 0
+        },
+        {
+          "left": "cal",
+          "right": "audit",
+          "count": 0
+        }
+      ],
+      "meaning": "Monitor is gradient-disjoint but fully included in initial supervised profile fit; cal is outside profile fit but already used for selection; no group is claimed project-blind",
+      "fresh_development_rows_identified": false,
+      "unreconciled_project_wide_exposure": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "groups": {
+        "profile_fit": {
+          "count": 20000,
+          "minimum_id": 10000,
+          "maximum_id": 29999
+        },
+        "RL_train": {
+          "count": 4096,
+          "minimum_id": 10005,
+          "maximum_id": 29999
+        },
+        "monitor": {
+          "count": 1024,
+          "minimum_id": 10003,
+          "maximum_id": 29963
+        },
+        "cal": {
+          "count": 1024,
+          "minimum_id": 0,
+          "maximum_id": 1023
+        },
+        "audit": {
+          "count": 1024,
+          "minimum_id": 1024,
+          "maximum_id": 2047
+        }
+      },
+      "same_source_ID_intersections": [
+        {
+          "left": "profile_fit",
+          "right": "RL_train",
+          "count": 4096
+        },
+        {
+          "left": "profile_fit",
+          "right": "monitor",
+          "count": 1024
+        },
+        {
+          "left": "profile_fit",
+          "right": "cal",
+          "count": 0
+        },
+        {
+          "left": "profile_fit",
+          "right": "audit",
+          "count": 0
+        },
+        {
+          "left": "RL_train",
+          "right": "monitor",
+          "count": 0
+        },
+        {
+          "left": "RL_train",
+          "right": "cal",
+          "count": 0
+        },
+        {
+          "left": "RL_train",
+          "right": "audit",
+          "count": 0
+        },
+        {
+          "left": "monitor",
+          "right": "cal",
+          "count": 0
+        },
+        {
+          "left": "monitor",
+          "right": "audit",
+          "count": 0
+        },
+        {
+          "left": "cal",
+          "right": "audit",
+          "count": 0
+        }
+      ],
+      "meaning": "Monitor is gradient-disjoint but fully included in initial supervised profile fit; cal is outside profile fit but already used for selection; no group is claimed project-blind",
+      "fresh_development_rows_identified": false,
+      "unreconciled_project_wide_exposure": true
+    }
+  ],
+  "provenance_status": "PASS",
+  "new_vectors_read": 0,
+  "new_GT_labels_read": 0,
+  "new_ANN": 0,
+  "new_training": 0,
+  "training_plan_ready": false,
+  "sources": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/row_ids.i64",
+      "sha256": "4bda401c5f0aaf7996c2c8c8abfb6b345e03debe898b445961c2a46b65dd795c"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_offline_profile_rl_v1/inputs/webvid2_5m_light_v1/source_local.i32",
+      "sha256": "6f90382d53ec94cc1635c0195c0940ec519929fc82c3edca52bc68af0235e57e"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_offline_profile_rl_v1/inputs/webvid2_5m_light_v1/row_ids.i64",
+      "sha256": "98ffbc8999914063df22a4bfa9669a88feeb9b5b34fb6dceef8c5a6f853c5d12"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_expanded_final_comparison_v1/inputs/webvid2_5m_light_v1/cal/row_ids.i64",
+      "sha256": "2f88e9ce00d238e7e011a7b140b413dcad818f1da41a721f914f1af604d0e217"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_offline_profile_rl_v1/inputs/webvid2_5m_light_v1/audit/row_ids.i64",
+      "sha256": "72110e38eda26fdd25d001791881d5219c5c0f8dbdbf0b6d053319d691ae11c0"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_offline_profile_rl_v1/inputs/webvid2_5m_light_v1/selection.json",
+      "sha256": "af0ca85bcbe49a8b32b65ebb22b27f5fc8f1e0024a99a9c0b16af81e797ccb02"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/row_ids.i64",
+      "sha256": "4bda401c5f0aaf7996c2c8c8abfb6b345e03debe898b445961c2a46b65dd795c"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_offline_profile_rl_v1/inputs/yandex_t2i_official10M_ip_v1/source_local.i32",
+      "sha256": "6f90382d53ec94cc1635c0195c0940ec519929fc82c3edca52bc68af0235e57e"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_offline_profile_rl_v1/inputs/yandex_t2i_official10M_ip_v1/row_ids.i64",
+      "sha256": "98ffbc8999914063df22a4bfa9669a88feeb9b5b34fb6dceef8c5a6f853c5d12"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_expanded_final_comparison_v1/inputs/yandex_t2i_official10M_ip_v1/cal/row_ids.i64",
+      "sha256": "2f88e9ce00d238e7e011a7b140b413dcad818f1da41a721f914f1af604d0e217"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_offline_profile_rl_v1/inputs/yandex_t2i_official10M_ip_v1/audit/row_ids.i64",
+      "sha256": "72110e38eda26fdd25d001791881d5219c5c0f8dbdbf0b6d053319d691ae11c0"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_offline_profile_rl_v1/inputs/yandex_t2i_official10M_ip_v1/selection.json",
+      "sha256": "d402f743a9bc33d4cd844783cfb0959e2adea8be7a50153a20bacfa027ccef76"
+    }
+  ]
+}

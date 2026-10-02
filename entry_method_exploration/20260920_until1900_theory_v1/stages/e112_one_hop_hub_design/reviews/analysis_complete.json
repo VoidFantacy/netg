@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "seconds": 4.4455273151397705,
+  "gate": {
+    "status": "STOP_ONE_HOP_H_DESIGN_INFORMATION_GATE",
+    "datasets": [
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "clauses": {
+          "F_gain_over_original_at_least_2pp": true,
+          "both_CI_lower_positive": true,
+          "conditional_GT1_rescue_at_least_1pp": true
+        },
+        "pass_all": true
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "clauses": {
+          "F_gain_over_original_at_least_2pp": false,
+          "both_CI_lower_positive": false,
+          "conditional_GT1_rescue_at_least_1pp": false
+        },
+        "pass_all": false
+      }
+    ],
+    "new_NSGruns": 0,
+    "actual_deployable_Recall_improvement_proven": false,
+    "coverage_score_is_conditional": true,
+    "baseline_oracle_choice_is_privileged": true
+  },
+  "source": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/postprocess/analyze_v3.py",
+    "bytes": 9409,
+    "sha256": "ffcbb513e7cb7d6473594e65640b4825fec68fcb4ca771b9e071271416f96acc"
+  }
+}

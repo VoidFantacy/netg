@@ -1,0 +1,94 @@
+{
+  "status": "PASS",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "fit_queries": 20000,
+      "HNSW": 40256,
+      "missing_ranked_hub_events": 5369,
+      "eligible_vote_events": 5366,
+      "distinct_vote_pairs": 4696,
+      "source_nodes_with_votes": 1227,
+      "added_edges_per_arm": 254,
+      "support_min": 2,
+      "support_max": 41,
+      "physical": 1771,
+      "near_ties": 55,
+      "old_exact_mode_near_precision_differences": 0,
+      "offline_training_seconds": 2.8941521660017315,
+      "new_NSGlabeled_training": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "fit_queries": 20000,
+      "HNSW": 40256,
+      "missing_ranked_hub_events": 2373,
+      "eligible_vote_events": 2372,
+      "distinct_vote_pairs": 2310,
+      "source_nodes_with_votes": 1155,
+      "added_edges_per_arm": 47,
+      "support_min": 2,
+      "support_max": 3,
+      "physical": 2067,
+      "near_ties": 20,
+      "old_exact_mode_near_precision_differences": 0,
+      "offline_training_seconds": 2.0942303349984286,
+      "new_NSGlabeled_training": 0
+    }
+  ],
+  "installs": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "model": "shortcut10",
+      "seconds": 0.026561044996924466,
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage25_query_shortcuts_v1/models/webvid2_5m_light_v1/shortcut10/graph.hnsw",
+        "bytes": 3889472,
+        "mtime_ns": 1789289058767553517,
+        "sha256": "bf7825d7d7af8d29560efe62984848301a0350c22ea81e27119fa048f41afe32"
+      },
+      "all_old_edges_and_nonadjacency_bytes_preserved": true
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "model": "neighbor10",
+      "seconds": 0.02719819699996151,
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage25_query_shortcuts_v1/models/webvid2_5m_light_v1/neighbor10/graph.hnsw",
+        "bytes": 3889472,
+        "mtime_ns": 1789289058795553713,
+        "sha256": "f2796769ca77d0c0a5fcd7bd9ac15f00a5e102933ef1d7a97e98e707166951e2"
+      },
+      "all_old_edges_and_nonadjacency_bytes_preserved": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "shortcut10",
+      "seconds": 0.026008068001829088,
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage25_query_shortcuts_v1/models/yandex_t2i_official10M_ip_v1/shortcut10/graph.hnsw",
+        "bytes": 1959640,
+        "mtime_ns": 1789289058827553936,
+        "sha256": "3ebd7b045099163457ee092fb054e3519109703635ca2d508ec801735781796b"
+      },
+      "all_old_edges_and_nonadjacency_bytes_preserved": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "neighbor10",
+      "seconds": 0.02511234399935347,
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage25_query_shortcuts_v1/models/yandex_t2i_official10M_ip_v1/neighbor10/graph.hnsw",
+        "bytes": 1959640,
+        "mtime_ns": 1789289058851554104,
+        "sha256": "1c064ccc95b4488c1260f4b60d673a7834130481e20e2b7626240742d3c37ed5"
+      },
+      "all_old_edges_and_nonadjacency_bytes_preserved": true
+    }
+  ],
+  "builds": 0,
+  "graph_supervised_fits": 2,
+  "gradient_updates": 0,
+  "new_GT": 0,
+  "preparation_seconds": 5.234039327999199
+}

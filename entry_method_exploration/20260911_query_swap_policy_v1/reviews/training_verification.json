@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "arm": "rl",
+      "seed": 20260917,
+      "updates": 3000,
+      "checkpoints": 31,
+      "all_checkpoint_greedy_and_value_verified": true,
+      "max_expected_value_error": 4.547473508864641e-12,
+      "trajectory_episodes_verified": 192000,
+      "max_checkpoint_policy_logprob_error": 1.7763568394002505e-14,
+      "max_EMA_error": 0.0,
+      "selected_step": 700
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "arm": "rl",
+      "seed": 20260918,
+      "updates": 3000,
+      "checkpoints": 31,
+      "all_checkpoint_greedy_and_value_verified": true,
+      "max_expected_value_error": 6.366462912410498e-12,
+      "trajectory_episodes_verified": 192000,
+      "max_checkpoint_policy_logprob_error": 3.4638958368304884e-14,
+      "max_EMA_error": 0.0,
+      "selected_step": 800
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "arm": "exact",
+      "seed": 20260917,
+      "updates": 3000,
+      "checkpoints": 31,
+      "all_checkpoint_greedy_and_value_verified": true,
+      "max_expected_value_error": 8.640199666842818e-12,
+      "trajectory_episodes_verified": 0,
+      "max_checkpoint_policy_logprob_error": 0.0,
+      "max_EMA_error": 0.0,
+      "selected_step": 200
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "arm": "exact",
+      "seed": 20260918,
+      "updates": 3000,
+      "checkpoints": 31,
+      "all_checkpoint_greedy_and_value_verified": true,
+      "max_expected_value_error": 1.8189894035458565e-11,
+      "trajectory_episodes_verified": 0,
+      "max_checkpoint_policy_logprob_error": 0.0,
+      "max_EMA_error": 0.0,
+      "selected_step": 300
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "arm": "rl",
+      "seed": 20260917,
+      "updates": 3000,
+      "checkpoints": 31,
+      "all_checkpoint_greedy_and_value_verified": true,
+      "max_expected_value_error": 9.094947017729282e-12,
+      "trajectory_episodes_verified": 192000,
+      "max_checkpoint_policy_logprob_error": 1.9539925233402755e-14,
+      "max_EMA_error": 0.0,
+      "selected_step": 1400
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "arm": "rl",
+      "seed": 20260918,
+      "updates": 3000,
+      "checkpoints": 31,
+      "all_checkpoint_greedy_and_value_verified": true,
+      "max_expected_value_error": 1.000444171950221e-11,
+      "trajectory_episodes_verified": 192000,
+      "max_checkpoint_policy_logprob_error": 1.9539925233402755e-14,
+      "max_EMA_error": 0.0,
+      "selected_step": 1800
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "arm": "exact",
+      "seed": 20260917,
+      "updates": 3000,
+      "checkpoints": 31,
+      "all_checkpoint_greedy_and_value_verified": true,
+      "max_expected_value_error": 1.7280399333685637e-11,
+      "trajectory_episodes_verified": 0,
+      "max_checkpoint_policy_logprob_error": 0.0,
+      "max_EMA_error": 0.0,
+      "selected_step": 2400
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "arm": "exact",
+      "seed": 20260918,
+      "updates": 3000,
+      "checkpoints": 31,
+      "all_checkpoint_greedy_and_value_verified": true,
+      "max_expected_value_error": 2.000888343900442e-11,
+      "trajectory_episodes_verified": 0,
+      "max_checkpoint_policy_logprob_error": 0.0,
+      "max_EMA_error": 0.0,
+      "selected_step": 600
+    }
+  ],
+  "baseline_regression_outputs": 4096,
+  "baseline_sources": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/results/webvid2_5m_light_v1/baseline.npz",
+      "bytes": 1493868,
+      "mtime_ns": 1789115200773664687,
+      "sha256": "021f536daa63d7b84305434ac16e704a40e0456ae8980a28e122ac5a80d487cc"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/results/yandex_t2i_official10M_ip_v1/baseline.npz",
+      "bytes": 1551093,
+      "mtime_ns": 1789115328702063027,
+      "sha256": "5797dfbcf72f03130f82ddee46446e5f386b664b90a87e8a6b8c5492c322a926"
+    }
+  ],
+  "optimizer_updates": 24000,
+  "NSG_calls": 0
+}

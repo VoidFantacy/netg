@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "arms": [
+    "commit"
+  ],
+  "seeds": [
+    20260921,
+    20260922
+  ],
+  "steps": 200,
+  "population": 8,
+  "sigma": 0.3,
+  "train_queries": 4096,
+  "monitor_queries": 1024,
+  "decision_steps": 800,
+  "gradient_updates": 0,
+  "NSG_hard_cap": 400000,
+  "per_run_reservation": 100000,
+  "fixed_NSG_per_run": 15744,
+  "builds_per_run": 1803,
+  "HNSW_per_run": 6569216,
+  "HNSW_expected": 26276864,
+  "builds_expected": 7212,
+  "action": "original RL Gaussian proposals; eligible iff all coefficients within [-2,2]",
+  "selection": "original full J, no-op before candidate ordinal on ties",
+  "coefficient_clip_for_proposal": false,
+  "monitor_selection": "same nonzero feasible checkpoint rule as E47",
+  "conservative_projection_seconds": 1234.578961232999,
+  "projection_sources": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "seed": 20260921,
+      "E47_RL_seconds": 176.21424684399972
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "seed": 20260922,
+      "E47_RL_seconds": 176.78726761299913
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "seed": 20260921,
+      "E47_RL_seconds": 134.87551282300046
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "seed": 20260922,
+      "E47_RL_seconds": 135.17561354200006
+    }
+  ],
+  "projection_latest_finish_epoch": 1789218600,
+  "training_stop": 1789220100,
+  "latest_launch": 1789218900,
+  "threads": 1,
+  "output_bytes": 268435456,
+  "minimum_free_bytes": 8589934592
+}

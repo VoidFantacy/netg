@@ -1,0 +1,576 @@
+{
+  "schema_version": 1,
+  "status": "PREPARED_INDEPENDENT_REVIEW_CHECKLIST_IMPLEMENTATIONS_PENDING",
+  "created_utc": "2026-09-07T18:05:14.229276+00:00",
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/diagnosis_protocol_v1.json",
+    "sha256": "4bdd1cd92b42d85f89bd69aec980068c9bed0d5aee90917d5ce2ad8db9823959"
+  },
+  "source_review_of_implementations_completed": false,
+  "actual_data_read": false,
+  "ANN_run": false,
+  "common_checks": [
+    {
+      "id": "C01",
+      "name": "Frozen provenance",
+      "check": "Verify diagnosis protocol exact SHA, P3 NOPASS gate identity, P3 protocol, complete analysis/structure bindings, analyzer/source identity; source drift or mismatched complete markers fails before input use."
+    },
+    {
+      "id": "C02",
+      "name": "Read boundary",
+      "check": "Source path audit must exclude graph/base/query vectors, validation/held-out and ANN. Target code alone may read strictly bounded pilot GT100 prefix and saved fit GT10; portal code reads saved metadata/count only."
+    },
+    {
+      "id": "C03",
+      "name": "No gate or model mutation",
+      "check": "Output remains post-hoc descriptive, preserves P3 NOPASS, no confidence intervals/bootstrap/new threshold/seed/model/portal or auxiliary graph authorization."
+    },
+    {
+      "id": "C04",
+      "name": "Completeness and preservation",
+      "check": "New exclusive output directory, INCOMPLETE until all required outputs bound, complete marker last, source/input binding retained; old output rejected and exceptions never report COMPLETE."
+    },
+    {
+      "id": "C05",
+      "name": "Full family",
+      "check": "Both registered datasets, L64/128, all exact comparison/bin cells retained including empty groups; no best-bin/model selection or implicit filtering."
+    },
+    {
+      "id": "C06",
+      "name": "Scientific counter semantics",
+      "check": "Exclude legacy Fast expanded/rejected/evicted zero sentinels; oracle counters available. Timing not used as Recall replicates, no cross-model paired wall claim."
+    }
+  ],
+  "target_generalization_checks": [
+    {
+      "id": "T01",
+      "name": "Physical GT bound",
+      "check": "Synthetic ivecs prefix with width100 per record, exactly 10000 records in actual mode; full first100-rank values SHA verification while metrics use only top10; never read byte beyond allowed prefix."
+    },
+    {
+      "id": "T02",
+      "name": "GT rejection",
+      "check": "Wrong per-record header, truncation, rank99 byte tamper, duplicate top10 IDs, negative/out-of-range ID and prefix checksum mismatch fail; trailing records remain unread and do not affect prefix identity."
+    },
+    {
+      "id": "T03",
+      "name": "Fit identity",
+      "check": "Fit rawGT10 SHA and shape20000x10 match fit manifest and P0 fit identity; all rows unique IDs, no pilot GT in fit support. Count f(u) by query incidence."
+    },
+    {
+      "id": "T04",
+      "name": "Exact targets",
+      "check": "All256 leaf counts descending with leafID tie, high IDs above63 and top4 zero ties; exact D and M4, histograms D1..10 and targetcounts0..10 with empty bins."
+    },
+    {
+      "id": "T05",
+      "name": "Saved oracle integrity",
+      "check": "Recomputed full-GT regions and conditional weights match all four models, both L and both queues; common initial/no-search structures are kept separate."
+    },
+    {
+      "id": "T06",
+      "name": "Denominators",
+      "check": "Separate all-node, seen/unseen unique-node populations from pilot targetslot weighted populations. Every fit target is seen; optional subgroup ratios use correct nonzero slot denominator or null."
+    },
+    {
+      "id": "T07",
+      "name": "Movement",
+      "check": "pass1 move followed by pass2 return counts anypass changed but not final changed; final leaf/coarse change versus init explicit; lambda0-versus1 final difference explicit; no population dump."
+    },
+    {
+      "id": "T08",
+      "name": "Additive subgroup contributions",
+      "check": "Use same full-GT top4 for seen and unseen; covered_seen/10+covered_unseen/10==M4 and hits_seen/10+hits_unseen/10==Recall exactly in integer-count form. Never independently reroute subgroups or allocate NDC to targets."
+    },
+    {
+      "id": "T09",
+      "name": "Query strata",
+      "check": "k_seen exact0..10 all eleven bins, all10K queries exactly once; synthetic one-per-bin and empty-bin fixtures; slot-level seen/unseen counts consistent."
+    },
+    {
+      "id": "T10",
+      "name": "All ten contrasts",
+      "check": "Original8 plus lambda1-minus-lambda0 oracle_unified under frequency3 andgreedy3; 2Ds*2Ls*10=40 contrast cells. Explicit candidate/reference signs, saved resultID-derived hits, wins/losses/equal, NDC/expanded deltas in every k_seen bin."
+    },
+    {
+      "id": "T11",
+      "name": "Compact artifacts",
+      "check": "Fit20K/pilot10K perquery CSV or NPZ with hashes, enough columns for D/M4/support decomposition; no rawGT or million-node dump. Source permits one dataset independently but completion scope explicit."
+    }
+  ],
+  "portal_exposure_checks": [
+    {
+      "id": "P01",
+      "name": "Verification identity",
+      "check": "Each saved perleaf verification binds proper same-lambda models/portals, candidate/query/cache evidence and analysis model identity; changed verification SHA or reordered incompatible leaf mapping fails."
+    },
+    {
+      "id": "P02",
+      "name": "Proxy denominators",
+      "check": "Exactly256 leaves per structure. Delta=greedy_unionhits-frequency_unionhits, eligible target support is the proper perleaf cached denominator; negative deltas preserved and not converted to population Recall."
+    },
+    {
+      "id": "P03",
+      "name": "Fixed eight comparisons",
+      "check": "Only greedy3-minus-frequency3 oracle_probability, 2Ds*2lambda*2L; do not compare cross-lambda proxy totals or select favorable portal model."
+    },
+    {
+      "id": "P04",
+      "name": "Actual entry classes",
+      "check": "Use deduplicated actual ordered seeds including shared/default/anchor context. Exactly same ordered, same set changed order, or changed set; duplicate list/missingshared seed rejected."
+    },
+    {
+      "id": "P05",
+      "name": "Full route invariant",
+      "check": "Same full ordered route plus fixed labels implies exact result IDs/order, Recall, NDC, expanded, rejected and evicted; any mismatch is integrity failure, not averaged-away noise."
+    },
+    {
+      "id": "P06",
+      "name": "Hidden route fields",
+      "check": "Entry equality alone cannot permit changed regions, conditional weights, default or Fast anchor. Same-lambda expected region/weight identity checked independently of entry-class summary."
+    },
+    {
+      "id": "P07",
+      "name": "Result-set versus Recall",
+      "check": "Changed top10 order, changed top10 set, Recall wins/losses/equal kept separate; equal Recall may conceal changed ID set, and same ID set may have changed order."
+    },
+    {
+      "id": "P08",
+      "name": "Exposure signs",
+      "check": "Compute integer sum-delta sign independently of weighted delta/support score; sign of unweighted sum may differ from weighted score. Use saved conditional weights without re-normalizing supported leaves."
+    },
+    {
+      "id": "P09",
+      "name": "Empty proxy support",
+      "check": "No division by zero or silent evidence fabrication. Document null/missing-support policy; positive-weight unsupported leaf should yield explicitly missing weighted score or an equally transparent predefined treatment. Zero-weight unsupported leaf has no weighted contribution."
+    },
+    {
+      "id": "P10",
+      "name": "Full paired summaries",
+      "check": "All3 route classes and all3 sign classes including empty bins; counts exhaust10000 per cell, correct paired mean orientation, all oracle counters. Retain compact query-level outputs and binding."
+    }
+  ],
+  "small_independently_specified_fixtures": {
+    "subgroup_top4_trap": {
+      "gt10_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "gt10_leaf_ids": [
+        200,
+        200,
+        100,
+        100,
+        0,
+        0,
+        1,
+        1,
+        2,
+        3
+      ],
+      "seen_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "expected": {
+        "ordered_top4": [
+          0,
+          1,
+          100,
+          200
+        ],
+        "conditional_weights": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "D": 6,
+        "covered_total": 8,
+        "covered_seen": 4,
+        "covered_unseen": 4,
+        "M4": 0.8,
+        "seen_contribution": 0.4,
+        "unseen_contribution": 0.4,
+        "wrong_independent_unseen_top4_coverage": 6
+      }
+    },
+    "movement_return_trap": {
+      "initial": [
+        0,
+        1,
+        16,
+        17
+      ],
+      "lambda0_pass1": [
+        1,
+        1,
+        0,
+        17
+      ],
+      "lambda0_final": [
+        0,
+        1,
+        0,
+        17
+      ],
+      "lambda1_pass1": [
+        0,
+        2,
+        17,
+        17
+      ],
+      "lambda1_final": [
+        0,
+        2,
+        16,
+        17
+      ],
+      "seen_node_ids": [
+        0,
+        2
+      ],
+      "expected": {
+        "lambda0_final_changed": [
+          2
+        ],
+        "lambda0_anypass_changed": [
+          0,
+          2
+        ],
+        "lambda0_final_coarse_changed": [
+          2
+        ],
+        "lambda1_final_changed": [
+          1
+        ],
+        "lambda1_anypass_changed": [
+          1,
+          2
+        ],
+        "lambda1_final_coarse_changed": [],
+        "final_lambda0_vs_lambda1_different": [
+          1,
+          2
+        ]
+      }
+    },
+    "all_k_seen_bins": {
+      "seen_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "queries": [
+        [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        [
+          0,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        [
+          0,
+          1,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        [
+          0,
+          1,
+          2,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          10,
+          11,
+          12,
+          13
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          10,
+          11,
+          12
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          10,
+          11
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      ],
+      "expected_k_seen": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "expected_seen_slot_count": 55,
+      "expected_unseen_slot_count": 55
+    },
+    "route_classes": {
+      "reference_actual_entries": [
+        99,
+        88,
+        10,
+        20,
+        30
+      ],
+      "candidates": [
+        [
+          99,
+          88,
+          10,
+          20,
+          30
+        ],
+        [
+          99,
+          88,
+          10,
+          30,
+          20
+        ],
+        [
+          99,
+          88,
+          10,
+          20,
+          31
+        ]
+      ],
+      "expected": [
+        "same ordered actual entries",
+        "same entry set but changed order",
+        "changed entry set"
+      ],
+      "hidden_route_mutations_to_reject": [
+        "regions",
+        "weights",
+        "shared/default seed",
+        "Fast anchor"
+      ]
+    },
+    "result_identity_traps": {
+      "reference_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "same_set_different_order": [
+        1,
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "different_set_equal_recall": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "gt10_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "expected_recall_all": 0.5,
+      "same_route_all_result_mutations_must_fail": true
+    },
+    "exposure_distinct_sign_trap": {
+      "delta_unionhits": [
+        2,
+        -3,
+        1,
+        0
+      ],
+      "support": [
+        10,
+        20,
+        5,
+        8
+      ],
+      "conditional_weights": [
+        0.4,
+        0.3,
+        0.2,
+        0.1
+      ],
+      "expected_sum_delta": 0,
+      "expected_sum_sign": "zero",
+      "expected_weighted_score": 0.075,
+      "expected_weighted_score_sign": "positive"
+    },
+    "exposure_zero_support_trap": {
+      "delta_unionhits": [
+        2,
+        -3,
+        1,
+        0
+      ],
+      "support": [
+        10,
+        20,
+        5,
+        0
+      ],
+      "conditional_weights": [
+        0.4,
+        0.3,
+        0.2,
+        0.1
+      ],
+      "expected_sum_sign": "zero",
+      "recommended_weighted_score": null,
+      "recommended_missing_support_weight": 0.1,
+      "forbidden": "Silently divide0/0, infer zero effect, or renormalize remaining weights"
+    }
+  },
+  "synthetic_execution_status": "Expected values independently derived; implementer functions not yet available or executed."
+}

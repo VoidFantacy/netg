@@ -1,0 +1,140 @@
+[
+  {
+    "argv": [
+      "g++",
+      "-O3",
+      "-march=native",
+      "-std=c++17",
+      "-fopenmp",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+      "-I/data/netg/ACSG/entry_method_exploration/20260922_target_budget_response_v1/src/common",
+      "/data/netg/ACSG/entry_method_exploration/20260922_target_budget_response_v1/src/evaluate.cpp",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+      "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+      "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "-lopenblas",
+      "-lz",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20260922_target_budget_response_v1/bin/evaluate"
+    ],
+    "name": "build",
+    "started_unix": 1790050208.5429935,
+    "reserved_calls": 0,
+    "pid": 40531,
+    "pgid": 40531,
+    "exit_code": 0,
+    "seconds": 8.611729383468628,
+    "observed_max_tasks": 0,
+    "observed_max_rss_kib": 0
+  },
+  {
+    "argv": [
+      "/data/netg/ACSG/entry_method_exploration/20260922_target_budget_response_v1/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260922_target_budget_response_v1/reviews/smoke_webvid2_5m_light_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260922_target_budget_response_v1/reviews/smoke_webvid2_5m_light_v1"
+    ],
+    "name": "smoke_webvid2_5m_light_v1",
+    "started_unix": 1790050217.1588132,
+    "reserved_calls": 1920,
+    "pid": 40574,
+    "pgid": 40574,
+    "exit_code": 0,
+    "seconds": 34.38201189041138,
+    "observed_max_tasks": 1,
+    "observed_max_rss_kib": 5674312,
+    "complete": {
+      "ann_calls": 32,
+      "calls": 1920,
+      "cpu": 15,
+      "exact_profile_distances": 78240,
+      "formal_QPS": false,
+      "maxrss_kib": 5674312,
+      "seconds": 34.236757375,
+      "status": "PASS",
+      "threads": 1
+    }
+  },
+  {
+    "argv": [
+      "/data/netg/ACSG/entry_method_exploration/20260922_target_budget_response_v1/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260922_target_budget_response_v1/reviews/smoke_yandex_t2i_official10M_ip_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260922_target_budget_response_v1/reviews/smoke_yandex_t2i_official10M_ip_v1"
+    ],
+    "name": "smoke_yandex_t2i_official10M_ip_v1",
+    "started_unix": 1790050251.5451872,
+    "reserved_calls": 1536,
+    "pid": 40684,
+    "pgid": 40684,
+    "exit_code": 0,
+    "seconds": 59.638887882232666,
+    "observed_max_tasks": 1,
+    "observed_max_rss_kib": 10401560,
+    "complete": {
+      "ann_calls": 32,
+      "calls": 1536,
+      "cpu": 15,
+      "exact_profile_distances": 78816,
+      "formal_QPS": false,
+      "maxrss_kib": 10401560,
+      "seconds": 59.339770222,
+      "status": "PASS",
+      "threads": 1
+    }
+  },
+  {
+    "argv": [
+      "/data/netg/ACSG/entry_method_exploration/20260922_target_budget_response_v1/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260922_target_budget_response_v1/reviews/main_webvid2_5m_light_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260922_target_budget_response_v1/results/main_webvid2_5m_light_v1"
+    ],
+    "name": "main_webvid2_5m_light_v1",
+    "started_unix": 1790050311.1902685,
+    "reserved_calls": 196608,
+    "pid": 40866,
+    "pgid": 40866,
+    "exit_code": 0,
+    "seconds": 482.95699310302734,
+    "observed_max_tasks": 1,
+    "observed_max_rss_kib": 5677516,
+    "complete": {
+      "ann_calls": 8192,
+      "calls": 196608,
+      "cpu": 15,
+      "exact_profile_distances": 20029440,
+      "formal_QPS": false,
+      "maxrss_kib": 5677516,
+      "seconds": 482.811214731,
+      "status": "PASS",
+      "threads": 1
+    }
+  },
+  {
+    "argv": [
+      "/data/netg/ACSG/entry_method_exploration/20260922_target_budget_response_v1/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260922_target_budget_response_v1/reviews/main_yandex_t2i_official10M_ip_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260922_target_budget_response_v1/results/main_yandex_t2i_official10M_ip_v1"
+    ],
+    "name": "main_yandex_t2i_official10M_ip_v1",
+    "started_unix": 1790050794.1548498,
+    "reserved_calls": 131072,
+    "pid": 42506,
+    "pgid": 42506,
+    "exit_code": 0,
+    "seconds": 71.5704243183136,
+    "observed_max_tasks": 1,
+    "observed_max_rss_kib": 10401588,
+    "complete": {
+      "ann_calls": 8192,
+      "calls": 131072,
+      "cpu": 15,
+      "exact_profile_distances": 20176896,
+      "formal_QPS": false,
+      "maxrss_kib": 10401588,
+      "seconds": 71.264019098,
+      "status": "PASS",
+      "threads": 1
+    }
+  }
+]

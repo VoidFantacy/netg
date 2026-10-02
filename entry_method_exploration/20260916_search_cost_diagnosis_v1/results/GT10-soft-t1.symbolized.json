@@ -1,0 +1,2930 @@
+{
+  "samples": 11690,
+  "sampled_seconds": 46.765588294,
+  "categories": [
+    {
+      "category": "distance_kernel_including_memory_stalls",
+      "count": 9037,
+      "percent": 77.30538922155688
+    },
+    {
+      "category": "graph_loop_visited_bounds_and_other",
+      "count": 1614,
+      "percent": 13.806672369546622
+    },
+    {
+      "category": "candidate_queue",
+      "count": 471,
+      "percent": 4.029084687767322
+    },
+    {
+      "category": "libc_memcpy_memmove",
+      "count": 425,
+      "percent": 3.6355859709153124
+    },
+    {
+      "category": "other",
+      "count": 138,
+      "percent": 1.1804961505560307
+    },
+    {
+      "category": "other_libc",
+      "count": 3,
+      "percent": 0.02566295979469632
+    },
+    {
+      "category": "hnsw_other",
+      "count": 2,
+      "percent": 0.01710863986313088
+    }
+  ],
+  "functions": [
+    {
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "count": 8996,
+      "percent": 76.9546621043627
+    },
+    {
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "count": 2079,
+      "percent": 17.78443113772455
+    },
+    {
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "count": 426,
+      "percent": 3.644140290846878
+    },
+    {
+      "function": "faiss::NegativeDistanceComputer::operator()(long)",
+      "count": 69,
+      "percent": 0.5902480752780154
+    },
+    {
+      "function": "faiss::FlatCodesDistanceComputer::operator()(long)",
+      "count": 44,
+      "percent": 0.3763900769888794
+    },
+    {
+      "function": "hnswlib::InnerProductSIMD16ExtAVX512(void const*, void const*, void const*)",
+      "count": 40,
+      "percent": 0.3421727972626176
+    },
+    {
+      "function": "faiss::(anonymous namespace)::FlatIPDis::distance_to_code(unsigned char const*)",
+      "count": 14,
+      "percent": 0.11976047904191617
+    },
+    {
+      "function": "std::priority_queue<std::pair<float, unsigned int>, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > >, hnswlib::HierarchicalNSW<float>::CompareByFirst>::pop()",
+      "count": 4,
+      "percent": 0.03421727972626176
+    },
+    {
+      "function": "std::priority_queue<std::pair<float, unsigned int>, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > >, hnswlib::HierarchicalNSW<float>::CompareByFirst> hnswlib::HierarchicalNSW<float>::searchBaseLayerST<true, false>(unsigned int, void const*, unsigned long, hnswlib::BaseFilterFunctor*, hnswlib::BaseSearchStopCondition<float>*) const",
+      "count": 3,
+      "percent": 0.02566295979469632
+    },
+    {
+      "function": "faiss::RandomGenerator::RandomGenerator(long)",
+      "count": 3,
+      "percent": 0.02566295979469632
+    },
+    {
+      "function": "?",
+      "count": 2,
+      "percent": 0.01710863986313088
+    },
+    {
+      "function": "hnswlib::HierarchicalNSW<float>::searchKnn(void const*, unsigned long, hnswlib::BaseFilterFunctor*) const [clone .constprop.0]",
+      "count": 2,
+      "percent": 0.01710863986313088
+    },
+    {
+      "function": "acsg::ACSG::search_new(faiss::DistanceComputer&, int, long*, float*, faiss::VisitedTable&, int, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >*)",
+      "count": 2,
+      "percent": 0.01710863986313088
+    },
+    {
+      "function": "hnswlib::InnerProductDistanceSIMD16ExtAVX512(void const*, void const*, void const*)",
+      "count": 1,
+      "percent": 0.00855431993156544
+    },
+    {
+      "function": "Worker::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Router*, hnswlib::HierarchicalNSW<float>*, CountParam&, std::vector<float, std::allocator<float> > const&, unsigned long, Batch&, bool) [clone .constprop.0]",
+      "count": 1,
+      "percent": 0.00855431993156544
+    },
+    {
+      "function": "faiss::NegativeDistanceComputer::set_query(float const*)",
+      "count": 1,
+      "percent": 0.00855431993156544
+    },
+    {
+      "function": "malloc",
+      "count": 1,
+      "percent": 0.00855431993156544
+    },
+    {
+      "function": "free",
+      "count": 1,
+      "percent": 0.00855431993156544
+    },
+    {
+      "function": "_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7compareEPKc",
+      "count": 1,
+      "percent": 0.00855431993156544
+    }
+  ],
+  "sites": [
+    {
+      "base": 4194304,
+      "count": 5024,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429612,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235308
+    },
+    {
+      "base": 4194304,
+      "count": 1115,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429724,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235420
+    },
+    {
+      "base": 4194304,
+      "count": 884,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645098,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1583"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450794
+    },
+    {
+      "base": 4194304,
+      "count": 469,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429628,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235324
+    },
+    {
+      "base": 4194304,
+      "count": 466,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429676,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235372
+    },
+    {
+      "base": 4194304,
+      "count": 452,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429660,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235356
+    },
+    {
+      "base": 4194304,
+      "count": 444,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429644,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235340
+    },
+    {
+      "base": 4194304,
+      "count": 357,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429692,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235388
+    },
+    {
+      "base": 4194304,
+      "count": 313,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429708,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235404
+    },
+    {
+      "base": 4194304,
+      "count": 266,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645142,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "faiss::VisitedTable::set(int)",
+        "/data/netg/ACSG/faiss/faiss/impl/AuxIndexStructures.h:181",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1586"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450838
+    },
+    {
+      "base": 4194304,
+      "count": 128,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645709,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1581 (discriminator 2)"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 451405
+    },
+    {
+      "base": 4194304,
+      "count": 77,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645387,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:190",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451083
+    },
+    {
+      "base": 140039166910464,
+      "count": 72,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641855,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731391
+    },
+    {
+      "base": 140039166910464,
+      "count": 65,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641835,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731371
+    },
+    {
+      "base": 4194304,
+      "count": 62,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429620,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235316
+    },
+    {
+      "base": 4194304,
+      "count": 57,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645399,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:189",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451095
+    },
+    {
+      "base": 4194304,
+      "count": 48,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429775,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235471
+    },
+    {
+      "base": 140039166910464,
+      "count": 47,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641849,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731385
+    },
+    {
+      "base": 4194304,
+      "count": 44,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4638218,
+      "symbol": "",
+      "function": "faiss::NegativeDistanceComputer::operator()(long)",
+      "inline_stack": [
+        "faiss::NegativeDistanceComputer::operator()(long)",
+        "/data/netg/ACSG/faiss/faiss/impl/DistanceComputer.h:79"
+      ],
+      "category": "other",
+      "object_offset": 443914
+    },
+    {
+      "base": 4194304,
+      "count": 44,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429753,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235449
+    },
+    {
+      "base": 140039166910464,
+      "count": 44,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641842,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731378
+    },
+    {
+      "base": 140039166910464,
+      "count": 43,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641889,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731425
+    },
+    {
+      "base": 4194304,
+      "count": 42,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645368,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:189",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451064
+    },
+    {
+      "base": 4194304,
+      "count": 41,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645371,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:189",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451067
+    },
+    {
+      "base": 4194304,
+      "count": 40,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4709136,
+      "symbol": "",
+      "function": "faiss::FlatCodesDistanceComputer::operator()(long)",
+      "inline_stack": [
+        "faiss::FlatCodesDistanceComputer::operator()(long)",
+        "??:?"
+      ],
+      "category": "other",
+      "object_offset": 514832
+    },
+    {
+      "base": 4194304,
+      "count": 39,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429784,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235480
+    },
+    {
+      "base": 4194304,
+      "count": 36,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645380,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:190",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451076
+    },
+    {
+      "base": 4194304,
+      "count": 33,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429767,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235463
+    },
+    {
+      "base": 4194304,
+      "count": 32,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645712,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1581 (discriminator 2)"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 451408
+    },
+    {
+      "base": 140039166910464,
+      "count": 31,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641883,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731419
+    },
+    {
+      "base": 4194304,
+      "count": 30,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645391,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:190",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451087
+    },
+    {
+      "base": 4194304,
+      "count": 28,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645376,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:190",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451072
+    },
+    {
+      "base": 4194304,
+      "count": 27,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645397,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:189",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451093
+    },
+    {
+      "base": 4194304,
+      "count": 27,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645402,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:187",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451098
+    },
+    {
+      "base": 4194304,
+      "count": 25,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429763,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235459
+    },
+    {
+      "base": 4194304,
+      "count": 23,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429746,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235442
+    },
+    {
+      "base": 140039166910464,
+      "count": 23,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641869,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731405
+    },
+    {
+      "base": 4194304,
+      "count": 22,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645093,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::Graph<int>::at(int, int) const",
+        "/data/netg/ACSG/ACSG/ACSG.h:125",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1582"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450789
+    },
+    {
+      "base": 4194304,
+      "count": 22,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645373,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:190",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451069
+    },
+    {
+      "base": 4194304,
+      "count": 21,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645145,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)::{lambda(int, bool)#1}::operator()(int, bool) const",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1454",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1587"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450841
+    },
+    {
+      "base": 4194304,
+      "count": 21,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645888,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:189",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451584
+    },
+    {
+      "base": 4194304,
+      "count": 19,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4644947,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1575"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450643
+    },
+    {
+      "base": 140039166910464,
+      "count": 19,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641876,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731412
+    },
+    {
+      "base": 4194304,
+      "count": 16,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645091,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::Graph<int>::at(int, int) const",
+        "/data/netg/ACSG/ACSG/ACSG.h:125",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1582"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450787
+    },
+    {
+      "base": 140039166910464,
+      "count": 15,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641828,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731364
+    },
+    {
+      "base": 4194304,
+      "count": 14,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4377324,
+      "symbol": "",
+      "function": "hnswlib::InnerProductSIMD16ExtAVX512(void const*, void const*, void const*)",
+      "inline_stack": [
+        "_mm512_loadu_ps(void const*)",
+        "/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:6291",
+        "InnerProductSIMD16ExtAVX512",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/hnswlib/space_ip.h:168"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 183020
+    },
+    {
+      "base": 4194304,
+      "count": 14,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645095,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::Graph<int>::at(int, int) const",
+        "/data/netg/ACSG/ACSG/ACSG.h:125",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1582"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450791
+    },
+    {
+      "base": 4194304,
+      "count": 13,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4638207,
+      "symbol": "",
+      "function": "faiss::NegativeDistanceComputer::operator()(long)",
+      "inline_stack": [
+        "faiss::NegativeDistanceComputer::operator()(long)",
+        "/data/netg/ACSG/faiss/faiss/impl/DistanceComputer.h:78"
+      ],
+      "category": "other",
+      "object_offset": 443903
+    },
+    {
+      "base": 4194304,
+      "count": 13,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4644932,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1575"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450628
+    },
+    {
+      "base": 4194304,
+      "count": 13,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645882,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1595"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 451578
+    },
+    {
+      "base": 4194304,
+      "count": 13,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429652,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235348
+    },
+    {
+      "base": 4194304,
+      "count": 12,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4644924,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >::operator[](unsigned long)",
+        "/usr/include/c++/11/bits/stl_vector.h:1046",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1575"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450620
+    },
+    {
+      "base": 4194304,
+      "count": 12,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429730,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235426
+    },
+    {
+      "base": 4194304,
+      "count": 11,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4644939,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >::operator[](unsigned long)",
+        "/usr/include/c++/11/bits/stl_vector.h:1046",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1575"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450635
+    },
+    {
+      "base": 4194304,
+      "count": 11,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645084,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::Graph<int>::at(int, int) const",
+        "/data/netg/ACSG/ACSG/ACSG.h:125",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1582"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450780
+    },
+    {
+      "base": 4194304,
+      "count": 10,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4377351,
+      "symbol": "",
+      "function": "hnswlib::InnerProductSIMD16ExtAVX512(void const*, void const*, void const*)",
+      "inline_stack": [
+        "_mm512_fmadd_ps(float __vector(16), float __vector(16), float __vector(16))",
+        "/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:13326",
+        "InnerProductSIMD16ExtAVX512",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/hnswlib/space_ip.h:183"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 183047
+    },
+    {
+      "base": 4194304,
+      "count": 10,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4644915,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1571"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450611
+    },
+    {
+      "base": 4194304,
+      "count": 10,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4644929,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >::operator[](unsigned long)",
+        "/usr/include/c++/11/bits/stl_vector.h:1046",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1575"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450625
+    },
+    {
+      "base": 4194304,
+      "count": 10,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645106,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1583 (discriminator 2)"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450802
+    },
+    {
+      "base": 4194304,
+      "count": 10,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645421,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:201",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451117
+    },
+    {
+      "base": 4194304,
+      "count": 9,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429684,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235380
+    },
+    {
+      "base": 140039166910464,
+      "count": 9,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641788,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731324
+    },
+    {
+      "base": 4194304,
+      "count": 8,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4638192,
+      "symbol": "",
+      "function": "faiss::NegativeDistanceComputer::operator()(long)",
+      "inline_stack": [
+        "faiss::NegativeDistanceComputer::operator()(long)",
+        "/data/netg/ACSG/faiss/faiss/impl/DistanceComputer.h:77"
+      ],
+      "category": "other",
+      "object_offset": 443888
+    },
+    {
+      "base": 4194304,
+      "count": 8,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645328,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:176",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451024
+    },
+    {
+      "base": 4194304,
+      "count": 8,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645890,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:189",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451586
+    },
+    {
+      "base": 4194304,
+      "count": 8,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429598,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235294
+    },
+    {
+      "base": 4194304,
+      "count": 8,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429668,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235364
+    },
+    {
+      "base": 140039166910464,
+      "count": 8,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641862,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731398
+    },
+    {
+      "base": 4194304,
+      "count": 7,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4644943,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1575"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450639
+    },
+    {
+      "base": 4194304,
+      "count": 7,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645080,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::Graph<int>::at(int, int) const",
+        "/data/netg/ACSG/ACSG/ACSG.h:125",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1582"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450776
+    },
+    {
+      "base": 4194304,
+      "count": 7,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645088,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::Graph<int>::at(int, int) const",
+        "/data/netg/ACSG/ACSG/ACSG.h:125",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1582"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450784
+    },
+    {
+      "base": 4194304,
+      "count": 7,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645240,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1588"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450936
+    },
+    {
+      "base": 4194304,
+      "count": 7,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4705360,
+      "symbol": "",
+      "function": "faiss::(anonymous namespace)::FlatIPDis::distance_to_code(unsigned char const*)",
+      "inline_stack": [
+        "faiss::(anonymous namespace)::FlatIPDis::distance_to_code(unsigned char const*)",
+        "IndexFlat.cpp:?"
+      ],
+      "category": "other",
+      "object_offset": 511056
+    },
+    {
+      "base": 4194304,
+      "count": 7,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429406,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235102
+    },
+    {
+      "base": 4194304,
+      "count": 6,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645130,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "std::vector<unsigned char, std::allocator<unsigned char> >::operator[](unsigned long) const",
+        "/usr/include/c++/11/bits/stl_vector.h:1064",
+        "faiss::VisitedTable::get(int) const",
+        "/data/netg/ACSG/faiss/faiss/impl/AuxIndexStructures.h:186",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1583"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450826
+    },
+    {
+      "base": 4194304,
+      "count": 6,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645414,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:201",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451110
+    },
+    {
+      "base": 4194304,
+      "count": 6,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4705369,
+      "symbol": "",
+      "function": "faiss::(anonymous namespace)::FlatIPDis::distance_to_code(unsigned char const*)",
+      "inline_stack": [
+        "faiss::(anonymous namespace)::FlatIPDis::distance_to_code(unsigned char const*)",
+        "IndexFlat.cpp:?"
+      ],
+      "category": "other",
+      "object_offset": 511065
+    },
+    {
+      "base": 140039166910464,
+      "count": 6,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641171,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1730707
+    },
+    {
+      "base": 140039166910464,
+      "count": 6,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641810,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731346
+    },
+    {
+      "base": 4194304,
+      "count": 5,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4377385,
+      "symbol": "",
+      "function": "hnswlib::InnerProductSIMD16ExtAVX512(void const*, void const*, void const*)",
+      "inline_stack": [
+        "_mm512_fmadd_ps(float __vector(16), float __vector(16), float __vector(16))",
+        "/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:13326",
+        "InnerProductSIMD16ExtAVX512",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/hnswlib/space_ip.h:184"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 183081
+    },
+    {
+      "base": 4194304,
+      "count": 5,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4644935,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >::operator[](unsigned long)",
+        "/usr/include/c++/11/bits/stl_vector.h:1046",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1575"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450631
+    },
+    {
+      "base": 4194304,
+      "count": 5,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4644970,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1638 (discriminator 1)"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450666
+    },
+    {
+      "base": 4194304,
+      "count": 5,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645281,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1591"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450977
+    },
+    {
+      "base": 4194304,
+      "count": 5,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429716,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235412
+    },
+    {
+      "base": 140039166910464,
+      "count": 5,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641896,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731432
+    },
+    {
+      "base": 4194304,
+      "count": 4,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4377391,
+      "symbol": "",
+      "function": "hnswlib::InnerProductSIMD16ExtAVX512(void const*, void const*, void const*)",
+      "inline_stack": [
+        "_mm512_fmadd_ps(float __vector(16), float __vector(16), float __vector(16))",
+        "/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:13326",
+        "InnerProductSIMD16ExtAVX512",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/hnswlib/space_ip.h:185"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 183087
+    },
+    {
+      "base": 4194304,
+      "count": 4,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4638222,
+      "symbol": "",
+      "function": "faiss::NegativeDistanceComputer::operator()(long)",
+      "inline_stack": [
+        "faiss::NegativeDistanceComputer::operator()(long)",
+        "/data/netg/ACSG/faiss/faiss/impl/DistanceComputer.h:79"
+      ],
+      "category": "other",
+      "object_offset": 443918
+    },
+    {
+      "base": 4194304,
+      "count": 4,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4644949,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1632"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450645
+    },
+    {
+      "base": 4194304,
+      "count": 4,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645133,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1583"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450829
+    },
+    {
+      "base": 4194304,
+      "count": 4,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645569,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:218",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451265
+    },
+    {
+      "base": 4194304,
+      "count": 4,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645871,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1591 (discriminator 1)"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 451567
+    },
+    {
+      "base": 4194304,
+      "count": 4,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645877,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1595"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 451573
+    },
+    {
+      "base": 4194304,
+      "count": 4,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4646149,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1592"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 451845
+    },
+    {
+      "base": 4194304,
+      "count": 4,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429605,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235301
+    },
+    {
+      "base": 140039166910464,
+      "count": 4,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641558,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731094
+    },
+    {
+      "base": 4194304,
+      "count": 3,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4644906,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1570 (discriminator 4)"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450602
+    },
+    {
+      "base": 4194304,
+      "count": 3,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4644966,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1638 (discriminator 1)"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450662
+    },
+    {
+      "base": 4194304,
+      "count": 3,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645259,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1591"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450955
+    },
+    {
+      "base": 4194304,
+      "count": 3,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645362,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:175",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451058
+    },
+    {
+      "base": 4194304,
+      "count": 3,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645406,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:201",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451102
+    },
+    {
+      "base": 4194304,
+      "count": 3,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645458,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:207",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451154
+    },
+    {
+      "base": 4194304,
+      "count": 3,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645727,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1617"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 451423
+    },
+    {
+      "base": 4194304,
+      "count": 3,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645936,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1638"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 451632
+    },
+    {
+      "base": 4194304,
+      "count": 3,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4646144,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1581"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 451840
+    },
+    {
+      "base": 4194304,
+      "count": 3,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429376,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235072
+    },
+    {
+      "base": 4194304,
+      "count": 3,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429700,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235396
+    },
+    {
+      "base": 140039166910464,
+      "count": 3,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641795,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731331
+    },
+    {
+      "base": 140039166910464,
+      "count": 3,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641803,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731339
+    },
+    {
+      "base": 140039166910464,
+      "count": 3,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641921,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731457
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4231120,
+      "symbol": "",
+      "function": "?",
+      "inline_stack": [
+        "??",
+        "??:0"
+      ],
+      "category": "other",
+      "object_offset": 36816
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4377403,
+      "symbol": "",
+      "function": "hnswlib::InnerProductSIMD16ExtAVX512(void const*, void const*, void const*)",
+      "inline_stack": [
+        "hnswlib::InnerProductSIMD16ExtAVX512(void const*, void const*, void const*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/hnswlib/space_ip.h:162"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 183099
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4377476,
+      "symbol": "",
+      "function": "hnswlib::InnerProductSIMD16ExtAVX512(void const*, void const*, void const*)",
+      "inline_stack": [
+        "_mm512_reduce_add_ps(float __vector(16))",
+        "/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:16127",
+        "hnswlib::InnerProductSIMD16ExtAVX512(void const*, void const*, void const*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/hnswlib/space_ip.h:197"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 183172
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4644054,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1443"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 449750
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4644976,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1576"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450672
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4644980,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1577"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450676
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645111,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1583 (discriminator 2)"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450807
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645119,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "std::vector<unsigned char, std::allocator<unsigned char> >::operator[](unsigned long) const",
+        "/usr/include/c++/11/bits/stl_vector.h:1064",
+        "faiss::VisitedTable::get(int) const",
+        "/data/netg/ACSG/faiss/faiss/impl/AuxIndexStructures.h:186",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1583"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450815
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645125,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "faiss::VisitedTable::get(int) const",
+        "/data/netg/ACSG/faiss/faiss/impl/AuxIndexStructures.h:186",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1583"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450821
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645345,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:182",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451041
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645485,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:213",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451181
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645538,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/usr/include/x86_64-linux-gnu/bits/string_fortified.h:36",
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:217",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451234
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645586,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1599"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 451282
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645723,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1617"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 451419
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4646448,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1638"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 452144
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429416,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235112
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429739,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235435
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429780,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235476
+    },
+    {
+      "base": 4194304,
+      "count": 2,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5684264,
+      "symbol": "",
+      "function": "faiss::RandomGenerator::RandomGenerator(long)",
+      "inline_stack": [
+        "faiss::RandomGenerator::RandomGenerator(long)",
+        "??:?"
+      ],
+      "category": "other",
+      "object_offset": 1489960
+    },
+    {
+      "base": 140039166910464,
+      "count": 2,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641232,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1730768
+    },
+    {
+      "base": 140039166910464,
+      "count": 2,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641421,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1730957
+    },
+    {
+      "base": 140039166910464,
+      "count": 2,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641430,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1730966
+    },
+    {
+      "base": 140039166910464,
+      "count": 2,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641928,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731464
+    },
+    {
+      "base": 140039166910464,
+      "count": 2,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168642000,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731536
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4377357,
+      "symbol": "",
+      "function": "hnswlib::InnerProductSIMD16ExtAVX512(void const*, void const*, void const*)",
+      "inline_stack": [
+        "_mm512_loadu_ps(void const*)",
+        "/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:6291",
+        "InnerProductSIMD16ExtAVX512",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/hnswlib/space_ip.h:178"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 183053
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4377378,
+      "symbol": "",
+      "function": "hnswlib::InnerProductSIMD16ExtAVX512(void const*, void const*, void const*)",
+      "inline_stack": [
+        "_mm512_loadu_ps(void const*)",
+        "/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:6291",
+        "InnerProductSIMD16ExtAVX512",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/hnswlib/space_ip.h:179"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 183074
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4377397,
+      "symbol": "",
+      "function": "hnswlib::InnerProductSIMD16ExtAVX512(void const*, void const*, void const*)",
+      "inline_stack": [
+        "_mm512_fmadd_ps(float __vector(16), float __vector(16), float __vector(16))",
+        "/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:13326",
+        "InnerProductSIMD16ExtAVX512",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/hnswlib/space_ip.h:186"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 183093
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4377549,
+      "symbol": "",
+      "function": "hnswlib::InnerProductDistanceSIMD16ExtAVX512(void const*, void const*, void const*)",
+      "inline_stack": [
+        "hnswlib::InnerProductDistanceSIMD16ExtAVX512(void const*, void const*, void const*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/hnswlib/space_ip.h:204"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 183245
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4394705,
+      "symbol": "",
+      "function": "hnswlib::HierarchicalNSW<float>::searchKnn(void const*, unsigned long, hnswlib::BaseFilterFunctor*) const [clone .constprop.0]",
+      "inline_stack": [
+        "std::__atomic_base<long>::fetch_add(long, std::memory_order)",
+        "/usr/include/c++/11/bits/atomic_base.h:618",
+        "std::__atomic_base<long>::operator++(int)",
+        "/usr/include/c++/11/bits/atomic_base.h:369",
+        "hnswlib::HierarchicalNSW<float>::searchKnn(void const*, unsigned long, hnswlib::BaseFilterFunctor*) const",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/hnswlib/hnswalg.h:1291"
+      ],
+      "category": "hnsw_other",
+      "object_offset": 200401
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4394817,
+      "symbol": "",
+      "function": "hnswlib::HierarchicalNSW<float>::searchKnn(void const*, unsigned long, hnswlib::BaseFilterFunctor*) const [clone .constprop.0]",
+      "inline_stack": [
+        "hnswlib::HierarchicalNSW<float>::searchKnn(void const*, unsigned long, hnswlib::BaseFilterFunctor*) const",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/hnswlib/hnswalg.h:1301"
+      ],
+      "category": "hnsw_other",
+      "object_offset": 200513
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4396110,
+      "symbol": "",
+      "function": "Worker::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Router*, hnswlib::HierarchicalNSW<float>*, CountParam&, std::vector<float, std::allocator<float> > const&, unsigned long, Batch&, bool) [clone .constprop.0]",
+      "inline_stack": [
+        "int* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int>(int const*, int const*, int*)",
+        "/usr/include/c++/11/bits/stl_algobase.h:431",
+        "int* std::__copy_move_a2<false, int*, int*>(int*, int*, int*)",
+        "/usr/include/c++/11/bits/stl_algobase.h:495",
+        "int* std::__copy_move_a1<false, int*, int*>(int*, int*, int*)",
+        "/usr/include/c++/11/bits/stl_algobase.h:522",
+        "__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::__copy_move_a<false, int*, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(int*, int*, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >)",
+        "/usr/include/c++/11/bits/stl_algobase.h:529",
+        "__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > std::copy<int*, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(int*, int*, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >)",
+        "/usr/include/c++/11/bits/stl_algobase.h:620",
+        "Worker::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Router*, hnswlib::HierarchicalNSW<float>*, CountParam&, std::vector<float, std::allocator<float> > const&, unsigned long, Batch&, bool)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/evaluate.cpp:26"
+      ],
+      "category": "other",
+      "object_offset": 201806
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4472238,
+      "symbol": "",
+      "function": "std::priority_queue<std::pair<float, unsigned int>, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > >, hnswlib::HierarchicalNSW<float>::CompareByFirst>::pop()",
+      "inline_stack": [
+        "__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >::operator--()",
+        "/usr/include/c++/11/bits/stl_iterator.h:1068",
+        "void std::pop_heap<__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, hnswlib::HierarchicalNSW<float>::CompareByFirst>(__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, __gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, hnswlib::HierarchicalNSW<float>::CompareByFirst)",
+        "/usr/include/c++/11/bits/stl_heap.h:331",
+        "std::priority_queue<std::pair<float, unsigned int>, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > >, hnswlib::HierarchicalNSW<float>::CompareByFirst>::pop()",
+        "/usr/include/c++/11/bits/stl_queue.h:678"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 277934
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4472258,
+      "symbol": "",
+      "function": "std::priority_queue<std::pair<float, unsigned int>, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > >, hnswlib::HierarchicalNSW<float>::CompareByFirst>::pop()",
+      "inline_stack": [
+        "std::priority_queue<std::pair<float, unsigned int>, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > >, hnswlib::HierarchicalNSW<float>::CompareByFirst>::pop()",
+        "/usr/include/c++/11/bits/stl_queue.h:675"
+      ],
+      "category": "other",
+      "object_offset": 277954
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4472484,
+      "symbol": "",
+      "function": "std::priority_queue<std::pair<float, unsigned int>, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > >, hnswlib::HierarchicalNSW<float>::CompareByFirst>::pop()",
+      "inline_stack": [
+        "void std::__push_heap<__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, long, std::pair<float, unsigned int>, __gnu_cxx::__ops::_Iter_comp_val<hnswlib::HierarchicalNSW<float>::CompareByFirst> >(__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, long, long, std::pair<float, unsigned int>, __gnu_cxx::__ops::_Iter_comp_val<hnswlib::HierarchicalNSW<float>::CompareByFirst>&)",
+        "/usr/include/c++/11/bits/stl_heap.h:139",
+        "void std::__adjust_heap<__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, long, std::pair<float, unsigned int>, __gnu_cxx::__ops::_Iter_comp_iter<hnswlib::HierarchicalNSW<float>::CompareByFirst> >(__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, long, long, std::pair<float, unsigned int>, __gnu_cxx::__ops::_Iter_comp_iter<hnswlib::HierarchicalNSW<float>::CompareByFirst>)",
+        "/usr/include/c++/11/bits/stl_heap.h:246",
+        "void std::__pop_heap<__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, __gnu_cxx::__ops::_Iter_comp_iter<hnswlib::HierarchicalNSW<float>::CompareByFirst> >(__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, __gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, __gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, __gnu_cxx::__ops::_Iter_comp_iter<hnswlib::HierarchicalNSW<float>::CompareByFirst>&)",
+        "/usr/include/c++/11/bits/stl_heap.h:263",
+        "void std::pop_heap<__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, hnswlib::HierarchicalNSW<float>::CompareByFirst>(__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, __gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, hnswlib::HierarchicalNSW<float>::CompareByFirst)",
+        "/usr/include/c++/11/bits/stl_heap.h:332",
+        "std::priority_queue<std::pair<float, unsigned int>, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > >, hnswlib::HierarchicalNSW<float>::CompareByFirst>::pop()",
+        "/usr/include/c++/11/bits/stl_queue.h:678"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 278180
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4472488,
+      "symbol": "",
+      "function": "std::priority_queue<std::pair<float, unsigned int>, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > >, hnswlib::HierarchicalNSW<float>::CompareByFirst>::pop()",
+      "inline_stack": [
+        "void std::__push_heap<__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, long, std::pair<float, unsigned int>, __gnu_cxx::__ops::_Iter_comp_val<hnswlib::HierarchicalNSW<float>::CompareByFirst> >(__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, long, long, std::pair<float, unsigned int>, __gnu_cxx::__ops::_Iter_comp_val<hnswlib::HierarchicalNSW<float>::CompareByFirst>&)",
+        "/usr/include/c++/11/bits/stl_heap.h:139",
+        "void std::__adjust_heap<__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, long, std::pair<float, unsigned int>, __gnu_cxx::__ops::_Iter_comp_iter<hnswlib::HierarchicalNSW<float>::CompareByFirst> >(__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, long, long, std::pair<float, unsigned int>, __gnu_cxx::__ops::_Iter_comp_iter<hnswlib::HierarchicalNSW<float>::CompareByFirst>)",
+        "/usr/include/c++/11/bits/stl_heap.h:246",
+        "void std::__pop_heap<__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, __gnu_cxx::__ops::_Iter_comp_iter<hnswlib::HierarchicalNSW<float>::CompareByFirst> >(__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, __gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, __gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, __gnu_cxx::__ops::_Iter_comp_iter<hnswlib::HierarchicalNSW<float>::CompareByFirst>&)",
+        "/usr/include/c++/11/bits/stl_heap.h:263",
+        "void std::pop_heap<__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, hnswlib::HierarchicalNSW<float>::CompareByFirst>(__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, __gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, hnswlib::HierarchicalNSW<float>::CompareByFirst)",
+        "/usr/include/c++/11/bits/stl_heap.h:332",
+        "std::priority_queue<std::pair<float, unsigned int>, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > >, hnswlib::HierarchicalNSW<float>::CompareByFirst>::pop()",
+        "/usr/include/c++/11/bits/stl_queue.h:678"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 278184
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4523465,
+      "symbol": "",
+      "function": "std::priority_queue<std::pair<float, unsigned int>, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > >, hnswlib::HierarchicalNSW<float>::CompareByFirst> hnswlib::HierarchicalNSW<float>::searchBaseLayerST<true, false>(unsigned int, void const*, unsigned long, hnswlib::BaseFilterFunctor*, hnswlib::BaseSearchStopCondition<float>*) const",
+      "inline_stack": [
+        "std::priority_queue<std::pair<float, unsigned int>, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > >, hnswlib::HierarchicalNSW<float>::CompareByFirst> hnswlib::HierarchicalNSW<float>::searchBaseLayerST<true, false>(unsigned int, void const*, unsigned long, hnswlib::BaseFilterFunctor*, hnswlib::BaseSearchStopCondition<float>*) const",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/hnswlib/hnswalg.h:368"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 329161
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4523612,
+      "symbol": "",
+      "function": "std::priority_queue<std::pair<float, unsigned int>, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > >, hnswlib::HierarchicalNSW<float>::CompareByFirst> hnswlib::HierarchicalNSW<float>::searchBaseLayerST<true, false>(unsigned int, void const*, unsigned long, hnswlib::BaseFilterFunctor*, hnswlib::BaseSearchStopCondition<float>*) const",
+      "inline_stack": [
+        "std::priority_queue<std::pair<float, unsigned int>, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > >, hnswlib::HierarchicalNSW<float>::CompareByFirst> hnswlib::HierarchicalNSW<float>::searchBaseLayerST<true, false>(unsigned int, void const*, unsigned long, hnswlib::BaseFilterFunctor*, hnswlib::BaseSearchStopCondition<float>*) const",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/hnswlib/hnswalg.h:390"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 329308
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4524016,
+      "symbol": "",
+      "function": "std::priority_queue<std::pair<float, unsigned int>, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > >, hnswlib::HierarchicalNSW<float>::CompareByFirst> hnswlib::HierarchicalNSW<float>::searchBaseLayerST<true, false>(unsigned int, void const*, unsigned long, hnswlib::BaseFilterFunctor*, hnswlib::BaseSearchStopCondition<float>*) const",
+      "inline_stack": [
+        "std::pair<float, unsigned int>::operator=(std::pair<float, unsigned int>&&)",
+        "/usr/include/c++/11/bits/stl_pair.h:409",
+        "void std::__push_heap<__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, long, std::pair<float, unsigned int>, __gnu_cxx::__ops::_Iter_comp_val<hnswlib::HierarchicalNSW<float>::CompareByFirst> >(__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, long, long, std::pair<float, unsigned int>, __gnu_cxx::__ops::_Iter_comp_val<hnswlib::HierarchicalNSW<float>::CompareByFirst>&)",
+        "/usr/include/c++/11/bits/stl_heap.h:141",
+        "void std::push_heap<__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, hnswlib::HierarchicalNSW<float>::CompareByFirst>(__gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, __gnu_cxx::__normal_iterator<std::pair<float, unsigned int>*, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > > >, hnswlib::HierarchicalNSW<float>::CompareByFirst)",
+        "/usr/include/c++/11/bits/stl_heap.h:215",
+        "void std::priority_queue<std::pair<float, unsigned int>, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > >, hnswlib::HierarchicalNSW<float>::CompareByFirst>::emplace<float&, int&>(float&, int&)",
+        "/usr/include/c++/11/bits/stl_queue.h:659",
+        "std::priority_queue<std::pair<float, unsigned int>, std::vector<std::pair<float, unsigned int>, std::allocator<std::pair<float, unsigned int> > >, hnswlib::HierarchicalNSW<float>::CompareByFirst> hnswlib::HierarchicalNSW<float>::searchBaseLayerST<true, false>(unsigned int, void const*, unsigned long, hnswlib::BaseFilterFunctor*, hnswlib::BaseSearchStopCondition<float>*) const",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/hnswlib/hnswalg.h:413"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 329712
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4615769,
+      "symbol": "",
+      "function": "acsg::ACSG::search_new(faiss::DistanceComputer&, int, long*, float*, faiss::VisitedTable&, int, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >*)",
+      "inline_stack": [
+        "acsg::ACSG::search_new(faiss::DistanceComputer&, int, long*, float*, faiss::VisitedTable&, int, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1369"
+      ],
+      "category": "other",
+      "object_offset": 421465
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4617068,
+      "symbol": "",
+      "function": "acsg::ACSG::search_new(faiss::DistanceComputer&, int, long*, float*, faiss::VisitedTable&, int, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >*)",
+      "inline_stack": [
+        "acsg::ACSG::search_new(faiss::DistanceComputer&, int, long*, float*, faiss::VisitedTable&, int, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1353"
+      ],
+      "category": "other",
+      "object_offset": 422764
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4638910,
+      "symbol": "",
+      "function": "faiss::NegativeDistanceComputer::set_query(float const*)",
+      "inline_stack": [
+        "faiss::NegativeDistanceComputer::set_query(float const*)",
+        "/data/netg/ACSG/faiss/faiss/impl/DistanceComputer.h:73"
+      ],
+      "category": "other",
+      "object_offset": 444606
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4643818,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1429"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 449514
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4644043,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1445"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 449739
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4644050,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1446"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 449746
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645061,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1581"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450757
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645077,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1581"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450773
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645244,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1588"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450940
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645287,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1595"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 450983
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645304,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:176",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451000
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645319,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:176",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451015
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645453,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:203",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451149
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645462,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:203",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451158
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645489,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:213",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451185
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645509,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:217",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451205
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645527,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:217",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451223
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645543,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "acsg::insert_into_pool(acsg::Neighbor*, int, acsg::Neighbor)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:218",
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1598"
+      ],
+      "category": "candidate_queue",
+      "object_offset": 451239
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645556,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1599"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 451252
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645720,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1617"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 451416
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645867,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1591 (discriminator 1)"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 451563
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4645917,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1579"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 451613
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4646028,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1614"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 451724
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4646049,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1614"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 451745
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4646457,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1638"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 452153
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4646460,
+      "symbol": "",
+      "function": "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+      "inline_stack": [
+        "void acsg::ACSG::search_on_graph_new<false, int>(acsg::Graph<int> const&, faiss::DistanceComputer&, faiss::VisitedTable&, int, std::vector<acsg::Neighbor, std::allocator<acsg::Neighbor> >&, std::vector<acsg::EnterPoint, std::allocator<acsg::EnterPoint> > const&, int, int, acsg::SearchTrace*)",
+        "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/src/ACSG.original.cpp:1638"
+      ],
+      "category": "graph_loop_visited_bounds_and_other",
+      "object_offset": 452156
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4705364,
+      "symbol": "",
+      "function": "faiss::(anonymous namespace)::FlatIPDis::distance_to_code(unsigned char const*)",
+      "inline_stack": [
+        "faiss::(anonymous namespace)::FlatIPDis::distance_to_code(unsigned char const*)",
+        "IndexFlat.cpp:?"
+      ],
+      "category": "other",
+      "object_offset": 511060
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4709140,
+      "symbol": "",
+      "function": "faiss::FlatCodesDistanceComputer::operator()(long)",
+      "inline_stack": [
+        "faiss::FlatCodesDistanceComputer::operator()(long)",
+        "??:?"
+      ],
+      "category": "other",
+      "object_offset": 514836
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4709143,
+      "symbol": "",
+      "function": "faiss::FlatCodesDistanceComputer::operator()(long)",
+      "inline_stack": [
+        "faiss::FlatCodesDistanceComputer::operator()(long)",
+        "??:?"
+      ],
+      "category": "other",
+      "object_offset": 514839
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4709148,
+      "symbol": "",
+      "function": "faiss::FlatCodesDistanceComputer::operator()(long)",
+      "inline_stack": [
+        "faiss::FlatCodesDistanceComputer::operator()(long)",
+        "??:?"
+      ],
+      "category": "other",
+      "object_offset": 514844
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 4709152,
+      "symbol": "",
+      "function": "faiss::FlatCodesDistanceComputer::operator()(long)",
+      "inline_stack": [
+        "faiss::FlatCodesDistanceComputer::operator()(long)",
+        "??:?"
+      ],
+      "category": "other",
+      "object_offset": 514848
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429428,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235124
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429636,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235332
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5429771,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235467
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5430035,
+      "symbol": "",
+      "function": "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+      "inline_stack": [
+        "faiss::fvec_inner_product(float const*, float const*, unsigned long)",
+        "??:?"
+      ],
+      "category": "distance_kernel_including_memory_stalls",
+      "object_offset": 1235731
+    },
+    {
+      "base": 4194304,
+      "count": 1,
+      "file": "/data/netg/ACSG/entry_method_exploration/20260916_search_cost_diagnosis_v1/bin/diagnose.original",
+      "pc": 5684260,
+      "symbol": "",
+      "function": "faiss::RandomGenerator::RandomGenerator(long)",
+      "inline_stack": [
+        "faiss::RandomGenerator::RandomGenerator(long)",
+        "??:?"
+      ],
+      "category": "other",
+      "object_offset": 1489956
+    },
+    {
+      "base": 140039166910464,
+      "count": 1,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039167586796,
+      "symbol": "malloc",
+      "function": "malloc",
+      "inline_stack": [],
+      "category": "other_libc",
+      "object_offset": 676332
+    },
+    {
+      "base": 140039166910464,
+      "count": 1,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039167587269,
+      "symbol": "free",
+      "function": "free",
+      "inline_stack": [],
+      "category": "other_libc",
+      "object_offset": 676805
+    },
+    {
+      "base": 140039166910464,
+      "count": 1,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641152,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1730688
+    },
+    {
+      "base": 140039166910464,
+      "count": 1,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641165,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1730701
+    },
+    {
+      "base": 140039166910464,
+      "count": 1,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641284,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1730820
+    },
+    {
+      "base": 140039166910464,
+      "count": 1,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641415,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1730951
+    },
+    {
+      "base": 140039166910464,
+      "count": 1,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641446,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1730982
+    },
+    {
+      "base": 140039166910464,
+      "count": 1,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641468,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731004
+    },
+    {
+      "base": 140039166910464,
+      "count": 1,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641818,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731354
+    },
+    {
+      "base": 140039166910464,
+      "count": 1,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641907,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731443
+    },
+    {
+      "base": 140039166910464,
+      "count": 1,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168641936,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "libc_memcpy_memmove",
+      "object_offset": 1731472
+    },
+    {
+      "base": 140039166910464,
+      "count": 1,
+      "file": "/lib/x86_64-linux-gnu/libc.so.6",
+      "pc": 140039168643450,
+      "symbol": "",
+      "function": "/lib/x86_64-linux-gnu/libc.so.6",
+      "inline_stack": [],
+      "category": "other_libc",
+      "object_offset": 1732986
+    },
+    {
+      "base": 140039170555904,
+      "count": 1,
+      "file": "/lib/x86_64-linux-gnu/libstdc++.so.6",
+      "pc": 140039171926928,
+      "symbol": "_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7compareEPKc",
+      "function": "_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7compareEPKc",
+      "inline_stack": [],
+      "category": "other",
+      "object_offset": 1371024
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "stage": "P3_POST_NOGO_DIAGNOSIS",
+  "status": "PREREGISTERED_BEFORE_DIAGNOSTIC_IMPLEMENTATION_AND_NEW_DATA_READS",
+  "created_utc": "2026-09-07T18:00:52.867543+00:00",
+  "upstream_P3": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P3.json",
+    "sha256": "3e154f9db332ec9a404b85d85061459967911be797e4350c191b1d9774dbc4f2"
+  },
+  "P3_protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+  },
+  "analysis": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analysis_v1/analysis.json",
+    "sha256": "63da6a71425b0dbd6e186db1c608a564b9847c58168b6b56059a9ed2d2f901ae"
+  },
+  "structure_analysis": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/structure_analysis_v1/analysis.json",
+    "sha256": "8b0cec717a14382c5917504e560bcffd732146c517ea9a699b0bb1812463088e"
+  },
+  "interpretation_limits": [
+    "Finite fit-vs-pilot differences may include distribution shift; overfit or memorization remain hypotheses.",
+    "Lambda contrast changes labels, candidate/query selection, portals, oracle selection/weights and queue membership; no isolated label causal claim.",
+    "Unchanged/improved abstract target concentration with worseRecall does not establish graph connectivity bottleneck.",
+    "Fast frontier counters are unmeasured zero sentinels; exclude from this diagnosis."
+  ],
+  "hypotheses": [
+    "Fit target concentration may fail to transfer to pilot target concentration, particularly for targets absent from fit GT10.",
+    "A better single-portal fit cache proxy may not change actual multi-entry pilot routes or may fail to improve joint search even when routes change."
+  ],
+  "scope": "Post-hoc descriptive diagnosis of a failed frozen branch; no new confidence intervals, scientific gate reopening, method selection or tuning.",
+  "cpu_only": true,
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "fit_range": [
+    10000,
+    30000
+  ],
+  "pilot_range": [
+    0,
+    10000
+  ],
+  "structures": [
+    "common_initial",
+    "lambda0_final",
+    "lambda1_final"
+  ],
+  "additional_labels_for_movement_only": [
+    "lambda0_pass1",
+    "lambda1_pass1"
+  ],
+  "input_boundaries": {
+    "allowed": "Bound completed P3 analyses/models/count/portal verification and saved labels; P0 audited pilot GT top100 first10000 physical records only; existing rawfit GT10 only. No original graph/base/query-vector reads.",
+    "pilot_GT": "Verify complete P0 pilot GT-values SHA and per-record header; use ranks0..9, do not read beyond first10000 records.",
+    "fit_GT": "Verify fit manifest/P0 fullfit identity and extracted gt10.i32 SHA, count20000, unique10 IDs eachrow.",
+    "forbidden": [
+      "validation",
+      "heldout",
+      "query_vectors",
+      "base_vectors",
+      "graph_adjacency",
+      "ANN",
+      "refit",
+      "new_portals",
+      "parameter_or_seed_changes"
+    ]
+  },
+  "target_generalization": {
+    "query_metrics": [
+      "D distinct GT10 leaves",
+      "(D-1)/9",
+      "actual globalGT top4 absolute covered target count/10 M4",
+      "init-to-lambda0/init-to-lambda1/lambda1-to-lambda0 paired changes"
+    ],
+    "oracle_order": "All256 leaf GT10 counts descending then leafID ascending; conditional weights normalized only within selected4. Recompute and match saved regions/weights all models/L/queue.",
+    "histograms": "All exact D1..10 and covered targetcounts0..10 (empty bins retained)",
+    "support": "f(u)=number of fitGT10 rows containing u; seen iff f>0. Fit targetunseen group cannot exist by definition.",
+    "node_population": "Allbase, seen/unseen unique-node denominators: final change relativeinit, anypasschange, coarsechange, final lambda0 vs1 difference. Also report pilot targetslot weighted counts separately.",
+    "pilot_strata": "k_seen(q)=0..10 all eleven exact bins; all10K queries accounted, no bestbin selection",
+    "seen_unseen_decomposition": "Use the same fullGT selectedtop4 for bothgroups. Covered_s/10 and hit_s/10 contributions must exactly sum to full M4/Recall; optional subgroup ratios have targetslot denominators and empty=null. Do not independently selecttop4 per subgroup.",
+    "search_contrasts": "All original8fixedP3contrasts plus exactly2 descriptive lambda1-minus-lambda0 oracle_unified contrasts under frequency3 andgreedy3, for bothLs and datasets. Compute savedresultID hits, paired means/gain-loss-equal and oracle NDC/expanded differences per k_seen. No NDC allocation to seen/unseen targets."
+  },
+  "portal_exposure": {
+    "comparisons": "All8 original same-lambda greedy3-minus-frequency3 oracle_probability cells (2ds*2lambda*2L); no crosslambda proxytotal comparison.",
+    "proxy_records": "Perleaf verification cached greedy/frequency unionhits, eligible target support, chosenportal arrays. These are correlated regional fit proxycounts, not population Recall.",
+    "route_classes": [
+      "same ordered actual entries",
+      "same entry set but changed order",
+      "changed entry set"
+    ],
+    "invariance": "Same actual ordered route including regions/weights/default/anchor/entries and fixedlabels must reproduce resultIDs/Recall/NDC/expanded/rejected/evicted exactly. Mismatches are integrity failures, not statistics.",
+    "fit_proxy_exposure": "Join the fixed four active leaves to their cached delta unionhits and support. Report sumdelta sign negative/zero/positive and normalized perleaf delta/support weighted by saved conditionalweights as a descriptive fit-exposure score only. No threshold selection, newprobability claim or causal interpretation.",
+    "paired_summaries": "For all routeclasses and exposure signs report querycounts, changed top10 ID sets/order, Recall wins/losses/equal, mean paired Recall and oracle NDC/counters. Equal Recall must not be equated to same top10."
+  },
+  "output": "Perdataset summary JSON, complete marker and compact fit20K/pilot10K perquery CSV or NPZ with hashes; no million-row base dump or redundant rawGT dump. Preserve all bins/negative results.",
+  "resources": {
+    "max_heavy_processes": 1,
+    "min_free_disk_gib": 10,
+    "artifact_limit_gib": 8,
+    "softclose_utc": "2026-09-07T22:59:00Z",
+    "hard_deadline_utc": "2026-09-07T23:00:00Z",
+    "launch": "control/stage_run.py P3 analysis; serial root-controlled actual runs"
+  },
+  "method_revision_increment": 0,
+  "P4_authorized": false,
+  "new_model_or_auxgraph_authorized": false
+}

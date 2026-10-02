@@ -1,0 +1,90 @@
+{
+  "artifact_version": "roargraph-webvid2.5m-ip-v1",
+  "build_wall_seconds": 1.2445027180000352,
+  "dataset": "webvid2_5m_light_v1",
+  "metric": "ip",
+  "purpose": "exploratory fast entry-routing alternatives; not formal results",
+  "schema_version": 1,
+  "shared_ids_file": "fast_entry_variants/webvid2_5m_light_v1_seed20260830/prototype_hub_ids.bin",
+  "shared_ids_sha256": "4eb8985c001f5b1c56054f8ca1975341c051995ed0e5dcb5f96277f02e5a3149",
+  "sources": {
+    "aco_gt": "benches/datasets/WebVid2.5M_light_v1/gt.aco_train.seed20260826.ip.ivecs",
+    "aco_gt_sha256": "46ba3dfa04f16df69b4667aa62c033c6575234dfe080f995a879ba35444f9866",
+    "aco_queries": "benches/datasets/WebVid2.5M_light_v1/query.aco_train.seed20260826.fvecs",
+    "aco_queries_sha256": "b4322c37b2d4ab10e965bc5731f523341d1a974d5e40aa0cd881b4fbe28a572e",
+    "base": "benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+    "labels": "drl/webvid2_5m_light_v1_results/topo_aware_labels.ivecs",
+    "labels_sha256": "82f95ceb22ba87be335aac83224bdd99b19ff828d27e3fa4ef4224da39c7de68",
+    "router_gt": "benches/datasets/WebVid2.5M_light_v1/gt.router_train.seed20260826.ip.ivecs",
+    "router_gt_sha256": "1db08bf5b259a468558e6dfed19661d73bc6fe6947a3c862e526176242ace72c",
+    "router_queries": "benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+    "router_queries_sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855"
+  },
+  "variants": {
+    "gt_basin_prototype": {
+      "hub_count": 815,
+      "hubs_file": "fast_entry_variants/webvid2_5m_light_v1_seed20260830/gt_basin_prototype_hubs.bin",
+      "hubs_sha256": "7b5387cd108e8f106b81fdc8ebd2e74ec36234dc495ddf23f3902a1ce4f99010",
+      "hubs_with_assignments": 787,
+      "max_queries_per_hub": 786,
+      "method": "nearest-existing-hub-to-train-GT-vector then spherical query prototype",
+      "min_queries_per_observed_hub": 1,
+      "prior_strength": 1.0,
+      "requires_aco_dpc": true,
+      "requires_neural_training": false,
+      "requires_probe_labels": false,
+      "train_queries": 30000
+    },
+    "prototype_cost": {
+      "hub_count": 815,
+      "hubs_file": "fast_entry_variants/webvid2_5m_light_v1_seed20260830/prototype_cost_hubs.bin",
+      "hubs_sha256": "57c61a5a1cc9d9f841b72ea7ffa4e3989228e50b2a64c8f92107ea1dbb169f85",
+      "hubs_with_labels": 809,
+      "max_labels_per_hub": 208,
+      "min_labels_per_observed_hub": 1,
+      "mode": "cost",
+      "prior_strength": 1.0,
+      "valid_labels": 25067
+    },
+    "prototype_uniform": {
+      "hub_count": 815,
+      "hubs_file": "fast_entry_variants/webvid2_5m_light_v1_seed20260830/prototype_uniform_hubs.bin",
+      "hubs_sha256": "cde7261d9dca45c4049a75b613bda4452c930d6e09ddf2da265677bb17cb245b",
+      "hubs_with_labels": 809,
+      "max_labels_per_hub": 208,
+      "min_labels_per_observed_hub": 1,
+      "mode": "uniform",
+      "prior_strength": 1.0,
+      "valid_labels": 25067
+    },
+    "qgt_cover": {
+      "empty_clusters": 0,
+      "gt_candidates_per_query": 100,
+      "hubs_file": "fast_entry_variants/webvid2_5m_light_v1_seed20260830/qgt_cover_hubs.bin",
+      "hubs_sha256": "6f2a13973ec03037031eacc521691474991628c238703388a787ca11748acac9",
+      "ids_file": "fast_entry_variants/webvid2_5m_light_v1_seed20260830/qgt_cover_hub_ids.bin",
+      "ids_sha256": "749626f1b06a48661b99ebc634dfaa444ccf8a2a8ab0a9636d71469577150078",
+      "kmeans_iterations": 25,
+      "method": "spherical-query-kmeans-representative-GT-cover",
+      "seed": 20260830,
+      "selected_hubs": 815,
+      "target_hubs": 815
+    },
+    "qgt_gt_basin_prototype": {
+      "hub_count": 815,
+      "hubs_file": "fast_entry_variants/webvid2_5m_light_v1_seed20260830/qgt_gt_basin_prototype_hubs.bin",
+      "hubs_sha256": "bd7bcd8349294b96bcb5edcfbbc871c55813525ea35420a5cd1a6f7efcbdf635",
+      "hubs_with_assignments": 800,
+      "ids_file": "fast_entry_variants/webvid2_5m_light_v1_seed20260830/qgt_cover_hub_ids.bin",
+      "ids_sha256": "749626f1b06a48661b99ebc634dfaa444ccf8a2a8ab0a9636d71469577150078",
+      "max_queries_per_hub": 338,
+      "method": "QGT-Cover hubs plus GT-basin spherical query prototypes",
+      "min_queries_per_observed_hub": 1,
+      "prior_strength": 1.0,
+      "requires_aco_dpc": false,
+      "requires_neural_training": false,
+      "requires_probe_labels": false,
+      "train_queries": 30000
+    }
+  }
+}

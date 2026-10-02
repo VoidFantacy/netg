@@ -1,0 +1,68 @@
+[
+  {
+    "dataset": "webvid2_5m_light_v1",
+    "status": "PASS",
+    "baseline_parity_queries": 5120,
+    "native_three_way_parity_queries": 96,
+    "deterministic_rebuild": true,
+    "baseline_topology_sha": "c4797d31330d779d061e4fbaf9efa07a80d4093de88bf58816285f9ce38f943d",
+    "baseline_graph_file_sha": "fa4dfabb630cfd30dbe1f065ac469189a3449a9d560348e585c4d318468da091",
+    "original_graph_file_sha": "fa4dfabb630cfd30dbe1f065ac469189a3449a9d560348e585c4d318468da091",
+    "perturbations": [
+      {
+        "W_sha": "004f91582f8863c52b2d91d5490d7f4fcf581d44ab2a697fa08c1ea5e86eb52b",
+        "topology_sha": "cf7f2050daa3d1fad793bbe3921653032b9636edc333efd443574ec059f6c46e",
+        "changed_entries": 13
+      },
+      {
+        "W_sha": "5b65bdaaeaefa6fff1492d659a94b6b83617f195dff1f1f431bfa0bca2b98247",
+        "topology_sha": "78b240d05106636843cfd5af0a2eb1f485e00924ab6b43544eef739b79d87117",
+        "changed_entries": 13
+      }
+    ],
+    "invalid_inputs_rejected": [
+      "bad_L",
+      "bad_row",
+      "NaN_profile"
+    ],
+    "seconds": 6.996826887130737,
+    "NSG_calls": 5600,
+    "HNSW_calls": 5504,
+    "builds": 4,
+    "actual_threads": 1,
+    "build_seconds": 0.20245584
+  },
+  {
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "status": "PASS",
+    "baseline_parity_queries": 5120,
+    "native_three_way_parity_queries": 96,
+    "deterministic_rebuild": true,
+    "baseline_topology_sha": "8534d38ab004d5162130837c821681a54d18adb62ca77265f854c74f2b2a7923",
+    "baseline_graph_file_sha": "11ffd1dc090f132cdb78e027a202edf5e49a5d50033f82b8834bb0e2ca08036c",
+    "original_graph_file_sha": "11ffd1dc090f132cdb78e027a202edf5e49a5d50033f82b8834bb0e2ca08036c",
+    "perturbations": [
+      {
+        "W_sha": "963df1a0f1288110f69fd9911910f1ea292c46c730982d3b2c13284addfe1dda",
+        "topology_sha": "5615fc4401e398b468cc9cbd1115aa62f2ed0c538b1305bc5a2c2da5f125b211",
+        "changed_entries": 7
+      },
+      {
+        "W_sha": "a603c9ca69d40027ddeae831d77a034a33a42d05731a9258af08dcbfa5719802",
+        "topology_sha": "0788cc6532b6646a235a28d35b0b47f81a1c72eeebfb4af3a3985ea2b40ca0e5",
+        "changed_entries": 8
+      }
+    ],
+    "invalid_inputs_rejected": [
+      "bad_L",
+      "bad_row",
+      "NaN_profile"
+    ],
+    "seconds": 13.827579975128174,
+    "NSG_calls": 5600,
+    "HNSW_calls": 5504,
+    "builds": 4,
+    "actual_threads": 1,
+    "build_seconds": 0.176438499
+  }
+]

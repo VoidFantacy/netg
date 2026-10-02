@@ -1,0 +1,37 @@
+{
+  "K": [
+    1,
+    100
+  ],
+  "L": 128,
+  "base_n": 2505000,
+  "dataset": "webvid2_5m_light_v1",
+  "deadline_unix": 1789875942.4593332,
+  "dimension": 512,
+  "gt": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/inputs/webvid2_5m_light_v1/cal/gt.i64",
+  "hub_count": 815,
+  "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/inputs/webvid2_5m_light_v1/cal/hub_ids.i32",
+  "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "max_main_search_calls": 1100000,
+  "metric_id": 0,
+  "n": 512,
+  "parity_rows": [],
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/inputs/webvid2_5m_light_v1/cal/queries.f32",
+  "root": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1",
+  "routers": [
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+      "name": "GT10-soft-t1"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_hard/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-hard.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+      "name": "GT10-hard"
+    }
+  ],
+  "split": "cal",
+  "threads": 1
+}

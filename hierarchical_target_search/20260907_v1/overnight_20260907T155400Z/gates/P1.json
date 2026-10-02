@@ -1,0 +1,55 @@
+{
+  "stage": "P1",
+  "status": "PASS",
+  "accepted_utc": "2026-09-07T16:13:54.125082+00:00",
+  "next_stage": "P2",
+  "heldout_accessed": false,
+  "performance_claim": null,
+  "checks": {
+    "search_synthetic": "11 groups, including1200 kernel parity (800 ties), shared visited, real cross-region bridge, queue capacities/invalid inputs, independent traces and top-m",
+    "sanitizers": "ASan and UBSan new header/tests pass; existing linked libraries not rebuilt under sanitizer",
+    "evaluator_synthetic": "280 complete count/plain route and result checks plus same-entry/fixed-route/top-m controls",
+    "real_datasets": "Both datasets,512 pilot queries at L64/128;legacy/unified sameIDs/NDC;count/plain/routes and5timing-round identity pass; actual m4/6/8 on32queries",
+    "timer": "Independent source audit; preallocated buffers; online API has noGT; GT/trace/hash/JSON outsidewall",
+    "gate_runner": "Explicit stage/split/measurement/output; all upstreamgates required; validation/heldout restrictions"
+  },
+  "interpretation": "Implementation and measurement accepted; not a new-method performance result. Paired Fast20K uses corrected best-first entries; old Fast default code is untouched.",
+  "evidence": [
+    {
+      "path": "p1/search_audit.json",
+      "sha256": "582bec312a30daba0865d7711e167265713b0d85d2f313a2d6917e62f50ae0f1"
+    },
+    {
+      "path": "p1/synthetic_final.stdout",
+      "sha256": "c837ec9533d8f95ee3b40607187c0ea04741de5f09b751f8a94cef6002676558"
+    },
+    {
+      "path": "p1/synthetic_sanitized.stdout",
+      "sha256": "c837ec9533d8f95ee3b40607187c0ea04741de5f09b751f8a94cef6002676558"
+    },
+    {
+      "path": "p1/evaluator_independent_review.json",
+      "sha256": "8a9953074c190a4249b64b9f0e43c577bfe7a828dc37ee35e053051182a2fe75"
+    },
+    {
+      "path": "p1/evaluator_cli_audit_v2/report.json",
+      "sha256": "aa6a5d3421f7ce44106bac1a8c0cc166fbd5a556974524934c75ecc8e2d204c0"
+    },
+    {
+      "path": "logs/p1_evaluator_selftest_v2.log",
+      "sha256": "bcf88a532d8a180d02938261c3a34ce0f27562c5fb56ebbdba381634cee6810a"
+    },
+    {
+      "path": "p1/real_parity_v1/report.json",
+      "sha256": "d547a834d265af6ccbda6681a9e2bcfe02306d9acb18612823782e754af9458a"
+    },
+    {
+      "path": "p1/paired_fast20k/webvid2_5m_light_v1/manifest.json",
+      "sha256": "5cf6bdf1cc698ba130db9b13d488874c23d2c234975c7d8c606e5d0645e30975"
+    },
+    {
+      "path": "p1/paired_fast20k/yandex_t2i_official10M_ip_v1/manifest.json",
+      "sha256": "483542c85c8afd5cbb65327cb1b6ac31869445aff916965f90469dffad0179c2"
+    }
+  ]
+}

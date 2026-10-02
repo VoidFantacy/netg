@@ -1,0 +1,100 @@
+{
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "dimension": 200,
+  "H": 821,
+  "base_n": 10000000,
+  "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+  "GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt.i32",
+  "source_rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/source_rows.i64",
+  "dataset_order": 1,
+  "points": [
+    {
+      "K": 1,
+      "L": 64
+    },
+    {
+      "K": 1,
+      "L": 128
+    },
+    {
+      "K": 1,
+      "L": 256
+    },
+    {
+      "K": 1,
+      "L": 400
+    },
+    {
+      "K": 1,
+      "L": 800
+    },
+    {
+      "K": 100,
+      "L": 128
+    },
+    {
+      "K": 100,
+      "L": 256
+    },
+    {
+      "K": 100,
+      "L": 400
+    },
+    {
+      "K": 100,
+      "L": 800
+    }
+  ],
+  "methods": [
+    {
+      "name": "A_P_GP",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "source_W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "source_graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+      "hybrid": false,
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+      "before": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/yandex_t2i_official10M_ip_v1/A_P_GP.before.hnsw"
+    },
+    {
+      "name": "B_U_GP",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/yandex_t2i_official10M_ip_v1.UnitHub.W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "source_W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "source_graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+      "hybrid": true,
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/models/yandex_t2i_official10M_ip_v1/B_U_GP.hnsw",
+      "before": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/yandex_t2i_official10M_ip_v1/B_U_GP.before.hnsw"
+    },
+    {
+      "name": "C_P_GU",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "source_W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/yandex_t2i_official10M_ip_v1.UnitHub.W.f32",
+      "source_graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/yandex_t2i_official10M_ip_v1/UnitHub.hnsw",
+      "hybrid": true,
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/models/yandex_t2i_official10M_ip_v1/C_P_GU.hnsw",
+      "before": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/yandex_t2i_official10M_ip_v1/C_P_GU.before.hnsw"
+    },
+    {
+      "name": "D_U_GU",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/yandex_t2i_official10M_ip_v1.UnitHub.W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "source_W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/yandex_t2i_official10M_ip_v1.UnitHub.W.f32",
+      "source_graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/yandex_t2i_official10M_ip_v1/UnitHub.hnsw",
+      "hybrid": false,
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/yandex_t2i_official10M_ip_v1/UnitHub.hnsw",
+      "before": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/yandex_t2i_official10M_ip_v1/D_U_GU.before.hnsw"
+    }
+  ],
+  "threads": 1,
+  "reference_E108": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1",
+  "deadline_unix": 1789902000,
+  "seconds_cap": 900,
+  "smoke": false,
+  "n": 4096,
+  "expected_NSG_calls": 147456,
+  "expected_ANN_calls": 16384
+}

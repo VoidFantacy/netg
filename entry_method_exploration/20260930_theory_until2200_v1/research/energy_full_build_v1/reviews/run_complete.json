@@ -1,0 +1,475 @@
+{
+  "status": "BUILT_PENDING_IDENTITY_AUDIT",
+  "seconds": 509.9166980959999,
+  "jobs": {
+    "webvid2_5m_light_v1_exact": {
+      "exit_code": 0,
+      "seconds": 37.6691057349999,
+      "max_threads": 15,
+      "maxrss_bytes": 10585665536,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 249.42344,
+      "system_cpu_seconds": 6.181552,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/exact.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/inputs/webvid2_5m_light_v1.json"
+      ]
+    },
+    "webvid2_5m_light_v1_teacher": {
+      "exit_code": 0,
+      "seconds": 63.8058370990002,
+      "max_threads": 1,
+      "maxrss_bytes": 5843431424,
+      "affinity_samples": [
+        "14",
+        "15"
+      ],
+      "single_thread_samples": 317,
+      "user_cpu_seconds": 61.210668,
+      "system_cpu_seconds": 2.479946,
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/bin/labels_without_router",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/webvid2_5m_light_v1/labels.config.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/webvid2_5m_light_v1/labels"
+      ]
+    },
+    "webvid2_5m_light_v1_EnergyTree_choose": {
+      "exit_code": 0,
+      "seconds": 4.007818793001206,
+      "max_threads": 15,
+      "maxrss_bytes": 4947939328,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 11.037784999999985,
+      "system_cpu_seconds": 13.292102000000002,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/choose.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/inputs/webvid2_5m_light_v1.json",
+        "EnergyTree"
+      ]
+    },
+    "webvid2_5m_light_v1_EnergyTree_additional": {
+      "exit_code": 0,
+      "seconds": 22.441494528000476,
+      "max_threads": 15,
+      "maxrss_bytes": 10412478464,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 129.48023600000005,
+      "system_cpu_seconds": 4.960590999999997,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/additional.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/inputs/webvid2_5m_light_v1.json",
+        "EnergyTree"
+      ]
+    },
+    "webvid2_5m_light_v1_EnergyTree_profile": {
+      "exit_code": 0,
+      "seconds": 3.0061956199988344,
+      "max_threads": 8,
+      "maxrss_bytes": 4499533824,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 8.659909999999968,
+      "system_cpu_seconds": 11.280654000000002,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/profile.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/inputs/webvid2_5m_light_v1.json",
+        "EnergyTree"
+      ]
+    },
+    "webvid2_5m_light_v1_EnergyTree_router": {
+      "exit_code": 0,
+      "seconds": 0.20085003600070195,
+      "max_threads": 1,
+      "maxrss_bytes": 4096,
+      "affinity_samples": [
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 0.046586999999988166,
+      "system_cpu_seconds": 0.007764999999999134,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/bin/build_router",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/webvid2_5m_light_v1/EnergyTree/router.config.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/webvid2_5m_light_v1/EnergyTree/router_complete.json"
+      ]
+    },
+    "webvid2_5m_light_v1_ShuffledEnergyTree_choose": {
+      "exit_code": 0,
+      "seconds": 4.008324280001034,
+      "max_threads": 15,
+      "maxrss_bytes": 4899753984,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 11.302707999999996,
+      "system_cpu_seconds": 13.095773999999999,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/choose.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/inputs/webvid2_5m_light_v1.json",
+        "ShuffledEnergyTree"
+      ]
+    },
+    "webvid2_5m_light_v1_ShuffledEnergyTree_additional": {
+      "exit_code": 0,
+      "seconds": 22.646206962001088,
+      "max_threads": 15,
+      "maxrss_bytes": 10377986048,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 129.60119600000007,
+      "system_cpu_seconds": 5.167537000000003,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/additional.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/inputs/webvid2_5m_light_v1.json",
+        "ShuffledEnergyTree"
+      ]
+    },
+    "webvid2_5m_light_v1_ShuffledEnergyTree_profile": {
+      "exit_code": 0,
+      "seconds": 2.805866941000204,
+      "max_threads": 8,
+      "maxrss_bytes": 4599083008,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 8.234514999999988,
+      "system_cpu_seconds": 11.135185,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/profile.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/inputs/webvid2_5m_light_v1.json",
+        "ShuffledEnergyTree"
+      ]
+    },
+    "webvid2_5m_light_v1_ShuffledEnergyTree_router": {
+      "exit_code": 0,
+      "seconds": 0.20085905799896864,
+      "max_threads": 1,
+      "maxrss_bytes": 4096,
+      "affinity_samples": [
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 0.05357099999991988,
+      "system_cpu_seconds": 0.0,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/bin/build_router",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/webvid2_5m_light_v1/ShuffledEnergyTree/router.config.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/webvid2_5m_light_v1/ShuffledEnergyTree/router_complete.json"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1_exact": {
+      "exit_code": 0,
+      "seconds": 145.87722199499876,
+      "max_threads": 15,
+      "maxrss_bytes": 16219209728,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 1038.7230610000001,
+      "system_cpu_seconds": 7.279904000000002,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/exact.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/inputs/yandex_t2i_official10M_ip_v1.json"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1_teacher": {
+      "exit_code": 0,
+      "seconds": 27.882380306000414,
+      "max_threads": 1,
+      "maxrss_bytes": 10647838720,
+      "affinity_samples": [
+        "14",
+        "15"
+      ],
+      "single_thread_samples": 138,
+      "user_cpu_seconds": 23.418530999999803,
+      "system_cpu_seconds": 4.431129999999996,
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/bin/labels_without_router",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/yandex_t2i_official10M_ip_v1/labels.config.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/yandex_t2i_official10M_ip_v1/labels"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1_EnergyTree_choose": {
+      "exit_code": 0,
+      "seconds": 2.004625333000149,
+      "max_threads": 15,
+      "maxrss_bytes": 6964977664,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 4.865351000000146,
+      "system_cpu_seconds": 5.274158,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/choose.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/inputs/yandex_t2i_official10M_ip_v1.json",
+        "EnergyTree"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1_EnergyTree_additional": {
+      "exit_code": 0,
+      "seconds": 81.76643807299843,
+      "max_threads": 15,
+      "maxrss_bytes": 16107106304,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 563.876391,
+      "system_cpu_seconds": 7.0434450000000055,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/additional.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/inputs/yandex_t2i_official10M_ip_v1.json",
+        "EnergyTree"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1_EnergyTree_profile": {
+      "exit_code": 0,
+      "seconds": 1.4033288680002443,
+      "max_threads": 8,
+      "maxrss_bytes": 6791004160,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 3.332933000000139,
+      "system_cpu_seconds": 5.049702999999994,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/profile.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/inputs/yandex_t2i_official10M_ip_v1.json",
+        "EnergyTree"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1_EnergyTree_router": {
+      "exit_code": 0,
+      "seconds": 0.20083502899979067,
+      "max_threads": 1,
+      "maxrss_bytes": 4096,
+      "affinity_samples": [
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 0.041103000000020984,
+      "system_cpu_seconds": 0.0041099999999971715,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/bin/build_router",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/yandex_t2i_official10M_ip_v1/EnergyTree/router.config.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/yandex_t2i_official10M_ip_v1/EnergyTree/router_complete.json"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1_ShuffledEnergyTree_choose": {
+      "exit_code": 0,
+      "seconds": 2.0040612960001454,
+      "max_threads": 15,
+      "maxrss_bytes": 6981869568,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 4.851708999999573,
+      "system_cpu_seconds": 5.235675999999998,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/choose.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/inputs/yandex_t2i_official10M_ip_v1.json",
+        "ShuffledEnergyTree"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1_ShuffledEnergyTree_additional": {
+      "exit_code": 0,
+      "seconds": 86.37424512300095,
+      "max_threads": 15,
+      "maxrss_bytes": 16107388928,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 580.555229,
+      "system_cpu_seconds": 7.232828000000012,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/additional.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/inputs/yandex_t2i_official10M_ip_v1.json",
+        "ShuffledEnergyTree"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1_ShuffledEnergyTree_profile": {
+      "exit_code": 0,
+      "seconds": 1.4032703680004488,
+      "max_threads": 8,
+      "maxrss_bytes": 6766727168,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 3.4237640000001193,
+      "system_cpu_seconds": 4.947251999999992,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/profile.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/inputs/yandex_t2i_official10M_ip_v1.json",
+        "ShuffledEnergyTree"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1_ShuffledEnergyTree_router": {
+      "exit_code": 0,
+      "seconds": 0.20089070099857054,
+      "max_threads": 1,
+      "maxrss_bytes": 4096,
+      "affinity_samples": [
+        "14"
+      ],
+      "single_thread_samples": 0,
+      "user_cpu_seconds": 0.045121000000108324,
+      "system_cpu_seconds": 0.0,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/bin/build_router",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/yandex_t2i_official10M_ip_v1/ShuffledEnergyTree/router.config.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/yandex_t2i_official10M_ip_v1/ShuffledEnergyTree/router_complete.json"
+      ]
+    }
+  },
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "complete_build_wall_seconds": 131.13309603699963,
+      "job_seconds_sum": 131.13130181100132,
+      "jobs": [
+        "webvid2_5m_light_v1_exact",
+        "webvid2_5m_light_v1_teacher",
+        "webvid2_5m_light_v1_EnergyTree_choose",
+        "webvid2_5m_light_v1_EnergyTree_additional",
+        "webvid2_5m_light_v1_EnergyTree_profile",
+        "webvid2_5m_light_v1_EnergyTree_router"
+      ],
+      "control_incremental_wall_seconds": 29.662550506000116,
+      "control_jobs": [
+        "webvid2_5m_light_v1_ShuffledEnergyTree_choose",
+        "webvid2_5m_light_v1_ShuffledEnergyTree_additional",
+        "webvid2_5m_light_v1_ShuffledEnergyTree_profile",
+        "webvid2_5m_light_v1_ShuffledEnergyTree_router"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "complete_build_wall_seconds": 259.1367972930002,
+      "job_seconds_sum": 259.1348296039978,
+      "jobs": [
+        "yandex_t2i_official10M_ip_v1_exact",
+        "yandex_t2i_official10M_ip_v1_teacher",
+        "yandex_t2i_official10M_ip_v1_EnergyTree_choose",
+        "yandex_t2i_official10M_ip_v1_EnergyTree_additional",
+        "yandex_t2i_official10M_ip_v1_EnergyTree_profile",
+        "yandex_t2i_official10M_ip_v1_EnergyTree_router"
+      ],
+      "control_incremental_wall_seconds": 89.98374800800048,
+      "control_jobs": [
+        "yandex_t2i_official10M_ip_v1_ShuffledEnergyTree_choose",
+        "yandex_t2i_official10M_ip_v1_ShuffledEnergyTree_additional",
+        "yandex_t2i_official10M_ip_v1_ShuffledEnergyTree_profile",
+        "yandex_t2i_official10M_ip_v1_ShuffledEnergyTree_router"
+      ]
+    }
+  },
+  "default_changed": false
+}

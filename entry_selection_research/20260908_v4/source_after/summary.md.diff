@@ -1,0 +1,19 @@
+--- source_before/summary.md
++++ current/summary.md
+@@ -6,11 +6,15 @@
+ 
+ ### 当前主要方向：改进入口选择方法
+ 
++2026-09-08新方法[调研v4](entry_selection_research/20260908_v4/report.md)已完成，状态`RESEARCH_COMPLETE_DESIGN_ONLY`：推荐**直接按真实搜索效用训练、允许多叶选择同一hub的斜切决策树**。query-only重参照与树共同拟合、分别审计样本外收益，教师失败不否决成功的树；树直接优化实测效用，分支比较当前左右子树实际输出的收益差，在线最多10次线性判断直接输出一个入口。它不依赖Fast短名单，不切base，不恢复P3，不预先固定anchor/三个入口。完整机制和风险见[method.md](entry_selection_research/20260908_v4/method.md)，样本/预算/阶段停止草案见[minimum_gate.md](entry_selection_research/20260908_v4/minimum_gate.md)。
++
++本轮重新核查旧ranker、NETG、centroid/residual及finite-beam v2：真实Recall/NDC、soft labels、全H probe和离线重/在线轻分别已有先例；v2所谓distillation实际是64-NN局部记忆，不能据其失败否定任意query-only非线性模型。GATE/LRSG已有轻量在线图/入口表达，TAO/policytree提供树优化机制；本次是面向原kernel效用的适配候选，不宣称学术首次。多个叶子可选同hub只提供多区域表示能力，叶数/样本限制仍可能丢入口；重模型不是理论上界，训练改进和操作数上限均非部署GO。此次仅调研与文档，没有新模型/搜索/环境修改或原始validation/held-out访问。
++
+ 2026-09-08 用户授权的[Fast根因诊断已完成](fast_router_diagnosis/20260908_v1/report.md)：双数据集各512历史pilot，原NSG/raw-IP与20K paired Fast，全H single及C8真实pair/triple，共2,770,770次搜索。输入/画像复算、真实count/plain/repeat和独立统计核查通过，检查项内未发现实现错误。主要可定位缺口是GT1几何标签/画像评分与真实有限预算搜索效用不一致；ANN近似不是主因，近邻迁移未呈现稳定优势，但不能证明理论不可学习。当前计划见[s-target.md](s-target.md)，Fast基线保留。
+ 
+ 单入口exact画像路由相对全H单入口oracle仍差WebVid14.16/11.46 pp、Yandex11.02/5.92 pp（L64/128）；直接知道原GT1 basin标签也仍差13.07/10.35及7.75/4.80 pp。exact C8内最佳single仍遗漏3.16–6.66 pp的全H机会，因此短名单内与外均有损失。这里oracle均是同L、当前H、免费事后选择，不是部署收益或全base上界。
+ 
+-此前固定anchor、固定三入口的默认设计现已撤下：含anchor最佳triple比不受限最佳triple低0.84–3.11 pp，四点全族区间均为正；C8最佳single的平均Recall四点均略高于最佳triple（此项描述性，不能宣布单入口部署最优）。最近fit−随机fit的四个主对比全族区间均跨0；跨L A0集合相交率92.19%/96.09%，不能用唯一ID改变夸大困难。下一步先明确区别于旧失败ranker的真实搜索效用表示与可预测信号，单入口作为最小诊断动作；不自动训练原v2组合模型、不恢复失败分支。[完整32对比](fast_router_diagnosis/20260908_v1/analysis/v2/analysis.md)。
++此前固定anchor、固定三入口的默认设计现已撤下：含anchor最佳triple比不受限最佳triple低0.84–3.11 pp，四点全族区间均为正；C8最佳single的平均Recall四点均略高于最佳triple（此项描述性，不能宣布单入口部署最优）。最近fit−随机fit的四个主对比全族区间均跨0；跨L A0集合相交率92.19%/96.09%，不能用唯一ID改变夸大困难。新树方案以单入口作为最小动作检验真实效用表示与可预测信号；不自动训练原v2组合模型、不恢复失败分支。[完整32对比](fast_router_diagnosis/20260908_v1/analysis/v2/analysis.md)。
+ 
+ 已有WebVid validation 1K、815现有候选、K10/L64诊断中，Fast Top-3 Recall为65.23%，免费穷举选择的单入口oracle为80.24%，graph NDC为923.564→913.376。这支持该历史候选池存在选择空间，不证明当前入口是唯一瓶颈。它使用旧30K Fast与旧评测、排除选择成本，不能视为新paired20K/双数据集/端到端收益；命中并集贪心三入口也不是最佳联合搜索。[原始诊断](oracle_entry_diagnostics/webvid_validation_1k_current_hubs_v1/results.json)。
+ 

@@ -1,0 +1,126 @@
+--- before/summary.md
++++ after/summary.md
+@@ -4,9 +4,11 @@
+ 
+ ## 1. 当前结论
+ 
+-**方案C已设为第一优先级并实际完成C0→C1→C2；当前冻结配置在C2门停止，不进入C3。** 版本`entry_method_exploration/20260909_c_stage1_v1`，状态`NO_GO_UNCONDITIONAL_HEADROOM_STOP_C`。WebVid两点有实质oracle空间，Yandex两点未达到预注册+0.5pp；不能写成所有点无空间，也不能把common-cap oracle当成可部署方法或Recall–QPS GO。
++**下一阶段主线已按用户最新指令切换为A+B：可路由性约束的入口—表示联合设计。** 当前只有联合理论设计，下一项是最小协议；本次优先级更新没有新增实现、标签、训练或搜索。完整计划由[s-target.md](s-target.md)维护，A+B尚无性能GO。
+ 
+-A+B保持研究设计未实现，不与C联动、不让C挽救A+B。原C R0仍保留当时设计未运行身份；本轮执行是新的stage1版本。此前E20 Fast根因诊断及E14/E15/E16的证据边界不变。
++**最近完成的方案C已实际执行C0→C1→C2，当前冻结配置在C2门停止，不进入C3。** 版本`entry_method_exploration/20260909_c_stage1_v1`，状态`NO_GO_UNCONDITIONAL_HEADROOM_STOP_C`。WebVid两点有实质oracle空间，Yandex两点未达到预注册+0.5pp；不能写成所有点无空间，也不能把common-cap oracle当成可部署方法或Recall–QPS GO。
++
++C已退出当前推进队列，不与A+B联动；其停止不证明A+B有效。原C R0仍保留当时设计未运行身份，本轮真实执行属于新的stage1版本。此前E20 Fast根因诊断及E14/E15/E16的证据边界不变。
+ 
+ ## 2. 实际完成
+ 
+@@ -43,4 +45,4 @@
+ - [C第一阶段完整报告](entry_method_exploration/20260909_c_stage1_v1/report.md)、[实际命令](entry_method_exploration/20260909_c_stage1_v1/commands.md)、[状态](entry_method_exploration/20260909_c_stage1_v1/state.json)。
+ - [主统计与逐分支成本](entry_method_exploration/20260909_c_stage1_v1/results/analysis_v1/report.json)、[C2 gate](entry_method_exploration/20260909_c_stage1_v1/results/analysis_v1/gate.json)、[C1 gate](entry_method_exploration/20260909_c_stage1_v1/results/c1_gate.json)。
+ - [历史10：C真实执行](experiment_history/10_c_state_intervention.md)；[此前E20](experiment_history/08_fast_router_diagnosis.md)；[E14](experiment_history/05_probe_reroute.md)与[E15/E16](experiment_history/06_finite_beam_and_atlas.md)。
+-- 下一步只由[s-target.md](s-target.md)管理，A+B仍为[联合理论设计](entry_method_exploration/20260909_ab_joint_r0_v1/README.md)。
++- 下一阶段主线与协议交付要求见[s-target.md](s-target.md)；设计依据为[A+B联合理论](entry_method_exploration/20260909_ab_joint_r0_v1/README.md)，尚未形成执行协议或实验结果。
+--- before/s-target.md
++++ after/s-target.md
+@@ -1,14 +1,15 @@
+-# ACSG 下一阶段目标：C 同状态有限动作诊断优先
++# ACSG 下一阶段目标：A+B 入口—表示联合设计主线
+ 
+-> 2026-09-08建立，2026-09-09保留A+B联合理论，按用户授权优先执行C0–C2并在实质门停止。本文只维护下一阶段目标、阶段产物和进退条件。最近实测结果见[summary.md](summary.md)，实现合同见[spec.md](spec.md)，历史经验先由[s-experiment.md](s-experiment.md)进入详细复盘。当前用户已明确授权 C0→C1→有界C2，并将 C 设为第一优先级；A+B 仍为设计未运行。C0/C1已通过，C2已完成并触发实质headroom停止门；C3/C4、validation/held-out均未授权且未运行。
++> 2026-09-08建立，2026-09-09在C0–C2完成并停止后，按用户最新指令将A+B列为下一阶段主线。本文只维护下一阶段目标、阶段产物和进退条件。最近实测结果见[summary.md](summary.md)，实现合同见[spec.md](spec.md)，历史经验先由[s-experiment.md](s-experiment.md)进入详细复盘。本次仅更新文档与优先级；A+B仍为设计未运行，最小执行协议尚未冻结。C保持停止，C3/C4未运行。
+ 
+ ## 1. 当前优先级与状态
+ 
+-2026-09-09 当前执行优先级（覆盖旧R0文件中的未授权/先A+B表述）：
++2026-09-09 当前研究安排以用户在C2停止后的最新指令为准：
+ 
+-1. **C：同一完整搜索状态上的一次补充入口干预。** 已按第一优先级完成C0→C1→每dataset2K drl_train C2。当前冻结配置`NO_GO_UNCONDITIONAL_HEADROOM_STOP_C`；阶段停止，等用户决定后续研究，不自动进入C3或重新分配预算救场。
+-2. **A+B：可路由性约束的入口—表示联合设计。** 保留以下联合理论，当前不实现、不训练、不与C混跑。
+-3. **D：策略修改驱动的成对标注。** 仍是某个真实效用策略成立后的离线效率支线。
++1. **A+B：下一阶段第一优先级、唯一主线。** 联合优化受限query路由分区与slot→真实入口映射。下一项交付是把现有联合理论收敛为新的最小协议，随后按“existing-H exact验证→micro-index→完整Recall–QPS”的门槛推进；目前未实现、未生成标签、未训练、未搜索。
++2. **D：后置离线效率支线。** 只有真实效用策略成立后才考虑成对标注，不与A+B首阶段并行展开。
++
++**C退出当前推进队列，保留已验证的状态机与完整负结果。** 它此前按第一优先级完成C0→C1→每dataset2K drl_train C2，冻结配置状态为`NO_GO_UNCONDITIONAL_HEADROOM_STOP_C`。不进入C3，不通过扩大模型、候选或预算续跑，也不纳入A+B首阶段。C停止是本次资源转向的依据，不构成A+B有效或可学的证据。
+ 
+ v4 效用树是 A+B 最直接的本地强参照：它已经允许多叶映射同一 hub，并以真实搜索效用更新分区和叶动作。新 A+B 不能把这些宽泛概念称为首次；其差异必须落在固定 `M=|H|` 的 flat slot codebook、Fast identity 可恢复、显式 slot/action 分解、受限 affine metric partition 及 micro-IP 部署。
+ 
+@@ -17,8 +18,8 @@
+ | Fast 根因诊断 E20 | 已完成，作为C之前的最近诊断保留 | 保持[当前总结](summary.md)与[历史08](experiment_history/08_fast_router_diagnosis.md)的证据边界 |
+ | B 独立 R0 v1 | 原 H 外 fixed-m/tree-swap 版本曾因过严的组件碰撞标准关闭；未运行 | 作为[历史版本](entry_method_exploration/20260909_b_r0_v1/README.md)保留，不直接复活旧 pilot |
+ | A 独立 R0 v1 | standalone per-hub facet 版本的待决状态已结束；未运行 | 作为[历史版本](entry_method_exploration/20260909_a_r0_v1/README.md)保留，其组件前作继续作为强对照 |
+-| A+B 联合 R0 | `R0_THEORY_REFORMULATED_DESIGN_ONLY_UNRUN` | 用户审阅[联合理论](entry_method_exploration/20260909_ab_joint_r0_v1/theory.md)后，另行冻结最小协议；当前不实现或执行 |
+-| C stage1 v1 / E21 | `NO_GO_UNCONDITIONAL_HEADROOM_STOP_C` | [实际报告](entry_method_exploration/20260909_c_stage1_v1/report.md)、[gate](entry_method_exploration/20260909_c_stage1_v1/results/analysis_v1/gate.json)、[状态](entry_method_exploration/20260909_c_stage1_v1/state.json)；停止，不进入C3 |
++| A+B 联合方向 | 下一阶段第一优先级；现有R0仍为`R0_THEORY_REFORMULATED_DESIGN_ONLY_UNRUN` | 依据[联合理论](entry_method_exploration/20260909_ab_joint_r0_v1/theory.md)形成独立最小协议；协议未锁定，实验未启动 |
++| C stage1 v1 / E21 | `NO_GO_UNCONDITIONAL_HEADROOM_STOP_C`，已退出推进队列 | 保留[实际报告](entry_method_exploration/20260909_c_stage1_v1/report.md)、[gate](entry_method_exploration/20260909_c_stage1_v1/results/analysis_v1/gate.json)、[状态](entry_method_exploration/20260909_c_stage1_v1/state.json)；停止，不进入C3 |
+ 
+ 原创性判断更新为：**已有组件不等于整体方法没有原创性。** 方法贡献可以来自新的问题定义、不可分的约束耦合、专门优化与端到端证据；GATE 也是这种贡献形态。当前 A+B 因而是“方法／系统层面的合理原创性候选，尚未由完整查新与实证确立”，不再是“组件已有即强算法 NO-GO”。C 的情况更窄：QING 2012 已覆盖搜索中保留状态并加入新 pivot，ANNiE 等已覆盖 learned live-state control；C 只能把同状态、共同预登记剩余 graph-NDC cap、逐分支实际成本和 candidate-specific `continue/force-expand` 成对动作值作为条件性贡献候选，不能声称首次动态注入。
+ 
+@@ -145,6 +146,10 @@
+ 
+ ## 7. 最小析因与阶段门槛
+ 
++**下一项交付是A+B最小协议，不是直接启动完整标签或训练。** 新协议使用独立版本路径，至少固定：paired-Fast20K输入身份；WebVid与official Yandex-IP；K10、L64/128；`C=H`、`M=|H|`与single-entry；2×2参数容量、fold隔离及ties；主比较族、实质效应/伤害阈值和停止条件；标签调用、wall/RSS/磁盘上限及artifact schema。旧E20样本只作回顾性检查；新audit的样本身份须核对历史使用记录，包括本次C2的训练query名单，不能把已参与方法选择的开发样本称为新鲜audit。
++
++当前只确定主线与上述协议交付要求，尚未新增execution lock或实验命令。原A/B独立R0和C stage1的state、manifest与交付快照保留历史身份；其中当时的优先级不覆盖本文。本次文档更新不启动标签生成、训练、ANN搜索或validation/held-out访问。
++
+ 第一阶段固定 `C=H`、`M=|H|`、single-entry、exact score：
+ 
+ | 路由分数 | identity `pi` | utility-remapped `pi` |
+@@ -160,7 +165,7 @@
+ 
+ 阶段顺序：
+ 
+-1. **R0协议锁：** 冻结 2×2 容量、fold、ties、统计族、资源、输入身份和停止条件；当前未完成、未授权执行。
++1. **R0协议锁（当前下一项）：** 完成上述最小协议及身份/资源/统计锁，给出具体可复核的实施范围；当前未完成，本次没有启动后续实验。
+ 2. **回顾性 kill-screen：** 现有 E20 512 pilot 只可估计效应和检查实现，不作新证据或阈值选择后的 audit。
+ 3. **existing-H exact gate：** 新的隔离样本上，joint 必须超过 exact Fast1、旧 GT1-basin 标签完美恢复参考值、affine-only 与 mapping-only，并满足双数据集、L64/L128 的预注册伤害规则；同时把 v4 树作为直接强对照。
+ 4. **micro-index gate：** exact 通过后才测同 scorer 的近似路由损失；随后测 routing、graph、total 的独立整批 wall。
+@@ -169,7 +174,7 @@
+ 
+ 主要停止条件：joint 只提高训练／oracle、不胜任一主效应、只靠增容量或更多标签才赢、任一数据集出现系统性伤害、micro-index 或完整 wall 吞掉质量收益。失败只否决冻结配置，不外推成所有 query-only 共设计不可能。
+ 
+-## 8. C、与 A+B 的关系、资源与文档接续
++## 8. C停止边界、条件接口与资源接续
+ 
+ C 已完成首阶段，当前结论是**C1通过，C2四点共同实质门失败，停止当前冻结配置**。本地 E13/E15 表明搜索进展有增量信号，但 E14 最终 v4 已使用 paid trace、frontier、topology 和 merged Recall/NDC 监督，在 WebVid 仍显著选错替代入口；其 Yandex 最终扩展未运行。C R0当时尚未测量的同状态、共同cap、四候选force相对continue增量，已由[E21](experiment_history/10_c_state_intervention.md)实际补齐。WebVid +0.980/+0.635pp通过，Yandex +0.230/+0.140pp未达四点均≥+0.5pp；四个校正区间均正，停止原因是实质空间不足，不是完全没有正增量。前作与原设计边界仍见[C R0](entry_method_exploration/20260909_c_r0_v1/README.md)。
+ 
+--- before/s-experiment.md
++++ after/s-experiment.md
+@@ -34,6 +34,8 @@
+ 
+ ## 2. 准备与设计：不能计作方法实验
+ 
++2026-09-09在E21停止后，用户将A+B指定为下一阶段主线。此次为优先级与文档更新，A+B最小协议尚未冻结，不新增实验编号；后续目标以[s-target.md](s-target.md)为准。
++
+ | 记录 | 已完成 | 尚未执行/不能声称 | 详细入口 |
+ |---|---|---|---|
+ | 比较依赖准备 | METIS/GKlib、独立Python、gp-ann/MIPS、RoarGraph、局部MKL与smoke | 依赖就绪不是RoarGraph/kRt/LIRA等正式同机结果 | [03 基线与环境](experiment_history/03_baselines.md) |
+@@ -42,7 +44,7 @@
+ | v3离线重/在线轻 | 澄清训练与推理成本边界 | 没有新标签/模型/实验 | [09](experiment_history/09_research_designs_not_experiments.md) |
+ | v4效用树 | 原生搜索收益/多叶同hub的树设计与gate | 尚未实现训练器、未生成完整20K×H标签、无性能GO | [09](experiment_history/09_research_designs_not_experiments.md) |
+ | v5四方向 | 近期前作、机制/成本/风险与独立复核 | v5设计原版的A/B/C/D均未实施；A+B及C后来完成更细R0，其中C的独立stage1继任执行见E21，不能回写成v5原版已运行 | [09](experiment_history/09_research_designs_not_experiments.md) |
+-| A/B独立R0与联合理论 | A、B分别完成组件碰撞审计和未执行协议；随后按用户意见改用方法层原创性标准，形成fixed-M、Fast可恢复的flat slot/action联合理论 | 两个独立R0均未运行并作为历史保留；A+B联合版只完成理论重述，未实现、未训练、未搜索 | [09](experiment_history/09_research_designs_not_experiments.md) |
++| A/B独立R0与联合理论 | A、B分别完成组件碰撞审计和未执行协议；随后按用户意见改用方法层原创性标准，形成fixed-M、Fast可恢复的flat slot/action联合理论；C停止后被列为下一阶段主线 | 两个独立R0均未运行并作为历史保留；A+B联合版只有理论设计，最小协议未锁定，未实现、未训练、未搜索 | [09](experiment_history/09_research_designs_not_experiments.md) |
+ | C独立R0 | 补查QING/ANNiE等最近前作，核对E13–E16与当前kernel，冻结同状态有限动作、state×reuse析因和A+B条件接口 | R0原版本未实现未运行；后续新授权stage1已执行C0–C2并按实质门停止，见E21；无C3/C4或A+B联动GO | [09](experiment_history/09_research_designs_not_experiments.md) |
+ 
+ ## 3. 容易误读的版本与证据
+--- before/experiment_history/09_research_designs_not_experiments.md
++++ after/experiment_history/09_research_designs_not_experiments.md
+@@ -1,6 +1,8 @@
+ # 09｜已完成研究设计与未执行提案
+ 
+ 核对日期：2026-09-09。本页用于防止把“调研完成、依赖就绪、写了协议”误认为做过方法实验。以下设计版本保留其原state和交付身份；当时的推荐、预算和未执行命令不覆盖当前[s-target.md](../s-target.md)。本页记录设计版本，原件不变；2026-09-09另行授权执行的C stage1是[E21真实实验](10_c_state_intervention.md)，不能把其结果回写成旧R0已经运行。
++
++同日E21停止后，用户明确将A+B列为下一阶段主线；下一项是独立最小协议。此次仅更新文档与研究优先级，A+B仍未实现、未生成标签、未训练或搜索，C保持停止。联合R0与C stage1的原state、manifest和交付快照保留当时身份，当前安排见[s-target.md](../s-target.md)。
+ 
+ ## 1. 文献复审与入口研究版本
+ 
+@@ -11,7 +13,7 @@
+ | [入口v2](../entry_selection_research/20260908_v2/report.md) | 一手文献/作者实现与本地失败审查、recommendation/minimum_gate/protocol_draft | C8内含anchor的固定三入口与40维联合选择器草案 | 40维模型未实现未训练；anchor/固定3/C8充分假设后来被真实Fast诊断撤下 |
+ | [范围澄清v3](../entry_selection_research/20260908_v3/clarification.md) | 用户明确离线可重、在线要轻；同步研究边界 | 允许重模型、复杂监督和离线预计算，不强制轻训练或teacher/student | 没有生成新标签/模型/结果；不是一次学习实验 |
+ | [效用树v4](../entry_selection_research/20260908_v4/report.md) | TAO/成本敏感树、旧NETG/ranker/Atlas一手审计；method/minimum_gate与独立复核 | 全H真实Recall、允许多叶同hub、单路径query树；重参照分别审计 | 没有树训练器/重模型/新72.14M标签或部署点；当前保留为共同基线 |
+-| [论文方向v5](../entry_selection_research/20260908_v5/report.md) | 四专题、近期前作碰撞、成本与方法审查、保护校验 | A多面、B入口发现与路由共同设计、C同状态干预、D成对标注 | 四条都未实现未运行；没有高原创性或性能GO证明；下一阶段用户确认先细评后探索B/A/C |
++| [论文方向v5](../entry_selection_research/20260908_v5/report.md) | 四专题、近期前作碰撞、成本与方法审查、保护校验 | A多面、B入口发现与路由共同设计、C同状态干预、D成对标注 | v5原版四条都未实现未运行；没有高原创性或性能GO证明；当时计划先细评B/A/C，后续C stage1执行及A+B主线调整分别见E21和本页接续记录 |
+ | [B独立R0](../entry_method_exploration/20260909_b_r0_v1/README.md) | 对H外64列、fixed-m、受限tree selector-aware swap作组件碰撞审计和未执行pilot草案 | 当时因组件前作与论文优先级关闭该具体v1 | 未生成候选、标签、模型或搜索结果；关闭不是性能否证，当前只作历史版本 |
+ | [A独立R0](../entry_method_exploration/20260909_a_r0_v1/README.md) | 对per-hub多facet、regret增删、flat MIPS作组件碰撞审计和未执行协议 | 当时给出“关闭或接受低原创性systems诊断”的二选一 | 用户后来认为该整体原创性标准过严；v1未运行，其组件前作继续作为强对照 |
+ | [A+B联合R0](../entry_method_exploration/20260909_ab_joint_r0_v1/README.md) | 按方法层原创性重构为fixed `M=|H|`、Fast可恢复的flat slot/action codebook；定义many-to-one映射、受限affine、两类误差分解和2×2 gate | 先在现有H内共同设计可路由分区与入口语义，H外发现后置 | 只完成理论重述；没有protocol lock、实现、标签、训练、搜索、validation或held-out |

@@ -1,0 +1,76 @@
+{
+  "K": 10,
+  "L": 128,
+  "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+  "dataset": "webvid2_5m_light_v1",
+  "dim": 512,
+  "graph_file": "/data/netg/ACSG/entry_method_exploration/20260911_hnsw_edge_rl_v1/inputs/webvid2_5m_light_v1/base.hnsw",
+  "gt_file": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/inputs/webvid2_5m_light_v1/cal/gt.i64",
+  "hub_count": 815,
+  "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+  "hub_projection": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/inputs/webvid2_5m_light_v1/hub_projection.f64",
+  "index_path": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "measure_wall": false,
+  "methods": [
+    {
+      "kind": "base",
+      "name": "base"
+    },
+    {
+      "kind": "random",
+      "name": "random"
+    },
+    {
+      "arm": "rl",
+      "kind": "model",
+      "model": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/models/webvid2_5m_light_v1/rl_20260917/selected/model.json",
+      "name": "rl_20260917",
+      "seed": 20260917
+    },
+    {
+      "arm": "rl",
+      "kind": "model",
+      "model": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/models/webvid2_5m_light_v1/rl_20260918/selected/model.json",
+      "name": "rl_20260918",
+      "seed": 20260918
+    },
+    {
+      "arm": "exact",
+      "kind": "model",
+      "model": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/models/webvid2_5m_light_v1/exact_20260917/selected/model.json",
+      "name": "exact_20260917",
+      "seed": 20260917
+    },
+    {
+      "arm": "exact",
+      "kind": "model",
+      "model": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/models/webvid2_5m_light_v1/exact_20260918/selected/model.json",
+      "name": "exact_20260918",
+      "seed": 20260918
+    }
+  ],
+  "mode": "evaluate",
+  "num_queries": 512,
+  "pair_cosine": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/inputs/webvid2_5m_light_v1/pair_cosine.f32",
+  "policy": {
+    "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+    "canonical_entry_order": true,
+    "dim": 512,
+    "family": "profile",
+    "hnsw_seed": 20260828,
+    "hub_count": 815,
+    "k": 3,
+    "mapping": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+    "model_name": "gt10_soft",
+    "name": "gt10_soft",
+    "seed": 20260828,
+    "slot_labels": false,
+    "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/hub_ids.i32"
+  },
+  "projection": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/inputs/webvid2_5m_light_v1/projection.f64",
+  "queries_file": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/inputs/webvid2_5m_light_v1/cal/queries.f32",
+  "query_cpu": 15,
+  "row_ids": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/inputs/webvid2_5m_light_v1/cal/row_ids.i64",
+  "split": "cal",
+  "threads": 1
+}

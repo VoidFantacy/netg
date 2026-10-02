@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "scope": "P1 reacceptance: first32 saved P2 queries, 64regions2portals, both datasets6methods2Ls; no new performance claim",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "aligned_query_method_L_rows": 384,
+      "count_fields": [
+        "routing_ndc",
+        "graph_ndc",
+        "total_ndc",
+        "routing_mac",
+        "graph_mac",
+        "total_mac",
+        "expanded",
+        "rejected",
+        "evicted_unexpanded"
+      ],
+      "route_result_fields": [
+        "query_id",
+        "recall",
+        "result_ids",
+        "entry_ids",
+        "fast_anchor_id",
+        "shared_seed",
+        "actual_entry_count",
+        "regions",
+        "weights"
+      ],
+      "five_timing_rounds_stable": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "aligned_query_method_L_rows": 384,
+      "count_fields": [
+        "routing_ndc",
+        "graph_ndc",
+        "total_ndc",
+        "routing_mac",
+        "graph_mac",
+        "total_mac",
+        "expanded",
+        "rejected",
+        "evicted_unexpanded"
+      ],
+      "route_result_fields": [
+        "query_id",
+        "recall",
+        "result_ids",
+        "entry_ids",
+        "fast_anchor_id",
+        "shared_seed",
+        "actual_entry_count",
+        "regions",
+        "weights"
+      ],
+      "five_timing_rounds_stable": true
+    }
+  ],
+  "inputs": [
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/webvid_eval/count.json",
+      "sha256": "2b9a16a3225082ae38ec22dd6b1d8fbe5ad7b852ef5625359ccd4b4465655d6a"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/p2_compatibility_v2/webvid_count.json",
+      "sha256": "5d2f50ee86a0168da93aeae7a5022c5c227279d3e5798f47925857f0a8e7aca7"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/p2_compatibility_v2/webvid_timing.json",
+      "sha256": "15b2e4eb83a6ba00a0f6a6711cc66f990d3337bc8c83e0cf4eac8910a7fb84da"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_eval/count.json",
+      "sha256": "96c4f629f318addd5499666ab02bed67063fd3dba449418e863c9bd211033d87"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/p2_compatibility_v2/yandex_count.json",
+      "sha256": "5fc3cff2897b131c94b8f6d8809b21f2e55800e35f5096e43ea21f4b9870f1a7"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/p2_compatibility_v2/yandex_timing.json",
+      "sha256": "bde4ad21f248ae86766129e0d6701dadba45d061758394c1744ece71e712ce0f"
+    }
+  ],
+  "evaluator_provenance": {
+    "binary_path": "/data/netg/ACSG/build/benches/bench_hierarchical_eval_p3",
+    "binary_sha256": "2f234d1276fdafebe0ab706ebccc37f4c52312ca16ca09b512530f404b0ce580",
+    "source_hash_scope": "source file present at execution; root build manifest binds compiled source",
+    "source_path": "/data/netg/ACSG/benches/bench_hierarchical_eval_p3.cpp",
+    "source_sha256": "cf40032dc469c08840e409af23bd503e1ad6571184351a2694776247e21d1316"
+  },
+  "script_sha256": "0a9e859324024d78deb592dc0b2a022d33ee8aa889b214e8c7f5879736a17f26",
+  "heldout_accessed": false
+}

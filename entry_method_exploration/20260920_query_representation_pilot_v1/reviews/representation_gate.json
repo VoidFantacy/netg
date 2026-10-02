@@ -1,0 +1,183 @@
+{
+  "status": "STOP_REPRESENTATION",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "primary_ANN_gate": {
+        "baseline": "GT10",
+        "delta_pp": [
+          -0.9765625,
+          -0.115234375
+        ],
+        "anchor_pass": false,
+        "controls": [
+          {
+            "control": "QLinearANN",
+            "delta_hits": [
+              15,
+              448
+            ],
+            "pass_gate": true
+          },
+          {
+            "control": "WFreeANN",
+            "delta_hits": [
+              -9,
+              -370
+            ],
+            "pass_gate": false
+          }
+        ],
+        "passed": false
+      },
+      "exact_diagnostic_gate": {
+        "baseline": "IdentityExact",
+        "delta_pp": [
+          -1.3671875,
+          -0.5
+        ],
+        "anchor_pass": false,
+        "controls": [
+          {
+            "control": "QLinearExact",
+            "delta_hits": [
+              4,
+              126
+            ],
+            "pass_gate": true
+          },
+          {
+            "control": "WFreeExact",
+            "delta_hits": [
+              -9,
+              -432
+            ],
+            "pass_gate": false
+          }
+        ],
+        "passed": false
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "primary_ANN_gate": {
+        "baseline": "GT10",
+        "delta_pp": [
+          -1.3671875,
+          -1.052734375
+        ],
+        "anchor_pass": false,
+        "controls": [
+          {
+            "control": "QLinearANN",
+            "delta_hits": [
+              -3,
+              -109
+            ],
+            "pass_gate": false
+          },
+          {
+            "control": "WFreeANN",
+            "delta_hits": [
+              -13,
+              -790
+            ],
+            "pass_gate": false
+          }
+        ],
+        "passed": false
+      },
+      "exact_diagnostic_gate": {
+        "baseline": "IdentityExact",
+        "delta_pp": [
+          -1.7578125,
+          -0.927734375
+        ],
+        "anchor_pass": false,
+        "controls": [
+          {
+            "control": "QLinearExact",
+            "delta_hits": [
+              -3,
+              -14
+            ],
+            "pass_gate": false
+          },
+          {
+            "control": "WFreeExact",
+            "delta_hits": [
+              -14,
+              -720
+            ],
+            "pass_gate": false
+          }
+        ],
+        "passed": false
+      }
+    }
+  ],
+  "implementation_checks": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "family": "Identity",
+      "cpp_torch_encoded_max_error": 0.0,
+      "score_max_error": null
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "family": "QLinear",
+      "cpp_torch_encoded_max_error": 2.980232238769531e-07,
+      "score_max_error": 7.549558007635682e-07
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "family": "QMLP",
+      "cpp_torch_encoded_max_error": 3.5762786865234375e-07,
+      "score_max_error": 8.442419707765936e-07
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "family": "WFree",
+      "cpp_torch_encoded_max_error": 0.0,
+      "score_max_error": 7.3406186862357e-07
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "family": "Identity",
+      "cpp_torch_encoded_max_error": 0.0,
+      "score_max_error": null
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "family": "QLinear",
+      "cpp_torch_encoded_max_error": 1.1920928955078125e-07,
+      "score_max_error": 5.892440479993155e-07
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "family": "QMLP",
+      "cpp_torch_encoded_max_error": 1.1920928955078125e-07,
+      "score_max_error": 5.96405742014916e-07
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "family": "WFree",
+      "cpp_torch_encoded_max_error": 0.0,
+      "score_max_error": 6.17613064468614e-07
+    }
+  ],
+  "identity_ANN_matches_original_GT10": true,
+  "supported_actions_match_cached_ID_distance_bits_NDC": true,
+  "new_model_main_search_calls": 81920,
+  "descriptive_query_bootstrap": {
+    "repeats": 2000,
+    "seed": 20260920,
+    "independent_fresh_test": false
+  },
+  "source": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/src/analyze_quality.py",
+    "bytes": 10025,
+    "mtime_ns": 1789869808983398524,
+    "sha256": "9bcb2366efce34eea426f205e1c8f3f509ed869c5fa0969b97fe14e75304765d"
+  }
+}

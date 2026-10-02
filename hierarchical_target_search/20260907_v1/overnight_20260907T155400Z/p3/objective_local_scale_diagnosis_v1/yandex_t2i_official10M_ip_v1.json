@@ -1,0 +1,2342 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE",
+  "stage": "P3_POST_NOGO_OBJECTIVE_LOCAL_SCALE",
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "N": 10000000,
+  "M_directed_valid_nonself": 294844794,
+  "Q_fit": 20000,
+  "sufficient_condition": "D(u)*(9*Q) < M, strict integer arithmetic",
+  "degree_definition": "Original directed valid nonself incoming+outgoing slots, duplicate arcs retained.",
+  "groups": [
+    {
+      "family": "support",
+      "population": "all",
+      "node_count": 10000000,
+      "fit_target_occurrences": 200000,
+      "condition_node_count": 10000000,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 200000,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 29.4844794,
+        "min": 1,
+        "max": 403
+      },
+      "out_degree": {
+        "mean": 29.4844794,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 58.9689588,
+        "min": 2,
+        "max": 467
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 42,
+          "zero_based_order_index": 2499999
+        },
+        {
+          "p": 0.5,
+          "degree": 56,
+          "zero_based_order_index": 4999999
+        },
+        {
+          "p": 0.75,
+          "degree": 74,
+          "zero_based_order_index": 7499999
+        },
+        {
+          "p": 0.9,
+          "degree": 90,
+          "zero_based_order_index": 8999999
+        },
+        {
+          "p": 0.95,
+          "degree": 102,
+          "zero_based_order_index": 9499999
+        },
+        {
+          "p": 0.99,
+          "degree": 125,
+          "zero_based_order_index": 9899999
+        },
+        {
+          "p": 1,
+          "degree": 467,
+          "zero_based_order_index": 9999999
+        }
+      ]
+    },
+    {
+      "family": "support",
+      "population": "seen",
+      "node_count": 188913,
+      "fit_target_occurrences": 200000,
+      "condition_node_count": 188913,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 200000,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 29.125322238278997,
+        "min": 1,
+        "max": 98
+      },
+      "out_degree": {
+        "mean": 29.130414529439477,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 58.255736767718474,
+        "min": 2,
+        "max": 162
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 42,
+          "zero_based_order_index": 47228
+        },
+        {
+          "p": 0.5,
+          "degree": 56,
+          "zero_based_order_index": 94456
+        },
+        {
+          "p": 0.75,
+          "degree": 72,
+          "zero_based_order_index": 141684
+        },
+        {
+          "p": 0.9,
+          "degree": 90,
+          "zero_based_order_index": 170021
+        },
+        {
+          "p": 0.95,
+          "degree": 100,
+          "zero_based_order_index": 179467
+        },
+        {
+          "p": 0.99,
+          "degree": 123,
+          "zero_based_order_index": 187023
+        },
+        {
+          "p": 1,
+          "degree": 162,
+          "zero_based_order_index": 188912
+        }
+      ]
+    },
+    {
+      "family": "support",
+      "population": "unseen",
+      "node_count": 9811087,
+      "fit_target_occurrences": 0,
+      "condition_node_count": 9811087,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 0,
+      "condition_fit_occurrence_weighted_fraction": null,
+      "in_degree": {
+        "mean": 29.491394990177948,
+        "min": 1,
+        "max": 403
+      },
+      "out_degree": {
+        "mean": 29.491296937841852,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 58.9826919280198,
+        "min": 2,
+        "max": 467
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 42,
+          "zero_based_order_index": 2452771
+        },
+        {
+          "p": 0.5,
+          "degree": 56,
+          "zero_based_order_index": 4905543
+        },
+        {
+          "p": 0.75,
+          "degree": 74,
+          "zero_based_order_index": 7358315
+        },
+        {
+          "p": 0.9,
+          "degree": 90,
+          "zero_based_order_index": 8829978
+        },
+        {
+          "p": 0.95,
+          "degree": 102,
+          "zero_based_order_index": 9320532
+        },
+        {
+          "p": 0.99,
+          "degree": 125,
+          "zero_based_order_index": 9712976
+        },
+        {
+          "p": 1,
+          "degree": 467,
+          "zero_based_order_index": 9811086
+        }
+      ]
+    },
+    {
+      "family": "frequency",
+      "frequency_interval_inclusive": [
+        0,
+        0
+      ],
+      "node_count": 9811087,
+      "fit_target_occurrences": 0,
+      "condition_node_count": 9811087,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 0,
+      "condition_fit_occurrence_weighted_fraction": null,
+      "in_degree": {
+        "mean": 29.491394990177948,
+        "min": 1,
+        "max": 403
+      },
+      "out_degree": {
+        "mean": 29.491296937841852,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 58.9826919280198,
+        "min": 2,
+        "max": 467
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 42,
+          "zero_based_order_index": 2452771
+        },
+        {
+          "p": 0.5,
+          "degree": 56,
+          "zero_based_order_index": 4905543
+        },
+        {
+          "p": 0.75,
+          "degree": 74,
+          "zero_based_order_index": 7358315
+        },
+        {
+          "p": 0.9,
+          "degree": 90,
+          "zero_based_order_index": 8829978
+        },
+        {
+          "p": 0.95,
+          "degree": 102,
+          "zero_based_order_index": 9320532
+        },
+        {
+          "p": 0.99,
+          "degree": 125,
+          "zero_based_order_index": 9712976
+        },
+        {
+          "p": 1,
+          "degree": 467,
+          "zero_based_order_index": 9811086
+        }
+      ]
+    },
+    {
+      "family": "frequency",
+      "frequency_interval_inclusive": [
+        1,
+        1
+      ],
+      "node_count": 179511,
+      "fit_target_occurrences": 179511,
+      "condition_node_count": 179511,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 179511,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 29.1718334809566,
+        "min": 1,
+        "max": 98
+      },
+      "out_degree": {
+        "mean": 29.17655185476099,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 58.34838533571759,
+        "min": 2,
+        "max": 162
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 42,
+          "zero_based_order_index": 44877
+        },
+        {
+          "p": 0.5,
+          "degree": 56,
+          "zero_based_order_index": 89755
+        },
+        {
+          "p": 0.75,
+          "degree": 72,
+          "zero_based_order_index": 134633
+        },
+        {
+          "p": 0.9,
+          "degree": 90,
+          "zero_based_order_index": 161559
+        },
+        {
+          "p": 0.95,
+          "degree": 100,
+          "zero_based_order_index": 170535
+        },
+        {
+          "p": 0.99,
+          "degree": 123,
+          "zero_based_order_index": 177715
+        },
+        {
+          "p": 1,
+          "degree": 162,
+          "zero_based_order_index": 179510
+        }
+      ]
+    },
+    {
+      "family": "frequency",
+      "frequency_interval_inclusive": [
+        2,
+        2
+      ],
+      "node_count": 8196,
+      "fit_target_occurrences": 16392,
+      "condition_node_count": 8196,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 16392,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 28.361029770619815,
+        "min": 3,
+        "max": 89
+      },
+      "out_degree": {
+        "mean": 28.368106393362616,
+        "min": 3,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 56.72913616398243,
+        "min": 6,
+        "max": 153
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 6,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 40,
+          "zero_based_order_index": 2048
+        },
+        {
+          "p": 0.5,
+          "degree": 54,
+          "zero_based_order_index": 4097
+        },
+        {
+          "p": 0.75,
+          "degree": 70,
+          "zero_based_order_index": 6146
+        },
+        {
+          "p": 0.9,
+          "degree": 88,
+          "zero_based_order_index": 7376
+        },
+        {
+          "p": 0.95,
+          "degree": 100,
+          "zero_based_order_index": 7786
+        },
+        {
+          "p": 0.99,
+          "degree": 120,
+          "zero_based_order_index": 8114
+        },
+        {
+          "p": 1,
+          "degree": 153,
+          "zero_based_order_index": 8195
+        }
+      ]
+    },
+    {
+      "family": "frequency",
+      "frequency_interval_inclusive": [
+        3,
+        3
+      ],
+      "node_count": 904,
+      "fit_target_occurrences": 2712,
+      "condition_node_count": 904,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 2712,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 27.52212389380531,
+        "min": 5,
+        "max": 66
+      },
+      "out_degree": {
+        "mean": 27.577433628318584,
+        "min": 5,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 55.099557522123895,
+        "min": 10,
+        "max": 130
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 10,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 38,
+          "zero_based_order_index": 225
+        },
+        {
+          "p": 0.5,
+          "degree": 52,
+          "zero_based_order_index": 451
+        },
+        {
+          "p": 0.75,
+          "degree": 68,
+          "zero_based_order_index": 677
+        },
+        {
+          "p": 0.9,
+          "degree": 86,
+          "zero_based_order_index": 813
+        },
+        {
+          "p": 0.95,
+          "degree": 96,
+          "zero_based_order_index": 858
+        },
+        {
+          "p": 0.99,
+          "degree": 114,
+          "zero_based_order_index": 894
+        },
+        {
+          "p": 1,
+          "degree": 130,
+          "zero_based_order_index": 903
+        }
+      ]
+    },
+    {
+      "family": "frequency",
+      "frequency_interval_inclusive": [
+        4,
+        4
+      ],
+      "node_count": 204,
+      "fit_target_occurrences": 816,
+      "condition_node_count": 204,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 816,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 27.862745098039216,
+        "min": 7,
+        "max": 67
+      },
+      "out_degree": {
+        "mean": 27.90686274509804,
+        "min": 7,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 55.76960784313726,
+        "min": 14,
+        "max": 131
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 14,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 40,
+          "zero_based_order_index": 50
+        },
+        {
+          "p": 0.5,
+          "degree": 52,
+          "zero_based_order_index": 101
+        },
+        {
+          "p": 0.75,
+          "degree": 70,
+          "zero_based_order_index": 152
+        },
+        {
+          "p": 0.9,
+          "degree": 84,
+          "zero_based_order_index": 183
+        },
+        {
+          "p": 0.95,
+          "degree": 99,
+          "zero_based_order_index": 193
+        },
+        {
+          "p": 0.99,
+          "degree": 120,
+          "zero_based_order_index": 201
+        },
+        {
+          "p": 1,
+          "degree": 131,
+          "zero_based_order_index": 203
+        }
+      ]
+    },
+    {
+      "family": "frequency",
+      "frequency_interval_inclusive": [
+        5,
+        9
+      ],
+      "node_count": 98,
+      "fit_target_occurrences": 569,
+      "condition_node_count": 98,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 569,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 25.26530612244898,
+        "min": 7,
+        "max": 54
+      },
+      "out_degree": {
+        "mean": 25.244897959183675,
+        "min": 7,
+        "max": 54
+      },
+      "total_degree": {
+        "mean": 50.51020408163265,
+        "min": 14,
+        "max": 108
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 14,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 36,
+          "zero_based_order_index": 24
+        },
+        {
+          "p": 0.5,
+          "degree": 50,
+          "zero_based_order_index": 48
+        },
+        {
+          "p": 0.75,
+          "degree": 65,
+          "zero_based_order_index": 73
+        },
+        {
+          "p": 0.9,
+          "degree": 76,
+          "zero_based_order_index": 88
+        },
+        {
+          "p": 0.95,
+          "degree": 84,
+          "zero_based_order_index": 93
+        },
+        {
+          "p": 0.99,
+          "degree": 108,
+          "zero_based_order_index": 97
+        },
+        {
+          "p": 1,
+          "degree": 108,
+          "zero_based_order_index": 97
+        }
+      ]
+    },
+    {
+      "family": "frequency",
+      "frequency_interval_inclusive": [
+        10,
+        19
+      ],
+      "node_count": 0,
+      "fit_target_occurrences": 0,
+      "condition_node_count": 0,
+      "condition_node_fraction": null,
+      "condition_fit_occurrences": 0,
+      "condition_fit_occurrence_weighted_fraction": null,
+      "in_degree": {
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "out_degree": {
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "total_degree": {
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.25,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.5,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.75,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.9,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.95,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.99,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 1,
+          "degree": null,
+          "zero_based_order_index": null
+        }
+      ]
+    },
+    {
+      "family": "frequency",
+      "frequency_interval_inclusive": [
+        20,
+        49
+      ],
+      "node_count": 0,
+      "fit_target_occurrences": 0,
+      "condition_node_count": 0,
+      "condition_node_fraction": null,
+      "condition_fit_occurrences": 0,
+      "condition_fit_occurrence_weighted_fraction": null,
+      "in_degree": {
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "out_degree": {
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "total_degree": {
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.25,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.5,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.75,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.9,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.95,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.99,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 1,
+          "degree": null,
+          "zero_based_order_index": null
+        }
+      ]
+    },
+    {
+      "family": "frequency",
+      "frequency_interval_inclusive": [
+        50,
+        99
+      ],
+      "node_count": 0,
+      "fit_target_occurrences": 0,
+      "condition_node_count": 0,
+      "condition_node_fraction": null,
+      "condition_fit_occurrences": 0,
+      "condition_fit_occurrence_weighted_fraction": null,
+      "in_degree": {
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "out_degree": {
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "total_degree": {
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.25,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.5,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.75,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.9,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.95,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.99,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 1,
+          "degree": null,
+          "zero_based_order_index": null
+        }
+      ]
+    },
+    {
+      "family": "frequency",
+      "frequency_interval_inclusive": [
+        100,
+        null
+      ],
+      "node_count": 0,
+      "fit_target_occurrences": 0,
+      "condition_node_count": 0,
+      "condition_node_fraction": null,
+      "condition_fit_occurrences": 0,
+      "condition_fit_occurrence_weighted_fraction": null,
+      "in_degree": {
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "out_degree": {
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "total_degree": {
+        "mean": null,
+        "min": null,
+        "max": null
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.25,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.5,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.75,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.9,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.95,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 0.99,
+          "degree": null,
+          "zero_based_order_index": null
+        },
+        {
+          "p": 1,
+          "degree": null,
+          "zero_based_order_index": null
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "lambda0_final_leaf_changed_from_initial",
+      "state": "changed",
+      "population": "all",
+      "node_count": 449216,
+      "fit_target_occurrences": 8604,
+      "condition_node_count": 449216,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 8604,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 33.02658186707508,
+        "min": 1,
+        "max": 215
+      },
+      "out_degree": {
+        "mean": 33.00996180011398,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 66.03654366718906,
+        "min": 2,
+        "max": 279
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 48,
+          "zero_based_order_index": 112303
+        },
+        {
+          "p": 0.5,
+          "degree": 64,
+          "zero_based_order_index": 224607
+        },
+        {
+          "p": 0.75,
+          "degree": 81,
+          "zero_based_order_index": 336911
+        },
+        {
+          "p": 0.9,
+          "degree": 98,
+          "zero_based_order_index": 404294
+        },
+        {
+          "p": 0.95,
+          "degree": 110,
+          "zero_based_order_index": 426755
+        },
+        {
+          "p": 0.99,
+          "degree": 130,
+          "zero_based_order_index": 444723
+        },
+        {
+          "p": 1,
+          "degree": 279,
+          "zero_based_order_index": 449215
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "lambda0_final_leaf_changed_from_initial",
+      "state": "unchanged",
+      "population": "all",
+      "node_count": 9550784,
+      "fit_target_occurrences": 191396,
+      "condition_node_count": 9550784,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 191396,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 29.317878511334776,
+        "min": 1,
+        "max": 403
+      },
+      "out_degree": {
+        "mean": 29.318660227265113,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 58.63653873859989,
+        "min": 2,
+        "max": 467
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 42,
+          "zero_based_order_index": 2387695
+        },
+        {
+          "p": 0.5,
+          "degree": 56,
+          "zero_based_order_index": 4775391
+        },
+        {
+          "p": 0.75,
+          "degree": 73,
+          "zero_based_order_index": 7163087
+        },
+        {
+          "p": 0.9,
+          "degree": 90,
+          "zero_based_order_index": 8595705
+        },
+        {
+          "p": 0.95,
+          "degree": 102,
+          "zero_based_order_index": 9073244
+        },
+        {
+          "p": 0.99,
+          "degree": 124,
+          "zero_based_order_index": 9455276
+        },
+        {
+          "p": 1,
+          "degree": 467,
+          "zero_based_order_index": 9550783
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "lambda0_final_leaf_changed_from_initial",
+      "state": "changed",
+      "population": "seen",
+      "node_count": 8154,
+      "fit_target_occurrences": 8604,
+      "condition_node_count": 8154,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 8604,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 32.42874662742212,
+        "min": 4,
+        "max": 98
+      },
+      "out_degree": {
+        "mean": 32.420897718910965,
+        "min": 4,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 64.8496443463331,
+        "min": 8,
+        "max": 162
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 8,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 48,
+          "zero_based_order_index": 2038
+        },
+        {
+          "p": 0.5,
+          "degree": 62,
+          "zero_based_order_index": 4076
+        },
+        {
+          "p": 0.75,
+          "degree": 80,
+          "zero_based_order_index": 6115
+        },
+        {
+          "p": 0.9,
+          "degree": 96,
+          "zero_based_order_index": 7338
+        },
+        {
+          "p": 0.95,
+          "degree": 108,
+          "zero_based_order_index": 7746
+        },
+        {
+          "p": 0.99,
+          "degree": 128,
+          "zero_based_order_index": 8072
+        },
+        {
+          "p": 1,
+          "degree": 162,
+          "zero_based_order_index": 8153
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "lambda0_final_leaf_changed_from_initial",
+      "state": "unchanged",
+      "population": "seen",
+      "node_count": 180759,
+      "fit_target_occurrences": 191396,
+      "condition_node_count": 180759,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 191396,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 28.976305467500925,
+        "min": 1,
+        "max": 98
+      },
+      "out_degree": {
+        "mean": 28.981981533422957,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 57.95828700092388,
+        "min": 2,
+        "max": 162
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 42,
+          "zero_based_order_index": 45189
+        },
+        {
+          "p": 0.5,
+          "degree": 56,
+          "zero_based_order_index": 90379
+        },
+        {
+          "p": 0.75,
+          "degree": 72,
+          "zero_based_order_index": 135569
+        },
+        {
+          "p": 0.9,
+          "degree": 89,
+          "zero_based_order_index": 162683
+        },
+        {
+          "p": 0.95,
+          "degree": 100,
+          "zero_based_order_index": 171721
+        },
+        {
+          "p": 0.99,
+          "degree": 122,
+          "zero_based_order_index": 178951
+        },
+        {
+          "p": 1,
+          "degree": 162,
+          "zero_based_order_index": 180758
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "lambda0_final_leaf_changed_from_initial",
+      "state": "changed",
+      "population": "unseen",
+      "node_count": 441062,
+      "fit_target_occurrences": 0,
+      "condition_node_count": 441062,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 0,
+      "condition_fit_occurrence_weighted_fraction": null,
+      "in_degree": {
+        "mean": 33.037634164811294,
+        "min": 1,
+        "max": 215
+      },
+      "out_degree": {
+        "mean": 33.020851943717666,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 66.05848610852895,
+        "min": 2,
+        "max": 279
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 48,
+          "zero_based_order_index": 110265
+        },
+        {
+          "p": 0.5,
+          "degree": 64,
+          "zero_based_order_index": 220530
+        },
+        {
+          "p": 0.75,
+          "degree": 81,
+          "zero_based_order_index": 330796
+        },
+        {
+          "p": 0.9,
+          "degree": 98,
+          "zero_based_order_index": 396955
+        },
+        {
+          "p": 0.95,
+          "degree": 110,
+          "zero_based_order_index": 419008
+        },
+        {
+          "p": 0.99,
+          "degree": 130,
+          "zero_based_order_index": 436651
+        },
+        {
+          "p": 1,
+          "degree": 279,
+          "zero_based_order_index": 441061
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "lambda0_final_leaf_changed_from_initial",
+      "state": "unchanged",
+      "population": "unseen",
+      "node_count": 9370025,
+      "fit_target_occurrences": 0,
+      "condition_node_count": 9370025,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 0,
+      "condition_fit_occurrence_weighted_fraction": null,
+      "in_degree": {
+        "mean": 29.324467864279978,
+        "min": 1,
+        "max": 403
+      },
+      "out_degree": {
+        "mean": 29.32515516233948,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 58.64962302661946,
+        "min": 2,
+        "max": 467
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 42,
+          "zero_based_order_index": 2342506
+        },
+        {
+          "p": 0.5,
+          "degree": 56,
+          "zero_based_order_index": 4685012
+        },
+        {
+          "p": 0.75,
+          "degree": 73,
+          "zero_based_order_index": 7027518
+        },
+        {
+          "p": 0.9,
+          "degree": 90,
+          "zero_based_order_index": 8433022
+        },
+        {
+          "p": 0.95,
+          "degree": 102,
+          "zero_based_order_index": 8901523
+        },
+        {
+          "p": 0.99,
+          "degree": 125,
+          "zero_based_order_index": 9276324
+        },
+        {
+          "p": 1,
+          "degree": 467,
+          "zero_based_order_index": 9370024
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "lambda1_final_leaf_changed_from_initial",
+      "state": "changed",
+      "population": "all",
+      "node_count": 473735,
+      "fit_target_occurrences": 26127,
+      "condition_node_count": 473735,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 26127,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 32.94990237157905,
+        "min": 1,
+        "max": 215
+      },
+      "out_degree": {
+        "mean": 32.93373510506929,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 65.88363747664833,
+        "min": 2,
+        "max": 279
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 48,
+          "zero_based_order_index": 118433
+        },
+        {
+          "p": 0.5,
+          "degree": 64,
+          "zero_based_order_index": 236867
+        },
+        {
+          "p": 0.75,
+          "degree": 81,
+          "zero_based_order_index": 355301
+        },
+        {
+          "p": 0.9,
+          "degree": 98,
+          "zero_based_order_index": 426361
+        },
+        {
+          "p": 0.95,
+          "degree": 109,
+          "zero_based_order_index": 450048
+        },
+        {
+          "p": 0.99,
+          "degree": 130,
+          "zero_based_order_index": 468997
+        },
+        {
+          "p": 1,
+          "degree": 279,
+          "zero_based_order_index": 473734
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "lambda1_final_leaf_changed_from_initial",
+      "state": "unchanged",
+      "population": "all",
+      "node_count": 9526265,
+      "fit_target_occurrences": 173873,
+      "condition_node_count": 9526265,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 173873,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 29.31214615591735,
+        "min": 1,
+        "max": 403
+      },
+      "out_degree": {
+        "mean": 29.31295014362922,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 58.62509629954657,
+        "min": 2,
+        "max": 467
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 42,
+          "zero_based_order_index": 2381566
+        },
+        {
+          "p": 0.5,
+          "degree": 56,
+          "zero_based_order_index": 4763132
+        },
+        {
+          "p": 0.75,
+          "degree": 72,
+          "zero_based_order_index": 7144698
+        },
+        {
+          "p": 0.9,
+          "degree": 90,
+          "zero_based_order_index": 8573638
+        },
+        {
+          "p": 0.95,
+          "degree": 102,
+          "zero_based_order_index": 9049951
+        },
+        {
+          "p": 0.99,
+          "degree": 124,
+          "zero_based_order_index": 9431002
+        },
+        {
+          "p": 1,
+          "degree": 467,
+          "zero_based_order_index": 9526264
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "lambda1_final_leaf_changed_from_initial",
+      "state": "changed",
+      "population": "seen",
+      "node_count": 24804,
+      "fit_target_occurrences": 26127,
+      "condition_node_count": 24804,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 26127,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 31.704079987098854,
+        "min": 1,
+        "max": 92
+      },
+      "out_degree": {
+        "mean": 31.697145621673922,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 63.401225608772776,
+        "min": 2,
+        "max": 156
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 46,
+          "zero_based_order_index": 6200
+        },
+        {
+          "p": 0.5,
+          "degree": 62,
+          "zero_based_order_index": 12401
+        },
+        {
+          "p": 0.75,
+          "degree": 78,
+          "zero_based_order_index": 18602
+        },
+        {
+          "p": 0.9,
+          "degree": 96,
+          "zero_based_order_index": 22323
+        },
+        {
+          "p": 0.95,
+          "degree": 107,
+          "zero_based_order_index": 23563
+        },
+        {
+          "p": 0.99,
+          "degree": 128,
+          "zero_based_order_index": 24555
+        },
+        {
+          "p": 1,
+          "degree": 156,
+          "zero_based_order_index": 24803
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "lambda1_final_leaf_changed_from_initial",
+      "state": "unchanged",
+      "population": "seen",
+      "node_count": 164109,
+      "fit_target_occurrences": 173873,
+      "condition_node_count": 164109,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 173873,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 28.735559902260082,
+        "min": 1,
+        "max": 98
+      },
+      "out_degree": {
+        "mean": 28.742469943756895,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 57.47802984601697,
+        "min": 2,
+        "max": 162
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 40,
+          "zero_based_order_index": 41027
+        },
+        {
+          "p": 0.5,
+          "degree": 54,
+          "zero_based_order_index": 82054
+        },
+        {
+          "p": 0.75,
+          "degree": 72,
+          "zero_based_order_index": 123081
+        },
+        {
+          "p": 0.9,
+          "degree": 88,
+          "zero_based_order_index": 147698
+        },
+        {
+          "p": 0.95,
+          "degree": 100,
+          "zero_based_order_index": 155903
+        },
+        {
+          "p": 0.99,
+          "degree": 122,
+          "zero_based_order_index": 162467
+        },
+        {
+          "p": 1,
+          "degree": 162,
+          "zero_based_order_index": 164108
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "lambda1_final_leaf_changed_from_initial",
+      "state": "changed",
+      "population": "unseen",
+      "node_count": 448931,
+      "fit_target_occurrences": 0,
+      "condition_node_count": 448931,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 0,
+      "condition_fit_occurrence_weighted_fraction": null,
+      "in_degree": {
+        "mean": 33.018735618613995,
+        "min": 1,
+        "max": 215
+      },
+      "out_degree": {
+        "mean": 33.002058222755835,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 66.02079384136984,
+        "min": 2,
+        "max": 279
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 48,
+          "zero_based_order_index": 112232
+        },
+        {
+          "p": 0.5,
+          "degree": 64,
+          "zero_based_order_index": 224465
+        },
+        {
+          "p": 0.75,
+          "degree": 81,
+          "zero_based_order_index": 336698
+        },
+        {
+          "p": 0.9,
+          "degree": 98,
+          "zero_based_order_index": 404037
+        },
+        {
+          "p": 0.95,
+          "degree": 110,
+          "zero_based_order_index": 426484
+        },
+        {
+          "p": 0.99,
+          "degree": 130,
+          "zero_based_order_index": 444441
+        },
+        {
+          "p": 1,
+          "degree": 279,
+          "zero_based_order_index": 448930
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "lambda1_final_leaf_changed_from_initial",
+      "state": "unchanged",
+      "population": "unseen",
+      "node_count": 9362156,
+      "fit_target_occurrences": 0,
+      "condition_node_count": 9362156,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 0,
+      "condition_fit_occurrence_weighted_fraction": null,
+      "in_degree": {
+        "mean": 29.322253122037274,
+        "min": 1,
+        "max": 403
+      },
+      "out_degree": {
+        "mean": 29.322950076884,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 58.64520319892127,
+        "min": 2,
+        "max": 467
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 42,
+          "zero_based_order_index": 2340538
+        },
+        {
+          "p": 0.5,
+          "degree": 56,
+          "zero_based_order_index": 4681077
+        },
+        {
+          "p": 0.75,
+          "degree": 73,
+          "zero_based_order_index": 7021616
+        },
+        {
+          "p": 0.9,
+          "degree": 90,
+          "zero_based_order_index": 8425940
+        },
+        {
+          "p": 0.95,
+          "degree": 102,
+          "zero_based_order_index": 8894048
+        },
+        {
+          "p": 0.99,
+          "degree": 125,
+          "zero_based_order_index": 9268534
+        },
+        {
+          "p": 1,
+          "degree": 467,
+          "zero_based_order_index": 9362155
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "final_lambda1_vs_lambda0_leaf_difference",
+      "state": "changed",
+      "population": "all",
+      "node_count": 72107,
+      "fit_target_occurrences": 23421,
+      "condition_node_count": 72107,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 23421,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 33.62251931157863,
+        "min": 1,
+        "max": 98
+      },
+      "out_degree": {
+        "mean": 33.600316196763146,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 67.22283550834177,
+        "min": 2,
+        "max": 162
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 50,
+          "zero_based_order_index": 18026
+        },
+        {
+          "p": 0.5,
+          "degree": 66,
+          "zero_based_order_index": 36053
+        },
+        {
+          "p": 0.75,
+          "degree": 82,
+          "zero_based_order_index": 54080
+        },
+        {
+          "p": 0.9,
+          "degree": 100,
+          "zero_based_order_index": 64896
+        },
+        {
+          "p": 0.95,
+          "degree": 111,
+          "zero_based_order_index": 68501
+        },
+        {
+          "p": 0.99,
+          "degree": 130,
+          "zero_based_order_index": 71385
+        },
+        {
+          "p": 1,
+          "degree": 162,
+          "zero_based_order_index": 72106
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "final_lambda1_vs_lambda0_leaf_difference",
+      "state": "unchanged",
+      "population": "all",
+      "node_count": 9927893,
+      "fit_target_occurrences": 176579,
+      "condition_node_count": 9927893,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 176579,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 29.454424518878277,
+        "min": 1,
+        "max": 403
+      },
+      "out_degree": {
+        "mean": 29.454585781696075,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 58.90901030057435,
+        "min": 2,
+        "max": 467
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 42,
+          "zero_based_order_index": 2481973
+        },
+        {
+          "p": 0.5,
+          "degree": 56,
+          "zero_based_order_index": 4963946
+        },
+        {
+          "p": 0.75,
+          "degree": 74,
+          "zero_based_order_index": 7445919
+        },
+        {
+          "p": 0.9,
+          "degree": 90,
+          "zero_based_order_index": 8935103
+        },
+        {
+          "p": 0.95,
+          "degree": 102,
+          "zero_based_order_index": 9431498
+        },
+        {
+          "p": 0.99,
+          "degree": 125,
+          "zero_based_order_index": 9828614
+        },
+        {
+          "p": 1,
+          "degree": 467,
+          "zero_based_order_index": 9927892
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "final_lambda1_vs_lambda0_leaf_difference",
+      "state": "changed",
+      "population": "seen",
+      "node_count": 22224,
+      "fit_target_occurrences": 23421,
+      "condition_node_count": 22224,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 23421,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 31.881524478041758,
+        "min": 1,
+        "max": 98
+      },
+      "out_degree": {
+        "mean": 31.863930885529157,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 63.74545536357091,
+        "min": 2,
+        "max": 162
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 46,
+          "zero_based_order_index": 5555
+        },
+        {
+          "p": 0.5,
+          "degree": 62,
+          "zero_based_order_index": 11111
+        },
+        {
+          "p": 0.75,
+          "degree": 78,
+          "zero_based_order_index": 16667
+        },
+        {
+          "p": 0.9,
+          "degree": 96,
+          "zero_based_order_index": 20001
+        },
+        {
+          "p": 0.95,
+          "degree": 108,
+          "zero_based_order_index": 21112
+        },
+        {
+          "p": 0.99,
+          "degree": 129,
+          "zero_based_order_index": 22001
+        },
+        {
+          "p": 1,
+          "degree": 162,
+          "zero_based_order_index": 22223
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "final_lambda1_vs_lambda0_leaf_difference",
+      "state": "unchanged",
+      "population": "seen",
+      "node_count": 166689,
+      "fit_target_occurrences": 176579,
+      "condition_node_count": 166689,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 176579,
+      "condition_fit_occurrence_weighted_fraction": 1.0,
+      "in_degree": {
+        "mean": 28.757848448307925,
+        "min": 1,
+        "max": 98
+      },
+      "out_degree": {
+        "mean": 28.765965360641673,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 57.5238138089496,
+        "min": 2,
+        "max": 162
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 40,
+          "zero_based_order_index": 41672
+        },
+        {
+          "p": 0.5,
+          "degree": 54,
+          "zero_based_order_index": 83344
+        },
+        {
+          "p": 0.75,
+          "degree": 72,
+          "zero_based_order_index": 125016
+        },
+        {
+          "p": 0.9,
+          "degree": 88,
+          "zero_based_order_index": 150020
+        },
+        {
+          "p": 0.95,
+          "degree": 100,
+          "zero_based_order_index": 158354
+        },
+        {
+          "p": 0.99,
+          "degree": 122,
+          "zero_based_order_index": 165022
+        },
+        {
+          "p": 1,
+          "degree": 162,
+          "zero_based_order_index": 166688
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "final_lambda1_vs_lambda0_leaf_difference",
+      "state": "changed",
+      "population": "unseen",
+      "node_count": 49883,
+      "fit_target_occurrences": 0,
+      "condition_node_count": 49883,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 0,
+      "condition_fit_occurrence_weighted_fraction": null,
+      "in_degree": {
+        "mean": 34.39817172182908,
+        "min": 1,
+        "max": 96
+      },
+      "out_degree": {
+        "mean": 34.37391496100876,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 68.77208668283784,
+        "min": 2,
+        "max": 160
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 52,
+          "zero_based_order_index": 12470
+        },
+        {
+          "p": 0.5,
+          "degree": 66,
+          "zero_based_order_index": 24941
+        },
+        {
+          "p": 0.75,
+          "degree": 84,
+          "zero_based_order_index": 37412
+        },
+        {
+          "p": 0.9,
+          "degree": 102,
+          "zero_based_order_index": 44894
+        },
+        {
+          "p": 0.95,
+          "degree": 112,
+          "zero_based_order_index": 47388
+        },
+        {
+          "p": 0.99,
+          "degree": 131,
+          "zero_based_order_index": 49384
+        },
+        {
+          "p": 1,
+          "degree": 160,
+          "zero_based_order_index": 49882
+        }
+      ]
+    },
+    {
+      "family": "movement",
+      "variable": "final_lambda1_vs_lambda0_leaf_difference",
+      "state": "unchanged",
+      "population": "unseen",
+      "node_count": 9761204,
+      "fit_target_occurrences": 0,
+      "condition_node_count": 9761204,
+      "condition_node_fraction": 1.0,
+      "condition_fit_occurrences": 0,
+      "condition_fit_occurrence_weighted_fraction": null,
+      "in_degree": {
+        "mean": 29.466319728590857,
+        "min": 1,
+        "max": 403
+      },
+      "out_degree": {
+        "mean": 29.466345135292737,
+        "min": 1,
+        "max": 64
+      },
+      "total_degree": {
+        "mean": 58.932664863883595,
+        "min": 2,
+        "max": 467
+      },
+      "total_degree_quantiles": [
+        {
+          "p": 0,
+          "degree": 2,
+          "zero_based_order_index": 0
+        },
+        {
+          "p": 0.25,
+          "degree": 42,
+          "zero_based_order_index": 2440300
+        },
+        {
+          "p": 0.5,
+          "degree": 56,
+          "zero_based_order_index": 4880601
+        },
+        {
+          "p": 0.75,
+          "degree": 74,
+          "zero_based_order_index": 7320902
+        },
+        {
+          "p": 0.9,
+          "degree": 90,
+          "zero_based_order_index": 8785083
+        },
+        {
+          "p": 0.95,
+          "degree": 102,
+          "zero_based_order_index": 9273143
+        },
+        {
+          "p": 0.99,
+          "degree": 125,
+          "zero_based_order_index": 9663591
+        },
+        {
+          "p": 1,
+          "degree": 467,
+          "zero_based_order_index": 9761203
+        }
+      ]
+    }
+  ],
+  "total_degree_sparse_histogram": {
+    "included": true,
+    "artifact": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_diagnosis_v1/yandex_t2i_official10M_ip_v1.total_degree_histogram.json",
+      "sha256": "1af69c3d5001577a7de6e331ff78bd06c92afc1adc210902fed9c2c1a5ca104a",
+      "bytes": 2632
+    },
+    "limit_bytes": 1048576,
+    "distinct_degrees": 247,
+    "encoding": "JSON array of [degree,node_count] pairs",
+    "pair_values_duplicated_in_report": false,
+    "cap_applies_to_complete_serialized_artifact_including_metadata_and_newline": true
+  },
+  "integrity": {
+    "P0_slot_counts": {
+      "invalid_edges": 0,
+      "padding": 345155184,
+      "valid_edges": 294844816,
+      "self_edges": 22,
+      "valid_nonself_edges": 294844794
+    },
+    "degree_conservation": {
+      "numeric_bytes_read": 2560000000,
+      "numeric_byte_range": [
+        80000095,
+        2640000095
+      ],
+      "read_past_adjacency": false,
+      "row_block_max": 65536,
+      "wall_seconds": 9.499221327998384,
+      "sum_in": 294844794,
+      "sum_out": 294844794,
+      "sum_total": 589689588
+    },
+    "support_and_movement": {
+      "support_counts_match_target": true,
+      "fit_occurrences_match_target": true,
+      "frequency_bins_disjoint_exhaustive": true,
+      "movement_groups": {
+        "lambda0_final_leaf_changed_from_initial": {
+          "all": {
+            "changed": 449216,
+            "unchanged": 9550784,
+            "denominator": 10000000,
+            "matches_completed_target_diagnosis": true
+          },
+          "seen": {
+            "changed": 8154,
+            "unchanged": 180759,
+            "denominator": 188913,
+            "matches_completed_target_diagnosis": true
+          },
+          "unseen": {
+            "changed": 441062,
+            "unchanged": 9370025,
+            "denominator": 9811087,
+            "matches_completed_target_diagnosis": true
+          }
+        },
+        "lambda1_final_leaf_changed_from_initial": {
+          "all": {
+            "changed": 473735,
+            "unchanged": 9526265,
+            "denominator": 10000000,
+            "matches_completed_target_diagnosis": true
+          },
+          "seen": {
+            "changed": 24804,
+            "unchanged": 164109,
+            "denominator": 188913,
+            "matches_completed_target_diagnosis": true
+          },
+          "unseen": {
+            "changed": 448931,
+            "unchanged": 9362156,
+            "denominator": 9811087,
+            "matches_completed_target_diagnosis": true
+          }
+        },
+        "final_lambda1_vs_lambda0_leaf_difference": {
+          "all": {
+            "changed": 72107,
+            "unchanged": 9927893,
+            "denominator": 10000000,
+            "matches_completed_target_diagnosis": true
+          },
+          "seen": {
+            "changed": 22224,
+            "unchanged": 166689,
+            "denominator": 188913,
+            "matches_completed_target_diagnosis": true
+          },
+          "unseen": {
+            "changed": 49883,
+            "unchanged": 9761204,
+            "denominator": 9811087,
+            "matches_completed_target_diagnosis": true
+          }
+        }
+      },
+      "condition_degree_cutoff_exclusive_fraction": "294844794/180000",
+      "first_integer_degree_not_satisfying": 1639,
+      "strict_equality_excluded": true,
+      "condition_arithmetic": "int64 D*(9Q)<M after explicit overflow check"
+    },
+    "graph_file_identity_stable": true,
+    "fit_unique10_each_query_validated": true,
+    "numeric_vectors_read": false,
+    "pilot_GT_read": false
+  },
+  "inputs": {
+    "graph": {
+      "path": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "sha256": "fa6eb7dd4e8d9dc95d696947fc18bd167880fb336212cb7bd073e7acddd4bf2e",
+      "fresh_full_file_SHA256": true,
+      "checksum_includes_uninterpreted_embedded_vector_bytes": true,
+      "header": {
+        "format": "IndexACSG native little-endian binary v1",
+        "version": 1,
+        "n": 10000000,
+        "d": 200,
+        "metric_enum": 0,
+        "degree": 64,
+        "enterpoint": 6474461,
+        "adjacency_offset": 80000095,
+        "neighbor_count": 640000000,
+        "vector_offset": 2640000103,
+        "vector_count": 2000000000,
+        "bytes": 10640000103,
+        "padding": -1
+      },
+      "file_identity": {
+        "device": 66306,
+        "inode": 13762562,
+        "bytes": 10640000103,
+        "mtime_ns": 1787655783830469960
+      }
+    },
+    "graph_info": {
+      "path": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json.info",
+      "sha256": "15518765ec986df46423d0310e9c2359ca1ad0637235e59b60ffb8c91ce6f016"
+    },
+    "fit_manifest": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/fit_inputs/yandex_t2i_official10M_ip_v1/manifest.json",
+      "sha256": "89f4c8db94ba5de56fa2af09ed7547bb17bfaa14246b0383a4462e187711d788"
+    },
+    "fit_GT10": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/fit_inputs/yandex_t2i_official10M_ip_v1/gt10.i32",
+      "sha256": "cb8e53681677bd035fd82982220fd7c65ccc388cab717c2ca3dca51eeb0d0f11"
+    },
+    "labels": {
+      "common_initial": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/initial/regions.u16",
+        "sha256": "247600b91274d5eef5793ef73f1345c675514582a68c3ee01cfb93ed4e9f291a",
+        "rows": 10000000,
+        "bytes": 20000000
+      },
+      "lambda0_final": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/lambda0/pass2.regions.u16",
+        "sha256": "efcbdd333cec86759907a6af7f5a363c4c1ecb4af8d16fdabbb7f0b56526f19c",
+        "rows": 10000000,
+        "bytes": 20000000
+      },
+      "lambda1_final": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/lambda1/pass2.regions.u16",
+        "sha256": "e6d36a21adef6bce7a8e7ec146f3a1a1bf223c04b81f8d21c6538716889a04c7",
+        "rows": 10000000,
+        "bytes": 20000000
+      }
+    },
+    "partition_manifest": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/manifest.json",
+      "sha256": "230d507fada6662711aa6859816a8278994c5f48b15983ed6daaf313e6b75a4d"
+    }
+  },
+  "cost": {
+    "full_graph_SHA256_seconds": 6.870886400000018,
+    "adjacency_numeric_scan_seconds": 9.499221327998384,
+    "fixed_group_summary_seconds": 4.839208958001109,
+    "total_wall_seconds": 21.405465746000118
+  },
+  "quantile_method": "Exact empirical inverted CDF, index max(0,ceil(p*n)-1), fixed decimal-rational levels; no interpolation.",
+  "weighted_denominator": "Fit target occurrences sum f(u), not unique nodes or independent queries; zero denominator null.",
+  "movement_interpretation": "Final-state label differences, not accepted sequential moves or temporal counterfactuals.",
+  "P3_gate_status_unchanged": "NOPASS",
+  "new_CI_or_model_or_gate": false
+}

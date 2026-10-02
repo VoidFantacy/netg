@@ -1,0 +1,92 @@
+{
+  "version": "E113_comparison_support_v1",
+  "created_unix": 1789893335.0684533,
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "dataset": "webvid2_5m_light_v1",
+      "n": 2048,
+      "dimension": 512,
+      "base_n": 2505000,
+      "H": 815,
+      "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "index_stat": {
+        "bytes": 5791560103,
+        "mtime_ns": 1787714557628644919
+      },
+      "queries": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/webvid2_5m_light_v1/queries.f32",
+      "entries": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/webvid2_5m_light_v1/entries.i32",
+      "GT1": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/webvid2_5m_light_v1/GT1.i32",
+      "slots": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/webvid2_5m_light_v1/slots.i32",
+      "expected": {
+        "1": {
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/webvid2_5m_light_v1/k1.ids.i32",
+          "distances": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/webvid2_5m_light_v1/k1.distances.f32",
+          "ndc": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/webvid2_5m_light_v1/k1.ndc.u64"
+        },
+        "100": {
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/webvid2_5m_light_v1/k100.ids.i32",
+          "distances": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/webvid2_5m_light_v1/k100.distances.f32",
+          "ndc": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/webvid2_5m_light_v1/k100.ndc.u64"
+        }
+      },
+      "deadline_unix": 1789901400,
+      "seconds_cap": 890,
+      "max_pairs": 30000000
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "n": 2048,
+      "dimension": 200,
+      "base_n": 10000000,
+      "H": 821,
+      "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "index_stat": {
+        "bytes": 10640000103,
+        "mtime_ns": 1787655783830469960
+      },
+      "queries": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+      "entries": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/yandex_t2i_official10M_ip_v1/entries.i32",
+      "GT1": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/yandex_t2i_official10M_ip_v1/GT1.i32",
+      "slots": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/yandex_t2i_official10M_ip_v1/slots.i32",
+      "expected": {
+        "1": {
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/yandex_t2i_official10M_ip_v1/k1.ids.i32",
+          "distances": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/yandex_t2i_official10M_ip_v1/k1.distances.f32",
+          "ndc": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/yandex_t2i_official10M_ip_v1/k1.ndc.u64"
+        },
+        "100": {
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/yandex_t2i_official10M_ip_v1/k100.ids.i32",
+          "distances": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/yandex_t2i_official10M_ip_v1/k100.distances.f32",
+          "ndc": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/inputs/yandex_t2i_official10M_ip_v1/k100.ndc.u64"
+        }
+      },
+      "deadline_unix": 1789901400,
+      "seconds_cap": 890,
+      "max_pairs": 30000000
+    }
+  },
+  "threads": 1,
+  "cpu": 15,
+  "expected_NSG_calls": 32768,
+  "max_NSG_calls": 36000,
+  "max_stage_bytes": 838860800,
+  "max_combined_bytes": 2147483648,
+  "min_free_gib": 4,
+  "max_rss_gib": 40,
+  "deadline_unix": 1789901400,
+  "seconds_per_dataset": 900,
+  "previous_phase": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1",
+  "feature_gate": {
+    "dictionary_size": 32,
+    "min_query_support": 32,
+    "min_positive_distinct_GT1": 8,
+    "min_negative_distinct_GT1": 8,
+    "min_query_coverage": 0.5,
+    "both_datasets_required": true
+  },
+  "new_ANN": 0,
+  "new_GT": 0,
+  "new_graphs": 0,
+  "new_training": 0,
+  "scope": "Fit-only shared-comparison information; no deployable policy or QPS"
+}

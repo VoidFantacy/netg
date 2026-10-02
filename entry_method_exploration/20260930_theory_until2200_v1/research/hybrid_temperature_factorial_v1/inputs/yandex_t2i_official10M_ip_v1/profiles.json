@@ -1,0 +1,34 @@
+{
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "dimension": 200,
+  "base_n": 10000000,
+  "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+  "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/queries.f32",
+  "approx_ids": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/results/yandex_t2i_official10M_ip_v1/labels/ids.i32",
+  "selected_rows": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/inputs/yandex_t2i_official10M_ip_v1/selected_rows.i32",
+  "selected_gt": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/inputs/yandex_t2i_official10M_ip_v1/selected_gt.i64",
+  "old_temperature": null,
+  "methods": [
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "name": "GT10-hard"
+    },
+    {
+      "name": "ApproxTarget10",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/models/yandex_t2i_official10M_ip_v1/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_approximate_target_profiles_v1/models/yandex_t2i_official10M_ip_v1/router.hnsw"
+    },
+    {
+      "name": "HybridFixedTemperature",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/models/yandex_t2i_official10M_ip_v1/HybridFixedTemperature/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/models/yandex_t2i_official10M_ip_v1/HybridFixedTemperature/router.hnsw"
+    }
+  ],
+  "n": 20000,
+  "pilot_n": 2048
+}

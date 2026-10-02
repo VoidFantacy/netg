@@ -1,0 +1,140 @@
+--- before/summary.md
++++ after/summary.md
+@@ -1,6 +1,6 @@
+ # ACSG 当前结果摘要
+ 
+-2026-09-13第14串行会话完成交付核验与安全接续，第13会话报告保留。实际最终实验仍为E94：双集各2000查询、五L五轮、50原点/250wall已完整实测。**尚未找到稳定优于当前GT10起点的新方法，默认保持。** 本会话0新增训练/ANN/构图/GT/QPS；整日21:00目标未由本会话标完成。
++2026-09-13限时探索与汇报已收口，共14个串行会话；监督器于21:00:01.595123按截止退出，最终检查确认无待恢复任务。实际最终实验仍为E94：双集各2000查询、五L五轮、50原点/250wall已完整实测。**尚未找到稳定优于当前GT10起点的新方法，默认保持Web GT10-soft-t1 / Yandex GT10-hard。** 限时任务完成不等于研究目标达成；[监督最终检查](entry_method_exploration/20260913_post_closeout_handoff_v1/evidence/review_217_final_goal_audit.json)接续了第14会话“等待收口”的历史状态。原报告、campaign state与封存保留。
+ 
+ 顺序均L64/128/256/400/800，Recall为百分点，失败为零GT10命中净新增。
+ 
+@@ -16,8 +16,10 @@
+ 
+ E92线上1771画像slot/815真实入口，Y compact为2067/821；一次小HNSW七slot去重三入口+原NSG/rawIP。E60有限小动作辅助支持稀疏，E89较大父恢复训练中同时增损与并图交互明显；两种证据不混为共享表示无解。
+ 
++收口后与用户讨论的当前判断：**保留离线学习入口画像/小图的目标，下调现有参数扰动型RL及局部修补分支的优先级，先重新设计方法。** E50已证实正候选到确定更新的转化缺口，E52直接择优、E53反馈步长及E56纯构图RL均有局部信号，尚未建立稳定额外价值；不能把全部失败归因于RL，也不能只靠扩大训练预算。当天多数新方法是确定性离线构造，后期相对compact的修复未补齐相对原P的损失。完整依据见[复盘86](experiment_history/86_post_closeout_rl_direction_review.md)，后续范围见[s-target](s-target.md)。本次只更新文档，0新增实验/训练/ANN/构图/GT/QPS。
++
+ E94实际700800NSG/560000HNSW，native操作994.213s与纯wall695.047s分开；8源小图、40plain+40count加载、0新拟合/普通build/GT。继承100000集合评分、70000原基线回归、800原kernel及跨L图/七slot验收通过。401独立失败query的完整五L为10730单元，原812query×L零事件为4230单元，两表分开。全日6854176NSG/17820080HNSW/360普通build不变，旧四开发QPS批不拼最终曲线；完整训练/GT成本未知项保持。
+ 
+ 第13会话核对50点/250轮/65配对表级算术、10730呈现单元逐字段一致；未重复原raw评分。中文四图、六页PDF、单文件离线HTML已生成。监督侧实际桌面/手机浏览器穷举401query×五L及两种CSV下载通过；第13执行沙箱的两次浏览器启动失败记录与独立成功证据分开。监督208随后已实际逐页查看完整六页PDF；第14会话核对交付身份并继承该验收，不重复浏览器或原始评分。当前入口见[交付清单](entry_method_exploration/20260913_until2100_v1/session14_closeout_v1/delivery.md)。
+ 
+-[整日中文汇报](entry_method_exploration/20260913_until2100_v1/session13_report_v1/report.md) · [离线查询浏览](entry_method_exploration/20260913_until2100_v1/session13_report_v1/report.html) · [六页PDF](entry_method_exploration/20260913_until2100_v1/session13_report_v1/report.pdf) · [机制边界](entry_method_exploration/20260913_until2100_v1/session13_report_v1/mechanism_note.md) · [E94完整原报告](entry_method_exploration/20260913_until2100_v1/stage35_final_comparison_v1/report.md) · [下一步](s-target.md)。
++[当前收口后交接](entry_method_exploration/20260913_post_closeout_handoff_v1/handoff.md) · [整日中文汇报](entry_method_exploration/20260913_until2100_v1/session13_report_v1/report.md) · [离线查询浏览](entry_method_exploration/20260913_until2100_v1/session13_report_v1/report.html) · [六页PDF](entry_method_exploration/20260913_until2100_v1/session13_report_v1/report.pdf) · [机制边界](entry_method_exploration/20260913_until2100_v1/session13_report_v1/mechanism_note.md) · [E94完整原报告](entry_method_exploration/20260913_until2100_v1/stage35_final_comparison_v1/report.md) · [下一步](s-target.md)。
+--- before/spec.md
++++ after/spec.md
+@@ -17,6 +17,8 @@
+ 事实优先级为当前源码/配置/manifest/实测产物，高于说明文档或旧记忆。遇到历史实验不确定、结论冲突或疑似重复路线时，必须由`s-experiment.md`进入对应详细卡片，再读卡片指向的协议、配置、gate、结果和修正记录；证据仍不足则明确标为未确认，不能只据概览或旧摘要推断。
+ 
+ 未提交代码、旧日志/索引/模型/结果不得重置、清理或覆盖；新执行输出使用独立版本。旧报告中的spec章节号属于当时文档，完整版本保存在[本次整理前快照](experiment_history/_maintenance/20260908_document_reorganization/source_before/spec.md)，不能把旧编号套入本文件。
++
++2026-09-13收口后的当前接续入口为[新交接](entry_method_exploration/20260913_post_closeout_handoff_v1/handoff.md)，监督退出和最终检查以[精确副本及来源清单](entry_method_exploration/20260913_post_closeout_handoff_v1/before_manifest.json)绑定。旧campaign state、session14交接与阶段root_after/seal保存当时身份；它们的待收口字段不覆盖监督最终状态，也不要求恢复旧runner。此次仅更新文档与证据入口，无源码/API、数据/metric、模型/图、计时或重跑依赖变化。
+ 
+ ## 2. 已实现主链：Fast
+ 
+@@ -414,6 +416,8 @@
+ 
+ [train.py](entry_method_exploration/20260912_offline_profile_rl_v1/src/train.py)是one-step Gaussian参数策略：每个动作采样整份静态画像系数，同一份图服务batch128。奖励为命中增量减0.1倍逐query总NDC相对变化、0.1倍零命中事件变化及画像均方漂移。RL使用8个独立扰动的score-function/leave-one-out估计；ES对照使用4对正负扰动。两者同高斯平滑黑箱目标、表示和调用预算，不将其称作两个不同模型族；没有多步PPO、固定C8重排或旧三元组标签代理。
+ 
++该参数策略及后继E43/E47/E53/E56不等于已实现按构图状态进行长期信用分配的新策略；E52是0梯度的直接候选择优，E61–E92的确定性构造/筛选也不统称RL。E33边概率与E36在线多步换点仍按各自小节定义。当前优化器优先级属于summary/s-target的研究判断，不改变上述已有实现合同，也不登记新的多步构图API。
++
+ 两集各RL/ES双seed，200更新/次，σ0.3、Adam、cosine步长、梯度范数与参数均值限制均由[锁定配置](entry_method_exploration/20260912_offline_profile_rl_v1/config.locked.json)及协议定义。step0和20..200存完整确定性train512/monitor1024结果；非零checkpoint按monitor U及graph NDC门选择，选中/末点分别输出mu.f64、W.f32、graph.hnsw和identity.json。全部动作/扰动/batch/奖励/返回/optimizer轨迹保存，12800份重复大画像由冻结系数与B重建，原始H/NSG仍为冻结依赖。
+ 
+ [部署控制器](entry_method_exploration/20260912_offline_profile_rl_v1/src/deploy.py)在全部模型冻结并通过独立训练复算后才准备历史cal1024；按cal U/总NDC/seed冻结选择，再准备audit1024。实际部署直接使用与E34逐字一致的无hook[评测binary](entry_method_exploration/20260912_offline_profile_rl_v1/bin/evaluate)。在线仅raw query→普通HNSW top3→ID升序→原NSG，无query投影/MLP/组合枚举，GT只在全部原始搜索后打开。选中模型与训练checkpoint在fit128完整字节一致；plain/count/原kernel和五L相同入口/图均独立核验。
+--- before/s-target.md
++++ after/s-target.md
+@@ -1,13 +1,49 @@
+ # ACSG 下一阶段目标与接续
+ 
+-第14唯一串行会话已核验第13整日中文报告、六页PDF与全部401失败query离线浏览，新增[交付入口](entry_method_exploration/20260913_until2100_v1/session14_closeout_v1/delivery.md)。E92/E93/E94实际完成，最终模型、选择、原始返回及计时冻结；无待恢复实验。整日21:00目标保持未完成状态，由监督会话接续交付，不能把本次安全退出等同整日完成。
++2026-09-13限时探索与报告已完成，监督器21:00:01.595123按原截止退出，无待恢复实验。E94最终50点/250wall、401失败query及图/HTML/PDF均已交付和核验；默认仍为Web GT10-soft-t1 / Yandex GT10-hard，尚无稳定更好方法。当前入口为[收口后交接](entry_method_exploration/20260913_post_closeout_handoff_v1/handoff.md)和[复盘86](experiment_history/86_post_closeout_rl_direction_review.md)，不再执行第14旧交接中的待收口命令。
+ 
+-1. 接续直接读[第14会话交接](entry_method_exploration/20260913_until2100_v1/handoff_session14.md)与[报告](entry_method_exploration/20260913_until2100_v1/session13_report_v1/report.md)，执行其中只读检查器并查看最新监督备注后完成21:00交付。50点250wall和全部失败表已完成，监督208实际六页PDF验收也已补入当前记录，不重跑原始评分、ANN或浏览器穷举。
+-2. 当前不再训练或新增查询，不从最终反馈调整模型、入口、图、参数或L；held-out不开。Web best_all=P、best_new=组合反证；Y两个开发角色compact。局部正信号保留，默认不换。
+-3. 后续独立研究线索见[机制说明](entry_method_exploration/20260913_until2100_v1/session13_report_v1/mechanism_note.md)：先分别检查有效动作支持、完整并图交互、已有收益丢失及跨来源迁移；尚无新方向实施，不能据最终坏例选子集或自动扩大RL/阈值网格。新阶段须重新冻结数据角色、协议与预算。
++**下一优先级：先只读研究并重新设计方法，保留离线学习入口画像/小图的目标，下调现有参数扰动型RL及局部修补分支。** 本次用户授权为文档更新；以下是后续接续计划，尚未执行，没有新实验或后台会话排队。
+ 
+-第14会话新输出预算2MiB、另72MiB预留、free>=6.45GiB；源前件已存，旧history83/84及模型/raw/选择/wall/报告封存不改。接口与计时合同无变化，spec检查后保持字节。20:00停止训练、20:40停止新增查询及本会话安全交接、21:00整日交付边界不变。独立[记录85](experiment_history/85_campaign_delivery_readiness.md)承接本次交付核验。
++## 1. 先定义有效动作和真实效用问题
+ 
+-[六页PDF](entry_method_exploration/20260913_until2100_v1/session13_report_v1/report.pdf) · [离线完整失败浏览](entry_method_exploration/20260913_until2100_v1/session13_report_v1/report.html) · [401查询原CSV](entry_method_exploration/20260913_until2100_v1/stage35_final_comparison_v1/supplement_v1/failed_queries_all_L.csv) · [状态](entry_method_exploration/20260913_until2100_v1/state.json)。
++沿复盘86读取原协议、源码、配置和原表，明确当前解释的四层：更新转化不足、动作支持稀疏、查询间损伤、组合及跨来源迁移。E50/E52/E53/E60/E89/E90均已做过，不重复列成待执行诊断。图可达、画像排名和原NSG完整三入口收益分别讨论；单入口或单动作净值之和不替代实际联合结果。
+ 
+-第12会话历史纠正入口为[handoff_session12_v2](entry_method_exploration/20260913_until2100_v1/handoff_session12_v2.md)，其旧v1曾遇history83封存依赖冲突；原件已恢复、追加文字另存，不能继续旧v1命令。第13会话新增详细复盘另存[记录84](experiment_history/84_campaign_20260913_report.md)，未原位追加history83。
++新假设需要回答：哪类修改能产生足够多的有效改道，如何保住原GT10已有收益，为什么这些效果可能迁移到未参与新选型的查询。明确与遗漏GT重权、零命中重权、多画像/不同分组、宽度、补边、父恢复及query门控的实质区别。相对compact修复不能替代相对原P的检验；“保留原P向量”也不保证保留原入口行为。
++
++**退出条件：** 若只能提出旧动作的阈值、seed、步长、簇数或预算扩张，且没有新的可检验机制依据，建议停止本分支，整理已有结果，不为延续运行而制造实验。
++
++## 2. 再选择离线方法，保持可核算的线上成本
++
++结合已有代码/结果及一手论文、作者实现，最多比较2–3个有实质差异的机制，推荐一个主方案和一个备选；可得出当前没有值得实施方案的结论。候选先写明表示、动作或提议、训练目标、画像评分与小图结构如何配合，再判断适用监督优化、确定性/黑盒搜索或RL，不预设算法标签。
++
++每个方案需提供：
++
++- 离线到在线的完整流程或伪代码，以及对当前单次小图路由/三真实入口/原NSG的具体变化。
++- 已有可复用标签及严格复用键，缺失的真实反馈；不能把几何排名、未知组合或独立搜索并集当作已测联合效用。
++- 数据角色、完整三入口实际收益、保留旧收益/新增损伤/零命中失败、原P和简单对照。
++- 原生调用、路由、构建、训练wall、内存/磁盘预算及未知成本；相同候选或反馈数不等于相同训练wall。
++- 最小可否证实验、预先冻结的成功/停止条件和所需产物。此阶段只交设计，不执行新训练或查询。
++
++## 3. RL 仅作为有额外依据的候选优化器
++
++已有画像RL主要是Gaussian参数搜索；E50说明找到正候选不保证确定更新有效，E52/E53已缓解部分问题，E56纯构图也只有局部信号。当前证据既不支持继续默认扩大RL预算，也不证明全部RL方法无效。
++
++若新设计确实涉及多步构图决策，先明确状态、合法动作、转移、回报与信用分配，并解释它需要利用哪种即时择优不能处理的交互。现有并图非加性不是“长期规划必有优势”的证明。新的多步策略尚未实现，不能仅换算法名就进入训练。
++
++只有新动作/表示机制成立后，才为对应新版本设计RL与简单优化的对照：保持表示、反馈来源及预算可比，单列真实训练wall；保留所有seed/负点、确定导出与部署差距。RL若不能在冻结接受集上重复显示额外收益，不再作为该版本主线。旧RL/ES/直接择优比较已完成，不原样复跑。
++
++## 数据、实验与性能边界
++
++当前只读研究范围不包括新训练、标签生成、构图、ANN、QPS、依赖安装或自动启动会话。后续用户若明确授权实施，再按当时范围建立独立版本并冻结协议、数据角色和预算；本交接不延长9月13日全天执行授权。
++
++P-fit含旧train/monitor，aux/cal/audit已反复使用，动作及模型选择反馈计训练；E94用的是历史validation，也非全项目盲集。最终模型与选择已在最终载荷访问前冻结，本次最终反馈未回流训练。**不按E94最终失败例挑动作/子集或调参；held-out保持未开。** 后续划分必须记录已有暴露，不把改名的旧开发集当成新盲集。
++
++进入完整性能比较前须有相对匹配GT10起点的开发依据，并预先确定有实际意义的收益/损伤接受标准。最终按同机单线程、方法串行、全在线wall比较Recall–QPS及失败查询；保留五L全点和各轮计时。单L Recall、NDC、插值或训练monitor不构成性能GO，计时重复和跨L不增加独立query样本。完整成本未知项不得补零。
++
++## 接续产物与新会话入口
++
++只读研究预期交付一份方法比较及主/备方案说明、一份最小实验设计；如依据不足则提交停止理由。形成研究结论后按AGENTS分工同步四根文档与历史索引。本次尚未产生这些研究产物或新方法实现。
++
++[可复制的新会话指令](entry_method_exploration/20260913_post_closeout_handoff_v1/handoff.md#可复制的新会话指令) · [完整复盘86](experiment_history/86_post_closeout_rl_direction_review.md) · [中文报告](entry_method_exploration/20260913_until2100_v1/session13_report_v1/report.md) · [交互网页](entry_method_exploration/20260913_until2100_v1/session13_report_v1/report.html) · [PDF](entry_method_exploration/20260913_until2100_v1/session13_report_v1/report.pdf)。
++
++原第14交接、campaign state、历史83–85及全部模型/raw/选择/wall/报告/seal保存为历史身份；其中待收口状态由[监督最终检查](entry_method_exploration/20260913_post_closeout_handoff_v1/evidence/review_217_final_goal_audit.json)接续，不原位改写。根文档旧版已保存于[本次source_before](entry_method_exploration/20260913_post_closeout_handoff_v1/source_before/)。
+--- before/s-experiment.md
++++ after/s-experiment.md
+@@ -1,4 +1,6 @@
+ # ACSG 历史实验概览与复盘索引
++
++9月13日限时探索与汇报已由监督器在21:00收口，最新实验仍为E94。收口后新增[复盘86：RL方向与接续](experiment_history/86_post_closeout_rl_direction_review.md)，仅更新文档和研究优先级，0新实验；当前交接以[s-target](s-target.md)及[收口后交接](entry_method_exploration/20260913_post_closeout_handoff_v1/handoff.md)为准。
+ 
+ > 实验、设计与停止状态更新截至2026-09-13。`experiment`拼写正确，文件名沿用`s-experiment.md`。本文负责“以前做过什么、结论大概是什么、去哪里详细复盘”，与spec、summary、s-target同在项目根目录。详细记录统一放在[experiment_history/](experiment_history/README.md)，原始产物保留原位置。
+ 
+@@ -111,6 +113,7 @@
+ 
+ | 记录 | 已完成 | 尚未执行/不能声称 | 详细入口 |
+ |---|---|---|---|
++| 9月13日收口后的RL方向复盘 | 依据E50更新转化、E52/E53对照、E60支持、E89交互与E94结果，下调现有RL/局部修补分支，保留离线学习索引目标 | 本次只更新交接；新方法比较/设计及实验未执行，不是E95，不证明RL整体无效 | [86 收口后复盘](experiment_history/86_post_closeout_rl_direction_review.md)、[下一阶段](s-target.md) |
+ | E26后GT10收益机制分析计划原件 | 2026-09-10按用户要求冻结下一步归因目标；当时只更新文档 | 计划原件保留未执行身份；2026-09-11继任E27已完成既有分析与限定补测，见上表，不将原计划本身计作实验 | [当前目标](s-target.md)、[历史16](experiment_history/16_gt10_mechanism.md) |
+ | E23后GT入口/聚类/rank/OOD微型图调研 | 核对当前builder、E20/E23既有证据和14项一手工作；推荐固定H的GT-topK软画像、真实效用分组备选及保分数成对拉伸效率支线 | `RESEARCH_COMPLETE_METHOD_UNSELECTED_UNRUN`；未重新聚类、标注、训练、构建ANN或评测，rank8仍未证最优，无方法/性能GO | [四问题报告](entry_method_exploration/20260910_ood_hubs_clustering_router_research_v1/report.md)、[09研究记录](experiment_history/09_research_designs_not_experiments.md) |
+ | 四问题调研后的详细实验交接 | 按用户要求在s-target展开全部优先级：固定H软画像、真实效用分组/入口及联合评分、微型图拉伸/建边，另列聚类器、rank和范数消融；各含方法、对照、阶段、成本、停止依据与新对话指令 | `NEXT_EXPERIMENT_DIRECTION_DEFINED_UNRUN`；只有文档交接，该交接原件当时未执行；用户随后授权第一方向E24，已冻结并完成，见历史13；不回写研究原件状态 | [当前目标](s-target.md)、[09接续记录](experiment_history/09_research_designs_not_experiments.md) |
+@@ -149,4 +152,4 @@
+ 
+ 2026-09-13第13会话完成[整日中文汇报](entry_method_exploration/20260913_until2100_v1/session13_report_v1/report.md)、六页PDF及401查询离线浏览；全部50原点/10730呈现单元与实际浏览器下载验收通过，0新增训练/ANN/QPS。独立[详细记录84](experiment_history/84_campaign_20260913_report.md)承接报告与机制边界，不增加实验编号，不改E94封存或整日完成状态。
+ 
+-2026-09-13第14会话核验交付封存，补入监督208实际六页PDF查看及监督211第13退出/第14串行接续证据；原报告/历史卡保持。新增[交付入口](entry_method_exploration/20260913_until2100_v1/session14_closeout_v1/delivery.md)及[详细记录85](experiment_history/85_campaign_delivery_readiness.md)，0新实验/训练/ANN/QPS，整日目标仍待监督接续交付。
++2026-09-13第14会话核验交付封存，补入监督208实际六页PDF查看及监督211第13退出/第14串行接续证据；原报告/历史卡保持。新增[交付入口](entry_method_exploration/20260913_until2100_v1/session14_closeout_v1/delivery.md)及[详细记录85](experiment_history/85_campaign_delivery_readiness.md)，0新实验/训练/ANN/QPS；当时待监督接续，随后监督器于21:00:01退出并完成限时任务检查，见[收口后复盘86](experiment_history/86_post_closeout_rl_direction_review.md)。旧会话快照不回写。
+--- before/experiment_history/README.md
++++ after/experiment_history/README.md
+@@ -15,6 +15,7 @@
+ 
+ | 卡片 | 覆盖 |
+ |---|---|
++| [86 收口后RL方向与交接](86_post_closeout_rl_direction_review.md) | 9月13日限时任务已收口；区分更新转化、动作支持和查询损伤，下调当前RL/局部修补分支，0新实验 |
+ | [57 完整画像排序诊断](57_profile_ranking_diagnosis.md) | E68：0新ANN，近似缺口/93失败query排序连接；不是NSG反事实 |
+ | [56 多画像完整wall](56_multimode_wall.md) | E67：固定mode与duplicate、55点275轮、QPS/Recall/失败及完整回归 |
+ | [55 GT10多画像小索引](55_multimode_index.md) | E66：P+两模态直接3H小图、同容量重复P、7slot去重及完整开发 |
+@@ -158,4 +159,4 @@
+ 
+ 第13串行会话：[84 整日结果汇报整理](84_campaign_20260913_report.md)，复用E94的中文图/PDF、完整401query离线浏览与机制说明；非新增实验，0训练/ANN/QPS，原封存保持。
+ 
+-第14串行会话：[85 交付核验与安全接续](85_campaign_delivery_readiness.md)，核验既有交付封存并补齐实际六页PDF审查来源，0新增实验，整日目标保持未完成。
++第14串行会话：[85 交付核验与安全接续](85_campaign_delivery_readiness.md)，核验既有交付封存并补齐实际六页PDF审查来源，0新增实验；当时整日目标待监督收口。随后21:00监督退出与最新研究取舍见[86 收口后RL方向与交接](86_post_closeout_rl_direction_review.md)，旧阶段封存不改。

@@ -1,0 +1,262 @@
+{
+  "status": "PASS_TASK_COMPLETE_METHOD_STOP",
+  "time": "2026-09-20T10:13:26.296239+08:00",
+  "requirements": [
+    {
+      "item": "source/data identities and disjoint historical roles",
+      "status": "PASS",
+      "evidence": "inputs/*/{fit,cal}/manifest.json"
+    },
+    {
+      "item": "six entry permutations and same-entry original kernel",
+      "status": "PASS",
+      "evidence": "reviews/parity_gate.json"
+    },
+    {
+      "item": "true K1/K100 joint utility and fit headroom gate",
+      "status": "PASS",
+      "evidence": "reviews/headroom_gate.json"
+    },
+    {
+      "item": "six fixed model runs and cal after freeze",
+      "status": "PASS",
+      "evidence": "reviews/models_frozen.json"
+    },
+    {
+      "item": "actual exact/ANN routing and independent scoring",
+      "status": "PASS",
+      "evidence": "results/quality_metrics.csv"
+    },
+    {
+      "item": "prelocked representation decision",
+      "status": "STOP_REPRESENTATION",
+      "evidence": "reviews/representation_gate.json"
+    },
+    {
+      "item": "conditional 160-config/480-plain full wall",
+      "status": "NOT_ENTERED_BY_FROZEN_GATE",
+      "evidence": "reviews/representation_gate.json"
+    },
+    {
+      "item": "complete paired results, costs, figure and handoff",
+      "status": "PASS",
+      "evidence": "report.md"
+    }
+  ],
+  "protected_selected_files_unchanged": 16,
+  "input_and_router_identities_verified": 38,
+  "large_index_checks": "size/mtime, loaded shape/metric; no fresh full content hash",
+  "root_before_snapshots_verified": 6,
+  "current_documents": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/report.md",
+      "bytes": 8652,
+      "mtime_ns": 1789870231503366864,
+      "sha256": "6af3f418c9529c19e63599ad302bf9828a780cca9be969efb736cec3582edc6d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/protocol.md",
+      "bytes": 2225,
+      "mtime_ns": 1789868840691458589,
+      "sha256": "6eeeb1b55d0f1a094bae8ab277fb732e26d5c7d9476bf12136385fe98d6fa1b9"
+    },
+    {
+      "path": "/data/netg/ACSG/experiment_history/98_query_representation_pilot.md",
+      "bytes": 2617,
+      "mtime_ns": 1789870231503366864,
+      "sha256": "6141c9708259236326580b9848af7ac582d74484aab9d14085724aacdf310749"
+    },
+    {
+      "path": "/data/netg/ACSG/spec.md",
+      "bytes": 162801,
+      "mtime_ns": 1789870231503366864,
+      "sha256": "198ba2c75c70608b5c9105787b20605475c4c4c9fac97438b03903a06cb50bbc"
+    },
+    {
+      "path": "/data/netg/ACSG/summary.md",
+      "bytes": 11537,
+      "mtime_ns": 1789870231503366864,
+      "sha256": "edcb8a4fc82baec10e6ac414136da1a0d793db11180d4e50d0fc41e8b507e46c"
+    },
+    {
+      "path": "/data/netg/ACSG/s-target.md",
+      "bytes": 14388,
+      "mtime_ns": 1789870231503366864,
+      "sha256": "51a0cdbf2ca114f30c07dcbc547d836f29d0d5839043562ab4adb36384d5b207"
+    },
+    {
+      "path": "/data/netg/ACSG/s-experiment.md",
+      "bytes": 45102,
+      "mtime_ns": 1789870231503366864,
+      "sha256": "1c4a263610b4e216388499c3526d2a2c342f1bb48c8aa10c2640af768838586b"
+    },
+    {
+      "path": "/data/netg/ACSG/experiment_history/README.md",
+      "bytes": 18173,
+      "mtime_ns": 1789870231503366864,
+      "sha256": "d708729b402cdffd22ab59ed6c4efe8fe1ff0452b404d7210e9721cc7bf3c12f"
+    }
+  ],
+  "compiled_kernel_byte_identical_E103": true,
+  "live_same_jobs": 0,
+  "local_links_checked": 734,
+  "missing_local_links": [],
+  "independent_raw_return_recomputation": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "IdentityANN",
+      "K": 1,
+      "hit_sum": 397,
+      "baseline_hit_sum": 397,
+      "delta_pp": 0.0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "QLinearANN",
+      "K": 1,
+      "hit_sum": 377,
+      "baseline_hit_sum": 397,
+      "delta_pp": -3.90625
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "QMLPANN",
+      "K": 1,
+      "hit_sum": 392,
+      "baseline_hit_sum": 397,
+      "delta_pp": -0.9765625
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "WFreeANN",
+      "K": 1,
+      "hit_sum": 401,
+      "baseline_hit_sum": 397,
+      "delta_pp": 0.78125
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "IdentityANN",
+      "K": 100,
+      "hit_sum": 33749,
+      "baseline_hit_sum": 33749,
+      "delta_pp": 0.0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "QLinearANN",
+      "K": 100,
+      "hit_sum": 33242,
+      "baseline_hit_sum": 33749,
+      "delta_pp": -0.990234375
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "QMLPANN",
+      "K": 100,
+      "hit_sum": 33690,
+      "baseline_hit_sum": 33749,
+      "delta_pp": -0.115234375
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "WFreeANN",
+      "K": 100,
+      "hit_sum": 34060,
+      "baseline_hit_sum": 33749,
+      "delta_pp": 0.607421875
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "IdentityANN",
+      "K": 1,
+      "hit_sum": 467,
+      "baseline_hit_sum": 467,
+      "delta_pp": 0.0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "QLinearANN",
+      "K": 1,
+      "hit_sum": 463,
+      "baseline_hit_sum": 467,
+      "delta_pp": -0.78125
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "QMLPANN",
+      "K": 1,
+      "hit_sum": 460,
+      "baseline_hit_sum": 467,
+      "delta_pp": -1.3671875
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "WFreeANN",
+      "K": 1,
+      "hit_sum": 473,
+      "baseline_hit_sum": 467,
+      "delta_pp": 1.171875
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "IdentityANN",
+      "K": 100,
+      "hit_sum": 42986,
+      "baseline_hit_sum": 42986,
+      "delta_pp": 0.0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "QLinearANN",
+      "K": 100,
+      "hit_sum": 42556,
+      "baseline_hit_sum": 42986,
+      "delta_pp": -0.83984375
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "QMLPANN",
+      "K": 100,
+      "hit_sum": 42447,
+      "baseline_hit_sum": 42986,
+      "delta_pp": -1.052734375
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "WFreeANN",
+      "K": 100,
+      "hit_sum": 43237,
+      "baseline_hit_sum": 42986,
+      "delta_pp": 0.49023437499999994
+    }
+  ],
+  "models_frozen_before_cal_payload_copy": true,
+  "fresh_test_or_heldout_access": false,
+  "production_changed": false,
+  "default_changed": false,
+  "costs": {
+    "main_nsg_calls": 655808,
+    "micro_hnsw_route_calls": 36000,
+    "training_runs": 6,
+    "training_seconds": 11.606674432754517,
+    "training_maxrss_kib": 369072,
+    "search_subprocess_wall_seconds": 314.79929208755493,
+    "search_maxrss_kib": 10443252,
+    "micro_hnsw_builds": 2,
+    "micro_hnsw_build_seconds": 0.132059344,
+    "fresh_gt_calls": 0,
+    "bottom_graph_builds": 0,
+    "K10_searches": 0,
+    "formal_plain_rounds": 0,
+    "version_elapsed_seconds": 1663.832561969757,
+    "generated_bytes": 397826551,
+    "inherited_GT_graph_profile_cost": "not remeasured; not zero"
+  },
+  "source": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/src/verify_completion.py",
+    "bytes": 9585,
+    "mtime_ns": 1789870405159358550,
+    "sha256": "dd20aeff82b834b803f654fcfb4c1ab1a868ff172aaf48660c5e726e3d9466f6"
+  }
+}

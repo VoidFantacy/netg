@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "jobs": [
+    {
+      "phase": "gate",
+      "dataset": "webvid2_5m_light_v1",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/bin/measure",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/inputs/webvid2_5m_light_v1/native.json",
+        "gate",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/results/webvid2_5m_light_v1/gate"
+      ],
+      "exit_code": 0,
+      "seconds": 137.94769441600147,
+      "max_threads": 1,
+      "max_observed_rss": 5814411264,
+      "stopped": null
+    },
+    {
+      "phase": "gate",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/bin/measure",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/inputs/yandex_t2i_official10M_ip_v1/native.json",
+        "gate",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/results/yandex_t2i_official10M_ip_v1/gate"
+      ],
+      "exit_code": 0,
+      "seconds": 41.67520316700029,
+      "max_threads": 1,
+      "max_observed_rss": 10655653888,
+      "stopped": null
+    },
+    {
+      "phase": "labels",
+      "dataset": "webvid2_5m_light_v1",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/bin/measure",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/inputs/webvid2_5m_light_v1/native.json",
+        "labels",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/results/webvid2_5m_light_v1/labels"
+      ],
+      "exit_code": 0,
+      "seconds": 265.91098068800056,
+      "max_threads": 1,
+      "max_observed_rss": 5818159104,
+      "stopped": null
+    },
+    {
+      "phase": "labels",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/bin/measure",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/inputs/yandex_t2i_official10M_ip_v1/native.json",
+        "labels",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/results/yandex_t2i_official10M_ip_v1/labels"
+      ],
+      "exit_code": 0,
+      "seconds": 70.06059746300161,
+      "max_threads": 1,
+      "max_observed_rss": 10655723520,
+      "stopped": null
+    },
+    {
+      "phase": "wall",
+      "dataset": "webvid2_5m_light_v1",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/bin/measure",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/inputs/webvid2_5m_light_v1/native.json",
+        "wall",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/results/webvid2_5m_light_v1/wall"
+      ],
+      "exit_code": 0,
+      "seconds": 402.3546426690009,
+      "max_threads": 1,
+      "max_observed_rss": 5818331136,
+      "stopped": null
+    },
+    {
+      "phase": "wall",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/bin/measure",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/inputs/yandex_t2i_official10M_ip_v1/native.json",
+        "wall",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/results/yandex_t2i_official10M_ip_v1/wall"
+      ],
+      "exit_code": 0,
+      "seconds": 99.64789214399934,
+      "max_threads": 1,
+      "max_observed_rss": 10655567872,
+      "stopped": null
+    }
+  ],
+  "search_job_seconds": 1017.5970105470042,
+  "new_NSG": 594688,
+  "new_ANN": 610816,
+  "CPU15_actual1_serial": true,
+  "all_sources_inputs_models_unchanged": true,
+  "stage_bytes": 43188816,
+  "campaign_bytes": 1114571095
+}

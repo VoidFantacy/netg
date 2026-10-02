@@ -1,0 +1,8 @@
+{
+  "unix": 1790083107.7448857,
+  "search_calls": 0,
+  "evaluation_output_created": false,
+  "log_bytes": 0,
+  "cause": "taskset launcher inspected before CPU binding, prior to native evaluator exec",
+  "fix": "check thread/affinity once /proc/cmdline identifies native evaluator; native own threads() also enforces CPU15"
+}

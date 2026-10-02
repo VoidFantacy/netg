@@ -1,0 +1,33 @@
+{
+  "limitations": "Synthetic suite; full-data legacy parity and evaluator timing isolation are separate P1 gates",
+  "seed": 2026090711,
+  "status": "PASS",
+  "tests": [
+    {
+      "name": "legacy_shared_unique_and_tied_distance_parity",
+      "queries": 1200,
+      "status": "PASS",
+      "tied_queries": 800,
+      "unique_queries": 400
+    },
+    {
+      "name": "count_plain_and_single_region_parity",
+      "status": "PASS"
+    },
+    {
+      "name": "protected_bridge_cross_region_and_empty_regions",
+      "regional_ndc": 43,
+      "shared_ndc": 42,
+      "status": "PASS"
+    },
+    {
+      "name": "trace_replay_duplicates_shared_visited_epoch_wrap",
+      "status": "PASS",
+      "trace_events": 94
+    },
+    {
+      "name": "capacity_and_invalid_inputs",
+      "status": "PASS"
+    }
+  ]
+}

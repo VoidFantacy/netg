@@ -1,0 +1,81 @@
+--- before/spec.md
++++ after/spec.md
+@@ -1,6 +1,6 @@
+ # NETG / ACSG 当前实现规格
+ 
+-> 最后核对：2026-09-08。本文件只记录当前实现、数据/metric 契约、artifact、评测口径和重跑依赖。研究结论见 `summary.md`，修订优先级及历史协议见 `s-target.md`，历史过程见 `aco_router_fast_entry.md`。最新文献复审只修改研究计划，未改变实现，见第15节。
++> 最后核对：2026-09-08。本文件只记录当前实现、数据/metric 契约、artifact、评测口径和重跑依赖。研究结论见 `summary.md`，修订优先级及历史协议见 `s-target.md`，历史过程见 `aco_router_fast_entry.md`。当前主要方向为入口选择方法调研，尚无新实现，交接边界见第16节；此前文献复审见第15节。
+ 
+ ## 1. 权威性与保护边界
+ 
+@@ -44,7 +44,7 @@
+ 
+ ## 3. 当前代码入口
+ 
+-已停止版本 `hierarchical_target_search/20260907_v1` 的P0/P1、区域搜索/独立计数/纯计时及P3的256叶区新P1均通过。新增 `ACSG/RegionalSearch.h`、`benches/test_regional_search.cpp` 和三个分层评测/门户入口，修改前源码/checksum已保存。P2的64区域、P3的16×16结构与门户模型均完成双数据集pilot；P3搜索收益gate为NOPASS，三项失败诊断完成。P4层次预测尚未实现和启动。实现正确不等于方法有效；原契约见第13节，计划复审边界见第15节。
++已停止版本 `hierarchical_target_search/20260907_v1` 的P0/P1、区域搜索/独立计数/纯计时及P3的256叶区新P1均通过。新增 `ACSG/RegionalSearch.h`、`benches/test_regional_search.cpp` 和三个分层评测/门户入口，修改前源码/checksum已保存。P2的64区域、P3的16×16结构与门户模型均完成双数据集pilot；P3搜索收益gate为NOPASS，三项失败诊断完成。P4层次预测尚未实现和启动。实现正确不等于方法有效；原契约见第13节，历史复审见第15节，当前入口调研边界见第16节。
+ 
+ | 目的 | 入口 |
+ | --- | --- |
+@@ -196,12 +196,13 @@
+ - WebVid GATE 已同图适配但弱于 Fast；按 gate 未复制到 Yandex。仍缺 RoarGraph/RobustVamana 同机端到端比较。
+ - 本批未读取 Multi-view held-out，且失败后不得返回调参；若未来提出新方法，必须另立协议，不能沿用本批 validation/test 授权。
+ 
+-旧 Multi-view 已按 E0 → E1 → E1b 提前终止；当前 `s-target.md` 首部为文献复审后的优先级，已停止分层搜索版本的P0–P8计划保留为历史正文。旧 oracle、utility ranker、BTG、probe-reroute、finite-beam 和 GATE 细节保留在各自 artifact，不作为新方案 GO 证据。
++旧 Multi-view 已按 E0 → E1 → E1b 提前终止；当前 `s-target.md` 首部为入口选择调研优先级，原R0–R2成本筛查及已停止分层搜索P0–P8保留为历史正文，不自动排队。旧 oracle、utility ranker、BTG、probe-reroute、finite-beam 和 GATE 细节保留在各自 artifact，不作为新方案 GO 证据。
+ 
+ ## 12. 辅助入口
+ 
+ - 当前研究结论：`summary.md`
+ - 本批协议与终局：`s-target.md`
++- 当前入口选择调研指令：`entry_selection_research/20260908_v1/next_dialogue_prompt.md`
+ - 历史方法与失败分支：`aco_router_fast_entry.md`、对应 `*_diagnostics/`
+ - 复现命令：`command.md`
+ - 相关工作历史提案：`papers/related_work_2026-08-29/README.md`
+@@ -221,7 +222,7 @@
+ - 新 artifact 预算 8 GiB，/data 保留 ≥10 GiB；不复制 base/图，仅一个重数据集进程。完整成本记录 exactGT、partition、portal、router，缺失项 null＋原因。
+ - 改区域/门户/拟合 split 必须重建模型与全部下游评测；改队列/路由必须重过 P1 和下游；改计时必须重测 wall；辅助图是独立改搜索图版本，重新 P1–P7。详细矩阵、统计及停止规则以 s-target.md 和版本 protocol.json 为准。
+ 
+-## 14. 夜间执行依赖与恢复交接
++## 14. 已结束夜间执行的依赖与历史交接
+ 
+ 依赖安装的权威记录为 `hierarchical_target_search/20260907_v1/dependencies/{README.md,manifest.json}`。此前准备轮只做依赖准备和安装检查，没有真实数据实验；当时核心源码、新草稿、旧 gate、原 Python 包版本保护检查均通过。后续夜间恢复授权已于截止结束，`state.json` 为 `TIMEBOX_STOPPED_REPORT_COMPLETE_P3_NOPASS`；该批独立证据已通过P0/P1，依赖就绪本身不算方法验收。
+ 
+@@ -230,7 +231,7 @@
+ - `tools/gp-ann/build` 已构建 MIPS 版本和所需子模块；`tools/RoarGraph/build` 已构建索引/搜索和 DiskANN exact-GT 工具。版本 checksum 见 manifest。LIRA 的 CPU/数据契约适配、gp-ann 计数协议审计仍是后续工作，不能声称基线正式复验完成。
+ - RoarGraph 的 MKL/OpenMP 在局部 `tools/mkl-sysroot`，仅由 `tools/roargraph-env.sh` 启用；不能将其环境混入原 ACSG 的构建与计时。系统仅新增 15 个依赖包，未升级或删除已有包。
+ - 复用现有 GATE 二进制及 gensim Graph2Vec CSV 适配；不得因可选 karateclub 缺失而静默退化成均值池化。
+-- 新对话提示词为版本目录 `overnight_prompt.md`，方法开发与实验截止北京时间 2026-09-08 07:00。本次截止watchdog已完成停止核验并退出；无截止中断任务，早期失败产物保留原状态。停止后只整理既有证据和文档，已创建[实验总结](实验总结.md)：标题后首段用 3–5 句、约 150 字以内概括整晚成果，后文详细说明实现/验证、设置/结果/gate、证据、资源/安全、复现/下一步。若路径已存在，保留旧文档，在新时间戳 artifact 子目录保存同名文件并报告实际路径。
++- 版本目录 `overnight_prompt.md` 为已结束的夜间授权原文，其方法开发与实验截止北京时间 2026-09-08 07:00；当前新对话使用第16节的[入口调研指令](entry_selection_research/20260908_v1/next_dialogue_prompt.md)。本次截止watchdog已完成停止核验并退出；无截止中断任务，早期失败产物保留原状态。停止后只整理既有证据和文档，已创建[实验总结](实验总结.md)：标题后首段用 3–5 句、约 150 字以内概括整晚成果，后文详细说明实现/验证、设置/结果/gate、证据、资源/安全、复现/下一步。若路径已存在，保留旧文档，在新时间戳 artifact 子目录保存同名文件并报告实际路径。
+ 
+ ### 本次夜间实现与证据（核对于北京时间 2026-09-08 07:10）
+ 
+@@ -258,10 +259,24 @@
+ 
+ [实验总结](实验总结.md)最终独立复核PASS，0项实质/阻断问题，证据见[报告复核](hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/final_report_independent_review_v1.md)。本次有截止的执行与报告交付已完成；长期研究仍未完成，当前P3 NOPASS及后续gate边界不变。
+ 
+-## 15. 文献与计划复审（2026-09-08，未执行新实验）
++## 15. 历史文献与计划复审（2026-09-08，R0–R2未运行且已被替代）
+ 
+ 新增 `research_direction_review/20260908_v1/`：复审前文档/state快照与SHA、14篇核心论文的方法/实验核对、独立本地假设审查、[综合报告](research_direction_review/20260908_v1/report.md)。只读论文及已有小型证据，未打开原始query/GT/base/图，未改搜索/分区源码、二进制、配置、模型或统计产物；原夜间报告、P3 gate、state和CLOSED控制边界保持。
+ 
+-`s-target.md` 新首部为当前建议优先级，旧P0–P8正文标为历史协议。新计划状态`DESIGN_REVIEWED_NOT_RUN`，不注册为通过gate：先核验paired Fast/同入口统一池/GATE受约束适配的可比性，并优先评估PyANNS完整系统基线；再以固定P2表示/入口和六个核心搜索点检验实际成本空间。新筛查预定统一池/区域池QPS比[1.00,1.02]的近似匹配容差，超差/无匹配为INCONCLUSIVE，不插值补点，不丢弃bootstrap无匹配重复；具体统计处理/输入绑定/资源限制仍须在新执行版本冻结。依赖安装不等于baseline验收，论文速度不等于本地结果。
+-
+-复审不改变raw-IP、原NSG、20K fit、历史10K pilot、validation性能未使用或held-out冻结边界。原P3仍NOPASS；GT占比oracle不是最优调度oracle；P4未实现不能写成所有层次预测失败。新方法若改变图、标签或搜索规则，按第10节联动重跑对应阶段，不能沿旧已关闭runner绕过gate。
++该次复审曾将R0–R2列为优先级，状态`DESIGN_REVIEWED_NOT_RUN`，不注册为通过gate：先核验paired Fast/同入口统一池/GATE受约束适配的可比性，并优先评估PyANNS完整系统基线；再以固定P2表示/入口和六个核心搜索点检验实际成本空间。历史筛查预定统一池/区域池QPS比[1.00,1.02]的近似匹配容差；具体统计处理/输入绑定/资源限制当时尚未冻结。该建议未执行，现已由第16节入口选择调研替代，不是前置必跑阶段。基线可比性与完整成本原则保留；依赖安装不等于baseline验收，论文速度不等于本地结果。
++
++复审不改变raw-IP、原NSG、20K fit、历史10K pilot、该分层夜间版本validation仅完整性检查或held-out冻结边界；其他旧分支已使用validation做性能评测，不能推广为全项目从未使用。原P3仍NOPASS；GT占比oracle不是最优调度oracle；P4未实现不能写成所有层次预测失败。新方法若改变图、标签或搜索规则，按第10节联动重跑对应阶段，不能沿旧已关闭runner绕过gate。
++
++## 16. 当前入口选择主线的调研交接（2026-09-08）
++
++用户已指定“改进入口选择方法”为主要方向。新增 `entry_selection_research/20260908_v1/`：`direction.md`记录问题、当前实现与历史证据边界；`next_dialogue_prompt.md`为下一对话指令；`state.json`标记`DIRECTION_SET_RESEARCH_PENDING`；`source_before/`与`manifest.json`保存本次文档变更前快照及受保护小文件身份。本轮只修改文档/交接状态，未修改方法源码、二进制、配置、模型、原始数据或实验gate，未运行新实验。
++
++实现仍为第2节Fast和已验收的独立搜索组件。下一轮首先查 `benches/run/build_fast_entry_variants.py` 中的候选构造、top-1 GT basin平均prototype和真实路由链；候选池、短名单/排序、少量入口组合仅为研究轴，不是已实现的新算法。固定图和搜索语义用于隔离入口收益；改入口数须验证`search_new` mode 2三入口上限、实际消费/顺序/去重，新路径不能以旧输出顺序冒充parity。
++
++历史oracle入口为 `oracle_entry_diagnostics/webvid_validation_1k_current_hubs_v1/results.json`，仅取K≤L的有效行；它是旧30K Fast、815候选、validation 1K、免费穷举入口和graph-only统计，不与新20K paired Fast及新纯wall结果混用。`CurrentHub_Diverse_Top3_GreedyProxy`是单入口命中并集后重放，不是最优联合入口。关联负证据为 `sparse_utility_ranker_results/analysis.md`、`probe_reroute_results/analysis.md`、`trace_conditioned_rerouter_results/webvid_probe10_top32_topology_v4/report.json`；旧报告的下一步不覆盖当前停止边界。
++
++下一对话范围为源码/已有结果复核、一手文献及作者实现调研、2–3个机制比较、一个推荐与最小证伪协议草案。允许只读证据/联网查文献和写新调研文档；不训练、构图、ANN性能评测、扫参、新GT或依赖安装，不改方法源码，不读取原始validation/held-out查询与GT，不自动进入实验执行。旧 `overnight_prompt.md` 只作已结束的授权原文；旧截止、P0–P8 runner、state/gate/CLOSED均不用于新调研。
++
++未来实验仍需另立协议，绑定原始IP、冻结NSG/base/GT、独立QGT5K、router_train后20K fit/前10K历史pilot和同20K paired Fast。不得以旧30K prototype作为新训练输入。validation已有历史性能使用（如旧oracle、ranker、Multi-view），分层夜间版本只做了完整性检查；必须分别记录使用历史，不能宣称全项目validation从未使用。held-out须在方法冻结及相应验证通过后按10K×3执行，不用于新调参。
++
++完整计时包括候选检索、打分/组合选择、归一化、重置/去重、搜索和结果写入；GT/hash/trace/JSON在外，count/plain独立验收；完整离线成本包含exactGT、额外标签/轨迹、候选构造、模型训练与路由索引。强基线、两数据集、三独立构建、尾部与最终性能门槛不降低；具体比较族/成本匹配/资源预算在新协议冻结。若改变hub、标签或路由，按第10节重建相应模型与下游；若改变搜索语义，需重新正确性/计时验收，不能混作纯入口改进。

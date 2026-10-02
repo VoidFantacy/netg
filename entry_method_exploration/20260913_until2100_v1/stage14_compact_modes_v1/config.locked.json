@@ -1,0 +1,19 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "threads": 1,
+  "CPU": 15,
+  "NSG_expected": 97152,
+  "HNSW_expected": 96960,
+  "builds": 2,
+  "NSG_hard_cap": 100000,
+  "output_cap_MiB": 64,
+  "free_min_GiB": 7,
+  "latest_launch": 1789278300,
+  "query_hard_stop": 1789278600,
+  "per_job_seconds": 600,
+  "quality_gate": "vs P full positive/halves nonnegative/no failure increase; vs fullmode full and halves nonnegative/no failure increase",
+  "wall_measurement": "after implementation verification, fixed compact candidate including any quality failure, separate E74 protocol"
+}

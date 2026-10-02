@@ -1,0 +1,187 @@
+{
+  "artifact_version": "roargraph-webvid2.5m-ip-v1",
+  "base": {
+    "range": [
+      0,
+      2505000
+    ],
+    "source": "clip.webvid.base.2.5M.fbin"
+  },
+  "created_unix": 1787715039,
+  "dedup_selection": {
+    "duplicate_train": 31,
+    "overlap_public_test": 36,
+    "source_rows_consumed": 45067
+  },
+  "files": {
+    "base.webvid2_5m.fvecs": {
+      "bytes": 5140260000,
+      "sha256": "6fb5b5510b29504de38271be7c343bd5e85a029f5755c7b3d74177cbf1ebbb18"
+    },
+    "gt.aco_train.seed20260826.ip.ivecs": {
+      "bytes": 2020000,
+      "sha256": "46ba3dfa04f16df69b4667aa62c033c6575234dfe080f995a879ba35444f9866"
+    },
+    "gt.router_train.seed20260826.ip.ivecs": {
+      "bytes": 12120000,
+      "sha256": "1db08bf5b259a468558e6dfed19661d73bc6fe6947a3c862e526176242ace72c"
+    },
+    "gt.test.public10K.ip.top100.ivecs": {
+      "bytes": 4040000,
+      "sha256": "1e55041056ef61d4192e01064fed0311cf8d831b6a8d6e5225b9514ace801022"
+    },
+    "gt.validation.seed20260826.ip.ivecs": {
+      "bytes": 4040000,
+      "sha256": "882f0a9ddebcf40885b4a41e384e530dad6a2514c96d8ead391f0118a97588cc"
+    },
+    "query.aco_train.seed20260826.fvecs": {
+      "bytes": 10260000,
+      "sha256": "b4322c37b2d4ab10e965bc5731f523341d1a974d5e40aa0cd881b4fbe28a572e"
+    },
+    "query.router_train.seed20260826.fvecs": {
+      "bytes": 61560000,
+      "sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855"
+    },
+    "query.test.public10K.fvecs": {
+      "bytes": 20520000,
+      "sha256": "96b11dda1628f15e704512438e1dc773a8f19b2426e03c71aedcacf11f18910d"
+    },
+    "query.validation.seed20260826.fvecs": {
+      "bytes": 20520000,
+      "sha256": "a59d61a48bf160679626a5a0a71f9d28d32d3528bda94d92ddf6ab03e132b96a"
+    },
+    "split_source_indices.seed20260826.json": {
+      "bytes": 655419,
+      "sha256": "27649b0f03d650b2716955cce7dac077a9ecdc72126d0f8bdc98227da1411c00"
+    }
+  },
+  "ground_truth": {
+    "k": 100,
+    "metric": "exact_inner_product",
+    "test_source_k": 500
+  },
+  "local_sources": {
+    "source/clip.webvid.base.2.5M.fbin": {
+      "bytes": 5130240008,
+      "complete_official_file": true,
+      "sha256": "e4952560bb5f51a591079651dc9279004d6c3dfa138bbfaf2c60f4079bac69de"
+    },
+    "source/webvid.gt.10k.ibin": {
+      "bytes": 40000008,
+      "complete_official_file": true,
+      "sha256": "37aad7f48cb42cf6f74a7804a92c9366e88e625668351f02f91ef175193b150e"
+    },
+    "source/webvid.query.10k.fbin": {
+      "bytes": 20480008,
+      "complete_official_file": true,
+      "sha256": "03f309697b65be79f8bfd11433691ad5339d18f425ab3b06835101c98e70d16b"
+    },
+    "source/webvid.query.train.2.5M.fbin": {
+      "bytes": 5120000008,
+      "complete_official_file": true,
+      "sha256": "cb48e2b8d90492fce20c2303b5a5ca10b49875f6a75967733d2bc7b73bd8c2b9"
+    }
+  },
+  "metric": "ip",
+  "norm_samples": {
+    "aco_train": {
+      "max": 1.0006383657455444,
+      "mean": 1.0000020265579224,
+      "min": 0.9993470311164856,
+      "sample_rows": 5000,
+      "std": 0.0002216231805505231
+    },
+    "base": {
+      "max": 1.0000001192092896,
+      "mean": 1.0,
+      "min": 0.9999998211860657,
+      "sample_rows": 20000,
+      "std": 4.126088271050321e-08
+    },
+    "router_train": {
+      "max": 1.000655174255371,
+      "mean": 1.0000001192092896,
+      "min": 0.9993374347686768,
+      "sample_rows": 20000,
+      "std": 0.00022116606123745441
+    },
+    "test": {
+      "max": 1.0006725788116455,
+      "mean": 1.0000008344650269,
+      "min": 0.9993383884429932,
+      "sample_rows": 10000,
+      "std": 0.00022320645803119987
+    },
+    "validation": {
+      "max": 1.0006818771362305,
+      "mean": 1.0000056028366089,
+      "min": 0.9993802905082703,
+      "sample_rows": 10000,
+      "std": 0.0002224788477178663
+    }
+  },
+  "normalization": "source_unit_norm_no_additional",
+  "official_gt_validation": {
+    "sample_queries": 32,
+    "set_recall_at_100": 1.0
+  },
+  "official_sources": {
+    "clip.webvid.base.2.5M.fbin": {
+      "bytes": 5130240008,
+      "md5": "0a3d70417a5536241950c9a5a4b45163"
+    },
+    "webvid.gt.10k.ibin": {
+      "bytes": 40000008,
+      "md5": "d38e61f1d3ae8ed4e7b2dd821ec5ac6f"
+    },
+    "webvid.query.10k.fbin": {
+      "bytes": 20480008,
+      "md5": "af1343dc16554d87c43326cf4024493d"
+    },
+    "webvid.query.train.2.5M.fbin": {
+      "bytes": 5120000008,
+      "md5": "cef416cd7c69cdae27e0517a7dca668d"
+    }
+  },
+  "query_overlap_counts": {
+    "aco_train__router_train": 0,
+    "aco_train__test": 0,
+    "aco_train__validation": 0,
+    "router_train__test": 0,
+    "router_train__validation": 0,
+    "validation__test": 0
+  },
+  "schema_version": 1,
+  "source_record": "https://zenodo.org/records/11090378",
+  "split_seed": 20260826,
+  "splits": {
+    "aco_train": {
+      "first_source_row": 1952512,
+      "last_source_row": 713876,
+      "selected_count": 5000,
+      "selection_file": "split_source_indices.seed20260826.json",
+      "source": "webvid.query.train.2.5M.fbin"
+    },
+    "router_train": {
+      "first_source_row": 1845805,
+      "last_source_row": 1424104,
+      "selected_count": 30000,
+      "selection_file": "split_source_indices.seed20260826.json",
+      "source": "webvid.query.train.2.5M.fbin"
+    },
+    "test": {
+      "source": "webvid.query.10k.fbin",
+      "source_range": [
+        0,
+        10000
+      ]
+    },
+    "validation": {
+      "first_source_row": 2392209,
+      "last_source_row": 2237513,
+      "selected_count": 10000,
+      "selection_file": "split_source_indices.seed20260826.json",
+      "source": "webvid.query.train.2.5M.fbin"
+    }
+  }
+}

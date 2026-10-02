@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "status": "PREREGISTERED_BEFORE_IMPLEMENTATION_AND_ACTUAL_DEGREE_READS",
+  "stage": "P3_POST_NOGO_OBJECTIVE_LOCAL_SCALE",
+  "created_utc": "2026-09-07T18:29:31.181247+00:00",
+  "upstream_P3": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P3.json",
+    "sha256": "3e154f9db332ec9a404b85d85061459967911be797e4350c191b1d9774dbc4f2"
+  },
+  "P3_protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+  },
+  "P0_audit": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+    "sha256": "7da975cbb0e045265f405b08e230abb6442eba51621064699a4ad449c90ae58b"
+  },
+  "P0_header_parser_source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/audit_inputs.py",
+    "sha256": "06b81595218618c4db882f8fe8f522f3d87f18b94e9b91c8f4d3fa8a33454473"
+  },
+  "target_diagnosis": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/target_generalization_diagnosis_v1/diagnosis.json",
+    "sha256": "124c65ee713dc3c3de57968ef98675be8566c1dbf2e3e24411c974434e3c0a0c"
+  },
+  "target_diagnosis_completion": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/target_generalization_diagnosis_v1/complete.json",
+    "sha256": "4722ad6885e667dd0a8ebdada9aaf09340d7dc35a5b512e1ffec05d491cabf29"
+  },
+  "algebra": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_scale_analysis_v1.json",
+    "sha256": "b5c603ad1bca4414ff34eb80ebaf14b98a83c1f692a630247764b88a3d50ba99"
+  },
+  "algebra_independent_review": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_scale_independent_review_v1.json",
+    "sha256": "719cd9d1939f450f91c02620303c0aaf087bd3adfed7626139f811a8b65282a8"
+  },
+  "scope": "Finite descriptive audit of the exact sufficient local-objective condition on the already-fitted target population and fixed label-change groups; no search, fitting, model/parameter changes, CIs, model selection or gate reopening.",
+  "motivation_from_completed_evidence": [
+    "Target diagnosis: fit concentration gain transfers weakly to WebVid pilot and essentially not to Yandex pilot; WebVid main Recall harm is predominantly seen-target contribution despite improved seen-target coverage.",
+    "Final lambda1-vs-lambda0 labels differ on 24.1694793%/11.7641454% of unique fit-seen nodes and .9885638%/.5084350% of unseen nodes. These descriptive facts motivate checking actual local scales, not a causal claim.",
+    "Global Markov degree bound gives no positive lower bound for fit targets: the global high-degree upper bound exceeds the at-most-200K unique targets."
+  ],
+  "cpu_only": true,
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "input_boundaries": {
+    "allowed_numeric_reads": [
+      "Frozen original graph adjacency only, in bounded row blocks",
+      "Existing extracted fit20K GT10 only, full hash and unique10-per-row validation",
+      "Previously verified common-init and lambda0/lambda1 final labels only, exact hashes"
+    ],
+    "allowed_provenance_reads": "Fresh streaming SHA256 of full frozen native graph file, including uninterpreted embedded-vector bytes solely for input identity; reparse small header/length metadata and compare exactly to P0. No vector arithmetic or base-array loading. Info JSON hash rechecked. GT10 and label hashes freshly verified.",
+    "forbidden": [
+      "pilot_GT",
+      "query_vectors",
+      "validation",
+      "heldout",
+      "standalone_base_vectors",
+      "ANN",
+      "graph_writes",
+      "partition_refinement",
+      "fit_or_portal_changes",
+      "new_parameters",
+      "new_CI"
+    ],
+    "original_two_diagnosis_protocol_unchanged": true
+  },
+  "degree_contract": {
+    "out": "Count original directed valid nonself slots from u; retain duplicate directed arcs.",
+    "in": "Count original directed valid nonself slots arriving at u, retaining duplicate arcs.",
+    "total": "D(u)=in(u)+out(u)",
+    "padding": "Only -1 allowed; -1 ignored, self arcs ignored consistently with fixed J; other negative/out-of-range ID is integrity failure.",
+    "checks": [
+      "Full native index SHA and metadata equals P0",
+      "M and Q equal frozen partition/algebra metadata",
+      "Sum in = sum out = M, sum D = 2M",
+      "Padding/self/valid counts reproduce P0 scan",
+      "Fit count, unique target count, total occurrences and max occurrence reproduce completed target diagnosis",
+      "Fixed-label movement group counts reproduce completed target diagnosis"
+    ]
+  },
+  "condition": {
+    "exact": "D(u)*(9*Q) < M using int64 arithmetic; strict equality excluded.",
+    "meaning": "For this node, any feasible candidate move with integer DeltaS<=-1 strictly lowers J_lambda1 regardless of its cut change; only a sufficient condition.",
+    "units": "M counts original directed valid nonself slots, Q=20000 fit query rows.",
+    "report": "Report exact measured coverage for all nodes and fit support groups; no substitute from global average or sample estimate."
+  },
+  "support": {
+    "definition": "f(u)=number of fit GT10 rows containing u, seen iff f>0; GT row has unique targets.",
+    "populations": [
+      "all",
+      "seen",
+      "unseen"
+    ],
+    "exact_frequency_bins": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        10,
+        19
+      ],
+      [
+        20,
+        49
+      ],
+      [
+        50,
+        99
+      ],
+      [
+        100,
+        null
+      ]
+    ],
+    "weighted_denominator": "sum f(u) in the group; measures fit target occurrences, not unique nodes or independent queries; empty weighted denominator=null."
+  },
+  "movement_groups": {
+    "variables": [
+      "lambda0_final_leaf_changed_from_initial",
+      "lambda1_final_leaf_changed_from_initial",
+      "final_lambda1_vs_lambda0_leaf_difference"
+    ],
+    "states": [
+      "changed",
+      "unchanged"
+    ],
+    "support_populations": [
+      "all",
+      "seen",
+      "unseen"
+    ],
+    "crossproduct": "All 18 fixed cells retained including empty; changed and unchanged must exhaust each support population. End-state labels only, not accepted sequential moves."
+  },
+  "summaries": {
+    "each_group": [
+      "node_count",
+      "sum fit target occurrences",
+      "count/fraction satisfying exact sufficient condition",
+      "fit-occurrence-weighted count/fraction satisfying condition",
+      "mean/min/max of in/out/total degree",
+      "total-degree quantiles at fixed levels"
+    ],
+    "quantile_levels": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      0.9,
+      0.95,
+      0.99,
+      1
+    ],
+    "quantile_method": "Exact empirical inverted_cdf/order-statistic ceil(p*n)-1 clamped0; no interpolation, empty=null.",
+    "no_threshold_selection": true
+  },
+  "output": "Complete per-dataset summary JSON with all groups, source/input hashes, M/Q and conservation checks, compact all-base total-degree histogram if <=1MiB; no million-row or raw-ID/GT/vector dumps. Top complete marker; interrupted output INCOMPLETE and preserved.",
+  "interpretation_limits": [
+    "Measured support of a sufficient local condition does not show a GT-improving feasible candidate exists or is selected.",
+    "Does not reconstruct actual accepted-move DeltaC/DeltaS, temporal ordering or a unique contribution to final cut.",
+    "Unseen DeltaS=0 does not imply its trajectory is independent of GT-aware moves of other nodes, candidate sets or capacities.",
+    "Label changes, support, degrees and retrieval all correlate; no causal attribution or proof of memorization/connectivity failure.",
+    "No fixed-lambda change, second representation revision, new router, portal or auxiliary graph is authorized."
+  ],
+  "resources": {
+    "max_heavy_processes": 1,
+    "launch": "Root-controlled control/stage_run.py P3 split fit measurement analysis",
+    "min_ram_gib": 4,
+    "min_free_disk_gib": 10,
+    "artifact_limit_gib": 8,
+    "expected_seconds_per_dataset": 60,
+    "soft_close_utc": "2026-09-07T22:59:00Z",
+    "hard_deadline_utc": "2026-09-07T23:00:00Z"
+  },
+  "method_revision_increment": 0,
+  "P4_authorized": false,
+  "P3_gate_reopened": false,
+  "new_model_or_auxgraph_authorized": false
+}

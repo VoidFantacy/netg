@@ -1,0 +1,61 @@
+{
+  "dataset": "webvid2_5m_light_v1",
+  "arm": "rl",
+  "seed": 20260917,
+  "updates": 3000,
+  "training_seconds": 13.173705577850342,
+  "best": {
+    "step": 700,
+    "seconds": 3.1194591522216797,
+    "path": "/data/netg/ACSG/entry_method_exploration/20260911_query_swap_policy_v1/models/webvid2_5m_light_v1/rl_20260917/checkpoint_0700",
+    "train": {
+      "recall_pct": 75.22321428571429,
+      "delta_recall_pp": 0.13392857142857142,
+      "utility": 0.013250455342947868,
+      "expected_utility": 0.007233953330968363,
+      "expected_recall_pct": 75.16575360268946,
+      "expected_graph_ndc": 1654.7098404140609,
+      "graph_ndc": 1652.9542410714287,
+      "graph_change_pct": 0.11731809020616435,
+      "failure_pct": 2.0089285714285716,
+      "changed_queries": 163,
+      "mean_swaps": 0.09095982142857142,
+      "stop_at_first_pct": 90.90401785714286,
+      "max_abs_score": 12.4970272418135
+    },
+    "monitor": {
+      "recall_pct": 74.453125,
+      "delta_recall_pp": 0.078125,
+      "utility": 0.007808711629113432,
+      "expected_utility": -0.010655909698166478,
+      "expected_recall_pct": 74.27377283225103,
+      "expected_graph_ndc": 1667.125206025485,
+      "graph_ndc": 1661.8359375,
+      "graph_change_pct": 0.02092438772656191,
+      "failure_pct": 1.171875,
+      "changed_queries": 23,
+      "mean_swaps": 0.08984375,
+      "stop_at_first_pct": 91.015625,
+      "max_abs_score": 9.441204546528379
+    },
+    "full_fit": {
+      "recall_pct": 75.126953125,
+      "delta_recall_pp": 0.126953125,
+      "utility": 0.012570237378718561,
+      "expected_utility": 0.004997720452326507,
+      "expected_recall_pct": 75.05425600638466,
+      "expected_graph_ndc": 1656.2617611154888,
+      "graph_ndc": 1654.064453125,
+      "graph_change_pct": 0.10520206479738281,
+      "failure_pct": 1.904296875,
+      "changed_queries": 186,
+      "mean_swaps": 0.0908203125,
+      "stop_at_first_pct": 90.91796875,
+      "max_abs_score": 12.4970272418135
+    }
+  },
+  "any_cost_feasible": true,
+  "selection": "max nonzero checkpoint monitor greedy utility under graphNDC<=+1%, earliest tie; if none max utility marked infeasible",
+  "cached_RL_episodes": 192000,
+  "new_NSG_calls": 0
+}

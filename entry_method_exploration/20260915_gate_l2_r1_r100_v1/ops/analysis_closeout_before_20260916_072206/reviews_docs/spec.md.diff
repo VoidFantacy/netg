@@ -1,0 +1,12 @@
+--- before/spec.md
++++ after/spec.md
+@@ -1,6 +1,8 @@
+ # ACSG 代码架构与实现契约
+ 
+-2026-09-15 [GATE后续审查](entry_method_exploration/20260915_gate_reproduction_audit_v1/report.md)确认 E96 的 release 负样本阈值会与正样本重叠，实际 triplet 中冲突比例约0.25%–0.40%。现有训练代码与模型尚未修改；后继须先从 neg 中去除 pos，再过滤/配对并验互斥。兼容 hop 缓存可复用，triplet/模型/embedding/评测需新版本。batch-first 修复、CPU/Sinkhorn和同图 kernel 适配可保留；全部1536子图触及1000节点上限，不能声称未截断。当前新增审查脚本只处理已有缓存/模型前向及合成输入，无训练或ANN。
++E97 实现与验收已完成：metric_id显式绑定IP/L2、K仅1或100、L/ef>=K；完整HNSW使用原生距离。GATE先从负集合移除全部正hub，再过滤和配对，新模型和旧E96隔离。800点通过线程、plain/count、全部返回评分、跨K首距离/入口及同距tie及冻结身份核验。[实现与接口](entry_method_exploration/20260915_gate_l2_r1_r100_v1/protocol.md)、[验收](entry_method_exploration/20260915_gate_l2_r1_r100_v1/reviews/raw_results_verified.json)。
++
++2026-09-15 [GATE后续审查](entry_method_exploration/20260915_gate_reproduction_audit_v1/report.md)确认 E96 的 release 负样本阈值会与正样本重叠，实际 triplet 中冲突比例约0.25%–0.40%。审查当时尚未修改训练代码与模型；其要求是先从 neg 中去除 pos，再过滤/配对并验互斥，E97现已在独立版本完成。兼容 hop 缓存可复用，triplet/模型/embedding/评测需新版本。batch-first 修复、CPU/Sinkhorn和同图 kernel 适配可保留；全部1536子图触及1000节点上限，不能声称未截断。当前新增审查脚本只处理已有缓存/模型前向及合成输入，无训练或ANN。
+ 
+ 后续新评测合同改为 **Recall@1、Recall@100**，详见第8节。E96 evaluator 仍硬编码 IP/K10，未实现新三集 L2/K1/K100 支持；不能把新合同写成它已有的能力。
+ 

@@ -1,0 +1,115 @@
+{
+  "status": "CLARIFIED_EXISTING_P0_INTEGRITY_ACCESS",
+  "created_utc": "2026-09-07T19:00:50.274381+00:00",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/audit_inputs.py",
+    "sha256": "06b81595218618c4db882f8fe8f522f3d87f18b94e9b91c8f4d3fa8a33454473",
+    "lines": "160-214"
+  },
+  "completed_audit": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+    "sha256": "7da975cbb0e045265f405b08e230abb6442eba51621064699a4ad449c90ae58b"
+  },
+  "validation_access_at_P0": [
+    "query and GT headers and full-file SHA256",
+    "query per-row byte fingerprints for within/split duplicate and overlap checks",
+    "query finiteness validation",
+    "GT base-ID range and per-row duplicate checks"
+  ],
+  "validation_not_used_for": [
+    "fitting",
+    "model or parameter selection",
+    "ANN search",
+    "Recall or QPS evaluation"
+  ],
+  "heldout_files_opened": false,
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "validation_query_file": {
+        "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.validation.seed20260826.fvecs",
+        "header": {
+          "n": 10000,
+          "d": 512,
+          "bytes": 20520000
+        },
+        "expected_sha256": "a59d61a48bf160679626a5a0a71f9d28d32d3528bda94d92ddf6ab03e132b96a",
+        "sha256": "a59d61a48bf160679626a5a0a71f9d28d32d3528bda94d92ddf6ab03e132b96a",
+        "checksum_wall_seconds": 0.05010513500019442
+      },
+      "validation_gt_file": {
+        "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/gt.validation.seed20260826.ip.ivecs",
+        "header": {
+          "n": 10000,
+          "d": 100,
+          "bytes": 4040000
+        },
+        "expected_sha256": "882f0a9ddebcf40885b4a41e384e530dad6a2514c96d8ead391f0118a97588cc",
+        "sha256": "882f0a9ddebcf40885b4a41e384e530dad6a2514c96d8ead391f0118a97588cc",
+        "checksum_wall_seconds": 0.01094704999923124
+      },
+      "query_overlap": {
+        "duplicates": {
+          "qgt": 0,
+          "pilot": 0,
+          "fit": 0,
+          "validation": 0
+        },
+        "pairs": {
+          "qgt__pilot": 0,
+          "qgt__fit": 0,
+          "qgt__validation": 0,
+          "pilot__fit": 0,
+          "pilot__validation": 0,
+          "fit__validation": 0
+        }
+      },
+      "heldout_accessed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "validation_query_file": {
+        "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.validation.fvecs",
+        "header": {
+          "n": 10000,
+          "d": 200,
+          "bytes": 8040000
+        },
+        "expected_sha256": "f84e695822f4b0fd303782f9ff5c8c92e5149bbd7f46d500250f40030e35871b",
+        "sha256": "f84e695822f4b0fd303782f9ff5c8c92e5149bbd7f46d500250f40030e35871b",
+        "checksum_wall_seconds": 0.01875906900022528
+      },
+      "validation_gt_file": {
+        "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/gt.validation.ip.ivecs",
+        "header": {
+          "n": 10000,
+          "d": 100,
+          "bytes": 4040000
+        },
+        "expected_sha256": "cfe1b5e99d4a0a4b7a9b1a260636d10850a13c212054d22829ee5da5c97f0301",
+        "sha256": "cfe1b5e99d4a0a4b7a9b1a260636d10850a13c212054d22829ee5da5c97f0301",
+        "checksum_wall_seconds": 0.009081071002583485
+      },
+      "query_overlap": {
+        "duplicates": {
+          "qgt": 0,
+          "pilot": 0,
+          "fit": 0,
+          "validation": 0
+        },
+        "pairs": {
+          "qgt__pilot": 0,
+          "qgt__fit": 0,
+          "qgt__validation": 0,
+          "pilot__fit": 0,
+          "pilot__validation": 0,
+          "fit__validation": 0
+        }
+      },
+      "heldout_accessed": false
+    }
+  ],
+  "supersedes_imprecise_prose": "Earlier broad statements validation/held-out unread should be read as validation performance not run, held-out unread; P0 validation input-integrity checks did read validation bytes as listed. Immutable prior records retained.",
+  "this_addendum_reads": "existing source and completed audit JSON only; no validation data reread",
+  "gate_changed": false
+}

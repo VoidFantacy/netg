@@ -1,0 +1,44 @@
+{
+  "name": "dummy",
+  "status": "INCOMPLETE",
+  "created_utc": "2026-09-07T15:57:23.070401+00:00",
+  "token": "44b8e2ae-d579-428d-9c4e-c862e212a437",
+  "command": [
+    "/usr/bin/python3",
+    "-c",
+    "import time; print(\"started\",flush=True); time.sleep(60)"
+  ],
+  "heavy": false,
+  "expected_seconds": 120,
+  "timeout_seconds": 60.0,
+  "min_ram_gib": 4,
+  "log": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/selftest/logs/dummy.log",
+  "started_utc": "2026-09-07T15:57:23.095195+00:00",
+  "supervisor_pid": 33053,
+  "pid": 33054,
+  "pgid": 33054,
+  "start_ticks": 2725342,
+  "peak_rss_kib": 8920,
+  "last_observed_utc": "2026-09-07T15:57:31.140132+00:00",
+  "stop_reason": "DEADLINE",
+  "signals": [
+    {
+      "at": "2026-09-07T15:57:31.146701+00:00",
+      "signal": 15,
+      "result": "SENT",
+      "members": [
+        {
+          "pid": 33054,
+          "pgid": 33054,
+          "start_ticks": 2725342,
+          "state": "S",
+          "token": "44b8e2ae-d579-428d-9c4e-c862e212a437",
+          "rss_kib": 8920
+        }
+      ]
+    }
+  ],
+  "returncode": -15,
+  "ended_utc": "2026-09-07T15:57:33.149031+00:00",
+  "elapsed_seconds": 10.053707701001258
+}

@@ -1,0 +1,145 @@
+{
+  "experiment": "router_rank_pareto_v1",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "dataset": "webvid2_5m_light_v1",
+      "dimension": 512,
+      "base_n": 2505000,
+      "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+      "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "anchor": {
+        "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+        "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+        "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+        "name": "GT10-soft-t1"
+      },
+      "threads": 1,
+      "n": 4096,
+      "queries": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/inputs/webvid2_5m_light_v1/fit/queries.f32",
+      "gt": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/inputs/webvid2_5m_light_v1/fit/gt.i64",
+      "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+      "seconds_cap": 1800,
+      "max_search_calls": 310000,
+      "label_block": 128,
+      "label_repeats": 3,
+      "trace_single_actions": 8,
+      "direction_samples_per_query": 64,
+      "cpu": 15,
+      "ranked_reference": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/inputs/webvid2_5m_light_v1/ranked_entries.i32",
+      "feature_reference": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/inputs/webvid2_5m_light_v1/features.f64",
+      "profile_reference": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/inputs/webvid2_5m_light_v1/profile_scores.f32",
+      "state_reference": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e121_router_state_table_v1/results/webvid2_5m_light_v1/upper_states.i32",
+      "canonical_reference": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e121_router_state_table_v1/results/webvid2_5m_light_v1/entries.i32",
+      "folds": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/inputs/webvid2_5m_light_v1/folds.i32",
+      "old_roles": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e121_router_state_table_v1/models/webvid2_5m_light_v1/roles.npz",
+      "old_labels_root": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/results/webvid2_5m_light_v1/labels",
+      "points": [
+        {
+          "K": 1,
+          "L": 1000
+        },
+        {
+          "K": 100,
+          "L": 1250
+        }
+      ],
+      "repeats": 3,
+      "warm_n": 128,
+      "root": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1",
+      "min_free_bytes": 6442450944,
+      "maxrss_bytes": 34359738368,
+      "H": 815
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "dimension": 200,
+      "base_n": 10000000,
+      "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+      "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "anchor": {
+        "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+        "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+        "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+        "name": "GT10-hard"
+      },
+      "threads": 1,
+      "n": 4096,
+      "queries": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/inputs/yandex_t2i_official10M_ip_v1/fit/queries.f32",
+      "gt": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/inputs/yandex_t2i_official10M_ip_v1/fit/gt.i64",
+      "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "seconds_cap": 1800,
+      "max_search_calls": 310000,
+      "label_block": 128,
+      "label_repeats": 3,
+      "trace_single_actions": 8,
+      "direction_samples_per_query": 64,
+      "cpu": 15,
+      "ranked_reference": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/inputs/yandex_t2i_official10M_ip_v1/ranked_entries.i32",
+      "feature_reference": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/inputs/yandex_t2i_official10M_ip_v1/features.f64",
+      "profile_reference": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/inputs/yandex_t2i_official10M_ip_v1/profile_scores.f32",
+      "state_reference": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e121_router_state_table_v1/results/yandex_t2i_official10M_ip_v1/upper_states.i32",
+      "canonical_reference": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e121_router_state_table_v1/results/yandex_t2i_official10M_ip_v1/entries.i32",
+      "folds": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1/inputs/yandex_t2i_official10M_ip_v1/folds.i32",
+      "old_roles": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e121_router_state_table_v1/models/yandex_t2i_official10M_ip_v1/roles.npz",
+      "old_labels_root": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/results/yandex_t2i_official10M_ip_v1/labels",
+      "points": [
+        {
+          "K": 1,
+          "L": 128
+        },
+        {
+          "K": 100,
+          "L": 256
+        }
+      ],
+      "repeats": 3,
+      "warm_n": 128,
+      "root": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/router_rank_pareto_v1",
+      "min_free_bytes": 6442450944,
+      "maxrss_bytes": 34359738368,
+      "H": 821
+    }
+  },
+  "N": 4096,
+  "folds": 4,
+  "models": [
+    "StatePareto",
+    "GlobalPareto",
+    "ShufflePareto",
+    "FeaturePareto"
+  ],
+  "methods": [
+    "Default",
+    "ForcedDefault",
+    "StatePareto",
+    "GlobalPareto",
+    "ShufflePareto",
+    "FeaturePareto"
+  ],
+  "training_rule": "min_full_query_time_subject_to_integer_recall_delta_ge_0_and_strict_time_saving_per_cell",
+  "tree_depth": 2,
+  "min_leaf": 512,
+  "split_quantiles": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "bootstrap_seed": 2026093025,
+  "bootstrap_reps": 10000,
+  "max_new_NSG": 620000,
+  "max_new_ANN": 680000,
+  "max_stage_bytes": 67108864,
+  "max_campaign_bytes": 1140850688,
+  "min_free_bytes": 6442450944,
+  "search_job_seconds_cap_total": 1800,
+  "deadline_unix": 1790771400,
+  "new_source_access": false,
+  "default_change_allowed": false,
+  "labels_are_instrumented_proxy_not_QPS": true
+}

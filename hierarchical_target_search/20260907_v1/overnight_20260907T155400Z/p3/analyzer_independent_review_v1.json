@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "status": "PASS_SOURCE_AND_SMALL_SYNTHETIC_REVIEW",
+  "stage": "P3_ANALYZER_INDEPENDENT_REVIEW",
+  "created_utc": "2026-09-07T17:46:23.497102+00:00",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analyze_p3.py",
+    "sha256": "a840b060a61061df6e60ae6166cd9a090570ef6ec0002a3ec7c7deea14e4e03e"
+  },
+  "frozen_P2_helper": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/analyze_p2.py",
+    "sha256": "8219fc24ac771d585cc30f9ad628aa7d5c8e55025bfe60725511aafafb05acd8"
+  },
+  "runner_interface": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/run_p3_evaluation.py",
+    "sha256": "03eccddc76efa3c2e19a2f747f4e93213ebab57a4ce643984c5d392189729d08"
+  },
+  "independent_checks": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analyzer_independent_checks_v2/report.json",
+    "sha256": "92e1a3df6843ed88fcba7916e05c45cd633c3388ec2de1c6fee21b5894f6c874"
+  },
+  "confirmed": [
+    "Requires both registered datasets and exact four models/three methods/L64,128/count1/timing5 matrix; every measured cell requires aligned pilot IDs0..9999.",
+    "Reconstructs result and full-route FNV identities, verifies plain round0 against all count rows and repeated timing hashes/Recall; same-route queue contrasts and constant routing across L are enforced.",
+    "All four model cells must preserve Fast result IDs, routes, Recall and all six NDC/MAC metrics; actual Fast raw fingerprints and new runner fast_inputs bindings are checked.",
+    "Every contrast uses candidate Recall minus reference Recall. Exactly eight fixed contrasts per dataset/L: four structural/portal controls plus four within-model protection controls.",
+    "One query-index matrix per bootstrap replicate is shared across all eight contrasts within a dataset/L; 10000 replicates, fixed seed2026090711, ordinary pointwise 95% intervals, no multiplicity-adjusted claim.",
+    "Primary test stays oracle_probability lambda1_greedy3 minus lambda0_greedy3 at both L values on both datasets; report only describes the search subcondition and never grants P3/P4 gate.",
+    "Within-model timing preserves five direct paired rounds; between-model fixed-order wall comparison provides only ratio of mean QPS and raw rounds, no cross-model paired ratios or interval.",
+    "No query/GT/base/graph values are read by the analyzer; evaluation artifacts must be pilot-only, with oracle diagnostics explicitly excluded from deployment claims.",
+    "Final check_invocations uses fast_kind and retains measurement kind, producing all eight distinct (model,count/timing) output keys."
+  ],
+  "validation": {
+    "synthetic_checks": 17,
+    "synthetic_query_count": 3,
+    "ANN_calls": 0,
+    "real_dataset_values_read": false,
+    "CPU_threads": 1,
+    "direct_bootstrap_reference": "Bitwise identical to independently generated 10000x3 query-index matrix for all eight explicit delta rows.",
+    "semantic_contrast_tolerance": "1e-15 only for algebraically equal differences built through floating-point Recall subtraction; exact identity checks remain exact.",
+    "invocation_fixture": "All eight model/measurement keys, wrong frozen Fast ID path, duplicate CLI flag and reversed measurement order checked."
+  },
+  "preserved_intermediate_evidence": {
+    "root_author_shadow_fix": "Earlier analyzer version reused kind in a Fast-file loop; author fixed it and added invocation fixture. Current source a840 is reviewed.",
+    "reviewer_fixture_assertion": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analyzer_independent_checks_v1/reviewer_fixture_failure.json",
+      "sha256": "d9af5d008808ab06b9bd591d668d19d4b9f8a8614fcc64935fb2424a599f5620"
+    }
+  },
+  "needed_fixes": [],
+  "scope_limits": [
+    "This review is source and tiny synthetic evidence only. It does not establish the real P3 statistical results or scientific gate.",
+    "Full actual-data analyzer execution, structure objective/common initialization checks and final P3 decision remain root-controlled."
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "status": "PASS_SOURCE_AND_INDEPENDENT_SMALL_SYNTHETICS",
+  "created_utc": "2026-09-07T18:25:34.907684+00:00",
+  "reviewer": "p1_evaluator",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/diagnose_target_generalization.py",
+    "sha256": "798e9e3b4b61bc4380879b71aedaec1fae28cf1db38df3595ba2b210b498a5b5"
+  },
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/diagnosis_protocol_v1.json",
+    "sha256": "4bdd1cd92b42d85f89bd69aec980068c9bed0d5aee90917d5ce2ad8db9823959"
+  },
+  "independent_checks": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/target_generalization_independent_checks_v1/report.json",
+    "sha256": "984f64284dbdf647eb381656aa1653a413c1c1179314d604228466c564c8d911"
+  },
+  "independent_checker": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/check_target_generalization_independent.py",
+    "sha256": "b9a8c30845887dfa935ab098266b4df6c451454414d0786b6878fb48ca47ea60"
+  },
+  "author_integration_source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/test_target_generalization.py",
+    "sha256": "1def03adf618b1bedd5cf4f11ef4a14507eba0023d447564aa38d9bf7981b458"
+  },
+  "author_integration_result": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/target_generalization_synthetic_v1/result.json",
+    "sha256": "8ab7ad1c5a9d6cf99edd2117f4d4db88acc6103fa42b03fc913fa9e1904315a9"
+  },
+  "required_fixes_remaining": [],
+  "read_scope": "Complete subject source and complete author synthetic suite plus own generated tiny arrays and parent-ivecs fixtures only. No actual GT, saved labels, count rows, vectors, graph or ANN were read/run by this reviewer.",
+  "checked_contracts": [
+    "Frozen diagnosis protocol and P3 NOPASS gate bind exact completed search/structure analyses; both datasets, model families, P0 audit, partition branches/labels and extracted fit GT identity are checked before raw diagnostic inputs.",
+    "The original parent GT loader reads exactly NQ*404 bytes once for physical records0..9999, validates every width100 header, hashes all100 GT values per pilot row and takes ranks0..9 for metrics. Parent suffix is never read, memmapped or rehashed; whole-file size stat is explicitly separate.",
+    "Only existing raw fit GT10 is opened;20000x10 signed IDs, checksum, unique10 per row, ID range and manifest/P0 full-fit identity are validated. No query vectors, base vectors, original adjacency, validation or heldout are opened.",
+    "D and absolute covered targets are integer-derived over all256 leaves; stable ascending-leaf ties match the oracle, including zero-mass ties. Saved region order is exact; conditional weights use fixed1e-12 absolute tolerance for equivalent floating expression.",
+    "Full-GT selected top4 is reused for both support groups. covered_seen+covered_unseen==full and hits_seen+hits_unseen==full hold in exact integers; contributions use fixed denominator10, subgroup ratios use target-slot denominators and empty=null. D_seen/D_unseen explicitly do not add to full D.",
+    "Fit support counts row incidence because GT10 rows are unique; all fit targets are seen by construction. Unique-node and pilot targetslot population denominators are separate, including repeated unseen target occurrence across queries.",
+    "Any-pass leaf and coarse movement catches a pass1 move returning in pass2; final and cross-lambda differences are reported separately. All saved labels receive shape/hash/capacity rechecks; raw graph cut is explicitly inherited.",
+    "All11 exact k_seen bins, D1..10 and covered-count0..10 bins retained, including empties. Candidate/reference direction is explicit for three structure changes and ten search contrasts.",
+    "Original8 fixed contrasts are reconstructed against saved Recall/sign/NDC summaries, plus exactly2 predeclared oracle_unified lambda1-minus-lambda0 comparisons. All both-L/dataset cells retained with per-stratum oracle counters, no counter allocation to support groups.",
+    "Result hits are independently recomputed from saved IDs and pilot GT, then checked against saved Recall. All four oracle queue/L routes per model match; legacy Fast batches are excluded entirely.",
+    "Compact fit/pilot NPZ saves metrics/hits/counters without rawGT/results/node dump. Exclusive outputs and complete-last markers preserve failures; no bootstrap, CI, refit, selection, P3 reopening or new-method authorization."
+  ],
+  "independent_synthetic_evidence": {
+    "checks_passed": 24,
+    "independent_random_rows": 24,
+    "reference_implementation": "collections.Counter and sorted(range256) with leafID tie; direct Python target-count and known GT intersections",
+    "physical_prefix_guards": [
+      "one bounded read, no seek/EOF/suffix/fullhash",
+      "rank99 tamper fails full values hash",
+      "second-record header mismatch rejected",
+      "short prefix rejected"
+    ],
+    "denominator_cases": [
+      "same fullGT top4 with independently-routed-subgroup trap",
+      "allzero empty group retains bins/null",
+      "one occupied leaf255 plus zero-mass ties",
+      "valid repeated fit rows and repeated unseen node across pilot queries",
+      "transient leaf and coarse moves return to initialization"
+    ],
+    "source_stable_after_checks": true
+  },
+  "limits": [
+    "Full saved count/model/evaluator integrity is inherited from the already accepted exact-hash P3 analysis; this reader does not reimplement all prior timer/portal ownership checks.",
+    "Same fitted-model route agreement plus GT-mass agreement is checked; this is an oracle structural diagnosis, not learned prediction generalization.",
+    "Observed fit/pilot or seen/unseen differences can reflect support/popularity and distribution differences. They do not prove memorization, leakage, or a connectivity bottleneck.",
+    "Actual full datasets have not been run by this reviewer; root controlled serial execution and final completion markers remain required."
+  ]
+}

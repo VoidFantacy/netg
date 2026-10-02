@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "implementation_contract_correction",
+  "not_performance_parameter_tuning": true,
+  "mechanism_revision_count_delta": 0,
+  "parent_protocol_sha256": "857745551778adc1884a4198862b2f55fd72a642abe7d7622970e602d88ff48b",
+  "accepted_utc": "2026-09-07T16:24:10.549538+00:00",
+  "evidence": "p2/webvid_partition_diagnostic_v2/manifest.json",
+  "finding": {
+    "nonempty_regions": 64,
+    "violating_regions": 12,
+    "nodes_per_violating_region": 46970,
+    "strict_integer_capacity": 46968,
+    "excess_each": 2,
+    "maximum_size_over_average": 1.2000319361277445
+  },
+  "cause": {
+    "primary_source": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/tools/METIS/libmetis/options.c",
+    "sha256": "aeea35d4f542019a73dcf806bed239ac9556ba5a2405b48ff382b854851eddfb",
+    "line": 121,
+    "code": "ctrl->ubfactors[i] += 0.0000499;"
+  },
+  "correction": "Supply explicit real_t ubvec compensated for METIS internal epsilon with conservative nextafter toward1, preserving requested effective bound<=1.2. Independently verify each integer region size<=floor(6*N/(5*parts)).",
+  "unchanged": [
+    "frozen directed NSG",
+    "graph-only 64-region objective",
+    "METIS seed2026090711",
+    "ufactor200",
+    "NCUTS1",
+    "NITER10",
+    "all portal/profile/routing/search/statistical protocol definitions"
+  ],
+  "invalidated_outputs": [
+    "p2/webvid_partition (failed before labels persisted)",
+    "p2/webvid_partition_diagnostic_v2 (complete failing labels; never admissible model input)"
+  ],
+  "required_rerun": [
+    "graph partition",
+    "subsequent model/count/timing/trace (none yet run)"
+  ],
+  "research_scope": "P2 implementation repair; not evidence for or against online mechanism; no validation/heldout access"
+}

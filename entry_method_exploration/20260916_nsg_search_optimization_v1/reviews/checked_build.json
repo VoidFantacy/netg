@@ -1,0 +1,98 @@
+[
+  {
+    "command": [
+      "ar",
+      "rcs",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/IndexACSG.original.o",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/optimized.o"
+    ],
+    "seconds": 0.004628181457519531
+  },
+  {
+    "command": [
+      "c++",
+      "-std=c++17",
+      "-O3",
+      "-g",
+      "-march=native",
+      "-fopenmp",
+      "-fPIC",
+      "-I/data/netg/ACSG/build/_deps/json-src/include",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/src",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/src/benchmark.cpp",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/legacy.o",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+      "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+      "-lopenblas",
+      "-llapack",
+      "-lz",
+      "-lpthread",
+      "-ldl",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/benchmark"
+    ],
+    "seconds": 11.944055318832397
+  },
+  {
+    "command": [
+      "c++",
+      "-std=c++17",
+      "-O3",
+      "-g",
+      "-march=native",
+      "-fopenmp",
+      "-fPIC",
+      "-I/data/netg/ACSG/build/_deps/json-src/include",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/src",
+      "-O1",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "-c",
+      "/data/netg/ACSG/ACSG/ACSG.cpp",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/optimized.sanitized.o"
+    ],
+    "seconds": 5.320303678512573
+  },
+  {
+    "command": [
+      "c++",
+      "-std=c++17",
+      "-O3",
+      "-g",
+      "-march=native",
+      "-fopenmp",
+      "-fPIC",
+      "-I/data/netg/ACSG/build/_deps/json-src/include",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/src",
+      "-O1",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/src/regression.cpp",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/legacy.o",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/optimized.sanitized.o",
+      "/data/netg/ACSG/build/ACSG/libACSG.a",
+      "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+      "-lopenblas",
+      "-llapack",
+      "-lz",
+      "-lpthread",
+      "-ldl",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/regression.sanitized"
+    ],
+    "seconds": 10.794727802276611
+  },
+  {
+    "sanitizer_status": "PASS"
+  }
+]

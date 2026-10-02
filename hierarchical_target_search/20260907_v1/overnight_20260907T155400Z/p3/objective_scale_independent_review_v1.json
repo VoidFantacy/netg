@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "status": "PASS_ALGEBRA_AND_METADATA_REVIEW",
+  "created_utc": "2026-09-07T18:28:05.333139+00:00",
+  "reviewer": "p1_evaluator",
+  "source_analysis": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_scale_analysis_v1.json",
+    "sha256": "b5c603ad1bca4414ff34eb80ebaf14b98a83c1f692a630247764b88a3d50ba99"
+  },
+  "source_markdown": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_scale_analysis_v1.md",
+    "sha256": "7049daaec1a499ecf82cc90ecd9392bad03e8dca343dca3464b42e7910869684"
+  },
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+  },
+  "gate": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P3.json",
+    "sha256": "3e154f9db332ec9a404b85d85061459967911be797e4350c191b1d9774dbc4f2"
+  },
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "N": 2505000,
+      "M": 49611457,
+      "Q": 20000,
+      "threshold_fraction": "49611457/180000",
+      "threshold": 275.61920555555554,
+      "mean_in_plus_out": 39.609945708582835,
+      "ratio_threshold_to_mean": "167/24",
+      "integer_high_degree_cutoff": 276,
+      "global_low_degree_min_nodes": 2145497,
+      "global_low_degree_min_fraction": 0.8564858283433133,
+      "all_fit_unique_targets_could_still_fit_inside_global_high_degree_upper_bound": true,
+      "fit_target_degree_distribution_measured": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "N": 10000000,
+      "M": 294844794,
+      "Q": 20000,
+      "threshold_fraction": "49140799/30000",
+      "threshold": 1638.0266333333334,
+      "mean_in_plus_out": 58.9689588,
+      "ratio_threshold_to_mean": "250/9",
+      "integer_high_degree_cutoff": 1639,
+      "global_low_degree_min_nodes": 9640214,
+      "global_low_degree_min_fraction": 0.9640214,
+      "all_fit_unique_targets_could_still_fit_inside_global_high_degree_upper_bound": true,
+      "fit_target_degree_distribution_measured": false
+    }
+  ],
+  "proof": [
+    "For frozen lambda1 objective, multiplying deltaJ by positive9QM gives9Q*deltaC+M*deltaS. If deltaS=-k (integer k>=1), strict improvement is exactly deltaC<kM/(9Q).",
+    "Only valid nonself incoming/outgoing stored slots incident to u can change crossing status. Each contributes at most+1, preserving direction and duplicates, so deltaC<=D_in(u)+D_out(u).",
+    "Consequently D(u)<M/(9Q) is a sufficient condition for strict improvement of any feasible candidate with deltaS<=-1. It neither supplies a candidate nor establishes feasibility or selection.",
+    "Every valid directed nonself slot contributes one outgoing and one incoming degree, hence sum D=2M. Integer D>=M/(9Q) iff D>=ceil(M/(9Q)); the high-degree population is at most floor(2M/ceil(M/(9Q))). The stated complementary global bounds follow exactly.",
+    "Threshold/mean degree simplifies to N/(18Q), explaining the reported6.958333 and27.777778 values without observing actual degree distributions."
+  ],
+  "generated_combinatorial_check": {
+    "node_count": 4,
+    "valid_directed_nonself_slots": 6,
+    "moves_checked": 648,
+    "duplicate_and_reciprocal_slots_retained": true,
+    "self_slot_excluded": true,
+    "full_cut_vs_local_delta_and_degree_bound": "PASS",
+    "strict_boundary_check": "At deltaC=M/(9Q) and deltaS=-1 deltaJ=0, so replacing strict< by <= would be wrong."
+  },
+  "clarifications": [
+    "The degree-fraction bound concerns all base nodes only. In both datasets its allowed high-degree population exceeds the maximum200000 distinct fitGT10 targets, so it provides no positive lower bound at all on the fraction of fit targets satisfying the sufficient condition. This is a logical limitation, not evidence that fit targets are high degree.",
+    "For a node absent from all fitGT10 rows, deltaS=0 for a move of that node. Graph-only here describes its local objective increment; GT-dependent earlier moves and capacity/neighbor state can still change its later candidate set or trajectory versuslambda0.",
+    "A low-degree fitted target still needs a feasible candidate whose net incident-query deltaS is negative. Support, capacity and conflicting hyperedges can prevent that condition.",
+    "Neither global degree arithmetic nor fit/pilot summary differences prove the cause of P3 failure, path reachability, useful portals, or an auxiliary-graph bottleneck.",
+    "This review authorizes no graph read, degree experiment, lambda tuning, new representation revision or P3 gate reopening. Any actual degree audit remains separately preregistered/root-controlled."
+  ],
+  "actual_graph_GT_labels_vectors_read": false,
+  "ANN_calls": 0,
+  "new_model_or_gate": false
+}

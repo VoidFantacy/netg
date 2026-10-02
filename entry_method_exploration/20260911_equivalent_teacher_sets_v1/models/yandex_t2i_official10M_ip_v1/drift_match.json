@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "raw_drifts": {
+    "single": 0.00012577257639187242,
+    "multi": 0.0001311640070227147
+  },
+  "target_drift": 0.00012577257639187242,
+  "matched_smaller": "single",
+  "matched_larger": "multi",
+  "cal_used": false,
+  "audit_used": false,
+  "validation_used": false,
+  "optimizer_steps": 0,
+  "NSG_calls": 0,
+  "alpha": 0.9792313925101259,
+  "actual_drift": 0.00012577257720435743,
+  "relative_error": 6.459953600114686e-09,
+  "canonical_models": [
+    {
+      "name": "single",
+      "W": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/models/yandex_t2i_official10M_ip_v1/single/W.f32",
+        "bytes": 656800,
+        "mtime_ns": 1789098738726767927,
+        "sha256": "4a82f9ae9fb8716c74ce4cae55b31feea543b912d6af1fd718b8bdc9b7f00915"
+      }
+    },
+    {
+      "name": "multi",
+      "W": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/models/yandex_t2i_official10M_ip_v1/multi/W.f32",
+        "bytes": 656800,
+        "mtime_ns": 1789098743526779548,
+        "sha256": "c6d15437bf198d237b1e60fbbc46714294b08bf3fd75f536c95447b95978073c"
+      }
+    },
+    {
+      "name": "multi_matched",
+      "W": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/models/yandex_t2i_official10M_ip_v1/multi_matched/W.f32",
+        "bytes": 656800,
+        "mtime_ns": 1789098854767050474,
+        "sha256": "3fac2a4b6f7657942b1801ba9f679b4cbc2a99e026ffccd033810659fc98627e"
+      }
+    }
+  ],
+  "aliases": {
+    "single_matched": "single"
+  }
+}

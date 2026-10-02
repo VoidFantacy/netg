@@ -1,0 +1,107 @@
+{
+  "status": "PASS_DOCUMENTATION_ONLY_HANDOFF_UPDATED",
+  "at": "2026-09-13T21:34:04.918482+08:00",
+  "changed": [
+    "summary.md",
+    "spec.md",
+    "s-target.md",
+    "s-experiment.md",
+    "experiment_history/README.md"
+  ],
+  "new_documents": [
+    "experiment_history/86_post_closeout_rl_direction_review.md",
+    "entry_method_exploration/20260913_post_closeout_handoff_v1/handoff.md"
+  ],
+  "protected_files_unchanged": 55,
+  "old_session14_seal_preserved": true,
+  "supervision_copies_exact": true,
+  "local_links_checked": 643,
+  "new_handoff_anchors_checked": 1,
+  "missing_links": [],
+  "whitespace_checks": [
+    {
+      "path": "summary.md",
+      "check": "git diff --no-index --check",
+      "exit": 1,
+      "whitespace_errors": []
+    },
+    {
+      "path": "spec.md",
+      "check": "git diff --no-index --check",
+      "exit": 1,
+      "whitespace_errors": []
+    },
+    {
+      "path": "s-target.md",
+      "check": "git diff --no-index --check",
+      "exit": 1,
+      "whitespace_errors": []
+    },
+    {
+      "path": "s-experiment.md",
+      "check": "git diff --no-index --check",
+      "exit": 1,
+      "whitespace_errors": []
+    },
+    {
+      "path": "experiment_history/README.md",
+      "check": "git diff --no-index --check",
+      "exit": 1,
+      "whitespace_errors": []
+    }
+  ],
+  "source_snapshots_verified": 6,
+  "identities": [
+    {
+      "path": "/data/netg/ACSG/summary.md",
+      "bytes": 4338,
+      "sha256": "d027e54052ed7f63df1c42813fefabbd3fa90821aac7c79dea0ce26dcc0aee8b"
+    },
+    {
+      "path": "/data/netg/ACSG/spec.md",
+      "bytes": 148549,
+      "sha256": "a86d4e5743576e58d342ac626ca44d5d95c259dd30aa110e6c51852e04256bbd"
+    },
+    {
+      "path": "/data/netg/ACSG/s-target.md",
+      "bytes": 6350,
+      "sha256": "1b0dbe10972c8d550ed76139dd0d590bca7a643882473794d129fbcf4de6d8c3"
+    },
+    {
+      "path": "/data/netg/ACSG/s-experiment.md",
+      "bytes": 37728,
+      "sha256": "43bcc8721f4143078643ecb1942037c83f81abb71891e2fb46d0b974ab63d569"
+    },
+    {
+      "path": "/data/netg/ACSG/experiment_history/README.md",
+      "bytes": 15591,
+      "sha256": "314df2d431de3a946a54401606ab259bf7b13a6797854422ad2a58d91eecb74a"
+    },
+    {
+      "path": "/data/netg/ACSG/experiment_history/86_post_closeout_rl_direction_review.md",
+      "bytes": 7523,
+      "sha256": "107fc2143920566c8c678c112a1379a813b63e1c95113a86ea3abbe251cc28f1"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260913_post_closeout_handoff_v1/handoff.md",
+      "bytes": 6285,
+      "sha256": "149fd59b2307209ba4fb5f204fe25a5736c2c72e49f02aa854f0c15b080b7029"
+    }
+  ],
+  "new_ANN": 0,
+  "new_training": 0,
+  "new_GT": 0,
+  "new_build": 0,
+  "new_QPS": 0,
+  "new_experiment": false,
+  "corrections": [
+    {
+      "scope": "documentation editing only",
+      "issue": "Initial two atomic patches rejected duplicate target operations and mismatched old index text; root bytes unchanged. Applied scoped updates with exact content guards."
+    },
+    {
+      "scope": "verifier only",
+      "issue": "git diff --no-index --check returns1 for changed files without whitespace diagnostics; initial check wrongly required0. Corrected to accept0/1 only with empty stdout/stderr, retaining explicit whitespace checks."
+    }
+  ]
+}

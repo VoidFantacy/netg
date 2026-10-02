@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "status": "PASS_SOURCE_AND_EXISTING_SYNTHETIC_EVIDENCE_REVIEW",
+  "reviewer": "p1_search",
+  "created_utc": "2026-09-07T17:50:19.108684+00:00",
+  "scope": "Independent read-only source review and inspection of the already completed small synthetic test; no actual partition label, GT, graph, base or query data scan and no test rerun.",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analyze_structure.py",
+    "sha256": "42de37c79b330c96708eeabd488142884eb3fd4f9900db00405f1421950de64c"
+  },
+  "partition_source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partition_hierarchy.cpp",
+    "sha256": "78cd134726c61fda5b722887262b33176989b1c40163e00af7a7bc52c76a81b5"
+  },
+  "existing_test_source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/test_structure_analysis.py",
+    "sha256": "650f95adb22958b6113aef6d2bd0bfc78602ab3cb4ff954d337dc5781dc100ba"
+  },
+  "existing_test_result": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/structure_analyzer_synthetic_v1/result.json",
+    "sha256": "213781289246da7541538282737852d6c2bc65a889cd8bc475b878821d66423f"
+  },
+  "blocking_findings": [],
+  "checks": [
+    {
+      "name": "exact_objective_and_pass_algebra",
+      "status": "PASS",
+      "detail": "Python integer C*9Q + lambda*S*M over M*9Q matches compiled C++ __int128 objective. M and Q remain common across initial/pass/final snapshots. Each pass checks saved numerator strings, delta C and (lambda1 only) delta S, aggregate strict descent, completed cursor, and saved independent full-recompute flags. Lambda0 leaves S posthoc and does not invent an incremental GT delta."
+    },
+    {
+      "name": "canonicalization_and_changed_node_counts",
+      "status": "PASS",
+      "detail": "Ascending first-occurrence canonical IDs reconstruct coarse raw labels and each child in ascending global node order. C++ canonicalizes once before either branch. Each refinement pass visits every node once and moves that node at most once, so adjacent label snapshot Hamming distance equals accepted moves; the parent-label Hamming distance equals cross-coarse moves. Initial hashes, sidecars, capacities and min3 are checked."
+    },
+    {
+      "name": "evidence_binding_and_read_isolation",
+      "status": "PASS",
+      "detail": "All 23 label files per dataset are freshly SHA256 checked, structurally validated and bound through sidecar equality to the final partition manifest hash. Label paths are resolved inside that partition root. Protocol and compiled partition source hashes are fixed. Audit/fit/graph/binary hashes are explicitly inherited, with no claim to reopen those inputs or independently recompute raw C/S. Existing synthetic test watches JSON and NumPy reads and confirms forbidden raw-input paths are untouched."
+    },
+    {
+      "name": "nonoverlapping_costs",
+      "status": "PASS",
+      "detail": "CSR count/fill/sort/compact timers are sequential; coarse and child METIS timers exclude induced CSR setup; branch timers include their own refine and full-recompute/snapshot intervals. Branch subtotals remain explanatory children of branch wall and are not added twice. Branch initial copies/hashes and lambda1 GT-count setup occur before branch timers and remain in the top-level residual. Full initialization and reused exact-GT costs correctly remain unmeasured/null, not zero. Both branch and total negative residuals are rejected."
+    },
+    {
+      "name": "bounded_label_memory",
+      "status": "PASS_SOURCE_INSPECTION",
+      "detail": "The analyzer uses sequential O(N) uint16 label arrays and temporary O(N) NumPy arrays; child arrays are replaced per coarse child, and branch arrays do not accumulate in output. It stores metadata for 23 label files, not 23 full label arrays. Hashing uses 1 MiB chunks; it does not allocate graph CSR, N-by-N structures, query-vector matrices or GT matrices. Peak RSS was not independently measured in this review."
+    },
+    {
+      "name": "existing_small_synthetic_evidence",
+      "status": "PASS",
+      "detail": "Result SHA matches current analyzer/test sources. One generated 4096-node/32-fit-query valid fixture passed all 23 label checks and the necessary structure condition without passing P3. Eleven malformed fixtures were rejected: delta, full-recompute flag, common initialization, cross count, lambda0 GT state, missing pass, label hash, capacity, escaping path, incomplete manifest and wrong P2 gate."
+    },
+    {
+      "name": "gate_interpretation",
+      "status": "PASS",
+      "detail": "Registered structure condition is lower final J evaluated at lambda1 AND lower fit fragmentation versus lambda0. Search transfer is separately required; output cannot automatically pass P3, tune parameters, create new CI or claim effective search performance."
+    }
+  ],
+  "limitations": [
+    "This review does not certify actual dataset outcomes; the root-controlled real evidence analysis remains separate.",
+    "Saved raw C/S and individual-move strictness rely on the already reviewed, source-bound partition implementation and its completed full-recompute evidence. Labels and aggregate algebra alone cannot independently establish every graph/GT count or every move decision.",
+    "Nonoverlapping timing subtotals omit some allocation/setup/recording phases; residual timing and the explicit missing full-initializer field preserve those costs."
+  ],
+  "source_modified": false,
+  "actual_data_accessed": false,
+  "new_experiments_or_tests_run": false,
+  "P3_gate_passed_by_this_review": false
+}

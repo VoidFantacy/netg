@@ -1,0 +1,34 @@
+{
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "status": "COMPLETE",
+  "pid": 3,
+  "started_epoch": 1789287459.3436987,
+  "reserved_NSG": 2416,
+  "native": {
+    "NSG": 2416,
+    "HNSW": 0,
+    "builds": 0,
+    "actual_threads": 1
+  },
+  "load_seconds": 12.065899633998924,
+  "operation_seconds": [
+    {
+      "stage": "baseline_replay",
+      "begin": 0,
+      "end": 128,
+      "seconds": 0.15437124099844368,
+      "normal_NSG": 256
+    },
+    {
+      "stage": "missing",
+      "begin": 0,
+      "end": 1064,
+      "seconds": 1.2846476680024352,
+      "normal_NSG": 2128
+    }
+  ],
+  "invalid_batches_rejected": 21,
+  "elapsed_seconds": 13.562545089997002,
+  "max_RSS_GiB": 9.95431900024414,
+  "completed_epoch": 1789287472.9120858
+}

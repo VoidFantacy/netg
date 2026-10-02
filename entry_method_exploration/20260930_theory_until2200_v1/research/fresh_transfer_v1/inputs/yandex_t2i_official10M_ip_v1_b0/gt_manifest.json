@@ -1,0 +1,140 @@
+{
+  "status": "PASS_EXACT_GT",
+  "case": "yandex_t2i_official10M_ip_v1_b0",
+  "n": 4096,
+  "k": 100,
+  "metric": "raw_inner_product",
+  "query_sha256": "64dddf9ec01ac15a4d21dc86d0762e710b587a5e5a1c9ef27c2623c7890dd2e2",
+  "base_sha256": "56d1baa271c79ea280d57ee1c7a8359438ffffc98a75cac799051b13fbdbe0ff",
+  "GT_sha256": "d709b38f1ec00b82ddb48b05583dc019ff5046ed42f6ff83c36bbf1b4ba51277",
+  "search_seconds": 292.2413829849993,
+  "batch_seconds": [
+    17.985736939999697,
+    18.327609775000383,
+    17.809956781000437,
+    18.300033649000397,
+    18.00843357699887,
+    18.122218382999563,
+    17.83555286900082,
+    18.61195011699965,
+    20.97745236999981,
+    18.187912938999943,
+    17.827925343999595,
+    18.20414248599991,
+    18.002056696999716,
+    18.20196835800016,
+    18.02523597900108,
+    17.813196720999258
+  ],
+  "independent_float64_seconds": 3.9448791690010694,
+  "independent_float64_checks": [
+    {
+      "row": 0,
+      "set_overlap": 100,
+      "float64_threshold": 0.4295160407982747,
+      "actual_minimum": 0.42951604079827466,
+      "top1_float64_max_error": -3.3306690738754696e-16,
+      "tolerance": 2e-05
+    },
+    {
+      "row": 512,
+      "set_overlap": 100,
+      "float64_threshold": 0.4559116071187107,
+      "actual_minimum": 0.4559116071187107,
+      "top1_float64_max_error": 0.0,
+      "tolerance": 2e-05
+    },
+    {
+      "row": 1024,
+      "set_overlap": 100,
+      "float64_threshold": 0.4544208332090886,
+      "actual_minimum": 0.4544208332090885,
+      "top1_float64_max_error": 5.551115123125783e-17,
+      "tolerance": 2e-05
+    },
+    {
+      "row": 1536,
+      "set_overlap": 100,
+      "float64_threshold": 0.4766349178277772,
+      "actual_minimum": 0.4766349178277771,
+      "top1_float64_max_error": -1.1102230246251565e-16,
+      "tolerance": 2e-05
+    },
+    {
+      "row": 2048,
+      "set_overlap": 100,
+      "float64_threshold": 0.42870060840769103,
+      "actual_minimum": 0.428700608407691,
+      "top1_float64_max_error": -2.220446049250313e-16,
+      "tolerance": 2e-05
+    },
+    {
+      "row": 2560,
+      "set_overlap": 100,
+      "float64_threshold": 0.5595647634877079,
+      "actual_minimum": 0.5595647634877076,
+      "top1_float64_max_error": 0.0,
+      "tolerance": 2e-05
+    },
+    {
+      "row": 3072,
+      "set_overlap": 100,
+      "float64_threshold": 0.5132380373739193,
+      "actual_minimum": 0.5132380373739194,
+      "top1_float64_max_error": -1.1102230246251565e-16,
+      "tolerance": 2e-05
+    },
+    {
+      "row": 3584,
+      "set_overlap": 100,
+      "float64_threshold": 0.5012856240612118,
+      "actual_minimum": 0.5012856240612117,
+      "top1_float64_max_error": -1.1102230246251565e-16,
+      "tolerance": 2e-05
+    }
+  ],
+  "GT_threads": 8,
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "resident_threads": 15,
+  "faiss_version": "1.15.0",
+  "numpy_version": "1.26.4",
+  "threadpools": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 8,
+      "prefix": "libopenblas",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so",
+      "version": "0.3.23.dev",
+      "threading_layer": "pthreads",
+      "architecture": "Cooperlake"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 8,
+      "prefix": "libgomp",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/faiss_cpu.libs/libgomp-e985bcbb.so.1.0.0",
+      "version": null
+    },
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 8,
+      "prefix": "libopenblas",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/faiss_cpu.libs/libopenblaso-r0-d77a1985.3.15.so",
+      "version": "0.3.15",
+      "threading_layer": "openmp",
+      "architecture": "Prescott"
+    }
+  ]
+}

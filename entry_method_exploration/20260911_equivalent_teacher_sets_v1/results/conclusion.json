@@ -1,0 +1,30 @@
+{
+  "status": "EQUIVALENT_TEACHER_SETS_COMPLETE_NO_RELIABLE_REPLACEMENT",
+  "recommendations": [
+    {
+      "dataset": "WebVid2.5M",
+      "default": "gt10_soft",
+      "descriptive_fastest": "gt10_soft",
+      "descriptive_fastest_change_pct": 0.0,
+      "recommended": "gt10_soft",
+      "reason": "no challenger passed frozen replacement gate",
+      "qualified_challengers": [],
+      "historical_validation": true,
+      "blind_confirmation": false
+    },
+    {
+      "dataset": "Yandex10M IP",
+      "default": "gt10_hard",
+      "descriptive_fastest": "gt10_hard",
+      "descriptive_fastest_change_pct": 0.0,
+      "recommended": "gt10_hard",
+      "reason": "no challenger passed frozen replacement gate",
+      "qualified_challengers": [],
+      "historical_validation": true,
+      "blind_confirmation": false
+    }
+  ],
+  "development_gate": "STOP_FURTHER_MODEL_EXPANSION",
+  "new_method_recommended": false,
+  "scope": "two historical validation query sets; one fixed H/NSG and optimization seed; five timings; no fresh blind confirmation"
+}

@@ -1,0 +1,305 @@
+{
+  "status": "PASS",
+  "split": "fit",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "split": "fit",
+      "n": 2048,
+      "metrics": [
+        {
+          "K": 1,
+          "anchor_recall": 0.76416015625,
+          "finite_pool_oracle_recall": 0.8291015625,
+          "oracle_gain_pp": 6.494140625,
+          "oracle_improved_fraction": 0.06494140625,
+          "anchor_zero_fraction": 0.23583984375,
+          "oracle_zero_fraction": 0.1708984375,
+          "anchor_ndc_mean": 1647.20263671875,
+          "max_float64_distance_error": 4.336947795335888e-08
+        },
+        {
+          "K": 100,
+          "anchor_recall": 0.6588916015624999,
+          "finite_pool_oracle_recall": 0.689638671875,
+          "oracle_gain_pp": 3.07470703125,
+          "oracle_improved_fraction": 0.5771484375,
+          "anchor_zero_fraction": 0.0009765625,
+          "oracle_zero_fraction": 0.0,
+          "anchor_ndc_mean": 1647.20263671875,
+          "max_float64_distance_error": 7.701989335195947e-08
+        }
+      ],
+      "any_K_improved_fraction": 0.58642578125,
+      "both_K_safe_improvement_fraction": 0.572265625,
+      "selected_mean_utility_teacher_K1_harm_fraction": 0.0,
+      "selected_mean_utility_teacher_K100_harm_fraction": 0.01318359375,
+      "mean_teacher_count": 23.78125,
+      "headroom_pass": true,
+      "raw_unit_route_differences": 0,
+      "outputs": [
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/alternate_entries.i32",
+          "bytes": 24576,
+          "mtime_ns": 1789869232035442625,
+          "sha256": "b619dc03186b6cbaf1b1d6eaff2195df571d638957f51eb4504d60be8b87fac7"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/anchor_entries.i32",
+          "bytes": 24576,
+          "mtime_ns": 1789869232035442625,
+          "sha256": "7927ac0119e95a420722a6b692bf508126fb0db7753da3acbe72c933a1d5ab83"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/baseline_slots.i32",
+          "bytes": 16384,
+          "mtime_ns": 1789869232035442625,
+          "sha256": "ced74bdc4eb9df3b04e9f79d6f507c6034cd45e3ea718080fb092f59b7b8b79c"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/candidates.i32",
+          "bytes": 65536,
+          "mtime_ns": 1789869232035442625,
+          "sha256": "fe2cbeedadb3872992241b146d20f5c70605f712141025bf4fcd1167f2a82783"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/complete.json",
+          "bytes": 424,
+          "mtime_ns": 1789869283195438715,
+          "sha256": "93e582658186cc3fbeb2cdc70e805d39ffbb9ca2db1ec1d5060d0ec93bfb2808"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/config.json",
+          "bytes": 1911,
+          "mtime_ns": 1789869226967443012,
+          "sha256": "8ac0ab2a2a56a7710ba1a4a32225355f4e8e00e76938babe0ec3577a4dae9f92"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/k1.distances.f32",
+          "bytes": 458752,
+          "mtime_ns": 1789869257115440708,
+          "sha256": "8aa8eb0e45d4dff52409e4db29520085b08404d5d39d4a6936a4968265318e83"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/k1.hits.u8",
+          "bytes": 114688,
+          "mtime_ns": 1789869257119440707,
+          "sha256": "a8c08c0a81884b733f2a14359a127146ca8eef6f3e2e7336fec7a66786e560b2"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/k1.ids.i32",
+          "bytes": 458752,
+          "mtime_ns": 1789869257115440708,
+          "sha256": "9f7b3ed4db4f03476c1c7c1234cc30468ee58cbd65a05ff2a103248bea9c4a59"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/k1.ndc.u64",
+          "bytes": 917504,
+          "mtime_ns": 1789869257115440708,
+          "sha256": "faa6e3b3f12b93ca7b8cddb5bec4cd3100ff6a90b3eb55a718b1fe99818df6ae"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/k100.distances.f32",
+          "bytes": 45875200,
+          "mtime_ns": 1789869283175438716,
+          "sha256": "4daf8540086cf8b03c46f8c732c94f2c60d7efd862798dc79ed7a867c8ed4442"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/k100.hits.u8",
+          "bytes": 114688,
+          "mtime_ns": 1789869283195438715,
+          "sha256": "33b220adc64616262bf1621f00504167a4145bcb604f4f4ea41b05e05330b76c"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/k100.ids.i32",
+          "bytes": 45875200,
+          "mtime_ns": 1789869283155438718,
+          "sha256": "aa202fd161ea622b3816fac6261089340e9519e802da25665832573fc572c687"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/k100.ndc.u64",
+          "bytes": 917504,
+          "mtime_ns": 1789869283195438715,
+          "sha256": "faa6e3b3f12b93ca7b8cddb5bec4cd3100ff6a90b3eb55a718b1fe99818df6ae"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/progress.json",
+          "bytes": 113,
+          "mtime_ns": 1789869283155438718,
+          "sha256": "3b9fc595cab47bb2082fdd16bea61e4c25a99c9136d7140fdf58121854d0373d"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/teacher_mask.u8",
+          "bytes": 114688,
+          "mtime_ns": 1789869375691431645,
+          "sha256": "9977da984b39032eb6f9705028ab1dd5ddb52143c436d1d06a296c8d30430098"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/triples.i32",
+          "bytes": 1376256,
+          "mtime_ns": 1789869232035442625,
+          "sha256": "0217649682b5544f89a5b147f4c1718c15adee097b89b0591b43bb7500b701da"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/webvid2_5m_light_v1/fit_labels/unit_identity_entries.i32",
+          "bytes": 24576,
+          "mtime_ns": 1789869232035442625,
+          "sha256": "7927ac0119e95a420722a6b692bf508126fb0db7753da3acbe72c933a1d5ab83"
+        }
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "split": "fit",
+      "n": 2048,
+      "metrics": [
+        {
+          "K": 1,
+          "anchor_recall": 0.912109375,
+          "finite_pool_oracle_recall": 0.95703125,
+          "oracle_gain_pp": 4.4921875,
+          "oracle_improved_fraction": 0.044921875,
+          "anchor_zero_fraction": 0.087890625,
+          "oracle_zero_fraction": 0.04296875,
+          "anchor_ndc_mean": 2842.56884765625,
+          "max_float64_distance_error": 5.2592238564130867e-08
+        },
+        {
+          "K": 100,
+          "anchor_recall": 0.8404052734375,
+          "finite_pool_oracle_recall": 0.8687744140625,
+          "oracle_gain_pp": 2.8369140624999996,
+          "oracle_improved_fraction": 0.43115234375,
+          "anchor_zero_fraction": 0.005859375,
+          "oracle_zero_fraction": 0.0009765625,
+          "anchor_ndc_mean": 2842.56884765625,
+          "max_float64_distance_error": 8.695727915508655e-08
+        }
+      ],
+      "any_K_improved_fraction": 0.43408203125,
+      "both_K_safe_improvement_fraction": 0.42724609375,
+      "selected_mean_utility_teacher_K1_harm_fraction": 0.0,
+      "selected_mean_utility_teacher_K100_harm_fraction": 0.005859375,
+      "mean_teacher_count": 32.123046875,
+      "headroom_pass": true,
+      "raw_unit_route_differences": 0,
+      "outputs": [
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/alternate_entries.i32",
+          "bytes": 24576,
+          "mtime_ns": 1789869296239437718,
+          "sha256": "c57d4aace42006d3d44249ca019c20f97af33ad19afe41cef0fbbbe480b014f3"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/anchor_entries.i32",
+          "bytes": 24576,
+          "mtime_ns": 1789869296239437718,
+          "sha256": "27061b1616dceb3826b242eb23b4d6ca1a87f1dabe096e241d9cccca1a9b2aec"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/baseline_slots.i32",
+          "bytes": 16384,
+          "mtime_ns": 1789869296239437718,
+          "sha256": "94007b9d9f8d69760fd56f4324cabdae2958fcaa30a9e756fdbb26fce5089d96"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/candidates.i32",
+          "bytes": 65536,
+          "mtime_ns": 1789869296239437718,
+          "sha256": "cdb2e33a5f11d83756aacd4868275ca057353502fb9470729defe634b3504b66"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/complete.json",
+          "bytes": 435,
+          "mtime_ns": 1789869351903433463,
+          "sha256": "03272c5bf620d38c3c7a7cfbe4355c9081100d230953d6a30b55624ad9a221d3"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/config.json",
+          "bytes": 2011,
+          "mtime_ns": 1789869283355438702,
+          "sha256": "423e79dc0153d82c20ff46e0abd6db37f9204cb3db0c976001fa30f1e41fc8b3"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/k1.distances.f32",
+          "bytes": 458752,
+          "mtime_ns": 1789869323547435631,
+          "sha256": "206c4147adb7e8753b94c06702ea0faed2cf6cb85f9c7b93d58271f38378d799"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/k1.hits.u8",
+          "bytes": 114688,
+          "mtime_ns": 1789869323551435630,
+          "sha256": "034514e74da507cc48ded7b4c19ea37defbce6f79ad45a84cb965bbdb68253b0"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/k1.ids.i32",
+          "bytes": 458752,
+          "mtime_ns": 1789869323547435631,
+          "sha256": "257a7807724a69a699597225ae0835b0fbe9effc5b163849f063d8ff09df2ca9"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/k1.ndc.u64",
+          "bytes": 917504,
+          "mtime_ns": 1789869323547435631,
+          "sha256": "3466123994a874a29b95883a70dea38075201c21f9803182ceef18824d37ff80"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/k100.distances.f32",
+          "bytes": 45875200,
+          "mtime_ns": 1789869351879433465,
+          "sha256": "3a6a6f6e1c72c5faec48d29a6f25d7cb5673a38597019d790b09b1954fb63b7e"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/k100.hits.u8",
+          "bytes": 114688,
+          "mtime_ns": 1789869351899433463,
+          "sha256": "25262e57af132c00df348ce2e3f22dbb280ca53dd3aa5b7385803113f5d2da13"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/k100.ids.i32",
+          "bytes": 45875200,
+          "mtime_ns": 1789869351859433466,
+          "sha256": "83092faf96f503d8bd654629f3bde2fd3baa6b6aba6a1536b4456b59188735e1"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/k100.ndc.u64",
+          "bytes": 917504,
+          "mtime_ns": 1789869351899433463,
+          "sha256": "3466123994a874a29b95883a70dea38075201c21f9803182ceef18824d37ff80"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/progress.json",
+          "bytes": 113,
+          "mtime_ns": 1789869351859433466,
+          "sha256": "3d60ecec55e4ab5c8956c95b107ec3c123141cacbd5afbdabc5a118588a34171"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/teacher_mask.u8",
+          "bytes": 114688,
+          "mtime_ns": 1789869376299431597,
+          "sha256": "5106fd23c2819e5cce1afdaa0671a8ea908a50f080838f0100d9fcf7134c5a5b"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/triples.i32",
+          "bytes": 1376256,
+          "mtime_ns": 1789869296239437718,
+          "sha256": "4156433da842d4870b3fe88290cf1650db8835c92f05a071f0883264a9c8987c"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/labels/yandex_t2i_official10M_ip_v1/fit_labels/unit_identity_entries.i32",
+          "bytes": 24576,
+          "mtime_ns": 1789869296239437718,
+          "sha256": "27061b1616dceb3826b242eb23b4d6ca1a87f1dabe096e241d9cccca1a9b2aec"
+        }
+      ]
+    }
+  ],
+  "independent_hits_and_distance_check": true,
+  "source": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/src/analyze_labels.py",
+    "bytes": 5600,
+    "mtime_ns": 1789869220175443532,
+    "sha256": "604abb42995a93a7b41ba63324c4eed3e3107632948dd1b509bd949711cee8fb"
+  }
+}

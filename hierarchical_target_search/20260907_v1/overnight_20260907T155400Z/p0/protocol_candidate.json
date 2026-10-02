@@ -1,0 +1,337 @@
+{
+  "schema_version": 1,
+  "protocol_id": "hierarchical-target-search-20260907-v1-overnight",
+  "status": "PREREGISTRATION_CANDIDATE_REQUIRES_ROOT_ACCEPTANCE",
+  "created_utc": "2026-09-07T16:02:07.741933+00:00",
+  "authorization": "User explicitly resumed research in current conversation; CPU only; no further approval required within stated boundaries",
+  "deadline_utc": "2026-09-07T23:00:00Z",
+  "shutdown_begin_utc": "2026-09-07T22:59:00Z",
+  "no_new_cross_deadline_heavy_job_after_utc": "2026-09-07T22:40:00Z",
+  "post_deadline_allowed": "Existing-evidence review and handoff/report writing only; no method development or experiment",
+  "controlling_documents": {
+    "AGENTS.md": {
+      "path": "AGENTS.md",
+      "sha256_at_preregistration": "dbb88f109e250c93422f34cc0db83b767ed6d8961f98f8f3fd6219fceb95a119"
+    },
+    "summary.md": {
+      "path": "summary.md",
+      "sha256_at_preregistration": "c38982637e2cb3d333c2594f998ceec2f3485d926bea0b3525ab1c9fce2b4e14"
+    },
+    "spec.md": {
+      "path": "spec.md",
+      "sha256_at_preregistration": "0237837405dc694d825237b78ea83b99d27f7be0adfc2256d597e22b41d9d7d0"
+    },
+    "s-target.md": {
+      "path": "s-target.md",
+      "sha256_at_preregistration": "1129b38ef589624e10c2316a9c8ac7a4af9f62abee12442a1dfc4246db0c7fa2"
+    },
+    "hierarchical_target_search/20260907_v1/overnight_prompt.md": {
+      "path": "hierarchical_target_search/20260907_v1/overnight_prompt.md",
+      "sha256_at_preregistration": "f78a9070ec60f6a891ff81e495bb1b60db6318bff9f73ba3dfda0497d797787f"
+    }
+  },
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "data_contract": {
+    "metric": "raw inner product end to end; query normalization permitted inside router only",
+    "base_and_graph": "Frozen current formal base and original directed NSG, checksums must match P0",
+    "partition_graph": "Only partition input is undirected, symmetrized original NSG; no modification to search graph",
+    "qgt": "Independent 5K QGT exact top-100, existing raw QGT hubs allowed",
+    "fit": {
+      "parent_split": "router_train",
+      "row_range": [
+        10000,
+        30000
+      ],
+      "count": 20000,
+      "purpose": "Region, portal, router and paired Fast fit"
+    },
+    "pilot": {
+      "parent_split": "router_train",
+      "row_range": [
+        0,
+        10000
+      ],
+      "count": 10000,
+      "historically_used_development": true
+    },
+    "validation": {
+      "count": 10000,
+      "performance_allowed_after": "Relevant upstream gates; P6 stability after P5 freeze candidate"
+    },
+    "heldout": {
+      "count": 10000,
+      "access_allowed_after": "P6 PASS plus model/protocol freeze",
+      "timing_runs": 3
+    },
+    "paired_fast": "Rebuild prototype using the same 20K fit rows and raw QGT hubs; old 30K prototypes forbidden as new-method input",
+    "old_fast30k": "Optional stronger reference only, distinctly labelled and excluded from paired20K training chain"
+  },
+  "resources": {
+    "cpu_only": true,
+    "heavy_dataset_processes_max": 1,
+    "threads_default": 16,
+    "disk_free_gib_min": 10,
+    "new_artifact_gib_max": 8,
+    "copy_base_or_graph": false,
+    "controller": "control/taskctl.py",
+    "isolated_process_groups_and_deadline_required": true
+  },
+  "p2_preregistered": {
+    "region_count": 64,
+    "partition": "METIS v5.2.1 64-bit indices, graph structure only",
+    "partition_seed": 2026090711,
+    "model_seed": 2026090711,
+    "revision_count_max": 2,
+    "portals_per_region": 2,
+    "active_regions": 4,
+    "geometry_router": "Normalized per-region query image from fit20K; dot-product scores, softmax temperature 1.0",
+    "geometric_softmax_temperature": 1.0,
+    "geometric_region_probability": "softmax over fixed 64 region scores; choose top4 with region ID tie break; renormalize selected probabilities for capacity allocation",
+    "region_query_image_fit_only": true,
+    "portal_and_route_fixed_across_queue_controls": true,
+    "top_k": 10,
+    "search_Ls": [
+      64,
+      128
+    ],
+    "comparisons": [
+      {
+        "id": "geom_unified",
+        "route": "geometric",
+        "queue": "unified"
+      },
+      {
+        "id": "geom_uniform",
+        "route": "same geometric",
+        "queue": "regional",
+        "capacity": "uniform"
+      },
+      {
+        "id": "geom_weighted",
+        "route": "same geometric",
+        "queue": "regional",
+        "capacity": "predicted region probability"
+      },
+      {
+        "id": "oracle_unified",
+        "route": "true GT10 region fractions, train diagnostic only",
+        "queue": "unified"
+      },
+      {
+        "id": "oracle_weighted",
+        "route": "same oracle",
+        "queue": "regional",
+        "capacity": "oracle region probability"
+      }
+    ],
+    "fast_control": "Paired Fast20K same graph/query order/threads; retain primary Fast first entry; preserve old default Fast path",
+    "oracle_not_deployment_frontier": true,
+    "trace_query_ids": "Preselect before performance results, deterministic pilot row IDs; bounded small sample",
+    "mechanism_gate": "Per s-target: repeatable queue-mechanism gain, or oracle potential with a localized prediction/portal bottleneck. No invented numeric P2 threshold; P5/P6 thresholds are unchanged.",
+    "no_oracle_benefit_action": "Stop current configuration before building a larger model; inspect competition trace only if needed to distinguish equivalent queues or implementation defects",
+    "oracle_positive_prediction_negative_action": "Decompose prediction/portal loss; at most one representation or partition revision, within overall two mechanism revisions per version"
+  },
+  "search_contract": {
+    "capacity": "L_shared + sum L_region = L_total exactly; shared floor(0.25*L), regional residual distributed with minimum4 then largest remainder, regionID tie",
+    "scheduler": "Weighted round robin across queues; every retained candidate expanded before termination",
+    "routing_seeds": "Paired Fast first entry retained; graph default entry seeds shared queue as explicit exception; duplicate entry first ownership wins",
+    "cross_region_edges": "Always traversable; no filtering by active region",
+    "visited": "One global visited structure; each base node computed once per query",
+    "results": "One independent global top-K collector in both unified and regional controls",
+    "api": "Real router and search have no GT input; oracle lives in evaluation adapter only",
+    "top_m": "New path consumes all entry IDs, sorted HNSW return order and dedup recorded; legacy search_new mode2 three-entry cap must not be reused for top-m claims"
+  },
+  "measurement": {
+    "plain": "Batch wall for one method, preallocated per-thread workspace and output buffers",
+    "inside_timer": [
+      "query normalization",
+      "routing",
+      "visited/workspace reset",
+      "seed dedup",
+      "queue scheduling",
+      "graph search",
+      "result buffer write"
+    ],
+    "outside_timer": [
+      "GT scoring",
+      "trace",
+      "hash",
+      "JSON serialization",
+      "workspace allocation"
+    ],
+    "count": "Independent run with routing/graph/total NDC; same result IDs as plain required",
+    "trace": "Independent bounded run; same result IDs as plain; GT linked afterward",
+    "pilot_validation_rounds": 5,
+    "paired_order": [
+      "AB",
+      "BA",
+      "AB",
+      "BA",
+      "AB"
+    ],
+    "pair_rotation": "Run order is written before timing; per-pair AB/BA repeated as registered, no selective reruns",
+    "warmup": "Fixed complete warm-up batch before each measured invocation; count and trace excluded from timings",
+    "cache": "Label warm-cache with fixed warmup; graph loading excluded from online batch wall and reported offline",
+    "qps": "num_queries / independent single-method batch_wall_seconds",
+    "not_valid": "Do not derive batch QPS from sum or mean of multithread per-query latencies",
+    "timing_rounds_not_independent_recall": true,
+    "reported": [
+      "routing_ndc",
+      "graph_ndc",
+      "total_ndc",
+      "router_MACs",
+      "routing_wall",
+      "batch_wall",
+      "peak_RAM",
+      "index_bytes"
+    ]
+  },
+  "stages": {
+    "P0": {
+      "artifacts": [
+        "source snapshot/checksum",
+        "input manifest and checksum audit",
+        "fit/pilot identity+overlap",
+        "old per-query evidence inventory",
+        "accepted protocol and execution ledger"
+      ],
+      "gate": "Input identity/contract checks pass; exploratory/diagnostic/formal data and heldout access gates explicit; dependency readiness is insufficient"
+    },
+    "P1": {
+      "artifacts": [
+        "GT-free search/router interfaces",
+        "pure-wall evaluator",
+        "plain/count/trace paths",
+        "unit and parity results"
+      ],
+      "tests": [
+        "same-entry unified versus legacy parity",
+        "single-region degeneration",
+        "duplicate entries",
+        "empty region",
+        "invalid region/node IDs",
+        "capacity boundaries",
+        "global visited/shared NDC",
+        "cross-region edge traversal",
+        "count/plain IDs",
+        "real API has no GT",
+        "reject K>L",
+        "repeatability",
+        "trace reconstructs discovery/admission/eviction/expansion with GT joined after"
+      ],
+      "gate": "All correctness and measurement checks pass; implementation or timing failure must be repaired and reverified before algorithm judgment"
+    },
+    "P2": {
+      "artifacts": [
+        "fixed 64-region structure",
+        "fixed fit-only portal/geometry model",
+        "paired Fast20K",
+        "five queue comparisons on pilot K10 L64/128",
+        "independent count/plain/trace evidence"
+      ],
+      "gate": "Repeatable mechanism gain OR oracle potential with localized bottleneck; no numeric threshold added to plan",
+      "forbidden": "Do not build full hierarchy or learned model before mechanism gate"
+    },
+    "P3": {
+      "artifacts": [
+        "16x16 regions",
+        "lambda1 and lambda0 graph+GT partition controls",
+        "size cap1.2",
+        "two deterministic accepted descent move rounds",
+        "portal search proxy selection",
+        "structure/offline cost report"
+      ],
+      "gate": "Graph+GT partition improves over graph-only and gain passes through actual search"
+    },
+    "P4": {
+      "artifacts": [
+        "hierarchical linear softmax fit20K",
+        "L2=1e-4 CPU L-BFGS max100",
+        "oracle gap decomposition",
+        "online inference cost"
+      ],
+      "gate": "Predicted router retains mechanism gain at acceptable total wall cost"
+    },
+    "P5": {
+      "artifacts": [
+        "pilot full L grid32,48,64,96,128,192,256",
+        "Fast m3,4,6,8 true entry-count/order checks",
+        "freeze candidate manifest"
+      ],
+      "gate": "Both datasets meet substantial-performance screen at two adjacent anchors; this is development evidence, not confirmation"
+    },
+    "P6": {
+      "artifacts": [
+        "validation three independent builds",
+        "registered ablations",
+        "appropriate strong baselines",
+        "tails",
+        "offline and online cost",
+        "statistical intervals"
+      ],
+      "gate": "Stable substantial gains on both datasets with causal controls; report each build separately; only after PASS freeze method and permit held-out"
+    },
+    "P7": {
+      "artifacts": [
+        "frozen heldout10K x3 timing per build",
+        "LAION transfer control",
+        "success/failure report"
+      ],
+      "gate": "Replicate main conclusions, otherwise narrow/retract claim; never tune on held-out"
+    },
+    "P8": {
+      "artifacts": [
+        "method description",
+        "mechanism figures",
+        "limitations",
+        "reproduction entrypoints",
+        "claim-evidence table"
+      ],
+      "gate": "Each paper claim tied to valid evidence; submission acceptance not promised"
+    }
+  },
+  "p5_p6_p7_statistics": {
+    "paired_fast_anchors": [
+      64,
+      96,
+      128
+    ],
+    "family_count": 12,
+    "bootstrap_repetitions": 10000,
+    "ordinary_CI": 0.95,
+    "familywise_alpha": 0.05,
+    "multiplicity": "Bonferroni 2 datasets x3 anchors x2 benefit families",
+    "matching": "Measured points only; interpolate only for plots; redo cost matching and best feasible selection inside each bootstrap",
+    "required_per_dataset": "At least two adjacent anchors satisfy the same family: matched Recall average QPS>=+10%, OR matched QPS mean Recall@10>=+1pp; corrected CI supports positive benefit",
+    "dataset_families_may_differ": true,
+    "off_target_degradation_limits": {
+      "matched_recall_qps_percent": -3,
+      "matched_qps_recall_pp": -0.2
+    },
+    "unresolved_measurement": "INCONCLUSIVE; no automatic parameter/seed/threshold sweep"
+  },
+  "failure_actions": {
+    "correctness_or_timing_failure": "Repair within same protocol, rerun affected checks; do not call algorithm failure",
+    "uniform_regional_equivalent": "Inspect competition trace; without support close candidate-protection branch",
+    "routing_cost_erases_recall": "One semantics-preserving implementation optimization; failure after that denies online implementation",
+    "single_dataset_only": "Analyze applicability, no universal claim or dataset cherry-picking",
+    "connectivity_bottleneck_with_correct_regions_portals": "May propose separate sparse auxiliary-graph version, retain NSG, max4 edges per portal, no-edge/geometric/target controls and rerun P1-P7",
+    "validation_heldout_failure": "Freeze negative result, do not tune on heldout",
+    "deadline": "Stop registered research jobs, keep partials INCOMPLETE; long-term goal remains unfinished"
+  },
+  "report_contract": {
+    "title": "实验总结",
+    "preferred_path": "/data/netg/ACSG/实验总结.md",
+    "protect_existing": true,
+    "first_paragraph": "3-5 sentences about actual overnight stage/findings/performance evidence/incomplete work, around150 Chinese characters",
+    "handoffs": [
+      "spec.md",
+      "summary.md",
+      "s-target.md",
+      "state.json"
+    ]
+  }
+}

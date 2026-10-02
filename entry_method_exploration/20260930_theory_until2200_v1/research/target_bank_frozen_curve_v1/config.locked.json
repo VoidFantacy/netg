@@ -1,0 +1,156 @@
+{
+  "experiment": "target_bank_frozen_curve_v1",
+  "methods": [
+    "Default3",
+    "DefaultRank1",
+    "TargetBank1"
+  ],
+  "main_candidate": "TargetBank1",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "dataset": "webvid2_5m_light_v1",
+      "dimension": 512,
+      "base_n": 2505000,
+      "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+      "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "anchor": {
+        "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+        "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+        "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+        "name": "GT10-soft-t1"
+      },
+      "points": [
+        {
+          "K": 1,
+          "L": 800
+        },
+        {
+          "K": 1,
+          "L": 1000
+        },
+        {
+          "K": 1,
+          "L": 1250
+        },
+        {
+          "K": 100,
+          "L": 1120
+        },
+        {
+          "K": 100,
+          "L": 1250
+        },
+        {
+          "K": 100,
+          "L": 1400
+        }
+      ],
+      "H": 815,
+      "n": 4096,
+      "threads": 1,
+      "cpu": 15,
+      "root": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/target_bank_frozen_curve_v1",
+      "train_n": 20000,
+      "targets": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/query_target_transfer_v1/inputs/webvid2_5m_light_v1/target_ids.i32",
+      "queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/queries.f32",
+      "GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/gt.i32",
+      "source_rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/source_rows.i64",
+      "old_results": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/webvid2_5m_light_v1",
+      "target_graph": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/query_target_transfer_v1/models/webvid2_5m_light_v1/target.hnsw",
+      "methods": [
+        "Default3",
+        "DefaultRank1",
+        "TargetBank1"
+      ],
+      "M": 16,
+      "efConstruction": 200,
+      "ef": 10,
+      "repeats": 3,
+      "warm_n": 128,
+      "max_search_calls": 310000,
+      "seconds_cap": 1800,
+      "maxrss_bytes": 34359738368,
+      "min_free_bytes": 6442450944,
+      "previous_results": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/query_target_transfer_v1/results/webvid2_5m_light_v1"
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "dimension": 200,
+      "base_n": 10000000,
+      "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+      "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "anchor": {
+        "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+        "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+        "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+        "name": "GT10-hard"
+      },
+      "points": [
+        {
+          "K": 1,
+          "L": 96
+        },
+        {
+          "K": 1,
+          "L": 128
+        },
+        {
+          "K": 1,
+          "L": 160
+        },
+        {
+          "K": 100,
+          "L": 200
+        },
+        {
+          "K": 100,
+          "L": 256
+        },
+        {
+          "K": 100,
+          "L": 320
+        }
+      ],
+      "H": 821,
+      "n": 4096,
+      "threads": 1,
+      "cpu": 15,
+      "root": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/target_bank_frozen_curve_v1",
+      "train_n": 20000,
+      "targets": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/query_target_transfer_v1/inputs/yandex_t2i_official10M_ip_v1/target_ids.i32",
+      "queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+      "GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt.i32",
+      "source_rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/source_rows.i64",
+      "old_results": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/yandex_t2i_official10M_ip_v1",
+      "target_graph": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/query_target_transfer_v1/models/yandex_t2i_official10M_ip_v1/target.hnsw",
+      "methods": [
+        "Default3",
+        "DefaultRank1",
+        "TargetBank1"
+      ],
+      "M": 16,
+      "efConstruction": 200,
+      "ef": 10,
+      "repeats": 3,
+      "warm_n": 128,
+      "max_search_calls": 310000,
+      "seconds_cap": 1800,
+      "maxrss_bytes": 34359738368,
+      "min_free_bytes": 6442450944,
+      "previous_results": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/query_target_transfer_v1/results/yandex_t2i_official10M_ip_v1"
+    }
+  },
+  "bootstrap_reps": 10000,
+  "bootstrap_seed": 2026093027,
+  "max_new_NSG": 620000,
+  "max_new_ANN": 620000,
+  "expected_NSG": 596160,
+  "expected_ANN": 595584,
+  "max_stage_bytes": 83886080,
+  "max_campaign_bytes": 1426063360,
+  "min_free_bytes": 6442450944,
+  "search_seconds_cap": 1800,
+  "deadline_unix": 1790771400,
+  "maxrss_bytes": 34359738368,
+  "compile_seconds_cap": 120
+}

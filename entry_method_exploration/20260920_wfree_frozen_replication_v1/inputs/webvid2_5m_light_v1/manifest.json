@@ -1,0 +1,55 @@
+{
+  "status": "PASS_SOURCE_AND_DEDUP",
+  "dataset": "webvid2_5m_light_v1",
+  "n": 4096,
+  "dimension": 512,
+  "source": {
+    "source": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/source/webvid.query.train.2.5M.fbin",
+    "source_rows": [
+      2450000,
+      2470000
+    ],
+    "source_stat": {
+      "bytes": 5120000008,
+      "mtime_ns": 1787714604500765209
+    },
+    "slice_sha256": "57029d23477724275baed1e6578e5e783d243f80cdcddc0e4f5a25fe8e048eb6",
+    "inherited_full_source_sha256": "cb48e2b8d90492fce20c2303b5a5ca10b49875f6a75967733d2bc7b73bd8c2b9"
+  },
+  "excluded_files": [
+    {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.aco_train.seed20260826.fvecs",
+      "rows": 5000,
+      "sha256": "b4322c37b2d4ab10e965bc5731f523341d1a974d5e40aa0cd881b4fbe28a572e"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+      "rows": 30000,
+      "sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.test.public10K.fvecs",
+      "rows": 10000,
+      "sha256": "96b11dda1628f15e704512438e1dc773a8f19b2426e03c71aedcacf11f18910d"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.validation.seed20260826.fvecs",
+      "rows": 10000,
+      "sha256": "a59d61a48bf160679626a5a0a71f9d28d32d3528bda94d92ddf6ab03e132b96a"
+    }
+  ],
+  "duplicates_skipped": 91,
+  "invalid_skipped": 0,
+  "new_rows_unique": true,
+  "new_vs_all_known_formal_splits_byte_overlap": 0,
+  "selection": "source order, no labels or model outputs",
+  "created_unix": 1789871758.406623,
+  "seconds": 0.6515321731567383,
+  "files": {
+    "queries.f32": "59e72fe42b5f920f6782f93a6b5ac55cbaef9627ca26090a6ec8c7cd55c54423",
+    "queries.fvecs": "b650c6c40c7b743e5392c052c3cf64abb7f00334593aa58fb20443c09ddae076",
+    "candidate_source.f32": "57029d23477724275baed1e6578e5e783d243f80cdcddc0e4f5a25fe8e048eb6",
+    "source_rows.i64": "e85ba43ee93e2de4b6ecac54c453d31d8f1cb4da16d3205a9d21c0359bcdd667"
+  },
+  "scope": "new source rows and no byte duplicates against all four registered splits; not a claim of semantic independence or exhaustive unregistered historical exposure"
+}

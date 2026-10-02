@@ -1,0 +1,33 @@
+{
+  "formal": false,
+  "threads": 1,
+  "n": 32,
+  "L": [
+    32,
+    128,
+    1500
+  ],
+  "index": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/reviews/evaluation_smoke/synthetic_native.nsg",
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/reviews/evaluation_smoke/q.f32",
+  "base": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/reviews/topology_smoke_input/base.fvecs",
+  "hnsw_topology": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/reviews/topology_smoke/full.topology.gz",
+  "hnsw_complete": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/reviews/topology_smoke/complete.json",
+  "methods": [
+    {
+      "name": "NSG"
+    },
+    {
+      "name": "GT10",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/reviews/evaluation_smoke/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/reviews/evaluation_smoke/ids.i32"
+    },
+    {
+      "name": "GATE",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/reviews/evaluation_smoke/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/reviews/evaluation_smoke/ids.i32"
+    },
+    {
+      "name": "HNSW"
+    }
+  ]
+}

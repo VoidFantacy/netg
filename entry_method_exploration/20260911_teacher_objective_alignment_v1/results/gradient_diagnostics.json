@@ -1,0 +1,530 @@
+{
+  "status": "PASS",
+  "scope": "Post-hoc fit-only; gradient projections are not causal performance attribution",
+  "records": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "cost_ce",
+      "checkpoint": "initial",
+      "groups": {
+        "headroom": {
+          "queries": 4234,
+          "fraction": 0.2117,
+          "loss_contribution": 2.5985119698698913,
+          "mean_group_loss": 12.274501510958391,
+          "parameter_gradient_norm": 0.855732695665715,
+          "per_query_group_mean_gradient_norm": 4.0421950669141
+        },
+        "no_headroom": {
+          "queries": 15766,
+          "fraction": 0.7883,
+          "loss_contribution": 8.78856255372874,
+          "mean_group_loss": 11.148753715246404,
+          "parameter_gradient_norm": 3.3575183269069395,
+          "per_query_group_mean_gradient_norm": 4.25918854104648
+        }
+      },
+      "gradient_cosine": 0.9355404897440297,
+      "total_data_gradient_norm": 4.16906248640595,
+      "headroom_projection_fraction": 0.19677805847616414,
+      "no_headroom_projection_fraction": 0.8032219415238362,
+      "excludes_regularization": true,
+      "optimizer_steps": 0,
+      "NSG_calls": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "cost_ce",
+      "checkpoint": "final",
+      "groups": {
+        "headroom": {
+          "queries": 4234,
+          "fraction": 0.2117,
+          "loss_contribution": 2.445601267245498,
+          "mean_group_loss": 11.552202490531403,
+          "parameter_gradient_norm": 0.9017527081797374,
+          "per_query_group_mean_gradient_norm": 4.259578215303436
+        },
+        "no_headroom": {
+          "queries": 15766,
+          "fraction": 0.7883,
+          "loss_contribution": 8.209804206250702,
+          "mean_group_loss": 10.414568319485857,
+          "parameter_gradient_norm": 3.4692725601738115,
+          "per_query_group_mean_gradient_norm": 4.400954662151226
+        }
+      },
+      "gradient_cosine": 0.9305732140826319,
+      "total_data_gradient_norm": 4.321049500117223,
+      "headroom_projection_fraction": 0.199469434332716,
+      "no_headroom_projection_fraction": 0.8005305656672849,
+      "excludes_regularization": true,
+      "optimizer_steps": 0,
+      "NSG_calls": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "keep_ce",
+      "checkpoint": "initial",
+      "groups": {
+        "headroom": {
+          "queries": 4234,
+          "fraction": 0.2117,
+          "loss_contribution": 2.5985119698698913,
+          "mean_group_loss": 12.274501510958391,
+          "parameter_gradient_norm": 0.855732695665715,
+          "per_query_group_mean_gradient_norm": 4.0421950669141
+        },
+        "no_headroom": {
+          "queries": 15766,
+          "fraction": 0.7883,
+          "loss_contribution": 8.53868229025975,
+          "mean_group_loss": 10.83176746195579,
+          "parameter_gradient_norm": 3.561330614570737,
+          "per_query_group_mean_gradient_norm": 4.517735144704727
+        }
+      },
+      "gradient_cosine": 0.9403633808555042,
+      "total_data_gradient_norm": 4.375723652323992,
+      "headroom_projection_fraction": 0.1879191560489517,
+      "no_headroom_projection_fraction": 0.8120808439510482,
+      "excludes_regularization": true,
+      "optimizer_steps": 0,
+      "NSG_calls": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "keep_ce",
+      "checkpoint": "final",
+      "groups": {
+        "headroom": {
+          "queries": 4234,
+          "fraction": 0.2117,
+          "loss_contribution": 2.4402722006959197,
+          "mean_group_loss": 11.527029762380348,
+          "parameter_gradient_norm": 0.9083584255393905,
+          "per_query_group_mean_gradient_norm": 4.290781414923904
+        },
+        "no_headroom": {
+          "queries": 15766,
+          "fraction": 0.7883,
+          "loss_contribution": 7.896885897412103,
+          "mean_group_loss": 10.01761499100863,
+          "parameter_gradient_norm": 3.716519997230625,
+          "per_query_group_mean_gradient_norm": 4.714601036700019
+        }
+      },
+      "gradient_cosine": 0.9354542917019435,
+      "total_data_gradient_norm": 4.5775207862454765,
+      "headroom_projection_fraction": 0.1900927282568051,
+      "no_headroom_projection_fraction": 0.8099072717431952,
+      "excludes_regularization": true,
+      "optimizer_steps": 0,
+      "NSG_calls": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "cost_margin",
+      "checkpoint": "initial",
+      "groups": {
+        "headroom": {
+          "queries": 4234,
+          "fraction": 0.2117,
+          "loss_contribution": 0.21948804780967474,
+          "mean_group_loss": 1.036788133253069,
+          "parameter_gradient_norm": 0.14434993505083807,
+          "per_query_group_mean_gradient_norm": 0.6818608174342847
+        },
+        "no_headroom": {
+          "queries": 15766,
+          "fraction": 0.7883,
+          "loss_contribution": 0.37981123765314606,
+          "mean_group_loss": 0.48181052600931884,
+          "parameter_gradient_norm": 0.22837514368764678,
+          "per_query_group_mean_gradient_norm": 0.2897058780764262
+        }
+      },
+      "gradient_cosine": 0.7047778329502781,
+      "total_data_gradient_norm": 0.3456290403121139,
+      "headroom_projection_fraction": 0.36891657868393507,
+      "no_headroom_projection_fraction": 0.6310834213160648,
+      "excludes_regularization": true,
+      "optimizer_steps": 0,
+      "NSG_calls": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "cost_margin",
+      "checkpoint": "final",
+      "groups": {
+        "headroom": {
+          "queries": 4234,
+          "fraction": 0.2117,
+          "loss_contribution": 0.2036137137400849,
+          "mean_group_loss": 0.9618030880495272,
+          "parameter_gradient_norm": 0.12055440799286024,
+          "per_query_group_mean_gradient_norm": 0.5694587056819095
+        },
+        "no_headroom": {
+          "queries": 15766,
+          "fraction": 0.7883,
+          "loss_contribution": 0.34909658293298473,
+          "mean_group_loss": 0.44284737147403874,
+          "parameter_gradient_norm": 0.1792328123962219,
+          "per_query_group_mean_gradient_norm": 0.22736624685553966
+        }
+      },
+      "gradient_cosine": 0.6530844290246004,
+      "total_data_gradient_norm": 0.27364311793959917,
+      "headroom_projection_fraction": 0.38253936206109895,
+      "no_headroom_projection_fraction": 0.6174606379389004,
+      "excludes_regularization": true,
+      "optimizer_steps": 0,
+      "NSG_calls": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "keep_margin",
+      "checkpoint": "initial",
+      "groups": {
+        "headroom": {
+          "queries": 4234,
+          "fraction": 0.2117,
+          "loss_contribution": 0.21948804780967474,
+          "mean_group_loss": 1.036788133253069,
+          "parameter_gradient_norm": 0.14434993505083807,
+          "per_query_group_mean_gradient_norm": 0.6818608174342847
+        },
+        "no_headroom": {
+          "queries": 15766,
+          "fraction": 0.7883,
+          "loss_contribution": 0.08541906710981155,
+          "mean_group_loss": 0.10835857809185785,
+          "parameter_gradient_norm": 0.099758870052092,
+          "per_query_group_mean_gradient_norm": 0.1265493721325536
+        }
+      },
+      "gradient_cosine": 0.1963049486351797,
+      "total_data_gradient_norm": 0.19089890416511257,
+      "headroom_projection_fraction": 0.6493462848318343,
+      "no_headroom_projection_fraction": 0.3506537151681655,
+      "excludes_regularization": true,
+      "optimizer_steps": 0,
+      "NSG_calls": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "keep_margin",
+      "checkpoint": "final",
+      "groups": {
+        "headroom": {
+          "queries": 4234,
+          "fraction": 0.2117,
+          "loss_contribution": 0.2074836224464876,
+          "mean_group_loss": 0.9800832425436353,
+          "parameter_gradient_norm": 0.12081928243350888,
+          "per_query_group_mean_gradient_norm": 0.5707098839561119
+        },
+        "no_headroom": {
+          "queries": 15766,
+          "fraction": 0.7883,
+          "loss_contribution": 0.07518803242746039,
+          "mean_group_loss": 0.09537997263409918,
+          "parameter_gradient_norm": 0.0767034696178842,
+          "per_query_group_mean_gradient_norm": 0.09730238439411924
+        }
+      },
+      "gradient_cosine": -0.04727440495878396,
+      "total_data_gradient_norm": 0.14001611703300504,
+      "headroom_projection_fraction": 0.7222416018045489,
+      "no_headroom_projection_fraction": 0.27775839819545095,
+      "excludes_regularization": true,
+      "optimizer_steps": 0,
+      "NSG_calls": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "cost_ce",
+      "checkpoint": "initial",
+      "groups": {
+        "headroom": {
+          "queries": 2161,
+          "fraction": 0.10805,
+          "loss_contribution": 0.8534032204324091,
+          "mean_group_loss": 7.898225084982963,
+          "parameter_gradient_norm": 0.20432493228650322,
+          "per_query_group_mean_gradient_norm": 1.8910220480009554
+        },
+        "no_headroom": {
+          "queries": 17839,
+          "fraction": 0.89195,
+          "loss_contribution": 5.511239040206861,
+          "mean_group_loss": 6.1788654523312525,
+          "parameter_gradient_norm": 1.5294007124545705,
+          "per_query_group_mean_gradient_norm": 1.7146709035871635
+        }
+      },
+      "gradient_cosine": 0.9267816707674766,
+      "total_data_gradient_norm": 1.7204778208435247,
+      "headroom_projection_fraction": 0.11194530992328809,
+      "no_headroom_projection_fraction": 0.888054690076712,
+      "excludes_regularization": true,
+      "optimizer_steps": 0,
+      "NSG_calls": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "cost_ce",
+      "checkpoint": "final",
+      "groups": {
+        "headroom": {
+          "queries": 2161,
+          "fraction": 0.10805,
+          "loss_contribution": 0.8383532631924562,
+          "mean_group_loss": 7.758938113766369,
+          "parameter_gradient_norm": 0.19549087743318275,
+          "per_query_group_mean_gradient_norm": 1.8092630951705948
+        },
+        "no_headroom": {
+          "queries": 17839,
+          "fraction": 0.89195,
+          "loss_contribution": 5.378170839200459,
+          "mean_group_loss": 6.029677492236627,
+          "parameter_gradient_norm": 1.4589208629478143,
+          "per_query_group_mean_gradient_norm": 1.635653190142737
+        }
+      },
+      "gradient_cosine": 0.9225045108419468,
+      "total_data_gradient_norm": 1.640997834613996,
+      "headroom_projection_fraction": 0.11189541655534836,
+      "no_headroom_projection_fraction": 0.8881045834446516,
+      "excludes_regularization": true,
+      "optimizer_steps": 0,
+      "NSG_calls": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "keep_ce",
+      "checkpoint": "initial",
+      "groups": {
+        "headroom": {
+          "queries": 2161,
+          "fraction": 0.10805,
+          "loss_contribution": 0.8534032204324091,
+          "mean_group_loss": 7.898225084982963,
+          "parameter_gradient_norm": 0.20432493228650322,
+          "per_query_group_mean_gradient_norm": 1.8910220480009554
+        },
+        "no_headroom": {
+          "queries": 17839,
+          "fraction": 0.89195,
+          "loss_contribution": 4.847201377928531,
+          "mean_group_loss": 5.434386880350391,
+          "parameter_gradient_norm": 1.7799934477963855,
+          "per_query_group_mean_gradient_norm": 1.9956202116670054
+        }
+      },
+      "gradient_cosine": 0.9230585316565182,
+      "total_data_gradient_norm": 1.9701656440129156,
+      "headroom_projection_fraction": 0.09724519203889877,
+      "no_headroom_projection_fraction": 0.9027548079611012,
+      "excludes_regularization": true,
+      "optimizer_steps": 0,
+      "NSG_calls": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "keep_ce",
+      "checkpoint": "final",
+      "groups": {
+        "headroom": {
+          "queries": 2161,
+          "fraction": 0.10805,
+          "loss_contribution": 0.8374566947095159,
+          "mean_group_loss": 7.750640395275483,
+          "parameter_gradient_norm": 0.1964048903175541,
+          "per_query_group_mean_gradient_norm": 1.817722261152745
+        },
+        "no_headroom": {
+          "queries": 17839,
+          "fraction": 0.89195,
+          "loss_contribution": 4.677182129865555,
+          "mean_group_loss": 5.243771657453394,
+          "parameter_gradient_norm": 1.7192401664450518,
+          "per_query_group_mean_gradient_norm": 1.9275073338696695
+        }
+      },
+      "gradient_cosine": 0.9179562846788661,
+      "total_data_gradient_norm": 1.901128360770098,
+      "headroom_projection_fraction": 0.09643351246080484,
+      "no_headroom_projection_fraction": 0.9035664875391952,
+      "excludes_regularization": true,
+      "optimizer_steps": 0,
+      "NSG_calls": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "cost_margin",
+      "checkpoint": "initial",
+      "groups": {
+        "headroom": {
+          "queries": 2161,
+          "fraction": 0.10805,
+          "loss_contribution": 0.19470032960878267,
+          "mean_group_loss": 1.801946595176147,
+          "parameter_gradient_norm": 0.08106115942931079,
+          "per_query_group_mean_gradient_norm": 0.750218967416111
+        },
+        "no_headroom": {
+          "queries": 17839,
+          "fraction": 0.89195,
+          "loss_contribution": 0.7848058279516822,
+          "mean_group_loss": 0.8798764818114044,
+          "parameter_gradient_norm": 0.287867778880496,
+          "per_query_group_mean_gradient_norm": 0.3227398159992107
+        }
+      },
+      "gradient_cosine": 0.7799308376938212,
+      "total_data_gradient_norm": 0.3547364930872996,
+      "headroom_projection_fraction": 0.19684451849981985,
+      "no_headroom_projection_fraction": 0.8031554815001801,
+      "excludes_regularization": true,
+      "optimizer_steps": 0,
+      "NSG_calls": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "cost_margin",
+      "checkpoint": "final",
+      "groups": {
+        "headroom": {
+          "queries": 2161,
+          "fraction": 0.10805,
+          "loss_contribution": 0.18950563415271177,
+          "mean_group_loss": 1.75386982094134,
+          "parameter_gradient_norm": 0.07507948074349192,
+          "per_query_group_mean_gradient_norm": 0.6948586834196384
+        },
+        "no_headroom": {
+          "queries": 17839,
+          "fraction": 0.89195,
+          "loss_contribution": 0.7623492220112729,
+          "mean_group_loss": 0.8546995033480271,
+          "parameter_gradient_norm": 0.25867312680567334,
+          "per_query_group_mean_gradient_norm": 0.29000855070987536
+        }
+      },
+      "gradient_cosine": 0.7730730822680714,
+      "total_data_gradient_norm": 0.32027564334226255,
+      "headroom_projection_fraction": 0.20132113379146324,
+      "no_headroom_projection_fraction": 0.798678866208537,
+      "excludes_regularization": true,
+      "optimizer_steps": 0,
+      "NSG_calls": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "keep_margin",
+      "checkpoint": "initial",
+      "groups": {
+        "headroom": {
+          "queries": 2161,
+          "fraction": 0.10805,
+          "loss_contribution": 0.19470032960878267,
+          "mean_group_loss": 1.801946595176147,
+          "parameter_gradient_norm": 0.08106115942931079,
+          "per_query_group_mean_gradient_norm": 0.750218967416111
+        },
+        "no_headroom": {
+          "queries": 17839,
+          "fraction": 0.89195,
+          "loss_contribution": 0.05963149707646256,
+          "mean_group_loss": 0.0668552016104743,
+          "parameter_gradient_norm": 0.064486237055744,
+          "per_query_group_mean_gradient_norm": 0.07229804031138964
+        }
+      },
+      "gradient_cosine": 0.053164626018094054,
+      "total_data_gradient_norm": 0.10623184238048838,
+      "headroom_projection_fraction": 0.6068849409671025,
+      "no_headroom_projection_fraction": 0.39311505903289745,
+      "excludes_regularization": true,
+      "optimizer_steps": 0,
+      "NSG_calls": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "keep_margin",
+      "checkpoint": "final",
+      "groups": {
+        "headroom": {
+          "queries": 2161,
+          "fraction": 0.10805,
+          "loss_contribution": 0.19123788157612356,
+          "mean_group_loss": 1.7699017267572752,
+          "parameter_gradient_norm": 0.07739990357463006,
+          "per_query_group_mean_gradient_norm": 0.7163341376643226
+        },
+        "no_headroom": {
+          "queries": 17839,
+          "fraction": 0.89195,
+          "loss_contribution": 0.054870313216748096,
+          "mean_group_loss": 0.06151725233112629,
+          "parameter_gradient_norm": 0.05888899730622271,
+          "per_query_group_mean_gradient_norm": 0.06602275610317025
+        }
+      },
+      "gradient_cosine": -0.02243867993156977,
+      "total_data_gradient_norm": 0.09619827414814161,
+      "headroom_projection_fraction": 0.636308711953174,
+      "no_headroom_projection_fraction": 0.363691288046826,
+      "excludes_regularization": true,
+      "optimizer_steps": 0,
+      "NSG_calls": 0
+    }
+  ],
+  "geometry": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "teacher": "cost",
+      "ce_margin_direction_cosine": -0.17311464427255718,
+      "margin_to_ce_norm_ratio": 0.2614032346565386,
+      "best_scalar_projection": -0.04525272797926247,
+      "unexplained_margin_displacement_fraction": 0.9700313199383874,
+      "measured_only_geometry": true,
+      "counterfactual_QPS": null
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "teacher": "keep",
+      "ce_margin_direction_cosine": -0.024539377871244526,
+      "margin_to_ce_norm_ratio": 0.1962531883164343,
+      "best_scalar_projection": -0.004815931146533492,
+      "unexplained_margin_displacement_fraction": 0.9993978189336926,
+      "measured_only_geometry": true,
+      "counterfactual_QPS": null
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "teacher": "cost",
+      "ce_margin_direction_cosine": -0.2596741272447255,
+      "margin_to_ce_norm_ratio": 0.4236263917026459,
+      "best_scalar_projection": -0.11000481354321678,
+      "unexplained_margin_displacement_fraction": 0.9325693476396903,
+      "measured_only_geometry": true,
+      "counterfactual_QPS": null
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "teacher": "keep",
+      "ce_margin_direction_cosine": -0.07030984496570525,
+      "margin_to_ce_norm_ratio": 0.22861577931599233,
+      "best_scalar_projection": -0.016073940000421307,
+      "unexplained_margin_displacement_fraction": 0.9950565257008982,
+      "measured_only_geometry": true,
+      "counterfactual_QPS": null
+    }
+  ],
+  "optimizer_steps": 0,
+  "NSG_calls": 0
+}

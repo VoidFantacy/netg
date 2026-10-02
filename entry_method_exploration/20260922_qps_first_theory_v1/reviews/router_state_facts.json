@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "facts": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "historical_graph_identity": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+        "bytes": 1790316,
+        "sha256": "fa4dfabb630cfd30dbe1f065ac469189a3449a9d560348e585c4d318468da091"
+      },
+      "level1_nodes": 52,
+      "upper_exit_possible_states_upper_bound": 52,
+      "direct_uint8_action_table_bytes": 815,
+      "conditional_occupancy": "Unknown: node count is not observed query support or action value"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "historical_graph_identity": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+        "bytes": 778860,
+        "sha256": "11ffd1dc090f132cdb78e027a202edf5e49a5d50033f82b8834bb0e2ca08036c"
+      },
+      "level1_nodes": 52,
+      "upper_exit_possible_states_upper_bound": 52,
+      "direct_uint8_action_table_bytes": 821,
+      "conditional_occupancy": "Unknown: node count is not observed query support or action value"
+    }
+  ],
+  "source_inference": "For these level>=1 HNSW graphs, descent stays in level1 nodes before base search; at most 52 exit IDs. No claim all are reachable or occupied.",
+  "old_router_work_csv_fields": [
+    "dataset",
+    "method",
+    "query",
+    "ndc",
+    "upper_expansions",
+    "upper_neighbor_scans",
+    "base_expansions",
+    "base_neighbor_scans",
+    "base_first_visit_distances",
+    "base_visited_skips"
+  ],
+  "cache_scope": "Inspected work-count cache has no upper exit ID; no claim all historical files were exhaustively searched",
+  "identity_scope": "Old topology and record125 manifests agree; no graph/base/query/GT payload opened",
+  "inputs": {
+    "entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/results/topology_description.json": "fcb555e152eb031993ee5a0b45391b2b28fcb2ba6643466f59293da08525d12a",
+    "entry_method_exploration/20260922_knn_three_point_timing_v1/reviews/inputs.json": "524d9c54fba8039a9be080e23073361bbb357c8bed89d03300e665486eac2b0f",
+    "entry_method_exploration/20260920_until1900_theory_v1/research/router_work_identity_v1/results/queries.csv": "415301c1c33be53094d0b0adc055175dadf83a640f1ca7823fda95efcca5bb7f",
+    "benches/hnswlib/hnswalg.h": "deb4b7119fab06b65c0ba32169477e1fcaf079ef4bff9306a3ac0f32c76ea536"
+  },
+  "new_searches": 0,
+  "new_training": 0
+}

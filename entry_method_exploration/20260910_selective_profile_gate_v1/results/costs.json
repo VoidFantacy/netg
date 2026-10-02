@@ -1,0 +1,298 @@
+{
+  "real_graph_calls": 1089152,
+  "repair_calls": 0,
+  "search_process_wall_seconds": 1227.5040246550052,
+  "search_process_boundary": "includes loading, graph construction, warmup, count, checks and I/O; never converted to QPS",
+  "max_observed_search_RSS_bytes": 10944991232,
+  "actual_query_threads": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "input_prepare_seconds": 19.617127760000585,
+  "phases": {
+    "recovery": {
+      "calls": 3200,
+      "process_seconds": 23.643241492001835
+    },
+    "fit": {
+      "calls": 131200,
+      "process_seconds": 69.94090431999939
+    },
+    "cal": {
+      "calls": 32896,
+      "process_seconds": 30.056958722001582
+    },
+    "audit": {
+      "calls": 32896,
+      "process_seconds": 30.048029703000793
+    },
+    "validation": {
+      "calls": 888960,
+      "process_seconds": 1073.8148904180016
+    }
+  },
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "six_weighted_logistic_fit_seconds": 0.03686564399686176,
+      "fit_time_boundary": "per-model standardization and convex solve, excludes imports/selftest/cal candidate scoring/serialization",
+      "L128": {
+        "nsg": {
+          "route_only_us_per_query": 0.008955499999999998,
+          "graph_only_us_per_query": 551.4121725,
+          "end_to_end_median_us_per_query": 554.381757,
+          "route_only_over_independent_total_ratio": 1.6154030840520602e-05,
+          "mean_route_ndc": 0.0,
+          "mean_graph_ndc": 1875.8235,
+          "mean_total_ndc": 1875.8235,
+          "policy_build_seconds": 3.5718e-05,
+          "count_policy_load_seconds": 2.1417e-05
+        },
+        "fast30k": {
+          "route_only_us_per_query": 6.7919030000000005,
+          "graph_only_us_per_query": 501.24847500000004,
+          "end_to_end_median_us_per_query": 510.73056800000006,
+          "route_only_over_independent_total_ratio": 0.013298407077134259,
+          "mean_route_ndc": 121.954,
+          "mean_graph_ndc": 1657.127,
+          "mean_total_ndc": 1779.081,
+          "policy_build_seconds": 0.06071208,
+          "count_policy_load_seconds": 0.011828661
+        },
+        "fast20k": {
+          "route_only_us_per_query": 7.195346000000001,
+          "graph_only_us_per_query": 504.90198399999997,
+          "end_to_end_median_us_per_query": 514.220204,
+          "route_only_over_independent_total_ratio": 0.013992732965428172,
+          "mean_route_ndc": 128.549,
+          "mean_graph_ndc": 1658.1695,
+          "mean_total_ndc": 1786.7185,
+          "policy_build_seconds": 0.060752106,
+          "count_policy_load_seconds": 0.011700626
+        },
+        "e24": {
+          "route_only_us_per_query": 6.5323925,
+          "graph_only_us_per_query": 503.792935,
+          "end_to_end_median_us_per_query": 506.51518799999997,
+          "route_only_over_independent_total_ratio": 0.012896735684853741,
+          "mean_route_ndc": 112.062,
+          "mean_graph_ndc": 1646.826,
+          "mean_total_ndc": 1758.888,
+          "policy_build_seconds": 0.061047813,
+          "count_policy_load_seconds": 0.01172807
+        },
+        "base_gate": {
+          "route_only_us_per_query": 16.075709,
+          "graph_only_us_per_query": 505.2886049999999,
+          "end_to_end_median_us_per_query": 523.7738575000001,
+          "route_only_over_independent_total_ratio": 0.030692079739775863,
+          "mean_route_ndc": 218.8385,
+          "mean_graph_ndc": 1647.869,
+          "mean_total_ndc": 1866.7075,
+          "policy_build_seconds": 0.122766043,
+          "count_policy_load_seconds": 0.025116343
+        },
+        "dual_gate": {
+          "route_only_us_per_query": 19.139852499999996,
+          "graph_only_us_per_query": 494.418032,
+          "end_to_end_median_us_per_query": 528.055735,
+          "route_only_over_independent_total_ratio": 0.036245894573988476,
+          "mean_route_ndc": 246.611,
+          "mean_graph_ndc": 1645.7035,
+          "mean_total_ndc": 1892.3145,
+          "policy_build_seconds": 0.122366597,
+          "count_policy_load_seconds": 0.025246229
+        }
+      },
+      "L128_graph_assets": [
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/results/webvid2_5m_light_v1/base_gate_L128.base.hnsw",
+          "bytes": 1790316,
+          "mtime_ns": 1789047854195481409,
+          "sha256": "5a4048145bbe51b55f6427068af7e7fc1e687574e39a466d32bbea2062387d8f"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/results/webvid2_5m_light_v1/base_gate_L128.new.hnsw",
+          "bytes": 1790316,
+          "mtime_ns": 1789047854255481696,
+          "sha256": "fa4dfabb630cfd30dbe1f065ac469189a3449a9d560348e585c4d318468da091"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/results/webvid2_5m_light_v1/dual_gate_L128.base.hnsw",
+          "bytes": 1790316,
+          "mtime_ns": 1789047854343482115,
+          "sha256": "5a4048145bbe51b55f6427068af7e7fc1e687574e39a466d32bbea2062387d8f"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/results/webvid2_5m_light_v1/dual_gate_L128.new.hnsw",
+          "bytes": 1790316,
+          "mtime_ns": 1789047854403482401,
+          "sha256": "fa4dfabb630cfd30dbe1f065ac469189a3449a9d560348e585c4d318468da091"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/results/webvid2_5m_light_v1/e24_L128.new.hnsw",
+          "bytes": 1790316,
+          "mtime_ns": 1789047854123481067,
+          "sha256": "fa4dfabb630cfd30dbe1f065ac469189a3449a9d560348e585c4d318468da091"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/results/webvid2_5m_light_v1/fast20k_L128.base.hnsw",
+          "bytes": 1790316,
+          "mtime_ns": 1789047854051480723,
+          "sha256": "5a4048145bbe51b55f6427068af7e7fc1e687574e39a466d32bbea2062387d8f"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/results/webvid2_5m_light_v1/fast30k_L128.direct.hnsw",
+          "bytes": 1790180,
+          "mtime_ns": 1789047853975480361,
+          "sha256": "6955e7128eae24b376e64f4d1adf38baed0ea606ec2631ec5f08b98ebdf479d0"
+        }
+      ],
+      "all_30_point_policy_build_seconds": 2.126574871,
+      "policy_graph_constructions_repeated_per_L_for_measurement": true,
+      "single_deployment_base_or_dual_gate_requires_two_micrographs": true,
+      "gate_model_json_bytes": {
+        "base_gate": 1353,
+        "dual_gate": 1958
+      }
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "six_weighted_logistic_fit_seconds": 0.031364400005259085,
+      "fit_time_boundary": "per-model standardization and convex solve, excludes imports/selftest/cal candidate scoring/serialization",
+      "L128": {
+        "nsg": {
+          "route_only_us_per_query": 0.008917999999999999,
+          "graph_only_us_per_query": 578.262391,
+          "end_to_end_median_us_per_query": 572.1019785,
+          "route_only_over_independent_total_ratio": 1.5588129975327468e-05,
+          "mean_route_ndc": 0.0,
+          "mean_graph_ndc": 3165.5315,
+          "mean_total_ndc": 3165.5315,
+          "policy_build_seconds": 3.5922e-05,
+          "count_policy_load_seconds": 2.197e-05
+        },
+        "fast30k": {
+          "route_only_us_per_query": 4.4176485,
+          "graph_only_us_per_query": 512.4000835,
+          "end_to_end_median_us_per_query": 517.637029,
+          "route_only_over_independent_total_ratio": 0.008534259051239551,
+          "mean_route_ndc": 116.032,
+          "mean_graph_ndc": 2870.087,
+          "mean_total_ndc": 2986.119,
+          "policy_build_seconds": 0.04863892,
+          "count_policy_load_seconds": 0.005490442
+        },
+        "fast20k": {
+          "route_only_us_per_query": 4.567118499999999,
+          "graph_only_us_per_query": 511.0075395,
+          "end_to_end_median_us_per_query": 519.4142835,
+          "route_only_over_independent_total_ratio": 0.008792824235069385,
+          "mean_route_ndc": 110.135,
+          "mean_graph_ndc": 2871.986,
+          "mean_total_ndc": 2982.121,
+          "policy_build_seconds": 0.048664966,
+          "count_policy_load_seconds": 0.005518069
+        },
+        "e24": {
+          "route_only_us_per_query": 4.3677535,
+          "graph_only_us_per_query": 510.43022800000006,
+          "end_to_end_median_us_per_query": 520.3734880000001,
+          "route_only_over_independent_total_ratio": 0.008393497364339206,
+          "mean_route_ndc": 106.4395,
+          "mean_graph_ndc": 2872.525,
+          "mean_total_ndc": 2978.9645,
+          "policy_build_seconds": 0.048119207,
+          "count_policy_load_seconds": 0.005311921
+        },
+        "base_gate": {
+          "route_only_us_per_query": 6.5415525,
+          "graph_only_us_per_query": 509.690888,
+          "end_to_end_median_us_per_query": 527.4841035,
+          "route_only_over_independent_total_ratio": 0.012401421116949357,
+          "mean_route_ndc": 146.893,
+          "mean_graph_ndc": 2868.8,
+          "mean_total_ndc": 3015.693,
+          "policy_build_seconds": 0.095603968,
+          "count_policy_load_seconds": 0.011320367
+        },
+        "dual_gate": {
+          "route_only_us_per_query": 10.223209500000001,
+          "graph_only_us_per_query": 508.67833949999994,
+          "end_to_end_median_us_per_query": 528.114106,
+          "route_only_over_independent_total_ratio": 0.01935795575965926,
+          "mean_route_ndc": 222.5745,
+          "mean_graph_ndc": 2872.0225,
+          "mean_total_ndc": 3094.597,
+          "policy_build_seconds": 0.09569866,
+          "count_policy_load_seconds": 0.011319981
+        }
+      },
+      "L128_graph_assets": [
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/results/yandex_t2i_official10M_ip_v1/base_gate_L128.base.hnsw",
+          "bytes": 778860,
+          "mtime_ns": 1789048400046083813,
+          "sha256": "09137140a91e960813d3b5e2d4c9261f618d64774decc356df47d21036b377a1"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/results/yandex_t2i_official10M_ip_v1/base_gate_L128.new.hnsw",
+          "bytes": 778860,
+          "mtime_ns": 1789048400094084042,
+          "sha256": "11ffd1dc090f132cdb78e027a202edf5e49a5d50033f82b8834bb0e2ca08036c"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/results/yandex_t2i_official10M_ip_v1/dual_gate_L128.base.hnsw",
+          "bytes": 778860,
+          "mtime_ns": 1789048400154084327,
+          "sha256": "09137140a91e960813d3b5e2d4c9261f618d64774decc356df47d21036b377a1"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/results/yandex_t2i_official10M_ip_v1/dual_gate_L128.new.hnsw",
+          "bytes": 778860,
+          "mtime_ns": 1789048400202084557,
+          "sha256": "11ffd1dc090f132cdb78e027a202edf5e49a5d50033f82b8834bb0e2ca08036c"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/results/yandex_t2i_official10M_ip_v1/e24_L128.new.hnsw",
+          "bytes": 778860,
+          "mtime_ns": 1789048399994083564,
+          "sha256": "11ffd1dc090f132cdb78e027a202edf5e49a5d50033f82b8834bb0e2ca08036c"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/results/yandex_t2i_official10M_ip_v1/fast20k_L128.base.hnsw",
+          "bytes": 778860,
+          "mtime_ns": 1789048399938083298,
+          "sha256": "09137140a91e960813d3b5e2d4c9261f618d64774decc356df47d21036b377a1"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/results/yandex_t2i_official10M_ip_v1/fast30k_L128.direct.hnsw",
+          "bytes": 778724,
+          "mtime_ns": 1789048399886083050,
+          "sha256": "73acddd2add6fe202433fa86121ed77afcaa66d7924f73849cc56dc7051211f8"
+        }
+      ],
+      "all_30_point_policy_build_seconds": 1.6740129060000006,
+      "policy_graph_constructions_repeated_per_L_for_measurement": true,
+      "single_deployment_base_or_dual_gate_requires_two_micrographs": true,
+      "gate_model_json_bytes": {
+        "base_gate": 1349,
+        "dual_gate": 1922
+      }
+    }
+  },
+  "from_scratch_upstream_costs": {
+    "exact_GT": null,
+    "QGT": null,
+    "NSG": null,
+    "E24_W": null,
+    "reason": "frozen upstream artifacts reused; this run did not measure their construction"
+  },
+  "component_walls_are_not_added_to_derive_QPS": true
+}

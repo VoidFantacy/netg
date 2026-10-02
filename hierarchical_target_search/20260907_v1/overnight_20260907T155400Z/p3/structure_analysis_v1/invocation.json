@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "status": "INCOMPLETE",
+  "scope": "P3_SAVED_STRUCTURE_EVIDENCE",
+  "created_utc": "2026-09-07T17:50:47.127659+00:00",
+  "argv": [
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analyze_structure.py",
+    "--partition-manifest",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/webvid2_5m_light_v1/manifest.json",
+    "--partition-manifest",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/manifest.json",
+    "--protocol",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "--output",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/structure_analysis_v1"
+  ],
+  "script_sha256": "42de37c79b330c96708eeabd488142884eb3fd4f9900db00405f1421950de64c",
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+  },
+  "reads_graph_GT_base_queryvectors_pilot_validation_heldout": false,
+  "performs_search_refit_or_parameter_selection": false,
+  "P3_gate_passed": false,
+  "limitations": [
+    "Raw C/S are not recomputed here; this audits saved full-recompute evidence and exact integer algebra.",
+    "Every initial/coarse/child/pass label is freshly hashed and its structural role is checked.",
+    "Source/binary/audit/fit/graph identities are inherited from the accepted partition manifests; this script does not reopen those inputs.",
+    "Structure conditions are necessary only; paired oracle search transfer remains required before P3 can pass.",
+    "No pilot/validation/held-out data, new CI, tuning or performance claim is used."
+  ]
+}

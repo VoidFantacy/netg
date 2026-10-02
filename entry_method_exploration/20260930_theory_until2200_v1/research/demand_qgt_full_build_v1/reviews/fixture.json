@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "seconds": 0.0049322699996992014,
+  "success_H": [
+    10,
+    11,
+    12,
+    13
+  ],
+  "details": {
+    "method": "spherical-query-kmeans-representative-GT-cover",
+    "target_hubs": 4,
+    "selected_hubs": 4,
+    "empty_clusters": 1,
+    "kmeans_iterations": 25,
+    "seed": 20260828,
+    "gt_candidates_per_query": 2
+  },
+  "trace": [
+    {
+      "row": 0,
+      "source": "cluster",
+      "cache_hit": true,
+      "ranks_read": 1
+    },
+    {
+      "row": 1,
+      "source": "cluster",
+      "cache_hit": true,
+      "ranks_read": 2
+    },
+    {
+      "row": 2,
+      "source": "cluster",
+      "cache_hit": false,
+      "ranks_read": 1
+    },
+    {
+      "row": 3,
+      "source": "cluster",
+      "cache_hit": true,
+      "ranks_read": 2
+    },
+    {
+      "row": 0,
+      "source": "fallback",
+      "cache_hit": true,
+      "ranks_read": 2
+    },
+    {
+      "row": 1,
+      "source": "fallback",
+      "cache_hit": true,
+      "ranks_read": 2
+    },
+    {
+      "row": 2,
+      "source": "fallback",
+      "cache_hit": true,
+      "ranks_read": 2
+    }
+  ],
+  "generation": [
+    {
+      "phase": "representative_prefetch",
+      "rows": [
+        0,
+        1
+      ],
+      "overlap_rows": 0
+    },
+    {
+      "phase": "representative_prefetch",
+      "rows": [
+        3
+      ],
+      "overlap_rows": 0
+    },
+    {
+      "phase": "fallback_source_block",
+      "rows": [
+        2,
+        3
+      ],
+      "overlap_rows": 1
+    }
+  ],
+  "overlap_checks": 1,
+  "insufficient_unique_errors": [
+    "could only choose 1/4 unique GT hubs",
+    "could only choose 1/4 unique GT hubs"
+  ],
+  "synthetic_only": true,
+  "real_GT_queries": 0
+}

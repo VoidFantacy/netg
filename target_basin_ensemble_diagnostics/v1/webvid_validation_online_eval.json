@@ -1,0 +1,85 @@
+{
+  "artifact_version": "roargraph-webvid2.5m-ip-v1",
+  "candidate_count": 815,
+  "dataset": "webvid2_5m_light_v1",
+  "metric": "ip",
+  "num_queries": 10000,
+  "num_runs": 1,
+  "online_ensemble": {
+    "exact_prototype_dot_products_per_query": 1638,
+    "prototype_views": 3,
+    "rank0_preserved": true,
+    "reference_route_mismatch_fraction": 0.026766666666666668,
+    "routing_batch_wall_us": 523128.837,
+    "routing_effective_wall_us_per_query": 52.3128837,
+    "top_per_view": 8
+  },
+  "oracle_definition": "skipped; router comparison only",
+  "results": [
+    {
+      "methods": [
+        {
+          "mean_graph_latency_us": 549.0486995000001,
+          "mean_graph_ndc": 1163.2241,
+          "mean_recall": 0.61293,
+          "method": "Medoid",
+          "samples": 10000
+        },
+        {
+          "mean_graph_latency_us": 401.32193839999985,
+          "mean_graph_ndc": 922.3222,
+          "mean_recall": 0.6550499999999996,
+          "method": "Fast_Prototype_Top3",
+          "samples": 10000
+        },
+        {
+          "mean_graph_latency_us": 302.3180227,
+          "mean_graph_ndc": 902.7028,
+          "mean_recall": 0.6632699999999997,
+          "method": "MultiSeedTargetBasinEnsemble_Online_Top3",
+          "samples": 10000
+        }
+      ],
+      "search_L": 64,
+      "top_k": 10
+    },
+    {
+      "methods": [
+        {
+          "mean_graph_latency_us": 936.2696617999999,
+          "mean_graph_ndc": 1893.0309,
+          "mean_recall": 0.7119399999999995,
+          "method": "Medoid",
+          "samples": 10000
+        },
+        {
+          "mean_graph_latency_us": 755.6690575999996,
+          "mean_graph_ndc": 1655.3978,
+          "mean_recall": 0.7460599999999992,
+          "method": "Fast_Prototype_Top3",
+          "samples": 10000
+        },
+        {
+          "mean_graph_latency_us": 575.7612524999997,
+          "mean_graph_ndc": 1633.6428,
+          "mean_recall": 0.7494599999999992,
+          "method": "MultiSeedTargetBasinEnsemble_Online_Top3",
+          "samples": 10000
+        }
+      ],
+      "search_L": 128,
+      "top_k": 10
+    }
+  ],
+  "schema_version": 1,
+  "search_Ls": [
+    64,
+    128
+  ],
+  "split": "validation",
+  "status": "complete",
+  "threads": 16,
+  "top_ks": [
+    10
+  ]
+}

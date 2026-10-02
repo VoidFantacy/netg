@@ -1,0 +1,1232 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-07T17:58:25.036348+00:00",
+  "reviewer": "p1_evaluator independent scientific gate review",
+  "status": "RECOMMEND_P3_NOPASS",
+  "recommendation": "P3_NOPASS_STRUCTURE_IMPROVEMENT_DID_NOT_TRANSFER_TO_SEARCH",
+  "writes_authoritative_gate": false,
+  "evidence": [
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+      "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analysis_v1/analysis.json",
+      "sha256": "63da6a71425b0dbd6e186db1c608a564b9847c58168b6b56059a9ed2d2f901ae"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analysis_v1/complete.json",
+      "sha256": "75b72c6213c2ee4910d9ffe419100ccc0c66a5b9f2f65e7326d465212a5ac611"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/structure_analysis_v1/analysis.json",
+      "sha256": "8b0cec717a14382c5917504e560bcffd732146c517ea9a699b0bb1812463088e"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/structure_analysis_v1/complete.json",
+      "sha256": "335dbfc560288ed303c5af6ddacb267beb46e7773cfabfc340fe700efe258caa"
+    },
+    {
+      "path": "/data/netg/ACSG/s-target.md",
+      "sha256": "b95ac636716d29831d493f494a75bea22a8114613f712d3da89768a6f465f19f"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P1_P3_reacceptance.json",
+      "sha256": "02b5e08c84625b37b12304d91ae03416d9c00085663e474f1cb8f27005ece7eb"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P2.json",
+      "sha256": "6240cea60d790d030e0fdaf560b95d9e951260d4ba3d6701863b06c1c4cc895e"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/bench_hierarchical_eval.cpp",
+      "sha256": "ec770d5921831ac3937ab117b87a1750164f51164b48f3461183192c6d8e2079"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/bench_hierarchical_eval_p3.cpp",
+      "sha256": "cf40032dc469c08840e409af23bd503e1ad6571184351a2694776247e21d1316"
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/RegionalSearch.h",
+      "sha256": "320e29c9407d5907ece7ef64113edeb8b2d5157fa8796aaf94e470eb6771e14e"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analyze_p3.py",
+      "sha256": "a840b060a61061df6e60ae6166cd9a090570ef6ec0002a3ec7c7deea14e4e03e"
+    }
+  ],
+  "review_scope": "Read-only saved summaries, metadata, small saved bootstrap-file hashes, and frozen source semantics; no ANN, refit, raw query/GT/base/graph read, fresh bootstrap, or parameter selection. Only new review files are written.",
+  "preregistered_condition": {
+    "family": "Fixedfour2x2contrasts perL: lambda1-lambda0 underfrequency andgreedy; greedy-frequency underlambda0and1. Alsowithinmodeloracleprotected-unified. Allreported, no bestcellselection",
+    "bootstrap_repetitions": 10000,
+    "seed": 2026090711,
+    "intervals": "Ordinarypairedquery95% exploratory; P5/P6 correctedsubstantialperformancegate remains unchanged",
+    "structure_gate": "Bothdatasets lambda1 final J evaluatedatlambda1 andfitGTfragmentation lowerthanlambda0; capacities/allnodecoverage/fullrecomputepass",
+    "search_gate": "Bothdatasets mainlambda1_greedy3 oracle_probability Recall improvesversuslambda0_greedy3 at bothfixedL64/128 withordinary95lower>0; fixedfrequencycontrols andportalcontrasts reported",
+    "cost_gate_scope": "No deployedperformanceclaim atP3; allwall/NDCcostreported; oracletradeoff onlyallowsnextP4hypothesis; P4 mustretainbenefitwithrealpredictioncost",
+    "failure": "Ifstructureorsearchtransferfails, P3NOPASS; do not startP4/P5/validation/heldout or tuneseeds/lambda/L. Preservefailure andfollowboundedplanwithnewmechanismevidence only"
+  },
+  "metadata_checks": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "analysis_metadata_bindings_checked": true,
+      "same_common_initialization_identity_across_search_and_structure": true,
+      "complete_fixed_family": true,
+      "same_Fast_results_routes_and_NDC_in_four_models": true,
+      "bootstrap_npz_hash_matches_saved_binding": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "analysis_metadata_bindings_checked": true,
+      "same_common_initialization_identity_across_search_and_structure": true,
+      "complete_fixed_family": true,
+      "same_Fast_results_routes_and_NDC_in_four_models": true,
+      "bootstrap_npz_hash_matches_saved_binding": true
+    }
+  ],
+  "structure_condition": {
+    "both_datasets_met": true,
+    "datasets": [
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "mean_distinct_fit_leaf_regions_lambda0": 4.3328500000000005,
+        "mean_distinct_fit_leaf_regions_lambda1": 2.60275,
+        "J_at_lambda1_lambda0": 0.7564568681124738,
+        "J_at_lambda1_lambda1": 0.5680790756474524,
+        "J_at_lambda1_delta": -0.1883777924650214,
+        "leaf_cut_fraction_delta": 0.0038555408683119304,
+        "structure_condition_met": true,
+        "capacity_allnode_coverage_and_full_recompute": "Accepted saved-structure audit; no fresh raw graph or GT scan in this review",
+        "common_initial_labels_sha256": "2fc6112d684f4a3d8c59e16e553f47a93103355f17ca8117bc72813e3136999a"
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "mean_distinct_fit_leaf_regions_lambda0": 3.00925,
+        "mean_distinct_fit_leaf_regions_lambda1": 1.9647999999999999,
+        "J_at_lambda1_lambda0": 0.5530408865231652,
+        "J_at_lambda1_lambda1": 0.43817811114819954,
+        "J_at_lambda1_delta": -0.11486277537496559,
+        "leaf_cut_fraction_delta": 0.0011872246250344172,
+        "structure_condition_met": true,
+        "capacity_allnode_coverage_and_full_recompute": "Accepted saved-structure audit; no fresh raw graph or GT scan in this review",
+        "common_initial_labels_sha256": "247600b91274d5eef5793ef73f1345c675514582a68c3ee01cfb93ed4e9f291a"
+      }
+    ],
+    "independent_arithmetic": "Recomputed final J delta from saved integer C/S/M/Q and matched exact integer numerator. Full graph/GT recomputation and capacities remain supported by the accepted upstream saved-structure audit."
+  },
+  "search_condition": {
+    "all_four_required": true,
+    "all_four_positive_lower_bounds": false,
+    "cells": [
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "L": 64,
+        "contrast": "structure_under_greedy3",
+        "candidate_model": "lambda1_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda0_greedy3",
+        "reference_method": "oracle_probability",
+        "recall_delta_pp": -0.8660000000000001,
+        "paired_query_bootstrap95_pp": [
+          -1.083,
+          -0.6469999999999999
+        ],
+        "mean_total_ndc_delta": -2.6359999999999673,
+        "qps_ratio_of_means": 1.0528824100995604,
+        "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA",
+        "decision": "NEGATIVE_ORDINARY_95_INTERVAL",
+        "search_lower_bound_positive": false
+      },
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "L": 128,
+        "contrast": "structure_under_greedy3",
+        "candidate_model": "lambda1_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda0_greedy3",
+        "reference_method": "oracle_probability",
+        "recall_delta_pp": -0.79,
+        "paired_query_bootstrap95_pp": [
+          -0.96,
+          -0.621
+        ],
+        "mean_total_ndc_delta": -4.593700000000126,
+        "qps_ratio_of_means": 1.0067694287777373,
+        "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA",
+        "decision": "NEGATIVE_ORDINARY_95_INTERVAL",
+        "search_lower_bound_positive": false
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "L": 64,
+        "contrast": "structure_under_greedy3",
+        "candidate_model": "lambda1_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda0_greedy3",
+        "reference_method": "oracle_probability",
+        "recall_delta_pp": -0.095,
+        "paired_query_bootstrap95_pp": [
+          -0.20700000000000002,
+          0.015999999999999997
+        ],
+        "mean_total_ndc_delta": 16.778999999999996,
+        "qps_ratio_of_means": 0.9941389953970804,
+        "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA",
+        "decision": "INCONCLUSIVE_NOT_EQUIVALENT",
+        "search_lower_bound_positive": false
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "L": 128,
+        "contrast": "structure_under_greedy3",
+        "candidate_model": "lambda1_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda0_greedy3",
+        "reference_method": "oracle_probability",
+        "recall_delta_pp": -0.017000000000000008,
+        "paired_query_bootstrap95_pp": [
+          -0.08,
+          0.04799999999999998
+        ],
+        "mean_total_ndc_delta": 17.208399999999983,
+        "qps_ratio_of_means": 1.00720720028133,
+        "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA",
+        "decision": "INCONCLUSIVE_NOT_EQUIVALENT",
+        "search_lower_bound_positive": false
+      }
+    ],
+    "interpretation": "WebVid has negative ordinary 95% intervals at both L; Yandex is inconclusive at both L. Neither equals a confirmed absence of all possible effects, but the registered improvement gate clearly fails."
+  },
+  "portal_contrasts": {
+    "count": 8,
+    "all_intervals_include_zero": true,
+    "equivalence_proven": false,
+    "cells": [
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "L": 64,
+        "contrast": "portals_under_lambda0",
+        "candidate_model": "lambda0_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda0_frequency3",
+        "reference_method": "oracle_probability",
+        "recall_delta_pp": 0.04399999999999993,
+        "paired_query_bootstrap95_pp": [
+          -0.12500000000000006,
+          0.21299999999999994
+        ],
+        "mean_total_ndc_delta": -2.533200000000079,
+        "qps_ratio_of_means": 0.9671550320768195,
+        "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+      },
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "L": 64,
+        "contrast": "portals_under_lambda1",
+        "candidate_model": "lambda1_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda1_frequency3",
+        "reference_method": "oracle_probability",
+        "recall_delta_pp": 0.14899999999999997,
+        "paired_query_bootstrap95_pp": [
+          -0.016999999999999967,
+          0.31599999999999995
+        ],
+        "mean_total_ndc_delta": -10.326700000000073,
+        "qps_ratio_of_means": 1.0179965332862155,
+        "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+      },
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "L": 128,
+        "contrast": "portals_under_lambda0",
+        "candidate_model": "lambda0_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda0_frequency3",
+        "reference_method": "oracle_probability",
+        "recall_delta_pp": -0.017999999999999978,
+        "paired_query_bootstrap95_pp": [
+          -0.12999999999999998,
+          0.09300000000000003
+        ],
+        "mean_total_ndc_delta": -4.674099999999953,
+        "qps_ratio_of_means": 1.0577615394225053,
+        "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+      },
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "L": 128,
+        "contrast": "portals_under_lambda1",
+        "candidate_model": "lambda1_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda1_frequency3",
+        "reference_method": "oracle_probability",
+        "recall_delta_pp": 0.055,
+        "paired_query_bootstrap95_pp": [
+          -0.06,
+          0.16802499999999967
+        ],
+        "mean_total_ndc_delta": -11.884900000000016,
+        "qps_ratio_of_means": 1.0185956949838892,
+        "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "L": 64,
+        "contrast": "portals_under_lambda0",
+        "candidate_model": "lambda0_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda0_frequency3",
+        "reference_method": "oracle_probability",
+        "recall_delta_pp": 0.03900000000000001,
+        "paired_query_bootstrap95_pp": [
+          -0.06999999999999999,
+          0.14400000000000002
+        ],
+        "mean_total_ndc_delta": -22.152800000000298,
+        "qps_ratio_of_means": 0.9903645764048301,
+        "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "L": 64,
+        "contrast": "portals_under_lambda1",
+        "candidate_model": "lambda1_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda1_frequency3",
+        "reference_method": "oracle_probability",
+        "recall_delta_pp": -0.013000000000000001,
+        "paired_query_bootstrap95_pp": [
+          -0.117,
+          0.09102499999999966
+        ],
+        "mean_total_ndc_delta": 3.1521999999999935,
+        "qps_ratio_of_means": 1.0027058722995752,
+        "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "L": 128,
+        "contrast": "portals_under_lambda0",
+        "candidate_model": "lambda0_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda0_frequency3",
+        "reference_method": "oracle_probability",
+        "recall_delta_pp": 0.024000000000000004,
+        "paired_query_bootstrap95_pp": [
+          -0.04299999999999999,
+          0.092
+        ],
+        "mean_total_ndc_delta": -23.019900000000234,
+        "qps_ratio_of_means": 0.9704658072380375,
+        "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "L": 128,
+        "contrast": "portals_under_lambda1",
+        "candidate_model": "lambda1_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda1_frequency3",
+        "reference_method": "oracle_probability",
+        "recall_delta_pp": -0.03099999999999999,
+        "paired_query_bootstrap95_pp": [
+          -0.09000000000000002,
+          0.029999999999999992
+        ],
+        "mean_total_ndc_delta": 3.367000000000189,
+        "qps_ratio_of_means": 1.005985769070217,
+        "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+      }
+    ]
+  },
+  "protection_contrasts": {
+    "count": 16,
+    "all_lower_bounds_positive": true,
+    "all_total_NDC_deltas_positive": true,
+    "all_mean_QPS_ratios_below_one": true,
+    "cells": [
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "L": 64,
+        "contrast": "protection_lambda0_frequency3",
+        "candidate_model": "lambda0_frequency3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda0_frequency3",
+        "reference_method": "oracle_unified",
+        "recall_delta_pp": 6.561,
+        "paired_query_bootstrap95_pp": [
+          6.182,
+          6.939000000000001
+        ],
+        "mean_total_ndc_delta": 296.5008,
+        "qps_ratio_of_means": 0.7788397565674724,
+        "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+      },
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "L": 64,
+        "contrast": "protection_lambda1_frequency3",
+        "candidate_model": "lambda1_frequency3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda1_frequency3",
+        "reference_method": "oracle_unified",
+        "recall_delta_pp": 5.922,
+        "paired_query_bootstrap95_pp": [
+          5.5520000000000005,
+          6.29305
+        ],
+        "mean_total_ndc_delta": 302.34079999999994,
+        "qps_ratio_of_means": 0.780826504728953,
+        "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+      },
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "L": 64,
+        "contrast": "protection_lambda0_greedy3",
+        "candidate_model": "lambda0_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda0_greedy3",
+        "reference_method": "oracle_unified",
+        "recall_delta_pp": 6.691000000000001,
+        "paired_query_bootstrap95_pp": [
+          6.314974999999999,
+          7.07
+        ],
+        "mean_total_ndc_delta": 295.5248999999999,
+        "qps_ratio_of_means": 0.7272525461839545,
+        "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+      },
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "L": 64,
+        "contrast": "protection_lambda1_greedy3",
+        "candidate_model": "lambda1_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda1_greedy3",
+        "reference_method": "oracle_unified",
+        "recall_delta_pp": 6.064000000000001,
+        "paired_query_bootstrap95_pp": [
+          5.687974999999999,
+          6.436
+        ],
+        "mean_total_ndc_delta": 296.81039999999985,
+        "qps_ratio_of_means": 0.8041573921425897,
+        "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+      },
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "L": 128,
+        "contrast": "protection_lambda0_frequency3",
+        "candidate_model": "lambda0_frequency3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda0_frequency3",
+        "reference_method": "oracle_unified",
+        "recall_delta_pp": 6.214,
+        "paired_query_bootstrap95_pp": [
+          5.887974999999999,
+          6.542000000000001
+        ],
+        "mean_total_ndc_delta": 289.4245000000001,
+        "qps_ratio_of_means": 0.8082539646947887,
+        "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+      },
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "L": 128,
+        "contrast": "protection_lambda1_frequency3",
+        "candidate_model": "lambda1_frequency3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda1_frequency3",
+        "reference_method": "oracle_unified",
+        "recall_delta_pp": 5.596,
+        "paired_query_bootstrap95_pp": [
+          5.273974999999999,
+          5.925
+        ],
+        "mean_total_ndc_delta": 292.7527,
+        "qps_ratio_of_means": 0.8334780042352549,
+        "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+      },
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "L": 128,
+        "contrast": "protection_lambda0_greedy3",
+        "candidate_model": "lambda0_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda0_greedy3",
+        "reference_method": "oracle_unified",
+        "recall_delta_pp": 6.237,
+        "paired_query_bootstrap95_pp": [
+          5.92,
+          6.559025
+        ],
+        "mean_total_ndc_delta": 287.32180000000017,
+        "qps_ratio_of_means": 0.8547871885371656,
+        "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+      },
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "L": 128,
+        "contrast": "protection_lambda1_greedy3",
+        "candidate_model": "lambda1_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda1_greedy3",
+        "reference_method": "oracle_unified",
+        "recall_delta_pp": 5.6579999999999995,
+        "paired_query_bootstrap95_pp": [
+          5.343999999999999,
+          5.9799999999999995
+        ],
+        "mean_total_ndc_delta": 284.27250000000004,
+        "qps_ratio_of_means": 0.8452163189162297,
+        "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "L": 64,
+        "contrast": "protection_lambda0_frequency3",
+        "candidate_model": "lambda0_frequency3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda0_frequency3",
+        "reference_method": "oracle_unified",
+        "recall_delta_pp": 3.8120000000000003,
+        "paired_query_bootstrap95_pp": [
+          3.468000000000001,
+          4.161
+        ],
+        "mean_total_ndc_delta": 639.1808000000003,
+        "qps_ratio_of_means": 0.7295331906004294,
+        "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "L": 64,
+        "contrast": "protection_lambda1_frequency3",
+        "candidate_model": "lambda1_frequency3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda1_frequency3",
+        "reference_method": "oracle_unified",
+        "recall_delta_pp": 3.826,
+        "paired_query_bootstrap95_pp": [
+          3.4829749999999993,
+          4.173
+        ],
+        "mean_total_ndc_delta": 631.6757,
+        "qps_ratio_of_means": 0.7083675196822607,
+        "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "L": 64,
+        "contrast": "protection_lambda0_greedy3",
+        "candidate_model": "lambda0_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda0_greedy3",
+        "reference_method": "oracle_unified",
+        "recall_delta_pp": 3.853,
+        "paired_query_bootstrap95_pp": [
+          3.512,
+          4.194
+        ],
+        "mean_total_ndc_delta": 618.884,
+        "qps_ratio_of_means": 0.7515005432281378,
+        "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "L": 64,
+        "contrast": "protection_lambda1_greedy3",
+        "candidate_model": "lambda1_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda1_greedy3",
+        "reference_method": "oracle_unified",
+        "recall_delta_pp": 3.728,
+        "paired_query_bootstrap95_pp": [
+          3.3889749999999994,
+          4.073025
+        ],
+        "mean_total_ndc_delta": 635.8057999999999,
+        "qps_ratio_of_means": 0.7405380107364972,
+        "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "L": 128,
+        "contrast": "protection_lambda0_frequency3",
+        "candidate_model": "lambda0_frequency3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda0_frequency3",
+        "reference_method": "oracle_unified",
+        "recall_delta_pp": 3.5420000000000007,
+        "paired_query_bootstrap95_pp": [
+          3.2649999999999997,
+          3.8290000000000006
+        ],
+        "mean_total_ndc_delta": 697.3280000000004,
+        "qps_ratio_of_means": 0.812135267481659,
+        "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "L": 128,
+        "contrast": "protection_lambda1_frequency3",
+        "candidate_model": "lambda1_frequency3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda1_frequency3",
+        "reference_method": "oracle_unified",
+        "recall_delta_pp": 3.6399999999999997,
+        "paired_query_bootstrap95_pp": [
+          3.3589999999999995,
+          3.9360249999999994
+        ],
+        "mean_total_ndc_delta": 689.3275999999996,
+        "qps_ratio_of_means": 0.7780262186086244,
+        "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "L": 128,
+        "contrast": "protection_lambda0_greedy3",
+        "candidate_model": "lambda0_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda0_greedy3",
+        "reference_method": "oracle_unified",
+        "recall_delta_pp": 3.53,
+        "paired_query_bootstrap95_pp": [
+          3.244975,
+          3.819
+        ],
+        "mean_total_ndc_delta": 676.8436000000002,
+        "qps_ratio_of_means": 0.8048605920340557,
+        "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "L": 128,
+        "contrast": "protection_lambda1_greedy3",
+        "candidate_model": "lambda1_greedy3",
+        "candidate_method": "oracle_probability",
+        "reference_model": "lambda1_greedy3",
+        "reference_method": "oracle_unified",
+        "recall_delta_pp": 3.472,
+        "paired_query_bootstrap95_pp": [
+          3.2,
+          3.7570000000000006
+        ],
+        "mean_total_ndc_delta": 694.4886999999999,
+        "qps_ratio_of_means": 0.8029151513047664,
+        "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+      }
+    ],
+    "interpretation": "Same-route oracle candidate protection retains an exploratory Recall benefit while spending more distance computations and wall time; this does not show GT-aware structure improvement or deployed/matched-cost benefit."
+  },
+  "all_fixed_comparisons": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 64,
+      "contrast": "structure_under_frequency3",
+      "candidate_model": "lambda1_frequency3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_frequency3",
+      "reference_method": "oracle_probability",
+      "recall_delta_pp": -0.971,
+      "paired_query_bootstrap95_pp": [
+        -1.1880000000000002,
+        -0.7559750000000004
+      ],
+      "mean_total_ndc_delta": 5.157500000000027,
+      "qps_ratio_of_means": 1.000298613813313,
+      "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 64,
+      "contrast": "structure_under_greedy3",
+      "candidate_model": "lambda1_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_greedy3",
+      "reference_method": "oracle_probability",
+      "recall_delta_pp": -0.8660000000000001,
+      "paired_query_bootstrap95_pp": [
+        -1.083,
+        -0.6469999999999999
+      ],
+      "mean_total_ndc_delta": -2.6359999999999673,
+      "qps_ratio_of_means": 1.0528824100995604,
+      "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 64,
+      "contrast": "portals_under_lambda0",
+      "candidate_model": "lambda0_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_frequency3",
+      "reference_method": "oracle_probability",
+      "recall_delta_pp": 0.04399999999999993,
+      "paired_query_bootstrap95_pp": [
+        -0.12500000000000006,
+        0.21299999999999994
+      ],
+      "mean_total_ndc_delta": -2.533200000000079,
+      "qps_ratio_of_means": 0.9671550320768195,
+      "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 64,
+      "contrast": "portals_under_lambda1",
+      "candidate_model": "lambda1_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda1_frequency3",
+      "reference_method": "oracle_probability",
+      "recall_delta_pp": 0.14899999999999997,
+      "paired_query_bootstrap95_pp": [
+        -0.016999999999999967,
+        0.31599999999999995
+      ],
+      "mean_total_ndc_delta": -10.326700000000073,
+      "qps_ratio_of_means": 1.0179965332862155,
+      "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 64,
+      "contrast": "protection_lambda0_frequency3",
+      "candidate_model": "lambda0_frequency3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_frequency3",
+      "reference_method": "oracle_unified",
+      "recall_delta_pp": 6.561,
+      "paired_query_bootstrap95_pp": [
+        6.182,
+        6.939000000000001
+      ],
+      "mean_total_ndc_delta": 296.5008,
+      "qps_ratio_of_means": 0.7788397565674724,
+      "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 64,
+      "contrast": "protection_lambda1_frequency3",
+      "candidate_model": "lambda1_frequency3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda1_frequency3",
+      "reference_method": "oracle_unified",
+      "recall_delta_pp": 5.922,
+      "paired_query_bootstrap95_pp": [
+        5.5520000000000005,
+        6.29305
+      ],
+      "mean_total_ndc_delta": 302.34079999999994,
+      "qps_ratio_of_means": 0.780826504728953,
+      "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 64,
+      "contrast": "protection_lambda0_greedy3",
+      "candidate_model": "lambda0_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_greedy3",
+      "reference_method": "oracle_unified",
+      "recall_delta_pp": 6.691000000000001,
+      "paired_query_bootstrap95_pp": [
+        6.314974999999999,
+        7.07
+      ],
+      "mean_total_ndc_delta": 295.5248999999999,
+      "qps_ratio_of_means": 0.7272525461839545,
+      "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 64,
+      "contrast": "protection_lambda1_greedy3",
+      "candidate_model": "lambda1_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda1_greedy3",
+      "reference_method": "oracle_unified",
+      "recall_delta_pp": 6.064000000000001,
+      "paired_query_bootstrap95_pp": [
+        5.687974999999999,
+        6.436
+      ],
+      "mean_total_ndc_delta": 296.81039999999985,
+      "qps_ratio_of_means": 0.8041573921425897,
+      "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 128,
+      "contrast": "structure_under_frequency3",
+      "candidate_model": "lambda1_frequency3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_frequency3",
+      "reference_method": "oracle_probability",
+      "recall_delta_pp": -0.8630000000000001,
+      "paired_query_bootstrap95_pp": [
+        -1.033,
+        -0.693
+      ],
+      "mean_total_ndc_delta": 2.6170999999999367,
+      "qps_ratio_of_means": 1.0454805435284107,
+      "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 128,
+      "contrast": "structure_under_greedy3",
+      "candidate_model": "lambda1_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_greedy3",
+      "reference_method": "oracle_probability",
+      "recall_delta_pp": -0.79,
+      "paired_query_bootstrap95_pp": [
+        -0.96,
+        -0.621
+      ],
+      "mean_total_ndc_delta": -4.593700000000126,
+      "qps_ratio_of_means": 1.0067694287777373,
+      "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 128,
+      "contrast": "portals_under_lambda0",
+      "candidate_model": "lambda0_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_frequency3",
+      "reference_method": "oracle_probability",
+      "recall_delta_pp": -0.017999999999999978,
+      "paired_query_bootstrap95_pp": [
+        -0.12999999999999998,
+        0.09300000000000003
+      ],
+      "mean_total_ndc_delta": -4.674099999999953,
+      "qps_ratio_of_means": 1.0577615394225053,
+      "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 128,
+      "contrast": "portals_under_lambda1",
+      "candidate_model": "lambda1_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda1_frequency3",
+      "reference_method": "oracle_probability",
+      "recall_delta_pp": 0.055,
+      "paired_query_bootstrap95_pp": [
+        -0.06,
+        0.16802499999999967
+      ],
+      "mean_total_ndc_delta": -11.884900000000016,
+      "qps_ratio_of_means": 1.0185956949838892,
+      "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 128,
+      "contrast": "protection_lambda0_frequency3",
+      "candidate_model": "lambda0_frequency3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_frequency3",
+      "reference_method": "oracle_unified",
+      "recall_delta_pp": 6.214,
+      "paired_query_bootstrap95_pp": [
+        5.887974999999999,
+        6.542000000000001
+      ],
+      "mean_total_ndc_delta": 289.4245000000001,
+      "qps_ratio_of_means": 0.8082539646947887,
+      "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 128,
+      "contrast": "protection_lambda1_frequency3",
+      "candidate_model": "lambda1_frequency3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda1_frequency3",
+      "reference_method": "oracle_unified",
+      "recall_delta_pp": 5.596,
+      "paired_query_bootstrap95_pp": [
+        5.273974999999999,
+        5.925
+      ],
+      "mean_total_ndc_delta": 292.7527,
+      "qps_ratio_of_means": 0.8334780042352549,
+      "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 128,
+      "contrast": "protection_lambda0_greedy3",
+      "candidate_model": "lambda0_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_greedy3",
+      "reference_method": "oracle_unified",
+      "recall_delta_pp": 6.237,
+      "paired_query_bootstrap95_pp": [
+        5.92,
+        6.559025
+      ],
+      "mean_total_ndc_delta": 287.32180000000017,
+      "qps_ratio_of_means": 0.8547871885371656,
+      "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "L": 128,
+      "contrast": "protection_lambda1_greedy3",
+      "candidate_model": "lambda1_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda1_greedy3",
+      "reference_method": "oracle_unified",
+      "recall_delta_pp": 5.6579999999999995,
+      "paired_query_bootstrap95_pp": [
+        5.343999999999999,
+        5.9799999999999995
+      ],
+      "mean_total_ndc_delta": 284.27250000000004,
+      "qps_ratio_of_means": 0.8452163189162297,
+      "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "structure_under_frequency3",
+      "candidate_model": "lambda1_frequency3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_frequency3",
+      "reference_method": "oracle_probability",
+      "recall_delta_pp": -0.043,
+      "paired_query_bootstrap95_pp": [
+        -0.13699999999999996,
+        0.052
+      ],
+      "mean_total_ndc_delta": -8.526000000000295,
+      "qps_ratio_of_means": 0.981903140555059,
+      "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "structure_under_greedy3",
+      "candidate_model": "lambda1_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_greedy3",
+      "reference_method": "oracle_probability",
+      "recall_delta_pp": -0.095,
+      "paired_query_bootstrap95_pp": [
+        -0.20700000000000002,
+        0.015999999999999997
+      ],
+      "mean_total_ndc_delta": 16.778999999999996,
+      "qps_ratio_of_means": 0.9941389953970804,
+      "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "portals_under_lambda0",
+      "candidate_model": "lambda0_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_frequency3",
+      "reference_method": "oracle_probability",
+      "recall_delta_pp": 0.03900000000000001,
+      "paired_query_bootstrap95_pp": [
+        -0.06999999999999999,
+        0.14400000000000002
+      ],
+      "mean_total_ndc_delta": -22.152800000000298,
+      "qps_ratio_of_means": 0.9903645764048301,
+      "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "portals_under_lambda1",
+      "candidate_model": "lambda1_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda1_frequency3",
+      "reference_method": "oracle_probability",
+      "recall_delta_pp": -0.013000000000000001,
+      "paired_query_bootstrap95_pp": [
+        -0.117,
+        0.09102499999999966
+      ],
+      "mean_total_ndc_delta": 3.1521999999999935,
+      "qps_ratio_of_means": 1.0027058722995752,
+      "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "protection_lambda0_frequency3",
+      "candidate_model": "lambda0_frequency3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_frequency3",
+      "reference_method": "oracle_unified",
+      "recall_delta_pp": 3.8120000000000003,
+      "paired_query_bootstrap95_pp": [
+        3.468000000000001,
+        4.161
+      ],
+      "mean_total_ndc_delta": 639.1808000000003,
+      "qps_ratio_of_means": 0.7295331906004294,
+      "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "protection_lambda1_frequency3",
+      "candidate_model": "lambda1_frequency3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda1_frequency3",
+      "reference_method": "oracle_unified",
+      "recall_delta_pp": 3.826,
+      "paired_query_bootstrap95_pp": [
+        3.4829749999999993,
+        4.173
+      ],
+      "mean_total_ndc_delta": 631.6757,
+      "qps_ratio_of_means": 0.7083675196822607,
+      "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "protection_lambda0_greedy3",
+      "candidate_model": "lambda0_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_greedy3",
+      "reference_method": "oracle_unified",
+      "recall_delta_pp": 3.853,
+      "paired_query_bootstrap95_pp": [
+        3.512,
+        4.194
+      ],
+      "mean_total_ndc_delta": 618.884,
+      "qps_ratio_of_means": 0.7515005432281378,
+      "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "protection_lambda1_greedy3",
+      "candidate_model": "lambda1_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda1_greedy3",
+      "reference_method": "oracle_unified",
+      "recall_delta_pp": 3.728,
+      "paired_query_bootstrap95_pp": [
+        3.3889749999999994,
+        4.073025
+      ],
+      "mean_total_ndc_delta": 635.8057999999999,
+      "qps_ratio_of_means": 0.7405380107364972,
+      "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "structure_under_frequency3",
+      "candidate_model": "lambda1_frequency3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_frequency3",
+      "reference_method": "oracle_probability",
+      "recall_delta_pp": 0.038,
+      "paired_query_bootstrap95_pp": [
+        -0.021000000000000005,
+        0.09699999999999999
+      ],
+      "mean_total_ndc_delta": -9.17850000000044,
+      "qps_ratio_of_means": 0.9716441114076623,
+      "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "structure_under_greedy3",
+      "candidate_model": "lambda1_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_greedy3",
+      "reference_method": "oracle_probability",
+      "recall_delta_pp": -0.017000000000000008,
+      "paired_query_bootstrap95_pp": [
+        -0.08,
+        0.04799999999999998
+      ],
+      "mean_total_ndc_delta": 17.208399999999983,
+      "qps_ratio_of_means": 1.00720720028133,
+      "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "portals_under_lambda0",
+      "candidate_model": "lambda0_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_frequency3",
+      "reference_method": "oracle_probability",
+      "recall_delta_pp": 0.024000000000000004,
+      "paired_query_bootstrap95_pp": [
+        -0.04299999999999999,
+        0.092
+      ],
+      "mean_total_ndc_delta": -23.019900000000234,
+      "qps_ratio_of_means": 0.9704658072380375,
+      "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "portals_under_lambda1",
+      "candidate_model": "lambda1_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda1_frequency3",
+      "reference_method": "oracle_probability",
+      "recall_delta_pp": -0.03099999999999999,
+      "paired_query_bootstrap95_pp": [
+        -0.09000000000000002,
+        0.029999999999999992
+      ],
+      "mean_total_ndc_delta": 3.367000000000189,
+      "qps_ratio_of_means": 1.005985769070217,
+      "qps_scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "protection_lambda0_frequency3",
+      "candidate_model": "lambda0_frequency3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_frequency3",
+      "reference_method": "oracle_unified",
+      "recall_delta_pp": 3.5420000000000007,
+      "paired_query_bootstrap95_pp": [
+        3.2649999999999997,
+        3.8290000000000006
+      ],
+      "mean_total_ndc_delta": 697.3280000000004,
+      "qps_ratio_of_means": 0.812135267481659,
+      "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "protection_lambda1_frequency3",
+      "candidate_model": "lambda1_frequency3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda1_frequency3",
+      "reference_method": "oracle_unified",
+      "recall_delta_pp": 3.6399999999999997,
+      "paired_query_bootstrap95_pp": [
+        3.3589999999999995,
+        3.9360249999999994
+      ],
+      "mean_total_ndc_delta": 689.3275999999996,
+      "qps_ratio_of_means": 0.7780262186086244,
+      "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "protection_lambda0_greedy3",
+      "candidate_model": "lambda0_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda0_greedy3",
+      "reference_method": "oracle_unified",
+      "recall_delta_pp": 3.53,
+      "paired_query_bootstrap95_pp": [
+        3.244975,
+        3.819
+      ],
+      "mean_total_ndc_delta": 676.8436000000002,
+      "qps_ratio_of_means": 0.8048605920340557,
+      "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "protection_lambda1_greedy3",
+      "candidate_model": "lambda1_greedy3",
+      "candidate_method": "oracle_probability",
+      "reference_model": "lambda1_greedy3",
+      "reference_method": "oracle_unified",
+      "recall_delta_pp": 3.472,
+      "paired_query_bootstrap95_pp": [
+        3.2,
+        3.7570000000000006
+      ],
+      "mean_total_ndc_delta": 694.4886999999999,
+      "qps_ratio_of_means": 0.8029151513047664,
+      "qps_scope": "Within-model forward/reverse paired timing rounds; oracle diagnostic only"
+    }
+  ],
+  "stage_scope": {
+    "P4_P5_validation_heldout_may_start": false,
+    "new_lambda_seed_L_or_portal_sweep_allowed": false,
+    "another_representation_or_partition_revision_authorized_by_current_evidence": false,
+    "reason": "s-target.md failure table allows at most one representation/partition revision for effective-oracle/ineffective-prediction evidence. P3 protocol explicitly records that revision as number 1. The general maximum of two evidence-backed mechanism revisions is a ceiling, not permission for a second instance of that narrower revision or bypass of P3 search gate.",
+    "auxiliary_graph_authorized_by_current_result_alone": false,
+    "auxiliary_graph_condition": "Requires evidence that correct regions and useful portals still encounter a connection bottleneck; a negative fit-objective transfer result and a leaf-mass oracle do not alone establish portal quality or that bottleneck. Any supported auxiliary-graph branch needs separate preregistration and P1-P7 acceptance."
+  },
+  "bounded_followup_options": [
+    {
+      "priority": 1,
+      "scope": "Existing-output descriptive failure attribution",
+      "action": "Before computing outcomes, fix both datasets, all four models, both L values and a short list of summaries. Relate per-query Recall changes to recorded oracle weight concentration, actual-entry duplication, expanded/rejected/evicted counts and graph NDC. Use oracle counters only; no best-bin/model selection and no new significance claims.",
+      "new_search_or_model_change": false,
+      "caution": "Saved selected weights are normalized over top4; their sum cannot recover absolute top4 GT coverage."
+    },
+    {
+      "priority": 2,
+      "scope": "Offline pilot target coverage using frozen labels and already authorized development GT only",
+      "action": "If absolute coverage/generalization is needed, prerecord metrics and compute pilot distinct GT regions, top4 GT mass and concentration for the fixed lambda0/lambda1 labels, comparing with saved fit summaries. Use this only to distinguish a fit-to-pilot generalization gap from search/portal misalignment.",
+      "new_search_or_model_change": false,
+      "caution": "This is additional development evidence and may read existing pilot GT; it does not rescue P3, access validation/held-out, or prove a causal connection bottleneck."
+    },
+    {
+      "priority": 3,
+      "scope": "Bounded mechanism evidence only if saved summaries cannot answer the question",
+      "action": "Root may preregister a small fixed paired replay using existing lambda0/lambda1 greedy3 models, both datasets and L64/128, with query IDs fixed before inspecting wins/losses. Trace discovery, admission, rejection, eviction, expansion and GT association after search; compare identical query IDs.",
+      "new_search_or_model_change": "Would require a separately registered diagnostic trace task before the deadline; no fitting, seed/parameter change, wall claim or full pilot rerun.",
+      "caution": "Current acceptance traces on the first model can validate the kernel but cannot identify cross-model failure. Add a sparse auxiliary graph only after the required connection evidence exists, never merely because P3 failed."
+    }
+  ],
+  "measurement_semantics_limitations": [
+    {
+      "field": "Fast mean_expanded/mean_rejected/mean_evicted_unexpanded",
+      "observed_raw_value": 0,
+      "scientific_value": null,
+      "meaning": "UNMEASURED_DEFAULT_SENTINEL",
+      "source_evidence": [
+        "ACSG/RegionalSearch.h:39 initializes Stats to zero",
+        "benches/bench_hierarchical_eval_p3.cpp:339-354 Fast invokes legacy search_new, does not assign rg::Stats event counters, then assigns only independent CountDC ndc",
+        "benches/bench_hierarchical_eval.cpp:255-270 has the same legacy Fast branch",
+        "Both evaluators serialize the three counters unconditionally in count rows"
+      ],
+      "effect": "Render null or an em dash in scientific reports and exclude comparisons using these Fast event counters. Fast Recall, results/routes, measured NDC/MAC and wall remain valid. All P3 gate comparisons use instrumented oracle rg::search, so gate conclusion is unchanged.",
+      "raw_artifacts_and_frozen_sources_modified": false
+    },
+    {
+      "field": "analysis.bootstrap.status",
+      "observed_raw_value": "INCOMPLETE",
+      "meaning": "Copied initial invocation metadata retained inside an otherwise completed report",
+      "completion_evidence": "Top-level analysis status COMPLETE, both dataset summaries, no failure marker, and complete.json with current exact analysis SHA all checked. It is not an interrupted bootstrap run.",
+      "effect": "Use completion manifest and top-level status as completion authority; do not mutate frozen report solely for display."
+    }
+  ],
+  "scientific_limits": [
+    "Fit objective and offline portal proxy improvements are training diagnostics and do not establish pilot search transfer.",
+    "Ordinary paired query 95% intervals are exploratory and unadjusted; five timing rounds are not independent Recall samples.",
+    "Cross-model fixed-order QPS ratios remain descriptive; no paired cross-model timing CI or matched-cost improvement is established.",
+    "Oracle means true GT leaf mass supplied outside the online timer; it is neither a deployed predictor nor a universal upper bound over possible entry choices.",
+    "Current evidence rejects this preregistered structure/portal revision gate, not the entire long-term research goal.",
+    "No raw graph/GT recomputation, new bootstrap, or ANN was performed in this review."
+  ]
+}

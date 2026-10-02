@@ -1,0 +1,72 @@
+{
+  "version": "E103_OPTIMIZED_FULL_CURVES",
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1",
+    "deep10m_l2_v1",
+    "sift10m_bigann_l2_v1",
+    "gist1m_l2_v1"
+  ],
+  "K": [
+    1,
+    100
+  ],
+  "L": {
+    "1": [
+      32,
+      48,
+      64,
+      96,
+      128,
+      160,
+      200,
+      256,
+      320,
+      400,
+      512,
+      640,
+      800,
+      1000,
+      1250,
+      1500
+    ],
+    "100": [
+      100,
+      112,
+      128,
+      160,
+      200,
+      256,
+      320,
+      400,
+      512,
+      640,
+      800,
+      900,
+      1000,
+      1120,
+      1250,
+      1500
+    ]
+  },
+  "methods": [
+    "NSG",
+    "GT10-hard",
+    "GT10-soft-t1",
+    "GATE",
+    "HNSW"
+  ],
+  "query_threads": 1,
+  "repeats": 3,
+  "max_real_search_calls": 32800000,
+  "max_rss_gib": 64,
+  "min_free_gib": 10,
+  "max_total_seconds": 86400,
+  "excluded_datasets": [
+    "laion10m_acsg_v1"
+  ],
+  "created_at": "2026-09-16T16:23:48.796306+08:00",
+  "source_matrix": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/config.locked.json",
+  "shared_kernel": "/data/netg/ACSG/entry_method_exploration/20260916_shared_span_batch4_v1/src/kernels.hpp",
+  "scope": "Reuse original five-dataset 16-budget matrix; four NSG methods on the same optimized kernel plus same-run full HNSW; no training, graph build, GT generation or default change."
+}

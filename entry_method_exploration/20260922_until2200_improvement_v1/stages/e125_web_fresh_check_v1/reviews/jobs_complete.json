@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "seconds": 102.66333861099702,
+  "jobs": {
+    "prepare": {
+      "exit_code": 0,
+      "seconds": 1.001699340005871,
+      "max_threads": 1,
+      "maxrss_bytes": 90857472,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_web_fresh_check_v1/src/prepare_inputs.py"
+      ]
+    },
+    "exact_gt": {
+      "exit_code": 0,
+      "seconds": 79.11335032300121,
+      "max_threads": 15,
+      "maxrss_bytes": 11856994304,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_web_fresh_check_v1/src/exact_gt.py"
+      ]
+    },
+    "compile": {
+      "exit_code": 0,
+      "seconds": 7.760564238997176,
+      "max_threads": 1,
+      "maxrss_bytes": 3084288,
+      "argv": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "-fopenmp",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+        "-I/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_web_fresh_check_v1/src/common",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_web_fresh_check_v1/src/evaluate.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "-lopenblas",
+        "-lz",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_web_fresh_check_v1/bin/evaluate"
+      ]
+    },
+    "evaluate_resume": {
+      "exit_code": 0,
+      "seconds": 102.65632409600221,
+      "max_threads": 1,
+      "maxrss_bytes": 5805699072,
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_web_fresh_check_v1/bin/evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_web_fresh_check_v1/evaluate.json",
+        "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_web_fresh_check_v1/results/evaluation"
+      ]
+    }
+  },
+  "new_NSG_calls": 40992,
+  "new_ANN_calls": 40960,
+  "new_exact_GT_queries": 4096,
+  "independent_float64_GT_queries": 8,
+  "models_unchanged": true,
+  "large_stat_unchanged": {
+    "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json": {
+      "bytes": 5791560103,
+      "mtime_ns": 1787714557628644919
+    },
+    "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs": {
+      "bytes": 5140260000,
+      "mtime_ns": 1787713211996956145
+    }
+  },
+  "default_changed": false
+}

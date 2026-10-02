@@ -1,0 +1,11 @@
+# Conditional next objectives after E47
+
+E47 full-feedback training is still running. Finish all eight runs and independent cache/reward/Adam replay before deciding the next result-driven experiment. Do not interrupt or repeat the active process.
+
+1. Preserve the original all-dataset/all-arm monitor gate. If it passes, a separately frozen evaluation of current/default/RL/ES using existing isolated cal/audit can test generalization and actual end-to-end cost. E37's static evaluator is compatible, but E47 checkpoint train arrays are full4096 (monitor starts4096), not E37's old train512 concatenation. No new validation/held-out files are needed. A full five-method/five-L/five-repeat audit matrix would cost423680 NSG including fit parity/cal/audit; decide only after training evidence and remaining time.
+
+2. A concrete causal hypothesis for the user's shared-query-conflict question: apparent remote gains/harms may arise from HNSW adjacency rebuilt after a local profile change, rather than solely conflicting geometric preferences for one shared profile. Use E44's same20 contexts/eight actions; C=(Wc,Gc), A=(Wa,Ga) already measured. Missing controls S=(Wa,Gc), T=(Wc,Ga). An isolated wrapper can install validated saved topology after ordinary build, then call the original route/NSG. E46 exact feedback reuse makes these full4096 controls cheap in NSG calls while still paying all routing. This is a new causal intervention, not a sampler grid or extra epochs. Freeze before queries, keep all contexts, assert identical H/ID/levels/entry/maxlevel/capacities and unchanged vector bytes. Compare full per-query four-cell interaction and G/L across near/complement; do not assign unobserved labels or call a graph-only result representation impossibility.
+
+3. Even if the original aggregate training gate fails, preserve any RL/ES local positive separately. Do not retroactively alter gate wording. Stop budget expansion for E47 and choose a distinct missing mechanism measurement using the actual results. The user's stronger instruction is to make bold hypotheses and prove carefully, not to manufacture permission requests or abandon a clear next question.
+
+Deadline: no training after19:35, no new queries after19:40, summarize/audit by20:00. All actual costs, failed reservations and reused seed feedback stay visible.

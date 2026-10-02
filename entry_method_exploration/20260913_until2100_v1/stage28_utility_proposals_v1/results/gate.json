@@ -1,0 +1,53 @@
+{
+  "status": "COMPLETE_UTILITY_PROPOSALS",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "passed": false,
+      "rules": {
+        "baseline10_net": false,
+        "baseline10_halves": false,
+        "baseline10_failures": false,
+        "compact10_net": true,
+        "compact10_halves": true,
+        "compact10_failures": true,
+        "geometric10_net": false,
+        "geometric10_halves": false,
+        "geometric10_failures": false,
+        "previous10_net": false,
+        "previous10_halves": false,
+        "previous10_failures": true,
+        "neighbor10_net": true,
+        "neighbor10_halves": true,
+        "neighbor10_failures": true,
+        "nonzero_update": true,
+        "merged_training": true
+      }
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "passed": false,
+      "rules": {
+        "baseline10_net": true,
+        "baseline10_halves": true,
+        "baseline10_failures": true,
+        "compact10_net": false,
+        "compact10_halves": true,
+        "compact10_failures": true,
+        "geometric10_net": true,
+        "geometric10_halves": true,
+        "geometric10_failures": true,
+        "previous10_net": true,
+        "previous10_halves": true,
+        "previous10_failures": true,
+        "neighbor10_net": true,
+        "neighbor10_halves": true,
+        "neighbor10_failures": true,
+        "nonzero_update": false,
+        "merged_training": false
+      }
+    }
+  },
+  "wall_measurement_allowed": false,
+  "selection_feedback": "historically exposed auxiliary acceptance counts as training information",
+  "old_gates_unchanged": true,
+  "not_performance_GO": true
+}

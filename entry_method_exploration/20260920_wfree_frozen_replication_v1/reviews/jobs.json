@@ -1,0 +1,142 @@
+[
+  {
+    "kind": "parity",
+    "dataset": "webvid2_5m_light_v1",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/reviews/config_parity_webvid2_5m_light_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/reviews/parity_webvid2_5m_light_v1"
+    ],
+    "config_sha256": "6ff2b51a7d9fd2ded5bb605c680829e8500489aec737e075e4d579a15bd0d68c",
+    "started_unix": 1789872200.0510716,
+    "reserved_calls": 192,
+    "pid": 6880,
+    "exit_code": 0,
+    "finished_unix": 1789872204.820653,
+    "seconds": 4.76958155632019,
+    "complete": {
+      "boot_id": "7597a436-8d6c-4a0b-98ff-59bfab6da206",
+      "cpu": 15,
+      "formal": false,
+      "graph_builds": 0,
+      "load_seconds": 4.552406179,
+      "maxrss_kib": 5663560,
+      "points": 4,
+      "router_calls": 192,
+      "search_calls": 192,
+      "seconds_excluding_load": 0.05789875,
+      "seconds_including_load": 4.610305738,
+      "status": "PASS",
+      "threads": 1,
+      "wall_rounds": 4
+    }
+  },
+  {
+    "kind": "parity",
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/reviews/config_parity_yandex_t2i_official10M_ip_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/reviews/parity_yandex_t2i_official10M_ip_v1"
+    ],
+    "config_sha256": "82adc56e556baa3ef30b15cdd1c2ea2f129a0c14a2ea51c204eb434c38acd865",
+    "started_unix": 1789872204.821818,
+    "reserved_calls": 192,
+    "pid": 6888,
+    "exit_code": 0,
+    "finished_unix": 1789872217.3508165,
+    "seconds": 12.528998613357544,
+    "complete": {
+      "boot_id": "7597a436-8d6c-4a0b-98ff-59bfab6da206",
+      "cpu": 15,
+      "formal": false,
+      "graph_builds": 0,
+      "load_seconds": 12.257924148,
+      "maxrss_kib": 10398292,
+      "points": 4,
+      "router_calls": 192,
+      "search_calls": 192,
+      "seconds_excluding_load": 0.061955529,
+      "seconds_including_load": 12.319879993,
+      "status": "PASS",
+      "threads": 1,
+      "wall_rounds": 4
+    }
+  },
+  {
+    "kind": "formal",
+    "dataset": "webvid2_5m_light_v1",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/reviews/config_formal_webvid2_5m_light_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/webvid2_5m_light_v1"
+    ],
+    "config_sha256": "71b2a7f64289824e3d47d485645b18c3fe0f76b884609c492631c524c430e011",
+    "started_unix": 1789872217.3522851,
+    "reserved_calls": 1310720,
+    "pid": 6891,
+    "exit_code": 0,
+    "finished_unix": 1789874078.174504,
+    "seconds": 1860.822219133377,
+    "complete": {
+      "boot_id": "7597a436-8d6c-4a0b-98ff-59bfab6da206",
+      "cpu": 15,
+      "formal": true,
+      "graph_builds": 0,
+      "load_seconds": 4.585061697,
+      "maxrss_kib": 5679400,
+      "points": 64,
+      "router_calls": 1310720,
+      "search_calls": 1310720,
+      "seconds_excluding_load": 1856.084930185,
+      "seconds_including_load": 1860.669992155,
+      "status": "PASS",
+      "threads": 1,
+      "wall_rounds": 192
+    }
+  },
+  {
+    "kind": "formal",
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/reviews/config_formal_yandex_t2i_official10M_ip_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/yandex_t2i_official10M_ip_v1"
+    ],
+    "config_sha256": "a9a4167b46b1c8785ed89dcca4e22a0457fe34c0dc8bcaba347edc0c50560ff4",
+    "started_unix": 1789874078.1755886,
+    "reserved_calls": 1310720,
+    "pid": 7469,
+    "exit_code": 0,
+    "finished_unix": 1789876044.8153431,
+    "seconds": 1966.6397547721863,
+    "complete": {
+      "boot_id": "7597a436-8d6c-4a0b-98ff-59bfab6da206",
+      "cpu": 15,
+      "formal": true,
+      "graph_builds": 0,
+      "load_seconds": 12.253483083,
+      "maxrss_kib": 10398456,
+      "points": 64,
+      "router_calls": 1310720,
+      "search_calls": 1310720,
+      "seconds_excluding_load": 1954.15994304,
+      "seconds_including_load": 1966.41342636,
+      "status": "PASS",
+      "threads": 1,
+      "wall_rounds": 192
+    }
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "model": "rl_20260921",
+      "selected_step": 140,
+      "seed": 2026091201,
+      "excluded": 253,
+      "eligible": 3843,
+      "query_count": 1024,
+      "rows_sha": "7971b6186665aea1c2121c836a3705f9453d244b5723dfb9d7eac1d5b80dbeb6"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "model": "rl_20260922",
+      "selected_step": 40,
+      "seed": 2026091202,
+      "excluded": 252,
+      "eligible": 3844,
+      "query_count": 1024,
+      "rows_sha": "82c2b453434557ffbaa5715c21fc10119f3efdff0868f8b95b51c7bb5e9561a2"
+    }
+  ],
+  "normal_NSG": 36864,
+  "parity_NSG": 1728,
+  "expected_NSG": 38592,
+  "hard_cap": 40000,
+  "expected_HNSW": 38016,
+  "builds": 36,
+  "optimizer_updates": 0,
+  "new_GT": 0,
+  "threads": 1,
+  "practical_gate": {
+    "primary_cos_min": 0.3,
+    "balanced_median_cos_min": 0.3,
+    "balanced_positive_fraction_min": 0.75
+  }
+}

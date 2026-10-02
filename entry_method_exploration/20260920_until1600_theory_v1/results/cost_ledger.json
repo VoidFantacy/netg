@@ -1,0 +1,1070 @@
+{
+  "created_unix": 1789889345.6081038,
+  "NSG_calls": 2797056,
+  "synthetic_calls": 6,
+  "search_process_seconds": 2888.6458966732025,
+  "stages": [
+    {
+      "stage": "e107_initialization_factorial",
+      "NSG_calls": 1181184,
+      "search_process_seconds": 1203.2554469108582,
+      "other_recorded_process_seconds": 8.983322381973267,
+      "max_rss_gib": 9.919830322265625,
+      "jobs_source": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/reviews/jobs.json",
+      "jobs": [
+        {
+          "argv": [
+            "g++",
+            "-O3",
+            "-march=native",
+            "-std=c++17",
+            "-fopenmp",
+            "-I/data/netg/ACSG",
+            "-I/data/netg/ACSG/faiss",
+            "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+            "-I/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/src/common",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/src/evaluate.cpp",
+            "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+            "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+            "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+            "-lopenblas",
+            "-lz",
+            "-o",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/bin/evaluate"
+          ],
+          "kind": "build",
+          "started_unix": 1789881373.6189196,
+          "timeout_seconds": 120,
+          "reserved_calls": 0,
+          "pid": 11001,
+          "pgid": 11001,
+          "exit_code": 0,
+          "seconds": 8.978617906570435,
+          "finished_unix": 1789881382.5975387
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/bin/evaluate",
+            "counterexample",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/reviews/counterexample.json"
+          ],
+          "kind": "synthetic",
+          "started_unix": 1789881382.5979145,
+          "timeout_seconds": 20,
+          "reserved_calls": 0,
+          "pid": 11012,
+          "pgid": 11012,
+          "exit_code": 0,
+          "seconds": 0.004704475402832031,
+          "finished_unix": 1789881382.6026196
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/reviews/smoke_webvid2_5m_light_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/reviews/smoke_webvid2_5m_light_v1"
+          ],
+          "kind": "smoke",
+          "started_unix": 1789881391.8379421,
+          "timeout_seconds": 1500,
+          "reserved_calls": 768,
+          "pid": 11015,
+          "pgid": 11015,
+          "exit_code": 0,
+          "seconds": 4.922269344329834,
+          "finished_unix": 1789881396.760213,
+          "complete": {
+            "ann_calls": 32,
+            "calls": 768,
+            "cpu": 15,
+            "exact_profile_distances": 78240,
+            "formal_QPS": false,
+            "maxrss_kib": 5674184,
+            "seconds": 4.780102943,
+            "status": "PASS",
+            "threads": 1
+          }
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/reviews/smoke_yandex_t2i_official10M_ip_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/reviews/smoke_yandex_t2i_official10M_ip_v1"
+          ],
+          "kind": "smoke",
+          "started_unix": 1789881396.7630124,
+          "timeout_seconds": 1500,
+          "reserved_calls": 768,
+          "pid": 11016,
+          "pgid": 11016,
+          "exit_code": 0,
+          "seconds": 12.633007526397705,
+          "finished_unix": 1789881409.3960216,
+          "complete": {
+            "ann_calls": 32,
+            "calls": 768,
+            "cpu": 15,
+            "exact_profile_distances": 78816,
+            "formal_QPS": false,
+            "maxrss_kib": 10401696,
+            "seconds": 12.429321611,
+            "status": "PASS",
+            "threads": 1
+          }
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/reviews/main_webvid2_5m_light_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_webvid2_5m_light_v1"
+          ],
+          "kind": "main",
+          "started_unix": 1789881409.4000642,
+          "timeout_seconds": 1500,
+          "reserved_calls": 589824,
+          "pid": 11017,
+          "pgid": 11017,
+          "exit_code": 0,
+          "seconds": 564.5615682601929,
+          "finished_unix": 1789881973.9616337,
+          "complete": {
+            "ann_calls": 8192,
+            "calls": 589824,
+            "cpu": 15,
+            "exact_profile_distances": 20029440,
+            "formal_QPS": false,
+            "maxrss_kib": 5677408,
+            "seconds": 564.443653915,
+            "status": "PASS",
+            "threads": 1
+          }
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/reviews/main_yandex_t2i_official10M_ip_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1"
+          ],
+          "kind": "main",
+          "started_unix": 1789881973.969292,
+          "timeout_seconds": 1500,
+          "reserved_calls": 589824,
+          "pid": 12160,
+          "pgid": 12160,
+          "exit_code": 0,
+          "seconds": 621.1386017799377,
+          "finished_unix": 1789882595.1078956,
+          "complete": {
+            "ann_calls": 8192,
+            "calls": 589824,
+            "cpu": 15,
+            "exact_profile_distances": 20176896,
+            "formal_QPS": false,
+            "maxrss_kib": 10401636,
+            "seconds": 620.926989546,
+            "status": "PASS",
+            "threads": 1
+          }
+        }
+      ],
+      "audit_source": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/reviews/completion_audit.json",
+      "definitions": "Search process wall includes loading, smoke/count, and output checks. Other process wall is compile/prepare/graph/topology; Python analysis and orchestration are not included in either sum."
+    },
+    {
+      "stage": "e108_unit_hub_online",
+      "NSG_calls": 1106688,
+      "search_process_seconds": 1156.2534594535828,
+      "other_recorded_process_seconds": 8.642552852630615,
+      "max_rss_gib": 9.916801452636719,
+      "jobs_source": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/reviews/jobs.json",
+      "jobs": [
+        {
+          "argv": [
+            "g++",
+            "-O3",
+            "-march=native",
+            "-std=c++17",
+            "-fopenmp",
+            "-I/data/netg/ACSG",
+            "-I/data/netg/ACSG/faiss",
+            "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+            "-I/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/src/common",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/src/evaluate.cpp",
+            "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+            "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+            "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+            "-lopenblas",
+            "-lz",
+            "-o",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/bin/evaluate"
+          ],
+          "kind": "compile",
+          "started_unix": 1789883505.800536,
+          "timeout_seconds": 120,
+          "reserved_calls": 0,
+          "pid": 17710,
+          "pgid": 17710,
+          "exit_code": 0,
+          "finished_unix": 1789883514.1786234,
+          "seconds": 8.378087520599365
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/bin/evaluate",
+            "build",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/reviews/build_graphs_config.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/reviews/graphs_built.json"
+          ],
+          "kind": "graphs",
+          "started_unix": 1789883514.1800435,
+          "timeout_seconds": 120,
+          "reserved_calls": 0,
+          "pid": 17749,
+          "pgid": 17749,
+          "exit_code": 0,
+          "finished_unix": 1789883514.4445088,
+          "seconds": 0.26446533203125
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/reviews/smoke_webvid2_5m_light_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/reviews/smoke_webvid2_5m_light_v1"
+          ],
+          "kind": "smoke",
+          "started_unix": 1789883523.5722954,
+          "timeout_seconds": 1800,
+          "reserved_calls": 384,
+          "pid": 17794,
+          "pgid": 17794,
+          "exit_code": 0,
+          "finished_unix": 1789883528.393851,
+          "seconds": 4.8215556144714355,
+          "complete": {
+            "NSG_calls": 384,
+            "boot_id": "7597a436-8d6c-4a0b-98ff-59bfab6da206",
+            "cpu": 15,
+            "formal": false,
+            "load_seconds": 4.574558106,
+            "maxrss_kib": 5682220,
+            "points": 6,
+            "router_calls": 288,
+            "seconds_including_load": 4.685989151,
+            "status": "PASS",
+            "threads": 1,
+            "wall_rounds": 6
+          }
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/reviews/smoke_yandex_t2i_official10M_ip_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/reviews/smoke_yandex_t2i_official10M_ip_v1"
+          ],
+          "kind": "smoke",
+          "started_unix": 1789883528.4079351,
+          "timeout_seconds": 1800,
+          "reserved_calls": 384,
+          "pid": 17800,
+          "pgid": 17800,
+          "exit_code": 0,
+          "finished_unix": 1789883540.990856,
+          "seconds": 12.582920789718628,
+          "complete": {
+            "NSG_calls": 384,
+            "boot_id": "7597a436-8d6c-4a0b-98ff-59bfab6da206",
+            "cpu": 15,
+            "formal": false,
+            "load_seconds": 12.273845426,
+            "maxrss_kib": 10398332,
+            "points": 6,
+            "router_calls": 288,
+            "seconds_including_load": 12.381028736,
+            "status": "PASS",
+            "threads": 1,
+            "wall_rounds": 6
+          }
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/reviews/formal_webvid2_5m_light_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1"
+          ],
+          "kind": "formal",
+          "started_unix": 1789883541.0056384,
+          "timeout_seconds": 1800,
+          "reserved_calls": 552960,
+          "pid": 17847,
+          "pgid": 17847,
+          "exit_code": 0,
+          "finished_unix": 1789884081.5561237,
+          "seconds": 540.5504856109619,
+          "complete": {
+            "NSG_calls": 552960,
+            "boot_id": "7597a436-8d6c-4a0b-98ff-59bfab6da206",
+            "cpu": 15,
+            "formal": true,
+            "load_seconds": 4.566856133,
+            "maxrss_kib": 5695392,
+            "points": 27,
+            "router_calls": 552960,
+            "seconds_including_load": 540.427864521,
+            "status": "PASS",
+            "threads": 1,
+            "wall_rounds": 81
+          }
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/reviews/formal_yandex_t2i_official10M_ip_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1"
+          ],
+          "kind": "formal",
+          "started_unix": 1789884081.5747244,
+          "timeout_seconds": 1800,
+          "reserved_calls": 552960,
+          "pid": 19645,
+          "pgid": 19645,
+          "exit_code": 0,
+          "finished_unix": 1789884679.8732173,
+          "seconds": 598.2984974384308,
+          "complete": {
+            "NSG_calls": 552960,
+            "boot_id": "7597a436-8d6c-4a0b-98ff-59bfab6da206",
+            "cpu": 15,
+            "formal": true,
+            "load_seconds": 12.255839979,
+            "maxrss_kib": 10398520,
+            "points": 27,
+            "router_calls": 552960,
+            "seconds_including_load": 598.066287997,
+            "status": "PASS",
+            "threads": 1,
+            "wall_rounds": 81
+          }
+        }
+      ],
+      "audit_source": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/reviews/completion_audit.json",
+      "definitions": "Search process wall includes loading, smoke/count, and output checks. Other process wall is compile/prepare/graph/topology; Python analysis and orchestration are not included in either sum."
+    },
+    {
+      "stage": "e109_perfect_proxy_gate",
+      "NSG_calls": 66304,
+      "search_process_seconds": 59.5183789730072,
+      "other_recorded_process_seconds": 18.107790231704712,
+      "max_rss_gib": 9.927249908447266,
+      "jobs_source": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/reviews/jobs.json",
+      "jobs": [
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/.venv_cpu/bin/python",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/src/prepare.py"
+          ],
+          "kind": "prepare",
+          "started_unix": 1789885417.2264144,
+          "timeout_seconds": 300,
+          "reserved_calls": 0,
+          "pid": 24102,
+          "pgid": 24102,
+          "exit_code": 0,
+          "finished_unix": 1789885427.1056762,
+          "seconds": 9.879262208938599
+        },
+        {
+          "argv": [
+            "g++",
+            "-O3",
+            "-march=native",
+            "-std=c++17",
+            "-fopenmp",
+            "-I/data/netg/ACSG",
+            "-I/data/netg/ACSG/faiss",
+            "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+            "-I/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/src/common",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/src/evaluate.cpp",
+            "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+            "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+            "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+            "-lopenblas",
+            "-lz",
+            "-o",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/bin/evaluate"
+          ],
+          "kind": "compile",
+          "started_unix": 1789885427.1196053,
+          "timeout_seconds": 120,
+          "reserved_calls": 0,
+          "pid": 24142,
+          "pgid": 24142,
+          "exit_code": 0,
+          "finished_unix": 1789885435.3481333,
+          "seconds": 8.228528022766113
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/reviews/smoke_webvid2_5m_light_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/reviews/smoke_webvid2_5m_light_v1"
+          ],
+          "kind": "smoke",
+          "started_unix": 1789885435.3537107,
+          "timeout_seconds": 300,
+          "reserved_calls": 384,
+          "pid": 24178,
+          "pgid": 24178,
+          "exit_code": 0,
+          "finished_unix": 1789885440.175385,
+          "seconds": 4.821674346923828,
+          "complete": {
+            "NSG_calls": 384,
+            "auxiliary_profile_distances": 192,
+            "cpu": 15,
+            "exact_profile_distances": 52160,
+            "formal_QPS": false,
+            "maxrss_kib": 5681688,
+            "seconds": 4.704577677,
+            "status": "PASS",
+            "threads": 1
+          }
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/reviews/smoke_yandex_t2i_official10M_ip_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/reviews/smoke_yandex_t2i_official10M_ip_v1"
+          ],
+          "kind": "smoke",
+          "started_unix": 1789885440.1952126,
+          "timeout_seconds": 300,
+          "reserved_calls": 384,
+          "pid": 24194,
+          "pgid": 24194,
+          "exit_code": 0,
+          "finished_unix": 1789885452.778249,
+          "seconds": 12.583036422729492,
+          "complete": {
+            "NSG_calls": 384,
+            "auxiliary_profile_distances": 192,
+            "cpu": 15,
+            "exact_profile_distances": 52544,
+            "formal_QPS": false,
+            "maxrss_kib": 10409476,
+            "seconds": 12.356614912,
+            "status": "PASS",
+            "threads": 1
+          }
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/reviews/main_webvid2_5m_light_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/results/main_webvid2_5m_light_v1"
+          ],
+          "kind": "main",
+          "started_unix": 1789885452.7998235,
+          "timeout_seconds": 300,
+          "reserved_calls": 32768,
+          "pid": 24247,
+          "pgid": 24247,
+          "exit_code": 0,
+          "finished_unix": 1789885469.299139,
+          "seconds": 16.4993155002594,
+          "complete": {
+            "NSG_calls": 32768,
+            "auxiliary_profile_distances": 24576,
+            "cpu": 15,
+            "exact_profile_distances": 6676480,
+            "formal_QPS": false,
+            "maxrss_kib": 5681496,
+            "seconds": 16.344638519,
+            "status": "PASS",
+            "threads": 1
+          }
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/reviews/main_yandex_t2i_official10M_ip_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/results/main_yandex_t2i_official10M_ip_v1"
+          ],
+          "kind": "main",
+          "started_unix": 1789885469.3202589,
+          "timeout_seconds": 300,
+          "reserved_calls": 32768,
+          "pid": 24305,
+          "pgid": 24305,
+          "exit_code": 0,
+          "finished_unix": 1789885494.934611,
+          "seconds": 25.614352703094482,
+          "complete": {
+            "NSG_calls": 32768,
+            "auxiliary_profile_distances": 24576,
+            "cpu": 15,
+            "exact_profile_distances": 6725632,
+            "formal_QPS": false,
+            "maxrss_kib": 10409452,
+            "seconds": 25.404389261,
+            "status": "PASS",
+            "threads": 1
+          }
+        }
+      ],
+      "audit_source": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e109_perfect_proxy_gate/reviews/completion_audit.json",
+      "definitions": "Search process wall includes loading, smoke/count, and output checks. Other process wall is compile/prepare/graph/topology; Python analysis and orchestration are not included in either sum."
+    },
+    {
+      "stage": "e110_first_expansion_intervention",
+      "NSG_calls": 442880,
+      "search_process_seconds": 469.6186113357544,
+      "other_recorded_process_seconds": 9.229974508285522,
+      "max_rss_gib": 9.919830322265625,
+      "jobs_source": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/reviews/jobs.json",
+      "jobs": [
+        {
+          "argv": [
+            "g++",
+            "-O3",
+            "-march=native",
+            "-std=c++17",
+            "-fopenmp",
+            "-I/data/netg/ACSG",
+            "-I/data/netg/ACSG/faiss",
+            "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+            "-I/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/src/common",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/src/evaluate.cpp",
+            "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+            "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+            "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+            "-lopenblas",
+            "-lz",
+            "-o",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/bin/evaluate"
+          ],
+          "kind": "build",
+          "started_unix": 1789886724.7727392,
+          "timeout_seconds": 120,
+          "reserved_calls": 0,
+          "pid": 28752,
+          "pgid": 28752,
+          "exit_code": 0,
+          "finished_unix": 1789886734.0027134,
+          "seconds": 9.229974508285522
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/reviews/smoke_webvid2_5m_light_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/reviews/smoke_webvid2_5m_light_v1"
+          ],
+          "kind": "smoke",
+          "started_unix": 1789886743.1734579,
+          "timeout_seconds": 600,
+          "reserved_calls": 256,
+          "pid": 28809,
+          "pgid": 28809,
+          "exit_code": 0,
+          "finished_unix": 1789886747.9452796,
+          "seconds": 4.771821737289429,
+          "complete": {
+            "ann_calls": 0,
+            "calls": 256,
+            "cpu": 15,
+            "exact_profile_distances": 39120,
+            "formal_QPS": false,
+            "maxrss_kib": 5671732,
+            "seconds": 4.64259323,
+            "status": "PASS",
+            "threads": 1
+          }
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/reviews/smoke_yandex_t2i_official10M_ip_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/reviews/smoke_yandex_t2i_official10M_ip_v1"
+          ],
+          "kind": "smoke",
+          "started_unix": 1789886747.9686632,
+          "timeout_seconds": 600,
+          "reserved_calls": 256,
+          "pid": 28825,
+          "pgid": 28825,
+          "exit_code": 0,
+          "finished_unix": 1789886760.551465,
+          "seconds": 12.582802057266235,
+          "complete": {
+            "ann_calls": 0,
+            "calls": 256,
+            "cpu": 15,
+            "exact_profile_distances": 39408,
+            "formal_QPS": false,
+            "maxrss_kib": 10401696,
+            "seconds": 12.344049037,
+            "status": "PASS",
+            "threads": 1
+          }
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/reviews/main_webvid2_5m_light_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/results/main_webvid2_5m_light_v1"
+          ],
+          "kind": "main",
+          "started_unix": 1789886760.576273,
+          "timeout_seconds": 600,
+          "reserved_calls": 221184,
+          "pid": 28874,
+          "pgid": 28874,
+          "exit_code": 0,
+          "finished_unix": 1789886974.1863701,
+          "seconds": 213.61009740829468,
+          "complete": {
+            "ann_calls": 0,
+            "calls": 221184,
+            "cpu": 15,
+            "exact_profile_distances": 10014720,
+            "formal_QPS": false,
+            "maxrss_kib": 5671880,
+            "seconds": 213.493642315,
+            "status": "PASS",
+            "threads": 1
+          }
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/bin/evaluate",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/reviews/main_yandex_t2i_official10M_ip_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/results/main_yandex_t2i_official10M_ip_v1"
+          ],
+          "kind": "main",
+          "started_unix": 1789886974.2138312,
+          "timeout_seconds": 600,
+          "reserved_calls": 221184,
+          "pid": 29639,
+          "pgid": 29639,
+          "exit_code": 0,
+          "finished_unix": 1789887212.8677208,
+          "seconds": 238.65389013290405,
+          "complete": {
+            "ann_calls": 0,
+            "calls": 221184,
+            "cpu": 15,
+            "exact_profile_distances": 10088448,
+            "formal_QPS": false,
+            "maxrss_kib": 10401692,
+            "seconds": 238.427634368,
+            "status": "PASS",
+            "threads": 1
+          }
+        }
+      ],
+      "audit_source": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e110_first_expansion_intervention/reviews/completion_audit.json",
+      "definitions": "Search process wall includes loading, smoke/count, and output checks. Other process wall is compile/prepare/graph/topology; Python analysis and orchestration are not included in either sum."
+    },
+    {
+      "stage": "e111_rank_core_certificate",
+      "NSG_calls": 0,
+      "search_process_seconds": 0,
+      "other_recorded_process_seconds": 25.882487297058105,
+      "max_rss_gib": 9.921180725097656,
+      "jobs_source": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e111_rank_core_certificate/reviews/jobs.json",
+      "jobs": [
+        {
+          "argv": [
+            "g++",
+            "-O3",
+            "-march=native",
+            "-std=c++17",
+            "-fopenmp",
+            "-I/data/netg/ACSG",
+            "-I/data/netg/ACSG/faiss",
+            "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+            "-I/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/src/common",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e111_rank_core_certificate/src/certify.cpp",
+            "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+            "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+            "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+            "-lopenblas",
+            "-lz",
+            "-o",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e111_rank_core_certificate/bin/certify"
+          ],
+          "kind": "compile",
+          "started_unix": 1789887780.1296017,
+          "timeout_seconds": 120,
+          "NSG_calls": 0,
+          "pid": 32446,
+          "pgid": 32446,
+          "exit_code": 0,
+          "finished_unix": 1789887788.2067528,
+          "seconds": 8.07715106010437
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e111_rank_core_certificate/bin/certify",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e111_rank_core_certificate/reviews/webvid2_5m_light_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e111_rank_core_certificate/results/webvid2_5m_light_v1"
+          ],
+          "kind": "topology",
+          "started_unix": 1789887788.2108736,
+          "timeout_seconds": 300,
+          "NSG_calls": 0,
+          "pid": 32473,
+          "pgid": 32473,
+          "exit_code": 0,
+          "finished_unix": 1789887793.2829642,
+          "seconds": 5.0720908641815186,
+          "complete": {
+            "ANN_calls": 0,
+            "H": 815,
+            "NSG_calls": 0,
+            "core_adjacency_slots": 42991616,
+            "cpu": 15,
+            "graph_derived_labels": true,
+            "hub_adjacency_slots": 52160,
+            "independent_BFS_checks": 2624,
+            "initial_distance_calls": 77824,
+            "maxrss_kib": 5673456,
+            "n": 4096,
+            "new_GT": 0,
+            "new_graphs": 0,
+            "new_training": 0,
+            "seconds": 4.954994829,
+            "status": "PASS",
+            "threads": 1
+          }
+        },
+        {
+          "argv": [
+            "taskset",
+            "-c",
+            "15",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e111_rank_core_certificate/bin/certify",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e111_rank_core_certificate/reviews/yandex_t2i_official10M_ip_v1.json",
+            "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e111_rank_core_certificate/results/yandex_t2i_official10M_ip_v1"
+          ],
+          "kind": "topology",
+          "started_unix": 1789887793.3118608,
+          "timeout_seconds": 300,
+          "NSG_calls": 0,
+          "pid": 32490,
+          "pgid": 32490,
+          "exit_code": 0,
+          "finished_unix": 1789887806.045106,
+          "seconds": 12.733245372772217,
+          "complete": {
+            "ANN_calls": 0,
+            "H": 821,
+            "NSG_calls": 0,
+            "core_adjacency_slots": 42991616,
+            "cpu": 15,
+            "graph_derived_labels": true,
+            "hub_adjacency_slots": 52544,
+            "independent_BFS_checks": 2624,
+            "initial_distance_calls": 77824,
+            "maxrss_kib": 10403112,
+            "n": 4096,
+            "new_GT": 0,
+            "new_graphs": 0,
+            "new_training": 0,
+            "seconds": 12.500490268,
+            "status": "PASS",
+            "threads": 1
+          }
+        }
+      ],
+      "audit_source": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e111_rank_core_certificate/reviews/completion_audit.json",
+      "definitions": "Search process wall includes loading, smoke/count, and output checks. Other process wall is compile/prepare/graph/topology; Python analysis and orchestration are not included in either sum."
+    }
+  ],
+  "additional_synthetic": {
+    "status": "PASS",
+    "results": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/graph_dependence_v1/results.json",
+      "sha256": "f205dea2527f372c29e891fc0d70aa7c7e554df7a3193e0fb5fe41cc906b929d",
+      "bytes": 1110
+    },
+    "source": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/graph_dependence_v1/verify.cpp",
+      "sha256": "fc9821d0ccdd4c2559b48f37729f57039fa74ed4c2702cc6089f379d702f3067",
+      "bytes": 1896
+    },
+    "binary": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/graph_dependence_v1/verify",
+      "sha256": "01c1bf5e4520f870e1c15f04d32f82d94673d0ba0a866e4693ab68fb6646a064",
+      "bytes": 4102888
+    },
+    "NSG_calls": 0,
+    "synthetic_calls": 4,
+    "seconds": 7.476993083953857,
+    "frozen_dependencies_unchanged": 16,
+    "scope": "Arbitrary connected directed graphs under the frozen kernel; not claimed to be NSG-built proximity graphs."
+  },
+  "initial_order_diagnostic": {
+    "status": "PASS_DIAGNOSTIC_COMPLETE",
+    "seconds": 8.818603754043579,
+    "NSG_calls": 0,
+    "ANN_calls": 0,
+    "new_training": 0,
+    "raw_results": [
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/complete.json",
+        "bytes": 146,
+        "sha256": "eb70633cb36e00b331512dff5f1bd0f47317d7d4eda11e19e3a9c9c442150793"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/GT103/initial_distances.f32",
+        "bytes": 49152,
+        "sha256": "7409ad80415f8021132c80447befd0297e78b2fd20bcf2f59c3aac02299b94d2"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/GT103/first.i32",
+        "bytes": 16384,
+        "sha256": "3625e2bc4db052596dbe40fde7396904e0a660c8dc5d92d644c7fd8cc357c4d9"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/GT103/sorted.i32",
+        "bytes": 49152,
+        "sha256": "12dc17d6636f0039ba29cd2427debce9ee4002ef32916631c40f17511c5475d6"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/UnitHub1/initial_distances.f32",
+        "bytes": 49152,
+        "sha256": "47fdba4af39bba8e2ee928d18b09dcfbe6a586668c84bfd147cf267f3dd453db"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/UnitHub1/first.i32",
+        "bytes": 16384,
+        "sha256": "16d961207c8fc84565d9653834d969a2cff83e698a3695d6d3b034957f88a0f3"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/UnitHub1/sorted.i32",
+        "bytes": 49152,
+        "sha256": "3cce082ba98826a9fe9580442af1eb7be312987708e9125edf090c4b9225dbf6"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/GT13/initial_distances.f32",
+        "bytes": 49152,
+        "sha256": "17b72c6b4e2f46cc6ae258052bd05dc8d9194da5f1f2c3a859199c24df6d2f7b"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/GT13/first.i32",
+        "bytes": 16384,
+        "sha256": "1a12f200274fc3cd3f39aaefad2c3e24360ef79b5f4b57b6c4ca617b1e91b019"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/GT13/sorted.i32",
+        "bytes": 49152,
+        "sha256": "76d50f1dc55ac24512cf591f961fb4c2a50c74b0c6da834eaa8c888542995dbe"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/GT11/initial_distances.f32",
+        "bytes": 49152,
+        "sha256": "effb8b4f6a7f90cae36bd0ae80cef1866b3239372a53d5a510283a16e8af3c52"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/GT11/first.i32",
+        "bytes": 16384,
+        "sha256": "a9c0f492d82f4d9a6ff5e62e80e41ef2d9ad133b1e6b07c4a0ca5aa67d7d81e5"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/GT11/sorted.i32",
+        "bytes": 49152,
+        "sha256": "fd9750ef677c2f8af51fe9924a8d08933ad2780909bf28c8c7123050a54061da"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/GT101/initial_distances.f32",
+        "bytes": 49152,
+        "sha256": "b356b915bbf7c06ff085be5bd2ea039cbaf90bdd05614df22f2e10ca5050b85a"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/GT101/first.i32",
+        "bytes": 16384,
+        "sha256": "920133cf333096bb7f361218922b60435101444cd763f9b9060737f7882f5cbb"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/GT101/sorted.i32",
+        "bytes": 49152,
+        "sha256": "91fdd3856f9cb94db9b559ffd2a8d3505bc8193859fcfb2ec5f5a5694f8dd6d9"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/UnitHub3/initial_distances.f32",
+        "bytes": 49152,
+        "sha256": "179c458569f5b42bfb6f91f1ebb0578f5c74406fa58c94365aa774a1c0add6e4"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/UnitHub3/first.i32",
+        "bytes": 16384,
+        "sha256": "16d961207c8fc84565d9653834d969a2cff83e698a3695d6d3b034957f88a0f3"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/webvid2_5m_light_v1/UnitHub3/sorted.i32",
+        "bytes": 49152,
+        "sha256": "21958a723196e7c5edec5e88dc5ae7ec0a7da7e310966a9618138c5e32761c8f"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/complete.json",
+        "bytes": 146,
+        "sha256": "eb70633cb36e00b331512dff5f1bd0f47317d7d4eda11e19e3a9c9c442150793"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/GT103/initial_distances.f32",
+        "bytes": 49152,
+        "sha256": "04a9842693b686a602656dd86a8f8b41d7b86cbcd13c8dbaff7078616aa489f4"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/GT103/first.i32",
+        "bytes": 16384,
+        "sha256": "f412849bfd8ab0603e215fd4f5864f7d6e0acc8c90155efdedd44756b923f6e2"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/GT103/sorted.i32",
+        "bytes": 49152,
+        "sha256": "385c05b1162bc484d98fe0bcc06e571966e9b5f33cb924811b2222a6b9cb539d"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/UnitHub1/initial_distances.f32",
+        "bytes": 49152,
+        "sha256": "1d7f4fef074abda12251ff33fcfc52d909fcdd2be77d3c6ac596cbb4c30915e3"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/UnitHub1/first.i32",
+        "bytes": 16384,
+        "sha256": "f59d814f1e6b1eeabf6b50d25030b99caccb92cc3ccc6d556355201e4b4dc5d9"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/UnitHub1/sorted.i32",
+        "bytes": 49152,
+        "sha256": "9515e58c6a37be5712588f4b545cc87874f66fb1fb264368ea5b73c9c1f6506b"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/GT13/initial_distances.f32",
+        "bytes": 49152,
+        "sha256": "9fc04b67342a55817c7d2172cf7058c656a5c19e297006e6435849fc370cbf80"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/GT13/first.i32",
+        "bytes": 16384,
+        "sha256": "c204ddf4dffbf63843a62f616cd986dc5de04095c30897870aeb34c2fdcd29e3"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/GT13/sorted.i32",
+        "bytes": 49152,
+        "sha256": "4d380450e9d89d357bd256f0d6c82729227f8f7b2ac85112946a1458c450802d"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/GT11/initial_distances.f32",
+        "bytes": 49152,
+        "sha256": "0b578ae9b1b2c4491dd6e61debe01b44a5607c8ea9e75cae06bb17c21eca21ff"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/GT11/first.i32",
+        "bytes": 16384,
+        "sha256": "eb6650d1d0f2a9875705a68735b13c11a5e7df5b49b2c21a0daabb7b36815396"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/GT11/sorted.i32",
+        "bytes": 49152,
+        "sha256": "0babba8fe583ba3a35b4df11c9ec6e8ab15a69c5fb9aa886278a433490ffc363"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/GT101/initial_distances.f32",
+        "bytes": 49152,
+        "sha256": "8a632edbd42d7ca57d3f69dda336fac2fab72694edde4a79ab97c3eb521fcce3"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/GT101/first.i32",
+        "bytes": 16384,
+        "sha256": "3b5d1978bcef0bd18017e462ee71d99c27447ce0bee190e8dcf59f5bbd986fb7"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/GT101/sorted.i32",
+        "bytes": 49152,
+        "sha256": "b1bcbcb86526f911a4937dd99d4f58eb8dd5567aad71d0a88be05fb0ca4a3430"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/UnitHub3/initial_distances.f32",
+        "bytes": 49152,
+        "sha256": "25be35b36e0ab38323a4fd29e73aed90290014e9b43d33ef1e417678aa8b21dc"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/UnitHub3/first.i32",
+        "bytes": 16384,
+        "sha256": "210b3fb02b4bfe060f08c49905075799708c20f982caf3dcbfe0ec919da9d429"
+      },
+      {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/research/initial_seed_order_v1/yandex_t2i_official10M_ip_v1/UnitHub3/sorted.i32",
+        "bytes": 49152,
+        "sha256": "2f77ff5fac5431ad22afbae99b552a2439a2c9b1aa89a98f51f1e1d4fdb6154f"
+      }
+    ],
+    "reference_hashes_preserved": 20,
+    "full_query_groups": true,
+    "posthoc_association_only": true
+  },
+  "failed_compile_seconds": 2.017575263977051,
+  "historical_input_cost": "Inherited historical GT/base/NSG/profile cost is not zero and is not re-estimated here."
+}

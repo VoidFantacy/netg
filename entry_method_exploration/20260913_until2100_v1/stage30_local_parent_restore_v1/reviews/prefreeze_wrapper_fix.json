@@ -1,0 +1,15 @@
+{
+  "epoch": 1789294725.799006,
+  "status": "FIXED_BEFORE_PRECOMPILE_AND_PRETRAINING_FREEZE",
+  "issue": "Draft Python run rows shadowed by ctypes count",
+  "resolution": "Requested n retained; native data count is a separate ctypes count variable. Corrected before prepare/compile and both training invocations. No native failure or extra query from this draft.",
+  "evidence": [
+    "reviews/precompile_freeze.json",
+    "reviews/pretraining_freeze.json",
+    "results/webvid2_5m_light_v1/fit/first_action_physical_route.npz",
+    "results/webvid2_5m_light_v1/fit/after_restore_route.npz",
+    "results/yandex_t2i_official10M_ip_v1/fit/first_action_physical_route.npz",
+    "results/yandex_t2i_official10M_ip_v1/fit/after_restore_route.npz"
+  ],
+  "extra_ANN": 0
+}

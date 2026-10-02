@@ -1,0 +1,77 @@
+{
+  "schema_version": 2,
+  "status": "COMPLETE",
+  "stage": "P3",
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "model_name": "lambda1_greedy3",
+  "lambda": 1,
+  "portal_rule": "greedy3",
+  "oracle_diagnostic_only": true,
+  "parent_rule": "leaf_id // 16",
+  "region_count": 256,
+  "coarse_count": 16,
+  "leaves_per_coarse": 16,
+  "active_regions": 4,
+  "portals_per_region": 3,
+  "total_portals": 768,
+  "dim": 200,
+  "base_nodes": 10000000,
+  "fit_range": [
+    10000,
+    30000
+  ],
+  "fit_count": 20000,
+  "cpu_only": true,
+  "pilot_accessed": false,
+  "validation_accessed": false,
+  "heldout_accessed": false,
+  "fit_query_values_sha256": "e86c597b26ee908f4d4d64674a2ea89837e75d1f824c1ce30671fbd3fc5424e8",
+  "fit_gt_values_sha256": "d52e630214fb7a4ffa240372d5055f8c0e7a1232992e7fc78b656638abed6e5d",
+  "gt10_sha256": "cb8e53681677bd035fd82982220fd7c65ccc388cab717c2ca3dca51eeb0d0f11",
+  "fit_manifest": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/fit_inputs/yandex_t2i_official10M_ip_v1/manifest.json",
+    "sha256": "89f4c8db94ba5de56fa2af09ed7547bb17bfaa14246b0383a4462e187711d788"
+  },
+  "labels_file": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/lambda1/pass2.regions.u16",
+  "labels_sha256": "e6d36a21adef6bce7a8e7ec146f3a1a1bf223c04b81f8d21c6538716889a04c7",
+  "portals_file": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/yandex_t2i_official10M_ip_v1/lambda1/greedy3/portals.i32",
+  "portals_sha256": "4683a9838d1502e5ed422a45d0b69ba075338d9cd7b2abdf5fef2d9690f575a2",
+  "graph_file": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "graph_sha256": "fa6eb7dd4e8d9dc95d696947fc18bd167880fb336212cb7bd073e7acddd4bf2e",
+  "base_sha256": "56d1baa271c79ea280d57ee1c7a8359438ffffc98a75cac799051b13fbdbe0ff",
+  "input_audit_sha256": "7da975cbb0e045265f405b08e230abb6442eba51621064699a4ad449c90ae58b",
+  "protocol_sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f",
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+  },
+  "audit": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+    "sha256": "7da975cbb0e045265f405b08e230abb6442eba51621064699a4ad449c90ae58b"
+  },
+  "gate": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P2.json",
+    "sha256": "6240cea60d790d030e0fdaf560b95d9e951260d4ba3d6701863b06c1c4cc895e"
+  },
+  "partition_manifest": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/lambda1/manifest.json",
+    "sha256": "a208bd7ae9ec7cb1478f3ac7049f589c454accde6899b06b55effde60a20cce5"
+  },
+  "plan": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/yandex_t2i_official10M_ip_v1/lambda1/plan.json",
+    "sha256": "6c8ba38ed39e78660a60a5360e1d89dfe0e72f184f9f39223b3e056244122ab1"
+  },
+  "probe_complete": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda1/complete.json",
+    "sha256": "6ef152c34c41e9667cffb251d305834c826cbacfda66de94ae01e1a5efd5035c"
+  },
+  "finalizer_source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/finalize_portal_models.py",
+    "sha256": "d1945203dc99e7027ebdc9a414a6b1303df5da0988b491dcc15ac1b30f537a7e"
+  },
+  "independent_cache_verification": "PASS_ALL_256_LEAVES",
+  "probe_cache_shared_between_portal_rules": true,
+  "ANN_probe_selection_required_by_this_rule": true,
+  "online_performance_improvement_confirmed": false,
+  "created_utc": "2026-09-07T17:40:03.849261+00:00"
+}

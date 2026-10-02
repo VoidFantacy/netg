@@ -1,0 +1,138 @@
+diff --git a/ACSG/ACSG.cpp b/ACSG/ACSG.cpp
+index fe6af7b..1a03fb8 100644
+--- a/ACSG/ACSG.cpp
++++ b/ACSG/ACSG.cpp
+@@ -1,8 +1,10 @@
+ #include <faiss/impl/DistanceComputer.h>
+ #include <faiss/impl/NSG.h>
+ #include <ACSG/ACSG.h>
++#include <ACSG/detail/CandidatePool.h>
+ 
+ #include <algorithm>
++#include <cmath>
+ #include <memory>
+ #include <mutex>
+ #include <iostream>
+@@ -1436,6 +1438,15 @@ void ACSG::search_on_graph_new(const Graph<index_t> &graph,
+                             int query_id,
+                             SearchTrace* trace)
+ {
++    // Query-local view: no global base pointer, no ownership or ABI changes.
++    DistanceComputer* stored_dis = &dis;
++    while (auto* negative = dynamic_cast<NegativeDistanceComputer*>(stored_dis)) {
++        stored_dis = negative->basedis;
++    }
++    const auto* flat = dynamic_cast<FlatCodesDistanceComputer*>(stored_dis);
++    const uint8_t* prefetch_codes = flat ? flat->codes : nullptr;
++    const size_t prefetch_stride = flat ? flat->code_size : 0;
++
+     RandomGenerator gen(0x1234);
+     retset.resize(L + 1); 
+     
+@@ -1565,6 +1576,14 @@ void ACSG::search_on_graph_new(const Graph<index_t> &graph,
+     std::sort(retset.begin(), retset.begin() + num_ids);
+     if (trace && num_ids > 0) trace->initial_best_distance = retset[0].distance;
+ 
++    // The live-prefix invariant relies on finite scores below the empty-slot
++    // sentinel. Fall back for the remainder of a query if that ceases to hold.
++    bool compact_pool = std::all_of(
++        retset.begin(), retset.begin() + num_ids, [](const Neighbor& v) {
++            return std::isfinite(v.distance) &&
++                   v.distance < std::numeric_limits<float>::max();
++        });
++
+     int k = 0;
+     uint64_t current_stagnation = 0;
+     while (k < L) { 
+@@ -1579,6 +1598,19 @@ void ACSG::search_on_graph_new(const Graph<index_t> &graph,
+             const float best_before_expansion = retset[0].distance;
+ 
+             for (int m = 0; m < graph.K; m++) {
++#if defined(__GNUC__) || defined(__clang__)
++                if (m + 1 < graph.K) {
++                    int next_id = static_cast<int>(graph.at(n, m + 1));
++                    if (next_id >= 0 && next_id < ntotal) {
++                        __builtin_prefetch(vt.visited.data() + next_id, 0, 3);
++                        if (prefetch_codes && prefetch_stride) {
++                            __builtin_prefetch(
++                                prefetch_codes + size_t(next_id) * prefetch_stride,
++                                0, 3);
++                        }
++                    }
++                }
++#endif
+                 int id = (int)graph.at(n, m);
+                 if (id < 0 || id >= ntotal || vt.get(id)) {
+                     continue;
+@@ -1595,7 +1627,12 @@ void ACSG::search_on_graph_new(const Graph<index_t> &graph,
+                 const float best_before_insert = retset[0].distance;
+                 const float pool_before_insert = num_ids >= L
+                     ? retset[L - 1].distance : std::numeric_limits<float>::max();
+-                int r = insert_into_pool(retset.data(), L, nn);
++                if (num_ids < L &&
++                    (!std::isfinite(dist) || dist >= std::numeric_limits<float>::max())) {
++                    compact_pool = false;
++                }
++                int r = detail::insert_into_pool_live(
++                    retset.data(), L, compact_pool ? std::min(L, num_ids) : L, nn);
+                 if (r < L) { 
+                     if (trace) {
+                         ++trace->accepted_insertion_count;
+diff --git a/ACSG/detail/CandidatePool.h b/ACSG/detail/CandidatePool.h
+new file mode 100644
+index 0000000..06c47b0
+--- /dev/null
++++ b/ACSG/detail/CandidatePool.h
+@@ -0,0 +1,52 @@
++#pragma once
++
++#include <ACSG/ACSG.h>
++#include <algorithm>
++#include <cstring>
++
++namespace acsg {
++namespace detail {
++
++// Preserve the legacy binary search and equal-distance ordering. Only the
++// live prefix needs to move while the rest of the pool contains empty slots.
++// capacity >= 1; 1 <= live_count <= capacity; storage has capacity + 1 slots.
++inline int insert_into_pool_live(
++        Neighbor* addr, int capacity, int live_count, Neighbor nn) {
++    int left = 0, right = capacity - 1;
++    if (addr[left].distance > nn.distance) {
++        std::memmove(addr + 1, addr, live_count * sizeof(Neighbor));
++        addr[0] = nn;
++        return 0;
++    }
++    if (addr[right].distance < nn.distance) {
++        addr[capacity] = nn;
++        return capacity;
++    }
++    while (left < right - 1) {
++        int mid = (left + right) / 2;
++        if (addr[mid].distance > nn.distance) {
++            right = mid;
++        } else {
++            left = mid;
++        }
++    }
++    while (left > 0) {
++        if (addr[left].distance < nn.distance) {
++            break;
++        }
++        if (addr[left].id == nn.id) {
++            return capacity + 1;
++        }
++        --left;
++    }
++    if (addr[left].id == nn.id || addr[right].id == nn.id) {
++        return capacity + 1;
++    }
++    std::memmove(addr + right + 1, addr + right,
++                 std::max(0, live_count - right) * sizeof(Neighbor));
++    addr[right] = nn;
++    return right;
++}
++
++} // namespace detail
++} // namespace acsg

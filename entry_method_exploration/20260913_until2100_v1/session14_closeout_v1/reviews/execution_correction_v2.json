@@ -1,0 +1,12 @@
+{
+  "epoch": 1789303043.656291,
+  "failed_command": "python3 -B session14_closeout_v1/src/closeout_v2.py",
+  "actual_exit_code": 1,
+  "error": "AssertionError: handoff link session14_closeout_v1/closeout.json before file creation",
+  "cause": "Link checker preceded creation of its own closeout report.",
+  "failure_scope": "Report assets and scientific files unchanged; draft handoff/state/root_after/manifest had been written, final_seal and closeout had not. Intermediate state/handoff retained as attempt2 files.",
+  "corrected_source": "src/closeout_v3.py",
+  "correction": "Defer only the known closeout target; require every collected link to exist after closeout write and before final seal.",
+  "failed_elapsed_seconds": null,
+  "new_ANN": 0
+}

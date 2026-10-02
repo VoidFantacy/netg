@@ -1,0 +1,148 @@
+{
+  "status": "PASS",
+  "builds": [
+    {
+      "command": [
+        "c++",
+        "-I/data/netg/ACSG/build/_deps/json-src/include",
+        "-std=c++17",
+        "-O3",
+        "-march=native",
+        "-fopenmp",
+        "-fPIC",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/src",
+        "-c",
+        "/data/netg/ACSG/ACSG/ACSG.cpp",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/bin/ACSG.original.o"
+      ],
+      "seconds": 1.4401969909667969
+    },
+    {
+      "command": [
+        "c++",
+        "-I/data/netg/ACSG/build/_deps/json-src/include",
+        "-std=c++17",
+        "-O3",
+        "-march=native",
+        "-fopenmp",
+        "-fPIC",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/src",
+        "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/src/evaluate.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/bin/ACSG.original.o",
+        "/data/netg/ACSG/build/ACSG/libACSG.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "-lopenblas",
+        "-llapack",
+        "-lz",
+        "-lpthread",
+        "-ldl",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/bin/evaluate"
+      ],
+      "seconds": 6.478756427764893
+    },
+    {
+      "command": [
+        "c++",
+        "-I/data/netg/ACSG/build/_deps/json-src/include",
+        "-std=c++17",
+        "-O3",
+        "-march=native",
+        "-fopenmp",
+        "-fPIC",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/src",
+        "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/src/labels.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/bin/ACSG.original.o",
+        "/data/netg/ACSG/build/ACSG/libACSG.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "-lopenblas",
+        "-llapack",
+        "-lz",
+        "-lpthread",
+        "-ldl",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/bin/labels"
+      ],
+      "seconds": 3.590648889541626
+    },
+    {
+      "command": [
+        "c++",
+        "-I/data/netg/ACSG/build/_deps/json-src/include",
+        "-std=c++17",
+        "-O3",
+        "-march=native",
+        "-fopenmp",
+        "-fPIC",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/src",
+        "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/src/build_hnsw.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/bin/ACSG.original.o",
+        "/data/netg/ACSG/build/ACSG/libACSG.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "-lopenblas",
+        "-llapack",
+        "-lz",
+        "-lpthread",
+        "-ldl",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/bin/build_hnsw"
+      ],
+      "seconds": 5.4847612380981445
+    },
+    {
+      "command": [
+        "c++",
+        "-I/data/netg/ACSG/build/_deps/json-src/include",
+        "-std=c++17",
+        "-O3",
+        "-march=native",
+        "-fopenmp",
+        "-fPIC",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/src",
+        "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/src/build_nsg.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/bin/ACSG.original.o",
+        "/data/netg/ACSG/build/ACSG/libACSG.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "-lopenblas",
+        "-llapack",
+        "-lz",
+        "-lpthread",
+        "-ldl",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/bin/build_nsg"
+      ],
+      "seconds": 3.063084602355957
+    }
+  ],
+  "sources": {
+    "/data/netg/ACSG/ACSG/ACSG.cpp": "931d74db432bb2a64aeaedd5200f933674b5e84fb0d129d5640189d76b008ba4",
+    "/data/netg/ACSG/ACSG/ACSG.h": "d45ce4c40e4e295696df985d2e2f59efa88b7c79e3b6245ac2d92ccbc7df056b",
+    "/data/netg/ACSG/ACSG/IndexACSG.cpp": "84dde43523f0641e8bdb322181e03ca038795e4560c08e8aff3c5a53d522f8c7",
+    "/data/netg/ACSG/ACSG/IndexACSG.h": "211446c585293d2e9a7dc25cf5494319b2380fc63260d7600608fa4b09e6e5d1",
+    "/data/netg/ACSG/build/ACSG/libACSG.a": "a2f5edf3b6527a76f43ae44531eeaa815d34a284f886e735bcc336ae82464b00",
+    "/data/netg/ACSG/build/faiss/faiss/libfaiss.a": "9598573889c47b4a7665a601e25d5ada3026250c76c99ead886fa05abe174ff8",
+    "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a": "a778d6d3bcbbebcc9c200a0b0d959d73b81a9cd4213cff9f9d5e515bf133285b"
+  },
+  "binaries": {
+    "evaluate": "d2743edd0311c5e0479a3e44e19bf1aa14e8a6e2595c381dcd5ef8943746a9e7",
+    "build_hnsw": "f8a07d61672da161bc457ef4b613f5712742d641eaed38d1c09e90d712e3269c",
+    "build_nsg": "70134eb7083ab9090ba347db16bfd5a066a4df7a39255b4cb4cf14bf51c7bc0d",
+    "ACSG.original.o": "3aa2d57aec6e3f3d33dd4c3b4217b07f921fa6038c16ee7a3869c34b13fc2aeb",
+    "labels": "3edd43f3b9d8f03dc4adab28678e06527f386bb56308ec9e505c2ea34084176d"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "commands": [
+    {
+      "command": [
+        "c++",
+        "-std=c++17",
+        "-O3",
+        "-g",
+        "-march=native",
+        "-fopenmp",
+        "-fPIC",
+        "-I/data/netg/ACSG/build/_deps/json-src/include",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/src",
+        "-c",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/src/legacy.cpp",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/legacy.o"
+      ],
+      "seconds": 1.9488284587860107
+    },
+    {
+      "command": [
+        "c++",
+        "-std=c++17",
+        "-O3",
+        "-g",
+        "-march=native",
+        "-fopenmp",
+        "-fPIC",
+        "-I/data/netg/ACSG/build/_deps/json-src/include",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/src",
+        "-c",
+        "/data/netg/ACSG/ACSG/ACSG.cpp",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/optimized.o"
+      ],
+      "seconds": 1.9682114124298096
+    },
+    {
+      "command": [
+        "c++",
+        "-std=c++17",
+        "-O3",
+        "-g",
+        "-march=native",
+        "-fopenmp",
+        "-fPIC",
+        "-I/data/netg/ACSG/build/_deps/json-src/include",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/src",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/src/regression.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/legacy.o",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/optimized.o",
+        "/data/netg/ACSG/build/ACSG/libACSG.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "-lopenblas",
+        "-llapack",
+        "-lz",
+        "-lpthread",
+        "-ldl",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/regression"
+      ],
+      "seconds": 4.191736221313477
+    },
+    {
+      "command": [
+        "c++",
+        "-std=c++17",
+        "-O3",
+        "-g",
+        "-march=native",
+        "-fopenmp",
+        "-fPIC",
+        "-I/data/netg/ACSG/build/_deps/json-src/include",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/src",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/src/benchmark.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/legacy.o",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/optimized.o",
+        "/data/netg/ACSG/build/ACSG/libACSG.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "-lopenblas",
+        "-llapack",
+        "-lz",
+        "-lpthread",
+        "-ldl",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/benchmark"
+      ],
+      "seconds": 11.845798254013062
+    }
+  ],
+  "compiled_source_sha256": {
+    "/data/netg/ACSG/ACSG/ACSG.cpp": "5436ab455d60ba8ccc54ed96d1e7bec80dd15816287e6d556f78af1449f448d1",
+    "/data/netg/ACSG/ACSG/detail/CandidatePool.h": "edb082b9519603b19c67518295030abf78e4c749b1ee2b22d29c00e66a9270c5",
+    "/data/netg/ACSG/ACSG/ACSG.h": "d45ce4c40e4e295696df985d2e2f59efa88b7c79e3b6245ac2d92ccbc7df056b",
+    "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/src/benchmark.cpp": "01a607318a4c59cb58e8a6eb89d452e6395d2fe16a689aad464da488fb8adb68",
+    "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/src/regression.cpp": "22fd1efc792e7f71adb905aad132dae34f2bae6f93064dd6c3569f226a132690",
+    "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/src/legacy.cpp": "bd99ce0c7a48fe808306a01bae4de8e7241d2a6fcedc303cce6c426689790a41"
+  },
+  "binaries": {
+    "benchmark": "7585d1142a31e73dff27dcdb70cf1d0d8c2df79ce8d3facb1e74303e1c380899",
+    "optimized.o": "a2974ccc45b052ed40bd59bac826c366009371d4cfdf327be4acfcc729014c09",
+    "regression": "b9ffcc7bbbe05f624e59fbabcf14d2221684357c4cc400bb415f7b1e9ea17dea",
+    "legacy.o": "a6b65d39400bcd7ff9d0d1c4a2e17c17fc3686eb32bb9329018a48e972d80e04"
+  }
+}

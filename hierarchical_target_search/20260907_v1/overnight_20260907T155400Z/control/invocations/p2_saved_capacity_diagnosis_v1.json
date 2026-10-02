@@ -1,0 +1,33 @@
+{
+  "stage": "P2",
+  "split": "pilot",
+  "measurement": "analysis",
+  "output": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/saved_capacity_diagnosis_v1",
+  "command": [
+    ".venv_cpu/bin/python",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/diagnose_saved_capacities.py",
+    "--analysis",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/analysis_v1/analysis.json",
+    "--input",
+    "webvid2_5m_light_v1",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/webvid_eval/count.json",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/webvid_model/model.json",
+    "--input",
+    "yandex_t2i_official10M_ip_v1",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_eval/count.json",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_model/model.json",
+    "--output",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/saved_capacity_diagnosis_v1"
+  ],
+  "oracle": true,
+  "upstream_gates": [
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P0.json",
+      "sha256": "693b6947c97ac8835ba34da51300b8958866d3b9c8acdbc4234a24d2bea00c85"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P1.json",
+      "sha256": "d09316b50e6fc8b0fb28f498687494e6c768c918ed169c5bc334adff136b9261"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "created_unix": 1789907352.404956,
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "role_sizes": {
+        "proposal": 10000,
+        "fit": 10000,
+        "audit": 4096
+      },
+      "candidate_slots": 633,
+      "label_actions": 242408,
+      "label_calls": 727288,
+      "selected_edits": {
+        "Cost": 16,
+        "RecallControl": 16
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "role_sizes": {
+        "proposal": 10000,
+        "fit": 10000,
+        "audit": 4096
+      },
+      "candidate_slots": 774,
+      "label_actions": 246072,
+      "label_calls": 738280,
+      "selected_edits": {
+        "Cost": 16,
+        "RecallControl": 16
+      }
+    }
+  ],
+  "search_calls": 1711520,
+  "source_and_models_frozen": true,
+  "actual_three_entry_mapping_verified": true,
+  "unchanged_entries_restore_results": true,
+  "current_roles_byte_disjoint": true,
+  "main_search_source_unchanged": {
+    "ACSG/ACSG.cpp": true,
+    "ACSG/ACSG.h": true,
+    "ACSG/detail/CandidatePool.h": true
+  },
+  "kernel_copy_byte_identical": true,
+  "maxrss_kib_observed": 10575664,
+  "audit_wall_rounds": 36,
+  "new_gt": 0,
+  "new_graphs": 0,
+  "primary_gate": {
+    "status": "STOP_ENTRY_ID_PILOT",
+    "quality_nonnegative": false,
+    "positive_CI_in_each_dataset": false,
+    "all_mean_qps_nondecreasing": false,
+    "primary_method": "Cost",
+    "default_changed": false,
+    "new_formal_frontier_claim": false,
+    "pending_full_curve": false
+  }
+}

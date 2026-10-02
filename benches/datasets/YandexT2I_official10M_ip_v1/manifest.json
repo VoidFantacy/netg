@@ -1,0 +1,114 @@
+{
+  "artifact_version": "yandex-t2i-official-first10m-ip-v1",
+  "base": {
+    "range": [
+      0,
+      10000000
+    ],
+    "source": "T2I/base.1B.fbin"
+  },
+  "created_unix": 1787652835,
+  "files": {
+    "base.official_first10M.fvecs": {
+      "bytes": 8040000000,
+      "sha256": "56d1baa271c79ea280d57ee1c7a8359438ffffc98a75cac799051b13fbdbe0ff"
+    },
+    "gt.aco_train.ip.ivecs": {
+      "bytes": 2020000,
+      "sha256": "1ec76a1eb5ab2724c712ae2308afc6285d3dbf9a542aed670f646cb9b2446d3e"
+    },
+    "gt.router_train.ip.ivecs": {
+      "bytes": 12120000,
+      "sha256": "5255cc604439ad9d2523dd7526dab85e61b40f0784fd630d5f297ef43af6bdcb"
+    },
+    "gt.test.public100K.ip.ivecs": {
+      "bytes": 40400000,
+      "sha256": "9b8bed25edc98f4df45039b7a064e311ff4bdac0a69254c7f03fe668d14d1d29"
+    },
+    "gt.validation.ip.ivecs": {
+      "bytes": 4040000,
+      "sha256": "cfe1b5e99d4a0a4b7a9b1a260636d10850a13c212054d22829ee5da5c97f0301"
+    },
+    "query.aco_train.fvecs": {
+      "bytes": 4020000,
+      "sha256": "d9146b417777e49d175f56071f6c1a90ccbd7a51c767f8cf0f1d088cc7dfe727"
+    },
+    "query.router_train.fvecs": {
+      "bytes": 24120000,
+      "sha256": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2"
+    },
+    "query.test.public100K.fvecs": {
+      "bytes": 80400000,
+      "sha256": "d5c1079755a1bef7db62f63f1e8b041e3035024e072ac5db79ddfb66689b42a2"
+    },
+    "query.validation.fvecs": {
+      "bytes": 8040000,
+      "sha256": "f84e695822f4b0fd303782f9ff5c8c92e5149bbd7f46d500250f40030e35871b"
+    }
+  },
+  "ground_truth": {
+    "k": 100,
+    "metric": "exact_inner_product"
+  },
+  "metric": "ip",
+  "normalization": "none",
+  "official_gt_validation": {
+    "sample_queries": 64,
+    "set_recall_at_100": 1.0
+  },
+  "query_overlap_counts": {
+    "aco_train__router_train": 0,
+    "aco_train__test": 0,
+    "aco_train__validation": 0,
+    "router_train__test": 0,
+    "router_train__validation": 0,
+    "validation__test": 0
+  },
+  "query_source": "T2I/query.learn.50M.fbin",
+  "schema_version": 1,
+  "sources": {
+    "/data/netg/ACSG/benches/datasets/YandexT2I/query.public.100K.fbin": {
+      "bytes": 80000008,
+      "sha256": "4b9aabc321ca42a674d5854d1f95347deb902c489c7b49b34e38960f60dad784"
+    },
+    "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/source/base.1B.fbin.crop_nb_10000000": {
+      "bytes": 8000000008,
+      "sha256": "6e94056bfe99b314d328b9723fbc3660ab2fefc8e3b0545f13613a3c52397cf5"
+    },
+    "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/source/query.learn.first45K.fbin": {
+      "bytes": 36000008,
+      "sha256": "4477407b7554d100ad161ddfb66f8b1d8bd5812ad61af9c02abab50a4599f82a"
+    },
+    "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/source/text2image-10M.gt": {
+      "bytes": 80000008,
+      "sha256": "6bc90ed24ef525fe0435c17b4e4276e93484717ba2159981c1d18f320afc4b37"
+    }
+  },
+  "splits": {
+    "aco_train": {
+      "source_range": [
+        0,
+        5000
+      ]
+    },
+    "router_train": {
+      "source_range": [
+        5000,
+        35000
+      ]
+    },
+    "test": {
+      "source": "T2I/query.public.100K.fbin",
+      "source_range": [
+        0,
+        100000
+      ]
+    },
+    "validation": {
+      "source_range": [
+        35000,
+        45000
+      ]
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "identity_verified_utc": "2026-09-09T07:27:12.498871+00:00",
+  "binary": "bin/calibrate",
+  "binary_sha256": "af29da349f17fc6b36f5f6b062a4ffac801deca8437180a646bb912ba9bb908c",
+  "compiler": "c++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0\nCopyright (C) 2021 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "flags": "-std=c++17 -O3 -march=native -fopenmp -fPIC -Wall -Wextra",
+  "source_build_script": "src/build.sh",
+  "direct_native_source": "ACSG/ACSG.cpp",
+  "dependencies_verified_after_build": [
+    {
+      "path": "/data/netg/ACSG/ACSG/ACSG.cpp",
+      "sha256": "931d74db432bb2a64aeaedd5200f933674b5e84fb0d129d5640189d76b008ba4",
+      "bytes": 54198
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/ACSG.h",
+      "sha256": "d45ce4c40e4e295696df985d2e2f59efa88b7c79e3b6245ac2d92ccbc7df056b",
+      "bytes": 11397
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/IndexACSG.h",
+      "sha256": "211446c585293d2e9a7dc25cf5494319b2380fc63260d7600608fa4b09e6e5d1",
+      "bytes": 4296
+    },
+    {
+      "path": "/data/netg/ACSG/faiss/faiss/impl/AuxIndexStructures.h",
+      "sha256": "679c657e53303f8ed70ccf0fcb2ca382a7d6487af932bc9a1416b32d582742bf",
+      "bytes": 5950
+    },
+    {
+      "path": "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "sha256": "9598573889c47b4a7665a601e25d5ada3026250c76c99ead886fa05abe174ff8",
+      "bytes": 12831336
+    },
+    {
+      "path": "/data/netg/ACSG/build/ACSG/libACSG.a",
+      "sha256": "a2f5edf3b6527a76f43ae44531eeaa815d34a284f886e735bcc336ae82464b00",
+      "bytes": 333180
+    },
+    {
+      "path": "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+      "sha256": "a778d6d3bcbbebcc9c200a0b0d959d73b81a9cd4213cff9f9d5e515bf133285b",
+      "bytes": 111790
+    }
+  ],
+  "build_log": "logs/build_calibrate.log",
+  "actual_command": "bash entry_method_exploration/20260909_c_stage1_v1/src/build.sh calibrate > entry_method_exploration/20260909_c_stage1_v1/logs/build_calibrate.log 2>&1",
+  "note": "Dependencies rehashed after C0 build; original source protected against pre-C0 snapshot. Calibration binary already bound at C0 lock. No formal timing inferred."
+}

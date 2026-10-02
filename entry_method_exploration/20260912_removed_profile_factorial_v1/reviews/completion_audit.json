@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "objective": "Determine responsibility of the removed-entry profiles in the frozen negative cases and decide RL credit allocation",
+  "scope": "two specified removed-profile controls, all queries, contextual attribution and concrete reward design",
+  "requirements": [
+    {
+      "requirement": "locked_removed_profile_identity",
+      "status": "PROVEN",
+      "evidence": "config.locked; original E40 negative-entry set difference and unchanged observations"
+    },
+    {
+      "requirement": "same_full_query_pool_and_C_F",
+      "status": "PROVEN",
+      "evidence": "original E39 configs/1024 rows; 4096 E39 and 4096 E41 bit regressions"
+    },
+    {
+      "requirement": "actual_four_cells_two_datasets",
+      "status": "PROVEN",
+      "evidence": "8 W/physical HNSW graphs, raw arrays and bytewise row construction verification"
+    },
+    {
+      "requirement": "sufficiency_and_necessity_separate",
+      "status": "PROVEN",
+      "evidence": "independent negative-case 9/0/9/9 and 10/0/0/0; four boolean conditions checked"
+    },
+    {
+      "requirement": "actual_entry_and_output_mechanism",
+      "status": "PROVEN",
+      "evidence": "case entries and raw bits; WebVid removal without hit loss and Yandex duplicate bad routes"
+    },
+    {
+      "requirement": "all_query_gain_and_damage",
+      "status": "PROVEN",
+      "evidence": "8192 independently scored outputs, all 8 G/L/zero-event/NDC tables verified"
+    },
+    {
+      "requirement": "conditional_credit_and_interactions",
+      "status": "PROVEN",
+      "evidence": "2048 hits/U/J marginals and accounting identities; nonzero interactions checked"
+    },
+    {
+      "requirement": "concrete_RL_reward_decision",
+      "status": "PROVEN",
+      "evidence": "reward_decision.md exact original-objective paired Delta J, batch/background and action-parameterization limits"
+    },
+    {
+      "requirement": "honest_causal_limits",
+      "status": "PROVEN",
+      "evidence": "report distinguishes conditional necessity/sufficiency, overlapping harm, partition limits; no unique all-H cause or generalization claim"
+    },
+    {
+      "requirement": "ordinary_native_and_parity",
+      "status": "PROVEN",
+      "evidence": "unchanged native dependencies; 128-query serialized/plain/original-kernel parity"
+    },
+    {
+      "requirement": "bounded_serial_single_thread_cost",
+      "status": "PROVEN",
+      "evidence": "8576 NSG / 8448 HNSW / 8 builds, reserved cap10000, actual threads1 and nonoverlapping jobs"
+    },
+    {
+      "requirement": "no_new_training_or_evaluation_scope",
+      "status": "PROVEN",
+      "evidence": "copied W rows; no optimizer/GT path; original train-only native query configs"
+    },
+    {
+      "requirement": "old_artifacts_preserved",
+      "status": "PROVEN",
+      "evidence": "SHA and exact pathname sets for E37-E41 and native/NSG dependencies"
+    },
+    {
+      "requirement": "report_figures_and_document_sync",
+      "status": "PROVEN",
+      "evidence": "report/reward document, 2 visually inspected figures in 3 formats, history31/four root docs and links"
+    },
+    {
+      "requirement": "terminal_execution",
+      "status": "PROVEN",
+      "evidence": "both process handles collected exit0; saved job PIDs no live runner; no queued jobs"
+    }
+  ],
+  "unresolved_requirements": [],
+  "acknowledged_unmeasured": [
+    "individual hubs inside the rest block",
+    "score versus rebuilt adjacency",
+    "new learner and generalization"
+  ],
+  "new_training": "NOT_PART_OF_THIS_DIAGNOSTIC_AND_DESIGN_GOAL"
+}

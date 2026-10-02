@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "seconds": 4.127022172000579,
+  "affinity": [
+    0
+  ],
+  "threadpools": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libopenblas",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so",
+      "version": "0.3.23.dev",
+      "threading_layer": "pthreads",
+      "architecture": "Cooperlake"
+    },
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libscipy_openblas",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/scipy.libs/libscipy_openblas-68440149.so",
+      "version": "0.3.28",
+      "threading_layer": "pthreads",
+      "architecture": "SkylakeX"
+    }
+  ],
+  "scope": "shared frozen synthetic input generator; independent direct-exp, linear assignment, loop aggregation, scalar ordering, and fixed Decimal checks",
+  "input_sha256": "ac9c6414255eb356e9fa3d3594d0da116b32df964dc81979c1a96acc7b9697d0",
+  "counts": {
+    "transport": 2592,
+    "hard_pairs": 7380,
+    "aggregate": 512,
+    "score_topr": 3072,
+    "thresholds": 9
+  },
+  "max_transport_comparison_error": 1.7763568394002505e-15,
+  "max_aggregate_comparison_error": 3.552713678800501e-15,
+  "decimal_transport_instances": 32,
+  "decimal_probability_l1_max_float_error": 4.440892098500626e-16,
+  "decimal_binary_equality_max_float_error": 2.220446049250313e-16,
+  "real_data_reads": 0,
+  "NSG": 0,
+  "ANN": 0,
+  "new_GT": 0,
+  "new_models": 0
+}

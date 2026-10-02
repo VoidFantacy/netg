@@ -1,0 +1,206 @@
+{
+  "artifact_version": "roargraph-laion10m-unit-ip-acsg-v1",
+  "base": {
+    "dimension": 512,
+    "rows": 10004480,
+    "rows_per_shard": 1000448,
+    "shards_in_order": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10
+    ],
+    "source": "LAION-400M fp16 image embeddings"
+  },
+  "created_unix": 1788077547,
+  "dedup_selection": {
+    "duplicate_train": 52,
+    "overlap_public_test": 49,
+    "source_rows_consumed": 45101
+  },
+  "files": {
+    "base.roargraph_laion10m.unit.fvecs": {
+      "bytes": 20529192960,
+      "sha256": "9699ad29076d1a1aeb1a2536b55e73654e8611784f2844e9b8d1ae2cd7be6c5f"
+    },
+    "gt.aco_train.seed20260830.unit_ip.ivecs": {
+      "bytes": 2020000,
+      "sha256": "481b1dae0b22ac4e79658ec6b5c1ea5a86ff1aa0168afe168f5ab9635613f0f1"
+    },
+    "gt.router_train.seed20260830.unit_ip.ivecs": {
+      "bytes": 12120000,
+      "sha256": "40b38c6307e7ec77c61bc1741dfdeebbd13bb6d9c730e3904c7ffa7f5168b837"
+    },
+    "gt.test.public10K.unit_ip.top100.ivecs": {
+      "bytes": 4040000,
+      "sha256": "3353a2f99f3d4b60752fa8e5820468a46e773150ce73c038db9b81fc563a2376"
+    },
+    "gt.validation.seed20260830.unit_ip.ivecs": {
+      "bytes": 4040000,
+      "sha256": "e4b700eabbd6b8259b71a5e5364159807d315e26e7ae08fb17dbc6d6cfb83b78"
+    },
+    "query.aco_train.seed20260830.unit.fvecs": {
+      "bytes": 10260000,
+      "sha256": "8dba43b217c20708ce326e5882a40140bfb5ef1bab09bc18475982bb3621fca4"
+    },
+    "query.router_train.seed20260830.unit.fvecs": {
+      "bytes": 61560000,
+      "sha256": "91e42033344d537f6c907ef08fabb987965884f0a3fb843a289edaf38e0dabca"
+    },
+    "query.test.public10K.unit.fvecs": {
+      "bytes": 20520000,
+      "sha256": "58a438c8d8d2642ca7a7b04d2d8865941953499252bfcdbd8151aef2af17aa56"
+    },
+    "query.validation.seed20260830.unit.fvecs": {
+      "bytes": 20520000,
+      "sha256": "afc539eb60123022046c91992088ad027eca51c62410033550797bb5435ea433"
+    },
+    "split_source_indices.seed20260830.json": {
+      "bytes": 625347,
+      "sha256": "0d729500ce473cf79e1b90c33fbf729aef0feaff7af383c8b990ca70337cfc3c"
+    }
+  },
+  "ground_truth": {
+    "k": 100,
+    "metric": "exact_inner_product",
+    "test_source_k": 500
+  },
+  "metric": "ip",
+  "norm_samples": {
+    "aco_train": {
+      "max": 1.0000001192092896,
+      "mean": 1.0,
+      "min": 0.9999998211860657,
+      "sample_rows": 5000,
+      "std": 4.270788167559658e-08
+    },
+    "base": {
+      "max": 1.0000001192092896,
+      "mean": 1.0,
+      "min": 0.9999998211860657,
+      "sample_rows": 20000,
+      "std": 4.0893304742439796e-08
+    },
+    "router_train": {
+      "max": 1.0000001192092896,
+      "mean": 1.0,
+      "min": 0.9999998211860657,
+      "sample_rows": 20000,
+      "std": 4.2432478863929646e-08
+    },
+    "test": {
+      "max": 1.000000238418579,
+      "mean": 1.0,
+      "min": 0.9999998211860657,
+      "sample_rows": 10000,
+      "std": 4.202444614520573e-08
+    },
+    "validation": {
+      "max": 1.0000001192092896,
+      "mean": 1.0,
+      "min": 0.9999998211860657,
+      "sample_rows": 10000,
+      "std": 4.2749455531065905e-08
+    }
+  },
+  "normalization": "explicit_l2_unit_all_base_and_queries",
+  "official_gt_validation": {
+    "sample_queries": 32,
+    "set_recall_at_100": 1.0
+  },
+  "provenance": {
+    "laion_embedding_source": "https://deploy.laion.ai/8f83b608504d46bb81708ec86e912220/embeddings",
+    "roargraph_record": "https://zenodo.org/records/11090378"
+  },
+  "query_overlap_counts": {
+    "aco_train__router_train": 0,
+    "aco_train__test": 0,
+    "aco_train__validation": 0,
+    "router_train__test": 0,
+    "router_train__validation": 0,
+    "validation__test": 0
+  },
+  "schema_version": 1,
+  "sources": {
+    "source/img_emb_0.npy": {
+      "bytes": 1024458880,
+      "sha256": "4647943969df433c8fb6150da2701dca615e7bdd622dc86f6d974a0f7e3bfe9c"
+    },
+    "source/img_emb_1.npy": {
+      "bytes": 1024458880,
+      "sha256": "0f052bd53abd2a0a30794defad250467f85c1e3746a55275938b4eba5f4358e2"
+    },
+    "source/img_emb_10.npy": {
+      "bytes": 1024458880,
+      "sha256": "40c255ffd42a6492a6d8afdce48f6216dda5a599619017dd2604fbe372c124ff"
+    },
+    "source/img_emb_2.npy": {
+      "bytes": 1024458880,
+      "sha256": "e01f3cac6fb9c60d3ab3857ed126a4578755a8a4f49c25254fec595ac91d7229"
+    },
+    "source/img_emb_3.npy": {
+      "bytes": 1024458880,
+      "sha256": "e5d1c94322a0b46ed5cf1b8b38abe75a9ceb9fab180a59e0a7aac4a76d56577a"
+    },
+    "source/img_emb_4.npy": {
+      "bytes": 1024458880,
+      "sha256": "83a920502d0622aa38ba3abce5f78861c7166a9bbc3fe96eeeef4cd113fe588f"
+    },
+    "source/img_emb_5.npy": {
+      "bytes": 1024458880,
+      "sha256": "c00edd33ab7b065dcf62e7064de75a67007bd9eeecb8dc1798264aba4c65c82c"
+    },
+    "source/img_emb_6.npy": {
+      "bytes": 1024458880,
+      "sha256": "a752700e9ad4d94230a741115975cefbb65ed4c4756540024a91f45ee4ffa019"
+    },
+    "source/img_emb_7.npy": {
+      "bytes": 1024458880,
+      "sha256": "88d7f70256892dc77199538a5fd56c5bc3a807e76c765b8138d5c726a3f13efd"
+    },
+    "source/img_emb_9.npy": {
+      "bytes": 1024458880,
+      "sha256": "3a8314cda5abf19d1c93c258c2871184db8162312ee03493f6b8a32f27d10129"
+    },
+    "source/laion.gt.10k.ibin": {
+      "bytes": 40000008,
+      "sha256": "d45ecbf53733ad4ce34ea2a6d2f233b07a2f28cc81805d4a1ceda88ee9e6f807"
+    },
+    "source/laion.query.10k.fbin": {
+      "bytes": 20480008,
+      "sha256": "03f309697b65be79f8bfd11433691ad5339d18f425ab3b06835101c98e70d16b"
+    },
+    "source/text_emb_0.npy": {
+      "bytes": 1024458880,
+      "sha256": "cbb4ad625b09463caaf13fbb4cdae0726b3804c2b93b772218a14ea11314f64b"
+    }
+  },
+  "split_seed": 20260830,
+  "splits": {
+    "aco_train": {
+      "selected_count": 5000,
+      "source": "text_emb_0.npy"
+    },
+    "router_train": {
+      "selected_count": 30000,
+      "source": "text_emb_0.npy"
+    },
+    "test": {
+      "source": "laion.query.10k.fbin",
+      "source_range": [
+        0,
+        10000
+      ]
+    },
+    "validation": {
+      "selected_count": 10000,
+      "source": "text_emb_0.npy"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "scope": "Cached historical auxiliary failure report only",
+  "new_NSG": 0,
+  "new_HNSW": 0,
+  "new_builds": 0,
+  "new_GT": 0,
+  "new_training": 0,
+  "final_input": false,
+  "source_namespace": "router_train",
+  "source_rows": [
+    2048,
+    10000
+  ],
+  "all_auxiliary_exposed": true,
+  "selection_feedback_is_training": true,
+  "primary_models": [
+    "P",
+    "compact",
+    "E75_preserved",
+    "E77_shrink",
+    "E78_mass"
+  ],
+  "definition": "Any GT10 zero hit among five models; changed zero-status rows are an explicit subset",
+  "example_rule": "First 24 ascending source rows per dataset with changed zero status; complete union retained",
+  "output_cap_bytes": 2097152,
+  "epoch": 1789282830.4861252
+}

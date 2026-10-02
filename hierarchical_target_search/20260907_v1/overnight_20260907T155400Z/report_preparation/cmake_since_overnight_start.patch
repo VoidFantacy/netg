@@ -1,0 +1,21 @@
+--- overnight_start_snapshot
++++ current
+@@ -216,3 +216,18 @@
+ # Isolated frozen-graph regional search: legacy code paths are unchanged.
+ add_executable(test_regional_search test_regional_search.cpp)
+ setup_target(test_regional_search)
++
++# Isolated pure-wall evaluator for the hierarchical target search protocol.
++add_executable(bench_hierarchical_eval bench_hierarchical_eval.cpp)
++setup_target(bench_hierarchical_eval)
++target_include_directories(bench_hierarchical_eval PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/benches>)
++
++# Versioned P3 structure/portal diagnostic evaluator; P2 target stays unchanged.
++add_executable(bench_hierarchical_eval_p3 bench_hierarchical_eval_p3.cpp)
++setup_target(bench_hierarchical_eval_p3)
++target_include_directories(bench_hierarchical_eval_p3 PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/benches>)
++
++# Fit-only P3 portal probes; no default routing or changes to legacy methods.
++add_executable(bench_hierarchical_portals bench_hierarchical_portals.cpp)
++setup_target(bench_hierarchical_portals)
++target_include_directories(bench_hierarchical_portals PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/benches>)

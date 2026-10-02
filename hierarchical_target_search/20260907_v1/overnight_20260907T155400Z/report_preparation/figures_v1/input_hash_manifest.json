@@ -1,0 +1,457 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE",
+  "scope": "REPORT_EXPORT_FROM_EXISTING_SUMMARIES_ONLY",
+  "created_utc": "2026-09-07T18:30:16.217020+00:00",
+  "argv": [
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/figures_v1/generate_figures.py",
+    "--output",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/figures_v1"
+  ],
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/figures_v1/generate_figures.py",
+    "sha256": "5ae6b142119eeeb2730ee0e53c3657b2ace773fcfa8de4ad32b9f9916daf65ef",
+    "bytes": 15854
+  },
+  "inputs": {
+    "p2": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/analysis_v1/analysis.json",
+      "sha256": "e73a8d8c16a5bebb2404596b63d621b1780b1aab0f9eb29efce5281edfc04c1f",
+      "bytes": 134043
+    },
+    "p3": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analysis_v1/analysis.json",
+      "sha256": "63da6a71425b0dbd6e186db1c608a564b9847c58168b6b56059a9ed2d2f901ae",
+      "bytes": 210730
+    }
+  },
+  "outputs": [
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/figures_v1/p2_recall_qps.svg",
+      "sha256": "a2049dfc362ea48a0d6728db66925db48b9eff51d5bb4379a885f451808a1828",
+      "bytes": 34373,
+      "format": "standalone vector SVG; text preserved as text"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/figures_v1/p2_recall_qps.png",
+      "sha256": "c3118485e1016f56619f8c481d0ac0837bb6d38716be0015035ffeb2571c4699",
+      "bytes": 525849,
+      "pixel_dimensions": [
+        4200,
+        2250
+      ],
+      "dpi": 300
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/figures_v1/p3_fixed_contrasts.svg",
+      "sha256": "b76975953b677a2e358ee1f570dc084814e2e6a7df1948151e12e49f583a1a23",
+      "bytes": 28127,
+      "format": "standalone vector SVG; text preserved as text"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/figures_v1/p3_fixed_contrasts.png",
+      "sha256": "792d020fe7d3f05f4201ffd3a8cdf6793d719790201a8531a74101bd3cf809be",
+      "bytes": 593738,
+      "pixel_dimensions": [
+        4200,
+        2640
+      ],
+      "dpi": 300
+    }
+  ],
+  "plotted_P2_points": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "fast",
+      "L": 64,
+      "recall_fraction": 0.6565700000000001,
+      "mean_of_five_QPS": 32079.80418746254,
+      "oracle_diagnostic_only": false
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "fast",
+      "L": 128,
+      "recall_fraction": 0.74698,
+      "mean_of_five_QPS": 17421.79853835503,
+      "oracle_diagnostic_only": false
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "geom_unified",
+      "L": 64,
+      "recall_fraction": 0.6536,
+      "mean_of_five_QPS": 28779.082506143204,
+      "oracle_diagnostic_only": false
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "geom_unified",
+      "L": 128,
+      "recall_fraction": 0.74282,
+      "mean_of_five_QPS": 16530.43902595604,
+      "oracle_diagnostic_only": false
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "geom_uniform",
+      "L": 64,
+      "recall_fraction": 0.59924,
+      "mean_of_five_QPS": 19547.96347949596,
+      "oracle_diagnostic_only": false
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "geom_uniform",
+      "L": 128,
+      "recall_fraction": 0.70624,
+      "mean_of_five_QPS": 11632.304166239619,
+      "oracle_diagnostic_only": false
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "geom_probability",
+      "L": 64,
+      "recall_fraction": 0.59929,
+      "mean_of_five_QPS": 19573.596983232965,
+      "oracle_diagnostic_only": false
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "geom_probability",
+      "L": 128,
+      "recall_fraction": 0.70642,
+      "mean_of_five_QPS": 12003.522174689399,
+      "oracle_diagnostic_only": false
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "oracle_unified",
+      "L": 64,
+      "recall_fraction": 0.65941,
+      "mean_of_five_QPS": 30699.093263273746,
+      "oracle_diagnostic_only": true
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "oracle_unified",
+      "L": 128,
+      "recall_fraction": 0.74829,
+      "mean_of_five_QPS": 16995.31679946392,
+      "oracle_diagnostic_only": true
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "oracle_probability",
+      "L": 64,
+      "recall_fraction": 0.7135400000000001,
+      "mean_of_five_QPS": 21352.257175200542,
+      "oracle_diagnostic_only": true
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "oracle_probability",
+      "L": 128,
+      "recall_fraction": 0.80081,
+      "mean_of_five_QPS": 13744.240797041663,
+      "oracle_diagnostic_only": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "fast",
+      "L": 64,
+      "recall_fraction": 0.8283200000000001,
+      "mean_of_five_QPS": 27390.685431392845,
+      "oracle_diagnostic_only": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "fast",
+      "L": 128,
+      "recall_fraction": 0.89655,
+      "mean_of_five_QPS": 15947.72775718172,
+      "oracle_diagnostic_only": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "geom_unified",
+      "L": 64,
+      "recall_fraction": 0.8251900000000001,
+      "mean_of_five_QPS": 25327.738680943927,
+      "oracle_diagnostic_only": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "geom_unified",
+      "L": 128,
+      "recall_fraction": 0.8946200000000001,
+      "mean_of_five_QPS": 14633.794052562507,
+      "oracle_diagnostic_only": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "geom_uniform",
+      "L": 64,
+      "recall_fraction": 0.75337,
+      "mean_of_five_QPS": 16123.879597626667,
+      "oracle_diagnostic_only": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "geom_uniform",
+      "L": 128,
+      "recall_fraction": 0.8554299999999999,
+      "mean_of_five_QPS": 9924.228648751703,
+      "oracle_diagnostic_only": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "geom_probability",
+      "L": 64,
+      "recall_fraction": 0.7565200000000001,
+      "mean_of_five_QPS": 16508.936039661567,
+      "oracle_diagnostic_only": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "geom_probability",
+      "L": 128,
+      "recall_fraction": 0.85974,
+      "mean_of_five_QPS": 10033.053629463746,
+      "oracle_diagnostic_only": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "oracle_unified",
+      "L": 64,
+      "recall_fraction": 0.8309300000000001,
+      "mean_of_five_QPS": 26677.789904101526,
+      "oracle_diagnostic_only": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "oracle_unified",
+      "L": 128,
+      "recall_fraction": 0.8982400000000001,
+      "mean_of_five_QPS": 14984.612786406758,
+      "oracle_diagnostic_only": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "oracle_probability",
+      "L": 64,
+      "recall_fraction": 0.8624800000000001,
+      "mean_of_five_QPS": 19062.904348596825,
+      "oracle_diagnostic_only": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "oracle_probability",
+      "L": 128,
+      "recall_fraction": 0.9318300000000002,
+      "mean_of_five_QPS": 11779.953242675456,
+      "oracle_diagnostic_only": true
+    }
+  ],
+  "plotted_P3_contrasts": [
+    {
+      "group": "primary_structure",
+      "dataset": "webvid2_5m_light_v1",
+      "L": 64,
+      "contrast": "structure_under_greedy3",
+      "candidate_model": "lambda1_greedy3",
+      "reference_model": "lambda0_greedy3",
+      "recall_delta_pp": -0.8660000000000001,
+      "paired_query_bootstrap95_pp": [
+        -1.083,
+        -0.6469999999999999
+      ],
+      "interval_scope": "POINTWISE_ORDINARY_95_EXPLORATORY_UNADJUSTED"
+    },
+    {
+      "group": "primary_structure",
+      "dataset": "webvid2_5m_light_v1",
+      "L": 128,
+      "contrast": "structure_under_greedy3",
+      "candidate_model": "lambda1_greedy3",
+      "reference_model": "lambda0_greedy3",
+      "recall_delta_pp": -0.79,
+      "paired_query_bootstrap95_pp": [
+        -0.96,
+        -0.621
+      ],
+      "interval_scope": "POINTWISE_ORDINARY_95_EXPLORATORY_UNADJUSTED"
+    },
+    {
+      "group": "primary_structure",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "structure_under_greedy3",
+      "candidate_model": "lambda1_greedy3",
+      "reference_model": "lambda0_greedy3",
+      "recall_delta_pp": -0.095,
+      "paired_query_bootstrap95_pp": [
+        -0.20700000000000002,
+        0.015999999999999997
+      ],
+      "interval_scope": "POINTWISE_ORDINARY_95_EXPLORATORY_UNADJUSTED"
+    },
+    {
+      "group": "primary_structure",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "structure_under_greedy3",
+      "candidate_model": "lambda1_greedy3",
+      "reference_model": "lambda0_greedy3",
+      "recall_delta_pp": -0.017000000000000008,
+      "paired_query_bootstrap95_pp": [
+        -0.08,
+        0.04799999999999998
+      ],
+      "interval_scope": "POINTWISE_ORDINARY_95_EXPLORATORY_UNADJUSTED"
+    },
+    {
+      "group": "portal_selection",
+      "dataset": "webvid2_5m_light_v1",
+      "L": 64,
+      "contrast": "portals_under_lambda0",
+      "candidate_model": "lambda0_greedy3",
+      "reference_model": "lambda0_frequency3",
+      "recall_delta_pp": 0.04399999999999993,
+      "paired_query_bootstrap95_pp": [
+        -0.12500000000000006,
+        0.21299999999999994
+      ],
+      "interval_scope": "POINTWISE_ORDINARY_95_EXPLORATORY_UNADJUSTED"
+    },
+    {
+      "group": "portal_selection",
+      "dataset": "webvid2_5m_light_v1",
+      "L": 128,
+      "contrast": "portals_under_lambda0",
+      "candidate_model": "lambda0_greedy3",
+      "reference_model": "lambda0_frequency3",
+      "recall_delta_pp": -0.017999999999999978,
+      "paired_query_bootstrap95_pp": [
+        -0.12999999999999998,
+        0.09300000000000003
+      ],
+      "interval_scope": "POINTWISE_ORDINARY_95_EXPLORATORY_UNADJUSTED"
+    },
+    {
+      "group": "portal_selection",
+      "dataset": "webvid2_5m_light_v1",
+      "L": 64,
+      "contrast": "portals_under_lambda1",
+      "candidate_model": "lambda1_greedy3",
+      "reference_model": "lambda1_frequency3",
+      "recall_delta_pp": 0.14899999999999997,
+      "paired_query_bootstrap95_pp": [
+        -0.016999999999999967,
+        0.31599999999999995
+      ],
+      "interval_scope": "POINTWISE_ORDINARY_95_EXPLORATORY_UNADJUSTED"
+    },
+    {
+      "group": "portal_selection",
+      "dataset": "webvid2_5m_light_v1",
+      "L": 128,
+      "contrast": "portals_under_lambda1",
+      "candidate_model": "lambda1_greedy3",
+      "reference_model": "lambda1_frequency3",
+      "recall_delta_pp": 0.055,
+      "paired_query_bootstrap95_pp": [
+        -0.06,
+        0.16802499999999967
+      ],
+      "interval_scope": "POINTWISE_ORDINARY_95_EXPLORATORY_UNADJUSTED"
+    },
+    {
+      "group": "portal_selection",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "portals_under_lambda0",
+      "candidate_model": "lambda0_greedy3",
+      "reference_model": "lambda0_frequency3",
+      "recall_delta_pp": 0.03900000000000001,
+      "paired_query_bootstrap95_pp": [
+        -0.06999999999999999,
+        0.14400000000000002
+      ],
+      "interval_scope": "POINTWISE_ORDINARY_95_EXPLORATORY_UNADJUSTED"
+    },
+    {
+      "group": "portal_selection",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "portals_under_lambda0",
+      "candidate_model": "lambda0_greedy3",
+      "reference_model": "lambda0_frequency3",
+      "recall_delta_pp": 0.024000000000000004,
+      "paired_query_bootstrap95_pp": [
+        -0.04299999999999999,
+        0.092
+      ],
+      "interval_scope": "POINTWISE_ORDINARY_95_EXPLORATORY_UNADJUSTED"
+    },
+    {
+      "group": "portal_selection",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 64,
+      "contrast": "portals_under_lambda1",
+      "candidate_model": "lambda1_greedy3",
+      "reference_model": "lambda1_frequency3",
+      "recall_delta_pp": -0.013000000000000001,
+      "paired_query_bootstrap95_pp": [
+        -0.117,
+        0.09102499999999966
+      ],
+      "interval_scope": "POINTWISE_ORDINARY_95_EXPLORATORY_UNADJUSTED"
+    },
+    {
+      "group": "portal_selection",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "L": 128,
+      "contrast": "portals_under_lambda1",
+      "candidate_model": "lambda1_greedy3",
+      "reference_model": "lambda1_frequency3",
+      "recall_delta_pp": -0.03099999999999999,
+      "paired_query_bootstrap95_pp": [
+        -0.09000000000000002,
+        0.029999999999999992
+      ],
+      "interval_scope": "POINTWISE_ORDINARY_95_EXPLORATORY_UNADJUSTED"
+    }
+  ],
+  "environment": {
+    "python": "3.10.12",
+    "executable": "/data/netg/ACSG/.venv_cpu/bin/python",
+    "matplotlib": "3.10.9",
+    "numpy": "1.26.4",
+    "backend": "Agg"
+  },
+  "dimensions_inches": {
+    "p2_recall_qps": [
+      14,
+      7.5
+    ],
+    "p3_fixed_contrasts": [
+      14,
+      8.8
+    ]
+  },
+  "PNG_dpi": 300,
+  "reads_raw_GT_count_model_query_base_graph": false,
+  "new_numerical_experiment": false,
+  "new_confidence_intervals": false,
+  "new_interpolated_performance_points": false,
+  "formal_performance_gain_claim": false,
+  "limits": [
+    "P2 displays all six methods at exactly both fixed L values; connecting segments are visual guides only.",
+    "P2 QPS is the saved arithmetic mean of five pure-wall rounds, without a new timing uncertainty estimate.",
+    "P3 displays all four primary structure and all eight portal comparisons. CI endpoints are copied exactly; table text is rounded to 0.001 pp.",
+    "10K development pilot is neither validation nor held-out confirmation. Oracle is diagnostic only and not a deployable method.",
+    "Cross-model wall comparisons are descriptive. Neither plot implies matched-cost interpolation or formal performance improvement.",
+    "Near-overlapping P2 points retain their true coordinates; different marker shapes and outlines indicate both methods."
+  ]
+}

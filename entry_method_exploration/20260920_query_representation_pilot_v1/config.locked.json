@@ -1,0 +1,62 @@
+{
+  "version": "E104_QUERY_REPRESENTATION_PILOT",
+  "created_unix": 1789868742.4593332,
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "fit_n": 2048,
+  "cal_n": 512,
+  "train_seed": 20260920,
+  "K": [
+    1,
+    100
+  ],
+  "label_L": 128,
+  "hidden": 16,
+  "epochs": 40,
+  "batch": 256,
+  "lr": 0.001,
+  "tau": 0.05,
+  "lambda_score_anchor": 10,
+  "threads": 1,
+  "cpu": 15,
+  "max_main_search_calls": 1100000,
+  "prepare_label_train_seconds": 7200,
+  "train_seconds": 1800,
+  "extra_wall_seconds": 14400,
+  "min_free_gib": 4,
+  "max_search_rss_gib": 40,
+  "max_train_rss_gib": 8,
+  "fit_parity_positions": [
+    0,
+    128,
+    256,
+    384,
+    512,
+    640,
+    768,
+    896,
+    1024,
+    1152,
+    1280,
+    1408,
+    1536,
+    1664,
+    1792,
+    1920
+  ],
+  "cal_payload_access_before_model_freeze": false,
+  "source_protocol": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_research_v1/protocol.md",
+    "bytes": 10304,
+    "mtime_ns": 1789868240191479375,
+    "sha256": "7a49049063e0c441ebefcbedadddf72a21f4babf71a9b434ff7da00561ece9de"
+  },
+  "kernel": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/src/kernels.hpp",
+    "bytes": 5833,
+    "mtime_ns": 1789537001158272409,
+    "sha256": "615519c00a1ef07f4cbc6571912befb267778edbee7f5d55eec7381070ddb6e6"
+  }
+}

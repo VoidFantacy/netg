@@ -1,0 +1,67 @@
+--- before/summary.md
++++ after/summary.md
+@@ -4,19 +4,25 @@
+ 
+ ## 1. 当前方法
+ 
+-### 当前研究决策：先验证搜索成本，暂停硬区域组合
++### 当前主要方向：改进入口选择方法
+ 
+-2026-09-08 已依据本地 P2/P3 与14篇核心论文的方法/实验完成[方向复审](research_direction_review/20260908_v1/report.md)。结论：当前具体方案的目标集中度、门户代理和静态占比容量没有传递为有效端到端收益；暂停这一组合，保留“有限历史查询下改善图搜索实际成本”这个研究问题。GT区域占比oracle不是最优搜索策略，同L Recall收益尚不证明同成本收益。新[s-target.md](s-target.md)把强基线可比性和唯一成本筛查前置，取消16×16及原P4作为必经架构；改图仍需独立路径证据和新颖性审查。
++2026-09-08 用户明确将入口选择列为新的主要方向：在有限历史查询和CPU成本约束下，固定原NSG与搜索语义，研究怎样低成本选出真正改善搜索的少量入口。Fast v1保留为基线，候选池构造、查询到入口的表示/短名单/排序和入口组合均可研究，算法尚未选定。优先解释“已有好入口为什么选不中”，不预设必须重建候选池或换神经模型。[方向记录](entry_selection_research/20260908_v1/direction.md)区分事实、假设和未来验证。
+ 
+-本轮只做文献/设计审查及文档同步，未运行新实验、未打开原始query/GT/base/图、未恢复夜间执行。新计划状态`DESIGN_REVIEWED_NOT_RUN`；下一次最高优先项是先完成基线契约，再在新隔离协议下检验P2固定表示/入口条件的同实际成本空间。原P3 NOPASS和下述历史记录不变，尚无通过实验的新方法。
++已有WebVid validation 1K、815现有候选、K10/L64诊断中，Fast Top-3 Recall为65.23%，免费穷举选择的单入口oracle为80.24%，graph NDC为923.564→913.376。这支持该历史候选池存在选择空间，不证明当前入口是唯一瓶颈。它使用旧30K Fast与旧评测、排除选择成本，不能视为新paired20K/双数据集/端到端收益；命中并集贪心三入口也不是最佳联合搜索。[原始诊断](oracle_entry_diagnostics/webvid_validation_1k_current_hubs_v1/results.json)。
+ 
+-### 已停止的当前版本：目标邻域驱动的分层搜索
++当前“工程性较强”的研究问题在于设计缺少统一且经验证的选择原则，不能靠模型复杂化解决。需拆开候选池、短名单/排序和少量入口的实际联合收益，明确监督与成本。GATE/旧NETG已用真实搜索监督，旧静态utility、probe-reroute与Multi-view失败边界保留；“学习入口/图感知/可达性”本身不是新贡献，也不能从历史oracle保证整体提高。
++
++此前基于14篇核心论文的[文献复审](research_direction_review/20260908_v1/report.md)仍支持暂停硬区域、GT集中度/门户代理/静态容量组合；但其“先做P2六点成本筛查，再优先改搜索过程”的R0–R2建议现已被入口方向替代，未运行、不自动排队。强基线、公平成本、split隔离及最终性能门槛继续保留。
++
++本轮只更新方向和文档，状态`DIRECTION_SET_RESEARCH_PENDING`，未运行新实验。下一对话按[调研指令](entry_selection_research/20260908_v1/next_dialogue_prompt.md)复核源码/已有证据、定向读原论文与作者实现，比较2–3个方向，提出一个推荐及有界最小gate草案；只调研设计，不自动转入实现或实验。原P3 NOPASS、旧gate/state/CLOSED和夜间报告不变；完整计划见[s-target.md](s-target.md)。
++
++### 已停止的历史版本：目标邻域驱动的分层搜索
+ 
+ 该版本联合设计覆盖全部 base 的目标区域、查询到目标区域占比的层次预测、以及固定总容量下的区域候选保留。原计划先冻结 NSG，先做 P2 机制证伪，再按 gate 构建完整结构和学习模块。夜间授权已按截止完成；已通过 P0/P1/P2机制gate；P3结构与门户完整pilot完成但搜索收益gate为NOPASS，三项有界失败诊断也已完成。版本 `hierarchical_target_search/20260907_v1` 没有有效端到端性能改善证据，真实P2路由退化、oracle同L质量较高但更慢。
+ 
+-依赖已准备：METIS v5.2.1/i64、GKlib、独立基线 Python 环境、kRt/gp-ann MIPS 构建、RoarGraph 和局部 MKL；复用现有 GATE 适配。依赖检查通过不代表方法有效。依赖准备轮没有真实数据实验；本次夜间已完成搜索/计时验收、P2/P3完整pilot及失败诊断，证据另立日志。交接见版本目录 `dependencies/README.md`，恢复提示词见 `overnight_prompt.md`。本方法保持全 CPU。本次方法开发和实验已按北京时间2026-09-08 07:00截止完成停止核验；[实验总结](实验总结.md)已在停止后完成并通过文档复核，没有截止后补跑实验。
++依赖已准备：METIS v5.2.1/i64、GKlib、独立基线 Python 环境、kRt/gp-ann MIPS 构建、RoarGraph 和局部 MKL；复用现有 GATE 适配。依赖检查通过不代表方法有效。依赖准备轮没有真实数据实验；本次夜间已完成搜索/计时验收、P2/P3完整pilot及失败诊断，证据另立日志。交接见版本目录 `dependencies/README.md`，`overnight_prompt.md` 为已结束的历史授权原文；当前使用[入口调研指令](entry_selection_research/20260908_v1/next_dialogue_prompt.md)。本方法保持全 CPU。本次方法开发和实验已按北京时间2026-09-08 07:00截止完成停止核验；[实验总结](实验总结.md)已在停止后完成并通过文档复核，没有截止后补跑实验。
+ 
+-P2已运行64个图结构区域、每区2门户，比较统一池、均匀区域池和概率容量区域池。P3已运行16×16区域、每叶3门户共768，oracle全局选4叶区；oracle读取开发pilot真实GT区域占比，仅作诊断，不是可部署路由。P4层次线性预测尚未启动。本主线独立于旧 Multi-view、静态 utility ranker 和 probe-reroute。若证据明确指向连接瓶颈，才进入独立辅助图分支。
++P2已运行64个图结构区域、每区2门户，比较统一池、均匀区域池和概率容量区域池。P3已运行16×16区域、每叶3门户共768，oracle全局选4叶区；oracle读取开发pilot真实GT区域占比，仅作诊断，不是可部署路由。P4层次线性预测尚未启动。该历史版本独立于旧 Multi-view、静态 utility ranker 和 probe-reroute。若证据明确指向连接瓶颈，才进入独立辅助图分支。
+ 
+ 拟合只用 router_train 后 20K，前 10K 为已有历史使用的开发 pilot；paired Fast 也重建 20K prototype。旧 30K Fast 单列参考。双数据集均须在至少两个相邻工作点达到同 Recall QPS ≥+10%，或同 QPS Recall@10 ≥+1 pp，并有校正区间支持；P6/P7 才确认性能。实现成功和 pilot 通过均不代表项目完成。
+ 
+@@ -81,13 +87,13 @@
+ 
+ ## 5. 当前决策
+ 
+-最新决策为第1节的文献复审修订：[完整判断](research_direction_review/20260908_v1/report.md)、[计划](s-target.md)。原方法组合暂停，下一项是独立版本的基线与实际成本证据准备；本轮没有新实验GO。
++最新决策为第1节的入口选择主线：[方向记录](entry_selection_research/20260908_v1/direction.md)、[计划](s-target.md)、[下一对话指令](entry_selection_research/20260908_v1/next_dialogue_prompt.md)。下一项是入口方法调研、候选机制比较与最小证伪设计；不先跑旧R0b，也不把搜索控制当作已经选定的新算法。本轮没有新实验GO。
+ 
+ 旧 Multi-view 批次按 gate 终止，E2–E4 不是欠账，不续扫 HNSW。已结束的分层搜索夜间版本曾获恢复授权，并按其冻结旧协议通过 P0/P1/P2；P3固定结构与门户诊断已完成但搜索收益gate未通过；门户暴露、目标泛化、实际局部目标尺度诊断及完整23查询trace均已完成。07:00停止核验通过，[实验总结](实验总结.md)已完成并通过文档复核，P4预测模型不启动。
+ 
+ ## 6. 不可破坏边界
+ 
+-- 旧 Multi-view 不再运行 E4；新方法 held-out 仅在 P6 通过且方法冻结后执行。
++- 旧 Multi-view 不再运行 E4；新方法须在新协议中完成相应validation/稳定性验收且方法冻结后才执行held-out，不能复用已关闭P6/P7的自动推进授权。
+ - 冻结 NSG、base、metric、normalization、query split 与 GT 不变。
+ - 新 artifact 隔离保存并记录 checksum、seed、代码、线程和成本，不覆盖历史结果。
+ - 三个 views 是一个 ensemble；三个 timing runs 不是三个独立 Recall 样本。
+@@ -97,6 +103,7 @@
+ 
+ - 实现与复现：`spec.md`
+ - 本批协议与终局：`s-target.md`
++- 新主线与调研接续：`entry_selection_research/20260908_v1/{direction.md,next_dialogue_prompt.md,state.json}`
+ - Fast：`fast_entry_benchmark_results/benchmark_summary.md`
+ - Three-view：`target_basin_ensemble_diagnostics/v1/decision.json`
+ - Multi-view 正式化终局：`target_basin_formalization/20260907_v1/{gate.json,report.md}`
+@@ -112,7 +119,7 @@
+ 
+ 固定23查询trace全部补齐，460条trace/276配对重放通过；原P2 gate保留决策时16条证据，[完成补充](hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_completion_addendum_v1.json)说明后续覆盖。8个门户对照的普通95%区间均含0，不证明等效；五轮计时不是五个独立Recall样本。Fast部分frontier计数未测量，不能把占位零当成实测。
+ 
+-P4–P8、validation性能评测和held-out均未启动，没有辅助图触发证据；机制修订计数仍1，不调λ、不重开本版本P3。当时提出的“目标更集中却丢seen命中”方法审查，现已由第1节文献复审完成；下一项转为修订计划R0的基线和实际成本证据准备。夜间停止时已无研究进程，watchdog已退出；[最终进程核验](hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/final_process_verification_v1.json)通过，[实验总结](实验总结.md)已完成并通过文档复核。到时停止不等于长期研究目标完成。
++P4–P8、validation性能评测和held-out均未启动，没有辅助图触发证据；机制修订计数仍1，不调λ、不重开本版本P3。当时提出的“目标更集中却丢seen命中”方法审查已由文献复审完成；其R0成本优先建议随后被用户指定的入口选择调研方向替代，当前下一项见第1节及新的调研指令。夜间停止时已无研究进程，watchdog已退出；[最终进程核验](hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/final_process_verification_v1.json)通过，[实验总结](实验总结.md)已完成并通过文档复核。到时停止不等于长期研究目标完成。
+ 
+ 局部尺度的[纯代数补充](hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_lexicographic_addendum_v1.md)进一步证明：固定当前状态、考虑的候选与可行性，当前λ1先按整数GT分散变化ΔS、再按切边变化ΔC比较；全部fit目标满足严格界，unseen对所有候选ΔS恒为0。与stay零同分保持原标签，严格改善移动同分才按叶ID。图仍影响候选和同ΔS比较，容量及更新顺序仍重要；这不证明全局最优或Recall退化原因。
+ 

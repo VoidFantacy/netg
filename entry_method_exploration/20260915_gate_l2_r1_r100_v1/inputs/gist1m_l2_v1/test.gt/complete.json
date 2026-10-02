@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "n": 1000,
+  "base_sha256": "73418110328f5aa522d9f6b0cd9115a6c515dc44e3c48420e506ddeddbdbdbc0",
+  "metric": "squared_L2",
+  "k": 100,
+  "threads": 16,
+  "seconds": 17.280736207962036,
+  "independent_direct_float64_checks": [
+    {
+      "query": 0,
+      "full_base_rows": 1000000,
+      "float64_top100_distance_error": 1.5543122344752192e-15,
+      "tolerance": 2.3349485202268885e-06,
+      "identical_ID_set": true
+    },
+    {
+      "query": 999,
+      "full_base_rows": 1000000,
+      "float64_top100_distance_error": 7.216449660063518e-16,
+      "tolerance": 5.998638314125827e-07,
+      "identical_ID_set": true
+    }
+  ],
+  "gt_sha256": "19a49f4832d4f59dc39bcfc00d3604d81c3790008bfe870c179cc050d0baefed"
+}

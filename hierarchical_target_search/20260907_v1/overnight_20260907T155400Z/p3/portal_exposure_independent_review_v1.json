@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "status": "PASS_SOURCE_AND_INDEPENDENT_SMALL_SYNTHETICS",
+  "created_utc": "2026-09-07T18:19:19.967703+00:00",
+  "reviewer": "p1_evaluator",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/diagnose_portal_exposure.py",
+    "sha256": "e76ad3377df984af132596c3dc84f65c9ab3f86c90bbfdbbd1ec7581ce9a9e59"
+  },
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/diagnosis_protocol_v1.json",
+    "sha256": "4bdd1cd92b42d85f89bd69aec980068c9bed0d5aee90917d5ce2ad8db9823959"
+  },
+  "independent_checks": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/portal_exposure_independent_checks_v2/report.json",
+    "sha256": "fc3a090a7d248e7837af1f3acfcae39000901fa0b364fd4b1bc64de216935002"
+  },
+  "independent_checker": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/check_portal_exposure_independent.py",
+    "sha256": "74df112074cdc2e1a6854c130dda239260605cffd11740ae9c03d1c80b7e4b77"
+  },
+  "author_selftest": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/portal_exposure_selftest_v2/selftest.json",
+    "sha256": "df369b1a0f8fa12239f2fc540f30dc686e833359853dc39de54271fb758c3dfd"
+  },
+  "predeclared_checklist": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/diagnosis_independent_checklist_v1.json",
+    "sha256": "1e3365e62e90ec42bebb0b1cce713a54e5ca0c529b20575573e863d27c3196d8"
+  },
+  "interpretation_sha_source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/interpretation_limits_v1.md",
+    "sha256": "e39e4a3056365ff708808fd57906b0c02a5715916b4662b6b848e71a87689402"
+  },
+  "read_scope": "Complete source and frozen helper functions, prior metadata/interpretation and synthetic fixtures only. No actual count rows, labels, GT, vectors, graph, portal arrays or ANN were read/run by this reviewer.",
+  "required_fixes_remaining": [],
+  "closed_issue": {
+    "issue": "Same returned valid ID set must imply identical Recall even when route changes. Initial source only enforced Recall integrity for identical full routes; its synthetic changed-Recall examples reused unchanged returned sets.",
+    "resolution": "v2 adds independent returned-set⇒Recall equality, repairs changed-Recall synthetic fixtures, and adds rejection check. Independent legal GT-derived fixtures confirm it.",
+    "preserved_initial_source": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/portal_exposure_source_versions/diagnose_portal_exposure_v1_f591b700.py"
+  },
+  "verified_contracts": [
+    "Exact failed P3 and diagnosis-protocol lineage; four verification fingerprints independently match the gate-bound interpretation document.",
+    "Saved model/count JSONs and small portals are freshly hashed with allowed path/type/shape boundaries. No label/cache masks/raw GT/vector/graph opening; accepted label/graph provenance is inherited explicitly.",
+    "Exactly same-lambda greedy3-minus-frequency3 oracle_probability; both datasets, both lambdas and L64/128 give all eight fixed cells. No cross-lambda fit proxy total comparison.",
+    "All256 proxy leaves, support/candidate/query counts, portal choices, marginal sum and aggregate proxy identity checked; negative leaves retained.",
+    "Actual kernel seed order is shared default then deduplicated entry_ids. Three entry classes plus complete regions/weights/default/anchor context are checked.",
+    "Identical complete route requires bitwise saved weights and exact returned IDs/order, Recall and all9 oracle NDC/MAC/frontier counters. Same returned set separately requires same Recall, even across differing route classes.",
+    "Raw sum-delta sign and weighted delta/support sign are independent. Positive-weight unsupported leaves make score null; zero-weight unsupported leaves contribute no weight; no re-normalization.",
+    "Full 3 route classes,3 raw signs,4 weighted signs including undefined, and Cartesian groups preserve empty bins and exhaust all10K per cell. ID-set/order equality and equal Recall remain distinct.",
+    "Mean paired orientation and gains/losses/equal are checked against frozen prior portal comparison; output compressed perquery arrays retain null as documented NaN.",
+    "Legacy Fast sentinel frontier counters are excluded; no CI, model/gate reopening, fitting, ANN or auxiliary graph authorization."
+  ],
+  "synthetic_evidence": {
+    "independent_queries": 6,
+    "known_synthetic_GT_used_to_construct_valid_recall": true,
+    "checks_passed": 33,
+    "integer_route_counter_identity_assertions": "exact",
+    "derived_float_expected_values_tolerance": 1e-15,
+    "reviewer_test_precision_correction": "First reviewer run used exact decimal equality for a derived -.04 weighted score and failed from normal float rounding. That reviewer script/failure metadata is preserved in independent_checks_v1; no subject implementation change was needed. v2 retains exact IDs/counters and uses 1e-15 only for derived expected floats."
+  },
+  "actual_acceptance": "Pending serial root controlled saved-output diagnosis. PASS here is source/synthetic acceptance, not evidence that actual full pilot invariance or diagnosis already passes."
+}

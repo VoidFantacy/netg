@@ -1,0 +1,57 @@
+{
+  "status": "STOP_DEVELOPMENT_GATE",
+  "by_dataset_split": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "split": "cal",
+      "conditions": {
+        "reward_beats_teacher": true,
+        "reward_beats_default": false,
+        "graph_ndc_le_default_plus1pct": true
+      },
+      "passed": false,
+      "reward_delta_teacher_pp": 0.02929687499999556,
+      "reward_delta_default_pp": -0.01953125000000444,
+      "graph_ndc_change_pct": -0.5973972961972773
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "split": "audit",
+      "conditions": {
+        "reward_beats_teacher": true,
+        "reward_beats_default": true,
+        "graph_ndc_le_default_plus1pct": true
+      },
+      "passed": true,
+      "reward_delta_teacher_pp": 0.20507812500000222,
+      "reward_delta_default_pp": 0.16601562499999334,
+      "graph_ndc_change_pct": -0.4748987166048102
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "split": "cal",
+      "conditions": {
+        "reward_beats_teacher": true,
+        "reward_beats_default": true,
+        "graph_ndc_le_default_plus1pct": true
+      },
+      "passed": true,
+      "reward_delta_teacher_pp": 0.11718750000000444,
+      "reward_delta_default_pp": 0.02929687500000666,
+      "graph_ndc_change_pct": 0.1820483300815745
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "split": "audit",
+      "conditions": {
+        "reward_beats_teacher": true,
+        "reward_beats_default": true,
+        "graph_ndc_le_default_plus1pct": true
+      },
+      "passed": true,
+      "reward_delta_teacher_pp": 0.10742187500000222,
+      "reward_delta_default_pp": 0.08789062499999778,
+      "graph_ndc_change_pct": -0.1282271217239006
+    }
+  ]
+}

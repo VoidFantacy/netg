@@ -1,0 +1,1532 @@
+{
+  "schema_version": 1,
+  "status": "PASS_SCOPED_POST_DEADLINE_PROTECTION_AND_METADATA_RESOURCE_REVIEW",
+  "started_utc": "2026-09-07T23:05:30.623991+00:00",
+  "completed_utc": "2026-09-07T23:05:30.659127+00:00",
+  "read_scope": "Small protected source/config/snapshot/status files, 54 registered jobs and stop/config metadata, plus stat-only RUN traversal and current system resource metadata. No real GT/graph/base/query/NPZ contents.",
+  "source_evidence": [
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/source_protection_preclose_v1.json",
+      "sha256": "9592c2718a87f58324eb601b98fb5ce1b18af040ce3429446af2af06fa0018e9",
+      "bytes": 2213
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/source_before_manifest.json",
+      "sha256": "029ee508a878cd23db7f65370a7b0f0c149431af94b40770de1543f81141c6f9",
+      "bytes": 1472
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/settings_provenance_recheck_v1.json",
+      "sha256": "1c05f0f0426b0530b9e34b4577a97b81db1996de4daa11541f89a35adff5476d",
+      "bytes": 382
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/config.json",
+      "sha256": "3220fbb4c8bc4f60a29bd8b158cae886d560f440f30e91fab0ac363940817498",
+      "bytes": 481
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/stop_verification.json",
+      "sha256": "e0e4dc5843f6c0f08bd41c32bc50bec3eeba1bb4257d7c75a5cae24186ab9706",
+      "bytes": 215
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/CLOSED.json",
+      "sha256": "eb4afcbde8a4ca8107cf947e52596e0cda0e4be2b1e89dac78ee0a800eb1f6af",
+      "bytes": 592
+    }
+  ],
+  "protected_small_source_checks": [
+    {
+      "path": "/data/netg/ACSG/AGENTS.md",
+      "sha256": "dbb88f109e250c93422f34cc0db83b767ed6d8961f98f8f3fd6219fceb95a119",
+      "bytes": 1621,
+      "expected_sha256": "dbb88f109e250c93422f34cc0db83b767ed6d8961f98f8f3fd6219fceb95a119",
+      "matches_preclose_protected_identity": true,
+      "basis": "overnight-start snapshot"
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/ACSG.cpp",
+      "sha256": "931d74db432bb2a64aeaedd5200f933674b5e84fb0d129d5640189d76b008ba4",
+      "bytes": 54198,
+      "expected_sha256": "931d74db432bb2a64aeaedd5200f933674b5e84fb0d129d5640189d76b008ba4",
+      "matches_preclose_protected_identity": true,
+      "basis": "overnight-start snapshot"
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/ACSG.h",
+      "sha256": "d45ce4c40e4e295696df985d2e2f59efa88b7c79e3b6245ac2d92ccbc7df056b",
+      "bytes": 11397,
+      "expected_sha256": "d45ce4c40e4e295696df985d2e2f59efa88b7c79e3b6245ac2d92ccbc7df056b",
+      "matches_preclose_protected_identity": true,
+      "basis": "overnight-start snapshot"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/bench_target_basin_eval.cpp",
+      "sha256": "41a9f890bc4112cb844f62920188ed0c185ccda18900c0da6d87752d3af4b03d",
+      "bytes": 33055,
+      "expected_sha256": "41a9f890bc4112cb844f62920188ed0c185ccda18900c0da6d87752d3af4b03d",
+      "matches_preclose_protected_identity": true,
+      "basis": "overnight-start snapshot"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/bench_hierarchical_eval.cpp",
+      "sha256": "ec770d5921831ac3937ab117b87a1750164f51164b48f3461183192c6d8e2079",
+      "bytes": 42603,
+      "expected_sha256": "ec770d5921831ac3937ab117b87a1750164f51164b48f3461183192c6d8e2079",
+      "matches_preclose_protected_identity": true,
+      "basis": "evaluated frozen implementation"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/bench_hierarchical_eval_p3.cpp",
+      "sha256": "cf40032dc469c08840e409af23bd503e1ad6571184351a2694776247e21d1316",
+      "bytes": 57005,
+      "expected_sha256": "cf40032dc469c08840e409af23bd503e1ad6571184351a2694776247e21d1316",
+      "matches_preclose_protected_identity": true,
+      "basis": "evaluated frozen implementation"
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/RegionalSearch.h",
+      "sha256": "320e29c9407d5907ece7ef64113edeb8b2d5157fa8796aaf94e470eb6771e14e",
+      "bytes": 9788,
+      "expected_sha256": "320e29c9407d5907ece7ef64113edeb8b2d5157fa8796aaf94e470eb6771e14e",
+      "matches_preclose_protected_identity": true,
+      "basis": "evaluated frozen implementation"
+    }
+  ],
+  "cmake": {
+    "current": {
+      "path": "/data/netg/ACSG/benches/CMakeLists.txt",
+      "sha256": "c12aa1e8fe249db348223c1b4680b391da56dddcd41e4530fe59707c36001d5e",
+      "bytes": 8354
+    },
+    "overnight_start_snapshot": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/source_before/benches/CMakeLists.txt",
+      "sha256": "c48687fc3a5de3f88e988a048399321a12a601b42e802d4524c3fd33d82ade10",
+      "bytes": 7450
+    },
+    "snapshot_matches_start_manifest": true,
+    "old_content_exact_prefix": true,
+    "added_targets": [
+      "bench_hierarchical_eval",
+      "bench_hierarchical_eval_p3",
+      "bench_hierarchical_portals"
+    ],
+    "only_three_target_setup_and_include_blocks": true,
+    "current_diff_matches_preclose_recorded_patch": true,
+    "preclose_patch": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/cmake_since_overnight_start.patch",
+      "sha256": "3a4b373603da9886f3e210b69151df26b0017b0f0c41170f1209db7e370adb14",
+      "bytes": 1155
+    },
+    "repository_file_modified_by_this_review": false
+  },
+  "settings": {
+    "current": {
+      "path": "/data/netg/ACSG/benches/datasets/settings.json",
+      "sha256": "6519ca075544828ae0ea85f55f1c8e6a662affc8bf1b67f39bb9eccc294a590a",
+      "bytes": 7974
+    },
+    "expected_sha256": "6519ca075544828ae0ea85f55f1c8e6a662affc8bf1b67f39bb9eccc294a590a",
+    "matches_existing_P0_recheck": true,
+    "configuration_changed_by_this_review": false
+  },
+  "git_status": {
+    "command": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "environment_override": {
+      "GIT_OPTIONAL_LOCKS": "0"
+    },
+    "start_snapshot": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/git_status_before.txt",
+      "sha256": "4f6e1e39d06d5704a4a6dfe84ac3e16db694bcd5324b8e004021abd064daffc1",
+      "bytes": 81765
+    },
+    "start_line_count": 1308,
+    "current_line_count": 1311,
+    "added_status_lines": [
+      "?? benches/bench_hierarchical_eval.cpp",
+      "?? benches/bench_hierarchical_eval_p3.cpp",
+      "?? benches/bench_hierarchical_portals.cpp"
+    ],
+    "removed_status_lines": [],
+    "new_deletion_status_lines": [],
+    "removed_previous_tracked_status_lines": [],
+    "matches_preclose_added_lines": true,
+    "matches_preclose_removed_lines": true,
+    "status_is_not_a_full_content_integrity_proof": true,
+    "index_checkout_or_repository_mutations_by_review": false
+  },
+  "registered_jobs": {
+    "count": 54,
+    "status_counts": {
+      "COMPLETE": 51,
+      "LAUNCH_FAILED": 1,
+      "FAILED": 2
+    },
+    "jobs": [
+      {
+        "name": "p0_full_audit",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:01:04.685628+00:00",
+        "ended_utc": "2026-09-07T16:01:40.846703+00:00",
+        "elapsed_seconds": 36.16094515900113,
+        "returncode": 0,
+        "rusage_maxrss_kib": 2743496,
+        "peak_rss_kib": 852932,
+        "child_user_cpu_seconds": 20.076302,
+        "child_system_cpu_seconds": 5.179301,
+        "disk_free_bytes_at_end": 21507543040,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p0_full_audit.json",
+          "sha256": "66fc3dbbf158a61aeb101f97151dd18d350323f5cd56320ae0286b447dd7b1c8",
+          "bytes": 1125
+        },
+        "stage_from_registered_name": "P0"
+      },
+      {
+        "name": "p1_evaluator_build_v1",
+        "status": "LAUNCH_FAILED",
+        "heavy": false,
+        "started_utc": null,
+        "ended_utc": "2026-09-07T16:03:17.854896+00:00",
+        "elapsed_seconds": null,
+        "returncode": null,
+        "rusage_maxrss_kib": null,
+        "peak_rss_kib": null,
+        "child_user_cpu_seconds": null,
+        "child_system_cpu_seconds": null,
+        "disk_free_bytes_at_end": null,
+        "error": "[Errno 2] No such file or directory: 'cmake'",
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p1_evaluator_build_v1.json",
+          "sha256": "5e2400a675d011a376c9946eb8df2e887877cc24eea28df2e75b5d28536086cd",
+          "bytes": 618
+        },
+        "stage_from_registered_name": "P1"
+      },
+      {
+        "name": "p1_evaluator_build_v2",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T16:06:12.764557+00:00",
+        "ended_utc": "2026-09-07T16:06:24.820056+00:00",
+        "elapsed_seconds": 12.055360688998917,
+        "returncode": 0,
+        "rusage_maxrss_kib": 734044,
+        "peak_rss_kib": 15384,
+        "child_user_cpu_seconds": 10.294156,
+        "child_system_cpu_seconds": 0.289481,
+        "disk_free_bytes_at_end": 21486653440,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p1_evaluator_build_v2.json",
+          "sha256": "a54898d5cc97afdec7df61a708806d009bc9e154711408513a10c58ff3b2ac24",
+          "bytes": 1018
+        },
+        "stage_from_registered_name": "P1"
+      },
+      {
+        "name": "p1_evaluator_build_v3",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T16:09:00.872065+00:00",
+        "ended_utc": "2026-09-07T16:09:12.928682+00:00",
+        "elapsed_seconds": 12.056246348998684,
+        "returncode": 0,
+        "rusage_maxrss_kib": 735528,
+        "peak_rss_kib": 15464,
+        "child_user_cpu_seconds": 10.3588,
+        "child_system_cpu_seconds": 0.273596,
+        "disk_free_bytes_at_end": 21486563328,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p1_evaluator_build_v3.json",
+          "sha256": "05cceb3ee18334fa7e50abfb0a1b59c6ac2dbe1f945565adea231513cb37ee34",
+          "bytes": 1016
+        },
+        "stage_from_registered_name": "P1"
+      },
+      {
+        "name": "p1_evaluator_build_v4",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T16:09:41.998469+00:00",
+        "ended_utc": "2026-09-07T16:09:54.053601+00:00",
+        "elapsed_seconds": 12.055001314001856,
+        "returncode": 0,
+        "rusage_maxrss_kib": 741336,
+        "peak_rss_kib": 15420,
+        "child_user_cpu_seconds": 10.498198,
+        "child_system_cpu_seconds": 0.349613,
+        "disk_free_bytes_at_end": 21486526464,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p1_evaluator_build_v4.json",
+          "sha256": "0b633a974deee951692e9b800269a71434ff059fbc6ecb743b9663c52e17f6e7",
+          "bytes": 1018
+        },
+        "stage_from_registered_name": "P1"
+      },
+      {
+        "name": "p1_evaluator_cli_audit_v1",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T16:08:05.138275+00:00",
+        "ended_utc": "2026-09-07T16:08:07.145603+00:00",
+        "elapsed_seconds": 2.007165848001023,
+        "returncode": 0,
+        "rusage_maxrss_kib": 17880,
+        "peak_rss_kib": 8432,
+        "child_user_cpu_seconds": 0.046061,
+        "child_system_cpu_seconds": 0.006751999999999999,
+        "disk_free_bytes_at_end": 21486616576,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p1_evaluator_cli_audit_v1.json",
+          "sha256": "63150315031f5baaaf305c20f9b0826638d8680684dadba7efb9e5f2d26ed8cc",
+          "bytes": 1017
+        },
+        "stage_from_registered_name": "P1"
+      },
+      {
+        "name": "p1_evaluator_cli_audit_v2",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T16:10:21.261808+00:00",
+        "ended_utc": "2026-09-07T16:10:23.269613+00:00",
+        "elapsed_seconds": 2.0076685569983965,
+        "returncode": 0,
+        "rusage_maxrss_kib": 18952,
+        "peak_rss_kib": 8444,
+        "child_user_cpu_seconds": 0.043164999999999995,
+        "child_system_cpu_seconds": 0.011803,
+        "disk_free_bytes_at_end": 21486493696,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p1_evaluator_cli_audit_v2.json",
+          "sha256": "f7f9f0c4e2e87f3d65f4b191c7bfe1aab52019e061d0f13ac73ef8ba8f65b26a",
+          "bytes": 1137
+        },
+        "stage_from_registered_name": "P1"
+      },
+      {
+        "name": "p1_evaluator_selftest_v1",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T16:06:44.771965+00:00",
+        "ended_utc": "2026-09-07T16:06:46.781604+00:00",
+        "elapsed_seconds": 2.0095054789999267,
+        "returncode": 0,
+        "rusage_maxrss_kib": 13040,
+        "peak_rss_kib": 12968,
+        "child_user_cpu_seconds": 0.00949,
+        "child_system_cpu_seconds": 0.0,
+        "disk_free_bytes_at_end": 21486645248,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p1_evaluator_selftest_v1.json",
+          "sha256": "a9ea0f2c6e0466cacd9e079c05c825bfd5f7a5093f4c489bf8b0890c433328cd",
+          "bytes": 965
+        },
+        "stage_from_registered_name": "P1"
+      },
+      {
+        "name": "p1_evaluator_selftest_v2",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T16:10:03.722059+00:00",
+        "ended_utc": "2026-09-07T16:10:05.729607+00:00",
+        "elapsed_seconds": 2.0073839299984684,
+        "returncode": 0,
+        "rusage_maxrss_kib": 13072,
+        "peak_rss_kib": 12960,
+        "child_user_cpu_seconds": 0.004804,
+        "child_system_cpu_seconds": 0.004804,
+        "disk_free_bytes_at_end": 21486518272,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p1_evaluator_selftest_v2.json",
+          "sha256": "fe63e3a7e86970dbf08c3e806a666a43557cb99f7c267496153a45af25ef0ac5",
+          "bytes": 971
+        },
+        "stage_from_registered_name": "P1"
+      },
+      {
+        "name": "p1_fast20k_webvid",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:05:27.443717+00:00",
+        "ended_utc": "2026-09-07T16:05:29.453112+00:00",
+        "elapsed_seconds": 2.0092585519996646,
+        "returncode": 0,
+        "rusage_maxrss_kib": 1234080,
+        "peak_rss_kib": 8640,
+        "child_user_cpu_seconds": 1.437341,
+        "child_system_cpu_seconds": 2.329622,
+        "disk_free_bytes_at_end": 21491781632,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p1_fast20k_webvid.json",
+          "sha256": "646e06e0cad994f38ab46ac71a33bf23d95b27fb05b76ecc62f24aaca7f14492",
+          "bytes": 1384
+        },
+        "stage_from_registered_name": "P1"
+      },
+      {
+        "name": "p1_fast20k_yandex",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:06:19.162634+00:00",
+        "ended_utc": "2026-09-07T16:06:21.172017+00:00",
+        "elapsed_seconds": 2.009144992000074,
+        "returncode": 0,
+        "rusage_maxrss_kib": 1338628,
+        "peak_rss_kib": 8784,
+        "child_user_cpu_seconds": 1.086879,
+        "child_system_cpu_seconds": 2.086808,
+        "disk_free_bytes_at_end": 21491068928,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p1_fast20k_yandex.json",
+          "sha256": "a96dafa35abcc59da2f053d228e7f32270ab275c86e0aeb1122a25863d2133bd",
+          "bytes": 1401
+        },
+        "stage_from_registered_name": "P1"
+      },
+      {
+        "name": "p1_real_parity_v1",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:10:58.293805+00:00",
+        "ended_utc": "2026-09-07T16:12:22.666295+00:00",
+        "elapsed_seconds": 84.37236452500292,
+        "returncode": 0,
+        "rusage_maxrss_kib": 10694116,
+        "peak_rss_kib": 10478856,
+        "child_user_cpu_seconds": 73.319555,
+        "child_system_cpu_seconds": 35.776282,
+        "disk_free_bytes_at_end": 21473787904,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p1_real_parity_v1.json",
+          "sha256": "7bb8b83bebc097f0ab32000c9f3ff5f14cd1706deb364d077b8851ad7c1b8a31",
+          "bytes": 1434
+        },
+        "stage_from_registered_name": "P1"
+      },
+      {
+        "name": "p2_analysis_v1",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:36:41.973855+00:00",
+        "ended_utc": "2026-09-07T16:36:58.042442+00:00",
+        "elapsed_seconds": 16.068449910999334,
+        "returncode": 0,
+        "rusage_maxrss_kib": 611856,
+        "peak_rss_kib": 523328,
+        "child_user_cpu_seconds": 13.93474,
+        "child_system_cpu_seconds": 0.680133,
+        "disk_free_bytes_at_end": 20236132352,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p2_analysis_v1.json",
+          "sha256": "10f5fdced6f4ef32e93a3b3f8caaae877313bddf9fa0ca764500af84cf6a3e0a",
+          "bytes": 2257
+        },
+        "stage_from_registered_name": "P2"
+      },
+      {
+        "name": "p2_eval_webvid",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:31:38.570185+00:00",
+        "ended_utc": "2026-09-07T16:32:41.042655+00:00",
+        "elapsed_seconds": 62.472341921002226,
+        "returncode": 0,
+        "rusage_maxrss_kib": 6417756,
+        "peak_rss_kib": 6155916,
+        "child_user_cpu_seconds": 648.267172,
+        "child_system_cpu_seconds": 8.53645,
+        "disk_free_bytes_at_end": 20874452992,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p2_eval_webvid.json",
+          "sha256": "e18d8899e0a8a21f418ad286f99f0b656cd4dcbeedd185dbc0a33ea70066ec30",
+          "bytes": 1531
+        },
+        "stage_from_registered_name": "P2"
+      },
+      {
+        "name": "p2_eval_yandex",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:33:33.353999+00:00",
+        "ended_utc": "2026-09-07T16:35:05.894412+00:00",
+        "elapsed_seconds": 92.54028768799981,
+        "returncode": 0,
+        "rusage_maxrss_kib": 11272888,
+        "peak_rss_kib": 11108852,
+        "child_user_cpu_seconds": 784.210003,
+        "child_system_cpu_seconds": 14.941556,
+        "disk_free_bytes_at_end": 20237230080,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p2_eval_yandex.json",
+          "sha256": "1371aff16345796eaaf7a388c4f738203ea539a1169175b09700022552de8638",
+          "bytes": 1551
+        },
+        "stage_from_registered_name": "P2"
+      },
+      {
+        "name": "p2_model_webvid",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:26:42.377984+00:00",
+        "ended_utc": "2026-09-07T16:26:44.387256+00:00",
+        "elapsed_seconds": 2.0091453599998204,
+        "returncode": 0,
+        "rusage_maxrss_kib": 296880,
+        "peak_rss_kib": 9604,
+        "child_user_cpu_seconds": 0.9044869999999999,
+        "child_system_cpu_seconds": 1.692015,
+        "disk_free_bytes_at_end": 21461549056,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p2_model_webvid.json",
+          "sha256": "ea2525aaad583f5a00c3d9b6bf4500a3485953bb7128e9bc227036d0c28fafe4",
+          "bytes": 1638
+        },
+        "stage_from_registered_name": "P2"
+      },
+      {
+        "name": "p2_model_yandex",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:31:16.739552+00:00",
+        "ended_utc": "2026-09-07T16:31:18.748733+00:00",
+        "elapsed_seconds": 2.0090553279987944,
+        "returncode": 0,
+        "rusage_maxrss_kib": 192964,
+        "peak_rss_kib": 8640,
+        "child_user_cpu_seconds": 0.765617,
+        "child_system_cpu_seconds": 1.356689,
+        "disk_free_bytes_at_end": 21441351680,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p2_model_yandex.json",
+          "sha256": "21c88e741ef152efe5162880bc51d02af8a387c7a8d2683ee60d119523d05535",
+          "bytes": 1637
+        },
+        "stage_from_registered_name": "P2"
+      },
+      {
+        "name": "p2_partition_webvid",
+        "status": "FAILED",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:18:11.762072+00:00",
+        "ended_utc": "2026-09-07T16:18:39.885602+00:00",
+        "elapsed_seconds": 28.123390608998307,
+        "returncode": 1,
+        "rusage_maxrss_kib": 6134196,
+        "peak_rss_kib": 6022584,
+        "child_user_cpu_seconds": 27.562724,
+        "child_system_cpu_seconds": 2.321577,
+        "disk_free_bytes_at_end": 21472915456,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p2_partition_webvid.json",
+          "sha256": "aa6e8191de8901bbb7eda236d4f4d032fcba377536dd6e8e0fa9bd0fce03da20",
+          "bytes": 1568
+        },
+        "stage_from_registered_name": "P2"
+      },
+      {
+        "name": "p2_partition_webvid_diagnostic_v2",
+        "status": "FAILED",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:22:32.866072+00:00",
+        "ended_utc": "2026-09-07T16:23:00.989452+00:00",
+        "elapsed_seconds": 28.123228991997166,
+        "returncode": 3,
+        "rusage_maxrss_kib": 6134156,
+        "peak_rss_kib": 6024348,
+        "child_user_cpu_seconds": 27.126953,
+        "child_system_cpu_seconds": 2.1976459999999998,
+        "disk_free_bytes_at_end": 21467258880,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p2_partition_webvid_diagnostic_v2.json",
+          "sha256": "1ff29fbfd0182f0e8ff2ed2e389956af7572e5ea0809df31101b4df6bc0e2564",
+          "bytes": 1618
+        },
+        "stage_from_registered_name": "P2"
+      },
+      {
+        "name": "p2_partition_webvid_strict_v3",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:25:34.259208+00:00",
+        "ended_utc": "2026-09-07T16:26:02.377600+00:00",
+        "elapsed_seconds": 28.11826606700197,
+        "returncode": 0,
+        "rusage_maxrss_kib": 6134212,
+        "peak_rss_kib": 6100940,
+        "child_user_cpu_seconds": 27.414685,
+        "child_system_cpu_seconds": 2.184707,
+        "disk_free_bytes_at_end": 21461712896,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p2_partition_webvid_strict_v3.json",
+          "sha256": "109898c6a07aa44e6b7a4a739dc20e0bfdf46b0e5945a43d4337f4f3f8b03fc9",
+          "bytes": 1597
+        },
+        "stage_from_registered_name": "P2"
+      },
+      {
+        "name": "p2_partition_yandex_strict_v3",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:27:21.409048+00:00",
+        "ended_utc": "2026-09-07T16:30:14.172986+00:00",
+        "elapsed_seconds": 172.7637970729993,
+        "returncode": 0,
+        "rusage_maxrss_kib": 35699900,
+        "peak_rss_kib": 35550988,
+        "child_user_cpu_seconds": 167.230565,
+        "child_system_cpu_seconds": 15.672615,
+        "disk_free_bytes_at_end": 21441437696,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p2_partition_yandex_strict_v3.json",
+          "sha256": "177007cab4785a82b3d60fbd2878f4e8012f4544edf2cb266e58f1230e871ebd",
+          "bytes": 1621
+        },
+        "stage_from_registered_name": "P2"
+      },
+      {
+        "name": "p2_region_selection_diagnosis_v1",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:45:02.957348+00:00",
+        "ended_utc": "2026-09-07T16:45:10.990716+00:00",
+        "elapsed_seconds": 8.033235643000808,
+        "returncode": 0,
+        "rusage_maxrss_kib": 458200,
+        "peak_rss_kib": 453712,
+        "child_user_cpu_seconds": 5.631452,
+        "child_system_cpu_seconds": 0.447638,
+        "disk_free_bytes_at_end": 20229865472,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p2_region_selection_diagnosis_v1.json",
+          "sha256": "6516b8c2b69af29da0c43c406781fdcff27dc83b05e9c087f0f11215d3f072e9",
+          "bytes": 1890
+        },
+        "stage_from_registered_name": "P2"
+      },
+      {
+        "name": "p2_saved_capacity_diagnosis_v1",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:56:11.016027+00:00",
+        "ended_utc": "2026-09-07T16:56:21.065584+00:00",
+        "elapsed_seconds": 10.04944271000204,
+        "returncode": 0,
+        "rusage_maxrss_kib": 450408,
+        "peak_rss_kib": 327468,
+        "child_user_cpu_seconds": 8.812494,
+        "child_system_cpu_seconds": 0.412023,
+        "disk_free_bytes_at_end": 20214607872,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p2_saved_capacity_diagnosis_v1.json",
+          "sha256": "8fb5f6afcc91aa7c073836d4f58ee6172241ba485c921fac9f08d262f95944d2",
+          "bytes": 1771
+        },
+        "stage_from_registered_name": "P2"
+      },
+      {
+        "name": "p2_trace_analysis_complete_v2",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T18:12:23.927827+00:00",
+        "ended_utc": "2026-09-07T18:12:35.977588+00:00",
+        "elapsed_seconds": 12.049644468002953,
+        "returncode": 0,
+        "rusage_maxrss_kib": 1224864,
+        "peak_rss_kib": 1210004,
+        "child_user_cpu_seconds": 10.845612,
+        "child_system_cpu_seconds": 0.49589,
+        "disk_free_bytes_at_end": 17920212992,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p2_trace_analysis_complete_v2.json",
+          "sha256": "d0234bfc7e84dd72c21ed6d48509b3d81f8a9931b13d3b4adfb6ec904cf14cbf",
+          "bytes": 3887
+        },
+        "stage_from_registered_name": "P2"
+      },
+      {
+        "name": "p2_trace_analysis_v1",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:42:18.069835+00:00",
+        "ended_utc": "2026-09-07T16:42:26.110485+00:00",
+        "elapsed_seconds": 8.04051953599992,
+        "returncode": 0,
+        "rusage_maxrss_kib": 890664,
+        "peak_rss_kib": 768396,
+        "child_user_cpu_seconds": 7.667678,
+        "child_system_cpu_seconds": 0.355985,
+        "disk_free_bytes_at_end": 20233011200,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p2_trace_analysis_v1.json",
+          "sha256": "61b715e5c0d44f2dd02331fecf3271b89fd6866badba04e770c235523328e3ce",
+          "bytes": 1668
+        },
+        "stage_from_registered_name": "P2"
+      },
+      {
+        "name": "p2_trace_completion_v1",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T18:09:47.855245+00:00",
+        "ended_utc": "2026-09-07T18:11:42.329582+00:00",
+        "elapsed_seconds": 114.47413609099749,
+        "returncode": 0,
+        "rusage_maxrss_kib": 10448552,
+        "peak_rss_kib": 10738996,
+        "child_user_cpu_seconds": 65.104499,
+        "child_system_cpu_seconds": 48.434207,
+        "disk_free_bytes_at_end": 17924591616,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p2_trace_completion_v1.json",
+          "sha256": "a796f00ca8a2bec1a283acc5bd293c61841149b2c356705b826a10b27ed811f2",
+          "bytes": 1338
+        },
+        "stage_from_registered_name": "P2"
+      },
+      {
+        "name": "p3_analysis_v1",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T17:51:25.648685+00:00",
+        "ended_utc": "2026-09-07T17:51:53.765584+00:00",
+        "elapsed_seconds": 28.116796164002153,
+        "returncode": 0,
+        "rusage_maxrss_kib": 1036996,
+        "peak_rss_kib": 997728,
+        "child_user_cpu_seconds": 25.472989,
+        "child_system_cpu_seconds": 1.523819,
+        "disk_free_bytes_at_end": 18052882432,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_analysis_v1.json",
+          "sha256": "47d270297be73555cce855de42bb4af8b8f8c9f480bbf67b4cd74756a4538248",
+          "bytes": 1723
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_analyzer_selftest_v1",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T17:39:44.400118+00:00",
+        "ended_utc": "2026-09-07T17:39:46.411955+00:00",
+        "elapsed_seconds": 2.011678627000947,
+        "returncode": 0,
+        "rusage_maxrss_kib": 38204,
+        "peak_rss_kib": 8412,
+        "child_user_cpu_seconds": 0.115158,
+        "child_system_cpu_seconds": 0.011911999999999999,
+        "disk_free_bytes_at_end": 19863924736,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_analyzer_selftest_v1.json",
+          "sha256": "b09df92bbe825634b2c3dd7b79f6b5ad2a21d9c5168ea929c13db9c0547f7b96",
+          "bytes": 1199
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_analyzer_selftest_v2",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T17:42:14.016773+00:00",
+        "ended_utc": "2026-09-07T17:42:16.024984+00:00",
+        "elapsed_seconds": 2.0080943339999067,
+        "returncode": 0,
+        "rusage_maxrss_kib": 38652,
+        "peak_rss_kib": 8516,
+        "child_user_cpu_seconds": 0.079208,
+        "child_system_cpu_seconds": 0.019802,
+        "disk_free_bytes_at_end": 19827593216,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_analyzer_selftest_v2.json",
+          "sha256": "4c45f7930b4ed74c95fd61d4f436a43ff180e75ef0802a9b26533216d65de184",
+          "bytes": 1188
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_eval_webvid",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T17:43:07.661085+00:00",
+        "ended_utc": "2026-09-07T17:45:04.407873+00:00",
+        "elapsed_seconds": 116.74667394000426,
+        "returncode": 0,
+        "rusage_maxrss_kib": 6135644,
+        "peak_rss_kib": 6098928,
+        "child_user_cpu_seconds": 1083.757338,
+        "child_system_cpu_seconds": 22.317527,
+        "disk_free_bytes_at_end": 18938101760,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_eval_webvid.json",
+          "sha256": "386c38545ef14b6a9ebe6ac941a3ca5fd8a907ebe6881dae9ae4809909d2f34c",
+          "bytes": 1769
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_eval_yandex",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T17:47:01.122646+00:00",
+        "ended_utc": "2026-09-07T17:50:10.081407+00:00",
+        "elapsed_seconds": 188.9586145180001,
+        "returncode": 0,
+        "rusage_maxrss_kib": 10991440,
+        "peak_rss_kib": 10955304,
+        "child_user_cpu_seconds": 1344.136907,
+        "child_system_cpu_seconds": 38.977407,
+        "disk_free_bytes_at_end": 18054311936,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_eval_yandex.json",
+          "sha256": "e9c3d3b1a1faf118825b61dc8bcd4dda4e7b11cfe7ec222989d2af974db1bdca",
+          "bytes": 1797
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_evaluator_build_v1",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T17:08:27.553485+00:00",
+        "ended_utc": "2026-09-07T17:08:39.617578+00:00",
+        "elapsed_seconds": 12.063961686999392,
+        "returncode": 0,
+        "rusage_maxrss_kib": 764004,
+        "peak_rss_kib": 17076,
+        "child_user_cpu_seconds": 10.345747,
+        "child_system_cpu_seconds": 0.32146399999999997,
+        "disk_free_bytes_at_end": 20209704960,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_evaluator_build_v1.json",
+          "sha256": "a35f0d8d06dcd0b630a1d94fcbde981fd32092b4c3c39cb64fc0947c6fc15cf1",
+          "bytes": 1018
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_evaluator_build_v2",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T17:17:00.132332+00:00",
+        "ended_utc": "2026-09-07T17:17:12.181604+00:00",
+        "elapsed_seconds": 12.049165525000717,
+        "returncode": 0,
+        "rusage_maxrss_kib": 765200,
+        "peak_rss_kib": 15504,
+        "child_user_cpu_seconds": 9.99474,
+        "child_system_cpu_seconds": 0.299463,
+        "disk_free_bytes_at_end": 20145348608,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_evaluator_build_v2.json",
+          "sha256": "048e2d0ee3b027bbcebbf006906e7eb8168dc6f8509dd4d7270f0c027631b13a",
+          "bytes": 1005
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_evaluator_cli_audit_v1",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T17:14:09.467196+00:00",
+        "ended_utc": "2026-09-07T17:14:11.475762+00:00",
+        "elapsed_seconds": 2.0084456340009638,
+        "returncode": 0,
+        "rusage_maxrss_kib": 19512,
+        "peak_rss_kib": 8848,
+        "child_user_cpu_seconds": 0.056271999999999996,
+        "child_system_cpu_seconds": 0.010295,
+        "disk_free_bytes_at_end": 20145491968,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_evaluator_cli_audit_v1.json",
+          "sha256": "a1430db5ff79ccfd1401aada28727dd30af907de361955c26751ae6bd31e539d",
+          "bytes": 1153
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_evaluator_cli_audit_v2",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T17:19:42.089922+00:00",
+        "ended_utc": "2026-09-07T17:19:44.097558+00:00",
+        "elapsed_seconds": 2.007501639996917,
+        "returncode": 0,
+        "rusage_maxrss_kib": 19536,
+        "peak_rss_kib": 8556,
+        "child_user_cpu_seconds": 0.046640999999999995,
+        "child_system_cpu_seconds": 0.023059,
+        "disk_free_bytes_at_end": 20143595520,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_evaluator_cli_audit_v2.json",
+          "sha256": "2ec78ea755f0ca96669939071a6a5cf93466a1dd70008889d2599b6dc664f8a2",
+          "bytes": 1152
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_evaluator_selftest_v1",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T17:09:00.182680+00:00",
+        "ended_utc": "2026-09-07T17:09:02.190909+00:00",
+        "elapsed_seconds": 2.008113574996969,
+        "returncode": 0,
+        "rusage_maxrss_kib": 16828,
+        "peak_rss_kib": 13100,
+        "child_user_cpu_seconds": 0.023386999999999998,
+        "child_system_cpu_seconds": 0.007795,
+        "disk_free_bytes_at_end": 20209692672,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_evaluator_selftest_v1.json",
+          "sha256": "ab26e6055bbbb008f3f91b75d2c57c629939f241f6509a864d14adbfef442f1f",
+          "bytes": 971
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_evaluator_selftest_v2",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T17:19:41.997188+00:00",
+        "ended_utc": "2026-09-07T17:19:44.005565+00:00",
+        "elapsed_seconds": 2.0082570250015124,
+        "returncode": 0,
+        "rusage_maxrss_kib": 16756,
+        "peak_rss_kib": 13012,
+        "child_user_cpu_seconds": 0.023518999999999998,
+        "child_system_cpu_seconds": 0.007839,
+        "disk_free_bytes_at_end": 20143595520,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_evaluator_selftest_v2.json",
+          "sha256": "70f2481558e1e7e7c465e1533751e192cf99a59ef21ac2543303dcef9be3cb40",
+          "bytes": 972
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_finalizer_selftest_v1",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T17:26:17.720286+00:00",
+        "ended_utc": "2026-09-07T17:26:19.728694+00:00",
+        "elapsed_seconds": 2.008278658002382,
+        "returncode": 0,
+        "rusage_maxrss_kib": 34956,
+        "peak_rss_kib": 8896,
+        "child_user_cpu_seconds": 0.07023599999999999,
+        "child_system_cpu_seconds": 0.004131,
+        "disk_free_bytes_at_end": 20113502208,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_finalizer_selftest_v1.json",
+          "sha256": "2720d09310e3902ec0fe97ff8f19981855ad5e2234fd3bc7d0e86c1131c447fe",
+          "bytes": 1165
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_fit_inputs_webvid",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T17:09:32.149440+00:00",
+        "ended_utc": "2026-09-07T17:09:34.157574+00:00",
+        "elapsed_seconds": 2.008004721999896,
+        "returncode": 0,
+        "rusage_maxrss_kib": 154704,
+        "peak_rss_kib": 8160,
+        "child_user_cpu_seconds": 0.151324,
+        "child_system_cpu_seconds": 0.08362599999999999,
+        "disk_free_bytes_at_end": 20167897088,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_fit_inputs_webvid.json",
+          "sha256": "d489c04928725909c5ce6093e6ade9d58fa5e852af6ce9c8527b5ea8dcbfa46e",
+          "bytes": 1529
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_fit_inputs_yandex",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T17:10:21.960974+00:00",
+        "ended_utc": "2026-09-07T17:10:23.969315+00:00",
+        "elapsed_seconds": 2.0082177509975736,
+        "returncode": 0,
+        "rusage_maxrss_kib": 82112,
+        "peak_rss_kib": 8260,
+        "child_user_cpu_seconds": 0.105851,
+        "child_system_cpu_seconds": 0.043123999999999996,
+        "disk_free_bytes_at_end": 20151021568,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_fit_inputs_yandex.json",
+          "sha256": "b48200121aaec9ec674a85cac7fab8a0abbc2f3340c5b7c1a5957b9d8ab753d1",
+          "bytes": 1548
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_objective_local_scale_diagnosis_v1",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T18:45:39.876125+00:00",
+        "ended_utc": "2026-09-07T18:46:07.990993+00:00",
+        "elapsed_seconds": 28.11475092099863,
+        "returncode": 0,
+        "rusage_maxrss_kib": 788028,
+        "peak_rss_kib": 774104,
+        "child_user_cpu_seconds": 21.486024,
+        "child_system_cpu_seconds": 5.831463,
+        "disk_free_bytes_at_end": 17895608320,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_objective_local_scale_diagnosis_v1.json",
+          "sha256": "fb541be5136cbc79efdc01a40b3632e4fb75f28417a3e007ecd174ae89c3908f",
+          "bytes": 1385
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_p2_compatibility_v2",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T17:21:48.566046+00:00",
+        "ended_utc": "2026-09-07T17:22:24.716827+00:00",
+        "elapsed_seconds": 36.15066466100325,
+        "returncode": 0,
+        "rusage_maxrss_kib": 10708396,
+        "peak_rss_kib": 10724768,
+        "child_user_cpu_seconds": 32.174026,
+        "child_system_cpu_seconds": 14.606315,
+        "disk_free_bytes_at_end": 20138340352,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_p2_compatibility_v2.json",
+          "sha256": "64e97d9b795596feb96524a6f9ebaa7123954618ac6202f968ec38fef77043d3",
+          "bytes": 1131
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_partition_webvid",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T17:32:20.964258+00:00",
+        "ended_utc": "2026-09-07T17:33:01.136321+00:00",
+        "elapsed_seconds": 40.171949290001066,
+        "returncode": 0,
+        "rusage_maxrss_kib": 6401504,
+        "peak_rss_kib": 6272916,
+        "child_user_cpu_seconds": 38.61327,
+        "child_system_cpu_seconds": 3.152877,
+        "disk_free_bytes_at_end": 20047667200,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_partition_webvid.json",
+          "sha256": "aecd073e0660ae691ba93a19b92a234e982c13a072edc2987897de3f8adb9c6b",
+          "bytes": 1848
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_partition_yandex",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T17:33:39.997870+00:00",
+        "ended_utc": "2026-09-07T17:38:03.093572+00:00",
+        "elapsed_seconds": 263.0955834350025,
+        "returncode": 0,
+        "rusage_maxrss_kib": 37355416,
+        "peak_rss_kib": 37288240,
+        "child_user_cpu_seconds": 246.442418,
+        "child_system_cpu_seconds": 27.629167,
+        "disk_free_bytes_at_end": 19887013888,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_partition_yandex.json",
+          "sha256": "6dabf62e6b89e0d4608a30aa266ae287207d38f854952baf87b7300f6996439a",
+          "bytes": 1888
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_portal_exposure_diagnosis_v1",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T18:19:06.445002+00:00",
+        "ended_utc": "2026-09-07T18:19:20.501570+00:00",
+        "elapsed_seconds": 14.056450237003446,
+        "returncode": 0,
+        "rusage_maxrss_kib": 457012,
+        "peak_rss_kib": 386792,
+        "child_user_cpu_seconds": 11.411562,
+        "child_system_cpu_seconds": 0.675974,
+        "disk_free_bytes_at_end": 17909370880,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_portal_exposure_diagnosis_v1.json",
+          "sha256": "aac9e58e0b35ce4f3631b3283526b8317f6cfce02abe2978cccf62ec546e6ee0",
+          "bytes": 1349
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_portal_suite_webvid",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T17:38:27.419074+00:00",
+        "ended_utc": "2026-09-07T17:38:47.507511+00:00",
+        "elapsed_seconds": 20.088320722003118,
+        "returncode": 0,
+        "rusage_maxrss_kib": 5739656,
+        "peak_rss_kib": 5757460,
+        "child_user_cpu_seconds": 135.025767,
+        "child_system_cpu_seconds": 5.22706,
+        "disk_free_bytes_at_end": 19872604160,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_portal_suite_webvid.json",
+          "sha256": "0956198bc8a768ff9a4f0779131501b9eb20642f3da747a0e2c3c20e810ceb87",
+          "bytes": 1228
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_portal_suite_yandex",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T17:39:27.402367+00:00",
+        "ended_utc": "2026-09-07T17:40:05.569579+00:00",
+        "elapsed_seconds": 38.16709716100013,
+        "returncode": 0,
+        "rusage_maxrss_kib": 10525676,
+        "peak_rss_kib": 10543408,
+        "child_user_cpu_seconds": 179.432691,
+        "child_system_cpu_seconds": 9.181862,
+        "disk_free_bytes_at_end": 19856953344,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_portal_suite_yandex.json",
+          "sha256": "f30e4ff19fdcd5e5bb2120c0a9e6329ef583b5ec117c80b6841ec54be4ced100",
+          "bytes": 1237
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_prober_build_v1",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T17:11:31.321703+00:00",
+        "ended_utc": "2026-09-07T17:11:41.364641+00:00",
+        "elapsed_seconds": 10.042819067999517,
+        "returncode": 0,
+        "rusage_maxrss_kib": 610436,
+        "peak_rss_kib": 17000,
+        "child_user_cpu_seconds": 8.49659,
+        "child_system_cpu_seconds": 0.289549,
+        "disk_free_bytes_at_end": 20146573312,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_prober_build_v1.json",
+          "sha256": "1031a39fee5849ab7cef878b9876418fb61458edaf9af6435ae6cf1677839987",
+          "bytes": 999
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_prober_build_v2",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T17:13:49.064170+00:00",
+        "ended_utc": "2026-09-07T17:13:59.105804+00:00",
+        "elapsed_seconds": 10.04152663700006,
+        "returncode": 0,
+        "rusage_maxrss_kib": 617680,
+        "peak_rss_kib": 15424,
+        "child_user_cpu_seconds": 8.626971,
+        "child_system_cpu_seconds": 0.247767,
+        "disk_free_bytes_at_end": 20146507776,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_prober_build_v2.json",
+          "sha256": "efbb4d4185ecf550f7d82a8a33f0a9c2cc14ad8516432949a6ad9a284222bb74",
+          "bytes": 999
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_prober_selftest_v2",
+        "status": "COMPLETE",
+        "heavy": false,
+        "started_utc": "2026-09-07T17:17:00.041070+00:00",
+        "ended_utc": "2026-09-07T17:17:02.049399+00:00",
+        "elapsed_seconds": 2.0082191309993505,
+        "returncode": 0,
+        "rusage_maxrss_kib": 13800,
+        "peak_rss_kib": 0,
+        "child_user_cpu_seconds": 0.0063609999999999995,
+        "child_system_cpu_seconds": 0.0,
+        "disk_free_bytes_at_end": 20145364992,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_prober_selftest_v2.json",
+          "sha256": "dd3535a26f465faa13810a6e4820e60b3090a1784dbbbbb4fd5080a7517a5175",
+          "bytes": 958
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_real_model_acceptance_webvid",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T17:40:39.564586+00:00",
+        "ended_utc": "2026-09-07T17:40:53.621588+00:00",
+        "elapsed_seconds": 14.056880534000811,
+        "returncode": 0,
+        "rusage_maxrss_kib": 5821688,
+        "peak_rss_kib": 5764236,
+        "child_user_cpu_seconds": 8.807081,
+        "child_system_cpu_seconds": 7.534943,
+        "disk_free_bytes_at_end": 19846193152,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_real_model_acceptance_webvid.json",
+          "sha256": "bdf6e60db6313a627cbff3554fda388a91872130a3ed968ed21256efe0302d7c",
+          "bytes": 1571
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_real_model_acceptance_yandex",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T17:41:32.350421+00:00",
+        "ended_utc": "2026-09-07T17:42:08.501332+00:00",
+        "elapsed_seconds": 36.15079443700233,
+        "returncode": 0,
+        "rusage_maxrss_kib": 10708412,
+        "peak_rss_kib": 10466380,
+        "child_user_cpu_seconds": 24.363215,
+        "child_system_cpu_seconds": 13.524907,
+        "disk_free_bytes_at_end": 19827666944,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_real_model_acceptance_yandex.json",
+          "sha256": "d04a98b3ff3e4406a66772715d6c8a5290a6588f98a32dab9f29a02263a39ade",
+          "bytes": 1592
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_structure_analysis_v1",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T17:50:47.064584+00:00",
+        "ended_utc": "2026-09-07T17:50:49.072949+00:00",
+        "elapsed_seconds": 2.0082421400002204,
+        "returncode": 0,
+        "rusage_maxrss_kib": 202068,
+        "peak_rss_kib": 8696,
+        "child_user_cpu_seconds": 0.742644,
+        "child_system_cpu_seconds": 0.16769299999999998,
+        "disk_free_bytes_at_end": 18054213632,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_structure_analysis_v1.json",
+          "sha256": "59e9dc925b49846fa705af79d293c0cda8ba568259e963d04b4af43eae54d00f",
+          "bytes": 1655
+        },
+        "stage_from_registered_name": "P3"
+      },
+      {
+        "name": "p3_target_generalization_diagnosis_v1",
+        "status": "COMPLETE",
+        "heavy": true,
+        "started_utc": "2026-09-07T18:25:06.987680+00:00",
+        "ended_utc": "2026-09-07T18:25:21.047991+00:00",
+        "elapsed_seconds": 14.060196885999176,
+        "returncode": 0,
+        "rusage_maxrss_kib": 435476,
+        "peak_rss_kib": 360892,
+        "child_user_cpu_seconds": 12.474975,
+        "child_system_cpu_seconds": 0.823932,
+        "disk_free_bytes_at_end": 17899720704,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_target_generalization_diagnosis_v1.json",
+          "sha256": "d891c358918e3caf7027c4a5f4434c0bf8196b522e05eb8a08ff762a09ba748b",
+          "bytes": 1502
+        },
+        "stage_from_registered_name": "P3"
+      }
+    ],
+    "stage_summaries": [
+      {
+        "stage": "P0",
+        "registered_jobs": 1,
+        "status_counts": {
+          "COMPLETE": 1
+        },
+        "recorded_job_elapsed_seconds_sum": 36.16094515900113,
+        "jobs_with_elapsed": 1,
+        "jobs_without_elapsed": [],
+        "heavy_recorded_elapsed_seconds_sum": 36.16094515900113,
+        "first_launched_utc": "2026-09-07T16:01:04.685628+00:00",
+        "last_ended_utc": "2026-09-07T16:01:40.846703+00:00",
+        "first_to_last_span_seconds_including_gaps": 36.161075,
+        "child_user_cpu_seconds_sum": 20.076302,
+        "child_system_cpu_seconds_sum": 5.179301,
+        "elapsed_scope": "Registered command/supervisor elapsed including checks, builds, failed attempts and diagnostics; not complete training cost. Summation can include overlapping nonheavy jobs and is not whole-night wall time."
+      },
+      {
+        "stage": "P1",
+        "registered_jobs": 11,
+        "status_counts": {
+          "LAUNCH_FAILED": 1,
+          "COMPLETE": 10
+        },
+        "recorded_job_elapsed_seconds_sum": 132.58910023499993,
+        "jobs_with_elapsed": 10,
+        "jobs_without_elapsed": [
+          "p1_evaluator_build_v1"
+        ],
+        "heavy_recorded_elapsed_seconds_sum": 88.39076806900266,
+        "first_launched_utc": "2026-09-07T16:05:27.443717+00:00",
+        "last_ended_utc": "2026-09-07T16:12:22.666295+00:00",
+        "first_to_last_span_seconds_including_gaps": 415.222578,
+        "child_user_cpu_seconds_sum": 107.09844899999999,
+        "child_system_cpu_seconds_sum": 41.128761000000004,
+        "elapsed_scope": "Registered command/supervisor elapsed including checks, builds, failed attempts and diagnostics; not complete training cost. Summation can include overlapping nonheavy jobs and is not whole-night wall time."
+      },
+      {
+        "stage": "P2",
+        "registered_jobs": 14,
+        "status_counts": {
+          "COMPLETE": 12,
+          "FAILED": 2
+        },
+        "recorded_job_elapsed_seconds_sum": 584.8749413969999,
+        "jobs_with_elapsed": 14,
+        "jobs_without_elapsed": [],
+        "heavy_recorded_elapsed_seconds_sum": 584.8749413969999,
+        "first_launched_utc": "2026-09-07T16:18:11.762072+00:00",
+        "last_ended_utc": "2026-09-07T18:12:35.977588+00:00",
+        "first_to_last_span_seconds_including_gaps": 6864.215516,
+        "child_user_cpu_seconds_sum": 1795.4786810000003,
+        "child_system_cpu_seconds_sum": 99.729131,
+        "elapsed_scope": "Registered command/supervisor elapsed including checks, builds, failed attempts and diagnostics; not complete training cost. Summation can include overlapping nonheavy jobs and is not whole-night wall time."
+      },
+      {
+        "stage": "P3",
+        "registered_jobs": 28,
+        "status_counts": {
+          "COMPLETE": 28
+        },
+        "recorded_job_elapsed_seconds_sum": 904.2252990600173,
+        "jobs_with_elapsed": 28,
+        "jobs_without_elapsed": [],
+        "heavy_recorded_elapsed_seconds_sum": 843.9592375190186,
+        "first_launched_utc": "2026-09-07T17:08:27.553485+00:00",
+        "last_ended_utc": "2026-09-07T18:46:07.990993+00:00",
+        "first_to_last_span_seconds_including_gaps": 5860.437508,
+        "child_user_cpu_seconds_sum": 3202.4829119999995,
+        "child_system_cpu_seconds_sum": 152.54477200000002,
+        "elapsed_scope": "Registered command/supervisor elapsed including checks, builds, failed attempts and diagnostics; not complete training cost. Summation can include overlapping nonheavy jobs and is not whole-night wall time."
+      }
+    ],
+    "heavy_intervals": {
+      "launched_heavy_count": 34,
+      "overlap_pairs": [],
+      "no_positive_interval_overlap": true,
+      "conservative_interval": "started_utc through ended_utc recorded by supervisor, including its observation latency"
+    },
+    "largest_recorded_rusage": {
+      "job": "p3_partition_yandex",
+      "rusage_maxrss_kib": 37355416,
+      "gib": 35.624900817871094,
+      "source": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_partition_yandex.json",
+        "sha256": "6dabf62e6b89e0d4608a30aa266ae287207d38f854952baf87b7300f6996439a",
+        "bytes": 1888
+      },
+      "meaning": "Recorded child rusage.ru_maxrss at command reap; a kernel-accounted command high-water field, not a simultaneous whole-machine memory sum."
+    },
+    "largest_polled_RSS": {
+      "job": "p3_partition_yandex",
+      "peak_rss_kib": 37288240,
+      "gib": 35.56083679199219,
+      "source": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_partition_yandex.json",
+        "sha256": "6dabf62e6b89e0d4608a30aa266ae287207d38f854952baf87b7300f6996439a",
+        "bytes": 1888
+      },
+      "meaning": "Largest saved controller polling RSS sample; sampling can miss between-poll peaks and differs from rusage."
+    },
+    "minimum_recorded_end_disk_free_bytes": 17895608320,
+    "end_disk_samples_are_not_continuous_minimum": true,
+    "noncomplete_jobs": [
+      {
+        "name": "p1_evaluator_build_v1",
+        "status": "LAUNCH_FAILED",
+        "heavy": false,
+        "started_utc": null,
+        "ended_utc": "2026-09-07T16:03:17.854896+00:00",
+        "elapsed_seconds": null,
+        "returncode": null,
+        "rusage_maxrss_kib": null,
+        "peak_rss_kib": null,
+        "child_user_cpu_seconds": null,
+        "child_system_cpu_seconds": null,
+        "disk_free_bytes_at_end": null,
+        "error": "[Errno 2] No such file or directory: 'cmake'",
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p1_evaluator_build_v1.json",
+          "sha256": "5e2400a675d011a376c9946eb8df2e887877cc24eea28df2e75b5d28536086cd",
+          "bytes": 618
+        },
+        "stage_from_registered_name": "P1"
+      },
+      {
+        "name": "p2_partition_webvid",
+        "status": "FAILED",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:18:11.762072+00:00",
+        "ended_utc": "2026-09-07T16:18:39.885602+00:00",
+        "elapsed_seconds": 28.123390608998307,
+        "returncode": 1,
+        "rusage_maxrss_kib": 6134196,
+        "peak_rss_kib": 6022584,
+        "child_user_cpu_seconds": 27.562724,
+        "child_system_cpu_seconds": 2.321577,
+        "disk_free_bytes_at_end": 21472915456,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p2_partition_webvid.json",
+          "sha256": "aa6e8191de8901bbb7eda236d4f4d032fcba377536dd6e8e0fa9bd0fce03da20",
+          "bytes": 1568
+        },
+        "stage_from_registered_name": "P2"
+      },
+      {
+        "name": "p2_partition_webvid_diagnostic_v2",
+        "status": "FAILED",
+        "heavy": true,
+        "started_utc": "2026-09-07T16:22:32.866072+00:00",
+        "ended_utc": "2026-09-07T16:23:00.989452+00:00",
+        "elapsed_seconds": 28.123228991997166,
+        "returncode": 3,
+        "rusage_maxrss_kib": 6134156,
+        "peak_rss_kib": 6024348,
+        "child_user_cpu_seconds": 27.126953,
+        "child_system_cpu_seconds": 2.1976459999999998,
+        "disk_free_bytes_at_end": 21467258880,
+        "error": null,
+        "source": {
+          "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p2_partition_webvid_diagnostic_v2.json",
+          "sha256": "1ff29fbfd0182f0e8ff2ed2e389956af7572e5ea0809df31101b4df6bc0e2564",
+          "bytes": 1618
+        },
+        "stage_from_registered_name": "P2"
+      }
+    ],
+    "deadline": {
+      "hard_deadline_utc": "2026-09-07T23:00:00+00:00",
+      "stop_verification_at": "2026-09-07T23:00:00.312452+00:00",
+      "all_registered_stopped": true,
+      "stop_active": [],
+      "stop_signals": [],
+      "intervals_crossing_hard_deadline": [],
+      "research_started_at_or_after_hard_deadline": [],
+      "jobs_ending_at_or_after_soft_stop": [],
+      "interrupted_or_timeout_status_jobs": [],
+      "deadline_interrupted_job_count": 0,
+      "last_registered_job_end_utc": "2026-09-07T18:46:07.990993+00:00",
+      "independent_all_proc_identity_scan": "Owned by root; not performed or claimed by this reviewer."
+    }
+  },
+  "current_resources": {
+    "at": "2026-09-07T23:05:30.659042+00:00",
+    "disk_path": "/data",
+    "disk_total_bytes": 315925245952,
+    "disk_free_bytes": 34017456128,
+    "disk_available_bytes": 17894608896,
+    "run_metadata_walk": {
+      "started_utc": "2026-09-07T23:05:30.638592+00:00",
+      "ended_utc": "2026-09-07T23:05:30.659042+00:00",
+      "regular_file_count": 6548,
+      "directory_count": 363,
+      "symlinks_not_followed": 0,
+      "other_entries": 0,
+      "regular_file_logical_bytes_sum": 3581638811,
+      "regular_file_allocated_bytes_unique_inodes": 3598319616,
+      "unique_regular_file_inodes": 6548,
+      "duplicate_hardlink_directory_entries": 0,
+      "stat_errors": [],
+      "file_contents_read_for_size": false,
+      "snapshot_atomic": false,
+      "scope": "Current file metadata before this report write; concurrent root report writes may change totals. No symlink targets followed."
+    },
+    "memory_snapshot": {
+      "MemTotal_kib": 129277492,
+      "MemFree_kib": 88487676,
+      "MemAvailable_kib": 126087788,
+      "SwapTotal_kib": 0,
+      "SwapFree_kib": 0
+    },
+    "is_whole_night_worst_case_bound": false,
+    "scope": "Current statvfs/file metadata and /proc/meminfo snapshot, not a bound on whole-night resource extremes."
+  },
+  "preservation": {
+    "files_actively_deleted_by_this_task": [],
+    "cleanup_performed_by_this_task": false,
+    "protected_artifacts_cleaned_by_this_task": false,
+    "old_failed_outputs_logs_snapshots_preserved": true,
+    "scope": "Scoped source/config hashes and status/metadata checks. No cleanup/reset/checkout or content traversal of large protected artifacts was performed.",
+    "unhashed_large_inputs": "Retain existing bound evidence; GT/graph/base/NPZ were not reopened or newly hashed here."
+  },
+  "new_experiment_method_compilation_or_model_run": false,
+  "writes_experiment_summary_handoffs_state_or_gate": false
+}

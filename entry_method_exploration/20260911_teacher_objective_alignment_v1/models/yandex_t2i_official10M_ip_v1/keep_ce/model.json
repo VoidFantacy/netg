@@ -1,0 +1,41 @@
+{
+  "status": "TRAINED_FIT_ONLY",
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "cell": "keep_ce",
+  "teacher": "keep",
+  "loss": "ce",
+  "lambda_anchor": 100,
+  "temperature": 0.05,
+  "margin": 0.1,
+  "seed": 20260911,
+  "epochs": 80,
+  "parameter_count": 40000,
+  "first": {
+    "data_loss": 5.70060459836094,
+    "drift": 9.073510151009346e-18,
+    "objective": 5.700604598360941,
+    "gradient_norm": 1.9701656440129154,
+    "epoch": 0,
+    "seconds": 0.43023228645324707
+  },
+  "last": {
+    "data_loss": 5.51463882457507,
+    "drift": 0.0009000334836408681,
+    "objective": 5.604642172939157,
+    "gradient_norm": 0.3176192930766756,
+    "epoch": 80,
+    "seconds": 35.623329877853394
+  },
+  "objective_decreased": true,
+  "training_seconds": 35.74570655822754,
+  "export_seconds": 0.0023221969604492188,
+  "W": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260911_teacher_objective_alignment_v1/models/yandex_t2i_official10M_ip_v1/keep_ce/W.f32",
+    "bytes": 656800,
+    "mtime_ns": 1789093321729240120,
+    "sha256": "6c3290d72a67686c2b2e16b25594ac904a7802192c05ef60bdbc5c7945df4443"
+  },
+  "cal_used": false,
+  "audit_used": false,
+  "validation_used": false
+}

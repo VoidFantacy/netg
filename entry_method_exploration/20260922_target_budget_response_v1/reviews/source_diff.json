@@ -1,0 +1,16 @@
+{
+  "diff": [
+    "--- \n",
+    "+++ \n",
+    "@@ -41,7 +41,7 @@\n",
+    "   write_raw(sub/\"entries.i32\",entries);write_raw(sub/\"route_ndc.u64\",route_ndc);if(route==\"exact\")write_raw(sub/\"exact_margin.f32\",margin);",
+    "   for(auto it=c[\"K_L\"].begin();it!=c[\"K_L\"].end();++it){int K=std::stoi(it.key());require(K==1||K==100,\"real K\");",
+    "    for(int L:it.value()){",
+    "-    require(L>=K&&L<=800,\"valid L\");idx->acsg.search_L=L;auto point=sub/(\"k\"+std::to_string(K)+\"_L\"+std::to_string(L));fs::create_directories(point);",
+    "+    require(L>=K&&L<=1250,\"valid L\");idx->acsg.search_L=L;auto point=sub/(\"k\"+std::to_string(K)+\"_L\"+std::to_string(L));fs::create_directories(point);",
+    "     std::vector<int32_t> ids(n*K);std::vector<float> dist(n*K);std::vector<uint64_t> ndc(n);",
+    "     for(size_t i=0;i<n;++i){",
+    "      if(i%128==0)checktime();ep.clear();for(int j=0;j<count;++j)ep.emplace_back(entries[i*3+j],1);vt.advance();dc.set_query(q.data()+i*d);"
+  ],
+  "kernel_changed": false
+}

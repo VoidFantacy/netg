@@ -1,0 +1,241 @@
+#define main legacy_diagnostic_main
+#include "legacy_reference.cpp"
+#undef main
+#include <map>
+
+struct Decision {
+    std::array<int32_t,3> ids{-1,-1,-1};
+    std::array<int32_t,3> labels{-1,-1,-1};
+    uint32_t ndc=0;
+    std::array<int32_t,8> candidates{-1,-1,-1,-1,-1,-1,-1,-1};
+    int32_t action_slot=-1;
+};
+
+class Policy {
+    size_t dim,h,k;bool counted,exact,slot_labels,heap_order,canonical_order;
+    int32_t fixed_entry;
+    std::vector<float> w;
+    std::vector<int32_t> mapping,tie_ids;
+    std::unique_ptr<hnswlib::SpaceInterface<float>> space;
+    std::unique_ptr<hnswlib::HierarchicalNSW<float>> graph;
+    mutable hnswlib::InnerProductSpace exact_space;
+    bool c8=false;
+    std::vector<float> anchor;
+    std::vector<std::unique_ptr<Policy>> candidate_policies;
+    std::map<int32_t,int32_t> real_to_local;
+public:
+    Policy(const json& c,const fs::path& index_file,bool counting,bool load):
+        dim(c.at("dim")),h(c.value("hub_count",size_t(0))),k(c.value("k",1)),counted(counting),
+        exact(c.value("exact",false)),slot_labels(c.value("slot_labels",false)),heap_order(c.value("legacy_heap_order",false)),canonical_order(c.value("canonical_entry_order",false)),
+        fixed_entry(c.value("fixed_entry",int32_t(-1))),
+        w(c.contains("fixed_entry") ? std::vector<float>{} : read_raw<float>(c.at("W"))),
+        mapping(c.contains("fixed_entry") ? std::vector<int32_t>{} : read_raw<int32_t>(c.at("mapping"))),
+        tie_ids(c.contains("fixed_entry") ? std::vector<int32_t>{} : read_raw<int32_t>(c.at("tie_ids"))),exact_space(dim) {
+        if(c.contains("fixed_entry")) { require(fixed_entry>=0 && k==1,"invalid fixed NSG entry"); return; }
+        require(w.size()==h*dim && mapping.size()==h && tie_ids.size()==h,"policy shape mismatch");
+        require(k>=1 && k<=3,"invalid policy k");finite_matrix(w,"policy vectors");
+        if(!slot_labels)require(std::set<int32_t>(mapping.begin(),mapping.end()).size()==h,"Fast real labels must be unique");
+        require(std::set<int32_t>(tie_ids.begin(),tie_ids.end()).size()==h,"tie IDs must be unique");
+        c8=c.value("family",std::string())=="c8";
+        if(c8) {
+            require(k==3 && canonical_order && !slot_labels,"invalid C8 policy");
+            anchor=read_raw<float>(c.at("c8_anchor"));require(anchor.size()==h*dim,"anchor shape");
+            for(size_t j=0;j<h;++j)real_to_local[mapping[j]]=int32_t(j);
+            size_t i=0;
+            for(auto kid:c.at("c8_policies")) {
+                kid["dim"]=dim;
+                require(kid.at("family")=="profile" && kid.at("k")==3,"fixed candidate policy required");
+                require(read_raw<int32_t>(kid.at("mapping"))==mapping,"candidate mapping mismatch");
+                candidate_policies.push_back(std::make_unique<Policy>(kid,index_file.string()+"."+std::to_string(i++),counted,load));
+            }
+            require(candidate_policies.size()==2,"two fixed proposal policies required");return;
+        }
+        if(exact)return;
+        if(counted)space=std::make_unique<CountSpace>(dim);else space=std::make_unique<hnswlib::InnerProductSpace>(dim);
+        if(load)graph=std::make_unique<hnswlib::HierarchicalNSW<float>>(space.get(),index_file.string(),false,h);
+        else {
+            graph=std::make_unique<hnswlib::HierarchicalNSW<float>>(space.get(),h,16,200,c.value("hnsw_seed",c.at("seed").get<size_t>()));
+            for(size_t j=0;j<h;++j)graph->addPoint(w.data()+j*dim,slot_labels ? j : size_t(mapping[j]));
+            graph->saveIndex(index_file.string());
+        }
+        require(graph->cur_element_count==h,"duplicate external labels destroyed slot capacity");graph->setEf(10);
+    }
+    size_t entry_count()const{return k;}
+    Decision route(const float* q)const {
+        Decision result;
+        auto canonicalize=[&](){
+            if(canonical_order)for(size_t i=0;i<k;++i)for(size_t j=i+1;j<k;++j)
+                if(result.ids[j]<result.ids[i]){std::swap(result.ids[i],result.ids[j]);std::swap(result.labels[i],result.labels[j]);}
+        };
+        if(fixed_entry>=0) { result.ids[0]=fixed_entry;result.labels[0]=fixed_entry;return result; }
+        if(c8) {
+            std::set<int32_t> chosen;uint64_t count=0;
+            for(const auto& policy:candidate_policies) {
+                auto proposal=policy->route(q);count+=proposal.ndc;
+                for(int32_t id:proposal.ids)chosen.insert(real_to_local.at(id));
+            }
+            auto fn=exact_space.get_dist_func();void* param=exact_space.get_dist_func_param();
+            std::vector<std::pair<float,int32_t>> ranked(h);
+            for(size_t j=0;j<h;++j)ranked[j]={fn(q,anchor.data()+j*dim,param),int32_t(j)};
+            std::sort(ranked.begin(),ranked.end(),[&](auto a,auto b){return a.first<b.first||(a.first==b.first&&mapping[a.second]<mapping[b.second]);});
+            for(auto r:ranked){if(chosen.size()==8)break;chosen.insert(r.second);}
+            std::vector<int32_t> ids(chosen.begin(),chosen.end());
+            std::sort(ids.begin(),ids.end(),[&](int32_t a,int32_t b){return mapping[a]<mapping[b];});
+            require(ids.size()==8,"C8 size mismatch");
+            double norm=0;for(size_t j=0;j<dim;++j)norm+=double(q[j])*q[j];norm=std::sqrt(norm);
+            require(norm>0 && std::isfinite(norm),"invalid query norm");
+            std::array<double,8> scores{};
+            for(size_t j=0;j<8;++j) {
+                result.candidates[j]=ids[j];
+                double value=0;for(size_t v=0;v<dim;++v)value+=(double(q[v])/norm)*double(w[ids[j]*dim+v]);
+                scores[j]=value/.05;
+            }
+            double best=-std::numeric_limits<double>::infinity();int32_t slot=0;
+            for(size_t a=0;a<8;++a)for(size_t b=a+1;b<8;++b)for(size_t e=b+1;e<8;++e,++slot) {
+                double value=(scores[a]+scores[b])+scores[e];
+                if(value>best) {
+                    best=value;result.action_slot=slot;
+                    result.labels={ids[a],ids[b],ids[e]};result.ids={mapping[ids[a]],mapping[ids[b]],mapping[ids[e]]};
+                }
+            }
+            require(slot==56 && result.action_slot>=0,"action enumeration mismatch");
+            result.ndc=counted?uint32_t(count+h+8):0;return result;
+        }
+        if(exact) {
+            auto fn=exact_space.get_dist_func();void* param=exact_space.get_dist_func_param();
+            std::vector<std::pair<float,size_t>> scores(h);
+            for(size_t j=0;j<h;++j)scores[j]={fn(q,w.data()+j*dim,param),j};
+            std::partial_sort(scores.begin(),scores.begin()+k,scores.end(),[&](const auto& a,const auto& b){
+                return a.first<b.first || (a.first==b.first && tie_ids[a.second]<tie_ids[b.second]);});
+            for(size_t j=0;j<k;++j){result.ids[j]=mapping[scores[j].second];result.labels[j]=int32_t(scores[j].second);}
+            result.ndc=counted?h:0;canonicalize();return result;
+        }
+        uint64_t count=0;route_counter=counted?&count:nullptr;
+        auto heap=graph->searchKnn(q,k);route_counter=nullptr;
+        for(size_t position=0;position<k;++position){size_t j=heap_order?position:k-1-position;int32_t label=heap.top().second;result.labels[j]=label;result.ids[j]=slot_labels?mapping[label]:label;heap.pop();}
+        result.ndc=uint32_t(count);canonicalize();return result;
+    }
+};
+
+struct NativeWork {
+    std::unique_ptr<faiss::DistanceComputer> dc;CountDC* counted=nullptr;
+    faiss::VisitedTable visited;std::vector<acsg::Neighbor> retset;std::vector<acsg::EnterPoint> entries;
+    NativeWork(acsg::IndexACSGFlat& index,bool count):visited(index.ntotal) {
+        if(count){counted=new CountDC(acsg::storage_distance_computer(index.storage));dc.reset(counted);}
+        else dc.reset(acsg::storage_distance_computer(index.storage));
+        retset.reserve(129);entries.reserve(3);
+    }
+    Search search(acsg::IndexACSGFlat& index,const float* q,const Decision& route,size_t k) {
+        entries.clear();for(size_t j=0;j<k;++j)entries.emplace_back(route.ids[j],1.0);
+        dc->set_query(q);visited.advance();if(counted)counted->count=0;
+        Search result;std::array<faiss::idx_t,K> ids;
+        index.acsg.search_new(*dc,K,ids.data(),result.distances.data(),visited,2,entries,&retset);
+        for(size_t j=0;j<K;++j)result.ids[j]=int32_t(ids[j]);
+        if(counted) {
+            require(counted->count<=UINT32_MAX && counted->count>=k,"invalid graph count");result.ndc=counted->count;
+            for(size_t j=0;j<k;++j)require(counted->first_ids[j]==route.ids[j],"entry injection mismatch");
+        }
+        return result;
+    }
+};
+
+struct BatchOutput {std::vector<Decision> routes;std::vector<Search> searches;explicit BatchOutput(size_t n):routes(n),searches(n){}};
+using Workers=std::vector<std::unique_ptr<NativeWork>>;
+void batch(acsg::IndexACSGFlat& index,const Policy& policy,const std::vector<float>& q,size_t d,Workers& workers,BatchOutput& out) {
+    const size_t n=out.routes.size();
+    #pragma omp parallel for schedule(static)
+    for(size_t i=0;i<n;++i) {
+        out.routes[i]=policy.route(q.data()+i*d);
+        out.searches[i]=workers[omp_get_thread_num()]->search(index,q.data()+i*d,out.routes[i],policy.entry_count());
+    }
+}
+void route_batch(const Policy& policy,const std::vector<float>& q,size_t d,BatchOutput& out) {
+    #pragma omp parallel for schedule(static)
+    for(size_t i=0;i<out.routes.size();++i)out.routes[i]=policy.route(q.data()+i*d);
+}
+void graph_batch(acsg::IndexACSGFlat& index,const Policy& policy,const std::vector<float>& q,size_t d,Workers& workers,BatchOutput& out) {
+    #pragma omp parallel for schedule(static)
+    for(size_t i=0;i<out.routes.size();++i)out.searches[i]=workers[omp_get_thread_num()]->search(index,q.data()+i*d,out.routes[i],policy.entry_count());
+}
+void compare(const BatchOutput& a,const BatchOutput& b) {
+    for(size_t i=0;i<a.routes.size();++i) {
+        require(a.routes[i].ids==b.routes[i].ids && a.routes[i].labels==b.routes[i].labels,"plain/count route mismatch");
+        require(a.searches[i].ids==b.searches[i].ids && a.searches[i].distances==b.searches[i].distances,"plain/count kernel mismatch");
+    }
+}
+
+json metrics(const BatchOutput& out,const std::vector<int64_t>& gt,size_t gtk,const fs::path& dest) {
+    size_t n=out.routes.size();std::vector<uint8_t> hits(n);std::vector<uint16_t> masks(n);
+    std::vector<uint32_t> route_ndc(n),graph_ndc(n);std::vector<int32_t> ids(n*K),entry_ids(n*3),labels(n*3);
+    uint64_t sum=0,failed=0,rndc=0,gndc=0;
+    for(size_t i=0;i<n;++i) {
+        masks[i]=hitmask(out.searches[i].ids,gt.data()+i*gtk);hits[i]=__builtin_popcount(unsigned(masks[i]));
+        sum+=hits[i];failed+=hits[i]==0;route_ndc[i]=out.routes[i].ndc;graph_ndc[i]=out.searches[i].ndc;
+        rndc+=route_ndc[i];gndc+=graph_ndc[i];
+        std::copy(out.searches[i].ids.begin(),out.searches[i].ids.end(),ids.begin()+i*K);
+        std::copy(out.routes[i].ids.begin(),out.routes[i].ids.end(),entry_ids.begin()+i*3);
+        std::copy(out.routes[i].labels.begin(),out.routes[i].labels.end(),labels.begin()+i*3);
+    }
+    fs::create_directories(dest);write_raw(dest/"hits.u8",hits);write_raw(dest/"hitmask.u16",masks);
+    write_raw(dest/"route_ndc.u32",route_ndc);write_raw(dest/"graph_ndc.u32",graph_ndc);write_raw(dest/"ids.i32",ids);
+    write_raw(dest/"entry_ids.i32",entry_ids);write_raw(dest/"router_labels.i32",labels);
+    return {{"queries",n},{"total_hits",sum},{"recall_at_10",double(sum)/(n*K)},{"failed_queries",failed},{"failure_rate",double(failed)/n},
+            {"mean_route_ndc",double(rndc)/n},{"mean_graph_ndc",double(gndc)/n},{"mean_total_ndc",double(rndc+gndc)/n}};
+}
+
+int benchmark(const json& c,const fs::path& out) {
+    require(!fs::exists(out),"refuse existing output");fs::create_directories(out);write_json(out/"config.json",c);
+    size_t d=c.at("dim"),n=c.at("num_queries"),gtk=c.at("gt_k");int threads=c.value("threads",16);
+    require(threads>=1 && threads<=16 && gtk>=10,"invalid threads/GT");omp_set_num_threads(threads);
+    auto q=read_raw<float>(c.at("queries_file"));auto gt=read_raw<int64_t>(c.at("gt_file"));auto rows=read_raw<int64_t>(c.at("row_ids"));
+    require(q.size()==n*d && gt.size()==n*gtk && rows.size()==n,"input shape mismatch");finite_matrix(q,"queries");write_raw(out/"row_ids.i64",rows);
+    auto index=std::make_unique<acsg::IndexACSGFlat>();index->loadACPG(c.at("index_path").get<std::string>().c_str());
+    std::vector<float>().swap(index->acsg.pheromone);std::vector<float>().swap(index->acsg.weight);
+    require(index->d==int(d) && index->metric_type==faiss::METRIC_INNER_PRODUCT,"wrong frozen index");
+    Workers plain,counted;for(int t=0;t<threads;++t){plain.push_back(std::make_unique<NativeWork>(*index,false));counted.push_back(std::make_unique<NativeWork>(*index,true));}
+    json result={{"status","RUNNING"},{"dataset",c.at("dataset")},{"split",c.at("split")},{"queries",n},{"threads",threads},{"methods",json::array()}};
+    const auto methods=c.at("methods").get<std::vector<json>>();size_t m=methods.size();require(m>0,"no methods");
+    std::vector<std::unique_ptr<Policy>> policies;std::vector<BatchOutput> counted_results;
+    BatchOutput plain_result(n);
+    for(size_t j=0;j<m;++j) {
+        json mc=methods[j];mc["dim"]=d;std::string name=mc.at("name");require(name.find('/')==std::string::npos,"unsafe name");
+        int l=mc.at("L");require(l>=10 && l<=128,"invalid L");index->acsg.search_L=l;
+        if(mc.value("family",std::string())=="nsg_medoid") {
+            require(index->acsg.enterpoint>=0 && index->acsg.enterpoint<index->ntotal,"invalid frozen NSG enterpoint");
+            mc["fixed_entry"]=index->acsg.enterpoint;mc["k"]=1;mc["hub_count"]=0;
+        } else {
+            auto mapping=read_raw<int32_t>(mc.at("mapping"));for(auto id:mapping)require(id>=0 && id<index->ntotal,"mapping outside base");
+        }
+        fs::path file=out/(name+".hnsw");auto p=std::make_unique<Policy>(mc,file,false,false);Policy count_policy(mc,file,true,true);
+        counted_results.emplace_back(n);auto& measured=counted_results.back();
+        batch(*index,count_policy,q,d,counted,measured);batch(*index,*p,q,d,plain,plain_result);compare(measured,plain_result);
+        auto metric=metrics(measured,gt,gtk,out/name);metric["name"]=name;metric["L"]=l;metric["seed"]=mc.at("seed");metric["configuration"]=mc;metric["plain_count_parity_queries"]=n;
+        metric["timings"]=json::array();result["methods"].push_back(metric);policies.push_back(std::move(p));
+        std::cout<<json({{"stage","count_and_parity"},{"method",name},{"recall",metric["recall_at_10"]},{"failure",metric["failure_rate"]}}).dump()<<std::endl;
+    }
+    // No GT, checksums, counters, JSON or micro-index construction in these intervals.
+    int repeats=c.value("timing_repeats",3);
+    for(int rep=0;rep<repeats;++rep) {
+        size_t offset=(c.value("order_offset",0)+rep*std::max(size_t(1),m/3))%m;
+        for(size_t position=0;position<m;++position) {
+            size_t j=(offset+position)%m;const auto& policy=*policies[j];index->acsg.search_L=methods[j].at("L");
+            batch(*index,policy,q,d,plain,plain_result); // Full-batch warmup.
+            auto t=Clock::now();batch(*index,policy,q,d,plain,plain_result);double wall=std::chrono::duration<double>(Clock::now()-t).count();
+            compare(counted_results[j],plain_result);
+            route_batch(policy,q,d,plain_result);t=Clock::now();route_batch(policy,q,d,plain_result);double route_wall=std::chrono::duration<double>(Clock::now()-t).count();
+            graph_batch(*index,policy,q,d,plain,plain_result);t=Clock::now();graph_batch(*index,policy,q,d,plain,plain_result);double graph_wall=std::chrono::duration<double>(Clock::now()-t).count();
+            compare(counted_results[j],plain_result);
+            result["methods"][j]["timings"].push_back({{"repeat",rep},{"order_position",position},{"end_to_end_seconds",wall},{"qps",n/wall},{"route_only_seconds",route_wall},{"graph_only_seconds",graph_wall}});
+        }
+        write_json(out/"results.json",result);std::cout<<json({{"stage","timing_repeat_complete"},{"repeat",rep},{"methods",m}}).dump()<<std::endl;
+    }
+    result["status"]="COMPLETE";result["timing_contract"]="Independent plain full-batch wall includes routing/mapping/original kernel/output; excludes GT/hash/JSON/count/load/build; route-only and graph-only are separate diagnostics";
+    write_json(out/"results.json",result);return 0;
+}
+
+#ifndef AB_BENCHMARK_LIBRARY
+int main(int argc,char** argv) {
+    try {require(argc==3,"Usage: benchmark config.json new_output");std::ifstream f(argv[1]);require(bool(f),"missing config");json c;f>>c;return benchmark(c,argv[2]);}
+    catch(const std::exception& e){std::cerr<<e.what()<<std::endl;return 1;}
+}
+#endif

@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "script_sha256": "42de37c79b330c96708eeabd488142884eb3fd4f9900db00405f1421950de64c",
+  "test_script_sha256": "650f95adb22958b6113aef6d2bd0bfc78602ab3cb4ff954d337dc5781dc100ba",
+  "valid_fixture_nodes": 4096,
+  "valid_fixture_fit_query_count": 32,
+  "actual_saved_labels_checked": 23,
+  "negative_cases": [
+    {
+      "case": "delta",
+      "status": "REJECTED_AS_EXPECTED",
+      "error": "Full C does not equal incremental delta evidence"
+    },
+    {
+      "case": "full_recompute",
+      "status": "REJECTED_AS_EXPECTED",
+      "error": "Pass independent full-recompute/descent checks did not pass"
+    },
+    {
+      "case": "common_init",
+      "status": "REJECTED_AS_EXPECTED",
+      "error": "Lambda branches did not start from the identical saved initialization"
+    },
+    {
+      "case": "cross_count",
+      "status": "REJECTED_AS_EXPECTED",
+      "error": "Actual changed coarse labels differ from cross-coarse move count"
+    },
+    {
+      "case": "lambda0_GT",
+      "status": "REJECTED_AS_EXPECTED",
+      "error": "Lambda0 unexpectedly maintained GT move state"
+    },
+    {
+      "case": "missing_pass",
+      "status": "REJECTED_AS_EXPECTED",
+      "error": "Exactly two completed branch passes required"
+    },
+    {
+      "case": "label_hash",
+      "status": "REJECTED_AS_EXPECTED",
+      "error": "Saved label SHA256 mismatch: /data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/structure_analyzer_synthetic_v1/label_hash/lambda1/pass1.regions.u16"
+    },
+    {
+      "case": "capacity",
+      "status": "REJECTED_AS_EXPECTED",
+      "error": "Actual saved labels violate min3 or global leaf/coarse capacities"
+    },
+    {
+      "case": "outside_path",
+      "status": "REJECTED_AS_EXPECTED",
+      "error": "Saved label/manifest path escapes this partition directory"
+    },
+    {
+      "case": "not_complete",
+      "status": "REJECTED_AS_EXPECTED",
+      "error": "Actual completed P3 partition required"
+    },
+    {
+      "case": "gate_binding",
+      "status": "REJECTED_AS_EXPECTED",
+      "error": "P2 gate differs from the frozen P3 protocol binding"
+    }
+  ],
+  "file_read_boundary": "Only generated fixture JSON/u16 opened; forbidden GT/graph/source paths untouched",
+  "unique_fixture_paths_read": 454,
+  "actual_partition_graph_or_GT_analyzed": false
+}

@@ -1,0 +1,79 @@
+{
+  "status": "READY_FOR_INDEPENDENT_REVIEW_AND_ROOT_CONTROLLED_RUN",
+  "created_utc": "2026-09-07T17:30:58.658461+00:00",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partition_hierarchy.cpp",
+    "sha256": "78cd134726c61fda5b722887262b33176989b1c40163e00af7a7bc52c76a81b5"
+  },
+  "release_binary": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partition_build_v4/partition_hierarchy",
+    "sha256": "3f379668883907395d7c81ebe8515351b37922c19aa7e60177164ccf763b9c5e"
+  },
+  "source_and_binary_compile_time_bound": true,
+  "real_graph_GT_or_partition_run_by_agent": false,
+  "P3_research_gate_passed": false,
+  "protocol_sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f",
+  "tests": {
+    "release": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partition_synthetic_v3/manifest.json",
+      "sha256": "2d081631f3ccf740cbf1d52d1f26b95c874d3e4a422a6d799a962d7338347970",
+      "groups": 11,
+      "delta_cases": 336,
+      "wall_seconds": 0.110681963,
+      "peak_rss_kib": 7100
+    },
+    "ASan_UBSan_leaks": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partition_sanitizer_synthetic_v2/manifest.json",
+      "sha256": "0b4f97ae98592d7318f6bf6cfa1c14f635a671c106932b94b9a5e0d8df527d18",
+      "wall_seconds": 0.623638073,
+      "peak_rss_kib": 282728,
+      "stderr_bytes": 0
+    }
+  },
+  "documentation": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partition_hierarchy_README.md",
+  "build_command": [
+    ".venv_cpu/bin/python",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/build_partition_hierarchy.py",
+    "--output",
+    "NEW_BUILD_DIRECTORY"
+  ],
+  "actual_argv": [
+    "--graph",
+    "FROZEN_GRAPH",
+    "--dataset",
+    "DATASET",
+    "--audit",
+    "P0_AUDIT",
+    "--gate",
+    "P2_GATE",
+    "--protocol",
+    "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "--fit-manifest",
+    "FIT_MANIFEST",
+    "--output",
+    "NEW_PARTITION_DIRECTORY",
+    "--threads",
+    "16"
+  ],
+  "output_flat_fields": [
+    "status",
+    "stage",
+    "dataset",
+    "n",
+    "nodes",
+    "regions",
+    "coarse_count",
+    "leaves_per_coarse",
+    "lambda",
+    "labels_file",
+    "labels_sha256",
+    "initial_labels_sha256",
+    "protocol_sha256",
+    "input_audit_sha256",
+    "fit_manifest_sha256",
+    "fit_gt_values_sha256",
+    "input_graph_sha256",
+    "source_sha256",
+    "binary_sha256"
+  ]
+}

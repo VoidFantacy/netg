@@ -1,0 +1,740 @@
+{
+  "primary": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "L": 800,
+      "target_endpoint": true,
+      "primary_upper": true,
+      "baseline_recall": 0.891845703125,
+      "oracle_gain_pp": 1.7578125,
+      "oracle_CI95_pp": [
+        1.3671875,
+        2.1728515625
+      ],
+      "transferred_gain_pp": 1.611328125,
+      "transferred_CI95_pp": [
+        1.2451171875,
+        2.001953125
+      ],
+      "regret_pp": 0.146484375,
+      "retention": 0.9166666666666666,
+      "preserves_80pct": true,
+      "optimal_set_overlap": 1.0,
+      "winner_agreement": 0.959228515625,
+      "low_positive_to_high_negative": 0,
+      "low_negative_to_high_positive": 0,
+      "transferred_rescue_queries": 66,
+      "transferred_harmed_queries": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "L": 1250,
+      "target_endpoint": true,
+      "primary_upper": true,
+      "baseline_recall": 0.9058154296875001,
+      "oracle_gain_pp": 0.42724609375,
+      "oracle_CI95_pp": [
+        0.350091552734375,
+        0.51708984375
+      ],
+      "transferred_gain_pp": 0.18505859374999997,
+      "transferred_CI95_pp": [
+        0.1181640625,
+        0.2646545410156249
+      ],
+      "regret_pp": 0.24218750000000006,
+      "retention": 0.4331428571428571,
+      "preserves_80pct": false,
+      "optimal_set_overlap": 0.944091796875,
+      "winner_agreement": 0.662109375,
+      "low_positive_to_high_negative": 178,
+      "low_negative_to_high_positive": 244,
+      "transferred_rescue_queries": 344,
+      "transferred_harmed_queries": 70
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "L": 128,
+      "target_endpoint": true,
+      "primary_upper": true,
+      "baseline_recall": 0.90625,
+      "oracle_gain_pp": 2.3193359375,
+      "oracle_CI95_pp": [
+        1.8798828125,
+        2.8076171875
+      ],
+      "transferred_gain_pp": 2.3193359375,
+      "transferred_CI95_pp": [
+        1.8798828125,
+        2.8076171875
+      ],
+      "regret_pp": 0.0,
+      "retention": 1.0,
+      "preserves_80pct": true,
+      "optimal_set_overlap": 1.0,
+      "winner_agreement": 1.0,
+      "low_positive_to_high_negative": 0,
+      "low_negative_to_high_positive": 0,
+      "transferred_rescue_queries": 95,
+      "transferred_harmed_queries": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "L": 256,
+      "target_endpoint": true,
+      "primary_upper": true,
+      "baseline_recall": 0.9104443359375001,
+      "oracle_gain_pp": 0.8125,
+      "oracle_CI95_pp": [
+        0.622314453125,
+        1.0200317382812498
+      ],
+      "transferred_gain_pp": 0.57275390625,
+      "transferred_CI95_pp": [
+        0.395501708984375,
+        0.7710083007812498
+      ],
+      "regret_pp": 0.23974609375,
+      "retention": 0.7049278846153846,
+      "preserves_80pct": false,
+      "optimal_set_overlap": 0.968017578125,
+      "winner_agreement": 0.8720703125,
+      "low_positive_to_high_negative": 161,
+      "low_negative_to_high_positive": 111,
+      "transferred_rescue_queries": 299,
+      "transferred_harmed_queries": 62
+    }
+  ],
+  "all_transfers": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "L": 64,
+      "target_endpoint": false,
+      "primary_upper": false,
+      "baseline_recall": 0.671630859375,
+      "oracle_gain_pp": 7.6416015625,
+      "oracle_CI95_pp": [
+        6.8353271484375,
+        8.49609375
+      ],
+      "transferred_gain_pp": 4.7119140625,
+      "transferred_CI95_pp": [
+        4.0771484375,
+        5.37109375
+      ],
+      "regret_pp": 2.9296875,
+      "retention": 0.6166134185303515,
+      "preserves_80pct": false,
+      "optimal_set_overlap": 1.0,
+      "winner_agreement": 0.963623046875,
+      "low_positive_to_high_negative": 0,
+      "low_negative_to_high_positive": 0,
+      "transferred_rescue_queries": 193,
+      "transferred_harmed_queries": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "L": 128,
+      "target_endpoint": false,
+      "primary_upper": false,
+      "baseline_recall": 0.753173828125,
+      "oracle_gain_pp": 5.4931640625,
+      "oracle_CI95_pp": [
+        4.8095703125,
+        6.201171875
+      ],
+      "transferred_gain_pp": 5.4931640625,
+      "transferred_CI95_pp": [
+        4.8095703125,
+        6.201171875
+      ],
+      "regret_pp": 0.0,
+      "retention": 1.0,
+      "preserves_80pct": true,
+      "optimal_set_overlap": 1.0,
+      "winner_agreement": 1.0,
+      "low_positive_to_high_negative": 0,
+      "low_negative_to_high_positive": 0,
+      "transferred_rescue_queries": 225,
+      "transferred_harmed_queries": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "L": 256,
+      "target_endpoint": false,
+      "primary_upper": false,
+      "baseline_recall": 0.819091796875,
+      "oracle_gain_pp": 3.5888671875,
+      "oracle_CI95_pp": [
+        3.02734375,
+        4.1748046875
+      ],
+      "transferred_gain_pp": 3.271484375,
+      "transferred_CI95_pp": [
+        2.734375,
+        3.80859375
+      ],
+      "regret_pp": 0.3173828125,
+      "retention": 0.9115646258503401,
+      "preserves_80pct": true,
+      "optimal_set_overlap": 1.0,
+      "winner_agreement": 0.974365234375,
+      "low_positive_to_high_negative": 0,
+      "low_negative_to_high_positive": 0,
+      "transferred_rescue_queries": 134,
+      "transferred_harmed_queries": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "L": 400,
+      "target_endpoint": false,
+      "primary_upper": false,
+      "baseline_recall": 0.8544921875,
+      "oracle_gain_pp": 2.6123046875,
+      "oracle_CI95_pp": [
+        2.1240234375,
+        3.1005859375
+      ],
+      "transferred_gain_pp": 2.490234375,
+      "transferred_CI95_pp": [
+        2.0263671875,
+        2.978515625
+      ],
+      "regret_pp": 0.1220703125,
+      "retention": 0.9532710280373832,
+      "preserves_80pct": true,
+      "optimal_set_overlap": 1.0,
+      "winner_agreement": 0.96826171875,
+      "low_positive_to_high_negative": 0,
+      "low_negative_to_high_positive": 0,
+      "transferred_rescue_queries": 102,
+      "transferred_harmed_queries": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "L": 640,
+      "target_endpoint": true,
+      "primary_upper": false,
+      "baseline_recall": 0.88037109375,
+      "oracle_gain_pp": 1.953125,
+      "oracle_CI95_pp": [
+        1.5380859375,
+        2.392578125
+      ],
+      "transferred_gain_pp": 1.8310546875,
+      "transferred_CI95_pp": [
+        1.4404296875,
+        2.2705078125
+      ],
+      "regret_pp": 0.1220703125,
+      "retention": 0.9375,
+      "preserves_80pct": true,
+      "optimal_set_overlap": 1.0,
+      "winner_agreement": 0.96142578125,
+      "low_positive_to_high_negative": 0,
+      "low_negative_to_high_positive": 0,
+      "transferred_rescue_queries": 75,
+      "transferred_harmed_queries": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "L": 800,
+      "target_endpoint": true,
+      "primary_upper": true,
+      "baseline_recall": 0.891845703125,
+      "oracle_gain_pp": 1.7578125,
+      "oracle_CI95_pp": [
+        1.3671875,
+        2.1728515625
+      ],
+      "transferred_gain_pp": 1.611328125,
+      "transferred_CI95_pp": [
+        1.2451171875,
+        2.001953125
+      ],
+      "regret_pp": 0.146484375,
+      "retention": 0.9166666666666666,
+      "preserves_80pct": true,
+      "optimal_set_overlap": 1.0,
+      "winner_agreement": 0.959228515625,
+      "low_positive_to_high_negative": 0,
+      "low_negative_to_high_positive": 0,
+      "transferred_rescue_queries": 66,
+      "transferred_harmed_queries": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "L": 128,
+      "target_endpoint": false,
+      "primary_upper": false,
+      "baseline_recall": 0.65540771484375,
+      "oracle_gain_pp": 2.500732421875,
+      "oracle_CI95_pp": [
+        2.258056640625,
+        2.7578613281249993
+      ],
+      "transferred_gain_pp": 2.500732421875,
+      "transferred_CI95_pp": [
+        2.258056640625,
+        2.7578613281249993
+      ],
+      "regret_pp": 0.0,
+      "retention": 1.0,
+      "preserves_80pct": true,
+      "optimal_set_overlap": 1.0,
+      "winner_agreement": 1.0,
+      "low_positive_to_high_negative": 0,
+      "low_negative_to_high_positive": 0,
+      "transferred_rescue_queries": 1554,
+      "transferred_harmed_queries": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "L": 256,
+      "target_endpoint": false,
+      "primary_upper": false,
+      "baseline_recall": 0.75802490234375,
+      "oracle_gain_pp": 1.56396484375,
+      "oracle_CI95_pp": [
+        1.396728515625,
+        1.748297119140625
+      ],
+      "transferred_gain_pp": 0.9699707031250001,
+      "transferred_CI95_pp": [
+        0.801019287109375,
+        1.15478515625
+      ],
+      "regret_pp": 0.593994140625,
+      "retention": 0.6201998126756166,
+      "preserves_80pct": false,
+      "optimal_set_overlap": 0.898193359375,
+      "winner_agreement": 0.765869140625,
+      "low_positive_to_high_negative": 429,
+      "low_negative_to_high_positive": 396,
+      "transferred_rescue_queries": 904,
+      "transferred_harmed_queries": 169
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "L": 400,
+      "target_endpoint": false,
+      "primary_upper": false,
+      "baseline_recall": 0.8103515625,
+      "oracle_gain_pp": 1.205810546875,
+      "oracle_CI95_pp": [
+        1.04686279296875,
+        1.373785400390625
+      ],
+      "transferred_gain_pp": 0.5727539062499999,
+      "transferred_CI95_pp": [
+        0.42943115234374996,
+        0.7253479003906248
+      ],
+      "regret_pp": 0.633056640625,
+      "retention": 0.47499493824660854,
+      "preserves_80pct": false,
+      "optimal_set_overlap": 0.904052734375,
+      "winner_agreement": 0.72119140625,
+      "low_positive_to_high_negative": 403,
+      "low_negative_to_high_positive": 399,
+      "transferred_rescue_queries": 692,
+      "transferred_harmed_queries": 164
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "L": 800,
+      "target_endpoint": false,
+      "primary_upper": false,
+      "baseline_recall": 0.87455810546875,
+      "oracle_gain_pp": 0.65576171875,
+      "oracle_CI95_pp": [
+        0.553466796875,
+        0.7653991699218747
+      ],
+      "transferred_gain_pp": 0.23925781250000003,
+      "transferred_CI95_pp": [
+        0.14818725585937503,
+        0.33837890625
+      ],
+      "regret_pp": 0.41650390624999994,
+      "retention": 0.3648548026805659,
+      "preserves_80pct": false,
+      "optimal_set_overlap": 0.93212890625,
+      "winner_agreement": 0.677978515625,
+      "low_positive_to_high_negative": 274,
+      "low_negative_to_high_positive": 291,
+      "transferred_rescue_queries": 448,
+      "transferred_harmed_queries": 96
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "L": 1120,
+      "target_endpoint": true,
+      "primary_upper": false,
+      "baseline_recall": 0.899140625,
+      "oracle_gain_pp": 0.4616699218749999,
+      "oracle_CI95_pp": [
+        0.38182373046874996,
+        0.5542114257812498
+      ],
+      "transferred_gain_pp": 0.19238281249999997,
+      "transferred_CI95_pp": [
+        0.12328491210937495,
+        0.27417602539062486
+      ],
+      "regret_pp": 0.269287109375,
+      "retention": 0.4167107350608144,
+      "preserves_80pct": false,
+      "optimal_set_overlap": 0.94287109375,
+      "winner_agreement": 0.66748046875,
+      "low_positive_to_high_negative": 188,
+      "low_negative_to_high_positive": 237,
+      "transferred_rescue_queries": 369,
+      "transferred_harmed_queries": 74
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "L": 1250,
+      "target_endpoint": true,
+      "primary_upper": true,
+      "baseline_recall": 0.9058154296875001,
+      "oracle_gain_pp": 0.42724609375,
+      "oracle_CI95_pp": [
+        0.350091552734375,
+        0.51708984375
+      ],
+      "transferred_gain_pp": 0.18505859374999997,
+      "transferred_CI95_pp": [
+        0.1181640625,
+        0.2646545410156249
+      ],
+      "regret_pp": 0.24218750000000006,
+      "retention": 0.4331428571428571,
+      "preserves_80pct": false,
+      "optimal_set_overlap": 0.944091796875,
+      "winner_agreement": 0.662109375,
+      "low_positive_to_high_negative": 178,
+      "low_negative_to_high_positive": 244,
+      "transferred_rescue_queries": 344,
+      "transferred_harmed_queries": 70
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "L": 64,
+      "target_endpoint": false,
+      "primary_upper": false,
+      "baseline_recall": 0.84375,
+      "oracle_gain_pp": 3.9306640625,
+      "oracle_CI95_pp": [
+        3.3447265625,
+        4.541015625
+      ],
+      "transferred_gain_pp": 1.953125,
+      "transferred_CI95_pp": [
+        1.5380859375,
+        2.393188476562491
+      ],
+      "regret_pp": 1.9775390625,
+      "retention": 0.4968944099378882,
+      "preserves_80pct": false,
+      "optimal_set_overlap": 1.0,
+      "winner_agreement": 0.977294921875,
+      "low_positive_to_high_negative": 0,
+      "low_negative_to_high_positive": 0,
+      "transferred_rescue_queries": 80,
+      "transferred_harmed_queries": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "L": 96,
+      "target_endpoint": true,
+      "primary_upper": false,
+      "baseline_recall": 0.883544921875,
+      "oracle_gain_pp": 2.9052734375,
+      "oracle_CI95_pp": [
+        2.392578125,
+        3.4423828125
+      ],
+      "transferred_gain_pp": 2.1728515625,
+      "transferred_CI95_pp": [
+        1.7333984375,
+        2.637329101562491
+      ],
+      "regret_pp": 0.732421875,
+      "retention": 0.7478991596638656,
+      "preserves_80pct": false,
+      "optimal_set_overlap": 1.0,
+      "winner_agreement": 0.99169921875,
+      "low_positive_to_high_negative": 0,
+      "low_negative_to_high_positive": 0,
+      "transferred_rescue_queries": 89,
+      "transferred_harmed_queries": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "L": 128,
+      "target_endpoint": true,
+      "primary_upper": true,
+      "baseline_recall": 0.90625,
+      "oracle_gain_pp": 2.3193359375,
+      "oracle_CI95_pp": [
+        1.8798828125,
+        2.8076171875
+      ],
+      "transferred_gain_pp": 2.3193359375,
+      "transferred_CI95_pp": [
+        1.8798828125,
+        2.8076171875
+      ],
+      "regret_pp": 0.0,
+      "retention": 1.0,
+      "preserves_80pct": true,
+      "optimal_set_overlap": 1.0,
+      "winner_agreement": 1.0,
+      "low_positive_to_high_negative": 0,
+      "low_negative_to_high_positive": 0,
+      "transferred_rescue_queries": 95,
+      "transferred_harmed_queries": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "L": 256,
+      "target_endpoint": false,
+      "primary_upper": false,
+      "baseline_recall": 0.94482421875,
+      "oracle_gain_pp": 1.2939453125,
+      "oracle_CI95_pp": [
+        0.9765625,
+        1.66015625
+      ],
+      "transferred_gain_pp": 1.1474609375,
+      "transferred_CI95_pp": [
+        0.830078125,
+        1.4892578125
+      ],
+      "regret_pp": 0.146484375,
+      "retention": 0.8867924528301887,
+      "preserves_80pct": true,
+      "optimal_set_overlap": 1.0,
+      "winner_agreement": 0.986572265625,
+      "low_positive_to_high_negative": 0,
+      "low_negative_to_high_positive": 0,
+      "transferred_rescue_queries": 47,
+      "transferred_harmed_queries": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "L": 400,
+      "target_endpoint": false,
+      "primary_upper": false,
+      "baseline_recall": 0.961669921875,
+      "oracle_gain_pp": 1.0009765625,
+      "oracle_CI95_pp": [
+        0.7080078125,
+        1.318359375
+      ],
+      "transferred_gain_pp": 0.87890625,
+      "transferred_CI95_pp": [
+        0.6103515625,
+        1.171875
+      ],
+      "regret_pp": 0.1220703125,
+      "retention": 0.8780487804878049,
+      "preserves_80pct": true,
+      "optimal_set_overlap": 1.0,
+      "winner_agreement": 0.98388671875,
+      "low_positive_to_high_negative": 0,
+      "low_negative_to_high_positive": 0,
+      "transferred_rescue_queries": 36,
+      "transferred_harmed_queries": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "L": 800,
+      "target_endpoint": false,
+      "primary_upper": false,
+      "baseline_recall": 0.979736328125,
+      "oracle_gain_pp": 0.4638671875,
+      "oracle_CI95_pp": [
+        0.2685546875,
+        0.68359375
+      ],
+      "transferred_gain_pp": 0.4150390625,
+      "transferred_CI95_pp": [
+        0.2197265625,
+        0.634765625
+      ],
+      "regret_pp": 0.048828125,
+      "retention": 0.8947368421052632,
+      "preserves_80pct": true,
+      "optimal_set_overlap": 1.0,
+      "winner_agreement": 0.98046875,
+      "low_positive_to_high_negative": 0,
+      "low_negative_to_high_positive": 0,
+      "transferred_rescue_queries": 17,
+      "transferred_harmed_queries": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "L": 128,
+      "target_endpoint": false,
+      "primary_upper": false,
+      "baseline_recall": 0.83791748046875,
+      "oracle_gain_pp": 1.46484375,
+      "oracle_CI95_pp": [
+        1.222900390625,
+        1.725830078125
+      ],
+      "transferred_gain_pp": 1.46484375,
+      "transferred_CI95_pp": [
+        1.222900390625,
+        1.725830078125
+      ],
+      "regret_pp": 0.0,
+      "retention": 1.0,
+      "preserves_80pct": true,
+      "optimal_set_overlap": 1.0,
+      "winner_agreement": 1.0,
+      "low_positive_to_high_negative": 0,
+      "low_negative_to_high_positive": 0,
+      "transferred_rescue_queries": 729,
+      "transferred_harmed_queries": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "L": 200,
+      "target_endpoint": true,
+      "primary_upper": false,
+      "baseline_recall": 0.88779296875,
+      "oracle_gain_pp": 1.003173828125,
+      "oracle_CI95_pp": [
+        0.793939208984375,
+        1.227783203125
+      ],
+      "transferred_gain_pp": 0.8312988281249999,
+      "transferred_CI95_pp": [
+        0.622314453125,
+        1.0520141601562498
+      ],
+      "regret_pp": 0.17187500000000003,
+      "retention": 0.8286687758578728,
+      "preserves_80pct": true,
+      "optimal_set_overlap": 0.969970703125,
+      "winner_agreement": 0.89697265625,
+      "low_positive_to_high_negative": 138,
+      "low_negative_to_high_positive": 113,
+      "transferred_rescue_queries": 411,
+      "transferred_harmed_queries": 56
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "L": 256,
+      "target_endpoint": true,
+      "primary_upper": true,
+      "baseline_recall": 0.9104443359375001,
+      "oracle_gain_pp": 0.8125,
+      "oracle_CI95_pp": [
+        0.622314453125,
+        1.0200317382812498
+      ],
+      "transferred_gain_pp": 0.57275390625,
+      "transferred_CI95_pp": [
+        0.395501708984375,
+        0.7710083007812498
+      ],
+      "regret_pp": 0.23974609375,
+      "retention": 0.7049278846153846,
+      "preserves_80pct": false,
+      "optimal_set_overlap": 0.968017578125,
+      "winner_agreement": 0.8720703125,
+      "low_positive_to_high_negative": 161,
+      "low_negative_to_high_positive": 111,
+      "transferred_rescue_queries": 299,
+      "transferred_harmed_queries": 62
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "L": 400,
+      "target_endpoint": false,
+      "primary_upper": false,
+      "baseline_recall": 0.940478515625,
+      "oracle_gain_pp": 0.6638183593750001,
+      "oracle_CI95_pp": [
+        0.482159423828125,
+        0.8606018066406249
+      ],
+      "transferred_gain_pp": 0.392333984375,
+      "transferred_CI95_pp": [
+        0.22606201171875,
+        0.5822814941406249
+      ],
+      "regret_pp": 0.271484375,
+      "retention": 0.5910261125413754,
+      "preserves_80pct": false,
+      "optimal_set_overlap": 0.96728515625,
+      "winner_agreement": 0.84716796875,
+      "low_positive_to_high_negative": 148,
+      "low_negative_to_high_positive": 122,
+      "transferred_rescue_queries": 187,
+      "transferred_harmed_queries": 59
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "L": 800,
+      "target_endpoint": false,
+      "primary_upper": false,
+      "baseline_recall": 0.9713696289062501,
+      "oracle_gain_pp": 0.351318359375,
+      "oracle_CI95_pp": [
+        0.228515625,
+        0.4919494628906249
+      ],
+      "transferred_gain_pp": 0.215576171875,
+      "transferred_CI95_pp": [
+        0.093994140625,
+        0.3537658691406249
+      ],
+      "regret_pp": 0.1357421875,
+      "retention": 0.6136205698401668,
+      "preserves_80pct": false,
+      "optimal_set_overlap": 0.979736328125,
+      "winner_agreement": 0.83203125,
+      "low_positive_to_high_negative": 86,
+      "low_negative_to_high_positive": 88,
+      "transferred_rescue_queries": 88,
+      "transferred_harmed_queries": 31
+    }
+  ],
+  "headroom_gate": true,
+  "budget_mismatch": true,
+  "information_control_eligible": true,
+  "seconds": 8.377035726000031,
+  "scope": "finite seven-strategy Recall oracle; not all-H or QPS"
+}

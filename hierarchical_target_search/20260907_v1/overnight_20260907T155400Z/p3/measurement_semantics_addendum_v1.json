@@ -1,0 +1,51 @@
+{
+  "status": "CONFIRMED_SOURCE_SEMANTICS_ADDENDUM",
+  "created_utc": "2026-09-07T17:55:52.080796+00:00",
+  "issue": "Legacy Fast frontier counters have zero default values and were not measured",
+  "affected_method": "fast",
+  "affected_fields": [
+    "expanded",
+    "rejected",
+    "evicted_unexpanded",
+    "mean_expanded",
+    "mean_rejected",
+    "mean_evicted_unexpanded"
+  ],
+  "correct_interpretation": "UNMEASURED for legacy Fast; stored zero is a default sentinel, not evidence of no expansions/rejections/evictions. Render null or not measured when reporting these fields.",
+  "source_evidence": "Row.stats zero initialization; online_query Method::fast calls existing search_new and fills only stats.ndc from separate counted distance adapter. Regional rg::search methods populate actual queue counters.",
+  "affected_analyses": [
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/analysis_v1/analysis.json",
+      "sha256": "e73a8d8c16a5bebb2404596b63d621b1780b1aab0f9eb29efce5281edfc04c1f"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analysis_v1/analysis.json",
+      "sha256": "63da6a71425b0dbd6e186db1c608a564b9847c58168b6b56059a9ed2d2f901ae"
+    }
+  ],
+  "source_bindings": [
+    {
+      "path": "/data/netg/ACSG/ACSG/RegionalSearch.h",
+      "sha256": "320e29c9407d5907ece7ef64113edeb8b2d5157fa8796aaf94e470eb6771e14e"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/bench_hierarchical_eval.cpp",
+      "sha256": "ec770d5921831ac3937ab117b87a1750164f51164b48f3461183192c6d8e2079"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/bench_hierarchical_eval_p3.cpp",
+      "sha256": "cf40032dc469c08840e409af23bd503e1ad6571184351a2694776247e21d1316"
+    }
+  ],
+  "unchanged_results": [
+    "Recall/resultIDs",
+    "Fast and oracle route identity",
+    "routing/graph/total NDC and MAC",
+    "pure batch wall/QPS",
+    "all preregistered P3 oracle-only contrasts and gate"
+  ],
+  "raw_evidence_preserved": true,
+  "new_ANN_runs_required_for_current_gate": false,
+  "independent_source_confirmation": "p1_evaluator same-branch source review",
+  "future_contract": "If a future evaluator exposes these fields, mark availability per method or instrument separate counts and reaccept; do not pretend old sentinels are measured."
+}

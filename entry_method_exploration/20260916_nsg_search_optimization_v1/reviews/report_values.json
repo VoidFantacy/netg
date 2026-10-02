@@ -1,0 +1,45 @@
+{
+  "headline": "WebVid四个预先固定预算、四种共享NSG内核的方法，平均QPS变化范围为+10.51%至+13.53%；16组比较中16组平均值提升。全部五集100个方法/版本/预算组合的返回ID、距离bits、入口及逐query距离计数与E97一致。",
+  "gain_min": 10.514718406129543,
+  "gain_max": 13.529466922961507,
+  "positive_cells": 16,
+  "web_hnsw_comparison": [
+    {
+      "K": 1,
+      "L": 96,
+      "hnsw_recall": 0.6903,
+      "hnsw_qps": 2603.587056893933,
+      "soft_recall": 0.7277,
+      "soft_qps": 2906.781929585706,
+      "soft_vs_hnsw_percent": 11.645275001999856
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "hnsw_recall": 0.60891,
+      "hnsw_qps": 2488.475842430339,
+      "soft_recall": 0.616003,
+      "soft_qps": 2816.5820219367383,
+      "soft_vs_hnsw_percent": 13.185025705773313
+    },
+    {
+      "K": 1,
+      "L": 800,
+      "hnsw_recall": 0.8875,
+      "hnsw_qps": 416.13128226869685,
+      "soft_recall": 0.9075,
+      "soft_qps": 402.3438338994625,
+      "soft_vs_hnsw_percent": -3.3132448716825302
+    },
+    {
+      "K": 100,
+      "L": 1250,
+      "hnsw_recall": 0.9037179999999999,
+      "hnsw_qps": 282.5109338120915,
+      "soft_recall": 0.906868,
+      "soft_qps": 268.8635437058182,
+      "soft_vs_hnsw_percent": -4.830747582799988
+    }
+  ],
+  "measurement_minutes": 73.1521293759346
+}

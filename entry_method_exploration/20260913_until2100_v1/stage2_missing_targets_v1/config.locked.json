@@ -1,0 +1,23 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "models": [
+    "baseline",
+    "missing_lambda05",
+    "sham_lambda05"
+  ],
+  "lambda_value": 0.5,
+  "sham_seed": 20260913,
+  "threads": 1,
+  "query_cpu": 15,
+  "per_dataset_NSG_reserved": 45000,
+  "total_NSG_cap": 90000,
+  "per_dataset_HNSW": 66528,
+  "per_dataset_builds": 3,
+  "candidate_selection": "only missing model; cal net hits>0, zero-hit failures nonincreasing, mean totalNDC <= baseline*1.01; sham not selectable",
+  "final_validation_access": false,
+  "query_stop": 1789264800,
+  "latest_launch": 1789264200
+}

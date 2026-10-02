@@ -1,0 +1,138 @@
+[
+  {
+    "kind": "smoke",
+    "dataset": "webvid2_5m_light_v1",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/reviews/smoke_webvid2_5m_light_v1.config.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/reviews/smoke_webvid2_5m_light_v1"
+    ],
+    "reserved_calls": 896,
+    "started_unix": 1789878816.1662211,
+    "pid": 10049,
+    "exit_code": 0,
+    "seconds": 4.919876337051392,
+    "finished_unix": 1789878821.0860982,
+    "complete": {
+      "ann_calls": 32,
+      "boot_id": "7597a436-8d6c-4a0b-98ff-59bfab6da206",
+      "cpu": 15,
+      "exact_profile_distances": 169520,
+      "formal": false,
+      "graph_builds": 0,
+      "maxrss_kib": 5663544,
+      "methods": 14,
+      "n": 16,
+      "search_calls": 896,
+      "seconds": 4.800809387,
+      "status": "PASS",
+      "threads": 1,
+      "timing_note": "Cached routes for mechanism diagnostics; not online QPS."
+    }
+  },
+  {
+    "kind": "smoke",
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/reviews/smoke_yandex_t2i_official10M_ip_v1.config.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/reviews/smoke_yandex_t2i_official10M_ip_v1"
+    ],
+    "reserved_calls": 512,
+    "started_unix": 1789878821.0870552,
+    "pid": 10051,
+    "exit_code": 0,
+    "seconds": 12.52883267402649,
+    "finished_unix": 1789878833.6158888,
+    "complete": {
+      "ann_calls": 32,
+      "boot_id": "7597a436-8d6c-4a0b-98ff-59bfab6da206",
+      "cpu": 15,
+      "exact_profile_distances": 91952,
+      "formal": false,
+      "graph_builds": 0,
+      "maxrss_kib": 10398528,
+      "methods": 8,
+      "n": 16,
+      "search_calls": 512,
+      "seconds": 12.331531273,
+      "status": "PASS",
+      "threads": 1,
+      "timing_note": "Cached routes for mechanism diagnostics; not online QPS."
+    }
+  },
+  {
+    "kind": "main",
+    "dataset": "webvid2_5m_light_v1",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/reviews/main_webvid2_5m_light_v1.config.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/results/webvid2_5m_light_v1"
+    ],
+    "reserved_calls": 229376,
+    "started_unix": 1789878833.6170726,
+    "pid": 10055,
+    "exit_code": 0,
+    "seconds": 87.60632705688477,
+    "finished_unix": 1789878921.2234013,
+    "complete": {
+      "ann_calls": 8192,
+      "boot_id": "7597a436-8d6c-4a0b-98ff-59bfab6da206",
+      "cpu": 15,
+      "exact_profile_distances": 43397120,
+      "formal": false,
+      "graph_builds": 0,
+      "maxrss_kib": 5675104,
+      "methods": 14,
+      "n": 4096,
+      "search_calls": 229376,
+      "seconds": 87.483990422,
+      "status": "PASS",
+      "threads": 1,
+      "timing_note": "Cached routes for mechanism diagnostics; not online QPS."
+    }
+  },
+  {
+    "kind": "main",
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/reviews/main_yandex_t2i_official10M_ip_v1.config.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/results/yandex_t2i_official10M_ip_v1"
+    ],
+    "reserved_calls": 131072,
+    "started_unix": 1789878921.2244508,
+    "pid": 10098,
+    "exit_code": 0,
+    "seconds": 65.59402990341187,
+    "finished_unix": 1789878986.8184826,
+    "complete": {
+      "ann_calls": 8192,
+      "boot_id": "7597a436-8d6c-4a0b-98ff-59bfab6da206",
+      "cpu": 15,
+      "exact_profile_distances": 23539712,
+      "formal": false,
+      "graph_builds": 0,
+      "maxrss_kib": 10401492,
+      "methods": 8,
+      "n": 4096,
+      "search_calls": 131072,
+      "seconds": 65.38857809,
+      "status": "PASS",
+      "threads": 1,
+      "timing_note": "Cached routes for mechanism diagnostics; not online QPS."
+    }
+  }
+]

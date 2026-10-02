@@ -1,0 +1,44 @@
+{
+  "stage": "P0",
+  "status": "PASS",
+  "accepted_utc": "2026-09-07T16:05:27.369084+00:00",
+  "checks": [
+    "base/graph/GT checksums match frozen manifests",
+    "fit20K/pilot10K/QGT5K/validation10K overlaps zero",
+    "all frozen adjacency entries legal or padding",
+    "raw QGT hubs byte-equal source base",
+    "fixed-point embedded/external base agreement",
+    "source snapshot and old diagnostic evidence inventory",
+    "protocol preregistered and CPU/deadline control verified"
+  ],
+  "heldout_accessed": false,
+  "exact_GT_recomputed": false,
+  "performance_conclusion": null,
+  "next_stage": "P1",
+  "evidence": [
+    {
+      "path": "p0/full_audit/audit.json",
+      "sha256": "7da975cbb0e045265f405b08e230abb6442eba51621064699a4ad449c90ae58b"
+    },
+    {
+      "path": "p0/embedded_base_sample.json",
+      "sha256": "364cae1a271ce61f3add895fba87ad34bcd4407eef4ebb46c36242676c3cc4eb"
+    },
+    {
+      "path": "p0/historical_diagnostics_inventory.json",
+      "sha256": "712b6c1f9c7a2863ad39d723d04575379bda1d96c2a35d22b9b252baa64a6615"
+    },
+    {
+      "path": "source_before_manifest.json",
+      "sha256": "029ee508a878cd23db7f65370a7b0f0c149431af94b40770de1543f81141c6f9"
+    },
+    {
+      "path": "protocol.json",
+      "sha256": "857745551778adc1884a4198862b2f55fd72a642abe7d7622970e602d88ff48b"
+    },
+    {
+      "path": "control/selftest/result.json",
+      "sha256": "557953f388733412934eb02f461be47e8aca628a6b4ef4b8e5d1170bd5e2cf61"
+    }
+  ]
+}

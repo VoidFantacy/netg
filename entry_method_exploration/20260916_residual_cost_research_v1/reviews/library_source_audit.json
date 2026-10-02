@@ -1,0 +1,21 @@
+{
+  "reviewed_at": "2026-09-16T12:48:39.988019+08:00",
+  "frozen_web_index_build_type": 1,
+  "source_sha256": {
+    "ACSG/IndexACSG.cpp": "84dde43523f0641e8bdb322181e03ca038795e4560c08e8aff3c5a53d522f8c7",
+    "ACSG/ACSG.cpp": "5436ab455d60ba8ccc54ed96d1e7bec80dd15816287e6d556f78af1449f448d1",
+    "ACSG/CMakeLists.txt": "324d5a8b745a80180031209f9f0246b7eb00fe6e1d623f22b38aca1b7d7fff7c",
+    "faiss/faiss/impl/NSG.cpp": "9a220d3293ec39faf21df3bb4ac3aa1fbab684e14b9722c90ec145b43a8ad391",
+    "entry_method_exploration/20260916_residual_cost_research_v1/src/common/evaluate.cpp": "41b771356d18a7fdf6f47303ea3106ab2cb3ff8b006d05a66de9e35bd0c640d2"
+  },
+  "facts": [
+    "IndexACSG build_type=1 uses faiss::IndexNSG then project graph copying and connectivity processing",
+    "Measured NSG control injects the fixed entry through project search_new mode2",
+    "Native Faiss initializes entry neighbors plus random candidates up to pool_size; it also scans graph.K",
+    "No separate native Faiss NSG QPS measured in E100"
+  ],
+  "sources": [
+    "https://faiss.ai/cpp_api/struct/structfaiss_1_1IndexNSG.html",
+    "https://github.com/ZJULearning/nsg"
+  ]
+}

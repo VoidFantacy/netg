@@ -1,0 +1,167 @@
+{
+  "status": "PASS",
+  "seconds": 721.8289632420006,
+  "jobs": {
+    "compile_evaluate": {
+      "exit_code": 0,
+      "seconds": 8.512029742000323,
+      "max_threads": 1,
+      "maxrss_bytes": 2912256,
+      "affinity_thread_samples": 0,
+      "argv": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "-fopenmp",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+        "-I/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/src/common",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/src/evaluate.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "-lopenblas",
+        "-lz",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/bin/evaluate"
+      ]
+    },
+    "compile_build_router": {
+      "exit_code": 0,
+      "seconds": 4.005478868999944,
+      "max_threads": 1,
+      "maxrss_bytes": 3084288,
+      "affinity_thread_samples": 0,
+      "argv": [
+        "g++",
+        "-O3",
+        "-march=native",
+        "-std=c++17",
+        "-fopenmp",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+        "-I/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/src/common",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/src/build_router.cpp",
+        "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "-lopenblas",
+        "-lz",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/bin/build_router"
+      ]
+    },
+    "profiles": {
+      "exit_code": 0,
+      "seconds": 6.509801194999909,
+      "max_threads": 8,
+      "maxrss_bytes": 6327431168,
+      "affinity_thread_samples": 0,
+      "argv": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/profiles.py"
+      ]
+    },
+    "webvid2_5m_light_v1_HybridFixedTemperature_router": {
+      "exit_code": 0,
+      "seconds": 0.5016203940003834,
+      "max_threads": 1,
+      "maxrss_bytes": 4096,
+      "affinity_thread_samples": 0,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/bin/build_router",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/inputs/webvid2_5m_light_v1/HybridFixedTemperature.build.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/models/webvid2_5m_light_v1/HybridFixedTemperature/router_build.json"
+      ]
+    },
+    "webvid2_5m_light_v1_ApproxPilotTemperature_router": {
+      "exit_code": 0,
+      "seconds": 0.5006322409999484,
+      "max_threads": 1,
+      "maxrss_bytes": 4096,
+      "affinity_thread_samples": 0,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/bin/build_router",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/inputs/webvid2_5m_light_v1/ApproxPilotTemperature.build.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/models/webvid2_5m_light_v1/ApproxPilotTemperature/router_build.json"
+      ]
+    },
+    "webvid2_5m_light_v1_HybridPilotTemperature_router": {
+      "exit_code": 0,
+      "seconds": 0.5009458549998271,
+      "max_threads": 1,
+      "maxrss_bytes": 4096,
+      "affinity_thread_samples": 0,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/bin/build_router",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/inputs/webvid2_5m_light_v1/HybridPilotTemperature.build.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/models/webvid2_5m_light_v1/HybridPilotTemperature/router_build.json"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1_HybridFixedTemperature_router": {
+      "exit_code": 0,
+      "seconds": 0.5009485059999861,
+      "max_threads": 1,
+      "maxrss_bytes": 4096,
+      "affinity_thread_samples": 0,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/bin/build_router",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/inputs/yandex_t2i_official10M_ip_v1/HybridFixedTemperature.build.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/models/yandex_t2i_official10M_ip_v1/HybridFixedTemperature/router_build.json"
+      ]
+    },
+    "webvid2_5m_light_v1_evaluate": {
+      "exit_code": 0,
+      "seconds": 568.3331160289999,
+      "max_threads": 1,
+      "maxrss_bytes": 5845745664,
+      "affinity_thread_samples": 1134,
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/bin/evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/inputs/webvid2_5m_light_v1/evaluate.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/results/webvid2_5m_light_v1/evaluation"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1_evaluate": {
+      "exit_code": 0,
+      "seconds": 132.23249753600066,
+      "max_threads": 1,
+      "maxrss_bytes": 10648100864,
+      "affinity_thread_samples": 263,
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/bin/evaluate",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/inputs/yandex_t2i_official10M_ip_v1/evaluate.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/results/yandex_t2i_official10M_ip_v1/evaluation"
+      ]
+    }
+  },
+  "new_NSG_calls": 327936,
+  "new_ANN_calls": 327680,
+  "new_profiles": 4,
+  "new_graphs": 4,
+  "new_GT": 0,
+  "complete_wall_points": 16,
+  "wall_rounds": 48,
+  "default_changed": false
+}

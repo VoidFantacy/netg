@@ -1,0 +1,54 @@
+--- /data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/src/analyze.py
++++ /data/netg/ACSG/entry_method_exploration/20260916_optimized_five_dataset_r1_r100_v1/src/analyze.py
+@@ -20,7 +20,9 @@
+     return max(0,center-rad),min(1,center+rad)
+ 
+ def analyze():
+-    rows=[];paired=[];rounds=[];cross=[];hits_all={};costs=[]
++    rows=[];paired=[];rounds=[];cross=[];hits_all={};costs=[];raw_checks=[]
++    baseline=RUN.parent/"20260915_gate_l2_r1_r100_v1"
++    old_rows=list(csv.DictReader((baseline/"results/metrics.csv").open()))
+     for ds in DATASETS:
+         inp=RUN/'inputs'/ds;c=json.loads((inp/'manifest.json').read_text());n=c['test_rows'];base_n,d=c['shape'];base=vecs(c['paths']['base_path']);query=vecs(c['paths']['query_path']);gt=vecs(c['paths']['gt_path'],'i4')
+         for k in LOCK['K']:
+@@ -32,6 +34,11 @@
+             for L in LOCK['L'][str(k)]:
+                 for method in LOCK['methods']:
+                     out=root/(method+'_L'+str(L));m=json.loads((out/'complete.json').read_text());assert m['K']==k and m['n']==n and m['metric_id']==c['metric_id'] and m['threads']==1 and m['plain_count_bit_parity'] and m['warmup_bit_parity'] and len(m['seconds'])==3
++                    assert m['output_bits_and_ndc_verified'] and (method=='HNSW' or m['actual_batch4_forwarded'])
++                    for filename in ['ids.i32','distances.f32','entry_ids.i32','route_ndc.u64','graph_ndc.u64']:
++                        old_file=baseline/'results'/ds/f'k{k}'/(method+'_L'+str(L))/filename
++                        digest=sha(out/filename);assert digest==sha(old_file),(ds,k,method,L,filename)
++                        raw_checks.append(dict(file=str((out/filename).relative_to(RUN)),sha256=digest,reference=str(old_file)))
+                     ids=np.fromfile(out/'ids.i32','i4').reshape(n,k);dist=np.fromfile(out/'distances.f32','f4').reshape(n,k);entries=np.fromfile(out/'entry_ids.i32','i4').reshape(n,3)
+                     assert (ids>=0).all() and (ids<base_n).all() and np.isfinite(dist).all() and np.all(np.diff(np.sort(ids,axis=1),axis=1)>0)
+                     assert np.all(np.diff(dist,axis=1)>=-1e-5),'results not distance sorted'
+@@ -57,6 +64,8 @@
+                     for rep in range(3):
+                         row[f'wall_round{rep+1}']=float(seconds[rep]);row[f'qps_round{rep+1}']=float(qps[rep])
+                         pp=[p for p in progress if p['method']==method and p['L']==L and p['repeat']==rep];assert len(pp)==1 and pp[0]['seconds']==seconds[rep] and abs(pp[0]['qps']-qps[rep])<1e-7
++                    old_row=next(x for x in old_rows if (x['dataset'],int(x['K']),x['method'],int(x['L']))==(ds,k,method,L))
++                    assert abs(row['recall']-float(old_row['recall']))<1e-12
+                     rows.append(row)
+                     if k==100 and L in LOCK['L']['1']:
+                         old=RUN/'results'/ds/'k1'/(method+'_L'+str(L));a=np.fromfile(old/'ids.i32','i4');b=np.fromfile(old/'distances.f32','f4')
+@@ -95,7 +104,9 @@
+     for p in sorted((RUN/'reviews').glob('stage_*.json')):
+         r=json.loads(p.read_text());costs.append(dict(stage=r['stage'],seconds=r['seconds'],status=r['status'],log=r['log']))
+     dump(RUN/'results/offline_and_evaluation_costs.json',costs)
+-    dump(RUN/'reviews/raw_results_verified.json',dict(status='PASS',points=len(rows),wall_rounds=len(rounds),cross_K_checks=cross,query_distance_probes_per_point=8,all_return_IDs_and_GT_scored=True,metrics_sha256=sha(RUN/'results/metrics.csv')))
++    assert len(raw_checks)==4000
++    dump(RUN/'reviews/reference_raw_checks.json',raw_checks)
++    dump(RUN/'reviews/raw_results_verified.json',dict(status='PASS',reference_raw_files=4000,actual_batch4_count=True,all_e97_recall_unchanged=True,points=len(rows),wall_rounds=len(rounds),cross_K_checks=cross,query_distance_probes_per_point=8,all_return_IDs_and_GT_scored=True,metrics_sha256=sha(RUN/'results/metrics.csv')))
+     return rows,targets
+ 
+ def draw(rows):
+@@ -115,7 +126,7 @@
+                 else:ax.set_ylim(bottom=0);ax.set_xscale('log')
+                 ax.grid(alpha=.2,which='both')
+             handles,labels=axes[0].get_legend_handles_labels();axes[-1].axis('off');axes[-1].legend(handles,labels,loc='center',frameon=False,fontsize=12)
+-            note='Five datasets; LAION excluded. One CPU thread, 16 budgets, 3 timing repeats. GATE retrained with disjoint labels.'
++            note='Five datasets; LAION excluded. One CPU thread, 16 budgets, 3 timing repeats. Shared optimized NSG kernel; frozen models; same-run HNSW.'
+             fig.suptitle(f'Recall@{k}: '+('zero-hit query rate' if failure else 'measured recall–throughput curves'),fontsize=17,y=.985)
+             fig.text(.5,.015,note,ha='center',fontsize=10)
+             fig.tight_layout(rect=[0,.045,1,.95]);stem=('failed_query_rate' if failure else 'recall_qps')+f'_k{k}'

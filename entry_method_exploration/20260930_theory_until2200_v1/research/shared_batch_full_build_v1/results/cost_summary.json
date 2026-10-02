@@ -1,0 +1,564 @@
+{
+  "status": "AUDITED_FULL_BUILD_COST_IDENTITY_SEPARATE",
+  "cases": {
+    "webvid2_5m_light_v1__Default": {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "Default",
+      "complete_build_wall_seconds": 332.95432927,
+      "jobs": [
+        "webvid2_5m_light_v1__Default_build_exact",
+        "webvid2_5m_light_v1__Default_profile",
+        "webvid2_5m_light_v1__Default_router"
+      ],
+      "job_seconds_sum": 332.8982959929999,
+      "exact_prefix_comparison": {
+        "ordered_first10_changed_queries": 0,
+        "set_first10_changed_queries": 0,
+        "changed_source_rows": [],
+        "first10_distance_bits_changed_cells": 212,
+        "first10_max_abs_distance_difference": 1.1920928955078125e-07,
+        "all11_ids_identity": true,
+        "all11_distance_bits_identity": false
+      },
+      "max_consumed_distance_abs_error_vs_float64": 1.550106388803485e-07,
+      "H_identity": true,
+      "temperature_identity": true,
+      "W_bits_identity": true,
+      "W_changed_float32_cells": 0,
+      "W_max_abs_difference": 0.0,
+      "old_assignment_hash_identity": true,
+      "selection_identity": null,
+      "graph": {
+        "nodes": 815,
+        "edges": 7783,
+        "semantic_identity_to_old_model": true,
+        "whole_file_identity_to_old_model": true
+      },
+      "deployment_identity_restored": true,
+      "independent_scalar_hub_max_error": 2.5579538487363607e-13,
+      "new_exact_queries": 20815,
+      "teacher_queries": 0,
+      "teacher_NSG_calls": 0,
+      "native_audit_ANN_calls": 512,
+      "profile": {
+        "status": "COMPLETE_UNVALIDATED",
+        "method": "Default",
+        "seconds": 2.4076240949980274,
+        "temperature": 0.016201138496398926,
+        "temperature_seconds": 0.24069419099760125,
+        "assignment_and_profile_seconds": 2.117140146998281,
+        "profile_sha256": "897f61a0cfaa6ccba01e626c3c3d946e6622c04f43cd2b0fccc50356b0de7834",
+        "assignment_sha256": "4ca4103b35c7c19bfc731b9a077778c6d153e76d0fad7efeb275aba084da2343",
+        "resultant_sha256": "a613782c73513fde15fe0a50b9ea51c3580b865837e99ad1b2a9708c68efb08a",
+        "approx_assignment_sha256": null,
+        "new_profiles": 1,
+        "exact_labels_consumed": 20000,
+        "approx_labels_generated_and_read": 0,
+        "minimum_resultant_norm": 1.031190253531786,
+        "affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "threadpools": [
+          {
+            "user_api": "blas",
+            "internal_api": "openblas",
+            "num_threads": 8,
+            "prefix": "libopenblas",
+            "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so",
+            "version": "0.3.23.dev",
+            "threading_layer": "pthreads",
+            "architecture": "Cooperlake"
+          }
+        ],
+        "resultant_persisted": false,
+        "stored_target_prefix": 11
+      },
+      "exact_search_seconds": 322.99506141700476
+    },
+    "webvid2_5m_light_v1__Uniform": {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "Uniform",
+      "complete_build_wall_seconds": 119.98032790599973,
+      "jobs": [
+        "webvid2_5m_light_v1__Uniform_build_exact",
+        "webvid2_5m_light_v1__Uniform_teacher",
+        "webvid2_5m_light_v1__Uniform_profile",
+        "webvid2_5m_light_v1__Uniform_router"
+      ],
+      "job_seconds_sum": 119.90533548899839,
+      "exact_prefix_comparison": {
+        "ordered_first10_changed_queries": 0,
+        "set_first10_changed_queries": 0,
+        "changed_source_rows": [],
+        "first10_distance_bits_changed_cells": 12,
+        "first10_max_abs_distance_difference": 1.1920928955078125e-07,
+        "all11_ids_identity": true,
+        "all11_distance_bits_identity": false
+      },
+      "max_consumed_distance_abs_error_vs_float64": 1.4156947714116797e-07,
+      "H_identity": true,
+      "temperature_identity": true,
+      "W_bits_identity": true,
+      "W_changed_float32_cells": 0,
+      "W_max_abs_difference": 0.0,
+      "old_assignment_hash_identity": true,
+      "selection_identity": null,
+      "graph": {
+        "nodes": 815,
+        "edges": 7784,
+        "semantic_identity_to_old_model": true,
+        "whole_file_identity_to_old_model": true
+      },
+      "deployment_identity_restored": true,
+      "independent_scalar_hub_max_error": 1.7763568394002505e-13,
+      "new_exact_queries": 2863,
+      "teacher_queries": 20000,
+      "teacher_NSG_calls": 20032,
+      "native_audit_ANN_calls": 512,
+      "profile": {
+        "status": "COMPLETE_UNVALIDATED",
+        "method": "Uniform",
+        "seconds": 2.732249964999937,
+        "temperature": 0.01631888747215271,
+        "temperature_seconds": 0.24620893800238264,
+        "assignment_and_profile_seconds": 2.4355221620025986,
+        "profile_sha256": "a1a8bdbdb29a1016d86c7c08fdc809db54a2969d9d134a58c0dcf45dfe0cb441",
+        "assignment_sha256": "7500ec54a54cc2b3e61c0c8efa7109af963b2718dcf6c84982dcb66249ff26a9",
+        "resultant_sha256": "672f65f1f116f1fceec87d5ed49d3c30f8b8872142c392eed6f85b01768e64f4",
+        "approx_assignment_sha256": "5769e746bcd85c83c2cb5cc0b1ae8609e4491421c0b24239dd4f4030f83f394a",
+        "new_profiles": 1,
+        "exact_labels_consumed": 2048,
+        "approx_labels_generated_and_read": 20000,
+        "minimum_resultant_norm": 1.0013873799774793,
+        "affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "threadpools": [
+          {
+            "user_api": "blas",
+            "internal_api": "openblas",
+            "num_threads": 8,
+            "prefix": "libopenblas",
+            "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so",
+            "version": "0.3.23.dev",
+            "threading_layer": "pthreads",
+            "architecture": "Cooperlake"
+          }
+        ],
+        "resultant_persisted": false,
+        "stored_target_prefix": 11
+      },
+      "exact_search_seconds": 46.029947521001304
+    },
+    "webvid2_5m_light_v1__EnergyTree": {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "EnergyTree",
+      "complete_build_wall_seconds": 130.04573078400063,
+      "jobs": [
+        "webvid2_5m_light_v1__EnergyTree_build_exact",
+        "webvid2_5m_light_v1__EnergyTree_teacher",
+        "webvid2_5m_light_v1__EnergyTree_choose",
+        "webvid2_5m_light_v1__EnergyTree_additional",
+        "webvid2_5m_light_v1__EnergyTree_profile",
+        "webvid2_5m_light_v1__EnergyTree_router"
+      ],
+      "job_seconds_sum": 129.92851545599842,
+      "exact_prefix_comparison": {
+        "ordered_first10_changed_queries": 0,
+        "set_first10_changed_queries": 0,
+        "changed_source_rows": [],
+        "first10_distance_bits_changed_cells": 26,
+        "first10_max_abs_distance_difference": 5.960464477539063e-08,
+        "all11_ids_identity": true,
+        "all11_distance_bits_identity": false
+      },
+      "max_consumed_distance_abs_error_vs_float64": 1.3612707361332355e-07,
+      "H_identity": true,
+      "temperature_identity": true,
+      "W_bits_identity": true,
+      "W_changed_float32_cells": 0,
+      "W_max_abs_difference": 0.0,
+      "old_assignment_hash_identity": true,
+      "selection_identity": {
+        "source_rows": true,
+        "tree": true
+      },
+      "graph": {
+        "nodes": 815,
+        "edges": 7751,
+        "semantic_identity_to_old_model": true,
+        "whole_file_identity_to_old_model": true
+      },
+      "deployment_identity_restored": true,
+      "independent_scalar_hub_max_error": 1.8474111129762605e-13,
+      "new_exact_queries": 2863,
+      "teacher_queries": 20000,
+      "teacher_NSG_calls": 20032,
+      "native_audit_ANN_calls": 512,
+      "profile": {
+        "status": "COMPLETE_UNVALIDATED",
+        "method": "EnergyTree",
+        "seconds": 2.453650302999449,
+        "temperature": 0.01631888747215271,
+        "temperature_seconds": 0.001873778997833142,
+        "assignment_and_profile_seconds": 2.4013575689969002,
+        "profile_sha256": "7365700e9e174bc7f288598938b016df3bb6a595da3bc95b54d15febff42e0be",
+        "assignment_sha256": "47a5dc12fdbc0a16f7c569f4cec06380361095fefe2eb2a28cc6f7bcae333092",
+        "resultant_sha256": "4e69d9b4057b55489e0afe14c7660f941c8a7fcdb91bc0778c3bcbc820f0661c",
+        "approx_assignment_sha256": "5769e746bcd85c83c2cb5cc0b1ae8609e4491421c0b24239dd4f4030f83f394a",
+        "new_profiles": 1,
+        "exact_labels_consumed": 2048,
+        "approx_labels_generated_and_read": 20000,
+        "minimum_resultant_norm": 1.0014183620246957,
+        "affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "threadpools": [
+          {
+            "user_api": "blas",
+            "internal_api": "openblas",
+            "num_threads": 8,
+            "prefix": "libopenblas",
+            "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so",
+            "version": "0.3.23.dev",
+            "threading_layer": "pthreads",
+            "architecture": "Cooperlake"
+          }
+        ],
+        "resultant_persisted": false,
+        "stored_target_prefix": 11
+      },
+      "exact_search_seconds": 45.56729987300059
+    },
+    "yandex_t2i_official10M_ip_v1__EnergyTree": {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "EnergyTree",
+      "complete_build_wall_seconds": 163.87797790900004,
+      "jobs": [
+        "yandex_t2i_official10M_ip_v1__EnergyTree_build_exact",
+        "yandex_t2i_official10M_ip_v1__EnergyTree_teacher",
+        "yandex_t2i_official10M_ip_v1__EnergyTree_choose",
+        "yandex_t2i_official10M_ip_v1__EnergyTree_additional",
+        "yandex_t2i_official10M_ip_v1__EnergyTree_profile",
+        "yandex_t2i_official10M_ip_v1__EnergyTree_router"
+      ],
+      "job_seconds_sum": 163.7560095570043,
+      "exact_prefix_comparison": {
+        "ordered_first10_changed_queries": 1,
+        "set_first10_changed_queries": 0,
+        "changed_source_rows": [
+          13980
+        ],
+        "first10_distance_bits_changed_cells": 14086,
+        "first10_max_abs_distance_difference": 2.384185791015625e-07,
+        "all11_ids_identity": false,
+        "all11_distance_bits_identity": false
+      },
+      "max_consumed_distance_abs_error_vs_float64": 2.2490609807856998e-07,
+      "H_identity": true,
+      "temperature_identity": true,
+      "W_bits_identity": true,
+      "W_changed_float32_cells": 0,
+      "W_max_abs_difference": 0.0,
+      "old_assignment_hash_identity": true,
+      "selection_identity": {
+        "source_rows": true,
+        "tree": true
+      },
+      "graph": {
+        "nodes": 821,
+        "edges": 9367,
+        "semantic_identity_to_old_model": true,
+        "whole_file_identity_to_old_model": true
+      },
+      "deployment_identity_restored": true,
+      "independent_scalar_hub_max_error": 6.217248937900877e-15,
+      "new_exact_queries": 2869,
+      "teacher_queries": 20000,
+      "teacher_NSG_calls": 20032,
+      "native_audit_ANN_calls": 512,
+      "profile": {
+        "status": "COMPLETE_UNVALIDATED",
+        "method": "EnergyTree",
+        "seconds": 1.0196693110010528,
+        "temperature": null,
+        "temperature_seconds": 0.001358301000436768,
+        "assignment_and_profile_seconds": 0.99553169399951,
+        "profile_sha256": "8721bf99169467c86ae9c29905b2d243dea120fca123bd1799b396b50c4f763f",
+        "assignment_sha256": "99cd5a7849c43f9dba7c3b561f96c1ae049fc59b7a2d5fce8270fc410233e061",
+        "resultant_sha256": "ef0101f6a7795b8e9d42870c4d0d923ebf3eebf5ce4df22eef80d0c719a8dbd6",
+        "approx_assignment_sha256": "0ec21f1c1a423e51826ae19c895e83ab3858974ca1610407c27325f87d40bf28",
+        "new_profiles": 1,
+        "exact_labels_consumed": 2048,
+        "approx_labels_generated_and_read": 20000,
+        "minimum_resultant_norm": 1.9110900968903661,
+        "affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "threadpools": [
+          {
+            "user_api": "blas",
+            "internal_api": "openblas",
+            "num_threads": 8,
+            "prefix": "libopenblas",
+            "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so",
+            "version": "0.3.23.dev",
+            "threading_layer": "pthreads",
+            "architecture": "Cooperlake"
+          }
+        ],
+        "resultant_persisted": false,
+        "stored_target_prefix": 11
+      },
+      "exact_search_seconds": 112.09426411000459
+    },
+    "yandex_t2i_official10M_ip_v1__Uniform": {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "Uniform",
+      "complete_build_wall_seconds": 149.23033082199981,
+      "jobs": [
+        "yandex_t2i_official10M_ip_v1__Uniform_build_exact",
+        "yandex_t2i_official10M_ip_v1__Uniform_teacher",
+        "yandex_t2i_official10M_ip_v1__Uniform_profile",
+        "yandex_t2i_official10M_ip_v1__Uniform_router"
+      ],
+      "job_seconds_sum": 149.14756456999748,
+      "exact_prefix_comparison": {
+        "ordered_first10_changed_queries": 1,
+        "set_first10_changed_queries": 0,
+        "changed_source_rows": [
+          13980
+        ],
+        "first10_distance_bits_changed_cells": 13317,
+        "first10_max_abs_distance_difference": 2.384185791015625e-07,
+        "all11_ids_identity": false,
+        "all11_distance_bits_identity": false
+      },
+      "max_consumed_distance_abs_error_vs_float64": 2.5167686035221237e-07,
+      "H_identity": true,
+      "temperature_identity": true,
+      "W_bits_identity": true,
+      "W_changed_float32_cells": 0,
+      "W_max_abs_difference": 0.0,
+      "old_assignment_hash_identity": true,
+      "selection_identity": null,
+      "graph": {
+        "nodes": 821,
+        "edges": 9401,
+        "semantic_identity_to_old_model": true,
+        "whole_file_identity_to_old_model": true
+      },
+      "deployment_identity_restored": true,
+      "independent_scalar_hub_max_error": 6.217248937900877e-15,
+      "new_exact_queries": 2869,
+      "teacher_queries": 17952,
+      "teacher_NSG_calls": 17984,
+      "native_audit_ANN_calls": 512,
+      "profile": {
+        "status": "COMPLETE_UNVALIDATED",
+        "method": "Uniform",
+        "seconds": 0.813568606001354,
+        "temperature": null,
+        "temperature_seconds": 0.0007345439989876468,
+        "assignment_and_profile_seconds": 0.7913505249998707,
+        "profile_sha256": "8594341d70ca91a4c0859f6e30a70244f01f734c83c9e45b6f9d2f704517b089",
+        "assignment_sha256": "056c261bb5b1b62ed66ae1a0d2079f334a84c492c2b9393bc4fc8e8146fed62a",
+        "resultant_sha256": "7194f53e12a3516c602d5d41ff54b44094f39662288f16bc2a0368b159d192c3",
+        "approx_assignment_sha256": null,
+        "new_profiles": 1,
+        "exact_labels_consumed": 2048,
+        "approx_labels_generated_and_read": 17952,
+        "minimum_resultant_norm": 1.9110900968903661,
+        "affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "threadpools": [
+          {
+            "user_api": "blas",
+            "internal_api": "openblas",
+            "num_threads": 8,
+            "prefix": "libopenblas",
+            "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so",
+            "version": "0.3.23.dev",
+            "threading_layer": "pthreads",
+            "architecture": "Cooperlake"
+          }
+        ],
+        "resultant_persisted": false,
+        "stored_target_prefix": 11
+      },
+      "exact_search_seconds": 110.7910555160015
+    },
+    "yandex_t2i_official10M_ip_v1__Default": {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "method": "Default",
+      "complete_build_wall_seconds": 602.5334345860028,
+      "jobs": [
+        "yandex_t2i_official10M_ip_v1__Default_build_exact",
+        "yandex_t2i_official10M_ip_v1__Default_profile",
+        "yandex_t2i_official10M_ip_v1__Default_router"
+      ],
+      "job_seconds_sum": 602.4708146279991,
+      "exact_prefix_comparison": {
+        "ordered_first10_changed_queries": 2,
+        "set_first10_changed_queries": 1,
+        "changed_source_rows": [
+          6141,
+          13980
+        ],
+        "first10_distance_bits_changed_cells": 127597,
+        "first10_max_abs_distance_difference": 2.980232238769531e-07,
+        "all11_ids_identity": false,
+        "all11_distance_bits_identity": false
+      },
+      "max_consumed_distance_abs_error_vs_float64": 2.617176010355493e-07,
+      "H_identity": true,
+      "temperature_identity": true,
+      "W_bits_identity": false,
+      "W_changed_float32_cells": 400,
+      "W_max_abs_difference": 0.00029879435896873474,
+      "old_assignment_hash_identity": false,
+      "selection_identity": null,
+      "graph": {
+        "nodes": 821,
+        "edges": 9360,
+        "semantic_identity_to_old_model": false,
+        "whole_file_identity_to_old_model": false
+      },
+      "deployment_identity_restored": false,
+      "independent_scalar_hub_max_error": 7.993605777301127e-15,
+      "new_exact_queries": 20821,
+      "teacher_queries": 0,
+      "teacher_NSG_calls": 0,
+      "native_audit_ANN_calls": 512,
+      "profile": {
+        "status": "COMPLETE_UNVALIDATED",
+        "method": "Default",
+        "seconds": 0.8153724080002576,
+        "temperature": null,
+        "temperature_seconds": 0.0003052079991903156,
+        "assignment_and_profile_seconds": 0.7924790059987572,
+        "profile_sha256": "6e97a33326cda90d44fb74bcea04e2b7204a76748d6af13fb40beb46e9b1182d",
+        "assignment_sha256": "0f89a1ef439aa897123d04f2ff63615561181923f02d22cc454f27f708619180",
+        "resultant_sha256": "4c9626ed1fca21a9a2b71b87d6c78b51926007673640387e5bfa598700420d13",
+        "approx_assignment_sha256": null,
+        "new_profiles": 1,
+        "exact_labels_consumed": 20000,
+        "approx_labels_generated_and_read": 0,
+        "minimum_resultant_norm": 2.0463315016190595,
+        "affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "threadpools": [
+          {
+            "user_api": "blas",
+            "internal_api": "openblas",
+            "num_threads": 8,
+            "prefix": "libopenblas",
+            "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so",
+            "version": "0.3.23.dev",
+            "threading_layer": "pthreads",
+            "architecture": "Cooperlake"
+          }
+        ],
+        "resultant_persisted": false,
+        "stored_target_prefix": 11
+      },
+      "exact_search_seconds": 590.506669704002
+    }
+  },
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "Default": {
+        "complete_wall_seconds": 332.95432927,
+        "ratio_to_default": 1.0,
+        "deployment_identity_restored": true,
+        "old_quality_pair_may_be_reused": true
+      },
+      "Uniform": {
+        "complete_wall_seconds": 119.98032790599973,
+        "ratio_to_default": 0.3603507068643791,
+        "deployment_identity_restored": true,
+        "old_quality_pair_may_be_reused": true
+      },
+      "EnergyTree": {
+        "complete_wall_seconds": 130.04573078400063,
+        "ratio_to_default": 0.3905812880376866,
+        "deployment_identity_restored": true,
+        "old_quality_pair_may_be_reused": true
+      }
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "EnergyTree": {
+        "complete_wall_seconds": 163.87797790900004,
+        "ratio_to_default": 0.2719815507360179,
+        "deployment_identity_restored": true,
+        "old_quality_pair_may_be_reused": false
+      },
+      "Uniform": {
+        "complete_wall_seconds": 149.23033082199981,
+        "ratio_to_default": 0.24767145233116414,
+        "deployment_identity_restored": true,
+        "old_quality_pair_may_be_reused": false
+      },
+      "Default": {
+        "complete_wall_seconds": 602.5334345860028,
+        "ratio_to_default": 1.0,
+        "deployment_identity_restored": false,
+        "old_quality_pair_may_be_reused": false
+      }
+    }
+  },
+  "all_deployment_identities_restored": false,
+  "new_GT": 53100,
+  "new_NSG": 78080,
+  "new_ANN": 3072,
+  "new_profiles": 6,
+  "new_graphs": 6,
+  "new_qgt_kmeans_fits": 6,
+  "new_energy_trees": 2,
+  "default_changed": false,
+  "new_online_performance": false
+}

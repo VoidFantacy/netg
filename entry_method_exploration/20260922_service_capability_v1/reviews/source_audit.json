@@ -1,0 +1,63 @@
+{
+  "status": "METADATA_SOURCE_CANDIDATES_AVAILABLE_NOT_BLIND_CERTIFIED",
+  "files": [
+    {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/manifest.json",
+      "bytes": 5579,
+      "sha256": "1bad4d81fe3ef753c4df546ffca6b89709c626060221ad5227aea78c4ad83614"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/split_source_indices.seed20260826.json",
+      "bytes": 655419,
+      "sha256": "27649b0f03d650b2716955cce7dac077a9ecdc72126d0f8bdc98227da1411c00"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/manifest.json",
+      "bytes": 3302,
+      "sha256": "84cd11015c2b98b4fc81d6f62b907351889a87d5b14126a17966104a0bb2000b"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/config.locked.json",
+      "bytes": 4328,
+      "sha256": "f3d5e198186a7d03feea5e32386af119269498311dae476151748cc54338cb50"
+    }
+  ],
+  "query_payload_opened": false,
+  "new_GT": false,
+  "webvid": {
+    "source": "webvid.query.train.2.5M.fbin",
+    "registered_excluded_source_rows": 45000,
+    "proposed_candidate_window": [
+      1200000,
+      1220000
+    ],
+    "remaining_after_registered_row_exclusion": 19604,
+    "additionally_excluded_E105_materialized_window": [
+      2450000,
+      2470000
+    ]
+  },
+  "yandex": {
+    "source": "query.learn.50M.fbin",
+    "registered_excluded_range": [
+      0,
+      45000
+    ],
+    "additionally_excluded_E105_materialized_window": [
+      2000000,
+      2020000
+    ],
+    "proposed_candidate_window": [
+      3000000,
+      3020000
+    ]
+  },
+  "remaining_checks": [
+    "review all matched historical references",
+    "freeze policy and power-based sample size",
+    "verify source identity and remote range headers if applicable",
+    "byte-deduplicate candidate queries against every registered split and historical extra query source",
+    "record first-payload-access time; do not call source-order samples semantic independence"
+  ],
+  "seconds": 0.11398217299984026
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "dim": 200,
+  "num_queries": 768,
+  "pilot_count": 512,
+  "hub_count": 821,
+  "base_count": 10000000,
+  "gt_k": 100,
+  "top_k": 10,
+  "L": [
+    64,
+    128
+  ],
+  "threads": 16,
+  "hnsw_seed": 20260828,
+  "legacy_hnsw_seed": 100,
+  "hnsw_m": 16,
+  "hnsw_ef_construction": 200,
+  "hnsw_ef": 10,
+  "index_path": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "queries_file": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/inputs/prepared_v2/yandex_t2i_official10M_ip_v1/queries.f32",
+  "gt_file": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/inputs/prepared_v2/yandex_t2i_official10M_ip_v1/gt.i64",
+  "row_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/inputs/prepared_v2/yandex_t2i_official10M_ip_v1/row_ids.i64",
+  "hub_ids": "/data/netg/ACSG/fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_cover_hub_ids.bin",
+  "raw_hubs": "/data/netg/ACSG/fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_cover_hubs.bin",
+  "prototypes": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/yandex_t2i_official10M_ip_v1/prototype.f32",
+  "basin_label_local": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/inputs/prepared_v2/yandex_t2i_official10M_ip_v1/basin_label_local.i32",
+  "sample_manifest": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/inputs/prepared_v2/yandex_t2i_official10M_ip_v1/sample_manifest.json",
+  "verified_identities": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/inputs/prepared_v2/yandex_t2i_official10M_ip_v1/verified_identities.json"
+}

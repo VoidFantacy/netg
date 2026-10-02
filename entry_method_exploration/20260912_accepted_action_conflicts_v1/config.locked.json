@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "runs": 12,
+  "steps": 2400,
+  "budgets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "normal_states": 534,
+      "accepted": 528,
+      "parity_graphs": 17,
+      "parity_NSG": 816,
+      "HNSW": 547360,
+      "builds": 680,
+      "installations": 146,
+      "NSG_reservation": 30000
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "normal_states": 386,
+      "accepted": 380,
+      "parity_graphs": 15,
+      "parity_NSG": 720,
+      "HNSW": 395744,
+      "builds": 505,
+      "installations": 119,
+      "NSG_reservation": 30000
+    }
+  ],
+  "NSG_cap": 60000,
+  "HNSW_cap": 2000000,
+  "optimizer_updates": 0,
+  "new_GT": 0,
+  "threads": 1,
+  "query_stop": 1789220400,
+  "latest_launch": 1789219800
+}

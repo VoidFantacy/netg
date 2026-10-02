@@ -1,0 +1,108 @@
+{
+  "input_and_split_seconds": 0.042839116000322974,
+  "GT": {
+    "qgt5000": {
+      "n": 5000,
+      "search_seconds": 84.45670097199945,
+      "batch_seconds": [
+        4.034100500999557,
+        4.079164877000039,
+        4.078048569000202,
+        4.078793468000185,
+        4.082633626999268,
+        4.081338742999833,
+        4.078603048999867,
+        4.077879086999928,
+        4.082573300000149,
+        4.081052880000243,
+        4.080239679999977,
+        4.08148804800021,
+        4.082140084999992,
+        4.081250502999865,
+        4.081359488999624,
+        4.0795766000001095,
+        4.078444639000736,
+        4.078430095999465,
+        4.085171296999761,
+        6.974412434000442
+      ],
+      "write_seconds": 0.002614001000438293,
+      "whole_phase_seconds": 84.47257719000027
+    },
+    "selected2048": {
+      "n": 2048,
+      "search_seconds": 33.279305467001905,
+      "batch_seconds": [
+        4.160048812000241,
+        4.157896083999731,
+        4.162752122000711,
+        4.163782805000665,
+        4.158507189999909,
+        4.159135648999836,
+        4.159042631000375,
+        4.158140174000437
+      ],
+      "write_seconds": 0.0012764869998136419,
+      "whole_phase_seconds": 33.28534402300011
+    }
+  },
+  "new_GT": 7048,
+  "base_load_flat_build_seconds": 11.48235932300031,
+  "qgt_H_seconds": 0.3955417480001415,
+  "qgt_H_details": {
+    "method": "spherical-query-kmeans-representative-GT-cover",
+    "target_hubs": 815,
+    "selected_hubs": 815,
+    "empty_clusters": 0,
+    "kmeans_iterations": 25,
+    "seed": 20260828,
+    "gt_candidates_per_query": 100
+  },
+  "status": "COMPLETE_UNVALIDATED",
+  "seconds": 129.79000095500032,
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "threads": 15,
+  "faiss_threads": 8,
+  "threadpools": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 8,
+      "prefix": "libopenblas",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so",
+      "version": "0.3.23.dev",
+      "threading_layer": "pthreads",
+      "architecture": "Cooperlake"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 8,
+      "prefix": "libgomp",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/faiss_cpu.libs/libgomp-e985bcbb.so.1.0.0",
+      "version": null
+    },
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 8,
+      "prefix": "libopenblas",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/faiss_cpu.libs/libopenblaso-r0-d77a1985.3.15.so",
+      "version": "0.3.15",
+      "threading_layer": "openmp",
+      "architecture": "Prescott"
+    }
+  ],
+  "numpy_version": "1.26.4",
+  "faiss_version": "1.15.0",
+  "maxrss_GiB": 9.840221405029297
+}

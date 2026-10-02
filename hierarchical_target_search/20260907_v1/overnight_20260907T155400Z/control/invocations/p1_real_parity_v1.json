@@ -1,0 +1,27 @@
+{
+  "stage": "P1",
+  "split": "pilot",
+  "measurement": "correctness",
+  "output": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/real_parity_v1",
+  "command": [
+    ".venv_cpu/bin/python",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/run_real_parity.py",
+    "--evaluator",
+    "build/benches/bench_hierarchical_eval",
+    "--audit",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+    "--fast-root",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k",
+    "--output",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/real_parity_v1",
+    "--queries",
+    "512"
+  ],
+  "oracle": false,
+  "upstream_gates": [
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P0.json",
+      "sha256": "693b6947c97ac8835ba34da51300b8958866d3b9c8acdbc4234a24d2bea00c85"
+    }
+  ]
+}

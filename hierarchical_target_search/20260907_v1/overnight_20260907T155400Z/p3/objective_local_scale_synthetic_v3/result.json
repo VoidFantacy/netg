@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/diagnose_objective_local_scale.py",
+    "sha256": "148e3ff29259857865e9916f5f3905f2f2d1ffd3c1d843bfd8909a16c18259c8"
+  },
+  "scope": "Generated fixtures only; source files allowed for import/hash; no actual graph/GT/labels/count rows.",
+  "tests": [
+    "native_unaligned_header_parser",
+    "directed_duplicate_reciprocal_arcs",
+    "self_exclusion_and_minus1_padding",
+    "bounded_numeric_adjacency_reads_no_vector_payload",
+    "sum_in_out_M_total_2M",
+    "full_graph_checksum_uninterpreted_payload",
+    "invalid_negative_and_out_of_range_rejection",
+    "short_adjacency_read_rejection",
+    "three_random_generated_graph_reference_cases",
+    "strict_equality_excluded",
+    "int64_multiplication_50000_by180000",
+    "overflow_guard",
+    "sparse_histogram_huge_degree_no_dense_bincount",
+    "histogram_byte_limit_omit_with_reason",
+    "full_standalone_histogram_cap_includes_metadata_newline",
+    "histogram_file_hash_and_report_descriptor_no_pairs",
+    "omitted_histogram_creates_no_file",
+    "empty_and_endpoint_quantiles",
+    "exact_decimal_rational_quantile_rank",
+    "all31_group_independent_python_reference",
+    "all18_movement_cells",
+    "all10_frequency_bins",
+    "empty_weighted_denominator_null",
+    "movement_count_mismatch_rejection",
+    "fit_support_max_mismatch_rejection",
+    "GT10_frequency_Counter_reference",
+    "GT10_duplicate_rejection",
+    "label_range_rejection",
+    "protocol_SHA_rejection",
+    "fixture_only_Path_open_numpy_fromfile_guard"
+  ],
+  "group_reference": {
+    "groups_checked_against_independent_reference": 31,
+    "nodes": 16,
+    "fixed_quantile_levels": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      0.9,
+      0.95,
+      0.99,
+      1
+    ]
+  },
+  "guarded_file_calls": 49,
+  "actual_inputs_read": false
+}

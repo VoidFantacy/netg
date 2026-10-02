@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-09-07T16:18:52.598706+00:00",
+  "status": "COMPILED_AND_SYNTHETIC_TESTED",
+  "source_sha256": "86f2c717ed0abc2589ff73e1c1b4a7fbadf2b3e319007db3cbedcfe77a3ddd50",
+  "binary_sha256": "0fee7b721f77525d644bbf6dad5ac2917bc58d039633a5dc4e9b7148d1890aa8",
+  "compiler": "g++ Ubuntu11.4.0",
+  "flags": [
+    "-O3",
+    "-std=c++17",
+    "-fopenmp",
+    "-Wall",
+    "-Wextra"
+  ],
+  "libraries": [
+    "METISv5.2.1 idx64",
+    "GKlib",
+    "libm"
+  ],
+  "no_new_dependencies": true,
+  "compile_warnings": 0,
+  "synthetic_structure_tests": "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/synthetic_test_v1/manifest.json",
+  "synthetic_native_mmap_and_multiblock_sha256_tests": "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/partition_io_test.json",
+  "real_dataset_run_by_this_agent": false,
+  "input_access": "O_RDONLY adjacency-only mmap; native unaligned offset handled via memcpy",
+  "primary_output": "regions.u16; manifest.json",
+  "sha256_reference_comparison": true
+}

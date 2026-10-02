@@ -1,0 +1,56 @@
+{
+  "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+  "base_n": 2505000,
+  "batch": 1,
+  "candidate_count": 20000,
+  "dataset": "webvid2_5m_light_v1",
+  "dataset_order": 2,
+  "dimension": 512,
+  "formal": true,
+  "gt": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/inputs/webvid2_5m_light_v1_b1/gt.i32",
+  "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "max_search_calls": 164000,
+  "methods": [
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/default_demand_full_build_v1/results/webvid2_5m_light_v1/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/default_demand_full_build_v1/results/webvid2_5m_light_v1/router.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/default_demand_full_build_v1/results/webvid2_5m_light_v1/ids.i32",
+      "name": "GT10-soft-t1"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/temperature_full_build_v1/results/webvid2_5m_light_v1/HybridApproxMedian/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/temperature_full_build_v1/results/webvid2_5m_light_v1/HybridApproxMedian/router.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/temperature_full_build_v1/results/webvid2_5m_light_v1/ids.i32",
+      "name": "Uniform"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/webvid2_5m_light_v1/ShuffledEnergyTree/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/webvid2_5m_light_v1/ShuffledEnergyTree/router.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/webvid2_5m_light_v1/ids.i32",
+      "name": "ShuffledEnergyTree"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/webvid2_5m_light_v1/EnergyTree/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/webvid2_5m_light_v1/EnergyTree/router.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_full_build_v1/results/webvid2_5m_light_v1/ids.i32",
+      "name": "EnergyTree"
+    }
+  ],
+  "n": 4096,
+  "normalize_anchor": false,
+  "points": [
+    {
+      "K": 1,
+      "L": 1000
+    },
+    {
+      "K": 100,
+      "L": 1250
+    }
+  ],
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/energy_fresh_transfer_v1/inputs/webvid2_5m_light_v1_b1/queries.f32",
+  "repeats": 3,
+  "seconds_cap": 1200,
+  "source_start": 2390000,
+  "threads": 1
+}

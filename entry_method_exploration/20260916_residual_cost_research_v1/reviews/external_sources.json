@@ -1,0 +1,23 @@
+{
+  "retrieved_on": "2026-09-16",
+  "sources": [
+    {
+      "url": "https://faiss.ai/cpp_api/struct/structfaiss_1_1DistanceComputer.html",
+      "role": "Official batch-4 interface documentation; local IndexFlat.cpp and distances_simd.cpp determine the actual installed implementation."
+    },
+    {
+      "url": "https://github.com/nmslib/hnswlib/blob/master/hnswlib/hnswalg.h",
+      "role": "Primary upstream source; local frozen E99 copy determines measured behavior."
+    },
+    {
+      "url": "https://www.intel.com/content/www/us/en/docs/cpp-compiler/developer-guide-reference/2021-8/cacheability-support-intrinsics-002.html",
+      "role": "Official cache-line prefetch semantics, not evidence for the measured machine's miss rate.",
+      "fetch_status": "Search excerpt only; full URL redirect failed. Not used as a decisive source."
+    },
+    {
+      "url": "https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html",
+      "role": "Official __builtin_prefetch latency-hiding semantics and need for sufficiently early issue; full section read."
+    }
+  ],
+  "caveat": "No primary documentation alone proves a proposed control improves end-to-end search. No code or packages were downloaded for execution."
+}

@@ -1,0 +1,6 @@
+{
+  "status": "REVIEWER_ASSERTION_PRECISION_ERROR",
+  "source_under_review_sha256": "e76ad3377df984af132596c3dc84f65c9ab3f86c90bbfdbbd1ec7581ce9a9e59",
+  "reviewer_script_sha256": "200c88176523041b272c25e1d2ea98fe84ec169ebd112726e896d01a868bc92e",
+  "cause": "Reviewer compared the computed binary float -0.4/10 expression to decimal -0.04 using exact equality. Difference is ordinary float rounding, not an implementation effect. Use abs difference <=1e-15 for this expected weighted score; exact integer and integrity assertions remain exact."
+}

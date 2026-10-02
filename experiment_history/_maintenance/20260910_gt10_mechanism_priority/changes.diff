@@ -1,0 +1,205 @@
+--- before/s-target.md
++++ after/s-target.md
+@@ -1,12 +1,14 @@
+ # ACSG 下一阶段方向与实验接续
+ 
+-2026-09-10夜间。E25/E26均完整收口；最近E26状态`SHRINKAGE_DID_NOT_STABILIZE_SELECTIVITY_NO_FORMAL_GO`。用户最新要求接近结束则当晚给短结论、明天继续，见[时间更新](entry_method_exploration/20260910_profile_shrinkage_v1/authorization_update.md)。今晚不继续等待原07:00、不新开实验；原protocol/E25授权文本保留当时历史。全部长期分支在第4节，不是一张自动执行队列。
++2026-09-10夜间。**用户最新确定：下一步先弄清GT10为什么提高性能，以GT10 hard对GT1 hard为主对照。** 计划状态`GT10_MECHANISM_ANALYSIS_PLANNED_UNRUN`，具体执行顺序见第3节，新对话指令见第6节；本次只更新文档，明日续接分析。E25/E26均已收口，E26保留`SHRINKAGE_DID_NOT_STABILIZE_SELECTIVITY_NO_FORMAL_GO`，不以其负结果否定E24。原[当晚收口安排](entry_method_exploration/20260910_profile_shrinkage_v1/authorization_update.md)继续有效，原protocol保留历史。第4节的方法探索在GT10机制分析之后按证据选择，不是一张自动执行队列。
+ 
+ ## 1. 最近结果给出的判断
+ 
++E24的GT10已有正信号，应先解释它。相对matched GT1 hard，WebVid GT10 hard在L64/800同时提高Recall和QPS，L128/256是小幅Recall下降与速度提高的交换，L400微降；Yandex五L Recall均提高，三个点QPS也提高。WebVid L64为+0.285pp/+3.13%，Yandex L128为+0.335pp/+2.56%，这些速度数值属于E24当轮单次wall。不能把“大部分优于NSG”全部归给GT10，Fast本身的收益要由matched GT1 hard对照扣开。
++
+ E25两类门控与E26单路收缩都未建立跨数据集稳定的收益保留/损失减少与端到端改善。E25 WebVid保留较多收益但路由成本抵消小幅质量修复，Yandex减少损伤时失去大多数有效改道。E26两数据集cal冻结α0.75，cal/audit/validation均未达联合目标；validation有效事件保留64.62%/68.92%、全部受损事件净减少14.02%/22.58%，十点九个Recall低于E24，无稳定同L双升。
+ 
+-这些结果不支持继续仅加密当前门控阈值或全局alpha，也不能证明效用普遍不可学习。连续缩小画像会产生第三套入口，旧损失被避免与新增损伤必须同时记录。完整事实分别见[E25报告](entry_method_exploration/20260910_selective_profile_gate_v1/report.md)、[E26报告](entry_method_exploration/20260910_profile_shrinkage_v1/report.md)、[历史15](experiment_history/15_profile_shrinkage.md)；summary保持当前精简结论。
++这两组后续结果回答的是“能否继续增强GT10”，不撤销E24已有提升。75%收益保留/25%损伤减少是E25/E26目标，不作为原GT10有效性的门槛；也不要求全部query或每个L都变好。评价应看目标Recall区间的整体实测前沿、重复稳定性和代价。原始事实见[E24报告](entry_method_exploration/20260910_gt_topk_profiles_v1/report.md)、[E25报告](entry_method_exploration/20260910_selective_profile_gate_v1/report.md)、[E26报告](entry_method_exploration/20260910_profile_shrinkage_v1/report.md)。
+ 
+ ## 2. 当前冻结资产与继续时的对照
+ 
+@@ -15,25 +17,67 @@
+ - E26正常897280真实调用、修复0、合成2268，全部阶段结束；E25正常1089152、E24正常543296均已独立用完并收口。任何旧预算、未使用修复额度或时间授权都不是新队列预算。
+ - 后续新方法保留matched Fast20K、E24按旧cal冻结的主画像及相关GT10硬/软对照；Fast30K另列30K/seed100/顺序身份。E25/E26可作对应机制参照，不按旧validation重新挑主规则。
+ 
+-## 3. 明日建议与进入边界
+-
+-明日先围绕已有正负改道分解和真实效用标签，判断收益与损伤是否有稳定、低成本的可区分信号，再决定下一独立方法。E25与E26原query级输出、损失迁移、案例、冻结模型和计时已保存，不必复跑整轮来找回事实；不能先增加门控容量或alpha网格再解释结果。
+-
+-长期优先级仍是第4.1的2A：固定H，以真实finite-L作用组织可预测分组，并保留旧single赢家centroid和E24几何画像对照。E08已有single赢家重聚合，E23已有真实三入口标签/排序；若选择2A，先说明软/可预测分组或条件联合作用的实质区别与旧标签兼容性。single只能提供分组/候选，三个入口的结果必须真实联合搜索，不能以命中并集代理。
+-
+-若更适合研究联合集合评分、微型图效率、聚类、rank或范数消融，按第4节对应分支另定小协议，避免同时改变监督、H、画像和搜索器。E24 audit exact−HNSW主候选仅WebVid+0.146pp/Yandex−0.020pp，路由单测约占总wall的1%，当前没有微型图是主要瓶颈的证据。
+-
+-所有新正式查询继续单线程、每次一个方法、独立端到端plain wall，全部路由计算收费。新模型/参数在使用其评估数据前冻结。今晚E25/E26收口不自动启动2A、新H、C/probe、标签或其它长队列。
+-
+-## 4. 全部实验方向：优先级、方法、对照与进入条件
++## 3. 下一步首要任务：解释GT10的性能收益
++
++**任务目标。** 回答GT10改变了什么、哪些变化真正帮助搜索、Recall和QPS分别为何变化，以及收益在哪些数据/query/L上存在。允许结论是多个因素共同作用或部分速度差未复现，不能预设“GT更多所以必然更好”。先解释已观察到的收益，再由解释决定如何继续改进。
++
++### 3.1 主对照、现有证据与理论起点
++
++主对照固定为两数据集的`GT10 hard`与`GT1 hard / matched Fast20K`，覆盖L64/128/256/400/800；WebVid虽原cal选中GT10软，也必须直接分析GT10硬。GT1软/GT10软为辅助消融，NSG/Fast30K为上下文对照，E25/E26用于解释后续改动为何损失原收益。保持原fit20K、H、raw-IP、NSG、入口数、Micro-HNSW参数/seed/入口顺序一致，不把30K/20K或旧不同顺序的差异归给GT数。
++
++从[E24构建源码](entry_method_exploration/20260910_gt_topk_profiles_v1/src/build_profiles.py)核对：若`b(q,j)`是第j个GT目标按cosine归属的真实hub，则`a1(q,h)=1[b(q,1)=h]`，`a10(q,h)=Σ(j=1..10)1[b(q,j)=h]/10`，画像为`normalize(unit(raw_hub)+Σq a(q,h)unit(q))`。GT10 hard对每个GT目标硬归属，但同一query可向多个hub分配分数权重；每query总质量仍为1。它不是训练query增至十倍，也不是增加H或在线入口数。画像累加的是query方向，GT向量只决定权重。GT1原float32恢复和其它画像float64累加差异单列数值控制，不能把舍入变化算作多目标机制。
++
++### 3.2 阶段A：先核清提升的范围与稳定性
++
++从[E24全部原值](entry_method_exploration/20260910_gt_topk_profiles_v1/results/tables.md)、[逐点指标](entry_method_exploration/20260910_gt_topk_profiles_v1/results/metrics.csv)、[配对差](entry_method_exploration/20260910_gt_topk_profiles_v1/results/comparisons.csv)重建两数据集GT10硬对GT1硬的完整五点表、逐query命中变化和实测非支配点。正点、交换点、负点一起解释，不以连线直接推断等Recall加速，不用固定单L优劣代替整条前沿。
++
++核对E25/E26中已经重复测得的A0/A1：Yandex的A1确为GT10硬，可以对相同模型/query的质量做身份回归、对各轮独立QPS差分别检查；WebVid的A1是GT10软，不能将这些重复当作GT10硬重复。相同query/模型的重复计时不增加Recall样本数，跨轮wall不混成同一批比较。先利用已有三次wall、route/graph单测和原始日志；缺少的稳定性证据列入阶段D，避免先整轮重跑。
++
++交付一张“哪个数据集、哪个Recall区间、改善质量还是速度、当前复现到什么程度”的证据表。若某一速度增幅随轮次明显变小，明确报告；仍可继续分析其画像/质量机制，不把一次速度差当作确定因果。
++
++### 3.3 阶段B：从GT归属追到画像与三入口
++
++按下表沿同一原query/hub身份连接已有fit统计、W、入口和真实结果。先分析相关和必要条件，不把支持数、距离或几何覆盖直接写成搜索效用。
++
++| 要回答的问题 | 优先使用的证据 | 怎样避免错误归因 |
++|---|---|---|
++| 第2–10名GT增加了哪些信息？ | 每rank归属hub、与GT1同hub的比例、每query有效hub数；`a10−a1`的质量转移 | 同hub的十个目标不等于十份新信息；总query质量仍为1 |
++| 哪些画像实际改变，是否减少支持不足？ | [支持统计](entry_method_exploration/20260910_gt_topk_profiles_v1/results/profile_support.csv)、每hub mass/ESS/prior比例、W角位移和方向集中度 | ESS增长与平均更平滑是描述，不能直接推出泛化或Recall提高；QGT选H的簇与fit画像basin分开 |
++| 新画像把哪些query送去了不同入口？ | GT1/GT10硬的精确top3与HNSW top3、实际三入口集合重合、分数间隔、入口频次/覆盖 | 同三入口在原kernel下应有相同结果；变了多少入口不等于改好了多少 |
++| 哪些改道贡献了净命中收益？ | 全部query按增益/持平/受损分组，报告正负幅度、零命中救回/新增失败及跨L变化，再关联支持和入口变化 | 全query保留分母，案例按明确规则选；GT只作离线解释，不进入线上策略 |
++
++画像归属矩阵若未存完整文件，按原fit与构建规则只读重算，并核对manifest中的digest；不运行会覆盖原模型的builder。分组统计尽量先在原开发段提出解释，再检查其它已使用段的一致性，并披露它们都是历史开发/validation数据，不能称新的盲验证。
++
++### 3.4 阶段C：区分“入口更有效”与“计算更便宜”
++
++Recall侧先比较GT1硬/GT10硬各自的exact3和HNSW3，用已有cal/audit逐query结果判断收益在精确画像排序下是否仍存在，不能用WebVid GT10软的exact结果替代硬画像。精确画像top3仍不是NSG效用oracle；三个入口的互补或竞争必须由真实联合搜索解释，不能把独立single命中并集当作三入口结果。
++
++成本侧分开列route NDC、graph NDC、各自单测wall和独立端到端wall。追问GT10是否减少微型图访问、是否让NSG在更有利的位置启动，或改变扩展/距离计算与内存访问；只存在NDC差时不能直接解释全部QPS差。现有路由只占L128总wall约1%，尤其Yandex GT10硬的L128 graph NDC略增而E24 QPS提高，必须保留计时/路径/缓存原因尚未分离的可能。
++
++优先复用已有结果和trace；若缺少逐扩展路径等证据，列清缺失字段，不声称已经观察到更短路径。需要补trace时只对事先固定的小批代表query和对照，在timer外诊断并验原kernel结果一致；诊断开销不能混入正式QPS。
++
++### 3.5 阶段D：有明确证据缺口再做最小补测
++
++先完成A–C的已有证据分析，再为仍无法区分的解释选择最少对照，并在任何新搜索前冻结独立目录、模型/query/GT/图身份、候选、线程、调用与时间/存储上限。两类可能需要的补测是：一类重复固定GT1/GT10硬曲线，确认速度差和目标Recall区间；另一类隔离真实多目标信息与一般平滑/支持增加，例如保留GT1贡献、按固定规则打乱第2–10名目标与query的对应关系作为诊断。后者须先说明实际保持了哪些支持统计、改变了哪些因素，不能泛称完全匹配控制。这些是候选诊断设计，当前未选定具体数值、未实现或执行。
++
++所有新查询单线程、每次一个方法、独立warm/plain端到端wall；若只重放固定入口测graph或做带trace诊断，应明确属于分项/机制证据，不作为完整在线方法QPS。只在已有数据范围或新协议明确限定的开发样本补测，held-out不自动打开；不以本次计划启动GT数/温度/seed大网格、新H、门控、rank、MLP、C/probe或2A新标签。
++
++### 3.6 最终交付与后续决策
++
++产物至少包含：GT1/GT10硬完整性能与重复性表、GT rank→hub质量转移、画像支持/方向变化、逐query三入口与正负命中连接、路由/主搜索/总wall成本分解，以及每个解释的“证据支持／反证／尚未区分”清单。将可确认的机制用中文讲清楚；无法确认的部分给出缺少哪项证据，不能编成单一原因。
++
++收口时回答“GT10的收益主要来自哪里、在什么条件下保留、哪些简单特征值得沿用”。如果真实多目标信息有独立作用，再考虑如何利用；如果主要来自一般支持/平滑，优先研究更直接的控制；如果速度主要是测量波动，就保留已验证的质量变化并纠正速度幅度。2A、联合评分和微型图效率等只按这轮解释决定是否成为下一实验，不预先把新模型当作结论。原E24/E25/E26均保持完成身份，新分析有独立记录，更新summary/history时不覆写旧报告。
++
++## 4. 机制分析之后保留的方法方向
+ 
+ | 优先级 | 方向 | 进入条件和区别 |
+ |---|---|---|
++| 当前首要，第3节 | GT10收益机制分析 | 先解释已有提升与边界，形成证据链；当前计划已确定、分析未执行 |
+ | 1，E24已完成收口 | 固定H的GT-topK软画像 | 隔离目标归属；与旧GT1 basin内增加两个mode、多seed多view、single赢家centroid不同 |
+ | 2，较重备选 | 以真实finite-L作用组织分组或在小GT候选集挑入口 | 若主线显示几何代理仍有缺口，再定协议；度数只作特征，三入口用真实联合搜索。旧centroid/rerouter已有真实效用，须说明新条件作用/可预测分组差别 |
+ | 3，效率支线 | 固定W，成对拉伸并重建Micro-HNSW | `p′=Ap,q′=A⁻ᵀq`，优先受限正对角A；先验评分一致，再看导航和总wall。不能变换后逐画像归一化；不重建边时保分数变换不会改变理想搜索路径 |
+ 
+-这个排序表示研究资源优先级，不要求每个方向都先取得正结果才能思考下一方向。第一方向失败也有信息价值：它可能提示需要真实搜索监督，而不是继续增加GT数。三个方向分别改善画像目标、真实入口作用、索引导航，应独立对照后再决定组合。除第一方向的E24已完成外，下面其它分支尚未执行，也不构成一张自动全部跑完的实验队列。
++先完成第3节GT10机制分析，再依据结果调整后续方法优先级。原有方向分别改善画像目标、真实入口作用和索引导航，应独立对照后再决定组合；E24的局部收益保留，不能因后续增强未通过便跳过其原因分析。除E24已完成外，下面其它方法分支尚未执行，也不构成一张自动全部跑完的实验队列。
+ 
+ ### 4.1 第二优先：用真实搜索作用分组、挑入口，并考虑连通性
+ 
+@@ -118,7 +162,7 @@
+ 
+ | 观察 | 更有针对性的下一步 | 不能据此推断 |
+ |---|---|---|
+-| GT10硬优于GT1硬，软分配无额外收益 | 保留多目标信息，检查支持/范数或有监督分组 | 软分配、复杂聚类器必然更好 |
++| GT10硬优于GT1硬，软分配无额外收益 | 先按第3节区分真实多目标信息、支持/平滑和路由/主搜索成本，再决定方法 | 软分配、复杂聚类器或有监督分组必然更好 |
+ | 软画像的exact选择有收益，HNSW部署明显损失 | 保留画像，独立研究微型图导航/成对拉伸 | 精确画像top3等于最优真实入口 |
+ | exact与HNSW都无收益，但现有H效用空间仍大 | 优先真实搜索作用分组/条件三入口评分 | 必须先换新H或重建NSG |
+ | 现有H的受限候选覆盖不够，而新GT候选有实质作用 | 定义固定H预算的入口替换实验，连同路由学习一起测 | 新候选oracle提升已经可部署 |
+@@ -132,6 +176,7 @@
+ ## 5. 新对话应定位的代码与证据
+ 
+ - 阅读顺序：[AGENTS.md](AGENTS.md)→[summary.md](summary.md)→[spec.md](spec.md)→本文件→[s-experiment.md](s-experiment.md)。
++- 下一首要任务为第3节GT10收益机制分析：[E24构建源码](entry_method_exploration/20260910_gt_topk_profiles_v1/src/build_profiles.py)、[支持统计](entry_method_exploration/20260910_gt_topk_profiles_v1/results/profile_support.csv)、[近似/精确对照](entry_method_exploration/20260910_gt_topk_profiles_v1/results/ann_diagnostics.csv)、[原始全部指标](entry_method_exploration/20260910_gt_topk_profiles_v1/results/metrics.csv)；先以两数据集GT10硬对GT1硬连接已有证据。
+ - 最近完成E26：[报告](entry_method_exploration/20260910_profile_shrinkage_v1/report.md)、[协议](entry_method_exploration/20260910_profile_shrinkage_v1/protocol.md)、[固定选择](entry_method_exploration/20260910_profile_shrinkage_v1/models/frozen_before_audit.json)、[历史15](experiment_history/15_profile_shrinkage.md)、[用户收口更新](entry_method_exploration/20260910_profile_shrinkage_v1/authorization_update.md)。
+ - 已完成E25：[协议](entry_method_exploration/20260910_selective_profile_gate_v1/protocol.md)、[固定选择](entry_method_exploration/20260910_selective_profile_gate_v1/models/frozen_before_audit.json)、[完整报告](entry_method_exploration/20260910_selective_profile_gate_v1/report.md)、[历史14](experiment_history/14_selective_profile_gate.md)。
+ - 已完成第一方向：[E24完整报告](entry_method_exploration/20260910_gt_topk_profiles_v1/report.md)、[协议与预算](entry_method_exploration/20260910_gt_topk_profiles_v1/protocol.md)、[冻结选择](entry_method_exploration/20260910_gt_topk_profiles_v1/models/frozen_before_validation.json)；全部消融及负点保留。
+@@ -141,30 +186,33 @@
+ - 输入身份：[E23 prepare_fit.py](entry_method_exploration/20260910_three_entry_rank_v1/src/prepare_fit.py)和其`inputs/<dataset>/<split>/config.json`。GT实际保留100列，读取时核对形状、字节数与row_ids；旧准备器还会读取single标签并生成组合，不能整段照跑来准备本次闭式画像。
+ - 单线程评测：[E23 protocol](entry_method_exploration/20260910_three_entry_rank_v1/protocol.md)、[evaluate.cpp](entry_method_exploration/20260910_three_entry_rank_v1/src/evaluate.cpp)、[最终验收](entry_method_exploration/20260910_three_entry_rank_v1/reviews/final_audit.json)。复用需绑定新版本的源码/可执行文件/输出身份，不覆盖E23。
+ 
+-## 6. 新对话启动与分支选择
++## 6. 明日新对话启动指令
+ 
+ 本轮第一方向已结束，不再使用旧的“启动第一方向”指令重跑；原指令和全部建议范围保存在[E24修改前s-target](entry_method_exploration/20260910_gt_topk_profiles_v1/source_before/s-target.md)及[锁定协议](entry_method_exploration/20260910_gt_topk_profiles_v1/protocol.md)。
+ 
+-下一次若明确选择建议的2A，可使用：
++下一次从已确定的GT10收益机制分析开始：
+ 
+ ```text
+ 工作目录 /data/netg/ACSG。
+ 完整阅读AGENTS.md、summary.md、spec.md、s-target.md、s-experiment.md，
+-再读E24/E25/E26完整报告、四问题调研及历史04/05/08/12/13/14/15的相关原件。
+-推进s-target 4.1的2A：固定现有H，比较GT几何归属与真实finite-L效用分组。
+-先核对旧标签兼容性、冻结独立小型protocol和调用预算；保留matched Fast20K、
+-E24按cal冻结画像及旧single赢家centroid对照，不按validation换E24主候选。
+-GT/标签只在fit构建目标，cal选参数，audit只报告；冻结后按协议小validation评估。
+-原base/raw-IP/NSG/QGT seed20260828/H及三个真实入口保持不变。
+-不默认进入2B新H，不同时加rank/MLP/vMF/HNSW拉伸，不恢复旧大实验/C，不打开held-out。
+-正式查询单线程、单方法独立plain wall，全部路由成本计入QPS；保留旧资产。
+-达到停止条件保留结果并收口，交付全对照/图/成本局限，同步四份主文档和历史。
++沿历史13进入E24原协议、构建代码、manifest、逐query结果和成本，再读E25/E26相关对照。
++按s-target第3节先弄清GT10为什么提高性能，不先发明新方法。
++主对照是两数据集GT10 hard与matched GT1 hard，GT1/GT10 soft作辅助消融。
++先复核已有五L的Recall/QPS与重复性，区分GT10对Fast的增益与Fast对NSG的增益。
++沿GT目标归属、画像支持/方向、实际三入口、NSG命中/工作量和纯wall追溯；
++Recall和QPS分开解释，支持/平滑、真实多目标信息和近似路由因素分开检验。
++全部正负query/L点保留，历史validation的使用如实披露，不当新盲测。
++先用已有数据完成归因；缺证据才冻结独立小协议和硬预算做最小补测，保留旧资产。
++正式查询单线程、每次一个方法、纯端到端wall；trace/count在timer外，分项不冒充总QPS。
++不以75%/25%增强门槛否定原GT10，不要求所有query/L都受益；不自动开held-out或新模型大网格。
++最终交付有证据支持的收益解释、成立条件、未解决项及由此推出的下一步，同步对应文档。
+ ```
+ 
+-以上是供未来明确选择2A的指令，不表示本轮已经启动它。其它分支可替换任务段：
++以上是当前接续指令，本次尚未执行分析。完成机制分析后，若证据支持再选择下列方法分支：
+ 
+ | 要启动的方向 | 任务说明 |
+ |---|---|
++| 真实效用分组2A | 按4.1固定H，先核对旧single/triple标签兼容性及与旧赢家centroid的区别，保留GT1硬/GT10硬和原冻结软画像对照，再定独立协议。 |
+ | 微型HNSW拉伸 | 按4.2的3A固定matched Fast20K W，比较受限正对角成对变换；先恢复评分/身份，再重建Micro-HNSW并测完整wall，不改NSG。 |
+ | 聚类替代 | 按4.3先定位支持/单峰问题，固定目标和输出预算，只选一种相关聚类备选；不同时改变H、画像和路由。 |
+ | rank容量 | 按4.4先明确同一目标，核对兼容标签后比较rank4/8/16/32与Full；cal联合选rank/λ，不扩大其它变量。 |
+--- before/summary.md
++++ after/summary.md
+@@ -4,7 +4,9 @@
+ 
+ ## 当前结论
+ 
+-**尚未得到稳定保留有效改道、减少受损查询并改善端到端性能的方法。** E25门控在WebVid小幅修复质量但增加时间，在Yandex丢掉大多数收益；E26单路画像收缩消除了双路结构成本，却同时损失有效改道并产生新损伤。E26状态`SHRINKAGE_DID_NOT_STABILIZE_SELECTIVITY_NO_FORMAL_GO`，全部预定阶段收口。
++**GT10已有值得保留的局部Recall–QPS提升；E25门控与E26收缩尚未在这个基础上形成稳定的进一步改善。** E24中，GT10 hard相对matched GT1 hard在WebVid有两个同L Recall/QPS双升点，在Yandex五L Recall均提高、三个点QPS也提高。后续门控/收缩的结果不能抵消这部分正信号；速度增幅仍应结合重复计时和完整前沿判断。
++
++E25门控在WebVid小幅修复质量但增加时间，在Yandex丢掉大多数收益；E26单路画像收缩消除了双路结构成本，却同时损失有效改道并产生新损伤。E26状态`SHRINKAGE_DID_NOT_STABILIZE_SELECTIVITY_NO_FORMAL_GO`，全部预定阶段收口。下文75%/25%门槛只评价后续选择性增强，不是原GT10有效性的必要条件，也不要求每个query、每个L都受益。
+ 
+ ## E26实际方法与选择
+ 
+@@ -60,4 +62,4 @@
+ - [E26完整报告](entry_method_exploration/20260910_profile_shrinkage_v1/report.md)、[全部原值](entry_method_exploration/20260910_profile_shrinkage_v1/results/tables.md)、[Recall–QPS](entry_method_exploration/20260910_profile_shrinkage_v1/figures/recall_qps.svg)、[损失分解](entry_method_exploration/20260910_profile_shrinkage_v1/figures/gain_loss_decomposition.svg)、[最终验收](entry_method_exploration/20260910_profile_shrinkage_v1/reviews/final_audit.json)、[历史15](experiment_history/15_profile_shrinkage.md)。
+ - [E25完整报告](entry_method_exploration/20260910_selective_profile_gate_v1/report.md)、[历史14](experiment_history/14_selective_profile_gate.md)；E24局部正信号见[历史13](experiment_history/13_gt_topk_profiles.md)。
+ 
+-用户最新要求接近结束则当晚给短结论、明天继续，见[时间更新](entry_method_exploration/20260910_profile_shrinkage_v1/authorization_update.md)。今晚收口，不继续等待原07:00或扩alpha/模型。明日先判断正负改道是否存在稳定可区分信号，再决定新机制；长期分支保留在s-target，未自动启动。
++用户先要求当晚收口、明天继续，随后明确把**“弄清GT10为什么提高性能”**设为下一步首要任务。先围绕两数据集GT10 hard与GT1 hard复核性能，从目标归属、画像、三入口和搜索成本解释已有提升及差异；新机制建议在归因之后。详细阶段、证据与补测边界见[s-target第3节](s-target.md)。本次只更新计划，`GT10_MECHANISM_ANALYSIS_PLANNED_UNRUN`，没有新分析执行、搜索或训练；长期分支保留。
+--- before/s-experiment.md
++++ after/s-experiment.md
+@@ -43,6 +43,7 @@
+ 
+ | 记录 | 已完成 | 尚未执行/不能声称 | 详细入口 |
+ |---|---|---|---|
++| E26后GT10收益机制分析计划 | 按用户要求将“GT10为什么提高性能”设为下一步首要任务；保留E24正信号，区分后续门控/收缩结果 | `GT10_MECHANISM_ANALYSIS_PLANNED_UNRUN`；仅文档更新，尚未做新归因分析、补测或新模型，不能将计划计作实验 | [当前目标](s-target.md)、[历史13接续](experiment_history/13_gt_topk_profiles.md) |
+ | E23后GT入口/聚类/rank/OOD微型图调研 | 核对当前builder、E20/E23既有证据和14项一手工作；推荐固定H的GT-topK软画像、真实效用分组备选及保分数成对拉伸效率支线 | `RESEARCH_COMPLETE_METHOD_UNSELECTED_UNRUN`；未重新聚类、标注、训练、构建ANN或评测，rank8仍未证最优，无方法/性能GO | [四问题报告](entry_method_exploration/20260910_ood_hubs_clustering_router_research_v1/report.md)、[09研究记录](experiment_history/09_research_designs_not_experiments.md) |
+ | 四问题调研后的详细实验交接 | 按用户要求在s-target展开全部优先级：固定H软画像、真实效用分组/入口及联合评分、微型图拉伸/建边，另列聚类器、rank和范数消融；各含方法、对照、阶段、成本、停止依据与新对话指令 | `NEXT_EXPERIMENT_DIRECTION_DEFINED_UNRUN`；只有文档交接，该交接原件当时未执行；用户随后授权第一方向E24，已冻结并完成，见历史13；不回写研究原件状态 | [当前目标](s-target.md)、[09接续记录](experiment_history/09_research_designs_not_experiments.md) |
+ | E22后梯度/低秩/MLP方法复核 | 阅读11篇相关论文的方法章节及GATE/LRSG作者代码，复核原训练与既有结果；提出真实三入口排序、Fast锚定完整W参考和离线共享MLP备选 | 该只读原件保留`RESEARCH_COMPLETE_METHOD_UNSELECTED_UNRUN`；后续用户另授权继任实验E23，不能将后续执行回写为原研究已运行 | [研究报告](entry_method_exploration/20260910_optimizer_research_v1/report.md)、[E22补充](experiment_history/11_ab_fixed_slot_exploration.md) |
+--- before/experiment_history/13_gt_topk_profiles.md
++++ after/experiment_history/13_gt_topk_profiles.md
+@@ -63,3 +63,11 @@
+ - [全部原值](../entry_method_exploration/20260910_gt_topk_profiles_v1/results/tables.md)、[指标CSV](../entry_method_exploration/20260910_gt_topk_profiles_v1/results/metrics.csv)、[配对变化](../entry_method_exploration/20260910_gt_topk_profiles_v1/results/comparisons.csv)、[Recall–QPS](../entry_method_exploration/20260910_gt_topk_profiles_v1/figures/recall_qps.svg)、[差值图](../entry_method_exploration/20260910_gt_topk_profiles_v1/figures/deltas.svg)。
+ - [近似检索](../entry_method_exploration/20260910_gt_topk_profiles_v1/results/ann_diagnostics.csv)、[支持统计](../entry_method_exploration/20260910_gt_topk_profiles_v1/results/profile_support.csv)、[前沿实测点](../entry_method_exploration/20260910_gt_topk_profiles_v1/results/frontier_points.csv)、[明确标记的插值](../entry_method_exploration/20260910_gt_topk_profiles_v1/results/frontier_interpolation.csv)、[成本账](../entry_method_exploration/20260910_gt_topk_profiles_v1/results/costs.json)。
+ - [输入](../entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/preflight.json)、[恢复](../entry_method_exploration/20260910_gt_topk_profiles_v1/reviews/recovery_gate.json)、[cal门](../entry_method_exploration/20260910_gt_topk_profiles_v1/reviews/cal_gate.json)、[validation前冻结](../entry_method_exploration/20260910_gt_topk_profiles_v1/models/frozen_before_validation.json)、[输出核验](../entry_method_exploration/20260910_gt_topk_profiles_v1/reviews/result_verification.json)、[保护与选择审计](../entry_method_exploration/20260910_gt_topk_profiles_v1/reviews/immutable_integrity.json)。
++
++## 2026-09-10接续更新：先解释GT10的性能收益
++
++用户在E25/E26收口后指出GT10 hard已有可见提升，并明确要求把“弄清GT10为什么提高性能”列为明日下一步。当前优先任务由此前建议的2A/正负改道选择，调整为[GT10收益机制分析](../s-target.md)；此前建议保留历史身份，E24原协议、画像、计时、结果及状态均不修改。本次只更新计划，尚未开始该分析或补测，不增加实验ID。
++
++E24的正信号与E25/E26后续增强未通过应分开解释。WebVid GT10 hard相对matched GT1 hard有两个同L Recall/QPS双升点，Yandex五L Recall均小幅提高、其中三个点QPS也提高；这值得保留和解释。75%收益保留/25%损伤减少是后续选择性增强的目标，不是GT10有效性的必要条件。评价原GT10应看目标Recall区间的完整前沿及可复现性，不要求所有query、所有L都受益。
++
++明日主对照为两数据集GT10 hard与GT1 hard，GT1/GT10 soft作为辅助消融。先复核既有性能与计时，再沿“GT目标归属→画像支持和方向→三入口变化→原NSG命中/搜索工作量→端到端wall”追溯；统计相关与机制因果分别陈述，有缺口才制定最小补测。原始数值见本卡链接，计划细节及新对话指令统一维护在s-target。

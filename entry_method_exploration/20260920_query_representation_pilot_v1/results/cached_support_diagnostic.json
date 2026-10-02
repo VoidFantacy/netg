@@ -1,0 +1,335 @@
+{
+  "status": "COMPLETE_READ_ONLY",
+  "post_gate": true,
+  "new_search_calls": 0,
+  "new_training_runs": 0,
+  "interpretation": "All restricted actions were already measured at matching K/L/query/kernel/order; their costs are not online latency measurements. This diagnosis does not reopen the stopped gate.",
+  "source": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/src/cached_support_diagnostic.py",
+    "bytes": 2474,
+    "mtime_ns": 1789869955147387351,
+    "sha256": "7776f08986c1805179ecc44f371ddebc2829aea8244cedf3ce68660484aa5978"
+  },
+  "records": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "split": "fit",
+      "family": "Identity",
+      "within_C8_teacher_accuracy": 0.419921875,
+      "K": {
+        "1": {
+          "cached_C8_selected_recall": 0.7724609375,
+          "delta_gt10_pp": 0.830078125,
+          "actual_full_H_exact_recall": 0.7724609375,
+          "restriction_minus_full_H_pp": 0.0
+        },
+        "100": {
+          "cached_C8_selected_recall": 0.6607373046875,
+          "delta_gt10_pp": 0.18457031250000977,
+          "actual_full_H_exact_recall": 0.6607324218749999,
+          "restriction_minus_full_H_pp": 0.0004882812500106581
+        }
+      }
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "split": "fit",
+      "family": "QLinear",
+      "within_C8_teacher_accuracy": 0.67041015625,
+      "K": {
+        "1": {
+          "cached_C8_selected_recall": 0.7958984375,
+          "delta_gt10_pp": 3.173828125,
+          "actual_full_H_exact_recall": 0.76123046875,
+          "restriction_minus_full_H_pp": 3.466796875
+        },
+        "100": {
+          "cached_C8_selected_recall": 0.6691748046875,
+          "delta_gt10_pp": 1.0283203125000084,
+          "actual_full_H_exact_recall": 0.6555810546875,
+          "restriction_minus_full_H_pp": 1.359374999999996
+        }
+      }
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "split": "fit",
+      "family": "QMLP",
+      "within_C8_teacher_accuracy": 0.6474609375,
+      "K": {
+        "1": {
+          "cached_C8_selected_recall": 0.794921875,
+          "delta_gt10_pp": 3.076171875,
+          "actual_full_H_exact_recall": 0.7607421875,
+          "restriction_minus_full_H_pp": 3.41796875
+        },
+        "100": {
+          "cached_C8_selected_recall": 0.6690673828125,
+          "delta_gt10_pp": 1.017578125000007,
+          "actual_full_H_exact_recall": 0.6559912109375,
+          "restriction_minus_full_H_pp": 1.3076171874999987
+        }
+      }
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "split": "fit",
+      "family": "WFree",
+      "within_C8_teacher_accuracy": 1.0,
+      "K": {
+        "1": {
+          "cached_C8_selected_recall": 0.8291015625,
+          "delta_gt10_pp": 6.494140625,
+          "actual_full_H_exact_recall": 0.8212890625,
+          "restriction_minus_full_H_pp": 0.78125
+        },
+        "100": {
+          "cached_C8_selected_recall": 0.686630859375,
+          "delta_gt10_pp": 2.7739257812500084,
+          "actual_full_H_exact_recall": 0.6825927734375,
+          "restriction_minus_full_H_pp": 0.4038085937499991
+        }
+      }
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "split": "cal",
+      "family": "Identity",
+      "within_C8_teacher_accuracy": 0.439453125,
+      "K": {
+        "1": {
+          "cached_C8_selected_recall": 0.779296875,
+          "delta_gt10_pp": 0.390625,
+          "actual_full_H_exact_recall": 0.779296875,
+          "restriction_minus_full_H_pp": 0.0
+        },
+        "100": {
+          "cached_C8_selected_recall": 0.6604296875,
+          "delta_gt10_pp": 0.12695312499999556,
+          "actual_full_H_exact_recall": 0.6604296875,
+          "restriction_minus_full_H_pp": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "split": "cal",
+      "family": "QLinear",
+      "within_C8_teacher_accuracy": 0.439453125,
+      "K": {
+        "1": {
+          "cached_C8_selected_recall": 0.77734375,
+          "delta_gt10_pp": 0.1953125,
+          "actual_full_H_exact_recall": 0.7578125,
+          "restriction_minus_full_H_pp": 1.953125
+        },
+        "100": {
+          "cached_C8_selected_recall": 0.6580078125,
+          "delta_gt10_pp": -0.11523437500000622,
+          "actual_full_H_exact_recall": 0.65296875,
+          "restriction_minus_full_H_pp": 0.5039062499999969
+        }
+      }
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "split": "cal",
+      "family": "QMLP",
+      "within_C8_teacher_accuracy": 0.45703125,
+      "K": {
+        "1": {
+          "cached_C8_selected_recall": 0.78125,
+          "delta_gt10_pp": 0.5859375,
+          "actual_full_H_exact_recall": 0.765625,
+          "restriction_minus_full_H_pp": 1.5625
+        },
+        "100": {
+          "cached_C8_selected_recall": 0.65974609375,
+          "delta_gt10_pp": 0.05859375000000222,
+          "actual_full_H_exact_recall": 0.6554296875000001,
+          "restriction_minus_full_H_pp": 0.431640624999996
+        }
+      }
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "split": "cal",
+      "family": "WFree",
+      "within_C8_teacher_accuracy": 0.451171875,
+      "K": {
+        "1": {
+          "cached_C8_selected_recall": 0.767578125,
+          "delta_gt10_pp": -0.78125,
+          "actual_full_H_exact_recall": 0.783203125,
+          "restriction_minus_full_H_pp": -1.5625
+        },
+        "100": {
+          "cached_C8_selected_recall": 0.658359375,
+          "delta_gt10_pp": -0.08007812500000488,
+          "actual_full_H_exact_recall": 0.6638671875,
+          "restriction_minus_full_H_pp": -0.5507812499999987
+        }
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "split": "fit",
+      "family": "Identity",
+      "within_C8_teacher_accuracy": 0.5693359375,
+      "K": {
+        "1": {
+          "cached_C8_selected_recall": 0.91357421875,
+          "delta_gt10_pp": 0.146484375,
+          "actual_full_H_exact_recall": 0.91357421875,
+          "restriction_minus_full_H_pp": 0.0
+        },
+        "100": {
+          "cached_C8_selected_recall": 0.8419140625,
+          "delta_gt10_pp": 0.150878906249996,
+          "actual_full_H_exact_recall": 0.8419140625000001,
+          "restriction_minus_full_H_pp": -1.1102230246251565e-14
+        }
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "split": "fit",
+      "family": "QLinear",
+      "within_C8_teacher_accuracy": 0.71533203125,
+      "K": {
+        "1": {
+          "cached_C8_selected_recall": 0.93505859375,
+          "delta_gt10_pp": 2.294921875,
+          "actual_full_H_exact_recall": 0.92578125,
+          "restriction_minus_full_H_pp": 0.927734375
+        },
+        "100": {
+          "cached_C8_selected_recall": 0.8534130859375,
+          "delta_gt10_pp": 1.3007812499999938,
+          "actual_full_H_exact_recall": 0.8479248046875,
+          "restriction_minus_full_H_pp": 0.5488281250000004
+        }
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "split": "fit",
+      "family": "QMLP",
+      "within_C8_teacher_accuracy": 0.68310546875,
+      "K": {
+        "1": {
+          "cached_C8_selected_recall": 0.93017578125,
+          "delta_gt10_pp": 1.806640625,
+          "actual_full_H_exact_recall": 0.927734375,
+          "restriction_minus_full_H_pp": 0.244140625
+        },
+        "100": {
+          "cached_C8_selected_recall": 0.853232421875,
+          "delta_gt10_pp": 1.2827148437499991,
+          "actual_full_H_exact_recall": 0.8476123046875,
+          "restriction_minus_full_H_pp": 0.5620117187499996
+        }
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "split": "fit",
+      "family": "WFree",
+      "within_C8_teacher_accuracy": 1.0,
+      "K": {
+        "1": {
+          "cached_C8_selected_recall": 0.95703125,
+          "delta_gt10_pp": 4.4921875,
+          "actual_full_H_exact_recall": 0.95556640625,
+          "restriction_minus_full_H_pp": 0.146484375
+        },
+        "100": {
+          "cached_C8_selected_recall": 0.8671484375,
+          "delta_gt10_pp": 2.674316406249999,
+          "actual_full_H_exact_recall": 0.8655615234375,
+          "restriction_minus_full_H_pp": 0.15869140625
+        }
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "split": "cal",
+      "family": "Identity",
+      "within_C8_teacher_accuracy": 0.583984375,
+      "K": {
+        "1": {
+          "cached_C8_selected_recall": 0.916015625,
+          "delta_gt10_pp": 0.390625,
+          "actual_full_H_exact_recall": 0.916015625,
+          "restriction_minus_full_H_pp": 0.0
+        },
+        "100": {
+          "cached_C8_selected_recall": 0.8398046875,
+          "delta_gt10_pp": 0.023437500000000888,
+          "actual_full_H_exact_recall": 0.8398046875,
+          "restriction_minus_full_H_pp": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "split": "cal",
+      "family": "QLinear",
+      "within_C8_teacher_accuracy": 0.578125,
+      "K": {
+        "1": {
+          "cached_C8_selected_recall": 0.912109375,
+          "delta_gt10_pp": 0.0,
+          "actual_full_H_exact_recall": 0.904296875,
+          "restriction_minus_full_H_pp": 0.78125
+        },
+        "100": {
+          "cached_C8_selected_recall": 0.83771484375,
+          "delta_gt10_pp": -0.18554687499999778,
+          "actual_full_H_exact_recall": 0.83080078125,
+          "restriction_minus_full_H_pp": 0.691406250000004
+        }
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "split": "cal",
+      "family": "QMLP",
+      "within_C8_teacher_accuracy": 0.591796875,
+      "K": {
+        "1": {
+          "cached_C8_selected_recall": 0.9140625,
+          "delta_gt10_pp": 0.1953125,
+          "actual_full_H_exact_recall": 0.8984375,
+          "restriction_minus_full_H_pp": 1.5625
+        },
+        "100": {
+          "cached_C8_selected_recall": 0.8396875,
+          "delta_gt10_pp": 0.011718750000000444,
+          "actual_full_H_exact_recall": 0.83052734375,
+          "restriction_minus_full_H_pp": 0.9160156249999996
+        }
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "split": "cal",
+      "family": "WFree",
+      "within_C8_teacher_accuracy": 0.59375,
+      "K": {
+        "1": {
+          "cached_C8_selected_recall": 0.91796875,
+          "delta_gt10_pp": 0.5859375,
+          "actual_full_H_exact_recall": 0.92578125,
+          "restriction_minus_full_H_pp": -0.78125
+        },
+        "100": {
+          "cached_C8_selected_recall": 0.84087890625,
+          "delta_gt10_pp": 0.130859374999992,
+          "actual_full_H_exact_recall": 0.84458984375,
+          "restriction_minus_full_H_pp": -0.37109375000000666
+        }
+      }
+    }
+  ]
+}

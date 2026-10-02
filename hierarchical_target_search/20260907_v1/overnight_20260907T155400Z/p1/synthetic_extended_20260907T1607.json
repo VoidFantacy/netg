@@ -1,0 +1,166 @@
+{
+  "limitations": "Synthetic suite; full-data legacy parity and evaluator timing isolation are separate P1 gates",
+  "seed": 2026090711,
+  "status": "PASS",
+  "tests": [
+    {
+      "name": "legacy_shared_unique_and_tied_distance_parity",
+      "queries": 1200,
+      "status": "PASS",
+      "tied_queries": 800,
+      "unique_queries": 400
+    },
+    {
+      "name": "count_plain_and_single_region_parity",
+      "status": "PASS"
+    },
+    {
+      "name": "protected_bridge_cross_region_and_empty_regions",
+      "regional_ndc": 43,
+      "shared_ndc": 42,
+      "status": "PASS"
+    },
+    {
+      "name": "trace_replay_duplicates_shared_visited_epoch_wrap",
+      "status": "PASS",
+      "trace_events": 94
+    },
+    {
+      "name": "preallocated_search_storage_retained",
+      "queries": 520,
+      "status": "PASS"
+    },
+    {
+      "name": "capacity_and_invalid_inputs",
+      "status": "PASS"
+    },
+    {
+      "name": "global_topk_includes_rejected_regional_candidates",
+      "status": "PASS"
+    },
+    {
+      "name": "hnsw_top_m_actual_consumption_order_and_dedup",
+      "records": [
+        {
+          "consumed_entry_ids": [
+            63,
+            61,
+            59
+          ],
+          "heap_pop_order": [
+            59,
+            61,
+            63
+          ],
+          "m": 3,
+          "ndc": 3
+        },
+        {
+          "consumed_entry_ids": [
+            63,
+            61,
+            59,
+            57
+          ],
+          "heap_pop_order": [
+            57,
+            59,
+            61,
+            63
+          ],
+          "m": 4,
+          "ndc": 4
+        },
+        {
+          "consumed_entry_ids": [
+            63,
+            61,
+            59,
+            57,
+            55,
+            53
+          ],
+          "heap_pop_order": [
+            53,
+            55,
+            57,
+            59,
+            61,
+            63
+          ],
+          "m": 6,
+          "ndc": 6
+        },
+        {
+          "consumed_entry_ids": [
+            63,
+            61,
+            59,
+            57,
+            55,
+            53,
+            51,
+            49
+          ],
+          "heap_pop_order": [
+            49,
+            51,
+            53,
+            55,
+            57,
+            59,
+            61,
+            63
+          ],
+          "m": 8,
+          "ndc": 8
+        },
+        {
+          "consumed_entry_ids": [
+            63,
+            61,
+            59,
+            57,
+            55,
+            53,
+            51,
+            49,
+            47,
+            45,
+            43,
+            41,
+            39,
+            37,
+            35,
+            33,
+            31,
+            29
+          ],
+          "heap_pop_order": [
+            29,
+            31,
+            33,
+            35,
+            37,
+            39,
+            41,
+            43,
+            45,
+            47,
+            49,
+            51,
+            53,
+            55,
+            57,
+            59,
+            61,
+            63
+          ],
+          "m": 18,
+          "ndc": 18
+        }
+      ],
+      "status": "PASS"
+    }
+  ]
+}

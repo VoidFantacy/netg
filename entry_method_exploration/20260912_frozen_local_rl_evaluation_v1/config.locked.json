@@ -1,0 +1,73 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "models": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "arm": "rl",
+      "seed": 20260921,
+      "selected_step": 100
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "arm": "rl",
+      "seed": 20260922,
+      "selected_step": 80
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "arm": "es",
+      "seed": 20260921,
+      "selected_step": 40
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "arm": "es",
+      "seed": 20260922,
+      "selected_step": 20
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "arm": "rl",
+      "seed": 20260921,
+      "selected_step": 100
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "arm": "rl",
+      "seed": 20260922,
+      "selected_step": 200
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "arm": "es",
+      "seed": 20260921,
+      "selected_step": 120
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "arm": "es",
+      "seed": 20260922,
+      "selected_step": 200
+    }
+  ],
+  "NSG_hard_cap": 500000,
+  "expected_NSG": 423680,
+  "fit_points": 10,
+  "cal_points": 10,
+  "audit_points": 10,
+  "frontier_points": 50,
+  "wall_repeats": 250,
+  "threads": 1,
+  "model_selection": "cal mean U then lower total NDC then smaller seed",
+  "cal_recall_gate_pp": 0.1,
+  "audit_recall_gate_strict_pp": 0,
+  "cost_delta_max_pct": 1,
+  "optimizer_updates": 0,
+  "output_bytes": 268435456,
+  "minimum_free_bytes": 9126805504.0,
+  "query_stop": 1789220400,
+  "campaign_deadline": 1789221600
+}

@@ -1,0 +1,189 @@
+{
+  "base_count": 2505000,
+  "dataset": "webvid2_5m_light_v1",
+  "dataset_order": 0,
+  "dim": 512,
+  "export_features": true,
+  "gt_file": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/webvid2_5m_light_v1/recovery/gt.i64",
+  "gt_k": 100,
+  "index_path": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "methods": [
+    {
+      "L": 64,
+      "family": "fast20k",
+      "kind": "fast20k",
+      "name": "fast20k_L64"
+    },
+    {
+      "L": 64,
+      "family": "e24",
+      "kind": "e24",
+      "name": "e24_L64"
+    },
+    {
+      "L": 64,
+      "family": "force_base",
+      "force": 0,
+      "kind": "dual_gate",
+      "name": "force_base_L64"
+    },
+    {
+      "L": 64,
+      "family": "force_new",
+      "force": 1,
+      "kind": "dual_gate",
+      "name": "force_new_L64"
+    },
+    {
+      "L": 128,
+      "family": "fast20k",
+      "kind": "fast20k",
+      "name": "fast20k_L128"
+    },
+    {
+      "L": 128,
+      "family": "e24",
+      "kind": "e24",
+      "name": "e24_L128"
+    },
+    {
+      "L": 128,
+      "family": "force_base",
+      "force": 0,
+      "kind": "dual_gate",
+      "name": "force_base_L128"
+    },
+    {
+      "L": 128,
+      "family": "force_new",
+      "force": 1,
+      "kind": "dual_gate",
+      "name": "force_new_L128"
+    },
+    {
+      "L": 256,
+      "family": "fast20k",
+      "kind": "fast20k",
+      "name": "fast20k_L256"
+    },
+    {
+      "L": 256,
+      "family": "e24",
+      "kind": "e24",
+      "name": "e24_L256"
+    },
+    {
+      "L": 256,
+      "family": "force_base",
+      "force": 0,
+      "kind": "dual_gate",
+      "name": "force_base_L256"
+    },
+    {
+      "L": 256,
+      "family": "force_new",
+      "force": 1,
+      "kind": "dual_gate",
+      "name": "force_new_L256"
+    },
+    {
+      "L": 400,
+      "family": "fast20k",
+      "kind": "fast20k",
+      "name": "fast20k_L400"
+    },
+    {
+      "L": 400,
+      "family": "e24",
+      "kind": "e24",
+      "name": "e24_L400"
+    },
+    {
+      "L": 400,
+      "family": "force_base",
+      "force": 0,
+      "kind": "dual_gate",
+      "name": "force_base_L400"
+    },
+    {
+      "L": 400,
+      "family": "force_new",
+      "force": 1,
+      "kind": "dual_gate",
+      "name": "force_new_L400"
+    },
+    {
+      "L": 800,
+      "family": "fast20k",
+      "kind": "fast20k",
+      "name": "fast20k_L800"
+    },
+    {
+      "L": 800,
+      "family": "e24",
+      "kind": "e24",
+      "name": "e24_L800"
+    },
+    {
+      "L": 800,
+      "family": "force_base",
+      "force": 0,
+      "kind": "dual_gate",
+      "name": "force_base_L800"
+    },
+    {
+      "L": 800,
+      "family": "force_new",
+      "force": 1,
+      "kind": "dual_gate",
+      "name": "force_new_L800"
+    }
+  ],
+  "num_queries": 32,
+  "policies": {
+    "A0": {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt1_hard/W.f32",
+      "canonical_entry_order": true,
+      "dataset": "webvid2_5m_light_v1",
+      "dim": 512,
+      "exact": false,
+      "family": "fast20k",
+      "hnsw_seed": 20260828,
+      "hub_count": 815,
+      "k": 3,
+      "legacy_heap_order": false,
+      "mapping": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+      "name": "fast20k",
+      "seed": 20260828,
+      "slot_labels": false,
+      "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/webvid2_5m_light_v1/hub_ids.i32"
+    },
+    "A1": {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+      "canonical_entry_order": true,
+      "dataset": "webvid2_5m_light_v1",
+      "dim": 512,
+      "exact": false,
+      "family": "e24",
+      "hnsw_seed": 20260828,
+      "hub_count": 815,
+      "k": 3,
+      "legacy_heap_order": false,
+      "mapping": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+      "name": "e24",
+      "seed": 20260828,
+      "slot_labels": false,
+      "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/webvid2_5m_light_v1/hub_ids.i32"
+    },
+    "hub_features": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/webvid2_5m_light_v1/hub_features.f64",
+    "primary_E24": "gt10_soft_t1"
+  },
+  "protocol_sha256": "16c148cc2952b8ec37fd99b414122471af3d26fcecf211574501be247564f33d",
+  "queries_file": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/webvid2_5m_light_v1/recovery/queries.f32",
+  "query_cpu": 15,
+  "real_call_cap": 1600,
+  "row_ids": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/webvid2_5m_light_v1/recovery/row_ids.i64",
+  "split": "recovery",
+  "threads": 1,
+  "timing_repeats": 0
+}

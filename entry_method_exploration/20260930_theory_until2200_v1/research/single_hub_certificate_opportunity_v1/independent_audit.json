@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "seconds": 13.489091047998954,
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "threadpools": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 8,
+      "prefix": "libopenblas",
+      "filepath": "/data/netg/ACSG/.venv_cpu/lib/python3.10/site-packages/numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so",
+      "version": "0.3.23.dev",
+      "threading_layer": "pthreads",
+      "architecture": "Cooperlake"
+    }
+  ],
+  "scope": "same agent, independent reductions/chunking, complete norm and geometry passes plus direct witness margins",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "full_base_norm_rows": 2505000,
+      "norm_audit_seconds": 3.6443835940008285,
+      "max_norm_audit_row": 1585790,
+      "all_query_geometry": 20000,
+      "candidate_dot_products": 400000,
+      "direct_margin_queries": 47,
+      "max_tau_ratio_difference": 5.551115123125783e-17,
+      "max_direct_delta_difference": 1.249000902703301e-16,
+      "no_positive_in_either_mode": true
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "full_base_norm_rows": 10000000,
+      "norm_audit_seconds": 4.566593071001989,
+      "max_norm_audit_row": 4801007,
+      "all_query_geometry": 20000,
+      "candidate_dot_products": 400000,
+      "direct_margin_queries": 48,
+      "max_tau_ratio_difference": 5.551115123125783e-16,
+      "max_direct_delta_difference": 3.885780586188048e-16,
+      "no_positive_in_either_mode": true
+    }
+  },
+  "new_exact_GT": 0,
+  "NSG": 0,
+  "ANN": 0,
+  "native_float32_replacement_certified": false
+}

@@ -1,0 +1,32 @@
+from common import *
+from verify_candidates import load_raw
+import csv
+import matplotlib;matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+threads();pairs=list(csv.DictReader((O/'results/paired.csv').open()));g=read(O/'results/gate.json');cost=read(O/'results/cost.json');v=read(O/'reviews/verification.json');con=read(O/'results/construction.json');failed=[]
+fig,ax=plt.subplots(2,3,figsize=(13,7.5),constrained_layout=True)
+for di,ds in enumerate(DS):
+ for j,(key,unit) in enumerate([('net_hits','Net GT10 hits'),('failure_change','Failure count change'),('total_NDC_change_pct','Total NDC change (%)')]):
+  refs=['baseline10','compact10','neighbor10'];xs=[next(x for x in pairs if x['dataset']==ds and x['candidate']=='shortcut10' and x['reference']==ref and x['split']=='all') for ref in refs];vals=[float(x[key]) for x in xs];a=ax[di,j];a.bar(['vs P','vs compact','vs neighbor'],vals,color=['#5382a1','#7aa675','#ca944c']);a.axhline(0,color='black',lw=.7);span=max(1,max(0,max(vals))-min(0,min(vals)));a.set_ylim(min(0,min(vals))-.25*span,max(0,max(vals))+.25*span);a.set_ylabel(unit);a.set_title('WebVid' if di==0 else 'Yandex')
+  for i,x in enumerate(vals):a.text(i,x+(.035*span if x>=0 else -.035*span),f'{x:+.2f}' if j==2 else f'{int(x):+d}',ha='center',va='bottom' if x>=0 else 'top')
+fig.suptitle('E84 query shortcuts | historical aux7952, L128 | counts only, no QPS');fig.savefig(O/'figures/query_shortcuts.png',dpi=150);plt.close(fig)
+names=['baseline10','compact10','shortcut10','neighbor10']
+for ds in DS:
+ cfg=read(O/'inputs'/ds/'aux.json');gt=np.fromfile(cfg['gt_file'],np.int64).reshape(7952,100);rows=np.fromfile(cfg['row_ids'],np.int64);raw={m:load_raw(O/'results'/ds/'aux'/(m+'_L128'),7952) for m in names};hs=np.stack([raw[m]['hits'] for m in names]);zero=hs==0;union=zero.any(0);changed=np.any(zero!=zero[0],axis=0)
+ for i in np.flatnonzero(union):
+  rec=dict(dataset=ds,namespace=read(C/'stage10_exact_triple_utility_v1/inputs'/ds/'provenance.json')['namespace'],source_row=int(rows[i]),changed_zero_status=bool(changed[i]),gt10=' '.join(map(str,gt[i,:10])))
+  for m in names:rec[m+'_hits']=int(raw[m]['hits'][i]);rec[m+'_entries']=' '.join(map(str,raw[m]['entries'][i]));rec[m+'_ids']=' '.join(map(str,raw[m]['ids'][i]))
+  failed.append(rec)
+with (O/'results/failure_queries.csv').open('x',newline='') as f:w=csv.DictWriter(f,fieldnames=list(failed[0]));w.writeheader();w.writerows(failed)
+fig,ax=plt.subplots(1,2,figsize=(10.5,9),constrained_layout=True)
+for di,ds in enumerate(DS):
+ rows=[x for x in failed if x['dataset']==ds and x['changed_zero_status']][:24];mat=np.array([[x[m+'_hits'] for m in names] for x in rows]);im=ax[di].imshow(mat,cmap='viridis',vmin=0,vmax=10,aspect='auto');ax[di].set_xticks(range(4),['P','Compact','Shortcut','Neighbor']);ax[di].set_yticks(range(len(rows)),[x['source_row'] for x in rows]);ax[di].set_title('WebVid' if di==0 else 'Yandex');ax[di].set_ylabel('router_train source row')
+ for i in range(len(rows)):
+  for j in range(4):ax[di].text(j,i,str(mat[i,j]),ha='center',va='center',color='white' if mat[i,j]<6 else 'black',fontsize=9)
+fig.colorbar(im,ax=ax,label='GT10 hits; 0 = failure',shrink=.7);fig.suptitle('E84 failure queries | first 24 changed source rows per dataset\nHistorical aux, L128; complete union in CSV; no QPS');fig.savefig(O/'figures/failure_queries.png',dpi=150);plt.close(fig)
+lines=['# E84 训练查询排名缺口补边','', '双集固定监督补边实验完成。'+('至少一集通过预锁质量门，可另立完整双集 wall 检验。' if g['wall_measurement_allowed'] else '双集未通过预锁质量门，停止固定首返回画像投票补边规则，不扫票数阈值、边数或依据辅助反馈改票。')+' 原 compact 局部信号保留；整日目标未完成。','', '| 数据 | 主方法相对 | 净命中 | 救回 / 新增失败 | 两半净命中 | 路由 / 总 NDC变化 |','|---|---|---:|---|---|---|']
+for ds in DS:
+ for ref in ['baseline10','compact10','neighbor10']:
+  x=next(x for x in pairs if x['dataset']==ds and x['candidate']=='shortcut10' and x['reference']==ref and x['split']=='all');halves=[int(next(y for y in pairs if y['dataset']==ds and y['candidate']=='shortcut10' and y['reference']==ref and y['split']==ss)['net_hits']) for ss in ['first_half','second_half']];lines.append(f'| {"WebVid" if ds==DS[0] else "Yandex"} | {ref} | {int(x["net_hits"]):+d} | {x["rescued"]} / {x["new_failures"]} | {halves} | {float(x["route_NDC_change_pct"]):+.2f}% / {float(x["total_NDC_change_pct"]):+.2f}% |')
+lines += ['', '固定原 E73 compact 画像和图。以 P-fit20K 原查询的实际首返回 slot 为源，对未进入实际三入口的完整画像 per-hub max 前三入口投票；每源只追加最高票目标且至少2票。源是返回排名首位画像，并非记录的遍历路径。WebVid/Yandex 分别254/47条边，最高支持41/3票。对照在相同节点各追加一条最相近的其他 hub 非邻居；两臂节点度一致，边长不匹配，不能单凭此作语义因果归因。', '', '新增图监督只读 fit20K raw query，不读 GT 或 NSG 命中。原画像仍有历史 GT 监督。fit namespace 为 router_train[10000:30000]，包含旧 train4096/monitor1024。aux128 只回归旧 compact 路由且不进入投票；全 fit20K 验证新 plain/count 一致，不声称存在旧全 fit 路由回归。完整 float64 排名与 E68 hub集合一致；Web55/Y20近tie保留，未声称 SIMD bit parity。', '', '独立逐查询排名/全部票数、全部受影响节点控制排序、图的每条旧边与其顺序/未改字节、原图可达集合均通过。图 header、上层、入口、层级、W/labels 和原底层 NSG/base/rawIP 不变。在线使用原 E73 同 SHA evaluator、ef10、七 slot 去重三真实入口。', '', f'实际 {cost["NSG"]:,} NSG / {cost["HNSW"]:,} HNSW，其中训练路由80,512，查询129,280；2次图监督训练、4静态图边安装、0普通 HNSW build/梯度更新/画像训练/新GT。编译 {cost["compile_seconds"]:.3f}s、图监督阶段 {cost["graph_supervision_seconds"]:.3f}s、边安装/核验 {cost["edge_install_seconds"]:.3f}s、查询 native 操作 {cost["native_job_seconds"]:.3f}s。阶段耗时有包含关系，不能简单相加或当 QPS；继承画像与 GT 成本未知。', '', f'全部 ANN 串行 CPU15，实测进程及数值库1线程。集合/mask {v["set_scored_rows"]:,}行、历史 P/compact 全字段{v["old_recovered_rows"]:,}行、原 kernel {v["original_kernel_parity_rows"]}行、完整7slot/距离/三入口及同三入口返回{v["same_triple_return_rows"]:,}行核验。失败严格 GT10 零命中；并集{len(failed)}条，状态变化{sum(x["changed_zero_status"] for x in failed)}条，全 GT/入口/返回 ID 保留。', '', 'aux7952及固定两半是已暴露的选择训练反馈；cal/audit 有历史暴露。E34历史 validation2000 最终对照与 held-out 均未打开，不把辅助结果作为最终性能结论。此阶段未计正式 QPS，最近完整开发 wall 仍为 E74。', '', '补充资源检查纳入 E82/E83/E84 全部输出；原 frozen common.py 累计列表漏掉 E83，未改原封存，实际未超192MiB。协议 A 的旧输出回归措辞已在独立补充中明确，仅 aux128 有旧路由逐字段回归。', '', '[协议](protocol.md) · [措辞/资源补充](reviews/protocol_clarification.md) · [配对](results/paired.csv) · [原值](results/points.csv) · [收益保留](results/gain_retention.json) · [门](results/gate.json) · [完整失败查询](results/failure_queries.csv) · [三指标图](figures/query_shortcuts.png) · [失败图](figures/failure_queries.png) · [训练核验](reviews/training_independent.json) · [查询核验](reviews/verification.json) · [成本](results/cost.json)']
+(O/'report.md').write_text('\n'.join(lines)+'\n');dump(O/'reviews/failure_union.json',dict(union_queries=len(failed),changed_queries=sum(x['changed_zero_status'] for x in failed),all_zero_queries=sum(not x['changed_zero_status'] for x in failed),source_namespace_preserved=True));print('REPORT_COMPLETE',len(failed))

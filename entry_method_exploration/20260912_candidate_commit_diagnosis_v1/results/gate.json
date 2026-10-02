@@ -1,0 +1,30 @@
+{
+  "status": "PASS_CANDIDATE_COMMIT_CONTROL_GATE",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "RL_steps": 400,
+      "positive_candidate_steps": 214,
+      "positive_candidate_fraction": 0.535,
+      "positive_candidate_mean_null_steps": 184,
+      "mean_null_fraction_on_positive": 0.8598130841121495,
+      "J_best_net_sum": 1207,
+      "mean_net_sum": 51,
+      "J_best_illegal_steps": 0,
+      "passed": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "RL_steps": 400,
+      "positive_candidate_steps": 97,
+      "positive_candidate_fraction": 0.2425,
+      "positive_candidate_mean_null_steps": 93,
+      "mean_null_fraction_on_positive": 0.9587628865979382,
+      "J_best_net_sum": 409,
+      "mean_net_sum": 10,
+      "J_best_illegal_steps": 0,
+      "passed": true
+    }
+  ],
+  "scope": "Counterfactual one-step statistics across original trajectories, never a new trained model"
+}

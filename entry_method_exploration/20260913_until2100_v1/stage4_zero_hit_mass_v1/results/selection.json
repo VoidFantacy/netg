@@ -1,0 +1,29 @@
+{
+  "status": "FROZEN_CAL_SELECTION",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "selected": "baseline",
+      "rules": {
+        "net_positive": false,
+        "failures_nonincreasing": true,
+        "total_NDC_within_one_percent": true
+      },
+      "source": "cal only; frozen rule; audit not an argument",
+      "sham_selectable": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "selected": "baseline",
+      "rules": {
+        "net_positive": false,
+        "failures_nonincreasing": false,
+        "total_NDC_within_one_percent": true
+      },
+      "source": "cal only; frozen rule; audit not an argument",
+      "sham_selectable": false
+    }
+  ],
+  "models_freeze_sha": "ad615aca614ad82f4dc5cf16d8e41d1acd216a508afd5e1d2c26c7e26da1f7d3",
+  "rule_sha": "7ab959e5435248b05d02a22893c9ffd05e5614ff3219145d3675e8c89d3e5de5"
+}

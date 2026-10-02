@@ -1,0 +1,98 @@
+{
+  "epoch": 1789300447.7233121,
+  "jobs": [
+    {
+      "split": "preflight",
+      "status": "COMPLETE",
+      "reserved_NSG": 1360,
+      "started_at": 1789298119.5699527,
+      "peak_threads": 1,
+      "peak_RSS_KiB": 5760552,
+      "pid": 3,
+      "affinity": [
+        15
+      ],
+      "actual_NSG": 1360,
+      "actual_HNSW": 1280,
+      "seconds": 5.675394296646118,
+      "returncode": 0,
+      "completed_at": 1789298125.2453475,
+      "stage": "stage33_composed_repair_v1",
+      "tool_session_id": 64045,
+      "actual_tool_terminal_observed": true,
+      "threads": 1,
+      "CPU": 15
+    },
+    {
+      "split": "aux",
+      "status": "COMPLETE",
+      "reserved_NSG": 79600,
+      "started_at": 1789298137.364163,
+      "peak_threads": 1,
+      "peak_RSS_KiB": 5776868,
+      "pid": 3,
+      "affinity": [
+        15
+      ],
+      "actual_NSG": 79600,
+      "actual_HNSW": 79520,
+      "seconds": 52.064725160598755,
+      "returncode": 0,
+      "completed_at": 1789298189.428889,
+      "stage": "stage33_composed_repair_v1",
+      "tool_session_id": 39746,
+      "actual_tool_terminal_observed": true,
+      "threads": 1,
+      "CPU": 15
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "status": "COMPLETE",
+      "reserved_NSG": 420480,
+      "started_at": 1789298686.6456199,
+      "peak_threads": 1,
+      "peak_RSS_KiB": 6058484,
+      "pid": 3,
+      "affinity": [
+        15
+      ],
+      "actual_NSG": 420480,
+      "seconds": 596.2625896930695,
+      "completed_at": 1789299282.90821,
+      "returncode": 0,
+      "stage": "stage35_final_comparison_v1",
+      "tool_session_id": 13856,
+      "actual_tool_terminal_observed": true,
+      "threads": 1,
+      "CPU": 15,
+      "actual_HNSW": 320000
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "status": "COMPLETE",
+      "reserved_NSG": 280320,
+      "started_at": 1789299289.8925064,
+      "peak_threads": 1,
+      "peak_RSS_KiB": 10509776,
+      "pid": 3,
+      "affinity": [
+        15
+      ],
+      "actual_NSG": 280320,
+      "seconds": 397.950532913208,
+      "completed_at": 1789299687.84304,
+      "returncode": 0,
+      "stage": "stage35_final_comparison_v1",
+      "tool_session_id": 81975,
+      "actual_tool_terminal_observed": true,
+      "threads": 1,
+      "CPU": 15,
+      "actual_HNSW": 240000
+    }
+  ],
+  "NSG": 781760,
+  "HNSW": 640800,
+  "native_operation_seconds": 1051.9532420635223,
+  "all_actual_tools_terminal": true,
+  "process_scope": "Tool completion observed in this session; /proc namespace is isolated; supervisor separately observed host seriality. Historical active.json is not a live task."
+}

@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "records": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "set_mask_rows": 61440,
+      "physical_graphs": 25,
+      "original_kernel_rows": 480,
+      "same_triple_rows": 23945,
+      "wall_batches": 150,
+      "source_load_seconds": 0.5240900659999999,
+      "count_load_seconds": 0.51809799,
+      "pure_wall_seconds": 428.017412649
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "set_mask_rows": 51200,
+      "physical_graphs": 20,
+      "original_kernel_rows": 400,
+      "same_triple_rows": 17145,
+      "wall_batches": 125,
+      "source_load_seconds": 0.212061391,
+      "count_load_seconds": 0.21157057199999998,
+      "pure_wall_seconds": 344.42889747899994
+    }
+  ],
+  "old_2048_set_rows": 112640,
+  "in_memory_2000_score_rows": 110000,
+  "negative_guard_tests": [
+    "webvid2_5m_light_v1_duplicate_id",
+    "webvid2_5m_light_v1_negative_id",
+    "webvid2_5m_light_v1_incorrect_mask",
+    "webvid2_5m_light_v1_wrong_threads",
+    "webvid2_5m_light_v1_wrong_cap",
+    "webvid2_5m_light_v1_wrong_cpu",
+    "webvid2_5m_light_v1_unsupported_distinct",
+    "yandex_t2i_official10M_ip_v1_duplicate_id",
+    "yandex_t2i_official10M_ip_v1_negative_id",
+    "yandex_t2i_official10M_ip_v1_incorrect_mask",
+    "yandex_t2i_official10M_ip_v1_wrong_threads",
+    "yandex_t2i_official10M_ip_v1_wrong_cap",
+    "yandex_t2i_official10M_ip_v1_wrong_cpu",
+    "yandex_t2i_official10M_ip_v1_unsupported_distinct",
+    "unselected",
+    "final_feedback",
+    "missing_rule",
+    "missing_tie"
+  ],
+  "existing_wall_batches_verified": 275,
+  "complete_failure_cells": 4627,
+  "query_L_zero_union_events": 825,
+  "unique_zero_union_queries": 414,
+  "new_ANN": 0,
+  "new_QPS_points": 0,
+  "final_payload_opened": false,
+  "actual_final_controller_run": false,
+  "scope": "Existing E74 software reanalysis only. 2000 fixture has no timing/QPS.",
+  "seconds": 2.7854930120010977
+}

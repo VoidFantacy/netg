@@ -1,0 +1,52 @@
+{
+  "feature_set": "base_gate",
+  "features": [
+    "log1p_query_norm",
+    "base_best_cosine",
+    "base_gap12",
+    "base_gap13",
+    "base_mean_log_ess",
+    "base_min_log_ess",
+    "base_mean_profile_shift"
+  ],
+  "mean": [
+    0.6931481415453584,
+    0.7323065813605021,
+    0.023028522772865063,
+    0.034147114336530685,
+    3.5611250038569513,
+    2.935743104610781,
+    0.018951230643679828
+  ],
+  "scale": [
+    0.00011063739717381279,
+    0.11195600380070671,
+    0.026907966363456583,
+    0.032307102930843976,
+    0.49591241152849924,
+    0.5975692113008435,
+    0.013515124857025395
+  ],
+  "beta": [
+    -0.05879494762907498,
+    -0.061645652198842354,
+    -0.09644995490810354,
+    -0.06542477591222218,
+    -0.15513878449373256,
+    0.15922938894083258,
+    -0.1449208217755276
+  ],
+  "bias": 0.05282125712644161,
+  "threshold": 0.0,
+  "lambda": 0.01,
+  "fit_queries": 8192,
+  "status": "CONVERGED",
+  "positive_hit_weight": 2315,
+  "negative_hit_weight": 2101,
+  "standardization": "fit_all_rows_population_std_floor_1e-6_clip_minus6_plus6",
+  "decision": "sequential_float64_logit_greater_equal_threshold",
+  "training_seconds": 0.005668842000886798,
+  "selection_status": "CAL_TARGET_NOT_MET",
+  "candidate": "base_gate_lambda0.01_threshold0",
+  "protocol_sha256": "16c148cc2952b8ec37fd99b414122471af3d26fcecf211574501be247564f33d"
+}

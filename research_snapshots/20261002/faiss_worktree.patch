@@ -1,0 +1,204 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 03d2b496eb86a1cb0f4483571be459008e27c568..7961ea2b0abf4d54cb9658eee1c0c717ee6aedc2 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -75,7 +75,9 @@ if(FAISS_ENABLE_GPU)
+     execute_process(COMMAND ${PROJECT_SOURCE_DIR}/faiss/gpu/hipify.sh)
+   else ()
+     set(CMAKE_CUDA_HOST_COMPILER ${CMAKE_CXX_COMPILER})
+-    enable_language(CUDA)
++    if(FAISS_ENABLE_GPU)
++        enable_language(CUDA)
++    endif()
+     set(GPU_EXT_PREFIX "cu")
+   endif()
+ endif()
+diff --git a/benchs/distributed_ondisk/combined_index.py b/benchs/distributed_ondisk/combined_index.py
+old mode 100755
+new mode 100644
+diff --git a/benchs/distributed_ondisk/distributed_kmeans.py b/benchs/distributed_ondisk/distributed_kmeans.py
+old mode 100755
+new mode 100644
+diff --git a/benchs/distributed_ondisk/run_on_cluster.bash b/benchs/distributed_ondisk/run_on_cluster.bash
+old mode 100755
+new mode 100644
+diff --git a/conda/faiss-gpu-raft/test_cpu_dispatch.sh b/conda/faiss-gpu-raft/test_cpu_dispatch.sh
+old mode 100755
+new mode 100644
+diff --git a/conda/faiss-gpu/build-lib.sh b/conda/faiss-gpu/build-lib.sh
+old mode 100755
+new mode 100644
+diff --git a/conda/faiss-gpu/build-pkg.sh b/conda/faiss-gpu/build-pkg.sh
+old mode 100755
+new mode 100644
+diff --git a/conda/faiss-gpu/test_cpu_dispatch.sh b/conda/faiss-gpu/test_cpu_dispatch.sh
+old mode 100755
+new mode 100644
+diff --git a/conda/faiss/build-lib-arm64.sh b/conda/faiss/build-lib-arm64.sh
+old mode 100755
+new mode 100644
+diff --git a/conda/faiss/build-lib-osx.sh b/conda/faiss/build-lib-osx.sh
+old mode 100755
+new mode 100644
+diff --git a/conda/faiss/build-lib.bat b/conda/faiss/build-lib.bat
+old mode 100644
+new mode 100755
+diff --git a/conda/faiss/build-lib.sh b/conda/faiss/build-lib.sh
+old mode 100755
+new mode 100644
+diff --git a/conda/faiss/build-pkg-arm64.sh b/conda/faiss/build-pkg-arm64.sh
+old mode 100755
+new mode 100644
+diff --git a/conda/faiss/build-pkg-osx.sh b/conda/faiss/build-pkg-osx.sh
+old mode 100755
+new mode 100644
+diff --git a/conda/faiss/build-pkg.bat b/conda/faiss/build-pkg.bat
+old mode 100644
+new mode 100755
+diff --git a/conda/faiss/build-pkg.sh b/conda/faiss/build-pkg.sh
+old mode 100755
+new mode 100644
+diff --git a/conda/faiss/test_cpu_dispatch.sh b/conda/faiss/test_cpu_dispatch.sh
+old mode 100755
+new mode 100644
+diff --git a/contrib/client_server.py b/contrib/client_server.py
+old mode 100755
+new mode 100644
+diff --git a/contrib/rpc.py b/contrib/rpc.py
+old mode 100755
+new mode 100644
+diff --git a/demos/demo_auto_tune.py b/demos/demo_auto_tune.py
+old mode 100755
+new mode 100644
+diff --git a/demos/demo_client_server_ivf.py b/demos/demo_client_server_ivf.py
+old mode 100755
+new mode 100644
+diff --git a/demos/demo_ondisk_ivf.py b/demos/demo_ondisk_ivf.py
+old mode 100755
+new mode 100644
+diff --git a/faiss/Index.cpp b/faiss/Index.cpp
+index ce5aa956c1f1a9f2fb8b4809ae322c22b5696c35..2af603b263d4d3f7f8ea9e1c41de5eeba919ca36 100644
+--- a/faiss/Index.cpp
++++ b/faiss/Index.cpp
+@@ -13,8 +13,8 @@
+ #include <faiss/impl/DistanceComputer.h>
+ #include <faiss/impl/FaissAssert.h>
+ #include <faiss/utils/distances.h>
+-
+ #include <cstring>
++#include <iostream>
+ 
+ namespace faiss {
+ 
+@@ -168,6 +168,7 @@ struct GenericDistanceComputer : DistanceComputer {
+ 
+ DistanceComputer* Index::get_distance_computer() const {
+     if (metric_type == METRIC_L2) {
++        std::cerr << "222" << metric_type << std ::endl;
+         return new GenericDistanceComputer(*this);
+     } else {
+         FAISS_THROW_MSG("get_distance_computer() not implemented");
+diff --git a/faiss/IndexNNDescent.cpp b/faiss/IndexNNDescent.cpp
+index 382e9c41c607998aa28806666554e5d4766f56f0..fde95e3da1463861058939ce0383078fd8ec0999 100644
+--- a/faiss/IndexNNDescent.cpp
++++ b/faiss/IndexNNDescent.cpp
+@@ -27,6 +27,7 @@
+ #include <faiss/utils/Heap.h>
+ #include <faiss/utils/distances.h>
+ #include <faiss/utils/random.h>
++#include <iostream>
+ 
+ extern "C" {
+ 
+diff --git a/faiss/IndexNSG.cpp b/faiss/IndexNSG.cpp
+index 45a547b93b7d1bbc638def31b5013edd31e26be5..87e7dc035cf1556594f636103d15dec302f1766a 100644
+--- a/faiss/IndexNSG.cpp
++++ b/faiss/IndexNSG.cpp
+@@ -20,6 +20,7 @@
+ #include <faiss/impl/FaissAssert.h>
+ #include <faiss/utils/Heap.h>
+ #include <faiss/utils/distances.h>
++#include <iostream>
+ 
+ namespace faiss {
+ 
+@@ -123,6 +124,7 @@ void IndexNSG::build(idx_t n, const float* x, idx_t* knn_graph, int GK_2) {
+ }
+ 
+ void IndexNSG::add(idx_t n, const float* x) {
++    std::cerr << n << std::endl;
+     FAISS_THROW_IF_NOT_MSG(
+             storage,
+             "Please use IndexNSGFlat (or variants) "
+@@ -195,15 +197,16 @@ void IndexNSG::add(idx_t n, const float* x) {
+ 
+         // prevent IndexNSG from deleting the storage
+         index.own_fields = false;
+-
+         index.add(n, x);
+ 
+         // storage->add is already implicit called in IndexNSG.add
+         ntotal = storage->ntotal;
++        std::cerr << ntotal << std::endl;
++
+         FAISS_THROW_IF_NOT(ntotal == n);
+ 
+         knng.resize(ntotal * GK);
+-
++        std::cerr << GK << std::endl;
+         // cast from idx_t to int
+         const int* knn_graph = index.nndescent.final_graph.data();
+ #pragma omp parallel for
+diff --git a/faiss/IndexNSG.h b/faiss/IndexNSG.h
+index 401d00a99cbc6c312f11cf6c14c294e6718eae50..b538e16238ddf933cff778a3f0ae823cb89bf72b 100644
+--- a/faiss/IndexNSG.h
++++ b/faiss/IndexNSG.h
+@@ -46,7 +46,7 @@ struct IndexNSG : Index {
+     int nndescent_S = 10;
+     int nndescent_R = 100;
+     int nndescent_L; // set to GK + 50
+-    int nndescent_iter = 10;
++    int nndescent_iter = 20;
+ 
+     explicit IndexNSG(int d = 0, int R = 32, MetricType metric = METRIC_L2);
+     explicit IndexNSG(Index* storage, int R = 32);
+diff --git a/faiss/gpu/hipify.sh b/faiss/gpu/hipify.sh
+old mode 100755
+new mode 100644
+diff --git a/faiss/gpu/perf/slow.py b/faiss/gpu/perf/slow.py
+old mode 100755
+new mode 100644
+diff --git a/faiss/gpu/test/test_gpu_basics.py b/faiss/gpu/test/test_gpu_basics.py
+old mode 100755
+new mode 100644
+diff --git a/faiss/gpu/test/test_gpu_index.py b/faiss/gpu/test/test_gpu_index.py
+old mode 100755
+new mode 100644
+diff --git a/faiss/gpu/test/test_gpu_index_ivfsq.py b/faiss/gpu/test/test_gpu_index_ivfsq.py
+old mode 100755
+new mode 100644
+diff --git a/faiss/impl/HNSW.cpp b/faiss/impl/HNSW.cpp
+index 930cf52ce68452730623d053653f02ffb2468738..b2cba86daa3721ee72e5b4cda0e2a62d9ed617d0 100644
+--- a/faiss/impl/HNSW.cpp
++++ b/faiss/impl/HNSW.cpp
+@@ -916,6 +916,7 @@ HNSWStats HNSW::search(
+         ResultHandler<C>& res,
+         VisitedTable& vt,
+         const SearchParametersHNSW* params) const {
++    // 记录搜索过程中的统计信息
+     HNSWStats stats;
+     if (entry_point == -1) {
+         return stats;
+diff --git a/faiss/impl/NNDescent.h b/faiss/impl/NNDescent.h
+index 2426b0d7bb33235ea64618ef435c55c747c1bb6d..b383d8d4b8b3e5d68b20026be00a10f0f8448ebe 100644
+--- a/faiss/impl/NNDescent.h
++++ b/faiss/impl/NNDescent.h
+@@ -137,7 +137,7 @@ struct NNDescent {
+     int S = 10;  // number of sample neighbors to be updated for each node
+     int R = 100; // size of reverse links, 0 means the reverse links will not be
+                  // used
+-    int iter = 10;          // number of iterations to iterate over
++    int iter = 20;          // number of iterations to iterate over
+     int search_L = 0;       // size of candidate pool in searching
+     int random_seed = 2021; // random seed for generators
+ 

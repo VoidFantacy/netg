@@ -1,0 +1,592 @@
+{
+  "schema_version": 1,
+  "status": "PASS_BOUNDED_SUMMARY_HASH_SCOPE_AND_INTERPRETATION_REVIEW",
+  "created_utc": "2026-09-07T18:23:11.063018+00:00",
+  "reviewer": "p1_search",
+  "read_scope": "Only diagnosis analysis.json, its two bound small summary JSONs, and the bound original P3 fixed CI summary were read.",
+  "freshly_hashed_inputs": [
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/portal_exposure_diagnosis_v1/analysis.json",
+      "sha256": "23c80d4960abdbac7c93ea10ba21e69fef245a8b09268b9d283269d961fc9a59",
+      "bytes": 3722
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analysis_v1/analysis.json",
+      "sha256": "63da6a71425b0dbd6e186db1c608a564b9847c58168b6b56059a9ed2d2f901ae",
+      "bytes": 210730
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/portal_exposure_diagnosis_v1/webvid2_5m_light_v1.json",
+      "sha256": "2564b11e574cef05dd802c86ec96f348e5f4a317db3892d6c5d813f97cd2257a",
+      "bytes": 292276
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/portal_exposure_diagnosis_v1/yandex_t2i_official10M_ip_v1.json",
+      "sha256": "35c663941cd5fce3e3754fc81de6e6d70be7a1c298c653f33d00506526150cdb",
+      "bytes": 292592
+    }
+  ],
+  "inherited_not_reopened": [
+    "per-query NPZ files and their contents/checksums",
+    "count rows",
+    "models and portal arrays",
+    "labels",
+    "GT",
+    "query/base vectors",
+    "graph",
+    "source/protocol files"
+  ],
+  "checks": [
+    "Both summary SHA256 values match diagnosis analysis bindings; diagnosis source/protocol hashes match reviewed frozen identities.",
+    "All eight fixed same-lambda portal comparisons contain 10000 queries; all route/sign bins are retained, sum to the total, and reconstruct outcomes/paired means.",
+    "Return-set/order and equal-Recall accounting is consistent; inherited ordinary CI mean/win/loss/equal totals match the original frozen P3 analysis.",
+    "All same-route invariance checks have zero applicable real queries and therefore are vacuous; summary PASS must not be called real same-route parity evidence.",
+    "No additional raw inputs, per-query data, NPZ, ANN or new confidence intervals were used in this review."
+  ],
+  "cells": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "lambda": 0,
+      "L": 64,
+      "queries": 10000,
+      "changed_actual_entry_set_queries": 10000,
+      "same_returned_ID_set_queries": 6834,
+      "same_returned_ID_order_queries": 6829,
+      "same_Recall_queries": 7633,
+      "same_Recall_but_different_returned_ID_sets": 799,
+      "mean_delta_Recall_pp": 0.044,
+      "inherited_ordinary95_CI_pp": [
+        -0.12500000000000006,
+        0.21299999999999994
+      ],
+      "weighted_positive_queries": 9834,
+      "weighted_positive_mean_delta_Recall_pp": 0.034573927191376856,
+      "weighted_undefined_queries": 0,
+      "mean_total_NDC_delta": -2.5332,
+      "same_route_invariance_queries_checked": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "lambda": 0,
+      "L": 128,
+      "queries": 10000,
+      "changed_actual_entry_set_queries": 10000,
+      "same_returned_ID_set_queries": 8171,
+      "same_returned_ID_order_queries": 8164,
+      "same_Recall_queries": 8598,
+      "same_Recall_but_different_returned_ID_sets": 427,
+      "mean_delta_Recall_pp": -0.018,
+      "inherited_ordinary95_CI_pp": [
+        -0.12999999999999998,
+        0.09300000000000003
+      ],
+      "weighted_positive_queries": 9834,
+      "weighted_positive_mean_delta_Recall_pp": -0.016270083384177344,
+      "weighted_undefined_queries": 0,
+      "mean_total_NDC_delta": -4.6741,
+      "same_route_invariance_queries_checked": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "lambda": 1,
+      "L": 64,
+      "queries": 10000,
+      "changed_actual_entry_set_queries": 10000,
+      "same_returned_ID_set_queries": 6899,
+      "same_returned_ID_order_queries": 6885,
+      "same_Recall_queries": 7719,
+      "same_Recall_but_different_returned_ID_sets": 820,
+      "mean_delta_Recall_pp": 0.149,
+      "inherited_ordinary95_CI_pp": [
+        -0.016999999999999967,
+        0.31599999999999995
+      ],
+      "weighted_positive_queries": 9953,
+      "weighted_positive_mean_delta_Recall_pp": 0.14668944036973777,
+      "weighted_undefined_queries": 6,
+      "mean_total_NDC_delta": -10.3267,
+      "same_route_invariance_queries_checked": 0
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "lambda": 1,
+      "L": 128,
+      "queries": 10000,
+      "changed_actual_entry_set_queries": 10000,
+      "same_returned_ID_set_queries": 8228,
+      "same_returned_ID_order_queries": 8210,
+      "same_Recall_queries": 8693,
+      "same_Recall_but_different_returned_ID_sets": 465,
+      "mean_delta_Recall_pp": 0.055,
+      "inherited_ordinary95_CI_pp": [
+        -0.06,
+        0.16802499999999967
+      ],
+      "weighted_positive_queries": 9953,
+      "weighted_positive_mean_delta_Recall_pp": 0.052245554104290166,
+      "weighted_undefined_queries": 6,
+      "mean_total_NDC_delta": -11.8849,
+      "same_route_invariance_queries_checked": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "lambda": 0,
+      "L": 64,
+      "queries": 10000,
+      "changed_actual_entry_set_queries": 10000,
+      "same_returned_ID_set_queries": 8240,
+      "same_returned_ID_order_queries": 8239,
+      "same_Recall_queries": 8660,
+      "same_Recall_but_different_returned_ID_sets": 420,
+      "mean_delta_Recall_pp": 0.039,
+      "inherited_ordinary95_CI_pp": [
+        -0.06999999999999999,
+        0.14400000000000002
+      ],
+      "weighted_positive_queries": 9931,
+      "weighted_positive_mean_delta_Recall_pp": 0.039270969690866984,
+      "weighted_undefined_queries": 0,
+      "mean_total_NDC_delta": -22.1528,
+      "same_route_invariance_queries_checked": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "lambda": 0,
+      "L": 128,
+      "queries": 10000,
+      "changed_actual_entry_set_queries": 10000,
+      "same_returned_ID_set_queries": 9298,
+      "same_returned_ID_order_queries": 9297,
+      "same_Recall_queries": 9442,
+      "same_Recall_but_different_returned_ID_sets": 144,
+      "mean_delta_Recall_pp": 0.024,
+      "inherited_ordinary95_CI_pp": [
+        -0.04299999999999999,
+        0.092
+      ],
+      "weighted_positive_queries": 9931,
+      "weighted_positive_mean_delta_Recall_pp": 0.024166750578995064,
+      "weighted_undefined_queries": 0,
+      "mean_total_NDC_delta": -23.0199,
+      "same_route_invariance_queries_checked": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "lambda": 1,
+      "L": 64,
+      "queries": 10000,
+      "changed_actual_entry_set_queries": 10000,
+      "same_returned_ID_set_queries": 8319,
+      "same_returned_ID_order_queries": 8319,
+      "same_Recall_queries": 8729,
+      "same_Recall_but_different_returned_ID_sets": 410,
+      "mean_delta_Recall_pp": -0.013,
+      "inherited_ordinary95_CI_pp": [
+        -0.117,
+        0.09102499999999966
+      ],
+      "weighted_positive_queries": 9868,
+      "weighted_positive_mean_delta_Recall_pp": -0.016214025131738953,
+      "weighted_undefined_queries": 0,
+      "mean_total_NDC_delta": 3.1522,
+      "same_route_invariance_queries_checked": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "lambda": 1,
+      "L": 128,
+      "queries": 10000,
+      "changed_actual_entry_set_queries": 10000,
+      "same_returned_ID_set_queries": 9336,
+      "same_returned_ID_order_queries": 9336,
+      "same_Recall_queries": 9458,
+      "same_Recall_but_different_returned_ID_sets": 122,
+      "mean_delta_Recall_pp": -0.031,
+      "inherited_ordinary95_CI_pp": [
+        -0.09000000000000002,
+        0.029999999999999992
+      ],
+      "weighted_positive_queries": 9868,
+      "weighted_positive_mean_delta_Recall_pp": -0.03141467369274423,
+      "weighted_undefined_queries": 0,
+      "mean_total_NDC_delta": 3.367,
+      "same_route_invariance_queries_checked": 0
+    }
+  ],
+  "all_sign_bins": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "lambda": 0,
+      "L": 64,
+      "raw_sign_bins": [
+        {
+          "sum_proxy_delta_sign": "negative",
+          "query_count": 0,
+          "mean_delta_recall_pp": null
+        },
+        {
+          "sum_proxy_delta_sign": "zero",
+          "query_count": 0,
+          "mean_delta_recall_pp": null
+        },
+        {
+          "sum_proxy_delta_sign": "positive",
+          "query_count": 10000,
+          "mean_delta_recall_pp": 0.044
+        }
+      ],
+      "weighted_sign_bins": [
+        {
+          "weighted_proxy_score_sign": "negative",
+          "query_count": 11,
+          "mean_delta_recall_pp": 0.9090909090909091
+        },
+        {
+          "weighted_proxy_score_sign": "zero",
+          "query_count": 155,
+          "mean_delta_recall_pp": 0.5806451612903226
+        },
+        {
+          "weighted_proxy_score_sign": "positive",
+          "query_count": 9834,
+          "mean_delta_recall_pp": 0.034573927191376856
+        },
+        {
+          "weighted_proxy_score_sign": "undefined",
+          "query_count": 0,
+          "mean_delta_recall_pp": null
+        }
+      ]
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "lambda": 0,
+      "L": 128,
+      "raw_sign_bins": [
+        {
+          "sum_proxy_delta_sign": "negative",
+          "query_count": 0,
+          "mean_delta_recall_pp": null
+        },
+        {
+          "sum_proxy_delta_sign": "zero",
+          "query_count": 0,
+          "mean_delta_recall_pp": null
+        },
+        {
+          "sum_proxy_delta_sign": "positive",
+          "query_count": 10000,
+          "mean_delta_recall_pp": -0.018
+        }
+      ],
+      "weighted_sign_bins": [
+        {
+          "weighted_proxy_score_sign": "negative",
+          "query_count": 11,
+          "mean_delta_recall_pp": 0.0
+        },
+        {
+          "weighted_proxy_score_sign": "zero",
+          "query_count": 155,
+          "mean_delta_recall_pp": -0.12903225806451613
+        },
+        {
+          "weighted_proxy_score_sign": "positive",
+          "query_count": 9834,
+          "mean_delta_recall_pp": -0.016270083384177344
+        },
+        {
+          "weighted_proxy_score_sign": "undefined",
+          "query_count": 0,
+          "mean_delta_recall_pp": null
+        }
+      ]
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "lambda": 1,
+      "L": 64,
+      "raw_sign_bins": [
+        {
+          "sum_proxy_delta_sign": "negative",
+          "query_count": 2,
+          "mean_delta_recall_pp": 0.0
+        },
+        {
+          "sum_proxy_delta_sign": "zero",
+          "query_count": 0,
+          "mean_delta_recall_pp": null
+        },
+        {
+          "sum_proxy_delta_sign": "positive",
+          "query_count": 9998,
+          "mean_delta_recall_pp": 0.14902980596119225
+        }
+      ],
+      "weighted_sign_bins": [
+        {
+          "weighted_proxy_score_sign": "negative",
+          "query_count": 20,
+          "mean_delta_recall_pp": 0.0
+        },
+        {
+          "weighted_proxy_score_sign": "zero",
+          "query_count": 21,
+          "mean_delta_recall_pp": 0.0
+        },
+        {
+          "weighted_proxy_score_sign": "positive",
+          "query_count": 9953,
+          "mean_delta_recall_pp": 0.14668944036973777
+        },
+        {
+          "weighted_proxy_score_sign": "undefined",
+          "query_count": 6,
+          "mean_delta_recall_pp": 5.0
+        }
+      ]
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "lambda": 1,
+      "L": 128,
+      "raw_sign_bins": [
+        {
+          "sum_proxy_delta_sign": "negative",
+          "query_count": 2,
+          "mean_delta_recall_pp": 0.0
+        },
+        {
+          "sum_proxy_delta_sign": "zero",
+          "query_count": 0,
+          "mean_delta_recall_pp": null
+        },
+        {
+          "sum_proxy_delta_sign": "positive",
+          "query_count": 9998,
+          "mean_delta_recall_pp": 0.05501100220044009
+        }
+      ],
+      "weighted_sign_bins": [
+        {
+          "weighted_proxy_score_sign": "negative",
+          "query_count": 20,
+          "mean_delta_recall_pp": 0.0
+        },
+        {
+          "weighted_proxy_score_sign": "zero",
+          "query_count": 21,
+          "mean_delta_recall_pp": 0.0
+        },
+        {
+          "weighted_proxy_score_sign": "positive",
+          "query_count": 9953,
+          "mean_delta_recall_pp": 0.052245554104290166
+        },
+        {
+          "weighted_proxy_score_sign": "undefined",
+          "query_count": 6,
+          "mean_delta_recall_pp": 5.0
+        }
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "lambda": 0,
+      "L": 64,
+      "raw_sign_bins": [
+        {
+          "sum_proxy_delta_sign": "negative",
+          "query_count": 0,
+          "mean_delta_recall_pp": null
+        },
+        {
+          "sum_proxy_delta_sign": "zero",
+          "query_count": 0,
+          "mean_delta_recall_pp": null
+        },
+        {
+          "sum_proxy_delta_sign": "positive",
+          "query_count": 10000,
+          "mean_delta_recall_pp": 0.039
+        }
+      ],
+      "weighted_sign_bins": [
+        {
+          "weighted_proxy_score_sign": "negative",
+          "query_count": 22,
+          "mean_delta_recall_pp": 0.0
+        },
+        {
+          "weighted_proxy_score_sign": "zero",
+          "query_count": 47,
+          "mean_delta_recall_pp": 0.0
+        },
+        {
+          "weighted_proxy_score_sign": "positive",
+          "query_count": 9931,
+          "mean_delta_recall_pp": 0.039270969690866984
+        },
+        {
+          "weighted_proxy_score_sign": "undefined",
+          "query_count": 0,
+          "mean_delta_recall_pp": null
+        }
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "lambda": 0,
+      "L": 128,
+      "raw_sign_bins": [
+        {
+          "sum_proxy_delta_sign": "negative",
+          "query_count": 0,
+          "mean_delta_recall_pp": null
+        },
+        {
+          "sum_proxy_delta_sign": "zero",
+          "query_count": 0,
+          "mean_delta_recall_pp": null
+        },
+        {
+          "sum_proxy_delta_sign": "positive",
+          "query_count": 10000,
+          "mean_delta_recall_pp": 0.024
+        }
+      ],
+      "weighted_sign_bins": [
+        {
+          "weighted_proxy_score_sign": "negative",
+          "query_count": 22,
+          "mean_delta_recall_pp": 0.0
+        },
+        {
+          "weighted_proxy_score_sign": "zero",
+          "query_count": 47,
+          "mean_delta_recall_pp": 0.0
+        },
+        {
+          "weighted_proxy_score_sign": "positive",
+          "query_count": 9931,
+          "mean_delta_recall_pp": 0.024166750578995064
+        },
+        {
+          "weighted_proxy_score_sign": "undefined",
+          "query_count": 0,
+          "mean_delta_recall_pp": null
+        }
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "lambda": 1,
+      "L": 64,
+      "raw_sign_bins": [
+        {
+          "sum_proxy_delta_sign": "negative",
+          "query_count": 2,
+          "mean_delta_recall_pp": 0.0
+        },
+        {
+          "sum_proxy_delta_sign": "zero",
+          "query_count": 1,
+          "mean_delta_recall_pp": 0.0
+        },
+        {
+          "sum_proxy_delta_sign": "positive",
+          "query_count": 9997,
+          "mean_delta_recall_pp": -0.013003901170351105
+        }
+      ],
+      "weighted_sign_bins": [
+        {
+          "weighted_proxy_score_sign": "negative",
+          "query_count": 43,
+          "mean_delta_recall_pp": 0.46511627906976744
+        },
+        {
+          "weighted_proxy_score_sign": "zero",
+          "query_count": 89,
+          "mean_delta_recall_pp": 0.11235955056179775
+        },
+        {
+          "weighted_proxy_score_sign": "positive",
+          "query_count": 9868,
+          "mean_delta_recall_pp": -0.016214025131738953
+        },
+        {
+          "weighted_proxy_score_sign": "undefined",
+          "query_count": 0,
+          "mean_delta_recall_pp": null
+        }
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "lambda": 1,
+      "L": 128,
+      "raw_sign_bins": [
+        {
+          "sum_proxy_delta_sign": "negative",
+          "query_count": 2,
+          "mean_delta_recall_pp": 0.0
+        },
+        {
+          "sum_proxy_delta_sign": "zero",
+          "query_count": 1,
+          "mean_delta_recall_pp": 0.0
+        },
+        {
+          "sum_proxy_delta_sign": "positive",
+          "query_count": 9997,
+          "mean_delta_recall_pp": -0.031009302790837252
+        }
+      ],
+      "weighted_sign_bins": [
+        {
+          "weighted_proxy_score_sign": "negative",
+          "query_count": 43,
+          "mean_delta_recall_pp": 0.0
+        },
+        {
+          "weighted_proxy_score_sign": "zero",
+          "query_count": 89,
+          "mean_delta_recall_pp": 0.0
+        },
+        {
+          "weighted_proxy_score_sign": "positive",
+          "query_count": 9868,
+          "mean_delta_recall_pp": -0.03141467369274423
+        },
+        {
+          "weighted_proxy_score_sign": "undefined",
+          "query_count": 0,
+          "mean_delta_recall_pp": null
+        }
+      ]
+    }
+  ],
+  "confirmed_interpretation": [
+    "Greedy versus frequency changes the actual entry-node set on every query in all eight fixed cells; the explanation that selected portals never alter actual entry sets is ruled out for this saved pilot.",
+    "Returned valid top10 ID sets nevertheless coincide on 68.34 to 93.36 percent of queries; exact ordered results coincide on 68.29 to 93.36 percent. This is final-output agreement, not trace or exploration agreement.",
+    "Positive weighted fit-proxy exposure occurs for 98.34 to 99.53 percent of queries per structure. A simple absence of exposure to fit-proxy gains is not an adequate description of this pilot.",
+    "All eight original global portal Recall intervals still include zero. Positive-exposure subgroup mean Recall changes have mixed signs; three are negative descriptively. These subgroup means have no new CI and do not establish significant subgroup harm or benefit.",
+    "WebVid lambda1 has six undefined weighted-exposure queries at each L because positive oracle weight falls on a leaf with no fit support. They remain in the full totals and the undefined bin; do not replace their score with zero or count repeated L as independent samples."
+  ],
+  "not_established": [
+    "Identical returned ID sets do not establish identical visited nodes, expansions, distances, paths or NDC. Aggregate mean NDC changes already show that final-output agreement cannot be used as an overall cost-equivalence statement.",
+    "The single-entry independent-search union proxy versus joint multi-entry search mismatch is compatible with the observations, but redundancy, fit optimism, sample shift and search-path interactions remain unseparated hypotheses.",
+    "An interval containing zero is not an equivalence or no-effect test. Tiny negative/zero/undefined exposure bins must not be selected as successful submethods.",
+    "This same-lambda portal diagnosis does not isolate the cause of cross-lambda structure harm and does not identify a graph-connectivity bottleneck."
+  ],
+  "gate_effect": "None: P3 remains NOPASS; no P4, validation/held-out, new model, parameter selection, new CI or auxiliary graph is authorized.",
+  "application_wall_seconds_from_saved_analysis": 12.00029078299849,
+  "job_resources_reported_by_root_not_independently_read_here": {
+    "elapsed_seconds": 14.056,
+    "max_rss_kib": 457012
+  },
+  "new_data_or_experiment_run": false,
+  "source_or_model_changed": false,
+  "P3_gate_reopened": false
+}

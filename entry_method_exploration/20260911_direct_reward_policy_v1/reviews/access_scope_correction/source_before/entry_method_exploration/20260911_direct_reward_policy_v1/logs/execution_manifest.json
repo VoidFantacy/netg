@@ -1,0 +1,33 @@
+{
+  "python": "/data/netg/ACSG/.venv_cpu/bin/python",
+  "working_directory": "/data/netg/ACSG",
+  "commands": [
+    "test_objective.py",
+    "preflight.py",
+    "run_training.py",
+    "analyze.py",
+    "prepare_deployment.py",
+    "plot.py",
+    "run_deployment.py parity",
+    "run_deployment.py fit (failed before NSG; preserved)",
+    "run_deployment_v2.py fit",
+    "run_deployment_v2.py development",
+    "diagnose_reward_support.py",
+    "analyze_deployment.py",
+    "plot_deployment.py",
+    "write_report.py",
+    "update_docs.py",
+    "final_audit_deployment.py"
+  ],
+  "training_threads": 8,
+  "query_threads": 1,
+  "query_cpu": 15,
+  "PYTHONDONTWRITEBYTECODE": 1,
+  "compiler_commands": "/data/netg/ACSG/entry_method_exploration/20260911_direct_reward_policy_v1/bin/evaluate.build.json",
+  "router_commands": "/data/netg/ACSG/entry_method_exploration/20260911_direct_reward_policy_v1/logs/route_parity_jobs.json",
+  "query_commands": "/data/netg/ACSG/entry_method_exploration/20260911_direct_reward_policy_v1/logs/evaluation_jobs.json",
+  "query_patch": "/data/netg/ACSG/entry_method_exploration/20260911_direct_reward_policy_v1/configuration_repair.md",
+  "new_training_labels": 0,
+  "new_validation_query_or_GT_access": false,
+  "heldout_access": false
+}

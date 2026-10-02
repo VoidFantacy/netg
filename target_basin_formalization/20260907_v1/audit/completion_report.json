@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "stage": "completion_audit",
+  "status": "PASS",
+  "execution_status": "COMPLETE",
+  "decision": "NO_GO_ROUTING_COST",
+  "heldout_accessed": false,
+  "checks": [
+    {
+      "name": "protocol_terminal_stage_state",
+      "status": "PASS",
+      "details": {
+        "E0": "PASS",
+        "E1": "FAIL_TRIGGER_E1B",
+        "E1b": "NO_GO_ROUTING_COST",
+        "E2": "NOT_RUN",
+        "E3": "NOT_RUN",
+        "E4": "NOT_RUN"
+      }
+    },
+    {
+      "name": "gate_terminal_decision",
+      "status": "PASS",
+      "details": {
+        "execution_status": "COMPLETE",
+        "decision": "NO_GO_ROUTING_COST",
+        "selected_method": "Fast v1"
+      }
+    },
+    {
+      "name": "protocol_hash_bound_to_reports",
+      "status": "PASS",
+      "details": {
+        "actual_sha256": "0835fc8d2db5975277f55bddae7993a7c6a4ecea5922764baf535a955bf0601c"
+      }
+    },
+    {
+      "name": "stage_evidence_consistent",
+      "status": "PASS",
+      "details": {
+        "E0": "PASS",
+        "E1": "FAIL/TRIGGER_E1B",
+        "E1b": "FAIL/NO_GO_ROUTING_COST"
+      }
+    },
+    {
+      "name": "source_and_binary_hashes_current",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "webvid.current_binary_route_regression",
+      "status": "PASS",
+      "details": {
+        "queries": 128,
+        "semantic_match": true,
+        "heldout_accessed": false
+      }
+    },
+    {
+      "name": "yandex.current_binary_route_regression",
+      "status": "PASS",
+      "details": {
+        "queries": 128,
+        "semantic_match": true,
+        "heldout_accessed": false
+      }
+    },
+    {
+      "name": "evaluator_self_test",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0
+      }
+    },
+    {
+      "name": "runner_blocks_E2_after_no_go",
+      "status": "PASS",
+      "details": {
+        "exit_code": 2,
+        "stderr": "TARGET_BASIN_STAGE_REFUSED: E2 blocked by routing-cost gate: E1=FAIL_TRIGGER_E1B, E1b=NO_GO_ROUTING_COST"
+      }
+    },
+    {
+      "name": "runner_refuses_existing_output_root",
+      "status": "PASS",
+      "details": {
+        "exit_code": 2,
+        "stderr": "TARGET_BASIN_STAGE_REFUSED: refusing to overwrite output root: /data/netg/ACSG/target_basin_formalization/20260907_v1"
+      }
+    },
+    {
+      "name": "summarizer_refuses_existing_outputs",
+      "status": "PASS",
+      "details": {
+        "exit_code": 2,
+        "stderr": "TARGET_BASIN_SUMMARY_REFUSED: refusing to overwrite output: /data/netg/ACSG/target_basin_formalization/20260907_v1/pilot/hnsw/report.json"
+      }
+    },
+    {
+      "name": "no_heldout_artifact_or_access_flag",
+      "status": "PASS",
+      "details": {
+        "rg_exit_code": 1,
+        "matching_files": [],
+        "heldout_directory_exists": false
+      }
+    },
+    {
+      "name": "handoff_documents_synchronized",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "four_equal_ndc_points_fail_as_reported",
+      "status": "PASS",
+      "details": {
+        "unexpected_points": []
+      }
+    }
+  ],
+  "current_sha256": {
+    "benches/run/audit_target_basin_completion.py": "67f786c808cee67293027cfca44181542b250894f722092d2d6db9f25f224454",
+    "build/benches/bench_target_basin_eval": "d96df57f8bf8df859b3ee646ad0e4d4c95c1e58a1402d55a6238d64a50331ed2",
+    "benches/run/run_target_basin_protocol.py": "fd8abfc927c20f21d46339a37806a115b03dcc22b040609189c0e3613d0a78de",
+    "benches/run/summarize_target_basin_e1b.py": "1b5ef6da2888e974ba5758c3db86ffe82757ff0c7d0643e5bdba8edcc6502762",
+    "target_basin_formalization/20260907_v1/protocol.json": "0835fc8d2db5975277f55bddae7993a7c6a4ecea5922764baf535a955bf0601c",
+    "target_basin_formalization/20260907_v1/gate.json": "ba30af94d503bea8219070151871119148fa90e9e15a3512888a6a0176416cfe",
+    "target_basin_formalization/20260907_v1/pilot/hnsw/report.json": "af0b0ad16db27816858ff0c8314d972f633fe727760191b1cb8ce0c591b25da4"
+  },
+  "resources": {
+    "data_available_bytes": 22277705728,
+    "data_available_gib": 20.747730255126953
+  }
+}

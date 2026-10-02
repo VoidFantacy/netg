@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "split": "validation",
+  "method": "Fast-rank0-anchored three-seed target-basin ensemble",
+  "method_frozen": true,
+  "heldout_accessed": false,
+  "labels_used_for_routing": false,
+  "online_graph_probes": 0,
+  "rank0_preserved": true,
+  "route_top3_order_changed_fraction": 0.9657,
+  "route_top3_set_changed_fraction": 0.9568,
+  "candidate_union_upper_bound": 24,
+  "prototype_index_count": 3,
+  "sources": {
+    "queries": {
+      "path": "benches/datasets/WebVid2.5M_light_v1/query.validation.seed20260826.fvecs",
+      "sha256": "a59d61a48bf160679626a5a0a71f9d28d32d3528bda94d92ddf6ab03e132b96a"
+    },
+    "baseline_shortlist": {
+      "path": "sparse_utility_datasets/webvid_validation10k_top32_l64_128_r10_v1/results.json",
+      "sha256": "7363d2ddc7105dafe5e7e82431da72b2bb7e99244a6c3863aabd088e497ea9f5"
+    },
+    "seed28_prototypes": {
+      "path": "fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+      "sha256": "b9e549ee8406798db8a9ee191f4765277a505a5372587f379e7a3e88e780d2a0"
+    },
+    "seed28_ids": {
+      "path": "fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_cover_hub_ids.bin",
+      "sha256": "47c58c28e48e85c5a4f0cad245ef66f451dde404afb0ad7231909ba1956e8e03"
+    },
+    "seed29_prototypes": {
+      "path": "fast_entry_variants/webvid2_5m_light_v1_seed20260829/qgt_gt_basin_prototype_hubs.bin",
+      "sha256": "c2f2866e161f89ebca1433150c91678f9247a8ecd7bf35508ba43e4ace491d26"
+    },
+    "seed29_ids": {
+      "path": "fast_entry_variants/webvid2_5m_light_v1_seed20260829/qgt_cover_hub_ids.bin",
+      "sha256": "fccfc631ea0d267c77e503ee9f1650ad065a5e9944b0a675dec851bc409f31d4"
+    },
+    "seed30_prototypes": {
+      "path": "fast_entry_variants/webvid2_5m_light_v1_seed20260830/qgt_gt_basin_prototype_hubs.bin",
+      "sha256": "bd7bcd8349294b96bcb5edcfbbc871c55813525ea35420a5cd1a6f7efcbdf635"
+    },
+    "seed30_ids": {
+      "path": "fast_entry_variants/webvid2_5m_light_v1_seed20260830/qgt_cover_hub_ids.bin",
+      "sha256": "749626f1b06a48661b99ebc634dfaa444ccf8a2a8ab0a9636d71469577150078"
+    }
+  },
+  "route": {
+    "path": "target_basin_ensemble_diagnostics/v1/routing_cost_webvid_validation_replay/routes_validation_top3.i32",
+    "sha256": "e0872e46b2b24b62eb7861ac2022bdd2d55122c72d1bab5d8e98c57592c16aa2",
+    "bytes": 120000
+  }
+}

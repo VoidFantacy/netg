@@ -1,0 +1,86 @@
+{
+  "version": "E112_one_hop_hub_design_v1",
+  "created_unix": 1789890865.9929006,
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "dataset": "webvid2_5m_light_v1",
+      "dimension": 512,
+      "H": 815,
+      "base_n": 2505000,
+      "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "index_stat": {
+        "bytes": 5791560103,
+        "mtime_ns": 1787714557628644919
+      },
+      "QGT_manifest": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/manifest.json",
+      "QGT_queries_source": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.aco_train.seed20260826.fvecs",
+      "QGT_GT_source": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/gt.aco_train.seed20260826.ip.ivecs",
+      "old_hub_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+      "QGT_queries": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/inputs/webvid2_5m_light_v1/queries.f32",
+      "QGT_GT": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/inputs/webvid2_5m_light_v1/gt.i32",
+      "development_queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/queries.f32",
+      "development_GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/gt.i32",
+      "development_manifest": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/gt_manifest.json",
+      "development_rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/source_rows.i64",
+      "default_K1": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_webvid2_5m_light_v1/DefaultANN/k1_L128/ids.i32"
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "dimension": 200,
+      "H": 821,
+      "base_n": 10000000,
+      "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "index_stat": {
+        "bytes": 10640000103,
+        "mtime_ns": 1787655783830469960
+      },
+      "QGT_manifest": "/data/netg/ACSG/fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/manifest.json",
+      "QGT_queries_source": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.aco_train.fvecs",
+      "QGT_GT_source": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/gt.aco_train.ip.ivecs",
+      "old_hub_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/hub_ids.i32",
+      "QGT_queries": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+      "QGT_GT": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e112_one_hop_hub_design/inputs/yandex_t2i_official10M_ip_v1/gt.i32",
+      "development_queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+      "development_GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt.i32",
+      "development_manifest": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt_manifest.json",
+      "development_rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/source_rows.i64",
+      "default_K1": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1/DefaultANN/k1_L128/ids.i32"
+    }
+  },
+  "n_QGT": 5000,
+  "n_development": 4096,
+  "K": [
+    1,
+    100
+  ],
+  "score_denominator": 200,
+  "methods": [
+    "OriginalH",
+    "GraphH",
+    "FrequencyH"
+  ],
+  "threads": 1,
+  "cpu": 15,
+  "deadline_unix": 1789901400,
+  "job_seconds_cap": 900,
+  "max_nonzero_per_dataset": 80000000,
+  "max_new_bytes": 1073741824,
+  "max_combined_new_bytes": 2147483648,
+  "min_free_gib": 4,
+  "max_rss_gib": 40,
+  "expected_NSG_calls": 0,
+  "expected_ANN_calls": 0,
+  "new_GT": 0,
+  "new_training": 0,
+  "new_graphs": 0,
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 20260920,
+  "CI_level": 0.9875,
+  "information_gate": {
+    "each_dataset_F_GraphH_minus_OriginalH_min_pp": 2,
+    "all_four_comparison_CI_lower_positive": true,
+    "each_dataset_default_L128_GT1_conditional_rescue_min_pp": 1
+  },
+  "previous_phase": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1",
+  "data_roles": "Same independent QGT5K selects H; all exposed development4096 is read by this runner only after both datasets H frozen; no held-out. Development globally exposed before this stage."
+}

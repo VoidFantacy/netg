@@ -1,0 +1,172 @@
+{
+  "K": [
+    1,
+    100
+  ],
+  "L": 128,
+  "base_n": 10000000,
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "deadline_unix": 1789875942.4593332,
+  "dimension": 200,
+  "gt": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/inputs/yandex_t2i_official10M_ip_v1/fit/gt.i64",
+  "hub_count": 821,
+  "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/inputs/yandex_t2i_official10M_ip_v1/fit/hub_ids.i32",
+  "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "max_main_search_calls": 1100000,
+  "metric_id": 0,
+  "models": [
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "family": "Identity",
+      "rank": 16
+    },
+    {
+      "P": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "U": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/models/yandex_t2i_official10M_ip_v1/QLinear/U.f32",
+      "V": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/models/yandex_t2i_official10M_ip_v1/QLinear/V.f32",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "cal_payload_access": false,
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "dim": 200,
+      "epochs": 40,
+      "family": "QLinear",
+      "final": {
+        "ce": 0.8113389015197754,
+        "epoch": 40,
+        "measured_candidate_teacher_accuracy": 0.71533203125,
+        "objective": 0.8668924570083618,
+        "score_drift": 0.005555354990065098,
+        "seconds": 1.1823115348815918
+      },
+      "h": 821,
+      "initial": {
+        "ce": 1.432834506034851,
+        "epoch": 0,
+        "measured_candidate_teacher_accuracy": 0.5693359375,
+        "objective": 1.432834506034851,
+        "score_drift": 0.0,
+        "seconds": 0.0
+      },
+      "parameter_count": 6400,
+      "rank": 16,
+      "seconds": 1.1925489902496338,
+      "seed": 20260920,
+      "status": "TRAINED_FIT_ONLY"
+    },
+    {
+      "P": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "U": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/models/yandex_t2i_official10M_ip_v1/QMLP/U.f32",
+      "V": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/models/yandex_t2i_official10M_ip_v1/QMLP/V.f32",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "cal_payload_access": false,
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "dim": 200,
+      "epochs": 40,
+      "family": "QMLP",
+      "final": {
+        "ce": 0.8853665590286255,
+        "epoch": 40,
+        "measured_candidate_teacher_accuracy": 0.68310546875,
+        "objective": 0.9335539937019348,
+        "score_drift": 0.004818745423108339,
+        "seconds": 1.1852264404296875
+      },
+      "h": 821,
+      "initial": {
+        "ce": 1.432834506034851,
+        "epoch": 0,
+        "measured_candidate_teacher_accuracy": 0.5693359375,
+        "objective": 1.432834506034851,
+        "score_drift": 0.0,
+        "seconds": 0.0
+      },
+      "parameter_count": 6400,
+      "rank": 16,
+      "seconds": 1.1963655948638916,
+      "seed": 20260920,
+      "status": "TRAINED_FIT_ONLY"
+    },
+    {
+      "P": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "U": null,
+      "V": null,
+      "W": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/models/yandex_t2i_official10M_ip_v1/WFree/W.f32",
+      "cal_payload_access": false,
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "dim": 200,
+      "epochs": 40,
+      "family": "WFree",
+      "final": {
+        "ce": 0.03926217183470726,
+        "epoch": 40,
+        "measured_candidate_teacher_accuracy": 1.0,
+        "objective": 0.05659293383359909,
+        "score_drift": 0.0017330762930214405,
+        "seconds": 1.406623125076294
+      },
+      "h": 821,
+      "initial": {
+        "ce": 1.432834506034851,
+        "epoch": 0,
+        "measured_candidate_teacher_accuracy": 0.5693359375,
+        "objective": 1.432834506034851,
+        "score_drift": 0.0,
+        "seconds": 0.0
+      },
+      "parameter_count": 164200,
+      "rank": 16,
+      "seconds": 1.4166755676269531,
+      "seed": 20260920,
+      "status": "TRAINED_FIT_ONLY"
+    }
+  ],
+  "n": 2048,
+  "parity_rows": [
+    0,
+    128,
+    256,
+    384,
+    512,
+    640,
+    768,
+    896,
+    1024,
+    1152,
+    1280,
+    1408,
+    1536,
+    1664,
+    1792,
+    1920
+  ],
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/inputs/yandex_t2i_official10M_ip_v1/fit/queries.f32",
+  "root": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1",
+  "routers": [
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "name": "GT10-hard"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_soft_t1/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-soft-t1.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "name": "GT10-soft-t1"
+    }
+  ],
+  "split": "fit",
+  "splits": [
+    {
+      "n": 2048,
+      "name": "fit",
+      "queries": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/inputs/yandex_t2i_official10M_ip_v1/fit/queries.f32"
+    },
+    {
+      "n": 512,
+      "name": "cal",
+      "queries": "/data/netg/ACSG/entry_method_exploration/20260920_query_representation_pilot_v1/inputs/yandex_t2i_official10M_ip_v1/cal/queries.f32"
+    }
+  ],
+  "threads": 1
+}

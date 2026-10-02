@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "method": "Fast-anchored residual target-basin modes",
+  "heldout_accessed": false,
+  "validation_accessed": false,
+  "fit_rows": [
+    10000,
+    30000
+  ],
+  "route_rows": [
+    0,
+    10000
+  ],
+  "hub_count": 821,
+  "mode_count": 2,
+  "min_mode_samples": 8,
+  "hubs_with_two_modes": 787,
+  "basin_count_min_mean_max": [
+    1,
+    24.360535931790498,
+    82
+  ],
+  "route_top1_changed_fraction": 0.1576,
+  "route_top3_order_changed_fraction": 0.5105,
+  "route_top3_set_changed_fraction": 0.3866,
+  "online_extra_dot_products": 64,
+  "online_graph_probes": 0,
+  "sources": {
+    "queries": {
+      "path": "benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs",
+      "sha256": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2"
+    },
+    "gt": {
+      "path": "benches/datasets/YandexT2I_official10M_ip_v1/gt.router_train.ip.ivecs",
+      "sha256": "5255cc604439ad9d2523dd7526dab85e61b40f0784fd630d5f297ef43af6bdcb"
+    },
+    "base": {
+      "path": "benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+      "sha256": "56d1baa271c79ea280d57ee1c7a8359438ffffc98a75cac799051b13fbdbe0ff"
+    },
+    "hub_ids": {
+      "path": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_cover_hub_ids.bin",
+      "sha256": "ec82834901aacf360049aad43c47065fcd5de90cc0b882d6dd0016de798e2240"
+    },
+    "raw_hubs": {
+      "path": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_cover_hubs.bin",
+      "sha256": "280d9bcf1fc89f4f6ad942e0d01d9b0c0c2c45afeb3c9bfdf0b069a4325072fc"
+    },
+    "primary_prototypes": {
+      "path": "fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_gt_basin_prototype_hubs.bin",
+      "sha256": "d6ffa9769d457829c7c463457aae9042e5fba31008ca63402c46fbbb488f4f22"
+    },
+    "utility_json": {
+      "path": "sparse_utility_datasets/yandex_train10k_top32_l64_128_r10_v1/results.json",
+      "sha256": "baebcf831b54142186cd2dfced73606f28a964c2d349e48d2741a6e68659306e"
+    }
+  },
+  "artifacts": {
+    "modes": {
+      "path": "target_basin_mode_diagnostics/v1/yandex/target_basin_modes.npz",
+      "sha256": "64ab1f77092ee0e53b5764f5fbc079f2810b1b0e51f4933a52bc7ab1e224a2bf",
+      "bytes": 1988066
+    },
+    "routes": {
+      "path": "target_basin_mode_diagnostics/v1/yandex/routes_train10k_top3.i32",
+      "sha256": "f6c2e7b9bd4578bf50e2ecc98db4d943d48425aef72018cd7dba26dce7ec9f86",
+      "bytes": 120000
+    }
+  }
+}

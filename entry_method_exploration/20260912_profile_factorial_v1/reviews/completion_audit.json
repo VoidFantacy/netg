@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "objective": "Execute the E40 target/rest 2x2 control",
+  "scope": "two preselected datasets, four cells each, fixed 1024 queries and full analysis",
+  "requirements": [
+    {
+      "requirement": "same_two_frozen_cases",
+      "status": "PROVEN",
+      "evidence": "config.locked.json and E40 attribution_cases equality"
+    },
+    {
+      "requirement": "all_four_cells_both_datasets",
+      "status": "PROVEN",
+      "evidence": "8 W files, 8 physical graphs, 8 raw result arrays and identities"
+    },
+    {
+      "requirement": "exact_row_level_construction",
+      "status": "PROVEN",
+      "evidence": "independent_verification W_constructions=8"
+    },
+    {
+      "requirement": "original_1024_query_lists",
+      "status": "PROVEN",
+      "evidence": "prequery freeze and independent query identity checks"
+    },
+    {
+      "requirement": "ordinary_HNSW_original_NSG",
+      "status": "PROVEN",
+      "evidence": "native dependency SHA, serialized plain and original kernel verify"
+    },
+    {
+      "requirement": "C_F_full_regression",
+      "status": "PROVEN",
+      "evidence": "4096 outputs and 4 topology/physical graph identities"
+    },
+    {
+      "requirement": "S_R_real_new_search",
+      "status": "PROVEN",
+      "evidence": "native ledgers, raw arrays and 128 parity query results"
+    },
+    {
+      "requirement": "all_query_gain_loss_and_failures",
+      "status": "PROVEN",
+      "evidence": "8192 independent set scores, 8 metrics and 2048 query rows"
+    },
+    {
+      "requirement": "frozen_case_conditions_and_interaction",
+      "status": "PROVEN",
+      "evidence": "4 case queries, 16 case cells, 2048 independently reconstructed interactions"
+    },
+    {
+      "requirement": "bounded_serial_single_thread_execution",
+      "status": "PROVEN",
+      "evidence": "native 8576 NSG / 8448 HNSW / 8 builds, threads1, serial completed jobs"
+    },
+    {
+      "requirement": "no_optimizer_or_new_GT_evaluation_scope",
+      "status": "PROVEN",
+      "evidence": "fixed copied W rows and no training/update path; existing train4096 query/GT inputs"
+    },
+    {
+      "requirement": "old_artifacts_preserved",
+      "status": "PROVEN",
+      "evidence": "all E37 E38 E39 E40 file identities and native NSG dependencies match"
+    },
+    {
+      "requirement": "report_plots_and_document_sync",
+      "status": "PROVEN",
+      "evidence": "report, inspected PNGs and SVG/PDF, history30, root documents, local links"
+    },
+    {
+      "requirement": "no_remaining_active_query_jobs",
+      "status": "PROVEN",
+      "evidence": "both job process handles terminal and no matching live run.py PID"
+    }
+  ],
+  "unresolved_requirements": [],
+  "future_removed_profile_control": "DESIGNED_UNRUN_NOT_PART_OF_THIS_EXECUTION"
+}

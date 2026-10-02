@@ -1,0 +1,68 @@
+{
+  "status": "PASS_READ_ONLY_REUSE_COVERAGE",
+  "started_epoch": 1789271838.525091,
+  "completed_epoch": 1789271853.7789505,
+  "records": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "n": 7952,
+      "same_query_same_triple_existing_collisions_bitwise_checked": 7309,
+      "exact_P_mode_same_triples": 2301,
+      "exact_routes": {
+        "P": {
+          "cached": 7001,
+          "missing": 951,
+          "matched_source_models": {
+            "baseline": 6869,
+            "duplicate3P": 64,
+            "mode3P": 68
+          }
+        },
+        "mode": {
+          "cached": 6473,
+          "missing": 1479,
+          "matched_source_models": {
+            "baseline": 2136,
+            "duplicate3P": 67,
+            "mode3P": 4270
+          }
+        }
+      },
+      "missing_unique_query_triples": 2308
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "n": 7952,
+      "same_query_same_triple_existing_collisions_bitwise_checked": 8677,
+      "exact_P_mode_same_triples": 2711,
+      "exact_routes": {
+        "P": {
+          "cached": 7553,
+          "missing": 399,
+          "matched_source_models": {
+            "baseline": 7444,
+            "duplicate3P": 49,
+            "mode3P": 60
+          }
+        },
+        "mode": {
+          "cached": 7075,
+          "missing": 877,
+          "matched_source_models": {
+            "baseline": 2603,
+            "duplicate3P": 73,
+            "mode3P": 4399
+          }
+        }
+      },
+      "missing_unique_query_triples": 1227
+    }
+  ],
+  "logical_exact_routes": 31808,
+  "missing_unique_query_triples": 3535,
+  "new_NSG": 0,
+  "new_HNSW": 0,
+  "new_GT": 0,
+  "scope": "E66 aux existing same-query canonical-triple output equivalence and E68 exact-route coverage only; all missing outcomes remain unknown. Future actual NSG diagnostic must freeze base/query/kernel/L/input identities, account new and cached calls separately, and validate reuse before new execution; no QPS cache substitution.",
+  "day_goal_complete": false
+}

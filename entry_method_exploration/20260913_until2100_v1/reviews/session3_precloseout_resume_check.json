@@ -1,0 +1,115 @@
+{
+  "status": "PASS_SESSION3_READ_ONLY_RESUME",
+  "epoch": 1789271980.8230338,
+  "checked_files": 3675,
+  "free_GiB": 7.283870697021484,
+  "active_native_or_training": [],
+  "stages": [
+    {
+      "stage": "stage1_support_v1",
+      "status": "COMPLETE_VERIFIED_FIXED_ACTION_SUPPORT",
+      "complete_jobs": 2,
+      "failed_jobs": 0
+    },
+    {
+      "stage": "stage2_missing_targets_v1",
+      "status": "COMPLETE_VERIFIED_MISSING_TARGET_DEVELOPMENT",
+      "complete_jobs": 2,
+      "failed_jobs": 0
+    },
+    {
+      "stage": "stage3_missing_factorial_v1",
+      "status": "COMPLETE_MISSING_FACTORIAL_NO_CAL_GO",
+      "complete_jobs": 2,
+      "failed_jobs": 0
+    },
+    {
+      "stage": "stage4_zero_hit_mass_v1",
+      "status": "COMPLETE_ZERO_MASS_FIT_SIGNAL_NO_CAL_GO",
+      "complete_jobs": 2,
+      "failed_jobs": 0
+    },
+    {
+      "stage": "stage5_frozen_pool_aux_v1",
+      "status": "COMPLETE_FIXED_POOL_AUX_NO_GATE_PASS",
+      "complete_jobs": 2,
+      "failed_jobs": 1
+    },
+    {
+      "stage": "stage6_development_wall_v1",
+      "status": "COMPLETE_DEVELOPMENT_WALL_LOCAL_WEB_SIGNAL_NO_REPLACEMENT",
+      "complete_jobs": 2,
+      "failed_jobs": 0
+    },
+    {
+      "stage": "stage7_multimode_index_v1",
+      "status": "COMPLETE_MULTIMODE_DEVELOPMENT",
+      "complete_jobs": 6,
+      "failed_jobs": 0
+    },
+    {
+      "stage": "stage8_multimode_wall_v1",
+      "status": "COMPLETE_MULTIMODE_DEVELOPMENT_WALL",
+      "complete_jobs": 2,
+      "failed_jobs": 0
+    },
+    {
+      "stage": "stage9_profile_ranking_diagnosis_v1",
+      "status": "COMPLETE_PROFILE_RANKING_DIAGNOSIS",
+      "complete_jobs": 0,
+      "failed_jobs": 0
+    }
+  ],
+  "campaign_state": {
+    "status": "SESSION3_E66_E67_E68_COMPLETE",
+    "started_at": 1789260691.0363264,
+    "writer": "authorized independent research session",
+    "day_goal_complete": false,
+    "session_safe_exit_deadline": 1789272798,
+    "day_deadline": 1789304400,
+    "native_pids": [],
+    "next_action": "Read handoff and run src/resume_inspect_v2.py; choose a new bounded stage7 prospective protocol; final validation still pending",
+    "stage": "E68_COMPLETE",
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "pid_scope": "Sandbox process namespace; tool session managed until process exit",
+    "last_dataset": "yandex_t2i_official10M_ip_v1",
+    "last_native_status": "COMPLETE",
+    "stage1_status": "STOP_SAME_LOCAL_ACTION_CONTINUOUS_EXPANSION",
+    "stage1_NSG": 17830,
+    "stage2_status": "NO_CAL_GO",
+    "total_new_NSG": 2069814,
+    "stage3_status": "NO_CAL_GO",
+    "total_HNSW": 2810656,
+    "total_builds": 346,
+    "formal_QPS_points": 100,
+    "session_safe_boundary_epoch": 1789268162.5871053,
+    "stage4_status": "NO_CAL_GO_FIT_SIGNAL",
+    "stage5_status": "NO_AUX_GATE_PASS",
+    "session_safe_boundary_local_time": "2026-09-13 10:56:02 +0800",
+    "session2_NSG": 877862,
+    "session2_HNSW": 857472,
+    "session2_builds": 6,
+    "formal_QPS_scope": "historical development previously used for E64 selection",
+    "final_validation_QPS_points": 0,
+    "stage6_status": "COMPLETE_DEVELOPMENT_WALL_LOCAL_WEB_SIGNAL_NO_REPLACEMENT",
+    "stop_new_training_local": "2026-09-13 20:00 +0800",
+    "stop_new_queries_local": "2026-09-13 20:40 +0800",
+    "source_graph_loads_copies_E64_E65": 49,
+    "plain_count_loads_E64_E65": 98,
+    "split": "aux",
+    "stage7_status": "COMPLETE_MULTIMODE_DEVELOPMENT",
+    "session3_synthetic_HNSW": 15,
+    "session3_synthetic_builds": 1,
+    "stage8_status": "COMPLETE_MULTIMODE_DEVELOPMENT_WALL",
+    "formal_wall_batches": 500,
+    "stage9_status": "COMPLETE_PROFILE_RANKING_DIAGNOSIS",
+    "session3_NSG": 1126608,
+    "session3_HNSW": 982080,
+    "session3_builds": 4,
+    "session3_offline_full_score_references": 111808,
+    "session3_duplicate_reference_aliases": 55904
+  },
+  "next_design": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/next_stage_design_session3_v2.md",
+  "next_action": "Use a new independent version and prospective protocol. Never rerun completed stage1..9 runners.",
+  "data_roles": "All fit/cal/audit/aux7952 are historical and exposed; E64 aux is selection training; E65/E67 are development walls; E68 offline scores are not NSG utility; final E34 inputs excluded today."
+}

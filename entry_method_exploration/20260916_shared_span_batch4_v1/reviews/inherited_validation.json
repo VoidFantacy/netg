@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "source_experiment": "E101",
+  "unchanged_kernel_sha256": "615519c00a1ef07f4cbc6571912befb267778edbee7f5d55eec7381070ddb6e6",
+  "compatibility_binary_sha256": "dcecd153ac9522c7a115bbf8cfd19585d43735ae695a710a5cee7e34f6ab0384",
+  "regression_reports": {
+    "/data/netg/ACSG/entry_method_exploration/20260916_faiss_nsg_comparison_v1/reviews/regression.json": {
+      "covers": "ties, duplicate entries, empty-entry fallback, holes, invalid neighbors, trailing padding, short result sets, K1/K100, visited wraparound, distance call order, actual Faiss scalar/batch4 bits",
+      "dimensions": [
+        4,
+        32,
+        512
+      ],
+      "metrics": [
+        "IP",
+        "L2"
+      ],
+      "paired_cases": 6480,
+      "status": "PASS",
+      "synthetic_search_calls": 12960
+    },
+    "/data/netg/ACSG/entry_method_exploration/20260916_faiss_nsg_comparison_v1/reviews/regression_sanitized.json": {
+      "covers": "ties, duplicate entries, empty-entry fallback, holes, invalid neighbors, trailing padding, short result sets, K1/K100, visited wraparound, distance call order, actual Faiss scalar/batch4 bits",
+      "dimensions": [
+        4,
+        32,
+        512
+      ],
+      "metrics": [
+        "IP",
+        "L2"
+      ],
+      "paired_cases": 6480,
+      "status": "PASS",
+      "synthetic_search_calls": 12960
+    }
+  },
+  "new_synthetic_searches": 0,
+  "reason": "Unchanged kernel and compatibility executable; new combined benchmark validates every warm/plain/count against E99."
+}

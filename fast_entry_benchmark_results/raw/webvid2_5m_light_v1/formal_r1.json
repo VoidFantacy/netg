@@ -1,0 +1,99 @@
+{
+    "artifact_version": "roargraph-webvid2.5m-ip-v1",
+    "dataset": "webvid2_5m_light_v1",
+    "metric": "ip",
+    "normalization": "source_unit_norm_no_additional",
+    "num_queries": 10000,
+    "num_runs": 3,
+    "results": [
+        {
+            "method_name": "0. Medoid (Baseline)",
+            "performance": [
+                {
+                    "qps": 3223.5807659490215,
+                    "qps_std": 16.147974884305096,
+                    "recall": 0.6263999938964844,
+                    "search_L": 64
+                },
+                {
+                    "qps": 1891.292937003087,
+                    "qps_std": 2.663937318314172,
+                    "recall": 0.7182999849319458,
+                    "search_L": 128
+                },
+                {
+                    "qps": 1306.1133914932102,
+                    "qps_std": 6.432024472291785,
+                    "recall": 0.7763000130653381,
+                    "search_L": 200
+                },
+                {
+                    "qps": 696.8810878744963,
+                    "qps_std": 4.20038048980192,
+                    "recall": 0.8442000150680542,
+                    "search_L": 400
+                }
+            ]
+        },
+        {
+            "method_name": "2. Raw HNSW Routing (Ablation Baseline)",
+            "performance": [
+                {
+                    "qps": 3647.5172932412065,
+                    "qps_std": 3.005889562127055,
+                    "recall": 0.6340000033378601,
+                    "search_L": 64
+                },
+                {
+                    "qps": 2030.6568382689422,
+                    "qps_std": 2.417008373462357,
+                    "recall": 0.7300000190734863,
+                    "search_L": 128
+                },
+                {
+                    "qps": 1348.6760065676528,
+                    "qps_std": 6.646386426159473,
+                    "recall": 0.7867000102996826,
+                    "search_L": 200
+                },
+                {
+                    "qps": 716.4592932964433,
+                    "qps_std": 6.17504459957793,
+                    "recall": 0.8521999716758728,
+                    "search_L": 400
+                }
+            ]
+        },
+        {
+            "method_name": "5. Asym-Neural HNSW Routing (0ms inference)",
+            "performance": [
+                {
+                    "qps": 3465.310102710359,
+                    "qps_std": 10.19313482179722,
+                    "recall": 0.6660000085830688,
+                    "search_L": 64
+                },
+                {
+                    "qps": 1981.1599866079177,
+                    "qps_std": 10.387971647177851,
+                    "recall": 0.7477999925613403,
+                    "search_L": 128
+                },
+                {
+                    "qps": 1357.9577546104153,
+                    "qps_std": 3.599430559038371,
+                    "recall": 0.7940000295639038,
+                    "search_L": 200
+                },
+                {
+                    "qps": 713.6806776218474,
+                    "qps_std": 4.807579078623295,
+                    "recall": 0.8539000153541565,
+                    "search_L": 400
+                }
+            ]
+        }
+    ],
+    "split": "held-out-test",
+    "top_k": 1
+}

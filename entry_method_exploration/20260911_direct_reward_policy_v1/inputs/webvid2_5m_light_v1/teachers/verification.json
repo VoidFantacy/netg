@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "dataset": "webvid2_5m_light_v1",
+  "logical_labels_verified": 1120000,
+  "new_label_calls": 0,
+  "statistics": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "group": "all",
+      "queries": 20000,
+      "maxhit_ties_mean": 43.55395,
+      "maxhit_ties_median": 56.0,
+      "equivalent_mean": 9.3447,
+      "equivalent_median": 6.0,
+      "multiple_fraction": 0.82245,
+      "all56_fraction": 0.00115,
+      "baseline_recall_pct": 75.01599999999999,
+      "teacher_recall_pct": 79.642,
+      "baseline_graph_ndc": 1642.9354,
+      "teacher_graph_ndc": 1621.2892
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "group": "headroom",
+      "queries": 4234,
+      "maxhit_ties_mean": 13.358526216343883,
+      "maxhit_ties_median": 10.0,
+      "equivalent_mean": 5.917808219178082,
+      "equivalent_median": 4.0,
+      "multiple_fraction": 0.7333490788852149,
+      "all56_fraction": 0.0,
+      "baseline_recall_pct": 49.65281058101087,
+      "teacher_recall_pct": 71.50448748228625,
+      "baseline_graph_ndc": 1729.552905054322,
+      "teacher_graph_ndc": 1838.9855928200284
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "group": "no_headroom",
+      "queries": 15766,
+      "maxhit_ties_mean": 51.66300900672333,
+      "maxhit_ties_median": 56.0,
+      "equivalent_mean": 10.26500063427629,
+      "equivalent_median": 6.0,
+      "multiple_fraction": 0.8463782823798046,
+      "all56_fraction": 0.001458835468730179,
+      "baseline_recall_pct": 81.82734999365724,
+      "teacher_recall_pct": 81.82734999365724,
+      "baseline_graph_ndc": 1619.6740454141825,
+      "teacher_graph_ndc": 1562.826271723963
+    }
+  ],
+  "source_files": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/labels/webvid2_5m_light_v1/ids.i32",
+      "bytes": 44800000,
+      "mtime_ns": 1789089930744826339,
+      "sha256": "a99fb0c3e7cfcd810add8e7d7448f69b7b9a7c1a10c2bced57e364c0813e5310"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/labels/webvid2_5m_light_v1/hits.u8",
+      "bytes": 1120000,
+      "mtime_ns": 1789089930744826339,
+      "sha256": "5253a7cedef3c864402ffc07846ebcebb72130e684ab6ed3d9ae8d4245a1faf0"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/labels/webvid2_5m_light_v1/masks.u16",
+      "bytes": 2240000,
+      "mtime_ns": 1789089930744826339,
+      "sha256": "2d6ff1a6d88ed15196eec2a2a3b370592778a0c2bdd9a3f942e1b04ab9a8aa32"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/labels/webvid2_5m_light_v1/graph_ndc.u32",
+      "bytes": 4480000,
+      "mtime_ns": 1789089930744826339,
+      "sha256": "6ac61d6469d462c724b454e200d693cd918a90de20f7d7419e4ea47933ec7010"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/labels/webvid2_5m_light_v1/teacher_slot.i32",
+      "bytes": 80000,
+      "mtime_ns": 1789090011453016805,
+      "sha256": "0eb543dca3fcaed02af46b8262b502b93526b5bc3970934c0fc7214a6c08dac4"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/labels/webvid2_5m_light_v1/teacher.i32",
+      "bytes": 240000,
+      "mtime_ns": 1789090011453016805,
+      "sha256": "57073ac94c0411a32340fc8425c655edf683a791683eef27e6c1773a0d332534"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/inputs/webvid2_5m_light_v1/proposals/triples.i32",
+      "bytes": 13440000,
+      "mtime_ns": 1789089885712720067,
+      "sha256": "fea935d9e08eb71dc49e26509909c9d7e090bb930b04fd3ed22ddbf39e6335cf"
+    }
+  ],
+  "teacher_files": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/inputs/webvid2_5m_light_v1/teachers/headroom.u8",
+      "bytes": 20000,
+      "mtime_ns": 1789098470722119099,
+      "sha256": "828f26f113e6aa4c443e59ed2619190408e67940f9a5eda1f885e8c58765891a"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/inputs/webvid2_5m_light_v1/teachers/teacher_slot.i32",
+      "bytes": 80000,
+      "mtime_ns": 1789098470722119099,
+      "sha256": "0eb543dca3fcaed02af46b8262b502b93526b5bc3970934c0fc7214a6c08dac4"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/inputs/webvid2_5m_light_v1/teachers/single.u8",
+      "bytes": 1120000,
+      "mtime_ns": 1789098470718119089,
+      "sha256": "66e968a4e962bd99754f7771d09f8d7b35a84405f090f79f2e19ad12fc085e04"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/inputs/webvid2_5m_light_v1/teachers/multi.u8",
+      "bytes": 1120000,
+      "mtime_ns": 1789098470722119099,
+      "sha256": "27c0bc6f580d7355122ffdb0db52bd4c0e2b73ddb316be076e3bbea95b7a312c"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260911_equivalent_teacher_sets_v1/inputs/webvid2_5m_light_v1/teachers/baseline_slot.i32",
+      "bytes": 80000,
+      "mtime_ns": 1789098470722119099,
+      "sha256": "d10458a40b8f46f744533dd2c7d307a6ea898e297846b01ca8d0aea449f50015"
+    }
+  ]
+}

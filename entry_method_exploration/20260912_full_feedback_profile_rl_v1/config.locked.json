@@ -1,0 +1,37 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "arms": [
+    "rl",
+    "es"
+  ],
+  "seeds": [
+    20260921,
+    20260922
+  ],
+  "steps": 200,
+  "population": 8,
+  "full_train_queries": 4096,
+  "rank": 16,
+  "sigma": 0.3,
+  "NSG_hard_cap": 800000,
+  "per_run_reserved_NSG": 100000,
+  "HNSW_expected": 59107328,
+  "HNSW_hard_cap": 60000000,
+  "builds_expected": 14424,
+  "build_hard_cap": 15000,
+  "per_run_fixed_NSG": 15744,
+  "per_run_HNSW": 7388416,
+  "per_run_builds": 1803,
+  "optimizer_updates_expected": 1600,
+  "threads": 1,
+  "train_stop_epoch": 1789212900,
+  "conservative_projection_seconds": 2951.911891320051,
+  "projection_latest_finish_epoch": 1789212300,
+  "checkpoint_rows": "train4096 + monitor1024, aligned E37 original5120",
+  "new_GT": 0,
+  "new_development_queries": 0,
+  "QPS_points": 0
+}

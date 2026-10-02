@@ -1,0 +1,26 @@
+{
+  "schema_version": 2,
+  "status": "COMPLETE",
+  "stage": "P3",
+  "dataset": "p3_synthetic_fixture",
+  "dim": 8,
+  "base_nodes": 768,
+  "region_count": 64,
+  "coarse_count": 16,
+  "leaves_per_coarse": 16,
+  "parent_rule": "leaf_id // 16",
+  "active_regions": 4,
+  "portals_per_region": 3,
+  "oracle_diagnostic_only": true,
+  "portal_rule": "frequency3",
+  "lambda": 0,
+  "labels_file": "labels.u16",
+  "labels_sha256": "2ecc1e72e9f7aa32d41850725155f3b6fbf861f05bf1b7dc9b819d44d12ee13f",
+  "portals_file": "portals.i32",
+  "portals_sha256": "85eba7cd6f21d78c263eb97bd5770e73dd6ee1a54d33ce3c9490212e0cf72fad",
+  "fit_range": [
+    10000,
+    30000
+  ],
+  "synthetic_fixture_only": true
+}

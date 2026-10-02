@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "historical_thresholds": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "target": 0.9,
+      "covered": true
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "target": 0.95,
+      "covered": false
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "target": 0.9,
+      "covered": true
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "target": 0.95,
+      "covered": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "target": 0.9,
+      "covered": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "target": 0.95,
+      "covered": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "target": 0.9,
+      "covered": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "target": 0.95,
+      "covered": true
+    }
+  ],
+  "historical_cost_basis": "Direct average of three recorded batch wall times divided by query count; no new timing",
+  "cross_query_cache_counterexample": {
+    "baseline_total_us": 160,
+    "invalid_spliced_prediction_us": 130,
+    "actual_policy_total_us": 180
+  },
+  "same_route_state_opposite_gain_counterexample": {
+    "coarse_state_value": "0",
+    "fine_state_value": "0.05"
+  },
+  "new_searches": 0,
+  "new_training": 0
+}

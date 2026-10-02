@@ -1,0 +1,94 @@
+{
+  "status": "PASS_CACHED_IMPLEMENTATION_CHECKS",
+  "new_training": 0,
+  "new_ANN": 0,
+  "new_graph_build": 0,
+  "new_GT": 0,
+  "new_QPS": 0,
+  "definition": "Route accuracy and cached L64 single-entry success are diagnostics, not Recall@1 of deployed top3 search.",
+  "source_sha256": "9254b12dfa5a19f60378de82afec8b70619d33ae503ffd52342d48db4f2f6d6e",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "monitor_usable": 843,
+      "triplets": 624350,
+      "identical_positive_negative_query_triplets": 57,
+      "represented_hubs": 512,
+      "first_loss": 0.9738562915889755,
+      "last_loss": 0.7659927235747908,
+      "best_epoch": 12,
+      "model_export_max_abs": 0.0,
+      "batch_singleton_max_abs": 1.0728836059570312e-06,
+      "subgraphs_at_1000_node_cap": 512,
+      "subgraph_nodes_min": 1000,
+      "subgraph_nodes_max": 1000,
+      "cached_monitor_controls": {
+        "raw_hub_cosine": {
+          "exact_min_hop_route_acc": 0.11387900355871886,
+          "selected_cached_single_entry_gt1_success_all1024": 0.634765625,
+          "unique_selected_hubs": 293
+        },
+        "GATE_learned": {
+          "exact_min_hop_route_acc": 0.0711743772241993,
+          "selected_cached_single_entry_gt1_success_all1024": 0.66015625,
+          "unique_selected_hubs": 140
+        }
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "monitor_usable": 1005,
+      "triplets": 714600,
+      "identical_positive_negative_query_triplets": 30,
+      "represented_hubs": 508,
+      "first_loss": 0.9143480811998552,
+      "last_loss": 0.5564275125165363,
+      "best_epoch": 24,
+      "model_export_max_abs": 7.450580596923828e-08,
+      "batch_singleton_max_abs": 4.3958425521850586e-07,
+      "subgraphs_at_1000_node_cap": 512,
+      "subgraph_nodes_min": 1000,
+      "subgraph_nodes_max": 1000,
+      "cached_monitor_controls": {
+        "raw_hub_cosine": {
+          "exact_min_hop_route_acc": 0.16218905472636816,
+          "selected_cached_single_entry_gt1_success_all1024": 0.84375,
+          "unique_selected_hubs": 386
+        },
+        "GATE_learned": {
+          "exact_min_hop_route_acc": 0.09751243781094528,
+          "selected_cached_single_entry_gt1_success_all1024": 0.853515625,
+          "unique_selected_hubs": 301
+        }
+      }
+    },
+    {
+      "dataset": "laion10m_acsg_v1",
+      "monitor_usable": 859,
+      "triplets": 707750,
+      "identical_positive_negative_query_triplets": 62,
+      "represented_hubs": 512,
+      "first_loss": 0.9536531688829312,
+      "last_loss": 0.7145587523550332,
+      "best_epoch": 42,
+      "model_export_max_abs": 0.0,
+      "batch_singleton_max_abs": 9.5367431640625e-07,
+      "subgraphs_at_1000_node_cap": 512,
+      "subgraph_nodes_min": 1000,
+      "subgraph_nodes_max": 1000,
+      "cached_monitor_controls": {
+        "raw_hub_cosine": {
+          "exact_min_hop_route_acc": 0.13154831199068684,
+          "selected_cached_single_entry_gt1_success_all1024": 0.6669921875,
+          "unique_selected_hubs": 401
+        },
+        "GATE_learned": {
+          "exact_min_hop_route_acc": 0.059371362048894066,
+          "selected_cached_single_entry_gt1_success_all1024": 0.689453125,
+          "unique_selected_hubs": 180
+        }
+      }
+    }
+  ],
+  "synthetic_legacy_cross_hub_attention_max_abs": 0.9275150895118713
+}

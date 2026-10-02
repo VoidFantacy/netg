@@ -1,0 +1,29 @@
+{
+  "command": [
+    "c++",
+    "-std=c++17",
+    "-O3",
+    "-g",
+    "-march=native",
+    "-fopenmp",
+    "-fPIC",
+    "-I/data/netg/ACSG/build/_deps/json-src/include",
+    "-I/data/netg/ACSG/entry_method_exploration/20260916_optimized_five_dataset_r1_r100_v1/src",
+    "-I/data/netg/ACSG/entry_method_exploration/20260916_optimized_five_dataset_r1_r100_v1/src/common",
+    "-I/data/netg/ACSG",
+    "-I/data/netg/ACSG/faiss",
+    "/data/netg/ACSG/entry_method_exploration/20260916_optimized_five_dataset_r1_r100_v1/src/evaluate.cpp",
+    "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+    "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+    "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+    "-lopenblas",
+    "-llapack",
+    "-lz",
+    "-lpthread",
+    "-ldl",
+    "-o",
+    "/data/netg/ACSG/entry_method_exploration/20260916_optimized_five_dataset_r1_r100_v1/bin/evaluate"
+  ],
+  "returncode": 0,
+  "seconds": 12.063671112060547
+}

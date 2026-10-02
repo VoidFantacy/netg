@@ -1,0 +1,2482 @@
+{
+  "status": "COMPUTED_PENDING_AUDIT",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "methods": {
+        "Uniform": {
+          "chord2_mean": 1.4890778986631923,
+          "ratio_of_mean_chord2_to_Uniform": 1.0,
+          "mean_paired_chord2_ratio": 1.0,
+          "paired_chord2_ratio_range": [
+            1.0,
+            1.0
+          ],
+          "halves_ratio_of_mean_chord2_to_Uniform": [
+            1.0,
+            1.0
+          ],
+          "replicates_better_than_Uniform": 0,
+          "approx_tangent_risk_mean": 3.074874914713131,
+          "truth_tangent_risk_mean": 1.0118981832734733,
+          "raw_risk_mean": 1161.9382179926163,
+          "minimum_radial_ratio": 0.3246301133177522,
+          "nonpositive_radial_hub_replicates": 0,
+          "r0_chord2": 1.474111237976793,
+          "r0_ratio_to_Uniform": 1.0
+        },
+        "LeaveOneOutTree": {
+          "chord2_mean": 1.3765994643230615,
+          "ratio_of_mean_chord2_to_Uniform": 0.9244643719169376,
+          "mean_paired_chord2_ratio": 0.924643456112787,
+          "paired_chord2_ratio_range": [
+            0.8684255541575548,
+            1.0013329944049614
+          ],
+          "halves_ratio_of_mean_chord2_to_Uniform": [
+            0.915176052933055,
+            0.9336838358597076
+          ],
+          "replicates_better_than_Uniform": 15,
+          "approx_tangent_risk_mean": 2.861719641618775,
+          "truth_tangent_risk_mean": 0.9556969696454034,
+          "raw_risk_mean": 1061.7032139819003,
+          "minimum_radial_ratio": 0.3451219096802012,
+          "nonpositive_radial_hub_replicates": 0,
+          "r0_chord2": 1.3374302932023707,
+          "r0_ratio_to_Uniform": 0.9072790836585602
+        },
+        "SelfIncludedTree": {
+          "chord2_mean": 1.3927104850737997,
+          "ratio_of_mean_chord2_to_Uniform": 0.9352838332528435,
+          "mean_paired_chord2_ratio": 0.9354520695662216,
+          "paired_chord2_ratio_range": [
+            0.8224417404338203,
+            1.024217872683971
+          ],
+          "halves_ratio_of_mean_chord2_to_Uniform": [
+            0.9420897622569506,
+            0.9285283571371652
+          ],
+          "replicates_better_than_Uniform": 13,
+          "approx_tangent_risk_mean": 2.903056029038952,
+          "truth_tangent_risk_mean": 0.9611306619913706,
+          "raw_risk_mean": 1060.1769602327581,
+          "minimum_radial_ratio": 0.34563338831297574,
+          "nonpositive_radial_hub_replicates": 0,
+          "r0_chord2": 1.357043547042202,
+          "r0_ratio_to_Uniform": 0.92058422192394
+        },
+        "EnergyTree": {
+          "chord2_mean": 1.3868684432510197,
+          "ratio_of_mean_chord2_to_Uniform": 0.9313605718653603,
+          "mean_paired_chord2_ratio": 0.9317968107875693,
+          "paired_chord2_ratio_range": [
+            0.8049990066680535,
+            1.0440287370486785
+          ],
+          "halves_ratio_of_mean_chord2_to_Uniform": [
+            0.9423211632832078,
+            0.9204812321760554
+          ],
+          "replicates_better_than_Uniform": 13,
+          "approx_tangent_risk_mean": 2.891323244284907,
+          "truth_tangent_risk_mean": 0.9581263925953837,
+          "raw_risk_mean": 1057.1601247192893,
+          "minimum_radial_ratio": 0.3309928553307857,
+          "nonpositive_radial_hub_replicates": 0,
+          "r0_chord2": 1.3269637958860119,
+          "r0_ratio_to_Uniform": 0.9001788750401631
+        },
+        "ShuffledLeaveOneOutTree": {
+          "chord2_mean": 1.4530410758418577,
+          "ratio_of_mean_chord2_to_Uniform": 0.9757992359877973,
+          "mean_paired_chord2_ratio": 0.9766394530026811,
+          "paired_chord2_ratio_range": [
+            0.8199927557469402,
+            1.1049849485355456
+          ],
+          "halves_ratio_of_mean_chord2_to_Uniform": [
+            0.9771976933747997,
+            0.9744111454756885
+          ],
+          "replicates_better_than_Uniform": 10,
+          "approx_tangent_risk_mean": 3.0156552371985246,
+          "truth_tangent_risk_mean": 0.9958046046530521,
+          "raw_risk_mean": 1138.5367424449114,
+          "minimum_radial_ratio": 0.3333707149930212,
+          "nonpositive_radial_hub_replicates": 0,
+          "r0_chord2": 1.3621632925846008,
+          "r0_ratio_to_Uniform": 0.9240573285732222
+        }
+      },
+      "score_diagnostics": [
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.0002550008499244925
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0005340836721092841,
+            "pilot_target_truth_correlation": 0.8395146376586742,
+            "pilot_target_bias": 1.6276702197379316e-05,
+            "pilot_target_MSE": 2.987657911664254e-06,
+            "accepted_prediction_truth_correlations": [
+              0.06891275988104964,
+              0.06097058313994582,
+              0.0772302777337705
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.626407853082757e-06,
+              5.836089784488742e-06,
+              5.416725921676772e-06
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0005091926056421127,
+            "pilot_target_truth_correlation": 0.8289101580080634,
+            "pilot_target_bias": 0.0019141327218650554,
+            "pilot_target_MSE": 0.00020259810880343747,
+            "accepted_prediction_truth_correlations": [
+              0.07086736013904912,
+              0.06038204564057581,
+              0.08172125738153933
+            ],
+            "accepted_prediction_truth_MSE": [
+              1.8179038562267444e-05,
+              1.8510640265902275e-05,
+              1.7847436858632613e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0005555868308937714,
+            "pilot_target_truth_correlation": 0.7395757165828158,
+            "pilot_target_bias": -0.00030970685206001627,
+            "pilot_target_MSE": 5.493665521039605e-06,
+            "accepted_prediction_truth_correlations": [
+              0.07573511367991045,
+              0.06545139784308379,
+              0.08642070528252761
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.579188800227052e-06,
+              5.7724811327355e-06,
+              5.385896467718604e-06
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.000472695418888229,
+            "pilot_target_truth_correlation": 0.1689489336470792,
+            "pilot_target_bias": 1.6276702197379316e-05,
+            "pilot_target_MSE": 1.4196912718681397e-05,
+            "accepted_prediction_truth_correlations": [
+              0.03219193515103867,
+              0.04549727341682688,
+              0.018583588361854846
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.6267882387316586e-06,
+              5.795014989175274e-06,
+              5.458561488288042e-06
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.0002523451087448735
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0004475116284857559,
+            "pilot_target_truth_correlation": 0.8608258842011705,
+            "pilot_target_bias": 1.3110203610215661e-05,
+            "pilot_target_MSE": 1.2007532825030045e-06,
+            "accepted_prediction_truth_correlations": [
+              0.05892910577947629,
+              0.07260444102119876,
+              0.050572741100539324
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.809874978090198e-06,
+              3.934434446382964e-06,
+              7.685315509797433e-06
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0005047150207638763,
+            "pilot_target_truth_correlation": 0.7440289959250455,
+            "pilot_target_bias": 0.0012326223229002526,
+            "pilot_target_MSE": 0.00010512327475147346,
+            "accepted_prediction_truth_correlations": [
+              0.04294700522303819,
+              0.05265109059319256,
+              0.03696775499951449
+            ],
+            "accepted_prediction_truth_MSE": [
+              1.0000029419576137e-05,
+              8.163628736005631e-06,
+              1.1836430103146647e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0005047150207638763,
+            "pilot_target_truth_correlation": 0.6925287991959159,
+            "pilot_target_bias": -0.00018426638982391185,
+            "pilot_target_MSE": 1.6272173990644884e-06,
+            "accepted_prediction_truth_correlations": [
+              0.05329331874771326,
+              0.06895584595472588,
+              0.04333434648433876
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.865442417181625e-06,
+              3.979745200456356e-06,
+              7.751139633906894e-06
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00013452871528794977,
+            "pilot_target_truth_correlation": -0.007829019505928276,
+            "pilot_target_bias": 1.3110203610215654e-05,
+            "pilot_target_MSE": 6.3528483409424385e-06,
+            "accepted_prediction_truth_correlations": [
+              -0.005385398841838571,
+              -0.024447162492554162,
+              0.007680351962554657
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.882725913537718e-06,
+              4.024296062768525e-06,
+              7.741155764306909e-06
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.00025451544805673107
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.00028627184231705627,
+            "pilot_target_truth_correlation": 0.8273730566791739,
+            "pilot_target_bias": 0.00034010805064678846,
+            "pilot_target_MSE": 8.815179935221603e-05,
+            "accepted_prediction_truth_correlations": [
+              -0.003804442476053162,
+              -0.0005565164913576682,
+              -0.007832636796787102
+            ],
+            "accepted_prediction_truth_MSE": [
+              7.02465932530625e-06,
+              7.847250998482582e-06,
+              6.2020676521299165e-06
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.00018912110210026785,
+            "pilot_target_truth_correlation": 0.9204119643425874,
+            "pilot_target_bias": 0.0037055190612235987,
+            "pilot_target_MSE": 0.002866987952564096,
+            "accepted_prediction_truth_correlations": [
+              0.01655986408250066,
+              0.0050622141528640485,
+              0.03045482846162574
+            ],
+            "accepted_prediction_truth_MSE": [
+              4.377447663759959e-05,
+              4.493448300193793e-05,
+              4.261447027326126e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.00018912110210026785,
+            "pilot_target_truth_correlation": 0.9042522897457858,
+            "pilot_target_bias": -0.0003227318581986833,
+            "pilot_target_MSE": 1.1477152044454305e-05,
+            "accepted_prediction_truth_correlations": [
+              0.012944071316262771,
+              0.0016536677474147108,
+              0.026558638617102663
+            ],
+            "accepted_prediction_truth_MSE": [
+              4.828846582829531e-06,
+              5.665813804239537e-06,
+              3.9918793614195225e-06
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00013548102439245722,
+            "pilot_target_truth_correlation": -0.0023345021500111402,
+            "pilot_target_bias": 0.0003401080506467884,
+            "pilot_target_MSE": 0.00018588654180002776,
+            "accepted_prediction_truth_correlations": [
+              -0.029395522629994186,
+              -0.029084943330988534,
+              -0.030062284262119463
+            ],
+            "accepted_prediction_truth_MSE": [
+              7.430506976843999e-06,
+              8.294819939893534e-06,
+              6.566194013794466e-06
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.0003111268120757507
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0006252130847680683,
+            "pilot_target_truth_correlation": 0.8888654507608788,
+            "pilot_target_bias": -7.724476739383233e-06,
+            "pilot_target_MSE": 1.2779041975199969e-06,
+            "accepted_prediction_truth_correlations": [
+              0.06576422103797756,
+              0.07350479295667196,
+              0.05718503787516734
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.632993330715825e-06,
+              6.307836010275723e-06,
+              4.958150651155927e-06
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0004417285233179764,
+            "pilot_target_truth_correlation": 0.7480413800863633,
+            "pilot_target_bias": 0.0015893287042849096,
+            "pilot_target_MSE": 0.00017547761816842135,
+            "accepted_prediction_truth_correlations": [
+              0.052412519398774914,
+              0.05076272113946673,
+              0.05450312305129017
+            ],
+            "accepted_prediction_truth_MSE": [
+              1.1390507047878313e-05,
+              1.2052103872783592e-05,
+              1.072891022297303e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0004417285233179764,
+            "pilot_target_truth_correlation": 0.6617578925261955,
+            "pilot_target_bias": -0.000286827190738129,
+            "pilot_target_MSE": 4.782369389203612e-06,
+            "accepted_prediction_truth_correlations": [
+              0.0417095617765897,
+              0.04017657922261113,
+              0.04362194454855075
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.657629926285161e-06,
+              6.355269119487744e-06,
+              4.959990733082577e-06
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.0003808337480365197,
+            "pilot_target_truth_correlation": 0.009368858140337747,
+            "pilot_target_bias": -7.724476739383257e-06,
+            "pilot_target_MSE": 1.1376952246964784e-05,
+            "accepted_prediction_truth_correlations": [
+              -0.0005417936089755997,
+              -0.004159415322799466,
+              0.00351173416224245
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.726692252469699e-06,
+              6.426051929000634e-06,
+              5.027332575938764e-06
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.0002727471995951139
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.00036826118885675135,
+            "pilot_target_truth_correlation": 0.8943912425043469,
+            "pilot_target_bias": -1.1525563894022008e-05,
+            "pilot_target_MSE": 3.657409910719822e-06,
+            "accepted_prediction_truth_correlations": [
+              0.03569654834549511,
+              0.03056925506659366,
+              0.040172409472310044
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.15220254446472e-06,
+              3.54955575884079e-06,
+              6.754849330088649e-06
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0002156654045755905,
+            "pilot_target_truth_correlation": 0.9485749198361871,
+            "pilot_target_bias": 0.003197636073301101,
+            "pilot_target_MSE": 0.002109923534852796,
+            "accepted_prediction_truth_correlations": [
+              0.010878980315624806,
+              0.0071996376728256425,
+              0.013828274720515114
+            ],
+            "accepted_prediction_truth_MSE": [
+              4.310530940993267e-05,
+              4.194778925716787e-05,
+              4.426282956269748e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0002156654045755905,
+            "pilot_target_truth_correlation": 0.9432340386424372,
+            "pilot_target_bias": -0.0002971443418606665,
+            "pilot_target_MSE": 8.99582190506852e-06,
+            "accepted_prediction_truth_correlations": [
+              0.008978581446543258,
+              0.005262421602001815,
+              0.011904632433875717
+            ],
+            "accepted_prediction_truth_MSE": [
+              4.9869140681399166e-06,
+              3.345113705384516e-06,
+              6.628714430895318e-06
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00030623827530222976,
+            "pilot_target_truth_correlation": -0.007609920734318701,
+            "pilot_target_bias": -1.1525563894021967e-05,
+            "pilot_target_MSE": 3.409416314091695e-05,
+            "accepted_prediction_truth_correlations": [
+              -0.024312710271012075,
+              -0.01688102996427747,
+              -0.03009486668836838
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.137521487997398e-06,
+              3.4953233481192946e-06,
+              6.779719627875503e-06
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.000312417478489139
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.00040784308947070164,
+            "pilot_target_truth_correlation": 0.9058127823169299,
+            "pilot_target_bias": -4.820448259580645e-05,
+            "pilot_target_MSE": 5.132668356454479e-07,
+            "accepted_prediction_truth_correlations": [
+              0.021195294653317643,
+              0.01856395834698647,
+              0.0264593621025515
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.805083589140056e-06,
+              7.997201652137535e-06,
+              3.612965526142578e-06
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0006286489525842509,
+            "pilot_target_truth_correlation": 0.6362953782938775,
+            "pilot_target_bias": 0.0017864568732823803,
+            "pilot_target_MSE": 0.00013207603400279213,
+            "accepted_prediction_truth_correlations": [
+              0.07357549730820657,
+              0.06812057584350187,
+              0.08512750350668485
+            ],
+            "accepted_prediction_truth_MSE": [
+              1.2821403845193822e-05,
+              1.4803356305396216e-05,
+              1.0839451384991431e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0006286489525842509,
+            "pilot_target_truth_correlation": 0.5653648050531799,
+            "pilot_target_bias": -0.0002108834567410201,
+            "pilot_target_MSE": 2.3328614056392717e-06,
+            "accepted_prediction_truth_correlations": [
+              0.07414453518539801,
+              0.06936701144323863,
+              0.08463578342106193
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.808026694959517e-06,
+              8.014095032965517e-06,
+              3.6019583569535174e-06
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.0003939872676727375,
+            "pilot_target_truth_correlation": 0.002560716183769298,
+            "pilot_target_bias": -4.820448259580646e-05,
+            "pilot_target_MSE": 4.966602527916012e-06,
+            "accepted_prediction_truth_correlations": [
+              0.016112107882131067,
+              0.012791347487499431,
+              0.02140613176861247
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.8122742524286686e-06,
+              8.005719312912423e-06,
+              3.6188291919449145e-06
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.0002748699517815641
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.000739091832583908,
+            "pilot_target_truth_correlation": 0.6712062134493288,
+            "pilot_target_bias": -0.00011033808905682132,
+            "pilot_target_MSE": 3.3422491685124316e-06,
+            "accepted_prediction_truth_correlations": [
+              0.08805187622568554,
+              0.11067519704578094,
+              0.07385072894787426
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.571122467800606e-06,
+              3.7484762909334336e-06,
+              7.393768644667781e-06
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.000341473071880822,
+            "pilot_target_truth_correlation": 0.8336374786485464,
+            "pilot_target_bias": 0.0015661660653265405,
+            "pilot_target_MSE": 0.00010757518955838621,
+            "accepted_prediction_truth_correlations": [
+              0.049448948495511874,
+              0.056917450139258315,
+              0.04505455522682624
+            ],
+            "accepted_prediction_truth_MSE": [
+              1.0692001861199371e-05,
+              8.895666900322755e-06,
+              1.2488336822075988e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.00015423895304072526,
+            "pilot_target_truth_correlation": 0.8117732629410684,
+            "pilot_target_bias": -0.0002532065792895796,
+            "pilot_target_MSE": 4.7330479944243225e-06,
+            "accepted_prediction_truth_correlations": [
+              0.016409044201577776,
+              0.021405709125910916,
+              0.013304658742079456
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.660158596617886e-06,
+              3.831682154091833e-06,
+              7.488635039143939e-06
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.0002613719451231333,
+            "pilot_target_truth_correlation": -0.006193286528727856,
+            "pilot_target_bias": -0.0001103380890568213,
+            "pilot_target_MSE": 7.748674618694972e-06,
+            "accepted_prediction_truth_correlations": [
+              0.012900475121227892,
+              0.0027893101291271375,
+              0.020323674665169617
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.634829836316943e-06,
+              3.823513344783721e-06,
+              7.446146327850165e-06
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.0002625426802979183
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0006328207460443802,
+            "pilot_target_truth_correlation": 0.7673042406508542,
+            "pilot_target_bias": -9.170863876024092e-05,
+            "pilot_target_MSE": 8.787346942982082e-07,
+            "accepted_prediction_truth_correlations": [
+              0.07296090311923181,
+              0.05286798712404039,
+              0.10096972506508703
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.829256235327083e-06,
+              7.419396283208257e-06,
+              4.239116187445907e-06
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0005231539438234057,
+            "pilot_target_truth_correlation": 0.5742436612811213,
+            "pilot_target_bias": 0.001150216420031781,
+            "pilot_target_MSE": 5.666864989342092e-05,
+            "accepted_prediction_truth_correlations": [
+              0.07096447083920233,
+              0.052675681675953975,
+              0.09669342278242392
+            ],
+            "accepted_prediction_truth_MSE": [
+              9.496375875880216e-06,
+              1.1144221245988271e-05,
+              7.848530505772163e-06
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0006221893034376923,
+            "pilot_target_truth_correlation": 0.527037311822072,
+            "pilot_target_bias": -0.00015999974207649048,
+            "pilot_target_MSE": 1.601044100254264e-06,
+            "accepted_prediction_truth_correlations": [
+              0.05605840019129744,
+              0.05029778663856537,
+              0.06486567435916894
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.878129469554617e-06,
+              7.4619211261339086e-06,
+              4.294337812975326e-06
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00046384201425576373,
+            "pilot_target_truth_correlation": 0.012190270154953232,
+            "pilot_target_bias": -9.170863876024095e-05,
+            "pilot_target_MSE": 2.360631907779579e-06,
+            "accepted_prediction_truth_correlations": [
+              -0.015938696257173455,
+              0.015010591975413934,
+              -0.056924368716581276
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.8688543224632575e-06,
+              7.439165288544808e-06,
+              4.298543356381706e-06
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.0004543808025703444
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.000620830053512892,
+            "pilot_target_truth_correlation": 0.8284533211204314,
+            "pilot_target_bias": -7.9825362540709e-05,
+            "pilot_target_MSE": 1.4444873939257926e-06,
+            "accepted_prediction_truth_correlations": [
+              0.06861130115795945,
+              0.07243857406977185,
+              0.06494217210581606
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.730999454794827e-06,
+              5.541040743713634e-06,
+              5.920958165876019e-06
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0006301522187978203,
+            "pilot_target_truth_correlation": 0.8707458260275358,
+            "pilot_target_bias": 0.0012843574686640948,
+            "pilot_target_MSE": 8.2547180634147e-05,
+            "accepted_prediction_truth_correlations": [
+              0.06269467265336331,
+              0.0668414505056463,
+              0.058740773517240406
+            ],
+            "accepted_prediction_truth_MSE": [
+              9.798959199440062e-06,
+              9.532548385217407e-06,
+              1.0065370013662716e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0006301522187978203,
+            "pilot_target_truth_correlation": 0.8457303836275267,
+            "pilot_target_bias": -0.0001814528488291821,
+            "pilot_target_MSE": 2.67431223472431e-06,
+            "accepted_prediction_truth_correlations": [
+              0.06283903395132409,
+              0.06819395927042732,
+              0.05773060883756441
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.785250913273616e-06,
+              5.5973431840603e-06,
+              5.973158642486933e-06
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.0001940951164682776,
+            "pilot_target_truth_correlation": -0.010304617816184731,
+            "pilot_target_bias": -7.9825362540709e-05,
+            "pilot_target_MSE": 4.473030367883795e-06,
+            "accepted_prediction_truth_correlations": [
+              -0.008244677540043956,
+              -0.021904838575140185,
+              0.004945073778543932
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.767327024225226e-06,
+              5.5847921294548686e-06,
+              5.949861918995583e-06
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.0002018760017540369
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.00038648064169408017,
+            "pilot_target_truth_correlation": 0.7020646861708684,
+            "pilot_target_bias": -9.319384496117185e-05,
+            "pilot_target_MSE": 2.4034379724730165e-06,
+            "accepted_prediction_truth_correlations": [
+              0.046445105233022276,
+              0.04295904015052566,
+              0.049865211791463276
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.717648210818161e-06,
+              5.715275900801973e-06,
+              5.72002052083435e-06
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0005049280463348311,
+            "pilot_target_truth_correlation": 0.7544307827834701,
+            "pilot_target_bias": 0.0016820504600068386,
+            "pilot_target_MSE": 0.00016082564855017533,
+            "accepted_prediction_truth_correlations": [
+              0.0381376757168708,
+              0.03471057852263081,
+              0.04152875332188429
+            ],
+            "accepted_prediction_truth_MSE": [
+              1.5429594382258982e-05,
+              1.5408868078464982e-05,
+              1.5450320686052982e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0005049280463348311,
+            "pilot_target_truth_correlation": 0.7403756468244583,
+            "pilot_target_bias": -0.0001819203573072868,
+            "pilot_target_MSE": 2.982593071528766e-06,
+            "accepted_prediction_truth_correlations": [
+              0.03661586977574109,
+              0.033212069240210015,
+              0.03998741482607483
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.755604345723339e-06,
+              5.75526920280727e-06,
+              5.755939488639407e-06
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.0006506503774178109,
+            "pilot_target_truth_correlation": -0.011778877720550977,
+            "pilot_target_bias": -9.319384496117186e-05,
+            "pilot_target_MSE": 4.656993426409453e-06,
+            "accepted_prediction_truth_correlations": [
+              0.0491156235619159,
+              0.05150271509274296,
+              0.046643337917685296
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.717764666184139e-06,
+              5.712352785898311e-06,
+              5.723176546469967e-06
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.00042462462814437
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0006645455865077311,
+            "pilot_target_truth_correlation": 0.743927254042048,
+            "pilot_target_bias": 3.980831026162088e-05,
+            "pilot_target_MSE": 3.7849443971596674e-06,
+            "accepted_prediction_truth_correlations": [
+              0.08188628176700079,
+              0.07194315371541524,
+              0.09481766611025112
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.622123083885863e-06,
+              6.71753249573439e-06,
+              4.526713672037336e-06
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0006489548324300169,
+            "pilot_target_truth_correlation": 0.7520565726164479,
+            "pilot_target_bias": 0.0020512440296346374,
+            "pilot_target_MSE": 0.00018437787558285232,
+            "accepted_prediction_truth_correlations": [
+              0.08020167933597007,
+              0.06862336836056508,
+              0.09512288713580383
+            ],
+            "accepted_prediction_truth_MSE": [
+              1.7049773190229282e-05,
+              1.8288800540424273e-05,
+              1.5810745840034287e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0006490229375758094,
+            "pilot_target_truth_correlation": 0.6767973480450977,
+            "pilot_target_bias": -0.00031921317980217293,
+            "pilot_target_MSE": 5.425280138373134e-06,
+            "accepted_prediction_truth_correlations": [
+              0.07223960234767059,
+              0.06840078419339736,
+              0.07746307370681586
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.59421724360749e-06,
+              6.693035604502033e-06,
+              4.495398882712945e-06
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00039954526216544426,
+            "pilot_target_truth_correlation": -0.018661351845236186,
+            "pilot_target_bias": 3.980831026162088e-05,
+            "pilot_target_MSE": 1.4854429076899882e-05,
+            "accepted_prediction_truth_correlations": [
+              0.013415176311622758,
+              0.00846833144797383,
+              0.019614540340476463
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.675666624723327e-06,
+              6.769548501516695e-06,
+              4.581784747929959e-06
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.00026568334506390037
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0004924828178358215,
+            "pilot_target_truth_correlation": 0.6226834879201709,
+            "pilot_target_bias": 0.000276746909873099,
+            "pilot_target_MSE": 3.317710672487858e-05,
+            "accepted_prediction_truth_correlations": [
+              0.03909118181048946,
+              0.04348015661750057,
+              0.0355883167756927
+            ],
+            "accepted_prediction_truth_MSE": [
+              6.489271297839346e-06,
+              5.557755866473158e-06,
+              7.420786729205534e-06
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0005552753243441052,
+            "pilot_target_truth_correlation": 0.6292205595943242,
+            "pilot_target_bias": 0.0021274354985069696,
+            "pilot_target_MSE": 0.0003458241491673663,
+            "accepted_prediction_truth_correlations": [
+              0.07397788426258278,
+              0.07645287859047406,
+              0.0723143006304589
+            ],
+            "accepted_prediction_truth_MSE": [
+              1.746464225396017e-05,
+              1.661792052779021e-05,
+              1.831136398013013e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0005552753243441052,
+            "pilot_target_truth_correlation": 0.6113364547256729,
+            "pilot_target_bias": -0.00020990270829902375,
+            "pilot_target_MSE": 2.0135649433754453e-06,
+            "accepted_prediction_truth_correlations": [
+              0.07444823254037705,
+              0.07692585334523123,
+              0.0727853274454824
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.818792680352564e-06,
+              4.894718180288636e-06,
+              6.742867180416492e-06
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00010797705256288989,
+            "pilot_target_truth_correlation": -0.011586547192556756,
+            "pilot_target_bias": 0.00027674690987309903,
+            "pilot_target_MSE": 4.6702951065733086e-05,
+            "accepted_prediction_truth_correlations": [
+              -0.031466520973954304,
+              -0.03416770700136613,
+              -0.029326909812011717
+            ],
+            "accepted_prediction_truth_MSE": [
+              6.288423163361567e-06,
+              5.347261178371435e-06,
+              7.229585148351699e-06
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.00020874283101341286
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0003390533408418154,
+            "pilot_target_truth_correlation": 0.9375094592905362,
+            "pilot_target_bias": 4.5438251094696184e-05,
+            "pilot_target_MSE": 8.836417271919164e-07,
+            "accepted_prediction_truth_correlations": [
+              0.052245603230708926,
+              0.05244914901021749,
+              0.0521157560504041
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.7487496406345016e-06,
+              5.137664915408864e-06,
+              6.35983436586014e-06
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.00014286899088556939,
+            "pilot_target_truth_correlation": 0.8236897738555022,
+            "pilot_target_bias": 0.0018449596319890964,
+            "pilot_target_MSE": 0.00017196248164295952,
+            "accepted_prediction_truth_correlations": [
+              0.02441223065882322,
+              0.024610243624876772,
+              0.02433222630689101
+            ],
+            "accepted_prediction_truth_MSE": [
+              1.5286058844017436e-05,
+              1.4792969563842007e-05,
+              1.5779148124192866e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.00014286899088556939,
+            "pilot_target_truth_correlation": 0.7430004070208241,
+            "pilot_target_bias": -0.00027971407474597685,
+            "pilot_target_MSE": 4.38727996858335e-06,
+            "accepted_prediction_truth_correlations": [
+              0.024729799580781794,
+              0.02500664689308062,
+              0.024579550401087617
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.67366757492398e-06,
+              5.058385832138255e-06,
+              6.288949317709703e-06
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00036712560034515883,
+            "pilot_target_truth_correlation": -0.010810904709279515,
+            "pilot_target_bias": 4.54382510946962e-05,
+            "pilot_target_MSE": 1.2770948676497728e-05,
+            "accepted_prediction_truth_correlations": [
+              0.012365655157313691,
+              0.011371581634417,
+              0.013356399968197468
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.732783305670862e-06,
+              5.126035272260257e-06,
+              6.339531339081466e-06
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.00033604402623850846
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.000346162925417405,
+            "pilot_target_truth_correlation": 0.934018741026349,
+            "pilot_target_bias": 1.0870841274436122e-05,
+            "pilot_target_MSE": 4.51560814136415e-07,
+            "accepted_prediction_truth_correlations": [
+              0.06980274174671315,
+              0.07430247774258478,
+              0.0667204517285144
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.77266977610175e-06,
+              4.559925675986529e-06,
+              6.985413876216969e-06
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0003404551926014939,
+            "pilot_target_truth_correlation": 0.8367823599406542,
+            "pilot_target_bias": 0.0009742406530549685,
+            "pilot_target_MSE": 2.0031814126555808e-05,
+            "accepted_prediction_truth_correlations": [
+              0.07734057090701969,
+              0.08618667749312693,
+              0.07098874039580416
+            ],
+            "accepted_prediction_truth_MSE": [
+              7.774422554330936e-06,
+              6.608172212034313e-06,
+              8.94067289662756e-06
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0005600873721273711,
+            "pilot_target_truth_correlation": 0.6777983017832961,
+            "pilot_target_bias": -0.0002208489199567914,
+            "pilot_target_MSE": 2.5849501626986748e-06,
+            "accepted_prediction_truth_correlations": [
+              0.06498186448308221,
+              0.07093187998427192,
+              0.06069800607197109
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.831063843604224e-06,
+              4.6027304624896144e-06,
+              7.0593972247188335e-06
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00035916475573209944,
+            "pilot_target_truth_correlation": -0.017079960350068743,
+            "pilot_target_bias": 1.0870841274436117e-05,
+            "pilot_target_MSE": 6.430745600520253e-06,
+            "accepted_prediction_truth_correlations": [
+              0.02940313350939945,
+              0.026619815121776434,
+              0.031916850427221345
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.783171271091033e-06,
+              4.569219966848419e-06,
+              6.997122575333647e-06
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.00023342969978292736
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0005079605046214397,
+            "pilot_target_truth_correlation": 0.7739221570765361,
+            "pilot_target_bias": -6.883107526779557e-05,
+            "pilot_target_MSE": 2.065059387168518e-06,
+            "accepted_prediction_truth_correlations": [
+              0.0522889021241738,
+              0.04626277805900366,
+              0.06158268723591849
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.660433737985484e-06,
+              7.2548682642989635e-06,
+              4.065999211672005e-06
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0007560055605801417,
+            "pilot_target_truth_correlation": 0.7702967156000808,
+            "pilot_target_bias": 0.0017129533247235167,
+            "pilot_target_MSE": 0.00017428929878364417,
+            "accepted_prediction_truth_correlations": [
+              0.07655333866917509,
+              0.07546716867093015,
+              0.0799931048408295
+            ],
+            "accepted_prediction_truth_MSE": [
+              1.3213492327679085e-05,
+              1.4528002655498992e-05,
+              1.1898981999859179e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.00079714537512989,
+            "pilot_target_truth_correlation": 0.7313277535402728,
+            "pilot_target_bias": -0.0002533205988452421,
+            "pilot_target_MSE": 3.8468451025181865e-06,
+            "accepted_prediction_truth_correlations": [
+              0.07210753394036774,
+              0.07117588285349945,
+              0.07510061447000121
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.693359893610448e-06,
+              7.299309309630586e-06,
+              4.087410477590309e-06
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.0004897059825702368,
+            "pilot_target_truth_correlation": -0.012786406703600664,
+            "pilot_target_bias": -6.883107526779557e-05,
+            "pilot_target_MSE": 7.2300787189189695e-06,
+            "accepted_prediction_truth_correlations": [
+              0.018578154609888934,
+              0.019100724674694276,
+              0.018374520049464476
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.686030607467505e-06,
+              7.27559454257308e-06,
+              4.096466672361929e-06
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.00021130189811203063
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0005244567929317386,
+            "pilot_target_truth_correlation": 0.8335603608330902,
+            "pilot_target_bias": -3.5820994287116886e-05,
+            "pilot_target_MSE": 2.485418785959611e-07,
+            "accepted_prediction_truth_correlations": [
+              0.045548629513987415,
+              0.0538532595157703,
+              0.037882846325727415
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.912309056163634e-06,
+              5.456588381325495e-06,
+              6.368029731001774e-06
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0003194527996802024,
+            "pilot_target_truth_correlation": 0.7121934823264979,
+            "pilot_target_bias": 0.0008100517048840205,
+            "pilot_target_MSE": 1.865024138528017e-05,
+            "accepted_prediction_truth_correlations": [
+              0.05726279710494831,
+              0.06169270148871825,
+              0.053156607741885534
+            ],
+            "accepted_prediction_truth_MSE": [
+              6.843111388943811e-06,
+              6.379425956554533e-06,
+              7.3067968213330875e-06
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0003194527996802024,
+            "pilot_target_truth_correlation": 0.6377121389797975,
+            "pilot_target_bias": -0.00010082493638896007,
+            "pilot_target_MSE": 6.452996040648465e-07,
+            "accepted_prediction_truth_correlations": [
+              0.05868995327720925,
+              0.06359417474738813,
+              0.0541492631410358
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.948144306774771e-06,
+              5.493576235972115e-06,
+              6.402712377577427e-06
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00034858203536522486,
+            "pilot_target_truth_correlation": -0.03007135716301326,
+            "pilot_target_bias": -3.582099428711688e-05,
+            "pilot_target_MSE": 1.5286816051577262e-06,
+            "accepted_prediction_truth_correlations": [
+              0.023780307090922607,
+              0.015366834433491941,
+              0.03148003182970345
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.919834147275148e-06,
+              5.470828996799681e-06,
+              6.368839297750615e-06
+            ]
+          }
+        }
+      ],
+      "truth_gain_quantiles": [
+        -0.013413414438757987,
+        -8.166338812407957e-05,
+        0.0,
+        0.009095791979058462,
+        0.12177935185814198
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "methods": {
+        "Uniform": {
+          "chord2_mean": 1.4973437439387487,
+          "ratio_of_mean_chord2_to_Uniform": 1.0,
+          "mean_paired_chord2_ratio": 1.0,
+          "paired_chord2_ratio_range": [
+            1.0,
+            1.0
+          ],
+          "halves_ratio_of_mean_chord2_to_Uniform": [
+            1.0,
+            1.0
+          ],
+          "replicates_better_than_Uniform": 0,
+          "approx_tangent_risk_mean": 1.6321755983995336,
+          "truth_tangent_risk_mean": 1.4280022460933575,
+          "raw_risk_mean": 727.4267671499688,
+          "minimum_radial_ratio": 0.6269496142351271,
+          "nonpositive_radial_hub_replicates": 0,
+          "r0_chord2": 1.5540847437007335,
+          "r0_ratio_to_Uniform": 1.0
+        },
+        "LeaveOneOutTree": {
+          "chord2_mean": 1.183435552479368,
+          "ratio_of_mean_chord2_to_Uniform": 0.7903566280421034,
+          "mean_paired_chord2_ratio": 0.7902635222048114,
+          "paired_chord2_ratio_range": [
+            0.7132979424711998,
+            0.9177789948731839
+          ],
+          "halves_ratio_of_mean_chord2_to_Uniform": [
+            0.80282137941035,
+            0.777608385641186
+          ],
+          "replicates_better_than_Uniform": 16,
+          "approx_tangent_risk_mean": 1.277574077618229,
+          "truth_tangent_risk_mean": 1.1442945894920256,
+          "raw_risk_mean": 530.7544810432425,
+          "minimum_radial_ratio": 0.6738512165047404,
+          "nonpositive_radial_hub_replicates": 0,
+          "r0_chord2": 1.2012703866286947,
+          "r0_ratio_to_Uniform": 0.7729761143965136
+        },
+        "SelfIncludedTree": {
+          "chord2_mean": 1.148020534218269,
+          "ratio_of_mean_chord2_to_Uniform": 0.7667047322069225,
+          "mean_paired_chord2_ratio": 0.7669219098965357,
+          "paired_chord2_ratio_range": [
+            0.6994643396891101,
+            0.8277142693516177
+          ],
+          "halves_ratio_of_mean_chord2_to_Uniform": [
+            0.7608352790971453,
+            0.7727076767337483
+          ],
+          "replicates_better_than_Uniform": 16,
+          "approx_tangent_risk_mean": 1.2342967098815878,
+          "truth_tangent_risk_mean": 1.113590622699963,
+          "raw_risk_mean": 505.91940225820036,
+          "minimum_radial_ratio": 0.7073096300483228,
+          "nonpositive_radial_hub_replicates": 0,
+          "r0_chord2": 1.200601761728977,
+          "r0_ratio_to_Uniform": 0.7725458773052432
+        },
+        "EnergyTree": {
+          "chord2_mean": 1.148020534218269,
+          "ratio_of_mean_chord2_to_Uniform": 0.7667047322069225,
+          "mean_paired_chord2_ratio": 0.7669219098965357,
+          "paired_chord2_ratio_range": [
+            0.6994643396891101,
+            0.8277142693516177
+          ],
+          "halves_ratio_of_mean_chord2_to_Uniform": [
+            0.7608352790971453,
+            0.7727076767337483
+          ],
+          "replicates_better_than_Uniform": 16,
+          "approx_tangent_risk_mean": 1.2342967098815878,
+          "truth_tangent_risk_mean": 1.113590622699963,
+          "raw_risk_mean": 505.91940225820036,
+          "minimum_radial_ratio": 0.7073096300483228,
+          "nonpositive_radial_hub_replicates": 0,
+          "r0_chord2": 1.200601761728977,
+          "r0_ratio_to_Uniform": 0.7725458773052432
+        },
+        "ShuffledLeaveOneOutTree": {
+          "chord2_mean": 1.4896020751369958,
+          "ratio_of_mean_chord2_to_Uniform": 0.9948297317612664,
+          "mean_paired_chord2_ratio": 0.9951103133899399,
+          "paired_chord2_ratio_range": [
+            0.9328177237825767,
+            1.0545474368700476
+          ],
+          "halves_ratio_of_mean_chord2_to_Uniform": [
+            0.9928770829923234,
+            0.9968267904345551
+          ],
+          "replicates_better_than_Uniform": 8,
+          "approx_tangent_risk_mean": 1.6205656851012908,
+          "truth_tangent_risk_mean": 1.423054356191593,
+          "raw_risk_mean": 717.2183856548527,
+          "minimum_radial_ratio": 0.6440958409336569,
+          "nonpositive_radial_hub_replicates": 0,
+          "r0_chord2": 1.6125717775647461,
+          "r0_ratio_to_Uniform": 1.0376343916257345
+        }
+      },
+      "score_diagnostics": [
+        {
+          "Uniform": {
+            "added_true_gain_mean": 7.79732933329022e-05
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0004669559998071337,
+            "pilot_target_truth_correlation": 0.4417580648826164,
+            "pilot_target_bias": 7.5410644378626685e-06,
+            "pilot_target_MSE": 1.6294675367456294e-07,
+            "accepted_prediction_truth_correlations": [
+              0.21320380169213654,
+              0.21210908327079345,
+              0.2146569145998756
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.762974163694089e-07,
+              6.12259988727724e-07,
+              5.403348440110939e-07
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0004679379289920773,
+            "pilot_target_truth_correlation": 0.7304095773161159,
+            "pilot_target_bias": 0.0018001694784143072,
+            "pilot_target_MSE": 6.688970956279154e-05,
+            "accepted_prediction_truth_correlations": [
+              0.2118187359442769,
+              0.2090915365245066,
+              0.2150118221937317
+            ],
+            "accepted_prediction_truth_MSE": [
+              1.3058604819458037e-05,
+              1.2945705417820213e-05,
+              1.3171504221095862e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0004679379289920773,
+            "pilot_target_truth_correlation": 0.7323385919225999,
+            "pilot_target_bias": -1.1680724584430935e-05,
+            "pilot_target_MSE": 4.826743102752964e-08,
+            "accepted_prediction_truth_correlations": [
+              0.21181776358637247,
+              0.20908956922537714,
+              0.2150118791608079
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.821107092986292e-07,
+              6.188036494251199e-07,
+              5.454177691721386e-07
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 1.2829493993948734e-05,
+            "pilot_target_truth_correlation": 0.018156748326122702,
+            "pilot_target_bias": 7.5410644378626685e-06,
+            "pilot_target_MSE": 2.7867710809799297e-07,
+            "accepted_prediction_truth_correlations": [
+              -0.032419439661778154,
+              -0.02687250566766783,
+              -0.03806386231700511
+            ],
+            "accepted_prediction_truth_MSE": [
+              6.081142460374222e-07,
+              6.446331565415762e-07,
+              5.715953355332683e-07
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 9.613485573552436e-05
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.00035154295337038214,
+            "pilot_target_truth_correlation": 0.4749920321484679,
+            "pilot_target_bias": -3.222601943398613e-05,
+            "pilot_target_MSE": 1.7717944184014634e-07,
+            "accepted_prediction_truth_correlations": [
+              0.17412844314722337,
+              0.17530808493922928,
+              0.1731188291122318
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.888038212519119e-07,
+              5.604122588484804e-07,
+              6.171953836553434e-07
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0005120969873081331,
+            "pilot_target_truth_correlation": 0.9016769495768019,
+            "pilot_target_bias": 0.0020651980789040876,
+            "pilot_target_MSE": 0.00011803733741526207,
+            "accepted_prediction_truth_correlations": [
+              0.21359580149948248,
+              0.2158277163418108,
+              0.2116030453624575
+            ],
+            "accepted_prediction_truth_MSE": [
+              1.7322588416303053e-05,
+              1.7386115785834827e-05,
+              1.7259061046771274e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0005120969873081331,
+            "pilot_target_truth_correlation": 0.9015547085745841,
+            "pilot_target_bias": -1.0350652064298706e-05,
+            "pilot_target_MSE": 3.022301078671335e-08,
+            "accepted_prediction_truth_correlations": [
+              0.21370450737621943,
+              0.21594135303695366,
+              0.2117071158461228
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.761456953975937e-07,
+              5.479844809698389e-07,
+              6.043069098253484e-07
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 7.392966378218466e-05,
+            "pilot_target_truth_correlation": 0.030402277233004163,
+            "pilot_target_bias": -3.2226019433986124e-05,
+            "pilot_target_MSE": 3.2564892392201047e-07,
+            "accepted_prediction_truth_correlations": [
+              -0.01772180258457722,
+              -0.019618702576586277,
+              -0.01589755194154306
+            ],
+            "accepted_prediction_truth_MSE": [
+              6.056927228034544e-07,
+              5.770928724298652e-07,
+              6.342925731770436e-07
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.00010641194836782399
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.00046623239673196945,
+            "pilot_target_truth_correlation": 0.7848620165613529,
+            "pilot_target_bias": 1.4233858471650853e-05,
+            "pilot_target_MSE": 1.5387274435984486e-07,
+            "accepted_prediction_truth_correlations": [
+              0.21061413267679627,
+              0.20887041299357073,
+              0.2148045107611536
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.692477361596835e-07,
+              6.651911625359116e-07,
+              4.7330430978345545e-07
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0004796794712067419,
+            "pilot_target_truth_correlation": 0.9193724700427788,
+            "pilot_target_bias": 0.0024563039254621743,
+            "pilot_target_MSE": 0.00015362986381019478,
+            "accepted_prediction_truth_correlations": [
+              0.21503487635773472,
+              0.21219736294282943,
+              0.22053425708256608
+            ],
+            "accepted_prediction_truth_MSE": [
+              2.038961401995368e-05,
+              1.9973985748192586e-05,
+              2.0805242291714773e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0004796794712067419,
+            "pilot_target_truth_correlation": 0.9173395321576979,
+            "pilot_target_bias": -1.9044498783495093e-05,
+            "pilot_target_MSE": 3.81187193496924e-08,
+            "accepted_prediction_truth_correlations": [
+              0.21496496126064113,
+              0.21213698998653308,
+              0.22045191601717495
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.719233578703683e-07,
+              6.701131966251908e-07,
+              4.7373351911554567e-07
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00010046831574387724,
+            "pilot_target_truth_correlation": -0.01049782349820644,
+            "pilot_target_bias": 1.4233858471650852e-05,
+            "pilot_target_MSE": 6.178990546488151e-07,
+            "accepted_prediction_truth_correlations": [
+              0.016761235874462262,
+              0.015807429955946323,
+              0.017995093771627977
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.974694463011227e-07,
+              6.974942946382661e-07,
+              4.974445979639795e-07
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.00013097003383209967
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.00045176774554078747,
+            "pilot_target_truth_correlation": 0.5195157420775339,
+            "pilot_target_bias": -3.745591662891668e-05,
+            "pilot_target_MSE": 6.766237749319941e-07,
+            "accepted_prediction_truth_correlations": [
+              0.21468803840463674,
+              0.21774747792314156,
+              0.2116537987789532
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.368501517160096e-07,
+              5.526913010245666e-07,
+              5.210090024074524e-07
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.00045176774554078747,
+            "pilot_target_truth_correlation": 0.7983150603606628,
+            "pilot_target_bias": 0.0024186271169209326,
+            "pilot_target_MSE": 0.0001312213573024392,
+            "accepted_prediction_truth_correlations": [
+              0.21545663031741336,
+              0.21874321104147992,
+              0.2121919495681651
+            ],
+            "accepted_prediction_truth_MSE": [
+              1.8052277744979657e-05,
+              1.7829506435725246e-05,
+              1.827504905423407e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.00045176774554078747,
+            "pilot_target_truth_correlation": 0.797566947661431,
+            "pilot_target_bias": -3.0318089185402895e-05,
+            "pilot_target_MSE": 5.057588510758888e-07,
+            "accepted_prediction_truth_correlations": [
+              0.21546758646748188,
+              0.2187561789168228,
+              0.21220087540832677
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.357198858291122e-07,
+              5.514706073757927e-07,
+              5.199691642824318e-07
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 8.352021337255782e-05,
+            "pilot_target_truth_correlation": -0.009969600163545197,
+            "pilot_target_bias": -3.745591662891668e-05,
+            "pilot_target_MSE": 1.1111954579857513e-06,
+            "accepted_prediction_truth_correlations": [
+              -0.0013728518624965113,
+              -0.005260741619386597,
+              0.0026165565960339075
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.638059228524956e-07,
+              5.808444659960392e-07,
+              5.467673797089519e-07
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 8.004295513183359e-05
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.00020775849852996134,
+            "pilot_target_truth_correlation": 0.550469565847758,
+            "pilot_target_bias": -3.1340405552081766e-05,
+            "pilot_target_MSE": 1.9611147195810603e-07,
+            "accepted_prediction_truth_correlations": [
+              0.10182655736994219,
+              0.08778092035833134,
+              0.11834045969508926
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.936559030863573e-07,
+              6.753467349546408e-07,
+              5.119650712180738e-07
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0003998404547078989,
+            "pilot_target_truth_correlation": 0.8707622147237748,
+            "pilot_target_bias": 0.002259422930475746,
+            "pilot_target_MSE": 0.0001196689823016937,
+            "accepted_prediction_truth_correlations": [
+              0.19390865269726312,
+              0.18376255305556932,
+              0.20645340489414749
+            ],
+            "accepted_prediction_truth_MSE": [
+              1.2838465786655738e-05,
+              1.3250817321852842e-05,
+              1.242611425145863e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0003998404547078989,
+            "pilot_target_truth_correlation": 0.8701649150043735,
+            "pilot_target_bias": -1.6784159230126684e-05,
+            "pilot_target_MSE": 4.8865052857110705e-08,
+            "accepted_prediction_truth_correlations": [
+              0.19401965616083292,
+              0.18387367198586332,
+              0.20656479382103562
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.800214371513655e-07,
+              6.602402230196233e-07,
+              4.998026512831077e-07
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00017445574741135103,
+            "pilot_target_truth_correlation": 0.0005958620734596731,
+            "pilot_target_bias": -3.1340405552081766e-05,
+            "pilot_target_MSE": 4.3071027039434074e-07,
+            "accepted_prediction_truth_correlations": [
+              0.03965467519180387,
+              0.04101541433107027,
+              0.038172281283188086
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.991459975322236e-07,
+              6.794544931729587e-07,
+              5.188375018914883e-07
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.00010976293010918806
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.000593446419274732,
+            "pilot_target_truth_correlation": 0.7050622432080321,
+            "pilot_target_bias": 2.1115207205910304e-05,
+            "pilot_target_MSE": 2.3684275576784334e-07,
+            "accepted_prediction_truth_correlations": [
+              0.22522288281650485,
+              0.20447104343292422,
+              0.2538821798516124
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.684940097435954e-07,
+              6.952533280536682e-07,
+              4.417346914335226e-07
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0005980717833961371,
+            "pilot_target_truth_correlation": 0.9340736438630785,
+            "pilot_target_bias": 0.00262696665051257,
+            "pilot_target_MSE": 0.0001366214330159287,
+            "accepted_prediction_truth_correlations": [
+              0.2265027033934011,
+              0.2057030420117822,
+              0.2552550608945694
+            ],
+            "accepted_prediction_truth_MSE": [
+              2.3514534311671556e-05,
+              2.3281485606214317e-05,
+              2.3747583017128795e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0005980717833961371,
+            "pilot_target_truth_correlation": 0.9322152422629355,
+            "pilot_target_bias": -1.570877324358227e-05,
+            "pilot_target_MSE": 2.1197875780790708e-08,
+            "accepted_prediction_truth_correlations": [
+              0.22652149092287074,
+              0.20571714338319166,
+              0.25527992970095414
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.716421789943286e-07,
+              6.98743184971685e-07,
+              4.4454117301697216e-07
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.0001596590322420648,
+            "pilot_target_truth_correlation": 0.006121196931423701,
+            "pilot_target_bias": 2.111520720591031e-05,
+            "pilot_target_MSE": 6.076492766148598e-07,
+            "accepted_prediction_truth_correlations": [
+              0.016720144409942947,
+              0.01332582722647993,
+              0.02108001916527077
+            ],
+            "accepted_prediction_truth_MSE": [
+              6.058288065084375e-07,
+              7.329852184663e-07,
+              4.786723945505751e-07
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 8.655964041705352e-05
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0003601433314519411,
+            "pilot_target_truth_correlation": 0.732130737319241,
+            "pilot_target_bias": 3.183889434887564e-06,
+            "pilot_target_MSE": 1.9423268222950575e-07,
+            "accepted_prediction_truth_correlations": [
+              0.1469597803454712,
+              0.14101801107975875,
+              0.15380358373320663
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.845727761239156e-07,
+              6.39718648826723e-07,
+              5.294269034211083e-07
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0006245382109910471,
+            "pilot_target_truth_correlation": 0.9390165418273366,
+            "pilot_target_bias": 0.0025197995872544236,
+            "pilot_target_MSE": 0.0001582352773508933,
+            "accepted_prediction_truth_correlations": [
+              0.22876370061559592,
+              0.22089597576844874,
+              0.23796369788321253
+            ],
+            "accepted_prediction_truth_MSE": [
+              1.7028059287164103e-05,
+              1.6857967289786583e-05,
+              1.7198151284541623e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0006245382109910471,
+            "pilot_target_truth_correlation": 0.9379858008576721,
+            "pilot_target_bias": -1.43438901362484e-05,
+            "pilot_target_MSE": 2.3017086560614005e-08,
+            "accepted_prediction_truth_correlations": [
+              0.22914011211802962,
+              0.22127142452722187,
+              0.23834262018424024
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.726951373453746e-07,
+              6.277616020608642e-07,
+              5.176286726298848e-07
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00010109709824201142,
+            "pilot_target_truth_correlation": 0.009445697044246044,
+            "pilot_target_bias": 3.1838894348875606e-06,
+            "pilot_target_MSE": 5.90439134176284e-07,
+            "accepted_prediction_truth_correlations": [
+              0.03158081140821005,
+              0.024359361407150462,
+              0.03963352256983111
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.990447032408794e-07,
+              6.549808042039643e-07,
+              5.431086022777943e-07
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 6.88143930764249e-05
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0005903699357846959,
+            "pilot_target_truth_correlation": 0.8799845111809883,
+            "pilot_target_bias": -2.38910740926412e-05,
+            "pilot_target_MSE": 1.5046731166957127e-07,
+            "accepted_prediction_truth_correlations": [
+              0.23243050212213737,
+              0.23808043584337765,
+              0.22730231452974947
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.467682589214102e-07,
+              5.069724907708719e-07,
+              5.865640270719485e-07
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0005903699357846959,
+            "pilot_target_truth_correlation": 0.9583466683334949,
+            "pilot_target_bias": 0.002766556555868038,
+            "pilot_target_MSE": 0.0006679870925923774,
+            "accepted_prediction_truth_correlations": [
+              0.2315430334769007,
+              0.23841580604832197,
+              0.22531780905939672
+            ],
+            "accepted_prediction_truth_MSE": [
+              3.4697492470519886e-05,
+              3.328811734590573e-05,
+              3.610686759513405e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0005903699357846959,
+            "pilot_target_truth_correlation": 0.9581457907161811,
+            "pilot_target_bias": -1.3285391116789066e-05,
+            "pilot_target_MSE": 4.988357838791681e-08,
+            "accepted_prediction_truth_correlations": [
+              0.23155002134721103,
+              0.238423513368958,
+              0.22532414735934694
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.453011909208784e-07,
+              5.052717974420906e-07,
+              5.853305843996659e-07
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00020418348544913709,
+            "pilot_target_truth_correlation": 0.009152836280605349,
+            "pilot_target_bias": -2.38910740926412e-05,
+            "pilot_target_MSE": 1.2282688832066088e-06,
+            "accepted_prediction_truth_correlations": [
+              0.04575260017935984,
+              0.04130349459152005,
+              0.05005044559530751
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.75893319587225e-07,
+              5.357423495931555e-07,
+              6.160442895812947e-07
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 8.760070372989885e-05
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0004273227774408219,
+            "pilot_target_truth_correlation": 0.931704113351242,
+            "pilot_target_bias": -1.3811200823425393e-05,
+            "pilot_target_MSE": 1.6105127734739177e-07,
+            "accepted_prediction_truth_correlations": [
+              0.18088262068448194,
+              0.18135125177990777,
+              0.18042753402999867
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.462712902792866e-07,
+              5.650700011311836e-07,
+              5.274725794273895e-07
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0004273227774408219,
+            "pilot_target_truth_correlation": 0.958244242663708,
+            "pilot_target_bias": 0.003253046023103931,
+            "pilot_target_MSE": 0.0007808246324088067,
+            "accepted_prediction_truth_correlations": [
+              0.18252206461672008,
+              0.1822237610335547,
+              0.18286907746281
+            ],
+            "accepted_prediction_truth_MSE": [
+              4.142702785869731e-05,
+              4.1882626104517946e-05,
+              4.0971429612876684e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0004273227774408219,
+            "pilot_target_truth_correlation": 0.9556398513667148,
+            "pilot_target_bias": -9.68580111094901e-06,
+            "pilot_target_MSE": 6.947959715329632e-08,
+            "accepted_prediction_truth_correlations": [
+              0.18255724992460173,
+              0.18223827810686363,
+              0.18292585856319554
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.464320303288256e-07,
+              5.653791599873411e-07,
+              5.274849006703101e-07
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00013695699180120197,
+            "pilot_target_truth_correlation": -0.006964967766932025,
+            "pilot_target_bias": -1.3811200823425394e-05,
+            "pilot_target_MSE": 1.9472478784758042e-06,
+            "accepted_prediction_truth_correlations": [
+              0.008345199839215254,
+              0.012491462376587796,
+              0.004088763281534118
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.702301613624982e-07,
+              5.892730274616979e-07,
+              5.511872952632984e-07
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 6.069605662161769e-05
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0004613507213058238,
+            "pilot_target_truth_correlation": 0.6962998237164953,
+            "pilot_target_bias": 9.745832474135427e-06,
+            "pilot_target_MSE": 4.778179843304942e-07,
+            "accepted_prediction_truth_correlations": [
+              0.20964305591173582,
+              0.2029112521814494,
+              0.21693397626400027
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.759154178002548e-07,
+              6.065950434889668e-07,
+              5.452357921115429e-07
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.00048099822111358535,
+            "pilot_target_truth_correlation": 0.9497367411700967,
+            "pilot_target_bias": 0.002832041347545196,
+            "pilot_target_MSE": 0.0002853986771438126,
+            "accepted_prediction_truth_correlations": [
+              0.21195101125521795,
+              0.20758187575594525,
+              0.21677230691688418
+            ],
+            "accepted_prediction_truth_MSE": [
+              4.127642441203218e-05,
+              4.0760150407790236e-05,
+              4.1792698416274123e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.00048099822111358535,
+            "pilot_target_truth_correlation": 0.9462845431259195,
+            "pilot_target_bias": -2.0530187339873156e-05,
+            "pilot_target_MSE": 4.0473839920408567e-08,
+            "accepted_prediction_truth_correlations": [
+              0.21196460225606625,
+              0.20759845780272015,
+              0.21678275373451486
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.618706006972853e-07,
+              5.924013469814559e-07,
+              5.313398544131147e-07
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00018575621473952903,
+            "pilot_target_truth_correlation": -0.014115019197058635,
+            "pilot_target_bias": 9.745832474135418e-06,
+            "pilot_target_MSE": 1.2803941469807913e-06,
+            "accepted_prediction_truth_correlations": [
+              0.04181507276820055,
+              0.04691133542815993,
+              0.03668170652165821
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.951139912889312e-07,
+              6.244471053652998e-07,
+              5.657808772125626e-07
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.00011583675354088809
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.000451770935933482,
+            "pilot_target_truth_correlation": 0.672970718300854,
+            "pilot_target_bias": -6.744636826605013e-07,
+            "pilot_target_MSE": 8.356492172698224e-07,
+            "accepted_prediction_truth_correlations": [
+              0.21727280856872935,
+              0.2166615977916602,
+              0.21910796820297146
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.18083791149439e-07,
+              5.795059282059585e-07,
+              4.5666165409291933e-07
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.000451770935933482,
+            "pilot_target_truth_correlation": 0.8046193559077481,
+            "pilot_target_bias": 0.003166892023125663,
+            "pilot_target_MSE": 0.0007507613740268813,
+            "accepted_prediction_truth_correlations": [
+              0.2188150673215563,
+              0.21793751027091748,
+              0.220951012437545
+            ],
+            "accepted_prediction_truth_MSE": [
+              4.4059345446650444e-05,
+              4.3431045671946725e-05,
+              4.468764522135416e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.000451770935933482,
+            "pilot_target_truth_correlation": 0.8034823238245911,
+            "pilot_target_bias": -2.8171836708703338e-05,
+            "pilot_target_MSE": 5.047960364416086e-07,
+            "accepted_prediction_truth_correlations": [
+              0.21884982637789274,
+              0.21795649076640056,
+              0.22100324139577518
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.071693695923575e-07,
+              5.708577377837175e-07,
+              4.434810014009974e-07
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 5.50331206359049e-05,
+            "pilot_target_truth_correlation": -0.011704141514610529,
+            "pilot_target_bias": -6.744636826605021e-07,
+            "pilot_target_MSE": 2.5645166521526476e-06,
+            "accepted_prediction_truth_correlations": [
+              0.0007916976282801191,
+              -0.0024599761440141153,
+              0.004506895240614622
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.443801682454604e-07,
+              6.113722192717658e-07,
+              4.773881172191548e-07
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 7.067864184950225e-05
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0005538018079311777,
+            "pilot_target_truth_correlation": 0.8853855473031148,
+            "pilot_target_bias": 1.7665624633750313e-05,
+            "pilot_target_MSE": 2.630681111390787e-07,
+            "accepted_prediction_truth_correlations": [
+              0.2309081792924768,
+              0.23900661120806221,
+              0.2235799313708043
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.513653765190399e-07,
+              5.158969378426302e-07,
+              5.868338151954498e-07
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0005538018079311777,
+            "pilot_target_truth_correlation": 0.9741658889952067,
+            "pilot_target_bias": 0.0033510321419465182,
+            "pilot_target_MSE": 0.0007496783888588027,
+            "accepted_prediction_truth_correlations": [
+              0.23100912113976688,
+              0.23828053718657632,
+              0.22447309396101559
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.051616997888115e-05,
+              5.164846240217957e-05,
+              4.938387755558273e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0005538018079311777,
+            "pilot_target_truth_correlation": 0.971521131772531,
+            "pilot_target_bias": -1.847067971897815e-05,
+            "pilot_target_MSE": 3.819695603973633e-08,
+            "accepted_prediction_truth_correlations": [
+              0.23104758840615916,
+              0.23829803102001265,
+              0.2245316929200396
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.409357048062744e-07,
+              5.050607513745649e-07,
+              5.768106582379837e-07
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00016165963048152,
+            "pilot_target_truth_correlation": 0.026496837864401636,
+            "pilot_target_bias": 1.7665624633750317e-05,
+            "pilot_target_MSE": 1.7603164015359461e-06,
+            "accepted_prediction_truth_correlations": [
+              -0.007391712451372716,
+              0.001955500668438395,
+              -0.016156603957991036
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.833611383258989e-07,
+              5.460145322630704e-07,
+              6.207077443887276e-07
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.00011334361593734215
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0003771341842371149,
+            "pilot_target_truth_correlation": 0.7185839559274452,
+            "pilot_target_bias": 3.473067235946549e-06,
+            "pilot_target_MSE": 4.6948959777010173e-07,
+            "accepted_prediction_truth_correlations": [
+              0.20528956443654725,
+              0.19768344582593989,
+              0.21360344309885665
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.611932625236855e-07,
+              4.441889973074889e-07,
+              6.781975277398821e-07
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0003771341842371149,
+            "pilot_target_truth_correlation": 0.8191277388769733,
+            "pilot_target_bias": 0.003079901172092406,
+            "pilot_target_MSE": 0.0002562900977264039,
+            "accepted_prediction_truth_correlations": [
+              0.21159881930945548,
+              0.20488614212781273,
+              0.21926934475131477
+            ],
+            "accepted_prediction_truth_MSE": [
+              4.5347406553981715e-05,
+              4.542033888586253e-05,
+              4.527447422210091e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0003771341842371149,
+            "pilot_target_truth_correlation": 0.8082802906243035,
+            "pilot_target_bias": -3.0243371023243004e-05,
+            "pilot_target_MSE": 1.862419702171786e-07,
+            "accepted_prediction_truth_correlations": [
+              0.21132107004602976,
+              0.2043932432976871,
+              0.21915982192513098
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.541015209703713e-07,
+              4.343397796965833e-07,
+              6.738632622441593e-07
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 7.348657287733641e-05,
+            "pilot_target_truth_correlation": -0.024991156511287634,
+            "pilot_target_bias": 3.4730672359465446e-06,
+            "pilot_target_MSE": 1.5091975127688742e-06,
+            "accepted_prediction_truth_correlations": [
+              0.009836114936637433,
+              9.323565552053501e-05,
+              0.01767228285532036
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.87544649026465e-07,
+              4.6129100620547677e-07,
+              7.137982918474533e-07
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.0001524061307364069
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0004847837338051509,
+            "pilot_target_truth_correlation": 0.5152326240816757,
+            "pilot_target_bias": -5.1486613475663445e-05,
+            "pilot_target_MSE": 5.102996697062626e-07,
+            "accepted_prediction_truth_correlations": [
+              0.2140411431263004,
+              0.20472080219184952,
+              0.22842079109723756
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.502015061348596e-07,
+              6.772070734749851e-07,
+              4.23195938794734e-07
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.000554912103639801,
+            "pilot_target_truth_correlation": 0.6899163932054156,
+            "pilot_target_bias": 0.002337596458034755,
+            "pilot_target_MSE": 0.00014826258371052495,
+            "accepted_prediction_truth_correlations": [
+              0.22859207321352012,
+              0.2179492759950826,
+              0.2446915226746387
+            ],
+            "accepted_prediction_truth_MSE": [
+              1.996564545116995e-05,
+              2.074789517946819e-05,
+              1.9183395722871707e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.000554912103639801,
+            "pilot_target_truth_correlation": 0.6875179880626723,
+            "pilot_target_bias": -3.3654695707113046e-05,
+            "pilot_target_MSE": 4.0709564524459587e-07,
+            "accepted_prediction_truth_correlations": [
+              0.228487994445913,
+              0.2178582316869624,
+              0.24457053912913937
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.444049344288455e-07,
+              6.707406797994023e-07,
+              4.1806918905828874e-07
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00011096634750798687,
+            "pilot_target_truth_correlation": 0.002844773425705347,
+            "pilot_target_bias": -5.1486613475663445e-05,
+            "pilot_target_MSE": 8.717617752035274e-07,
+            "accepted_prediction_truth_correlations": [
+              -0.0010614487665273188,
+              -0.005227603317789687,
+              0.004215197731273106
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.746216058765947e-07,
+              7.041415524973891e-07,
+              4.451016592558004e-07
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 0.00011408988835486905
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0004954295713064224,
+            "pilot_target_truth_correlation": 0.9137732607150277,
+            "pilot_target_bias": 0.00013230856759298567,
+            "pilot_target_MSE": 7.3877610781087e-06,
+            "accepted_prediction_truth_correlations": [
+              0.22820948187998152,
+              0.2407035715280205,
+              0.22449948376016984
+            ],
+            "accepted_prediction_truth_MSE": [
+              7.304254601778868e-07,
+              5.848255817860475e-07,
+              8.760253385697262e-07
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0004954295713064224,
+            "pilot_target_truth_correlation": 0.7667463600387152,
+            "pilot_target_bias": 0.0031699365942347004,
+            "pilot_target_MSE": 0.0003192860206951297,
+            "accepted_prediction_truth_correlations": [
+              0.23013899440001112,
+              0.243583963569614,
+              0.22579819291162095
+            ],
+            "accepted_prediction_truth_MSE": [
+              4.7493869156585375e-05,
+              4.7343298098517114e-05,
+              4.7644440214653636e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0004954295713064224,
+            "pilot_target_truth_correlation": 0.6466464045765307,
+            "pilot_target_bias": -5.7312616743042104e-05,
+            "pilot_target_MSE": 8.52661370572155e-07,
+            "accepted_prediction_truth_correlations": [
+              0.2302935777144709,
+              0.24384896943195408,
+              0.22587794603784028
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.060738042522162e-07,
+              3.404772829061901e-07,
+              6.716703255982421e-07
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 0.00011055698619555902,
+            "pilot_target_truth_correlation": -0.0068770519097283,
+            "pilot_target_bias": 0.00013230856759298567,
+            "pilot_target_MSE": 1.5381028403652508e-05,
+            "accepted_prediction_truth_correlations": [
+              0.04658092699326867,
+              0.022616630540565452,
+              0.06449659488040436
+            ],
+            "accepted_prediction_truth_MSE": [
+              6.429304289761603e-07,
+              4.838295038603984e-07,
+              8.020313540919223e-07
+            ]
+          }
+        },
+        {
+          "Uniform": {
+            "added_true_gain_mean": 8.541721441947348e-05
+          },
+          "LeaveOneOutTree": {
+            "added_true_gain_mean": 0.0005673160767271032,
+            "pilot_target_truth_correlation": 0.8189878573972823,
+            "pilot_target_bias": 1.3883850217043002e-06,
+            "pilot_target_MSE": 4.076450935190286e-07,
+            "accepted_prediction_truth_correlations": [
+              0.22711398378117847,
+              0.21508278654726082,
+              0.2431163602938431
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.589720114190307e-07,
+              6.536037156515386e-07,
+              4.643403071865227e-07
+            ]
+          },
+          "SelfIncludedTree": {
+            "added_true_gain_mean": 0.0005673160767271032,
+            "pilot_target_truth_correlation": 0.772100249948517,
+            "pilot_target_bias": 0.0028856299020786633,
+            "pilot_target_MSE": 0.0001959783516534013,
+            "accepted_prediction_truth_correlations": [
+              0.22615309127838976,
+              0.2137073168590091,
+              0.2426460099468324
+            ],
+            "accepted_prediction_truth_MSE": [
+              3.469517719316939e-05,
+              3.516698296173222e-05,
+              3.422337142460657e-05
+            ]
+          },
+          "EnergyTree": {
+            "added_true_gain_mean": 0.0005673160767271032,
+            "pilot_target_truth_correlation": 0.7462329276639221,
+            "pilot_target_bias": -4.9653530792895646e-05,
+            "pilot_target_MSE": 3.243293493261271e-07,
+            "accepted_prediction_truth_correlations": [
+              0.22605414719781824,
+              0.21358993740493193,
+              0.2425684634655538
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.43718130310295e-07,
+              6.393112095779784e-07,
+              4.481250510426117e-07
+            ]
+          },
+          "ShuffledLeaveOneOutTree": {
+            "added_true_gain_mean": 3.7327090997411275e-06,
+            "pilot_target_truth_correlation": 0.004165834236338988,
+            "pilot_target_bias": 1.3883850217043086e-06,
+            "pilot_target_MSE": 1.8463014660383782e-06,
+            "accepted_prediction_truth_correlations": [
+              -0.03827096119439992,
+              -0.03163424007172643,
+              -0.04635497964326014
+            ],
+            "accepted_prediction_truth_MSE": [
+              5.982886822686533e-07,
+              6.937296596713418e-07,
+              5.028477048659648e-07
+            ]
+          }
+        }
+      ],
+      "truth_gain_quantiles": [
+        -0.002032701874769946,
+        -7.428180955997745e-05,
+        0.0,
+        0.002333749316023078,
+        0.034328924702327485
+      ]
+    }
+  },
+  "gate": {
+    "webvid2_5m_light_v1": {
+      "checks": {
+        "mean_at_least_5percent_better": true,
+        "both_halves_better": true,
+        "better_than_energy": true,
+        "better_than_shuffled": true
+      },
+      "pass": true
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "checks": {
+        "mean_at_least_5percent_better": true,
+        "both_halves_better": true,
+        "better_than_energy": false,
+        "better_than_shuffled": true
+      },
+      "pass": false
+    }
+  },
+  "gate_pass": false,
+  "seconds": 9.1352387800016,
+  "new_GT": 0,
+  "new_NSG": 0,
+  "new_ANN": 0,
+  "new_exported_profiles": 0,
+  "new_graphs": 0,
+  "new_performance": false,
+  "RAM_hybrid_resultants": 160,
+  "small_trees": 128,
+  "exact_labels_consumed_per_simulated_builder": 2048,
+  "fixed_full_GT_temperature_control": true,
+  "default_changed": false
+}

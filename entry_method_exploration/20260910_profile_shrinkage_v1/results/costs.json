@@ -1,0 +1,210 @@
+{
+  "real_graph_calls": 897280,
+  "repair_calls": 0,
+  "synthetic_calls": 2268,
+  "search_process_wall_seconds": 1000.2507818720005,
+  "process_wall_boundary": "load/build/warm/count/verification/I/O included; not query QPS",
+  "max_observed_RSS_bytes": 10778251264,
+  "input_preparation_seconds": 19.201955435000855,
+  "profile_construction": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "construction_and_artifact_seconds": 0.07333936999930302,
+      "new_alpha_profiles": 3,
+      "endpoint_bit_copies": 2
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "construction_and_artifact_seconds": 0.026268058001733152,
+      "new_alpha_profiles": 3,
+      "endpoint_bit_copies": 2
+    }
+  ],
+  "new_fit_search_labels": 0,
+  "new_learned_parameters": 0,
+  "new_alpha_W_matrices": 6,
+  "phases": {
+    "recovery": {
+      "calls": 1600,
+      "process_seconds": 19.43504301199937
+    },
+    "cal": {
+      "calls": 82240,
+      "process_seconds": 50.08519886799695
+    },
+    "audit": {
+      "calls": 72640,
+      "process_seconds": 46.27363115800108
+    },
+    "validation": {
+      "calls": 740800,
+      "process_seconds": 884.4569088340031
+    }
+  },
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "L128": {
+        "nsg": {
+          "route_us_per_query": 0.007383,
+          "graph_us_per_query": 550.396216,
+          "total_median_us_per_query": 546.8570785,
+          "mean_route_ndc": 0.0,
+          "mean_graph_ndc": 1875.8235,
+          "policy_build_seconds": 2.0549e-05,
+          "count_policy_load_seconds": 1.035e-05
+        },
+        "fast30k": {
+          "route_us_per_query": 6.734841,
+          "graph_us_per_query": 489.0734345,
+          "total_median_us_per_query": 507.17740899999995,
+          "mean_route_ndc": 121.954,
+          "mean_graph_ndc": 1657.127,
+          "policy_build_seconds": 0.060625446,
+          "count_policy_load_seconds": 0.011674046
+        },
+        "fast20k": {
+          "route_us_per_query": 7.0171635,
+          "graph_us_per_query": 489.9780885,
+          "total_median_us_per_query": 509.3240325,
+          "mean_route_ndc": 128.549,
+          "mean_graph_ndc": 1658.1695,
+          "policy_build_seconds": 0.060209462,
+          "count_policy_load_seconds": 0.011914072
+        },
+        "e24": {
+          "route_us_per_query": 6.4316795,
+          "graph_us_per_query": 484.743445,
+          "total_median_us_per_query": 502.6305519999999,
+          "mean_route_ndc": 112.062,
+          "mean_graph_ndc": 1646.826,
+          "policy_build_seconds": 0.060943078,
+          "count_policy_load_seconds": 0.012113633
+        },
+        "shrink": {
+          "route_us_per_query": 6.562159500000001,
+          "graph_us_per_query": 488.58711999999997,
+          "total_median_us_per_query": 504.5767255,
+          "mean_route_ndc": 116.0105,
+          "mean_graph_ndc": 1651.9235,
+          "policy_build_seconds": 0.060978176,
+          "count_policy_load_seconds": 0.011895859
+        }
+      },
+      "all_point_policy_build_seconds": 1.2105306160000002,
+      "all_point_count_policy_load_seconds": 0.23864513400000006,
+      "L128_micro_graph_files": [
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_profile_shrinkage_v1/results/webvid2_5m_light_v1/e24_L128.hnsw",
+          "bytes": 1790316,
+          "mtime_ns": 1789051099722954821,
+          "sha256": "fa4dfabb630cfd30dbe1f065ac469189a3449a9d560348e585c4d318468da091"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_profile_shrinkage_v1/results/webvid2_5m_light_v1/fast20k_L128.hnsw",
+          "bytes": 1790316,
+          "mtime_ns": 1789051099646954458,
+          "sha256": "5a4048145bbe51b55f6427068af7e7fc1e687574e39a466d32bbea2062387d8f"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_profile_shrinkage_v1/results/webvid2_5m_light_v1/fast30k_L128.hnsw",
+          "bytes": 1790180,
+          "mtime_ns": 1789051099574954114,
+          "sha256": "6955e7128eae24b376e64f4d1adf38baed0ea606ec2631ec5f08b98ebdf479d0"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_profile_shrinkage_v1/results/webvid2_5m_light_v1/shrink_L128.hnsw",
+          "bytes": 1790316,
+          "mtime_ns": 1789051099794955164,
+          "sha256": "5a2fc188e8bd1263f5cf8bfd53f02f28bc41fc636fe37b764eaef242fe1ee03a"
+        }
+      ],
+      "deployment": "one selected W and one Micro-HNSW; no gate or second route"
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "L128": {
+        "nsg": {
+          "route_us_per_query": 0.007405,
+          "graph_us_per_query": 566.0246975,
+          "total_median_us_per_query": 572.1956594999999,
+          "mean_route_ndc": 0.0,
+          "mean_graph_ndc": 3165.5315,
+          "policy_build_seconds": 1.8173e-05,
+          "count_policy_load_seconds": 1.0653e-05
+        },
+        "fast30k": {
+          "route_us_per_query": 4.5178575,
+          "graph_us_per_query": 503.02139450000004,
+          "total_median_us_per_query": 516.918904,
+          "mean_route_ndc": 116.032,
+          "mean_graph_ndc": 2870.087,
+          "policy_build_seconds": 0.047659771,
+          "count_policy_load_seconds": 0.005505512
+        },
+        "fast20k": {
+          "route_us_per_query": 4.568118,
+          "graph_us_per_query": 503.6765265,
+          "total_median_us_per_query": 515.4624275000001,
+          "mean_route_ndc": 110.135,
+          "mean_graph_ndc": 2871.986,
+          "policy_build_seconds": 0.047901459,
+          "count_policy_load_seconds": 0.005370763
+        },
+        "e24": {
+          "route_us_per_query": 4.40954,
+          "graph_us_per_query": 501.25678250000004,
+          "total_median_us_per_query": 515.2656715,
+          "mean_route_ndc": 106.4395,
+          "mean_graph_ndc": 2872.525,
+          "policy_build_seconds": 0.0473808,
+          "count_policy_load_seconds": 0.005504956
+        },
+        "shrink": {
+          "route_us_per_query": 4.374668499999999,
+          "graph_us_per_query": 506.43701799999997,
+          "total_median_us_per_query": 517.249454,
+          "mean_route_ndc": 104.4975,
+          "mean_graph_ndc": 2874.3045,
+          "policy_build_seconds": 0.047289602,
+          "count_policy_load_seconds": 0.00538613
+        }
+      },
+      "all_point_policy_build_seconds": 0.9511849059999999,
+      "all_point_count_policy_load_seconds": 0.10889811500000002,
+      "L128_micro_graph_files": [
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_profile_shrinkage_v1/results/yandex_t2i_official10M_ip_v1/e24_L128.hnsw",
+          "bytes": 778860,
+          "mtime_ns": 1789051548565094724,
+          "sha256": "11ffd1dc090f132cdb78e027a202edf5e49a5d50033f82b8834bb0e2ca08036c"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_profile_shrinkage_v1/results/yandex_t2i_official10M_ip_v1/fast20k_L128.hnsw",
+          "bytes": 778860,
+          "mtime_ns": 1789051548513094477,
+          "sha256": "09137140a91e960813d3b5e2d4c9261f618d64774decc356df47d21036b377a1"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_profile_shrinkage_v1/results/yandex_t2i_official10M_ip_v1/fast30k_L128.hnsw",
+          "bytes": 778724,
+          "mtime_ns": 1789051548461094228,
+          "sha256": "73acddd2add6fe202433fa86121ed77afcaa66d7924f73849cc56dc7051211f8"
+        },
+        {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_profile_shrinkage_v1/results/yandex_t2i_official10M_ip_v1/shrink_L128.hnsw",
+          "bytes": 778860,
+          "mtime_ns": 1789051548621094991,
+          "sha256": "9bd319a0d1b48c16ebe7045ef5414b54d9afecc52adec0ce8724d03893ed3963"
+        }
+      ],
+      "deployment": "one selected W and one Micro-HNSW; no gate or second route"
+    }
+  },
+  "components_are_not_added_to_derive_QPS": true,
+  "from_scratch_upstream_costs": {
+    "exact_GT": null,
+    "QGT": null,
+    "NSG": null,
+    "E24_profiles": null,
+    "reason": "not rebuilt or newly timed"
+  }
+}

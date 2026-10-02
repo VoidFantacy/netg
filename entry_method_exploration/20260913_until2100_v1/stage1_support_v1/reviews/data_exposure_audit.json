@@ -1,0 +1,151 @@
+{
+  "status": "PASS_KNOWN_ROLES_NO_FRESHNESS_CLAIM",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "groups": {
+        "auxiliary": {
+          "count": 1024,
+          "router_train_range": [
+            0,
+            1024
+          ],
+          "namespace": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+          "namespace_sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855",
+          "previously_used": true,
+          "initial_P_fit_overlap": 0,
+          "current_role": "action selection training diagnostic"
+        },
+        "transfer": {
+          "count": 1024,
+          "router_train_range": [
+            1024,
+            2048
+          ],
+          "namespace": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+          "namespace_sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855",
+          "previously_used": true,
+          "initial_P_fit_overlap": 0,
+          "current_role": "fixed-rule migration description; historical, not blind"
+        }
+      },
+      "profile_fit_count": 20000,
+      "profile_fit_namespace": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+      "old_train_in_P": 4096,
+      "old_monitor_in_P": 1024,
+      "old_train_monitor_intersection": 0,
+      "auxiliary_transfer_same_namespace_intersection": 0,
+      "raw_copy_and_GT_parity": "PASS",
+      "Fast30K_exposure": "All 30000 router_train rows used by historical Fast prototype fitting",
+      "final_E34_validation": "Distinct validation source namespace; no input vector, GT, row or response read in E60",
+      "project_wide_unused_rows_claimed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "groups": {
+        "auxiliary": {
+          "count": 1024,
+          "router_train_range": [
+            0,
+            1024
+          ],
+          "namespace": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs",
+          "namespace_sha256": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2",
+          "previously_used": true,
+          "initial_P_fit_overlap": 0,
+          "current_role": "action selection training diagnostic"
+        },
+        "transfer": {
+          "count": 1024,
+          "router_train_range": [
+            1024,
+            2048
+          ],
+          "namespace": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs",
+          "namespace_sha256": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2",
+          "previously_used": true,
+          "initial_P_fit_overlap": 0,
+          "current_role": "fixed-rule migration description; historical, not blind"
+        }
+      },
+      "profile_fit_count": 20000,
+      "profile_fit_namespace": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs",
+      "old_train_in_P": 4096,
+      "old_monitor_in_P": 1024,
+      "old_train_monitor_intersection": 0,
+      "auxiliary_transfer_same_namespace_intersection": 0,
+      "raw_copy_and_GT_parity": "PASS",
+      "Fast30K_exposure": "All 30000 router_train rows used by historical Fast prototype fitting",
+      "final_E34_validation": "Distinct validation source namespace; no input vector, GT, row or response read in E60",
+      "project_wide_unused_rows_claimed": false
+    }
+  ],
+  "current_sources": [
+    {
+      "kind": "base",
+      "dataset": "webvid2_5m_light_v1",
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+      "bytes": 5140260000,
+      "mtime_ns": 1787713211996956145,
+      "sha256": "6fb5b5510b29504de38271be7c343bd5e85a029f5755c7b3d74177cbf1ebbb18"
+    },
+    {
+      "kind": "graph",
+      "dataset": "webvid2_5m_light_v1",
+      "path": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "bytes": 5791560103,
+      "mtime_ns": 1787714557628644919,
+      "sha256": "0a95d309b4980e0f0b73b7ad1222ec611db1f97c32ba2b69f070f5a952b9129a"
+    },
+    {
+      "kind": "query_train",
+      "dataset": "webvid2_5m_light_v1",
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+      "bytes": 61560000,
+      "mtime_ns": 1787714655768896778,
+      "sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855"
+    },
+    {
+      "kind": "gt_train",
+      "dataset": "webvid2_5m_light_v1",
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/gt.router_train.seed20260826.ip.ivecs",
+      "bytes": 12120000,
+      "mtime_ns": 1787714956393668277,
+      "sha256": "1db08bf5b259a468558e6dfed19661d73bc6fe6947a3c862e526176242ace72c"
+    },
+    {
+      "kind": "base",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+      "bytes": 8040000000,
+      "mtime_ns": 1787650857757488152,
+      "sha256": "56d1baa271c79ea280d57ee1c7a8359438ffffc98a75cac799051b13fbdbe0ff"
+    },
+    {
+      "kind": "graph",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "path": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "bytes": 10640000103,
+      "mtime_ns": 1787655783830469960,
+      "sha256": "fa6eb7dd4e8d9dc95d696947fc18bd167880fb336212cb7bd073e7acddd4bf2e"
+    },
+    {
+      "kind": "query_train",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs",
+      "bytes": 24120000,
+      "mtime_ns": 1787650857777488221,
+      "sha256": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2"
+    },
+    {
+      "kind": "gt_train",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/gt.router_train.ip.ivecs",
+      "bytes": 12120000,
+      "mtime_ns": 1787652397758769544,
+      "sha256": "5255cc604439ad9d2523dd7526dab85e61b40f0784fd630d5f297ef43af6bdcb"
+    }
+  ],
+  "seconds": 166.26202668799988,
+  "limitation": "Known relevant chains audited; no claim of exhaustive historical non-use. All router_train already exposed to legacy Fast."
+}

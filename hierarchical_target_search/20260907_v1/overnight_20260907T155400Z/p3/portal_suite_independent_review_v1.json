@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "status": "PASS_SOURCE_INTERFACE_REVIEW",
+  "created_utc": "2026-09-07T17:37:19.427541+00:00",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/build_portal_suite.py",
+    "sha256": "44194bbbf8bcc99130debf099102aaea886d231c6d8a4a448b0622968139917c"
+  },
+  "checked_interfaces": [
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/prepare_inputs_and_plans.py",
+      "sha256": "9be15acb7994057c719eb07501ce947f6bc831ae0cbd0e2a3770052b5ad6e016"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/bench_hierarchical_portals.cpp",
+      "sha256": "9137ae4ebc3b4a3c437fb171b0ffc1b5857d5ea1b610a674a59bf46c8af78385"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/finalize_portal_models.py",
+      "sha256": "d1945203dc99e7027ebdc9a414a6b1303df5da0988b491dcc15ac1b30f537a7e"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partition_hierarchy.cpp",
+      "sha256": "78cd134726c61fda5b722887262b33176989b1c40163e00af7a7bc52c76a81b5"
+    }
+  ],
+  "checks": [
+    "Common partition parent and branch lambda0/lambda1 manifest paths match producer output.",
+    "Planner plan CLI receives exact fit manifest, branch manifest, protocol/P2 gate/P0 audit, new output and four required prober source/kernel/build/binary bindings.",
+    "Prober CLI --plan/--output/--threads16 matches frozen production interface.",
+    "Finalizer CLI --plan/--probe-complete/--output matches exact complete cache interface and writes two fixed rules per branch.",
+    "Only lambda0 then lambda1; one planner/probe/finalize sequence per branch; no sweep or result-based choice.",
+    "All model/plan/probe output directories must be new; per-step metadata logs are exclusive and failures preserve INCOMPLETE top-level execution.",
+    "Subprocesses inherit controller PGID; soft deadline and frozen source/binary files checked before every stage; child tools retain their own checkpoints.",
+    "Existing protocol SHA and source paths match the reviewed pipeline; output models are addressed as lambda{0,1}/{frequency3,greedy3}/model.json."
+  ],
+  "help_check": "PASS",
+  "ANN_calls": 0,
+  "real_dataset_reads": false,
+  "needed_fixes": [],
+  "scope": "Source/interface orchestration only; actual partition/probe/finalizer runtime success remains to be established by controlled execution."
+}

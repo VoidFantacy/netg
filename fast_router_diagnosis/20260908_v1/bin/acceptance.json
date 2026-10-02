@@ -1,0 +1,37 @@
+{
+  "status": "PASS_SYNTHETIC_AND_SCHEMA_ONLY",
+  "real_data_experiments_started_by_this_agent": false,
+  "self_test": {
+    "graph_plain_count_checks": 144,
+    "kernel": "ACSG::search_new mode=2",
+    "kind": "synthetic_only",
+    "router_plain_count_checks": 48,
+    "status": "PASS"
+  },
+  "synthetic_end_to_end": {
+    "kind": "synthetic_end_to_end_only",
+    "serialized_mask_checks": 3464,
+    "status": "PASS",
+    "variants": 91
+  },
+  "synthetic_parity": {
+    "entry_audit": "first distance evaluations equal every supplied real entry ID in supplied order",
+    "graph_checks": 484,
+    "graph_comparison": "counted vs plain vs counted repeat; IDs and distances exact; repeat NDC exact",
+    "graph_search_calls": 1452,
+    "pilot_excluded": true,
+    "query_count": 2,
+    "route_checks": 2,
+    "rows_begin": 12,
+    "searches_per_graph_check": 3,
+    "status": "PASS"
+  },
+  "schema_checks": {
+    "V91_28pairs_56triples": true,
+    "cached_fast1_exact1_match_all_single": true,
+    "local_entry_padding_and_uniqueness": true,
+    "output_existing_root_rejected_without_metadata_change": true
+  },
+  "parity_only_status": "PARITY_ONLY_COMPLETE",
+  "binary_sha256": "c2948518b715aa66d28cede1aec126fef197b513dc555d0f42ff6e14d826287f"
+}

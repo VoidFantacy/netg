@@ -1,0 +1,55 @@
+{
+  "status": "PASS_SCOPED_PRE_CLOSE_PROTECTION_AUDIT",
+  "at": "2026-09-07T18:35:47.523225+00:00",
+  "basis": "Overnight-start snapshots and evaluated frozen versions, not Git HEAD",
+  "checks": [
+    {
+      "path": "/data/netg/ACSG/AGENTS.md",
+      "sha256": "dbb88f109e250c93422f34cc0db83b767ed6d8961f98f8f3fd6219fceb95a119",
+      "equals_overnight_start": true
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/ACSG.cpp",
+      "sha256": "931d74db432bb2a64aeaedd5200f933674b5e84fb0d129d5640189d76b008ba4",
+      "equals_overnight_start": true
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/ACSG.h",
+      "sha256": "d45ce4c40e4e295696df985d2e2f59efa88b7c79e3b6245ac2d92ccbc7df056b",
+      "equals_overnight_start": true
+    },
+    {
+      "path": "/data/netg/ACSG/benches/bench_target_basin_eval.cpp",
+      "sha256": "41a9f890bc4112cb844f62920188ed0c185ccda18900c0da6d87752d3af4b03d",
+      "equals_overnight_start": true
+    },
+    {
+      "path": "/data/netg/ACSG/benches/bench_hierarchical_eval.cpp",
+      "sha256": "ec770d5921831ac3937ab117b87a1750164f51164b48f3461183192c6d8e2079",
+      "equals_evaluated_frozen_version": true
+    },
+    {
+      "path": "/data/netg/ACSG/benches/bench_hierarchical_eval_p3.cpp",
+      "sha256": "cf40032dc469c08840e409af23bd503e1ad6571184351a2694776247e21d1316",
+      "equals_evaluated_frozen_version": true
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/RegionalSearch.h",
+      "sha256": "320e29c9407d5907ece7ef64113edeb8b2d5157fa8796aaf94e470eb6771e14e",
+      "equals_evaluated_frozen_version": true
+    }
+  ],
+  "cmake_old_contents_exact_prefix": true,
+  "cmake_diff": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/cmake_since_overnight_start.patch",
+  "git_status_lines_before": 1308,
+  "git_status_lines_now": 1311,
+  "git_status_new_lines": [
+    "?? benches/bench_hierarchical_eval.cpp",
+    "?? benches/bench_hierarchical_eval_p3.cpp",
+    "?? benches/bench_hierarchical_portals.cpp"
+  ],
+  "git_status_removed_lines": [],
+  "git_status_does_not_prove_all_file_content_unchanged": true,
+  "file_deletions_performed_by_this_task": [],
+  "final_after_deadline_verification_still_required": true
+}

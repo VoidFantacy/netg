@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "stage": "P3",
+  "status": "NOPASS",
+  "decision": "NO_GO_P3_SEARCH_TRANSFER",
+  "created_utc": "2026-09-07T18:00:52.867543+00:00",
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+  },
+  "p1_reacceptance": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P1_P3_reacceptance.json",
+    "sha256": "02b5e08c84625b37b12304d91ae03416d9c00085663e474f1cb8f27005ece7eb"
+  },
+  "evidence": [
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analysis_v1/analysis.json",
+      "sha256": "63da6a71425b0dbd6e186db1c608a564b9847c58168b6b56059a9ed2d2f901ae"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/structure_analysis_v1/analysis.json",
+      "sha256": "8b0cec717a14382c5917504e560bcffd732146c517ea9a699b0bb1812463088e"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/gate_independent_review_v1.json",
+      "sha256": "bb2a6d2e801e8d2a80131e2ff174724d587efbebd53ee2c044a1800638459a08"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/interpretation_limits_v1.md",
+      "sha256": "e39e4a3056365ff708808fd57906b0c02a5715916b4662b6b848e71a87689402"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/measurement_semantics_addendum_v1.json",
+      "sha256": "551b48dee6d6da536d1e4b2dc172c1c4af1dac5297157874a3521a680ba06fef"
+    },
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analysis_completion_addendum_v1.json",
+      "sha256": "969c6a9ebfa9f6c180333eae30eaf6d97a515eeeeb6855360afdaf0996d83ef6"
+    }
+  ],
+  "structure_condition_met": true,
+  "primary_search_condition": {
+    "comparison": "lambda1_greedy3 oracle_probability minus lambda0_greedy3 oracle_probability",
+    "cells": [
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "L": 64,
+        "contrast": "structure_under_greedy3",
+        "recall_delta_pp": -0.8660000000000001,
+        "ordinary95_interval_pp": [
+          -1.083,
+          -0.6469999999999999
+        ],
+        "lower_bound_positive": false
+      },
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "L": 128,
+        "contrast": "structure_under_greedy3",
+        "recall_delta_pp": -0.79,
+        "ordinary95_interval_pp": [
+          -0.96,
+          -0.621
+        ],
+        "lower_bound_positive": false
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "L": 64,
+        "contrast": "structure_under_greedy3",
+        "recall_delta_pp": -0.095,
+        "ordinary95_interval_pp": [
+          -0.20700000000000002,
+          0.015999999999999997
+        ],
+        "lower_bound_positive": false
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "L": 128,
+        "contrast": "structure_under_greedy3",
+        "recall_delta_pp": -0.017000000000000008,
+        "ordinary95_interval_pp": [
+          -0.08,
+          0.04799999999999998
+        ],
+        "lower_bound_positive": false
+      }
+    ],
+    "all_four_lower_bounds_positive": false,
+    "interpretation": "Describes only the preregistered oracle search subcondition; structure/capacity/full-recompute/common-initialization gate remains separate",
+    "automatic_stage_gate": false
+  },
+  "scientific_interpretation": "Training structural objective improved on both datasets but the preregistered oracle search transfer failed. WebVid both L have negative ordinary95 intervals; Yandex both main intervals include zero. This is a completed negative branch, not an interrupted run or failed correctness test.",
+  "portal_controls": "All eight fixed greedy-minus-frequency pilot intervals include zero. Fit proxy gains do not establish joint search gains.",
+  "oracle_queue_protection": "All sixteen fixed protected-minus-unified cells improve Recall with higher NDC and lower QPS; this does not rescue failed target-aware partition transfer.",
+  "P4_P8_authorized": false,
+  "validation_heldout_authorized": false,
+  "mechanism_revisions_used": 1,
+  "additional_representation_revision_authorized_by_this_gate": false,
+  "auxiliary_graph_trigger_established": false,
+  "allowed_next": "Preregister bounded read-only failure diagnostics on saved outputs/frozen labels and audited fit/pilot GT only; no refit, parameter sweep or predictor implementation. A trace requires its own bounded protocol.",
+  "whole_long_term_research_goal_complete": false,
+  "overnight_goal_complete": false,
+  "no_deployed_performance_improvement_evidence": true
+}

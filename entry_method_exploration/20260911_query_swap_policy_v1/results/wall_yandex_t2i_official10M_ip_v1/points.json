@@ -1,0 +1,182 @@
+[
+  {
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "phase": "wall",
+    "method": "base",
+    "kind": "base",
+    "queries": 512,
+    "L": 128,
+    "recall_pct": 88.26171875,
+    "delta_recall_pp": 0.0,
+    "failure_pct": 1.7578125,
+    "failure_delta_pp": 0.0,
+    "helped": 0,
+    "harmed": 0,
+    "rescued": 0,
+    "new_failures": 0,
+    "utility": 0.0,
+    "route_ndc": 107.376953125,
+    "graph_ndc": 2833.029296875,
+    "total_ndc": 2940.40625,
+    "total_NDC_change_pct": 0.0,
+    "changed_queries": 0,
+    "mean_swaps": 0.0,
+    "first_stop_pct": 100.0,
+    "QPS_median": 1843.2959929567662,
+    "QPS_min": 1833.7591397268557,
+    "QPS_max": 1863.8773528511967,
+    "timings": [
+      {
+        "QPS": 1863.8773528511967,
+        "order_position": 0,
+        "repeat": 0,
+        "wall_seconds": 0.274696186
+      },
+      {
+        "QPS": 1848.1747875208134,
+        "order_position": 2,
+        "repeat": 1,
+        "wall_seconds": 0.277030075
+      },
+      {
+        "QPS": 1843.2959929567662,
+        "order_position": 1,
+        "repeat": 2,
+        "wall_seconds": 0.277763312
+      },
+      {
+        "QPS": 1839.8369803819298,
+        "order_position": 0,
+        "repeat": 3,
+        "wall_seconds": 0.278285525
+      },
+      {
+        "QPS": 1833.7591397268557,
+        "order_position": 2,
+        "repeat": 4,
+        "wall_seconds": 0.279207879
+      }
+    ],
+    "native_numpy_score_max_error": 0.0
+  },
+  {
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "phase": "wall",
+    "method": "rl_20260918",
+    "kind": "model",
+    "queries": 512,
+    "L": 128,
+    "recall_pct": 88.65234375,
+    "delta_recall_pp": 0.390625,
+    "failure_pct": 1.5625,
+    "failure_delta_pp": -0.1953125,
+    "helped": 14,
+    "harmed": 11,
+    "rescued": 3,
+    "new_failures": 2,
+    "utility": 0.03760755969854901,
+    "route_ndc": 107.376953125,
+    "graph_ndc": 2841.35546875,
+    "total_ndc": 2948.732421875,
+    "total_NDC_change_pct": 0.2831639973218003,
+    "changed_queries": 474,
+    "mean_swaps": 1.41015625,
+    "first_stop_pct": 7.421875,
+    "QPS_median": 1690.3727188977286,
+    "QPS_min": 1683.6164035627467,
+    "QPS_max": 1699.2211948213883,
+    "timings": [
+      {
+        "QPS": 1699.2211948213883,
+        "order_position": 1,
+        "repeat": 0,
+        "wall_seconds": 0.301314509
+      },
+      {
+        "QPS": 1690.3727188977286,
+        "order_position": 0,
+        "repeat": 1,
+        "wall_seconds": 0.302891779
+      },
+      {
+        "QPS": 1683.6164035627467,
+        "order_position": 2,
+        "repeat": 2,
+        "wall_seconds": 0.304107277
+      },
+      {
+        "QPS": 1685.1303358627679,
+        "order_position": 1,
+        "repeat": 3,
+        "wall_seconds": 0.303834065
+      },
+      {
+        "QPS": 1697.8478130862952,
+        "order_position": 0,
+        "repeat": 4,
+        "wall_seconds": 0.301558241
+      }
+    ],
+    "native_numpy_score_max_error": 4.263256414560601e-14
+  },
+  {
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "phase": "wall",
+    "method": "exact_20260918",
+    "kind": "model",
+    "queries": 512,
+    "L": 128,
+    "recall_pct": 88.53515625,
+    "delta_recall_pp": 0.2734375,
+    "failure_pct": 1.171875,
+    "failure_delta_pp": -0.5859375,
+    "helped": 12,
+    "harmed": 10,
+    "rescued": 4,
+    "new_failures": 1,
+    "utility": 0.025876159454302695,
+    "route_ndc": 107.376953125,
+    "graph_ndc": 2845.3046875,
+    "total_ndc": 2952.681640625,
+    "total_NDC_change_pct": 0.4174726068889356,
+    "changed_queries": 462,
+    "mean_swaps": 1.62109375,
+    "first_stop_pct": 9.765625,
+    "QPS_median": 1691.43357082294,
+    "QPS_min": 1683.9364047340096,
+    "QPS_max": 1701.9832625902216,
+    "timings": [
+      {
+        "QPS": 1701.9832625902216,
+        "order_position": 2,
+        "repeat": 0,
+        "wall_seconds": 0.30082552
+      },
+      {
+        "QPS": 1691.43357082294,
+        "order_position": 1,
+        "repeat": 1,
+        "wall_seconds": 0.302701808
+      },
+      {
+        "QPS": 1683.9364047340096,
+        "order_position": 0,
+        "repeat": 2,
+        "wall_seconds": 0.304049487
+      },
+      {
+        "QPS": 1696.1926600290606,
+        "order_position": 2,
+        "repeat": 3,
+        "wall_seconds": 0.301852503
+      },
+      {
+        "QPS": 1691.1279852066996,
+        "order_position": 1,
+        "repeat": 4,
+        "wall_seconds": 0.302756506
+      }
+    ],
+    "native_numpy_score_max_error": 5.684341886080802e-14
+  }
+]

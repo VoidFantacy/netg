@@ -1,0 +1,70 @@
+{
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "dataset": "webvid2_5m_light_v1",
+      "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+      "base_n": 2505000,
+      "dimension": 512,
+      "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "qgt_queries": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.aco_train.seed20260826.fvecs",
+      "fit_queries": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/queries.f32",
+      "fit_n": 20000,
+      "H": 815,
+      "soft": true,
+      "selector_source": "/data/netg/ACSG/benches/run/build_fast_entry_variants.py",
+      "output": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/default_demand_full_build_v1/results/webvid2_5m_light_v1"
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+      "base_n": 10000000,
+      "dimension": 200,
+      "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "qgt_queries": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.aco_train.fvecs",
+      "fit_queries": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/queries.f32",
+      "fit_n": 20000,
+      "H": 821,
+      "soft": false,
+      "selector_source": "/data/netg/ACSG/benches/run/build_fast_entry_variants.py",
+      "output": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/default_demand_full_build_v1/results/yandex_t2i_official10M_ip_v1"
+    }
+  },
+  "n": 1024,
+  "configs": [
+    {
+      "name": "Batch256K100",
+      "batch": 256,
+      "k": 100
+    },
+    {
+      "name": "Batch256K10",
+      "batch": 256,
+      "k": 10
+    },
+    {
+      "name": "Batch1024K100",
+      "batch": 1024,
+      "k": 100
+    },
+    {
+      "name": "Batch1024K10",
+      "batch": 1024,
+      "k": 10
+    }
+  ],
+  "timed_repeats": 3,
+  "warm_repeats": 1,
+  "exact_query_cap": 32768,
+  "seconds_cap": 2400,
+  "per_dataset_seconds_cap": 1600,
+  "max_new_bytes": 8388608,
+  "max_campaign_bytes": 1073741824,
+  "min_free_bytes": 6442450944,
+  "float64_check_cap_per_dataset": 64,
+  "deadline_unix": 1790776800,
+  "latest_start_unix": 1790775000,
+  "main_comparison": [
+    "Batch1024K100",
+    "Batch256K100"
+  ]
+}

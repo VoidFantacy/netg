@@ -1,0 +1,1 @@
+E64首次prepare在import阶段因复制的graph_reader依赖模块名shared而失败，0输入准备/模型/原生查询。新增shared→common兼容导入，不修改图解析实现或方法协议。原prepare.log保留；后续日志prepare_v2.log。首次没有job或查询预留。

@@ -1,0 +1,85 @@
+{
+  "source_version": "E34 copied source with isolated E66 Policy and explicit input prefix",
+  "builds": [
+    {
+      "argv": [
+        "c++",
+        "-std=c++17",
+        "-O3",
+        "-march=native",
+        "-fopenmp",
+        "-fPIC",
+        "-Wall",
+        "-Wextra",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/benches",
+        "-I/data/netg/ACSG/build/_deps/json-src/include",
+        "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage7_multimode_index_v1/src/evaluate.cpp",
+        "/data/netg/ACSG/ACSG/ACSG.cpp",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "/data/netg/ACSG/build/ACSG/libACSG.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "/usr/lib/x86_64-linux-gnu/libopenblas.so",
+        "-lm",
+        "-ldl",
+        "-lpthread",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage7_multimode_index_v1/bin/evaluate"
+      ],
+      "seconds": 14.381118095001511,
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "c++",
+        "-std=c++17",
+        "-O3",
+        "-march=native",
+        "-fopenmp",
+        "-fPIC",
+        "-Wall",
+        "-Wextra",
+        "-I/data/netg/ACSG",
+        "-I/data/netg/ACSG/faiss",
+        "-I/data/netg/ACSG/benches",
+        "-I/data/netg/ACSG/build/_deps/json-src/include",
+        "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage7_multimode_index_v1/src/synthetic.cpp",
+        "/data/netg/ACSG/ACSG/ACSG.cpp",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "/data/netg/ACSG/build/ACSG/libACSG.a",
+        "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "/usr/lib/x86_64-linux-gnu/libopenblas.so",
+        "-lm",
+        "-ldl",
+        "-lpthread",
+        "-o",
+        "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage7_multimode_index_v1/bin/synthetic"
+      ],
+      "seconds": 12.5450242349998,
+      "returncode": 0
+    }
+  ],
+  "files": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage7_multimode_index_v1/bin/evaluate",
+      "bytes": 3454872,
+      "mtime_ns": 1789268804808919119,
+      "sha256": "742a44879b4346f726deb99203c409a1cae33cd86d41a3bc5bde58f23fa7cd78"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage7_multimode_index_v1/bin/synthetic",
+      "bytes": 3402112,
+      "mtime_ns": 1789268817353003074,
+      "sha256": "f603a6801639060d672f64e8b387bffdf696198f677b550a8e124a087afb7d2c"
+    }
+  ],
+  "original_kernel": {
+    "path": "/data/netg/ACSG/ACSG/ACSG.cpp",
+    "bytes": 54198,
+    "mtime_ns": 1788400319395352765,
+    "sha256": "931d74db432bb2a64aeaedd5200f933674b5e84fb0d129d5640189d76b008ba4"
+  }
+}

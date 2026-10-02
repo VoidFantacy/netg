@@ -1,0 +1,83 @@
+[
+  {
+    "command": [
+      "c++",
+      "-std=c++17",
+      "-O3",
+      "-g",
+      "-march=native",
+      "-fopenmp",
+      "-fPIC",
+      "-I/data/netg/ACSG/build/_deps/json-src/include",
+      "-I/data/netg/ACSG/entry_method_exploration/20260916_residual_cost_research_v1/src",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/entry_method_exploration/20260916_residual_cost_research_v1/src/common",
+      "-no-pie",
+      "/data/netg/ACSG/entry_method_exploration/20260916_residual_cost_research_v1/src/profile.cpp",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+      "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+      "-lopenblas",
+      "-llapack",
+      "-lz",
+      "-lpthread",
+      "-ldl",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20260916_residual_cost_research_v1/bin/profile"
+    ],
+    "seconds": 10.798190832138062
+  },
+  {
+    "command": [
+      "c++",
+      "-I/data/netg/ACSG/entry_method_exploration/20260916_residual_cost_research_v1/src/probe_include",
+      "-std=c++17",
+      "-O3",
+      "-g",
+      "-march=native",
+      "-fopenmp",
+      "-fPIC",
+      "-I/data/netg/ACSG/build/_deps/json-src/include",
+      "-I/data/netg/ACSG/entry_method_exploration/20260916_residual_cost_research_v1/src",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/entry_method_exploration/20260916_residual_cost_research_v1/src/probe_common",
+      "-c",
+      "/data/netg/ACSG/entry_method_exploration/20260916_residual_cost_research_v1/src/ACSG.probe.cpp",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20260916_residual_cost_research_v1/bin/ACSG.probe.o"
+    ],
+    "seconds": 1.9253168106079102
+  },
+  {
+    "command": [
+      "c++",
+      "-std=c++17",
+      "-O3",
+      "-g",
+      "-march=native",
+      "-fopenmp",
+      "-fPIC",
+      "-I/data/netg/ACSG/build/_deps/json-src/include",
+      "-I/data/netg/ACSG/entry_method_exploration/20260916_residual_cost_research_v1/src",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/entry_method_exploration/20260916_residual_cost_research_v1/src/probe_common",
+      "-no-pie",
+      "/data/netg/ACSG/entry_method_exploration/20260916_residual_cost_research_v1/src/probe.cpp",
+      "/data/netg/ACSG/entry_method_exploration/20260916_residual_cost_research_v1/bin/ACSG.probe.o",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+      "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+      "-lopenblas",
+      "-llapack",
+      "-lz",
+      "-lpthread",
+      "-ldl",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20260916_residual_cost_research_v1/bin/probe"
+    ],
+    "seconds": 10.61612844467163
+  }
+]

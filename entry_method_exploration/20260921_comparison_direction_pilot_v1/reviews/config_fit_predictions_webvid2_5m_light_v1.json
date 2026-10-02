@@ -1,0 +1,82 @@
+{
+  "dataset": "webvid2_5m_light_v1",
+  "dimension": 512,
+  "base_n": 2505000,
+  "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+  "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "anchor": {
+    "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+    "name": "GT10-soft-t1"
+  },
+  "threads": 1,
+  "n": 4096,
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/inputs/webvid2_5m_light_v1/fit/queries.f32",
+  "gt": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/inputs/webvid2_5m_light_v1/fit/gt.i64",
+  "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+  "seconds_cap": 18000,
+  "max_search_calls": 60000000,
+  "label_block": 128,
+  "label_repeats": 3,
+  "trace_single_actions": 8,
+  "direction_samples_per_query": 64,
+  "mode": "predict",
+  "features": [
+    {
+      "name": "graph",
+      "kind": "relu",
+      "m": 32,
+      "directions": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/webvid2_5m_light_v1/graph_directions.f32"
+    },
+    {
+      "name": "random",
+      "kind": "relu",
+      "m": 32,
+      "directions": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/webvid2_5m_light_v1/random_directions.f32"
+    },
+    {
+      "name": "linear",
+      "kind": "linear",
+      "m": 32,
+      "directions": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/webvid2_5m_light_v1/graph_directions.f32"
+    },
+    {
+      "name": "raw",
+      "kind": "raw"
+    }
+  ],
+  "models": [
+    {
+      "name": "GraphCost",
+      "type": "learned",
+      "model": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/webvid2_5m_light_v1/GraphCost/model.json"
+    },
+    {
+      "name": "GraphRecall",
+      "type": "learned",
+      "model": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/webvid2_5m_light_v1/GraphRecall/model.json"
+    },
+    {
+      "name": "RandomCost",
+      "type": "learned",
+      "model": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/webvid2_5m_light_v1/RandomCost/model.json"
+    },
+    {
+      "name": "GraphLinearCost",
+      "type": "learned",
+      "model": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/webvid2_5m_light_v1/GraphLinearCost/model.json"
+    },
+    {
+      "name": "RawLinearCost",
+      "type": "learned",
+      "model": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/webvid2_5m_light_v1/RawLinearCost/model.json"
+    },
+    {
+      "name": "ShuffledCost",
+      "type": "learned",
+      "model": "/data/netg/ACSG/entry_method_exploration/20260921_comparison_direction_pilot_v1/models/webvid2_5m_light_v1/ShuffledCost/model.json"
+    }
+  ],
+  "save_all_scores": false
+}

@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "models": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "teacher",
+      "checkpoint": "selected",
+      "status": "PASS",
+      "objective": 0.5085771209887301
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "teacher",
+      "checkpoint": "last",
+      "status": "PASS",
+      "objective": 0.5085771209887301
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "reward",
+      "checkpoint": "selected",
+      "status": "PASS",
+      "objective": 5.109574676972075
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "reward",
+      "checkpoint": "last",
+      "status": "PASS",
+      "objective": 5.109574676972075
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "teacher",
+      "checkpoint": "selected",
+      "status": "PASS",
+      "objective": 0.9223977931551727
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "teacher",
+      "checkpoint": "last",
+      "status": "PASS",
+      "objective": 0.92239779396165
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "reward",
+      "checkpoint": "selected",
+      "status": "PASS",
+      "objective": 2.5365496298288286
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "reward",
+      "checkpoint": "last",
+      "status": "PASS",
+      "objective": 2.5365496298288286
+    }
+  ],
+  "independent_scale_checks": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "teacher",
+      "numpy_initial_gradient_norm": 0.3479911654183176,
+      "status": "PASS"
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "cell": "reward",
+      "numpy_initial_gradient_norm": 0.0031519689785769,
+      "status": "PASS"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "teacher",
+      "numpy_initial_gradient_norm": 0.35317071624361673,
+      "status": "PASS"
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "cell": "reward",
+      "numpy_initial_gradient_norm": 0.0038777608494378665,
+      "status": "PASS"
+    }
+  ],
+  "teacher_E31_bit_recovery": true,
+  "scored_float32_exports": 6,
+  "logical_labels_reused": 2240000,
+  "new_labels": 0,
+  "NSG_calls": 0,
+  "optimizer_steps": 0
+}

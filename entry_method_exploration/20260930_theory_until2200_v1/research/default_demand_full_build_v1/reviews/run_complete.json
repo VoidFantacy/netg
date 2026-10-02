@@ -1,0 +1,145 @@
+{
+  "status": "BUILT_PENDING_IDENTITY_AUDIT",
+  "seconds": 1855.8056941100003,
+  "jobs": {
+    "webvid2_5m_light_v1_exact": {
+      "exit_code": 0,
+      "seconds": 333.0425699360003,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/default_demand_full_build_v1/exact.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/default_demand_full_build_v1/inputs/webvid2_5m_light_v1.json"
+      ],
+      "maxrss_bytes": 10485506048,
+      "max_threads": 15,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "user_cpu_seconds": 2607.536395,
+      "system_cpu_seconds": 10.939763
+    },
+    "webvid2_5m_light_v1_profile": {
+      "exit_code": 0,
+      "seconds": 2.806550632001745,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/default_demand_full_build_v1/profile.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/default_demand_full_build_v1/inputs/webvid2_5m_light_v1.json"
+      ],
+      "maxrss_bytes": 4549140480,
+      "max_threads": 8,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "user_cpu_seconds": 8.148588999999902,
+      "system_cpu_seconds": 10.803246000000001
+    },
+    "webvid2_5m_light_v1_router": {
+      "exit_code": 0,
+      "seconds": 0.20090496500051813,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/bin/build_router",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/default_demand_full_build_v1/results/webvid2_5m_light_v1/router.config.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/default_demand_full_build_v1/results/webvid2_5m_light_v1/router_complete.json"
+      ],
+      "maxrss_bytes": 4096,
+      "max_threads": 1,
+      "affinity_samples": [
+        "14"
+      ],
+      "user_cpu_seconds": 0.05019700000002558,
+      "system_cpu_seconds": 0.0038610000000005584
+    },
+    "yandex_t2i_official10M_ip_v1_exact": {
+      "exit_code": 0,
+      "seconds": 1518.349169313,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/default_demand_full_build_v1/exact.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/default_demand_full_build_v1/inputs/yandex_t2i_official10M_ip_v1.json"
+      ],
+      "maxrss_bytes": 16174899200,
+      "max_threads": 15,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "user_cpu_seconds": 11722.545229,
+      "system_cpu_seconds": 7.471862999999999
+    },
+    "yandex_t2i_official10M_ip_v1_profile": {
+      "exit_code": 0,
+      "seconds": 1.2029676100009965,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/default_demand_full_build_v1/profile.py",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/default_demand_full_build_v1/inputs/yandex_t2i_official10M_ip_v1.json"
+      ],
+      "maxrss_bytes": 6784122880,
+      "max_threads": 8,
+      "affinity_samples": [
+        "0-7",
+        "14"
+      ],
+      "user_cpu_seconds": 2.827379000000292,
+      "system_cpu_seconds": 4.561183
+    },
+    "yandex_t2i_official10M_ip_v1_router": {
+      "exit_code": 0,
+      "seconds": 0.2008444059993053,
+      "argv": [
+        "taskset",
+        "-c",
+        "0-7",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/hybrid_temperature_factorial_v1/bin/build_router",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/default_demand_full_build_v1/results/yandex_t2i_official10M_ip_v1/router.config.json",
+        "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/default_demand_full_build_v1/results/yandex_t2i_official10M_ip_v1/router_complete.json"
+      ],
+      "maxrss_bytes": 4096,
+      "max_threads": 1,
+      "affinity_samples": [
+        "14"
+      ],
+      "user_cpu_seconds": 0.0452129999994213,
+      "system_cpu_seconds": 0.0
+    }
+  },
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "complete_build_wall_seconds": 336.0514090840006,
+      "job_seconds_sum": 336.05002553300255,
+      "jobs": [
+        "webvid2_5m_light_v1_exact",
+        "webvid2_5m_light_v1_profile",
+        "webvid2_5m_light_v1_router"
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "complete_build_wall_seconds": 1519.7538713729991,
+      "job_seconds_sum": 1519.7529813290002,
+      "jobs": [
+        "yandex_t2i_official10M_ip_v1_exact",
+        "yandex_t2i_official10M_ip_v1_profile",
+        "yandex_t2i_official10M_ip_v1_router"
+      ]
+    }
+  },
+  "default_changed": false
+}

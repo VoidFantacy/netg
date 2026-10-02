@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "figures": 2,
+  "formats": [
+    "png",
+    "svg"
+  ],
+  "workbook_sheets": 5,
+  "sources": [
+    [
+      "Protocol",
+      "/data/netg/ACSG/entry_method_exploration/20260911_direct_reward_policy_v1/protocol.md"
+    ],
+    [
+      "Raw complete-action labels",
+      "/data/netg/ACSG/entry_method_exploration/20260911_gt10_shared_transform_v1/labels"
+    ],
+    [
+      "Frozen scales",
+      "/data/netg/ACSG/entry_method_exploration/20260911_direct_reward_policy_v1/reviews/reward_scales.json"
+    ],
+    [
+      "Report",
+      "/data/netg/ACSG/entry_method_exploration/20260911_direct_reward_policy_v1/report.md"
+    ],
+    [
+      "Expected reward",
+      "Exact softmax expectation over all 56 labeled C8 triples; not greedy deployment"
+    ],
+    [
+      "Greedy utility",
+      "Selected float32 model argmax triple; cached real NSG L128/K10 labels"
+    ],
+    [
+      "Scope",
+      "Historical fit20K, one H/seed/lambda/temperature; no new QPS or independent blind inference"
+    ],
+    [
+      "Cost",
+      "Graph NDC feasibility only; any future online timer must include complete C8 candidate generation"
+    ]
+  ]
+}

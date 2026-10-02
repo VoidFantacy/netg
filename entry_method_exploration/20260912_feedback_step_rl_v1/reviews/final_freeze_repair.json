@@ -1,0 +1,7 @@
+{
+  "status": "PASS_ALL_OTHER_FILES_UNCHANGED",
+  "mismatch": [
+    "/data/netg/ACSG/entry_method_exploration/20260912_feedback_step_rl_v1/logs/final.log"
+  ],
+  "explanation": "E53 finalizer在freeze之后向重定向的final.log打印完成行，使v1仅该日志SHA失配。所有其他已冻结文件通过。原v1和日志保留，进程exit0句柄已收集，现在从外部工具进程生成v2，包含已稳定日志；不改变训练、审计或结果。E54第一次prepare因此在任何查询前退出，无原生调用，修正其引用后继续。"
+}

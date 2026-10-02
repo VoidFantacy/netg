@@ -1,0 +1,24 @@
+{
+  "status": "PASS_DESCRIPTIVE_RULE_INTERSECTION",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "auxiliary_positive_actions": 9,
+      "auxiliary_positive_and_train_legal": 0,
+      "positive_auxiliary_but_train_hit_loss": 7,
+      "positive_auxiliary_train_hits_unchanged_J_negative": 2,
+      "auxiliary_positive_new_zero_failures": 0
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "auxiliary_positive_actions": 0,
+      "auxiliary_positive_and_train_legal": 0,
+      "positive_auxiliary_but_train_hit_loss": 0,
+      "positive_auxiliary_train_hits_unchanged_J_negative": 0,
+      "auxiliary_positive_new_zero_failures": 0
+    }
+  ],
+  "rule_changed": false,
+  "extra_native_calls": 0,
+  "interpretation": "The locked conjunction has empty support; distinguish absent auxiliary response from train-J rejection. No claim of whole-space incompatibility."
+}

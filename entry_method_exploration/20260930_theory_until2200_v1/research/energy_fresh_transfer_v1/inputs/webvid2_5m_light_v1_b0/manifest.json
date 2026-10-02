@@ -1,0 +1,80 @@
+{
+  "status": "PASS_SOURCE_AND_DEDUP",
+  "case": "webvid2_5m_light_v1_b0",
+  "dataset": "webvid2_5m_light_v1",
+  "n": 4096,
+  "dimension": 512,
+  "source": {
+    "source": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/source/webvid.query.train.2.5M.fbin",
+    "source_rows": [
+      2370000,
+      2390000
+    ],
+    "source_stat": {
+      "bytes": 5120000008,
+      "mtime_ns": 1787714604500765209
+    },
+    "slice_sha256": "668f9241a54d47fc8692f1e9f7df8c2e396210bfa646eebe4f06a02af66c329e",
+    "inherited_full_source_sha256": "cb48e2b8d90492fce20c2303b5a5ca10b49875f6a75967733d2bc7b73bd8c2b9"
+  },
+  "excluded_files": [
+    {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.aco_train.seed20260826.fvecs",
+      "rows": 5000,
+      "sha256": "b4322c37b2d4ab10e965bc5731f523341d1a974d5e40aa0cd881b4fbe28a572e"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+      "rows": 30000,
+      "sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.test.public10K.fvecs",
+      "rows": 10000,
+      "sha256": "96b11dda1628f15e704512438e1dc773a8f19b2426e03c71aedcacf11f18910d"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.validation.seed20260826.fvecs",
+      "rows": 10000,
+      "sha256": "a59d61a48bf160679626a5a0a71f9d28d32d3528bda94d92ddf6ab03e132b96a"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/candidate_source.f32",
+      "rows": 20000,
+      "sha256": "57029d23477724275baed1e6578e5e783d243f80cdcddc0e4f5a25fe8e048eb6"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/queries.f32",
+      "rows": 20000,
+      "sha256": "4eef43d019981b7ce8a57eb9969736c0443d4622412ed482868ba80cd8b078b6"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260922_until2200_improvement_v1/stages/e125_web_fresh_check_v1/inputs/webvid2_5m_light_v1/candidate_source.f32",
+      "rows": 20000,
+      "sha256": "7335078c72b00609b08fe75c996e3a366d652346fbff849bc7b83c3fd87c9379"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/fresh_transfer_v1/inputs/webvid2_5m_light_v1_b0/candidate_source.f32",
+      "rows": 20000,
+      "sha256": "8f751cf4b443973bd1d62783f79bd8bb52ad70878832c8aac3aa0d78edd8d90f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260930_theory_until2200_v1/research/fresh_transfer_v1/inputs/webvid2_5m_light_v1_b1/candidate_source.f32",
+      "rows": 20000,
+      "sha256": "4668ee4e62d7ff67c24a7af47457ff9b5e39505eff89e5aa2945cd4ecbcb3d27"
+    }
+  ],
+  "duplicates_skipped": 105,
+  "invalid_skipped": 0,
+  "new_vs_known_inputs_byte_overlap": 0,
+  "selected_queries_unique": true,
+  "selection": "first eligible source rows; no GT or model outputs",
+  "seconds": 0.14747989600073197,
+  "unix": 1790752978.4823704,
+  "files": {
+    "queries.f32": "be2fbdf76883e765ef0b755b6187a696c9814b5ab17b62e3275eba7f95b79add",
+    "candidate_source.f32": "668f9241a54d47fc8692f1e9f7df8c2e396210bfa646eebe4f06a02af66c329e",
+    "source_rows.i64": "91ce015648880d30d2f727e90f60a9fca8be389812b0d1683a37e2f12d9d640e"
+  },
+  "scope": "no known registered/exposed byte overlap; not semantic independence or exhaustive unregistered exposure"
+}

@@ -1,0 +1,83 @@
+{
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "split": "audit",
+  "dim": 200,
+  "num_queries": 2048,
+  "gt_k": 100,
+  "index_path": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "base_count": 10000000,
+  "queries_file": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/yandex_t2i_official10M_ip_v1/audit/queries.f32",
+  "gt_file": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/yandex_t2i_official10M_ip_v1/audit/gt.i64",
+  "row_ids": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/yandex_t2i_official10M_ip_v1/audit/row_ids.i64",
+  "timing_repeats": 0,
+  "export_features": true,
+  "policies": {
+    "A0": {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "dim": 200,
+      "hub_count": 821,
+      "k": 3,
+      "seed": 20260828,
+      "hnsw_seed": 20260828,
+      "mapping": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/yandex_t2i_official10M_ip_v1/hub_ids.i32",
+      "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/yandex_t2i_official10M_ip_v1/hub_ids.i32",
+      "slot_labels": false,
+      "exact": false,
+      "legacy_heap_order": false,
+      "canonical_entry_order": true,
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_hard/W.f32",
+      "family": "fast20k",
+      "name": "fast20k"
+    },
+    "A1": {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "dim": 200,
+      "hub_count": 821,
+      "k": 3,
+      "seed": 20260828,
+      "hnsw_seed": 20260828,
+      "mapping": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/yandex_t2i_official10M_ip_v1/hub_ids.i32",
+      "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/yandex_t2i_official10M_ip_v1/hub_ids.i32",
+      "slot_labels": false,
+      "exact": false,
+      "legacy_heap_order": false,
+      "canonical_entry_order": true,
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "family": "e24",
+      "name": "e24"
+    },
+    "hub_features": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/inputs/yandex_t2i_official10M_ip_v1/hub_features.f64",
+    "primary_E24": "gt10_hard"
+  },
+  "dataset_order": 1,
+  "methods": [
+    {
+      "name": "fast20k_L64",
+      "family": "fast20k",
+      "kind": "fast20k",
+      "L": 64
+    },
+    {
+      "name": "e24_L64",
+      "family": "e24",
+      "kind": "e24",
+      "L": 64
+    },
+    {
+      "name": "fast20k_L128",
+      "family": "fast20k",
+      "kind": "fast20k",
+      "L": 128
+    },
+    {
+      "name": "e24_L128",
+      "family": "e24",
+      "kind": "e24",
+      "L": 128
+    }
+  ],
+  "threads": 1,
+  "query_cpu": 15,
+  "real_call_cap": 16448,
+  "protocol_sha256": "16c148cc2952b8ec37fd99b414122471af3d26fcecf211574501be247564f33d"
+}

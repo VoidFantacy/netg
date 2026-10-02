@@ -1,0 +1,68 @@
+{
+  "status": "PASS_FAILURE_DIAGNOSTICS_PERSISTENCE",
+  "fixture_only": true,
+  "no_real_dataset_used": true,
+  "checks": {
+    "returncode3": true,
+    "failed_structure_status": true,
+    "labels_preserved": true,
+    "actual_sizes_saved": true,
+    "capacity_failure_explicit": true,
+    "integer_floor_limit1": true,
+    "label_sha256_matches_hashlib": true
+  },
+  "actual_partition_stats": {
+    "all_nodes_covered": true,
+    "all_regions_nonempty": false,
+    "capacity_limit_factor": 1.2,
+    "capacity_node_limit_floor": 1,
+    "capacity_pass": false,
+    "capacity_violations": [
+      {
+        "excess_nodes": 1,
+        "region": 1,
+        "size": 2
+      },
+      {
+        "excess_nodes": 1,
+        "region": 3,
+        "size": 2
+      },
+      {
+        "excess_nodes": 1,
+        "region": 4,
+        "size": 2
+      }
+    ],
+    "debug_level": 2054,
+    "empty_region_count": 2,
+    "maximum_region_size": 2,
+    "maximum_size_over_average": 1.6666666666666667,
+    "metis_edgecut": 3,
+    "metis_idx_bits": 64,
+    "metis_real_bits": 32,
+    "metis_return_code": 1,
+    "metis_seconds": 0.000235865,
+    "minimum_region_size": 0,
+    "ncuts": 1,
+    "niter": 10,
+    "numbering": 0,
+    "original_directed_nonself_crossing_slots": 9,
+    "original_directed_nonself_cut_fraction": 0.5,
+    "parts": 5,
+    "region_sizes": [
+      0,
+      2,
+      0,
+      2,
+      2
+    ],
+    "seed": 2026090711,
+    "ufactor": 200,
+    "undirected_edgecut_fraction": 0.5,
+    "verification_seconds": 1.4215e-05,
+    "verified_undirected_edgecut": 3
+  },
+  "production_code_changed": false,
+  "first_invocation": "Rejected argument/protocol mismatch before creating output; omitted --parts5 corrected on second fixture invocation"
+}

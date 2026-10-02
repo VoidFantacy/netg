@@ -1,0 +1,39 @@
+{
+  "index": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/reviews/synthetic_v1/l2/nsg/graph.nsg",
+  "base": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/reviews/synthetic_v1/l2/base.fvecs",
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/reviews/synthetic_v1/l2/queries.f32",
+  "hnsw_complete": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/reviews/synthetic_v1/l2/hnsw/complete.json",
+  "hnsw_topology": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/reviews/synthetic_v1/l2/hnsw/full.topology.gz",
+  "n": 48,
+  "K": 1,
+  "metric_id": 1,
+  "threads": 1,
+  "formal": false,
+  "L": [
+    32,
+    768
+  ],
+  "methods": [
+    {
+      "name": "NSG"
+    },
+    {
+      "name": "GT10-hard",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/reviews/synthetic_v1/l2/router.ids.i32",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/reviews/synthetic_v1/l2/W.f32"
+    },
+    {
+      "name": "GT10-soft-t1",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/reviews/synthetic_v1/l2/router.ids.i32",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/reviews/synthetic_v1/l2/W.f32"
+    },
+    {
+      "name": "GATE",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/reviews/synthetic_v1/l2/router.ids.i32",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/reviews/synthetic_v1/l2/W.f32"
+    },
+    {
+      "name": "HNSW"
+    }
+  ]
+}

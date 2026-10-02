@@ -1,0 +1,117 @@
+{
+    "artifact_version": "yandex-t2i-official-first10m-ip-v1",
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "metric": "ip",
+    "normalization": "none",
+    "num_queries": 10000,
+    "num_runs": 3,
+    "results": [
+        {
+            "method_name": "0. Medoid (Baseline)",
+            "performance": [
+                {
+                    "qps": 2227.8264519687614,
+                    "qps_std": 4.536203657489417,
+                    "recall": 0.7918142676353455,
+                    "search_L": 100
+                },
+                {
+                    "qps": 1822.590519484861,
+                    "qps_std": 3.673964368228306,
+                    "recall": 0.8274567127227783,
+                    "search_L": 128
+                },
+                {
+                    "qps": 1281.579243052726,
+                    "qps_std": 1.0852424831510976,
+                    "recall": 0.8806697130203247,
+                    "search_L": 200
+                },
+                {
+                    "qps": 690.7815526704097,
+                    "qps_std": 11.017030385477517,
+                    "recall": 0.9378125071525574,
+                    "search_L": 400
+                },
+                {
+                    "qps": 368.06720231553317,
+                    "qps_std": 0.6386864607304682,
+                    "recall": 0.9695764780044556,
+                    "search_L": 800
+                }
+            ]
+        },
+        {
+            "method_name": "2. Raw HNSW Routing (Ablation Baseline)",
+            "performance": [
+                {
+                    "qps": 2494.2368105410387,
+                    "qps_std": 6.751180204166941,
+                    "recall": 0.8029159307479858,
+                    "search_L": 100
+                },
+                {
+                    "qps": 2028.8796378256054,
+                    "qps_std": 2.9239018885260184,
+                    "recall": 0.8370203375816345,
+                    "search_L": 128
+                },
+                {
+                    "qps": 1380.6888448277316,
+                    "qps_std": 2.8637392052203774,
+                    "recall": 0.888465166091919,
+                    "search_L": 200
+                },
+                {
+                    "qps": 738.5498716887658,
+                    "qps_std": 1.653162050988577,
+                    "recall": 0.9422982335090637,
+                    "search_L": 400
+                },
+                {
+                    "qps": 382.37917592307787,
+                    "qps_std": 0.33431672895355613,
+                    "recall": 0.9713670015335083,
+                    "search_L": 800
+                }
+            ]
+        },
+        {
+            "method_name": "5. Asym-Neural HNSW Routing (0ms inference)",
+            "performance": [
+                {
+                    "qps": 2508.1088676268423,
+                    "qps_std": 6.855488256253607,
+                    "recall": 0.8039165139198303,
+                    "search_L": 100
+                },
+                {
+                    "qps": 2034.7536109003365,
+                    "qps_std": 3.1804634461575394,
+                    "recall": 0.8376071453094482,
+                    "search_L": 128
+                },
+                {
+                    "qps": 1385.283364849059,
+                    "qps_std": 4.779718481117487,
+                    "recall": 0.887365996837616,
+                    "search_L": 200
+                },
+                {
+                    "qps": 741.7148102313657,
+                    "qps_std": 1.4621883493151278,
+                    "recall": 0.9405500292778015,
+                    "search_L": 400
+                },
+                {
+                    "qps": 383.3186488429754,
+                    "qps_std": 1.2853579777080257,
+                    "recall": 0.9711706042289734,
+                    "search_L": 800
+                }
+            ]
+        }
+    ],
+    "split": "held-out-test",
+    "top_k": 100
+}

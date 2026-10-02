@@ -1,0 +1,76 @@
+{
+  "artifact_version": "roargraph-webvid2.5m-ip-v1",
+  "candidate_count": 815,
+  "dataset": "webvid2_5m_light_v1",
+  "metric": "ip",
+  "num_queries": 10000,
+  "num_runs": 1,
+  "oracle_definition": "skipped; router comparison only",
+  "results": [
+    {
+      "methods": [
+        {
+          "mean_graph_latency_us": 572.9033516999999,
+          "mean_graph_ndc": 1165.6466,
+          "mean_recall": 0.6155099999999999,
+          "method": "Medoid",
+          "samples": 10000
+        },
+        {
+          "mean_graph_latency_us": 413.16667759999996,
+          "mean_graph_ndc": 916.7418,
+          "mean_recall": 0.6593799999999995,
+          "method": "Fast_Prototype_Top3",
+          "samples": 10000
+        },
+        {
+          "mean_graph_latency_us": 294.61713619999995,
+          "mean_graph_ndc": 888.5531,
+          "mean_recall": 0.6711899999999994,
+          "method": "MetaAttnAlpha_m0p5_Top3",
+          "samples": 10000
+        }
+      ],
+      "search_L": 64,
+      "top_k": 10
+    },
+    {
+      "methods": [
+        {
+          "mean_graph_latency_us": 979.0317061999999,
+          "mean_graph_ndc": 1893.7062,
+          "mean_recall": 0.7162299999999991,
+          "method": "Medoid",
+          "samples": 10000
+        },
+        {
+          "mean_graph_latency_us": 781.9887901000001,
+          "mean_graph_ndc": 1646.1674,
+          "mean_recall": 0.7482999999999992,
+          "method": "Fast_Prototype_Top3",
+          "samples": 10000
+        },
+        {
+          "mean_graph_latency_us": 569.8097791,
+          "mean_graph_ndc": 1617.4125,
+          "mean_recall": 0.7566399999999989,
+          "method": "MetaAttnAlpha_m0p5_Top3",
+          "samples": 10000
+        }
+      ],
+      "search_L": 128,
+      "top_k": 10
+    }
+  ],
+  "schema_version": 1,
+  "search_Ls": [
+    64,
+    128
+  ],
+  "split": "drl_train",
+  "status": "complete",
+  "threads": 16,
+  "top_ks": [
+    10
+  ]
+}

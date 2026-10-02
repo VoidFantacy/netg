@@ -1,0 +1,143 @@
+{
+  "fit_positive_weights": {
+    "total": 1167.0,
+    "nonzero_queries": 212,
+    "weight_ESS": 94.35938474329662,
+    "maximum_query_weight": 20.0,
+    "fraction_in_top_1_percent_all_queries": 0.8157669237360754
+  },
+  "fit_negative_weights": {
+    "total": 1136.0,
+    "nonzero_queries": 213,
+    "weight_ESS": 98.69195472621597,
+    "maximum_query_weight": 20.0,
+    "fraction_in_top_1_percent_all_queries": 0.8142605633802817
+  },
+  "fit_total_weights": {
+    "total": 2303.0,
+    "nonzero_queries": 401,
+    "weight_ESS": 190.9562196219622,
+    "maximum_query_weight": 20.0,
+    "fraction_in_top_1_percent_all_queries": 0.5779418150238819
+  },
+  "models": {
+    "base_gate": {
+      "candidate": "base_gate_lambda0.1_threshold4",
+      "lambda": 0.1,
+      "bias": -0.0006059120027804445,
+      "threshold": 0.0349002105468352,
+      "ordered_standardized_coefficients": [
+        {
+          "feature": "base_gap13",
+          "coefficient": -0.09322146821212061
+        },
+        {
+          "feature": "base_gap12",
+          "coefficient": 0.07117966919288259
+        },
+        {
+          "feature": "base_mean_log_ess",
+          "coefficient": 0.04473267878559539
+        },
+        {
+          "feature": "base_min_log_ess",
+          "coefficient": -0.04408508932224519
+        },
+        {
+          "feature": "base_mean_profile_shift",
+          "coefficient": 0.022232327618111093
+        },
+        {
+          "feature": "base_best_cosine",
+          "coefficient": -0.01872319281302914
+        },
+        {
+          "feature": "log1p_query_norm",
+          "coefficient": -0.003033327509839147
+        }
+      ],
+      "optimization_iterations": [
+        3,
+        2,
+        2
+      ],
+      "final_gradient_inf": [
+        2.5522119140308774e-16,
+        2.4185172527863008e-11,
+        1.7008096320214605e-14
+      ],
+      "coefficient_directions_are_correlational_not_causal": true
+    },
+    "dual_gate": {
+      "candidate": "dual_gate_lambda0.01_threshold0",
+      "lambda": 0.01,
+      "bias": 0.1422370547839789,
+      "threshold": 0.0,
+      "ordered_standardized_coefficients": [
+        {
+          "feature": "base_gap12",
+          "coefficient": 0.7823695441191088
+        },
+        {
+          "feature": "new_gap12",
+          "coefficient": -0.6259662262444645
+        },
+        {
+          "feature": "new_minus_base_best_cosine",
+          "coefficient": 0.44275894539486593
+        },
+        {
+          "feature": "new_min_log_ess",
+          "coefficient": 0.3891339650721668
+        },
+        {
+          "feature": "base_gap13",
+          "coefficient": -0.15748131038766525
+        },
+        {
+          "feature": "base_min_log_ess",
+          "coefficient": -0.1251102835439459
+        },
+        {
+          "feature": "new_gap13",
+          "coefficient": 0.1150798432126564
+        },
+        {
+          "feature": "new_mean_log_ess",
+          "coefficient": -0.10942068875254521
+        },
+        {
+          "feature": "base_best_cosine",
+          "coefficient": -0.08071480798243398
+        },
+        {
+          "feature": "entry_overlap_fraction",
+          "coefficient": 0.07360637884600507
+        },
+        {
+          "feature": "base_mean_log_ess",
+          "coefficient": -0.04654845634149873
+        },
+        {
+          "feature": "log1p_query_norm",
+          "coefficient": -0.028918106469828828
+        },
+        {
+          "feature": "base_mean_profile_shift",
+          "coefficient": -0.0220183663421429
+        }
+      ],
+      "optimization_iterations": [
+        3,
+        3,
+        2
+      ],
+      "final_gradient_inf": [
+        3.085828729695872e-09,
+        1.7434317878262107e-13,
+        5.961252325104027e-12
+      ],
+      "coefficient_directions_are_correlational_not_causal": true
+    }
+  }
+}

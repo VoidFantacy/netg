@@ -1,0 +1,65 @@
+{
+  "status": "PASS_SOURCE_AND_DEDUP",
+  "dataset": "webvid2_5m_light_v1",
+  "n": 4096,
+  "dimension": 512,
+  "source": {
+    "source": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/source/webvid.query.train.2.5M.fbin",
+    "source_rows": [
+      2470000,
+      2490000
+    ],
+    "source_stat": {
+      "bytes": 5120000008,
+      "mtime_ns": 1787714604500765209
+    },
+    "slice_sha256": "7335078c72b00609b08fe75c996e3a366d652346fbff849bc7b83c3fd87c9379",
+    "inherited_full_source_sha256": "cb48e2b8d90492fce20c2303b5a5ca10b49875f6a75967733d2bc7b73bd8c2b9"
+  },
+  "excluded_files": [
+    {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.aco_train.seed20260826.fvecs",
+      "rows": 5000,
+      "sha256": "b4322c37b2d4ab10e965bc5731f523341d1a974d5e40aa0cd881b4fbe28a572e"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+      "rows": 30000,
+      "sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.test.public10K.fvecs",
+      "rows": 10000,
+      "sha256": "96b11dda1628f15e704512438e1dc773a8f19b2426e03c71aedcacf11f18910d"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.validation.seed20260826.fvecs",
+      "rows": 10000,
+      "sha256": "a59d61a48bf160679626a5a0a71f9d28d32d3528bda94d92ddf6ab03e132b96a"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/candidate_source.f32",
+      "rows": 20000,
+      "sha256": "57029d23477724275baed1e6578e5e783d243f80cdcddc0e4f5a25fe8e048eb6"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/queries.f32",
+      "rows": 20000,
+      "sha256": "4eef43d019981b7ce8a57eb9969736c0443d4622412ed482868ba80cd8b078b6"
+    }
+  ],
+  "duplicates_skipped": 83,
+  "invalid_skipped": 0,
+  "new_rows_unique": true,
+  "new_vs_all_known_formal_splits_byte_overlap": 0,
+  "selection": "source order, no labels or model outputs",
+  "created_unix": 1790082982.197927,
+  "seconds": 0.8284344673156738,
+  "files": {
+    "queries.f32": "2537fbe634a45f798a8ee53fbb9c099f32084c0c2b8546fdec57e6b4053b8319",
+    "queries.fvecs": "361c779ae8407a9f507be6350c3b0bd092e72801efc62256b8d06cdbc67f5788",
+    "candidate_source.f32": "7335078c72b00609b08fe75c996e3a366d652346fbff849bc7b83c3fd87c9379",
+    "source_rows.i64": "e5d2521010490f1c539113322cad9ae0cc2c217c1f9ba590624d2dba607b27a0"
+  },
+  "scope": "new source rows and no byte duplicates against all four registered splits; not a claim of semantic independence or exhaustive unregistered historical exposure"
+}

@@ -1,0 +1,45 @@
+{
+  "status": "STOP_DEVELOPMENT_GATE",
+  "checks": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "seed": 20260912,
+      "quality_cost": [
+        {
+          "split": "cal",
+          "path_A": true,
+          "path_B": false,
+          "pass_gate": true
+        },
+        {
+          "split": "audit",
+          "path_A": true,
+          "path_B": false,
+          "pass_gate": true
+        }
+      ],
+      "combined_reward_beats_random": true,
+      "pass_gate": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "seed": 20260911,
+      "quality_cost": [
+        {
+          "split": "cal",
+          "path_A": false,
+          "path_B": false,
+          "pass_gate": false
+        },
+        {
+          "split": "audit",
+          "path_A": false,
+          "path_B": false,
+          "pass_gate": false
+        }
+      ],
+      "combined_reward_beats_random": false,
+      "pass_gate": false
+    }
+  ]
+}

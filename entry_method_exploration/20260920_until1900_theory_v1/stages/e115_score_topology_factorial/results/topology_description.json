@@ -1,0 +1,434 @@
+{
+  "status": "PASS",
+  "created_unix": 1789898723.0841503,
+  "seconds": 0.040990591049194336,
+  "source": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/e115_topology_description.py",
+    "bytes": 3619,
+    "sha256": "119a65e1e305dac9745f29298d68121b8cd0566204c5fb636ade68a901506d67"
+  },
+  "posthoc_static_description": true,
+  "gate_unchanged": true,
+  "new_NSG": 0,
+  "new_ANN": 0,
+  "new_GT": 0,
+  "new_training": 0,
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "graphs": {
+        "GP_original": {
+          "source": {
+            "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+            "bytes": 1790316,
+            "sha256": "fa4dfabb630cfd30dbe1f065ac469189a3449a9d560348e585c4d318468da091"
+          },
+          "header": [
+            0,
+            815,
+            815,
+            2188,
+            2180,
+            132,
+            2,
+            166,
+            16,
+            32,
+            16,
+            0.36067376022224085,
+            200
+          ],
+          "layers": [
+            {
+              "layer": 0,
+              "nodes": 815,
+              "edges": 7530,
+              "mean_outdegree": 9.239263803680982,
+              "median_outdegree": 8.0,
+              "minimum": 1,
+              "maximum": 32
+            },
+            {
+              "layer": 1,
+              "nodes": 52,
+              "edges": 247,
+              "mean_outdegree": 4.75,
+              "median_outdegree": 3.5,
+              "minimum": 1,
+              "maximum": 16
+            },
+            {
+              "layer": 2,
+              "nodes": 3,
+              "edges": 6,
+              "mean_outdegree": 2.0,
+              "median_outdegree": 2.0,
+              "minimum": 2,
+              "maximum": 2
+            }
+          ],
+          "active_topology_sha256": "5215dde722501bbde3e3eb7722a983b15ded21712471cc324aa98401bd5ca537",
+          "vector_sha256": "897f61a0cfaa6ccba01e626c3c3d946e6622c04f43cd2b0fccc50356b0de7834"
+        },
+        "GP_rebuilt": {
+          "source": {
+            "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/webvid2_5m_light_v1/GT10Rebuilt.hnsw",
+            "bytes": 1790860,
+            "sha256": "f5f3277e1743c781db2947ec6fc3b0cccf4898b4cb4e8e0e8a0c4e51cddd2624"
+          },
+          "header": [
+            0,
+            815,
+            815,
+            2188,
+            2180,
+            132,
+            3,
+            159,
+            16,
+            32,
+            16,
+            0.36067376022224085,
+            200
+          ],
+          "layers": [
+            {
+              "layer": 0,
+              "nodes": 815,
+              "edges": 7530,
+              "mean_outdegree": 9.239263803680982,
+              "median_outdegree": 8.0,
+              "minimum": 1,
+              "maximum": 32
+            },
+            {
+              "layer": 1,
+              "nodes": 58,
+              "edges": 292,
+              "mean_outdegree": 5.0344827586206895,
+              "median_outdegree": 3.0,
+              "minimum": 1,
+              "maximum": 16
+            },
+            {
+              "layer": 2,
+              "nodes": 4,
+              "edges": 12,
+              "mean_outdegree": 3.0,
+              "median_outdegree": 3.0,
+              "minimum": 3,
+              "maximum": 3
+            },
+            {
+              "layer": 3,
+              "nodes": 1,
+              "edges": 0,
+              "mean_outdegree": 0.0,
+              "median_outdegree": 0.0,
+              "minimum": 0,
+              "maximum": 0
+            }
+          ],
+          "active_topology_sha256": "291c7fa07b22fca5f29de9f6834199d1e17cd9240dcf37f17de390750bec326b",
+          "vector_sha256": "897f61a0cfaa6ccba01e626c3c3d946e6622c04f43cd2b0fccc50356b0de7834"
+        },
+        "GU": {
+          "source": {
+            "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/webvid2_5m_light_v1/UnitHub.hnsw",
+            "bytes": 1790860,
+            "sha256": "c380e5d7f7035dfc87adc996f39f421d20e8086f2791dc862292321a3c35790d"
+          },
+          "header": [
+            0,
+            815,
+            815,
+            2188,
+            2180,
+            132,
+            3,
+            159,
+            16,
+            32,
+            16,
+            0.36067376022224085,
+            200
+          ],
+          "layers": [
+            {
+              "layer": 0,
+              "nodes": 815,
+              "edges": 10716,
+              "mean_outdegree": 13.148466257668712,
+              "median_outdegree": 12.0,
+              "minimum": 1,
+              "maximum": 32
+            },
+            {
+              "layer": 1,
+              "nodes": 58,
+              "edges": 305,
+              "mean_outdegree": 5.258620689655173,
+              "median_outdegree": 5.0,
+              "minimum": 1,
+              "maximum": 16
+            },
+            {
+              "layer": 2,
+              "nodes": 4,
+              "edges": 12,
+              "mean_outdegree": 3.0,
+              "median_outdegree": 3.0,
+              "minimum": 3,
+              "maximum": 3
+            },
+            {
+              "layer": 3,
+              "nodes": 1,
+              "edges": 0,
+              "mean_outdegree": 0.0,
+              "median_outdegree": 0.0,
+              "minimum": 0,
+              "maximum": 0
+            }
+          ],
+          "active_topology_sha256": "cbff841e4e2d49d74ebc85c2abf30220962e9481ec937ec4b2fa489662e19e59",
+          "vector_sha256": "f2ffa2c2abfde2446e0229d2047636719d98d013477928e1940541f782584af8"
+        }
+      },
+      "comparisons": [
+        {
+          "a": "GP_original",
+          "b": "GP_rebuilt",
+          "same_levels": false,
+          "same_entrypoint": false,
+          "same_active_topology": false,
+          "same_level0_rows": 815
+        },
+        {
+          "a": "GP_original",
+          "b": "GU",
+          "same_levels": false,
+          "same_entrypoint": false,
+          "same_active_topology": false,
+          "same_level0_rows": 1
+        },
+        {
+          "a": "GP_rebuilt",
+          "b": "GU",
+          "same_levels": true,
+          "same_entrypoint": true,
+          "same_active_topology": false,
+          "same_level0_rows": 1
+        }
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "graphs": {
+        "GP_original": {
+          "source": {
+            "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+            "bytes": 778860,
+            "sha256": "11ffd1dc090f132cdb78e027a202edf5e49a5d50033f82b8834bb0e2ca08036c"
+          },
+          "header": [
+            0,
+            821,
+            821,
+            940,
+            932,
+            132,
+            2,
+            166,
+            16,
+            32,
+            16,
+            0.36067376022224085,
+            200
+          ],
+          "layers": [
+            {
+              "layer": 0,
+              "nodes": 821,
+              "edges": 9055,
+              "mean_outdegree": 11.02923264311815,
+              "median_outdegree": 10.0,
+              "minimum": 2,
+              "maximum": 32
+            },
+            {
+              "layer": 1,
+              "nodes": 52,
+              "edges": 299,
+              "mean_outdegree": 5.75,
+              "median_outdegree": 5.0,
+              "minimum": 1,
+              "maximum": 16
+            },
+            {
+              "layer": 2,
+              "nodes": 3,
+              "edges": 6,
+              "mean_outdegree": 2.0,
+              "median_outdegree": 2.0,
+              "minimum": 2,
+              "maximum": 2
+            }
+          ],
+          "active_topology_sha256": "18bca1e969925755d8dfe971d60f74b07b455b7f4ad4858667638acd2f925687",
+          "vector_sha256": "bbc5e447aad556618a75fe50a6543c7d3fae68c46f920d79e8913281a0c9bf16"
+        },
+        "GP_rebuilt": {
+          "source": {
+            "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/yandex_t2i_official10M_ip_v1/GT10Rebuilt.hnsw",
+            "bytes": 779404,
+            "sha256": "7e73d67cc166f5cdcf611a55922903ca861d7a5fd614669de7d5c08aa6b1530d"
+          },
+          "header": [
+            0,
+            821,
+            821,
+            940,
+            932,
+            132,
+            3,
+            159,
+            16,
+            32,
+            16,
+            0.36067376022224085,
+            200
+          ],
+          "layers": [
+            {
+              "layer": 0,
+              "nodes": 821,
+              "edges": 9055,
+              "mean_outdegree": 11.02923264311815,
+              "median_outdegree": 10.0,
+              "minimum": 2,
+              "maximum": 32
+            },
+            {
+              "layer": 1,
+              "nodes": 58,
+              "edges": 308,
+              "mean_outdegree": 5.310344827586207,
+              "median_outdegree": 5.0,
+              "minimum": 1,
+              "maximum": 16
+            },
+            {
+              "layer": 2,
+              "nodes": 4,
+              "edges": 12,
+              "mean_outdegree": 3.0,
+              "median_outdegree": 3.0,
+              "minimum": 3,
+              "maximum": 3
+            },
+            {
+              "layer": 3,
+              "nodes": 1,
+              "edges": 0,
+              "mean_outdegree": 0.0,
+              "median_outdegree": 0.0,
+              "minimum": 0,
+              "maximum": 0
+            }
+          ],
+          "active_topology_sha256": "d39b967cec91b31559f11d32baa59736a56ff231a5918bf5458bb2e84d0e7d39",
+          "vector_sha256": "bbc5e447aad556618a75fe50a6543c7d3fae68c46f920d79e8913281a0c9bf16"
+        },
+        "GU": {
+          "source": {
+            "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/yandex_t2i_official10M_ip_v1/UnitHub.hnsw",
+            "bytes": 779404,
+            "sha256": "84d5e87ac20e7d62186074785bc7677476b29af8c3e8892550fe8ba93a056dab"
+          },
+          "header": [
+            0,
+            821,
+            821,
+            940,
+            932,
+            132,
+            3,
+            159,
+            16,
+            32,
+            16,
+            0.36067376022224085,
+            200
+          ],
+          "layers": [
+            {
+              "layer": 0,
+              "nodes": 821,
+              "edges": 16907,
+              "mean_outdegree": 20.5931790499391,
+              "median_outdegree": 20.0,
+              "minimum": 9,
+              "maximum": 32
+            },
+            {
+              "layer": 1,
+              "nodes": 58,
+              "edges": 492,
+              "mean_outdegree": 8.482758620689655,
+              "median_outdegree": 8.0,
+              "minimum": 4,
+              "maximum": 15
+            },
+            {
+              "layer": 2,
+              "nodes": 4,
+              "edges": 12,
+              "mean_outdegree": 3.0,
+              "median_outdegree": 3.0,
+              "minimum": 3,
+              "maximum": 3
+            },
+            {
+              "layer": 3,
+              "nodes": 1,
+              "edges": 0,
+              "mean_outdegree": 0.0,
+              "median_outdegree": 0.0,
+              "minimum": 0,
+              "maximum": 0
+            }
+          ],
+          "active_topology_sha256": "22f559f7d55d5b1a93609a2340f9556dd03804835f02982ec2036d76aebc4828",
+          "vector_sha256": "753cf8d2ca51323fa9e096b001b9f2ff39888d1524db31ec8498a6ad887744e0"
+        }
+      },
+      "comparisons": [
+        {
+          "a": "GP_original",
+          "b": "GP_rebuilt",
+          "same_levels": false,
+          "same_entrypoint": false,
+          "same_active_topology": false,
+          "same_level0_rows": 821
+        },
+        {
+          "a": "GP_original",
+          "b": "GU",
+          "same_levels": false,
+          "same_entrypoint": false,
+          "same_active_topology": false,
+          "same_level0_rows": 0
+        },
+        {
+          "a": "GP_rebuilt",
+          "b": "GU",
+          "same_levels": true,
+          "same_entrypoint": true,
+          "same_active_topology": false,
+          "same_level0_rows": 0
+        }
+      ]
+    }
+  ]
+}

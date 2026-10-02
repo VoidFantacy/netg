@@ -1,0 +1,26 @@
+{
+  "model": {
+    "name": "webvid_gate_uniquehub_smoke1_v2",
+    "input_dim": 512,
+    "hidden_dim": 2024,
+    "output_dim": 512,
+    "dropout": 0.05,
+    "batch_size": 16384,
+    "lr": 1e-5,
+    "temperature": 0.07,
+    "epochs": 1,
+    "seed": 42,
+    "efficient_unique_hubs": true
+  },
+  "dataset": {
+    "SAMPLE_PATH": "gate_baseline_artifacts/webvid2_5m_frozen_r64_v2/gate_samples_router_train10k_ip_l64_k1_v1",
+    "QUERY_PATH": "benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+    "VALIDATION_SAMPLE_PATH": "gate_baseline_artifacts/webvid2_5m_frozen_r64_v2/gate_samples_validation10k_ip_l64_k1_v1",
+    "VALIDATION_QUERY_PATH": "benches/datasets/WebVid2.5M_light_v1/query.validation.seed20260826.fvecs",
+    "HUB_PATH": "gate_baseline_artifacts/webvid2_5m_frozen_r64_v2/hbkm512_sinkhorn_seed42_v2/hubs.fvecs",
+    "SUBGRAPH_DIR": "gate_baseline_artifacts/webvid2_5m_frozen_r64_v2/hbkm512_sinkhorn_seed42_v2/subgraphs_topology_h5_n1000_v4",
+    "GRAPH2VEC_CSV": "gate_baseline_artifacts/webvid2_5m_frozen_r64_v2/hbkm512_sinkhorn_seed42_v2/graph2vec_wl2_d512_e10_mc5_seed42_v1/graph2vec_embedding.csv",
+    "DATASET_SEED": 42,
+    "RETURN_HUB_ID": true
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "status": "RESOURCE_FORECAST_ONLY_REVISION_BEFORE_TRAINING",
+  "time": 1789216682.6104095,
+  "reason": "Use already measured E53 dataset duration ratio instead of assuming second dataset costs 1.5x WebVid; retain 35 percent and 120 second margin, original 21:15 hard stop. No optimizer/model/data/candidate change, no E55 validation quality read.",
+  "old_guard": "previous=read(O/'results'/DS[0]/'training_complete.json');assert time.time()+1.5*previous['seconds']+300<TRAIN_STOP,'insufficient time for matched second dataset'",
+  "new_guard": "previous=read(O/'results'/DS[0]/'training_complete.json');ratio=read(E53/'results'/DS[1]/'training_complete.json')['seconds']/read(E53/'results'/DS[0]/'training_complete.json')['seconds'];assert time.time()+1.35*ratio*previous['seconds']+120<TRAIN_STOP,'insufficient time for matched second dataset'",
+  "preserved_original_files": "/data/netg/ACSG/entry_method_exploration/20260912_construction_only_rl_v1/reviews/source_before_guard_revision",
+  "files": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_construction_only_rl_v1/protocol.md",
+      "bytes": 4452,
+      "sha256": "bd27c185f3149c34ebbb3db92218538bb132730a4011ee4f252c476b6b34b461"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_construction_only_rl_v1/src/audit_training.py",
+      "bytes": 14697,
+      "sha256": "634c54778da3216f8f8dfacbe2d4f3e9d2ddc6faee3bf5e2f3f5d0e6d5be9fbc"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_construction_only_rl_v1/src/graph_bytes.py",
+      "bytes": 1381,
+      "sha256": "875d229e11125944f6c87f322e91e3b3e310d957db2950c10a3b0ae05516f97c"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_construction_only_rl_v1/src/native_construction.py",
+      "bytes": 812,
+      "sha256": "48f5353718c8269d55b9aeb7e2c6b68362f0e4ae62f9092db4f284d52f3576cb"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_construction_only_rl_v1/src/native_factorial.py",
+      "bytes": 3684,
+      "sha256": "9ecfc6f81caf394826f8355b97d67fd38924669fe5c4a23345930b2d85df3e64"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_construction_only_rl_v1/src/prepare.py",
+      "bytes": 3498,
+      "sha256": "7014b3c43c26b0b0553bde88a1b6baa333f35950588cc1c2beb295c33dd50992"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_construction_only_rl_v1/src/shared.py",
+      "bytes": 5147,
+      "sha256": "6e14b78ea3a4727867bbe6af5dfe38caacddb366f90e465908d8951c12defd60"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_construction_only_rl_v1/src/summarize.py",
+      "bytes": 5401,
+      "sha256": "9b9be384b5761e99255e29d904d06376fe3257e91a0d312e49059fa7f999a0d4"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_construction_only_rl_v1/src/train.py",
+      "bytes": 12734,
+      "sha256": "430bede1351396056c02f3a457d5bd994d17fe7e12bb2c5451039904302fce44"
+    }
+  ]
+}

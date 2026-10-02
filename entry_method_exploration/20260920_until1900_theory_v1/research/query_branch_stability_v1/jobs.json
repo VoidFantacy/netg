@@ -1,0 +1,45 @@
+[
+  {
+    "kind": "compile",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "g++",
+      "-O3",
+      "-march=native",
+      "-std=c++17",
+      "-fopenmp",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+      "-I/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/src/common",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/query_branch_stability_v1/verify.cpp",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+      "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+      "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "-lopenblas",
+      "-lz",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/query_branch_stability_v1/verify"
+    ],
+    "pid": 50745,
+    "started_unix": 1789892723.0555873,
+    "seconds": 7.573030471801758,
+    "exit_code": 0
+  },
+  {
+    "kind": "synthetic",
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/query_branch_stability_v1/verify",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/query_branch_stability_v1/result.json"
+    ],
+    "pid": 50790,
+    "started_unix": 1789892730.6288307,
+    "seconds": 0.004174470901489258,
+    "exit_code": 0
+  }
+]

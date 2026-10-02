@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "reviewed_utc": "2026-09-07T16:09:26.188902+00:00",
+  "review_type": "Independent static source audit plus review of existing dummy selftest; no process test repeated",
+  "status": "PASS_CORE_DEADLINE_IDENTITY_WITH_RESOURCE_AND_SCOPE_LIMITS",
+  "source_sha256": {
+    "taskctl.py": "bc3548c52aedebfbda8e18e322a08d6398ec571b9dd16f97c337fdc104e15fb7",
+    "stage_run.py": "8d0c8f58808ed8a1ad9841b1d0fb693c8e7df13f8058c4d64b5f43d09127b59b",
+    "config.json": "3220fbb4c8bc4f60a29bd8b158cae886d560f440f30e91fab0ac363940817498"
+  },
+  "evidence": {
+    "selftest_path": "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/selftest/result.json",
+    "selftest_sha256": "557953f388733412934eb02f461be47e8aca628a6b4ef4b8e5d1170bd5e2cf61",
+    "all_existing_selftest_checks_pass": true
+  },
+  "confirmed_checks": [
+    {
+      "id": "OWNERSHIP_BEFORE_NORMAL_SIGNAL",
+      "status": "PASS",
+      "evidence": "members filters registered pgid and excludes zombies; terminate requires every live member token equals per-job UUID; if leader exists, start_ticks must match before killpg"
+    },
+    {
+      "id": "DEADLINE_DUAL_CONTROL",
+      "status": "PASS",
+      "evidence": "Supervisor checks soft-stop/CLOSED every2s; independent watchdog closes at22:59 UTC, TERM then KILL after15s, records stop verification at23:00 UTC; active remaining yields false, not fabricated success"
+    },
+    {
+      "id": "POST_DEADLINE_LAUNCH",
+      "status": "PASS",
+      "evidence": "allowed checked at launch and again at supervisor; CLOSED or time>=soft_stop rejects; after22:40 expected crossing22:59 rejected"
+    },
+    {
+      "id": "HEAVY_MUTEX",
+      "status": "PASS_FOR_FOREGROUND_CHILDREN",
+      "evidence": "Nonblocking exclusive flock held for foreground supervised child lifetime; declared min available RAM checked after lock and before spawn"
+    },
+    {
+      "id": "DISK_RESERVE",
+      "status": "PASS",
+      "evidence": "10GiB reserve checked before launch and every2s during active supervisor; reserve breach marks stop_reason and INCOMPLETE"
+    },
+    {
+      "id": "CPU_ENV_AND_LOG_IDENTITY",
+      "status": "PASS_WITH_METHOD_AUDIT",
+      "evidence": "CUDA_VISIBLE_DEVICES blank; OMP/BLAS defaults; durable unique log and job JSON, PID/PGID/start/token and CPU/RSS records. Method source must still remain CPU-only"
+    },
+    {
+      "id": "UPSTREAM_STAGE_GATES",
+      "status": "PASS",
+      "evidence": "stage_run requires every earlier Pn gate PASS or GO; validation performance blocked beforeP6; heldout blocked beforeP7 and requires frozen-manifest existence; oracle metadata only permits fit/pilot"
+    },
+    {
+      "id": "NO_OVERWRITE_ENTRY",
+      "status": "PASS_FOR_CURRENT_PROGRAMS",
+      "evidence": "stage_run checks nonexistent output; invocation/job/log files use exclusive creation; program must reserve its own output with exclusive semantics"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "medium",
+      "id": "ARTIFACT_BUDGET_NOT_ENFORCED",
+      "location": "taskctl.py allowed/supervise/watchdog; config.json artifact_limit_bytes",
+      "fact": "8GiB artifact_limit_bytes is configured but never read/checked by controller",
+      "impact": "10GiB disk free reserve can remain satisfied while this run exceeds8GiB artifact budget",
+      "action": "Root should add periodic run-byte accounting or explicitly monitor and record manually; do not claim automatic8GiB protection until implemented"
+    },
+    {
+      "severity": "medium",
+      "id": "DETACHED_OR_REENVIRONED_DESCENDANT_LIMIT",
+      "location": "taskctl.py members/terminate and supervise child.poll loop",
+      "fact": "Tracking is registered PGID plus inherited token; a descendant that calls setsid escapes group scan; a same-group descendant stripping token causes safe identity refusal. Foreground child exit releases heavy lock even if descendants remain",
+      "impact": "Arbitrary daemonizing commands are outside verified stop/mutex scope",
+      "action": "Use foreground non-daemonizing research commands only; root should final-scan all /proc for registered tokens in addition to PGIDs and mark any mismatch unresolved; existing commands inspected are ordinary foreground Python/CMake/binaries"
+    },
+    {
+      "severity": "low",
+      "id": "LAUNCH_REGISTRATION_WINDOW",
+      "location": "taskctl.py supervise Popen before registry write",
+      "fact": "A narrow spawn-to-PID-registry window exists; supervisor crash there can leave a token-bearing child without registered pgid",
+      "impact": "Independent watchdog currently skips job records lacking pgid",
+      "action": "Optional recovery scan by registered job token at watchdog/final verification; current normal launch selftest passes"
+    },
+    {
+      "severity": "low",
+      "id": "EXCEPTION_CLEANUP_WEAKER_OWNERSHIP",
+      "location": "taskctl.py supervise except block",
+      "fact": "Emergency cleanup directly killpg after leader token check, without terminate all-member/start checks",
+      "impact": "Normal signalling has stronger checks than emergency path",
+      "action": "Use the same terminate helper if hardening; no unrelated target observed or killed"
+    },
+    {
+      "severity": "medium_future_gate",
+      "id": "STAGE_METADATA_NOT_COMMAND_ENFORCEMENT",
+      "location": "stage_run.py command passthrough, --oracle and method_frozen existence",
+      "fact": "stage/split/oracle/output are manifest declarations; wrapper does not inspect command arguments or bind actual model to freeze manifest. Direct taskctl launch bypasses stage wrapper",
+      "impact": "P6/P7 requires explicit semantic review; filename presence alone cannot prove method freeze or exclude oracle",
+      "action": "Current root commands must be reviewed against manifests; beforeP7 enforce evaluator split/oracle contract and check freeze hashes/status. This does not invalidate current P0/P1 because heldout not accessed"
+    }
+  ],
+  "no_changes_made_to_controller": true,
+  "no_new_process_tests": true,
+  "current_p0_p1_hard_blocker": false,
+  "root_attention_required": [
+    "artifact budget monitoring",
+    "non-daemonizing command rule",
+    "token-plus-PGID final stop verification"
+  ],
+  "v2_followup": {
+    "reviewed_utc": "2026-09-07T16:10:12.851508+00:00",
+    "taskctl_sha256": "bc3548c52aedebfbda8e18e322a08d6398ec571b9dd16f97c337fdc104e15fb7",
+    "status": "ARTIFACT_BUDGET_FINDING_FIXED_BY_ROOT_STATIC_REVIEW_PASS",
+    "findings": [
+      "allowed now sums run-file lstat sizes and rejects >=8GiB",
+      "watchdog checks8GiB/10GiB every15s, writes observed resources, closes research and signals registered groups on breach",
+      "budget enforcement is polling and permits transient growth within check/termination interval; foreground supervisor observes CLOSED and escalates TERM/KILL",
+      "Root committed to foreground token-preserving commands and final full/proc registered-token scan; detached-descendant limitation remains documented"
+    ],
+    "evidence": "watchdog_upgrade.json",
+    "new_process_tests": false
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "dataset": "webvid2_5m_light_v1",
+  "status": "COMPLETE",
+  "pid": 2,
+  "reserved_NSG": 16384,
+  "started_at": 1789291083.2915475,
+  "completed_edges": 64,
+  "accepted_edges": 29,
+  "actual_NSG": 5384,
+  "actual_HNSW": 2680256,
+  "actual_threads": 1,
+  "affinity": [
+    15
+  ],
+  "returncode": 0,
+  "edge_installs": 3,
+  "installs": [
+    {
+      "kind": "single_edge_regression",
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage27_edge_utility_v1/models/webvid2_5m_light_v1/first_edge_regression.hnsw",
+        "bytes": 3889472,
+        "mtime_ns": 1789291091817743665,
+        "sha256": "de4f6b3cb2f43312c125bafdf8de20e370ed03aea72022e322578d0819d7a154"
+      }
+    },
+    {
+      "kind": "utility10",
+      "seconds": 0.008453130998532288,
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage27_edge_utility_v1/models/webvid2_5m_light_v1/utility10/graph.hnsw",
+        "bytes": 3889472,
+        "mtime_ns": 1789291126301981913,
+        "sha256": "3dfc7563021244d3bd2d833c382c5561514c77f49f06f9feceee8a8f98f19886"
+      },
+      "edges": 29
+    },
+    {
+      "kind": "neighbor10",
+      "seconds": 0.010241544998280006,
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage27_edge_utility_v1/models/webvid2_5m_light_v1/neighbor10/graph.hnsw",
+        "bytes": 3889472,
+        "mtime_ns": 1789291127189988049,
+        "sha256": "510e549731516a67d4ba7589b52c080cc5ff713c9bff1c925227b51511dedd3d"
+      },
+      "edges": 29
+    }
+  ],
+  "union": [
+    {
+      "model": "utility10",
+      "edges": 29,
+      "net_hits": 191,
+      "half_net_hits": [
+        97,
+        94
+      ],
+      "failure_delta": -13,
+      "rescued": 13,
+      "new_failed": 0,
+      "gain_hits": 209,
+      "loss_hits": 18,
+      "total_ndc_relative": -0.00015087447967687684,
+      "accepted": true
+    },
+    {
+      "model": "neighbor10",
+      "edges": 29,
+      "net_hits": 7,
+      "half_net_hits": [
+        7,
+        0
+      ],
+      "failure_delta": 0,
+      "rescued": 0,
+      "new_failed": 0,
+      "gain_hits": 9,
+      "loss_hits": 2,
+      "total_ndc_relative": 8.814978543347785e-05,
+      "accepted": true
+    }
+  ],
+  "seconds": 44.81844081899908,
+  "max_RSS_GiB": 5.614528656005859,
+  "completed_at": 1789291128.1101718
+}

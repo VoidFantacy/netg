@@ -1,0 +1,31 @@
+--- before/spec.md
++++ after/spec.md
+@@ -1,6 +1,6 @@
+ # NETG / ACSG 当前实现规格
+ 
+-> 最后核对：2026-09-08。本文件只记录当前实现、数据/metric 契约、artifact、评测口径和重跑依赖。研究结论见 `summary.md`，本批协议与终局见 `s-target.md`，历史过程见 `aco_router_fast_entry.md`。
++> 最后核对：2026-09-08。本文件只记录当前实现、数据/metric 契约、artifact、评测口径和重跑依赖。研究结论见 `summary.md`，修订优先级及历史协议见 `s-target.md`，历史过程见 `aco_router_fast_entry.md`。最新文献复审只修改研究计划，未改变实现，见第15节。
+ 
+ ## 1. 权威性与保护边界
+ 
+@@ -44,7 +44,7 @@
+ 
+ ## 3. 当前代码入口
+ 
+-新主线 `hierarchical_target_search/20260907_v1` 已获恢复授权；P0/P1、区域搜索/独立计数/纯计时及P3的256叶区新P1均通过。新增 `ACSG/RegionalSearch.h`、`benches/test_regional_search.cpp` 和三个分层评测/门户入口，修改前源码/checksum已保存。P2的64区域、P3的16×16结构与门户模型均完成双数据集pilot；P3搜索收益gate为NOPASS，三项失败诊断完成。P4层次预测尚未实现和启动。实现正确不等于方法有效，新契约见第13节。
++已停止版本 `hierarchical_target_search/20260907_v1` 的P0/P1、区域搜索/独立计数/纯计时及P3的256叶区新P1均通过。新增 `ACSG/RegionalSearch.h`、`benches/test_regional_search.cpp` 和三个分层评测/门户入口，修改前源码/checksum已保存。P2的64区域、P3的16×16结构与门户模型均完成双数据集pilot；P3搜索收益gate为NOPASS，三项失败诊断完成。P4层次预测尚未实现和启动。实现正确不等于方法有效；原契约见第13节，计划复审边界见第15节。
+ 
+ | 目的 | 入口 |
+ | --- | --- |
+@@ -257,3 +257,11 @@
+ 07:00:00.312截止核验及07:01:24独立全进程身份核验均通过，无活跃任务，无终止信号，无截止中断。34个已启动重任务区间无重叠；源码/CMake/settings保护通过，主动删除文件无。见[最终停止](hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/final_process_verification_v1.json)、[最终保护与资源](hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/final_protection_resources_v1.md)和[实验总结](实验总结.md)。报告已完成并通过独立复核；研究结论仍P3 NOPASS，长期目标未完成。
+ 
+ [实验总结](实验总结.md)最终独立复核PASS，0项实质/阻断问题，证据见[报告复核](hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/report_preparation/final_report_independent_review_v1.md)。本次有截止的执行与报告交付已完成；长期研究仍未完成，当前P3 NOPASS及后续gate边界不变。
++
++## 15. 文献与计划复审（2026-09-08，未执行新实验）
++
++新增 `research_direction_review/20260908_v1/`：复审前文档/state快照与SHA、14篇核心论文的方法/实验核对、独立本地假设审查、[综合报告](research_direction_review/20260908_v1/report.md)。只读论文及已有小型证据，未打开原始query/GT/base/图，未改搜索/分区源码、二进制、配置、模型或统计产物；原夜间报告、P3 gate、state和CLOSED控制边界保持。
++
++`s-target.md` 新首部为当前建议优先级，旧P0–P8正文标为历史协议。新计划状态`DESIGN_REVIEWED_NOT_RUN`，不注册为通过gate：先核验paired Fast/同入口统一池/GATE受约束适配的可比性，并优先评估PyANNS完整系统基线；再以固定P2表示/入口和六个核心搜索点检验同实际wall下的空间。新筛查尚未运行，具体统计协议/输入绑定/资源限制仍须在新执行版本冻结。依赖安装不等于baseline验收，论文速度不等于本地结果。
++
++复审不改变raw-IP、原NSG、20K fit、历史10K pilot、validation性能未使用或held-out冻结边界。原P3仍NOPASS；GT占比oracle不是最优调度oracle；P4未实现不能写成所有层次预测失败。新方法若改变图、标签或搜索规则，按第10节联动重跑对应阶段，不能沿旧已关闭runner绕过gate。

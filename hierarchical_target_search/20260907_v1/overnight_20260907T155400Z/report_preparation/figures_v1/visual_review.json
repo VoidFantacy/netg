@@ -1,0 +1,37 @@
+{
+  "status": "PASS_VISUAL_AND_EXPORT_REVIEW",
+  "created_utc": "2026-09-07T18:31:06.083736+00:00",
+  "reviewer": "p1_search",
+  "manifest_sha256": "2d9e815dcf21ac1f4be0520a77154d300e652343178cfcf54437826d21032226",
+  "source_sha256": "5ae6b142119eeeb2730ee0e53c3657b2ace773fcfa8de4ad32b9f9916daf65ef",
+  "viewed_images": [
+    "p2_recall_qps.png",
+    "p3_fixed_contrasts.png"
+  ],
+  "P2": "Both dataset panels, all six methods and both L endpoints legible. Near-overlap is shown with distinct true-coordinate markers; legend and diagnostic qualifiers are readable.",
+  "P3": "All four primary structure and eight portal intervals and numeric annotations legible; zero line visible; final x-axis label and footnotes no longer overlap.",
+  "first_render_issue_preserved": "Initial P3 axis label overlapped first footnote; initial source/exports/manifest are retained in render_attempt_v1. Final margin increased; no numeric input changed.",
+  "output_checks": "All four current output hashes match manifest; both SVG files parse; all 24 P2 points and 12 P3 fixed contrasts are accounted.",
+  "PNG_dimensions": {
+    "p2_recall_qps.png": [
+      4200,
+      2250
+    ],
+    "p3_fixed_contrasts.png": [
+      4200,
+      2640
+    ]
+  },
+  "PNG_dpi": 300,
+  "rendering_limit": "SVG is vector and keeps text as text; exact font appearance depends on viewer font availability. PNG fixes the validated rendering.",
+  "scientific_limits": [
+    "P2 displays all six methods at exactly both fixed L values; connecting segments are visual guides only.",
+    "P2 QPS is the saved arithmetic mean of five pure-wall rounds, without a new timing uncertainty estimate.",
+    "P3 displays all four primary structure and all eight portal comparisons. CI endpoints are copied exactly; table text is rounded to 0.001 pp.",
+    "10K development pilot is neither validation nor held-out confirmation. Oracle is diagnostic only and not a deployable method.",
+    "Cross-model wall comparisons are descriptive. Neither plot implies matched-cost interpolation or formal performance improvement.",
+    "Near-overlapping P2 points retain their true coordinates; different marker shapes and outlines indicate both methods."
+  ],
+  "new_data_or_experiment": false,
+  "top_docs_or_final_report_modified": false
+}

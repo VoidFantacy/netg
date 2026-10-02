@@ -1,0 +1,22 @@
+{
+  "formal": false,
+  "threads": 1,
+  "index": "/data/netg/ACSG/indices/laion10m_acsg_v1_index/acosp_nsg.json",
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/inputs/laion10m_acsg_v1/cal.f32",
+  "n": 1024,
+  "L": [
+    128
+  ],
+  "methods": [
+    {
+      "name": "gt10_hard",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/models/laion10m_acsg_v1/gt10_hard/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/inputs/laion10m_acsg_v1/gt10.ids.i32"
+    },
+    {
+      "name": "gt10_soft_t1",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/models/laion10m_acsg_v1/gt10_soft_t1/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/inputs/laion10m_acsg_v1/gt10.ids.i32"
+    }
+  ]
+}

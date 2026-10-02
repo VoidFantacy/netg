@@ -1,0 +1,166 @@
+{
+  "status": "FROZEN_AUX_SELECTION_NOT_FINAL_VALIDATION",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "best_all": "baseline",
+      "best_new": "E62_topology",
+      "candidates": [
+        {
+          "model": "E61_missing",
+          "rules": {
+            "net_positive": true,
+            "both_halves_nonnegative": false,
+            "failures_nonincreasing": false,
+            "total_NDC_within_one_percent": true
+          },
+          "passed": false,
+          "net_hits": 7,
+          "failure_count": 177,
+          "total_NDC": 1757.9255533199196,
+          "halves_net_hits": [
+            24,
+            -17
+          ],
+          "fixed_rank": 0
+        },
+        {
+          "model": "E62_score",
+          "rules": {
+            "net_positive": false,
+            "both_halves_nonnegative": false,
+            "failures_nonincreasing": false,
+            "total_NDC_within_one_percent": true
+          },
+          "passed": false,
+          "net_hits": -60,
+          "failure_count": 180,
+          "total_NDC": 1757.50930583501,
+          "halves_net_hits": [
+            -56,
+            -4
+          ],
+          "fixed_rank": 1
+        },
+        {
+          "model": "E62_topology",
+          "rules": {
+            "net_positive": true,
+            "both_halves_nonnegative": true,
+            "failures_nonincreasing": false,
+            "total_NDC_within_one_percent": true
+          },
+          "passed": false,
+          "net_hits": 38,
+          "failure_count": 173,
+          "total_NDC": 1756.144366197183,
+          "halves_net_hits": [
+            31,
+            7
+          ],
+          "fixed_rank": 2
+        },
+        {
+          "model": "E63_zero_mass",
+          "rules": {
+            "net_positive": false,
+            "both_halves_nonnegative": false,
+            "failures_nonincreasing": false,
+            "total_NDC_within_one_percent": true
+          },
+          "passed": false,
+          "net_hits": -2,
+          "failure_count": 172,
+          "total_NDC": 1756.2313883299798,
+          "halves_net_hits": [
+            6,
+            -8
+          ],
+          "fixed_rank": 3
+        }
+      ],
+      "sham_selectable": false
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "best_all": "baseline",
+      "best_new": "E63_zero_mass",
+      "candidates": [
+        {
+          "model": "E61_missing",
+          "rules": {
+            "net_positive": false,
+            "both_halves_nonnegative": false,
+            "failures_nonincreasing": false,
+            "total_NDC_within_one_percent": true
+          },
+          "passed": false,
+          "net_hits": -74,
+          "failure_count": 164,
+          "total_NDC": 2971.41134305835,
+          "halves_net_hits": [
+            -38,
+            -36
+          ],
+          "fixed_rank": 0
+        },
+        {
+          "model": "E62_score",
+          "rules": {
+            "net_positive": false,
+            "both_halves_nonnegative": false,
+            "failures_nonincreasing": false,
+            "total_NDC_within_one_percent": true
+          },
+          "passed": false,
+          "net_hits": -78,
+          "failure_count": 164,
+          "total_NDC": 2975.135563380282,
+          "halves_net_hits": [
+            -21,
+            -57
+          ],
+          "fixed_rank": 1
+        },
+        {
+          "model": "E62_topology",
+          "rules": {
+            "net_positive": false,
+            "both_halves_nonnegative": false,
+            "failures_nonincreasing": false,
+            "total_NDC_within_one_percent": true
+          },
+          "passed": false,
+          "net_hits": -24,
+          "failure_count": 158,
+          "total_NDC": 2969.8094818913482,
+          "halves_net_hits": [
+            -30,
+            6
+          ],
+          "fixed_rank": 2
+        },
+        {
+          "model": "E63_zero_mass",
+          "rules": {
+            "net_positive": false,
+            "both_halves_nonnegative": false,
+            "failures_nonincreasing": true,
+            "total_NDC_within_one_percent": true
+          },
+          "passed": false,
+          "net_hits": -18,
+          "failure_count": 154,
+          "total_NDC": 2972.4763581488933,
+          "halves_net_hits": [
+            -23,
+            5
+          ],
+          "fixed_rank": 3
+        }
+      ],
+      "sham_selectable": false
+    }
+  },
+  "old_cal_failure_unchanged": true,
+  "auxiliary_feedback_is_training": true,
+  "final_validation_access": false
+}

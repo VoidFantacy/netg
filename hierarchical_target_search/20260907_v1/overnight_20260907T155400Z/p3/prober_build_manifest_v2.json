@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE",
+  "stage": "P3",
+  "target": "prober",
+  "created_utc": "2026-09-07T17:21:11.334565+00:00",
+  "binary": {
+    "path": "/data/netg/ACSG/build/benches/bench_hierarchical_portals",
+    "sha256": "b745e4732e881cf826d101c86dfc2d962fa7c92be8210c6b882eb56cb5fd61af",
+    "bytes": 3395432
+  },
+  "source": {
+    "path": "/data/netg/ACSG/benches/bench_hierarchical_portals.cpp",
+    "sha256": "9137ae4ebc3b4a3c437fb171b0ffc1b5857d5ea1b610a674a59bf46c8af78385",
+    "bytes": 41231
+  },
+  "build_job": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/control/jobs/p3_prober_build_v2.json",
+    "sha256": "efbb4d4185ecf550f7d82a8a33f0a9c2cc14ad8516432949a6ad9a284222bb74",
+    "bytes": 999
+  },
+  "build_command": [
+    ".venv_cpu/bin/cmake",
+    "--build",
+    "build",
+    "--target",
+    "bench_hierarchical_portals",
+    "-j4"
+  ],
+  "cpu_only": true,
+  "bindings": [
+    {
+      "path": "/data/netg/ACSG/ACSG/RegionalSearch.h",
+      "sha256": "320e29c9407d5907ece7ef64113edeb8b2d5157fa8796aaf94e470eb6771e14e",
+      "bytes": 9788
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/ACSG.cpp",
+      "sha256": "931d74db432bb2a64aeaedd5200f933674b5e84fb0d129d5640189d76b008ba4",
+      "bytes": 54198
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/ACSG.h",
+      "sha256": "d45ce4c40e4e295696df985d2e2f59efa88b7c79e3b6245ac2d92ccbc7df056b",
+      "bytes": 11397
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/IndexACSG.cpp",
+      "sha256": "84dde43523f0641e8bdb322181e03ca038795e4560c08e8aff3c5a53d522f8c7",
+      "bytes": 58755
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/IndexACSG.h",
+      "sha256": "211446c585293d2e9a7dc25cf5494319b2380fc63260d7600608fa4b09e6e5d1",
+      "bytes": 4296
+    },
+    {
+      "path": "/data/netg/ACSG/benches/CMakeLists.txt",
+      "sha256": "c12aa1e8fe249db348223c1b4680b391da56dddcd41e4530fe59707c36001d5e",
+      "bytes": 8354
+    },
+    {
+      "path": "/data/netg/ACSG/build/CMakeCache.txt",
+      "sha256": "572fe888101ce36f26d85245700ed2266dc5cab32976c0fcc57aa5c3188cf06a",
+      "bytes": 30956
+    },
+    {
+      "path": "/data/netg/ACSG/build/ACSG/libACSG.a",
+      "sha256": "a2f5edf3b6527a76f43ae44531eeaa815d34a284f886e735bcc336ae82464b00",
+      "bytes": 333180
+    },
+    {
+      "path": "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "sha256": "9598573889c47b4a7665a601e25d5ada3026250c76c99ead886fa05abe174ff8",
+      "bytes": 12831336
+    }
+  ],
+  "runtime_math_libraries": [
+    {
+      "path": "/usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so",
+      "sha256": "1dedc9fee9ca46eb73e1abc9d989093acbb5bf1bb474fe673af7f0591fa4b2d9",
+      "bytes": 38017672
+    },
+    {
+      "path": "/usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0",
+      "sha256": "d46f9225c1883039e8a6853e6d96ca1af11d034ce186a090952e4a7c8a7c2fdc",
+      "bytes": 298776
+    },
+    {
+      "path": "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30",
+      "sha256": "ff0825e113603c3866680d5d52216bc6d8eedf3a59f52a0aef67ff01994db128",
+      "bytes": 2260296
+    },
+    {
+      "path": "/usr/lib/x86_64-linux-gnu/libm.so.6",
+      "sha256": "df621c68dbfed7e843434ef2faedb9f4d4b0543ad161e9a55eaf4d4ce2443176",
+      "bytes": 940560
+    }
+  ]
+}

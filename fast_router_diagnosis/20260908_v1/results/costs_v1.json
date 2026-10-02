@@ -1,0 +1,227 @@
+{
+  "status": "RECORDED_DIAGNOSTIC_COSTS",
+  "timing_contract": "Observed instrumented diagnostic wall time; never deployable QPS or full training time.",
+  "preparation_runs": {
+    "prepared_v1": {
+      "webvid2_5m_light_v1": {
+        "total_seconds_including_hash_reproduction_selection_io": 8.214063198000076,
+        "file_identity_hash_seconds_sum": 7.2310778720420785,
+        "prototype_reproduction_seconds": 0.16491169700748287,
+        "purpose": "Input verification only; prepared_v2 is the search input, prepared_v1 retained."
+      },
+      "yandex_t2i_official10M_ip_v1": {
+        "total_seconds_including_hash_reproduction_selection_io": 12.906236341994372,
+        "file_identity_hash_seconds_sum": 12.176826304013957,
+        "prototype_reproduction_seconds": 0.05884303599304985,
+        "purpose": "Input verification only; prepared_v2 is the search input, prepared_v1 retained."
+      }
+    },
+    "prepared_v2": {
+      "webvid2_5m_light_v1": {
+        "total_seconds_including_hash_reproduction_selection_io": 8.12098008999601,
+        "file_identity_hash_seconds_sum": 7.148950631002663,
+        "prototype_reproduction_seconds": 0.1618768399930559,
+        "purpose": "Input verification only; prepared_v2 is the search input, prepared_v1 retained."
+      },
+      "yandex_t2i_official10M_ip_v1": {
+        "total_seconds_including_hash_reproduction_selection_io": 12.651812422001967,
+        "file_identity_hash_seconds_sum": 11.922166524993372,
+        "prototype_reproduction_seconds": 0.0590190080110915,
+        "purpose": "Input verification only; prepared_v2 is the search input, prepared_v1 retained."
+      }
+    }
+  },
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "jobs": [
+        {
+          "job_id": "webvid2_5m_light_v1_parity",
+          "dataset": "webvid2_5m_light_v1",
+          "phase": "parity",
+          "started_utc": "2026-09-08T02:58:49.512544+00:00",
+          "command": [
+            "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/fast_router_diagnosis",
+            "--config",
+            "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/inputs/prepared_v2/webvid2_5m_light_v1/runner_config.json",
+            "--output",
+            "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/results/run_v1/parity/webvid2_5m_light_v1",
+            "--parity-queries",
+            "8",
+            "--parity-only"
+          ],
+          "log": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/logs/webvid2_5m_light_v1_parity_v1.log",
+          "output": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/results/run_v1/parity/webvid2_5m_light_v1",
+          "process": {
+            "pid": 69607,
+            "pgid": 69607,
+            "start_ticks": 6693984
+          },
+          "status": "COMPLETE",
+          "peak_rss_bytes": 5810552832,
+          "ended_utc": "2026-09-08T02:59:04.552249+00:00",
+          "exit_code": 0,
+          "wall_seconds": 15.039363624004181,
+          "graph_search_calls": 43392
+        },
+        {
+          "job_id": "webvid2_5m_light_v1_main",
+          "dataset": "webvid2_5m_light_v1",
+          "phase": "main",
+          "started_utc": "2026-09-08T02:59:04.581503+00:00",
+          "command": [
+            "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/fast_router_diagnosis",
+            "--config",
+            "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/inputs/prepared_v2/webvid2_5m_light_v1/runner_config.json",
+            "--output",
+            "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/results/run_v1/main/webvid2_5m_light_v1",
+            "--parity-queries",
+            "0"
+          ],
+          "log": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/logs/webvid2_5m_light_v1_main_v1.log",
+          "output": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/results/run_v1/main/webvid2_5m_light_v1",
+          "process": {
+            "pid": 69626,
+            "pgid": 69626,
+            "start_ticks": 6695491
+          },
+          "status": "COMPLETE",
+          "peak_rss_bytes": 5842288640,
+          "ended_utc": "2026-09-08T02:59:58.788333+00:00",
+          "exit_code": 0,
+          "wall_seconds": 54.20656077700551,
+          "graph_search_calls": 1336510
+        }
+      ],
+      "main_elapsed_through_routes_seconds": 4.183603446,
+      "main_elapsed_through_routes_includes": "Index/input loading, both seed HNSW construction, all approximate and exact routing and output.",
+      "hnsw_build_separate_seconds": null,
+      "route_only_separate_seconds": null,
+      "separate_timer_missing_reason": "Runner records this phase jointly; cannot infer separate pure costs after the fact.",
+      "budgets": {
+        "64": {
+          "L": 64,
+          "all_single_instrumented_wall_seconds": 16.456252036000002,
+          "graph_search_calls": 668255,
+          "instrumented_diagnostic_only": true,
+          "pilot_joint_instrumented_wall_seconds": 0.926578524,
+          "pilot_rows": 512,
+          "rows": 767,
+          "scoring_and_binary_io_wall_seconds": 0.06969400299999999,
+          "status": "COMPLETE"
+        },
+        "128": {
+          "L": 128,
+          "all_single_instrumented_wall_seconds": 30.138055588000004,
+          "graph_search_calls": 668255,
+          "instrumented_diagnostic_only": true,
+          "pilot_joint_instrumented_wall_seconds": 1.8864501090000003,
+          "pilot_rows": 512,
+          "rows": 767,
+          "scoring_and_binary_io_wall_seconds": 0.06911190000000002,
+          "status": "COMPLETE"
+        }
+      }
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "jobs": [
+        {
+          "job_id": "yandex_t2i_official10M_ip_v1_parity",
+          "dataset": "yandex_t2i_official10M_ip_v1",
+          "phase": "parity",
+          "started_utc": "2026-09-08T02:59:58.817850+00:00",
+          "command": [
+            "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/fast_router_diagnosis",
+            "--config",
+            "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/inputs/prepared_v2/yandex_t2i_official10M_ip_v1/runner_config.json",
+            "--output",
+            "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/results/run_v1/parity/yandex_t2i_official10M_ip_v1",
+            "--parity-queries",
+            "8",
+            "--parity-only"
+          ],
+          "log": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/logs/yandex_t2i_official10M_ip_v1_parity_v1.log",
+          "output": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/results/run_v1/parity/yandex_t2i_official10M_ip_v1",
+          "process": {
+            "pid": 69722,
+            "pgid": 69722,
+            "start_ticks": 6700915
+          },
+          "status": "COMPLETE",
+          "peak_rss_bytes": 10650324992,
+          "ended_utc": "2026-09-08T03:00:20.884486+00:00",
+          "exit_code": 0,
+          "wall_seconds": 22.06634460001078,
+          "graph_search_calls": 43680
+        },
+        {
+          "job_id": "yandex_t2i_official10M_ip_v1_main",
+          "dataset": "yandex_t2i_official10M_ip_v1",
+          "phase": "main",
+          "started_utc": "2026-09-08T03:00:20.913877+00:00",
+          "command": [
+            "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/fast_router_diagnosis",
+            "--config",
+            "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/inputs/prepared_v2/yandex_t2i_official10M_ip_v1/runner_config.json",
+            "--output",
+            "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/results/run_v1/main/yandex_t2i_official10M_ip_v1",
+            "--parity-queries",
+            "0"
+          ],
+          "log": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/logs/yandex_t2i_official10M_ip_v1_main_v1.log",
+          "output": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/results/run_v1/main/yandex_t2i_official10M_ip_v1",
+          "process": {
+            "pid": 69754,
+            "pgid": 69754,
+            "start_ticks": 6703124
+          },
+          "status": "COMPLETE",
+          "peak_rss_bytes": 10746122240,
+          "ended_utc": "2026-09-08T03:01:20.158517+00:00",
+          "exit_code": 0,
+          "wall_seconds": 59.24434551400191,
+          "graph_search_calls": 1347188
+        }
+      ],
+      "main_elapsed_through_routes_seconds": 11.03554108,
+      "main_elapsed_through_routes_includes": "Index/input loading, both seed HNSW construction, all approximate and exact routing and output.",
+      "hnsw_build_separate_seconds": null,
+      "route_only_separate_seconds": null,
+      "separate_timer_missing_reason": "Runner records this phase jointly; cannot infer separate pure costs after the fact.",
+      "budgets": {
+        "64": {
+          "L": 64,
+          "all_single_instrumented_wall_seconds": 16.154988296,
+          "graph_search_calls": 673594,
+          "instrumented_diagnostic_only": true,
+          "pilot_joint_instrumented_wall_seconds": 0.8320397290000003,
+          "pilot_rows": 512,
+          "rows": 768,
+          "scoring_and_binary_io_wall_seconds": 0.069669784,
+          "status": "COMPLETE"
+        },
+        "128": {
+          "L": 128,
+          "all_single_instrumented_wall_seconds": 28.471776767999998,
+          "graph_search_calls": 673594,
+          "instrumented_diagnostic_only": true,
+          "pilot_joint_instrumented_wall_seconds": 1.6504702039999997,
+          "pilot_rows": 512,
+          "rows": 768,
+          "scoring_and_binary_io_wall_seconds": 0.07025294,
+          "status": "COMPLETE"
+        }
+      }
+    }
+  },
+  "search_process_wall_seconds": 150.55661451502237,
+  "graph_search_calls": 2770770,
+  "peak_search_rss_bytes": 10746122240,
+  "historical_exact_gt_seconds": null,
+  "historical_exact_gt_reason": "Existing training-side GT reused; original generation timing not established here.",
+  "historical_qgt_hub_build_seconds": null,
+  "historical_qgt_hub_build_reason": "Existing QGT5K artifacts reused, not rebuilt or timed here.",
+  "historical_nsg_build_seconds": null,
+  "historical_nsg_build_reason": "Frozen existing NSG reused; original build timing not established here.",
+  "cold_cache_control": false,
+  "cache_note": "Input hashing and preparation read files before searches; this is not a cold-cache benchmark."
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "purpose": "P0 historical diagnostic evidence inventory only; no new performance result",
+  "heldout_accessed": false,
+  "files": [
+    {
+      "path": "target_basin_formalization/20260907_v1/pilot/hnsw/webvid_fast10k_count.json",
+      "sha256": "29dce01d45899270f2f7d579140d130f3eb1aa9fa8fa0dbb36a41a93bb715e82",
+      "dataset": "webvid2_5m_light_v1",
+      "measurement": "count",
+      "split": "drl_train",
+      "num_queries": 10000,
+      "threads": 16,
+      "heldout_accessed": false,
+      "timing_publishable": false,
+      "timing_exclusion_reason": "Old evaluator batch wall contains GT scoring/workspace construction; old count QPS cannot be published",
+      "fit_exclusion_reason": "Old Fast prototype used all router_train30K including current pilot10K; diagnostics only, not paired20K baseline",
+      "points": [
+        {
+          "L": 64,
+          "K": 10,
+          "n": 10000,
+          "query_ids_aligned_zero_to_9999": true,
+          "mean_recall_recomputed": 0.6593799999999916,
+          "reported_recall": 0.6593799999999916,
+          "mean_routing_ndc": 122.2987,
+          "mean_graph_ndc": 916.7418,
+          "has_result_ids": true,
+          "has_entry_ids": true,
+          "total_ndc_addition_valid": true,
+          "low_tail_counts": {
+            "0.1": 454,
+            "0.2": 852,
+            "0.5": 2476,
+            "0.8": 5171
+          }
+        },
+        {
+          "L": 128,
+          "K": 10,
+          "n": 10000,
+          "query_ids_aligned_zero_to_9999": true,
+          "mean_recall_recomputed": 0.7482999999999851,
+          "reported_recall": 0.7482999999999851,
+          "mean_routing_ndc": 122.2987,
+          "mean_graph_ndc": 1646.1674,
+          "has_result_ids": true,
+          "has_entry_ids": true,
+          "total_ndc_addition_valid": true,
+          "low_tail_counts": {
+            "0.1": 212,
+            "0.2": 422,
+            "0.5": 1503,
+            "0.8": 3890
+          }
+        }
+      ]
+    },
+    {
+      "path": "target_basin_formalization/20260907_v1/pilot/hnsw/yandex_fast10k_count.json",
+      "sha256": "2580454bfb016680d692e235fcf7ec5f33d02acc5e521970d677de6dfde4a980",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "measurement": "count",
+      "split": "drl_train",
+      "num_queries": 10000,
+      "threads": 16,
+      "heldout_accessed": false,
+      "timing_publishable": false,
+      "timing_exclusion_reason": "Old evaluator batch wall contains GT scoring/workspace construction; old count QPS cannot be published",
+      "fit_exclusion_reason": "Old Fast prototype used all router_train30K including current pilot10K; diagnostics only, not paired20K baseline",
+      "points": [
+        {
+          "L": 64,
+          "K": 10,
+          "n": 10000,
+          "query_ids_aligned_zero_to_9999": true,
+          "mean_recall_recomputed": 0.8279799999999805,
+          "reported_recall": 0.8279799999999805,
+          "mean_routing_ndc": 116.112,
+          "mean_graph_ndc": 1643.4079,
+          "has_result_ids": true,
+          "has_entry_ids": true,
+          "total_ndc_addition_valid": true,
+          "low_tail_counts": {
+            "0.1": 295,
+            "0.2": 400,
+            "0.5": 916,
+            "0.8": 2400
+          }
+        },
+        {
+          "L": 128,
+          "K": 10,
+          "n": 10000,
+          "query_ids_aligned_zero_to_9999": true,
+          "mean_recall_recomputed": 0.8962999999999782,
+          "reported_recall": 0.8962999999999782,
+          "mean_routing_ndc": 116.112,
+          "mean_graph_ndc": 2855.0955,
+          "has_result_ids": true,
+          "has_entry_ids": true,
+          "total_ndc_addition_valid": true,
+          "low_tail_counts": {
+            "0.1": 174,
+            "0.2": 234,
+            "0.5": 486,
+            "0.8": 1342
+          }
+        }
+      ]
+    }
+  ]
+}

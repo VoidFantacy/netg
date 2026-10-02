@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "status": "PASS_REVIEWED_SOURCE_AND_SMALL_FIXTURES",
+  "created_utc": "2026-09-07T18:08:58.292475+00:00",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/complete_registered_traces.py",
+    "sha256": "a0c31bcc91e78efc754ec89f6c84ea8a0a904ac8f91e6eeb6f3928b486fd4cc2"
+  },
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/trace_completion_protocol_v1.json",
+    "sha256": "2fb9fff81f3d807b0af475c5bbb4f3db7d3d23ff689322cdf20c12c020a5d39c"
+  },
+  "review_scope": "Final runner source and fixed protocol plus original execution metadata and tiny synthetic command/hash fixtures only; no ANN, raw query/GT/graph/base/labels, or full count-row scan.",
+  "earlier_required_fix": "Implicit DataLoader settings and P0 graph-path binding were missing in the pre-fix source. Root preserved that source and added settings/audit/script checks; final source closes this issue.",
+  "confirmed_source_properties": [
+    "Only original seven IDs [157,631,2003,4093,6007,8009,9967] from the originally registered23 are scheduled.",
+    "Every command inherits accepted original P2 trace parameters and changes only query-offset/max-queries/warmup-queries/output. Fixed5 methods*2Ls*7queries*2datasets gives140 new traces.",
+    "Frozen P2 evaluator source/binary identities are checked, and original execution evaluator/protocol/model/Fast fingerprints must match.",
+    "P0 audit SHA matches both model and Fast manifest; implicit settings SHA equals P0; template index path and inherited model graph SHA match P0.",
+    "Settings/audit/runner source/evaluator/source/model/Fast raw files/model files reverified before every child. Original full graph identity inherited from accepted P0, not rehashed here.",
+    "Each new result is required COMPLETE with correct dataset/query interval/model, exactly10 method/L cells, round0 and one row/trace per cell. All18 saved route/result/Recall/NDC/MAC/oracle event-counter fields match the original complete10K row exactly.",
+    "Children inherit controller process group; source has softclose checks, exclusive output directory/logs and persistent INCOMPLETE execution state on any failure.",
+    "No P2/P3 gate edits, model tuning, new QPS/CI or method claim. Independent frozen trace replay of all460 traces is a required subsequent root acceptance step, not supplied by this runner itself."
+  ],
+  "small_checks": [
+    "webvid: only four allowed flags changed and original command immutable",
+    "webvid: rejects duplicate",
+    "webvid: rejects odd",
+    "webvid: rejects missing required",
+    "yandex: only four allowed flags changed and original command immutable",
+    "yandex: rejects duplicate",
+    "yandex: rejects odd",
+    "yandex: rejects missing required",
+    "synthetic exact input SHA accepted",
+    "synthetic changed settings SHA rejected"
+  ],
+  "small_check_count": 10,
+  "new_expected_trace_files": 140,
+  "merged_expected_trace_files": 460,
+  "merged_expected_pairs": 276,
+  "actual_run_acceptance": "Pending root controlled execution and frozen trace analyzer replay. This review is not a claim that new actual traces already pass."
+}

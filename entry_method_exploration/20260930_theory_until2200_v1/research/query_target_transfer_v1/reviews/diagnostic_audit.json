@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "all_entry_scores_and_counts": true,
+      "all_selected_case_cosines": true,
+      "exact16": {
+        "QueryTarget1": {
+          "argmax_identical": true,
+          "max_score_within_tolerance": 14
+        },
+        "TargetBank1": {
+          "argmax_identical": true,
+          "max_score_within_tolerance": 12
+        }
+      }
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "all_entry_scores_and_counts": true,
+      "all_selected_case_cosines": true,
+      "exact16": {
+        "QueryTarget1": {
+          "argmax_identical": true,
+          "max_score_within_tolerance": 16
+        },
+        "TargetBank1": {
+          "argmax_identical": true,
+          "max_score_within_tolerance": 14
+        }
+      }
+    }
+  },
+  "max_abs_error": 2.220446049250313e-16,
+  "seconds": 0.7141290260005917,
+  "scope": "post-result arithmetic audit only; frozen experiment and analysis unchanged; same agent, not independent personnel",
+  "field_semantics": "best_entry_cosine_query_scaled_mean is max raw IP divided by query norm, not base-normalized cosine"
+}

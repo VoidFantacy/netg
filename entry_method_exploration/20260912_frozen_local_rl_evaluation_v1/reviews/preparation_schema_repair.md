@@ -1,0 +1,1 @@
+2026-09-12，首次prepare在读取E48 final freeze时因旧E37 helper强制要求mtime_ns而KeyError。E48 manifest有path/bytes/SHA但没有mtime字段。发生于任何查询或预算预留之前，未完成新冻结。修正当前尚未冻结的check helper：有mtime时校验，所有文件仍完整验证bytes与SHA。无模型/数据/门/查询变化，NSG=0。

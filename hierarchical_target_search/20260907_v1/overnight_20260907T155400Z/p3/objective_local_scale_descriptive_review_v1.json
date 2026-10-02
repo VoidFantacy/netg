@@ -1,0 +1,97 @@
+{
+  "status": "PASS_DESCRIPTIVE_SUMMARY_REVIEW",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_diagnosis_v1/diagnosis.json",
+    "sha256": "c3fa695d1d1e49e8aa6081025a7c5eb704c7d3466a0634ffa9ba38b38288ee8f",
+    "bytes": 136654
+  },
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "validation": "PASS_SUMMARY_AND_HISTOGRAM_CONSISTENCY",
+      "groups_checked": 31,
+      "M": 49611457,
+      "Q": 20000,
+      "strict_threshold_fraction": "49611457/180000",
+      "strict_threshold": 275.61920555555554,
+      "first_failing_integer_degree": 276,
+      "all_nodes": 2505000,
+      "all_satisfying": 2504983,
+      "all_not_satisfying": 17,
+      "all_max_total_degree": 843,
+      "fit_seen_unique_nodes": 118811,
+      "fit_seen_satisfying": 118811,
+      "fit_seen_fraction": 1.0,
+      "fit_seen_max_total_degree": 168,
+      "fit_target_occurrences": 200000,
+      "fit_occurrence_weighted_satisfying_fraction": 1.0,
+      "final_lambda1_vs_lambda0_changed_all": 52305,
+      "changed_all_satisfying": 52305,
+      "changed_all_max_total_degree": 207,
+      "changed_seen_nodes": 28716,
+      "changed_seen_satisfying": 28716,
+      "histogram": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_diagnosis_v1/webvid2_5m_light_v1.total_degree_histogram.json",
+        "sha256": "afe42e4428d35dad09ed4070f68f011142835efeba4817e368653b8c49e87a3c",
+        "bytes": 2474
+      },
+      "group_count_fraction_and_partition_checks": true,
+      "all_base_histogram_and_quantiles_reconciled": true,
+      "subgroup_quantile_scope": "Ranks/order/bounds and partition aggregate consistency checked; subgroup values cannot be independently recomputed from an all-base histogram.",
+      "raw_degree_or_incidence_or_label_reconstruction_performed": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "validation": "PASS_SUMMARY_AND_HISTOGRAM_CONSISTENCY",
+      "groups_checked": 31,
+      "M": 294844794,
+      "Q": 20000,
+      "strict_threshold_fraction": "49140799/30000",
+      "strict_threshold": 1638.0266333333334,
+      "first_failing_integer_degree": 1639,
+      "all_nodes": 10000000,
+      "all_satisfying": 10000000,
+      "all_not_satisfying": 0,
+      "all_max_total_degree": 467,
+      "fit_seen_unique_nodes": 188913,
+      "fit_seen_satisfying": 188913,
+      "fit_seen_fraction": 1.0,
+      "fit_seen_max_total_degree": 162,
+      "fit_target_occurrences": 200000,
+      "fit_occurrence_weighted_satisfying_fraction": 1.0,
+      "final_lambda1_vs_lambda0_changed_all": 72107,
+      "changed_all_satisfying": 72107,
+      "changed_all_max_total_degree": 162,
+      "changed_seen_nodes": 22224,
+      "changed_seen_satisfying": 22224,
+      "histogram": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_diagnosis_v1/yandex_t2i_official10M_ip_v1.total_degree_histogram.json",
+        "sha256": "1af69c3d5001577a7de6e331ff78bd06c92afc1adc210902fed9c2c1a5ca104a",
+        "bytes": 2632
+      },
+      "group_count_fraction_and_partition_checks": true,
+      "all_base_histogram_and_quantiles_reconciled": true,
+      "subgroup_quantile_scope": "Ranks/order/bounds and partition aggregate consistency checked; subgroup values cannot be independently recomputed from an all-base histogram.",
+      "raw_degree_or_incidence_or_label_reconstruction_performed": false
+    }
+  ],
+  "groups_checked_total": 62,
+  "scope": "Only completed diagnostic summary and its two tiny checksum-bound histogram files were read.",
+  "confirmed": "The measured strict sufficient degree condition covers every unique fit-seen target and every fit target occurrence on both datasets; it also covers every final lambda1-vs-lambda0 changed node.",
+  "conditional_meaning": "For a node satisfying this condition, a feasible candidate with integer DeltaS<=-1 strictly lowers the frozen lambda1 objective regardless of cut increment. The audit measures the condition coverage only.",
+  "limits": [
+    "No feasible GT-improving candidate existence, actual selection, accepted-move delta or temporal trajectory is reconstructed.",
+    "Summary reconciliation inherits raw-degree/GT/label integrity from the completed bound diagnostic; it does not independently rerun those reads.",
+    "This establishes the scope of the sufficient local-scale condition; it does not identify a cause of failed retrieval transfer.",
+    "No candidate-ranking theorem, parameter tuning, new representation, new model or gate reopening is asserted."
+  ],
+  "P3_gate_status_unchanged": "NOPASS",
+  "new_CI_or_search_or_model": false,
+  "command": [
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/interpret_objective_local_scale.py",
+    "--input",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_diagnosis_v1/diagnosis.json",
+    "--output-prefix",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_descriptive_review_v1"
+  ]
+}

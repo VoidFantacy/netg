@@ -1,0 +1,60 @@
+{
+  "experiment": "E25_selective_profile_gate_v1",
+  "protocol_sha256": "16c148cc2952b8ec37fd99b414122471af3d26fcecf211574501be247564f33d",
+  "seed": 20260910,
+  "fit_n": 8192,
+  "cal_n": 2048,
+  "audit_n": 2048,
+  "validation_n": 2000,
+  "label_L": [
+    64,
+    128
+  ],
+  "L": [
+    64,
+    128,
+    256,
+    400,
+    800
+  ],
+  "timing_repeats": 3,
+  "feature_names": [
+    "log1p_query_norm",
+    "base_best_cosine",
+    "base_gap12",
+    "base_gap13",
+    "base_mean_log_ess",
+    "base_min_log_ess",
+    "base_mean_profile_shift",
+    "new_minus_base_best_cosine",
+    "new_gap12",
+    "new_gap13",
+    "new_mean_log_ess",
+    "new_min_log_ess",
+    "entry_overlap_fraction"
+  ],
+  "lambda": [
+    0.01,
+    0.1,
+    1.0
+  ],
+  "fit_logit_quantiles": [
+    0.1,
+    0.25,
+    0.5,
+    0.75
+  ],
+  "gain_retention_target": 0.75,
+  "harm_reduction_target": 0.25,
+  "query_cpu": 15,
+  "normal_real_call_cap": 1089152,
+  "repair_real_call_cap": 16384,
+  "total_real_call_cap": 1105536,
+  "synthetic_call_cap": 10000,
+  "rss_limit_bytes": 42949672960,
+  "output_limit_bytes": 1610612736,
+  "min_free_bytes": 10737418240,
+  "job_timeout_seconds": 1800,
+  "total_search_seconds": 7200,
+  "heldout_allowed": false
+}

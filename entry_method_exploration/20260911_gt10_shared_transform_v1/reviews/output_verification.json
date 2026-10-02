@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "jobs": [
+    {
+      "stage": "audit",
+      "dataset": "webvid2_5m_light_v1",
+      "points": 12,
+      "queries": 12288,
+      "status": "PASS",
+      "physical_calls": 24768
+    },
+    {
+      "stage": "audit",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "points": 12,
+      "queries": 12288,
+      "status": "PASS",
+      "physical_calls": 24768
+    },
+    {
+      "stage": "cal",
+      "dataset": "webvid2_5m_light_v1",
+      "points": 14,
+      "queries": 14336,
+      "status": "PASS",
+      "physical_calls": 28896
+    },
+    {
+      "stage": "cal",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "points": 14,
+      "queries": 14336,
+      "status": "PASS",
+      "physical_calls": 28896
+    },
+    {
+      "stage": "fit_probe",
+      "dataset": "webvid2_5m_light_v1",
+      "points": 4,
+      "queries": 1024,
+      "status": "PASS",
+      "physical_calls": 2112
+    },
+    {
+      "stage": "fit_probe",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "points": 4,
+      "queries": 1024,
+      "status": "PASS",
+      "physical_calls": 2112
+    },
+    {
+      "stage": "validation",
+      "dataset": "webvid2_5m_light_v1",
+      "points": 45,
+      "queries": 90000,
+      "status": "PASS",
+      "physical_calls": 646720
+    },
+    {
+      "stage": "validation",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "points": 45,
+      "queries": 90000,
+      "status": "PASS",
+      "physical_calls": 646720
+    }
+  ],
+  "total_points": 150,
+  "total_query_outputs": 235296,
+  "historical_regression_outputs": 120000,
+  "GT_rescore": true,
+  "same_entries_same_output": true,
+  "across_L_entries_equal": true
+}

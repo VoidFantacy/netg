@@ -1,0 +1,57 @@
+{
+  "protocol_sha256": "6ef2ac2c2bfc6995c7d5a2d215a742cd376570e8bb763ddc84fad95b67a2ad1c",
+  "locked_unix": 1789379596.0665464,
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1",
+    "laion10m_acsg_v1"
+  ],
+  "L": [
+    32,
+    48,
+    64,
+    96,
+    128,
+    160,
+    200,
+    256,
+    320,
+    400,
+    512,
+    640,
+    800,
+    1000,
+    1250,
+    1500
+  ],
+  "threads": 1,
+  "offline_threads": 16,
+  "query_cpu": 15,
+  "test_queries": 10000,
+  "repetitions": 3,
+  "methods": [
+    "NSG",
+    "GT10",
+    "GATE",
+    "HNSW"
+  ],
+  "formal_points": 192,
+  "formal_wall_rounds": 576,
+  "max_rss_bytes": 103079215104,
+  "min_free_bytes": 1610612736,
+  "parent_config_sha256": "84f80553e84bfc81745c4778a39b6b19149112ae49406ce673d67382f96cb112",
+  "amendment_sha256": "d5ff2d274f4bdb247148e84bf8e23ea3c0a9314e31b488254143593e4a20e368",
+  "HBKM": {
+    "k1": 32,
+    "k2": 16,
+    "sinkhorn_iters": 10,
+    "max_iters": 20,
+    "seed": 42,
+    "lambda_penalty": 0.01
+  },
+  "failure_query_definition": "top10 intersection with exact GT top10 is empty",
+  "optional_dataset_evaluation": false,
+  "GATE_model": "gate_release10_v2",
+  "GATE_sampling": "release fixed10 5near+5far with cap1000/5hop",
+  "sampling_amendment_sha256": "36aac19b24a319d1cad0512324a884cd798d2ccfbfabca61273142b6213eb86d"
+}

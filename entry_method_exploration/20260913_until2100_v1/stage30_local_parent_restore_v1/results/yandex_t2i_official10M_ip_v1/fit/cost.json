@@ -1,0 +1,105 @@
+{
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "status": "COMPLETE",
+  "pid": 4,
+  "reserved_NSG": 32768,
+  "started_at": 1789294619.2471204,
+  "completed_actions": 32,
+  "accepted_actions": 8,
+  "actual_NSG": 6336,
+  "actual_HNSW": 1400512,
+  "actual_threads": 1,
+  "affinity": [
+    15
+  ],
+  "returncode": 0,
+  "vector_installs": 3,
+  "installs": [
+    {
+      "kind": "single_action_regression",
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage30_local_parent_restore_v1/models/yandex_t2i_official10M_ip_v1/first_action_regression/graph.hnsw",
+        "bytes": 1959640,
+        "mtime_ns": 1789294632354115650,
+        "sha256": "f237adf6c3eef1307c079859daf3cb18bfc5b23688c1d8274f01ab9d87e30932"
+      },
+      "W": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage30_local_parent_restore_v1/models/yandex_t2i_official10M_ip_v1/first_action_regression/W.f32",
+        "bytes": 1653600,
+        "mtime_ns": 1789294632354115650,
+        "sha256": "53a0935f578092579a14a092f88094c84b3118597a79dacc8dd41595575a720b"
+      }
+    },
+    {
+      "kind": "restore10",
+      "seconds": 0.007058533999952488,
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage30_local_parent_restore_v1/models/yandex_t2i_official10M_ip_v1/restore10/graph.hnsw",
+        "bytes": 1959640,
+        "mtime_ns": 1789294646934215598,
+        "sha256": "cb0767d5cbd68dde26ae1125c022dfcdf7c18cc51798c49ca11897eb76bd846e"
+      },
+      "W": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage30_local_parent_restore_v1/models/yandex_t2i_official10M_ip_v1/restore10/W.f32",
+        "bytes": 1653600,
+        "mtime_ns": 1789294646938215625,
+        "sha256": "7110d89c7bdf4d37e4087be74615f4dedc88f23b95440b81853aa42d8e682391"
+      },
+      "groups": 8
+    },
+    {
+      "kind": "random10",
+      "seconds": 0.004737759998533875,
+      "graph": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage30_local_parent_restore_v1/models/yandex_t2i_official10M_ip_v1/random10/graph.hnsw",
+        "bytes": 1959640,
+        "mtime_ns": 1789294647594220122,
+        "sha256": "eb4223300a6d4fe054071e60a9e4e31930d2a9a6cc3ed7706cfa39f1a47d4daa"
+      },
+      "W": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage30_local_parent_restore_v1/models/yandex_t2i_official10M_ip_v1/random10/W.f32",
+        "bytes": 1653600,
+        "mtime_ns": 1789294647594220122,
+        "sha256": "39b64bcde87172a154659d44fd953d6889be821182d7cf0699064bf790277890"
+      },
+      "groups": 8
+    }
+  ],
+  "union": [
+    {
+      "model": "restore10",
+      "groups": 8,
+      "net_hits": 114,
+      "half_net_hits": [
+        36,
+        78
+      ],
+      "failure_delta": -10,
+      "rescued": 15,
+      "new_failed": 5,
+      "gain_hits": 165,
+      "loss_hits": 51,
+      "total_ndc_relative": -0.00030983604792000907,
+      "accepted": true
+    },
+    {
+      "model": "random10",
+      "groups": 8,
+      "net_hits": 15,
+      "half_net_hits": [
+        2,
+        13
+      ],
+      "failure_delta": -1,
+      "rescued": 1,
+      "new_failed": 0,
+      "gain_hits": 16,
+      "loss_hits": 1,
+      "total_ndc_relative": 0.00015345487677498326,
+      "accepted": true
+    }
+  ],
+  "seconds": 29.250458718001028,
+  "max_RSS_GiB": 10.026988983154297,
+  "completed_at": 1789294648.497894
+}

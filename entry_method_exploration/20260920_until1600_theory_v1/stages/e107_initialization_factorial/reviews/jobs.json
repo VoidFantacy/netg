@@ -1,0 +1,171 @@
+[
+  {
+    "argv": [
+      "g++",
+      "-O3",
+      "-march=native",
+      "-std=c++17",
+      "-fopenmp",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+      "-I/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/src/common",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/src/evaluate.cpp",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+      "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+      "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "-lopenblas",
+      "-lz",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/bin/evaluate"
+    ],
+    "kind": "build",
+    "started_unix": 1789881373.6189196,
+    "timeout_seconds": 120,
+    "reserved_calls": 0,
+    "pid": 11001,
+    "pgid": 11001,
+    "exit_code": 0,
+    "seconds": 8.978617906570435,
+    "finished_unix": 1789881382.5975387
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/bin/evaluate",
+      "counterexample",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/reviews/counterexample.json"
+    ],
+    "kind": "synthetic",
+    "started_unix": 1789881382.5979145,
+    "timeout_seconds": 20,
+    "reserved_calls": 0,
+    "pid": 11012,
+    "pgid": 11012,
+    "exit_code": 0,
+    "seconds": 0.004704475402832031,
+    "finished_unix": 1789881382.6026196
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/reviews/smoke_webvid2_5m_light_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/reviews/smoke_webvid2_5m_light_v1"
+    ],
+    "kind": "smoke",
+    "started_unix": 1789881391.8379421,
+    "timeout_seconds": 1500,
+    "reserved_calls": 768,
+    "pid": 11015,
+    "pgid": 11015,
+    "exit_code": 0,
+    "seconds": 4.922269344329834,
+    "finished_unix": 1789881396.760213,
+    "complete": {
+      "ann_calls": 32,
+      "calls": 768,
+      "cpu": 15,
+      "exact_profile_distances": 78240,
+      "formal_QPS": false,
+      "maxrss_kib": 5674184,
+      "seconds": 4.780102943,
+      "status": "PASS",
+      "threads": 1
+    }
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/reviews/smoke_yandex_t2i_official10M_ip_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/reviews/smoke_yandex_t2i_official10M_ip_v1"
+    ],
+    "kind": "smoke",
+    "started_unix": 1789881396.7630124,
+    "timeout_seconds": 1500,
+    "reserved_calls": 768,
+    "pid": 11016,
+    "pgid": 11016,
+    "exit_code": 0,
+    "seconds": 12.633007526397705,
+    "finished_unix": 1789881409.3960216,
+    "complete": {
+      "ann_calls": 32,
+      "calls": 768,
+      "cpu": 15,
+      "exact_profile_distances": 78816,
+      "formal_QPS": false,
+      "maxrss_kib": 10401696,
+      "seconds": 12.429321611,
+      "status": "PASS",
+      "threads": 1
+    }
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/reviews/main_webvid2_5m_light_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_webvid2_5m_light_v1"
+    ],
+    "kind": "main",
+    "started_unix": 1789881409.4000642,
+    "timeout_seconds": 1500,
+    "reserved_calls": 589824,
+    "pid": 11017,
+    "pgid": 11017,
+    "exit_code": 0,
+    "seconds": 564.5615682601929,
+    "finished_unix": 1789881973.9616337,
+    "complete": {
+      "ann_calls": 8192,
+      "calls": 589824,
+      "cpu": 15,
+      "exact_profile_distances": 20029440,
+      "formal_QPS": false,
+      "maxrss_kib": 5677408,
+      "seconds": 564.443653915,
+      "status": "PASS",
+      "threads": 1
+    }
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/reviews/main_yandex_t2i_official10M_ip_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/results/main_yandex_t2i_official10M_ip_v1"
+    ],
+    "kind": "main",
+    "started_unix": 1789881973.969292,
+    "timeout_seconds": 1500,
+    "reserved_calls": 589824,
+    "pid": 12160,
+    "pgid": 12160,
+    "exit_code": 0,
+    "seconds": 621.1386017799377,
+    "finished_unix": 1789882595.1078956,
+    "complete": {
+      "ann_calls": 8192,
+      "calls": 589824,
+      "cpu": 15,
+      "exact_profile_distances": 20176896,
+      "formal_QPS": false,
+      "maxrss_kib": 10401636,
+      "seconds": 620.926989546,
+      "status": "PASS",
+      "threads": 1
+    }
+  }
+]

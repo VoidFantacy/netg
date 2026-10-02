@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "objective": "E43 local-profile policy-search stage",
+  "requirements": [
+    {
+      "requirement": "new_local_action_implemented",
+      "status": "PROVEN",
+      "evidence": "frozen single-row H x 16 parameterization, current-background native search and preflight"
+    },
+    {
+      "requirement": "GT_free_independent_matched_schedule",
+      "status": "PROVEN",
+      "evidence": "all 1600 schedule rows replayed from original seeds and independent baseline-entry draws"
+    },
+    {
+      "requirement": "RL_ES_same_budget_and_representation",
+      "status": "PROVEN",
+      "evidence": "two arms/two seeds/two datasets, each 200 updates/247680 calls/1813 builds"
+    },
+    {
+      "requirement": "full_eight_training_runs",
+      "status": "PROVEN",
+      "evidence": "8 terminal model.json and 1600 trajectory files, 88 checkpoints"
+    },
+    {
+      "requirement": "actual_whole_batch_counterfactual_feedback",
+      "status": "PROVEN",
+      "evidence": "1978368 complete outputs independently set-scored; native call ledger and before/current/candidate arrays"
+    },
+    {
+      "requirement": "correct_reward_and_mean_updates",
+      "status": "PROVEN",
+      "evidence": "all Delta J, gradient components, LOO/ES, row counters/Adam/state replayed"
+    },
+    {
+      "requirement": "preserve_baseline_cancellation_limit",
+      "status": "PROVEN",
+      "evidence": "preflight identity plus explicit protocol/report disclosure"
+    },
+    {
+      "requirement": "deterministic_export_and_model_selection",
+      "status": "PROVEN",
+      "evidence": "all monitor choices replayed,16 W/physical graphs and 1024-query three-way parity"
+    },
+    {
+      "requirement": "full_positive_negative_and_signal_diagnosis",
+      "status": "PROVEN",
+      "evidence": "32 quality rows,8 models,1600 step feedback records and derived plots"
+    },
+    {
+      "requirement": "preregistered_monitor_gate",
+      "status": "PROVEN",
+      "evidence": "both datasets/arms eligibility recomputed; no result-dependent threshold change"
+    },
+    {
+      "requirement": "single_thread_serial_bounded_execution",
+      "status": "PROVEN",
+      "evidence": "actual threads1,nonoverlapping complete ledger; NSG/build caps and deadline checks"
+    },
+    {
+      "requirement": "old_sources_and_artifacts_preserved",
+      "status": "PROVEN",
+      "evidence": "E37-E42 complete SHA/path sets and native/NSG dependencies unchanged"
+    },
+    {
+      "requirement": "no_unauthorized_scope_substitution",
+      "status": "PROVEN",
+      "evidence": "0 new GT/development/QPS/validation/held-out; unchanged default"
+    },
+    {
+      "requirement": "reviewable_delivery",
+      "status": "PROVEN",
+      "evidence": "report/history32/root docs, plots opened visually, all local links resolve"
+    },
+    {
+      "requirement": "ongoing_user_goal_preserved",
+      "status": "PROVEN",
+      "evidence": "stage closes separately from the persistent 20:00 campaign"
+    }
+  ],
+  "unresolved_requirements": [],
+  "campaign_complete": false
+}

@@ -1,0 +1,56 @@
+{
+  "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+  "dataset": "webvid2_5m_light_v1",
+  "gt": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/gt.test.public10K.ip.top100.ivecs",
+  "hnsw_complete": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/hnsw/complete.json",
+  "hnsw_topology": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/hnsw/full.topology.gz",
+  "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "methods": [
+    {
+      "name": "NSG"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_hard/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+      "name": "GT10-hard"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+      "name": "GT10-soft-t1"
+    },
+    {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gate_disjoint_labels_v1/W.f32",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gate.ids.i32",
+      "name": "GATE"
+    },
+    {
+      "name": "HNSW"
+    }
+  ],
+  "metric_id": 0,
+  "n": 10000,
+  "performance": true,
+  "points": [
+    {
+      "K": 1,
+      "L": 96
+    },
+    {
+      "K": 100,
+      "L": 100
+    },
+    {
+      "K": 1,
+      "L": 800
+    },
+    {
+      "K": 100,
+      "L": 1250
+    }
+  ],
+  "queries": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.test.public10K.fvecs",
+  "reference_results": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1",
+  "source_eval_config": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/eval_k100.json",
+  "threads": 1
+}

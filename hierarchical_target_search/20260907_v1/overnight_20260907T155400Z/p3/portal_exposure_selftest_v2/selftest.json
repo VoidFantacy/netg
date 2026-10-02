@@ -1,0 +1,371 @@
+{
+  "status": "PASS",
+  "source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/diagnose_portal_exposure.py",
+    "sha256": "e76ad3377df984af132596c3dc84f65c9ab3f86c90bbfdbbd1ec7581ce9a9e59"
+  },
+  "tests": [
+    "tiny count cell hashes, route consumption, count metrics and L invariance",
+    "missing cell",
+    "reordered query",
+    "changed hash",
+    "counter boolean",
+    "recall outside range",
+    "all 256 fit proxy rows, selected portal arrays and aggregate identity",
+    "unsupported leaf cannot retain nonzero proxy hits",
+    "nine route/raw-sign combinations, separate weighted signs, unsupported weights and empty bins",
+    "identical route integrity rejects changed result_ids",
+    "identical route integrity rejects changed recall",
+    "identical route integrity rejects changed routing_ndc",
+    "identical route integrity rejects changed graph_ndc",
+    "identical route integrity rejects changed total_ndc",
+    "identical route integrity rejects changed routing_mac",
+    "identical route integrity rejects changed graph_mac",
+    "identical route integrity rejects changed total_mac",
+    "identical route integrity rejects changed expanded",
+    "identical route integrity rejects changed rejected",
+    "identical route integrity rejects changed evicted_unexpanded",
+    "fixed oracle/anchor context cannot change",
+    "changed route with identical returned set cannot change Recall",
+    "compact NPZ roundtrip including explicit undefined NaN",
+    "bound file hash drift",
+    "outside generated read boundary"
+  ],
+  "test_count": 25,
+  "fixture_queries": 9,
+  "actual_data_read": false,
+  "ANN_calls": 0,
+  "per_query": {
+    "file": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/portal_exposure_selftest_v2/synthetic.per_query.npz",
+      "sha256": "b5cdd667ddaa1c715601e216ed421799716e44634767539f2257f225c662b0e1"
+    },
+    "rows": 9,
+    "arrays": {
+      "query_id": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "route_class": {
+        "dtype": "uint8",
+        "shape": [
+          9
+        ]
+      },
+      "complete_ordered_route_equal": {
+        "dtype": "bool",
+        "shape": [
+          9
+        ]
+      },
+      "actual_entry_count_reference": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "actual_entry_count_candidate": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "result_order_equal": {
+        "dtype": "bool",
+        "shape": [
+          9
+        ]
+      },
+      "result_set_equal": {
+        "dtype": "bool",
+        "shape": [
+          9
+        ]
+      },
+      "reference_hit_count": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "candidate_hit_count": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "delta_recall_pp": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "active_leaves": {
+        "dtype": "int64",
+        "shape": [
+          9,
+          4
+        ]
+      },
+      "conditional_weights": {
+        "dtype": "float64",
+        "shape": [
+          9,
+          4
+        ]
+      },
+      "leaf_proxy_deltas": {
+        "dtype": "int64",
+        "shape": [
+          9,
+          4
+        ]
+      },
+      "leaf_target_support": {
+        "dtype": "int64",
+        "shape": [
+          9,
+          4
+        ]
+      },
+      "leaf_proxy_ratios": {
+        "dtype": "float64",
+        "shape": [
+          9,
+          4
+        ]
+      },
+      "sum_proxy_delta": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "sum_proxy_delta_sign": {
+        "dtype": "int8",
+        "shape": [
+          9
+        ]
+      },
+      "weighted_proxy_score": {
+        "dtype": "float64",
+        "shape": [
+          9
+        ]
+      },
+      "weighted_proxy_score_sign": {
+        "dtype": "int8",
+        "shape": [
+          9
+        ]
+      },
+      "missing_support_weight": {
+        "dtype": "float64",
+        "shape": [
+          9
+        ]
+      },
+      "missing_support_leaf_count": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "missing_positive_weight_support_leaf_count": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "routing_ndc_reference": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "routing_ndc_candidate": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "routing_ndc_delta": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "graph_ndc_reference": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "graph_ndc_candidate": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "graph_ndc_delta": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "total_ndc_reference": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "total_ndc_candidate": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "total_ndc_delta": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "routing_mac_reference": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "routing_mac_candidate": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "routing_mac_delta": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "graph_mac_reference": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "graph_mac_candidate": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "graph_mac_delta": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "total_mac_reference": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "total_mac_candidate": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "total_mac_delta": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "expanded_reference": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "expanded_candidate": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "expanded_delta": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "rejected_reference": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "rejected_candidate": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "rejected_delta": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "evicted_unexpanded_reference": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "evicted_unexpanded_candidate": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "evicted_unexpanded_delta": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "structure_lambda": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      },
+      "search_L": {
+        "dtype": "int64",
+        "shape": [
+          9
+        ]
+      }
+    },
+    "route_class_codes": {
+      "0": "same_ordered_actual_entries",
+      "1": "same_entry_set_changed_order",
+      "2": "changed_entry_set"
+    },
+    "sign_codes": {
+      "-1": "negative",
+      "0": "zero",
+      "1": "positive",
+      "2": "undefined"
+    },
+    "undefined_floats": "NaN only for weighted_proxy_score and unsupported leaf_proxy_ratios; not zero.",
+    "unit": "One row per dataset/lambda/L/pilot query; repeated query IDs across four cells are not independent samples."
+  }
+}

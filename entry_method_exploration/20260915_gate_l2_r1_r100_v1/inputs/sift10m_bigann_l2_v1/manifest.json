@@ -1,0 +1,91 @@
+{
+  "dataset": "sift10m_bigann_l2_v1",
+  "metric_id": 1,
+  "metric": "squared_L2",
+  "normalization": "none; preserve supplied vectors",
+  "shape": [
+    10000000,
+    128
+  ],
+  "test_rows": 10000,
+  "paths": {
+    "base_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/base.fvecs",
+    "query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/test.fvecs",
+    "gt_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/test.gt.ivecs",
+    "index": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/sift10m_bigann_l2_v1/nsg/graph.nsg",
+    "qgt_query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/qgt.fvecs",
+    "fit_query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/fit.fvecs",
+    "gate_train_query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/gate_train.fvecs",
+    "gate_monitor_query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/gate_monitor.fvecs",
+    "cal_query_path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/cal.fvecs"
+  },
+  "identities": {
+    "base_path": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/base.fvecs",
+      "bytes": 5160000000,
+      "sha256": "4e4a922227c4f5f57e183a9900851b79a61998820387c1d9eacfcba00c921213"
+    },
+    "qgt_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/qgt.fvecs",
+      "bytes": 2580000,
+      "sha256": "d7e3d922892ddb6529650d723785f260686753965791a9d28aa5ba79b2a3ea74"
+    },
+    "fit_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/fit.fvecs",
+      "bytes": 10320000,
+      "sha256": "c4cf84389c457d9d5a78080c8d8f5c38b0ab66ca3168f6f635d5cbbd86cbc66b"
+    },
+    "gate_train_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/gate_train.fvecs",
+      "bytes": 5160000,
+      "sha256": "7181acc93e2491d0b161009f6d101aedfb7360e4a234f71170873638d71ad4af"
+    },
+    "gate_monitor_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/gate_monitor.fvecs",
+      "bytes": 528384,
+      "sha256": "c602b49f6826884ecac04e716de250b6aa1f6d3848b4bcdb46e6ce087ee92724"
+    },
+    "cal_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/cal.fvecs",
+      "bytes": 528384,
+      "sha256": "2d5fc451915ba91faf0a1e3f191f061b02b95dbfe7aea46b3b1bb796121091c4"
+    },
+    "test_query": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/test.fvecs",
+      "bytes": 5160000,
+      "sha256": "4e686785082f56916a6422b120ad4c54b4110701195c17fa582391156bcb32cc"
+    }
+  },
+  "sources": {
+    "base": "https://dl.fbaipublicfiles.com/billion-scale-ann-benchmarks/bigann/base.1B.u8bin",
+    "base_subset": "first 10000000",
+    "learn": "https://dl.fbaipublicfiles.com/billion-scale-ann-benchmarks/bigann/learn.100M.u8bin",
+    "test": "https://dl.fbaipublicfiles.com/billion-scale-ann-benchmarks/bigann/query.public.10K.u8bin",
+    "reference": "https://big-ann-benchmarks.com/neurips21.html"
+  },
+  "split_bounds": {
+    "qgt": [
+      0,
+      5000
+    ],
+    "fit": [
+      5000,
+      25000
+    ],
+    "gate_train": [
+      5000,
+      15000
+    ],
+    "gate_monitor": [
+      25000,
+      26024
+    ],
+    "cal": [
+      26024,
+      27048
+    ]
+  },
+  "source_rows": "unique learn rows after excluding exact test/learn duplicates",
+  "learn_candidates_examined": 27048,
+  "preparation_seconds": 113.22455596923828
+}

@@ -1,0 +1,100 @@
+[
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "g++",
+      "-O3",
+      "-march=native",
+      "-std=c++17",
+      "-fopenmp",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+      "-I/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/src/common",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/src/evaluate.cpp",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+      "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+      "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "-lopenblas",
+      "-lz",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/bin/evaluate"
+    ],
+    "kind": "compile",
+    "started_unix": 1789893366.5395155,
+    "timeout_seconds": 120,
+    "pid": 52939,
+    "pgid": 52939,
+    "exit_code": 0,
+    "finished_unix": 1789893375.1177516,
+    "seconds": 8.578236103057861
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/reviews/webvid2_5m_light_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/results/webvid2_5m_light_v1"
+    ],
+    "kind": "fit_trace",
+    "started_unix": 1789893375.1826222,
+    "timeout_seconds": 900,
+    "pid": 52983,
+    "pgid": 52983,
+    "exit_code": 0,
+    "finished_unix": 1789893389.873511,
+    "seconds": 14.69088888168335,
+    "complete": {
+      "ANN_calls": 0,
+      "K1_K100_comparison_parity": true,
+      "NSG_calls": 16384,
+      "actions": 2,
+      "all_historical_outputs_restored": true,
+      "cpu": 15,
+      "maxrss_kib": 5951964,
+      "n": 2048,
+      "seconds": 14.540374178,
+      "status": "PASS",
+      "threads": 1,
+      "trace_control_parity": true,
+      "unique_query_action_pairs": 19481998
+    }
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/bin/evaluate",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/reviews/yandex_t2i_official10M_ip_v1.json",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e113_comparison_support/results/yandex_t2i_official10M_ip_v1"
+    ],
+    "kind": "fit_trace",
+    "started_unix": 1789893389.9347093,
+    "timeout_seconds": 900,
+    "pid": 53034,
+    "pgid": 53034,
+    "exit_code": 0,
+    "finished_unix": 1789893414.8407867,
+    "seconds": 24.90607738494873,
+    "complete": {
+      "ANN_calls": 0,
+      "K1_K100_comparison_parity": true,
+      "NSG_calls": 16384,
+      "actions": 2,
+      "all_historical_outputs_restored": true,
+      "cpu": 15,
+      "maxrss_kib": 10640244,
+      "n": 2048,
+      "seconds": 24.697640243,
+      "status": "PASS",
+      "threads": 1,
+      "trace_control_parity": true,
+      "unique_query_action_pairs": 26369480
+    }
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "stage": "P0",
+  "status": "INPUT_EVIDENCE_PASS_PROTOCOL_ACCEPTANCE_PENDING",
+  "candidate_for_root_acceptance": true,
+  "created_utc": "2026-09-07T16:05:02.393317+00:00",
+  "checks": {
+    "full_input_audit": true,
+    "same_binary_graph_and_base_checksums": true,
+    "fit20k_pilot10k_disjoint": true,
+    "no_query_duplicates": true,
+    "qgt_raw_hubs_match_base": true,
+    "embedded_base_fixed_point_byte_agreement": true,
+    "old_diagnostic_query_id_alignment": true,
+    "source_before_snapshot_integrity": true,
+    "audit_script_matches_result": true,
+    "heldout_not_opened": true
+  },
+  "pending": [
+    "Root acceptance and freeze of protocol_candidate.json after binding final P2 image/portal fallback, exact warmup and trace sample IDs",
+    "PairedFast20K must be built before P2; wrapper split logic reviewed, no performance result is implied"
+  ],
+  "evidence": [
+    "p0/full_audit/audit.json",
+    "p0/embedded_base_sample.json",
+    "p0/historical_diagnostics_inventory.json",
+    "p0/source_contract_identity.json",
+    "p0/protocol_candidate.json",
+    "source_before_manifest.json"
+  ],
+  "scope_limits": [
+    "P0 input/protocol evidence only; no P1 correctness gate or P2 mechanism/performance result",
+    "ExactGT provenance inherited through checksum equality; no exactGT recomputation",
+    "Embedded/external vectors checked at68 deterministic points per dataset; not full byte comparison",
+    "Heldout overlap inherited from unchanged official manifest; heldout files intentionally not opened"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "exact_current_H_match": true,
+      "selected_H": 815,
+      "different_positions": 0,
+      "seconds": 0.3891126599992276,
+      "details": {
+        "method": "spherical-query-kmeans-representative-GT-cover",
+        "target_hubs": 815,
+        "selected_hubs": 815,
+        "empty_clusters": 0,
+        "kmeans_iterations": 25,
+        "seed": 20260828,
+        "gt_candidates_per_query": 100
+      },
+      "qgt_queries": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.aco_train.seed20260826.fvecs",
+      "qgt_GT": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/gt.aco_train.seed20260826.ip.ivecs",
+      "source_manifest": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/manifest.json"
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "exact_current_H_match": true,
+      "selected_H": 821,
+      "different_positions": 0,
+      "seconds": 0.21845230499457102,
+      "details": {
+        "method": "spherical-query-kmeans-representative-GT-cover",
+        "target_hubs": 821,
+        "selected_hubs": 821,
+        "empty_clusters": 0,
+        "kmeans_iterations": 25,
+        "seed": 20260828,
+        "gt_candidates_per_query": 100
+      },
+      "qgt_queries": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.aco_train.fvecs",
+      "qgt_GT": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/gt.aco_train.ip.ivecs",
+      "source_manifest": "/data/netg/ACSG/fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/manifest.json"
+    }
+  },
+  "seconds": 0.6775336489954498,
+  "faiss_version": "1.15.0",
+  "numpy_version": "1.26.4",
+  "python": "3.10.12",
+  "faiss_threads": 8,
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "maxrss_GiB": 0.09943008422851562,
+  "new_qgt_fits": 2,
+  "new_GT_queries": 0
+}

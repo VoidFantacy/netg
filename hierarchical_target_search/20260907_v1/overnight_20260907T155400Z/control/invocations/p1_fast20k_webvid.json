@@ -1,0 +1,27 @@
+{
+  "stage": "P1",
+  "split": "fit",
+  "measurement": "build",
+  "output": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/webvid2_5m_light_v1",
+  "command": [
+    "env",
+    "OPENBLAS_NUM_THREADS=16",
+    "OMP_NUM_THREADS=16",
+    "MKL_NUM_THREADS=16",
+    ".venv_cpu/bin/python",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/build_paired_fast.py",
+    "--dataset",
+    "webvid2_5m_light_v1",
+    "--audit",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+    "--output",
+    "hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/webvid2_5m_light_v1"
+  ],
+  "oracle": false,
+  "upstream_gates": [
+    {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P0.json",
+      "sha256": "693b6947c97ac8835ba34da51300b8958866d3b9c8acdbc4234a24d2bea00c85"
+    }
+  ]
+}

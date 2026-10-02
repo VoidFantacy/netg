@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "corrections": [
+    {
+      "kind": "inventory_verifier_schema",
+      "original": "Expected all identity dictionaries contain mtime_ns",
+      "actual": "Some historical objects only record path/bytes/SHA; compare exactly all recorded fields",
+      "payload_change": false,
+      "old_objects_unchanged": true,
+      "failed_script": "closeout_initial_schema_check.py"
+    },
+    {
+      "kind": "report_wording",
+      "supervisor_review": 160,
+      "old": "限制在画像排序之前已出现",
+      "new": "目标在现有画像打分下尚不足以进入前三入口",
+      "numeric_change": false
+    }
+  ]
+}

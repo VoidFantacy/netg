@@ -1,0 +1,41 @@
+{
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "steps": [
+    20,
+    40,
+    60,
+    80,
+    100,
+    120,
+    140,
+    160,
+    180,
+    200
+  ],
+  "seed": 20260921,
+  "arm": "rl",
+  "query_rows": "E37 train 0:4096",
+  "threads": 1,
+  "NSG_hard_cap": 10000,
+  "NSG_expected": 3061,
+  "normal_new_NSG_expected": 1333,
+  "parity_NSG_expected": 1728,
+  "HNSW_expected": 738432,
+  "builds_expected": 180,
+  "per_dataset_reserved_NSG": 4000,
+  "reused_current_seed_rows": 81920,
+  "full_candidate_reference_rows": 655360,
+  "optimizer_updates": 0,
+  "query_stop_epoch": 1789213200,
+  "latest_launch_epoch": 1789212600,
+  "gate": {
+    "exact_bit_recovery_required": true,
+    "candidate_new_NSG_fraction_max": 0.1,
+    "training_projection_factor": 1.5,
+    "projection_fixed_overhead_seconds": 600,
+    "projected_finish_before_epoch": 1789212300
+  }
+}

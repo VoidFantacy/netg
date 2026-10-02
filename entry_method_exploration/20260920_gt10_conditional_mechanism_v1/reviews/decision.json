@@ -1,0 +1,248 @@
+{
+  "status": "STOP_GROUPMEAN_CANDIDATE",
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "quality_pass": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "quality_pass": false
+    }
+  ],
+  "primary": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "family": "soft",
+      "K": 1,
+      "L": 128,
+      "baseline_recall": 0.75390625,
+      "candidate_recall": 0.75341796875,
+      "delta_recall_pp": -0.048828125,
+      "delta_vs_current_ANN_pp": 0.0244140625,
+      "baseline_failed": 1008,
+      "candidate_failed": 1010,
+      "rescued": 48,
+      "newly_harmed": 50,
+      "first_half_delta_pp": -0.244140625,
+      "second_half_delta_pp": 0.146484375,
+      "same_entries": 1000,
+      "delta_graph_ndc_pct": 0.36217613281746,
+      "CI95": [
+        -0.537109375,
+        0.4150390625
+      ],
+      "CI98_75": [
+        -0.6591796875,
+        0.5615234375
+      ]
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "family": "soft",
+      "K": 100,
+      "L": 128,
+      "baseline_recall": 0.65619140625,
+      "candidate_recall": 0.65596923828125,
+      "delta_recall_pp": -0.022216796875,
+      "delta_vs_current_ANN_pp": 0.05615234375,
+      "baseline_failed": 4,
+      "candidate_failed": 0,
+      "rescued": 4,
+      "newly_harmed": 0,
+      "first_half_delta_pp": -0.18408203125,
+      "second_half_delta_pp": 0.1396484375,
+      "same_entries": 1000,
+      "delta_graph_ndc_pct": 0.36217613281746,
+      "CI95": [
+        -0.18408203125,
+        0.13672485351562447
+      ],
+      "CI98_75": [
+        -0.22607421875,
+        0.181640625
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "family": "hard",
+      "K": 1,
+      "L": 128,
+      "baseline_recall": 0.90576171875,
+      "candidate_recall": 0.908203125,
+      "delta_recall_pp": 0.244140625,
+      "delta_vs_current_ANN_pp": 0.1953125,
+      "baseline_failed": 386,
+      "candidate_failed": 376,
+      "rescued": 31,
+      "newly_harmed": 21,
+      "first_half_delta_pp": 0.29296875,
+      "second_half_delta_pp": 0.1953125,
+      "same_entries": 1639,
+      "delta_graph_ndc_pct": 0.06557425325393051,
+      "CI95": [
+        -0.09765625,
+        0.5859375
+      ],
+      "CI98_75": [
+        -0.1953125,
+        0.68359375
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "family": "hard",
+      "K": 100,
+      "L": 128,
+      "baseline_recall": 0.83734130859375,
+      "candidate_recall": 0.83740478515625,
+      "delta_recall_pp": 0.00634765625,
+      "delta_vs_current_ANN_pp": -0.05126953125,
+      "baseline_failed": 24,
+      "candidate_failed": 24,
+      "rescued": 4,
+      "newly_harmed": 4,
+      "first_half_delta_pp": 0.01220703125,
+      "second_half_delta_pp": 0.00048828125,
+      "same_entries": 1639,
+      "delta_graph_ndc_pct": 0.06557425325393051,
+      "CI95": [
+        -0.209234619140625,
+        0.2195007324218734
+      ],
+      "CI98_75": [
+        -0.27392730712890623,
+        0.28125
+      ]
+    }
+  ],
+  "mechanism": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "family": "hard",
+      "K": 1,
+      "L": 128,
+      "real_minus_permutation_mean_pp": 0.128173828125,
+      "real_minus_each_permutation_pp": [
+        0.146484375,
+        0.3173828125,
+        0.1708984375,
+        -0.1220703125
+      ],
+      "all_four_directions_positive": false,
+      "CI95_descriptive": [
+        -0.299072265625,
+        0.567626953125
+      ],
+      "seed_count": 4,
+      "query_count": 4096,
+      "interpretation": "Fixed-intervention paired query uncertainty; not a conditional-independence p-value or independent query replication."
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "family": "hard",
+      "K": 100,
+      "L": 128,
+      "real_minus_permutation_mean_pp": -0.018798828125,
+      "real_minus_each_permutation_pp": [
+        -0.079833984375,
+        0.10302734375,
+        0.01025390625,
+        -0.108642578125
+      ],
+      "all_four_directions_positive": false,
+      "CI95_descriptive": [
+        -0.163824462890625,
+        0.13031311035156223
+      ],
+      "seed_count": 4,
+      "query_count": 4096,
+      "interpretation": "Fixed-intervention paired query uncertainty; not a conditional-independence p-value or independent query replication."
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "family": "soft",
+      "K": 1,
+      "L": 128,
+      "real_minus_permutation_mean_pp": 0.0,
+      "real_minus_each_permutation_pp": [
+        0.146484375,
+        -0.0732421875,
+        -0.048828125,
+        -0.0244140625
+      ],
+      "all_four_directions_positive": false,
+      "CI95_descriptive": [
+        -0.439453125,
+        0.439453125
+      ],
+      "seed_count": 4,
+      "query_count": 4096,
+      "interpretation": "Fixed-intervention paired query uncertainty; not a conditional-independence p-value or independent query replication."
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "family": "soft",
+      "K": 100,
+      "L": 128,
+      "real_minus_permutation_mean_pp": 0.0294189453125,
+      "real_minus_each_permutation_pp": [
+        0.02587890625,
+        0.092529296875,
+        0.02001953125,
+        -0.020751953125
+      ],
+      "all_four_directions_positive": false,
+      "CI95_descriptive": [
+        -0.11248779296875,
+        0.17309722900390612
+      ],
+      "seed_count": 4,
+      "query_count": 4096,
+      "interpretation": "Fixed-intervention paired query uncertainty; not a conditional-independence p-value or independent query replication."
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "family": "hard",
+      "K": 1,
+      "L": 128,
+      "real_minus_permutation_mean_pp": -0.177001953125,
+      "real_minus_each_permutation_pp": [
+        -0.146484375,
+        0.048828125,
+        -0.4150390625,
+        -0.1953125
+      ],
+      "all_four_directions_positive": false,
+      "CI95_descriptive": [
+        -0.469970703125,
+        0.1220703125
+      ],
+      "seed_count": 4,
+      "query_count": 4096,
+      "interpretation": "Fixed-intervention paired query uncertainty; not a conditional-independence p-value or independent query replication."
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "family": "hard",
+      "K": 100,
+      "L": 128,
+      "real_minus_permutation_mean_pp": 0.01190185546875,
+      "real_minus_each_permutation_pp": [
+        0.000732421875,
+        0.076416015625,
+        -0.134765625,
+        0.105224609375
+      ],
+      "all_four_directions_positive": false,
+      "CI95_descriptive": [
+        -0.16748046875,
+        0.19116363525390612
+      ],
+      "seed_count": 4,
+      "query_count": 4096,
+      "interpretation": "Fixed-intervention paired query uncertainty; not a conditional-independence p-value or independent query replication."
+    }
+  ],
+  "default_changed": false
+}

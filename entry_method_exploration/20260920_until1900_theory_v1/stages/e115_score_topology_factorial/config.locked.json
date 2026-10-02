@@ -1,0 +1,1567 @@
+{
+  "stage": "E115 score/topology factorial",
+  "created_unix": 1789898160.950089,
+  "status": "LOCKED",
+  "protocol": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/protocol.md",
+    "bytes": 3693,
+    "sha256": "a9e73e809134abd3110ccb007b0a0052bd5ebda1d7cd31fddf475ab1e830b212"
+  },
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "dimension": 512,
+      "H": 815,
+      "base_n": 2505000,
+      "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+      "queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/queries.f32",
+      "GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/gt.i32",
+      "source_rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/source_rows.i64",
+      "dataset_order": 0,
+      "points": [
+        {
+          "K": 1,
+          "L": 64
+        },
+        {
+          "K": 1,
+          "L": 128
+        },
+        {
+          "K": 1,
+          "L": 256
+        },
+        {
+          "K": 1,
+          "L": 400
+        },
+        {
+          "K": 1,
+          "L": 800
+        },
+        {
+          "K": 100,
+          "L": 128
+        },
+        {
+          "K": 100,
+          "L": 256
+        },
+        {
+          "K": 100,
+          "L": 400
+        },
+        {
+          "K": 100,
+          "L": 800
+        }
+      ],
+      "methods": [
+        {
+          "name": "A_P_GP",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+          "source_W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+          "source_graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+          "hybrid": false,
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+          "before": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/webvid2_5m_light_v1/A_P_GP.before.hnsw"
+        },
+        {
+          "name": "B_U_GP",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/webvid2_5m_light_v1.UnitHub.W.f32",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+          "source_W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+          "source_graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+          "hybrid": true,
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/models/webvid2_5m_light_v1/B_U_GP.hnsw",
+          "before": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/webvid2_5m_light_v1/B_U_GP.before.hnsw"
+        },
+        {
+          "name": "C_P_GU",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+          "source_W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/webvid2_5m_light_v1.UnitHub.W.f32",
+          "source_graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/webvid2_5m_light_v1/UnitHub.hnsw",
+          "hybrid": true,
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/models/webvid2_5m_light_v1/C_P_GU.hnsw",
+          "before": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/webvid2_5m_light_v1/C_P_GU.before.hnsw"
+        },
+        {
+          "name": "D_U_GU",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/webvid2_5m_light_v1.UnitHub.W.f32",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+          "source_W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/webvid2_5m_light_v1.UnitHub.W.f32",
+          "source_graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/webvid2_5m_light_v1/UnitHub.hnsw",
+          "hybrid": false,
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/webvid2_5m_light_v1/UnitHub.hnsw",
+          "before": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/webvid2_5m_light_v1/D_U_GU.before.hnsw"
+        }
+      ],
+      "threads": 1,
+      "reference_E108": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1",
+      "deadline_unix": 1789902000,
+      "seconds_cap": 900
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "dimension": 200,
+      "H": 821,
+      "base_n": 10000000,
+      "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+      "queries": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+      "GT": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt.i32",
+      "source_rows": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/source_rows.i64",
+      "dataset_order": 1,
+      "points": [
+        {
+          "K": 1,
+          "L": 64
+        },
+        {
+          "K": 1,
+          "L": 128
+        },
+        {
+          "K": 1,
+          "L": 256
+        },
+        {
+          "K": 1,
+          "L": 400
+        },
+        {
+          "K": 1,
+          "L": 800
+        },
+        {
+          "K": 100,
+          "L": 128
+        },
+        {
+          "K": 100,
+          "L": 256
+        },
+        {
+          "K": 100,
+          "L": 400
+        },
+        {
+          "K": 100,
+          "L": 800
+        }
+      ],
+      "methods": [
+        {
+          "name": "A_P_GP",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+          "source_W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+          "source_graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+          "hybrid": false,
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+          "before": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/yandex_t2i_official10M_ip_v1/A_P_GP.before.hnsw"
+        },
+        {
+          "name": "B_U_GP",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/yandex_t2i_official10M_ip_v1.UnitHub.W.f32",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+          "source_W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+          "source_graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+          "hybrid": true,
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/models/yandex_t2i_official10M_ip_v1/B_U_GP.hnsw",
+          "before": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/yandex_t2i_official10M_ip_v1/B_U_GP.before.hnsw"
+        },
+        {
+          "name": "C_P_GU",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+          "source_W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/yandex_t2i_official10M_ip_v1.UnitHub.W.f32",
+          "source_graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/yandex_t2i_official10M_ip_v1/UnitHub.hnsw",
+          "hybrid": true,
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/models/yandex_t2i_official10M_ip_v1/C_P_GU.hnsw",
+          "before": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/yandex_t2i_official10M_ip_v1/C_P_GU.before.hnsw"
+        },
+        {
+          "name": "D_U_GU",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/yandex_t2i_official10M_ip_v1.UnitHub.W.f32",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+          "source_W": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/yandex_t2i_official10M_ip_v1.UnitHub.W.f32",
+          "source_graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/yandex_t2i_official10M_ip_v1/UnitHub.hnsw",
+          "hybrid": false,
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/yandex_t2i_official10M_ip_v1/UnitHub.hnsw",
+          "before": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/reviews/yandex_t2i_official10M_ip_v1/D_U_GU.before.hnsw"
+        }
+      ],
+      "threads": 1,
+      "reference_E108": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1",
+      "deadline_unix": 1789902000,
+      "seconds_cap": 900
+    }
+  ],
+  "expected_diagnostic_NSG": 295680,
+  "expected_diagnostic_ANN": 33024,
+  "max_stage_NSG": 1045000,
+  "max_new_bytes": 536870912,
+  "threads": 1,
+  "cpu": 15,
+  "candidate": "B_U_GP",
+  "controls": [
+    "A_P_GP",
+    "C_P_GU",
+    "D_U_GU"
+  ],
+  "bootstrap_seed": 20260920,
+  "bootstrap_replicates": 20000,
+  "individual_CI": 0.9875,
+  "primary_K": [
+    1,
+    100
+  ],
+  "primary_L": 128,
+  "minimum_gain_pp": 0.5,
+  "gate": "Each dataset: both primary K mean deltas >=0; some K gain >=.5pp; some K corrected lower >0; each K across-L mean delta >=0.",
+  "compile_argv": [
+    "g++",
+    "-O3",
+    "-march=native",
+    "-std=c++17",
+    "-fopenmp",
+    "-I/data/netg/ACSG",
+    "-I/data/netg/ACSG/faiss",
+    "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+    "-I/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/common",
+    "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/evaluate.cpp",
+    "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+    "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+    "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+    "-lopenblas",
+    "-lz",
+    "-o",
+    "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/bin/evaluate"
+  ],
+  "source_files": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/complete.json",
+      "bytes": 530,
+      "sha256": "67db94e04ff9dfdd7df9305a653e4a9574b68f9d38a68226f5ed0ba736b701a8"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/report.md",
+      "bytes": 7177,
+      "sha256": "76897b19a11b27028860c3e7228c5e346d4bf2946b90a5dfc521ce83606c983e"
+    },
+    {
+      "path": "/data/netg/ACSG/experiment_history/43_learned_model_factorial.md",
+      "bytes": 5421,
+      "sha256": "ff2b088ea9dc26218288e4a247bbe15bbd74d0e3b7fdb7d66fda86153ce8cf16"
+    },
+    {
+      "path": "/data/netg/ACSG/experiment_history/45_construction_only_rl.md",
+      "bytes": 5371,
+      "sha256": "af7be7c918cf37851e02c72ca4a68cede6fd251ba0e2ea974229d5da0116eb06"
+    },
+    {
+      "path": "/data/netg/ACSG/experiment_history/87_query_moment_graph_and_branch_stop.md",
+      "bytes": 3610,
+      "sha256": "7f247eec9e45df5a49ae95594e694e96c8428503d80da7072843606249b83995"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260912_learned_model_factorial_v1/protocol.md",
+      "bytes": 1944,
+      "sha256": "1b7b398b29e2b220d806eeb41285a39534f3fd659e915b10123550836e0ca6e8"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/reviews/formal_webvid2_5m_light_v1.json",
+      "bytes": 2873,
+      "sha256": "8fe701ac600d3d95c2342f9acaf9b2fdf1e902898110b54acbb206477478120c"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+      "bytes": 1669120,
+      "sha256": "897f61a0cfaa6ccba01e626c3c3d946e6622c04f43cd2b0fccc50356b0de7834"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+      "bytes": 3260,
+      "sha256": "47c58c28e48e85c5a4f0cad245ef66f451dde404afb0ad7231909ba1956e8e03"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+      "bytes": 1790316,
+      "sha256": "fa4dfabb630cfd30dbe1f065ac469189a3449a9d560348e585c4d318468da091"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/webvid2_5m_light_v1.UnitHub.W.f32",
+      "bytes": 1669120,
+      "sha256": "f2ffa2c2abfde2446e0229d2047636719d98d013477928e1940541f782584af8"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/webvid2_5m_light_v1/UnitHub.hnsw",
+      "bytes": 1790860,
+      "sha256": "c380e5d7f7035dfc87adc996f39f421d20e8086f2791dc862292321a3c35790d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/queries.f32",
+      "bytes": 8388608,
+      "sha256": "59e72fe42b5f920f6782f93a6b5ac55cbaef9627ca26090a6ec8c7cd55c54423"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/gt.i32",
+      "bytes": 1638400,
+      "sha256": "bb7886701cf5757c5ad8a84a61af5c563c9142b33f925f3a6381bf8d20a574b3"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/source_rows.i64",
+      "bytes": 32768,
+      "sha256": "e85ba43ee93e2de4b6ecac54c453d31d8f1cb4da16d3205a9d21c0359bcdd667"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L64/ids.i32",
+      "bytes": 16384,
+      "sha256": "27f303978862f01f4ba3d588846a9676a35553ac0c517f8b273bc07367d8a23e"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L64/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "201d88290f5ee05a186050c214e1f959ce1a8cbb16464a81a90d4adbe944a56f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L64/distances.f32",
+      "bytes": 16384,
+      "sha256": "578971a94c57faa805eba7409e2343ef542fd93a46f4c2767800deb5780afe7a"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L64/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "8a4ca7cf14aaf22eb8cbd915d12b607b6406600788e810d8498eeea67d8a6ca2"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L64/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "6c0446aa50acb8a06622b681a48149d57088a69533ce6fea4b47a04d52344082"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L64/complete.json",
+      "bytes": 310,
+      "sha256": "649ae85e389b848447e22f4e016f34ed5a53c9606f1a769cb23da6d410fdb95e"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L64/ids.i32",
+      "bytes": 16384,
+      "sha256": "1adbab0158a7c7c93417256cb8802b92da9c0a3d3bcda1414d47824d9ee90598"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L64/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "832950a5f2b5cc50fb2eac73bbd91650cfa43e61acb750b7a35bda5236fcd612"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L64/distances.f32",
+      "bytes": 16384,
+      "sha256": "353576023677400c331b41db14581427d249cf77d7b634e3478c66e337696a07"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L64/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "fe4bc2598a5d6916e4b659eb0728060d3f4ff7ec5d8d0dd5f18ce84e8add39e3"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L64/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "5ecb7a2a412d9d1ca8d9ccb60c1decda12c6ea8530613dd5825358dbd3e26bf2"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L64/complete.json",
+      "bytes": 306,
+      "sha256": "b4853dfaca66756f2474b141862271968be7dba118e255d7e11d342a8fbf0c61"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L128/ids.i32",
+      "bytes": 16384,
+      "sha256": "8945b18d77e3b13890fd8b1f53e5d6195d76f3a677141763b8a149b630fb2a95"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L128/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "201d88290f5ee05a186050c214e1f959ce1a8cbb16464a81a90d4adbe944a56f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L128/distances.f32",
+      "bytes": 16384,
+      "sha256": "99de25ed94f609c5b0e4535782ebc730bbca9f1f81b9a8cb3c90a2f82cf5cecd"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L128/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "c430c713f44db706e706941c293b6d372a2ac521ea935d7ba01bcc10ccda3a6f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L128/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "6c0446aa50acb8a06622b681a48149d57088a69533ce6fea4b47a04d52344082"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L128/complete.json",
+      "bytes": 311,
+      "sha256": "9a9e3750ff61ce57c35e1b133bd90cfd4d8548e0a1a184a733db912d73fada60"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L128/ids.i32",
+      "bytes": 16384,
+      "sha256": "c54bbbff408215bf0439c12fb35550dcfd2efc322a8bd1ec0a59f6180bda4f2f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L128/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "832950a5f2b5cc50fb2eac73bbd91650cfa43e61acb750b7a35bda5236fcd612"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L128/distances.f32",
+      "bytes": 16384,
+      "sha256": "45642f8c47ed3729cabbe33142c1fb12779965ae4bb71328bc6a35bb1a49e01d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L128/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "ff51ce5b69915fd3559c4ea31e29559d107ff17fb9b651a0a4848be4d2f7cd42"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L128/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "5ecb7a2a412d9d1ca8d9ccb60c1decda12c6ea8530613dd5825358dbd3e26bf2"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L128/complete.json",
+      "bytes": 305,
+      "sha256": "74d5e1424c2723fd7e13389967f008f3d0bbe0fc6de6fa8e64648e052034fe62"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L256/ids.i32",
+      "bytes": 16384,
+      "sha256": "f407c66db84db11ec67f4dc2c7a1ca1e786e2ba6cc32d04e8e1d5352bad6c2f7"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L256/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "201d88290f5ee05a186050c214e1f959ce1a8cbb16464a81a90d4adbe944a56f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L256/distances.f32",
+      "bytes": 16384,
+      "sha256": "9fa713f20cb49949bf09a25108f659a1afe4e5bf381222d2a2067be84458fafb"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L256/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "3568d07a0b197fcec4dc1f4a0e2b749b91ccd2778ee3ce3d181c28dfdf699301"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L256/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "6c0446aa50acb8a06622b681a48149d57088a69533ce6fea4b47a04d52344082"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L256/complete.json",
+      "bytes": 311,
+      "sha256": "52c56993b636a08d0ebf7775478f4488df109892b6a6632c2413ddc040d4982d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L256/ids.i32",
+      "bytes": 16384,
+      "sha256": "1f583386b5f5aadea39e505e670b481d43bca020bac2caf05d4ce957f5fde52f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L256/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "832950a5f2b5cc50fb2eac73bbd91650cfa43e61acb750b7a35bda5236fcd612"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L256/distances.f32",
+      "bytes": 16384,
+      "sha256": "dda5358e0a03c445ed772680203b23b19ca2f5a791cfab361aa2111b7aceedad"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L256/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "758404b850738f7352a8b2a3826dd2dacc530f0c595612255d90f905a934e23f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L256/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "5ecb7a2a412d9d1ca8d9ccb60c1decda12c6ea8530613dd5825358dbd3e26bf2"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L256/complete.json",
+      "bytes": 307,
+      "sha256": "1262ecd8822324ae1fa4878917bc456a9a9c378c9c9ae4217a9a9a1ac13d1d16"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L400/ids.i32",
+      "bytes": 16384,
+      "sha256": "776763d7a7851e582dfae05f74c743af8451da2f497abdb599c00e3ec4df88fc"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L400/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "201d88290f5ee05a186050c214e1f959ce1a8cbb16464a81a90d4adbe944a56f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L400/distances.f32",
+      "bytes": 16384,
+      "sha256": "271bae9fdfe851b637dd9baddebe405459c2ca30003d9ed25e1a17271c2b619b"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L400/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "eb4d4d030ca072d03cf671d3cf6f11d2283b113aeb8dcfdeb4f26e690560994d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L400/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "6c0446aa50acb8a06622b681a48149d57088a69533ce6fea4b47a04d52344082"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L400/complete.json",
+      "bytes": 311,
+      "sha256": "03aace17ca07856d953e1655f1d3287aeaff81c1aa66826710157d285cfe392b"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L400/ids.i32",
+      "bytes": 16384,
+      "sha256": "4baab30f31020fd5d45f5f1b6ea0c139efe3abdf95a65f272b64693127ecfbf5"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L400/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "832950a5f2b5cc50fb2eac73bbd91650cfa43e61acb750b7a35bda5236fcd612"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L400/distances.f32",
+      "bytes": 16384,
+      "sha256": "b1c5d673ba06263dbb79a7bdaf6dc46ff8521bad4a06d132948223bc97b82b05"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L400/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "4fa6bf231d71f524eec00cfdd6502d23fd44d061681108433089bc3e49141c85"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L400/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "5ecb7a2a412d9d1ca8d9ccb60c1decda12c6ea8530613dd5825358dbd3e26bf2"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L400/complete.json",
+      "bytes": 307,
+      "sha256": "cf2deb1ad709569252acde67d70ffbc9bcc18f777fe9c7716547c4212911f339"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L800/ids.i32",
+      "bytes": 16384,
+      "sha256": "ce7e968815f83c90aaf0a3333896b66174e5085a6939261ef18eeb59d6ac2738"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L800/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "201d88290f5ee05a186050c214e1f959ce1a8cbb16464a81a90d4adbe944a56f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L800/distances.f32",
+      "bytes": 16384,
+      "sha256": "245f3878ef38db1d548dfd89c690872c87d349ba06953af62d3a928c871f51d3"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L800/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "67b8776a5cbfe5c15642d53ad8e64f22a8a90985e27e896698004388354754e0"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L800/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "6c0446aa50acb8a06622b681a48149d57088a69533ce6fea4b47a04d52344082"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/GT10Default_L800/complete.json",
+      "bytes": 311,
+      "sha256": "89c2989f2ea5980e650570017a6fc63b21b12f3c2a37bc7de9457d180df79408"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L800/ids.i32",
+      "bytes": 16384,
+      "sha256": "ac0d9e1592f3c1e6bf1b2865bec2488bad58d189d2a18b34e2a4261a1d34c98b"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L800/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "832950a5f2b5cc50fb2eac73bbd91650cfa43e61acb750b7a35bda5236fcd612"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L800/distances.f32",
+      "bytes": 16384,
+      "sha256": "5e4b15c1bb658206bc3a65b889f5395a9513316e0adbe2904a90866260946242"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L800/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "b05862b0f356135fdf0724e857eedaf8854a81d56c8987c9847c477ecba51677"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L800/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "5ecb7a2a412d9d1ca8d9ccb60c1decda12c6ea8530613dd5825358dbd3e26bf2"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k1/UnitHub_L800/complete.json",
+      "bytes": 307,
+      "sha256": "cfe11d78e11ac8f6f61b0a1f06eb80093bbdb507e74e25c6ce23e77258fafbd1"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L128/ids.i32",
+      "bytes": 1638400,
+      "sha256": "c7219cee25336023c3f3eede6b84b1391de80c4be55e7b77cd1474214b1a24db"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L128/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "201d88290f5ee05a186050c214e1f959ce1a8cbb16464a81a90d4adbe944a56f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L128/distances.f32",
+      "bytes": 1638400,
+      "sha256": "a5ea4aef554804ec0e22354a2138f38620027dadd2a75df37c061481d3892b45"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L128/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "c430c713f44db706e706941c293b6d372a2ac521ea935d7ba01bcc10ccda3a6f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L128/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "6c0446aa50acb8a06622b681a48149d57088a69533ce6fea4b47a04d52344082"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L128/complete.json",
+      "bytes": 312,
+      "sha256": "30a32ae1fcc7d2d5d5745b6a2b6e717ad090bd6ded6a96bc3a13c8a2ea42a280"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L128/ids.i32",
+      "bytes": 1638400,
+      "sha256": "4f0247365845998250d522adee96557a99be6b21041f74af17f5e63e3f4c5de1"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L128/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "832950a5f2b5cc50fb2eac73bbd91650cfa43e61acb750b7a35bda5236fcd612"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L128/distances.f32",
+      "bytes": 1638400,
+      "sha256": "5cb086c26316c3145fba3f152171d0fbadf034a6757a7486d30d0a4d1b901203"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L128/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "ff51ce5b69915fd3559c4ea31e29559d107ff17fb9b651a0a4848be4d2f7cd42"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L128/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "5ecb7a2a412d9d1ca8d9ccb60c1decda12c6ea8530613dd5825358dbd3e26bf2"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L128/complete.json",
+      "bytes": 307,
+      "sha256": "de1dc1171ba726313536dfbade6f4f628f48c95912568d70fd2ca628e2947325"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L256/ids.i32",
+      "bytes": 1638400,
+      "sha256": "2d5ecf378bc9311e0e206986b494ee536c1ddcc988b2a1ec238180d38a2bb71d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L256/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "201d88290f5ee05a186050c214e1f959ce1a8cbb16464a81a90d4adbe944a56f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L256/distances.f32",
+      "bytes": 1638400,
+      "sha256": "e3a2e390c03ff9deb979e36fedbda36da4d7e0d5d5829dd5064fb718db87211e"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L256/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "3568d07a0b197fcec4dc1f4a0e2b749b91ccd2778ee3ce3d181c28dfdf699301"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L256/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "6c0446aa50acb8a06622b681a48149d57088a69533ce6fea4b47a04d52344082"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L256/complete.json",
+      "bytes": 313,
+      "sha256": "740b42193fa225e3b020d10c199b04bc6b635c5d5a1004982821289649c1143a"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L256/ids.i32",
+      "bytes": 1638400,
+      "sha256": "81e041b10780e9259ae5bdc3bfeb4ae82fe146216df9962cbb954df4fca5e436"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L256/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "832950a5f2b5cc50fb2eac73bbd91650cfa43e61acb750b7a35bda5236fcd612"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L256/distances.f32",
+      "bytes": 1638400,
+      "sha256": "5940af86a580b3a2920e4eaa255ac1902f3c289439effbbdfb9cbe40cb701980"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L256/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "758404b850738f7352a8b2a3826dd2dacc530f0c595612255d90f905a934e23f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L256/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "5ecb7a2a412d9d1ca8d9ccb60c1decda12c6ea8530613dd5825358dbd3e26bf2"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L256/complete.json",
+      "bytes": 309,
+      "sha256": "83d268553ac785aed45b371cc3ea5ddf962037f42c4aa62d084854ee2293f38e"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L400/ids.i32",
+      "bytes": 1638400,
+      "sha256": "c1f60f877906b8b1fea852fd23b164307d51b603fc2a9df2262b662ed4678a5c"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L400/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "201d88290f5ee05a186050c214e1f959ce1a8cbb16464a81a90d4adbe944a56f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L400/distances.f32",
+      "bytes": 1638400,
+      "sha256": "923e615d5a70757e95bfa4832cadcb5107ff4ed1f175533ae784806961ea099a"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L400/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "eb4d4d030ca072d03cf671d3cf6f11d2283b113aeb8dcfdeb4f26e690560994d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L400/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "6c0446aa50acb8a06622b681a48149d57088a69533ce6fea4b47a04d52344082"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L400/complete.json",
+      "bytes": 313,
+      "sha256": "7ad87ce1e9de53957157abb57044bb636d07460596fec89421b2320484a9f207"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L400/ids.i32",
+      "bytes": 1638400,
+      "sha256": "fbc84bc8d6e3f9ab8abb2e7e87e9cc618cef5fad92e245c9df6864e0c8dc43d8"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L400/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "832950a5f2b5cc50fb2eac73bbd91650cfa43e61acb750b7a35bda5236fcd612"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L400/distances.f32",
+      "bytes": 1638400,
+      "sha256": "9bd63d7271af3bfd00646149a6f7c1d01c8796ef2683b34653c9437e60162d58"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L400/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "4fa6bf231d71f524eec00cfdd6502d23fd44d061681108433089bc3e49141c85"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L400/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "5ecb7a2a412d9d1ca8d9ccb60c1decda12c6ea8530613dd5825358dbd3e26bf2"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L400/complete.json",
+      "bytes": 309,
+      "sha256": "88d7d51a3bd3ff725435c0a9f8da5484072254c5e689f10ceaac50fa93e83990"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L800/ids.i32",
+      "bytes": 1638400,
+      "sha256": "d75b2652200f5c5629f00f5abc5018bcbb338d73a87ad3da01ebb228040c0433"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L800/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "201d88290f5ee05a186050c214e1f959ce1a8cbb16464a81a90d4adbe944a56f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L800/distances.f32",
+      "bytes": 1638400,
+      "sha256": "1d194d4f929432e38ed84958e29ba4de602d40ee7d2f5a5fdd94c817eee6c8cb"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L800/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "67b8776a5cbfe5c15642d53ad8e64f22a8a90985e27e896698004388354754e0"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L800/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "6c0446aa50acb8a06622b681a48149d57088a69533ce6fea4b47a04d52344082"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/GT10Default_L800/complete.json",
+      "bytes": 313,
+      "sha256": "603ffa94abc68426c345ff8045e0c9a4bbc3abf9a8f9feb738a12ae103fe9d49"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L800/ids.i32",
+      "bytes": 1638400,
+      "sha256": "9d03842f205492c40ff7183c9184964346ca33f80c9d35f164adb6828f8d5522"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L800/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "832950a5f2b5cc50fb2eac73bbd91650cfa43e61acb750b7a35bda5236fcd612"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L800/distances.f32",
+      "bytes": 1638400,
+      "sha256": "d82036fb90ec624a2b0f94eb4ff9178374ccd832c7170a576d93402377af6eb1"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L800/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "b05862b0f356135fdf0724e857eedaf8854a81d56c8987c9847c477ecba51677"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L800/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "5ecb7a2a412d9d1ca8d9ccb60c1decda12c6ea8530613dd5825358dbd3e26bf2"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_webvid2_5m_light_v1/k100/UnitHub_L800/complete.json",
+      "bytes": 309,
+      "sha256": "6296a0d1cce3fd4f6db0013c7784d67253859bc351d08703c2bbafd89530634f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/reviews/formal_yandex_t2i_official10M_ip_v1.json",
+      "bytes": 3012,
+      "sha256": "eb9ff24ed8432ea4102a60a910efce4ab89605787261d21bc1bfccd0104368db"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "bytes": 656800,
+      "sha256": "bbc5e447aad556618a75fe50a6543c7d3fae68c46f920d79e8913281a0c9bf16"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "bytes": 3284,
+      "sha256": "ec82834901aacf360049aad43c47065fcd5de90cc0b882d6dd0016de798e2240"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+      "bytes": 778860,
+      "sha256": "11ffd1dc090f132cdb78e027a202edf5e49a5d50033f82b8834bb0e2ca08036c"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e107_initialization_factorial/models/yandex_t2i_official10M_ip_v1.UnitHub.W.f32",
+      "bytes": 656800,
+      "sha256": "753cf8d2ca51323fa9e096b001b9f2ff39888d1524db31ec8498a6ad887744e0"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/models/yandex_t2i_official10M_ip_v1/UnitHub.hnsw",
+      "bytes": 779404,
+      "sha256": "84d5e87ac20e7d62186074785bc7677476b29af8c3e8892550fe8ba93a056dab"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+      "bytes": 3276800,
+      "sha256": "c79e79c090ca845f66ab723e0aae621a14d81cc5a813c58c393ad2b1eac4948f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/gt.i32",
+      "bytes": 1638400,
+      "sha256": "4306b1face794c3ca443a10947e723ecc35246766af4ddf51e17c61bf837467e"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/source_rows.i64",
+      "bytes": 32768,
+      "sha256": "9e1e633d35bd2c60c22c94159ee93f4ccb1994243d844c4f4a25b31b74660f3d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L64/ids.i32",
+      "bytes": 16384,
+      "sha256": "c4aa637a6590b2d151bf3f98f5436ac5772202bfc6fb4d03b8533812ccf7d75e"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L64/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "c60c7521264f8d9ac871822a7dc195e0e6d6b15ff0763fcc963cb44571736bd3"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L64/distances.f32",
+      "bytes": 16384,
+      "sha256": "a4a7474d7baaa71fd1810ff4d0f9029244b3fb51bf6ef4d9034b7d671656967b"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L64/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "e291c0a3e8e327e1a49252ad6fb56f26d53c31a01d645392bb7272a6d143f752"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L64/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "65fb3aa0ba6e6d0cb2c0723663d5743c57684dfd948240dcafb060f8e82227c6"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L64/complete.json",
+      "bytes": 309,
+      "sha256": "124b8663e482cb250436f812771c2d2e7102aa866715023536b4ffc8e1b94265"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L64/ids.i32",
+      "bytes": 16384,
+      "sha256": "d3b86f0a00f588d1d11f883dfaa0f197da2f2f527a3c918852b8178a306d5fb7"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L64/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "6cdae7a4f7baee5157b8a712b159fb296a6edbecab8ee10fc053a82186d0fd50"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L64/distances.f32",
+      "bytes": 16384,
+      "sha256": "e2bd641a66997448dd9855a42ecf7da36e22fae8773a96c95ca3c11d5ee11c15"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L64/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "56d8d364c7e87796eaef939a14217d3d12bd24053fed96af34c56ab08965a6de"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L64/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "2d28f088e53f8b2f8cbc32dbccf0b537acd863369e227f9e987c00f4a63bf00d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L64/complete.json",
+      "bytes": 306,
+      "sha256": "75c2e5f6a2252cb49c994ed7afbfb2e7189b7b9c56b09c06c0cd1697e0ed8782"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L128/ids.i32",
+      "bytes": 16384,
+      "sha256": "6a2b3782320de22053afe510cb47ea5cd86a97142287445ab36b7235053070e4"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L128/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "c60c7521264f8d9ac871822a7dc195e0e6d6b15ff0763fcc963cb44571736bd3"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L128/distances.f32",
+      "bytes": 16384,
+      "sha256": "54fb8d9983371cfbf0b3732460021a2ddc4cadb80655db933a2787c1843a3e4a"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L128/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "224e2ebbf9c20339d68cdc732115866946f23469e668253d6c1fe551594f9917"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L128/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "65fb3aa0ba6e6d0cb2c0723663d5743c57684dfd948240dcafb060f8e82227c6"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L128/complete.json",
+      "bytes": 310,
+      "sha256": "8c330abda87deb6af9db1f11c2c533cd88d537f15c2cb3b7dcbcd1776b35fdd2"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L128/ids.i32",
+      "bytes": 16384,
+      "sha256": "c57afd3b78d6c1cc591f10e6d5dad349cf8d2c9dcd93948221c1a7c155407982"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L128/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "6cdae7a4f7baee5157b8a712b159fb296a6edbecab8ee10fc053a82186d0fd50"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L128/distances.f32",
+      "bytes": 16384,
+      "sha256": "9e9aae541bdb53febabf579797c872422ae984b8de532a370bcfad6eddfa54e9"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L128/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "74c30e86ef419b96e7a6b7ae8242cc1055fabe69262a74db98bfcad905cfa2e6"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L128/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "2d28f088e53f8b2f8cbc32dbccf0b537acd863369e227f9e987c00f4a63bf00d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L128/complete.json",
+      "bytes": 307,
+      "sha256": "eca78277d38ada37c455d139a9fd3860dcf801066e14c26f3dbb70cf571e29ed"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L256/ids.i32",
+      "bytes": 16384,
+      "sha256": "4e3c0dba46e836cdb7875379b6428ff8a5a33ddc6427ffdb5f117742d151cb2e"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L256/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "c60c7521264f8d9ac871822a7dc195e0e6d6b15ff0763fcc963cb44571736bd3"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L256/distances.f32",
+      "bytes": 16384,
+      "sha256": "cb1ed2a87ba0b9927d5e6037b568fcd1d38c37c96c2288e3a0dd6530005f6d5d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L256/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "01ac724a4de7d50b7ffae58d437ead7c9344e0334bc61e6ff01ecf48ff7e6c11"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L256/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "65fb3aa0ba6e6d0cb2c0723663d5743c57684dfd948240dcafb060f8e82227c6"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L256/complete.json",
+      "bytes": 311,
+      "sha256": "d1ebcf9d9cd04909b1d23bc001738a5d28b2da9d351986365f17b93d0b7a0414"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L256/ids.i32",
+      "bytes": 16384,
+      "sha256": "fcf7b5a9522507ad6027d422261c32da4ad071dd5b7f88496901f6141cfe059e"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L256/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "6cdae7a4f7baee5157b8a712b159fb296a6edbecab8ee10fc053a82186d0fd50"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L256/distances.f32",
+      "bytes": 16384,
+      "sha256": "228de6dc023e75843a492fcc2465f43499df8116033a0527809307effc0ecf00"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L256/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "4d0be397a83ae0441289b6308a8bf243c50ef2603d1accb819f3d871fc916d9d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L256/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "2d28f088e53f8b2f8cbc32dbccf0b537acd863369e227f9e987c00f4a63bf00d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L256/complete.json",
+      "bytes": 307,
+      "sha256": "9d782f67273753ef43391f908227155fe94806d8fc637fa6ead5cc9a11df7cb1"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L400/ids.i32",
+      "bytes": 16384,
+      "sha256": "80d58b95ee4451cc2d4164e96e2cf6d04afc0ec20273b72d769521f86ac07b55"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L400/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "c60c7521264f8d9ac871822a7dc195e0e6d6b15ff0763fcc963cb44571736bd3"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L400/distances.f32",
+      "bytes": 16384,
+      "sha256": "886b8144610213eab45aa03f125615bdd0a785c528d8dc1833fc74c5f4cae5a5"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L400/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "10ec3400c6b498a9ad07d40b1f28c1748a79dc1bb172b8db9828bb96bfcd8e26"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L400/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "65fb3aa0ba6e6d0cb2c0723663d5743c57684dfd948240dcafb060f8e82227c6"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L400/complete.json",
+      "bytes": 310,
+      "sha256": "a271a2abdfb246005613db39913a18bbd99001e173310c22ef7ffb10aa754e81"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L400/ids.i32",
+      "bytes": 16384,
+      "sha256": "50819d879a15240d9dae686f22fb6ef7c2967cfc1fd720450d60cf9a89bb0e5a"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L400/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "6cdae7a4f7baee5157b8a712b159fb296a6edbecab8ee10fc053a82186d0fd50"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L400/distances.f32",
+      "bytes": 16384,
+      "sha256": "e9f264467f088690485502868a1ae8fb3a763df5c4c3ca29f999b604ef7bcc04"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L400/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "e697fcffec788bbdb4876b25dcfa7cf33089d204c4820fc1ed68fc996c322ebb"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L400/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "2d28f088e53f8b2f8cbc32dbccf0b537acd863369e227f9e987c00f4a63bf00d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L400/complete.json",
+      "bytes": 307,
+      "sha256": "660eca8e832274935925ffaf5262b53ffc7102f17da6a04e1e0f6d725454c002"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L800/ids.i32",
+      "bytes": 16384,
+      "sha256": "8392347d3771330f07869f550232610074b95bfc399c501c997871541b93191f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L800/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "c60c7521264f8d9ac871822a7dc195e0e6d6b15ff0763fcc963cb44571736bd3"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L800/distances.f32",
+      "bytes": 16384,
+      "sha256": "5b91eea71e340c87b54d4dd653041dd4387091827471b213c895e29616d17cdb"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L800/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "58e283786aab1efc617f92eb031c106225dd139a8755378009d6765f99747ec4"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L800/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "65fb3aa0ba6e6d0cb2c0723663d5743c57684dfd948240dcafb060f8e82227c6"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/GT10Default_L800/complete.json",
+      "bytes": 310,
+      "sha256": "9149afaeaa77936f2a2b072cc74e0115c5856c320bfa2a7cabcfd8e217ee9fc3"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L800/ids.i32",
+      "bytes": 16384,
+      "sha256": "7517966b708c81b48085ca732639dcc706a4360f06eeb2f4b62845f062aa1060"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L800/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "6cdae7a4f7baee5157b8a712b159fb296a6edbecab8ee10fc053a82186d0fd50"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L800/distances.f32",
+      "bytes": 16384,
+      "sha256": "ac7c26fa1d45d0b1728883abe3e63488a38a007ed5e198878a20934bd04c0d1c"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L800/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "13a9f9af38c9210e66243647b8c343622ef8c393faa5e41033cf83bbc6914ada"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L800/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "2d28f088e53f8b2f8cbc32dbccf0b537acd863369e227f9e987c00f4a63bf00d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k1/UnitHub_L800/complete.json",
+      "bytes": 307,
+      "sha256": "7dd8ffc6b649c6eb151442987fadf45947c0f5fc65a056e51c9a207d3ff76859"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L128/ids.i32",
+      "bytes": 1638400,
+      "sha256": "e4f11f0c4ec77ab7ff8b02984e7b56356a182768aa2d386e4617ad54adac3397"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L128/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "c60c7521264f8d9ac871822a7dc195e0e6d6b15ff0763fcc963cb44571736bd3"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L128/distances.f32",
+      "bytes": 1638400,
+      "sha256": "7bc46bb0c9e6c9c71cdd2041e9008fc82d17e7b629184e0c184cd74447117005"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L128/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "224e2ebbf9c20339d68cdc732115866946f23469e668253d6c1fe551594f9917"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L128/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "65fb3aa0ba6e6d0cb2c0723663d5743c57684dfd948240dcafb060f8e82227c6"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L128/complete.json",
+      "bytes": 312,
+      "sha256": "0ada3a79cab8e5823a329cf57948b0dc29b16ed4ea37f2d060027a3ac2232231"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L128/ids.i32",
+      "bytes": 1638400,
+      "sha256": "4e7cf2ef98e833698d715c4cc13c71ec8af40956f67df0d2a17a4b6f58f0d061"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L128/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "6cdae7a4f7baee5157b8a712b159fb296a6edbecab8ee10fc053a82186d0fd50"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L128/distances.f32",
+      "bytes": 1638400,
+      "sha256": "00ebf6dc8129e71ff08cd00b3d64b39c74210da0424b786d13d683cda1649d3e"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L128/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "74c30e86ef419b96e7a6b7ae8242cc1055fabe69262a74db98bfcad905cfa2e6"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L128/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "2d28f088e53f8b2f8cbc32dbccf0b537acd863369e227f9e987c00f4a63bf00d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L128/complete.json",
+      "bytes": 309,
+      "sha256": "e2fb2228c4f3183a17cfe91706820f2fd08186056d4c6da6e2aa5def8251ab9e"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L256/ids.i32",
+      "bytes": 1638400,
+      "sha256": "7fda372f1cec3536b51f55d9c7b42eb772556546c26d8990103f21e7c7b362d9"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L256/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "c60c7521264f8d9ac871822a7dc195e0e6d6b15ff0763fcc963cb44571736bd3"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L256/distances.f32",
+      "bytes": 1638400,
+      "sha256": "12e4f8ef1edb441735c6af9dc5c1f0cb9924cf1e1f6e1054d3ce4dbec196312a"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L256/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "01ac724a4de7d50b7ffae58d437ead7c9344e0334bc61e6ff01ecf48ff7e6c11"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L256/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "65fb3aa0ba6e6d0cb2c0723663d5743c57684dfd948240dcafb060f8e82227c6"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L256/complete.json",
+      "bytes": 313,
+      "sha256": "04aadace267aa5ae0e20cde7f8856d7978a892dc18892d78c6459461e09ea708"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L256/ids.i32",
+      "bytes": 1638400,
+      "sha256": "e7a7e27ad06056804141c149daff2f36f8294425c0b02b3dc903eaeef19c7d8d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L256/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "6cdae7a4f7baee5157b8a712b159fb296a6edbecab8ee10fc053a82186d0fd50"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L256/distances.f32",
+      "bytes": 1638400,
+      "sha256": "b27fb31680062f97eaad57360a87ae7c27c2bea898b6e1a0d24d98abcae13fdf"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L256/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "4d0be397a83ae0441289b6308a8bf243c50ef2603d1accb819f3d871fc916d9d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L256/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "2d28f088e53f8b2f8cbc32dbccf0b537acd863369e227f9e987c00f4a63bf00d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L256/complete.json",
+      "bytes": 309,
+      "sha256": "3162d28c2079b49cb091bfef2563d1a7913537917e548696e67fa8f278f48b25"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L400/ids.i32",
+      "bytes": 1638400,
+      "sha256": "23ea3a400b6768e397aafd5aead48d432a99714a69a421b1a32d02ba33603a30"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L400/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "c60c7521264f8d9ac871822a7dc195e0e6d6b15ff0763fcc963cb44571736bd3"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L400/distances.f32",
+      "bytes": 1638400,
+      "sha256": "2e6591d2cf18a4c83301b47dc18cae8913767716c37948ce2ae6ecd57f729e34"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L400/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "10ec3400c6b498a9ad07d40b1f28c1748a79dc1bb172b8db9828bb96bfcd8e26"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L400/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "65fb3aa0ba6e6d0cb2c0723663d5743c57684dfd948240dcafb060f8e82227c6"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L400/complete.json",
+      "bytes": 313,
+      "sha256": "aaed97e57bef082cf62bac5ade8a022a83ce6144b74132c64b83efcc062582ba"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L400/ids.i32",
+      "bytes": 1638400,
+      "sha256": "97b820569e7dc588c6849826da5c85c069fa1e3b197bc2dd57e4d0abb942f4cb"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L400/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "6cdae7a4f7baee5157b8a712b159fb296a6edbecab8ee10fc053a82186d0fd50"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L400/distances.f32",
+      "bytes": 1638400,
+      "sha256": "1affad41dfa9f07c99452cdcf1d3fa6d7836abaac5ae0fb9c69b94e8b0e30a75"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L400/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "e697fcffec788bbdb4876b25dcfa7cf33089d204c4820fc1ed68fc996c322ebb"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L400/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "2d28f088e53f8b2f8cbc32dbccf0b537acd863369e227f9e987c00f4a63bf00d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L400/complete.json",
+      "bytes": 309,
+      "sha256": "4bd2bdfdb170b5134c1f923a34f6376380d37ceeb4944f14945621fce71e0a3a"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L800/ids.i32",
+      "bytes": 1638400,
+      "sha256": "157f6e7a4bd996e491d9f74bf96eed22e7b68815c0a2c2ad0c101c742d65aa1b"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L800/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "c60c7521264f8d9ac871822a7dc195e0e6d6b15ff0763fcc963cb44571736bd3"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L800/distances.f32",
+      "bytes": 1638400,
+      "sha256": "d298df7f09034f1b3bb796d64ec0e54efc3b7838134c7748c539174b0e965762"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L800/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "58e283786aab1efc617f92eb031c106225dd139a8755378009d6765f99747ec4"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L800/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "65fb3aa0ba6e6d0cb2c0723663d5743c57684dfd948240dcafb060f8e82227c6"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/GT10Default_L800/complete.json",
+      "bytes": 312,
+      "sha256": "e9ebc01af05a0357f2b5144aaa0e6631a031d9ee7af9808762277aaefa363f4d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L800/ids.i32",
+      "bytes": 1638400,
+      "sha256": "cda5556cd27ba62c4be70b19cf0f8480cb8b94ed8ae59d7b7c05a8aa8e07905e"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L800/entry_ids.i32",
+      "bytes": 49152,
+      "sha256": "6cdae7a4f7baee5157b8a712b159fb296a6edbecab8ee10fc053a82186d0fd50"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L800/distances.f32",
+      "bytes": 1638400,
+      "sha256": "651440101bdcdc7ebff5d37404825974bbacff9f002304e182d565d6a2ccb7c2"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L800/graph_ndc.u64",
+      "bytes": 32768,
+      "sha256": "13a9f9af38c9210e66243647b8c343622ef8c393faa5e41033cf83bbc6914ada"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L800/route_ndc.u64",
+      "bytes": 32768,
+      "sha256": "2d28f088e53f8b2f8cbc32dbccf0b537acd863369e227f9e987c00f4a63bf00d"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1600_theory_v1/stages/e108_unit_hub_online/results/formal_yandex_t2i_official10M_ip_v1/k100/UnitHub_L800/complete.json",
+      "bytes": 309,
+      "sha256": "eea0ce472166627de25ae5249035ef2cac368ad2cfd646f282723405d9cfd205"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/search_core.hpp",
+      "bytes": 1471,
+      "sha256": "03d57fd31f37769eb6c3c3bc806e494b50c6ffabe26920a1d98f05ba12e5743c"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/kernels.hpp",
+      "bytes": 5833,
+      "sha256": "615519c00a1ef07f4cbc6571912befb267778edbee7f5d55eec7381070ddb6e6"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/evaluate.cpp",
+      "bytes": 7525,
+      "sha256": "8544ee94ae8cb856f7ab075a7acba3e33c50c8f799e2ff6153fe8e4f7b18ea0b"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/common/topology.hpp",
+      "bytes": 4128,
+      "sha256": "08d9cd2d8d5bf32200858c7bb1b50b1ca831f6749984c1da30f3e6526c9482dc"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/common/native_common.hpp",
+      "bytes": 3228,
+      "sha256": "8f2b1d35e59f8a49396675753c592e9f30d5f548b18cac1dfe04500bd8a4e25a"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/common/evaluate.cpp",
+      "bytes": 11128,
+      "sha256": "41b771356d18a7fdf6f47303ea3106ab2cb3ff8b006d05a66de9e35bd0c640d2"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/common/hnswlib/space_ip.h",
+      "bytes": 11379,
+      "sha256": "6a89b5275527fe3592a9b02ea4fc50293fdc68cbd9f7c1ec13683581e1ebbaf7"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/common/hnswlib/space_l2.h",
+      "bytes": 8561,
+      "sha256": "c599d024657896412250b4fde1a95e39f8bc55cccd263f36c8948fa35779edf1"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/common/hnswlib/bruteforce.h",
+      "bytes": 5913,
+      "sha256": "da1f179e99d8e5a4c39b5db0c681bccf3c63e797aaa4982620519f8e001cb2c6"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/common/hnswlib/stop_condition.h",
+      "bytes": 8874,
+      "sha256": "930da73eead77dff0c8c9f3281c5d12250051c90ef98fcfbab8f5f307bdae8d9"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/common/hnswlib/hnswalg.h",
+      "bytes": 57141,
+      "sha256": "fd00d993ba871c1ecd005981d7c6dc7b273cd74fc61528094a1ad2ab8e89b14e"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/common/hnswlib/hnswlib.h",
+      "bytes": 6147,
+      "sha256": "b03ea381212bdc7e307337a5366079639a08e34580c81ff80b03160c5552c5e7"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/common/hnswlib/visited_list_pool.h",
+      "bytes": 1790,
+      "sha256": "8e5bab8d12b5ef26e3b603b656b8a1acba6738498d1d98f44c9fdb1cb0e25110"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/stages/e115_score_topology_factorial/src/common/hnswlib/space_cos.h",
+      "bytes": 4168,
+      "sha256": "0b2028bad18d5517f76446407ff1320f11d95bcb632c944284ea93e4333d19e5"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+      "bytes": 1988798,
+      "sha256": "cbcb3a470e835ae328ec0200936008d1f6f7b2fcb60ea4e04828eb8fb17f0a5e"
+    },
+    {
+      "path": "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+      "bytes": 111790,
+      "sha256": "a778d6d3bcbbebcc9c200a0b0d959d73b81a9cd4213cff9f9d5e515bf133285b"
+    },
+    {
+      "path": "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "bytes": 12831336,
+      "sha256": "9598573889c47b4a7665a601e25d5ada3026250c76c99ead886fa05abe174ff8"
+    }
+  ],
+  "large_files": [
+    {
+      "path": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "bytes": 5791560103,
+      "mtime_ns": 1787714557628644919,
+      "role": "index",
+      "identity_scope": "current stat and inherited E108 manifest; native embedded-base sample parity"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+      "bytes": 5140260000,
+      "mtime_ns": 1787713211996956145,
+      "role": "base",
+      "identity_scope": "current stat and inherited E108 manifest; native embedded-base sample parity"
+    },
+    {
+      "path": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "bytes": 10640000103,
+      "mtime_ns": 1787655783830469960,
+      "role": "index",
+      "identity_scope": "current stat and inherited E108 manifest; native embedded-base sample parity"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+      "bytes": 8040000000,
+      "mtime_ns": 1787650857757488152,
+      "role": "base",
+      "identity_scope": "current stat and inherited E108 manifest; native embedded-base sample parity"
+    }
+  ],
+  "ordinary_graph_builds": 0,
+  "new_GT": 0,
+  "new_training": 0,
+  "formal_QPS": false,
+  "data_role": "E105 exposed development, never held-out"
+}

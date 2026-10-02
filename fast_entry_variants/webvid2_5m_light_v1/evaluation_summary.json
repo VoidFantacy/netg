@@ -1,0 +1,236 @@
+{
+  "dataset": "webvid2_5m_light_v1",
+  "method_aliases": {
+    "fast R1/R100 neural task": "QGT-Cover plus closed-form GT-basin query prototypes; no neural network",
+    "fast R1/R100 raw task": "QGT-Cover raw hubs",
+    "fast per-query NETG_AsymHNSW": "QGT-Cover plus closed-form GT-basin query prototypes; no neural network"
+  },
+  "offline_wall_seconds": {
+    "fast_variants_cold_observed": 12.13960617199973,
+    "fast_variants_warm_observed": 1.1262419300001056,
+    "formal_aco": 1591.43,
+    "formal_dpc": 307.12,
+    "formal_neural_router": 1847.95,
+    "formal_probe_labels": 2755.44
+  },
+  "recall1": {
+    "medoid": {
+      "128": 0.7182999849319458,
+      "200": 0.7763000130653381,
+      "400": 0.8442000150680542,
+      "64": 0.6263999938964844
+    },
+    "neural": {
+      "128": 0.7477999925613403,
+      "200": 0.7940000295639038,
+      "400": 0.8539000153541565,
+      "64": 0.6660000085830688
+    },
+    "qgt_gt_basin_prototype": {
+      "128": 0.760699987411499,
+      "200": 0.8062999844551086,
+      "400": 0.8623999953269958,
+      "64": 0.6812000274658203
+    },
+    "qgt_raw": {
+      "128": 0.7562000155448914,
+      "200": 0.8037999868392944,
+      "400": 0.8618999719619751,
+      "64": 0.6728000044822693
+    },
+    "wdpc_raw": {
+      "128": 0.7300000190734863,
+      "200": 0.7867000102996826,
+      "400": 0.8521999716758728,
+      "64": 0.6340000033378601
+    }
+  },
+  "recall100": {
+    "medoid": {
+      "100": 0.599562406539917,
+      "128": 0.6420254111289978,
+      "200": 0.7151581645011902,
+      "400": 0.8058329224586487
+    },
+    "neural": {
+      "100": 0.614219605922699,
+      "128": 0.6549695730209351,
+      "200": 0.723624587059021,
+      "400": 0.8105491995811462
+    },
+    "qgt_gt_basin_prototype": {
+      "100": 0.6164141893386841,
+      "128": 0.6580789089202881,
+      "200": 0.7274895906448364,
+      "400": 0.8127924203872681
+    },
+    "qgt_raw": {
+      "100": 0.6175732612609863,
+      "128": 0.6582173109054565,
+      "200": 0.7273061275482178,
+      "400": 0.8136558532714844
+    },
+    "wdpc_raw": {
+      "100": 0.5979280471801758,
+      "128": 0.6430989503860474,
+      "200": 0.717922568321228,
+      "400": 0.809105634689331
+    }
+  },
+  "schema_version": 1,
+  "source_files": [
+    "test/webvid2_5m_light_v1_results/webvid2_5m_light_v1_recall1_light.json",
+    "test/webvid2_5m_light_v1_results/webvid2_5m_light_v1_recall100_light.json",
+    "fast_entry_variants/webvid2_5m_light_v1/eval_qgt_full_fast_nsg_r1.json",
+    "fast_entry_variants/webvid2_5m_light_v1/eval_qgt_full_fast_r100.json",
+    "fast_entry_variants/webvid2_5m_light_v1/per_query_qgt_full_fast_r10.json",
+    "fast_entry_variants/webvid2_5m_light_v1/manifest.json"
+  ],
+  "split": "held-out-test",
+  "status": "exploratory 10K x 1 run; not a final paper result",
+  "tail_recall10": {
+    "128": {
+      "fast_mean_recall10": 0.7513199984960258,
+      "medoid_mean_recall10": 0.718539998626709,
+      "thresholds": {
+        "0.1": {
+          "fast_failed": 206,
+          "medoid_failed": 467,
+          "newly_harmed": 94,
+          "rescued": 355,
+          "still_failed": 112
+        },
+        "0.2": {
+          "fast_failed": 425,
+          "medoid_failed": 775,
+          "newly_harmed": 151,
+          "rescued": 501,
+          "still_failed": 274
+        },
+        "0.5": {
+          "fast_failed": 1467,
+          "medoid_failed": 1903,
+          "newly_harmed": 224,
+          "rescued": 660,
+          "still_failed": 1243
+        },
+        "0.8": {
+          "fast_failed": 3826,
+          "medoid_failed": 4142,
+          "newly_harmed": 192,
+          "rescued": 508,
+          "still_failed": 3634
+        }
+      }
+    },
+    "200": {
+      "fast_mean_recall10": 0.8021199974201619,
+      "medoid_mean_recall10": 0.7771999976947903,
+      "thresholds": {
+        "0.1": {
+          "fast_failed": 117,
+          "medoid_failed": 279,
+          "newly_harmed": 46,
+          "rescued": 208,
+          "still_failed": 71
+        },
+        "0.2": {
+          "fast_failed": 244,
+          "medoid_failed": 481,
+          "newly_harmed": 72,
+          "rescued": 309,
+          "still_failed": 172
+        },
+        "0.5": {
+          "fast_failed": 986,
+          "medoid_failed": 1309,
+          "newly_harmed": 122,
+          "rescued": 445,
+          "still_failed": 864
+        },
+        "0.8": {
+          "fast_failed": 3027,
+          "medoid_failed": 3297,
+          "newly_harmed": 143,
+          "rescued": 413,
+          "still_failed": 2884
+        }
+      }
+    },
+    "400": {
+      "fast_mean_recall10": 0.8607299967795611,
+      "medoid_mean_recall10": 0.8466999969944358,
+      "thresholds": {
+        "0.1": {
+          "fast_failed": 45,
+          "medoid_failed": 101,
+          "newly_harmed": 14,
+          "rescued": 70,
+          "still_failed": 31
+        },
+        "0.2": {
+          "fast_failed": 105,
+          "medoid_failed": 183,
+          "newly_harmed": 28,
+          "rescued": 106,
+          "still_failed": 77
+        },
+        "0.5": {
+          "fast_failed": 538,
+          "medoid_failed": 709,
+          "newly_harmed": 53,
+          "rescued": 224,
+          "still_failed": 485
+        },
+        "0.8": {
+          "fast_failed": 2002,
+          "medoid_failed": 2203,
+          "newly_harmed": 77,
+          "rescued": 278,
+          "still_failed": 1925
+        }
+      }
+    },
+    "64": {
+      "fast_mean_recall10": 0.6605499999471008,
+      "medoid_mean_recall10": 0.6195599999047816,
+      "thresholds": {
+        "0.1": {
+          "fast_failed": 461,
+          "medoid_failed": 884,
+          "newly_harmed": 242,
+          "rescued": 665,
+          "still_failed": 219
+        },
+        "0.2": {
+          "fast_failed": 852,
+          "medoid_failed": 1365,
+          "newly_harmed": 349,
+          "rescued": 862,
+          "still_failed": 503
+        },
+        "0.5": {
+          "fast_failed": 2416,
+          "medoid_failed": 2965,
+          "newly_harmed": 399,
+          "rescued": 948,
+          "still_failed": 2017
+        },
+        "0.8": {
+          "fast_failed": 5191,
+          "medoid_failed": 5503,
+          "newly_harmed": 260,
+          "rescued": 572,
+          "still_failed": 4931
+        }
+      }
+    }
+  },
+  "validity": {
+    "eval_qgt_full_fast_nsg_r1.json": "valid; loads the version-1 frozen NSG artifact and has no ACO dependency",
+    "eval_qgt_full_fast_r100.json": "valid; graph bytes come from the matching ACPG container but weights are released and unused",
+    "eval_qgt_vs_prototype_r1.json/neural task": "valid prototype-uniform result on W-DPC hubs",
+    "eval_qgt_vs_prototype_r1.json/raw task": "INVALID: QGT vectors were paired with W-DPC IDs",
+    "per_query_qgt_full_fast_r10.json": "valid under the same matching-graph condition"
+  }
+}

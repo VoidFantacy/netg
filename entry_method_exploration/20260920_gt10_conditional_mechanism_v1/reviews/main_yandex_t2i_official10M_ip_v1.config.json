@@ -1,0 +1,80 @@
+{
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "dimension": 200,
+  "H": 821,
+  "n": 4096,
+  "queries": "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+  "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "base_n": 10000000,
+  "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+  "threads": 1,
+  "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/hub_ids.i32",
+  "methods": [
+    {
+      "name": "GT1Exact",
+      "family": "GT1",
+      "kind": "original",
+      "route": "exact",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt1_hard/W.f32"
+    },
+    {
+      "name": "HardOriginalExact",
+      "family": "hard",
+      "kind": "original",
+      "route": "exact",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32"
+    },
+    {
+      "name": "HardGroupMeanExact",
+      "family": "hard",
+      "kind": "candidate",
+      "route": "exact",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/models/yandex_t2i_official10M_ip_v1/hard/GroupMean.W.f32"
+    },
+    {
+      "name": "HardPerm0Exact",
+      "family": "hard",
+      "kind": "permutation",
+      "seed": 20260920,
+      "route": "exact",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/models/yandex_t2i_official10M_ip_v1/hard/Perm0.W.f32"
+    },
+    {
+      "name": "HardPerm1Exact",
+      "family": "hard",
+      "kind": "permutation",
+      "seed": 20260921,
+      "route": "exact",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/models/yandex_t2i_official10M_ip_v1/hard/Perm1.W.f32"
+    },
+    {
+      "name": "HardPerm2Exact",
+      "family": "hard",
+      "kind": "permutation",
+      "seed": 20260922,
+      "route": "exact",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/models/yandex_t2i_official10M_ip_v1/hard/Perm2.W.f32"
+    },
+    {
+      "name": "HardPerm3Exact",
+      "family": "hard",
+      "kind": "permutation",
+      "seed": 20260923,
+      "route": "exact",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/models/yandex_t2i_official10M_ip_v1/hard/Perm3.W.f32"
+    },
+    {
+      "name": "DefaultANN",
+      "family": "default",
+      "kind": "reference",
+      "route": "ann",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32"
+    }
+  ],
+  "reference": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/results/yandex_t2i_official10M_ip_v1",
+  "reference_method": "GT10-hard",
+  "max_search_calls": 400000,
+  "seconds_cap": 3494.9449639320374
+}

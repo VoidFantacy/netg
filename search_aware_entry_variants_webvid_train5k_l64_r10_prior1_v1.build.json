@@ -1,0 +1,30 @@
+{
+  "dataset": "webvid2_5m_light_v1",
+  "hub_count": 815,
+  "hubs_with_labels": 809,
+  "label_search_L": 64,
+  "label_top_k": 10,
+  "max_labels_per_hub": 21,
+  "min_labels_per_observed_hub": 1,
+  "outputs": {
+    "hub_ids": "search_aware_entry_variants/webvid_train5k_l64_r10_prior1_v1/hub_ids.bin",
+    "hub_ids_sha256": "47c58c28e48e85c5a4f0cad245ef66f451dde404afb0ad7231909ba1956e8e03",
+    "prototypes": "search_aware_entry_variants/webvid_train5k_l64_r10_prior1_v1/search_aware_oracle_label_prototypes.bin",
+    "prototypes_sha256": "0ed084a23579b760c387ad0b3b38b5bd970925b07ad72d9ca56c9adcb9be7553"
+  },
+  "prior_strength": 1.0,
+  "purpose": "closed-form oracle-label predictability diagnostic; not final method",
+  "schema_version": 1,
+  "sources": {
+    "hub_ids": "fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_cover_hub_ids.bin",
+    "hub_ids_sha256": "47c58c28e48e85c5a4f0cad245ef66f451dde404afb0ad7231909ba1956e8e03",
+    "oracle_json": "oracle_entry_diagnostics/webvid_router_train5k_l64_r10_current_hubs_v1/results.json",
+    "oracle_sha256": "9bf12df6afed26cb1dc8cef938a1fce5c95f65a3cf941309bab0121118434d3c",
+    "queries": "benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+    "queries_sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855",
+    "raw_hubs": "fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_cover_hubs.bin",
+    "raw_hubs_sha256": "9dcfb5cc8bc34ae83d46797c887cc6061abebb34e2deb6c05ce81b55de938ad5"
+  },
+  "train_queries": 5000,
+  "train_split": "drl_train"
+}

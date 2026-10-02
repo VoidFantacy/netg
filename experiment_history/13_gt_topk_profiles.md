@@ -63,3 +63,15 @@ audit主候选exact3−HNSW3最终Recall为WebVid+0.146pp、Yandex−0.020pp，A
 - [全部原值](../entry_method_exploration/20260910_gt_topk_profiles_v1/results/tables.md)、[指标CSV](../entry_method_exploration/20260910_gt_topk_profiles_v1/results/metrics.csv)、[配对变化](../entry_method_exploration/20260910_gt_topk_profiles_v1/results/comparisons.csv)、[Recall–QPS](../entry_method_exploration/20260910_gt_topk_profiles_v1/figures/recall_qps.svg)、[差值图](../entry_method_exploration/20260910_gt_topk_profiles_v1/figures/deltas.svg)。
 - [近似检索](../entry_method_exploration/20260910_gt_topk_profiles_v1/results/ann_diagnostics.csv)、[支持统计](../entry_method_exploration/20260910_gt_topk_profiles_v1/results/profile_support.csv)、[前沿实测点](../entry_method_exploration/20260910_gt_topk_profiles_v1/results/frontier_points.csv)、[明确标记的插值](../entry_method_exploration/20260910_gt_topk_profiles_v1/results/frontier_interpolation.csv)、[成本账](../entry_method_exploration/20260910_gt_topk_profiles_v1/results/costs.json)。
 - [输入](../entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/preflight.json)、[恢复](../entry_method_exploration/20260910_gt_topk_profiles_v1/reviews/recovery_gate.json)、[cal门](../entry_method_exploration/20260910_gt_topk_profiles_v1/reviews/cal_gate.json)、[validation前冻结](../entry_method_exploration/20260910_gt_topk_profiles_v1/models/frozen_before_validation.json)、[输出核验](../entry_method_exploration/20260910_gt_topk_profiles_v1/reviews/result_verification.json)、[保护与选择审计](../entry_method_exploration/20260910_gt_topk_profiles_v1/reviews/immutable_integrity.json)。
+
+## 2026-09-10接续更新：先解释GT10的性能收益
+
+用户在E25/E26收口后指出GT10 hard已有可见提升，并明确要求把“弄清GT10为什么提高性能”列为明日下一步。当前优先任务由此前建议的2A/正负改道选择，调整为[GT10收益机制分析](../s-target.md)；此前建议保留历史身份，E24原协议、画像、计时、结果及状态均不修改。本次只更新计划，尚未开始该分析或补测，不增加实验ID。
+
+E24的正信号与E25/E26后续增强未通过应分开解释。WebVid GT10 hard相对matched GT1 hard有两个同L Recall/QPS双升点，Yandex五L Recall均小幅提高、其中三个点QPS也提高；这值得保留和解释。75%收益保留/25%损伤减少是后续选择性增强的目标，不是GT10有效性的必要条件。评价原GT10应看目标Recall区间的完整前沿及可复现性，不要求所有query、所有L都受益。
+
+明日主对照为两数据集GT10 hard与GT1 hard，GT1/GT10 soft作为辅助消融。先复核既有性能与计时，再沿“GT目标归属→画像支持和方向→三入口变化→原NSG命中/搜索工作量→端到端wall”追溯；统计相关与机制因果分别陈述，有缺口才制定最小补测。原始数值见本卡链接，计划细节及新对话指令统一维护在s-target。
+
+## 2026-09-11：机制分析继任E27已完成
+
+上述2026-09-10计划原件保留当时未执行身份；实际继任[历史16](16_gt10_mechanism.md)已完成。两个原正点在exact3下仍保留收益，WebVid hard速度重复为约0.34%–1.36%，Yandex原约2.56%速度未在后续批次稳定保留。对应关系控制提供有限方向性证据，信息与平滑尚未完全分离。E24原结果/画像/状态不变，完整解释见[E27报告](../entry_method_exploration/20260911_gt10_mechanism_v1/report.md)；后续分支未自动启动。

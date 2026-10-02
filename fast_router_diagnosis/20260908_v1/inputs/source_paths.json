@@ -1,0 +1,524 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-08T02:42:34.961303+00:00",
+  "scope": "Read-only source/input audit for newly authorized Fast diagnosis; no ANN or fitting by this auditor",
+  "paths_absolute": true,
+  "raw_validation_opened": false,
+  "raw_heldout_opened": false,
+  "raw_base_opened": false,
+  "raw_graph_opened": false,
+  "large_input_hash_owner": "root will verify base/graph in one IO task",
+  "source_audit": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+    "sha256_current": "7da975cbb0e045265f405b08e230abb6442eba51621064699a4ad449c90ae58b",
+    "status_recorded": "PASS_INPUT_CONTRACT"
+  },
+  "datasets": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "metric": "ip",
+      "normalization": "source_unit_norm_no_additional",
+      "artifact_version": "roargraph-webvid2.5m-ip-v1",
+      "dimension": 512,
+      "base_count": 2505000,
+      "hub_count": 815,
+      "allowed_train_parent": "router_train",
+      "fit_range": [
+        10000,
+        30000
+      ],
+      "historical_pilot_range": [
+        0,
+        10000
+      ],
+      "fit_values_sha_inherited": {
+        "query": "4eef43d019981b7ce8a57eb9969736c0443d4622412ed482868ba80cd8b078b6",
+        "gt": "911ce1e55ee134f835103ee3e8e51ce54ee5740b40fbff5aeaab5f0786334610",
+        "not_recomputed_this_audit": true
+      },
+      "paired_manifest": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/webvid2_5m_light_v1/manifest.json",
+        "sha256_current": "5cf6bdf1cc698ba130db9b13d488874c23d2c234975c7d8c606e5d0645e30975",
+        "input_audit_sha_matches": true
+      },
+      "paired_build_details": {
+        "method": "nearest-existing-hub-to-train-GT-vector then spherical query prototype",
+        "train_queries": 20000,
+        "hub_count": 815,
+        "hubs_with_assignments": 802,
+        "min_queries_per_observed_hub": 1,
+        "max_queries_per_hub": 242,
+        "prior_strength": 1.0,
+        "requires_aco_dpc": false,
+        "requires_probe_labels": false,
+        "requires_neural_training": false
+      },
+      "base": {
+        "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+        "format": "fvecs",
+        "dtype": "float32_le",
+        "shape": [
+          2505000,
+          512
+        ],
+        "bytes_current": 5140260000,
+        "mtime_ns_current": 1787713211996956145,
+        "expected_sha256": "6fb5b5510b29504de38271be7c343bd5e85a029f5755c7b3d74177cbf1ebbb18",
+        "sha256_current": null,
+        "identity_status": "EXPECTED_SHA_INHERITED_NOT_REHASHED",
+        "header": {
+          "layout": "each row: int32_le dimension then d four-byte values",
+          "row_dimension_expected": 512,
+          "row_bytes": 2052,
+          "rows_expected": 2505000,
+          "current_header_opened": false
+        }
+      },
+      "query_train": {
+        "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+        "format": "fvecs",
+        "dtype": "float32_le",
+        "shape": [
+          30000,
+          512
+        ],
+        "bytes_current": 61560000,
+        "mtime_ns_current": 1787714655768896778,
+        "expected_sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855",
+        "sha256_current": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855",
+        "identity_status": "CURRENT_SHA_MATCH",
+        "header": {
+          "layout": "each row: int32_le dimension then d four-byte values",
+          "row_dimension_expected": 512,
+          "row_bytes": 2052,
+          "rows_expected": 30000,
+          "first_row_dimension_current": 512
+        }
+      },
+      "gt_train": {
+        "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/gt.router_train.seed20260826.ip.ivecs",
+        "format": "ivecs",
+        "dtype": "int32_le",
+        "shape": [
+          30000,
+          100
+        ],
+        "bytes_current": 12120000,
+        "mtime_ns_current": 1787714956393668277,
+        "expected_sha256": "1db08bf5b259a468558e6dfed19661d73bc6fe6947a3c862e526176242ace72c",
+        "sha256_current": "1db08bf5b259a468558e6dfed19661d73bc6fe6947a3c862e526176242ace72c",
+        "identity_status": "CURRENT_SHA_MATCH",
+        "header": {
+          "layout": "each row: int32_le dimension then d four-byte values",
+          "row_dimension_expected": 100,
+          "row_bytes": 404,
+          "rows_expected": 30000,
+          "first_row_dimension_current": 100
+        }
+      },
+      "query_qgt": {
+        "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.aco_train.seed20260826.fvecs",
+        "format": "fvecs",
+        "dtype": "float32_le",
+        "shape": [
+          5000,
+          512
+        ],
+        "bytes_current": 10260000,
+        "mtime_ns_current": 1787714655676896543,
+        "expected_sha256": "b4322c37b2d4ab10e965bc5731f523341d1a974d5e40aa0cd881b4fbe28a572e",
+        "sha256_current": "b4322c37b2d4ab10e965bc5731f523341d1a974d5e40aa0cd881b4fbe28a572e",
+        "identity_status": "CURRENT_SHA_MATCH",
+        "header": {
+          "layout": "each row: int32_le dimension then d four-byte values",
+          "row_dimension_expected": 512,
+          "row_bytes": 2052,
+          "rows_expected": 5000,
+          "first_row_dimension_current": 512
+        }
+      },
+      "gt_qgt": {
+        "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/gt.aco_train.seed20260826.ip.ivecs",
+        "format": "ivecs",
+        "dtype": "int32_le",
+        "shape": [
+          5000,
+          100
+        ],
+        "bytes_current": 2020000,
+        "mtime_ns_current": 1787714705961025588,
+        "expected_sha256": "46ba3dfa04f16df69b4667aa62c033c6575234dfe080f995a879ba35444f9866",
+        "sha256_current": "46ba3dfa04f16df69b4667aa62c033c6575234dfe080f995a879ba35444f9866",
+        "identity_status": "CURRENT_SHA_MATCH",
+        "header": {
+          "layout": "each row: int32_le dimension then d four-byte values",
+          "row_dimension_expected": 100,
+          "row_bytes": 404,
+          "rows_expected": 5000,
+          "first_row_dimension_current": 100
+        }
+      },
+      "graph": {
+        "path": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+        "format": "IndexACSG native little-endian binary v1; loadACPG compatible",
+        "header_inherited": {
+          "format": "IndexACSG native little-endian binary v1",
+          "version": 1,
+          "n": 2505000,
+          "d": 512,
+          "metric_enum": 0,
+          "degree": 64,
+          "enterpoint": 1103413,
+          "adjacency_offset": 20040095,
+          "neighbor_count": 160320000,
+          "vector_offset": 661320103,
+          "vector_count": 1282560000,
+          "bytes": 5791560103,
+          "padding": -1
+        },
+        "header_current_opened": false,
+        "bytes_current": 5791560103,
+        "mtime_ns_current": 1787714557628644919,
+        "expected_sha256": "0a95d309b4980e0f0b73b7ad1222ec611db1f97c32ba2b69f070f5a952b9129a",
+        "sha256_current": null,
+        "identity_status": "EXPECTED_SHA_INHERITED_NOT_REHASHED",
+        "info_path": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json.info",
+        "info_sha256_current": "bf7494da189429714ecafa82f21723af1c9cb3308398ca48858ec3775695fae5",
+        "info_sha256_expected": "bf7494da189429714ecafa82f21723af1c9cb3308398ca48858ec3775695fae5"
+      },
+      "prototypes": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/webvid2_5m_light_v1/prototype.f32",
+        "format": "raw_float32",
+        "dtype": "float32_le",
+        "shape": [
+          815,
+          512
+        ],
+        "bytes_current": 1669120,
+        "mtime_ns_current": 1788797127871974387,
+        "expected_sha256": "1d6481e5d8abdeb23634b3565bce840873a9a12cff0553b26138ce77c53bf5ae",
+        "sha256_current": "1d6481e5d8abdeb23634b3565bce840873a9a12cff0553b26138ce77c53bf5ae",
+        "identity_status": "CURRENT_SHA_MATCH",
+        "header": {
+          "layout": "headerless contiguous payload"
+        }
+      },
+      "hub_ids": {
+        "path": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_cover_hub_ids.bin",
+        "format": "raw_int32",
+        "dtype": "int32_le",
+        "shape": [
+          815
+        ],
+        "bytes_current": 3260,
+        "mtime_ns_current": 1787968536842044871,
+        "expected_sha256": "47c58c28e48e85c5a4f0cad245ef66f451dde404afb0ad7231909ba1956e8e03",
+        "sha256_current": "47c58c28e48e85c5a4f0cad245ef66f451dde404afb0ad7231909ba1956e8e03",
+        "identity_status": "CURRENT_SHA_MATCH",
+        "header": {
+          "layout": "headerless contiguous payload"
+        }
+      },
+      "raw_hubs": {
+        "path": "/data/netg/ACSG/fast_entry_variants/webvid2_5m_light_v1_seed20260828/qgt_cover_hubs.bin",
+        "format": "raw_float32",
+        "dtype": "float32_le",
+        "shape": [
+          815,
+          512
+        ],
+        "bytes_current": 1669120,
+        "mtime_ns_current": 1787968536842044871,
+        "expected_sha256": "9dcfb5cc8bc34ae83d46797c887cc6061abebb34e2deb6c05ce81b55de938ad5",
+        "sha256_current": "9dcfb5cc8bc34ae83d46797c887cc6061abebb34e2deb6c05ce81b55de938ad5",
+        "identity_status": "CURRENT_SHA_MATCH",
+        "header": {
+          "layout": "headerless contiguous payload"
+        }
+      }
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "metric": "ip",
+      "normalization": "none",
+      "artifact_version": "yandex-t2i-official-first10m-ip-v1",
+      "dimension": 200,
+      "base_count": 10000000,
+      "hub_count": 821,
+      "allowed_train_parent": "router_train",
+      "fit_range": [
+        10000,
+        30000
+      ],
+      "historical_pilot_range": [
+        0,
+        10000
+      ],
+      "fit_values_sha_inherited": {
+        "query": "e86c597b26ee908f4d4d64674a2ea89837e75d1f824c1ce30671fbd3fc5424e8",
+        "gt": "d52e630214fb7a4ffa240372d5055f8c0e7a1232992e7fc78b656638abed6e5d",
+        "not_recomputed_this_audit": true
+      },
+      "paired_manifest": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/yandex_t2i_official10M_ip_v1/manifest.json",
+        "sha256_current": "483542c85c8afd5cbb65327cb1b6ac31869445aff916965f90469dffad0179c2",
+        "input_audit_sha_matches": true
+      },
+      "paired_build_details": {
+        "method": "nearest-existing-hub-to-train-GT-vector then spherical query prototype",
+        "train_queries": 20000,
+        "hub_count": 821,
+        "hubs_with_assignments": 821,
+        "min_queries_per_observed_hub": 1,
+        "max_queries_per_hub": 82,
+        "prior_strength": 1.0,
+        "requires_aco_dpc": false,
+        "requires_probe_labels": false,
+        "requires_neural_training": false
+      },
+      "base": {
+        "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+        "format": "fvecs",
+        "dtype": "float32_le",
+        "shape": [
+          10000000,
+          200
+        ],
+        "bytes_current": 8040000000,
+        "mtime_ns_current": 1787650857757488152,
+        "expected_sha256": "56d1baa271c79ea280d57ee1c7a8359438ffffc98a75cac799051b13fbdbe0ff",
+        "sha256_current": null,
+        "identity_status": "EXPECTED_SHA_INHERITED_NOT_REHASHED",
+        "header": {
+          "layout": "each row: int32_le dimension then d four-byte values",
+          "row_dimension_expected": 200,
+          "row_bytes": 804,
+          "rows_expected": 10000000,
+          "current_header_opened": false
+        }
+      },
+      "query_train": {
+        "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs",
+        "format": "fvecs",
+        "dtype": "float32_le",
+        "shape": [
+          30000,
+          200
+        ],
+        "bytes_current": 24120000,
+        "mtime_ns_current": 1787650857777488221,
+        "expected_sha256": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2",
+        "sha256_current": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2",
+        "identity_status": "CURRENT_SHA_MATCH",
+        "header": {
+          "layout": "each row: int32_le dimension then d four-byte values",
+          "row_dimension_expected": 200,
+          "row_bytes": 804,
+          "rows_expected": 30000,
+          "first_row_dimension_current": 200
+        }
+      },
+      "gt_train": {
+        "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/gt.router_train.ip.ivecs",
+        "format": "ivecs",
+        "dtype": "int32_le",
+        "shape": [
+          30000,
+          100
+        ],
+        "bytes_current": 12120000,
+        "mtime_ns_current": 1787652397758769544,
+        "expected_sha256": "5255cc604439ad9d2523dd7526dab85e61b40f0784fd630d5f297ef43af6bdcb",
+        "sha256_current": "5255cc604439ad9d2523dd7526dab85e61b40f0784fd630d5f297ef43af6bdcb",
+        "identity_status": "CURRENT_SHA_MATCH",
+        "header": {
+          "layout": "each row: int32_le dimension then d four-byte values",
+          "row_dimension_expected": 100,
+          "row_bytes": 404,
+          "rows_expected": 30000,
+          "first_row_dimension_current": 100
+        }
+      },
+      "query_qgt": {
+        "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.aco_train.fvecs",
+        "format": "fvecs",
+        "dtype": "float32_le",
+        "shape": [
+          5000,
+          200
+        ],
+        "bytes_current": 4020000,
+        "mtime_ns_current": 1787650857761488165,
+        "expected_sha256": "d9146b417777e49d175f56071f6c1a90ccbd7a51c767f8cf0f1d088cc7dfe727",
+        "sha256_current": "d9146b417777e49d175f56071f6c1a90ccbd7a51c767f8cf0f1d088cc7dfe727",
+        "identity_status": "CURRENT_SHA_MATCH",
+        "header": {
+          "layout": "each row: int32_le dimension then d four-byte values",
+          "row_dimension_expected": 200,
+          "row_bytes": 804,
+          "rows_expected": 5000,
+          "first_row_dimension_current": 200
+        }
+      },
+      "gt_qgt": {
+        "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/gt.aco_train.ip.ivecs",
+        "format": "ivecs",
+        "dtype": "int32_le",
+        "shape": [
+          5000,
+          100
+        ],
+        "bytes_current": 2020000,
+        "mtime_ns_current": 1787651084722266143,
+        "expected_sha256": "1ec76a1eb5ab2724c712ae2308afc6285d3dbf9a542aed670f646cb9b2446d3e",
+        "sha256_current": "1ec76a1eb5ab2724c712ae2308afc6285d3dbf9a542aed670f646cb9b2446d3e",
+        "identity_status": "CURRENT_SHA_MATCH",
+        "header": {
+          "layout": "each row: int32_le dimension then d four-byte values",
+          "row_dimension_expected": 100,
+          "row_bytes": 404,
+          "rows_expected": 5000,
+          "first_row_dimension_current": 100
+        }
+      },
+      "graph": {
+        "path": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+        "format": "IndexACSG native little-endian binary v1; loadACPG compatible",
+        "header_inherited": {
+          "format": "IndexACSG native little-endian binary v1",
+          "version": 1,
+          "n": 10000000,
+          "d": 200,
+          "metric_enum": 0,
+          "degree": 64,
+          "enterpoint": 6474461,
+          "adjacency_offset": 80000095,
+          "neighbor_count": 640000000,
+          "vector_offset": 2640000103,
+          "vector_count": 2000000000,
+          "bytes": 10640000103,
+          "padding": -1
+        },
+        "header_current_opened": false,
+        "bytes_current": 10640000103,
+        "mtime_ns_current": 1787655783830469960,
+        "expected_sha256": "fa6eb7dd4e8d9dc95d696947fc18bd167880fb336212cb7bd073e7acddd4bf2e",
+        "sha256_current": null,
+        "identity_status": "EXPECTED_SHA_INHERITED_NOT_REHASHED",
+        "info_path": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json.info",
+        "info_sha256_current": "15518765ec986df46423d0310e9c2359ca1ad0637235e59b60ffb8c91ce6f016",
+        "info_sha256_expected": "15518765ec986df46423d0310e9c2359ca1ad0637235e59b60ffb8c91ce6f016"
+      },
+      "prototypes": {
+        "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p1/paired_fast20k/yandex_t2i_official10M_ip_v1/prototype.f32",
+        "format": "raw_float32",
+        "dtype": "float32_le",
+        "shape": [
+          821,
+          200
+        ],
+        "bytes_current": 656800,
+        "mtime_ns_current": 1788797179428173392,
+        "expected_sha256": "39c539d28c8a40c879a37dfeccc72a2a99b99ef26e4d38b35ed5e349e83c28f8",
+        "sha256_current": "39c539d28c8a40c879a37dfeccc72a2a99b99ef26e4d38b35ed5e349e83c28f8",
+        "identity_status": "CURRENT_SHA_MATCH",
+        "header": {
+          "layout": "headerless contiguous payload"
+        }
+      },
+      "hub_ids": {
+        "path": "/data/netg/ACSG/fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_cover_hub_ids.bin",
+        "format": "raw_int32",
+        "dtype": "int32_le",
+        "shape": [
+          821
+        ],
+        "bytes_current": 3284,
+        "mtime_ns_current": 1787974130760305685,
+        "expected_sha256": "ec82834901aacf360049aad43c47065fcd5de90cc0b882d6dd0016de798e2240",
+        "sha256_current": "ec82834901aacf360049aad43c47065fcd5de90cc0b882d6dd0016de798e2240",
+        "identity_status": "CURRENT_SHA_MATCH",
+        "header": {
+          "layout": "headerless contiguous payload"
+        }
+      },
+      "raw_hubs": {
+        "path": "/data/netg/ACSG/fast_entry_variants/yandex_t2i_official10M_ip_v1_seed20260828/qgt_cover_hubs.bin",
+        "format": "raw_float32",
+        "dtype": "float32_le",
+        "shape": [
+          821,
+          200
+        ],
+        "bytes_current": 656800,
+        "mtime_ns_current": 1787974130760305685,
+        "expected_sha256": "280d9bcf1fc89f4f6ad942e0d01d9b0c0c2c45afeb3c9bfdf0b069a4325072fc",
+        "sha256_current": "280d9bcf1fc89f4f6ad942e0d01d9b0c0c2c45afeb3c9bfdf0b069a4325072fc",
+        "identity_status": "CURRENT_SHA_MATCH",
+        "header": {
+          "layout": "headerless contiguous payload"
+        }
+      }
+    }
+  ],
+  "source_identities": {
+    "benches/run/build_fast_entry_variants.py": {
+      "path": "/data/netg/ACSG/benches/run/build_fast_entry_variants.py",
+      "sha256_current": "391870a4be2ffe32aa3e3ac11faff26ac0dc8f7dec03b22973ae430c5b1bfd24"
+    },
+    "ACSG/ACSG.cpp": {
+      "path": "/data/netg/ACSG/ACSG/ACSG.cpp",
+      "sha256_current": "931d74db432bb2a64aeaedd5200f933674b5e84fb0d129d5640189d76b008ba4"
+    },
+    "ACSG/ACSG.h": {
+      "path": "/data/netg/ACSG/ACSG/ACSG.h",
+      "sha256_current": "d45ce4c40e4e295696df985d2e2f59efa88b7c79e3b6245ac2d92ccbc7df056b"
+    },
+    "ACSG/IndexACSG.cpp": {
+      "path": "/data/netg/ACSG/ACSG/IndexACSG.cpp",
+      "sha256_current": "84dde43523f0641e8bdb322181e03ca038795e4560c08e8aff3c5a53d522f8c7"
+    },
+    "ACSG/IndexACSG.h": {
+      "path": "/data/netg/ACSG/ACSG/IndexACSG.h",
+      "sha256_current": "211446c585293d2e9a7dc25cf5494319b2380fc63260d7600608fa4b09e6e5d1"
+    },
+    "benches/bench_hierarchical_eval.cpp": {
+      "path": "/data/netg/ACSG/benches/bench_hierarchical_eval.cpp",
+      "sha256_current": "ec770d5921831ac3937ab117b87a1750164f51164b48f3461183192c6d8e2079"
+    },
+    "benches/hnswlib/hnswalg.h": {
+      "path": "/data/netg/ACSG/benches/hnswlib/hnswalg.h",
+      "sha256_current": "deb4b7119fab06b65c0ba32169477e1fcaf079ef4bff9306a3ac0f32c76ea536"
+    },
+    "benches/hnswlib/space_ip.h": {
+      "path": "/data/netg/ACSG/benches/hnswlib/space_ip.h",
+      "sha256_current": "6a89b5275527fe3592a9b02ea4fc50293fdc68cbd9f7c1ec13683581e1ebbaf7"
+    },
+    "benches/datasets/DataLoader.hpp": {
+      "path": "/data/netg/ACSG/benches/datasets/DataLoader.hpp",
+      "sha256_current": "00657c47f7ca518d3ca7001e30f17af9c79d4746d4c4cd136ec36a4133fe1a9c"
+    }
+  },
+  "builder_matches_both_paired_manifests": true,
+  "link_reuse": {
+    "build_recipe_reference": "/data/netg/ACSG/build/build.ninja:4590-4615",
+    "libraries": [
+      {
+        "path": "/data/netg/ACSG/build/ACSG/libACSG.a",
+        "sha256_current": "a2f5edf3b6527a76f43ae44531eeaa815d34a284f886e735bcc336ae82464b00",
+        "bytes": 333180
+      },
+      {
+        "path": "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+        "sha256_current": "a778d6d3bcbbebcc9c200a0b0d959d73b81a9cd4213cff9f9d5e515bf133285b",
+        "bytes": 111790
+      },
+      {
+        "path": "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+        "sha256_current": "9598573889c47b4a7665a601e25d5ada3026250c76c99ead886fa05abe174ff8",
+        "bytes": 12831336
+      }
+    ],
+    "warning": "Do not rebuild or overwrite shared libraries; compile isolated diagnostic against these immutable identities and recheck source/kernel parity."
+  }
+}

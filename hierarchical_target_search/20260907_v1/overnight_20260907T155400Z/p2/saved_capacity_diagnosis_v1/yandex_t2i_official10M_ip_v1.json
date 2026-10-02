@@ -1,0 +1,456 @@
+{
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "status": "COMPLETE_DATASET_DIAGNOSIS",
+  "query_range": [
+    0,
+    10000
+  ],
+  "evidence": {
+    "count": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_eval/count.json",
+      "sha256": "96c4f629f318addd5499666ab02bed67063fd3dba449418e863c9bd211033d87"
+    },
+    "model": {
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/yandex_model/model.json",
+      "sha256": "47b57609fe3c52c413aadbb8514e08a70351e4fb7c0f0e62623c71fb9cb78aaa"
+    }
+  },
+  "by_L": [
+    {
+      "L": 64,
+      "shared_capacity": 16,
+      "total_regional_capacity": 48,
+      "query_count": 10000,
+      "identical_integer_capacities_count": 6789,
+      "identical_integer_capacities_fraction": 0.6789,
+      "identical_capacity_output_check": "PASS",
+      "equal_capacity_mismatches": 0,
+      "all_queries_identical_saved_field_fraction": {
+        "result_ids": 0.9555,
+        "recall": 0.9663,
+        "routing_ndc": 1.0,
+        "graph_ndc": 0.6965,
+        "total_ndc": 0.6965,
+        "routing_mac": 1.0,
+        "graph_mac": 0.6965,
+        "total_mac": 0.6965,
+        "expanded": 0.7492,
+        "rejected": 0.6827,
+        "evicted_unexpanded": 0.7022
+      },
+      "geometry_capacity_l1_distance_from_uniform": {
+        "mean": 0.7458,
+        "min": 0.0,
+        "max": 6.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 2.0
+      },
+      "oracle_capacity_l1_distance_from_uniform": {
+        "mean": 35.3536,
+        "min": 0.0,
+        "max": 48.0,
+        "q25": 26.0,
+        "median": 36.0,
+        "q75": 48.0
+      },
+      "conditional_concentration": {
+        "geometry_weights_max_probability": {
+          "mean": 0.2652756360564419,
+          "min": 0.2501784465990061,
+          "max": 0.3256366254442609,
+          "q25": 0.2570509884564695,
+          "median": 0.26226438968504634,
+          "q75": 0.2705671799580596
+        },
+        "geometry_weights_entropy_bits": {
+          "mean": 1.9980928412674668,
+          "min": 1.976223873803795,
+          "max": 1.9999996626600116,
+          "q25": 1.9976287204050875,
+          "median": 1.9990690560751152,
+          "q75": 1.9996701766710576
+        },
+        "geometry_weights_normalized_entropy": {
+          "mean": 0.9990464206337334,
+          "min": 0.9881119369018975,
+          "max": 0.9999998313300058,
+          "q25": 0.9988143602025438,
+          "median": 0.9995345280375576,
+          "q75": 0.9998350883355288
+        },
+        "geometry_weights_herfindahl_index": {
+          "mean": 0.2506672843800998,
+          "min": 0.25000011690152024,
+          "max": 0.2585825004190783,
+          "q25": 0.2501146080025591,
+          "median": 0.2503225529165267,
+          "q75": 0.2508262327792823
+        },
+        "geometry_regional_capacity_max_probability": {
+          "mean": 0.2571291666666667,
+          "min": 0.25,
+          "max": 0.2916666666666667,
+          "q25": 0.25,
+          "median": 0.25,
+          "q75": 0.2708333333333333
+        },
+        "geometry_regional_capacity_entropy_bits": {
+          "mean": 1.999013079784681,
+          "min": 1.9874267924185611,
+          "max": 2.0,
+          "q25": 1.9974924140929848,
+          "median": 2.0,
+          "q75": 2.0
+        },
+        "geometry_regional_capacity_normalized_entropy": {
+          "mean": 0.9995065398923405,
+          "min": 0.9937133962092806,
+          "max": 1.0,
+          "q25": 0.9987462070464924,
+          "median": 1.0,
+          "q75": 1.0
+        },
+        "geometry_regional_capacity_herfindahl_index": {
+          "mean": 0.25034296874999995,
+          "min": 0.25,
+          "max": 0.2543402777777778,
+          "q25": 0.25,
+          "median": 0.25,
+          "q75": 0.2508680555555555
+        },
+        "oracle_weights_max_probability": {
+          "mean": 0.7745982936507937,
+          "min": 0.25,
+          "max": 1.0,
+          "q25": 0.6,
+          "median": 0.8,
+          "q75": 1.0
+        },
+        "oracle_weights_entropy_bits": {
+          "mean": 0.7512269544136312,
+          "min": -0.0,
+          "max": 2.0,
+          "q25": -0.0,
+          "median": 0.7219280948873623,
+          "q75": 1.3567796494470397
+        },
+        "oracle_weights_normalized_entropy": {
+          "mean": 0.3756134772068156,
+          "min": -0.0,
+          "max": 1.0,
+          "q25": -0.0,
+          "median": 0.36096404744368116,
+          "q75": 0.6783898247235198
+        },
+        "oracle_weights_herfindahl_index": {
+          "mean": 0.6990146970899472,
+          "min": 0.25,
+          "max": 1.0,
+          "q25": 0.46,
+          "median": 0.6799999999999999,
+          "q75": 1.0
+        },
+        "oracle_regional_capacity_max_probability": {
+          "mean": 0.6005166666666666,
+          "min": 0.25,
+          "max": 0.75,
+          "q25": 0.4791666666666667,
+          "median": 0.625,
+          "q75": 0.75
+        },
+        "oracle_regional_capacity_entropy_bits": {
+          "mean": 1.5021387670433746,
+          "min": 1.207518749639422,
+          "max": 2.0,
+          "q25": 1.207518749639422,
+          "median": 1.492754192030965,
+          "q75": 1.7308712850436359
+        },
+        "oracle_regional_capacity_normalized_entropy": {
+          "mean": 0.7510693835216873,
+          "min": 0.603759374819711,
+          "max": 1.0,
+          "q25": 0.603759374819711,
+          "median": 0.7463770960154825,
+          "q75": 0.8654356425218179
+        },
+        "oracle_regional_capacity_herfindahl_index": {
+          "mean": 0.45088810763888887,
+          "min": 0.25,
+          "max": 0.5833333333333333,
+          "q25": 0.3428819444444445,
+          "median": 0.44791666666666663,
+          "q75": 0.5833333333333333
+        }
+      },
+      "max_regional_capacity_histogram": {
+        "geometry": {
+          "12": 6789,
+          "13": 3000,
+          "14": 211
+        },
+        "oracle": {
+          "30": 1073,
+          "33": 1323,
+          "20": 934,
+          "23": 977,
+          "26": 876,
+          "36": 3344,
+          "17": 405,
+          "22": 165,
+          "15": 152,
+          "25": 71,
+          "18": 257,
+          "16": 109,
+          "27": 185,
+          "24": 40,
+          "14": 52,
+          "12": 16,
+          "13": 21
+        }
+      },
+      "same_vs_different_capacity_descriptive_strata": [
+        {
+          "identical_integer_capacities": true,
+          "query_count": 6789,
+          "identical_outputs_and_counts_count": 6789,
+          "mean_probability_minus_uniform_recall_pp": 0.0,
+          "mean_probability_minus_uniform_graph_ndc": 0.0,
+          "mean_probability_minus_uniform_expanded": 0.0
+        },
+        {
+          "identical_integer_capacities": false,
+          "query_count": 3211,
+          "identical_outputs_and_counts_count": 17,
+          "mean_probability_minus_uniform_recall_pp": 0.9810028028651511,
+          "mean_probability_minus_uniform_graph_ndc": -10.213640610401743,
+          "mean_probability_minus_uniform_expanded": -0.20367486764247897
+        }
+      ]
+    },
+    {
+      "L": 128,
+      "shared_capacity": 32,
+      "total_regional_capacity": 96,
+      "query_count": 10000,
+      "identical_integer_capacities_count": 2183,
+      "identical_integer_capacities_fraction": 0.2183,
+      "identical_capacity_output_check": "PASS",
+      "equal_capacity_mismatches": 0,
+      "all_queries_identical_saved_field_fraction": {
+        "result_ids": 0.9431,
+        "recall": 0.9537,
+        "routing_ndc": 1.0,
+        "graph_ndc": 0.2443,
+        "total_ndc": 0.2443,
+        "routing_mac": 1.0,
+        "graph_mac": 0.2443,
+        "total_mac": 0.2443,
+        "expanded": 0.3911,
+        "rejected": 0.2273,
+        "evicted_unexpanded": 0.2761
+      },
+      "geometry_capacity_l1_distance_from_uniform": {
+        "mean": 2.8204,
+        "min": 0.0,
+        "max": 14.0,
+        "q25": 2.0,
+        "median": 2.0,
+        "q75": 4.0
+      },
+      "oracle_capacity_l1_distance_from_uniform": {
+        "mean": 87.8016,
+        "min": 0.0,
+        "max": 120.0,
+        "q25": 64.0,
+        "median": 88.0,
+        "q75": 120.0
+      },
+      "conditional_concentration": {
+        "geometry_weights_max_probability": {
+          "mean": 0.2652756360564419,
+          "min": 0.2501784465990061,
+          "max": 0.3256366254442609,
+          "q25": 0.2570509884564695,
+          "median": 0.26226438968504634,
+          "q75": 0.2705671799580596
+        },
+        "geometry_weights_entropy_bits": {
+          "mean": 1.9980928412674668,
+          "min": 1.976223873803795,
+          "max": 1.9999996626600116,
+          "q25": 1.9976287204050875,
+          "median": 1.9990690560751152,
+          "q75": 1.9996701766710576
+        },
+        "geometry_weights_normalized_entropy": {
+          "mean": 0.9990464206337334,
+          "min": 0.9881119369018975,
+          "max": 0.9999998313300058,
+          "q25": 0.9988143602025438,
+          "median": 0.9995345280375576,
+          "q75": 0.9998350883355288
+        },
+        "geometry_weights_herfindahl_index": {
+          "mean": 0.2506672843800998,
+          "min": 0.25000011690152024,
+          "max": 0.2585825004190783,
+          "q25": 0.2501146080025591,
+          "median": 0.2503225529165267,
+          "q75": 0.2508262327792823
+        },
+        "geometry_regional_capacity_max_probability": {
+          "mean": 0.262596875,
+          "min": 0.25,
+          "max": 0.3125,
+          "q25": 0.2604166666666667,
+          "median": 0.2604166666666667,
+          "q75": 0.2708333333333333
+        },
+        "geometry_regional_capacity_entropy_bits": {
+          "mean": 1.9985636398476425,
+          "min": 1.9829637987072906,
+          "max": 2.0,
+          "q25": 1.9981460146003358,
+          "median": 1.9993736489680842,
+          "q75": 1.9993736489680842
+        },
+        "geometry_regional_capacity_normalized_entropy": {
+          "mean": 0.9992818199238213,
+          "min": 0.9914818993536453,
+          "max": 1.0,
+          "q25": 0.9990730073001679,
+          "median": 0.9996868244840421,
+          "q75": 0.9996868244840421
+        },
+        "geometry_regional_capacity_herfindahl_index": {
+          "mean": 0.2505014756944444,
+          "min": 0.25,
+          "max": 0.2560763888888889,
+          "q25": 0.2502170138888889,
+          "median": 0.2502170138888889,
+          "q75": 0.25065104166666663
+        },
+        "oracle_weights_max_probability": {
+          "mean": 0.7745982936507937,
+          "min": 0.25,
+          "max": 1.0,
+          "q25": 0.6,
+          "median": 0.8,
+          "q75": 1.0
+        },
+        "oracle_weights_entropy_bits": {
+          "mean": 0.7512269544136312,
+          "min": -0.0,
+          "max": 2.0,
+          "q25": -0.0,
+          "median": 0.7219280948873623,
+          "q75": 1.3567796494470397
+        },
+        "oracle_weights_normalized_entropy": {
+          "mean": 0.3756134772068156,
+          "min": -0.0,
+          "max": 1.0,
+          "q25": -0.0,
+          "median": 0.36096404744368116,
+          "q75": 0.6783898247235198
+        },
+        "oracle_weights_herfindahl_index": {
+          "mean": 0.6990146970899472,
+          "min": 0.25,
+          "max": 1.0,
+          "q25": 0.46,
+          "median": 0.6799999999999999,
+          "q75": 1.0
+        },
+        "oracle_regional_capacity_max_probability": {
+          "mean": 0.6869447916666666,
+          "min": 0.25,
+          "max": 0.875,
+          "q25": 0.5416666666666666,
+          "median": 0.7083333333333334,
+          "q75": 0.875
+        },
+        "oracle_regional_capacity_entropy_bits": {
+          "mean": 1.212530738632252,
+          "min": 0.7416847557897408,
+          "max": 2.0,
+          "q25": 0.7416847557897408,
+          "median": 1.2059413017339653,
+          "q75": 1.5636254885377856
+        },
+        "oracle_regional_capacity_normalized_entropy": {
+          "mean": 0.606265369316126,
+          "min": 0.3708423778948704,
+          "max": 1.0,
+          "q25": 0.3708423778948704,
+          "median": 0.6029706508669826,
+          "q75": 0.7818127442688928
+        },
+        "oracle_regional_capacity_herfindahl_index": {
+          "mean": 0.5616957899305556,
+          "min": 0.25,
+          "max": 0.7708333333333335,
+          "q25": 0.3958333333333333,
+          "median": 0.5486111111111113,
+          "q75": 0.7708333333333335
+        }
+      },
+      "max_regional_capacity_histogram": {
+        "geometry": {
+          "24": 2183,
+          "26": 1998,
+          "25": 4837,
+          "27": 724,
+          "28": 209,
+          "29": 42,
+          "30": 7
+        },
+        "oracle": {
+          "68": 1073,
+          "76": 1323,
+          "44": 934,
+          "52": 977,
+          "60": 1061,
+          "84": 3344,
+          "36": 405,
+          "48": 148,
+          "30": 49,
+          "57": 71,
+          "31": 103,
+          "39": 216,
+          "34": 109,
+          "54": 40,
+          "28": 52,
+          "50": 17,
+          "38": 41,
+          "24": 16,
+          "27": 21
+        }
+      },
+      "same_vs_different_capacity_descriptive_strata": [
+        {
+          "identical_integer_capacities": true,
+          "query_count": 2183,
+          "identical_outputs_and_counts_count": 2183,
+          "mean_probability_minus_uniform_recall_pp": 0.0,
+          "mean_probability_minus_uniform_graph_ndc": 0.0,
+          "mean_probability_minus_uniform_expanded": 0.0
+        },
+        {
+          "identical_integer_capacities": false,
+          "query_count": 7817,
+          "identical_outputs_and_counts_count": 33,
+          "mean_probability_minus_uniform_recall_pp": 0.5513624152488167,
+          "mean_probability_minus_uniform_graph_ndc": -8.500703594729435,
+          "mean_probability_minus_uniform_expanded": -0.06856850454138416
+        }
+      ]
+    }
+  ],
+  "per_query_csv": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/saved_capacity_diagnosis_v1/per_query_yandex_t2i_official10M_ip_v1.csv",
+    "sha256": "30f808cee1c6cb3d134ff6cf95683eec03c15e26d195ec5c806f3a41af37f014"
+  }
+}

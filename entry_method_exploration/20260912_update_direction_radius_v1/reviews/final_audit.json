@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "protected_files": 12158,
+  "local_links": 401,
+  "artifact_bytes": 256431512,
+  "verification": {
+    "status": "PASS",
+    "independent_set_scores": 1310720,
+    "states": 280,
+    "coefficient_radius_controls": 200,
+    "endpoint_bit_recovery_rows": 327680,
+    "cache_identity_rows": 1146880,
+    "new_patch_rows": 728,
+    "physical_graphs": 56,
+    "three_way_parity_rows": 896,
+    "new_search": 0,
+    "seconds": 6.465901796000253
+  },
+  "cost": {
+    "NSG_calls": 3416,
+    "HNSW_calls": 1148672,
+    "builds": 280,
+    "states": 280,
+    "new_counterfactual_states": 200,
+    "parity_NSG": 2688,
+    "optimizer_updates": 0,
+    "new_development_queries": 0,
+    "datasets": [
+      {
+        "status": "PASS",
+        "dataset": "webvid2_5m_light_v1",
+        "states": 140,
+        "normal_new_NSG": 524,
+        "seconds": 20.374802947000717,
+        "peak_RSS_KiB": 5717512,
+        "NSG_calls": 1868,
+        "HNSW_calls": 574336,
+        "builds": 140,
+        "actual_threads": 1,
+        "build_seconds": 7.058901058999997
+      },
+      {
+        "status": "PASS",
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "states": 140,
+        "normal_new_NSG": 204,
+        "seconds": 32.56469951300096,
+        "peak_RSS_KiB": 10442296,
+        "NSG_calls": 1548,
+        "HNSW_calls": 574336,
+        "builds": 140,
+        "actual_threads": 1,
+        "build_seconds": 6.203311667
+      }
+    ]
+  },
+  "campaign_complete": false
+}

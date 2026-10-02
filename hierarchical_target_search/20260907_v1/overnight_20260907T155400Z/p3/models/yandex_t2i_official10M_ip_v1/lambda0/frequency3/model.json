@@ -1,0 +1,77 @@
+{
+  "schema_version": 2,
+  "status": "COMPLETE",
+  "stage": "P3",
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "model_name": "lambda0_frequency3",
+  "lambda": 0,
+  "portal_rule": "frequency3",
+  "oracle_diagnostic_only": true,
+  "parent_rule": "leaf_id // 16",
+  "region_count": 256,
+  "coarse_count": 16,
+  "leaves_per_coarse": 16,
+  "active_regions": 4,
+  "portals_per_region": 3,
+  "total_portals": 768,
+  "dim": 200,
+  "base_nodes": 10000000,
+  "fit_range": [
+    10000,
+    30000
+  ],
+  "fit_count": 20000,
+  "cpu_only": true,
+  "pilot_accessed": false,
+  "validation_accessed": false,
+  "heldout_accessed": false,
+  "fit_query_values_sha256": "e86c597b26ee908f4d4d64674a2ea89837e75d1f824c1ce30671fbd3fc5424e8",
+  "fit_gt_values_sha256": "d52e630214fb7a4ffa240372d5055f8c0e7a1232992e7fc78b656638abed6e5d",
+  "gt10_sha256": "cb8e53681677bd035fd82982220fd7c65ccc388cab717c2ca3dca51eeb0d0f11",
+  "fit_manifest": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/fit_inputs/yandex_t2i_official10M_ip_v1/manifest.json",
+    "sha256": "89f4c8db94ba5de56fa2af09ed7547bb17bfaa14246b0383a4462e187711d788"
+  },
+  "labels_file": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/lambda0/pass2.regions.u16",
+  "labels_sha256": "efcbdd333cec86759907a6af7f5a363c4c1ecb4af8d16fdabbb7f0b56526f19c",
+  "portals_file": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/models/yandex_t2i_official10M_ip_v1/lambda0/frequency3/portals.i32",
+  "portals_sha256": "4ce8d4282b42ab6fee83330971879aaf2039583d7b7daeca6bd3274f59315cb8",
+  "graph_file": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "graph_sha256": "fa6eb7dd4e8d9dc95d696947fc18bd167880fb336212cb7bd073e7acddd4bf2e",
+  "base_sha256": "56d1baa271c79ea280d57ee1c7a8359438ffffc98a75cac799051b13fbdbe0ff",
+  "input_audit_sha256": "7da975cbb0e045265f405b08e230abb6442eba51621064699a4ad449c90ae58b",
+  "protocol_sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f",
+  "protocol": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+    "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f"
+  },
+  "audit": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p0/full_audit/audit.json",
+    "sha256": "7da975cbb0e045265f405b08e230abb6442eba51621064699a4ad449c90ae58b"
+  },
+  "gate": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P2.json",
+    "sha256": "6240cea60d790d030e0fdaf560b95d9e951260d4ba3d6701863b06c1c4cc895e"
+  },
+  "partition_manifest": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/partitions/yandex_t2i_official10M_ip_v1/lambda0/manifest.json",
+    "sha256": "bb290cc31fa9a9c45ff561114108e0f664a30a9b94684c6caf558c4e5f76f750"
+  },
+  "plan": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/plans/yandex_t2i_official10M_ip_v1/lambda0/plan.json",
+    "sha256": "4cec078cf78a4396d55fef5439f445a7a387b0e17f8b38c0506fbc73c9f4dc41"
+  },
+  "probe_complete": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/probes/yandex_t2i_official10M_ip_v1/lambda0/complete.json",
+    "sha256": "74db1515972cc600ab0bc6fc35a93c8958a10739a0cc0b256c5ded9cee4ca121"
+  },
+  "finalizer_source": {
+    "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/finalize_portal_models.py",
+    "sha256": "d1945203dc99e7027ebdc9a414a6b1303df5da0988b491dcc15ac1b30f537a7e"
+  },
+  "independent_cache_verification": "PASS_ALL_256_LEAVES",
+  "probe_cache_shared_between_portal_rules": true,
+  "ANN_probe_selection_required_by_this_rule": false,
+  "online_performance_improvement_confirmed": false,
+  "created_utc": "2026-09-07T17:39:45.938802+00:00"
+}

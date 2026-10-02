@@ -1,0 +1,86 @@
+{
+  "dataset": "SYNTHETIC_ONLY",
+  "split": "synthetic",
+  "dim": 8,
+  "num_queries": 20,
+  "gt_k": 100,
+  "index_path": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/synthetic_index.bin",
+  "row_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/row_ids.i64",
+  "queries_file": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/reviews/synthetic_inputs/queries.f32",
+  "gt_file": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/reviews/synthetic_inputs/gt.i64",
+  "timing_repeats": 0,
+  "export_features": true,
+  "policies": {
+    "A0": {
+      "name": "hnsw_L64",
+      "L": 64,
+      "seed": 20260828,
+      "hub_count": 32,
+      "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+      "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "k": 3,
+      "slot_labels": false,
+      "exact": false,
+      "legacy_heap_order": false,
+      "family": "test_hnsw",
+      "canonical_entry_order": true,
+      "hnsw_seed": 20260828,
+      "dim": 8
+    },
+    "A1": {
+      "name": "hnsw_L64",
+      "L": 64,
+      "seed": 20260828,
+      "hub_count": 32,
+      "W": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/prototypes.f32",
+      "mapping": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "tie_ids": "/data/netg/ACSG/fast_router_diagnosis/20260908_v1/bin/synthetic_e2e_v1/hub_ids.i32",
+      "k": 3,
+      "slot_labels": false,
+      "exact": false,
+      "legacy_heap_order": false,
+      "family": "test_hnsw",
+      "canonical_entry_order": true,
+      "hnsw_seed": 20260828,
+      "dim": 8
+    },
+    "hub_features": "/data/netg/ACSG/entry_method_exploration/20260910_selective_profile_gate_v1/reviews/synthetic_inputs/hub_features.f64"
+  },
+  "methods": [
+    {
+      "name": "fast20k_L128",
+      "family": "fast20k",
+      "kind": "fast20k",
+      "L": 128,
+      "component_wall": false
+    },
+    {
+      "name": "e24_L128",
+      "family": "e24",
+      "kind": "e24",
+      "L": 128,
+      "component_wall": false
+    },
+    {
+      "name": "force_base_L128",
+      "family": "force_base",
+      "kind": "dual_gate",
+      "L": 128,
+      "component_wall": false,
+      "force": 0
+    },
+    {
+      "name": "force_new_L128",
+      "family": "force_new",
+      "kind": "dual_gate",
+      "L": 128,
+      "component_wall": false,
+      "force": 1
+    }
+  ],
+  "threads": 1,
+  "query_cpu": 15,
+  "real_call_cap": 224,
+  "protocol_sha256": "16c148cc2952b8ec37fd99b414122471af3d26fcecf211574501be247564f33d"
+}

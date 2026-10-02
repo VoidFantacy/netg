@@ -1,0 +1,56 @@
+--- before/spec.md
++++ after/spec.md
+@@ -1,6 +1,6 @@
+ # NETG / ACSG 当前实现规格
+ 
+-> 最后核对：2026-09-08。本文件只记录当前实现、数据/metric 契约、artifact、评测口径和重跑依赖。研究结论见 `summary.md`，修订优先级及历史协议见 `s-target.md`，历史过程见 `aco_router_fast_entry.md`。当前主要方向为入口选择方法调研，尚无新实现，交接边界见第16节；此前文献复审见第15节。
++> 最后核对：2026-09-08。本文件只记录当前实现、数据/metric 契约、artifact、评测口径和重跑依赖。研究结论见 `summary.md`，修订优先级及历史协议见 `s-target.md`，历史过程见 `aco_router_fast_entry.md`。当前入口选择调研已完成，尚无新方法实现；原交接边界见第16节，当前设计与产物契约见第17节；此前文献复审见第15节。
+ 
+ ## 1. 权威性与保护边界
+ 
+@@ -202,7 +202,7 @@
+ 
+ - 当前研究结论：`summary.md`
+ - 本批协议与终局：`s-target.md`
+-- 当前入口选择调研指令：`entry_selection_research/20260908_v1/next_dialogue_prompt.md`
++- 已执行的入口调研指令：`entry_selection_research/20260908_v1/next_dialogue_prompt.md`；当前报告与未运行gate：`entry_selection_research/20260908_v2/{report.md,minimum_gate.md,state.json}`
+ - 历史方法与失败分支：`aco_router_fast_entry.md`、对应 `*_diagnostics/`
+ - 复现命令：`command.md`
+ - 相关工作历史提案：`papers/related_work_2026-08-29/README.md`
+@@ -267,16 +267,30 @@
+ 
+ 复审不改变raw-IP、原NSG、20K fit、历史10K pilot、该分层夜间版本validation仅完整性检查或held-out冻结边界；其他旧分支已使用validation做性能评测，不能推广为全项目从未使用。原P3仍NOPASS；GT占比oracle不是最优调度oracle；P4未实现不能写成所有层次预测失败。新方法若改变图、标签或搜索规则，按第10节联动重跑对应阶段，不能沿旧已关闭runner绕过gate。
+ 
+-## 16. 当前入口选择主线的调研交接（2026-09-08）
+-
+-用户已指定“改进入口选择方法”为主要方向。新增 `entry_selection_research/20260908_v1/`：`direction.md`记录问题、当前实现与历史证据边界；`next_dialogue_prompt.md`为下一对话指令；`state.json`标记`DIRECTION_SET_RESEARCH_PENDING`；`source_before/`与`manifest.json`保存本次文档变更前快照及受保护小文件身份。本轮只修改文档/交接状态，未修改方法源码、二进制、配置、模型、原始数据或实验gate，未运行新实验。
+-
+-实现仍为第2节Fast和已验收的独立搜索组件。下一轮首先查 `benches/run/build_fast_entry_variants.py` 中的候选构造、top-1 GT basin平均prototype和真实路由链；候选池、短名单/排序、少量入口组合仅为研究轴，不是已实现的新算法。固定图和搜索语义用于隔离入口收益；改入口数须验证`search_new` mode 2三入口上限、实际消费/顺序/去重，新路径不能以旧输出顺序冒充parity。
++## 16. 入口选择方向建立时的调研交接（2026-09-08，当前完成状态见第17节）
++
++用户已指定“改进入口选择方法”为主要方向。当时新增 `entry_selection_research/20260908_v1/`：`direction.md`记录问题、当前实现与历史证据边界；`next_dialogue_prompt.md`为下一对话指令；`state.json`标记`DIRECTION_SET_RESEARCH_PENDING`；`source_before/`与`manifest.json`保存本次文档变更前快照及受保护小文件身份。该方向建立轮只修改文档/交接状态，未修改方法源码、二进制、配置、模型、原始数据或实验gate，未运行新实验。
++
++实现仍为第2节Fast和已验收的独立搜索组件。当时约定下一轮首先查（现已完成，见第17节） `benches/run/build_fast_entry_variants.py` 中的候选构造、top-1 GT basin平均prototype和真实路由链；候选池、短名单/排序、少量入口组合仅为研究轴，不是已实现的新算法。固定图和搜索语义用于隔离入口收益；改入口数须验证`search_new` mode 2三入口上限、实际消费/顺序/去重，新路径不能以旧输出顺序冒充parity。
+ 
+ 历史oracle入口为 `oracle_entry_diagnostics/webvid_validation_1k_current_hubs_v1/results.json`，仅取K≤L的有效行；它是旧30K Fast、815候选、validation 1K、免费穷举入口和graph-only统计，不与新20K paired Fast及新纯wall结果混用。`CurrentHub_Diverse_Top3_GreedyProxy`是单入口命中并集后重放，不是最优联合入口。关联负证据为 `sparse_utility_ranker_results/analysis.md`、`probe_reroute_results/analysis.md`、`trace_conditioned_rerouter_results/webvid_probe10_top32_topology_v4/report.json`；旧报告的下一步不覆盖当前停止边界。
+ 
+-下一对话范围为源码/已有结果复核、一手文献及作者实现调研、2–3个机制比较、一个推荐与最小证伪协议草案。允许只读证据/联网查文献和写新调研文档；不训练、构图、ANN性能评测、扫参、新GT或依赖安装，不改方法源码，不读取原始validation/held-out查询与GT，不自动进入实验执行。旧 `overnight_prompt.md` 只作已结束的授权原文；旧截止、P0–P8 runner、state/gate/CLOSED均不用于新调研。
++当时下一对话的范围为源码/已有结果复核、一手文献及作者实现调研、2–3个机制比较、一个推荐与最小证伪协议草案。允许只读证据/联网查文献和写新调研文档；不训练、构图、ANN性能评测、扫参、新GT或依赖安装，不改方法源码，不读取原始validation/held-out查询与GT，不自动进入实验执行。旧 `overnight_prompt.md` 只作已结束的授权原文；旧截止、P0–P8 runner、state/gate/CLOSED均不用于新调研。
+ 
+ 未来实验仍需另立协议，绑定原始IP、冻结NSG/base/GT、独立QGT5K、router_train后20K fit/前10K历史pilot和同20K paired Fast。不得以旧30K prototype作为新训练输入。validation已有历史性能使用（如旧oracle、ranker、Multi-view），分层夜间版本只做了完整性检查；必须分别记录使用历史，不能宣称全项目validation从未使用。held-out须在方法冻结及相应验证通过后按10K×3执行，不用于新调参。
+ 
+ 完整计时包括候选检索、打分/组合选择、归一化、重置/去重、搜索和结果写入；GT/hash/trace/JSON在外，count/plain独立验收；完整离线成本包含exactGT、额外标签/轨迹、候选构造、模型训练与路由索引。强基线、两数据集、三独立构建、尾部与最终性能门槛不降低；具体比较族/成本匹配/资源预算在新协议冻结。若改变hub、标签或路由，按第10节重建相应模型与下游；若改变搜索语义，需重新正确性/计时验收，不能混作纯入口改进。
++
++## 17. 入口调研完成与未执行设计（20260908_v2）
++
++当前交付为 `entry_selection_research/20260908_v2/` 的report、related_work、recommendation、minimum_gate、protocol_draft和state。状态`RESEARCH_COMPLETE_DESIGN_ONLY`，新命令/API为`DRAFT_NOT_IMPLEMENTED_NOT_RUN`；本轮只读源码/已有结果、联网原文与作者源码并写调研文档，没有运行方法/性能实验、安装依赖或访问原始validation/held-out query/GT。三份交接同步；v1 direction/prompt/state、旧夜间runner/state/gate/CLOSED和实验总结保留。
++
++已核对的实现补充：`search_new` mode2真实常量为3，先截断再去重、随后按raw query–base距离排种子；同三个唯一ID且无距离tie时不能把HNSW输出反转直接解释为性能差。`hnswalg.h`使用`max(ef,k)`再截断，ef10的top3/top8搜索池规模相同，但成本/前缀parity仍须验收。旧oracle的greedy3来自独立single命中并集后真实重放，不是联合三入口穷举。
++
++作者实现核对独立存于v2/reviews和sources：GATE release v0.0.1/229f18d在线原query直接搜离线hub embedding，无query MLP；论文与release的正样本轴、启用loss和hop定义有差别。本地GATE rawIP/10K/dense适配与作者原件分列；这些核查不修改既有baseline结果或方法代码。
++
++推荐机制只改变入口决策单元：单view C8包含同paired Fast3/anchor，主方法固定21个三入口动作；29个含anchor的一至三入口集合是诊断。未来wrapper固定anchor先、补入口按C8 rank，实际消费与原search_new、count/plain逐ID/NDC一致；不能以区域global-topK实现替代原kernel。主模型每dataset一套固定40维ridge、两L共享系数，16个显式特征点积及pair表成本计入；在线API没有GT/标签/Fast搜索结果/D_F输入。
++
++未来最小gate草案绑定独立QGT5K、20K fit与历史10K pilot、同20K paired Fast；fit2048标签，互斥D1/D2各512，D1嵌套pool128/anchor64。固定动作标签和G3合计2,861,056次搜索，余138,944用于验收/暖机等，总300万；4小时、8GiB新产物、/data留10GiB、RSS80GiB、单重进程CPU16线程。G3固定16点/数据集、独立count与五轮纯wall；先对96项固定质量/成本对比建同时区间，再做最多3%差异QPS匹配，同时检查相对Fast和可加模型的增量。具体公式/停止/统计/未实现命令以minimum_gate为准；protocol_draft不是可运行配置或实验GO。
++
++原始IP/base/GT/图与20K split未变；若未来更改hub/画像/路由，按第10节重建相应下游。候选覆盖、single排序和组合损失是有限家族诊断，oracle不贡献部署点。新pilot不降低三独立构建、强基线、尾部、双相邻工作点实质门槛及方法冻结后held-out10K×3要求。当前无待续实验进程，不从文档设计自动转入执行。

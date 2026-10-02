@@ -1,0 +1,56 @@
+{
+  "dataset": "webvid2_5m_light_v1",
+  "dim": 512,
+  "hub_count": 815,
+  "num_queries": 22048,
+  "threads": 1,
+  "query_cpu": 15,
+  "L": 128,
+  "gt_k": 100,
+  "index_path": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "hub_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+  "P": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+  "raw_hubs": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/raw_hubs.f32",
+  "base_file": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+  "queries_file": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage2_missing_targets_v1/inputs/webvid2_5m_light_v1/queries.f32",
+  "gt_file": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage2_missing_targets_v1/inputs/webvid2_5m_light_v1/gt.i64",
+  "row_ids": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage2_missing_targets_v1/inputs/webvid2_5m_light_v1/row_ids.i64",
+  "native_call_cap": 45000,
+  "native_hnsw_cap": 67000,
+  "initial_topology_sha": "c4797d31330d779d061e4fbaf9efa07a80d4093de88bf58816285f9ce38f943d",
+  "original_assignments_sha": "4ca4103b35c7c19bfc731b9a077778c6d153e76d0fad7efeb275aba084da2343",
+  "temperature": 0.016201138496398926,
+  "roles": {
+    "fit": [
+      0,
+      20000
+    ],
+    "cal": [
+      20000,
+      21024
+    ],
+    "audit": [
+      21024,
+      22048
+    ]
+  },
+  "namespace": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+  "lambda_value": 0.5,
+  "sham_seed": 20260913,
+  "original_policy": {
+    "name": "gt10_soft",
+    "family": "profile",
+    "model_name": "gt10_soft",
+    "W": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+    "mapping": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+    "tie_ids": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/hub_ids.i32",
+    "hub_count": 815,
+    "dim": 512,
+    "k": 3,
+    "seed": 20260828,
+    "hnsw_seed": 20260828,
+    "slot_labels": false,
+    "canonical_entry_order": true
+  },
+  "parity_rows": "/data/netg/ACSG/entry_method_exploration/20260913_until2100_v1/stage2_missing_targets_v1/inputs/webvid2_5m_light_v1/parity_rows.i32"
+}

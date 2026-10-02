@@ -1,0 +1,48 @@
+[
+  {
+    "argv": [
+      "g++",
+      "-O3",
+      "-march=native",
+      "-std=c++17",
+      "-fopenmp",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+      "-I/data/netg/ACSG/entry_method_exploration/20260920_gt10_conditional_mechanism_v1/src/common",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/xor_entry_expressivity_v1/verify.cpp",
+      "/data/netg/ACSG/entry_method_exploration/20260916_nsg_search_optimization_v1/bin/libACSG.optimized.a",
+      "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+      "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "-lopenblas",
+      "-lz",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/xor_entry_expressivity_v1/verify"
+    ],
+    "kind": "compile",
+    "started_unix": 1789900493.7093694,
+    "timeout_seconds": 120,
+    "pid": 78090,
+    "pgid": 78090,
+    "exit_code": 0,
+    "seconds": 7.723150730133057,
+    "finished_unix": 1789900501.4325209
+  },
+  {
+    "argv": [
+      "taskset",
+      "-c",
+      "15",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/xor_entry_expressivity_v1/verify",
+      "/data/netg/ACSG/entry_method_exploration/20260920_until1900_theory_v1/research/xor_entry_expressivity_v1/result.json"
+    ],
+    "kind": "synthetic",
+    "started_unix": 1789900501.4371123,
+    "timeout_seconds": 30,
+    "pid": 78135,
+    "pgid": 78135,
+    "exit_code": 0,
+    "seconds": 0.003761768341064453,
+    "finished_unix": 1789900501.4408743
+  }
+]

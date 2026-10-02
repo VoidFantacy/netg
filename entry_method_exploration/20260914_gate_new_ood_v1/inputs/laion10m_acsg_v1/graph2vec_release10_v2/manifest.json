@@ -1,0 +1,41 @@
+{
+  "algorithm": {
+    "dimensions": 512,
+    "doc2vec": "PV-DBOW (dm=0)",
+    "epochs": 10,
+    "graph_direction": "directed NSG edges converted to undirected simple adjacency",
+    "initial_node_label": "undirected degree",
+    "min_count": 5,
+    "sample": 0.0001,
+    "seed": 42,
+    "wl_iterations": 2,
+    "workers": 1
+  },
+  "environment": {
+    "gensim": "4.4.0",
+    "numpy": "1.26.4",
+    "python": "3.10.12"
+  },
+  "fidelity_note": "GATE upstream leaves graph embedding external; this is a standard topology-only WL+Doc2Vec Graph2Vec reproduction, not an upstream artifact",
+  "input": {
+    "combined_sha256": "08bfecd32ba20e23914c79d5c2118d66f4a6183db7fb2e3f2150b41b71550173",
+    "num_graphs": 512,
+    "subgraph_dir": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/inputs/laion10m_acsg_v1/subgraphs_release10_v2"
+  },
+  "output": {
+    "csv": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/inputs/laion10m_acsg_v1/graph2vec_release10_v2/graph2vec_embedding.csv",
+    "csv_sha256": "1f777d329f09df6f39b4bb71ebb429ca072b13191038ed8edf1a9e4ee9d89c94",
+    "dtype": "float32",
+    "finite": true,
+    "npy": "/data/netg/ACSG/entry_method_exploration/20260914_gate_new_ood_v1/inputs/laion10m_acsg_v1/graph2vec_release10_v2/graph2vec_embedding.npy",
+    "npy_sha256": "73fedeb979afdc8c5aada0378a7763512c3c00f02f1fd3927d9f719f4392a96e",
+    "row_norm_max": 8.027260780334473,
+    "row_norm_min": 3.0117781162261963,
+    "shape": [
+      512,
+      512
+    ]
+  },
+  "purpose": "standalone GATE topology embedding adapter",
+  "schema_version": 1
+}

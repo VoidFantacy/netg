@@ -1,0 +1,182 @@
+[
+  {
+    "dataset": "webvid2_5m_light_v1",
+    "phase": "wall",
+    "method": "base",
+    "kind": "base",
+    "queries": 512,
+    "L": 128,
+    "recall_pct": 75.078125,
+    "delta_recall_pp": 0.0,
+    "failure_pct": 1.171875,
+    "failure_delta_pp": 0.0,
+    "helped": 0,
+    "harmed": 0,
+    "rescued": 0,
+    "new_failures": 0,
+    "utility": 0.0,
+    "route_ndc": 109.814453125,
+    "graph_ndc": 1631.064453125,
+    "total_ndc": 1740.87890625,
+    "total_NDC_change_pct": 0.0,
+    "changed_queries": 0,
+    "mean_swaps": 0.0,
+    "first_stop_pct": 100.0,
+    "QPS_median": 1876.7686574355796,
+    "QPS_min": 1871.9560901694779,
+    "QPS_max": 1901.9773547232828,
+    "timings": [
+      {
+        "QPS": 1876.2806004462916,
+        "order_position": 0,
+        "repeat": 0,
+        "wall_seconds": 0.272880293
+      },
+      {
+        "QPS": 1871.9560901694779,
+        "order_position": 2,
+        "repeat": 1,
+        "wall_seconds": 0.273510689
+      },
+      {
+        "QPS": 1901.9773547232828,
+        "order_position": 1,
+        "repeat": 2,
+        "wall_seconds": 0.269193531
+      },
+      {
+        "QPS": 1876.7686574355796,
+        "order_position": 0,
+        "repeat": 3,
+        "wall_seconds": 0.27280933
+      },
+      {
+        "QPS": 1882.0865705712472,
+        "order_position": 2,
+        "repeat": 4,
+        "wall_seconds": 0.272038496
+      }
+    ],
+    "native_numpy_score_max_error": 0.0
+  },
+  {
+    "dataset": "webvid2_5m_light_v1",
+    "phase": "wall",
+    "method": "rl_20260918",
+    "kind": "model",
+    "queries": 512,
+    "L": 128,
+    "recall_pct": 74.609375,
+    "delta_recall_pp": -0.46875,
+    "failure_pct": 1.5625,
+    "failure_delta_pp": 0.390625,
+    "helped": 6,
+    "harmed": 7,
+    "rescued": 0,
+    "new_failures": 2,
+    "utility": -0.04746758652279424,
+    "route_ndc": 109.814453125,
+    "graph_ndc": 1637.8125,
+    "total_ndc": 1747.626953125,
+    "total_NDC_change_pct": 0.38762299036272374,
+    "changed_queries": 196,
+    "mean_swaps": 0.404296875,
+    "first_stop_pct": 61.71875,
+    "QPS_median": 1701.8242335921816,
+    "QPS_min": 1686.0485577308477,
+    "QPS_max": 1716.2250447554286,
+    "timings": [
+      {
+        "QPS": 1716.2250447554286,
+        "order_position": 1,
+        "repeat": 0,
+        "wall_seconds": 0.298329174
+      },
+      {
+        "QPS": 1711.3047703509549,
+        "order_position": 0,
+        "repeat": 1,
+        "wall_seconds": 0.299186918
+      },
+      {
+        "QPS": 1694.2170346884948,
+        "order_position": 2,
+        "repeat": 2,
+        "wall_seconds": 0.302204493
+      },
+      {
+        "QPS": 1686.0485577308477,
+        "order_position": 1,
+        "repeat": 3,
+        "wall_seconds": 0.303668597
+      },
+      {
+        "QPS": 1701.8242335921816,
+        "order_position": 0,
+        "repeat": 4,
+        "wall_seconds": 0.300853631
+      }
+    ],
+    "native_numpy_score_max_error": 1.4210854715202004e-14
+  },
+  {
+    "dataset": "webvid2_5m_light_v1",
+    "phase": "wall",
+    "method": "exact_20260918",
+    "kind": "model",
+    "queries": 512,
+    "L": 128,
+    "recall_pct": 74.82421875,
+    "delta_recall_pp": -0.25390625,
+    "failure_pct": 1.5625,
+    "failure_delta_pp": 0.390625,
+    "helped": 6,
+    "harmed": 8,
+    "rescued": 0,
+    "new_failures": 2,
+    "utility": -0.025809637811696692,
+    "route_ndc": 109.814453125,
+    "graph_ndc": 1636.037109375,
+    "total_ndc": 1745.8515625,
+    "total_NDC_change_pct": 0.28564055961315393,
+    "changed_queries": 264,
+    "mean_swaps": 0.603515625,
+    "first_stop_pct": 48.4375,
+    "QPS_median": 1714.1745339967983,
+    "QPS_min": 1697.7854828942277,
+    "QPS_max": 1716.9041483231078,
+    "timings": [
+      {
+        "QPS": 1714.1745339967983,
+        "order_position": 2,
+        "repeat": 0,
+        "wall_seconds": 0.298686038
+      },
+      {
+        "QPS": 1716.9041483231078,
+        "order_position": 1,
+        "repeat": 1,
+        "wall_seconds": 0.298211173
+      },
+      {
+        "QPS": 1715.363617385599,
+        "order_position": 0,
+        "repeat": 2,
+        "wall_seconds": 0.29847899
+      },
+      {
+        "QPS": 1697.7854828942277,
+        "order_position": 2,
+        "repeat": 3,
+        "wall_seconds": 0.301569312
+      },
+      {
+        "QPS": 1709.1785780556918,
+        "order_position": 1,
+        "repeat": 4,
+        "wall_seconds": 0.299559102
+      }
+    ],
+    "native_numpy_score_max_error": 1.7763568394002505e-14
+  }
+]

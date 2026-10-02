@@ -1,0 +1,42 @@
+{
+  "status": "CURRENT_GT10_REBUILT_WITH_GT_COST",
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "GT_search_seconds": 395.6839601529937,
+      "base_load_flat_seconds": 6.053650506997656,
+      "H_select_seconds": 0.36516429200128186,
+      "profile_seconds": 1.838814309994632,
+      "router_build_seconds": 0.055153099,
+      "nonoverlapping_core_stage_sum_seconds": 403.99674236098724,
+      "full_GT_H_profile_process_seconds": 404.3779336600055,
+      "router_process_seconds_including_audit": 0.46647553500224603,
+      "GT_fraction_of_core_stage_sum": 0.979423640499146,
+      "GT_exact_rows": 25000,
+      "graph_semantics_independently_equal": true
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "GT_search_seconds": 1770.1251785540298,
+      "base_load_flat_seconds": 9.379023130997666,
+      "H_select_seconds": 0.1767465840021032,
+      "profile_seconds": 0.5057098580000456,
+      "router_build_seconds": 0.045245884,
+      "nonoverlapping_core_stage_sum_seconds": 1780.2319040110297,
+      "full_GT_H_profile_process_seconds": 1780.6342113489954,
+      "router_process_seconds_including_audit": 0.2534817209962057,
+      "GT_fraction_of_core_stage_sum": 0.9943228039929919,
+      "GT_exact_rows": 25000,
+      "graph_semantics_independently_equal": true
+    }
+  },
+  "new_exact_GT_queries": 50000,
+  "new_ANN_calls": 100000,
+  "new_NSG_calls": 0,
+  "QPS_measured": false,
+  "default_changed": false,
+  "excluded": [
+    "embedding extraction",
+    "download",
+    "bottom NSG construction"
+  ],
+  "timing_scope": "single run current cache state without cache flush; offline CPU0-7; router insertion serial; stage sum excludes audit and I/O; whole process includes them"
+}

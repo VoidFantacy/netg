@@ -1,0 +1,1757 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE_LOCAL_READ_ONLY_HYPOTHESIS_REVIEW",
+  "scope": "Current handoff/report and bound small protocol/analysis/diagnosis summaries only; no raw GT/graph/base/query/count/NPZ read; no experiment or implementation run",
+  "review": {
+    "path": "/data/netg/ACSG/research_direction_review/20260908_v1/reviews/local_hypothesis_audit.md",
+    "sha256": "9052a169ac47df1aa6a425638c79a15fafc933dbfdabc1baab4cd6a72329d101",
+    "bytes": 17805,
+    "local_links_checked": 14,
+    "missing_links": []
+  },
+  "original_version_gate": "P3 NOPASS unchanged",
+  "original_project_documents_or_gates_modified": false,
+  "new_experiment_performed": false,
+  "sources": [
+    {
+      "id": "summary.md",
+      "path": "/data/netg/ACSG/summary.md",
+      "sha256": "c85f9f21e85291535eaf44eae63da38f96b10a339af8d52d4dccccd5b9c0745f",
+      "bytes": 13781,
+      "verified_json_pointers": []
+    },
+    {
+      "id": "spec.md",
+      "path": "/data/netg/ACSG/spec.md",
+      "sha256": "368e55635deebf35991a4548e11c1308d106579a8b4434eed186a0963b005040",
+      "bytes": 24782,
+      "verified_json_pointers": []
+    },
+    {
+      "id": "s-target.md",
+      "path": "/data/netg/ACSG/s-target.md",
+      "sha256": "dc7a7fc8d79ff25cd9547d4e2e18f117b7078424bdbe66cb0caa3706dd518a86",
+      "bytes": 17772,
+      "verified_json_pointers": []
+    },
+    {
+      "id": "实验总结.md",
+      "path": "/data/netg/ACSG/实验总结.md",
+      "sha256": "4bda0c093a3169fbe2f376d756ac2f718e2f5f7b83b83b55646ba40444651d54",
+      "bytes": 29024,
+      "verified_json_pointers": []
+    },
+    {
+      "id": "current_findings.md",
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/current_findings.md",
+      "sha256": "9265554697068720fa7f73fe8cb0ea96d137d54021e766746f6af1567fe4e348",
+      "bytes": 10764,
+      "verified_json_pointers": []
+    },
+    {
+      "id": "parent_protocol",
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/protocol.json",
+      "sha256": "857745551778adc1884a4198862b2f55fd72a642abe7d7622970e602d88ff48b",
+      "bytes": 15373,
+      "verified_json_pointers": [
+        {
+          "pointer": "/search_contract",
+          "value": {
+            "capacity": "L_shared + sum L_region = L_total exactly; shared floor(0.25*L), regional residual distributed with minimum4 then largest remainder, regionID tie",
+            "scheduler": "Weighted round robin across queues; every retained candidate expanded before termination",
+            "routing_seeds": "Paired Fast first entry retained; graph default entry seeds shared queue as explicit exception; duplicate entry first ownership wins",
+            "cross_region_edges": "Always traversable; no filtering by active region",
+            "visited": "One global visited structure; each base node computed once per query",
+            "results": "One independent global top-K collector in both unified and regional controls",
+            "api": "Real router and search have no GT input; oracle lives in evaluation adapter only",
+            "top_m": "New path consumes all entry IDs, sorted HNSW return order and dedup recorded; legacy search_new mode2 three-entry cap must not be reused for top-m claims"
+          }
+        },
+        {
+          "pointer": "/stages/P2/gate",
+          "value": "Repeatable mechanism gain OR oracle potential with localized bottleneck; no numeric threshold added to plan"
+        },
+        {
+          "pointer": "/p5_p6_p7_statistics",
+          "value": {
+            "paired_fast_anchors": [
+              64,
+              96,
+              128
+            ],
+            "family_count": 12,
+            "bootstrap_repetitions": 10000,
+            "ordinary_CI": 0.95,
+            "familywise_alpha": 0.05,
+            "multiplicity": "Bonferroni 2 datasets x3 anchors x2 benefit families",
+            "matching": "Measured points only; interpolate only for plots; redo cost matching and best feasible selection inside each bootstrap",
+            "required_per_dataset": "At least two adjacent anchors satisfy the same family: matched Recall average QPS>=+10%, OR matched QPS mean Recall@10>=+1pp; corrected CI supports positive benefit",
+            "dataset_families_may_differ": true,
+            "off_target_degradation_limits": {
+              "matched_recall_qps_percent": -3,
+              "matched_qps_recall_pp": -0.2
+            },
+            "unresolved_measurement": "INCONCLUSIVE; no automatic parameter/seed/threshold sweep"
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2_gate",
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P2.json",
+      "sha256": "6240cea60d790d030e0fdaf560b95d9e951260d4ba3d6701863b06c1c4cc895e",
+      "bytes": 4344,
+      "verified_json_pointers": [
+        {
+          "pointer": "/decision",
+          "value": "GO_P3_STRUCTURE_DIAGNOSTIC_ONLY"
+        },
+        {
+          "pointer": "/confirmed",
+          "value": [
+            "Both datasets10Kpilot count/plain/fullroutes/fiveroundidentities and strict64region input contract pass",
+            "Sameoracle route regional-minus-unified Recall positive at bothL64/128 and bothdatasets; ordinary95CI lower>0",
+            "Saved320traces replay correctly; sameentry nonGT retained-and-expanded ancestors lead to rescuedGT, with reverse harm also observed",
+            "Geometric/oracle top4 absoluteGTmass Web.62539/.94691 and Yandex.78774/.98625 show selection gap",
+            "Geometric weights nearlyuniform: meanmax .254254/.265276 versusoracle .647620/.774598. WebL64 .9983 exactlyuniformcapacities; allsamecapacity outputs/counters equal"
+          ]
+        },
+        {
+          "pointer": "/negative_evidence",
+          "value": [
+            "All realP2 methods dominated bypairedFast at testedL64/128",
+            "Oracleprotected incurs moreNDC/expansions andlowerQPS, so sameLRecall gain is not matchedcost improvement",
+            "HighgeometricselectedGTmass queries still harmed; missingregions alone is not a full explanation"
+          ]
+        },
+        {
+          "pointer": "/limits",
+          "value": [
+            "Developmentpilot historicallyused; ordinary95querybootstrap exploratory/unadjusted",
+            "5timingrounds are not independentRecall samples",
+            "Trace actualIDs0..15 are only16/23preselected;192/276pairs, all12dataset/L/contrastcells represented; no population claims fromtrace",
+            "Retention and capacityweighted scheduling changedtogether; firstdiscovery ancestors are not provennecessary/uniquebridges",
+            "Prediction and selectedportal contributions not fullyseparated; fixingprediction is a hypothesis",
+            "No validation/heldout read; no auxiliarygraph trigger"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P3_gate",
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/gates/P3.json",
+      "sha256": "3e154f9db332ec9a404b85d85061459967911be797e4350c191b1d9774dbc4f2",
+      "bytes": 4914,
+      "verified_json_pointers": [
+        {
+          "pointer": "/status",
+          "value": "NOPASS"
+        },
+        {
+          "pointer": "/structure_condition_met",
+          "value": true
+        },
+        {
+          "pointer": "/primary_search_condition/cells",
+          "value": [
+            {
+              "dataset": "webvid2_5m_light_v1",
+              "L": 64,
+              "contrast": "structure_under_greedy3",
+              "recall_delta_pp": -0.8660000000000001,
+              "ordinary95_interval_pp": [
+                -1.083,
+                -0.6469999999999999
+              ],
+              "lower_bound_positive": false
+            },
+            {
+              "dataset": "webvid2_5m_light_v1",
+              "L": 128,
+              "contrast": "structure_under_greedy3",
+              "recall_delta_pp": -0.79,
+              "ordinary95_interval_pp": [
+                -0.96,
+                -0.621
+              ],
+              "lower_bound_positive": false
+            },
+            {
+              "dataset": "yandex_t2i_official10M_ip_v1",
+              "L": 64,
+              "contrast": "structure_under_greedy3",
+              "recall_delta_pp": -0.095,
+              "ordinary95_interval_pp": [
+                -0.20700000000000002,
+                0.015999999999999997
+              ],
+              "lower_bound_positive": false
+            },
+            {
+              "dataset": "yandex_t2i_official10M_ip_v1",
+              "L": 128,
+              "contrast": "structure_under_greedy3",
+              "recall_delta_pp": -0.017000000000000008,
+              "ordinary95_interval_pp": [
+                -0.08,
+                0.04799999999999998
+              ],
+              "lower_bound_positive": false
+            }
+          ]
+        },
+        {
+          "pointer": "/portal_controls",
+          "value": "All eight fixed greedy-minus-frequency pilot intervals include zero. Fit proxy gains do not establish joint search gains."
+        },
+        {
+          "pointer": "/oracle_queue_protection",
+          "value": "All sixteen fixed protected-minus-unified cells improve Recall with higher NDC and lower QPS; this does not rescue failed target-aware partition transfer."
+        }
+      ]
+    },
+    {
+      "id": "P3_protocol",
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/protocol.json",
+      "sha256": "fea64bc3c6a8046378849f55508198dcfd9a00df880a74e9d93cf22d051a418f",
+      "bytes": 8498,
+      "verified_json_pointers": [
+        {
+          "pointer": "/objective",
+          "value": {
+            "partition": "256leaflabels; coarse=leaf//16",
+            "J": "C/M + lambda*S/(9*Q)",
+            "C": "Originaldirected validnonself storededges crossing leaflabels; padding/self excluded; direction andduplicates preserved",
+            "M": "Alloriginaldirected validnonself storededges; reciprocal edges count2",
+            "S": "sum_fitq(distinct_leafregions(GT10(q))-1)",
+            "Q": 20000,
+            "lambdas": [
+              0,
+              1
+            ],
+            "coarse_objective_optimized": false,
+            "coarse_metrics": "reportonly, no extraweight",
+            "strict_move_test": "deltaC*(9*Q)+lambda*deltaS*M<0 using overflow-safe integer arithmetic",
+            "deltaCut": "out_to_old+in_from_old-out_to_new-in_from_new",
+            "deltaS": "sum_incident_fitq(1[count(q,new)==0]-1[count(q,old)==1])"
+          }
+        },
+        {
+          "pointer": "/refinement/destination_candidates",
+          "value": "currentincoming/outgoingneighborleafIDs; lambda1 additionallycurrentleafIDsfromsamefitGT10query; sortedunique"
+        },
+        {
+          "pointer": "/refinement/lambda0",
+          "value": "GT-freecandidategeneration/movedecisions; GTonlyposthocstructuremetrics"
+        },
+        {
+          "pointer": "/portals/proxy",
+          "value": "Singlecandidateentry, noFast/defaultseed, unifiedpool, originaldirectedNSG/rawIP/K10/L32; one search perleaf/candidate/query"
+        },
+        {
+          "pointer": "/evaluation/oracle",
+          "value": "Globaltop4trueGTleafmass, tiesleafID; usesatmost4coarsebyconstruction; NOTP4hierarchicalinference"
+        },
+        {
+          "pointer": "/analysis_and_gate/search_gate",
+          "value": "Bothdatasets mainlambda1_greedy3 oracle_probability Recall improvesversuslambda0_greedy3 at bothfixedL64/128 withordinary95lower>0; fixedfrequencycontrols andportalcontrasts reported"
+        },
+        {
+          "pointer": "/analysis_and_gate/cost_gate_scope",
+          "value": "No deployedperformanceclaim atP3; allwall/NDCcostreported; oracletradeoff onlyallowsnextP4hypothesis; P4 mustretainbenefitwithrealpredictioncost"
+        }
+      ]
+    },
+    {
+      "id": "P2_analysis",
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/analysis_v1/analysis.json",
+      "sha256": "e73a8d8c16a5bebb2404596b63d621b1780b1aab0f9eb29efce5281edfc04c1f",
+      "bytes": 134043,
+      "verified_json_pointers": [
+        {
+          "pointer": "/datasets/0/fixed_comparisons/1",
+          "value": {
+            "dataset": "webvid2_5m_light_v1",
+            "L": 64,
+            "contrast": "probability_protection",
+            "family": "primary_queue",
+            "candidate": "geom_probability",
+            "reference": "geom_unified",
+            "recall_delta_pp": -5.431,
+            "paired_query_bootstrap95_pp": [
+              -5.878025000000001,
+              -4.9799999999999995
+            ],
+            "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+            "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_NEGATIVE",
+            "query_improved": 1908,
+            "query_harmed": 4872,
+            "query_equal": 3220,
+            "qps_pairing": {
+              "pairs": [
+                {
+                  "round": 0,
+                  "candidate_qps": 19496.067366368046,
+                  "reference_qps": 28906.354860060565,
+                  "candidate_batch_wall_us": 512923.956,
+                  "reference_batch_wall_us": 345944.691,
+                  "qps_ratio": 0.6744561000773377
+                },
+                {
+                  "round": 1,
+                  "candidate_qps": 19463.681601231307,
+                  "reference_qps": 28204.107303225697,
+                  "candidate_batch_wall_us": 513777.414,
+                  "reference_batch_wall_us": 354558.288,
+                  "qps_ratio": 0.6901009626709671
+                },
+                {
+                  "round": 2,
+                  "candidate_qps": 19565.085101556106,
+                  "reference_qps": 28848.877207901576,
+                  "candidate_batch_wall_us": 511114.567,
+                  "reference_batch_wall_us": 346633.941,
+                  "qps_ratio": 0.6781922554752778
+                },
+                {
+                  "round": 3,
+                  "candidate_qps": 19810.722454078445,
+                  "reference_qps": 28947.79933951717,
+                  "candidate_batch_wall_us": 504777.149,
+                  "reference_batch_wall_us": 345449.403,
+                  "qps_ratio": 0.6843602244760093
+                },
+                {
+                  "round": 4,
+                  "candidate_qps": 19532.428392930917,
+                  "reference_qps": 28988.273820011007,
+                  "candidate_batch_wall_us": 511969.111,
+                  "reference_batch_wall_us": 344967.074,
+                  "qps_ratio": 0.6738044670823901
+                }
+              ],
+              "mean_paired_ratio": 0.6801828019563965,
+              "median_paired_ratio": 0.6781922554752778,
+              "min_paired_ratio": 0.6738044670823901,
+              "max_paired_ratio": 0.6901009626709671,
+              "candidate_faster_rounds": 0,
+              "ratio_of_mean_qps": 0.6801327658397299,
+              "ratio_CI": null,
+              "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+            },
+            "mean_graph_ndc_delta": 561.5727,
+            "mean_total_ndc_delta": 561.5726999999999,
+            "oracle_involved": false,
+            "matched_cost_or_recall_claim": false,
+            "p2_gate_automatically_passed": false
+          }
+        },
+        {
+          "pointer": "/datasets/0/fixed_comparisons/2",
+          "value": {
+            "dataset": "webvid2_5m_light_v1",
+            "L": 64,
+            "contrast": "oracle_protection",
+            "family": "primary_queue",
+            "candidate": "oracle_probability",
+            "reference": "oracle_unified",
+            "recall_delta_pp": 5.412999999999999,
+            "paired_query_bootstrap95_pp": [
+              5.009975,
+              5.826
+            ],
+            "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+            "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_POSITIVE",
+            "query_improved": 3283,
+            "query_harmed": 2172,
+            "query_equal": 4545,
+            "qps_pairing": {
+              "pairs": [
+                {
+                  "round": 0,
+                  "candidate_qps": 21143.176274335285,
+                  "reference_qps": 30656.993159045265,
+                  "candidate_batch_wall_us": 472965.834,
+                  "reference_batch_wall_us": 326189.85,
+                  "qps_ratio": 0.6896689497448985
+                },
+                {
+                  "round": 1,
+                  "candidate_qps": 21574.840137716088,
+                  "reference_qps": 29989.813150238566,
+                  "candidate_batch_wall_us": 463502.855,
+                  "reference_batch_wall_us": 333446.559,
+                  "qps_ratio": 0.7194056204896516
+                },
+                {
+                  "round": 2,
+                  "candidate_qps": 20757.11584184555,
+                  "reference_qps": 30593.998231575122,
+                  "candidate_batch_wall_us": 481762.499,
+                  "reference_batch_wall_us": 326861.495,
+                  "qps_ratio": 0.6784701915953819
+                },
+                {
+                  "round": 3,
+                  "candidate_qps": 22087.23778638699,
+                  "reference_qps": 31127.604411253436,
+                  "candidate_batch_wall_us": 452750.14,
+                  "reference_batch_wall_us": 321258.259,
+                  "qps_ratio": 0.7095707557373699
+                },
+                {
+                  "round": 4,
+                  "candidate_qps": 21198.915835718806,
+                  "reference_qps": 31127.05736425634,
+                  "candidate_batch_wall_us": 471722.237,
+                  "reference_batch_wall_us": 321263.905,
+                  "qps_ratio": 0.6810446483149363
+                }
+              ],
+              "mean_paired_ratio": 0.6956320331764476,
+              "median_paired_ratio": 0.6896689497448985,
+              "min_paired_ratio": 0.6784701915953819,
+              "max_paired_ratio": 0.7194056204896516,
+              "candidate_faster_rounds": 0,
+              "ratio_of_mean_qps": 0.6955338059038015,
+              "ratio_CI": null,
+              "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+            },
+            "mean_graph_ndc_delta": 409.0295000000001,
+            "mean_total_ndc_delta": 409.0295000000001,
+            "oracle_involved": true,
+            "matched_cost_or_recall_claim": false,
+            "p2_gate_automatically_passed": false
+          }
+        },
+        {
+          "pointer": "/datasets/0/fixed_comparisons/8",
+          "value": {
+            "dataset": "webvid2_5m_light_v1",
+            "L": 128,
+            "contrast": "probability_protection",
+            "family": "primary_queue",
+            "candidate": "geom_probability",
+            "reference": "geom_unified",
+            "recall_delta_pp": -3.64,
+            "paired_query_bootstrap95_pp": [
+              -4.0169999999999995,
+              -3.254
+            ],
+            "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+            "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_NEGATIVE",
+            "query_improved": 1699,
+            "query_harmed": 4171,
+            "query_equal": 4130,
+            "qps_pairing": {
+              "pairs": [
+                {
+                  "round": 0,
+                  "candidate_qps": 11942.512613651967,
+                  "reference_qps": 16479.50079136046,
+                  "candidate_batch_wall_us": 837344.73,
+                  "reference_batch_wall_us": 606814.498,
+                  "qps_ratio": 0.7246889796511886
+                },
+                {
+                  "round": 1,
+                  "candidate_qps": 12032.358100842726,
+                  "reference_qps": 16490.67521247757,
+                  "candidate_batch_wall_us": 831092.286,
+                  "reference_batch_wall_us": 606403.308,
+                  "qps_ratio": 0.7296461755391626
+                },
+                {
+                  "round": 2,
+                  "candidate_qps": 11915.762962692026,
+                  "reference_qps": 16429.69336773663,
+                  "candidate_batch_wall_us": 839224.482,
+                  "reference_batch_wall_us": 608654.086,
+                  "qps_ratio": 0.7252577815049968
+                },
+                {
+                  "round": 3,
+                  "candidate_qps": 12008.714483926697,
+                  "reference_qps": 16636.750655732954,
+                  "candidate_batch_wall_us": 832728.6,
+                  "reference_batch_wall_us": 601078.913,
+                  "qps_ratio": 0.7218185048526014
+                },
+                {
+                  "round": 4,
+                  "candidate_qps": 12118.262712333579,
+                  "reference_qps": 16615.57510247257,
+                  "candidate_batch_wall_us": 825200.793,
+                  "reference_batch_wall_us": 601844.952,
+                  "qps_ratio": 0.7293315240427793
+                }
+              ],
+              "mean_paired_ratio": 0.7261485931181457,
+              "median_paired_ratio": 0.7252577815049968,
+              "min_paired_ratio": 0.7218185048526014,
+              "max_paired_ratio": 0.7296461755391626,
+              "candidate_faster_rounds": 0,
+              "ratio_of_mean_qps": 0.7261466048083484,
+              "ratio_CI": null,
+              "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+            },
+            "mean_graph_ndc_delta": 725.1126999999999,
+            "mean_total_ndc_delta": 725.1126999999999,
+            "oracle_involved": false,
+            "matched_cost_or_recall_claim": false,
+            "p2_gate_automatically_passed": false
+          }
+        },
+        {
+          "pointer": "/datasets/0/fixed_comparisons/9",
+          "value": {
+            "dataset": "webvid2_5m_light_v1",
+            "L": 128,
+            "contrast": "oracle_protection",
+            "family": "primary_queue",
+            "candidate": "oracle_probability",
+            "reference": "oracle_unified",
+            "recall_delta_pp": 5.252000000000001,
+            "paired_query_bootstrap95_pp": [
+              4.917000000000001,
+              5.596025
+            ],
+            "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+            "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_POSITIVE",
+            "query_improved": 2943,
+            "query_harmed": 1395,
+            "query_equal": 5662,
+            "qps_pairing": {
+              "pairs": [
+                {
+                  "round": 0,
+                  "candidate_qps": 13988.232284886833,
+                  "reference_qps": 17012.936550186783,
+                  "candidate_batch_wall_us": 714886.613,
+                  "reference_batch_wall_us": 587788.003,
+                  "qps_ratio": 0.8222115120233761
+                },
+                {
+                  "round": 1,
+                  "candidate_qps": 12766.956012914874,
+                  "reference_qps": 16968.59135798805,
+                  "candidate_batch_wall_us": 783272.065,
+                  "reference_batch_wall_us": 589324.11,
+                  "qps_ratio": 0.7523874989720207
+                },
+                {
+                  "round": 2,
+                  "candidate_qps": 14055.34299738426,
+                  "reference_qps": 17011.938706393128,
+                  "candidate_batch_wall_us": 711473.21,
+                  "reference_batch_wall_us": 587822.48,
+                  "qps_ratio": 0.8262046577973049
+                },
+                {
+                  "round": 3,
+                  "candidate_qps": 14069.113015105437,
+                  "reference_qps": 17149.46192002625,
+                  "candidate_batch_wall_us": 710776.862,
+                  "reference_batch_wall_us": 583108.674,
+                  "qps_ratio": 0.8203821834594273
+                },
+                {
+                  "round": 4,
+                  "candidate_qps": 13841.559674916909,
+                  "reference_qps": 16833.65546272539,
+                  "candidate_batch_wall_us": 722461.936,
+                  "reference_batch_wall_us": 594048.038,
+                  "qps_ratio": 0.8222551367744307
+                }
+              ],
+              "mean_paired_ratio": 0.808688197805312,
+              "median_paired_ratio": 0.8222115120233761,
+              "min_paired_ratio": 0.7523874989720207,
+              "max_paired_ratio": 0.8262046577973049,
+              "candidate_faster_rounds": 0,
+              "ratio_of_mean_qps": 0.808707537447916,
+              "ratio_CI": null,
+              "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+            },
+            "mean_graph_ndc_delta": 417.1102999999998,
+            "mean_total_ndc_delta": 417.1102999999998,
+            "oracle_involved": true,
+            "matched_cost_or_recall_claim": false,
+            "p2_gate_automatically_passed": false
+          }
+        },
+        {
+          "pointer": "/datasets/1/fixed_comparisons/1",
+          "value": {
+            "dataset": "yandex_t2i_official10M_ip_v1",
+            "L": 64,
+            "contrast": "probability_protection",
+            "family": "primary_queue",
+            "candidate": "geom_probability",
+            "reference": "geom_unified",
+            "recall_delta_pp": -6.866999999999999,
+            "paired_query_bootstrap95_pp": [
+              -7.309,
+              -6.421
+            ],
+            "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+            "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_NEGATIVE",
+            "query_improved": 1325,
+            "query_harmed": 5299,
+            "query_equal": 3376,
+            "qps_pairing": {
+              "pairs": [
+                {
+                  "round": 0,
+                  "candidate_qps": 16455.24607239975,
+                  "reference_qps": 22754.900952273718,
+                  "candidate_batch_wall_us": 607708.931,
+                  "reference_batch_wall_us": 439465.767,
+                  "qps_ratio": 0.7231517336380894
+                },
+                {
+                  "round": 1,
+                  "candidate_qps": 16357.776743308343,
+                  "reference_qps": 25812.975334486277,
+                  "candidate_batch_wall_us": 611330.021,
+                  "reference_batch_wall_us": 387402.067,
+                  "qps_ratio": 0.633703652188218
+                },
+                {
+                  "round": 2,
+                  "candidate_qps": 16466.771125385756,
+                  "reference_qps": 25860.46501476171,
+                  "candidate_batch_wall_us": 607283.597,
+                  "reference_batch_wall_us": 386690.649,
+                  "qps_ratio": 0.6367546413409878
+                },
+                {
+                  "round": 3,
+                  "candidate_qps": 16579.658470409155,
+                  "reference_qps": 25901.306676371576,
+                  "candidate_batch_wall_us": 603148.733,
+                  "reference_batch_wall_us": 386080.908,
+                  "qps_ratio": 0.6401089596585458
+                },
+                {
+                  "round": 4,
+                  "candidate_qps": 16685.22778680483,
+                  "reference_qps": 26309.045426826364,
+                  "candidate_batch_wall_us": 599332.543,
+                  "reference_batch_wall_us": 380097.409,
+                  "qps_ratio": 0.634201185033932
+                }
+              ],
+              "mean_paired_ratio": 0.6535840343719546,
+              "median_paired_ratio": 0.6367546413409878,
+              "min_paired_ratio": 0.633703652188218,
+              "max_paired_ratio": 0.7231517336380894,
+              "candidate_faster_rounds": 0,
+              "ratio_of_mean_qps": 0.6518124751532813,
+              "ratio_CI": null,
+              "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+            },
+            "mean_graph_ndc_delta": 1019.7737999999997,
+            "mean_total_ndc_delta": 1019.7737999999999,
+            "oracle_involved": false,
+            "matched_cost_or_recall_claim": false,
+            "p2_gate_automatically_passed": false
+          }
+        },
+        {
+          "pointer": "/datasets/1/fixed_comparisons/2",
+          "value": {
+            "dataset": "yandex_t2i_official10M_ip_v1",
+            "L": 64,
+            "contrast": "oracle_protection",
+            "family": "primary_queue",
+            "candidate": "oracle_probability",
+            "reference": "oracle_unified",
+            "recall_delta_pp": 3.1550000000000002,
+            "paired_query_bootstrap95_pp": [
+              2.7710000000000004,
+              3.54
+            ],
+            "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+            "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_POSITIVE",
+            "query_improved": 2134,
+            "query_harmed": 2217,
+            "query_equal": 5649,
+            "qps_pairing": {
+              "pairs": [
+                {
+                  "round": 0,
+                  "candidate_qps": 19004.54472211894,
+                  "reference_qps": 26397.971708676007,
+                  "candidate_batch_wall_us": 526189.927,
+                  "reference_batch_wall_us": 378816.983,
+                  "qps_ratio": 0.719924429492167
+                },
+                {
+                  "round": 1,
+                  "candidate_qps": 18954.438055339328,
+                  "reference_qps": 26297.61194147209,
+                  "candidate_batch_wall_us": 527580.927,
+                  "reference_batch_wall_us": 380262.665,
+                  "qps_ratio": 0.720766512850075
+                },
+                {
+                  "round": 2,
+                  "candidate_qps": 19131.543883125138,
+                  "reference_qps": 26724.073754092882,
+                  "candidate_batch_wall_us": 522696.969,
+                  "reference_batch_wall_us": 374194.447,
+                  "qps_ratio": 0.7158917483602244
+                },
+                {
+                  "round": 3,
+                  "candidate_qps": 19047.86042936274,
+                  "reference_qps": 26942.586049635465,
+                  "candidate_batch_wall_us": 524993.347,
+                  "reference_batch_wall_us": 371159.62,
+                  "qps_ratio": 0.7069796638775311
+                },
+                {
+                  "round": 4,
+                  "candidate_qps": 19176.13465303799,
+                  "reference_qps": 27026.7060666312,
+                  "candidate_batch_wall_us": 521481.528,
+                  "reference_batch_wall_us": 370004.394,
+                  "qps_ratio": 0.7095254081559721
+                }
+              ],
+              "mean_paired_ratio": 0.714617552547194,
+              "median_paired_ratio": 0.7158917483602244,
+              "min_paired_ratio": 0.7069796638775311,
+              "max_paired_ratio": 0.720766512850075,
+              "candidate_faster_rounds": 0,
+              "ratio_of_mean_qps": 0.7145608544456689,
+              "ratio_CI": null,
+              "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+            },
+            "mean_graph_ndc_delta": 703.1252999999999,
+            "mean_total_ndc_delta": 703.1253000000002,
+            "oracle_involved": true,
+            "matched_cost_or_recall_claim": false,
+            "p2_gate_automatically_passed": false
+          }
+        },
+        {
+          "pointer": "/datasets/1/fixed_comparisons/8",
+          "value": {
+            "dataset": "yandex_t2i_official10M_ip_v1",
+            "L": 128,
+            "contrast": "probability_protection",
+            "family": "primary_queue",
+            "candidate": "geom_probability",
+            "reference": "geom_unified",
+            "recall_delta_pp": -3.4879999999999995,
+            "paired_query_bootstrap95_pp": [
+              -3.852025,
+              -3.115
+            ],
+            "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+            "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_NEGATIVE",
+            "query_improved": 1097,
+            "query_harmed": 3851,
+            "query_equal": 5052,
+            "qps_pairing": {
+              "pairs": [
+                {
+                  "round": 0,
+                  "candidate_qps": 10352.011668125024,
+                  "reference_qps": 13571.99478050939,
+                  "candidate_batch_wall_us": 965995.82,
+                  "reference_batch_wall_us": 736811.365,
+                  "qps_ratio": 0.7627479847687126
+                },
+                {
+                  "round": 1,
+                  "candidate_qps": 10245.262864000206,
+                  "reference_qps": 14935.66585897274,
+                  "candidate_batch_wall_us": 976060.852,
+                  "reference_batch_wall_us": 669538.278,
+                  "qps_ratio": 0.6859595655620047
+                },
+                {
+                  "round": 2,
+                  "candidate_qps": 9914.857391592019,
+                  "reference_qps": 14961.053281370563,
+                  "candidate_batch_wall_us": 1008587.376,
+                  "reference_batch_wall_us": 668402.138,
+                  "qps_ratio": 0.6627111878505209
+                },
+                {
+                  "round": 3,
+                  "candidate_qps": 9534.163689137018,
+                  "reference_qps": 14900.80526484788,
+                  "candidate_batch_wall_us": 1048859.693,
+                  "reference_batch_wall_us": 671104.67,
+                  "qps_ratio": 0.6398421776324281
+                },
+                {
+                  "round": 4,
+                  "candidate_qps": 10118.972534464454,
+                  "reference_qps": 14799.451077111968,
+                  "candidate_batch_wall_us": 988242.627,
+                  "reference_batch_wall_us": 675700.737,
+                  "qps_ratio": 0.683739719922039
+                }
+              ],
+              "mean_paired_ratio": 0.687000127147141,
+              "median_paired_ratio": 0.683739719922039,
+              "min_paired_ratio": 0.6398421776324281,
+              "max_paired_ratio": 0.7627479847687126,
+              "candidate_faster_rounds": 0,
+              "ratio_of_mean_qps": 0.6856085027181907,
+              "ratio_CI": null,
+              "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+            },
+            "mean_graph_ndc_delta": 1339.9782,
+            "mean_total_ndc_delta": 1339.9782,
+            "oracle_involved": false,
+            "matched_cost_or_recall_claim": false,
+            "p2_gate_automatically_passed": false
+          }
+        },
+        {
+          "pointer": "/datasets/1/fixed_comparisons/9",
+          "value": {
+            "dataset": "yandex_t2i_official10M_ip_v1",
+            "L": 128,
+            "contrast": "oracle_protection",
+            "family": "primary_queue",
+            "candidate": "oracle_probability",
+            "reference": "oracle_unified",
+            "recall_delta_pp": 3.359,
+            "paired_query_bootstrap95_pp": [
+              3.045,
+              3.6769999999999996
+            ],
+            "interval_scope": "POINTWISE_EXPLORATORY_PILOT_UNADJUSTED",
+            "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_POSITIVE",
+            "query_improved": 1687,
+            "query_harmed": 1088,
+            "query_equal": 7225,
+            "qps_pairing": {
+              "pairs": [
+                {
+                  "round": 0,
+                  "candidate_qps": 11882.197131463181,
+                  "reference_qps": 15283.413651187255,
+                  "candidate_batch_wall_us": 841595.194,
+                  "reference_batch_wall_us": 654304.086,
+                  "qps_ratio": 0.7774570133773839
+                },
+                {
+                  "round": 1,
+                  "candidate_qps": 11851.934137635766,
+                  "reference_qps": 13847.812890833748,
+                  "candidate_batch_wall_us": 843744.142,
+                  "reference_batch_wall_us": 722135.696,
+                  "qps_ratio": 0.8558704707427763
+                },
+                {
+                  "round": 2,
+                  "candidate_qps": 11716.25138124645,
+                  "reference_qps": 15211.094103181165,
+                  "candidate_batch_wall_us": 853515.316,
+                  "reference_batch_wall_us": 657414.906,
+                  "qps_ratio": 0.7702438300474505
+                },
+                {
+                  "round": 3,
+                  "candidate_qps": 11833.663003406391,
+                  "reference_qps": 15297.699785236206,
+                  "candidate_batch_wall_us": 845046.88,
+                  "reference_batch_wall_us": 653693.048,
+                  "qps_ratio": 0.7735583237701558
+                },
+                {
+                  "round": 4,
+                  "candidate_qps": 11615.720559625484,
+                  "reference_qps": 15283.04350159542,
+                  "candidate_batch_wall_us": 860902.253,
+                  "reference_batch_wall_us": 654319.933,
+                  "qps_ratio": 0.7600397498320869
+                }
+              ],
+              "mean_paired_ratio": 0.7874338775539707,
+              "median_paired_ratio": 0.7735583237701558,
+              "min_paired_ratio": 0.7600397498320869,
+              "max_paired_ratio": 0.8558704707427763,
+              "candidate_faster_rounds": 0,
+              "ratio_of_mean_qps": 0.7861366463444155,
+              "ratio_CI": null,
+              "ratio_CI_reason": "Five timing rounds are reported directly; no unsupported latency confidence claim"
+            },
+            "mean_graph_ndc_delta": 779.4125999999997,
+            "mean_total_ndc_delta": 779.4126000000001,
+            "oracle_involved": true,
+            "matched_cost_or_recall_claim": false,
+            "p2_gate_automatically_passed": false
+          }
+        },
+        {
+          "pointer": "/datasets/0/measurements/4",
+          "value": {
+            "dataset": "webvid2_5m_light_v1",
+            "method": "oracle_unified",
+            "L": 64,
+            "num_queries": 10000,
+            "recall": 0.65941,
+            "qps_mean_of_five": 30699.093263273746,
+            "qps_median_of_five": 30656.993159045265,
+            "qps_rounds": [
+              30656.993159045265,
+              29989.813150238566,
+              30593.998231575122,
+              31127.604411253436,
+              31127.05736425634
+            ],
+            "batch_wall_us_rounds": [
+              326189.85,
+              333446.559,
+              326861.495,
+              321258.259,
+              321263.905
+            ],
+            "qps_pooled_queries_over_total_wall": 30693.298985190893,
+            "actual_entries_min": 9,
+            "actual_entries_mean": 9.971,
+            "actual_entries_max": 10,
+            "oracle_diagnostic_only": true,
+            "deployment_frontier_eligible": false,
+            "result_hash": 10857289180887876811,
+            "route_hash": 7710271046799409071,
+            "mean_routing_ndc": 124.7466,
+            "mean_graph_ndc": 939.8859,
+            "mean_total_ndc": 1064.6325,
+            "mean_routing_mac": 63870.2592,
+            "mean_graph_mac": 481221.5808,
+            "mean_total_mac": 545091.84
+          }
+        },
+        {
+          "pointer": "/datasets/0/measurements/5",
+          "value": {
+            "dataset": "webvid2_5m_light_v1",
+            "method": "oracle_probability",
+            "L": 64,
+            "num_queries": 10000,
+            "recall": 0.7135400000000001,
+            "qps_mean_of_five": 21352.257175200542,
+            "qps_median_of_five": 21198.915835718806,
+            "qps_rounds": [
+              21143.176274335285,
+              21574.840137716088,
+              20757.11584184555,
+              22087.23778638699,
+              21198.915835718806
+            ],
+            "batch_wall_us_rounds": [
+              472965.834,
+              463502.855,
+              481762.499,
+              452750.14,
+              471722.237
+            ],
+            "qps_pooled_queries_over_total_wall": 21342.86247180402,
+            "actual_entries_min": 9,
+            "actual_entries_mean": 9.971,
+            "actual_entries_max": 10,
+            "oracle_diagnostic_only": true,
+            "deployment_frontier_eligible": false,
+            "result_hash": 15278120916365317288,
+            "route_hash": 7710271046799409071,
+            "mean_routing_ndc": 124.7466,
+            "mean_graph_ndc": 1348.9154,
+            "mean_total_ndc": 1473.662,
+            "mean_routing_mac": 63870.2592,
+            "mean_graph_mac": 690644.6848,
+            "mean_total_mac": 754514.944
+          }
+        }
+      ]
+    },
+    {
+      "id": "P3_analysis",
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/analysis_v1/analysis.json",
+      "sha256": "63da6a71425b0dbd6e186db1c608a564b9847c58168b6b56059a9ed2d2f901ae",
+      "bytes": 210730,
+      "verified_json_pointers": [
+        {
+          "pointer": "/datasets/0/fixed_comparisons/1",
+          "value": {
+            "dataset": "webvid2_5m_light_v1",
+            "L": 64,
+            "contrast": "structure_under_greedy3",
+            "family": "cross_model_2x2",
+            "candidate_model": "lambda1_greedy3",
+            "candidate_method": "oracle_probability",
+            "reference_model": "lambda0_greedy3",
+            "reference_method": "oracle_probability",
+            "recall_delta_pp": -0.8660000000000001,
+            "paired_query_bootstrap95_pp": [
+              -1.083,
+              -0.6469999999999999
+            ],
+            "interval_scope": "POINTWISE_ORDINARY_95_EXPLORATORY_UNADJUSTED",
+            "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_NEGATIVE",
+            "query_improved": 1661,
+            "query_harmed": 2249,
+            "query_equal": 6090,
+            "QPS_comparison": {
+              "scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA",
+              "candidate_qps_rounds": [
+                25729.71372111909,
+                23631.376651092974,
+                25797.217141195168,
+                25768.092200130424,
+                25848.255546338383
+              ],
+              "reference_qps_rounds": [
+                24679.058469437765,
+                25494.664173295307,
+                23689.725207573756,
+                20768.79900666822,
+                25774.983849717304
+              ],
+              "ratio_of_mean_qps": 1.0528824100995604,
+              "ratio_CI": null,
+              "paired_round_ratios": null,
+              "cross_model_paired_inference_allowed": false,
+              "limitation": "Each model ran in fixed listed order in a separate evaluator process; matching round indices does not create a between-model paired timing design"
+            },
+            "mean_graph_ndc_delta": -2.6359999999999673,
+            "mean_total_ndc_delta": -2.6359999999999673,
+            "mean_total_mac_delta": -1349.6319999999832,
+            "same_actual_route_required": false,
+            "oracle_diagnostic_only": true,
+            "matched_cost_claim": false,
+            "automatic_P3_GO": false
+          }
+        },
+        {
+          "pointer": "/datasets/0/fixed_comparisons/9",
+          "value": {
+            "dataset": "webvid2_5m_light_v1",
+            "L": 128,
+            "contrast": "structure_under_greedy3",
+            "family": "cross_model_2x2",
+            "candidate_model": "lambda1_greedy3",
+            "candidate_method": "oracle_probability",
+            "reference_model": "lambda0_greedy3",
+            "reference_method": "oracle_probability",
+            "recall_delta_pp": -0.79,
+            "paired_query_bootstrap95_pp": [
+              -0.96,
+              -0.621
+            ],
+            "interval_scope": "POINTWISE_ORDINARY_95_EXPLORATORY_UNADJUSTED",
+            "recall_evidence_sign": "POINTWISE_95_PERCENT_INTERVAL_NEGATIVE",
+            "query_improved": 1210,
+            "query_harmed": 1745,
+            "query_equal": 7045,
+            "QPS_comparison": {
+              "scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA",
+              "candidate_qps_rounds": [
+                13883.74937554887,
+                15488.646978974179,
+                15467.081269410519,
+                15470.683318113792,
+                15470.382399217231
+              ],
+              "reference_qps_rounds": [
+                15449.422503290476,
+                15540.786517589413,
+                15457.2683985153,
+                15524.795667258053,
+                13298.728569868574
+              ],
+              "ratio_of_mean_qps": 1.0067694287777373,
+              "ratio_CI": null,
+              "paired_round_ratios": null,
+              "cross_model_paired_inference_allowed": false,
+              "limitation": "Each model ran in fixed listed order in a separate evaluator process; matching round indices does not create a between-model paired timing design"
+            },
+            "mean_graph_ndc_delta": -4.593699999999899,
+            "mean_total_ndc_delta": -4.593700000000126,
+            "mean_total_mac_delta": -2351.9744000000646,
+            "same_actual_route_required": false,
+            "oracle_diagnostic_only": true,
+            "matched_cost_claim": false,
+            "automatic_P3_GO": false
+          }
+        },
+        {
+          "pointer": "/datasets/1/fixed_comparisons/1",
+          "value": {
+            "dataset": "yandex_t2i_official10M_ip_v1",
+            "L": 64,
+            "contrast": "structure_under_greedy3",
+            "family": "cross_model_2x2",
+            "candidate_model": "lambda1_greedy3",
+            "candidate_method": "oracle_probability",
+            "reference_model": "lambda0_greedy3",
+            "reference_method": "oracle_probability",
+            "recall_delta_pp": -0.095,
+            "paired_query_bootstrap95_pp": [
+              -0.20700000000000002,
+              0.015999999999999997
+            ],
+            "interval_scope": "POINTWISE_ORDINARY_95_EXPLORATORY_UNADJUSTED",
+            "recall_evidence_sign": "INTERVAL_INCLUDES_ZERO_NOT_AN_EQUIVALENCE_TEST",
+            "query_improved": 748,
+            "query_harmed": 791,
+            "query_equal": 8461,
+            "QPS_comparison": {
+              "scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA",
+              "candidate_qps_rounds": [
+                19796.69354001166,
+                19739.611585755225,
+                19645.36979968693,
+                19728.598134131928,
+                19798.08432706551
+              ],
+              "reference_qps_rounds": [
+                20101.80393769453,
+                20061.91230521245,
+                18893.681392933486,
+                20114.08823485705,
+                20118.812411209266
+              ],
+              "ratio_of_mean_qps": 0.9941389953970804,
+              "ratio_CI": null,
+              "paired_round_ratios": null,
+              "cross_model_paired_inference_allowed": false,
+              "limitation": "Each model ran in fixed listed order in a separate evaluator process; matching round indices does not create a between-model paired timing design"
+            },
+            "mean_graph_ndc_delta": 16.778999999999996,
+            "mean_total_ndc_delta": 16.778999999999996,
+            "mean_total_mac_delta": 3355.7999999999884,
+            "same_actual_route_required": false,
+            "oracle_diagnostic_only": true,
+            "matched_cost_claim": false,
+            "automatic_P3_GO": false
+          }
+        },
+        {
+          "pointer": "/datasets/1/fixed_comparisons/9",
+          "value": {
+            "dataset": "yandex_t2i_official10M_ip_v1",
+            "L": 128,
+            "contrast": "structure_under_greedy3",
+            "family": "cross_model_2x2",
+            "candidate_model": "lambda1_greedy3",
+            "candidate_method": "oracle_probability",
+            "reference_model": "lambda0_greedy3",
+            "reference_method": "oracle_probability",
+            "recall_delta_pp": -0.017000000000000008,
+            "paired_query_bootstrap95_pp": [
+              -0.08,
+              0.04799999999999998
+            ],
+            "interval_scope": "POINTWISE_ORDINARY_95_EXPLORATORY_UNADJUSTED",
+            "recall_evidence_sign": "INTERVAL_INCLUDES_ZERO_NOT_AN_EQUIVALENCE_TEST",
+            "query_improved": 334,
+            "query_harmed": 365,
+            "query_equal": 9301,
+            "QPS_comparison": {
+              "scope": "DESCRIPTIVE_CROSS_MODEL_FIXED_ORDER_NOT_PAIRED_ABBA",
+              "candidate_qps_rounds": [
+                12119.744309996686,
+                12115.612828329744,
+                12145.433531116294,
+                12172.990282122913,
+                12061.181268282082
+              ],
+              "reference_qps_rounds": [
+                11571.084328198482,
+                11874.773930280435,
+                12257.600690891328,
+                12227.114210462301,
+                12250.650924861176
+              ],
+              "ratio_of_mean_qps": 1.00720720028133,
+              "ratio_CI": null,
+              "paired_round_ratios": null,
+              "cross_model_paired_inference_allowed": false,
+              "limitation": "Each model ran in fixed listed order in a separate evaluator process; matching round indices does not create a between-model paired timing design"
+            },
+            "mean_graph_ndc_delta": 17.208399999999983,
+            "mean_total_ndc_delta": 17.208399999999983,
+            "mean_total_mac_delta": 3441.679999999935,
+            "same_actual_route_required": false,
+            "oracle_diagnostic_only": true,
+            "matched_cost_claim": false,
+            "automatic_P3_GO": false
+          }
+        },
+        {
+          "pointer": "/primary_search_condition",
+          "value": {
+            "comparison": "lambda1_greedy3 oracle_probability minus lambda0_greedy3 oracle_probability",
+            "cells": [
+              {
+                "dataset": "webvid2_5m_light_v1",
+                "L": 64,
+                "contrast": "structure_under_greedy3",
+                "recall_delta_pp": -0.8660000000000001,
+                "ordinary95_interval_pp": [
+                  -1.083,
+                  -0.6469999999999999
+                ],
+                "lower_bound_positive": false
+              },
+              {
+                "dataset": "webvid2_5m_light_v1",
+                "L": 128,
+                "contrast": "structure_under_greedy3",
+                "recall_delta_pp": -0.79,
+                "ordinary95_interval_pp": [
+                  -0.96,
+                  -0.621
+                ],
+                "lower_bound_positive": false
+              },
+              {
+                "dataset": "yandex_t2i_official10M_ip_v1",
+                "L": 64,
+                "contrast": "structure_under_greedy3",
+                "recall_delta_pp": -0.095,
+                "ordinary95_interval_pp": [
+                  -0.20700000000000002,
+                  0.015999999999999997
+                ],
+                "lower_bound_positive": false
+              },
+              {
+                "dataset": "yandex_t2i_official10M_ip_v1",
+                "L": 128,
+                "contrast": "structure_under_greedy3",
+                "recall_delta_pp": -0.017000000000000008,
+                "ordinary95_interval_pp": [
+                  -0.08,
+                  0.04799999999999998
+                ],
+                "lower_bound_positive": false
+              }
+            ],
+            "all_four_lower_bounds_positive": false,
+            "interpretation": "Describes only the preregistered oracle search subcondition; structure/capacity/full-recompute/common-initialization gate remains separate",
+            "automatic_stage_gate": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "P3_structure_analysis",
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/structure_analysis_v1/analysis.json",
+      "sha256": "8b0cec717a14382c5917504e560bcffd732146c517ea9a699b0bb1812463088e",
+      "bytes": 32321,
+      "verified_json_pointers": [
+        {
+          "pointer": "/both_datasets_structure_conditions_met",
+          "value": true
+        },
+        {
+          "pointer": "/limitations",
+          "value": [
+            "Raw C/S are not recomputed here; this audits saved full-recompute evidence and exact integer algebra.",
+            "Every initial/coarse/child/pass label is freshly hashed and its structural role is checked.",
+            "Source/binary/audit/fit/graph identities are inherited from the accepted partition manifests; this script does not reopen those inputs.",
+            "Structure conditions are necessary only; paired oracle search transfer remains required before P3 can pass.",
+            "No pilot/validation/held-out data, new CI, tuning or performance claim is used."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P2_selection_diagnosis",
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/region_selection_diagnosis_v1/diagnosis.json",
+      "sha256": "f9102fe9f7e3f8cf0a786e885d0bd8dfb4de27fa8dd32f53a4b78260c9da1e1d",
+      "bytes": 31544,
+      "verified_json_pointers": [
+        {
+          "pointer": "/datasets/0/by_L/0/bins_by_actual_geometry_absolute_mass/3",
+          "value": {
+            "geometry_absolute_mass_bin": [
+              0.75,
+              1.0
+            ],
+            "interval": "[low,high]",
+            "query_count": 4618,
+            "mean_geometry_absolute_mass": 0.9235816370723258,
+            "mean_oracle_absolute_mass": 0.9945647466435685,
+            "mean_distinct_GT10_regions": 2.4731485491554785,
+            "mean_recall_deltas_pp": {
+              "geom_uniform_minus_unified_recall_pp": -8.319618882633174,
+              "geom_probability_minus_unified_recall_pp": -8.308791684711997,
+              "oracle_probability_minus_unified_recall_pp": 1.8947596362061498,
+              "oracle_unified_minus_geom_unified_recall_pp": 0.12992637505413598
+            },
+            "causal_interpretation_allowed": false,
+            "confidence_intervals": null,
+            "reason_no_bin_CI": "Fixed descriptive stratification; no new significance or gate claim"
+          }
+        },
+        {
+          "pointer": "/datasets/1/by_L/0/bins_by_actual_geometry_absolute_mass/3",
+          "value": {
+            "geometry_absolute_mass_bin": [
+              0.75,
+              1.0
+            ],
+            "interval": "[low,high]",
+            "query_count": 7158,
+            "mean_geometry_absolute_mass": 0.9639145012573345,
+            "mean_oracle_absolute_mass": 0.9978485610505728,
+            "mean_distinct_GT10_regions": 1.925398155909472,
+            "mean_recall_deltas_pp": {
+              "geom_uniform_minus_unified_recall_pp": -9.782062028499581,
+              "geom_probability_minus_unified_recall_pp": -9.362950544844928,
+              "oracle_probability_minus_unified_recall_pp": 0.490360435875943,
+              "oracle_unified_minus_geom_unified_recall_pp": 0.2612461581447332
+            },
+            "causal_interpretation_allowed": false,
+            "confidence_intervals": null,
+            "reason_no_bin_CI": "Fixed descriptive stratification; no new significance or gate claim"
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2_capacity_diagnosis",
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p2/saved_capacity_diagnosis_v1/diagnosis.json",
+      "sha256": "2dfbf7ce5497c68bb917937567bbf3f1c7f06dfc5fd30ad2124c4f9956507352",
+      "bytes": 35391,
+      "verified_json_pointers": [
+        {
+          "pointer": "/datasets/0/by_L/0/identical_integer_capacities_fraction",
+          "value": 0.9983
+        },
+        {
+          "pointer": "/datasets/0/by_L/1/identical_integer_capacities_fraction",
+          "value": 0.853
+        },
+        {
+          "pointer": "/datasets/1/by_L/0/identical_integer_capacities_fraction",
+          "value": 0.6789
+        },
+        {
+          "pointer": "/datasets/1/by_L/1/identical_integer_capacities_fraction",
+          "value": 0.2183
+        },
+        {
+          "pointer": "/datasets/0/by_L/0/equal_capacity_mismatches",
+          "value": 0
+        },
+        {
+          "pointer": "/datasets/0/by_L/1/equal_capacity_mismatches",
+          "value": 0
+        },
+        {
+          "pointer": "/datasets/1/by_L/0/equal_capacity_mismatches",
+          "value": 0
+        },
+        {
+          "pointer": "/datasets/1/by_L/1/equal_capacity_mismatches",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "P3_portal_review",
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/portal_exposure_interpretation_review_v1.json",
+      "sha256": "772140e184a3d261c672c8d49246cc384b17d508c96e1b4b73feddd7e99daaf5",
+      "bytes": 19937,
+      "verified_json_pointers": [
+        {
+          "pointer": "/status",
+          "value": "PASS_BOUNDED_SUMMARY_HASH_SCOPE_AND_INTERPRETATION_REVIEW"
+        }
+      ]
+    },
+    {
+      "id": "P3_target_generalization_review",
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/target_generalization_interpretation_review_v1.json",
+      "sha256": "e3476a2ea51a93f5b8d2836100befc95339dceaa40a1f0ff3998be72b1de0780",
+      "bytes": 10326,
+      "verified_json_pointers": [
+        {
+          "pointer": "/datasets/0",
+          "value": {
+            "dataset": "webvid2_5m_light_v1",
+            "fit_and_pilot_concentration": {
+              "fit": {
+                "D_lambda0": 4.33285,
+                "D_lambda1": 2.60275,
+                "D_delta": -1.7300999999999997,
+                "M4_lambda0": 0.89955,
+                "M4_lambda1": 0.992775,
+                "M4_delta_pp": 9.3225,
+                "M4_seen_contribution_delta_pp": 9.3225,
+                "M4_unseen_contribution_delta_pp": 0.0
+              },
+              "pilot": {
+                "D_lambda0": 4.3194,
+                "D_lambda1": 4.0209,
+                "D_delta": -0.29849999999999977,
+                "M4_lambda0": 0.89985,
+                "M4_lambda1": 0.9179299999999999,
+                "M4_delta_pp": 1.8079999999999874,
+                "M4_seen_contribution_delta_pp": 1.976,
+                "M4_unseen_contribution_delta_pp": -0.16799999999999593
+              }
+            },
+            "pilot_seen_target_slot_share": 0.57258,
+            "pilot_queries_with_zero_seen_targets": 554,
+            "unique_base_population": {
+              "all": 2505000,
+              "seen": 118811,
+              "unseen": 2386189
+            },
+            "final_lambda1_vs_lambda0_label_difference": {
+              "unique_nodes": {
+                "all": {
+                  "changed": 52305,
+                  "denominator": 2505000,
+                  "rate": 0.020880239520958084
+                },
+                "seen": {
+                  "changed": 28716,
+                  "denominator": 118811,
+                  "rate": 0.24169479256971155
+                },
+                "unseen": {
+                  "changed": 23589,
+                  "denominator": 2386189,
+                  "rate": 0.009885637726097974
+                }
+              },
+              "pilot_target_slots": {
+                "all": {
+                  "changed": 16293,
+                  "denominator": 100000,
+                  "rate": 0.16293
+                },
+                "seen": {
+                  "changed": 15463,
+                  "denominator": 57258,
+                  "rate": 0.2700583324600929
+                },
+                "unseen": {
+                  "changed": 830,
+                  "denominator": 42742,
+                  "rate": 0.01941883861307379
+                }
+              }
+            },
+            "main_greedy_search_difference": [
+              {
+                "L": 64,
+                "recall_delta_pp": -0.866,
+                "seen_recall_contribution_delta_pp": -0.87,
+                "unseen_recall_contribution_delta_pp": 0.004,
+                "seen_conditional_target_hit_delta": -0.015194383317615006,
+                "unseen_conditional_target_hit_delta": 9.358476440035563e-05
+              },
+              {
+                "L": 128,
+                "recall_delta_pp": -0.79,
+                "seen_recall_contribution_delta_pp": -0.753,
+                "unseen_recall_contribution_delta_pp": -0.037,
+                "seen_conditional_target_hit_delta": -0.013151000733521953,
+                "unseen_conditional_target_hit_delta": -0.0008656590707032895
+              }
+            ],
+            "all_11_bins_present": true
+          }
+        },
+        {
+          "pointer": "/datasets/1",
+          "value": {
+            "dataset": "yandex_t2i_official10M_ip_v1",
+            "fit_and_pilot_concentration": {
+              "fit": {
+                "D_lambda0": 3.00925,
+                "D_lambda1": 1.9648,
+                "D_delta": -1.04445,
+                "M4_lambda0": 0.965385,
+                "M4_lambda1": 0.9996299999999999,
+                "M4_delta_pp": 3.424499999999986,
+                "M4_seen_contribution_delta_pp": 3.424499999999986,
+                "M4_unseen_contribution_delta_pp": 0.0
+              },
+              "pilot": {
+                "D_lambda0": 3.0181,
+                "D_lambda1": 3.0193,
+                "D_delta": 0.0011999999999998678,
+                "M4_lambda0": 0.96511,
+                "M4_lambda1": 0.9650700000000001,
+                "M4_delta_pp": -0.003999999999992898,
+                "M4_seen_contribution_delta_pp": 0.010000000000000286,
+                "M4_unseen_contribution_delta_pp": -0.014000000000002899
+              }
+            },
+            "pilot_seen_target_slot_share": 0.10163,
+            "pilot_queries_with_zero_seen_targets": 5189,
+            "unique_base_population": {
+              "all": 10000000,
+              "seen": 188913,
+              "unseen": 9811087
+            },
+            "final_lambda1_vs_lambda0_label_difference": {
+              "unique_nodes": {
+                "all": {
+                  "changed": 72107,
+                  "denominator": 10000000,
+                  "rate": 0.0072107
+                },
+                "seen": {
+                  "changed": 22224,
+                  "denominator": 188913,
+                  "rate": 0.11764145400263613
+                },
+                "unseen": {
+                  "changed": 49883,
+                  "denominator": 9811087,
+                  "rate": 0.005084349980792139
+                }
+              },
+              "pilot_target_slots": {
+                "all": {
+                  "changed": 1631,
+                  "denominator": 100000,
+                  "rate": 0.01631
+                },
+                "seen": {
+                  "changed": 1091,
+                  "denominator": 10163,
+                  "rate": 0.1073501918724786
+                },
+                "unseen": {
+                  "changed": 540,
+                  "denominator": 89837,
+                  "rate": 0.006010886383116088
+                }
+              }
+            },
+            "main_greedy_search_difference": [
+              {
+                "L": 64,
+                "recall_delta_pp": -0.095,
+                "seen_recall_contribution_delta_pp": -0.019,
+                "unseen_recall_contribution_delta_pp": -0.076,
+                "seen_conditional_target_hit_delta": -0.0018695267145527896,
+                "unseen_conditional_target_hit_delta": -0.0008459766020681901
+              },
+              {
+                "L": 128,
+                "recall_delta_pp": -0.017,
+                "seen_recall_contribution_delta_pp": -0.008,
+                "unseen_recall_contribution_delta_pp": -0.009,
+                "seen_conditional_target_hit_delta": -0.0007871691429695956,
+                "unseen_conditional_target_hit_delta": -0.00010018143971860146
+              }
+            ],
+            "all_11_bins_present": true
+          }
+        },
+        {
+          "pointer": "/unsupported_interpretations",
+          "value": [
+            "All P3 failure arises from targets absent from fit.",
+            "No pilot target concentration transferred on either dataset.",
+            "Seen-target losses have their own confirmed statistical interval; this diagnostic computes no subgroup CI.",
+            "The existing Yandex inconclusive main search contrasts have become confirmed algorithmic regression because a descriptive subgroup mean is negative.",
+            "M4 is an upper bound on Recall: cross-region edges and shared search can retrieve targets outside the four active leaves.",
+            "Endpoint label differences identify actual single-move deltaC/deltaS or isolate a label-only causal effect. The lambda pipeline also changes candidates/portals/oracle choices/queue assignments.",
+            "Fit-to-pilot differences prove memorization or connectivity failure, or authorize a model/auxiliary-graph revision."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P3_local_scale_interpretation_review",
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_interpretation_review_v1.json",
+      "sha256": "d082cc50449b5183c3e933f1ddfc36bc99b858af6bfb01404b4e39674345dfbf",
+      "bytes": 8935,
+      "verified_json_pointers": [
+        {
+          "pointer": "/datasets/0",
+          "value": {
+            "dataset": "webvid2_5m_light_v1",
+            "N": 2505000,
+            "M": 49611457,
+            "Q": 20000,
+            "threshold_exact": "49611457/180000",
+            "threshold_decimal": 275.61920555555554,
+            "seen_nodes": 118811,
+            "seen_max_degree": 168,
+            "seen_condition_fraction": 1.0,
+            "fit_occurrences": 200000,
+            "condition_fit_occurrence_fraction": 1.0,
+            "all_nodes_condition_count": 2504983,
+            "all_nodes_exceptions": 17,
+            "exceptions_all_unseen": true,
+            "final_lambda1_vs_lambda0_changed_groups": [
+              {
+                "population": "all",
+                "node_count": 52305,
+                "condition_node_count": 52305,
+                "fit_target_occurrences": 50742,
+                "condition_fit_occurrences": 50742,
+                "total_degree": {
+                  "mean": 27.965509989484755,
+                  "min": 2,
+                  "max": 207
+                }
+              },
+              {
+                "population": "seen",
+                "node_count": 28716,
+                "condition_node_count": 28716,
+                "fit_target_occurrences": 50742,
+                "condition_fit_occurrences": 50742,
+                "total_degree": {
+                  "mean": 22.411094860008358,
+                  "min": 2,
+                  "max": 162
+                }
+              },
+              {
+                "population": "unseen",
+                "node_count": 23589,
+                "condition_node_count": 23589,
+                "fit_target_occurrences": 0,
+                "condition_fit_occurrences": 0,
+                "total_degree": {
+                  "mean": 34.7271609648565,
+                  "min": 2,
+                  "max": 207
+                }
+              }
+            ],
+            "worst_seen_unit_DeltaS_pairwise_J_margin_exact": "2767351/1275723180000",
+            "worst_seen_unit_DeltaS_pairwise_J_margin_decimal": 2.1692409790656934e-06,
+            "all_group_count": 31,
+            "bound_histogram": {
+              "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_diagnosis_v1/webvid2_5m_light_v1.total_degree_histogram.json",
+              "sha256": "afe42e4428d35dad09ed4070f68f011142835efeba4817e368653b8c49e87a3c",
+              "bytes": 2474
+            },
+            "histogram_conservation_condition_and_quantiles_recomputed": true
+          }
+        },
+        {
+          "pointer": "/datasets/1",
+          "value": {
+            "dataset": "yandex_t2i_official10M_ip_v1",
+            "N": 10000000,
+            "M": 294844794,
+            "Q": 20000,
+            "threshold_exact": "49140799/30000",
+            "threshold_decimal": 1638.0266333333334,
+            "seen_nodes": 188913,
+            "seen_max_degree": 162,
+            "seen_condition_fraction": 1.0,
+            "fit_occurrences": 200000,
+            "condition_fit_occurrence_fraction": 1.0,
+            "all_nodes_condition_count": 10000000,
+            "all_nodes_exceptions": 0,
+            "exceptions_all_unseen": true,
+            "final_lambda1_vs_lambda0_changed_groups": [
+              {
+                "population": "all",
+                "node_count": 72107,
+                "condition_node_count": 72107,
+                "fit_target_occurrences": 23421,
+                "condition_fit_occurrences": 23421,
+                "total_degree": {
+                  "mean": 67.22283550834177,
+                  "min": 2,
+                  "max": 162
+                }
+              },
+              {
+                "population": "seen",
+                "node_count": 22224,
+                "condition_node_count": 22224,
+                "fit_target_occurrences": 23421,
+                "condition_fit_occurrences": 23421,
+                "total_degree": {
+                  "mean": 63.74545536357091,
+                  "min": 2,
+                  "max": 162
+                }
+              },
+              {
+                "population": "unseen",
+                "node_count": 49883,
+                "condition_node_count": 49883,
+                "fit_target_occurrences": 0,
+                "condition_fit_occurrences": 0,
+                "total_degree": {
+                  "mean": 68.77208668283784,
+                  "min": 2,
+                  "max": 160
+                }
+              }
+            ],
+            "worst_seen_unit_DeltaS_pairwise_J_margin_exact": "44280799/8845343820000",
+            "worst_seen_unit_DeltaS_pairwise_J_margin_decimal": 5.006113939842307e-06,
+            "all_group_count": 31,
+            "bound_histogram": {
+              "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_local_scale_diagnosis_v1/yandex_t2i_official10M_ip_v1.total_degree_histogram.json",
+              "sha256": "1af69c3d5001577a7de6e331ff78bd06c92afc1adc210902fed9c2c1a5ca104a",
+              "bytes": 2632
+            },
+            "histogram_conservation_condition_and_quantiles_recomputed": true
+          }
+        },
+        {
+          "pointer": "/interpretation_limits",
+          "value": [
+            "All comparisons refer to the same node, same current labeling, same frozen original directed graph and fit set, and the same considered feasible destinations plus stay. This does not compare lambda0 and lambda1 trajectories at different states.",
+            "DeltaS is the integer change in the sum of distinct fit-GT leaf counts minus one. The result relies on lambda1=1 and the frozen M/(9Q) normalization.",
+            "The actual updater considers graph-neighbor and GT-cooccurrence regions, filters leaf/coarse capacities and source minimum size, and initializes stay at exact zero score. It does not optimize over all possible global partitions.",
+            "Equal DeltaS leaves graph cut decisive; exact equal improving scores choose smaller destination ID, but exact zero ties with stay retain the current label.",
+            "Graph adjacency still supplies candidates, graph cut resolves equal-DeltaS choices, and capacity/feasibility plus update ordering affect the available choices and later states. Graph structure is not irrelevant.",
+            "This is a local comparison theorem and its mathematical consequences. It does not reconstruct actual accepted moves, separate realized DeltaC/DeltaS costs, establish global lexicographic optimality, or identify the cause of Recall harm.",
+            "No graph, fit GT, labels or count rows are reread by this addendum; no ANN, CI, parameter tuning, new representation revision or gate reopening is performed or authorized."
+          ]
+        },
+        {
+          "pointer": "/parent_claims_verified",
+          "value": {
+            "all_fit_nodes_satisfy_strict_condition": true,
+            "seen_max_degrees_168_162": true,
+            "WebVid_17_allbase_exceptions_are_unseen": true,
+            "Yandex_allbase_condition_fraction_1": true,
+            "all_final_lambda1_vs_lambda0_changed_groups_fraction_1": true,
+            "pairwise_DeltaC_bound_D_not_2D": true,
+            "conditional_local_lexicographic_ordering": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "P3_lexicographic_addendum",
+      "path": "/data/netg/ACSG/hierarchical_target_search/20260907_v1/overnight_20260907T155400Z/p3/objective_lexicographic_addendum_v1.md",
+      "sha256": "42245d744702c8bc6ed02893b378b15bd6c0cd5b87e1656cde394d01d113cfe0",
+      "bytes": 4069,
+      "verified_json_pointers": []
+    }
+  ],
+  "central_findings": [
+    "Correctness evidence is strong for tested contracts, not a proof of no bugs anywhere",
+    "P2 same-L oracle Recall benefit is not established matched-cost benefit",
+    "Ground-truth region mass is neither an optimal control policy nor a frozen-graph performance upper bound",
+    "P3 lambda branches also change candidate generation, then regions, portals, oracle routes and capacities; bundle effect, not isolated lambda effect",
+    "Local lexicographic objective scale is proved but not a global optimum or retrieval-failure cause",
+    "Freeze failed hierarchy configuration; preserve fixed-graph search control as an unresolved hypothesis; place strong implementations and actual cost before new modeling"
+  ],
+  "only_future_gate": "Preregister a tiny actual-wall-matched same-route oracle-unified versus oracle-regional screen on original P2 graph-only partition, with paired Fast and a validated strong baseline; no lambda sweep/P4/graph edits. Any hindsight selector over fixed finite policies is a diagnostic optimistic reference only. Distinguish inconclusive, lack of tested-family headroom, entry-only headroom and residual queue-policy headroom."
+}
