@@ -1,0 +1,56 @@
+{
+  "GT": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/gt.test.public100K.ip.ivecs",
+  "GT_format": "ivecs",
+  "GT_sha256": "9b8bed25edc98f4df45039b7a064e311ff4bdac0a69254c7f03fe668d14d1d29",
+  "K_values": [
+    1,
+    100
+  ],
+  "L": [
+    200,
+    400,
+    800,
+    1000,
+    1200
+  ],
+  "anchor": {
+    "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+    "name": "GT10-hard"
+  },
+  "audit_n": 256,
+  "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+  "base_n": 10000000,
+  "cpu": 15,
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "dimension": 200,
+  "freeze_timestamp": "2026-10-09T10:46:55.101191+08:00",
+  "full_query_test_count_unchanged": true,
+  "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "maxrss_bytes": 68719476736,
+  "methods": [
+    "NSG",
+    "GT",
+    "M5"
+  ],
+  "min_free_bytes": 1073741824,
+  "n": 10000,
+  "no_training": true,
+  "old_job_source": "/root/acsg-e172-storage-v2/campaign/inputs/m5_v6/yandex_t2i_official10M_ip_v1.cal.k1.json",
+  "old_job_source_sha256": "5c2ec1f2ad520cc37528387da8ef829a46f47ec3d2790e365dc1365d31a3d56a",
+  "out": "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1",
+  "protocol_revision": "v2_cost_only_no_quality_feedback",
+  "queries": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.test.public100K.fvecs",
+  "query_first": 0,
+  "query_format": "fvecs",
+  "query_sha256": "d5c1079755a1bef7db62f63f1e8b041e3035024e072ac5db79ddfb66689b42a2",
+  "role": "public_test",
+  "table": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/residual_joint.bin",
+  "table_sha256": "032e0c74af93a3278a9b2203b4cf7b7058d29396653749311aeadc4361593d1c",
+  "threads": 1,
+  "timing_repeats": 3,
+  "verify_loaded_base_words": true,
+  "warmup_batches": 1,
+  "warmup_n": 256
+}

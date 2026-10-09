@@ -1,0 +1,58 @@
+{
+  "status": "FROZEN_COMBINED_DATASET_JOBS_NOT_EXECUTED",
+  "frozen_at": "2026-10-09T10:33:52.357683+08:00",
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "query_count_each": 10000,
+  "K": [
+    1,
+    100
+  ],
+  "L": [
+    200,
+    400,
+    800,
+    1000,
+    1200
+  ],
+  "methods": [
+    "NSG",
+    "GT10",
+    "M5"
+  ],
+  "configurations": 60,
+  "timed_batches": 180,
+  "warmup_batches": 60,
+  "new_training": false,
+  "single_dataset_load": true,
+  "prepared_single_K_jobs_retained": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/jobs/webvid2_5m_light_v1.k1.json",
+      "sha256": "0562d80fbc689c9f326e08a71385ab504fe42318f652c544cb66ae00bf0e2323"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/jobs/webvid2_5m_light_v1.k100.json",
+      "sha256": "0a8cdab4314a458d94b7dfc3bd44145e269f7968c5ff9859da3d5a46c80d6894"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/jobs/yandex_t2i_official10M_ip_v1.k1.json",
+      "sha256": "c36a2f67ffaea52951c9f1c86e929bb470f2ab9f7711f1d406bf5a3fcaa14b56"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/jobs/yandex_t2i_official10M_ip_v1.k100.json",
+      "sha256": "e09d98aba0447aa0efbb1a648cc7bed366827df36cecb136726e3e678b742763"
+    }
+  ],
+  "jobs": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/jobs/webvid2_5m_light_v1.combined.json",
+      "sha256": "54490b007c608877220539d015f68ddf343b98d37afb5fe0baaab5509a679089"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/jobs/yandex_t2i_official10M_ip_v1.combined.json",
+      "sha256": "d7c2f21e30a03d8db48808659ad44770d16cebbd2e5cb09378a3898d0e3e003e"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "acsg_nsg_gt_m5_test_analysis_source_review_v1",
+  "status": "PASS",
+  "scope": "SOURCE_ONLY",
+  "reviewer": "/root/retest_contract",
+  "source_sha256": {
+    "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/src/evaluate_v2.py": "2920427e11da2c827dc890e63c116257a80563aab99e5014f1e328af52057119",
+    "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/src/plot_results.py": "3405b5365b96d7410f52caf54ce59988293e78534261ee906c3c679e0138ac60",
+    "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/src/benchmark_v2.cpp": "3340bdb510f013bceae08639e17337d26950e07b7cf79c4dbbde20d6ffdcde5d"
+  },
+  "findings": [
+    "K1 loads actual (10000,1) return packets from K1 searches, intersects the sole returned ID with gt[:,:1], and divides by n. It cannot count GT1 hidden in K100 returns.",
+    "K100 separately loads actual (10000,100) packets, requires unique valid return IDs and unique exact GT100 IDs, scores exact set intersections, and independently compares integer hit counts against per-GT-member membership sums.",
+    "The frozen job contract requires n=10000, K_values=[1,100], and exact L=[200,400,800,1000,1200]. Two combined jobs produce 60 point records, 60 paired comparison records, and 200000 aligned M5/GT query-by-K-by-L records. Root independently reported the two frozen jobs are exactly the intended WebVid and Yandex jobs.",
+    "The benchmark_v2 timing loop appends each method's timings in round order 0,1,2 at the same fixed K/L. evaluate_v2 compares matching array positions, computes each round's QPS ratio, and then takes the ratio median; it does not divide independently selected QPS medians.",
+    "paired_ci_pp groups exact observed integer per-query delta_hits. Multinomial(n, empirical class frequencies) gives the same distribution of class totals as ordinary paired row bootstrap; the aggregate mean uses denominator n*K and is explicitly descriptive, with fixed seed and 2000 repetitions.",
+    "All Recall and returned-route comparisons use full 10000 rows. NDC arrays and stats use exactly the predetermined 256 rows, verified against persisted floor(i*9999/255) audit IDs, and all reported count fields are explicitly named or scoped as sampled.",
+    "The GT/M5 full route-ID packet and full profile-distance words must match. Sampled route counts must match. Sampled M5 graph-score excess must equal sampled post_dots; those post dots are already included in graph_ndc.",
+    "The evaluator requires the v2 complete-native status, 90 formal wall records per dataset for three repetitions, actual saved job equality, thread/CPU receipts, count-parity sample scope, full-return scope, and the full-10000 M5 linear merge receipt. It checks recorded packet shapes, ID domains, padding, valid output uniqueness, positive finite timing values, and query/GT/table checksum identities before writing metrics.",
+    "Plotting requires a completed 60-point metrics status and uses the saved full-test Recall values and complete-wall QPS medians/min-max ranges. It only links measured points; it neither searches nor interpolates for conclusions.",
+    "The default plotting metrics path remains the v1-compatible analysis/metrics.json. Root's explicit v2 command supplies --metrics analysis_v2/metrics.json --out figures_v2, so the current authorized workflow is consistent and no source change is needed."
+  ],
+  "actual_source_bug_found": false,
+  "invocation_contract": {
+    "evaluation": ".venv_cpu/bin/python src/evaluate_v2.py --jobs jobs_v2 --out analysis_v2",
+    "plotting": ".venv_cpu/bin/python src/plot_results.py --metrics analysis_v2/metrics.json --out figures_v2",
+    "large_array_analysis_during_native_benchmark": false,
+    "execute_only_after_both_native_dataset_jobs_complete": true
+  },
+  "report_boundaries": [
+    "SOURCE-only. The reviewer did not execute either script or load GT/raw/scored arrays, and does not certify actual completion, numerical results, or plotting appearance.",
+    "Upstream native word/count/merge PASS fields are validated as receipts by analysis. This source review is not an independent rerun of native verification.",
+    "Each timed result packet was destroyed; only saved untimed outputs supply Recall scoring, and same-body execution supplies timing. Do not claim per-timed-round output bit checks.",
+    "Sampled NDC/statistics are not full-batch counts or means; do not extrapolate their totals to 10000 rows.",
+    "graph_ndc already includes M5 post scoring. total_ndc=route_ndc+graph_ndc; post_dots remains a subset disclosure.",
+    "2000 descriptive query bootstrap repetitions do not constitute a quality gate, population guarantee, or independent test source.",
+    "Public test exposure is disclosed. The scripts keep new_training=false, quality_screen_gate_used=false, and default_replacement_decided=false.",
+    "The final metrics source_sha256 records inputs and actual saved result packets. Code/model/kernel/build identities are additionally tracked by the experiment freeze/build/source-review records.",
+    "Matrix uniqueness and dataset identities are guaranteed by the two root-frozen intended jobs in this scoped run; the source's length checks alone should not be advertised as a generic malformed-job uniqueness proof."
+  ],
+  "native_execution": false,
+  "analysis_execution": false,
+  "plot_execution": false,
+  "large_array_read": false,
+  "performance_claim": false,
+  "source_modified": false
+}

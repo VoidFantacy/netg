@@ -1,5 +1,9 @@
 # ACSG 历史实验概览
 
+<!-- E173_CURRENT_BEGIN -->
+173 已完成：[直接公共测试复测](entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_v2/report.md)、[详细复盘](experiment_history/173_nsg_gt_m5_public_test_retest.md)。WebVid/Yandex各10K；NSG、GT10、正在研究的M5，K1/K100、实际L200/400/800/1000/1200，60点/180轮完整单线程wall，0新增训练。同L M5/GT 20点Recall全增、成员损伤0、配对QPS约降0.16%–4.85%；WebVid K1有两对实际跨L双升，其他三场景没有。GT默认保留。新用户直接test授权不沿用旧CAL停止门；旧171/172记录及停止边界保留原身份。下文为此前历史概览。
+<!-- E173_CURRENT_END -->
+
 当前见[Git结论交接](research_snapshots/20261006_results/README.md)和[八方法详细报告](research_snapshots/20261006_results/report.md)，核实时点2026-10-06T21:32:45.619435+08:00。
 
 每dataset跨全部方法TRAIN限7200秒；历史已超额，禁止新增训练。

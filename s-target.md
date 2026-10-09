@@ -1,5 +1,11 @@
 # ACSG 下一阶段目标
 
+<!-- E173_CURRENT_BEGIN -->
+2026-10-09：用户授权的 NSG/GT10/M5 两集五档 L 直接复测与曲线报告已经完成，见[最新结果](research_snapshots/20261009_nsg_gt_m5/README.md)。**M5 正在研究**；同L小幅提高质量但增加耗时，WebVid K1有两个离散跨L综合优势，Yandex增益很小。当前默认仍为WebVid GT10-soft-t1、Yandex GT10-hard；本次不自动改默认、不追加test调参或新训练、不恢复旧八方法队列。
+
+本轮后续工作是结果/方法说明、图表与Git交接。若后续继续研究，先说明要验证的具体跨场景问题和预算；公共test不得转作调表选择集，已有历史训练超额不能通过本轮0训练回改。下文为此前阶段目标与边界。
+<!-- E173_CURRENT_END -->
+
 当前见[Git结论交接](research_snapshots/20261006_results/README.md)和[八方法详细报告](research_snapshots/20261006_results/report.md)，核实时点2026-10-06T21:32:45.619435+08:00。
 
 每dataset跨全部方法TRAIN限7200秒；历史已超额，禁止新增训练。

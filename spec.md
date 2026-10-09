@@ -1,5 +1,11 @@
 # ACSG 代码架构与实现契约
 
+<!-- E173_CURRENT_BEGIN -->
+2026-10-09：E173 的隔离测试合同已实际完成：[benchmark_v2](entry_method_exploration/20261009_nsg_gt_m5_test_v1/src/benchmark_v2.cpp)、[协议v2](entry_method_exploration/20261009_nsg_gt_m5_test_v1/protocol_v2.md)、[完整结果](entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_v2/metrics.json)。NSG 使用原图 enterpoint 单入口；GT10 使用冻结画像 Micro-HNSW 返回的三个真实 hub；正在研究的 M5 复用同 GT 路由和 scalar search_new，在返回后查冻结残差表、去重、原度量重评分并合并。三方法同图、raw-IP、实际 L、T1/CPU15，K1/K100 分别搜索；60点每点三轮完整wall，包含输出分配/释放和路由、搜索、补全全部线上成本。
+
+完整10K用于真实返回、Recall、域/唯一性及M5独立线性合并核验；预锁均匀256-query只用于plain/count bits和NDC统计。post_dots已包含在graph_ndc，不重复求和。正式timed返回计时内释放，bits证据来自独立untimed完整plain、抽样count和全量合并oracle，不称逐timing轮bits被保存。读取旧迁卷源 /root/acsg-e172-storage-v2/campaign，不恢复旧runner/挂载；无新训练，未修改生产接口或原冻结模型。解释与文件入口见[当前研究快照](research_snapshots/20261009_nsg_gt_m5/README.md)。下文为此前契约和历史记录。
+<!-- E173_CURRENT_END -->
+
 当前见[Git结论交接](research_snapshots/20261006_results/README.md)和[八方法详细报告](research_snapshots/20261006_results/report.md)，核实时点2026-10-06T21:32:45.619435+08:00。
 
 每dataset跨全部方法TRAIN限7200秒；历史已超额，禁止新增训练。

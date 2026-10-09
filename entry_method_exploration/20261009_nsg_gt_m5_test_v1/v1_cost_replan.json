@@ -1,0 +1,51 @@
+{
+  "reason": "REDUCE_REDUNDANT_UNTIMED_VERIFICATION_AND_WARMUP_COST",
+  "at": "2026-10-09T10:45:38.190117+08:00",
+  "original_state": {
+    "status": "RUNNING",
+    "started_at": "2026-10-09T10:40:24.327597+08:00",
+    "jobs": [
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "config": "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/jobs/webvid2_5m_light_v1.combined.json",
+        "log": "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/webvid2_5m_light_v1.native.log",
+        "started_at": "2026-10-09T10:40:24.327743+08:00",
+        "status": "RUNNING",
+        "thread_observations": 63,
+        "affinity": "15",
+        "output": "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/results/webvid2_5m_light_v1",
+        "pid": 10403,
+        "last_process_status": {
+          "State": "R (running)",
+          "VmRSS": "5675908 kB",
+          "Threads": "1",
+          "Cpus_allowed_list": "15"
+        },
+        "completed_timed_batches": 18,
+        "last_timed_batch": {
+          "K": 1,
+          "L": 400,
+          "cpu": 15,
+          "method": "M5",
+          "n": 10000,
+          "native_calls": 310000,
+          "qps": 807.9262919652871,
+          "round": 2,
+          "seconds": 12.377366722,
+          "threads": 1
+        }
+      }
+    ],
+    "formal_total_batches": 180,
+    "source_binary_sha256": "e4c652437b6348011553a7f9bd70cd900dffb30ba10843828b9a89f504a07c07",
+    "no_training": true,
+    "elapsed_seconds": 310.36216234300036,
+    "updated_at": "2026-10-09T10:45:34.689782+08:00"
+  },
+  "signal": "SIGTERM",
+  "target_pid": 10403,
+  "prior_partial_retained": true,
+  "same_frozen_models_queries_L_K_and_formal_repetitions": true,
+  "new_test_requires_full_60_points_from_scratch": true,
+  "quality_feedback_read": false
+}

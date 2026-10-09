@@ -1,0 +1,46 @@
+{
+  "status": "COMPLETED_TEST_MATRIX",
+  "completed_at": "2026-10-09T12:31:39.303225+08:00",
+  "M5_status": "正在研究",
+  "default_replacement": false,
+  "default": {
+    "WebVid": "GT10-soft-t1",
+    "Yandex": "GT10-hard"
+  },
+  "points": 60,
+  "formal_timing_batches": 180,
+  "repeats_per_point": 3,
+  "queries_per_point": 10000,
+  "L": [
+    200,
+    400,
+    800,
+    1000,
+    1200
+  ],
+  "K": [
+    1,
+    100
+  ],
+  "methods": [
+    "NSG",
+    "GT",
+    "M5"
+  ],
+  "new_training": false,
+  "checks": {
+    "native_full_matrix": "PASS",
+    "full_10K_return_domain_and_recall": "PASS",
+    "full_10K_M5_linear_merge": "PASS",
+    "fixed_256_query_plain_count_parity": "PASS",
+    "final_result_independent_review": "PASS",
+    "final_document_review": "PASS",
+    "curves_visual_inspection": "PASS",
+    "input_stats_match_preflight": true
+  },
+  "public_test_historical_exposure": true,
+  "count_NDC_scope": "fixed uniform 256, not complete 10000",
+  "raw_native_driver_receipt": "run_state_v2.json remains NATIVE_COMPLETED_PENDING_EVALUATION as an immutable native-stage receipt",
+  "publication_status": "READY_PENDING_REMOTE_UPDATE",
+  "conclusion": "M5/GT same-L: 20 Recall gains, no truth-member damage, 20 median QPS decreases; two discrete WebVid K1 cross-L joint gains; Yandex gains small"
+}

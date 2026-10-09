@@ -1,0 +1,986 @@
+{
+  "schema": "ACSG_NSG_GT10_FROZEN_M5_PUBLIC_TEST_DATA_PREFLIGHT_V1",
+  "status": "PASS_CURRENT_FULL_INPUT_SHA_AND_EXACT_TRAIN_TEST_BYTE_DISJOINTNESS",
+  "errors": [],
+  "scope": "Read-only current complete input SHA/stat identities and exact query-vector byte overlap; no ANN/GT generation/training/benchmark or native execution. Dataset manifest and historical domain receipts remain prior evidence, not independently repeated structure/GT correctness computations.",
+  "dataset_order": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "datasets": {
+    "webvid2_5m_light_v1": {
+      "artifact_version": "roargraph-webvid2.5m-ip-v1",
+      "metric": "ip",
+      "normalization": "source_unit_norm_no_additional",
+      "dimension": 512,
+      "base_n": 2505000,
+      "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+      "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "historical_domain_receipt": "/root/acsg-e172-storage-v2/campaign/reviews/webvid2_5m_light_v1.data_domain.json",
+      "query_file": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.test.public10K.fvecs",
+      "GT_file": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/gt.test.public10K.ip.top100.ivecs",
+      "test_container_n": 10000,
+      "query_first": 0,
+      "tested_n": 10000,
+      "test_unique_vector_rows": 9991,
+      "test_duplicate_extra_rows": 9,
+      "test_f32_payload_sha256": "89d8e3aeb916efa578379cece767ca658b0917904021462c0ed2c5c5620b7331",
+      "GT_top100_container_n": 10000,
+      "GT_first10k_ivecs_sha256": "1e55041056ef61d4192e01064fed0311cf8d831b6a8d6e5225b9514ace801022",
+      "frozen_M5_table": "/root/acsg-e172-storage-v2/campaign/m5/models/webvid2_5m_light_v1/residual_joint.bin",
+      "table_sha256": "d0310bdb136d45595a00c8697c170dc38b6bda07b0090cec64ba00db236dd7ff",
+      "table_bytes": 53099,
+      "table_SHARED_K": true,
+      "posting_per_router_label_b": 8,
+      "max_candidates": 24,
+      "GT10_anchor": {
+        "name": "GT10-soft-t1",
+        "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+        "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+        "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw"
+      },
+      "original_training_and_select_roles": [
+        {
+          "role": "M5_TRAIN_DISCOVERY20K",
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/queries.f32",
+          "n": 20000,
+          "exact_vector_byte_overlap_with_test10k": 0
+        },
+        {
+          "role": "M5_SELECT4096",
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/queries.f32",
+          "n": 4096,
+          "exact_vector_byte_overlap_with_test10k": 0
+        },
+        {
+          "role": "ACO_TRAIN",
+          "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.aco_train.seed20260826.fvecs",
+          "n": 5000,
+          "exact_vector_byte_overlap_with_test10k": 0
+        },
+        {
+          "role": "GT10_ROUTER_TRAIN",
+          "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+          "n": 30000,
+          "exact_vector_byte_overlap_with_test10k": 0
+        }
+      ],
+      "manifest_declared_pairwise_overlap_counts": {
+        "aco_train__router_train": 0,
+        "aco_train__test": 0,
+        "aco_train__validation": 0,
+        "router_train__test": 0,
+        "router_train__validation": 0,
+        "validation__test": 0
+      },
+      "frozen_model_generation_status": "FROZEN_TRAIN_ONLY_POSTING_BYTES",
+      "frozen_model_train_audit_status": "PASS_ALL_TRAIN_INTEGER_GREEDY_INDEPENDENT_INCREMENTAL_REPLAY",
+      "table_fitted_again": false
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "artifact_version": "yandex-t2i-official-first10m-ip-v1",
+      "metric": "ip",
+      "normalization": "none",
+      "dimension": 200,
+      "base_n": 10000000,
+      "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+      "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "historical_domain_receipt": "/root/acsg-e172-storage-v2/campaign/reviews/yandex_t2i_official10M_ip_v1.data_domain.json",
+      "query_file": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.test.public100K.fvecs",
+      "GT_file": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/gt.test.public100K.ip.ivecs",
+      "test_container_n": 100000,
+      "query_first": 0,
+      "tested_n": 10000,
+      "test_unique_vector_rows": 10000,
+      "test_duplicate_extra_rows": 0,
+      "test_f32_payload_sha256": "3a61d70abbd6d12ce46d3dae5650b7ae79828c155b32813d180024d293e3cb85",
+      "GT_top100_container_n": 100000,
+      "GT_first10k_ivecs_sha256": "bd7c75058babf7bea4b31a27d9ac38705e88cd76a3482229cacac3e7609aa6eb",
+      "frozen_M5_table": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/residual_joint.bin",
+      "table_sha256": "032e0c74af93a3278a9b2203b4cf7b7058d29396653749311aeadc4361593d1c",
+      "table_bytes": 53369,
+      "table_SHARED_K": true,
+      "posting_per_router_label_b": 8,
+      "max_candidates": 24,
+      "GT10_anchor": {
+        "name": "GT10-hard",
+        "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+        "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+        "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw"
+      },
+      "original_training_and_select_roles": [
+        {
+          "role": "M5_TRAIN_DISCOVERY20K",
+          "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/queries.f32",
+          "n": 20000,
+          "exact_vector_byte_overlap_with_test10k": 0
+        },
+        {
+          "role": "M5_SELECT4096",
+          "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+          "n": 4096,
+          "exact_vector_byte_overlap_with_test10k": 0
+        },
+        {
+          "role": "ACO_TRAIN",
+          "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.aco_train.fvecs",
+          "n": 5000,
+          "exact_vector_byte_overlap_with_test10k": 0
+        },
+        {
+          "role": "GT10_ROUTER_TRAIN",
+          "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs",
+          "n": 30000,
+          "exact_vector_byte_overlap_with_test10k": 0
+        }
+      ],
+      "manifest_declared_pairwise_overlap_counts": {
+        "aco_train__router_train": 0,
+        "aco_train__test": 0,
+        "aco_train__validation": 0,
+        "router_train__test": 0,
+        "router_train__validation": 0,
+        "validation__test": 0
+      },
+      "frozen_model_generation_status": "FROZEN_TRAIN_ONLY_POSTING_BYTES",
+      "frozen_model_train_audit_status": "PASS_ALL_TRAIN_INTEGER_GREEDY_INDEPENDENT_INCREMENTAL_REPLAY",
+      "table_fitted_again": false
+    }
+  },
+  "current_complete_file_records": {
+    "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/manifest.json": {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/manifest.json",
+      "bytes": 5579,
+      "sha256": "1bad4d81fe3ef753c4df546ffca6b89709c626060221ad5227aea78c4ad83614",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 15073334,
+        "size": 5579,
+        "mtime_ns": 1787715049841908095,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 15073334,
+        "size": 5579,
+        "mtime_ns": 1787715049841908095,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": null,
+      "expected_bytes": null,
+      "matches_expected_sha256": null,
+      "matches_expected_bytes": null
+    },
+    "/root/acsg-e172-storage-v2/campaign/reviews/webvid2_5m_light_v1.data_domain.json": {
+      "path": "/root/acsg-e172-storage-v2/campaign/reviews/webvid2_5m_light_v1.data_domain.json",
+      "bytes": 1770,
+      "sha256": "88cc32457154b25321501b047608fbcb4d4eac83f78d60c44c1ac95d2ff1cd9a",
+      "stat5_before": {
+        "device": 66308,
+        "inode": 1200793,
+        "size": 1770,
+        "mtime_ns": 1790998838711740530,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66308,
+        "inode": 1200793,
+        "size": 1770,
+        "mtime_ns": 1790998838711740530,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": null,
+      "expected_bytes": null,
+      "matches_expected_sha256": null,
+      "matches_expected_bytes": null
+    },
+    "/root/acsg-e172-storage-v2/campaign/m5/models/webvid2_5m_light_v1/compile_manifest.json": {
+      "path": "/root/acsg-e172-storage-v2/campaign/m5/models/webvid2_5m_light_v1/compile_manifest.json",
+      "bytes": 4395,
+      "sha256": "4253bb7a7483dcf774cd7b7af63fdf7489b4782e02d0bf2777bd910437ef30c2",
+      "stat5_before": {
+        "device": 66308,
+        "inode": 1207992,
+        "size": 4395,
+        "mtime_ns": 1790998769335435687,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66308,
+        "inode": 1207992,
+        "size": 4395,
+        "mtime_ns": 1790998769335435687,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": null,
+      "expected_bytes": null,
+      "matches_expected_sha256": null,
+      "matches_expected_bytes": null
+    },
+    "/root/acsg-e172-storage-v2/campaign/m5/models/webvid2_5m_light_v1/train_integer_greedy.audit.json": {
+      "path": "/root/acsg-e172-storage-v2/campaign/m5/models/webvid2_5m_light_v1/train_integer_greedy.audit.json",
+      "bytes": 4492,
+      "sha256": "0c8f6b66a65f99d95f101cac58eddf5a8b3f87b51b6183d6bba7cc5528b994bd",
+      "stat5_before": {
+        "device": 66308,
+        "inode": 1207993,
+        "size": 4492,
+        "mtime_ns": 1791004964418671996,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66308,
+        "inode": 1207993,
+        "size": 4492,
+        "mtime_ns": 1791004964418671996,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": null,
+      "expected_bytes": null,
+      "matches_expected_sha256": null,
+      "matches_expected_bytes": null
+    },
+    "/root/acsg-e172-storage-v2/campaign/m5/models/webvid2_5m_light_v1/control_inputs.frozen.json": {
+      "path": "/root/acsg-e172-storage-v2/campaign/m5/models/webvid2_5m_light_v1/control_inputs.frozen.json",
+      "bytes": 2004,
+      "sha256": "dab36a7f68ec9cab8ece9e76bed772c352744f8650bd2d32bf8f01278fffdd71",
+      "stat5_before": {
+        "device": 66308,
+        "inode": 1207998,
+        "size": 2004,
+        "mtime_ns": 1791003006170057830,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66308,
+        "inode": 1207998,
+        "size": 2004,
+        "mtime_ns": 1791003006170057830,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": null,
+      "expected_bytes": null,
+      "matches_expected_sha256": null,
+      "matches_expected_bytes": null
+    },
+    "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs": {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+      "bytes": 5140260000,
+      "sha256": "6fb5b5510b29504de38271be7c343bd5e85a029f5755c7b3d74177cbf1ebbb18",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 15073301,
+        "size": 5140260000,
+        "mtime_ns": 1787713211996956145,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 15073301,
+        "size": 5140260000,
+        "mtime_ns": 1787713211996956145,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "6fb5b5510b29504de38271be7c343bd5e85a029f5755c7b3d74177cbf1ebbb18",
+      "expected_bytes": 5140260000,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json": {
+      "path": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "bytes": 5791560103,
+      "sha256": "0a95d309b4980e0f0b73b7ad1222ec611db1f97c32ba2b69f070f5a952b9129a",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 15466503,
+        "size": 5791560103,
+        "mtime_ns": 1787714557628644919,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 15466503,
+        "size": 5791560103,
+        "mtime_ns": 1787714557628644919,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "0a95d309b4980e0f0b73b7ad1222ec611db1f97c32ba2b69f070f5a952b9129a",
+      "expected_bytes": 5791560103,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.test.public10K.fvecs": {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.test.public10K.fvecs",
+      "bytes": 20520000,
+      "sha256": "96b11dda1628f15e704512438e1dc773a8f19b2426e03c71aedcacf11f18910d",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 15073305,
+        "size": 20520000,
+        "mtime_ns": 1787713212024956231,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 15073305,
+        "size": 20520000,
+        "mtime_ns": 1787713212024956231,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "96b11dda1628f15e704512438e1dc773a8f19b2426e03c71aedcacf11f18910d",
+      "expected_bytes": 20520000,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/gt.test.public10K.ip.top100.ivecs": {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/gt.test.public10K.ip.top100.ivecs",
+      "bytes": 4040000,
+      "sha256": "1e55041056ef61d4192e01064fed0311cf8d831b6a8d6e5225b9514ace801022",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 15073306,
+        "size": 4040000,
+        "mtime_ns": 1787713212028956243,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 15073306,
+        "size": 4040000,
+        "mtime_ns": 1787713212028956243,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "1e55041056ef61d4192e01064fed0311cf8d831b6a8d6e5225b9514ace801022",
+      "expected_bytes": 4040000,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/root/acsg-e172-storage-v2/campaign/m5/models/webvid2_5m_light_v1/residual_joint.bin": {
+      "path": "/root/acsg-e172-storage-v2/campaign/m5/models/webvid2_5m_light_v1/residual_joint.bin",
+      "bytes": 53099,
+      "sha256": "d0310bdb136d45595a00c8697c170dc38b6bda07b0090cec64ba00db236dd7ff",
+      "stat5_before": {
+        "device": 66308,
+        "inode": 1207996,
+        "size": 53099,
+        "mtime_ns": 1790998754507370532,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66308,
+        "inode": 1207996,
+        "size": 53099,
+        "mtime_ns": 1790998754507370532,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "d0310bdb136d45595a00c8697c170dc38b6bda07b0090cec64ba00db236dd7ff",
+      "expected_bytes": 53099,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/queries.f32": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/queries.f32",
+      "bytes": 40960000,
+      "sha256": "4eef43d019981b7ce8a57eb9969736c0443d4622412ed482868ba80cd8b078b6",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 8288537,
+        "size": 40960000,
+        "mtime_ns": 1789040115712291365,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 8288537,
+        "size": 40960000,
+        "mtime_ns": 1789040115712291365,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "4eef43d019981b7ce8a57eb9969736c0443d4622412ed482868ba80cd8b078b6",
+      "expected_bytes": 40960000,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/queries.f32": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/webvid2_5m_light_v1/queries.f32",
+      "bytes": 8388608,
+      "sha256": "59e72fe42b5f920f6782f93a6b5ac55cbaef9627ca26090a6ec8c7cd55c54423",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 8659840,
+        "size": 8388608,
+        "mtime_ns": 1789871758395285867,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 8659840,
+        "size": 8388608,
+        "mtime_ns": 1789871758395285867,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "59e72fe42b5f920f6782f93a6b5ac55cbaef9627ca26090a6ec8c7cd55c54423",
+      "expected_bytes": 8388608,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.aco_train.seed20260826.fvecs": {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.aco_train.seed20260826.fvecs",
+      "bytes": 10260000,
+      "sha256": "b4322c37b2d4ab10e965bc5731f523341d1a974d5e40aa0cd881b4fbe28a572e",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 15073328,
+        "size": 10260000,
+        "mtime_ns": 1787714655676896543,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 15073328,
+        "size": 10260000,
+        "mtime_ns": 1787714655676896543,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "b4322c37b2d4ab10e965bc5731f523341d1a974d5e40aa0cd881b4fbe28a572e",
+      "expected_bytes": 10260000,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs": {
+      "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.router_train.seed20260826.fvecs",
+      "bytes": 61560000,
+      "sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 15073329,
+        "size": 61560000,
+        "mtime_ns": 1787714655768896778,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 15073329,
+        "size": 61560000,
+        "mtime_ns": 1787714655768896778,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "dee83c948f0f918f625b39af1d947701d55b7f2ab8e6222b6f9edeeaf34b4855",
+      "expected_bytes": 61560000,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+      "bytes": 3260,
+      "sha256": "47c58c28e48e85c5a4f0cad245ef66f451dde404afb0ad7231909ba1956e8e03",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 8544403,
+        "size": 3260,
+        "mtime_ns": 1789380181254791105,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 8544403,
+        "size": 3260,
+        "mtime_ns": 1789380181254791105,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "47c58c28e48e85c5a4f0cad245ef66f451dde404afb0ad7231909ba1956e8e03",
+      "expected_bytes": null,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": null
+    },
+    "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+      "bytes": 1669120,
+      "sha256": "897f61a0cfaa6ccba01e626c3c3d946e6622c04f43cd2b0fccc50356b0de7834",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 8544417,
+        "size": 1669120,
+        "mtime_ns": 1789040609362463668,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 8544417,
+        "size": 1669120,
+        "mtime_ns": 1789040609362463668,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "897f61a0cfaa6ccba01e626c3c3d946e6622c04f43cd2b0fccc50356b0de7834",
+      "expected_bytes": null,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": null
+    },
+    "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+      "bytes": 1790316,
+      "sha256": "fa4dfabb630cfd30dbe1f065ac469189a3449a9d560348e585c4d318468da091",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 8551680,
+        "size": 1790316,
+        "mtime_ns": 1789491873446888264,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 8551680,
+        "size": 1790316,
+        "mtime_ns": 1789491873446888264,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": null,
+      "expected_bytes": null,
+      "matches_expected_sha256": null,
+      "matches_expected_bytes": null
+    },
+    "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/manifest.json": {
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/manifest.json",
+      "bytes": 3302,
+      "sha256": "84cd11015c2b98b4fc81d6f62b907351889a87d5b14126a17966104a0bb2000b",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 12851020,
+        "size": 3302,
+        "mtime_ns": 1787652846768310247,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 12851020,
+        "size": 3302,
+        "mtime_ns": 1787652846768310247,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": null,
+      "expected_bytes": null,
+      "matches_expected_sha256": null,
+      "matches_expected_bytes": null
+    },
+    "/root/acsg-e172-storage-v2/campaign/reviews/yandex_t2i_official10M_ip_v1.data_domain.json": {
+      "path": "/root/acsg-e172-storage-v2/campaign/reviews/yandex_t2i_official10M_ip_v1.data_domain.json",
+      "bytes": 1812,
+      "sha256": "13c073c289ab301eedd9d413330315c960cacfb68192e18a44b1b35a8a57db19",
+      "stat5_before": {
+        "device": 66308,
+        "inode": 1200783,
+        "size": 1812,
+        "mtime_ns": 1790998942032194525,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66308,
+        "inode": 1200783,
+        "size": 1812,
+        "mtime_ns": 1790998942032194525,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": null,
+      "expected_bytes": null,
+      "matches_expected_sha256": null,
+      "matches_expected_bytes": null
+    },
+    "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/compile_manifest.json": {
+      "path": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/compile_manifest.json",
+      "bytes": 4471,
+      "sha256": "855c57801f5ab45141c5b17620b875214f8c7cd5849b636a4205ea483215420a",
+      "stat5_before": {
+        "device": 66308,
+        "inode": 1207977,
+        "size": 4471,
+        "mtime_ns": 1790999186073266853,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66308,
+        "inode": 1207977,
+        "size": 4471,
+        "mtime_ns": 1790999186073266853,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": null,
+      "expected_bytes": null,
+      "matches_expected_sha256": null,
+      "matches_expected_bytes": null
+    },
+    "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/train_integer_greedy.audit.json": {
+      "path": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/train_integer_greedy.audit.json",
+      "bytes": 4639,
+      "sha256": "bfcd930d98e14e459406526ec67d1e130c328fd3a3a65cebd4576dfd19970d19",
+      "stat5_before": {
+        "device": 66308,
+        "inode": 1207978,
+        "size": 4639,
+        "mtime_ns": 1791004966774682366,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66308,
+        "inode": 1207978,
+        "size": 4639,
+        "mtime_ns": 1791004966774682366,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": null,
+      "expected_bytes": null,
+      "matches_expected_sha256": null,
+      "matches_expected_bytes": null
+    },
+    "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/control_inputs.frozen.json": {
+      "path": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/control_inputs.frozen.json",
+      "bytes": 2064,
+      "sha256": "7c11ec6a6cd34c210b6397e0fdaf39ccf0d7c80906221ee1c50b8e3ed0fb5ad1",
+      "stat5_before": {
+        "device": 66308,
+        "inode": 1207983,
+        "size": 2064,
+        "mtime_ns": 1791003006186057901,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66308,
+        "inode": 1207983,
+        "size": 2064,
+        "mtime_ns": 1791003006186057901,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": null,
+      "expected_bytes": null,
+      "matches_expected_sha256": null,
+      "matches_expected_bytes": null
+    },
+    "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs": {
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+      "bytes": 8040000000,
+      "sha256": "56d1baa271c79ea280d57ee1c7a8359438ffffc98a75cac799051b13fbdbe0ff",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 12851011,
+        "size": 8040000000,
+        "mtime_ns": 1787650857757488152,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 12851011,
+        "size": 8040000000,
+        "mtime_ns": 1787650857757488152,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "56d1baa271c79ea280d57ee1c7a8359438ffffc98a75cac799051b13fbdbe0ff",
+      "expected_bytes": 8040000000,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json": {
+      "path": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "bytes": 10640000103,
+      "sha256": "fa6eb7dd4e8d9dc95d696947fc18bd167880fb336212cb7bd073e7acddd4bf2e",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 13762562,
+        "size": 10640000103,
+        "mtime_ns": 1787655783830469960,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 13762562,
+        "size": 10640000103,
+        "mtime_ns": 1787655783830469960,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "fa6eb7dd4e8d9dc95d696947fc18bd167880fb336212cb7bd073e7acddd4bf2e",
+      "expected_bytes": 10640000103,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.test.public100K.fvecs": {
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.test.public100K.fvecs",
+      "bytes": 80400000,
+      "sha256": "d5c1079755a1bef7db62f63f1e8b041e3035024e072ac5db79ddfb66689b42a2",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 12851015,
+        "size": 80400000,
+        "mtime_ns": 1787650857845488453,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 12851015,
+        "size": 80400000,
+        "mtime_ns": 1787650857845488453,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "d5c1079755a1bef7db62f63f1e8b041e3035024e072ac5db79ddfb66689b42a2",
+      "expected_bytes": 80400000,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/gt.test.public100K.ip.ivecs": {
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/gt.test.public100K.ip.ivecs",
+      "bytes": 40400000,
+      "sha256": "9b8bed25edc98f4df45039b7a064e311ff4bdac0a69254c7f03fe668d14d1d29",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 12851016,
+        "size": 40400000,
+        "mtime_ns": 1787650857869488536,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 12851016,
+        "size": 40400000,
+        "mtime_ns": 1787650857869488536,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "9b8bed25edc98f4df45039b7a064e311ff4bdac0a69254c7f03fe668d14d1d29",
+      "expected_bytes": 40400000,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/residual_joint.bin": {
+      "path": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/residual_joint.bin",
+      "bytes": 53369,
+      "sha256": "032e0c74af93a3278a9b2203b4cf7b7058d29396653749311aeadc4361593d1c",
+      "stat5_before": {
+        "device": 66308,
+        "inode": 1207981,
+        "size": 53369,
+        "mtime_ns": 1790999168389189148,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66308,
+        "inode": 1207981,
+        "size": 53369,
+        "mtime_ns": 1790999168389189148,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "032e0c74af93a3278a9b2203b4cf7b7058d29396653749311aeadc4361593d1c",
+      "expected_bytes": 53369,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/queries.f32": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/queries.f32",
+      "bytes": 16000000,
+      "sha256": "e86c597b26ee908f4d4d64674a2ea89837e75d1f824c1ce30671fbd3fc5424e8",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 8288552,
+        "size": 16000000,
+        "mtime_ns": 1789040128308346680,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 8288552,
+        "size": 16000000,
+        "mtime_ns": 1789040128308346680,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "e86c597b26ee908f4d4d64674a2ea89837e75d1f824c1ce30671fbd3fc5424e8",
+      "expected_bytes": 16000000,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260920_wfree_frozen_replication_v1/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+      "bytes": 3276800,
+      "sha256": "c79e79c090ca845f66ab723e0aae621a14d81cc5a813c58c393ad2b1eac4948f",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 8659847,
+        "size": 3276800,
+        "mtime_ns": 1789871765159285440,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 8659847,
+        "size": 3276800,
+        "mtime_ns": 1789871765159285440,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "c79e79c090ca845f66ab723e0aae621a14d81cc5a813c58c393ad2b1eac4948f",
+      "expected_bytes": 3276800,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.aco_train.fvecs": {
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.aco_train.fvecs",
+      "bytes": 4020000,
+      "sha256": "d9146b417777e49d175f56071f6c1a90ccbd7a51c767f8cf0f1d088cc7dfe727",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 12851012,
+        "size": 4020000,
+        "mtime_ns": 1787650857761488165,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 12851012,
+        "size": 4020000,
+        "mtime_ns": 1787650857761488165,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "d9146b417777e49d175f56071f6c1a90ccbd7a51c767f8cf0f1d088cc7dfe727",
+      "expected_bytes": 4020000,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs": {
+      "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.router_train.fvecs",
+      "bytes": 24120000,
+      "sha256": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 12851013,
+        "size": 24120000,
+        "mtime_ns": 1787650857777488221,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 12851013,
+        "size": 24120000,
+        "mtime_ns": 1787650857777488221,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "53a30088e6f6aa6f57a02fe2a17f8680d83f5ed7c9886c0eea265b9adab1b8e2",
+      "expected_bytes": 24120000,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": true
+    },
+    "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "bytes": 3284,
+      "sha256": "ec82834901aacf360049aad43c47065fcd5de90cc0b882d6dd0016de798e2240",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 8544452,
+        "size": 3284,
+        "mtime_ns": 1789381554965480127,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 8544452,
+        "size": 3284,
+        "mtime_ns": 1789381554965480127,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "ec82834901aacf360049aad43c47065fcd5de90cc0b882d6dd0016de798e2240",
+      "expected_bytes": null,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": null
+    },
+    "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "bytes": 656800,
+      "sha256": "bbc5e447aad556618a75fe50a6543c7d3fae68c46f920d79e8913281a0c9bf16",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 8544463,
+        "size": 656800,
+        "mtime_ns": 1789040616102493581,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 8544463,
+        "size": 656800,
+        "mtime_ns": 1789040616102493581,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": "bbc5e447aad556618a75fe50a6543c7d3fae68c46f920d79e8913281a0c9bf16",
+      "expected_bytes": null,
+      "matches_expected_sha256": true,
+      "matches_expected_bytes": null
+    },
+    "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+      "bytes": 778860,
+      "sha256": "11ffd1dc090f132cdb78e027a202edf5e49a5d50033f82b8834bb0e2ca08036c",
+      "stat5_before": {
+        "device": 66309,
+        "inode": 8552814,
+        "size": 778860,
+        "mtime_ns": 1789506099285999991,
+        "mode": 33188
+      },
+      "stat5_after": {
+        "device": 66309,
+        "inode": 8552814,
+        "size": 778860,
+        "mtime_ns": 1789506099285999991,
+        "mode": 33188
+      },
+      "stable": true,
+      "expected_sha256": null,
+      "expected_bytes": null,
+      "matches_expected_sha256": null,
+      "matches_expected_bytes": null
+    }
+  },
+  "public_test_exposure": {
+    "previously_used_public_test": true,
+    "history_source": "/data/netg/ACSG/experiment_history/01_fast_and_legacy.md",
+    "history_lines": [
+      41,
+      47,
+      49,
+      51
+    ],
+    "statement": "Web public10K and Y public first10K were used in prior formal held-out comparisons; this is an explicitly authorized fixed-public-test retest, not a newly unexposed held-out claim. Exact byte disjointness shown here concerns current original M5 TRAIN/SELECT and original ACO/router TRAIN inputs, not an assertion that no historical tuning used public-test feedback."
+  },
+  "retained_campaign_root": "/root/acsg-e172-storage-v2/campaign",
+  "restored_bind_or_modified_frozen_input": false,
+  "training_calls": 0,
+  "ANN_calls": 0,
+  "GT_generation_calls": 0,
+  "io_preflight_seconds": 160.76936153399993,
+  "new_result_or_deployment_qualification_issued": false
+}

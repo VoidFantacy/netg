@@ -1,0 +1,50 @@
+{
+  "schema": "acsg_nsg_gt_m5_retest_source_review_v2",
+  "status": "PASS",
+  "scope": "SOURCE_ONLY",
+  "reviewer": "/root/retest_contract",
+  "source_sha256": {
+    "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/src/benchmark_v2.cpp": "3340bdb510f013bceae08639e17337d26950e07b7cf79c4dbbde20d6ffdcde5d",
+    "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/src/native.hpp": "ef9dc9e8a294a064f5ae03d96eb4ee3b9f6b9efa6cb685b483afa7c2d3328872",
+    "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/src/runtime.hpp": "ff1c567f3c232e80e912567f5b35e19768a5cc49130aa6a0d32378fbca4b8ced"
+  },
+  "reference_sha256": {
+    "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/src/benchmark.cpp": "8e85c2f964b901fe74e2e3f1143d4e84befe268ca1545b5200c1d2a2a7cda3b9"
+  },
+  "reviewed_delta": {
+    "first_diff_line": 65,
+    "formal_body_unchanged": true,
+    "run_unchanged": true,
+    "timed_normal_batch_unchanged": true,
+    "publish_normal_packet_unchanged": true,
+    "query_guard_post_router_and_merge_unchanged": true,
+    "formal_full_query_count_unchanged": true,
+    "formal_timing_repeats_unchanged": true,
+    "count_audit_n": "min(n,256)",
+    "count_query_ids_formula": "audit_n==1 ? 0 : floor(i*(n-1)/(audit_n-1))",
+    "count_sampling_before_any_responses": true
+  },
+  "findings": [
+    "All helper functions, including run, legal_query, publish_normal_packet, timed_normal_batch, audit_merge, and stats_json, remain byte-identical to the reviewed v1 source. Native and posting runtime headers are unchanged.",
+    "Each formal method still runs the complete n-query batch and configured repetition count with the unchanged complete normal-output lifetime; no count/parity/oracle logic is in the performance timer.",
+    "A fixed monotone uniform query-ID sample is created before any method feedback. For the intended n=10000, audit_n=256 and IDs are unique, in range, and include 0 and 9999.",
+    "audit_q copies exactly q[audit_ids[i]]; sample_plain copies all four compared output fields from full_plain at exactly the same source ID: ids, distances, entries, and profile_distances. same(sample_plain,counted) uses corresponding sample rows.",
+    "full_plain[0], full_plain[1], and full_plain[2] each run the complete current K/L batch once. Full M5 linear-merge auditing receives the same-point GT full_plain[1] as before and M5 full_plain[2] as after, with the same full query vector and frozen posting table.",
+    "Complete n-row ids/distances/entries/profile outputs are retained for all three methods. Count NDC and statistics are explicitly scoped to audit_n rows, with audit_query_ids persisted globally and per point.",
+    "No actual algorithm or source-level indexing bug was found in the cost reduction."
+  ],
+  "report_boundaries": [
+    "This is SOURCE-only. It certifies neither actual compiled machine identity, runtime parity, actual thread execution, nor performance.",
+    "The complete scored Recall output remains n=10000 per method and point. Only plain/count word parity and NDC/PostStats are reduced to the fixed 256-query sample.",
+    "Route and graph NDC files contain 256 aligned sample rows, not 10000 rows; downstream analysis must use raw/audit_query_ids.i32 and must label count/NDC/statistics as sampled.",
+    "graph_ndc already includes M5 post rescoring dots. total_ndc=route_ndc+graph_ndc; do not add post_dots again.",
+    "Full M5 independent linear merge auditing is retained for all 10000 rows and reuses the complete same-K/same-L GT plain packet.",
+    "Timed packets are destroyed. This audit does not claim each timed repetition was saved and checked word-for-word.",
+    "Warmup_n is a configuration value, with source default256. Root has specified the new protocol uses warmup256; report that condition rather than full-batch warmup.",
+    "Original v1 artifacts and source review retain their original identity; v2 does not retroactively change them."
+  ],
+  "native_execution": false,
+  "real_data_evaluation": false,
+  "performance_claim": false,
+  "additional_experiments": false
+}

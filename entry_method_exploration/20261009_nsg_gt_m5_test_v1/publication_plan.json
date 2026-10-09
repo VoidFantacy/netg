@@ -1,0 +1,1025 @@
+{
+  "schema": "acsg.e173.publication_plan.v1",
+  "status": "PLAN_ONLY_PENDING_NATIVE_AND_ANALYSIS_COMPLETION",
+  "prepared_date": "2026-10-09",
+  "plan_file": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/publication_plan.json",
+  "scope": "Explicit-path publication assembly plan. Historical plan-only action/status fields retain their original preparation meaning; copied artifacts remain pending final Root manifest and remote publication.",
+  "quality_feedback_read": false,
+  "latest_native_quality_read": false,
+  "future_paths_are_not_completion_claims": true,
+  "publication": {
+    "repository": "VoidFantacy/netg",
+    "branch": "research/state-20261002",
+    "remote_name": "voidfantacy",
+    "current_remote_and_publish_parent": "9026dc60ca4f29983792e0f5dcfb33d7ef9335b5",
+    "read_only_remote_check": "git ls-remote https://github.com/VoidFantacy/netg.git refs/heads/research/state-20261002",
+    "active_local_head": "96cf05d5410cf51272048cd1f90b4bb194e23c62",
+    "clean_publish_worktree": "/data/netg/ACSG-publish-20261006",
+    "active_worktree_must_not_be_bulk_staged": true,
+    "remote_ref_update": "Root manages final fast-forward publication only after rechecking current remote parent; this plan authorizes no network write.",
+    "preserve_old_snapshot": "research_snapshots/20261006_results",
+    "artifact_repo_prefix": "entry_method_exploration/20261009_nsg_gt_m5_test_v1",
+    "snapshot_prefix": "research_snapshots/20261009_nsg_gt_m5",
+    "entrypoint": "research_snapshots/20261009_nsg_gt_m5/README.md",
+    "entrypoint_links": {
+      "three_page_method": "../../entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/concise_v1/method_report.md",
+      "three_page_pdf": "../../entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/concise_v1/GT与M5方法说明.pdf",
+      "m5_explanation": "../../entry_method_exploration/20261009_nsg_gt_m5_test_v1/m5_method_explanation.md",
+      "final_report": "../../entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_v2/report.md",
+      "metrics_csv": "../../entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_v2/metrics.csv",
+      "metrics_json": "../../entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_v2/metrics.json",
+      "comparisons_csv": "../../entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_v2/comparisons.csv",
+      "recall_qps_png": "../../entry_method_exploration/20261009_nsg_gt_m5_test_v1/figures_v2/recall_qps_nsg_gt_m5.png",
+      "versus_budget_png": "../../entry_method_exploration/20261009_nsg_gt_m5_test_v1/figures_v2/recall_qps_vs_L_nsg_gt_m5.png",
+      "frozen_m5_algorithm": "../../entry_method_exploration/20261009_nsg_gt_m5_test_v1/frozen_m5_source/compile_postings.py",
+      "frozen_m5_scope": "../../entry_method_exploration/20261009_nsg_gt_m5_test_v1/frozen_m5_source/README.md",
+      "protocol": "../../entry_method_exploration/20261009_nsg_gt_m5_test_v1/protocol_v2.md"
+    },
+    "web_delivery": "After final commit, provide fixed NEW_COMMIT_SHA GitHub blob URLs and raw.githubusercontent.com URLs for snapshot README, three-page Markdown method and final report; validate remote bytes. Branch links may be secondary.",
+    "root_files_managed_only_by_root": [
+      "readme.md",
+      "summary.md",
+      "spec.md",
+      "s-target.md",
+      "s-experiment.md",
+      "experiment_history/173_nsg_gt_m5_public_test_retest.md",
+      "experiment_history/README.md"
+    ],
+    "history_173_name_note": "The card filename is a recommended future name; Root may choose its final explicit path. It is not created by this plan."
+  },
+  "whitelist_policy": {
+    "mode": "EXPLICIT_PATHS_ONLY",
+    "directory_wildcards_permitted": false,
+    "copy_targets_preserve_repo_relative_path": true,
+    "source_sha256": "Finalize byte identities for every copied/published file when assembling the completed publication. Do not use current dynamic receipt hashes as final identities.",
+    "missing_future_path": "Keep pending until produced; never substitute partial v1 results or fabricate an aggregate.",
+    "no_recursive_copy_of_experiment_directory": true,
+    "maximum_individual_file_bytes": 1048576,
+    "oversize_behavior": "Review scope and choose a compact approved representation; never silently broaden the whitelist.",
+    "not_run_ready_reproduction": "Published code and provenance explain the algorithms and measurement contract; full data/index/models, native libraries and original object files remain local. Do not claim an independently runnable complete experiment bundle."
+  },
+  "explicit_experiment_files": [
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/protocol.md",
+      "kind": "protocol",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/protocol_v2.md",
+      "kind": "formal_v2_protocol",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/data_preflight.json",
+      "kind": "data_identity_and_role_preflight",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/preparation.json",
+      "kind": "initial_preparation_receipt",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/preparation_combined.json",
+      "kind": "initial_combined_configuration_receipt",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/preparation_v2.json",
+      "kind": "formal_v2_preparation_receipt",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_job_copies.json",
+      "kind": "frozen_evaluator_job_copy_receipt",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/prepare_jobs.py",
+      "kind": "preparation_source",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/prepare_combined_jobs.py",
+      "kind": "preparation_source",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/prepare_v2.py",
+      "kind": "formal_v2_preparation_source",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/run_tests_v2.py",
+      "kind": "formal_v2_orchestration_source",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/jobs_v2/webvid2_5m_light_v1.combined.json",
+      "kind": "frozen_formal_v2_job",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/jobs_v2/yandex_t2i_official10M_ip_v1.combined.json",
+      "kind": "frozen_formal_v2_job",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/src/benchmark_v2.cpp",
+      "kind": "formal_v2_native_source",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/src/native.hpp",
+      "kind": "original_native_router_and_loader_source",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/src/runtime.hpp",
+      "kind": "frozen_m5_runtime_source",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/src/build_v2.py",
+      "kind": "formal_v2_build_source",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/src/build_v2.json",
+      "kind": "formal_v2_build_hash_receipt",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/src/evaluate_v2.py",
+      "kind": "formal_v2_scoring_source",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/src/plot_results.py",
+      "kind": "saved_results_plot_source",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/source_review_v2.json",
+      "kind": "independent_source_review",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_source_review.json",
+      "kind": "independent_evaluator_and_plot_source_review",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/v1_cost_replan.json",
+      "kind": "v1_cost_and_scope_replan_receipt",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/m5_method_explanation.md",
+      "kind": "m5_method_explanation",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/concise_v1/method_report.md",
+      "kind": "primary_three_page_method_markdown",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/concise_v1/GT与M5方法说明.pdf",
+      "kind": "primary_three_page_method_pdf",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/concise_v1/delivery_receipt.json",
+      "kind": "three_page_document_delivery_receipt",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/method_flow.svg",
+      "kind": "shared_method_diagram",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/build_advisor_pdf.py",
+      "kind": "document_render_source",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/method_review_notes.md",
+      "kind": "method_fact_and_theory_boundary_notes",
+      "required": true,
+      "readiness": "existing_static_file; finalize hash when assembling publication",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_v2/metrics.json",
+      "kind": "final_aggregate_result",
+      "required": true,
+      "readiness": "future_or_uninspected; allow only after both native datasets and final evaluator complete",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_v2/metrics.csv",
+      "kind": "final_aggregate_result",
+      "required": true,
+      "readiness": "future_or_uninspected; allow only after both native datasets and final evaluator complete",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_v2/comparisons.csv",
+      "kind": "final_aggregate_result",
+      "required": true,
+      "readiness": "future_or_uninspected; allow only after both native datasets and final evaluator complete",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_v2/report.md",
+      "kind": "final_aggregate_result",
+      "required": true,
+      "readiness": "future_or_uninspected; allow only after both native datasets and final evaluator complete",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/figures_v2/recall_qps_nsg_gt_m5.png",
+      "kind": "final_measured_curve",
+      "required": true,
+      "readiness": "future_or_uninspected; generated only from final analysis_v2/metrics.json",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/figures_v2/recall_qps_nsg_gt_m5.svg",
+      "kind": "final_measured_curve",
+      "required": true,
+      "readiness": "future_or_uninspected; generated only from final analysis_v2/metrics.json",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/figures_v2/recall_qps_nsg_gt_m5.pdf",
+      "kind": "final_measured_curve",
+      "required": true,
+      "readiness": "future_or_uninspected; generated only from final analysis_v2/metrics.json",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/figures_v2/recall_qps_vs_L_nsg_gt_m5.png",
+      "kind": "final_measured_curve",
+      "required": true,
+      "readiness": "future_or_uninspected; generated only from final analysis_v2/metrics.json",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/figures_v2/recall_qps_vs_L_nsg_gt_m5.svg",
+      "kind": "final_measured_curve",
+      "required": true,
+      "readiness": "future_or_uninspected; generated only from final analysis_v2/metrics.json",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/figures_v2/recall_qps_vs_L_nsg_gt_m5.pdf",
+      "kind": "final_measured_curve",
+      "required": true,
+      "readiness": "future_or_uninspected; generated only from final analysis_v2/metrics.json",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/figures_v2/plot_provenance.json",
+      "kind": "final_plot_provenance",
+      "required": true,
+      "readiness": "future_or_uninspected",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/run_state_v2.json",
+      "kind": "final_orchestration_receipt",
+      "required": true,
+      "readiness": "dynamic; copy final successful state only",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/job.json",
+      "kind": "native_job_identity_receipt",
+      "required": true,
+      "readiness": "future_or_dynamic; copy only after dataset final completion",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/native_environment.json",
+      "kind": "native_job_identity_receipt",
+      "required": true,
+      "readiness": "future_or_dynamic; copy only after dataset final completion",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/complete.json",
+      "kind": "final_dataset_native_receipt",
+      "required": true,
+      "readiness": "future_or_dynamic; copy only after dataset final completion",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k1/NSG_L200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k1/GT_L200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k1/M5_L200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k1/NSG_L400/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k1/GT_L400/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k1/M5_L400/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k1/NSG_L800/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k1/GT_L800/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k1/M5_L800/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k1/NSG_L1000/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k1/GT_L1000/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k1/M5_L1000/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k1/NSG_L1200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k1/GT_L1200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k1/M5_L1200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k100/NSG_L200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k100/GT_L200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k100/M5_L200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k100/NSG_L400/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k100/GT_L400/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k100/M5_L400/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k100/NSG_L800/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k100/GT_L800/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k100/M5_L800/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k100/NSG_L1000/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k100/GT_L1000/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k100/M5_L1000/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k100/NSG_L1200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k100/GT_L1200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/webvid2_5m_light_v1/k100/M5_L1200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/job.json",
+      "kind": "native_job_identity_receipt",
+      "required": true,
+      "readiness": "future_or_dynamic; copy only after dataset final completion",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/native_environment.json",
+      "kind": "native_job_identity_receipt",
+      "required": true,
+      "readiness": "future_or_dynamic; copy only after dataset final completion",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/complete.json",
+      "kind": "final_dataset_native_receipt",
+      "required": true,
+      "readiness": "future_or_dynamic; copy only after dataset final completion",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k1/NSG_L200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k1/GT_L200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k1/M5_L200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k1/NSG_L400/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k1/GT_L400/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k1/M5_L400/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k1/NSG_L800/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k1/GT_L800/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k1/M5_L800/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k1/NSG_L1000/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k1/GT_L1000/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k1/M5_L1000/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k1/NSG_L1200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k1/GT_L1200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k1/M5_L1200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k100/NSG_L200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k100/GT_L200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k100/M5_L200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k100/NSG_L400/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k100/GT_L400/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k100/M5_L400/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k100/NSG_L800/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k100/GT_L800/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k100/M5_L800/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k100/NSG_L1000/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k100/GT_L1000/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k100/M5_L1000/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k100/NSG_L1200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k100/GT_L1200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results_v2/yandex_t2i_official10M_ip_v1/k100/M5_L1200/complete.json",
+      "kind": "final_point_native_receipt",
+      "required": true,
+      "readiness": "future_or_uninspected; final native point receipt only; never sibling raw arrays",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/frozen_m5_source/compile_postings.py",
+      "kind": "planned_frozen_m5_reference_copy",
+      "required": true,
+      "readiness": "not copied by this task; copy exact existing bytes only after native completion",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/frozen_m5_source/audit_train_greedy.py",
+      "kind": "planned_frozen_m5_reference_copy",
+      "required": true,
+      "readiness": "not copied by this task; copy exact existing bytes only after native completion",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/frozen_m5_source/models/webvid2_5m_light_v1/compile_manifest.json",
+      "kind": "planned_frozen_m5_reference_copy",
+      "required": true,
+      "readiness": "not copied by this task; copy exact existing bytes only after native completion",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/frozen_m5_source/models/yandex_t2i_official10M_ip_v1/compile_manifest.json",
+      "kind": "planned_frozen_m5_reference_copy",
+      "required": true,
+      "readiness": "not copied by this task; copy exact existing bytes only after native completion",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/frozen_m5_source/README.md",
+      "kind": "planned_reference_scope_note",
+      "required": true,
+      "readiness": "future generated documentation, after native completion",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/publication_plan.json",
+      "kind": "publication_whitelist_plan",
+      "required": true,
+      "readiness": "this file; hash excluded from its own content",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/periodic_verifications/check_2026-10-09T111847.json",
+      "kind": "periodic_native_progress_verification",
+      "required": true,
+      "readiness": "historical static three checks; explicit Root requested expansion",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/periodic_verifications/check_2026-10-09T114709.json",
+      "kind": "periodic_native_progress_verification",
+      "required": true,
+      "readiness": "historical static three checks; explicit Root requested expansion",
+      "copy_to": "same_repository_relative_path"
+    },
+    {
+      "path": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/periodic_verifications/check_2026-10-09T121623.json",
+      "kind": "periodic_native_progress_verification",
+      "required": true,
+      "readiness": "historical static three checks; explicit Root requested expansion",
+      "copy_to": "same_repository_relative_path"
+    }
+  ],
+  "planned_exact_byte_copies_after_native_complete": [
+    {
+      "source": "/root/acsg-e172-storage-v2/campaign/m5/compile_postings.py",
+      "destination": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/frozen_m5_source/compile_postings.py",
+      "purpose": "Read the exact offline 100/1/101 token construction and joint lazy greedy; documentation only."
+    },
+    {
+      "source": "/root/acsg-e172-storage-v2/campaign/m5/audit_train_greedy.py",
+      "destination": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/frozen_m5_source/audit_train_greedy.py",
+      "purpose": "Read the independent fixed TRAIN greedy replay logic; not a new audit execution."
+    },
+    {
+      "source": "/root/acsg-e172-storage-v2/campaign/m5/models/webvid2_5m_light_v1/compile_manifest.json",
+      "destination": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/frozen_m5_source/models/webvid2_5m_light_v1/compile_manifest.json",
+      "purpose": "Frozen training-table identity, capacity, training proxy objective and compile-stage cost provenance; not new testing results."
+    },
+    {
+      "source": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/compile_manifest.json",
+      "destination": "entry_method_exploration/20261009_nsg_gt_m5_test_v1/frozen_m5_source/models/yandex_t2i_official10M_ip_v1/compile_manifest.json",
+      "purpose": "Frozen training-table identity, capacity, training proxy objective and compile-stage cost provenance; not new testing results."
+    }
+  ],
+  "frozen_m5_scope_note_requirements": [
+    "State these four files are exact existing frozen E172 references copied for method comprehension, not a new training run.",
+    "Explain compile_postings.py and audit_train_greedy.py retain their original relative assumptions and archive inputs; the copy is not a standalone trainer.",
+    "Link the two compile manifests and current src/runtime.hpp; explain integer objective=200N*normalized missing coverage, 100/1/101 token weights and row capacity 8.",
+    "Do not interpret the compile-stage seconds as full training cost or training coverage as final Recall.",
+    "Record source and destination SHA256 at actual copy time without changing the archived source."
+  ],
+  "planned_new_snapshot_files": [
+    {
+      "path": "research_snapshots/20261009_nsg_gt_m5/README.md",
+      "kind": "new_web_reading_entrypoint",
+      "required": true,
+      "readiness": "Root generates after native/evaluator completion; links into E173 repository artifacts rather than duplicate aggregate evidence"
+    },
+    {
+      "path": "research_snapshots/20261009_nsg_gt_m5/manifest.json",
+      "kind": "final_publication_path_and_sha_manifest",
+      "required": true,
+      "readiness": "Root generates from the actual explicitly selected completed bytes; exclude own digest to avoid self-reference"
+    },
+    {
+      "path": "research_snapshots/20261009_nsg_gt_m5/publication.md",
+      "kind": "publication_scope_and_identity_note",
+      "required": true,
+      "readiness": "Root generates; separate remote parent, local head, experiment source hashes, published evidence and omitted local artifacts"
+    }
+  ],
+  "completion_requirements": [
+    "Both dataset results_v2 complete.json report PASS_NSG_GT_M5_NATIVE_FULL_PLAIN_SAMPLED_COUNT_LINEAR_ORACLE_V2 before reading/using new quality.",
+    "Formal frozen scope: two datasets x K in {1,100} x L in {200,400,800,1000,1200} x {NSG,GT,M5}=60 points, 180 full timing rounds; no new training or table selection.",
+    "WebVid uses all public 10000 queries; Yandex uses the first 10000 of public 100000. Preserve query identity, historical public exposure and no blind-IID guarantee.",
+    "Final analysis_v2 metrics status COMPLETE_TRUE_PUBLIC_TEST_NSG_GT_M5_60_POINTS, 60 point rows and 60 same-L pair comparisons; all four aggregate outputs belong to the same run.",
+    "Recall uses each full 10000-query return packet; NDC/count parity and post stats use fixed 256 uniformly spaced query IDs. Never label sample NDC as full-batch NDC.",
+    "QPS includes full formal normal body, allocation/init/release, routes, original scalar main search and every M5 guard/lookup/dedup/rescore/merge/output cost. Loading and audits are separate.",
+    "Three measured timing rounds retain original same-round paired ratios; frozen M5 table is reused across five L values and both K.",
+    "Figures derive only from final analysis_v2 metrics.json with no new searches and no interpolated performance claim.",
+    "Three-page method PDF is the concise_v1 delivered three-page file, not the earlier long PDF.",
+    "Any source-only review remains labeled source-only and is not expanded into an independent performance replication.",
+    "Root checks Markdown relative links and image targets inside the actual published tree; /root and /data provenance paths may be textual identity records but cannot serve as web navigation links.",
+    "Final repository diff consists only of this explicit material plus Root-managed documentation updates; remote destination is VoidFantacy/netg and the original historical snapshot remains unchanged."
+  ],
+  "exclusions": {
+    "raw_inputs_and_models": [
+      "**/data/**",
+      "**/inputs/**/*.fvecs",
+      "**/inputs/**/*.ivecs",
+      "**/index/**",
+      "**/indices/**",
+      "**/*.fvecs",
+      "**/*.ivecs",
+      "**/*.fbin",
+      "**/*.ibin",
+      "**/*.bin",
+      "**/*.f32",
+      "**/*.i32",
+      "**/*.i64",
+      "**/*.u64",
+      "**/raw/**"
+    ],
+    "scored_and_per_query": [
+      "**/scored/**",
+      "**/*.npz",
+      "entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_v2/paired_query_metrics.csv"
+    ],
+    "builds_and_binaries": [
+      "**/.deps/**",
+      "**/build/**",
+      "**/bin/**",
+      "**/*.o",
+      "**/*.a",
+      "**/*.so",
+      "**/*.elf",
+      "**/benchmark",
+      "**/benchmark_v2",
+      "**/__pycache__/**",
+      "**/*.pyc"
+    ],
+    "old_or_transient": [
+      "entry_method_exploration/20261009_nsg_gt_m5_test_v1/results/**",
+      "entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis/**",
+      "entry_method_exploration/20261009_nsg_gt_m5_test_v1/figures/**",
+      "entry_method_exploration/20261009_nsg_gt_m5_test_v1/root_docs_before/**",
+      "entry_method_exploration/20261009_nsg_gt_m5_test_v1/source_before/**",
+      "entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/GT与M5方法说明.pdf",
+      "entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/pages/**",
+      "entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/concise_v1/pages/**",
+      "entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/*preview*.png",
+      "entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/method_body_draft.md",
+      "entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/extracted_text.txt",
+      "entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/concise_v1/extracted_text.txt",
+      "entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/document_checks.json",
+      "entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/concise_v1/document_checks.json",
+      "**/*.native.log",
+      "**/timing_progress.json",
+      "**/progress.json",
+      "**/backup/**",
+      "**/backups/**",
+      "**/large_backup/**"
+    ],
+    "notes": [
+      "Raw IDs/distances/entries/profile distances/audit IDs/route NDC/graph NDC remain local even when named in aggregate provenance.",
+      "The 200000-row paired_query_metrics.csv is deliberately omitted; aggregate comparisons.csv and metrics.json provide the published comparison view.",
+      "The earlier long PDF is excluded regardless of whether it is six or seven pages after revision.",
+      "Unlisted HTML, previews, logs, initial v1 jobs/ELF/raw/partial results, teacher packets and historical source backups are not authorized by directory inclusion.",
+      "frozen_m5_source contains only the four explicit old source/manifest copies plus its scope README, not training inputs or posting model binaries."
+    ]
+  },
+  "requested_actions_performed_by_this_plan": [
+    "write publication_plan.json only"
+  ],
+  "actual_artifact_copy_count": 0,
+  "network_write_count": 0,
+  "scope_extensions": {
+    "periodic_verifications": [
+      "check_2026-10-09T111847.json",
+      "check_2026-10-09T114709.json",
+      "check_2026-10-09T121623.json"
+    ],
+    "authorized_by": "Root artifact assembly instruction after native completion",
+    "unlisted_periodic_files_remain_excluded": true
+  }
+}

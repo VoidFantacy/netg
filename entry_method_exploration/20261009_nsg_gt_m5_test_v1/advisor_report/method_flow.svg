@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="350" viewBox="0 0 760 350">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#5e7082"/></marker></defs>
+<style>text{font-family:'Noto Sans CJK SC',sans-serif;fill:#203448;font-size:14px}.label{font-size:12px;fill:#5f7283}.title{font-size:15px;font-weight:700}.box{fill:#edf4f8;stroke:#b9ccda;rx:8}.post{fill:#fff2e7;stroke:#e4bb99;rx:8}.arrow{fill:none;stroke:#5e7082;stroke-width:1.7;marker-end:url(#arrow)}</style>
+<rect x="1" y="1" width="758" height="348" rx="12" fill="#fbfcfd" stroke="#dce4ea"/>
+<text x="22" y="29" class="title">离线：目标监督形成入口画像，搜索遗漏形成补全表</text>
+<rect x="22" y="45" width="136" height="48" class="box"/><text x="90" y="65" text-anchor="middle">训练查询及 GT10</text><text x="90" y="83" text-anchor="middle" class="label">真实近邻标签</text>
+<path d="M158 69H180" class="arrow"/>
+<rect x="180" y="45" width="152" height="48" class="box"/><text x="256" y="65" text-anchor="middle">目标到真实 hub 归属</text><text x="256" y="83" text-anchor="middle" class="label">hard / soft</text>
+<path d="M332 69H354" class="arrow"/>
+<rect x="354" y="45" width="174" height="48" class="box"/><text x="441" y="65" text-anchor="middle">按归属加权聚合 query</text><text x="441" y="83" text-anchor="middle" class="label">画像绑定真实 hub ID</text>
+<path d="M528 69H550" class="arrow"/>
+<rect x="550" y="45" width="184" height="48" class="box"/><text x="642" y="65" text-anchor="middle">GT10 画像路由小图</text><text x="642" y="83" text-anchor="middle" class="label">Micro-HNSW</text>
+<rect x="22" y="107" width="252" height="43" class="post"/><text x="148" y="132" text-anchor="middle">训练中实际 GT10 搜索遗漏目标</text>
+<path d="M274 128H310" class="arrow"/>
+<rect x="310" y="107" width="216" height="43" class="post"/><text x="418" y="132" text-anchor="middle">联合残差覆盖，最多 8 ID / 行</text>
+<path d="M526 128H562" class="arrow"/>
+<rect x="562" y="107" width="172" height="43" class="post"/><text x="648" y="132" text-anchor="middle">M5 冻结补全表</text>
+<line x1="22" y1="168" x2="734" y2="168" stroke="#dce4ea"/>
+<text x="22" y="193" class="title">在线：GT10 与 M5 共享入口和主搜索</text>
+<rect x="22" y="207" width="92" height="48" class="box"/><text x="68" y="236" text-anchor="middle">新查询 q</text>
+<path d="M114 231H138" class="arrow"/>
+<rect x="138" y="207" width="174" height="48" class="box"/><text x="225" y="227" text-anchor="middle">GT10 路由三个画像</text><text x="225" y="245" text-anchor="middle" class="label">取得三个真实入口 / 标签</text>
+<path d="M312 231H344" class="arrow"/>
+<rect x="344" y="207" width="174" height="48" class="box"/><text x="431" y="227" text-anchor="middle">原 NSG，固定预算 L</text><text x="431" y="245" text-anchor="middle" class="label">得到原搜索返回 R</text>
+<path d="M518 231H550" class="arrow"/>
+<rect x="550" y="207" width="184" height="48" class="box"/><text x="642" y="236" text-anchor="middle">GT10：直接返回 R</text>
+<path d="M225 255V296H344" class="arrow"/>
+<rect x="344" y="274" width="174" height="48" class="post"/><text x="431" y="294" text-anchor="middle">读取同一组三行，去重</text><text x="431" y="312" text-anchor="middle" class="label">补充候选 C，最多 24 ID</text>
+<path d="M518 298H550" class="arrow"/>
+<path d="M485 255V265H642V274" class="arrow"/>
+<rect x="550" y="274" width="184" height="48" class="post"/><text x="642" y="294" text-anchor="middle">M5：原度量重评分 R∪C</text><text x="642" y="312" text-anchor="middle" class="label">合并为最终 TopK</text>
+<text x="22" y="339" class="label">橙色部分为 M5 新增环节。在线不读取新查询的真值；补全目标不参与第二次图搜索。</text>
+</svg>

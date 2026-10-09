@@ -1,0 +1,137 @@
+{
+  "status": "FROZEN_TRAIN_ONLY_POSTING_BYTES",
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "shared_K_table": true,
+  "b": 8,
+  "max_candidates": 24,
+  "rows_arrival_order": "global exact integer greedy log",
+  "lookup_order": "actual heap-pop labels",
+  "primary": {
+    "bytes": 53369,
+    "runtime_scratch_reserved": 4096,
+    "total_incremental_reserved": 57465,
+    "sha256": "032e0c74af93a3278a9b2203b4cf7b7058d29396653749311aeadc4361593d1c",
+    "pairs": 6568,
+    "unique_targets": 6543,
+    "rows": 821,
+    "training_integer_objective": 211822,
+    "incidences": 223689,
+    "universe_pairs": 661549
+  },
+  "controls": {
+    "missing_frequency": {
+      "bytes": 53369,
+      "runtime_scratch_reserved": 4096,
+      "total_incremental_reserved": 57465,
+      "sha256": "7671488ed533e14eea0058babf178a374ce37cac0118230da8ba89c0500a8e61",
+      "pairs": 6568,
+      "unique_targets": 3792,
+      "rows": 821
+    },
+    "missing_global": {
+      "targets": [
+        2669168,
+        7056107,
+        5975110,
+        3134682,
+        3142618,
+        7913634,
+        632397,
+        195279,
+        1295102,
+        7038369,
+        1144064,
+        541263,
+        3256519,
+        3225562,
+        8496258,
+        265551,
+        748487,
+        881919,
+        1804991,
+        4484332,
+        4801296,
+        5714472,
+        7194429,
+        7810038
+      ],
+      "bytes": 96,
+      "sha256": "6b30ae70f06f6cfbf455f058da8d4fcb45708de4c8a1748fa23b10ed668b4b26"
+    },
+    "allgt_joint": {
+      "bytes": 53369,
+      "runtime_scratch_reserved": 4096,
+      "total_incremental_reserved": 57465,
+      "sha256": "ccc1254e09e750e44e85375cb2d04d4d19f653d5f819988f22df3c6e95dd50bb",
+      "pairs": 6568,
+      "unique_targets": 6559,
+      "rows": 821
+    },
+    "allgt_frequency": {
+      "bytes": 53369,
+      "runtime_scratch_reserved": 4096,
+      "total_incremental_reserved": 57465,
+      "sha256": "3cdf8badb67f35749570c9dc8e81f3d1faeaa954102825a1aa5c7c6de18a9101",
+      "pairs": 6568,
+      "unique_targets": 4392,
+      "rows": 821
+    },
+    "allgt_global": {
+      "targets": [
+        9995590,
+        5801063,
+        7158630,
+        7810038,
+        5136370,
+        7102937,
+        2669168,
+        6944625,
+        4044992,
+        3200340,
+        6301334,
+        6359468,
+        9082725,
+        9610810,
+        4740103,
+        4860295,
+        248947,
+        1087697,
+        2712692,
+        3095955,
+        9959691,
+        8243029,
+        5316952,
+        5669280
+      ],
+      "bytes": 96,
+      "sha256": "30cda0347d22a9354e42c4ca53d182b3a5476893ccd7323f08dfe32ee6aa98e1"
+    },
+    "empty": {
+      "bytes": 53369,
+      "runtime_scratch_reserved": 4096,
+      "total_incremental_reserved": 57465,
+      "sha256": "0287cb63c8e75928a81240249040dde87426007322888f877249f58181d436df",
+      "pairs": 0,
+      "unique_targets": 0,
+      "rows": 0
+    }
+  },
+  "input_sha256": {
+    "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/gt.i64": "af99eb0d786cd58fbc27fdea47a19265ae22b8b3ffe6c3f8294b44983edf7bdf",
+    "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32": "ec82834901aacf360049aad43c47065fcd5de90cc0b882d6dd0016de798e2240",
+    "/data/netg/ACSG/entry_method_exploration/20261003_all_methods_experiments_v1/results/native/yandex_t2i_official10M_ip_v1/discovery/k1_L100/entry_ids.i32": "54f679aa09dffa734c5448c101180fef15794ed59975da88603e625e488fbaba",
+    "/data/netg/ACSG/entry_method_exploration/20261003_all_methods_experiments_v1/results/native/yandex_t2i_official10M_ip_v1/discovery/k1_L100/ids.i32": "7414c90d346a67875552be51bb1739508a48f87953a1139a7a08bede2c945774",
+    "/data/netg/ACSG/entry_method_exploration/20261003_all_methods_experiments_v1/results/native/yandex_t2i_official10M_ip_v1/discovery/k100_L200/entry_ids.i32": "54f679aa09dffa734c5448c101180fef15794ed59975da88603e625e488fbaba",
+    "/data/netg/ACSG/entry_method_exploration/20261003_all_methods_experiments_v1/results/native/yandex_t2i_official10M_ip_v1/discovery/k100_L200/ids.i32": "d17ae62d9687772a7358665c24d8b8042af8307fd758674de97129ca902e609c"
+  },
+  "seconds": 19.314452389997314,
+  "cal_read": false,
+  "confirm_read": false,
+  "remaining_controls": [
+    "full-base geometry",
+    "same-universe geometry",
+    "same-U tiny-HNSW",
+    "128KiB tiny-HNSW"
+  ],
+  "actual_merge_audit_pending": true
+}

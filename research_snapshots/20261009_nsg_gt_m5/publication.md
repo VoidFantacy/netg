@@ -1,0 +1,9 @@
+# 发布范围与身份
+
+目标仓库 VoidFantacy/netg，分支 research/state-20261002；父提交9026dc60ca4f29983792e0f5dcfb33d7ef9335b5。当前研究工作区HEAD为96cf05d5410cf51272048cd1f90b4bb194e23c62，两者分别记录。发布使用独立工作树ACSG-publish-20261009，保留父提交的旧文件和20261006快照，只增加E173白名单产物、当前说明与入口。
+
+本次根文档只将E173当前结论/合同/目标/历史索引同步到旧已发布正文之前，未批量发布主工作区的其他未提交改动。实验native源码SHA3340bdb510f013bceae08639e17337d26950e07b7cf79c4dbbde20d6ffdcde5d，ELF SHA c1c1e970bf77def76edc7fddb5c10f9650ed5fc9ccc74ea0278893af8a4fe467。新训练0，compile_postings等为旧冻结源码字节复制，并非重新执行训练。
+
+清单含正式v2协议、配置、源码、构建/核验记录、60点全部聚合数据及每点完成receipt、曲线PNG/SVG/PDF、简洁3页方法稿和冻结M5编译源码说明。不含base/图/二进制模型、逐查询raw结果、scored npz、200000行配对CSV、本地deps/ELF、旧6页PDF或作业日志。报告中的绝对源路径用于身份追溯，网页阅读请用README中的相对链接。
+
+manifest.json从实际发布字节生成，含路径、大小、SHA256与Git blob SHA；其自身不纳入自己的摘要以避免自引用。提交身份由Git提交页给出，未在提交自身文件中伪造其SHA。最终远端ref及入口文件须在发布后回读核验。

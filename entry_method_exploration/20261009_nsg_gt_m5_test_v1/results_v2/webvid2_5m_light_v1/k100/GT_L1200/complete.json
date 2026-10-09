@@ -1,0 +1,38 @@
+{
+  "K": 100,
+  "L": 1200,
+  "audit_query_ids_formula": "floor(i*(n-1)/(audit_n-1)), endpoints included; frozen before any feedback",
+  "audit_scope": "full saved plain packet and full M5 linear oracle; plain/count word parity and NDC on fixed 256 query sample; timed rounds use unchanged normal body",
+  "count_audit_n": 256,
+  "cpu": 15,
+  "full_plain_return_n": 10000,
+  "independent_original_linear_merge": false,
+  "linear_merge_audit_n": 0,
+  "method": "GT",
+  "n": 10000,
+  "normal_output_release_before_stop": true,
+  "plain_count_bits_equal": true,
+  "plain_count_parity_scope": "fixed uniform query sample only",
+  "stats": {
+    "candidate_count": 0,
+    "commits": 0,
+    "domain_checks": 0,
+    "domain_fallbacks": 0,
+    "fallbacks": 0,
+    "lookups": 0,
+    "nonfinite_failures": 0,
+    "post_dots": 0,
+    "probes": 0,
+    "row_reads": 0
+  },
+  "stats_scope": "fixed uniform count-audit queries only, not the full batch",
+  "threads": 1,
+  "timed_output_retained": false,
+  "timing_seconds": [
+    36.02814927,
+    36.011917913,
+    35.969057137
+  ],
+  "warmup_batches": 1,
+  "warmup_n": 256
+}

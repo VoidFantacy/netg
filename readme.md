@@ -1,3 +1,9 @@
+# ACSG：GT10 与正在研究的 M5
+
+<!-- E173_CURRENT_BEGIN -->
+当前项目研究入口：[GT10 与正在研究的 M5](research_snapshots/20261009_nsg_gt_m5/README.md)。E173 已完成两集、三方法、两K、五档实际L的60点和180批单线程计时；[实测曲线](entry_method_exploration/20261009_nsg_gt_m5_test_v1/figures_v2/recall_qps_nsg_gt_m5.png)、[完整报告](entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_v2/report.md)、[3页方法说明](entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/concise_v1/method_report.md)。M5基于GT10；WebVid K1有局部综合优势，Yandex增益很小，当前默认仍为GT10。以下保留原NETG介绍。
+<!-- E173_CURRENT_END -->
+
 # NETG: Navigation-Enhanced Topology-aware Graph Indexing
 
 NETG is a lightweight, non-intrusive **entry-point optimization** layer for

@@ -1,5 +1,15 @@
 # ACSG 当前结果摘要
 
+<!-- E173_CURRENT_BEGIN -->
+2026-10-09：E173 已完成两集×三方法×两 K×五 L 的 60 点、180 批完整单线程复测，**M5 正在研究**，基于 GT10 增加冻结残差补全。WebVid/Yandex 各公共 test 前 10K；L=200/400/800/1000/1200，K=1/100 分别真实搜索。无新训练或 test 调参。
+
+同 L 相对 GT，M5 的 20 点 Recall 全部提高、真值近邻成员损伤 0，QPS 配对中位约降 0.16%–4.85%。WebVid K1 提高 0.97–1.92 pp；Yandex 提升很小。WebVid K1 的 M5 L800 相对 GT L1000、M5 L1000 相对 GT L1200 有实测双升，QPS 中位比约 +24.25%、+19.25%；其他三场景没有跨 L 实测双升。相对 NSG，同 L 的 GT/M5 全部 20 点 Recall 与 QPS 中位数均更高，各 19/20 点三轮配对速度都提高。默认保留 GT，不据本轮局部优势宣称 M5 全面替代。
+
+先读[本轮结论与网页阅读入口](research_snapshots/20261009_nsg_gt_m5/README.md)，再读[完整实验报告](entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_v2/report.md)、[五档曲线](entry_method_exploration/20261009_nsg_gt_m5_test_v1/figures_v2/recall_qps_nsg_gt_m5.png)、[全部60点CSV](entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_v2/metrics.csv)。方法说明：[3页PDF](entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/concise_v1/GT与M5方法说明.pdf)、[简洁正文](entry_method_exploration/20261009_nsg_gt_m5_test_v1/advisor_report/concise_v1/method_report.md)。
+
+Native 含加载和核验：WebVid 44.90 分钟、Yandex 46.18 分钟；新增训练 0。公共 test 有历史曝光，不称新盲测。计数/parity 只覆盖预锁256条，全10K返回、Recall及M5线性合并核验通过。下文为此前时点的保留记录。
+<!-- E173_CURRENT_END -->
+
 当前见[Git结论交接](research_snapshots/20261006_results/README.md)和[八方法详细报告](research_snapshots/20261006_results/report.md)，核实时点2026-10-06T21:32:45.619435+08:00。
 
 每dataset跨全部方法TRAIN限7200秒；历史已超额，禁止新增训练。

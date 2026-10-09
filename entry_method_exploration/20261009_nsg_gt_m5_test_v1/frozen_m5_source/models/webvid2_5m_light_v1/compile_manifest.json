@@ -1,0 +1,137 @@
+{
+  "status": "FROZEN_TRAIN_ONLY_POSTING_BYTES",
+  "dataset": "webvid2_5m_light_v1",
+  "shared_K_table": true,
+  "b": 8,
+  "max_candidates": 24,
+  "rows_arrival_order": "global exact integer greedy log",
+  "lookup_order": "actual heap-pop labels",
+  "primary": {
+    "bytes": 53099,
+    "runtime_scratch_reserved": 4096,
+    "total_incremental_reserved": 57195,
+    "sha256": "d0310bdb136d45595a00c8697c170dc38b6bda07b0090cec64ba00db236dd7ff",
+    "pairs": 6234,
+    "unique_targets": 5433,
+    "rows": 784,
+    "training_integer_objective": 203476,
+    "incidences": 216253,
+    "universe_pairs": 542718
+  },
+  "controls": {
+    "missing_frequency": {
+      "bytes": 53099,
+      "runtime_scratch_reserved": 4096,
+      "total_incremental_reserved": 57195,
+      "sha256": "3c81d2bc07e98409d53b7d8ed63468571a4bb1b24c68244b4236da1a9d8a1044",
+      "pairs": 6238,
+      "unique_targets": 3452,
+      "rows": 785
+    },
+    "missing_global": {
+      "targets": [
+        402860,
+        1937588,
+        1228515,
+        2123936,
+        1627796,
+        1672984,
+        1356160,
+        111968,
+        1041995,
+        642981,
+        1220259,
+        997406,
+        1973585,
+        1810871,
+        821642,
+        552563,
+        75125,
+        1323996,
+        1792149,
+        546768,
+        619277,
+        1094462,
+        279281,
+        1192940
+      ],
+      "bytes": 96,
+      "sha256": "9eb14c1102400350025a158d5340cf32302f5a3ff3da9ec39feb00861955073e"
+    },
+    "allgt_joint": {
+      "bytes": 53099,
+      "runtime_scratch_reserved": 4096,
+      "total_incremental_reserved": 57195,
+      "sha256": "2f4c3398a8066395bd1f1adfa6b367eea565315ae8889f2b344c310be8506c14",
+      "pairs": 6280,
+      "unique_targets": 6011,
+      "rows": 785
+    },
+    "allgt_frequency": {
+      "bytes": 53099,
+      "runtime_scratch_reserved": 4096,
+      "total_incremental_reserved": 57195,
+      "sha256": "8cef1f63d30f3465a59290fc4b27df284f8f854b88b6496fc6da0e379774b9c0",
+      "pairs": 6280,
+      "unique_targets": 4027,
+      "rows": 785
+    },
+    "allgt_global": {
+      "targets": [
+        801486,
+        402860,
+        277207,
+        1356160,
+        1321900,
+        857388,
+        1965159,
+        1041995,
+        484871,
+        1165769,
+        1937588,
+        49420,
+        2224498,
+        1933777,
+        1554784,
+        1429582,
+        1618503,
+        1834989,
+        312936,
+        938925,
+        553166,
+        2035679,
+        2396306,
+        1987200
+      ],
+      "bytes": 96,
+      "sha256": "89847e4bb770363c6f1e68314f9ab0330efbcddb18d73f936f65eab9ca91a5af"
+    },
+    "empty": {
+      "bytes": 53099,
+      "runtime_scratch_reserved": 4096,
+      "total_incremental_reserved": 57195,
+      "sha256": "323f8b156d43d44376e309ea215b47ea7665ab5dc008b6d95fca99805ef0ef34",
+      "pairs": 0,
+      "unique_targets": 0,
+      "rows": 0
+    }
+  },
+  "input_sha256": {
+    "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/gt.i64": "af028cf1a686e7a08c77889ac064c34eb461d1b74f5a3ac3e0e49ea50ec9d123",
+    "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32": "47c58c28e48e85c5a4f0cad245ef66f451dde404afb0ad7231909ba1956e8e03",
+    "/data/netg/ACSG/entry_method_exploration/20261003_all_methods_experiments_v1/results/native/webvid2_5m_light_v1/discovery/k1_L800/entry_ids.i32": "85d58b8003defc89be5409d9261926913c5d7206b2c601f2782880ebd8571464",
+    "/data/netg/ACSG/entry_method_exploration/20261003_all_methods_experiments_v1/results/native/webvid2_5m_light_v1/discovery/k1_L800/ids.i32": "dea268b987b80db4a56c039eca46f308200202ea2d6e6230fe8b094fe695705c",
+    "/data/netg/ACSG/entry_method_exploration/20261003_all_methods_experiments_v1/results/native/webvid2_5m_light_v1/discovery/k100_L1000/entry_ids.i32": "85d58b8003defc89be5409d9261926913c5d7206b2c601f2782880ebd8571464",
+    "/data/netg/ACSG/entry_method_exploration/20261003_all_methods_experiments_v1/results/native/webvid2_5m_light_v1/discovery/k100_L1000/ids.i32": "30ee7dc303c9c3001c838151dfab5c372220b649e5aec16222ddb173e4fb8e00"
+  },
+  "seconds": 16.40208051499212,
+  "cal_read": false,
+  "confirm_read": false,
+  "remaining_controls": [
+    "full-base geometry",
+    "same-universe geometry",
+    "same-U tiny-HNSW",
+    "128KiB tiny-HNSW"
+  ],
+  "actual_merge_audit_pending": true
+}
