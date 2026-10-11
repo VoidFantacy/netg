@@ -1,0 +1,70 @@
+{
+  "status": "COMPLETE_FROZEN_TRIAL_NO_RELIABLE_JOINT_GAIN",
+  "training_increment_seconds": 0,
+  "pilot_methods": [
+    "GT",
+    "M5",
+    "M5REG24",
+    "M5REG96",
+    "M5FIRST96",
+    "MFDIRECT",
+    "MFREG96",
+    "GEODIRECT",
+    "GEOREG96"
+  ],
+  "confirm_methods": [
+    "GT",
+    "M5",
+    "M5REG96",
+    "MFREG96",
+    "GEOREG96"
+  ],
+  "K_values": [
+    1,
+    100
+  ],
+  "L": {
+    "webvid2_5m_light_v1": [
+      800,
+      1000
+    ],
+    "yandex_t2i_official10M_ip_v1": [
+      1000,
+      1200
+    ]
+  },
+  "n_per_role": 4096,
+  "repeats": 3,
+  "planned_points": 112,
+  "planned_timed_batches": 336,
+  "protocol_frozen_before_new_query_results": true,
+  "primary_method": "M5REG96",
+  "default_replacement": false,
+  "run_state": "run_state.json",
+  "preexecution_acceptance": "reviews/preexecution_acceptance.json",
+  "formal_started_unix": 1791600867.0148728,
+  "last_status_sync_unix": 1791601354.5226376,
+  "actual_points": 112,
+  "actual_timed_batches": 336,
+  "actual_comparisons": 288,
+  "actual_region_mechanisms": 64,
+  "actual_native_jobs": 4,
+  "native_complete": true,
+  "quality_evaluation": "analysis/final_v1/metrics.json",
+  "independent_result_audit": "reviews/independent_result_audit/report.json",
+  "report": "analysis/final_v1/report.md",
+  "figure_version": "figures_v2",
+  "original_M5_retained": true,
+  "stop_boundary": "Stop this frozen one-hop/seed/cap version; no adaptive grid expansion or old queue restart.",
+  "original_protocol_primary_gate_count": 0,
+  "stricter_report_primary_gate_count": 0,
+  "same_L_vs_M5": {
+    "points": 16,
+    "recall_positive": 14,
+    "recall_equal": 2,
+    "qps_paired_ratio_median_down": 16
+  },
+  "finalized_unix": 1791608703.308,
+  "completion_audit": "reviews/completion_audit.json",
+  "final_delivery_independent_review": "reviews/final_delivery_independent_review.json"
+}

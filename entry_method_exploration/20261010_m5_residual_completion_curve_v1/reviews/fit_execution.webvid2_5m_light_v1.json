@@ -1,0 +1,36 @@
+{
+  "dataset": "webvid2_5m_light_v1",
+  "status": "PASS_ADDITIONAL_FIT_COMPLETE_WITHIN_900S",
+  "stages": [
+    {
+      "argv": [
+        "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/bin/fit",
+        "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_jobs/webvid2_5m_light_v1.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 435.726580216,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/logs/fit.webvid2_5m_light_v1.native.log"
+    },
+    {
+      "argv": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/compile_residual.py",
+        "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_jobs/webvid2_5m_light_v1.json",
+        "--max-seconds",
+        "464.27326340500076"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 33.41647698400266,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/logs/fit.webvid2_5m_light_v1.compiler.log"
+    }
+  ],
+  "elapsed_seconds": 469.14360973600196,
+  "cap_seconds": 900,
+  "historical_TRAIN_seconds": 21724.972836322,
+  "cumulative_TRAIN_with_this_increment_seconds": 22194.116446058,
+  "historical_cost_reset": false,
+  "model_manifest": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/compile_manifest.json",
+  "model_manifest_sha256": "3b632b79324169a82a0e8c1f1434bef4a5e2141c9726ec4e09680f0b8ff80dd8",
+  "model_eligible": true,
+  "full_process_lifecycle_included": true
+}

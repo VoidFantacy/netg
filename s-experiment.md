@@ -1,4 +1,35 @@
+<!-- E176_CURRENT_BEGIN -->
+# E176 最新实验索引（2026-10-10）
+
+**当前最新实测：E176 原 M5 成本优化与剩余遗漏条件补全。160点/480完整wall批次、800比较、60机制与独立整数/wall/trace审计实际完成；有限版本 STOP。默认仍为 E99 GT10，原 M5 保留。** 下方原 E175/E174/E173 与更早完整索引正文保全。
+
+- 历史/判断：[176_m5_residual_completion_curve_v1.md](/data/netg/ACSG/experiment_history/176_m5_residual_completion_curve_v1.md)。固定入口：[campaign README](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/README.md)。
+- 范围：两dataset各已曝光public10K；真实K1/K100，L200/400/800/1000/1200；`NSG/GT/M5/M5OPT/M5REG96/REGOPT96/WIDE12/M5RES12`；串行CPU15/T1、三轮normal Batch完整wall。新FIT只用旧合法20K，原raw-IP/主图/GT10/原M5完整C保留，无新confirmation。
+- 主结论：M5RES12对原M5 Recall14升/6平/0降，12460 query–GT成员救回/0损伤；两个point QPS中位数严格双升8/20，冻结paired口径9/20。WebK100五L组合+R0.1543..0.4168pp、pointmedian QPS+0.3769%..1.8872%。M5OPT与原M5全返回words20点相同；对M5OPT补全双升0/20，增R点均降速。PAIR对WIDE12 R1升/5平/14降、双升0，离线容量未配平，不能作纯条件键因果证明。
+- 默认边界：RES对GT仅Y K100/L1200有弱sameL信号（+0.0064pp，pointmedian+0.082284%，paired+0.176726%），三轮非全更快、range不分离。跨L12方法双升只为原M5已有的两WebK1预算对，无新K100/Y joint；不插值、不替换默认。
+- 费用：明确批准本次≤900秒/数据集新增FIT，实际Web469.143610/Y472.986268秒；旧TRAIN debt保留，累计22194.116446/16062.191988秒。预算timer含native/compiler child完整生命周期，后续manifest/hash/closing不含且未知不填0。正式native整job6970.796179/7089.322895秒；采样RSS非精确peak，分母/整job/inner与outer不重复相加。
+- 证据限界：单次全量untimed fresh scalar/linear oracle、main包/优化参考逐词门；无第二整批native replay、timed packets未保留；固定256计数与完整10K候选trace分开。CI描述性且独审未重生，已曝光单role无新确认；U外成员不是跨模态泛化证明。
+
+科学原件：[report](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/report.md)、[metrics](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/metrics.json)、[points](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/points.csv)、[comparisons](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/comparisons.csv)、[mechanisms](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/mechanisms.csv)。[全部800解释](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/interpretation.csv)保留原paired flags及pointmedian字段，两定义整体3个joint分歧不删选；[实际费用账](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/cost_ledger_supplement.md)保留所有未知边界。
+
+交付：[主曲线PNG](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/figures_delivery_v3/recall_qps_budget_curves.png) / [SVG](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/figures_delivery_v3/recall_qps_budget_curves.svg)、[机制曲线PNG](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/figures_delivery_v3/mechanism_budget_curves.png) / [SVG](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/figures_delivery_v3/mechanism_budget_curves.svg)、[独立结果审计](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/reviews/independent_result_audit/report.json)、[最终交付复核](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/reviews/final_delivery_review.json)。原source/锁/raw/报告/首版图与历史保留；不恢复旧队列、不新增fit/方法适配/确认。
+<!-- E176_CURRENT_END -->
+
+<!-- E175_CURRENT_BEGIN -->
+## E175｜2026-10-10｜M5区域补全的公共10K五档预算曲线｜COMPLETE，未新增双升预算组合
+
+实际完成两集×真实K1/K100×五L(200/400/800/1000/1200)×NSG/GT10/原M5/M5REG96的80点/240T1完整wall；200比较、20全量机制、独立结果审计与四panel PNG/SVG交付，0TRAIN。原三方法420份raw资格逐位回归；正式full replay/oracle通过，原M5保留。
+
+REG−M5同L：Recall17升3平，QPS20降，无同L双升。80跨L比较仅4双升，对应WebVid K1两组L800→GT1000、L1000→GT1200；原M5在相同两组已双升，REG无新增组合，WebK100/Y无双升。历史已曝光公共10K单role，非新confirm；GT10默认不变。native两job共8798.964398秒，评价/独审/绘图另计，有限扫描完成后停止；E173/E174原件和结论保留。
+
+详细记录：[175_m5_region_budget_curve_v1.md](experiment_history/175_m5_region_budget_curve_v1.md)；[报告](entry_method_exploration/20261010_m5_region_budget_curve_v1/analysis/final_v1/report.md)、[曲线](entry_method_exploration/20261010_m5_region_budget_curve_v1/analysis/final_v1/figures/recall_qps_budget_curves.png)、[80点CSV](entry_method_exploration/20261010_m5_region_budget_curve_v1/analysis/final_v1/points.csv)、[终态](entry_method_exploration/20261010_m5_region_budget_curve_v1/state.json)。
+<!-- E175_CURRENT_END -->
+
 # ACSG 历史实验概览
+
+<!-- E174_CURRENT_BEGIN -->
+174 已完成：[M5残差区域扩展](experiment_history/174_m5_residual_regions.md)，[完整报告](entry_method_exploration/20261010_m5_residual_regions_v1/analysis/final_v1/report.md)。保留原M5及完整C，0新TRAIN；pilot72点、confirm40点，共112点/336正式批次，完整4096评价与另行整数/wall/trace独审PASS。主M5REG96相对M5同L14点Recall增/2点平、16点QPS均降0.13%–0.70%；仅WebK1 b跨L观测双升，a负且原M5 b已有优势，原协议与严格报告主门均0。停止本冻结区域版，保留M5研究，GT10默认不变。E173及以下记录保持历史身份。
+<!-- E174_CURRENT_END -->
 
 <!-- E173_CURRENT_BEGIN -->
 173 已完成：[直接公共测试复测](entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_v2/report.md)、[详细复盘](experiment_history/173_nsg_gt_m5_public_test_retest.md)。WebVid/Yandex各10K；NSG、GT10、正在研究的M5，K1/K100、实际L200/400/800/1000/1200，60点/180轮完整单线程wall，0新增训练。同L M5/GT 20点Recall全增、成员损伤0、配对QPS约降0.16%–4.85%；WebVid K1有两对实际跨L双升，其他三场景没有。GT默认保留。新用户直接test授权不沿用旧CAL停止门；旧171/172记录及停止边界保留原身份。下文为此前历史概览。

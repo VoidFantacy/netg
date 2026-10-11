@@ -1,0 +1,48 @@
+{
+  "status": "PASS_SCOPE_AND_COST_BOUNDARY_REVIEW_SOURCE_ONLY",
+  "experiment": "E176",
+  "reviewer": "causal_review",
+  "source_sha256_at_review": {
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/protocol.md": "bb226f233a496d36f6ef65144d234a6eed12673b7c143784cb83dc4a27b52d8f",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/authorization.json": "e75485d4c52bee63738dda36b013d4a2eb892a8b7c666ee82f030bdf6eda11da",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_scope_lock.json": "4bb1ec5d0682905c3bbf4a852c7421e90c9fff8cd6ee7f8874d0721193778f16",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_execution_lock.json": "c64817aefa2a2d58449f6d582a159d949a899067731645f422ab694d1666e410",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/reviews/fit_preflight.json": "1bf5f39bab3b7e2439a4eed70062ad5abf78df24df0edde435329d613b91a849",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/prepare_fit.py": "e374d5b0302d975d41739b6ffa6d56015fc820405ee317eed6e9a781e7e61e3d",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/run_fit.py": "879ce3a2af603a71854d8322cb19fd2cf2244e5ddf1706a1916d61b81b94c4f7"
+  },
+  "scope": "Read-only source and administrative metadata review. No raw/query/GT/return arrays read in this review, no native/ANN/distance/fit/statistical execution. FIT scientific sources and existing locks unchanged.",
+  "split_boundary": {
+    "current_evidence": "prepare_fit inherits registered original config.locked.json/old model-manifest complete SHA plus current stat; fresh hashes the historical TRAIN query/GT/rows files and records them as the same discovery tuple. It administratively fingerprints TRAIN20K and public10K query bytes; fit_preflight records exact_query_byte_overlap=0 for both datasets. This reviewer read that receipt, did not repeat array/hash-overlap work.",
+    "what_it_establishes": "Frozen file identities and inherited query/GT/rows alignment, with no exactly equal query-vector byte string across these two windows according to recorded preparation. Public10K is already exposed and has only public_test role.",
+    "not_established_here": [
+      "A new held-out or confirmation split.",
+      "Semantic or text/image entity disjointness, near-duplicate independence or broader distribution independence.",
+      "New global source-ID disjointness inferred from numeric row IDs belonging to different source-file windows.",
+      "Fresh independent reconstruction of historical query/GT/row alignment from full source arrays."
+    ],
+    "wording": "Report inherited historical split/file provenance plus the recorded exact-query-byte overlap check; use source-file row-window identity rather than a new global-ID claim. Parent formal preflight must reject any registered source stat change."
+  },
+  "fit_cost_boundary": {
+    "dataset_cap_seconds": 900,
+    "shared_budget": "One shared allowance for response generation then compilation per dataset; compiler receives only remaining time, not another allowance. Timeout/error/overrun makes partial models ineligible.",
+    "reported_run_fit_elapsed": "Timer starts after job load and before native stage-state write, ends immediately after compiler process exits. Includes process creation/wait lifetimes, native loading/live binding/routing/main/M5/fresh/linear oracle/raw serialization, compiler process imports/input hashes/GT decoding/greedy/model serialization/hashes, and intervening driver work within those endpoints.",
+    "excluded_from_this_elapsed": [
+      "Initial run_fit imports, frozen-source hashes and administrative lock checks before per-dataset timer.",
+      "Preparation and native build stages outside that timer.",
+      "After-timer manifest read/validation/hash, success receipt writing, next-state/final-state serialization and print/driver shutdown."
+    ],
+    "reporting_rule": "The measured increment is complete native+compiler child lifetimes, not the entire outer driver or total campaign wall. Preserve actual preparation/build/driver/monitor/receipt overhead separately if recorded; unmeasured administrative elapsed is unknown, not zero. Existing TRAIN debt is retained and never reset."
+  },
+  "pair_vs_wide_boundary": {
+    "controlled": "Both tables use only status=2 original M5 TRAIN residual GT_K minus original M5 output; actual K/L separately; same support>=2, b4 per key, unit (query,target) joint greedy, three routed rows and <=12 unique online additional scores; original C and R-score reuse retained. Pair-key miss is empty, no route-only fallback.",
+    "capacity_confound": "PAIR conditions on (route,winner), WIDE on route. PAIR can have more distinct keys, total stored target pairs and resident bytes even with equal per-key and maximum online budgets. Real nX/lookup costs may also differ. Thus this control does not isolate conditioning information at equal total model memory or equal actual cost.",
+    "supported_future_claim": "If measured stronger, the frozen conditioned-table implementation improves over this same-supervision/maximum-online-budget route-only control. Report rows/pairs/resident/key support, actual nX and whole wall alongside rescue/damage.",
+    "unsupported_claims": [
+      "Conditioning alone causally explains a gain independent of offline memory capacity.",
+      "Teacher token coverage is measured TRAIN/test Recall or transferable candidate quality.",
+      "All region or multimodal approaches succeed/fail based on this one fixed table comparison."
+    ]
+  },
+  "scientific_claims_pending": "All output quality/cost and candidate mechanisms require completed fresh matched native measurement plus independent result audit; no current gain or default replacement is asserted."
+}

@@ -1,0 +1,57 @@
+{
+  "status": "PASS_NATIVE_COMPLETION_RECEIPTS_AND_FROZEN_BINDINGS_BEFORE_GT_EVALUATION",
+  "utc": "2026-10-10T04:52:36.952236+00:00",
+  "points": 112,
+  "formal_timed_batches": 336,
+  "query_calls": 2351104,
+  "jobs": [
+    {
+      "role": "confirm_a",
+      "dataset": "webvid2_5m_light_v1",
+      "points": 36,
+      "formal_timed_batches": 108,
+      "query_calls": 755712,
+      "elapsed_seconds": 2037.7719105309998,
+      "exit_code": 0,
+      "max_threads_observed": 1
+    },
+    {
+      "role": "confirm_a",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "points": 36,
+      "formal_timed_batches": 108,
+      "query_calls": 755712,
+      "elapsed_seconds": 2463.5248824230002,
+      "exit_code": 0,
+      "max_threads_observed": 1
+    },
+    {
+      "role": "confirm_b",
+      "dataset": "webvid2_5m_light_v1",
+      "points": 20,
+      "formal_timed_batches": 60,
+      "query_calls": 419840,
+      "elapsed_seconds": 1131.9134942419987,
+      "exit_code": 0,
+      "max_threads_observed": 1
+    },
+    {
+      "role": "confirm_b",
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "points": 20,
+      "formal_timed_batches": 60,
+      "query_calls": 419840,
+      "elapsed_seconds": 1382.0972120879997,
+      "exit_code": 0,
+      "max_threads_observed": 1
+    }
+  ],
+  "source_and_binary_sha_count": 18,
+  "auxiliary_sha_count": 6,
+  "input_stat_count": 109,
+  "GT_quality_evaluated_before_this_receipt": false,
+  "interim_speed_visibility_incident": "monitoring_visibility_incident.json",
+  "output_bytes_at_gate": 341790970,
+  "free_bytes_at_gate": 7321534464,
+  "scope": "all point receipt flags and exact matrix, n4096 full plain/replay flags, fixed256 count flags; formal rotation and actual raw integer/trace/wall agreement independently audited after evaluation"
+}

@@ -1,0 +1,48 @@
+{
+  "status": "PASS_STATIC_WRAPPER_AND_TERMINAL_METADATA_REVIEW",
+  "reviewer": "/root/causal_review",
+  "scope": "Source and administrative metadata only; this receipt does not independently evaluate any scientific result.",
+  "source_sha256": "9e13259e6375fc4f053530aa5175222a1c57655b509ada8e4f282f6402392b76",
+  "run_state_sha256": "b2d9535067e8d503e6dac64eb54d68c7a87e731e37ddb29777b744b7ccc89867",
+  "lock_sha256": {
+    "execution_lock.json": "55bd052075731073aef983ed08189b1675c11271cd3bf2794a0c941c50fb2834",
+    "auxiliary_lock.json": "3096e82a573a703b04c671d36610d630370b12147d24db99b6dfa814906fbd13",
+    "delivery_source_lock.json": "a9776c2cdaec0ffab49be61daaf3ab4850d3ef7235d00bc22d55faed11c01e18",
+    "delivery_source_precision_lock.json": "c1124166817e10e2ad08e325f7b090a70c0f5c1d06bcdd618067d1e2311ed6f8"
+  },
+  "actual_checks": {
+    "source_read_in_full": true,
+    "source_ast_parse_only": true,
+    "terminal_status": "NATIVE_COMPLETE_PENDING_INDEPENDENT_GT_EVALUATION",
+    "active": null,
+    "completed_jobs": 2,
+    "all_completed_exit_zero": true,
+    "completed_roles": ["public_test", "public_test"],
+    "completed_datasets": ["webvid2_5m_light_v1", "yandex_t2i_official10M_ip_v1"],
+    "planned_points_from_run_state": 80,
+    "planned_timed_batches_from_run_state": 240,
+    "input_stats_checked": 119,
+    "input_stat_mismatches": [],
+    "lock_file_small_sha_matches_previous_independent_closure": true
+  },
+  "source_findings": [
+    "Before launching a selected child, the wrapper requires two successful native jobs and active=None, verifies all four frozen lock maps, and checks all execution-lock input stat4 entries.",
+    "Selected children are exactly the frozen evaluate.py, independent_audit.py, plot_curves_v2.py, and write_report_v2.py; evaluate/plot use the existing CPU virtual environment and stdlib audit/report use /usr/bin/python3.",
+    "The child runs with CPU affinity 14 and BLAS/OpenMP thread environment set to one; ordinary nonzero exits retain stdout, stderr, actual elapsed and a failed receipt before raising.",
+    "Stage receipts are refused if already present; existing science, locks and historical files are not mutated by this wrapper.",
+    "Elapsed is explicitly the whole subprocess lifetime and excludes wrapper preflight lock verification, receipt serialization and print. It must not be described as complete wrapper wall time."
+  ],
+  "administrative_limits": [
+    "Order and absence of concurrent stage invocations are provided by the parent serial workflow and child gates; the wrapper itself has no concurrent invocation lease or automatic stage-order scheduler.",
+    "Ordinary child nonzero exits are recorded. Exceptions during child startup or KeyboardInterrupt are not covered by an explicit wrapper try/finally failure receipt; this source does not guarantee a receipt for every possible failure path.",
+    "Frozen SHA/stat checks in the wrapper precede child launch. Post-stage identity protection and scientific matrix/quality validation belong to the frozen child readers and independent audit.",
+    "Observed RSS/thread and artifact-size fields in run_state are administrative measurements; sampled RSS is not an exact peak. Planned 80/240 fields were read as declarations, not independently reconstructed from scientific outputs here."
+  ],
+  "not_performed": [
+    "No ANN, training, GT generation, distance scoring, bootstrap, second evaluation or independent result recomputation.",
+    "No metrics, partial responses, returned-ID arrays, GT integers, vectors or native logs read.",
+    "No large data hashes or binary rehash; lock metadata, wrapper source and current input stat4 only.",
+    "No existing code, scientific lock, protocol or history edited."
+  ],
+  "empirical_result_review": "PENDING_PARENT_COMPLETION_NOTIFICATION"
+}

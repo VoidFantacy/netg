@@ -1,4 +1,54 @@
+<!-- E176_CURRENT_BEGIN -->
+# E176 当前结果摘要（2026-10-10）
+
+**最新实测为 E176：冻结 160 点/480 个完整 wall 批次、800 个比较、60 个机制记录与独立整数/wall/trace 审计均完成。默认仍为 E99 GT10（Web `GT10-soft-t1`、Yandex `GT10-hard`），原 M5 保留；本有限版本完成后 STOP。** 下方 E175/E174/E173 及更早正文完整保留，其停止、预算和状态只对应各自历史范围。
+
+本轮完整保留原 M5 的监督表、三入口主搜索及全部 C≤24；新 `M5OPT` 在完整返回逐词等价前提下复用主搜索已付的 R 分数。`M5RES12` 在该优化基础上，用合法 TRAIN 中 `GT_K−原M5最终返回` 的剩余遗漏，按 `(route,原C winner)` 查询 K/L 专用补全表，额外目标≤12；没有丢弃原 M5，也没有重开图搜索。
+
+| 本轮同 L 证据 | 实际判断 |
+|---|---|
+| M5RES12 对原 M5 | 20 点 Recall 14 升/6 平/0 降，12460 个 query–GT 成员救回、0 损伤；以两个工作点 QPS 中位数判严格双升为 8/20，原冻结三轮配对速度比口径为 9/20。 |
+| Web K100，M5RES12 对原 M5 | 五个 L 均增加 Recall `+0.1543..+0.4168 pp`，点 QPS 中位数变化 `+0.3769%..+1.8872%`。这是组合实现收益。 |
+| M5RES12 对 M5OPT | 严格双升 0/20；点 QPS 中位数变化 `−0.6993%..+0.0321%`，所有 Recall 增长点都更慢。M5OPT 对原 M5 的完整返回字词 20/20 相同，因此组合收益的速度来源是工程省费，不能归给残差补全本身。 |
+| PAIR 对 route-only WIDE12 | Recall 1 升/5 平/14 降，双升 0/20。两者在线上限相同，但离线键数、总目标槽和 resident 未配平，不能作 winner 条件化的纯因果判断。 |
+| M5RES12 对 GT，同 L | 仅 Y K100/L1200 有弱双升信号：`+0.0064 pp`、点中位数 QPS `+0.082284%`（配对口径 `+0.176726%`）；三轮并非全更快，速度范围未分离，不能据此替换默认。 |
+
+跨 L 的 12 个方法比较双升只覆盖两个 Web K1 预算对：L800→GT L1000、L1000→GT L1200；原 M5 在同小 L 已有优势。没有新增 K100/Yandex 跨 L 双升，也没有插值到未测 L。两种速度定义不一般相等：原端点是三轮 `QPS_A/QPS_B` 比值的中位数，曲线端点是两个已存 QPS 中位数之比；全部 800 原比较及标志保留，解释补充列出整体 3 个双升标志分歧，没有改策略门或挑选点。
+
+范围为两集各已曝光的公共前 10K、真实 K1/K100、L=200/400/800/1000/1200、八方法、CPU15/T1、三轮完整正常 Batch 生命周期，只有 `public_test`，没有新确认。全量单次 untimed scalar/linear oracle 与完整字词资格已过；没有第二整批 native replay，也不保存 timed 输出。NDC 是固定256样本，候选 trace 为完整10K；CI 仅描述性，独审未重生 bootstrap 端点。表外 ID、U 外救回和监督覆盖不直接证明跨模态泛化。
+
+新增 FIT 获单次每集≤900秒明确授权，实际 Web **469.143610秒**、Y **472.986268秒**；保留旧 TRAIN 债后累计分别 **22194.116446秒**、**16062.191988秒**，旧7200秒限额超支不清零。实际预算计时包含 native/compiler 两子进程完整生命周期，不含随后 manifest load/hash 与行政收尾；这些未计量部分保留未知，不填0。正式 native 整 job 分别 **6970.796179秒**、**7089.322895秒**，包括 startup/oracle/count 等，不能再与其内部 QPS wall 相加；RSS 为约0.25秒采样观测峰，非精确峰值。工程构建、资格、评价、独审和展示费用按实际收据分别披露。
+
+交付入口：[E176历史与归因](/data/netg/ACSG/experiment_history/176_m5_residual_completion_curve_v1.md)、[冻结报告](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/report.md)、[全部800比较解释](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/interpretation.csv)、[实际费用账](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/cost_ledger_supplement.md)。交付图：[主曲线 PNG](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/figures_delivery_v3/recall_qps_budget_curves.png) / [SVG](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/figures_delivery_v3/recall_qps_budget_curves.svg)、[机制曲线 PNG](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/figures_delivery_v3/mechanism_budget_curves.png) / [SVG](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/figures_delivery_v3/mechanism_budget_curves.svg)。[结果独审](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/reviews/independent_result_audit/report.json)、[最终交付复核](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/reviews/final_delivery_review.json)。
+
+不恢复旧队列，不自动新 fit、适配方法或启动确认；GT10 默认、原 M5 研究与全部历史科学源/锁/raw 保留。
+<!-- E176_CURRENT_END -->
+
+<!-- E175_CURRENT_BEGIN -->
+## 最新实测：E175 五档 Recall–QPS 曲线已完成（2026-10-10）
+
+当前默认保持 production E99、WebVid `GT10-soft-t1`、Yandex `GT10-hard`；原 M5 保持研究方法和独立对照。新方法 `M5REG96` 保留原 M5，再从其候选种子的一跳邻居补全。此次扩展实际完成 **80 点、240 完整单线程计时批次**：两数据集各公共前10,000查询、真实K1/K100、L=200/400/800/1000/1200、NSG/GT10/原M5/M5REG96。四方法均本轮匹配重测；QPS为三轮中位，误差线min–max。
+
+同 L 相对原 M5，M5REG96 的20点 Recall **17升/3平/0降**，增量0～+0.1600百分点；配对QPS **20点均降**，变化−3.261940%～−0.034929%。新扩展共救回4138个命中成员、损伤0；这是跨工作点成员次数和，不是唯一ID数。此次仍为 Recall/速度取舍，没有同 L 双升。
+
+80个预锁跨 L 比较仅4个双升，实际只对应 WebVid K1 两组预算：M5/REG L800 对 GT L1000，及 M5/REG L1000 对 GT L1200。REG 两组 ΔRecall/QPS 为 +0.30pp/+23.459832%、+0.37pp/+18.822102%；**原 M5 已在相同两组双升，区域扩展没有新增双升预算组合**。WebVid K100、Yandex K1/K100均无跨 L 双升。
+
+所有native full replay、原M5/region全量oracle通过；独立结果审计实核80点/240轮/200比较/20机制，曲线再独核80点映射与min–max。新增TRAIN=0；原监督/构建债保留。native阶段总8798.964398秒（含加载、warmup、oracle、正式搜索、保存），评价25.032714秒、独审35.906468秒，绘图0.920985秒；正式QPS不含离线阶段，阶段费用不可和内含搜索wall重复相加。
+
+这是 E173 已曝光公共窗口的离散描述，单public_test角色，没有新独立确认；不支持默认替换或连续L性能推断。此次用户有限授权的五L扫描、图和报告全部交付后停止，E173/E174原件与历史STOP保持原范围。
+
+入口：[PNG曲线](entry_method_exploration/20261010_m5_region_budget_curve_v1/analysis/final_v1/figures/recall_qps_budget_curves.png)、[SVG](entry_method_exploration/20261010_m5_region_budget_curve_v1/analysis/final_v1/figures/recall_qps_budget_curves.svg)、[80点CSV](entry_method_exploration/20261010_m5_region_budget_curve_v1/analysis/final_v1/points.csv)、[完整报告](entry_method_exploration/20261010_m5_region_budget_curve_v1/analysis/final_v1/report.md)、[详细复盘](experiment_history/175_m5_region_budget_curve_v1.md)、[终态](entry_method_exploration/20261010_m5_region_budget_curve_v1/state.json)。以下E174原文完整保留其历史身份。
+<!-- E175_CURRENT_END -->
+
 # ACSG 当前结果摘要
+
+<!-- E174_CURRENT_BEGIN -->
+2026-10-10：最近完成实测为 **E174：M5 残差区域扩展**。冻结112点、336正式批次及四job全部成功；完整4096评价和独立整数/成员/wall/trace审计已实际通过。原 M5 完整保留，M5REG96 只是从原候选 C 选种子并沿原 NSG 一跳追加 X，原 M5 始终是对照。
+
+主方法相对原 M5 的16个同 L点中，14点Recall增、2点持平，三轮按序QPS比中位数全部下降 **0.13%–0.70%**；相对同L GT也全部为Recall/速度取舍。跨L只有WebVid K1的b组观测双升（Recall +0.8301百分点、QPS +23.46%），a组Recall仍−0.0732百分点；b组原M5已有+0.6592百分点/+23.94%的跨档优势。**原协议与更严格报告的主方法复现门均为0合格**，不能把原M5优势全归给扩展。停止本冻结一跳/seed/cap版本，保留原M5研究与历史结果；GT10仍默认（production E99，WebVid GT10-soft-t1 / Yandex GT10-hard）。
+
+新增TRAIN/拟合/教师/画像或主图构建=0，历史每集TRAIN超额不重置。四native实际总耗时7015.3075秒，其中336正式owned wall为4069.756秒，已包含在native总时长内；评价19.2674秒、整数独审28.0881秒，工程/身份/展示费另见报告。只有两角色各4096、K1/K100及两档L；NDC仅固定均匀256，timed packets未保存，CI端点未由整数独审重生，native回调符号UNRESOLVED的绑定范围保留。期间行政监控曾看到部分a组速度，没有看到质量或改动冻结策略，事件已留痕。见[完整报告](entry_method_exploration/20261010_m5_residual_regions_v1/analysis/final_v1/report.md)、[固定入口](entry_method_exploration/20261010_m5_residual_regions_v1/README.md)、[E174详细记录](experiment_history/174_m5_residual_regions.md)与[独立解释](entry_method_exploration/20261010_m5_residual_regions_v1/reviews/result_interpretation_independent.md)。以下E173及以前文字保持历史身份。
+<!-- E174_CURRENT_END -->
 
 <!-- E173_CURRENT_BEGIN -->
 2026-10-09：E173 已完成两集×三方法×两 K×五 L 的 60 点、180 批完整单线程复测，**M5 正在研究**，基于 GT10 增加冻结残差补全。WebVid/Yandex 各公共 test 前 10K；L=200/400/800/1000/1200，K=1/100 分别真实搜索。无新训练或 test 调参。

@@ -1,0 +1,103 @@
+{
+  "status": "PASS_INDEPENDENT_E175_CURVE_DELIVERY_REVIEW",
+  "scope": "Existing audited saved numbers, actual PNG visual inspection and SVG coordinate/endpoint mapping only; no ANN, GT, distance, bootstrap, fit or source/plot edits",
+  "visual_png": "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/analysis/final_v1/figures/recall_qps_budget_curves.png",
+  "visual_findings": {
+    "four_panels_readable": true,
+    "horizontal_Recall_vertical_QPS": true,
+    "Chinese_labels_and_caption_readable": true,
+    "axis_labels_not_clipped": true,
+    "legend_four_original_methods_retained": true,
+    "purple_REG_L_labels_readable": true,
+    "material_readability_errors": [],
+    "close_curve_overlap": "Some M5/M5REG96 points and lines overlap because their actual values are close; no jitter was introduced."
+  },
+  "mapping": {
+    "unique_saved_points": 80,
+    "plot_receipt_fields_equal_metrics": 80,
+    "SVG_median_markers_and_line_vertices_checked": 80,
+    "SVG_minmax_error_endpoints_checked": 80,
+    "measured_vertex_curves": 16,
+    "points_per_curve": 5,
+    "points_per_panel": 20,
+    "L": [
+      200,
+      400,
+      800,
+      1000,
+      1200
+    ],
+    "coordinate_tolerance_SVG_units": 2e-06,
+    "maximum_observed_coordinate_error_SVG_units": 9.172837280857493e-07,
+    "no_extra_intermediate_vertices_or_fitted_segments": true,
+    "method_styles": {
+      "NSG": "blue circle",
+      "GT10": "orange square",
+      "original_M5": "red star",
+      "M5REG96": "purple diamond"
+    }
+  },
+  "bindings": {
+    "metrics": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/analysis/final_v1/metrics.json",
+      "sha256": "59d0d958dc54e4fbe1b1c5a3bf560e36c462eaea60f60aa17e67a1ae1920a324",
+      "stat4": [
+        66305,
+        9044008,
+        519107,
+        1791620251885927896
+      ]
+    },
+    "PNG_SVG": {
+      "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/analysis/final_v1/figures/recall_qps_budget_curves.png": {
+        "sha256": "a4b8feac1ec475db6d5942b0a8463c18ce562044a464e6f7a7cf87c979bd6fe5",
+        "stat4": [
+          66305,
+          9044099,
+          407016,
+          1791620330590280791
+        ]
+      },
+      "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/analysis/final_v1/figures/recall_qps_budget_curves.svg": {
+        "sha256": "b5e9b3c42086a2666e814cc5992dcb606fd8d700c8930b8dfec6e6d0417d237d",
+        "stat4": [
+          66305,
+          9044100,
+          117128,
+          1791620330778281634
+        ]
+      }
+    },
+    "plot_execution": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/reviews/plot_curves_execution.json",
+      "sha256": "871d91107c842771e5623f3745ddf3953b807988577dee1877559b583e2eb0fd",
+      "stat4": [
+        66305,
+        8942834,
+        222862,
+        1791620330786281669
+      ]
+    },
+    "independent_result_audit": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/reviews/independent_result_audit/report.json",
+      "sha256": "668cc9cd796c5f5216582e5029ded7ee1b43561c64d4ef0f139991e9c16b2cc3",
+      "stat4": [
+        66305,
+        9044094,
+        269090,
+        1791620311718196172
+      ]
+    },
+    "executed_plot_source": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/src/plot_curves_v2.py",
+      "sha256": "9b98fe4949a907799029932eb0f3b555d96af8b33d78bda93fd5f89ab3c6ba2e"
+    }
+  },
+  "limits": [
+    "Single previously exposed public_test 10000-query role per dataset; these curves do not add confirmation evidence.",
+    "Straight segments connect only five measured L values; no intermediate-L performance is measured.",
+    "This review checks delivery and field/geometry mapping; it does not independently regenerate GT, distances, timing or bootstrap.",
+    "Error ranges can be visually small at this full-chart scale; all 80 saved min/max endpoints were checked in SVG."
+  ],
+  "verification_seconds": 0.009683685999334557
+}

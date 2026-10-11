@@ -1,0 +1,47 @@
+{
+  "status": "FROZEN_E176_160_POINT_480_BATCH_MATCHED_MATRIX",
+  "datasets": [
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "methods": [
+    "NSG",
+    "GT",
+    "M5",
+    "M5OPT",
+    "M5REG96",
+    "REGOPT96",
+    "WIDE12",
+    "M5RES12"
+  ],
+  "K_values": [
+    1,
+    100
+  ],
+  "L": [
+    200,
+    400,
+    800,
+    1000,
+    1200
+  ],
+  "n": 10000,
+  "timing_repeats": 3,
+  "points": 160,
+  "timed_batches": 480,
+  "comparisons": 800,
+  "mechanisms": 60,
+  "primary_method": "M5RES12",
+  "protocol_sha256": "bb226f233a496d36f6ef65144d234a6eed12673b7c143784cb83dc4a27b52d8f",
+  "jobs": {
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/jobs/public_test.webvid2_5m_light_v1.json": "5420a8044211f95150742270c914133dcd794225beaf477971d7ff3f6b59dad1",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/jobs/public_test.yandex_t2i_official10M_ip_v1.json": "2d7171e3ac0419ede6ef4f723b25d9b01d3a5fbcf2b4bcda0ebffb81d3541360"
+  },
+  "parameters_freeze_unix": 1791625315.3400962,
+  "no_adaptive_public_test_selection": true,
+  "no_adaptive_cancel_or_selection": true,
+  "new_TRAIN_per_dataset": {
+    "webvid2_5m_light_v1": 469.14360973600196,
+    "yandex_t2i_official10M_ip_v1": 472.98626797700126
+  }
+}

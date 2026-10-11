@@ -1,0 +1,64 @@
+{
+  "status": "PASS_STATIC_OPTIMIZED_RESIDUAL_AND_FIT_SOURCE_REVIEW",
+  "experiment": "E176",
+  "reviewer": "causal_review",
+  "source_sha256_at_review": {
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/optimized.hpp": "40ae31f396a99685ddafd53fb111d7225ac0fbbd667b00da4e2fc39925f924d3",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/residual.hpp": "fa44702c49c1f81ef5480b85997faf2e491f5fac0a3387ca8fce934992dad8c9",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/fit.cpp": "04389ae8b9aab6f2f367d69c796dd4300db559954884de6dd655698dcff355e3",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/compile_residual.py": "365873927d44cb06d66caa462853c743433e7d03630e46d2352a3d7cc36bc9ef",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/protocol.md": "bb226f233a496d36f6ef65144d234a6eed12673b7c143784cb83dc4a27b52d8f"
+  },
+  "scope": "Full source-only review of optimized.hpp/residual.hpp/fit.cpp/compile_residual.py and protocol. No compilation, import/execution of campaign sources, arrays, GT decode, scores, ANN, fitting, Recall/QPS, or CI calculation. Historical E175 files were read and remain untouched.",
+  "scientific_execution": "PENDING_PARENT_SERIAL_EXECUTION",
+  "implementation": {
+    "optimized_interface": "applyOptimized(dc,graph,vt,route,K,I,D,Posting&,extra_cap,first_seed,OptimizedStats*,CandidateAudit*,const OptimizedLayout*)",
+    "stats": "OptimizedStats publicly inherits RegionStats; old field access remains valid. post.dots counts physical DC calls; cached R hits do not count as dots. Non-null untimed audit verification calls are physical dots and separately r_word_check_dots. Formal timed/count paths must pass audit=nullptr.",
+    "r_cache_source": "Native search_new copies the returned Neighbor.distance word into D, originally obtained from the same query DC. Eligibility is finite valid main R, unchanged query/base/raw-IP callback and FP environment. Header audit checks every used R word against actual callback; native independent fresh-DC/full-main-word qualification remains required before wall.",
+    "region_layout": "Optional H*8 per-posting-target last-in-domain-slot+1 bounds, retaining internal holes and original slot-major/row-minor ordering. References actual graph/posting; no graph or base copying, visited writes, or new search. startup_seconds, reads, trimmed slots, resident and local stack must be accounted separately.",
+    "original_candidates_and_ties": "R priorities 0..K-1, original C priorities K..K+nc-1, later X priorities follow C; strict incoming.distance<worst.distance replacement and original better comparator preserved. All original C retained; physical scalar source unchanged. Completion row winners are query-best original paid C by score and C arrival; no per-route winner dedup.",
+    "completion_budget": "Each sorted (route,winner) or route-only row <=4 IDs, all three routed rows produce <=12 unique new scalar calls after original R/C/X dedup. Pair miss empty; no WIDE fallback. Same-K/L frozen table required by external model/point binding.",
+    "completion_trace": "20 words: three row-aligned winners (may be sparse or duplicate across rows), nC/nX/nWinnerRows/m5_committed/extension_aborted and X12. nWinnerRows is count of valid row entries, not a compact-prefix length. Must use dedicated independent completion oracle rather than REG seed uniqueness/roundrobin oracle.",
+    "fallback": "Completion cached nonfinite R uses inline fresh R branch with actual trace/cost accounting. Nonfinite C retains original main packet. Nonfinite X restores complete original M5 heap and emits it; all incurred calls remain counted. Optimized nonfinite main-R packet routes to preserved old region helper. Positive out-of-domain original R is fatal in optimized; completion relies on native valid-main domain contract."
+  },
+  "training_contract": {
+    "teacher": "Original GT10 main search and unmodified Posting::apply for every TRAIN20K actual K1/K100 and five L. Independent fresh R/C word plus linear heap oracle; main R vs fresh word compared on successful M5 queries. No optimized or region teacher.",
+    "labels": "Existing GT_K minus actual final original M5, not GT10-only residual. Actual K/L separate.",
+    "eligible_train_statuses": [
+      2
+    ],
+    "support_and_objective": "Same two models: >=2 distinct successful original-M5 TRAIN queries per key, b4; zero-residual eligible queries count support; globally shared unit (query,target) token coverage across actual three keys. Deterministic lazy joint greedy prioritizes maximum actual marginal then lexicographic(route,winner,target). Coverage is ID-incidence, not measured training Recall.",
+    "budget": "Per-dataset total response generation plus compiler/hash/serialization lifecycle <=900 seconds under parent-owned serial external deadline. Internal stage remainders and incomplete model guards do not replace shared parent clock. Old TRAIN debt remains separate.",
+    "data_alignment": "Internal compiler checks shapes/domain/distinct row IDs, fit source stats, teacher receipt, successful C winner in its original row and outside original R, per-K/L route identity and fallback packet. Parent preflight must additionally bind TRAIN query/GT/rows alignment, old role/source window identities, public separation and original source SHA/stat; this receipt does not claim those data checks executed."
+  },
+  "resolved_findings": [
+    {
+      "id": "NONFINITE_R_AUDIT",
+      "resolution": "Replaced untraced post.apply fallback with inline fresh-R trace/cost branch."
+    },
+    {
+      "id": "CACHE_STATS",
+      "resolution": "Completion stats changed to OptimizedStats; cache hit/physical check/fallback counters explicit."
+    },
+    {
+      "id": "TABLE_IDENTITY",
+      "resolution": "Loader requires base_n==post.base_n and conditioned anchor in its corresponding original posting row."
+    },
+    {
+      "id": "TRAIN_RUNTIME_ELIGIBILITY",
+      "resolution": "Compiler support/token/count/manifest now consistently status==2; status1 excluded because runtime C-empty returns without completion."
+    },
+    {
+      "id": "NONEXISTENT_MEMBER",
+      "resolution": "FIT removed index->acsg.GT_index assignment; live class declarations contain no such member."
+    }
+  ],
+  "fair_comparison": "M5OPT provides the same R-score-reuse opportunity to the original M5 baseline; distinguish optimization vs unchanged M5, REGOPT96 vs M5OPT, and M5RES12 vs M5OPT plus WIDE12. WIDE is same post-M5 residual supervision, not widened old-M5 supervision. Full-return equality required for cost-only OPT variants. Joint observed gain uses matched complete wall; no success or damage-free Recall claim follows from retained candidates alone.",
+  "remaining_qualification": [
+    "Native build against actual headers and binary/callback/FP binding.",
+    "Parent source/model/preflight/resource locks and shared FIT deadline.",
+    "All-window untimed independent main R word checks and linear oracle; cost-only M5OPT/REGOPT96 word equality vs original controls.",
+    "Fresh matched T1 complete wall, 256 physical count/plain parity and independent candidate/return/ID audit.",
+    "Default replacement and independent confirmation are outside public exposed-window scope."
+  ]
+}

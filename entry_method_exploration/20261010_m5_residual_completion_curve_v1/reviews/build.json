@@ -1,0 +1,40 @@
+{
+  "status": "PASS_E176_NATIVE_BUILD",
+  "argv": [
+    "g++",
+    "-O3",
+    "-march=native",
+    "-std=c++17",
+    "-fopenmp",
+    "-rdynamic",
+    "-I/data/netg/ACSG",
+    "-I/data/netg/ACSG/benches",
+    "-I/data/netg/ACSG/faiss",
+    "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/benchmark.cpp",
+    "/root/acsg-e172-storage-v2/campaign/common/acsg_current.o",
+    "/data/netg/ACSG/build/ACSG/libACSG.a",
+    "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+    "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+    "-lopenblas",
+    "-lz",
+    "-ldl",
+    "-o",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/bin/benchmark"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 11.51307819900103,
+  "source_sha256": {
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/native.hpp": "ef9dc9e8a294a064f5ae03d96eb4ee3b9f6b9efa6cb685b483afa7c2d3328872",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/runtime.hpp": "ff1c567f3c232e80e912567f5b35e19768a5cc49130aa6a0d32378fbca4b8ced",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/region.hpp": "61d8b2341f96ea359812767fdde19a98eaef4d9cdd51c403324e5112a5891cc5",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/optimized.hpp": "40ae31f396a99685ddafd53fb111d7225ac0fbbd667b00da4e2fc39925f924d3",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/residual.hpp": "fa44702c49c1f81ef5480b85997faf2e491f5fac0a3387ca8fce934992dad8c9",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/benchmark.cpp": "b260ed317333c5c87316e2ef6756545d2cb0a398b486b903fd31a49de0a7d9f4"
+  },
+  "binary": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/bin/benchmark",
+  "binary_sha256": "deffa463af57e3f6850582765d693a391531b9aa2f6d915adc553990557f8b73",
+  "log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/logs/benchmark.build.log",
+  "scope": "engineering compile only; no ANN/FIT or public result read",
+  "cpu": 14
+}

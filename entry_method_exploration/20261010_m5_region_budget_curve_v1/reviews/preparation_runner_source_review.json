@@ -1,0 +1,64 @@
+{
+  "status": "PASS_INDEPENDENT_STATIC_PREPARATION_AND_RUNNER_REVIEW",
+  "experiment": "E175",
+  "reviewer": "/root/causal_review",
+  "scope": "Complete prepare_inputs.py and run_serial.py read; both complete job JSONs, scope/parameter locks and preparation receipt parsed; all 119 registered input current stat4 checked, prior reused SHA/stat compared against E174. Small metadata/source hashes only. No array bytes, input hash recomputation, imports/execution of campaign scripts, native query, GT evaluation, distances or bootstrap.",
+  "empirical_boundary": "Preparation is an existing administrative execution receipt. This independent review did not execute preparation or native and does not establish output quality or future success.",
+  "sha256": {
+    "src/run_serial.py": "1cc71accf4f40d33816ccc8b64dadf70639483f7e0eb050f5dd3e9142aad04bd",
+    "src/prepare_inputs.py": "7a562bd6bb2c61e99510ffdacaa7840e84ef1e5e7b6854a3e43f4fa992e60387",
+    "reviews/data_preflight.json": "f192d97753db1fd788475b821f314b75b8d80749d482f0131ca48ac9aa46eaa5",
+    "parameter_lock.json": "b8013fbc0c757d9f35e96fdfdc0b387f64a3ef896e86b2043f83d48cbeeb4786",
+    "scope_lock.json": "09b62d87c5518a649aa87b19ec63b334ecc67444c2a4409060d39a90ad8e780e",
+    "protocol.md": "39e6d5b0613f9ab0cfe73a936bee49d70f41a1597b69ee19e80c367f34838d05"
+  },
+  "metadata_results": {
+    "registered_current_stat4_equal": 119,
+    "prior_E174_complete_SHA_and_exact_stat_reused": 109,
+    "fresh_public_source_SHA_declarations_equal_E173": 4,
+    "derived_fixed_window_inputs": 6,
+    "fixed_jobs_and_current_small_SHA_equal_parameter_lock": 2,
+    "derived_window_bytes_total": 36640000,
+    "protocol_SHA_equal_scope_parameter_preflight": true,
+    "array_bytes_read_by_reviewer": false,
+    "input_SHA_recomputed_by_reviewer": false
+  },
+  "preparation_checks": [
+    "scope_lock is preserved/new-only and saved before any old public GT/query mmap or window copy; exact single public_test 10000-row matrix is explicit.",
+    "Old E174 complete SHA is reused only after exact device/inode/size/mtime_ns equality; each receipt entry honestly labels prior SHA plus current stat, not fresh complete E175 hashing.",
+    "Four public query/GT source SHA declarations match original E173 jobs and preparation reports fresh complete source SHA with before/after hash stat check. Reviewer only checked those declarations and current metadata.",
+    "fvecs are interpreted as little-endian int32 words; a C-order int32 copy of coordinates preserves raw float words without centering/normalizing; only a view is used for finite checks.",
+    "ivecs fixed width100 headers, n>=10000, ID domain and within-row uniqueness are checked, then original ordered first10000 GT words are copied. No new GT teacher or distance is computed.",
+    "window_rows is little-endian int64 arange0..9999 and explicitly source-file positions, not global query/source IDs or semantic split proof.",
+    "Both actual jobs use raw query/GT fixed window first0 n10000, GT <i4 width100, original graph/base/router, null-table NSG/GT, identical original residual table for M5/REG, extra caps [0,0,0,96], all first_seed false.",
+    "Both jobs match actual K1/K100, exact five L, 3 rounds, one warmup256, audit256, CPU15/T1, frozen free/RSS values and no_training; immutable job SHA is in parameter_lock.",
+    "Preserve-only writes and distinct input directories prevent silently replacing existing windows/jobs/locks. Protocol SHA is rechecked at preparation end; preparation receipts disclose existing GT integer access and zero TRAIN.",
+    "A missing numpy exception happens at top-level import before main/scope save or copies. An absent elapsed measurement for the first failed invocation must remain unknown, not zero."
+  ],
+  "runner_checks": [
+    "Startup requires execution-source/binary SHA, preflight and preexecution acceptance, protocol SHA and exactly two parameter-locked job SHA entries; exact role/n/K/L/method names/timing/T1 checks precede launch.",
+    "Frozen job contents independently inspected above close cap/table/first_seed/warmup/resource flags that runner delegates to immutable job SHA and native guards.",
+    "No old outputs or logs overwritten; jobs are serial, with native CPU affinity15 and thread environment1. All registered stat4 checked before and after each child; no heavy input hash during performance.",
+    "Whole new directory byte total plus the entire four synchronized external root documents and E175 history file <=512MiB; free>=1GiB checked before start, at ~5s intervals and after each job. Extra whole-document counting is conservative and does not loosen cap. Runtime monitoring records sampled /proc VmRSS and actual affinity/thread count; sampled RSS is not an exact peak claim.",
+    "Timeout7200s covers owned job wall; assertion/timeout/state-write errors within owned try cause terminate/wait10/kill/wait, with cleanup and preserved partial. Successful/nonzero child is waited via poll, receipt appended, active cleared and nonzero rejected.",
+    "Two complete native successful jobs plus after-job stat checks are required before final NATIVE_COMPLETE_PENDING_INDEPENDENT_GT_EVALUATION; no response-driven cancel, parameter choice or GT/quality evaluation in runner."
+  ],
+  "engineering_note": {
+    "status": "RESOLVED_BY_NARROW_SOURCE_CHANGE_AND_REVIEWED",
+    "previous_runner_sha256": "5f3953d31c9ac193b1aa3f096114f8fcf2ec1cc344185cf6f7de7ed081f3ecb3",
+    "previous_issue": "Child can finish after poll() but before /proc status parsing; zombie status may lack VmRSS, causing administrative rejection of a successful native job.",
+    "reviewed_fix": "Parse proc_fields; when Threads or VmRSS is absent, break only if poll confirms termination; an actually live child lacking fields raises fatal. Existing resource/thread/affinity assertions and owned terminate/wait/kill cleanup remain.",
+    "matrix_cap_or_science_changed": false,
+    "current_behavior_does_not_accept_invalid_results": true
+  },
+  "pending_separate_checks": [
+    "Final execution/auxiliary lock identities and preexecution acceptance still require review against these actual source/metadata identities.",
+    "Actual max RSS/free/artifact and successful native80/240 come from execution receipts; this static review cannot certify them.",
+    "Full independent derived GT-copy equality and integer/result/trace audit occur only after all native jobs complete; this review did not read copied/original arrays."
+  ],
+  "final_runner_delta": {
+    "previous_reviewed_sha256": "f6aaf6039203fdc47d0f2a5c3999531fa8d119e27f4cc839974e95ca8191fa2e",
+    "change": "artifact_bytes adds complete synchronized summary/spec/s-target/s-experiment and E175 history sizes to new-directory bytes; same original 512MiB threshold.",
+    "scientific_matrix_method_or_acceptance_changed": false
+  }
+}

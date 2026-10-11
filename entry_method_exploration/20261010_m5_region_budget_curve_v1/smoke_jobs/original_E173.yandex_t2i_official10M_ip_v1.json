@@ -1,0 +1,56 @@
+{
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "role": "qualification_smoke",
+  "n": 16,
+  "query_first": 0,
+  "dimension": 200,
+  "base_n": 10000000,
+  "queries": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/query.test.public100K.fvecs",
+  "query_format": "fvecs",
+  "GT": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/gt.test.public100K.ip.ivecs",
+  "GT_format": "ivecs",
+  "query_sha256": "d5c1079755a1bef7db62f63f1e8b041e3035024e072ac5db79ddfb66689b42a2",
+  "GT_sha256": "9b8bed25edc98f4df45039b7a064e311ff4bdac0a69254c7f03fe668d14d1d29",
+  "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "anchor": {
+    "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+    "name": "GT10-hard"
+  },
+  "table": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/residual_joint.bin",
+  "table_sha256": "032e0c74af93a3278a9b2203b4cf7b7058d29396653749311aeadc4361593d1c",
+  "L": [
+    200,
+    400,
+    800,
+    1000,
+    1200
+  ],
+  "out": "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/smoke/original_E173/yandex_t2i_official10M_ip_v1",
+  "warmup_batches": 1,
+  "timing_repeats": 1,
+  "cpu": 15,
+  "threads": 1,
+  "freeze_timestamp": "2026-10-09T10:46:55.101191+08:00",
+  "no_training": true,
+  "methods": [
+    "NSG",
+    "GT",
+    "M5"
+  ],
+  "old_job_source": "/root/acsg-e172-storage-v2/campaign/inputs/m5_v6/yandex_t2i_official10M_ip_v1.cal.k1.json",
+  "old_job_source_sha256": "5c2ec1f2ad520cc37528387da8ef829a46f47ec3d2790e365dc1365d31a3d56a",
+  "K_values": [
+    1,
+    100
+  ],
+  "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+  "verify_loaded_base_words": true,
+  "warmup_n": 16,
+  "min_free_bytes": 1073741824,
+  "maxrss_bytes": 68719476736,
+  "audit_n": 256,
+  "protocol_revision": "v2_cost_only_no_quality_feedback",
+  "full_query_test_count_unchanged": true
+}

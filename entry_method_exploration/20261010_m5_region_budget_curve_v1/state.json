@@ -1,0 +1,257 @@
+{
+  "status": "COMPLETE_FROZEN_PUBLIC_BUDGET_CURVES_NO_NEW_JOINT_GAIN",
+  "experiment": "E175",
+  "planned_points": 80,
+  "planned_timed_batches": 240,
+  "training_increment_seconds": 0,
+  "latest_measured_experiment": "E175",
+  "new_formal_quality_status": "COMPLETE_INDEPENDENT_AUDIT_PASS",
+  "default_replacement": false,
+  "public_exposure_scope": "E173 public first10000 each; one public_test role, no new independent confirmation",
+  "methods": [
+    "NSG",
+    "GT",
+    "M5",
+    "M5REG96"
+  ],
+  "L": [
+    200,
+    400,
+    800,
+    1000,
+    1200
+  ],
+  "updated_unix": 1791620831.7942872,
+  "authorization": "user explicitly requested finite five-L expanded measurement and reference-style curve",
+  "qualification": "80 n16 new-method matrix points with full oracles; 60 old E173 control points; 420 raw files bit equal",
+  "finite_scope_complete": true,
+  "reliable_Recall_QPS_objective_achieved": false,
+  "measured_points": 80,
+  "measured_timed_batches": 240,
+  "same_L_comparisons": 120,
+  "cross_L_comparisons": 80,
+  "full_region_mechanism_points": 20,
+  "native_phase_receipt": "run_state.json",
+  "native_phase_historical_status": "NATIVE_COMPLETE_PENDING_INDEPENDENT_GT_EVALUATION",
+  "independent_result_audit": "reviews/independent_result_audit/report.json",
+  "independent_curve_review": "reviews/final_curve_delivery_review.json",
+  "curve_png": "analysis/final_v1/figures/recall_qps_budget_curves.png",
+  "curve_svg": "analysis/final_v1/figures/recall_qps_budget_curves.svg",
+  "points_csv": "analysis/final_v1/points.csv",
+  "report": "analysis/final_v1/report.md",
+  "defaults": {
+    "production": "E99",
+    "webvid2_5m_light_v1": "GT10-soft-t1",
+    "yandex_t2i_official10M_ip_v1": "GT10-hard"
+  },
+  "original_M5_research_retained": true,
+  "stop": "Finite frozen E175 scope complete; no further automatic L/cap/training/role additions",
+  "same_L_REG_minus_M5": {
+    "points": 20,
+    "Recall_up_flat_down": [
+      17,
+      3,
+      0
+    ],
+    "QPS_up_flat_down": [
+      0,
+      0,
+      20
+    ],
+    "Recall_delta_range_pp": [
+      0.0,
+      0.16
+    ],
+    "paired_QPS_delta_range_pct": [
+      -3.261940310892164,
+      -0.03492892126282232
+    ],
+    "observed_joint_gain_points": 0,
+    "rescue_member_incidence_sum": 4138,
+    "damage_member_incidence_sum": 0
+  },
+  "cross_L_observed_joint": [
+    {
+      "role": "public_test",
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "L": 800,
+      "method": "M5",
+      "reference_L": 1000,
+      "reference": "GT",
+      "n": 10000,
+      "recall_delta_pp": 0.27999999999999997,
+      "rescue_members": 102,
+      "damage_members": 74,
+      "queries_net_improved": 102,
+      "queries_net_damaged": 74,
+      "paired_qps_ratio_rounds": [
+        1.2385041232391096,
+        1.2389576617569091,
+        1.2389332024400994
+      ],
+      "paired_qps_ratio_median": 1.2389332024400994,
+      "paired_qps_change_pct": 23.893320244009942,
+      "qps_ratio_pairing_scope": "cross L round index only, descriptive, not simultaneous or randomized pairing",
+      "speed_ranges_separated": true,
+      "all_rounds_faster": true,
+      "observed_joint_gain": true,
+      "delta_ci": {
+        "low_pp": 0.01,
+        "high_pp": 0.53,
+        "seed": 3615193128,
+        "repeats": 2000,
+        "scope": "descriptive paired query bootstrap, no semantic IID or simultaneous comparison guarantee"
+      }
+    },
+    {
+      "role": "public_test",
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "L": 800,
+      "method": "M5REG96",
+      "reference_L": 1000,
+      "reference": "GT",
+      "n": 10000,
+      "recall_delta_pp": 0.3,
+      "rescue_members": 104,
+      "damage_members": 74,
+      "queries_net_improved": 104,
+      "queries_net_damaged": 74,
+      "paired_qps_ratio_rounds": [
+        1.2343806983580192,
+        1.2360782004926971,
+        1.2345983234642108
+      ],
+      "paired_qps_ratio_median": 1.2345983234642108,
+      "paired_qps_change_pct": 23.459832346421084,
+      "qps_ratio_pairing_scope": "cross L round index only, descriptive, not simultaneous or randomized pairing",
+      "speed_ranges_separated": true,
+      "all_rounds_faster": true,
+      "observed_joint_gain": true,
+      "delta_ci": {
+        "low_pp": 0.03,
+        "high_pp": 0.5599999999999999,
+        "seed": 1933572225,
+        "repeats": 2000,
+        "scope": "descriptive paired query bootstrap, no semantic IID or simultaneous comparison guarantee"
+      }
+    },
+    {
+      "role": "public_test",
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "L": 1000,
+      "method": "M5",
+      "reference_L": 1200,
+      "reference": "GT",
+      "n": 10000,
+      "recall_delta_pp": 0.35000000000000003,
+      "rescue_members": 97,
+      "damage_members": 62,
+      "queries_net_improved": 97,
+      "queries_net_damaged": 62,
+      "paired_qps_ratio_rounds": [
+        1.1888698749488809,
+        1.191823521585079,
+        1.1886763951792951
+      ],
+      "paired_qps_ratio_median": 1.1888698749488809,
+      "paired_qps_change_pct": 18.886987494888086,
+      "qps_ratio_pairing_scope": "cross L round index only, descriptive, not simultaneous or randomized pairing",
+      "speed_ranges_separated": true,
+      "all_rounds_faster": true,
+      "observed_joint_gain": true,
+      "delta_ci": {
+        "low_pp": 0.11,
+        "high_pp": 0.59,
+        "seed": 1390839839,
+        "repeats": 2000,
+        "scope": "descriptive paired query bootstrap, no semantic IID or simultaneous comparison guarantee"
+      }
+    },
+    {
+      "role": "public_test",
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "L": 1000,
+      "method": "M5REG96",
+      "reference_L": 1200,
+      "reference": "GT",
+      "n": 10000,
+      "recall_delta_pp": 0.37,
+      "rescue_members": 99,
+      "damage_members": 62,
+      "queries_net_improved": 99,
+      "queries_net_damaged": 62,
+      "paired_qps_ratio_rounds": [
+        1.1878160321191777,
+        1.1892101219091618,
+        1.1882210224906908
+      ],
+      "paired_qps_ratio_median": 1.1882210224906908,
+      "paired_qps_change_pct": 18.822102249069083,
+      "qps_ratio_pairing_scope": "cross L round index only, descriptive, not simultaneous or randomized pairing",
+      "speed_ranges_separated": true,
+      "all_rounds_faster": true,
+      "observed_joint_gain": true,
+      "delta_ci": {
+        "low_pp": 0.12975000000000003,
+        "high_pp": 0.62,
+        "seed": 1727083991,
+        "repeats": 2000,
+        "scope": "descriptive paired query bootstrap, no semantic IID or simultaneous comparison guarantee"
+      }
+    }
+  ],
+  "new_joint_budget_pairs_beyond_original_M5": 0,
+  "native_cost": {
+    "jobs": [
+      {
+        "role": "public_test",
+        "dataset": "webvid2_5m_light_v1",
+        "argv": [
+          "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/bin/benchmark",
+          "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/jobs/public_test.webvid2_5m_light_v1.json"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 4362.911619671999,
+        "max_threads_observed": 1,
+        "peak_rss_bytes_observed": 9232728064,
+        "rss_scope": "sampled /proc VmRSS at ~0.25s; not exact peak",
+        "artifact_bytes_after": 266209089,
+        "log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/logs/public_test.webvid2_5m_light_v1.log",
+        "job_sha256": "4275fc8d543bed30d11065563fbd7ed2d34bd95af4a08428979bf34a0092c11b"
+      },
+      {
+        "role": "public_test",
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "argv": [
+          "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/bin/benchmark",
+          "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/jobs/public_test.yandex_t2i_official10M_ip_v1.json"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 4436.05277871,
+        "max_threads_observed": 1,
+        "peak_rss_bytes_observed": 17509609472,
+        "rss_scope": "sampled /proc VmRSS at ~0.25s; not exact peak",
+        "artifact_bytes_after": 489116589,
+        "log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/logs/public_test.yandex_t2i_official10M_ip_v1.log",
+        "job_sha256": "d6e117c0827e8b90b638e02a8e96f8ba08bc8f57331e1a73a972206bbc136f2c"
+      }
+    ],
+    "total_elapsed_seconds": 8798.964398381999,
+    "scope": "Includes loading/warmup/oracles/formal searches/saving; do not add contained formal wall again"
+  },
+  "actual_stage_receipts": {
+    "build.json": 8.632061108999551,
+    "data_preflight.json": 0.43908345500130963,
+    "smoke_regression.json": 55.20136792099947,
+    "evaluation_execution.json": 25.03271448599844,
+    "independent_audit_execution.json": 35.90646846800155,
+    "plot_curves_execution.json": 0.9209847460006131,
+    "report_execution.json": 0.03935483399982331
+  },
+  "stage_cost_scope": "Each elapsed belongs to its receipt; native includes formal wall; script inner elapsed and wrapper subprocess elapsed are not additive; first administrative failure unmeasured, not zero",
+  "final_closure_review": "reviews/final_resource_and_preservation_check.json"
+}

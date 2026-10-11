@@ -1,0 +1,218 @@
+{
+  "status": "PASS_INDEPENDENT_FULL_SOURCE_REVIEW_ONLY",
+  "reviewer": "/root/measured_results",
+  "created_utc": "2026-10-10T02:52:38.987554+00:00",
+  "review_scope": "Independent full reads of all812 benchmark.cpp lines and all285 region.hpp lines; full unchanged native/runtime helper reads, preserved E173 benchmark comparison, natural visited invariant inspection and frozen protocol check. Source-only review, not native/runtime/quality evidence.",
+  "full_read_files": [
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_regions_v1/src/benchmark.cpp",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_regions_v1/src/region.hpp",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_regions_v1/src/runtime.hpp",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_regions_v1/src/native.hpp"
+  ],
+  "source_identities": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_regions_v1/src/benchmark.cpp",
+      "sha256": "26eeaa7f50c26e016f7f37933e0a107c9a4016b2aa2a7fa5cd0b15c6cf6eab7e",
+      "initial_independent_read_sha256": "26eeaa7f50c26e016f7f37933e0a107c9a4016b2aa2a7fa5cd0b15c6cf6eab7e",
+      "sha_unchanged_since_first_source_read": true,
+      "physical_lines": 812,
+      "bytes": 41819,
+      "device": 66305,
+      "inode": 8291909,
+      "mtime_ns": 1791600273721142217,
+      "stat_stable_during_final_small_source_hash": true
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_regions_v1/src/region.hpp",
+      "sha256": "61d8b2341f96ea359812767fdde19a98eaef4d9cdd51c403324e5112a5891cc5",
+      "initial_independent_read_sha256": "61d8b2341f96ea359812767fdde19a98eaef4d9cdd51c403324e5112a5891cc5",
+      "sha_unchanged_since_first_source_read": true,
+      "physical_lines": 285,
+      "bytes": 11844,
+      "device": 66305,
+      "inode": 8291903,
+      "mtime_ns": 1791599940503612432,
+      "stat_stable_during_final_small_source_hash": true
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_regions_v1/src/runtime.hpp",
+      "sha256": "ff1c567f3c232e80e912567f5b35e19768a5cc49130aa6a0d32378fbca4b8ced",
+      "initial_independent_read_sha256": "ff1c567f3c232e80e912567f5b35e19768a5cc49130aa6a0d32378fbca4b8ced",
+      "sha_unchanged_since_first_source_read": true,
+      "physical_lines": 43,
+      "bytes": 6523,
+      "device": 66305,
+      "inode": 8291890,
+      "mtime_ns": 1791513245019543302,
+      "stat_stable_during_final_small_source_hash": true
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_regions_v1/src/native.hpp",
+      "sha256": "ef9dc9e8a294a064f5ae03d96eb4ee3b9f6b9efa6cb685b483afa7c2d3328872",
+      "initial_independent_read_sha256": "ef9dc9e8a294a064f5ae03d96eb4ee3b9f6b9efa6cb685b483afa7c2d3328872",
+      "sha_unchanged_since_first_source_read": true,
+      "physical_lines": 87,
+      "bytes": 11656,
+      "device": 66305,
+      "inode": 8291889,
+      "mtime_ns": 1791513244963543085,
+      "stat_stable_during_final_small_source_hash": true
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_regions_v1/protocol.md",
+      "sha256": "014c55f89f1a420472af65d50d382224c45b44c7376e451dfcfc41a6bbc31338",
+      "initial_independent_read_sha256": "014c55f89f1a420472af65d50d382224c45b44c7376e451dfcfc41a6bbc31338",
+      "sha_unchanged_since_first_source_read": true,
+      "physical_lines": 27,
+      "bytes": 4546,
+      "device": 66305,
+      "inode": 8291891,
+      "mtime_ns": 1791599692498460768,
+      "stat_stable_during_final_small_source_hash": true
+    }
+  ],
+  "checks": [
+    {
+      "check": "original_control_identity",
+      "status": "PASS",
+      "evidence": [
+        "src/native.hpp:59-64",
+        "src/runtime.hpp:7-40",
+        "src/benchmark.cpp:283-391"
+      ],
+      "finding": "native.hpp and runtime.hpp are byte-identical to E173. NativeRouter preserves actual HNSW maxheap pop order, ef10 and original profile bytes. GT dispatch has no posting. Direct M5 dispatch calls the unchanged original Posting::apply with POST. All methods call original mode2 search_new with the natural DC/query/visited epoch."
+    },
+    {
+      "check": "original_m5_preserved_before_extension",
+      "status": "PASS",
+      "evidence": [
+        "src/region.hpp:80-163"
+      ],
+      "finding": "Plan uses original GT R, actual three route rows, first-arrival remove-R/dedup and complete missing-row fallback. All valid R are freshly re-scored before full C; finite C are strictly merged with original priority order. The complete successful original M5 packet is emitted before any extension and is the nonfinite-X fallback."
+    },
+    {
+      "check": "query_best_and_first_seed_controls",
+      "status": "PASS",
+      "evidence": [
+        "src/region.hpp:165-205"
+      ],
+      "finding": "Seeds are selected from original C words already paid, one winner per actual posting row, distance then original candidate arrival priority. First-seed control selects the first eligible row target. Route-order duplicate winners are suppressed without replacement. Targets already in original R are absent from C and cannot become seeds."
+    },
+    {
+      "check": "ordered_adjacency_and_fresh_id_extension",
+      "status": "PASS",
+      "evidence": [
+        "src/region.hpp:207-268",
+        "/data/netg/ACSG/ACSG/ACSG.cpp:1532-1545",
+        "/data/netg/ACSG/ACSG/ACSG.cpp:1614-1621"
+      ],
+      "finding": "Physical graph slots rotate row0/1/2, skip illegal/padding, original current-epoch main-seen IDs, all C, and already-scored local X. Main R IDs are main-visited by construction; the oracle additionally rejects any R appearing in X. Graph and visited are const references. No vt writes/advance, search reentry, query reset, new graph, base/index copy or fitted constructor is present. Cap counts actual new scalar calls including a failing nonfinite word."
+    },
+    {
+      "check": "strict_merge_priorities_and_failure",
+      "status": "PASS",
+      "evidence": [
+        "src/region.hpp:135-163",
+        "src/region.hpp:207-268"
+      ],
+      "finding": "X priority is K+nc+arrival and strictly later than all R/C. Admission requires padding or strictly smaller scalar distance; equal distance never replaces an existing member. Result heap size is K. A nonfinite X returns while I/D still contain the full successful M5 packet; incurred dots/reads remain. Arbitrary exceptions/traps are fatal rather than transactionally recovered."
+    },
+    {
+      "check": "independent_full_candidate_and_score_oracle",
+      "status": "PASS",
+      "evidence": [
+        "src/benchmark.cpp:57-255",
+        "src/benchmark.cpp:317-383",
+        "src/benchmark.cpp:702-755"
+      ],
+      "finding": "Separate fresh DC re-scores each actual R/C/X word and bit-compares. C is independently derived by sorted-label lookup and vector membership; seed winners and complete X sequence are separately reconstructed with vector find and current original epoch. The result oracle uses linear worst-slot replacement and a separate comparator rather than production heap/better/plan/candidate scratch. Region failure paths validate original GT or M5 fallback. Full plain vs full replay packet bits are asserted."
+    },
+    {
+      "check": "full_c_x_trace_and_bounded_storage",
+      "status": "PASS",
+      "evidence": [
+        "src/region.hpp:22-38",
+        "src/benchmark.cpp:32-36",
+        "src/benchmark.cpp:257-281",
+        "src/benchmark.cpp:714-759"
+      ],
+      "finding": "Every region point has a full4096 untimed trace: 128 int32 words/query, C24/X96 with seed IDs/counts/status, exactly2MiB. C/X arrival includes failing nonfinite word. Scalar words are checked in process, not serialized. Trace is from independent replay, asserted bit-equal to separately saved normal full plain output."
+    },
+    {
+      "check": "whole_wall_normal_lifetime",
+      "status": "PASS",
+      "evidence": [
+        "src/benchmark.cpp:285-391",
+        "src/benchmark.cpp:393-412",
+        "src/benchmark.cpp:684-700"
+      ],
+      "finding": "Clock starts before normal Batch allocation/init; includes route batches, eps, natural vt/DC/output/pool construction, scalar main, legal guard, posting/seed/adjacency/filter/dedup/new scores/strict merge, normal output and all destructors. Opaque publication covers all six normal buffers and shape, and all normal owned output is released before stop. Loading, file IO, resource guard, count/trace/oracle and GT evaluation occur outside wall."
+    },
+    {
+      "check": "no_audit_buffer_in_timed_body",
+      "status": "PASS",
+      "evidence": [
+        "src/benchmark.cpp:307-323",
+        "src/benchmark.cpp:400-412"
+      ],
+      "finding": "Timed run arguments are counting=false, stats=null, independent_audit=false, trace=null; CandidateAudit, OriginalPacket and fresh DC unique_ptrs remain null, with no audit allocation, candidate trace write, independent re-score or count work. Their small null handle/branch overhead is within complete wall. Region ID scratch and fixed seed/row/heap locals are part of production work."
+    },
+    {
+      "check": "no_fit_and_no_gt_quality_read",
+      "status": "PASS",
+      "evidence": [
+        "src/benchmark.cpp:527-655",
+        "src/benchmark.cpp:674-806",
+        "src/region.hpp:47-269",
+        "protocol.md:3-19"
+      ],
+      "finding": "Source loads frozen registered query/model/index bytes and performs authorized query-only inference and verification. There is no fitting/teacher-label optimization/construction routine and no GT file read in native caller. The no_training and no_GT_read receipts are supported by full-source flow, not only by declared flags."
+    },
+    {
+      "check": "schedule_and_role_binding_scope",
+      "status": "PASS",
+      "evidence": [
+        "src/benchmark.cpp:537-566",
+        "src/benchmark.cpp:594-625",
+        "src/benchmark.cpp:657-700",
+        "protocol.md:13-19"
+      ],
+      "finding": "Formal branch checks4096/3rounds/1warmup256; dynamic methods use prelocked rotation and real K1/K100 with L>=K. CPU15/single thread is checked by unchanged helper and before each wall batch. Exact role/method/table/L112-point matrix is a config/runner prelock dependency rather than inferred from generic native flags. n16/1round explicit smoke branch does not count as formal evidence."
+    },
+    {
+      "check": "direct_original_oracle_and_count_scope",
+      "status": "PASS",
+      "evidence": [
+        "src/benchmark.cpp:414-468",
+        "src/benchmark.cpp:702-782"
+      ],
+      "finding": "Direct methods retain original E173 full linear merge oracle (shares original plan only). Region gets stronger independent candidate generator/score/merge oracle. Every method has full normal/replay packet parity, plus fixed uniform256 plain/count ID/score/route/profile word parity. NDC/count statistics are explicitly sampled, and count wrapper performance is not used as QPS."
+    }
+  ],
+  "original_helpers_byte_identity": {
+    "reference_root": "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1",
+    "native_hpp_equal": true,
+    "runtime_hpp_equal": true
+  },
+  "data_identity_dependency": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_regions_v1/reviews/data_preflight.json",
+    "sha256": "71704226ed0efc8f44f73ed95f1bba1b80d2720eefcfca118d24e8bdd5b412cd",
+    "status": "PASS",
+    "fresh_large_hashes_completed_before_source_review": true
+  },
+  "blocking_findings": [],
+  "limits": [
+    "Compile/build receipt, linked scalar object identity and disassembly/caller binding remain separate required gates; this review did not execute compilation or numerical jobs.",
+    "Independent candidate/heap replacement logic shares the registered underlying scalar DistanceComputer implementation; it is not a newly generated distance or GT oracle.",
+    "Timed outputs are destroyed; full saved plain/replay parity and fixed256 count parity do not prove every timed packet bit.",
+    "Trace stores IDs/status only. Score-word equality is an in-process assertion backed by completion receipt, not an offline serialized scalar-word proof.",
+    "Direct linear oracle inherits E173 finite registered-domain assumptions; explicit nonfinite R/C/X fallback checks are present in the region oracle. Neither source review establishes universal Recall preservation, multimodal causality, transfer or QPS gain."
+  ],
+  "actions": {
+    "original_artifacts_modified": false,
+    "new_train": false,
+    "new_ANN_or_distance_jobs": false,
+    "new_large_or_data_hash_during_compile": false,
+    "only_review_json_written": true
+  }
+}

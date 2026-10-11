@@ -1,4 +1,88 @@
+<!-- E176_CURRENT_BEGIN -->
+# E176 当前实现与证据合同（2026-10-10）
+
+**E176 冻结实现已完成 160 点/480 timed 批次；评价 160/800/60 与独立整数、wall、trace 审计实际 PASS。** 这一段约束 E176；下方完整既有正文保留为历史合同，不借用 E175 的 second-full-replay 声明。当前默认仍是 E99 GT10，有限 E176 版本完成后 STOP；结果判断见 [summary.md](/data/netg/ACSG/summary.md)。
+
+目录：[E176](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/README.md)；冻结 [protocol](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/protocol.md)、[parameter lock](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/parameter_lock.json)、[execution lock](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/execution_lock.json)、[FIT lock](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_execution_lock.json)。
+
+## 保留原 M5 与显式费用控制
+
+base、原 NSG 主图、原 raw-IP、GT10画像/Micro-HNSW 与三入口 heap-pop 次序、原 posting 身份均继承 E175。主搜索仍为原 scalar `search_new(...,mode=2)`；NSG 原单入口，GT 及 M5 继承方法原三入口。没有改 GT、归一化、图边、主遍历或 visited。原 M5 每 posting 行≤8、三行合并排除原 R/首次重复后完整 C≤24；原 fresh R/C 版本一直保留为对照。
+
+| 固定方法 | 本轮执行合同 |
+|---|---|
+| NSG / GT | 原主搜索，无 posting；NSG 固定单入口、GT 为 GT10 三入口。 |
+| M5 | 原完整 C 与 fresh R/C 评分、严格优先级 Top-K 合并。 |
+| M5OPT | 复用本 query 刚完成原主搜索 R 分数字词及 posting 行→C 映射；最终 full packet 须逐词等于 M5。 |
+| M5REG96 | 原 M5 后由原 C 的逐行赢家取原图一跳邻接，按原 slot-major/route-minor 顺序评分 X≤96。 |
+| REGOPT96 | 优化原 REG 的 R/行映射费用，并仅截去已绑定种子图行无效尾槽；不压缩内部槽或改变到达次序；最终 full packet 须逐词等于 M5REG96。 |
+| WIDE12 | 原 M5 后按 route 查询剩余遗漏补全表；route-only、在线额外 X≤12。 |
+| M5RES12 | 原 M5 后按 `(route,原已评分C winner)` 查询剩余遗漏补全表，额外 X≤12。 |
+
+[R复用与布局](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/optimized.hpp)、[完整原主搜索/资格接线](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/benchmark.cpp)。复用资格依赖本次 main DC/query/base/FP 合同：全10K untimed 对每 valid R 再做独立 fresh scalar word 核验，并核所有非NSG主包与本 K/L fresh GT 包字词一致。优化最终完整包再对原 M5/REG96逐词核验，实际分别20/20点通过（共40点）；异常不静默接受。fresh核验/oracle/trace只在 untimed，warm/timed/count 不支付资格评分；真实物理 DC 调用数与缓存命中分开。布局为非学习预处理，startup、resident 与原图读取费用单列。
+
+## 新监督、模型与在线增量
+
+新标签严格为 `D(q,K,L)=GT_K(q)−未优化原M5_final(q,K,L)`。旧合法20K TRAIN/FIT query、源行与既有 GT100 按原 split 继承；真实 K1/K100×五 L 分别实际生成原 GT10/M5 响应，不用公共测试拟合、不新生成 exact GT。preflight 核本次 frozen TRAIN/public 窗口 exact-byte query 去重和源行身份；不宣称重新证明全部历史角色的语义独立性。
+
+仅 `fit_status=2`（原 M5 成功 Ccommit）的训练响应有在线补全资格；成功但零残差仍计 distinct-query 键支持。原 C 已排除 R并全三行首次去重；每 route winner 从已付原scalar分数的 C 中选，等分按原 Carrival，三 route赢家不去重，可重复或缺失。M5RES12 的 pair 键 `(route,winner)`，WIDE12 的 route键 `winner=-1`；各键≥2 distinct TRAIN query支持、每键≤4目标、三键共享 `(query,target)` 未覆盖状态，使用相同确定性整数边际覆盖 greedy。pair miss 纯空，无 route fallback。WIDE12 是同剩余遗漏监督的 route-only 控制，不能称原 M5 旧标签简单加宽。
+
+各 K/L 文件为排序 little-endian i32 `N×7=[route,winner,count,target0..3]`，`count≤4`、空位−1；[FIT响应生成](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/fit.cpp)、[编译器](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/compile_residual.py)、[在线表/合并](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/residual.hpp)。manifest 分别位于 `models/{dataset}/compile_manifest.json`，表身份由实际 FIT receipt、prepare 与执行锁闭合。
+
+在线原 C为空即不扩展；完整原 C≤24 保留，按 route/表行到达排除原 R、全 C、先前 X，支付所有 lookup、winner、去重、新 scalar DC 和严格晚到优先级合并。新 X≤12；非有限 X 回退完整原 M5 包，已耗费用保留。BANK winner按原route稀疏对齐、允许重复，不套 REG 种子压缩去重。原图/visited不变，无新图边、搜索或 MLP。
+
+PAIR/WIDE 在线上限、单键上限、残差监督和编译规则相同，但总键数/目标槽/模型字节/resident 未配平；不能隔离条件键的纯因果效应。U 外统计是逐query的成员 incidence，非全局distinct目标数；实际 rescue/damage 从返回集合与 GT_K 独立核算。表外候选、旧 M5 U 外救回或已见 TRAIN 教师支持不能直接等同跨模态未见泛化。
+
+## 真实预算与执行边界
+
+用户明确授权本次**每数据集额外≤900秒**，旧跨方法 TRAIN 债保留，不按 K/L 重置。本次预算权威实际区间包含 native/compiler 两子进程完整生命周期（其内部响应生成、加载/live绑定/teacher oracle/hash、标签解码、greedy和模型保存）；截止后 manifest load/hash 与行政收尾不在该900秒 timer，完整 FIT pipeline 外层和缺失收尾费用仍为未计量/null，不推成0。实际 Web469.143610秒、Y472.986268秒均在单次额度内；旧债21724.972836/15589.205720秒保留，累计22194.116446/16062.191988秒。编表属于新增 FIT，formal query `no_training=true` 不把 FIT 归为0 TRAIN。工程 build、preflight、smoke、正式查询、审计/绘图独立列账，嵌套 inner/outer 不重复加。
+
+两 dataset 各公共前10000、与 E175 同已曝光 `public_test`，真实 K1/K100、L200/400/800/1000/1200、八方法，共160点/480轮。CPU15/T1，只有一个 measured method，不并发 fit/编译/数值分析。每 K/L：先GT及各方法完整单次 native plain+fresh word/linear oracle与参考包检查；再 warm256；三轮按固定 `(KL ordinal+round+offset) mod8` 旋转；最后固定均匀256 count/plain bit核验。
+
+QPS分母是每方法 normal Batch 分配、初始化、路由/DC/vt、原主搜索、所有附加操作、输出及释放的完整wall。加载/live身份/布局、warmup/oracle/count、写盘/GT评价从分母分离，但计整job/阶段费用。没有第二次整批 native replay、不保留 timed packets，不能宣称 timed per-query逐位复现。NDC统计仅256样本，不能扩大为全10K。
+
+完整原REG trace为20点×10000条×128word；WIDE/M5RES各20点为20word轻trace `[winner0,winner1,winner2,nC,nX,nWinnerRows,m5_committed,extension_aborted,X0..X11]`。REGOPT不另存trace，依其完整原版输出身份和 native oracle。helper额外 `post_dots`/`new_distances` 必须按真实物理调用解释，fresh资格调用只在untimed额外统计。loaded-base/有序graph live words在本进程执行绑定，source/model SHA与大源已登记SHA+本次stat闭合，不以路径名称冒充callback资格。
+
+产物cap1536MiB/free≥1GiB/RSS≤64GiB/每正式job≤10800秒；实际整 native Web6970.796179秒、Y7089.322895秒，观测threads1。RSS为约0.25秒采样峰值，不能称精确peak或相加两集peak。未知工程/收尾elapsed保留null；费用权威：[cost ledger](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/cost_ledger_supplement.md)。
+
+## 已执行验证与报告口径
+
+实际 [n16原版字词/trace资格](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/reviews/native_qualification.json)、[评价](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/reviews/evaluation_execution.json)、[独立整数/wall/trace审计](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/reviews/independent_result_audit/report.json)均完成。800比较为同L28无重复方法对×20=560、六候选方法所有small<big L对GT共240；完整机制60，优化packet身份40点。独审不重跑ANN/distance/GT，旧REG winner score/grapharrival与BANK score/mergeword以完整native oracle为前件；检查整数到达/返回/机制、wall和计数的范围另明列。固定seed2000 paired-bootstrap描述性CI的保存端点有校验，独审未重新生成，不当IID/多重校正确认。
+
+冻结原科学速度字段为三轮配对 `median_r(QPS_A_r/QPS_B_r)`；新增保存字段解释用 `median(QPS_A)/median(QPS_B)` 匹配曲线端点，严格Recall>0且该比>1。两定义分开列，800原flags全部不改，整体3个双升flag分歧保留，不是新增门或选择。原报告/图和科学source/锁不改；交付v3只呈现真实五L点及三轮min–max，不插值性能。入口：[report](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/report.md)、[interpretation](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/interpretation.json)、[交付主图](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/figures_delivery_v3/recall_qps_budget_curves.png)、[机制图](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/figures_delivery_v3/mechanism_budget_curves.png)、[最终交付复核](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/reviews/final_delivery_review.json)。
+
+公开10K信号不代替独立确认。M5RES12对M5OPT无双升，保留GT10默认/原M5，有限E176完成后停止；不恢复历史runner、追加fit、适配方法或自动启动新confirmation。
+<!-- E176_CURRENT_END -->
+
+<!-- E175_CURRENT_BEGIN -->
+## E175：已实现并完成核验的公共10K预算曲线（2026-10-10）
+
+独立目录 `entry_method_exploration/20261010_m5_region_budget_curve_v1`；正式shape为两数据集各n=10000、真实K1/K100、L=200/400/800/1000/1200、NSG/GT/M5/M5REG96，共80点/240计时批次。原NSG固定enterpoint `[ep,-1,-1]`，profile/route/post相关共用stats为0；GT/M5/REG保持原scalar search_new和E174三header字节。n16资格80新点、60原E173控制点通过，原三方法420份raw逐位相等；两个正式job已退出0。
+
+固定来源为E173 Web公共10K及Y公共100K的前10K，source-file窗口行0..9999，原fvecs/ivecs来源与派生raw query/GT/rows双身份保留。行政复制读取既有已曝光GT整数，不产生新GT。原公共source fresh SHA；旧109件输入依赖E174完整SHA加本轮exact stat，不能称全部fresh重hash。119项输入stat在正式阶段及后处理中核验；base、raw-IP、主图、画像、residual表均冻结，0TRAIN。
+
+M5保留原C≤24完整合并；REG每路由行选择query-best候选、最多3个去重seed，依原物理邻接一跳round-robin扩展，过滤main-vt已见/无效/padding/C/X重复，额外fresh scalar X≤96。原R重评分、C/X评分与合并、normal Batch分配初始化释放均进入完整wall。四法相同主搜索L，附加工作量不同。T1/CPU15串行，线程环境均1；warmup每点256，各点三轮完整计时。加载、写盘、oracle、评价等费用另报。
+
+每点全10K保存plain、原生full replay内存逐词比较（不保存第二份full replay），原M5直线oracle通过；REG20点full seed/graph/visited/scalar/线性oracle及10000×128 i32 trace通过。CountDC/plain词和physical NDC仅固定均匀256查询；post/X已计入graph_ndc。timed返回未保留，不能声称已核验每轮timed bits或全10K CountDC。既有callback/native符号绑定未决限制保留，oracle PASS不等于补齐符号绑定证明。
+
+已执行冻结 `evaluate.py` → `independent_audit.py` → `plot_curves_v2.py` → `write_report_v2.py`，80点/120 same-L/80 cross-L/20机制全部实核；图和报告只读取已审字段。CI为既有2000次描述配对bootstrap；独审检查CI元信息和CSV/JSON身份，不重生随机端点，无同时多重比较保证。实际M5 U外/TRAIN_GT100 U外新救回及三类damage均计算，候选incidence与命中rescue区分。四panel PNG/SVG只连五个真实L点，QPSmedian/min–max，不拟合中间预算。
+
+行政 `execute_stage.py` 先检查四份源锁和119项stat再串行CPU14后处理；wrapper elapsed仅子进程生命周期，排除前检/收据序列化。普通非零退出有失败收据，未声称其覆盖任意启动异常/中断。native `run_state.json`保留原生阶段终态（其PENDING指当时待评价）；当前评价/交付终态独立见[state.json](entry_method_exploration/20261010_m5_region_budget_curve_v1/state.json)。原资源上限64GiB RSS/每job7200秒/至少1GiB free/全版本512MiB，终态按实测收据检查。
+
+契约/输出：[protocol](entry_method_exploration/20261010_m5_region_budget_curve_v1/protocol.md)、[执行锁](entry_method_exploration/20261010_m5_region_budget_curve_v1/execution_lock.json)、[metrics](entry_method_exploration/20261010_m5_region_budget_curve_v1/analysis/final_v1/metrics.json)、[独审](entry_method_exploration/20261010_m5_region_budget_curve_v1/reviews/independent_result_audit/report.json)、[曲线独核](entry_method_exploration/20261010_m5_region_budget_curve_v1/reviews/final_curve_delivery_review.json)。旧科学源/原锁/历史artifact不回改；公共曝光单角色不构成新confirm。
+<!-- E175_CURRENT_END -->
+
 # ACSG 代码架构与实现契约
+
+<!-- E174_CURRENT_BEGIN -->
+2026-10-10：E174隔离实现及完整验证已经完成，入口为[协议](entry_method_exploration/20261010_m5_residual_regions_v1/protocol.md)、[region.hpp](entry_method_exploration/20261010_m5_residual_regions_v1/src/region.hpp)和[benchmark.cpp](entry_method_exploration/20261010_m5_residual_regions_v1/src/benchmark.cpp)。保留E173原native/runtime、GT路由与主搜索及完整M5 C≤24；R/C按原scalar重评分和strict合并。从已付费C分数选每路由行不在原返回R中的最佳候选，≤3去重seed、重复不补位；按原NSG物理槽round-robin读取一跳邻居，排除main-vt已见/C/X重复，新增X≤24/96。主vt只读。X非有限时保留成功的完整direct返回（M5分支即原M5），R/C非有限沿原回退保GT，普通异常fatal；不能把所有失败概括为事务回退。
+
+实际正式合同：CPU15/T1、每点4096、真实K1/K100、固定三轮完整wall，包含正常输出allocate/init/release以及route/main/guard/post/seed/邻接/filter/score/merge；timed不采trace/oracle且不留packet。112点/336批次四job全部成功；每点另做全4096 plain、独立replay逐位相等，direct全量linear oracle，region全量C/seed/X/fresh scalar/独立linear oracle。全64region点trace保存4096×128 i32（seed3,nC,nX,nSeeds,m5_committed,extension_aborted,C24,X96；padding−1）；计数与plain/count词校验仅预锁均匀256，stats.post_dots为R+C、new_distances为X，graph_ndc已计附加费，不再叠加。
+
+[execution_lock](entry_method_exploration/20261010_m5_residual_regions_v1/execution_lock.json)的18个源码/ELF SHA与109项输入stat、[auxiliary_lock](entry_method_exploration/20261010_m5_residual_regions_v1/auxiliary_lock.json)的6个后处理身份保持；四大base/index完整SHA在正式前核验，正式前后stat守卫。实际评价112 points/288 comparisons/64 mechanisms和独立整数/wall/trace审计PASS；该独审不重新计算native seed/ordered graph/visited/scalar或CI随机端点。MF/GEO的M5-only new_rescues机制字段初始化0表示未计算，应使用comparisons的实际成员救/损。U外X/救回是每query incidence，非全局distinct。native距离counter回调callback_symbol=UNRESOLVED，身份/offset/评分词绑定有效但没有符号解析证明；资源guard通过而实际peakRSS数值未单独保存。
+
+默认与原图/模型未替换，新增TRAIN=0；采集native状态与[最终交付state](entry_method_exploration/20261010_m5_residual_regions_v1/state.json)职责分开，原run_state原样保留。第二版图仅后处理排版，原冻结renderer/首版图/报告快照保留。详细核验范围见[报告](entry_method_exploration/20261010_m5_residual_regions_v1/analysis/final_v1/report.md)与[独审](entry_method_exploration/20261010_m5_residual_regions_v1/reviews/independent_result_audit/report.json)。
+<!-- E174_CURRENT_END -->
 
 <!-- E173_CURRENT_BEGIN -->
 2026-10-09：E173 的隔离测试合同已实际完成：[benchmark_v2](entry_method_exploration/20261009_nsg_gt_m5_test_v1/src/benchmark_v2.cpp)、[协议v2](entry_method_exploration/20261009_nsg_gt_m5_test_v1/protocol_v2.md)、[完整结果](entry_method_exploration/20261009_nsg_gt_m5_test_v1/analysis_v2/metrics.json)。NSG 使用原图 enterpoint 单入口；GT10 使用冻结画像 Micro-HNSW 返回的三个真实 hub；正在研究的 M5 复用同 GT 路由和 scalar search_new，在返回后查冻结残差表、去重、原度量重评分并合并。三方法同图、raw-IP、实际 L、T1/CPU15，K1/K100 分别搜索；60点每点三轮完整wall，包含输出分配/释放和路由、搜索、补全全部线上成本。

@@ -1,0 +1,131 @@
+{
+  "boot_id": "0317c943-204b-4658-8619-d344d487712b",
+  "complete_distinct_posting_resident_bytes": 180123,
+  "declared_source_identities": {
+    "GT": "/root/acsg-e172-storage-v2/campaign/inputs/yandex_t2i_official10M_ip_v1/confirm_b/gt.i32",
+    "GT_dtype": "<i4",
+    "GT_format": "raw",
+    "GT_sha256": "b0935fc703248f652a368a7222e9f3bdc09fc4593f2f310bd52f1be6f7d092d8",
+    "GT_width": 100,
+    "K_values": [
+      1,
+      100
+    ],
+    "L": [
+      1000,
+      1200
+    ],
+    "anchor": {
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "name": "GT10-hard"
+    },
+    "audit_n": 256,
+    "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+    "base_n": 10000000,
+    "cpu": 15,
+    "dataset": "yandex_t2i_official10M_ip_v1",
+    "dimension": 200,
+    "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+    "maxrss_bytes": 68719476736,
+    "methods": [
+      {
+        "extra_cap": 0,
+        "first_seed": false,
+        "name": "GT",
+        "table": null,
+        "table_sha256": null
+      },
+      {
+        "extra_cap": 0,
+        "first_seed": false,
+        "name": "M5",
+        "table": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/residual_joint.bin",
+        "table_sha256": "032e0c74af93a3278a9b2203b4cf7b7058d29396653749311aeadc4361593d1c"
+      },
+      {
+        "extra_cap": 96,
+        "first_seed": false,
+        "name": "M5REG96",
+        "table": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/residual_joint.bin",
+        "table_sha256": "032e0c74af93a3278a9b2203b4cf7b7058d29396653749311aeadc4361593d1c"
+      },
+      {
+        "extra_cap": 96,
+        "first_seed": false,
+        "name": "MFREG96",
+        "table": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/missing_frequency.bin",
+        "table_sha256": "7671488ed533e14eea0058babf178a374ce37cac0118230da8ba89c0500a8e61"
+      },
+      {
+        "extra_cap": 96,
+        "first_seed": false,
+        "name": "GEOREG96",
+        "table": "/root/acsg-e172-storage-v2/campaign/m5/control_models/yandex_t2i_official10M_ip_v1/fullbase_geometry.bin",
+        "table_sha256": "ee0e5e6d895584d6edf51806e9a25132807cd425d0571f50ead52df39596bd09"
+      }
+    ],
+    "min_free_bytes": 1073741824,
+    "n": 4096,
+    "no_training": true,
+    "out": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_regions_v1/results/confirm_b/yandex_t2i_official10M_ip_v1",
+    "queries": "/root/acsg-e172-storage-v2/campaign/inputs/yandex_t2i_official10M_ip_v1/confirm_b/queries.f32",
+    "query_first": 0,
+    "query_format": "raw",
+    "query_sha256": "9a510d3f1c2edb0e660ef10c661088f5d0497c97562ea939b2804dc54d10910f",
+    "role": "confirm_b",
+    "rows": "/root/acsg-e172-storage-v2/campaign/inputs/yandex_t2i_official10M_ip_v1/confirm_b/source_rows.i64",
+    "rows_sha256": "0052f2c2ea7b1bfdbe5c36e753090625e8638451694632ca2bcc45d86d29cffc",
+    "threads": 1,
+    "timing_repeats": 3,
+    "verify_loaded_base_words": true,
+    "warmup_batches": 1,
+    "warmup_n": 256
+  },
+  "distinct_frozen_tables": [
+    {
+      "pairs": 6568,
+      "resident_bytes": 60041,
+      "table": "/root/acsg-e172-storage-v2/campaign/m5/control_models/yandex_t2i_official10M_ip_v1/fullbase_geometry.bin"
+    },
+    {
+      "pairs": 6568,
+      "resident_bytes": 60041,
+      "table": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/missing_frequency.bin"
+    },
+    {
+      "pairs": 6568,
+      "resident_bytes": 60041,
+      "table": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/residual_joint.bin"
+    }
+  ],
+  "enterpoint": 6474461,
+  "graph_N": 10000000,
+  "graph_degree": 64,
+  "loaded_base_words": 2000000000,
+  "loaded_base_words_checked": true,
+  "main_kernel": "original E173 scalar search_new, mode2, original GT route",
+  "mxcsr": 8096,
+  "no_GT_read": true,
+  "no_training": true,
+  "pid": 20789,
+  "region_candidate_id_scratch_bytes": 384,
+  "region_fixed_stack_state_note": "ID scratch plus local seed/row/record/loop state; ordinary compiler stack-frame bytes are not inferred from ID scratch alone",
+  "router": {
+    "callback_address": 93852673347056,
+    "callback_image_offset": 564720,
+    "callback_symbol": "UNRESOLVED",
+    "dimension": 200,
+    "ef": 10,
+    "image_base_address": 93852672782336,
+    "label_order": "actual maxheap pop; no resort",
+    "mxcsr": 8096,
+    "shared_object": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_regions_v1/bin/benchmark"
+  },
+  "smoke_only": false,
+  "startup_seconds": 12.194451935,
+  "threads": 1,
+  "untimed_candidate_audit_sizeof": 2224,
+  "whole_wall": "normal Batch allocate/init/release, routes/vt/DC/pool, guard, original posting, seed selection, adjacency/filter/new scores/merge/output; loading/audits/serialization separate"
+}

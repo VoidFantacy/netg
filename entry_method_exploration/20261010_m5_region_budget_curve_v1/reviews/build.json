@@ -1,0 +1,41 @@
+{
+  "status": "PASS_BUILD",
+  "argv": [
+    "g++",
+    "-O3",
+    "-march=native",
+    "-std=c++17",
+    "-fopenmp",
+    "-rdynamic",
+    "-I/data/netg/ACSG",
+    "-I/data/netg/ACSG/benches",
+    "-I/data/netg/ACSG/faiss",
+    "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/src/benchmark.cpp",
+    "/root/acsg-e172-storage-v2/campaign/common/acsg_current.o",
+    "/data/netg/ACSG/build/ACSG/libACSG.a",
+    "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+    "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+    "-lopenblas",
+    "-lz",
+    "-ldl",
+    "-o",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/bin/benchmark"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 8.632061108999551,
+  "source_sha256": {
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/src/native.hpp": "ef9dc9e8a294a064f5ae03d96eb4ee3b9f6b9efa6cb685b483afa7c2d3328872",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/src/runtime.hpp": "ff1c567f3c232e80e912567f5b35e19768a5cc49130aa6a0d32378fbca4b8ced",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/src/region.hpp": "61d8b2341f96ea359812767fdde19a98eaef4d9cdd51c403324e5112a5891cc5",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/src/benchmark.cpp": "8b206c3d73e98accaa550020fc518bcced5ef969af3e347176cc178d1dbeaf0a"
+  },
+  "stdout": "",
+  "stderr": "",
+  "cpu_affinity": [
+    14
+  ],
+  "source_unchanged": true,
+  "binary_sha256": "12dc765dac5bdb0a4cbd4b74dfa0a301069393194abd70f50f1080575c2e1cf2",
+  "binary_bytes": 3581048
+}

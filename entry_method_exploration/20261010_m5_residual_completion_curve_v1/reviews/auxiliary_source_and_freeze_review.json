@@ -1,0 +1,71 @@
+{
+  "status": "PASS_E176_AUXILIARY_SOURCE_AND_ACTUAL_FREEZE_CLOSURE_REVIEW",
+  "reviewer": "causal_review",
+  "source_sha256_at_review": {
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/build_native.py": "312640247dce1aa75adb4dc1bf499c40b074572a9ad6330da7fe54ef3599ff37",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/run_analysis.py": "894b2db607134eec1dc672804bc6b6f98efc5e2f4ff2a578d5091b45c07029ac",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/freeze_execution.py": "d17aed953b1beaf8df45112e40165bc0ad7472620fee1fa3e885a59411c33b56"
+  },
+  "small_metadata_sha256_at_review": {
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/execution_lock.json": "d83a0ab31822b3eeff4beeb9566acda6dcd2a6e9a33a0bd8dd9efd06488399b3",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/parameter_lock.json": "24a35d562bb46f8a583c20747315da19b820e83510d74706722ac0b4b3da9ff9",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/reviews/preexecution_acceptance.json": "7d84405636a9cc39535916195b64ead20bbfc0088c3175e518338f9e34c2ea13",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/protocol.md": "bb226f233a496d36f6ef65144d234a6eed12673b7c143784cb83dc4a27b52d8f",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/reviews/build.json": "0363648d8d2c1c55e7f75ab5c29d75ae7af245079da4a5a7531e52bc027c2781",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/reviews/native_qualification.json": "28ad00b8020bca66de52526998b87d5b614c4184a94b1c8d873c733ee939e35e",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/reviews/qualification_source_independent_review.json": "f70c010f6da3cd155b8039d418093b43ba1a67a55556f3d8b167b3fbfddc3bc0"
+  },
+  "review_scope": "Source-only full review and AST parse of build_native.py/run_analysis.py/freeze_execution.py, plus read-only administrative lock/review/actual smoke metadata closure. No program imports/execution, build/query/FIT, public raw/vector/GT/return/timing/Recall/QPS reads, bootstrap or scientific calculations. Small source/receipt SHA and file-stat checks only; no large input or binary rehash during performance.",
+  "build_native": {
+    "status": "STATIC_PASS",
+    "checks": [
+      "FIT complete active-none before build; preserved output target/receipt/log.",
+      "Actual six-source current SHA equals native static review; replace only FIT source/output in successful prior compile command.",
+      "Dedicated CPU14 compile, one-thread environment; real exit_code/elapsed/log and new binary SHA; sources rechecked."
+    ],
+    "cost_scope": "Recorded elapsed spans subprocess.run lifecycle. Source guards before start and binary/receipt serialization/hash/print after end are outside it. Actual build completion was recorded by parent; this reviewer did not rebuild."
+  },
+  "run_analysis": {
+    "status": "STATIC_PASS_AFTER_HARDENING",
+    "checks": [
+      "All two native jobs terminal exit0, active-none; source/binary SHA and frozen input stat gate before any stage.",
+      "Analysis static review status PASS and exact four planned script keys required, all SHA equal.",
+      "Four scripts evaluate/audit/plot/report serialized on CPU14 envT1; failed nonzero halts later stages and preserves log/receipt; previous attempt not overwritten.",
+      "Frozen input stats rechecked after every successful stage. Scientific readers contain their own complete-matrix/GT-late/model/point source guards reviewed separately by root."
+    ],
+    "cost_scope": "Each wrapper elapsed spans child process launch/wait/log-close, excluding initial lock/source guards and subsequent stage-source hash/receipt writes/stat rechecks/prints. Receipt is written for normal returned nonzero exit; exceptions outside/inside subprocess.run do not produce this wrapper normal elapsed receipt. Parent can preserve external execution failure/cost separately rather than fill unknown time with zero."
+  },
+  "freeze_execution": {
+    "status": "STATIC_PASS",
+    "checks": [
+      "Fixed160/480 parameter/protocol lock, FIT terminal and required source/data/build/smoke/scope reviews PASS before freeze.",
+      "Actual smoke exactstatus/two exit0T1 jobs/340wordfiles and source_identity SHA verified.",
+      "Native/analysis review source dictionaries, two canonical job SHA and every preflight registered current stat verified.",
+      "Original E175 source snapshot SHA preserved; all current new src/bin frozen with immutable exclusive new lock writes.",
+      "Preexecution acceptance binds exact execution/parameter/protocol/review SHA and public descriptive nonreplacement scope."
+    ]
+  },
+  "actual_metadata_closure": {
+    "status": "PASS_AT_REVIEW",
+    "frozen_source_and_binary_entries": 22,
+    "registered_input_stat_entries": 169,
+    "checks": [
+      "Current execution-lock SHA equals acceptance binding.",
+      "Parameter/protocol current SHA equals both lock and acceptance.",
+      "Seven required review receipt current SHA equals lock/acceptance shared dictionary.",
+      "All native, analysis and qualification static source maps equal frozen execution source map, including qualifier code.",
+      "Actual smoke source identity equals frozen source/protocol maps;340files/twoexit0T1/10240nativecalls metadata consistent.",
+      "Two current canonical job SHA equal parameter job mappings.",
+      "All169 registered input current stat4 equal frozen execution lock."
+    ],
+    "large_or_binary_hash_scope": "Actual binary/build SHA copied and cross-bound from existing build/qualification/freeze receipts; no fresh binary or giant input payload hash in this performance-phase review."
+  },
+  "reporting_limits": [
+    "Actual smoke proves finite16 prefix/algorithm eligibility and original-return regression, not public10K quality, confirmation or cross-run performance.",
+    "Normal formal packets are not captured timed and no second full native replay exists; all-window pre-timing fresh-word/linear qualification plus sampled256 count is the declared contract.",
+    "QPScost includes complete normal Batch body; fitting/preparation/build/oracle/count/serialization and administrative overhead are additional scopes.",
+    "Source acceptance and metadata consistency do not substitute completed formal native160/480 and independent result audit."
+  ],
+  "material_unresolved_findings": [],
+  "protected_files": "No frozen scientific source, old asset, execution/FIT/parameter lock or preexecution receipt changed; only this new auxiliary review is written."
+}

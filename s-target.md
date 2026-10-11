@@ -1,4 +1,38 @@
+<!-- E176_CURRENT_BEGIN -->
+# E176 当前目标与停止边界（2026-10-10）
+
+**E176 本次授权范围已完成：两数据集已曝光公共10K、K1/K100、五L、八方法的160点/480完整wall批次，800比较/60机制及独立审计与报告实际完成；有限版本 STOP。** 默认保留 E99 GT10（Web soft-t1/Y hard），原 M5 保留。下方旧目标/STOP/预算文本完整保全，不作为仍在执行的队列。
+
+本轮完成了原 M5 费用优化与原 M5 剩余遗漏补全，完整原 C没有被替换。M5OPT与原M5全部20点full packet逐词相同；M5RES12对原M5 14Recall升/6平/0降、12460成员救回/0损伤，按曲线两个点QPS中位数严格双升8/20（原配对口径9/20）。WebK100五L均有组合收益，但M5RES12对同成本基础M5OPT双升0/20，所有质量提升点更慢。PAIR对同在线上限route-only WIDE12仅1升/5平/14降，离线容量未配平；winner条件化、泛化机制与跨模态独有性均未被证明。
+
+跨L只见两个原M5已覆盖的WebK1预算对，未解锁新K100/Y双升。同L对GT仅Y K100/L1200的弱点中位数信号（+0.0064pp/+0.082284%），不是全三轮更快，速度范围未分离。本轮只有既有public_test角色，无新确认、不推广未测L，不替换默认。完整原800比较及两种QPS中位口径均保留，不用后处理解释重新选策略。
+
+用户新增授权是**本次每数据集额外900秒FIT**，实际Web469.143610秒/Y472.986268秒；旧TRAIN债不清零，累计Web22194.116446秒/Y16062.191988秒。实际900秒timer覆盖native/compiler完整child生命周期，后续manifest load/hash和行政收尾在计时外且未知费用保留null。它不是后续新fit额度，也不能将补全表训练说成0TRAIN。正式native6970.796179/7089.322895秒另列；嵌套阶段不重复相加，采样RSS不等于精确peak。
+
+当前动作边界：不恢复任何旧runner/队列，不追加监督拟合、改方法或开始新确认，不改旧 E173/E174/E175 科学源、锁、raw与原历史结论。后续若获新研究授权，应首先分离等价工程优化与残差质量贡献，核完整wall及实际阶段费用，避免以未配平离线容量或已曝光公共角色证明创新/可靠替换；这些限制不是已启动的新方案或新门。
+
+权威入口：[E176历史](/data/netg/ACSG/experiment_history/176_m5_residual_completion_curve_v1.md)、[冻结报告](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/report.md)、[全部解释](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/interpretation.csv)、[费用与未知边界](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/cost_ledger_supplement.md)、[独立结果审计](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/reviews/independent_result_audit/report.json)、[最终交付复核](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/reviews/final_delivery_review.json)。[主曲线](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/figures_delivery_v3/recall_qps_budget_curves.png)与[机制曲线](/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/analysis/final_v1/figures_delivery_v3/mechanism_budget_curves.png)只连接五个真实预算点，原图和科学端点保留。
+<!-- E176_CURRENT_END -->
+
+<!-- E175_CURRENT_BEGIN -->
+## E175有限扩展已完成，可靠综合收益目标尚未达成（2026-10-10）
+
+本次用户授权的五L网格已全部执行：两集公共前10K、真实K1/K100、L=200/400/800/1000/1200、四法NSG/GT10/原M5/M5REG96，80点/240T1完整wall，0新增TRAIN。200比较、20全量机制、独立结果审计及PNG/SVG四panel、CSV/报告均完成。原M5保留在图中，GT10仍为当前默认。
+
+M5REG96相对同L原M5：Recall17升3平、QPS20降，无同L双升。跨L仅WebVid K1的L800→GT1000和L1000→GT1200两组，两组原M5也已双升；区域扩展没有新增双升预算组合，WebK100/Y均无跨L双升。因此本轮完成的是预算曲线交付，未完成可靠Recall–QPS综合改进或默认替换。
+
+**有限E175到此停止**；不根据本轮公共曲线继续追加L/cap、重拟合、训练或新角色。未来继续研究须有实质方法区别和另立冻结范围，优先验证额外候选工作是否能替代主图搜索支出；保留完整费用和原M5独立对照，并用未参与选择的确认数据检验综合收益。本轮已曝光公共单角色、20K TRAIN监督及原native-binding边界均不因增加预算点而消失。历史E173/E174 STOP和原件不回改。
+
+交付：[曲线](entry_method_exploration/20261010_m5_region_budget_curve_v1/analysis/final_v1/figures/recall_qps_budget_curves.png)、[完整报告](entry_method_exploration/20261010_m5_region_budget_curve_v1/analysis/final_v1/report.md)、[协议](entry_method_exploration/20261010_m5_region_budget_curve_v1/protocol.md)、[终态](entry_method_exploration/20261010_m5_region_budget_curve_v1/state.json)。
+<!-- E175_CURRENT_END -->
+
 # ACSG 下一阶段目标
+
+<!-- E174_CURRENT_BEGIN -->
+2026-10-10：E174有限尝试已完成预锁112点/336批次、评价与独立审计。目标仍是可靠Recall–QPS综合改进；本轮没有达成主方法的两角色局部双升门。主M5REG96同L相对原M5为14点Recall增/2点平而全部QPS降；WebK1 b跨档正信号对应a负，且b原M5已具优势。**停止本冻结一跳/seed/cap版本**，不根据a/b响应追加参数、角色或门；不恢复旧队列。保留原M5研究与历史产物，GT10继续默认。新增TRAIN=0，历史每dataset跨方法TRAIN7200秒超额保留，不按K/role/阶段重置。
+
+本轮确认有限表外真实救回：K100每点仅3–6个原20K TRAIN GT100并集之外的新增真成员，K1对应点为0；大量U外候选不等于净Recall或跨模态泛化。通用邻接扩展尚未隔离跨模态语义因素。后续理论应围绕如何利用M5已有的跨模态漏失信号，在保留质量的同时替代主搜索工作并支付全部附加费用；提出不同机制及可证伪的冻结合同后再安排新的有限试验。该方向不是已实现收益或本轮继续运行授权。见[完整报告](entry_method_exploration/20261010_m5_residual_regions_v1/analysis/final_v1/report.md)、[M5关系](entry_method_exploration/20261010_m5_residual_regions_v1/m5_relationship.md)、[独立解释](entry_method_exploration/20261010_m5_residual_regions_v1/reviews/result_interpretation_independent.md)及[当前入口](entry_method_exploration/20261010_m5_residual_regions_v1/README.md)。
+<!-- E174_CURRENT_END -->
 
 <!-- E173_CURRENT_BEGIN -->
 2026-10-09：用户授权的 NSG/GT10/M5 两集五档 L 直接复测与曲线报告已经完成，见[最新结果](research_snapshots/20261009_nsg_gt_m5/README.md)。**M5 正在研究**；同L小幅提高质量但增加耗时，WebVid K1有两个离散跨L综合优势，Yandex增益很小。当前默认仍为WebVid GT10-soft-t1、Yandex GT10-hard；本次不自动改默认、不追加test调参或新训练、不恢复旧八方法队列。

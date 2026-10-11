@@ -1,0 +1,110 @@
+{
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "role": "confirm_a",
+  "n": 16,
+  "dimension": 200,
+  "base_n": 10000000,
+  "queries": "/root/acsg-e172-storage-v2/campaign/inputs/yandex_t2i_official10M_ip_v1/confirm_a/queries.f32",
+  "query_format": "raw",
+  "query_sha256": "5dbb9cbadb527ddfbcf77740b3d5f933ee58d8df1d23ec01ec02fa819cce01e2",
+  "query_first": 0,
+  "GT": "/root/acsg-e172-storage-v2/campaign/inputs/yandex_t2i_official10M_ip_v1/confirm_a/gt.i32",
+  "GT_format": "raw",
+  "GT_dtype": "<i4",
+  "GT_width": 100,
+  "GT_sha256": "c9d1ed26ff27c3d67fc09996695a4031984196e0c090b28c6f52745baa337528",
+  "rows": "/root/acsg-e172-storage-v2/campaign/inputs/yandex_t2i_official10M_ip_v1/confirm_a/source_rows.i64",
+  "rows_sha256": "fa680fe81ffcafaf90e2b441ad83fa7153948311214de5d938aa718fc2fc88f6",
+  "base": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+  "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "anchor": {
+    "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+    "name": "GT10-hard"
+  },
+  "methods": [
+    {
+      "name": "GT",
+      "table": null,
+      "table_sha256": null,
+      "extra_cap": 0,
+      "first_seed": false
+    },
+    {
+      "name": "M5",
+      "table": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/residual_joint.bin",
+      "table_sha256": "032e0c74af93a3278a9b2203b4cf7b7058d29396653749311aeadc4361593d1c",
+      "extra_cap": 0,
+      "first_seed": false
+    },
+    {
+      "name": "M5REG24",
+      "table": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/residual_joint.bin",
+      "table_sha256": "032e0c74af93a3278a9b2203b4cf7b7058d29396653749311aeadc4361593d1c",
+      "extra_cap": 24,
+      "first_seed": false
+    },
+    {
+      "name": "M5REG96",
+      "table": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/residual_joint.bin",
+      "table_sha256": "032e0c74af93a3278a9b2203b4cf7b7058d29396653749311aeadc4361593d1c",
+      "extra_cap": 96,
+      "first_seed": false
+    },
+    {
+      "name": "M5FIRST96",
+      "table": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/residual_joint.bin",
+      "table_sha256": "032e0c74af93a3278a9b2203b4cf7b7058d29396653749311aeadc4361593d1c",
+      "extra_cap": 96,
+      "first_seed": true
+    },
+    {
+      "name": "MFDIRECT",
+      "table": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/missing_frequency.bin",
+      "table_sha256": "7671488ed533e14eea0058babf178a374ce37cac0118230da8ba89c0500a8e61",
+      "extra_cap": 0,
+      "first_seed": false
+    },
+    {
+      "name": "MFREG96",
+      "table": "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/missing_frequency.bin",
+      "table_sha256": "7671488ed533e14eea0058babf178a374ce37cac0118230da8ba89c0500a8e61",
+      "extra_cap": 96,
+      "first_seed": false
+    },
+    {
+      "name": "GEODIRECT",
+      "table": "/root/acsg-e172-storage-v2/campaign/m5/control_models/yandex_t2i_official10M_ip_v1/fullbase_geometry.bin",
+      "table_sha256": "ee0e5e6d895584d6edf51806e9a25132807cd425d0571f50ead52df39596bd09",
+      "extra_cap": 0,
+      "first_seed": false
+    },
+    {
+      "name": "GEOREG96",
+      "table": "/root/acsg-e172-storage-v2/campaign/m5/control_models/yandex_t2i_official10M_ip_v1/fullbase_geometry.bin",
+      "table_sha256": "ee0e5e6d895584d6edf51806e9a25132807cd425d0571f50ead52df39596bd09",
+      "extra_cap": 96,
+      "first_seed": false
+    }
+  ],
+  "L": [
+    1000,
+    1200
+  ],
+  "K_values": [
+    1,
+    100
+  ],
+  "warmup_n": 16,
+  "warmup_batches": 0,
+  "timing_repeats": 1,
+  "threads": 1,
+  "cpu": 15,
+  "verify_loaded_base_words": true,
+  "no_training": true,
+  "min_free_bytes": 1073741824,
+  "maxrss_bytes": 68719476736,
+  "audit_n": 256,
+  "out": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_regions_v1/smoke/yandex_t2i_official10M_ip_v1"
+}

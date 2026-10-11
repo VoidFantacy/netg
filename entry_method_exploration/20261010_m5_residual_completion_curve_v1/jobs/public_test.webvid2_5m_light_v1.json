@@ -1,0 +1,184 @@
+{
+  "dataset": "webvid2_5m_light_v1",
+  "role": "public_test",
+  "n": 10000,
+  "dimension": 512,
+  "base_n": 2505000,
+  "queries": "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/inputs/webvid2_5m_light_v1/queries.f32",
+  "query_format": "raw",
+  "query_sha256": "89d8e3aeb916efa578379cece767ca658b0917904021462c0ed2c5c5620b7331",
+  "query_first": 0,
+  "GT": "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/inputs/webvid2_5m_light_v1/gt.i32",
+  "GT_format": "raw",
+  "GT_dtype": "<i4",
+  "GT_width": 100,
+  "GT_sha256": "54e7ea2ff654abf61bed94c50e67fa28e659ea1eccf0b28cbb5160fa2d1d9c3a",
+  "rows": "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/inputs/webvid2_5m_light_v1/window_rows.i64",
+  "rows_sha256": "9e1c19b3fdc185411bd1a987deb6a9fda2531116aac060a84c4d878854d1c099",
+  "base": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+  "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "anchor": {
+    "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+    "name": "GT10-soft-t1"
+  },
+  "methods": [
+    {
+      "name": "NSG",
+      "table": null,
+      "table_sha256": null,
+      "extra_cap": 0,
+      "first_seed": false,
+      "optimized": false,
+      "family": "base",
+      "completion_family": ""
+    },
+    {
+      "name": "GT",
+      "table": null,
+      "table_sha256": null,
+      "extra_cap": 0,
+      "first_seed": false,
+      "optimized": false,
+      "family": "base",
+      "completion_family": ""
+    },
+    {
+      "name": "M5",
+      "table": "/root/acsg-e172-storage-v2/campaign/m5/models/webvid2_5m_light_v1/residual_joint.bin",
+      "table_sha256": "d0310bdb136d45595a00c8697c170dc38b6bda07b0090cec64ba00db236dd7ff",
+      "extra_cap": 0,
+      "first_seed": false,
+      "optimized": false,
+      "family": "post",
+      "completion_family": ""
+    },
+    {
+      "name": "M5OPT",
+      "table": "/root/acsg-e172-storage-v2/campaign/m5/models/webvid2_5m_light_v1/residual_joint.bin",
+      "table_sha256": "d0310bdb136d45595a00c8697c170dc38b6bda07b0090cec64ba00db236dd7ff",
+      "extra_cap": 0,
+      "first_seed": false,
+      "optimized": true,
+      "family": "opt",
+      "completion_family": ""
+    },
+    {
+      "name": "M5REG96",
+      "table": "/root/acsg-e172-storage-v2/campaign/m5/models/webvid2_5m_light_v1/residual_joint.bin",
+      "table_sha256": "d0310bdb136d45595a00c8697c170dc38b6bda07b0090cec64ba00db236dd7ff",
+      "extra_cap": 96,
+      "first_seed": false,
+      "optimized": false,
+      "family": "reg",
+      "completion_family": ""
+    },
+    {
+      "name": "REGOPT96",
+      "table": "/root/acsg-e172-storage-v2/campaign/m5/models/webvid2_5m_light_v1/residual_joint.bin",
+      "table_sha256": "d0310bdb136d45595a00c8697c170dc38b6bda07b0090cec64ba00db236dd7ff",
+      "extra_cap": 96,
+      "first_seed": false,
+      "optimized": true,
+      "family": "opt_reg",
+      "completion_family": ""
+    },
+    {
+      "name": "WIDE12",
+      "table": "/root/acsg-e172-storage-v2/campaign/m5/models/webvid2_5m_light_v1/residual_joint.bin",
+      "table_sha256": "d0310bdb136d45595a00c8697c170dc38b6bda07b0090cec64ba00db236dd7ff",
+      "extra_cap": 12,
+      "first_seed": false,
+      "optimized": true,
+      "family": "route_bank",
+      "completion_family": "route"
+    },
+    {
+      "name": "M5RES12",
+      "table": "/root/acsg-e172-storage-v2/campaign/m5/models/webvid2_5m_light_v1/residual_joint.bin",
+      "table_sha256": "d0310bdb136d45595a00c8697c170dc38b6bda07b0090cec64ba00db236dd7ff",
+      "extra_cap": 12,
+      "first_seed": false,
+      "optimized": true,
+      "family": "bank",
+      "completion_family": "pair"
+    }
+  ],
+  "L": [
+    200,
+    400,
+    800,
+    1000,
+    1200
+  ],
+  "K_values": [
+    1,
+    100
+  ],
+  "warmup_n": 256,
+  "warmup_batches": 1,
+  "timing_repeats": 3,
+  "threads": 1,
+  "cpu": 15,
+  "verify_loaded_base_words": true,
+  "no_training": true,
+  "min_free_bytes": 1073741824,
+  "maxrss_bytes": 68719476736,
+  "audit_n": 256,
+  "out": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/results/public_test/webvid2_5m_light_v1",
+  "source_query_fvecs": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.test.public10K.fvecs",
+  "source_query_sha256": "96b11dda1628f15e704512438e1dc773a8f19b2426e03c71aedcacf11f18910d",
+  "source_GT_ivecs": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/gt.test.public10K.ip.top100.ivecs",
+  "source_GT_sha256": "1e55041056ef61d4192e01064fed0311cf8d831b6a8d6e5225b9514ace801022",
+  "source_window_first": 0,
+  "source_window_n": 10000,
+  "source_rows_scope": "source-file window positions only",
+  "completion_models": {
+    "k1_L200": {
+      "pair": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/pair.k1_L200.i32",
+      "route": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/route.k1_L200.i32"
+    },
+    "k1_L400": {
+      "pair": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/pair.k1_L400.i32",
+      "route": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/route.k1_L400.i32"
+    },
+    "k1_L800": {
+      "pair": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/pair.k1_L800.i32",
+      "route": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/route.k1_L800.i32"
+    },
+    "k1_L1000": {
+      "pair": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/pair.k1_L1000.i32",
+      "route": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/route.k1_L1000.i32"
+    },
+    "k1_L1200": {
+      "pair": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/pair.k1_L1200.i32",
+      "route": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/route.k1_L1200.i32"
+    },
+    "k100_L200": {
+      "pair": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/pair.k100_L200.i32",
+      "route": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/route.k100_L200.i32"
+    },
+    "k100_L400": {
+      "pair": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/pair.k100_L400.i32",
+      "route": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/route.k100_L400.i32"
+    },
+    "k100_L800": {
+      "pair": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/pair.k100_L800.i32",
+      "route": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/route.k100_L800.i32"
+    },
+    "k100_L1000": {
+      "pair": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/pair.k100_L1000.i32",
+      "route": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/route.k100_L1000.i32"
+    },
+    "k100_L1200": {
+      "pair": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/pair.k100_L1200.i32",
+      "route": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/route.k100_L1200.i32"
+    }
+  },
+  "completion_manifest": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/webvid2_5m_light_v1/compile_manifest.json",
+  "embedded_domain": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/reviews/webvid2_5m_light_v1.embedded_base_domain.relocated.json",
+  "FIT_increment_seconds": 469.14360973600196,
+  "original_protocol_sha256": "39e6d5b0613f9ab0cfe73a936bee49d70f41a1597b69ee19e80c367f34838d05",
+  "protocol_sha256": "bb226f233a496d36f6ef65144d234a6eed12673b7c143784cb83dc4a27b52d8f"
+}

@@ -1,0 +1,1320 @@
+{
+  "status": "FROZEN_TRAIN_ONLY_POST_M5_RESIDUAL_COMPLETION_ALL_10_POINTS",
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "n": 20000,
+  "role": "fit",
+  "point_count": 10,
+  "models": {
+    "k1_L200": {
+      "pair": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k1_L200.i32",
+        "sha256": "7fff5f605d9e4d89e3feaa05966c765c620f971e2d955ad7a498f24689fa039c",
+        "dtype": "<i4",
+        "shape": [
+          12,
+          7
+        ],
+        "bytes": 336,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k1_L200.selection_log.json",
+        "selection_log_sha256": "ca35bb05891672a3229ef6cdb0ce7d639291063d1602fb1dc68c7e923b244d45",
+        "K": 1,
+        "L": 200,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 0.13389952199941035,
+        "eligible_key_count": 5440,
+        "populated_key_count": 12,
+        "observed_key_count": 6238,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 14,
+        "residual_queries": 14,
+        "residual_query_target_tokens": 14,
+        "candidate_key_target_edges": 42,
+        "selected_key_target_pairs": 14,
+        "covered_residual_tokens": 14,
+        "heap_pops": 42,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      },
+      "route": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k1_L200.i32",
+        "sha256": "d7058a42198f27d3d087795d66255c8db6cf648b7852c12d9719d367e6fb28ab",
+        "dtype": "<i4",
+        "shape": [
+          9,
+          7
+        ],
+        "bytes": 252,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k1_L200.selection_log.json",
+        "selection_log_sha256": "5b4603155544077a41842d0ff9dff324a4c8febbabf13dc1be53c17895e4fbdc",
+        "K": 1,
+        "L": 200,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 0.11094827399938367,
+        "eligible_key_count": 821,
+        "populated_key_count": 9,
+        "observed_key_count": 821,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 14,
+        "residual_queries": 14,
+        "residual_query_target_tokens": 14,
+        "candidate_key_target_edges": 42,
+        "selected_key_target_pairs": 14,
+        "covered_residual_tokens": 14,
+        "heap_pops": 42,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      }
+    },
+    "k1_L400": {
+      "pair": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k1_L400.i32",
+        "sha256": "241848e88cabe47add006b76260bf5e3b9dfd80d6d5fa13ca06c55fb781335c6",
+        "dtype": "<i4",
+        "shape": [
+          7,
+          7
+        ],
+        "bytes": 196,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k1_L400.selection_log.json",
+        "selection_log_sha256": "1bb73e3471174d83c7c8eff98e1e3d5ee3c04a24ea25c074b4c1c7859628b1f7",
+        "K": 1,
+        "L": 400,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 0.1322836540020944,
+        "eligible_key_count": 5429,
+        "populated_key_count": 7,
+        "observed_key_count": 6192,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 7,
+        "residual_queries": 7,
+        "residual_query_target_tokens": 7,
+        "candidate_key_target_edges": 21,
+        "selected_key_target_pairs": 7,
+        "covered_residual_tokens": 7,
+        "heap_pops": 21,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      },
+      "route": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k1_L400.i32",
+        "sha256": "9b550957e432a0730191c14f1fb40f682d8e816d41036709ec2005c36cb58f7c",
+        "dtype": "<i4",
+        "shape": [
+          7,
+          7
+        ],
+        "bytes": 196,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k1_L400.selection_log.json",
+        "selection_log_sha256": "a7f0293ff84df645ea49b06e4a8fbacfffd6c797657709eba9bc695b9fd7042e",
+        "K": 1,
+        "L": 400,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 0.11110019300031126,
+        "eligible_key_count": 821,
+        "populated_key_count": 7,
+        "observed_key_count": 821,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 7,
+        "residual_queries": 7,
+        "residual_query_target_tokens": 7,
+        "candidate_key_target_edges": 21,
+        "selected_key_target_pairs": 7,
+        "covered_residual_tokens": 7,
+        "heap_pops": 21,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      }
+    },
+    "k1_L800": {
+      "pair": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k1_L800.i32",
+        "sha256": "43a4c6e395476b2b19aef7ba1277290e790d18259c8baf1741112a86ec7f08bd",
+        "dtype": "<i4",
+        "shape": [
+          5,
+          7
+        ],
+        "bytes": 140,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k1_L800.selection_log.json",
+        "selection_log_sha256": "acd800feda3b07d88a78c00ad309aa573081c2255676edc1962375b25562759c",
+        "K": 1,
+        "L": 800,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 0.13296324999828357,
+        "eligible_key_count": 5395,
+        "populated_key_count": 5,
+        "observed_key_count": 6161,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 5,
+        "residual_queries": 5,
+        "residual_query_target_tokens": 5,
+        "candidate_key_target_edges": 15,
+        "selected_key_target_pairs": 5,
+        "covered_residual_tokens": 5,
+        "heap_pops": 15,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      },
+      "route": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k1_L800.i32",
+        "sha256": "1d23c51976d70daa5fe9202fd946e051b08c4e537a6a786c12e291cc57a8874a",
+        "dtype": "<i4",
+        "shape": [
+          5,
+          7
+        ],
+        "bytes": 140,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k1_L800.selection_log.json",
+        "selection_log_sha256": "4ded9189e7e75e2fc06d6ac7685e9e3b3d6cd935b96c649267d7c972bdccf89f",
+        "K": 1,
+        "L": 800,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 0.1107020929994178,
+        "eligible_key_count": 821,
+        "populated_key_count": 5,
+        "observed_key_count": 821,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 5,
+        "residual_queries": 5,
+        "residual_query_target_tokens": 5,
+        "candidate_key_target_edges": 15,
+        "selected_key_target_pairs": 5,
+        "covered_residual_tokens": 5,
+        "heap_pops": 15,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      }
+    },
+    "k1_L1000": {
+      "pair": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k1_L1000.i32",
+        "sha256": "b2dcb9a94116dc3fbee993541e8df09d275c10ce4e85d211b8878a8ce3e9a528",
+        "dtype": "<i4",
+        "shape": [
+          4,
+          7
+        ],
+        "bytes": 112,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k1_L1000.selection_log.json",
+        "selection_log_sha256": "f13929e46260ab67aa951edeb2f625af87262e3c664e0c5dc77c8919ee5b975b",
+        "K": 1,
+        "L": 1000,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 0.1326982139980828,
+        "eligible_key_count": 5390,
+        "populated_key_count": 4,
+        "observed_key_count": 6155,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 4,
+        "residual_queries": 4,
+        "residual_query_target_tokens": 4,
+        "candidate_key_target_edges": 12,
+        "selected_key_target_pairs": 4,
+        "covered_residual_tokens": 4,
+        "heap_pops": 12,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      },
+      "route": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k1_L1000.i32",
+        "sha256": "4b92f24e8fffbb1b2b61d772a097e8cced43b99e16c38c58bbfd50c640a6941a",
+        "dtype": "<i4",
+        "shape": [
+          4,
+          7
+        ],
+        "bytes": 112,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k1_L1000.selection_log.json",
+        "selection_log_sha256": "d289bedf34aac5830ff71b12665771b6fe8115adb992054ad1fabc8d1226a568",
+        "K": 1,
+        "L": 1000,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 0.11183522999999695,
+        "eligible_key_count": 821,
+        "populated_key_count": 4,
+        "observed_key_count": 821,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 4,
+        "residual_queries": 4,
+        "residual_query_target_tokens": 4,
+        "candidate_key_target_edges": 12,
+        "selected_key_target_pairs": 4,
+        "covered_residual_tokens": 4,
+        "heap_pops": 12,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      }
+    },
+    "k1_L1200": {
+      "pair": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k1_L1200.i32",
+        "sha256": "a69db2d45b285b2722a14323e218b75d1c95b01e83e51466c90432d5d4295cb5",
+        "dtype": "<i4",
+        "shape": [
+          3,
+          7
+        ],
+        "bytes": 84,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k1_L1200.selection_log.json",
+        "selection_log_sha256": "903fe78b6f9374f1de7103531105ed2f4f82ed38c5c02f852a95eace8c62ddb8",
+        "K": 1,
+        "L": 1200,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 0.1359584530000575,
+        "eligible_key_count": 5386,
+        "populated_key_count": 3,
+        "observed_key_count": 6154,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 3,
+        "residual_queries": 3,
+        "residual_query_target_tokens": 3,
+        "candidate_key_target_edges": 9,
+        "selected_key_target_pairs": 3,
+        "covered_residual_tokens": 3,
+        "heap_pops": 9,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      },
+      "route": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k1_L1200.i32",
+        "sha256": "63ebd551a5740a59a30657872c131d4a08ff08f7badd8052fdaaa85f452d1762",
+        "dtype": "<i4",
+        "shape": [
+          3,
+          7
+        ],
+        "bytes": 84,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k1_L1200.selection_log.json",
+        "selection_log_sha256": "a42a38529944933edee440981744a62bf09e075f76568802fc4dae8b87b23dbc",
+        "K": 1,
+        "L": 1200,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 0.11119487899850355,
+        "eligible_key_count": 821,
+        "populated_key_count": 3,
+        "observed_key_count": 821,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 3,
+        "residual_queries": 3,
+        "residual_query_target_tokens": 3,
+        "candidate_key_target_edges": 9,
+        "selected_key_target_pairs": 3,
+        "covered_residual_tokens": 3,
+        "heap_pops": 9,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      }
+    },
+    "k100_L200": {
+      "pair": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k100_L200.i32",
+        "sha256": "39f429491b172471579c6c297ae5f4c2c61c5c083c7716c1ccc7dab2973a0866",
+        "dtype": "<i4",
+        "shape": [
+          5448,
+          7
+        ],
+        "bytes": 152544,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k100_L200.selection_log.json",
+        "selection_log_sha256": "23f0d3a34ff70eed5a72448c261382d8afd3e127a818682340d94898ef82307d",
+        "K": 100,
+        "L": 200,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 2.7563041870016605,
+        "eligible_key_count": 5460,
+        "populated_key_count": 5448,
+        "observed_key_count": 6247,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 214963,
+        "residual_queries": 17143,
+        "residual_query_target_tokens": 214963,
+        "candidate_key_target_edges": 620440,
+        "selected_key_target_pairs": 21661,
+        "covered_residual_tokens": 22680,
+        "heap_pops": 620483,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      },
+      "route": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k100_L200.i32",
+        "sha256": "f6ef924139584e3fe522616a34f3f2b035321fe6dbab60ec2625d7974e32cf46",
+        "dtype": "<i4",
+        "shape": [
+          820,
+          7
+        ],
+        "bytes": 22960,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k100_L200.selection_log.json",
+        "selection_log_sha256": "4aa30d122c12e1dbd467ad69fabf066d51e18d4d3ff567af193e23f6da71f4f4",
+        "K": 100,
+        "L": 200,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 2.7166944260025048,
+        "eligible_key_count": 821,
+        "populated_key_count": 820,
+        "observed_key_count": 821,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 214963,
+        "residual_queries": 17143,
+        "residual_query_target_tokens": 214963,
+        "candidate_key_target_edges": 639254,
+        "selected_key_target_pairs": 3280,
+        "covered_residual_tokens": 4249,
+        "heap_pops": 639264,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      }
+    },
+    "k100_L400": {
+      "pair": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k100_L400.i32",
+        "sha256": "1b562ac1f9fd7a3d628b226a40cdaef9a5d62495f796ff5194e1b33659b98ce1",
+        "dtype": "<i4",
+        "shape": [
+          5260,
+          7
+        ],
+        "bytes": 147280,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k100_L400.selection_log.json",
+        "selection_log_sha256": "47f219f2d0995ab49d9813d668e272806e7f640f89feb7c2d8a3e8d571e47b21",
+        "K": 100,
+        "L": 400,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 2.257445415998518,
+        "eligible_key_count": 5376,
+        "populated_key_count": 5260,
+        "observed_key_count": 6081,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 113602,
+        "residual_queries": 13648,
+        "residual_query_target_tokens": 113602,
+        "candidate_key_target_edges": 327657,
+        "selected_key_target_pairs": 20260,
+        "covered_residual_tokens": 20722,
+        "heap_pops": 327681,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      },
+      "route": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k100_L400.i32",
+        "sha256": "1000e93a1a9f3706975ffa742280695226ccbe052006515577961cb1a64a1c6e",
+        "dtype": "<i4",
+        "shape": [
+          820,
+          7
+        ],
+        "bytes": 22960,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k100_L400.selection_log.json",
+        "selection_log_sha256": "0fcbe63a7980c2a166bc627df582f90fa12972b0229ae67303715cd578a50798",
+        "K": 100,
+        "L": 400,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 2.202331628999673,
+        "eligible_key_count": 821,
+        "populated_key_count": 820,
+        "observed_key_count": 821,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 113602,
+        "residual_queries": 13648,
+        "residual_query_target_tokens": 113602,
+        "candidate_key_target_edges": 338198,
+        "selected_key_target_pairs": 3279,
+        "covered_residual_tokens": 3889,
+        "heap_pops": 338205,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      }
+    },
+    "k100_L800": {
+      "pair": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k100_L800.i32",
+        "sha256": "5d7c2d5512fa82fa9521aa0c2a43399dbecf7de43b5b394827cf0ae0b1f63521",
+        "dtype": "<i4",
+        "shape": [
+          4708,
+          7
+        ],
+        "bytes": 131824,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k100_L800.selection_log.json",
+        "selection_log_sha256": "095725749134c2a2adab616b8e2d5c98c98626bbebe0502510f560a310b7f0b0",
+        "K": 100,
+        "L": 800,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 2.0190265310011455,
+        "eligible_key_count": 5286,
+        "populated_key_count": 4708,
+        "observed_key_count": 5961,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 55267,
+        "residual_queries": 9736,
+        "residual_query_target_tokens": 55267,
+        "candidate_key_target_edges": 159489,
+        "selected_key_target_pairs": 16832,
+        "covered_residual_tokens": 17042,
+        "heap_pops": 159503,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      },
+      "route": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k100_L800.i32",
+        "sha256": "2b2f5c2980d84a09ab43d2f25d8a96b6b036196eed65ea4f580fda5bdbf7017a",
+        "dtype": "<i4",
+        "shape": [
+          820,
+          7
+        ],
+        "bytes": 22960,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k100_L800.selection_log.json",
+        "selection_log_sha256": "83f3d3e2f529d7490201b9a99bb39ea2791a72b199d14842c924ac56e1f53842",
+        "K": 100,
+        "L": 800,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 1.9233739119990787,
+        "eligible_key_count": 821,
+        "populated_key_count": 820,
+        "observed_key_count": 821,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 55267,
+        "residual_queries": 9736,
+        "residual_query_target_tokens": 55267,
+        "candidate_key_target_edges": 164470,
+        "selected_key_target_pairs": 3274,
+        "covered_residual_tokens": 3605,
+        "heap_pops": 164479,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      }
+    },
+    "k100_L1000": {
+      "pair": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k100_L1000.i32",
+        "sha256": "d51a56681817a313428d97237271a5864712ad0ae03903bc0e44d734e114142b",
+        "dtype": "<i4",
+        "shape": [
+          4423,
+          7
+        ],
+        "bytes": 123844,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k100_L1000.selection_log.json",
+        "selection_log_sha256": "58c06d5d6db7126c29ffa1f8c640b398834a9dbde6a94c04ad88bd4d9b278267",
+        "K": 100,
+        "L": 1000,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 1.950182535998465,
+        "eligible_key_count": 5281,
+        "populated_key_count": 4423,
+        "observed_key_count": 5939,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 43177,
+        "residual_queries": 8519,
+        "residual_query_target_tokens": 43177,
+        "candidate_key_target_edges": 124491,
+        "selected_key_target_pairs": 15296,
+        "covered_residual_tokens": 15452,
+        "heap_pops": 124502,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      },
+      "route": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k100_L1000.i32",
+        "sha256": "60bda4752215550a611013712b3f4ee8ed6e79442730eb8b48ac3ca94c3f0a86",
+        "dtype": "<i4",
+        "shape": [
+          818,
+          7
+        ],
+        "bytes": 22904,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k100_L1000.selection_log.json",
+        "selection_log_sha256": "7e24f250bc88e6b445b86d9b0d048978a439b0e30c064a5729bb8e578c56c142",
+        "K": 100,
+        "L": 1000,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 1.8756408029985323,
+        "eligible_key_count": 821,
+        "populated_key_count": 818,
+        "observed_key_count": 821,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 43177,
+        "residual_queries": 8519,
+        "residual_query_target_tokens": 43177,
+        "candidate_key_target_edges": 128417,
+        "selected_key_target_pairs": 3264,
+        "covered_residual_tokens": 3535,
+        "heap_pops": 128427,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      }
+    },
+    "k100_L1200": {
+      "pair": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k100_L1200.i32",
+        "sha256": "c2ba62bbb1dd59d2ef7c2f2e5e2121b9e3dc8274e1901d2733990ce2e13c66c4",
+        "dtype": "<i4",
+        "shape": [
+          4150,
+          7
+        ],
+        "bytes": 116200,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/pair.k100_L1200.selection_log.json",
+        "selection_log_sha256": "175889fb1a0ff7e8b7277ab37d80fc02df8760126eca3cee2847c59a746b5a8e",
+        "K": 100,
+        "L": 1200,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 1.9138177290005842,
+        "eligible_key_count": 5273,
+        "populated_key_count": 4150,
+        "observed_key_count": 5921,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 35389,
+        "residual_queries": 7528,
+        "residual_query_target_tokens": 35389,
+        "candidate_key_target_edges": 101857,
+        "selected_key_target_pairs": 13904,
+        "covered_residual_tokens": 14024,
+        "heap_pops": 101866,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      },
+      "route": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k100_L1200.i32",
+        "sha256": "0d38027733e962fc6565df255226554a1f30dc61707fd290532a66de543aad0f",
+        "dtype": "<i4",
+        "shape": [
+          816,
+          7
+        ],
+        "bytes": 22848,
+        "selection_log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/route.k100_L1200.selection_log.json",
+        "selection_log_sha256": "e77baab3ca3005704969f5c3571d34d7d35c011a2362925d03c8f3dd87961009",
+        "K": 100,
+        "L": 1200,
+        "base_n": 10000000,
+        "seconds_including_model_serialization_hash": 1.849989591002668,
+        "eligible_key_count": 821,
+        "populated_key_count": 816,
+        "observed_key_count": 821,
+        "support_min_distinct_queries": 2,
+        "eligible_query_count": 20000,
+        "residual_members": 35389,
+        "residual_queries": 7528,
+        "residual_query_target_tokens": 35389,
+        "candidate_key_target_edges": 105207,
+        "selected_key_target_pairs": 3245,
+        "covered_residual_tokens": 3471,
+        "heap_pops": 105218,
+        "integer_objective": "one unit per missing (TRAIN query,GT_K target), globally covered once across that query's actual three keys",
+        "greedy_tie": "largest actual marginal uncovered token count; then lexicographically smaller(route,winner,target)"
+      }
+    }
+  },
+  "format": {
+    "dtype": "<i4",
+    "row_words": 7,
+    "columns": [
+      "route_id",
+      "winner_id",
+      "count",
+      "target0",
+      "target1",
+      "target2",
+      "target3"
+    ],
+    "row_order": "strict lexicographic(route_id,winner_id)",
+    "padding": -1,
+    "count_max": 4,
+    "route_only_winner": -1,
+    "lookup_miss": "empty; no route-only fallback",
+    "overall_extra_candidate_cap": 12
+  },
+  "supervision": "D(query,K,L) = existing GT_K - actual final original M5(query,K,L); no old baseline-only residuals",
+  "same_supervision_control": "route-only post-M5 residual table, same support>=2/b4/unit-token joint-union greedy; not widened original-M5 supervision",
+  "eligible_query_statuses": [
+    2
+  ],
+  "ignored_statuses": {
+    "0": "unsupported raw query",
+    "1": "empty original C or original-M5 fallback; no online completion",
+    "3": "nonfinite original-M5 fallback"
+  },
+  "source_sha256_and_stat4": {
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_jobs/yandex_t2i_official10M_ip_v1.json": {
+      "sha256": "88e45ee0901964e55942ab3fd4d50d1eff25e05637f9ca6c4f81c5df68545863",
+      "stat4": [
+        66305,
+        9044140,
+        2543,
+        1791624270843783693
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/complete.json": {
+      "sha256": "bea6d160a543d235af7c9ad5831a4d4636eea6749394aa4e8e0c91958d40c00a",
+      "stat4": [
+        66305,
+        9044338,
+        13266,
+        1791625268212195525
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/gt.i64": {
+      "sha256": "af99eb0d786cd58fbc27fdea47a19265ae22b8b3ffe6c3f8294b44983edf7bdf",
+      "stat4": [
+        66305,
+        8288553,
+        16000000,
+        1789040128332346786
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/row_ids.i64": {
+      "sha256": "4bda401c5f0aaf7996c2c8c8abfb6b345e03debe898b445961c2a46b65dd795c",
+      "stat4": [
+        66305,
+        8288554,
+        160000,
+        1789040128344346838
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/queries.f32": {
+      "sha256": "e86c597b26ee908f4d4d64674a2ea89837e75d1f824c1ce30671fbd3fc5424e8",
+      "stat4": [
+        66305,
+        8288552,
+        16000000,
+        1789040128308346680
+      ]
+    },
+    "/root/acsg-e172-storage-v2/campaign/m5/models/yandex_t2i_official10M_ip_v1/residual_joint.bin": {
+      "sha256": "032e0c74af93a3278a9b2203b4cf7b7058d29396653749311aeadc4361593d1c",
+      "stat4": [
+        66309,
+        1207981,
+        53369,
+        1790999168389189148
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L200/complete.json": {
+      "sha256": "4a5050689e5ad1bbf4f7f917ac57065d4dcd764626f5e23420eb2be8c5d89550",
+      "stat4": [
+        66305,
+        9044278,
+        839,
+        1791624846066331977
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L200/gt_ids.i32": {
+      "sha256": "db32638050223d8d358546942d173abfd3934c4d113646a0273c9a73d3e7ba9a",
+      "stat4": [
+        66305,
+        9044273,
+        80000,
+        1791624846066331977
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L200/m5_ids.i32": {
+      "sha256": "5f7987efede5ec33618294beeaf7a469efb941ee17576e364d3110fbcaffc73e",
+      "stat4": [
+        66305,
+        9044274,
+        80000,
+        1791624846066331977
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L200/entry_ids.i32": {
+      "sha256": "54f679aa09dffa734c5448c101180fef15794ed59975da88603e625e488fbaba",
+      "stat4": [
+        66305,
+        9044275,
+        240000,
+        1791624846066331977
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L200/c_winners.i32": {
+      "sha256": "ad6e86e23b60519be478d6cee146ed78745aeb1a16edaeb4005f8bf991f33549",
+      "stat4": [
+        66305,
+        9044276,
+        240000,
+        1791624846066331977
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L200/fit_status.u8": {
+      "sha256": "0a2267e08d56ea6359eafc04020f45e2f5bbeae4e7be948b67e11f57f03f0df5",
+      "stat4": [
+        66305,
+        9044277,
+        20000,
+        1791624846066331977
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L400/complete.json": {
+      "sha256": "729103e2c58317257f165ccf895804fdc2b835d14562ba7a25538505c81be7b4",
+      "stat4": [
+        66305,
+        9044287,
+        837,
+        1791624871354443611
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L400/gt_ids.i32": {
+      "sha256": "70bb2ef1c305763afbfd338e13151cacbc4486d884a94208ec9d790bc33149c8",
+      "stat4": [
+        66305,
+        9044282,
+        80000,
+        1791624871354443611
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L400/m5_ids.i32": {
+      "sha256": "9f0e8fcafef34135d6841d7b49f1d891e6c92f429dbbea472cdf931932cde9c3",
+      "stat4": [
+        66305,
+        9044283,
+        80000,
+        1791624871354443611
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L400/entry_ids.i32": {
+      "sha256": "54f679aa09dffa734c5448c101180fef15794ed59975da88603e625e488fbaba",
+      "stat4": [
+        66305,
+        9044284,
+        240000,
+        1791624871354443611
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L400/c_winners.i32": {
+      "sha256": "12512e84e57293e4bffca54031b96dbf505e0df866cc0eabceb18527cdc4fea6",
+      "stat4": [
+        66305,
+        9044285,
+        240000,
+        1791624871354443611
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L400/fit_status.u8": {
+      "sha256": "0a2267e08d56ea6359eafc04020f45e2f5bbeae4e7be948b67e11f57f03f0df5",
+      "stat4": [
+        66305,
+        9044286,
+        20000,
+        1791624871354443611
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L800/complete.json": {
+      "sha256": "78cd11557dad5a043b242ef3bcd885d99c9f5697624d9651d9ba51bbdb4b521e",
+      "stat4": [
+        66305,
+        9044294,
+        836,
+        1791624919286655205
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L800/gt_ids.i32": {
+      "sha256": "10ffb4f0a1cc235fe3253bed06ee98d2ad8b3dc64bfe0903dfc1f2198c673398",
+      "stat4": [
+        66305,
+        9044289,
+        80000,
+        1791624919282655189
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L800/m5_ids.i32": {
+      "sha256": "26e2dc05f38739b13b668f9aa94e28c347556bb443560617cfd10300f1371ec9",
+      "stat4": [
+        66305,
+        9044290,
+        80000,
+        1791624919282655189
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L800/entry_ids.i32": {
+      "sha256": "54f679aa09dffa734c5448c101180fef15794ed59975da88603e625e488fbaba",
+      "stat4": [
+        66305,
+        9044291,
+        240000,
+        1791624919282655189
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L800/c_winners.i32": {
+      "sha256": "f558bb73d1ff9a70a6f26f4d01355c43e9a8668b6dc3692bcd20ccf2b16d90a7",
+      "stat4": [
+        66305,
+        9044292,
+        240000,
+        1791624919282655189
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L800/fit_status.u8": {
+      "sha256": "0a2267e08d56ea6359eafc04020f45e2f5bbeae4e7be948b67e11f57f03f0df5",
+      "stat4": [
+        66305,
+        9044293,
+        20000,
+        1791624919286655205
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L1000/complete.json": {
+      "sha256": "bfbd27ee15e4eb8aaf07988af66f996a8865fe4de31b411789a5e4ac248d7365",
+      "stat4": [
+        66305,
+        9044301,
+        838,
+        1791624978338915890
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L1000/gt_ids.i32": {
+      "sha256": "38a49ef8587af08f259e653e8b06e6b926ae866a907aa0c4774602d368d338af",
+      "stat4": [
+        66305,
+        9044296,
+        80000,
+        1791624978338915890
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L1000/m5_ids.i32": {
+      "sha256": "89f6e80982ed1e96be109cc1f187c19f5f5ffde715489ce5155a573fa51b73bc",
+      "stat4": [
+        66305,
+        9044297,
+        80000,
+        1791624978338915890
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L1000/entry_ids.i32": {
+      "sha256": "54f679aa09dffa734c5448c101180fef15794ed59975da88603e625e488fbaba",
+      "stat4": [
+        66305,
+        9044298,
+        240000,
+        1791624978338915890
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L1000/c_winners.i32": {
+      "sha256": "289422c61d0ff5214263d5e370fd3a9cc4ea01cace9ba9fa69a97f32187a7219",
+      "stat4": [
+        66305,
+        9044299,
+        240000,
+        1791624978338915890
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L1000/fit_status.u8": {
+      "sha256": "0a2267e08d56ea6359eafc04020f45e2f5bbeae4e7be948b67e11f57f03f0df5",
+      "stat4": [
+        66305,
+        9044300,
+        20000,
+        1791624978338915890
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L1200/complete.json": {
+      "sha256": "892290f1c9c15ce880422c369ad763dc9aec2c7357146e949ba1fac9eadb5c4c",
+      "stat4": [
+        66305,
+        9044308,
+        838,
+        1791625048427225293
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L1200/gt_ids.i32": {
+      "sha256": "99d6541d08e2d81413af861e39304ef910c630db67ba15ebe0890dbc5924f7ee",
+      "stat4": [
+        66305,
+        9044303,
+        80000,
+        1791625048427225293
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L1200/m5_ids.i32": {
+      "sha256": "df28d9a822577760bea84bc16dbf358f905db40d8b752a2188a0d94cdd2e5516",
+      "stat4": [
+        66305,
+        9044304,
+        80000,
+        1791625048427225293
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L1200/entry_ids.i32": {
+      "sha256": "54f679aa09dffa734c5448c101180fef15794ed59975da88603e625e488fbaba",
+      "stat4": [
+        66305,
+        9044305,
+        240000,
+        1791625048427225293
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L1200/c_winners.i32": {
+      "sha256": "e16aed1647860cf70e0d72ba8134c246e2732c68d0b2aa7a6bc9967ce38dd7ca",
+      "stat4": [
+        66305,
+        9044306,
+        240000,
+        1791625048427225293
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k1_L1200/fit_status.u8": {
+      "sha256": "0a2267e08d56ea6359eafc04020f45e2f5bbeae4e7be948b67e11f57f03f0df5",
+      "stat4": [
+        66305,
+        9044307,
+        20000,
+        1791625048427225293
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L200/complete.json": {
+      "sha256": "cc8000b5d92169a91f425b41762f404599ec9df39f52144643a955703f52a2f5",
+      "stat4": [
+        66305,
+        9044316,
+        839,
+        1791625062807288773
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L200/gt_ids.i32": {
+      "sha256": "d17ae62d9687772a7358665c24d8b8042af8307fd758674de97129ca902e609c",
+      "stat4": [
+        66305,
+        9044311,
+        8000000,
+        1791625062799288737
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L200/m5_ids.i32": {
+      "sha256": "b71d3d50d93eb562818089c8f94b9192f10fc5f609e879e39ee92060fa2428fa",
+      "stat4": [
+        66305,
+        9044312,
+        8000000,
+        1791625062803288754
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L200/entry_ids.i32": {
+      "sha256": "54f679aa09dffa734c5448c101180fef15794ed59975da88603e625e488fbaba",
+      "stat4": [
+        66305,
+        9044313,
+        240000,
+        1791625062807288773
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L200/c_winners.i32": {
+      "sha256": "9b94ff01a42d18d4b8fd8a348c9da20855e3d7d2484268c4438bcbba85c0ce2f",
+      "stat4": [
+        66305,
+        9044314,
+        240000,
+        1791625062807288773
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L200/fit_status.u8": {
+      "sha256": "0a2267e08d56ea6359eafc04020f45e2f5bbeae4e7be948b67e11f57f03f0df5",
+      "stat4": [
+        66305,
+        9044315,
+        20000,
+        1791625062807288773
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L400/complete.json": {
+      "sha256": "4ba4e36b77fd3ba53ca88a4d2a55908b18dec09c0744e59a2e052ec0eb1f341d",
+      "stat4": [
+        66305,
+        9044323,
+        838,
+        1791625088859403778
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L400/gt_ids.i32": {
+      "sha256": "e9d0986c53a504e7bce1917c60ee84e71981b99cc69cb5eff13102b78c72fdf6",
+      "stat4": [
+        66305,
+        9044318,
+        8000000,
+        1791625088851403744
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L400/m5_ids.i32": {
+      "sha256": "11d6e0f0920cf3fd7b10bab04fa68715c939dfb8f97a15d14cb1b5d8a7035939",
+      "stat4": [
+        66305,
+        9044319,
+        8000000,
+        1791625088855403761
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L400/entry_ids.i32": {
+      "sha256": "54f679aa09dffa734c5448c101180fef15794ed59975da88603e625e488fbaba",
+      "stat4": [
+        66305,
+        9044320,
+        240000,
+        1791625088859403778
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L400/c_winners.i32": {
+      "sha256": "c7a9be36433743cded17682fc69d76260e8541da9a63f73a43a908cf3b412652",
+      "stat4": [
+        66305,
+        9044321,
+        240000,
+        1791625088859403778
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L400/fit_status.u8": {
+      "sha256": "0a2267e08d56ea6359eafc04020f45e2f5bbeae4e7be948b67e11f57f03f0df5",
+      "stat4": [
+        66305,
+        9044322,
+        20000,
+        1791625088859403778
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L800/complete.json": {
+      "sha256": "b8d448e1a408401e711ffb023abd417f1f9ab6d0092d0e4d4c1bc747ea2a6eaa",
+      "stat4": [
+        66305,
+        9044330,
+        839,
+        1791625137579618852
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L800/gt_ids.i32": {
+      "sha256": "71d9c755a2b108081483aa67051131c753d28fe999a7b02203df6b8d83c29ace",
+      "stat4": [
+        66305,
+        9044325,
+        8000000,
+        1791625137571618817
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L800/m5_ids.i32": {
+      "sha256": "f5c9257be38a5fb42b4646837b3a3c507ce3b1a3ed7800979b202e8a08c3e585",
+      "stat4": [
+        66305,
+        9044326,
+        8000000,
+        1791625137575618835
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L800/entry_ids.i32": {
+      "sha256": "54f679aa09dffa734c5448c101180fef15794ed59975da88603e625e488fbaba",
+      "stat4": [
+        66305,
+        9044327,
+        240000,
+        1791625137579618852
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L800/c_winners.i32": {
+      "sha256": "fb0ffe76dcaacf2a08fe15f23e9931ad802ef65847e579639fa60d6728693a89",
+      "stat4": [
+        66305,
+        9044328,
+        240000,
+        1791625137579618852
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L800/fit_status.u8": {
+      "sha256": "0a2267e08d56ea6359eafc04020f45e2f5bbeae4e7be948b67e11f57f03f0df5",
+      "stat4": [
+        66305,
+        9044329,
+        20000,
+        1791625137579618852
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L1000/complete.json": {
+      "sha256": "26fa0e73578c8346ddc5f7805abd45033213fe44edbe47d52933365cdb5f1dba",
+      "stat4": [
+        66305,
+        9044337,
+        839,
+        1791625197395882909
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L1000/gt_ids.i32": {
+      "sha256": "5834b19e7acb3362b905a95783308c662773773b8793164b7f81ddf069073197",
+      "stat4": [
+        66305,
+        9044332,
+        8000000,
+        1791625197387882874
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L1000/m5_ids.i32": {
+      "sha256": "d2da69b178a77245c04642e2ff39e6178cedcbfdfc709f9623243e355da2820b",
+      "stat4": [
+        66305,
+        9044333,
+        8000000,
+        1791625197391882891
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L1000/entry_ids.i32": {
+      "sha256": "54f679aa09dffa734c5448c101180fef15794ed59975da88603e625e488fbaba",
+      "stat4": [
+        66305,
+        9044334,
+        240000,
+        1791625197391882891
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L1000/c_winners.i32": {
+      "sha256": "73f9b6a57b34b992cf2dd4850e37b301ab901e4c6245b63964cdd5229476a9ae",
+      "stat4": [
+        66305,
+        9044335,
+        240000,
+        1791625197395882909
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L1000/fit_status.u8": {
+      "sha256": "0a2267e08d56ea6359eafc04020f45e2f5bbeae4e7be948b67e11f57f03f0df5",
+      "stat4": [
+        66305,
+        9044336,
+        20000,
+        1791625197395882909
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L1200/complete.json": {
+      "sha256": "e0cabde0d935fe30cb399585cf8b039076a738af659e75051def123140e595ec",
+      "stat4": [
+        66305,
+        9044344,
+        838,
+        1791625268212195525
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L1200/gt_ids.i32": {
+      "sha256": "a02c9b3d0c368752bbb62f5724f447931e35b545f422f7e6ffccb743e6378e91",
+      "stat4": [
+        66305,
+        9044339,
+        8000000,
+        1791625268204195490
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L1200/m5_ids.i32": {
+      "sha256": "65128709f27727ac3eab6860e4547a153fe1919cca115f4edc8797dd9467fd5c",
+      "stat4": [
+        66305,
+        9044340,
+        8000000,
+        1791625268208195507
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L1200/entry_ids.i32": {
+      "sha256": "54f679aa09dffa734c5448c101180fef15794ed59975da88603e625e488fbaba",
+      "stat4": [
+        66305,
+        9044341,
+        240000,
+        1791625268212195525
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L1200/c_winners.i32": {
+      "sha256": "fbd97cde55e6d2fd4bf630955901b02c1eb1e37b04b66283b5c4109696a950f2",
+      "stat4": [
+        66305,
+        9044342,
+        240000,
+        1791625268212195525
+      ]
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_results/yandex_t2i_official10M_ip_v1/k100_L1200/fit_status.u8": {
+      "sha256": "0a2267e08d56ea6359eafc04020f45e2f5bbeae4e7be948b67e11f57f03f0df5",
+      "stat4": [
+        66305,
+        9044343,
+        20000,
+        1791625268212195525
+      ]
+    }
+  },
+  "source_hash_seconds": 0.09182000299915671,
+  "label_decode_seconds": 0.011536410998814972,
+  "point_stages": [
+    {
+      "K": 1,
+      "L": 200,
+      "elapsed_seconds": 0.3827692039994872
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "elapsed_seconds": 0.38486177700178814
+    },
+    {
+      "K": 1,
+      "L": 800,
+      "elapsed_seconds": 0.38338146599926404
+    },
+    {
+      "K": 1,
+      "L": 1000,
+      "elapsed_seconds": 0.3853187610002351
+    },
+    {
+      "K": 1,
+      "L": 1200,
+      "elapsed_seconds": 0.38660888300000806
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "elapsed_seconds": 5.622813550999126
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "elapsed_seconds": 4.60913414499737
+    },
+    {
+      "K": 100,
+      "L": 800,
+      "elapsed_seconds": 4.091253419002896
+    },
+    {
+      "K": 100,
+      "L": 1000,
+      "elapsed_seconds": 3.9732141209969996
+    },
+    {
+      "K": 100,
+      "L": 1200,
+      "elapsed_seconds": 3.9099799760006135
+    }
+  ],
+  "compiler_elapsed_seconds": 24.291415198000323,
+  "native_response_generation_elapsed_seconds": 448.403293138,
+  "compiler_max_seconds_remainder": 451.3653483630005,
+  "charged_scope": "all response generation/loading/main/M5/teacher verification/hashes/GT label decode/joint greedy/serialization are additional fitting; external receipt provides whole shared dataset<=900s budget and process startup/closing overhead",
+  "train_budget_is_not_zero": true,
+  "old_train_debt_reset": false,
+  "public_test_read": false,
+  "cal_read": false,
+  "confirm_read": false,
+  "new_base_graph": false,
+  "new_ground_truth_teacher": false,
+  "runtime_oracles_and_quality_pending": true
+}

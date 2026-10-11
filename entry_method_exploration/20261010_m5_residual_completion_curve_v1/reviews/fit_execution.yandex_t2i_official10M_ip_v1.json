@@ -1,0 +1,36 @@
+{
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "status": "PASS_ADDITIONAL_FIT_COMPLETE_WITHIN_900S",
+  "stages": [
+    {
+      "argv": [
+        "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/bin/fit",
+        "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_jobs/yandex_t2i_official10M_ip_v1.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 448.63424394899994,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/logs/fit.yandex_t2i_official10M_ip_v1.native.log"
+    },
+    {
+      "argv": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/src/compile_residual.py",
+        "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/fit_jobs/yandex_t2i_official10M_ip_v1.json",
+        "--max-seconds",
+        "451.3653483630005"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 24.35119572700205,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/logs/fit.yandex_t2i_official10M_ip_v1.compiler.log"
+    }
+  ],
+  "elapsed_seconds": 472.98626797700126,
+  "cap_seconds": 900,
+  "historical_TRAIN_seconds": 15589.205719895,
+  "cumulative_TRAIN_with_this_increment_seconds": 16062.191987872002,
+  "historical_cost_reset": false,
+  "model_manifest": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_completion_curve_v1/models/yandex_t2i_official10M_ip_v1/compile_manifest.json",
+  "model_manifest_sha256": "3c16a3434e545caf29008ad13e4f987eff6005e72a4b14cddc8e8ce4f355146d",
+  "model_eligible": true,
+  "full_process_lifecycle_included": true
+}

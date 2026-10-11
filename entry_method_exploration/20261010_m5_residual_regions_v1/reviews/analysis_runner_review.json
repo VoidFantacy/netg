@@ -1,0 +1,83 @@
+{
+  "status": "PASS_INDEPENDENT_STATIC_ANALYSIS_RUNNER_AND_BENCHMARK_REVIEW",
+  "review_type": "Independent static source review. No compile, query, result calculation, GT decode, vector read or heavy data hashing. Python sources were parsed as syntax trees only.",
+  "reviewed_source": {
+    "src/evaluate.py": {
+      "sha256": "2e5af05cf1fc4aa3ded640806a21ecfd9041a86bee111d74f36b7e56a4bb264c",
+      "lines": 259
+    },
+    "src/run_serial.py": {
+      "sha256": "d11b3d887615a94afeda12064b2a800ec8792dea9e7307596c8dc4287e82b6ec",
+      "lines": 118
+    },
+    "src/benchmark.cpp": {
+      "sha256": "26eeaa7f50c26e016f7f37933e0a107c9a4016b2aa2a7fa5cd0b15c6cf6eab7e",
+      "lines": 812
+    },
+    "src/region.hpp": {
+      "sha256": "61d8b2341f96ea359812767fdde19a98eaef4d9cdd51c403324e5112a5891cc5",
+      "lines": 285
+    },
+    "src/runtime.hpp": {
+      "sha256": "ff1c567f3c232e80e912567f5b35e19768a5cc49130aa6a0d32378fbca4b8ced",
+      "lines": 43
+    },
+    "src/native.hpp": {
+      "sha256": "ef9dc9e8a294a064f5ae03d96eb4ee3b9f6b9efa6cb685b483afa7c2d3328872",
+      "lines": 87
+    },
+    "protocol.md": {
+      "sha256": "014c55f89f1a420472af65d50d382224c45b44c7376e451dfcfc41a6bbc31338",
+      "lines": 27
+    },
+    "parameter_lock.json": {
+      "sha256": "5c4f59b2e3250418c31cc813712ab10223c1a74b9ecb505d195f710ef54c0fbf",
+      "lines": 14
+    }
+  },
+  "blocking_findings": [],
+  "resolved_findings": [
+    "Owned subprocess finally now covers polling/state-write/assert/timeout/interrupt failures, terminates and waits with kill fallback, sets active=None, persists cleanup and logs a persistence fallback; only its own proc is targeted.",
+    "Evaluation requires native-complete serial-supervisor status, active=None and four successful native exits before large hashes or role GT decode, and prescans every frozen point receipt before GT decoding.",
+    "Cross-L round-index speed ratios now explicitly state descriptive noncontemporaneous/nonrandom pairing and report speed-range separation; same-L ratios refer to sequential matched KL rounds.",
+    "Mechanism output now reads all-n frozen 128-word candidate traces, validates ID domains/uniqueness/disjointness/seed source/caps and checks M5 new rescues originate in X; U/teacher outside-support is counted from existing frozen ID sets.",
+    "Benchmark trace and evaluator both use seed3/nC/nX/nSeeds/m5_committed/extension_aborted/C24/X96 layout, not the earlier status/plannedNc proposal.",
+    "CandidateAudit and original packet allocations/writes are confined to independent untimed audit, rather than default-initialized on the timed path."
+  ],
+  "parameter_and_execution_checks": [
+    "Four jobs, actual K1/K100, two L/dataset, pilot nine methods and confirmation five methods are prelocked before new responses; 72+40=112 point enumeration and three timed repeats give336 batches.",
+    "Parameter lock binds protocol and each job SHA; serial runner binds execution source/binary SHA and data-preflight/acceptance before launch, with large-input stat guards only during serial jobs.",
+    "No fit/training, response-driven parameter replacement or confirmation cancellation branch is present. Confirmation vectors/GT admin identity are distinct from quality decoding.",
+    "CPU15 and one actual thread are asserted in native batch schedule/resource guards and monitored by the owning serial runner; no concurrent child launch is present."
+  ],
+  "analysis_checks": [
+    "Returned ID uniqueness/domain/padding, GTK uniqueness/domain and aligned hit/member arrays are checked; rescue-damage equals integer quality delta.",
+    "QPS uses n divided by three finite positive complete batch walls, retains all three ratios and range; positive integer delta plus median ratio is labeled observed joint gain rather than replacement.",
+    "Histogram multinomial bootstrap is equivalent to resampling query hit deltas, with stable key seed and2000 draws; intervals are explicitly descriptive without semantic IID or simultaneous/multiple-comparison guarantee.",
+    "TRAIN teacher support is read only after all native completion gates and checked against original compile-manifest SHA; support is ID incidence, not a bridge-effect or geometry proof.",
+    "Region traces are all4096 whereas NDC and count/plain parity are fixed256; outside-U candidate/member incidence is separate from actual final rescue/damage."
+  ],
+  "benchmark_checks": [
+    "timed_normal_batch starts before Batch allocation/initialization and stops after its scope releases output; run includes normal route, main DC/vt/pool, domain guard, posting, seed/graph work, all scores/merge/output.",
+    "Timed path is run(...counting=false,stats=nullptr,independent_audit=false) with no CandidateAudit allocation, fresh oracle DC or trace writes. Timed output publication barrier is followed by destruction, not retained results.",
+    "Every point gets three prelocked rotated method rounds and full separate plain returns; loading, serialization, full oracle and counting are outside timed walls.",
+    "All-n region replay independently derives original C via sorted-map lookup, recomputes actual R/C/X words with another original scalar DC, derives row seed winners and ordered legal/unseen X, and uses a separate linear worst-slot oracle rather than runtime heap.",
+    "Region replay is bit-compared to separately saved all-n plain output and original GT route/profile words. Count wrapper is independently bit-compared only on the fixed uniform256 sample.",
+    "Direct controls retain original Posting::apply with an independent linear merge oracle; direct candidate plan shares original plan and is not claimed as independent candidate generation.",
+    "extra0 intervention is smoke-only by default; formal output parity is not misrepresented as an additional full extra0 replay. Nonfinite-X oracle checks fallback to complete old M5 packet.",
+    "Raw trace saves IDs/status only, while score words are independently checked in untimed memory; timed per-round words are not captured and the receipt says so."
+  ],
+  "nonblocking_suggestions": [
+    "Reverify and record the small original M5 posting SHA when evaluating posting_U, rather than relying solely on administrative preflight/frozen-input workflow.",
+    "Tail-rank decomposition can be added later as descriptive result analysis without changing prelocked strategies; absence of it does not invalidate quality/QPS computations."
+  ],
+  "limitations": [
+    "Static review is not compilation, actual binary/FP qualification, successful run, data-integrity verification or performance evidence; authorized compiler/smoke/native/parity gates still remain.",
+    "Three speed rounds and many pointwise descriptive intervals do not prove general/simultaneous dominance or justify default replacement.",
+    "Different posting-row sources are not proven distinct basins or a measured modality gap; new X/teacher-outside coverage is not causal proof of cross-modal geometry.",
+    "Direct original linear oracle is specified for normal finite-score domain; unsupported nonfinite/trap branches may fail the experiment audit and must not be reported as accepted performance.",
+    "No review or hash of large data bytes was performed by this child during this source review."
+  ],
+  "region_author_receipt": "reviews/region_author_static.json",
+  "region_author_original_preserved": "/data/acsg_joint_gain_research_20261010/literature/region_source_static_review.json"
+}

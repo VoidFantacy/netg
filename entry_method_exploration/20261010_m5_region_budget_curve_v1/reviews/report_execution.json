@@ -1,0 +1,125 @@
+{
+  "status": "PASS_E175_AUDITED_SAVED_FIELD_REPORT",
+  "stage": "report",
+  "source": "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/src/write_report_v2.py",
+  "source_sha256": "57f9021db21c4e8403f2630c45edc59f6cd9be3cec602da0a21842924be3a0f5",
+  "metrics": "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/analysis/final_v1/metrics.json",
+  "metrics_audited_sha256_and_stat4": {
+    "sha256": "59d0d958dc54e4fbe1b1c5a3bf560e36c462eaea60f60aa17e67a1ae1920a324",
+    "stat4": [
+      66305,
+      9044008,
+      519107,
+      1791620251885927896
+    ]
+  },
+  "audit": "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/reviews/independent_result_audit/report.json",
+  "audit_sha256": "668cc9cd796c5f5216582e5029ded7ee1b43561c64d4ef0f139991e9c16b2cc3",
+  "plot_receipt_sha256": "871d91107c842771e5623f3745ddf3953b807988577dee1877559b583e2eb0fd",
+  "point_count": 80,
+  "formal_timed_batches": 240,
+  "comparison_count": 200,
+  "same_L_comparison_count": 120,
+  "cross_L_comparison_count": 80,
+  "full_region_trace_points": 20,
+  "reported_cross_L_observed_joint_points": [
+    [
+      "webvid2_5m_light_v1",
+      1,
+      800,
+      "M5",
+      1000,
+      "GT"
+    ],
+    [
+      "webvid2_5m_light_v1",
+      1,
+      800,
+      "M5REG96",
+      1000,
+      "GT"
+    ],
+    [
+      "webvid2_5m_light_v1",
+      1,
+      1000,
+      "M5",
+      1200,
+      "GT"
+    ],
+    [
+      "webvid2_5m_light_v1",
+      1,
+      1000,
+      "M5REG96",
+      1200,
+      "GT"
+    ]
+  ],
+  "actual_cost_receipt_fields": {
+    "reviews/build.json": {
+      "status": "PASS_BUILD",
+      "elapsed_seconds": 8.632061108999551,
+      "sha256": "38e3acf05f6bcd7813f14f518671ca8f07f3f008ffb3e90bac973b2e18f70c80"
+    },
+    "reviews/data_preflight.json": {
+      "status": "PASS_E175_SOURCE_IDENTITIES_AND_FIXED_WINDOW_COPY",
+      "elapsed_seconds": 0.43908345500130963,
+      "sha256": "f192d97753db1fd788475b821f314b75b8d80749d482f0131ca48ac9aa46eaa5"
+    },
+    "reviews/smoke_regression.json": {
+      "status": "PASS_E175_N16_FIVE_L_FULL_ORACLES_AND_E173_WORD_REGRESSION",
+      "elapsed_seconds": 55.20136792099947,
+      "sha256": "c0187c2bed3b8a571152b15e97252882e4808fb9ee61f4e8e53ebd5920f0435f"
+    },
+    "reviews/evaluation_execution.json": {
+      "status": "PASS_E175_ACTUAL_STAGE_EXECUTION",
+      "elapsed_seconds": 25.03271448599844,
+      "sha256": "cc01760cd45b3a5f38c20ca4100b0ccdaebe29bc4fa26a320395fe48455cf9ca"
+    },
+    "reviews/independent_audit_execution.json": {
+      "status": "PASS_E175_ACTUAL_STAGE_EXECUTION",
+      "elapsed_seconds": 35.90646846800155,
+      "sha256": "912165f1767c30623459e3e3f0bb4ff6170a4387e9015664b2598906eef23ec8"
+    },
+    "reviews/plot_curves_execution.json": {
+      "status": "PASS_E175_80_POINT_PRECOMPUTED_BUDGET_CURVES",
+      "elapsed_seconds": 0.9209847460006131,
+      "sha256": "871d91107c842771e5623f3745ddf3953b807988577dee1877559b583e2eb0fd"
+    },
+    "reviews/administrative_failure_1.json": {
+      "status": "ADMINISTRATIVE_FAILURE_RECORDED_RESOLVED_BEFORE_COPY",
+      "elapsed_seconds": null,
+      "sha256": "b83663cb3969f6dd139bf0089d0f723b7abb8aa142b46398001e332fe91d7488"
+    }
+  },
+  "protected_existing_file_count": 881,
+  "protected_existing_stat4_unchanged": true,
+  "TRAIN_increment_seconds": 0,
+  "default_replacement": false,
+  "base_query_GT_return_values_read": false,
+  "new_distance_GT_fit_bootstrap_or_quality_calculation": false,
+  "CPU_affinity": [
+    14
+  ],
+  "thread_env": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "outputs": {
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_region_budget_curve_v1/analysis/final_v1/report.md": {
+      "sha256": "04b956c4002cd7677bd5d80449db77d64821e78a30217f468f4460a24061168b",
+      "stat4": [
+        66305,
+        9044101,
+        60987,
+        1791620335742303892
+      ]
+    }
+  },
+  "elapsed_scope": "monotonic main start through report write and provenance checks; final receipt serialization/print excluded",
+  "scope": "presentation of actually audited saved fields; signs/counts across frozen comparisons only",
+  "elapsed_seconds": 0.03935483399982331
+}

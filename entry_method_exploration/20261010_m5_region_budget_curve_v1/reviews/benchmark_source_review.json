@@ -1,0 +1,39 @@
+{
+  "status": "PASS_INDEPENDENT_COMPOSED_STATIC_NATIVE_REVIEW",
+  "experiment": "E175",
+  "reviewer": "/root/causal_review",
+  "scope": "Original E174 complete benchmark source review plus complete E174-to-E175 diff and new run/main/audit/serialization contexts; original E173 NSG run compared independently. No compile, native execution, query, vector or GT-array decoding, distance calculation, bootstrap, or large input hashing.",
+  "empirical_status": "NOT_EVALUATED_BY_THIS_REVIEW",
+  "source_identity": {
+    "src/benchmark.cpp": "8b206c3d73e98accaa550020fc518bcced5ef969af3e347176cc178d1dbeaf0a",
+    "original_E174_benchmark.cpp": "26eeaa7f50c26e016f7f37933e0a107c9a4016b2aa2a7fa5cd0b15c6cf6eab7e",
+    "src/native.hpp": "ef9dc9e8a294a064f5ae03d96eb4ee3b9f6b9efa6cb685b483afa7c2d3328872",
+    "src/runtime.hpp": "ff1c567f3c232e80e912567f5b35e19768a5cc49130aa6a0d32378fbca4b8ced",
+    "src/region.hpp": "61d8b2341f96ea359812767fdde19a98eaef4d9cdd51c403324e5112a5891cc5",
+    "protocol.md_at_review": "39e6d5b0613f9ab0cfe73a936bee49d70f41a1597b69ee19e80c367f34838d05"
+  },
+  "prior_complete_review": "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_regions_v1/reviews/analysis_runner_review.json",
+  "reference_sources": [
+    "/data/netg/ACSG/entry_method_exploration/20261009_nsg_gt_m5_test_v1/src/benchmark_v2.cpp",
+    "/data/netg/ACSG/entry_method_exploration/20261010_m5_residual_regions_v1/src/benchmark.cpp"
+  ],
+  "checks": [
+    "Three copied native/runtime/region headers compared byte-for-byte with E174 and are unchanged; only small source hashes read.",
+    "Complete benchmark diff comprises Method.nsg, NSG entry branch and route assertions, correct exclusion from GT route/merge checks, formal n=10000, trace file cap=5MiB, and E175-specific receipt metadata/status.",
+    "NSG is recognized only by name NSG and requires null posting, extra_cap=0, first_seed=false; it never invokes GT router.route or posting/region apply.",
+    "NSG emplaces original graph enterpoint with weight 1, stores [ep,-1,-1], retains Batch constructor positive-zero unused profile words/route NDC, and uses the same original scalar search_new mode2 as E173.",
+    "NSG plain/replay/count routes checked independently; count.first[0] must be enterpoint and route NDC zero. GT-route comparison and original linear post merge are not applied to NSG.",
+    "Unchanged GT/M5/region branches retain full R/C preservation, strict scoring/merge, query-best seeds, original visited read-only filtering, all score costs and original nonfinite behavior.",
+    "Timed normal Batch path still passes independent_audit=false and nullptr trace/stats; CandidateAudit/original packet/independent fresh scorer only allocated in untimed posting audits. Normal Batch allocation/init/release remains inside wall.",
+    "Full plain saved once, independent full replay compared in memory; sampled plain/count words use frozen uniform256; region full C/X ordered fresh-scalar/linear oracle and 128-word ID/status trace preserved.",
+    "10000*128*4=5120000B per region trace fits explicit 5*1024*1024 byte guard; no duplicate saved replay packet introduced.",
+    "Formal loop and rotated order remain actual K1/K100 searches and complete n-query wall for all configured methods; startup/input binding/counts/audits/serialization remain separately charged native cost."
+  ],
+  "findings": [],
+  "external_requirements_and_limits": [
+    "Native parser intentionally retains a dynamic method/K/L interface and n16 smoke; the exact E175 4-method, 2-K, 5-L, 2-dataset matrix, frozen table paths and cap96/no-first flags require parameter/execution lock and administrative preflight enforcement reviewed separately.",
+    "Resource/source stat/hash guards, whole-directory 512MiB cap and own-child cleanup require runner/input-lock review and actual execution receipts; this source review does not establish actual success or performance.",
+    "Existing native callback symbol binding, finite/domain coverage and timing packet retention limits are inherited and must be reported rather than upgraded by this static PASS.",
+    "No actual GT-member monotonicity claim follows from preserving C; paired damage must be measured after all formal jobs complete."
+  ]
+}
