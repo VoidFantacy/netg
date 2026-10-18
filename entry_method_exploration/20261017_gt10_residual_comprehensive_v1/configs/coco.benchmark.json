@@ -1,0 +1,79 @@
+{
+  "dataset": "coco",
+  "index": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/nsg.index",
+  "metric_id": 0,
+  "base": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/base.f32",
+    "format": "raw_f32",
+    "n": 118272,
+    "d": 512
+  },
+  "routers": [
+    {
+      "name": "hard",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/ids.i32",
+      "W": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/router.hnsw",
+      "route_order": "heap_pop"
+    }
+  ],
+  "threads": 1,
+  "cpu": 15,
+  "protocol": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/protocol.md",
+  "protocol_sha256": "ca6cb003730bfb6585e623e8819a108a4e50b9a28dc2f65bf4328c36c99d6e75",
+  "queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/test.f32",
+    "format": "raw_f32",
+    "n": 10000,
+    "d": 512
+  },
+  "output_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/results/coco",
+  "K_L": {
+    "1": [
+      16,
+      32,
+      64,
+      100,
+      200,
+      400,
+      800,
+      1200
+    ],
+    "100": [
+      100,
+      128,
+      200,
+      400,
+      800,
+      1000,
+      1200
+    ]
+  },
+  "timing_repeats": 3,
+  "warmup_n": 256,
+  "methods": [
+    {
+      "name": "NSG",
+      "family": "NSG"
+    },
+    {
+      "name": "GT10-hard",
+      "family": "GT10",
+      "router": "hard"
+    },
+    {
+      "name": "hard-JOINT8",
+      "family": "POST",
+      "router": "hard",
+      "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/coco/compiled/hard/tables/JOINT8.bin",
+      "baseline": "GT10-hard"
+    },
+    {
+      "name": "hard-JOINT32",
+      "family": "POST",
+      "router": "hard",
+      "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/coco/compiled/hard/tables/JOINT32.bin",
+      "baseline": "GT10-hard"
+    }
+  ]
+}

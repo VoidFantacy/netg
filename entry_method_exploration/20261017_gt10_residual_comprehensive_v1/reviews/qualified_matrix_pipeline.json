@@ -1,0 +1,28 @@
+{
+  "status": "PASS_QUALIFIED_FORMAL_MATRIX_ANALYSIS_PENDING",
+  "stages": [
+    {
+      "stage": "qualification",
+      "argv": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/scripts/qualify_and_regress.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 84.77741441700005,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/logs/qualification_pipeline.log"
+    },
+    {
+      "stage": "formal",
+      "argv": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/scripts/run_suite.py",
+        "--stage",
+        "formal"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 18267.603254556998,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/logs/formal_pipeline.log"
+    }
+  ],
+  "elapsed_seconds": 18352.380769051997
+}

@@ -1,0 +1,94 @@
+{
+  "status": "PDF_GENERATED_VISUAL_REVIEW_AND_ROOT_DOCUMENTS_PENDING",
+  "stages": [
+    {
+      "stage": "costs",
+      "argv": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/scripts/collect_costs.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.04008455000075628,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/logs/post_costs.log"
+    },
+    {
+      "stage": "analysis",
+      "argv": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/scripts/analyze_results.py",
+        "--out",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/final_v1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 139.82971092499793,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/logs/post_analysis.log"
+    },
+    {
+      "stage": "audit_selftest",
+      "argv": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/scripts/independent_results_audit.py",
+        "--selftest"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.028572035000252072,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/logs/post_audit_selftest.log"
+    },
+    {
+      "stage": "independent_audit",
+      "argv": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/scripts/independent_results_audit.py",
+        "--analysis",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/final_v1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 408.03052460600156,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/logs/post_independent_audit.log"
+    },
+    {
+      "stage": "boundary_diagnostics",
+      "argv": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/scripts/diagnose_boundaries.py",
+        "--analysis-dir",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/final_v1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.18506545099808136,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/logs/post_boundary_diagnostics.log"
+    },
+    {
+      "stage": "finalize_report",
+      "argv": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/scripts/analyze_results.py",
+        "--finalize-report",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/final_v1",
+        "--out",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/delivery_v1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.266968887000985,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/logs/post_finalize_report.log"
+    },
+    {
+      "stage": "render_pdf",
+      "argv": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/scripts/render_pdf.py",
+        "--report",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/delivery_v1/report_zh.md",
+        "--output",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/delivery_v1/NETG_E183_GT10\u4e0e\u6b8b\u5dee_\u4e03\u6570\u636e\u96c6\u53ca\u5931\u8d25\u67e5\u8be2_20261017.pdf",
+        "--receipt",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/delivery_v1/pdf_render_receipt.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.955475897000724,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/logs/post_render_pdf.log"
+    }
+  ],
+  "elapsed_seconds": 552.3367577329991,
+  "pdf": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/delivery_v1/NETG_E183_GT10\u4e0e\u6b8b\u5dee_\u4e03\u6570\u636e\u96c6\u53ca\u5931\u8d25\u67e5\u8be2_20261017.pdf"
+}

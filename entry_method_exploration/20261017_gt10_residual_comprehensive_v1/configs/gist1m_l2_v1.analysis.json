@@ -1,0 +1,118 @@
+{
+  "dataset": "gist1m_l2_v1",
+  "benchmark_config": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/gist1m_l2_v1.benchmark.json",
+  "eval_gt": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/test.gt.i32",
+    "format": "raw_i32",
+    "n": 1000,
+    "k": 100,
+    "total_n": 1000,
+    "row_start": 0,
+    "width": 100,
+    "dtype": "<i4"
+  },
+  "source_manifest": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/manifest.json",
+  "models": {
+    "hard": {
+      "source_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/gist1m_l2_v1/compiled/hard/source",
+      "compile_manifest": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/gist1m_l2_v1/compiled/hard/compile_manifest.json",
+      "table_rows": {
+        "JOINT8": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/gist1m_l2_v1/compiled/hard/tables/JOINT8.rows.json",
+        "JOINT32": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/gist1m_l2_v1/compiled/hard/tables/JOINT32.rows.json"
+      },
+      "training_gt": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/fit.gt.i32",
+        "format": "raw_i32",
+        "n": 16000,
+        "k": 100,
+        "total_n": 20000,
+        "row_start": 0
+      },
+      "training_n": 16000,
+      "teacher_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/gist1m_l2_v1/teacher/hard"
+    },
+    "soft": {
+      "source_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/gist1m_l2_v1/compiled/soft/source",
+      "compile_manifest": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/gist1m_l2_v1/compiled/soft/compile_manifest.json",
+      "table_rows": {
+        "JOINT8": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/gist1m_l2_v1/compiled/soft/tables/JOINT8.rows.json",
+        "JOINT32": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/gist1m_l2_v1/compiled/soft/tables/JOINT32.rows.json"
+      },
+      "training_gt": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/fit.gt.i32",
+        "format": "raw_i32",
+        "n": 16000,
+        "k": 100,
+        "total_n": 20000,
+        "row_start": 0
+      },
+      "training_n": 16000,
+      "teacher_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/gist1m_l2_v1/teacher/soft"
+    }
+  },
+  "catalogue_entry": {
+    "dataset": "gist1m_l2_v1",
+    "metric_id": 1,
+    "base": {
+      "path": "/data/netg/ACSG/benches/datasets/GIST1M/gist_base.fvecs",
+      "format": "fvecs",
+      "n": 1000000,
+      "d": 960
+    },
+    "index": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/gist1m_l2_v1/nsg/graph.nsg",
+    "routers": [
+      {
+        "name": "hard",
+        "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/gt10.ids.i32",
+        "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/gist1m_l2_v1/gt10_hard/W.f32",
+        "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/gist1m_l2_v1/k100/GT10-hard.hnsw",
+        "route_order": "sorted_ids"
+      },
+      {
+        "name": "soft",
+        "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/gt10.ids.i32",
+        "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/gist1m_l2_v1/gt10_soft_t1/W.f32",
+        "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/gist1m_l2_v1/k100/GT10-soft-t1.hnsw",
+        "route_order": "sorted_ids"
+      }
+    ],
+    "H": 800,
+    "train_queries": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/fit.f32",
+      "format": "raw_f32",
+      "n": 16000,
+      "d": 960,
+      "total_n": 20000,
+      "row_start": 0
+    },
+    "train_gt": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/fit.gt.i32",
+      "format": "raw_i32",
+      "n": 16000,
+      "k": 100,
+      "total_n": 20000,
+      "row_start": 0
+    },
+    "test_queries": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/test.f32",
+      "format": "raw_f32",
+      "n": 1000,
+      "d": 960,
+      "total_n": 1000
+    },
+    "test_gt": {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/test.gt.i32",
+      "format": "raw_i32",
+      "n": 1000,
+      "k": 100,
+      "total_n": 1000,
+      "row_start": 0
+    },
+    "source_manifest": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/manifest.json",
+    "asset_audit": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/l2_assets.json",
+    "modality": "single_modality",
+    "training_role_scope": "Residual fit shares original GT10 profile-fit prefix; test identities excluded.",
+    "historical_results": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/gist1m_l2_v1",
+    "historical_point_results": "/data/netg/ACSG/entry_method_exploration/20260916_optimized_five_dataset_r1_r100_v1/results/gist1m_l2_v1"
+  }
+}

@@ -1,3 +1,20 @@
+<!-- E183_CURRENT_BEGIN -->
+# E183 完成：GT10可迁移，残差在非多模态上的收益有限（2026-10-17）
+
+完成Deep10M/SIFT10M/GIST1M原始L2与Web/Yandex/COCO/Flickr原始IP的645点、1935完整单线程批次；hard/soft与各自B8/B32分开，K1八L/K100七L。全部真实计时包三轮逐字一致、完整合并oracle及独立645点/540救损/360覆盖/2088分层/360级联/3600频次复算PASS。224样本全库float64 Top1及Top100集合全同；不是新盲确认。默认保留E99 GT10。
+
+GT10-soft对NSG的K100共同区间折线QPS：Deep +1.60%～+7.94%，SIFT +1.53%～+4.87%；GIST-soft约+0.56%～+1.97%但三轮不全同向，SIFT/GIST K1混合。B32对自身GT10：Deep/SIFT K100曲线较低，GIST K100交叉；Web与COCO两K全共同区间改善、三轮描述同向，Flickr交叉、Yandex K100较低。线段估计不是新增等Recall实测，饱和点的多值分支保留。
+
+事先L200/K100示例，soft Deep/SIFT、hard GIST的补回分别21/29220、25/18468、66/10886个遗漏（0.0719%/0.1354%/0.6063%），净Recall +0.0021/+0.0025/+0.0660pp，QPS -3.44/-3.22/-1.61%；该L200/K1三例救回0。Web-soft为20257/272967（7.4210%）、COCO-hard13715/46556（29.4591%），同L付出费用而完整曲线受益。
+
+源覆盖直接限制：Deep 29220→全局源195→当前路由未截断86→B32救回21；SIFT18468→140→62→25。GIST10886→4242→1117→66，瓶颈分布不同。不能只按模态归因；规模/metric/训练密度未因果配平。全360补全点损伤5事件/2query：Web4近边界未证明特定native因果、COCO1个1ULP排序倒置；严格ID/GT不改。
+
+正式suite18267.58秒（约5.07h，含内部正式wall、预热、保存及核验），独审407.80秒。初次Deep教师仅调度状态拼写修正、0重跑，26.80秒保留；源SHA330.27秒、GT抽审27.98秒部分重叠，不重复加总；继承完整冷启动成本未知。单图/单模型/已曝光测试、GIST1K、同K100教师跨K共表、未独立重算bootstrap/插值等限制保留。有限矩阵收口，未改默认。
+
+[详细PDF](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/delivery_v2/NETG_E183_GT10与残差_七数据集及失败查询_详细报告_20261017.pdf) · [报告](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/delivery_v2/report_zh.md) · [645点](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/final_v1/points.csv) · [独审](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/reviews/independent_results_audit.json) · [费用](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/cost_ledger.json) · [详细复盘](experiment_history/183_gt10_residual_comprehensive_v1.md)。
+2026-10-18 简版交付：[四页PDF](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/concise_v1/NETG_E183_NSG_GT10_残差_简版报告_20261018.pdf) · [简版文字](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/concise_v1/report_zh.md)。每图仅NSG、GT10、GT10＋残差三线，另有统一L200失败查询表；315点全部复用既有结果，固定同家族B32，无新增实验，详细版保留。
+<!-- E183_CURRENT_END -->
+
 <!-- E176_CURRENT_BEGIN -->
 # E176 当前结果摘要（2026-10-10）
 

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "metric_id": {"0": "raw inner product; native lower-is-better negative IP", "1": "original squared Euclidean L2"},
+  "commands": {"teacher": "bin/residual_tools teacher config.json", "compile": "bin/residual_tools compile config.json", "benchmark": "bin/benchmark benchmark config.json", "qualification": "bin/benchmark qualification config.json (n<=256, timing_repeats=1, any subset of K_L, formal_performance=false)", "selftest": "bin/residual_tools selftest"},
+  "common_native_config": {
+    "dataset": "name", "index": "existing ACSG serialized index", "metric_id": 1,
+    "base": {"path": "source file", "format": "fvecs|fbin|raw_f32", "n": 1000000, "d": 128},
+    "queries": {"path": "source file", "format": "fvecs|fbin|raw_f32", "n": 16000, "d": 128, "row_start": 0, "total_n": 20000},
+    "routers": [{"name": "hard", "ids": "ids.i32", "W": "W.f32", "graph": "existing router.hnsw", "route_order": "sorted_ids|heap_pop"}],
+    "output_dir": "fresh directory", "threads": 1, "cpu": 15,
+    "note": "total_n and row_start are optional; full file container size always checked, n is consumed prefix/window. Base/index check is sampled full words; wrapper binds full immutable source SHA."
+  },
+  "teacher_additions": {"teacher_K": 100, "teacher_L": 200},
+  "teacher_outputs": "output_dir/<router>/raw/{ids.i32,distances.f32,entry_ids.i32,profile_distances.f32}, per-router complete.json and common complete.json",
+  "compile_config": {
+    "dataset": "name", "base_n": 1000000,
+    "train_gt": {"path": "TRAIN GT only", "format": "raw_i32|raw_i64|ivecs", "n": 16000, "k": 100, "row_start": 0, "total_n": 20000},
+    "teachers": [{"name": "hard", "ids": "hub ids.i32", "teacher_dir": "teacher output_dir/hard"}],
+    "output_dir": "fresh directory"
+  },
+  "compile_outputs": "output_dir/<router>/tables/JOINT{8,16,32}.{bin,rows.json,selection_log.json}; compile_manifest.json; source/{token_queries.i32,token_targets.i32,hub_offsets.u64,hub_targets.i32,global_ids.i32}",
+  "source_semantics": {"global_ids": "sorted unique targets from all TRAIN omission tokens", "hub_targets": "per hub sorted unique targets from all TRAIN omission tokens associated with that routed hub, no capacity truncation", "hub_offsets": "H+1 offsets into hub_targets, hub order matches ids", "token_queries": "local consumed TRAIN row index, aligned one-to-one to token_targets"},
+  "benchmark_additions": {
+    "K_L": {"1": [16,32,64,100,200,400,800,1200], "100": [100,128,200,400,800,1000,1200]},
+    "timing_repeats": 3, "warmup_n": 256,
+    "methods": [{"name":"NSG","family":"NSG"},{"name":"GT10-hard","family":"GT10","router":"hard"},{"name":"hard-JOINT32","family":"POST","router":"hard","table":"JOINT32.bin","baseline":"GT10-hard"}]
+  },
+  "benchmark_outputs": "output_dir/k<K>/<method>_L<L>/raw/{ids.i32,distances.f32,entry_ids.i32,profile_distances.f32}; result.json; common complete.json includes results list",
+  "round_schema": {"round": 0, "wall_seconds": 1.0, "qps": 10000.0, "packet_sha256": "SHA256 over shape then six complete vectors; no hash inside wall", "first_round_bits_equal": true, "stored_round": 0, "raw_dir": "first-round raw directory"},
+  "timing": "All 3 rounds include normal Batch allocation/init, all routing, original scalar main search, residual scoring/merge, uniform full six-vector packet copy to preallocated archive, and actual normal Batch destruction. Warmup256 separate. Later rounds are compared bit-for-bit and hashed against actual retained round0; no extra ANN replay.",
+  "oracles": "All POST final returns independently reconstructed using same K/L/router measured GT baseline, fresh scalar scores and linear topK replacement; baseline score words verified. No separate per-POST pre-main packet retained."
+}

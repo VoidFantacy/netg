@@ -1,0 +1,99 @@
+{
+  "status": "PASS_INDEPENDENT_SOURCE_REVIEW_RUNTIME_PENDING",
+  "blocking_findings": [],
+  "reviewer": "non_multimodal_evidence independent agent; not native implementation author",
+  "reviewed_at_unix": 1792200900.871251,
+  "source_sha256": {
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/src/residual_tools.cpp": "131fb6d3011308b05e25c78f40dfcdce4beeb7d2ed77911c3e81c92d971365d9",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/src/benchmark.cpp": "2a869cd07b56988499e1909378cc0d50d1ad34845f3fc27d67a15b2a50a7ee53",
+    "/data/netg/ACSG/entry_method_exploration/20261015_m5_k100_capacity_v1/src/capacity.hpp": "cd52dabef904d4e5c3eed86589a2428f685a85fa4a4bc0c57124824fae66a220",
+    "/data/netg/ACSG/entry_method_exploration/20261015_m5_k100_capacity_v1/src/optimized.hpp": "40ae31f396a99685ddafd53fb111d7225ac0fbbd667b00da4e2fc39925f924d3",
+    "/data/netg/ACSG/entry_method_exploration/20261015_m5_k100_capacity_v1/src/region.hpp": "61d8b2341f96ea359812767fdde19a98eaef4d9cdd51c403324e5112a5891cc5",
+    "/data/netg/ACSG/entry_method_exploration/20261015_m5_k100_capacity_v1/src/runtime.hpp": "ff1c567f3c232e80e912567f5b35e19768a5cc49130aa6a0d32378fbca4b8ced",
+    "/data/netg/ACSG/entry_method_exploration/20261015_m5_k100_capacity_v1/src/native.hpp": "ef9dc9e8a294a064f5ae03d96eb4ee3b9f6b9efa6cb685b483afa7c2d3328872",
+    "/data/netg/ACSG/ACSG/ACSG.cpp": "5436ab455d60ba8ccc54ed96d1e7bec80dd15816287e6d556f78af1449f448d1",
+    "/data/netg/ACSG/ACSG/IndexACSG.h": "211446c585293d2e9a7dc25cf5494319b2380fc63260d7600608fa4b09e6e5d1",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/scripts/build_native.py": "d74220165133b2e1fbf2e1cb093da79ff136e989ea792881816d97f75e404b23",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/scripts/run_suite.py": "664ac9e54cfa99abaf769365d66bb84579f9b16d084614f18713de5cc4937322",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/protocol.md": "ca6cb003730bfb6585e623e8819a108a4e50b9a28dc2f65bf4328c36c99d6e75",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/reviews/interface.json": "86c4f743bf697095bc5426648f30a75e4820d22161eef5c3bc640d6e7496d734"
+  },
+  "checks": [
+    {
+      "name": "metric_and_layout",
+      "status": "PASS",
+      "assessment": "Native index metric and Flat metric equal declared 0/IP or 1/L2. Linked storage_distance_computer negates similarity only; L2 scalar stays squared L2. Matrix readers retain original float words; GT readers accept raw32/raw64/ivecs windows with row shape checks. No added normalization.",
+      "evidence": "src/residual_tools.cpp:23-59; ACSG/ACSG.cpp:35-45"
+    },
+    {
+      "name": "historic_router_contract",
+      "status": "PASS",
+      "assessment": "Loads actual serialized graph, checks all labels and profile words, ef10. sorted_ids sorts id-distance pairs; heap_pop preserved. E97 vs benches hnswalg differs only in construction RNG mutex; loaded query paths and space_ip are identical. All seven asset hub arrays are ascending, so compiler row-index tie matches real-hub-ID order.",
+      "evidence": "src/residual_tools.cpp:61-76; asset audits; diff E97 hnswalg.h"
+    },
+    {
+      "name": "shared_main_search",
+      "status": "PASS",
+      "assessment": "NSG fixed one entry; GT10 and POST same router and original scalar search_new(mode2), identical K/L. POST adds no second main traversal and does not mutate graph, routes, or visited table. Native linked current ACSG object SHA matches preserved build identity, and current ACSG.cpp SHA matches that build.",
+      "evidence": "src/residual_tools.cpp:78-91; inherited native_build_identity.json"
+    },
+    {
+      "name": "train_only_tokens",
+      "status": "PASS",
+      "assessment": "Teacher accepts only train query path and never opens GT. Compiler accepts only train GT/teacher packets, builds each missing (query,target) token once, associates it with three distinct legal routed hub rows. Serialized global and routed source pools retain all tokens before capacity selection.",
+      "evidence": "src/residual_tools.cpp:118-132,161-180"
+    },
+    {
+      "name": "nested_global_greedy",
+      "status": "PASS",
+      "assessment": "Lazy max heap priorities upper-bound remaining gain; stale gains reinsert, equal gains use row then target. Greedy8 extends at16 then32 preserving prior row prefixes, reopening rows with added capacity and rebuilding initial gains. All coverage recomputed independently per token at each capacity. This is nested extension, not independent optimal B32 and not guaranteed globally optimal.",
+      "evidence": "src/residual_tools.cpp:136-160,181-196"
+    },
+    {
+      "name": "posting_runtime_and_ties",
+      "status": "PASS",
+      "assessment": "Binary full layout/domain/hash mappings/counts/padding/nested rows validated. Candidate union uses all three rows in route order, excludes original output and first-repeat IDs. Existing result scores retained; candidates use same native scalar callback. Strict smaller-distance replacement preserves original membership at exact score ties; final order uses priority. Capacity allows96 candidates forB32.",
+      "evidence": "E180 capacity.hpp:20-239; E183 export_table"
+    },
+    {
+      "name": "complete_wall_and_retained_output",
+      "status": "PASS_SOURCE_ONLY",
+      "assessment": "timed_once starts before normal Batch creation and includes run_batch route/visited/DC/retset lifecycle, six-vector copy into preallocated archive and normal Batch destruction before clock stop. First actual timed packet is saved; rounds1/2 compare all six arrays and hash all six arrays. Allocation of retained destination, hashing, GT scoring, verification and disk I/O are outside wall. All methods use the same timed path.",
+      "evidence": "src/benchmark.cpp:6-11,31-44; src/residual_tools.cpp:95-103"
+    },
+    {
+      "name": "oracle_scope",
+      "status": "PASS_WITH_EXPLICIT_LIMIT",
+      "assessment": "All POST final packets are reconstructed from measured matched K/L/router GT10 baseline using separate candidate extraction and linear worst-selection, fresh scalar checks of all original score words and actual final word equality. The oracle shares Posting::better tie comparator and native scalar distance callback with runtime; it is not an independent floating-point distance implementation. No separate per-POST pre-main packet retained.",
+      "evidence": "src/residual_tools.cpp:104-117; src/benchmark.cpp:46-49"
+    },
+    {
+      "name": "threads_and_schedule",
+      "status": "PASS_SOURCE_ONLY",
+      "assessment": "Actual process one thread, OMP/BLAS/MKL/NUMEXPR=1 and CPU15 affinity required before and after each measured batch. Controller runs native stages synchronously; all offline before formal. Static review alone does not verify runtime isolation or timing receipts.",
+      "evidence": "E180 native.hpp:38; src/benchmark.cpp:34-39; scripts/run_suite.py"
+    },
+    {
+      "name": "counts_and_flags",
+      "status": "PASS_WITH_EXPLICIT_LIMIT",
+      "assessment": "The route_ndc/graph_ndc vectors are initialized zero layout, copied and checked but never counted; counts_collected=false/NDC=null correctly records this. Their zero buffers are not saved as raw files, so external packet SHA reconstruction must append exact zero arrays. Per-point full_merge_oracle_passed=true on baseline points means the associated common block passed; no merge oracle is needed/applied to plain NSG or GT10.",
+      "evidence": "E180 native.hpp:73-78; src/benchmark.cpp:52-63"
+    }
+  ],
+  "inherited_object_binding": {
+    "object": "/root/acsg-e172-storage-v2/campaign/common/acsg_current.o",
+    "object_sha256": "838ea7f115e6f189bb75c2d552da184fc3a60baa66f1d7d3031b68933f4e6aeb",
+    "build_identity": "/root/acsg-e172-storage-v2/campaign/reviews/native_build_identity.json",
+    "recorded_object_and_current_ACSG_cpp_hashes_match": true
+  },
+  "not_performed": [
+    "No ANN or performance run by reviewer.",
+    "No claim of native qualification pass until its runtime receipt exists.",
+    "No quality or QPS conclusion from source review."
+  ],
+  "next_runtime_checks": [
+    "Synthetic eager/lazy greedy and packet SHA selftest receipt.",
+    "Historical NSG/GT10 qualification on fixed prefixes with IDs/distances/entries equality.",
+    "645 point complete receipts,1935 actual wall batches, independent integer score/output SHA audit."
+  ]
+}

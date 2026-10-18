@@ -1,0 +1,42 @@
+{
+  "status": "PASS_E183_SYNTHETIC_AND_COMPILER_FIXTURE",
+  "checks": [
+    {
+      "argv": [
+        "taskset",
+        "-c",
+        "14",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/bin/residual_tools",
+        "selftest"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"ANN_calls\":0,\"capacities\":[8,16,32],\"greedy_selections_checked\":128,\"scientific_data_read\":false,\"status\":\"PASS_E183_SYNTHETIC\"}\n",
+      "stderr": "",
+      "seconds": 0.00446553100005076
+    },
+    {
+      "argv": [
+        "taskset",
+        "-c",
+        "14",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/bin/residual_tools",
+        "compile",
+        "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/reviews/synthetic_compiler/config.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"compiled\":\"synthetic\",\"seconds\":0.007018206,\"tokens\":800}\n{\"status\":\"PASS_E183_COMPILE\"}\n",
+      "stderr": "",
+      "seconds": 0.010315324000089277
+    }
+  ],
+  "known_expected_coverages": [
+    192,
+    384,
+    768
+  ],
+  "known_expected_tokens": 800,
+  "known_expected_edges": 300,
+  "scientific_data_read": false,
+  "ANN_calls": 0,
+  "binary_sha256": "1884d71774b3fe0e20bd5b1eab392cc215657e9ec45bfc19f5686ee6057cf37a"
+}

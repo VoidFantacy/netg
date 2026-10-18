@@ -1,0 +1,80 @@
+{
+  "status": "PASS_NATIVE_EXECUTION",
+  "argv": [
+    "taskset",
+    "-c",
+    "15",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/bin/residual_tools",
+    "teacher",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/deep10m_l2_v1.teacher.json"
+  ],
+  "pid": 4242,
+  "exit_code": 0,
+  "elapsed_seconds": 26.804487341000026,
+  "input_drift": [],
+  "outputs": {
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/teacher/complete.json": {
+      "bytes": 3571,
+      "mtime_ns": 1792201106920652699,
+      "sha256": "5dfea31a073f2675d32315cb7096c997be64e6bf7a27cd1db457b55029a4baf1"
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/teacher/hard/complete.json": {
+      "bytes": 538,
+      "mtime_ns": 1792201098144624344,
+      "sha256": "2e3e33d899e51611674bfc84b6f98485c04082daa7e02619cad0b5a1c6b6552d"
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/teacher/hard/raw/distances.f32": {
+      "bytes": 6400000,
+      "mtime_ns": 1792201098132624305,
+      "sha256": "e6d9bdc7a5ea121f7be868581e4d96abf9476e6ac4a910e14484e725177658ef"
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/teacher/hard/raw/entry_ids.i32": {
+      "bytes": 192000,
+      "mtime_ns": 1792201098132624305,
+      "sha256": "ce33d62a5e2f8d0d88c72223f6f77fb332f5b09914f208c3cd3843349f2e3163"
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/teacher/hard/raw/ids.i32": {
+      "bytes": 6400000,
+      "mtime_ns": 1792201098128624292,
+      "sha256": "57c22c6021397c8c5b5795591deeb8f89fca2e337d930c2cd0802492a680e4ee"
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/teacher/hard/raw/profile_distances.f32": {
+      "bytes": 192000,
+      "mtime_ns": 1792201098136624318,
+      "sha256": "6d440904e9ee204199341b3f0d6494dfa1ac52d09779e6608421cf7cb850f035"
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/teacher/soft/complete.json": {
+      "bytes": 537,
+      "mtime_ns": 1792201106920652699,
+      "sha256": "73f6541319015ac2eae98a6425756dd2ad7212c50a07347a43e21f9a00f680ad"
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/teacher/soft/raw/distances.f32": {
+      "bytes": 6400000,
+      "mtime_ns": 1792201106908652660,
+      "sha256": "20433f8aecd1c36037f7300edead2cf81a0ed80d402f5aecc7c8d539c8ff73a4"
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/teacher/soft/raw/entry_ids.i32": {
+      "bytes": 192000,
+      "mtime_ns": 1792201106912652672,
+      "sha256": "309967699b6866c9707c0185541b189ced1b55c5acc49d7071c59bed8d368684"
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/teacher/soft/raw/ids.i32": {
+      "bytes": 6400000,
+      "mtime_ns": 1792201106904652647,
+      "sha256": "ec79c825793a368d053c95ac05bd677e59706791af7a7eb9a319a990b7fe64d9"
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/teacher/soft/raw/profile_distances.f32": {
+      "bytes": 192000,
+      "mtime_ns": 1792201106912652672,
+      "sha256": "42a8417fb55271095450dd39de07bf22ea1d8dee4774244db7eab36d448b9625"
+    }
+  },
+  "native_complete": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/teacher/complete.json",
+  "native_status": "PASS_E183_TRAIN_TEACHERS",
+  "cost_scope": "Complete native child lifecycle. Contains any inner timing and audit; do not sum nested times twice.",
+  "supersedes_receipt_sha256": "0cf15f4cf4e7fc2526af9b9f1aa4cbae44fe3c3f965a7c0a772378e5095920ca",
+  "correction": "Launcher expected obsolete status spelling TEACHACHERS; final native status is TEACHERS. Exit0, native config, scientific input identity, both actual TRAIN packet hashes independently revalidated. No ANN or training rerun.",
+  "correction_audit_seconds": 0.06085559600001034,
+  "corrected_unix": 1792201223.8168988,
+  "scientific_searches_repeated": 0
+}

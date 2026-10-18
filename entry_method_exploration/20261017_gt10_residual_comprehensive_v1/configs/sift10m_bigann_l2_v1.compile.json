@@ -1,0 +1,27 @@
+{
+  "dataset": "sift10m_bigann_l2_v1",
+  "base_n": 10000000,
+  "train_gt": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/fit.gt.i32",
+    "format": "raw_i32",
+    "n": 16000,
+    "k": 100,
+    "total_n": 20000,
+    "row_start": 0
+  },
+  "teachers": [
+    {
+      "name": "hard",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/gt10.ids.i32",
+      "teacher_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/sift10m_bigann_l2_v1/teacher/hard"
+    },
+    {
+      "name": "soft",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/gt10.ids.i32",
+      "teacher_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/sift10m_bigann_l2_v1/teacher/soft"
+    }
+  ],
+  "output_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/sift10m_bigann_l2_v1/compiled",
+  "protocol": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/protocol.md",
+  "protocol_sha256": "ca6cb003730bfb6585e623e8819a108a4e50b9a28dc2f65bf4328c36c99d6e75"
+}

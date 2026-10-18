@@ -1,0 +1,26 @@
+{
+  "status": "PASS_INDEPENDENT_RESULTS_AUDITOR_SOURCE_FIXTURES",
+  "script": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/scripts/independent_results_audit.py",
+  "script_sha256": "c2a530614d6f178475a2b926990971247e34afb7bd734ed1afebe43107081a60",
+  "created_unix": 1792201173.3937361,
+  "checks": [
+    "Python AST parse",
+    "Handwritten exact set rescue2/damage1/net1 fixture and empty stratum",
+    "Packet shape distinguishes hash identity",
+    "Independent binary parser reconstructs all rows for native synthetic B8/B16/B32 tables, pairs24/48/96 and matches JSON"
+  ],
+  "scientific_outputs_read": false,
+  "ANN_calls": 0,
+  "actual_formal_result_audit_executed": false,
+  "required_invocation": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 .venv_cpu/bin/python /data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/scripts/independent_results_audit.py",
+  "scope": [
+    "645 actual points and1935 full walls/packet SHA",
+    "All GT10->NSG and POST->own GT paired integer changes and six K100 strata",
+    "All TRAIN omission tokens and full source/route pools reconstructed",
+    "All POST source-route-capacity-actual decomposition and binary tables checked"
+  ],
+  "limits": [
+    "Does not recompute bootstrap intervals or polyline interpolation.",
+    "Does not rerun scalar floating-point oracle or actual-data greedy sequence."
+  ]
+}

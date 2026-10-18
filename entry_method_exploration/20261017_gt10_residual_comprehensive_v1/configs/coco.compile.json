@@ -1,0 +1,20 @@
+{
+  "dataset": "coco",
+  "base_n": 118272,
+  "train_gt": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/exact/residual.gt100.i64",
+    "format": "raw_i64",
+    "n": 16000,
+    "k": 100
+  },
+  "teachers": [
+    {
+      "name": "hard",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/ids.i32",
+      "teacher_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/coco/teacher/hard"
+    }
+  ],
+  "output_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/coco/compiled",
+  "protocol": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/protocol.md",
+  "protocol_sha256": "ca6cb003730bfb6585e623e8819a108a4e50b9a28dc2f65bf4328c36c99d6e75"
+}

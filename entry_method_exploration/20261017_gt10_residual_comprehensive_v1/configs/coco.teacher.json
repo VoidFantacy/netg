@@ -1,0 +1,33 @@
+{
+  "dataset": "coco",
+  "index": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/nsg.index",
+  "metric_id": 0,
+  "base": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/base.f32",
+    "format": "raw_f32",
+    "n": 118272,
+    "d": 512
+  },
+  "routers": [
+    {
+      "name": "hard",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/ids.i32",
+      "W": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/router.hnsw",
+      "route_order": "heap_pop"
+    }
+  ],
+  "threads": 1,
+  "cpu": 15,
+  "protocol": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/protocol.md",
+  "protocol_sha256": "ca6cb003730bfb6585e623e8819a108a4e50b9a28dc2f65bf4328c36c99d6e75",
+  "queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/residual.f32",
+    "format": "raw_f32",
+    "n": 16000,
+    "d": 512
+  },
+  "teacher_K": 100,
+  "teacher_L": 200,
+  "output_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/coco/teacher"
+}

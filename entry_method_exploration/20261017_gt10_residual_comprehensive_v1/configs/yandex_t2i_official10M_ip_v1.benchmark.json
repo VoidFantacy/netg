@@ -1,0 +1,105 @@
+{
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "metric_id": 0,
+  "base": {
+    "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+    "format": "fvecs",
+    "n": 10000000,
+    "d": 200
+  },
+  "routers": [
+    {
+      "name": "hard",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+      "route_order": "sorted_ids"
+    },
+    {
+      "name": "soft",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+      "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_soft_t1/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-soft-t1.hnsw",
+      "route_order": "sorted_ids"
+    }
+  ],
+  "threads": 1,
+  "cpu": 15,
+  "protocol": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/protocol.md",
+  "protocol_sha256": "ca6cb003730bfb6585e623e8819a108a4e50b9a28dc2f65bf4328c36c99d6e75",
+  "queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/public_test10k.fvecs",
+    "format": "fvecs",
+    "n": 10000,
+    "d": 200
+  },
+  "output_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/results/yandex_t2i_official10M_ip_v1",
+  "K_L": {
+    "1": [
+      16,
+      32,
+      64,
+      100,
+      200,
+      400,
+      800,
+      1200
+    ],
+    "100": [
+      100,
+      128,
+      200,
+      400,
+      800,
+      1000,
+      1200
+    ]
+  },
+  "timing_repeats": 3,
+  "warmup_n": 256,
+  "methods": [
+    {
+      "name": "NSG",
+      "family": "NSG"
+    },
+    {
+      "name": "GT10-hard",
+      "family": "GT10",
+      "router": "hard"
+    },
+    {
+      "name": "hard-JOINT8",
+      "family": "POST",
+      "router": "hard",
+      "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/yandex_t2i_official10M_ip_v1/compiled/hard/tables/JOINT8.bin",
+      "baseline": "GT10-hard"
+    },
+    {
+      "name": "hard-JOINT32",
+      "family": "POST",
+      "router": "hard",
+      "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/yandex_t2i_official10M_ip_v1/compiled/hard/tables/JOINT32.bin",
+      "baseline": "GT10-hard"
+    },
+    {
+      "name": "GT10-soft-t1",
+      "family": "GT10",
+      "router": "soft"
+    },
+    {
+      "name": "soft-JOINT8",
+      "family": "POST",
+      "router": "soft",
+      "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/yandex_t2i_official10M_ip_v1/compiled/soft/tables/JOINT8.bin",
+      "baseline": "GT10-soft-t1"
+    },
+    {
+      "name": "soft-JOINT32",
+      "family": "POST",
+      "router": "soft",
+      "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/yandex_t2i_official10M_ip_v1/compiled/soft/tables/JOINT32.bin",
+      "baseline": "GT10-soft-t1"
+    }
+  ]
+}

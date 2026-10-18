@@ -1,3 +1,14 @@
+<!-- E183_CURRENT_BEGIN -->
+# E183 已实现并验收：跨metric残差与实际计时包合同（2026-10-17）
+
+隔离目录[entry_method_exploration/20261017_gt10_residual_comprehensive_v1](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/README.md)。七集直接引用已确认原base/图/画像/实际小图，三套非多模态保持squared L2、四套跨模态保持raw-IP；E97五集入口sorted_ids，E181两集heap_pop。已有hard/soft分别用合法16K、K100/L200遗漏训练单位query-target token的B8→16→32嵌套表；正式只测B8/B32，未截断TRAIN全局源/每hub源及token保留。测试GT不进入native搜索或编表，画像与残差训练可共享的来源如实标记。
+
+native支持teacher/compile/qualification/benchmark；原scalar主核与模式2入口保持，POST只补算排除原返回/重复后的候选并合并。645点/1935批T1/CPU15全部完成，wall含正常Batch创建初始化、路由/主搜/补点、统一六向量复制与正常销毁；首轮实际四数组保存，另两NDC数组为零布局而非测量，counts_collected=false/NDC=null。其余两轮完整bits/SHA核验，全部POST相对同K/L实际GT10主包的独立标量/线性合并oracle通过；没有额外整批ANN替代计时包。
+
+配置/旧源当前全SHA/阶段源码与binary/新表由各锁绑定。源抽审112文件完整SHA与224个全库float64样本通过；资格76个baseline对照256query逐字回归通过。独立集合脚本核645点、1935轮wall/QPS、540救损、360覆盖、2088分层、360级联、3600频次及全部TRAIN源。该独审不重算bootstrap、折线或全实际greedy序列。Deep首次父状态字符串误配的原FAIL及独立更正收据保留，科学native/查询未重跑。最终报告、PDF和视觉验收见[交付目录](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/delivery_v2)，旧科学源/默认未改。
+2026-10-18 简版artifact：[四页PDF](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/concise_v1/NETG_E183_NSG_GT10_残差_简版报告_20261018.pdf)、[315点子集](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/concise_v1/selected_points.csv)、[失败表](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/concise_v1/failure_queries_L200.csv)、[manifest](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/concise_v1/manifest.json)。每集全L固定hard/soft版本与B32，三线；仅既有CSV的展示重排，原API、计时、源结果与详细版保持。
+<!-- E183_CURRENT_END -->
+
 <!-- E176_CURRENT_BEGIN -->
 # E176 当前实现与证据合同（2026-10-10）
 

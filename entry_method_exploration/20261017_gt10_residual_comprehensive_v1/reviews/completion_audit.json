@@ -1,0 +1,3559 @@
+{
+  "status": "PASS_FULL_REQUIREMENT_COMPLETION_AUDIT",
+  "objective": "Seven-dataset comprehensive GT10 and residual evaluation, failed-query effects, detailed PDF",
+  "requirements_checked": 706,
+  "points": 645,
+  "formal_batches": 1935,
+  "formal_queries": 15615000,
+  "default_changed": false,
+  "checks": [
+    {
+      "requirement": "Seven datasets including all three non-multimodal L2 datasets",
+      "passed": true,
+      "evidence": [
+        "deep10m_l2_v1",
+        "sift10m_bigann_l2_v1",
+        "gist1m_l2_v1",
+        "webvid2_5m_light_v1",
+        "yandex_t2i_official10M_ip_v1",
+        "coco",
+        "flickr30k"
+      ]
+    },
+    {
+      "requirement": "Original metric preserved: deep10m_l2_v1",
+      "passed": true,
+      "evidence": 1
+    },
+    {
+      "requirement": "Actual native terminal and configuration: deep10m_l2_v1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "All frozen methods/K/L points actually completed: deep10m_l2_v1",
+      "passed": true,
+      "evidence": 105
+    },
+    {
+      "requirement": "Actual T1/CPU15/oracle/all-round identity: deep10m_l2_v1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/NSG/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-hard/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT8/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT32/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-soft-t1/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT8/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT32/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/NSG/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-hard/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT8/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT32/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-soft-t1/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT8/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT32/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/NSG/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-hard/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT8/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT32/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-soft-t1/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT8/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT32/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/NSG/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-hard/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT8/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT32/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-soft-t1/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT8/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT32/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/NSG/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-hard/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT8/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT32/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-soft-t1/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT8/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT32/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/NSG/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-hard/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT8/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT32/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-soft-t1/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT8/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT32/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/NSG/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-hard/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT8/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT32/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-soft-t1/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT8/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT32/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/NSG/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-hard/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT8/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT32/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-soft-t1/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT8/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT32/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/NSG/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-hard/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT8/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT32/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-soft-t1/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT8/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT32/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/NSG/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-hard/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT8/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT32/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-soft-t1/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT8/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT32/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/NSG/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-hard/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT8/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT32/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-soft-t1/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT8/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT32/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/NSG/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-hard/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT8/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT32/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-soft-t1/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT8/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT32/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/NSG/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-hard/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT8/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT32/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-soft-t1/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT8/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT32/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/NSG/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-hard/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT8/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT32/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-soft-t1/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT8/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT32/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/NSG/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-hard/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT8/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/hard-JOINT32/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/GT10-soft-t1/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT8/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: deep10m_l2_v1/soft-JOINT32/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Training/test roles and 16K teacher kept separate: deep10m_l2_v1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Original metric preserved: sift10m_bigann_l2_v1",
+      "passed": true,
+      "evidence": 1
+    },
+    {
+      "requirement": "Actual native terminal and configuration: sift10m_bigann_l2_v1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "All frozen methods/K/L points actually completed: sift10m_bigann_l2_v1",
+      "passed": true,
+      "evidence": 105
+    },
+    {
+      "requirement": "Actual T1/CPU15/oracle/all-round identity: sift10m_bigann_l2_v1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/NSG/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-hard/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT8/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT32/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-soft-t1/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT8/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT32/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/NSG/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-hard/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT8/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT32/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-soft-t1/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT8/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT32/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/NSG/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-hard/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT8/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT32/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-soft-t1/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT8/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT32/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/NSG/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-hard/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT8/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT32/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-soft-t1/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT8/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT32/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/NSG/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-hard/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT8/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT32/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-soft-t1/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT8/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT32/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/NSG/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-hard/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT8/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT32/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-soft-t1/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT8/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT32/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/NSG/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-hard/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT8/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT32/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-soft-t1/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT8/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT32/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/NSG/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-hard/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT8/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT32/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-soft-t1/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT8/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT32/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/NSG/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-hard/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT8/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT32/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-soft-t1/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT8/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT32/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/NSG/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-hard/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT8/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT32/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-soft-t1/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT8/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT32/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/NSG/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-hard/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT8/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT32/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-soft-t1/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT8/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT32/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/NSG/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-hard/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT8/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT32/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-soft-t1/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT8/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT32/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/NSG/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-hard/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT8/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT32/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-soft-t1/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT8/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT32/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/NSG/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-hard/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT8/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT32/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-soft-t1/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT8/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT32/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/NSG/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-hard/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT8/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/hard-JOINT32/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/GT10-soft-t1/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT8/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: sift10m_bigann_l2_v1/soft-JOINT32/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Training/test roles and 16K teacher kept separate: sift10m_bigann_l2_v1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Original metric preserved: gist1m_l2_v1",
+      "passed": true,
+      "evidence": 1
+    },
+    {
+      "requirement": "Actual native terminal and configuration: gist1m_l2_v1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "All frozen methods/K/L points actually completed: gist1m_l2_v1",
+      "passed": true,
+      "evidence": 105
+    },
+    {
+      "requirement": "Actual T1/CPU15/oracle/all-round identity: gist1m_l2_v1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/NSG/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-hard/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT8/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT32/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-soft-t1/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT8/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT32/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/NSG/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-hard/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT8/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT32/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-soft-t1/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT8/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT32/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/NSG/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-hard/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT8/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT32/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-soft-t1/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT8/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT32/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/NSG/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-hard/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT8/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT32/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-soft-t1/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT8/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT32/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/NSG/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-hard/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT8/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT32/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-soft-t1/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT8/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT32/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/NSG/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-hard/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT8/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT32/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-soft-t1/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT8/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT32/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/NSG/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-hard/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT8/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT32/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-soft-t1/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT8/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT32/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/NSG/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-hard/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT8/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT32/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-soft-t1/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT8/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT32/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/NSG/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-hard/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT8/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT32/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-soft-t1/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT8/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT32/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/NSG/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-hard/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT8/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT32/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-soft-t1/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT8/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT32/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/NSG/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-hard/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT8/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT32/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-soft-t1/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT8/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT32/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/NSG/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-hard/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT8/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT32/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-soft-t1/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT8/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT32/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/NSG/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-hard/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT8/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT32/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-soft-t1/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT8/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT32/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/NSG/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-hard/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT8/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT32/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-soft-t1/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT8/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT32/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/NSG/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-hard/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT8/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/hard-JOINT32/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/GT10-soft-t1/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT8/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: gist1m_l2_v1/soft-JOINT32/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Training/test roles and 16K teacher kept separate: gist1m_l2_v1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Original metric preserved: webvid2_5m_light_v1",
+      "passed": true,
+      "evidence": 0
+    },
+    {
+      "requirement": "Actual native terminal and configuration: webvid2_5m_light_v1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "All frozen methods/K/L points actually completed: webvid2_5m_light_v1",
+      "passed": true,
+      "evidence": 105
+    },
+    {
+      "requirement": "Actual T1/CPU15/oracle/all-round identity: webvid2_5m_light_v1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/NSG/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-hard/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT8/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT32/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-soft-t1/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT8/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT32/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/NSG/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-hard/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT8/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT32/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-soft-t1/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT8/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT32/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/NSG/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-hard/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT8/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT32/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-soft-t1/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT8/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT32/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/NSG/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-hard/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT8/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT32/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-soft-t1/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT8/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT32/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/NSG/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-hard/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT8/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT32/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-soft-t1/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT8/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT32/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/NSG/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-hard/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT8/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT32/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-soft-t1/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT8/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT32/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/NSG/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-hard/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT8/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT32/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-soft-t1/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT8/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT32/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/NSG/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-hard/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT8/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT32/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-soft-t1/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT8/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT32/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/NSG/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-hard/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT8/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT32/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-soft-t1/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT8/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT32/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/NSG/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-hard/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT8/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT32/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-soft-t1/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT8/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT32/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/NSG/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-hard/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT8/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT32/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-soft-t1/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT8/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT32/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/NSG/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-hard/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT8/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT32/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-soft-t1/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT8/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT32/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/NSG/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-hard/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT8/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT32/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-soft-t1/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT8/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT32/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/NSG/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-hard/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT8/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT32/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-soft-t1/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT8/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT32/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/NSG/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-hard/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT8/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/hard-JOINT32/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/GT10-soft-t1/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT8/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: webvid2_5m_light_v1/soft-JOINT32/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Training/test roles and 16K teacher kept separate: webvid2_5m_light_v1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Original metric preserved: yandex_t2i_official10M_ip_v1",
+      "passed": true,
+      "evidence": 0
+    },
+    {
+      "requirement": "Actual native terminal and configuration: yandex_t2i_official10M_ip_v1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "All frozen methods/K/L points actually completed: yandex_t2i_official10M_ip_v1",
+      "passed": true,
+      "evidence": 105
+    },
+    {
+      "requirement": "Actual T1/CPU15/oracle/all-round identity: yandex_t2i_official10M_ip_v1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/NSG/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-hard/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT8/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT32/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-soft-t1/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT8/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT32/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/NSG/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-hard/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT8/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT32/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-soft-t1/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT8/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT32/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/NSG/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-hard/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT8/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT32/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-soft-t1/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT8/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT32/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/NSG/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-hard/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT8/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT32/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-soft-t1/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT8/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT32/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/NSG/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-hard/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT8/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT32/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-soft-t1/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT8/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT32/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/NSG/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-hard/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT8/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT32/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-soft-t1/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT8/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT32/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/NSG/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-hard/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT8/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT32/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-soft-t1/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT8/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT32/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/NSG/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-hard/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT8/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT32/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-soft-t1/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT8/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT32/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/NSG/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-hard/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT8/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT32/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-soft-t1/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT8/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT32/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/NSG/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-hard/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT8/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT32/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-soft-t1/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT8/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT32/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/NSG/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-hard/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT8/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT32/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-soft-t1/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT8/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT32/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/NSG/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-hard/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT8/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT32/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-soft-t1/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT8/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT32/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/NSG/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-hard/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT8/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT32/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-soft-t1/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT8/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT32/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/NSG/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-hard/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT8/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT32/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-soft-t1/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT8/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT32/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/NSG/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-hard/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT8/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/hard-JOINT32/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/GT10-soft-t1/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT8/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: yandex_t2i_official10M_ip_v1/soft-JOINT32/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Training/test roles and 16K teacher kept separate: yandex_t2i_official10M_ip_v1",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Original metric preserved: coco",
+      "passed": true,
+      "evidence": 0
+    },
+    {
+      "requirement": "Actual native terminal and configuration: coco",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "All frozen methods/K/L points actually completed: coco",
+      "passed": true,
+      "evidence": 60
+    },
+    {
+      "requirement": "Actual T1/CPU15/oracle/all-round identity: coco",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/NSG/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/GT10-hard/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT8/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT32/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/NSG/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/GT10-hard/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT8/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT32/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/NSG/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/GT10-hard/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT8/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT32/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/NSG/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/GT10-hard/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT8/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT32/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/NSG/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/GT10-hard/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT8/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT32/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/NSG/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/GT10-hard/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT8/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT32/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/NSG/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/GT10-hard/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT8/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT32/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/NSG/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/GT10-hard/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT8/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT32/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/NSG/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/GT10-hard/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT8/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT32/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/NSG/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/GT10-hard/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT8/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT32/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/NSG/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/GT10-hard/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT8/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT32/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/NSG/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/GT10-hard/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT8/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT32/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/NSG/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/GT10-hard/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT8/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT32/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/NSG/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/GT10-hard/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT8/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT32/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/NSG/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/GT10-hard/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT8/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: coco/hard-JOINT32/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Training/test roles and 16K teacher kept separate: coco",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Original metric preserved: flickr30k",
+      "passed": true,
+      "evidence": 0
+    },
+    {
+      "requirement": "Actual native terminal and configuration: flickr30k",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "All frozen methods/K/L points actually completed: flickr30k",
+      "passed": true,
+      "evidence": 60
+    },
+    {
+      "requirement": "Actual T1/CPU15/oracle/all-round identity: flickr30k",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/NSG/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/GT10-hard/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT8/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT32/K1/L16",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/NSG/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/GT10-hard/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT8/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT32/K1/L32",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/NSG/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/GT10-hard/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT8/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT32/K1/L64",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/NSG/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/GT10-hard/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT8/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT32/K1/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/NSG/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/GT10-hard/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT8/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT32/K1/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/NSG/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/GT10-hard/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT8/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT32/K1/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/NSG/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/GT10-hard/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT8/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT32/K1/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/NSG/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/GT10-hard/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT8/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT32/K1/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/NSG/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/GT10-hard/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT8/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT32/K100/L100",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/NSG/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/GT10-hard/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT8/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT32/K100/L128",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/NSG/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/GT10-hard/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT8/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT32/K100/L200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/NSG/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/GT10-hard/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT8/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT32/K100/L400",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/NSG/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/GT10-hard/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT8/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT32/K100/L800",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/NSG/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/GT10-hard/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT8/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT32/K100/L1000",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/NSG/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/GT10-hard/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT8/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Three real consistent timing packets: flickr30k/hard-JOINT32/K100/L1200",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Training/test roles and 16K teacher kept separate: flickr30k",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Complete declared workload",
+      "passed": true,
+      "evidence": [
+        645,
+        1935,
+        15615000
+      ]
+    },
+    {
+      "requirement": "Independent full integer/source audit",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Full CSV points agree with actual native grid",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Requested failure/component analysis: same_L_deltas.csv",
+      "passed": true,
+      "evidence": 540
+    },
+    {
+      "requirement": "Requested failure/component analysis: candidate_coverage.csv",
+      "passed": true,
+      "evidence": 360
+    },
+    {
+      "requirement": "Requested failure/component analysis: failure_strata.csv",
+      "passed": true,
+      "evidence": 2088
+    },
+    {
+      "requirement": "Requested failure/component analysis: failure_cascade.csv",
+      "passed": true,
+      "evidence": 360
+    },
+    {
+      "requirement": "Requested failure/component analysis: target_frequency.csv",
+      "passed": true,
+      "evidence": 3600
+    },
+    {
+      "requirement": "Independent sampled exact GT evidence",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "All 112 frozen source stats unchanged",
+      "passed": true,
+      "evidence": 112
+    },
+    {
+      "requirement": "Actual 32-page PDF exists and matches renderer SHA",
+      "passed": true,
+      "evidence": {
+        "bytes": 1874677,
+        "sha256": "72d3db3f862fa4c8f6a08c277964ebd45748130ae034bf736f6978bb8d7f0b5b"
+      }
+    },
+    {
+      "requirement": "Every delivered PDF page actually rasterized",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Actual visual review completed",
+      "passed": true,
+      "evidence": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/delivery_v2/pdf_visual_review.json"
+    },
+    {
+      "requirement": "Protected original root-document suffix: LOCAL_CODEX_START.md",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Protected original root-document suffix: summary.md",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Protected original root-document suffix: spec.md",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Protected original root-document suffix: s-target.md",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Protected original root-document suffix: s-experiment.md",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Protected original root-document suffix: AGENTS.md",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Final project document updated: LOCAL_CODEX_START.md",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Final project document updated: summary.md",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Final project document updated: spec.md",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Final project document updated: s-target.md",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "Final project document updated: s-experiment.md",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "requirement": "No scientific query/teacher process still running",
+      "passed": true,
+      "evidence": []
+    }
+  ],
+  "pdf": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/delivery_v2/NETG_E183_GT10与残差_七数据集及失败查询_详细报告_20261017.pdf",
+  "pdf_sha256": "72d3db3f862fa4c8f6a08c277964ebd45748130ae034bf736f6978bb8d7f0b5b",
+  "created_unix": 1792220650.383987
+}

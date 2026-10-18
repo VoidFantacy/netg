@@ -1,3 +1,12 @@
+<!-- E183_CURRENT_BEGIN -->
+# E183 授权范围完成：七集与详细PDF收口（2026-10-17）
+
+用户要求的全面测试与详细PDF已完成：七集含Deep/SIFT/GIST非多模态L2、645点/1935完整单线程批次，GT10和残差分项、全L、失败救损/分层/级联/频次/来源覆盖及费用均有原始证据和独审。[最终报告](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/delivery_v2/report_zh.md) · [32页PDF](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/delivery_v2/NETG_E183_GT10与残差_七数据集及失败查询_详细报告_20261017.pdf) · [状态](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/state.json)。当前没有待恢复性能队列，默认仍E99 GT10。
+
+实际判断：GT10可迁移至Deep/SIFT；当前静态残差在两集的测试源覆盖不足，GIST为路由/容量限制和混合收益；Web/COCO保留补全曲线收益，Flickr/Yandex不作普遍正结论。后续问题是合法新训练遗漏源能否覆盖未知失败，以及容量/可部署困难识别是否值得在线费用；本轮诊断不启动新模型、追加teacher、种子、门控或补测。新的研究问题另定范围，旧历史原件保持。
+2026-10-18 简版交付：[四页PDF](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/concise_v1/NETG_E183_NSG_GT10_残差_简版报告_20261018.pdf) · [简版文字](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/concise_v1/report_zh.md)。每图仅NSG、GT10、GT10＋残差三线，另有统一L200失败查询表；315点全部复用既有结果，固定同家族B32，无新增实验，详细版保留。
+<!-- E183_CURRENT_END -->
+
 <!-- E176_CURRENT_BEGIN -->
 # E176 当前目标与停止边界（2026-10-10）
 

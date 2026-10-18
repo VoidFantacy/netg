@@ -1,3 +1,12 @@
+<!-- E183_CURRENT_BEGIN -->
+# 当前接续：E183 七集综合测试与详细PDF完成（2026-10-17）
+
+最新完成E183：七集（含Deep/SIFT/GIST原L2）、645点/1935完整T1批次；[32页详细PDF](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/delivery_v2/NETG_E183_GT10与残差_七数据集及失败查询_详细报告_20261017.pdf)、[中文报告](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/delivery_v2/report_zh.md)、[详细复盘](experiment_history/183_gt10_residual_comprehensive_v1.md)、[状态](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/state.json)。GT10在Deep/SIFT可迁移；B32在这两集收益很小、K100曲线较低；GIST混合。Web/COCO补全曲线受益，Flickr交叉、Yandex K100较低。默认仍E99 GT10，有限矩阵完成，无待恢复队列。先读AGENTS与四根文档顶部E183，再读报告/审计；不要启动旧runner。
+
+基底HEAD仍96cf05d5410cf51272048cd1f90b4bb194e23c62、research/state-20261002；E183是本地新产物，未提交/发布。旧结果和失败收据完整保留。
+2026-10-18 简版交付：[四页PDF](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/concise_v1/NETG_E183_NSG_GT10_残差_简版报告_20261018.pdf) · [简版文字](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/concise_v1/report_zh.md)。每图仅NSG、GT10、GT10＋残差三线，另有统一L200失败查询表；315点全部复用既有结果，固定同家族B32，无新增实验，详细版保留。
+<!-- E183_CURRENT_END -->
+
 # 本地 Codex 接续入口（2026-10-11）
 
 持久目标：**可靠的 Recall–QPS 综合改进**。当前默认仍是 E99 GT10：WebVid `GT10-soft-t1`、Yandex `GT10-hard`；原 M5 保留。E176 有限尝试已完成并停止，尚不足以替换默认。

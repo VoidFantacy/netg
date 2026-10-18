@@ -1,0 +1,773 @@
+{
+  "status": "FROZEN_SEVEN_DATASET_PLAN",
+  "datasets": {
+    "deep10m_l2_v1": {
+      "dataset": "deep10m_l2_v1",
+      "metric_id": 1,
+      "base": {
+        "path": "/data/netg/ACSG/benches/datasets/DEEP10M/base.10M.fvecs",
+        "format": "fvecs",
+        "n": 10000000,
+        "d": 96
+      },
+      "index": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/deep10m_l2_v1/nsg/graph.nsg",
+      "routers": [
+        {
+          "name": "hard",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/gt10.ids.i32",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/deep10m_l2_v1/gt10_hard/W.f32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/deep10m_l2_v1/k100/GT10-hard.hnsw",
+          "route_order": "sorted_ids"
+        },
+        {
+          "name": "soft",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/gt10.ids.i32",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/deep10m_l2_v1/gt10_soft_t1/W.f32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/deep10m_l2_v1/k100/GT10-soft-t1.hnsw",
+          "route_order": "sorted_ids"
+        }
+      ],
+      "H": 800,
+      "train_queries": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/fit.f32",
+        "format": "raw_f32",
+        "n": 16000,
+        "d": 96,
+        "total_n": 20000,
+        "row_start": 0
+      },
+      "train_gt": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/fit.gt.i32",
+        "format": "raw_i32",
+        "n": 16000,
+        "k": 100,
+        "total_n": 20000,
+        "row_start": 0
+      },
+      "test_queries": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/test.f32",
+        "format": "raw_f32",
+        "n": 10000,
+        "d": 96,
+        "total_n": 10000
+      },
+      "test_gt": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/test.gt.i32",
+        "format": "raw_i32",
+        "n": 10000,
+        "k": 100,
+        "total_n": 10000,
+        "row_start": 0
+      },
+      "source_manifest": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/manifest.json",
+      "asset_audit": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/l2_assets.json",
+      "modality": "single_modality",
+      "training_role_scope": "Residual fit shares original GT10 profile-fit prefix; test identities excluded.",
+      "historical_results": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/deep10m_l2_v1",
+      "historical_point_results": "/data/netg/ACSG/entry_method_exploration/20260916_optimized_five_dataset_r1_r100_v1/results/deep10m_l2_v1",
+      "benchmark_config": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/deep10m_l2_v1.benchmark.json",
+      "analysis_config": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/deep10m_l2_v1.analysis.json",
+      "expected_points": 105,
+      "methods": [
+        {
+          "name": "NSG",
+          "family": "NSG"
+        },
+        {
+          "name": "GT10-hard",
+          "family": "GT10",
+          "router": "hard"
+        },
+        {
+          "name": "hard-JOINT8",
+          "family": "POST",
+          "router": "hard",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/compiled/hard/tables/JOINT8.bin",
+          "baseline": "GT10-hard"
+        },
+        {
+          "name": "hard-JOINT32",
+          "family": "POST",
+          "router": "hard",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/compiled/hard/tables/JOINT32.bin",
+          "baseline": "GT10-hard"
+        },
+        {
+          "name": "GT10-soft-t1",
+          "family": "GT10",
+          "router": "soft"
+        },
+        {
+          "name": "soft-JOINT8",
+          "family": "POST",
+          "router": "soft",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/compiled/soft/tables/JOINT8.bin",
+          "baseline": "GT10-soft-t1"
+        },
+        {
+          "name": "soft-JOINT32",
+          "family": "POST",
+          "router": "soft",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/compiled/soft/tables/JOINT32.bin",
+          "baseline": "GT10-soft-t1"
+        }
+      ]
+    },
+    "sift10m_bigann_l2_v1": {
+      "dataset": "sift10m_bigann_l2_v1",
+      "metric_id": 1,
+      "base": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/base.fvecs",
+        "format": "fvecs",
+        "n": 10000000,
+        "d": 128
+      },
+      "index": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/sift10m_bigann_l2_v1/nsg/graph.nsg",
+      "routers": [
+        {
+          "name": "hard",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/gt10.ids.i32",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/sift10m_bigann_l2_v1/gt10_hard/W.f32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/sift10m_bigann_l2_v1/k100/GT10-hard.hnsw",
+          "route_order": "sorted_ids"
+        },
+        {
+          "name": "soft",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/gt10.ids.i32",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/sift10m_bigann_l2_v1/gt10_soft_t1/W.f32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/sift10m_bigann_l2_v1/k100/GT10-soft-t1.hnsw",
+          "route_order": "sorted_ids"
+        }
+      ],
+      "H": 800,
+      "train_queries": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/fit.f32",
+        "format": "raw_f32",
+        "n": 16000,
+        "d": 128,
+        "total_n": 20000,
+        "row_start": 0
+      },
+      "train_gt": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/fit.gt.i32",
+        "format": "raw_i32",
+        "n": 16000,
+        "k": 100,
+        "total_n": 20000,
+        "row_start": 0
+      },
+      "test_queries": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/test.f32",
+        "format": "raw_f32",
+        "n": 10000,
+        "d": 128,
+        "total_n": 10000
+      },
+      "test_gt": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/test.gt.i32",
+        "format": "raw_i32",
+        "n": 10000,
+        "k": 100,
+        "total_n": 10000,
+        "row_start": 0
+      },
+      "source_manifest": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/manifest.json",
+      "asset_audit": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/l2_assets.json",
+      "modality": "single_modality",
+      "training_role_scope": "Residual fit shares original GT10 profile-fit prefix; test identities excluded.",
+      "historical_results": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/sift10m_bigann_l2_v1",
+      "historical_point_results": "/data/netg/ACSG/entry_method_exploration/20260916_optimized_five_dataset_r1_r100_v1/results/sift10m_bigann_l2_v1",
+      "benchmark_config": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/sift10m_bigann_l2_v1.benchmark.json",
+      "analysis_config": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/sift10m_bigann_l2_v1.analysis.json",
+      "expected_points": 105,
+      "methods": [
+        {
+          "name": "NSG",
+          "family": "NSG"
+        },
+        {
+          "name": "GT10-hard",
+          "family": "GT10",
+          "router": "hard"
+        },
+        {
+          "name": "hard-JOINT8",
+          "family": "POST",
+          "router": "hard",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/sift10m_bigann_l2_v1/compiled/hard/tables/JOINT8.bin",
+          "baseline": "GT10-hard"
+        },
+        {
+          "name": "hard-JOINT32",
+          "family": "POST",
+          "router": "hard",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/sift10m_bigann_l2_v1/compiled/hard/tables/JOINT32.bin",
+          "baseline": "GT10-hard"
+        },
+        {
+          "name": "GT10-soft-t1",
+          "family": "GT10",
+          "router": "soft"
+        },
+        {
+          "name": "soft-JOINT8",
+          "family": "POST",
+          "router": "soft",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/sift10m_bigann_l2_v1/compiled/soft/tables/JOINT8.bin",
+          "baseline": "GT10-soft-t1"
+        },
+        {
+          "name": "soft-JOINT32",
+          "family": "POST",
+          "router": "soft",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/sift10m_bigann_l2_v1/compiled/soft/tables/JOINT32.bin",
+          "baseline": "GT10-soft-t1"
+        }
+      ]
+    },
+    "gist1m_l2_v1": {
+      "dataset": "gist1m_l2_v1",
+      "metric_id": 1,
+      "base": {
+        "path": "/data/netg/ACSG/benches/datasets/GIST1M/gist_base.fvecs",
+        "format": "fvecs",
+        "n": 1000000,
+        "d": 960
+      },
+      "index": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/gist1m_l2_v1/nsg/graph.nsg",
+      "routers": [
+        {
+          "name": "hard",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/gt10.ids.i32",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/gist1m_l2_v1/gt10_hard/W.f32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/gist1m_l2_v1/k100/GT10-hard.hnsw",
+          "route_order": "sorted_ids"
+        },
+        {
+          "name": "soft",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/gt10.ids.i32",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/gist1m_l2_v1/gt10_soft_t1/W.f32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/gist1m_l2_v1/k100/GT10-soft-t1.hnsw",
+          "route_order": "sorted_ids"
+        }
+      ],
+      "H": 800,
+      "train_queries": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/fit.f32",
+        "format": "raw_f32",
+        "n": 16000,
+        "d": 960,
+        "total_n": 20000,
+        "row_start": 0
+      },
+      "train_gt": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/fit.gt.i32",
+        "format": "raw_i32",
+        "n": 16000,
+        "k": 100,
+        "total_n": 20000,
+        "row_start": 0
+      },
+      "test_queries": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/test.f32",
+        "format": "raw_f32",
+        "n": 1000,
+        "d": 960,
+        "total_n": 1000
+      },
+      "test_gt": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/test.gt.i32",
+        "format": "raw_i32",
+        "n": 1000,
+        "k": 100,
+        "total_n": 1000,
+        "row_start": 0
+      },
+      "source_manifest": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/gist1m_l2_v1/manifest.json",
+      "asset_audit": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/l2_assets.json",
+      "modality": "single_modality",
+      "training_role_scope": "Residual fit shares original GT10 profile-fit prefix; test identities excluded.",
+      "historical_results": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/gist1m_l2_v1",
+      "historical_point_results": "/data/netg/ACSG/entry_method_exploration/20260916_optimized_five_dataset_r1_r100_v1/results/gist1m_l2_v1",
+      "benchmark_config": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/gist1m_l2_v1.benchmark.json",
+      "analysis_config": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/gist1m_l2_v1.analysis.json",
+      "expected_points": 105,
+      "methods": [
+        {
+          "name": "NSG",
+          "family": "NSG"
+        },
+        {
+          "name": "GT10-hard",
+          "family": "GT10",
+          "router": "hard"
+        },
+        {
+          "name": "hard-JOINT8",
+          "family": "POST",
+          "router": "hard",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/gist1m_l2_v1/compiled/hard/tables/JOINT8.bin",
+          "baseline": "GT10-hard"
+        },
+        {
+          "name": "hard-JOINT32",
+          "family": "POST",
+          "router": "hard",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/gist1m_l2_v1/compiled/hard/tables/JOINT32.bin",
+          "baseline": "GT10-hard"
+        },
+        {
+          "name": "GT10-soft-t1",
+          "family": "GT10",
+          "router": "soft"
+        },
+        {
+          "name": "soft-JOINT8",
+          "family": "POST",
+          "router": "soft",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/gist1m_l2_v1/compiled/soft/tables/JOINT8.bin",
+          "baseline": "GT10-soft-t1"
+        },
+        {
+          "name": "soft-JOINT32",
+          "family": "POST",
+          "router": "soft",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/gist1m_l2_v1/compiled/soft/tables/JOINT32.bin",
+          "baseline": "GT10-soft-t1"
+        }
+      ]
+    },
+    "webvid2_5m_light_v1": {
+      "dataset": "webvid2_5m_light_v1",
+      "metric_id": 0,
+      "base": {
+        "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+        "format": "fvecs",
+        "n": 2505000,
+        "d": 512
+      },
+      "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+      "routers": [
+        {
+          "name": "hard",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_hard/W.f32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-hard.hnsw",
+          "route_order": "sorted_ids"
+        },
+        {
+          "name": "soft",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+          "route_order": "sorted_ids"
+        }
+      ],
+      "H": 815,
+      "train_queries": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/queries.f32",
+        "format": "raw_f32",
+        "n": 16000,
+        "d": 512,
+        "total_n": 20000,
+        "row_start": 0
+      },
+      "train_gt": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/gt.i64",
+        "format": "raw_i64",
+        "n": 16000,
+        "k": 100,
+        "total_n": 20000,
+        "row_start": 0
+      },
+      "test_queries": {
+        "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.test.public10K.fvecs",
+        "format": "fvecs",
+        "n": 10000,
+        "d": 512
+      },
+      "test_gt": {
+        "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/gt.test.public10K.ip.top100.ivecs",
+        "format": "ivecs",
+        "n": 10000,
+        "k": 100,
+        "total_n": 10000,
+        "row_start": 0
+      },
+      "source_manifest": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/manifest.json",
+      "asset_audit": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/ip_assets.json",
+      "modality": "cross_modal",
+      "training_role_scope": "Residual fit shares original GT10 profile-fit prefix; test identities excluded.",
+      "historical_results": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1",
+      "historical_point_results": "/data/netg/ACSG/entry_method_exploration/20260916_optimized_five_dataset_r1_r100_v1/results/webvid2_5m_light_v1",
+      "benchmark_config": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/webvid2_5m_light_v1.benchmark.json",
+      "analysis_config": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/webvid2_5m_light_v1.analysis.json",
+      "expected_points": 105,
+      "methods": [
+        {
+          "name": "NSG",
+          "family": "NSG"
+        },
+        {
+          "name": "GT10-hard",
+          "family": "GT10",
+          "router": "hard"
+        },
+        {
+          "name": "hard-JOINT8",
+          "family": "POST",
+          "router": "hard",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/webvid2_5m_light_v1/compiled/hard/tables/JOINT8.bin",
+          "baseline": "GT10-hard"
+        },
+        {
+          "name": "hard-JOINT32",
+          "family": "POST",
+          "router": "hard",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/webvid2_5m_light_v1/compiled/hard/tables/JOINT32.bin",
+          "baseline": "GT10-hard"
+        },
+        {
+          "name": "GT10-soft-t1",
+          "family": "GT10",
+          "router": "soft"
+        },
+        {
+          "name": "soft-JOINT8",
+          "family": "POST",
+          "router": "soft",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/webvid2_5m_light_v1/compiled/soft/tables/JOINT8.bin",
+          "baseline": "GT10-soft-t1"
+        },
+        {
+          "name": "soft-JOINT32",
+          "family": "POST",
+          "router": "soft",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/webvid2_5m_light_v1/compiled/soft/tables/JOINT32.bin",
+          "baseline": "GT10-soft-t1"
+        }
+      ]
+    },
+    "yandex_t2i_official10M_ip_v1": {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "metric_id": 0,
+      "base": {
+        "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+        "format": "fvecs",
+        "n": 10000000,
+        "d": 200
+      },
+      "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+      "routers": [
+        {
+          "name": "hard",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+          "route_order": "sorted_ids"
+        },
+        {
+          "name": "soft",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+          "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_soft_t1/W.f32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-soft-t1.hnsw",
+          "route_order": "sorted_ids"
+        }
+      ],
+      "H": 821,
+      "train_queries": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/queries.f32",
+        "format": "raw_f32",
+        "n": 16000,
+        "d": 200,
+        "total_n": 20000,
+        "row_start": 0
+      },
+      "train_gt": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/gt.i64",
+        "format": "raw_i64",
+        "n": 16000,
+        "k": 100,
+        "total_n": 20000,
+        "row_start": 0
+      },
+      "test_queries": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/public_test10k.fvecs",
+        "format": "fvecs",
+        "n": 10000,
+        "d": 200
+      },
+      "test_gt": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/public_test10k.gt.ivecs",
+        "format": "ivecs",
+        "n": 10000,
+        "k": 100,
+        "total_n": 10000,
+        "row_start": 0
+      },
+      "source_manifest": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/manifest.json",
+      "asset_audit": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/ip_assets.json",
+      "modality": "cross_modal",
+      "training_role_scope": "Residual fit shares original GT10 profile-fit prefix; test identities excluded.",
+      "historical_results": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1",
+      "historical_point_results": "/data/netg/ACSG/entry_method_exploration/20260916_optimized_five_dataset_r1_r100_v1/results/yandex_t2i_official10M_ip_v1",
+      "benchmark_config": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/yandex_t2i_official10M_ip_v1.benchmark.json",
+      "analysis_config": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/yandex_t2i_official10M_ip_v1.analysis.json",
+      "expected_points": 105,
+      "methods": [
+        {
+          "name": "NSG",
+          "family": "NSG"
+        },
+        {
+          "name": "GT10-hard",
+          "family": "GT10",
+          "router": "hard"
+        },
+        {
+          "name": "hard-JOINT8",
+          "family": "POST",
+          "router": "hard",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/yandex_t2i_official10M_ip_v1/compiled/hard/tables/JOINT8.bin",
+          "baseline": "GT10-hard"
+        },
+        {
+          "name": "hard-JOINT32",
+          "family": "POST",
+          "router": "hard",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/yandex_t2i_official10M_ip_v1/compiled/hard/tables/JOINT32.bin",
+          "baseline": "GT10-hard"
+        },
+        {
+          "name": "GT10-soft-t1",
+          "family": "GT10",
+          "router": "soft"
+        },
+        {
+          "name": "soft-JOINT8",
+          "family": "POST",
+          "router": "soft",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/yandex_t2i_official10M_ip_v1/compiled/soft/tables/JOINT8.bin",
+          "baseline": "GT10-soft-t1"
+        },
+        {
+          "name": "soft-JOINT32",
+          "family": "POST",
+          "router": "soft",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/yandex_t2i_official10M_ip_v1/compiled/soft/tables/JOINT32.bin",
+          "baseline": "GT10-soft-t1"
+        }
+      ]
+    },
+    "coco": {
+      "dataset": "coco",
+      "metric_id": 0,
+      "base": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/base.f32",
+        "format": "raw_f32",
+        "n": 118272,
+        "d": 512
+      },
+      "index": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/nsg.index",
+      "H": 815,
+      "routers": [
+        {
+          "name": "hard",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/ids.i32",
+          "W": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/W.f32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/router.hnsw",
+          "route_order": "heap_pop"
+        }
+      ],
+      "train_queries": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/residual.f32",
+        "format": "raw_f32",
+        "n": 16000,
+        "d": 512
+      },
+      "train_gt": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/exact/residual.gt100.i64",
+        "format": "raw_i64",
+        "n": 16000,
+        "k": 100
+      },
+      "test_queries": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/test.f32",
+        "format": "raw_f32",
+        "n": 10000,
+        "d": 512
+      },
+      "test_gt": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/eval_gt/test.gt100.i64",
+        "format": "raw_i64",
+        "n": 10000,
+        "k": 100
+      },
+      "source_manifest": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/manifest.json",
+      "modality": "cross_modal",
+      "training_role_scope": "Residual training role disjoint from profile-fit and test by image/caption connected identity groups.",
+      "historical_results": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/results/coco",
+      "benchmark_config": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/coco.benchmark.json",
+      "analysis_config": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/coco.analysis.json",
+      "expected_points": 60,
+      "methods": [
+        {
+          "name": "NSG",
+          "family": "NSG"
+        },
+        {
+          "name": "GT10-hard",
+          "family": "GT10",
+          "router": "hard"
+        },
+        {
+          "name": "hard-JOINT8",
+          "family": "POST",
+          "router": "hard",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/coco/compiled/hard/tables/JOINT8.bin",
+          "baseline": "GT10-hard"
+        },
+        {
+          "name": "hard-JOINT32",
+          "family": "POST",
+          "router": "hard",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/coco/compiled/hard/tables/JOINT32.bin",
+          "baseline": "GT10-hard"
+        }
+      ]
+    },
+    "flickr30k": {
+      "dataset": "flickr30k",
+      "metric_id": 0,
+      "base": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/flickr30k/prepared/base.f32",
+        "format": "raw_f32",
+        "n": 31782,
+        "d": 512
+      },
+      "index": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/flickr30k/nsg.index",
+      "H": 815,
+      "routers": [
+        {
+          "name": "hard",
+          "ids": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/flickr30k/ids.i32",
+          "W": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/flickr30k/W.f32",
+          "graph": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/flickr30k/router.hnsw",
+          "route_order": "heap_pop"
+        }
+      ],
+      "train_queries": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/flickr30k/prepared/residual.f32",
+        "format": "raw_f32",
+        "n": 16000,
+        "d": 512
+      },
+      "train_gt": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/flickr30k/exact/residual.gt100.i64",
+        "format": "raw_i64",
+        "n": 16000,
+        "k": 100
+      },
+      "test_queries": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/flickr30k/prepared/test.f32",
+        "format": "raw_f32",
+        "n": 5000,
+        "d": 512
+      },
+      "test_gt": {
+        "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/flickr30k/eval_gt/test.gt100.i64",
+        "format": "raw_i64",
+        "n": 5000,
+        "k": 100
+      },
+      "source_manifest": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/flickr30k/prepared/manifest.json",
+      "modality": "cross_modal",
+      "training_role_scope": "Residual training role disjoint from profile-fit and test by image/caption connected identity groups.",
+      "historical_results": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/results/flickr30k",
+      "benchmark_config": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/flickr30k.benchmark.json",
+      "analysis_config": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/flickr30k.analysis.json",
+      "expected_points": 60,
+      "methods": [
+        {
+          "name": "NSG",
+          "family": "NSG"
+        },
+        {
+          "name": "GT10-hard",
+          "family": "GT10",
+          "router": "hard"
+        },
+        {
+          "name": "hard-JOINT8",
+          "family": "POST",
+          "router": "hard",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/flickr30k/compiled/hard/tables/JOINT8.bin",
+          "baseline": "GT10-hard"
+        },
+        {
+          "name": "hard-JOINT32",
+          "family": "POST",
+          "router": "hard",
+          "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/flickr30k/compiled/hard/tables/JOINT32.bin",
+          "baseline": "GT10-hard"
+        }
+      ]
+    }
+  },
+  "K_L": {
+    "1": [
+      16,
+      32,
+      64,
+      100,
+      200,
+      400,
+      800,
+      1200
+    ],
+    "100": [
+      100,
+      128,
+      200,
+      400,
+      800,
+      1000,
+      1200
+    ]
+  },
+  "expected_points": 645,
+  "expected_formal_batches": 1935,
+  "configs": [
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/deep10m_l2_v1.teacher.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/deep10m_l2_v1.compile.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/deep10m_l2_v1.benchmark.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/deep10m_l2_v1.analysis.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/sift10m_bigann_l2_v1.teacher.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/sift10m_bigann_l2_v1.compile.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/sift10m_bigann_l2_v1.benchmark.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/sift10m_bigann_l2_v1.analysis.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/gist1m_l2_v1.teacher.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/gist1m_l2_v1.compile.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/gist1m_l2_v1.benchmark.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/gist1m_l2_v1.analysis.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/webvid2_5m_light_v1.teacher.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/webvid2_5m_light_v1.compile.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/webvid2_5m_light_v1.benchmark.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/webvid2_5m_light_v1.analysis.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/yandex_t2i_official10M_ip_v1.teacher.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/yandex_t2i_official10M_ip_v1.compile.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/yandex_t2i_official10M_ip_v1.benchmark.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/yandex_t2i_official10M_ip_v1.analysis.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/coco.teacher.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/coco.compile.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/coco.benchmark.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/coco.analysis.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/flickr30k.teacher.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/flickr30k.compile.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/flickr30k.benchmark.json",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/flickr30k.analysis.json"
+  ],
+  "created_unix": 1792200726.9572926,
+  "timing_repeats": 3,
+  "protocol_sha256": "ca6cb003730bfb6585e623e8819a108a4e50b9a28dc2f65bf4328c36c99d6e75"
+}

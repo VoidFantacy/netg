@@ -1,0 +1,187 @@
+{
+  "status": "PASS_INDEPENDENT_LAUNCHER_METADATA_CORRECTION_REVIEW",
+  "reviewer": "non_multimodal_evidence independent agent",
+  "reviewed_at_unix": 1792201282.0021331,
+  "seconds": 0.06826396099995691,
+  "original_failure_cause": "Launcher expected misspelled PASS_E183_TRAIN_TEACHACHERS; actual successful native terminal status was PASS_E183_TRAIN_TEACHERS.",
+  "original_receipt_preserved": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/reviews/teacher_deep10m_l2_v1.execution.json",
+  "original_receipt_sha256": "0cf15f4cf4e7fc2526af9b9f1aa4cbae44fe3c3f965a7c0a772378e5095920ca",
+  "corrected_receipt": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/reviews/teacher_deep10m_l2_v1.execution.corrected.json",
+  "corrected_receipt_sha256": "dab10164a9f72a9d327977183d0eca64847235f9c5bcff5cc9fd069b0a0bb671",
+  "original_launcher_archive": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/source_before/run_suite_pre_status_fix.py",
+  "original_launcher_sha256_matches_old_execution_lock": true,
+  "new_launcher": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/scripts/run_suite.py",
+  "new_launcher_sha256": "a56e7795ae73fa57b7f8fe3c8b87b124c7f6429300c242d0bcc2ae0f50200cb4",
+  "reviewed_changes": [
+    "Correct expected teacher terminal spelling only; science binary, config, inputs and actual output unchanged.",
+    "New prior(stage,dataset) verifies preserved original receipt binding when correction exists, successful status, every frozen input and saved output identity.",
+    "Only the exact launcher path may differ when archived old launcher SHA equals its execution-lock SHA and a correction receipt is present; all other files retain ordinary identity checks.",
+    "Offline resumes existing successful stages via prior() and executes only missing stages; it never calls run() for this completed Deep teacher.",
+    "Formal readiness uses the same prior() helper; all new stages freeze their current launcher identity."
+  ],
+  "scientific_native_unchanged": true,
+  "native_config_matches_original": true,
+  "other_input_bindings_checked": [
+    {
+      "path": "/data/netg/ACSG/ACSG/ACSG.h",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/ACSG/IndexACSG.h",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/datasets/DEEP10M/base.10M.fvecs",
+      "scope": "frozen_full_SHA_plus_current_size_mtime"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/hnswlib/bruteforce.h",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/hnswlib/hnswalg.h",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/hnswlib/hnswlib.h",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/hnswlib/space_cos.h",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/hnswlib/space_ip.h",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/hnswlib/space_l2.h",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/hnswlib/stop_condition.h",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/benches/hnswlib/visited_list_pool.h",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/build/ACSG/libACSG.a",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/fit.f32",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/gt10.ids.i32",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/deep10m_l2_v1/gt10_hard/W.f32",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/deep10m_l2_v1/gt10_soft_t1/W.f32",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/deep10m_l2_v1/nsg/graph.nsg",
+      "scope": "frozen_full_SHA_plus_current_size_mtime"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/deep10m_l2_v1/k100/GT10-hard.hnsw",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/deep10m_l2_v1/k100/GT10-soft-t1.hnsw",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261015_m5_k100_capacity_v1/src/capacity.hpp",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261015_m5_k100_capacity_v1/src/native.hpp",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261015_m5_k100_capacity_v1/src/optimized.hpp",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261015_m5_k100_capacity_v1/src/region.hpp",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261015_m5_k100_capacity_v1/src/runtime.hpp",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/bin/build_residual_tools.json",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/bin/residual_tools",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/deep10m_l2_v1.teacher.json",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/protocol.md",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/scripts/build_native.py",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/src/residual_tools.cpp",
+      "scope": "current_full_SHA"
+    },
+    {
+      "path": "/root/acsg-e172-storage-v2/campaign/common/acsg_current.o",
+      "scope": "current_full_SHA"
+    }
+  ],
+  "corrected_output_files_current_full_SHA_verified": 11,
+  "teacher_packets_independently_rehashed": [
+    {
+      "router": "hard",
+      "queries": 16000,
+      "K": 100,
+      "L": 200,
+      "packet_sha256": "f1260bbb4761744d12f526ed7921be0aeaa691fbd52ecc5611d454a943a1889b",
+      "reconstruction": "shape+four_actual_arrays+two_zero_layout_buffers",
+      "status": "PASS"
+    },
+    {
+      "router": "soft",
+      "queries": 16000,
+      "K": 100,
+      "L": 200,
+      "packet_sha256": "0f74a7daf44654bbb4bb4387944d2aed7ffe26411d22b8506e26b0bf5209a2d1",
+      "reconstruction": "shape+four_actual_arrays+two_zero_layout_buffers",
+      "status": "PASS"
+    }
+  ],
+  "actual_preserved_teacher_query_searches": 32000,
+  "ANN_or_training_searches_run_by_this_review": 0,
+  "scientific_searches_repeated_for_metadata_fix": 0,
+  "blocking_findings": [],
+  "limitations": [
+    "Large inherited scientific inputs were checked against preserved current size/mtime binding in this small review; full suite SHA was separately computed by input_freeze.",
+    "This metadata correction review does not assert completion or performance of later compile/qualification/formal stages."
+  ]
+}

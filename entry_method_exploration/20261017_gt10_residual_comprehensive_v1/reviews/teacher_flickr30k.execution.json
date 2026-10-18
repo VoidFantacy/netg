@@ -1,0 +1,50 @@
+{
+  "status": "PASS_NATIVE_EXECUTION",
+  "argv": [
+    "taskset",
+    "-c",
+    "15",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/bin/residual_tools",
+    "teacher",
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/configs/flickr30k.teacher.json"
+  ],
+  "pid": 4484,
+  "exit_code": 0,
+  "elapsed_seconds": 6.75290366299987,
+  "input_drift": [],
+  "outputs": {
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/flickr30k/teacher/complete.json": {
+      "bytes": 2488,
+      "mtime_ns": 1792201384145510198,
+      "sha256": "14248ba34ae5f786b66193712e701684697b22385d4af97a706541df99771014"
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/flickr30k/teacher/hard/complete.json": {
+      "bytes": 528,
+      "mtime_ns": 1792201384141510185,
+      "sha256": "656bc797d12cad42270fffdb05d2a019762c8eee0aa3a4f3299ec163f40dab1b"
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/flickr30k/teacher/hard/raw/distances.f32": {
+      "bytes": 6400000,
+      "mtime_ns": 1792201384133510160,
+      "sha256": "1a18fdc6c4d8a42920896d7720f1f265d9209c42f9c3755772b9894d8383555c"
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/flickr30k/teacher/hard/raw/entry_ids.i32": {
+      "bytes": 192000,
+      "mtime_ns": 1792201384133510160,
+      "sha256": "fe6a4d44ba231ccda8b6f197eeb85f5009361ee02771c885e89fc853fe5607ab"
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/flickr30k/teacher/hard/raw/ids.i32": {
+      "bytes": 6400000,
+      "mtime_ns": 1792201384129510148,
+      "sha256": "1804b6b637d57b7fd92bbddecd2568ac3ad6f7e790f1ceec6efa1cf92023492a"
+    },
+    "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/flickr30k/teacher/hard/raw/profile_distances.f32": {
+      "bytes": 192000,
+      "mtime_ns": 1792201384133510160,
+      "sha256": "807a8024f2c087d549dccfc6cdd98066fcea90371956761c9b9576d9bcdfcf2a"
+    }
+  },
+  "native_complete": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/flickr30k/teacher/complete.json",
+  "native_status": "PASS_E183_TRAIN_TEACHERS",
+  "cost_scope": "Complete native child lifecycle. Contains any inner timing and audit; do not sum nested times twice."
+}

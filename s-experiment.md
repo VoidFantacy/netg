@@ -1,3 +1,12 @@
+<!-- E183_CURRENT_BEGIN -->
+# E183 当前实验索引（2026-10-17，已完成）
+
+[183 GT10与残差跨数据集及失败查询综合评测](experiment_history/183_gt10_residual_comprehensive_v1.md)：七集含三套非多模态原L2，645点/1935完整T1批次；GT10在Deep/SIFT有迁移收益，B32对两集K100曲线较低，GIST混合；Web/COCO两K曲线受益、Flickr交叉、Yandex K100较低。独立整数/source/救损/频次审计PASS，5边界损伤事件/2query保留。32页详细PDF已交付；单图、已曝光测试与未独立重算CI/插值限制明确，默认不变、有限矩阵结束。
+
+[报告](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/delivery_v2/report_zh.md) · [PDF](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/delivery_v2/NETG_E183_GT10与残差_七数据集及失败查询_详细报告_20261017.pdf) · [全645点](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/final_v1/points.csv) · [独审](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/reviews/independent_results_audit.json) · [费用](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/cost_ledger.json)。
+2026-10-18 简版交付：[四页PDF](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/concise_v1/NETG_E183_NSG_GT10_残差_简版报告_20261018.pdf) · [简版文字](entry_method_exploration/20261017_gt10_residual_comprehensive_v1/analysis/concise_v1/report_zh.md)。每图仅NSG、GT10、GT10＋残差三线，另有统一L200失败查询表；315点全部复用既有结果，固定同家族B32，无新增实验，详细版保留。
+<!-- E183_CURRENT_END -->
+
 <!-- E176_CURRENT_BEGIN -->
 # E176 最新实验索引（2026-10-10）
 
