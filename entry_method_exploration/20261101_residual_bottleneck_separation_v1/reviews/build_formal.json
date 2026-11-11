@@ -1,0 +1,65 @@
+{
+  "argv": [
+    "g++",
+    "-O3",
+    "-march=native",
+    "-std=c++17",
+    "-fopenmp",
+    "-rdynamic",
+    "-I/data/netg/ACSG",
+    "-I/data/netg/ACSG/benches",
+    "-I/data/netg/ACSG/faiss",
+    "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+    "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/src/benchmark.cpp",
+    "/root/acsg-e172-storage-v2/campaign/common/acsg_current.o",
+    "build/ACSG/libACSG.a",
+    "build/MRNN_Descent/libmrnndescent.a",
+    "build/faiss/faiss/libfaiss.a",
+    "-lopenblas",
+    "-lz",
+    "-ldl",
+    "-lcrypto",
+    "-o",
+    "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/storage/formal_benchmark"
+  ],
+  "returncode": 0,
+  "seconds": 20.049387357998057,
+  "source_files": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/src/benchmark.cpp",
+      "sha256": "c5d9980f9fb5549dd6ab5048b8082aa3d945c3571cf7912b7af43cc8fcd0932f"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/src/model.inc",
+      "sha256": "d7492ab473cfa2e2f5bdbd285aad01b8e18cdf03f6bca8034303dd2c13301c14"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/src/diagnose.inc",
+      "sha256": "7fde14f41ae53230724dfa8744a531630b012f4d9d83ff2dc55dd9e753161ca3"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/src/formal.inc",
+      "sha256": "11d51a5a019061808d9fcfbe865a2f4cefe73b09fa0b254995886d32045e6157"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/src/e195.inc",
+      "sha256": "63d0c30638bfbc21672488f8ac81b50a36f799d618af9fc8affdb811d047eddd"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/src/replay.inc",
+      "sha256": "f535236f4d131818e8e1f1648b2c52fc93931a6cf2d7c6bb330b06e935d87381"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/src/cached_search.inc",
+      "sha256": "5e039f6834407c5871b3391c8170bdd3a88c9f37187b499a72a99a57a1afa1f4"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/src/minimal_cached_search.inc",
+      "sha256": "4b62414d383c501c616ad61d6b76ff51cfd552c4ad389f2193a1f2d4ee341c16"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/src/e194.inc",
+      "sha256": "2e547ef146fab1807d01ff7ea4591b5150909c930f82bddebe5ea8eb27d3e062"
+    }
+  ]
+}

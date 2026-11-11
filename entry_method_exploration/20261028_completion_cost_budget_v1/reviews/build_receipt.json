@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "g++",
+    "-O3",
+    "-march=native",
+    "-std=c++17",
+    "-fopenmp",
+    "-rdynamic",
+    "-I/data/netg/ACSG",
+    "-I/data/netg/ACSG/benches",
+    "-I/data/netg/ACSG/faiss",
+    "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+    "entry_method_exploration/20261028_completion_cost_budget_v1/src/cost_budget.cpp",
+    "/root/acsg-e172-storage-v2/campaign/common/acsg_current.o",
+    "build/ACSG/libACSG.a",
+    "build/MRNN_Descent/libmrnndescent.a",
+    "build/faiss/faiss/libfaiss.a",
+    "-lopenblas",
+    "-lz",
+    "-ldl",
+    "-lcrypto",
+    "-o",
+    "entry_method_exploration/20261028_completion_cost_budget_v1/bin/cost_budget"
+  ],
+  "returncode": 0,
+  "seconds": 13.070323490000192
+}

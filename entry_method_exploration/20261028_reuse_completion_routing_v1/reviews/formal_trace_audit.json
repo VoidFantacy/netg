@@ -1,0 +1,86 @@
+{
+  "status": "PASS_E189_TRACE_SECOND_IMPLEMENTATION",
+  "role": "formal",
+  "checks": [
+    {
+      "dataset": "coco",
+      "method": "REUSE-BLOCK",
+      "queries": 64,
+      "pool_identity": true,
+      "original_metric_block_routing": true,
+      "whole_block_budget": true,
+      "PQ_threshold_float64_tolerance": true
+    },
+    {
+      "dataset": "coco",
+      "method": "MAIN-BLOCK",
+      "queries": 64,
+      "pool_identity": true,
+      "original_metric_block_routing": true,
+      "whole_block_budget": true,
+      "PQ_threshold_float64_tolerance": true
+    },
+    {
+      "dataset": "deep10m_l2_v1",
+      "method": "REUSE-BLOCK",
+      "queries": 64,
+      "pool_identity": true,
+      "original_metric_block_routing": true,
+      "whole_block_budget": true,
+      "PQ_threshold_float64_tolerance": true
+    },
+    {
+      "dataset": "deep10m_l2_v1",
+      "method": "MAIN-BLOCK",
+      "queries": 64,
+      "pool_identity": true,
+      "original_metric_block_routing": true,
+      "whole_block_budget": true,
+      "PQ_threshold_float64_tolerance": true
+    }
+  ],
+  "coverage": [
+    {
+      "dataset": "coco",
+      "method": "REUSE-BLOCK",
+      "L": 200,
+      "missing_members": 46556,
+      "pool_covered": 18932,
+      "scanned_covered": 18747,
+      "shortlist_covered": 2131,
+      "rescued": 2131
+    },
+    {
+      "dataset": "coco",
+      "method": "MAIN-BLOCK",
+      "L": 200,
+      "missing_members": 46556,
+      "pool_covered": 8418,
+      "scanned_covered": 8418,
+      "shortlist_covered": 1489,
+      "rescued": 1489
+    },
+    {
+      "dataset": "deep10m_l2_v1",
+      "method": "REUSE-BLOCK",
+      "L": 200,
+      "missing_members": 29220,
+      "pool_covered": 1091,
+      "scanned_covered": 1090,
+      "shortlist_covered": 938,
+      "rescued": 847
+    },
+    {
+      "dataset": "deep10m_l2_v1",
+      "method": "MAIN-BLOCK",
+      "L": 200,
+      "missing_members": 29220,
+      "pool_covered": 937,
+      "scanned_covered": 937,
+      "shortlist_covered": 811,
+      "rescued": 720
+    }
+  ],
+  "trace": "full-sort oracle reconstructed from actual timed main; not separate timed trace",
+  "seconds": 2.41756230500323
+}

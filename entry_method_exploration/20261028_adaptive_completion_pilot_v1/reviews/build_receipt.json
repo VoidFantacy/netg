@@ -1,0 +1,30 @@
+{
+  "status": "PASS_NATIVE_BUILD",
+  "cwd": "/data/netg/ACSG",
+  "argv": [
+    "g++",
+    "-O3",
+    "-march=native",
+    "-std=c++17",
+    "-fopenmp",
+    "-rdynamic",
+    "-I/data/netg/ACSG",
+    "-I/data/netg/ACSG/benches",
+    "-I/data/netg/ACSG/faiss",
+    "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+    "entry_method_exploration/20261028_adaptive_completion_pilot_v1/src/pilot.cpp",
+    "/root/acsg-e172-storage-v2/campaign/common/acsg_current.o",
+    "build/ACSG/libACSG.a",
+    "build/MRNN_Descent/libmrnndescent.a",
+    "build/faiss/faiss/libfaiss.a",
+    "-lopenblas",
+    "-lz",
+    "-ldl",
+    "-lcrypto",
+    "-o",
+    "entry_method_exploration/20261028_adaptive_completion_pilot_v1/bin/pilot"
+  ],
+  "returncode": 0,
+  "build_wall_seconds": null,
+  "note": "exact command retained; wall not separately instrumented; binary/libs hashes in freeze.json"
+}

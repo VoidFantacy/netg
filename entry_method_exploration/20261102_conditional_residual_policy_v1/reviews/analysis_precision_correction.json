@@ -1,0 +1,22 @@
+{
+  "status": "ANALYSIS_IMPLEMENTATION_CORRECTION_BEFORE_DELIVERY",
+  "cause": "NumPy float32 array comparison rounds Python double tree threshold to float32; native and sklearn use double threshold comparison.",
+  "example": {
+    "dataset": "coco",
+    "window": "B",
+    "K": 1,
+    "L": 200,
+    "query": 42,
+    "incorrect_numpy_budget": 96,
+    "native_and_double_comparison_budget": 384,
+    "incorrect_teacher96_score": 0.00010073497562526389,
+    "correct_teacher96_score": 6.233889107531256e-07,
+    "teacher384_score": 8.678461114975938e-05
+  },
+  "original_script_sha256": "1d8ad8a8c1a6b6269f296c074453792ba1819080bf3cf71520efcf325abb0945",
+  "corrected_script_sha256": "c74c14e58a614141ab7622876a9af20a6f3365ab1ba33662d5b3e8ed28c23331",
+  "formal_binary_models_packets_and_timings_unchanged": true,
+  "failed_log": "entry_method_exploration/20261102_conditional_residual_policy_v1/reviews/analyze.log",
+  "failed_receipt": "entry_method_exploration/20261102_conditional_residual_policy_v1/reviews/analyze.receipt.json",
+  "scope": "Only independent audit inputs promoted to float64; no training, selection, or measured execution changed."
+}

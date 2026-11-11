@@ -1,0 +1,3377 @@
+{
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "base": {
+    "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+    "format": "fvecs",
+    "n": 10000000,
+    "d": 200
+  },
+  "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "metric_id": 0,
+  "router": {
+    "name": "hard",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+    "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+    "route_order": "sorted_ids"
+  },
+  "queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/inputs/yandex_t2i_official10M_ip_v1/A/queries.f32",
+    "format": "raw_f32",
+    "n": 512,
+    "d": 200
+  },
+  "test_gt": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/inputs/yandex_t2i_official10M_ip_v1/A/gt.i32",
+    "format": "raw_i32",
+    "n": 512,
+    "k": 100
+  },
+  "train_queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/queries.f32",
+    "format": "raw_f32",
+    "n": 16000,
+    "d": 200,
+    "total_n": 20000,
+    "row_start": 0
+  },
+  "train_gt": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/gt.i64",
+    "format": "raw_i64",
+    "n": 16000,
+    "k": 100,
+    "total_n": 20000,
+    "row_start": 0
+  },
+  "teacher_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/yandex_t2i_official10M_ip_v1/teacher/hard",
+  "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/yandex_t2i_official10M_ip_v1/compiled/hard/tables/JOINT32.bin",
+  "source_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/yandex_t2i_official10M_ip_v1/compiled/hard/source",
+  "models": "/root/acsg-e191-storage/models/yandex_t2i_official10M_ip_v1",
+  "output_dir": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/storage/results/yandex_t2i_official10M_ip_v1/A",
+  "threads": 1,
+  "cpu": 15,
+  "K_L": {
+    "1": [
+      32,
+      64,
+      100,
+      128,
+      160,
+      200,
+      256,
+      320,
+      400,
+      480,
+      512,
+      528,
+      544,
+      640,
+      800,
+      1024,
+      1200
+    ],
+    "100": [
+      100,
+      128,
+      160,
+      200,
+      256,
+      320,
+      400,
+      480,
+      512,
+      528,
+      544,
+      640,
+      800,
+      1024,
+      1200
+    ]
+  },
+  "completion_L": {
+    "1": [
+      32,
+      100,
+      200,
+      400
+    ],
+    "100": [
+      100,
+      200,
+      400,
+      800
+    ]
+  },
+  "methods": [
+    "GT10",
+    "B32",
+    "REUSE-PQ",
+    "REUSE-SQ",
+    "MAIN-SQ"
+  ],
+  "timing_repeats": 3,
+  "warmup_n": 256,
+  "PQ_M": 20,
+  "training_role_scope": "Residual fit shares original GT10 profile-fit prefix; test identities excluded.",
+  "family": "hard",
+  "window": "A",
+  "Ls": [
+    100,
+    128,
+    160,
+    200,
+    256,
+    320,
+    400,
+    512,
+    640,
+    800,
+    1000
+  ],
+  "nav_methods": [
+    "ONEHOP96",
+    "DIST96",
+    "DIST384",
+    "NOVEL96",
+    "NOVEL384",
+    "REP384"
+  ],
+  "meta_dir": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/meta/yandex_t2i_official10M_ip_v1",
+  "q8_table": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/storage/models/yandex_t2i_official10M_ip_v1/Q8-B32.bin",
+  "scratch": "/dev/shm/acsg-e197/yandex_t2i_official10M_ip_v1",
+  "experiment_root": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1",
+  "points": [
+    {
+      "K": 1,
+      "L": 32,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 32,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 64,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 64,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 80,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 80,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 96,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 96,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "AUX384"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "AUX96"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "CBRIDGE384"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "CBRIDGE96"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "DIST1"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "DIST1-FULL"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "EARLY-ALL"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "EARLY-MIX"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "MODEL-FULL"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "MODEL-GATE"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "MODEL-GATE-FULL"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "MODEL1"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "REUSE-SQ"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "SHARED384"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "SHARED96"
+    },
+    {
+      "K": 1,
+      "L": 101,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 101,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 102,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 102,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 104,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 104,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 106,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 106,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 108,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 108,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 110,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 121,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 123,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 124,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 125,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 125,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 126,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 127,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 128,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 128,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 129,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 130,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 132,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 141,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 143,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 145,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 145,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 147,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 149,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 160,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 160,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 162,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 163,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 164,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 165,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 166,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 167,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 167,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 169,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 169,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 170,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 171,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 171,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 172,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 172,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 174,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 174,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 176,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 178,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "AUX384"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "AUX384-FAST"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "AUX384-FAST-FULL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "AUX96"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "CBRIDGE384"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "CBRIDGE384-FULL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "CBRIDGE96"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "DIST1"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "DIST1-FULL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "EARLY-ALL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "EARLY-ALL-FULL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "EARLY-MIX"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "EARLY-MIX-FULL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "MODEL-FULL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "MODEL-GATE"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "MODEL-GATE-FULL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "MODEL1"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "ORACLE-C1"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "ORACLE-S1"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "REF-DIST384"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "REUSE-SQ"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "SHARED-CAPTURE"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "SHARED-CAPTURE-FULL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "SHARED-FRONT3"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "SHARED384"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "SHARED384-FULL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "SHARED96"
+    },
+    {
+      "K": 1,
+      "L": 201,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 201,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 202,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 203,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 204,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 205,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 205,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 206,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 206,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 207,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 207,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 208,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 209,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 209,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 210,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 212,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 222,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 224,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 225,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 226,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 227,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 227,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 228,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 229,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 229,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 230,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 231,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 231,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 232,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 233,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 234,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 235,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 243,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 245,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 247,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 247,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 249,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 250,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 251,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 252,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 254,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 254,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 256,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 256,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 257,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 257,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 258,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 258,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 259,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 259,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 260,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 261,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 261,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 262,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 262,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 264,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 264,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 265,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 266,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 267,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 269,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 270,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 271,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 272,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 273,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 274,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 274,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 275,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 275,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 276,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 276,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 277,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 277,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 278,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 278,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 279,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 280,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 281,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 282,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 306,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 307,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 308,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 309,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 310,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 311,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 311,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 312,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 312,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 313,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 313,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 314,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 314,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 315,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 315,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 316,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 316,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 317,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 318,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 319,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 320,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 320,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 321,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 346,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 348,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 350,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 350,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 352,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 352,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 354,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 356,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 358,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 360,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 361,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 362,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 363,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 365,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 399,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "AUX384"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "AUX96"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "CBRIDGE384"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "CBRIDGE96"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "DIST1"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "DIST1-FULL"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "EARLY-ALL"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "EARLY-MIX"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "MODEL-FULL"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "MODEL-GATE"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "MODEL-GATE-FULL"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "MODEL1"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "REUSE-SQ"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "SHARED384"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "SHARED96"
+    },
+    {
+      "K": 1,
+      "L": 401,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 401,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 402,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 403,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 404,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 405,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 406,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 406,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 407,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 407,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 408,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 408,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 409,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 409,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 410,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 410,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 411,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 425,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 426,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 427,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 428,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 429,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 430,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 432,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 434,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 434,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 436,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 436,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 438,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 445,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 447,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 448,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 449,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 450,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 452,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 463,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 464,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 465,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 466,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 466,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 467,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 467,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 468,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 468,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 469,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 470,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 471,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 472,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 474,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 475,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 476,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 477,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 479,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 485,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 487,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 488,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 489,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 490,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 492,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 511,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 512,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 512,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 513,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 514,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 515,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 515,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 516,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 517,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 519,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 546,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 548,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 550,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 551,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 553,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 553,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 555,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 555,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 557,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 558,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 559,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 560,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 561,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 562,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 563,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 563,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 564,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 565,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 566,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 567,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 568,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 569,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 571,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 573,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 640,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 640,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 800,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 800,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 1000,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 1000,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "AUX384"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "AUX96"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "CBRIDGE384"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "CBRIDGE96"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "DIST1"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "DIST1-FULL"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "EARLY-ALL"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "EARLY-MIX"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "MODEL-FULL"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "MODEL-GATE"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "MODEL-GATE-FULL"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "MODEL1"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "REUSE-SQ"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "SHARED384"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "SHARED96"
+    },
+    {
+      "K": 100,
+      "L": 101,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 101,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 102,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 103,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 103,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 104,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 105,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 105,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 106,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 107,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 107,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 108,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 109,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 110,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 111,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 112,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 122,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 124,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 126,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 128,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 128,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 130,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 132,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 138,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 140,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 142,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 144,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 146,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 148,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 160,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 160,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 162,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 164,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 165,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 166,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 167,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 168,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 169,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 170,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 172,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 173,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 174,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 175,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 176,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 177,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 178,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 193,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 195,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 197,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 198,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 199,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "AUX384"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "AUX384-FAST"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "AUX384-FAST-FULL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "AUX96"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "CBRIDGE384"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "CBRIDGE384-FULL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "CBRIDGE96"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "DIST1"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "DIST1-FULL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "EARLY-ALL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "EARLY-ALL-FULL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "EARLY-MIX"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "EARLY-MIX-FULL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "MODEL-FULL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "MODEL-GATE"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "MODEL-GATE-FULL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "MODEL1"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "ORACLE-C1"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "ORACLE-S1"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "REF-DIST384"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "REUSE-SQ"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "SHARED-CAPTURE"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "SHARED-CAPTURE-FULL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "SHARED-FRONT3"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "SHARED384"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "SHARED384-FULL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "SHARED96"
+    },
+    {
+      "K": 100,
+      "L": 201,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 201,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 202,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 202,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 203,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 204,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 206,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 207,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 208,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 209,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 210,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 211,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 216,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 217,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 218,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 219,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 220,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 221,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 223,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 224,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 225,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 226,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 227,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 227,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 228,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 229,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 230,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 231,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 233,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 235,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 245,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 247,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 249,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 253,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 255,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 256,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 256,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 257,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 264,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 265,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 266,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 267,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 268,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 269,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 270,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 271,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 271,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 272,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 272,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 273,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 273,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 274,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 274,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 275,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 275,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 276,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 276,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 277,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 277,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 278,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 279,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 279,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 280,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 281,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 281,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 282,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 282,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 283,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 284,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 284,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 286,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 286,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 288,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 290,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 292,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 315,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 317,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 319,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 319,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 320,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 320,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 321,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 323,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 370,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 371,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 372,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 373,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 374,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 375,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 376,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 377,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 377,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 378,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 379,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 379,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 380,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 381,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 381,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 383,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 384,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 385,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 385,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 386,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 387,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 387,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 388,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 389,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 390,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 392,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 394,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 396,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 398,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 399,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "AUX384"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "AUX96"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "CBRIDGE384"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "CBRIDGE96"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "DIST1"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "DIST1-FULL"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "EARLY-ALL"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "EARLY-MIX"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "MODEL-FULL"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "MODEL-GATE"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "MODEL-GATE-FULL"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "MODEL1"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "REUSE-SQ"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "SHARED384"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "SHARED96"
+    },
+    {
+      "K": 100,
+      "L": 401,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 401,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 402,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 403,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 405,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 407,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 409,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 411,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 420,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 421,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 422,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 423,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 424,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 425,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 426,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 428,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 428,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 430,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 431,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 432,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 433,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 435,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 459,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 461,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 462,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 463,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 464,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 466,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 466,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 468,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 468,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 469,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 470,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 470,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 471,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 472,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 473,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 474,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 476,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 477,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 478,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 479,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 480,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 481,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 485,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 487,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 489,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 512,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 512,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 540,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 542,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 544,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 547,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 549,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 551,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 577,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 579,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 581,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 584,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 586,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 588,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 588,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 590,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 591,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 592,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 593,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 595,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 595,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 597,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 599,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 601,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 640,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 640,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 800,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 800,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 1000,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 1000,
+      "method": "OPT-B32"
+    }
+  ],
+  "teacher_masks": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/storage/diagnosis/yandex_t2i_official10M_ip_v1/A/teacher_masks.i32",
+  "recovery_expected": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/storage/reboot_recovery/expected/yandex_t2i_official10M_ip_v1.A.json"
+}

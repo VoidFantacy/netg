@@ -1,0 +1,355 @@
+{
+  "formal_process_seconds_including_load_warmup_performance_oracles_and_diagnosis": 3583.471721241998,
+  "formal_batch_wall_seconds": 2684.4511178069956,
+  "mechanism_diagnosis_seconds": 224.23883362699996,
+  "auxiliary_oracle_seconds": 321.37802864400027,
+  "static_graph_preprocessing_seconds": 34.507730507000005,
+  "qualification_and_legacy_success_seconds": 347.70458625300023,
+  "failed_process_receipts": [
+    {
+      "argv": [
+        "/data/netg/ACSG/entry_method_exploration/20261028_seven_dataset_scoring_v1/storage/benchmark",
+        "qualification",
+        "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/configs/coco.legacy.json"
+      ],
+      "returncode": 2,
+      "seconds": 0.41421889599996575,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/reviews/coco.legacy.log"
+    }
+  ],
+  "failed_process_recorded_seconds": 0.41421889599996575,
+  "failed_build_attempt": {
+    "argv": [
+      "g++",
+      "-O3",
+      "-march=native",
+      "-std=c++17",
+      "-fopenmp",
+      "-rdynamic",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/benches",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+      "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/src/benchmark.cpp",
+      "/root/acsg-e172-storage-v2/campaign/common/acsg_current.o",
+      "build/ACSG/libACSG.a",
+      "build/MRNN_Descent/libmrnndescent.a",
+      "build/faiss/faiss/libfaiss.a",
+      "-lopenblas",
+      "-lz",
+      "-ldl",
+      "-lcrypto",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/benchmark"
+    ],
+    "returncode": 1,
+    "seconds": 3.4173888420000367
+  },
+  "source_chain": {
+    "status": "PASS_EXACT_SET_CONTAINMENT_AND_FIXED_SOURCE_CHAIN",
+    "rows": 42864,
+    "summary_rows": 84,
+    "seconds": 15.121913511999992,
+    "scope": "same new public windows; no new ANN, model, GT or performance"
+  },
+  "geometry": {
+    "status": "PASS_OFFLINE_GEOMETRY_PROXY_AND_DIRECT_DISTANCE_CHECKS",
+    "seconds": 68.54557172600016,
+    "background_seed": 19520261103,
+    "datasets": [
+      {
+        "dataset": "coco",
+        "nodes": 3964,
+        "background": 8192,
+        "roles": 3773,
+        "source": {
+          "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/base.f32",
+          "bytes": 242221056,
+          "mtime_ns": 1792117649215851029,
+          "inode": 9187782
+        }
+      },
+      {
+        "dataset": "flickr30k",
+        "nodes": 3455,
+        "background": 8192,
+        "roles": 3448,
+        "source": {
+          "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/flickr30k/prepared/base.f32",
+          "bytes": 65089536,
+          "mtime_ns": 1792117650527856091,
+          "inode": 9187803
+        }
+      },
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "nodes": 4294,
+        "background": 8192,
+        "roles": 4214,
+        "source": {
+          "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+          "bytes": 5140260000,
+          "mtime_ns": 1787713211996956145,
+          "inode": 15073301
+        }
+      },
+      {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "nodes": 4120,
+        "background": 8192,
+        "roles": 3708,
+        "source": {
+          "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+          "bytes": 8040000000,
+          "mtime_ns": 1787650857757488152,
+          "inode": 12851011
+        }
+      },
+      {
+        "dataset": "deep10m_l2_v1",
+        "nodes": 3816,
+        "background": 8192,
+        "roles": 3399,
+        "source": {
+          "path": "/data/netg/ACSG/benches/datasets/DEEP10M/base.10M.fvecs",
+          "bytes": 3880000000,
+          "mtime_ns": 1767184063000000000,
+          "inode": 8143779
+        }
+      },
+      {
+        "dataset": "sift10m_bigann_l2_v1",
+        "nodes": 3831,
+        "background": 8192,
+        "roles": 3291,
+        "source": {
+          "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/base.fvecs",
+          "bytes": 5160000000,
+          "mtime_ns": 1789445051160189042,
+          "inode": 8546547
+        }
+      },
+      {
+        "dataset": "gist1m_l2_v1",
+        "nodes": 4284,
+        "background": 8192,
+        "roles": 3824,
+        "source": {
+          "path": "/data/netg/ACSG/benches/datasets/GIST1M/gist_base.fvecs",
+          "bytes": 3844000000,
+          "mtime_ns": 1749285985000000000,
+          "inode": 8143769
+        }
+      }
+    ],
+    "raw_IP_task_metric_unchanged": true,
+    "no_new_performance": true,
+    "protocol_sha": "5dba71672e682c21a753de3fd859cd40352f5f54e286f48891e694642c66f51c"
+  },
+  "stdlib_audit": {
+    "status": "PASS_STDLIB_1260_POINTS_3780_HASH_WALL_INTEGER_AUDIT",
+    "points": 1260,
+    "formal_rounds": 3780,
+    "query_point_instances": 642960,
+    "formal_batch_wall_seconds": 2684.451117807,
+    "seconds": 13.240624444999412,
+    "imports": "stdlib only; no analyzer or numpy",
+    "same_executor_different_implementation": true
+  },
+  "process_observations": {
+    "scope": "five-second proc observations, not guaranteed exact exit peak",
+    "processes": [
+      {
+        "pid": 4002,
+        "command": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/benchmark formal /data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/configs/coco.A.json ",
+        "samples": 11,
+        "max_observed_VmHWM_kB": 358408,
+        "max_observed_threads": 1,
+        "affinities": [
+          "15"
+        ]
+      },
+      {
+        "pid": 4041,
+        "command": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/benchmark formal /data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/configs/coco.B.json ",
+        "samples": 31,
+        "max_observed_VmHWM_kB": 358524,
+        "max_observed_threads": 1,
+        "affinities": [
+          "15"
+        ]
+      },
+      {
+        "pid": 4090,
+        "command": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/benchmark formal /data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/configs/flickr30k.A.json ",
+        "samples": 36,
+        "max_observed_VmHWM_kB": 116844,
+        "max_observed_threads": 1,
+        "affinities": [
+          "15"
+        ]
+      },
+      {
+        "pid": 4137,
+        "command": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/benchmark formal /data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/configs/flickr30k.B.json ",
+        "samples": 35,
+        "max_observed_VmHWM_kB": 116884,
+        "max_observed_threads": 1,
+        "affinities": [
+          "15"
+        ]
+      },
+      {
+        "pid": 4644,
+        "command": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/benchmark formal /data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/configs/webvid2_5m_light_v1.A.json ",
+        "samples": 44,
+        "max_observed_VmHWM_kB": 7051952,
+        "max_observed_threads": 1,
+        "affinities": [
+          "15"
+        ]
+      },
+      {
+        "pid": 4983,
+        "command": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/benchmark formal /data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/configs/webvid2_5m_light_v1.B.json ",
+        "samples": 44,
+        "max_observed_VmHWM_kB": 7052012,
+        "max_observed_threads": 1,
+        "affinities": [
+          "15"
+        ]
+      },
+      {
+        "pid": 5113,
+        "command": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/benchmark formal /data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/configs/yandex_t2i_official10M_ip_v1.A.json ",
+        "samples": 51,
+        "max_observed_VmHWM_kB": 12745076,
+        "max_observed_threads": 1,
+        "affinities": [
+          "15"
+        ]
+      },
+      {
+        "pid": 5263,
+        "command": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/benchmark formal /data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/configs/yandex_t2i_official10M_ip_v1.B.json ",
+        "samples": 50,
+        "max_observed_VmHWM_kB": 12745168,
+        "max_observed_threads": 1,
+        "affinities": [
+          "15"
+        ]
+      },
+      {
+        "pid": 5406,
+        "command": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/benchmark formal /data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/configs/deep10m_l2_v1.A.json ",
+        "samples": 41,
+        "max_observed_VmHWM_kB": 7579440,
+        "max_observed_threads": 1,
+        "affinities": [
+          "15"
+        ]
+      },
+      {
+        "pid": 5515,
+        "command": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/benchmark formal /data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/configs/deep10m_l2_v1.B.json ",
+        "samples": 42,
+        "max_observed_VmHWM_kB": 7579592,
+        "max_observed_threads": 1,
+        "affinities": [
+          "15"
+        ]
+      },
+      {
+        "pid": 5627,
+        "command": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/benchmark formal /data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/configs/sift10m_bigann_l2_v1.A.json ",
+        "samples": 48,
+        "max_observed_VmHWM_kB": 9157240,
+        "max_observed_threads": 1,
+        "affinities": [
+          "15"
+        ]
+      },
+      {
+        "pid": 5780,
+        "command": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/benchmark formal /data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/configs/sift10m_bigann_l2_v1.B.json ",
+        "samples": 48,
+        "max_observed_VmHWM_kB": 9156824,
+        "max_observed_threads": 1,
+        "affinities": [
+          "15"
+        ]
+      },
+      {
+        "pid": 5905,
+        "command": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/benchmark formal /data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/configs/gist1m_l2_v1.A.json ",
+        "samples": 107,
+        "max_observed_VmHWM_kB": 5043008,
+        "max_observed_threads": 1,
+        "affinities": [
+          "15"
+        ]
+      },
+      {
+        "pid": 6249,
+        "command": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/benchmark formal /data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/configs/gist1m_l2_v1.B.json ",
+        "samples": 107,
+        "max_observed_VmHWM_kB": 5042948,
+        "max_observed_threads": 1,
+        "affinities": [
+          "15"
+        ]
+      }
+    ]
+  },
+  "resource_revision": {
+    "time": 1793511687.977824,
+    "revision": "storage-only allowance; frozen scientific matrix/source/models/roles unchanged",
+    "reason": "Lossless full auxiliary candidate events use more storage than the initial one-GiB estimate; retain all evidence and finish all precommitted datasets.",
+    "original_root_new_bytes": 1073741824,
+    "revised_root_new_bytes": 1610612736,
+    "data_new_bytes_cap": 125829120,
+    "root_free_reserve_bytes": 314572800,
+    "observed_own_storage_bytes": 647252298,
+    "observed_root_free": 1390772224,
+    "points_added": 0,
+    "old_files_removed": 0
+  },
+  "nested_costs_do_not_add": true,
+  "build": {
+    "argv": [
+      "g++",
+      "-O3",
+      "-march=native",
+      "-std=c++17",
+      "-fopenmp",
+      "-rdynamic",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/benches",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+      "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/src/benchmark.cpp",
+      "/root/acsg-e172-storage-v2/campaign/common/acsg_current.o",
+      "build/ACSG/libACSG.a",
+      "build/MRNN_Descent/libmrnndescent.a",
+      "build/faiss/faiss/libfaiss.a",
+      "-lopenblas",
+      "-lz",
+      "-ldl",
+      "-lcrypto",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/benchmark"
+    ],
+    "returncode": 0,
+    "seconds": 15.832477650999977
+  },
+  "analysis": {
+    "status": "PASS_ANALYSIS_AND_SECOND_IMPLEMENTATION_FULL_SORT",
+    "points": 1260,
+    "auxiliary_candidate_audit_points": 504,
+    "auxiliary_candidate_audit_queries": 257184,
+    "single_seed_probes": 10752,
+    "seconds": 81.42543165799998,
+    "GT_changed": false,
+    "scientific_old_files_changed": false
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "argv": [
+    "g++",
+    "-O3",
+    "-march=native",
+    "-std=c++17",
+    "-fopenmp",
+    "-rdynamic",
+    "-I/data/netg/ACSG",
+    "-I/data/netg/ACSG/benches",
+    "-I/data/netg/ACSG/faiss",
+    "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+    "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/src/recover_packets.cpp",
+    "/root/acsg-e172-storage-v2/campaign/common/acsg_current.o",
+    "build/ACSG/libACSG.a",
+    "build/MRNN_Descent/libmrnndescent.a",
+    "build/faiss/faiss/libfaiss.a",
+    "-lopenblas",
+    "-lz",
+    "-ldl",
+    "-lcrypto",
+    "-o",
+    "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/storage/recover_packets"
+  ],
+  "returncode": 0,
+  "seconds": 19.154369900999995,
+  "source_sha256": "7629e9d6461310d96ffad94685b7b357d2c8b48476a0afb1941a427a9dc451eb",
+  "inherited_exact_formal_source": {
+    "status": "DERIVED_ONLY_BY_RENAMING_MAIN",
+    "formal_source": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/src/benchmark.cpp",
+    "formal_source_sha256": "c5d9980f9fb5549dd6ab5048b8082aa3d945c3571cf7912b7af43cc8fcd0932f",
+    "audit_base": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/src/decision_base.inc",
+    "audit_base_sha256": "c1352a71b77d8e6409ea8139469568ff53a37f030c81a505c04cda57147b849f"
+  },
+  "binary_sha256": "6684d02100f9be5c7db916c0f3c550cd143ff6834b5013045b4861d980f8cdc7"
+}

@@ -1,0 +1,46 @@
+{
+  "status": "PASS_E190_SCORING_SECOND_IMPLEMENTATION",
+  "role": "formal",
+  "checks": [
+    {
+      "method": "REUSE-BLOCK",
+      "L": 400,
+      "sampled_queries": 32,
+      "all_query_pool_and_scan_parity": true,
+      "shortlist_threshold_checked": true,
+      "native_raw_IP_scores_checked": true
+    },
+    {
+      "method": "SQ8-96",
+      "L": 400,
+      "sampled_queries": 32,
+      "all_query_pool_and_scan_parity": true,
+      "shortlist_threshold_checked": true,
+      "native_raw_IP_scores_checked": true
+    }
+  ],
+  "coverage": [
+    {
+      "method": "REUSE-BLOCK",
+      "L": 400,
+      "missing_members": 17901,
+      "pool_covered": 6183,
+      "scanned_covered": 6073,
+      "shortlist_covered": 509,
+      "rescued": 509
+    },
+    {
+      "method": "SQ8-96",
+      "L": 400,
+      "missing_members": 17901,
+      "pool_covered": 6183,
+      "scanned_covered": 6073,
+      "shortlist_covered": 6073,
+      "rescued": 6073
+    }
+  ],
+  "SQ8_all_base_encode_max_code_difference": null,
+  "SQ8_all_base_encode_differing_components": null,
+  "scope": "same operator; NumPy float64 diagnostics and separate native oracle; no independent personnel",
+  "seconds": 1.2890830740002457
+}

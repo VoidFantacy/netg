@@ -1,0 +1,84 @@
+{
+  "experiment": "E200",
+  "datasets": [
+    "coco",
+    "flickr30k",
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "methods": [
+    "NSG",
+    "GT10",
+    "GT10+Residual",
+    "GATE"
+  ],
+  "K_L": {
+    "1": [
+      16,
+      24,
+      32,
+      48,
+      64,
+      80,
+      96,
+      128,
+      160,
+      200,
+      256,
+      320,
+      400,
+      512,
+      640,
+      800,
+      1000,
+      1200,
+      1400,
+      1600
+    ],
+    "100": [
+      100,
+      112,
+      128,
+      144,
+      160,
+      180,
+      200,
+      224,
+      256,
+      320,
+      400,
+      480,
+      576,
+      640,
+      800,
+      960,
+      1120,
+      1280,
+      1440,
+      1600
+    ]
+  },
+  "timing_repeats": 2,
+  "aggregation": "arithmetic mean of two per-round QPS; also report both walls, mean wall and pooled QPS",
+  "threads": 1,
+  "cpu": 15,
+  "warmup_n": 256,
+  "formal_points": 640,
+  "formal_batches": 1280,
+  "new_gate_training": [
+    "coco",
+    "flickr30k"
+  ],
+  "gate_roles": {
+    "train": "existing residual role rows [0,10000)",
+    "monitor": "existing residual role rows [10000,11024)",
+    "test": "existing full test role, never fitted"
+  },
+  "gate_max_epochs": 200,
+  "gate_patience": 20,
+  "gate_training_seed": 42,
+  "gate_training_threads": 16,
+  "storage_free_floor_GiB": 6,
+  "storage_new_budget_GiB": 6,
+  "default_change": false
+}

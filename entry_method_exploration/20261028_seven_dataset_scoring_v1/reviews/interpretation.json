@@ -1,0 +1,21 @@
+{
+  "status": "MEASURED_E191_INTERPRETATION",
+  "created_at": "2026-10-28T21:12:45.664942+00:00",
+  "conclusions": [
+    "结论是保留具体场景，暂不替换默认。七集真实K1/K100共989个计时点、2967轮完整T1测量，另有140资格点；覆盖较强共享观测的COCO/Flickr，也覆盖Deep/SIFT等弱覆盖情形。这里没有人为构造零共享因果组，新块表12K与旧B32的16K监督角色分别保留。",
+    "固定扫描下，SQ显著减少PQ筛选损失：K100/L200的COCO短名单覆盖2131→18747，WebVid为6320→22639。SQ保住99%以上扫描内遗漏，但不代表覆盖全部遗漏。Deep的168个短名单到返回损失均有相同向量的其他ID；严格GT-ID、并列规则和原metric均未改写。",
+    "弱覆盖场景确实能救回旧残差源外目标，但代价不能略去。Deep/SIFT在K100/L200分别救回913/808个成员，其中旧源外904/794；Recall仅增0.0913/0.0808pp，完整平均查询耗时增21.32%/18.63%，扫描仅覆盖原遗漏3.73%/4.42%。源外不等于从未受任何监督。",
+    "66个表面阳性经一次密集GT10控制，50个被覆盖、4个未过门、12个保留：COCO4、Flickr3、WebVid3、Deep1、GIST1。COCO的K1/SQ在L100/200/400有21.50%/32.64%/31.23%阈值速度优势；这是有限网格参照。Deep只多4个K1命中，GIST仅预算门通过，Flickr高Recall点也须看小计数。",
+    "再比较已有补全，12点中5点被覆盖：WebVid三点和COCO的K100/L800被B32覆盖，GIST点被PQ覆盖。其余7点未被已测方法覆盖，但B32仅有原四档L，尚无同样密集的费用匹配控制；不能宣称7点已经优于充分调节预算的B32，更不能称通用最佳。",
+    "严重失败修复有限。K100/L200的SQ使WebVid严格0–9命中查询53→40，Yandex为86→82；完整耗时分别增42.63%和81.94%。COCO虽Recall增1.8747pp，原1个严重失败仍未修复。MAIN-SQ有源外救回，但来源信息与访问量同时改变，不能当纯共享因果消融。",
+    "默认E99 GT10保持，本轮固定矩阵收口。后续先补已有B32密集费用控制，再用合法新查询/图确认；不自动追加实验。当前是一套图/画像、历史曝光测试，三轮只重复计时；无分段时间归因或总NDC。已复核的一处0.05pp浮点边界不改变选点及最终判断。"
+  ],
+  "source_sha256": {
+    "analysis/candidate_assessment.csv": "cd4831eeef56237c7f4ec6c95b612532cc3b3c5bfd3ea77af94a05b875d98766",
+    "analysis/all_paired.csv": "f4f3dcaaee8407e8274ced9d84ed553733483ad65fb6b510db24b25caf102690",
+    "analysis/all_coverage.csv": "6e7ffbd89e230dc91a9fb7e47392e562dce66dcb34bb368ce99f5b3001581166",
+    "analysis/merge_loss_summary.csv": "72cbba2ecef1c171c4896b409b0895bdf94f250244bab03dbc633867eab27fd7",
+    "reviews/screen_numerics_audit.json": "988d768fc4459caaec959bef0d9d63902ddd04debdb4699d47106b79ea15fd22"
+  },
+  "scope": "Current measured evidence; observational sharing; finite grids; no default replacement or new performance authorization"
+}

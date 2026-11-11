@@ -1,0 +1,46 @@
+{
+  "summary": [
+    {
+      "dataset": "coco",
+      "method": "OPT-B32",
+      "paired_points": 16,
+      "passes": 2,
+      "stable": 1,
+      "configs": 8,
+      "median_gain": 0.8690348571078865
+    },
+    {
+      "dataset": "coco",
+      "method": "OPT-SQ",
+      "paired_points": 12,
+      "passes": 0,
+      "stable": 0,
+      "configs": 6,
+      "median_gain": 0.21637245198476984
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "OPT-B32",
+      "paired_points": 16,
+      "passes": 2,
+      "stable": 1,
+      "configs": 8,
+      "median_gain": 0.6171653733201388
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "method": "OPT-SQ",
+      "paired_points": 12,
+      "passes": 0,
+      "stable": 0,
+      "configs": 6,
+      "median_gain": -0.10590700217391058
+    }
+  ],
+  "retained_configurations": [
+    "coco/OPT-B32/K100/L100",
+    "webvid2_5m_light_v1/OPT-B32/K100/L100"
+  ],
+  "decision": "保留2个跨窗口均通过的具体优化配置；其他配置保留原始效应，不默认推广。",
+  "default_changed": false
+}

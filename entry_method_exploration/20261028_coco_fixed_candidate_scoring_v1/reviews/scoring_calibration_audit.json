@@ -1,0 +1,114 @@
+{
+  "status": "PASS_E190_SCORING_SECOND_IMPLEMENTATION",
+  "role": "calibration",
+  "checks": [
+    {
+      "method": "REUSE-BLOCK",
+      "L": 100,
+      "sampled_queries": 32,
+      "all_query_pool_and_scan_parity": true,
+      "shortlist_threshold_checked": true,
+      "native_raw_IP_scores_checked": true
+    },
+    {
+      "method": "SQ8-96",
+      "L": 100,
+      "sampled_queries": 32,
+      "all_query_pool_and_scan_parity": true,
+      "shortlist_threshold_checked": true,
+      "native_raw_IP_scores_checked": true
+    },
+    {
+      "method": "REUSE-BLOCK",
+      "L": 200,
+      "sampled_queries": 32,
+      "all_query_pool_and_scan_parity": true,
+      "shortlist_threshold_checked": true,
+      "native_raw_IP_scores_checked": true
+    },
+    {
+      "method": "SQ8-96",
+      "L": 200,
+      "sampled_queries": 32,
+      "all_query_pool_and_scan_parity": true,
+      "shortlist_threshold_checked": true,
+      "native_raw_IP_scores_checked": true
+    },
+    {
+      "method": "REUSE-BLOCK",
+      "L": 400,
+      "sampled_queries": 32,
+      "all_query_pool_and_scan_parity": true,
+      "shortlist_threshold_checked": true,
+      "native_raw_IP_scores_checked": true
+    },
+    {
+      "method": "SQ8-96",
+      "L": 400,
+      "sampled_queries": 32,
+      "all_query_pool_and_scan_parity": true,
+      "shortlist_threshold_checked": true,
+      "native_raw_IP_scores_checked": true
+    }
+  ],
+  "coverage": [
+    {
+      "method": "REUSE-BLOCK",
+      "L": 100,
+      "missing_members": 43865,
+      "pool_covered": 20114,
+      "scanned_covered": 19971,
+      "shortlist_covered": 3147,
+      "rescued": 3147
+    },
+    {
+      "method": "SQ8-96",
+      "L": 100,
+      "missing_members": 43865,
+      "pool_covered": 20114,
+      "scanned_covered": 19971,
+      "shortlist_covered": 19971,
+      "rescued": 19971
+    },
+    {
+      "method": "REUSE-BLOCK",
+      "L": 200,
+      "missing_members": 19084,
+      "pool_covered": 7680,
+      "scanned_covered": 7599,
+      "shortlist_covered": 816,
+      "rescued": 816
+    },
+    {
+      "method": "SQ8-96",
+      "L": 200,
+      "missing_members": 19084,
+      "pool_covered": 7680,
+      "scanned_covered": 7599,
+      "shortlist_covered": 7599,
+      "rescued": 7599
+    },
+    {
+      "method": "REUSE-BLOCK",
+      "L": 400,
+      "missing_members": 7344,
+      "pool_covered": 2489,
+      "scanned_covered": 2433,
+      "shortlist_covered": 194,
+      "rescued": 194
+    },
+    {
+      "method": "SQ8-96",
+      "L": 400,
+      "missing_members": 7344,
+      "pool_covered": 2489,
+      "scanned_covered": 2433,
+      "shortlist_covered": 2433,
+      "rescued": 2433
+    }
+  ],
+  "SQ8_all_base_encode_max_code_difference": null,
+  "SQ8_all_base_encode_differing_components": null,
+  "scope": "same operator; NumPy float64 diagnostics and separate native oracle; no independent personnel",
+  "seconds": 1.9202966979999019
+}

@@ -1,0 +1,59 @@
+{
+  "status": "PASS_E188_ANALYSIS",
+  "role": "formal",
+  "points": 100,
+  "paired_points": 42,
+  "batches": 300,
+  "costs": [
+    {
+      "dataset": "coco",
+      "internal_wall_seconds": 950.7834644659999,
+      "suite_wall_seconds": 993.929265234,
+      "environment": {
+        "binding": {
+          "N": 118272,
+          "d": 512,
+          "full_embedded_base_audit": false,
+          "full_source_identity_authority": "external execution lock SHA256",
+          "metric_id": 0,
+          "sampled_embedded_base_rows": 256,
+          "sampled_words_equal": true,
+          "startup_seconds": 0.201595963
+        },
+        "block_backend_bytes": 5315784,
+        "cpu": 15,
+        "old_backend_bytes": 5468168,
+        "startup_seconds": 0.27773842,
+        "threads": 1,
+        "timer": "full Batch allocation/init + unchanged route/main + completion + six-array copy + destruction"
+      }
+    },
+    {
+      "dataset": "deep10m_l2_v1",
+      "internal_wall_seconds": 1174.0410779640001,
+      "suite_wall_seconds": 1290.593334694,
+      "environment": {
+        "binding": {
+          "N": 10000000,
+          "d": 96,
+          "full_embedded_base_audit": false,
+          "full_source_identity_authority": "external execution lock SHA256",
+          "metric_id": 1,
+          "sampled_embedded_base_rows": 256,
+          "sampled_words_equal": true,
+          "startup_seconds": 9.478416079
+        },
+        "block_backend_bytes": 243928280,
+        "cpu": 15,
+        "old_backend_bytes": 240499720,
+        "startup_seconds": 9.710091282,
+        "threads": 1,
+        "timer": "full Batch allocation/init + unchanged route/main + completion + six-array copy + destruction"
+      }
+    }
+  ],
+  "seconds": 11.965498814000966,
+  "quality_scope": "historically exposed queries; not blind",
+  "bootstrap": "5000 paired draws, descriptive percentile95, no multiplicity adjustment",
+  "B32_counts": "unmeasured in native stats; reconstructed separately"
+}

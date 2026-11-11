@@ -1,0 +1,76 @@
+[
+  {
+    "dataset": "coco",
+    "stage": "features",
+    "command": [
+      "/data/netg/ACSG/.venv_cpu/bin/python",
+      "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/scripts/prepare_gate.py",
+      "coco"
+    ],
+    "exit_code": 0,
+    "seconds": 50.36155462265015,
+    "log": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/logs/coco_features.log"
+  },
+  {
+    "dataset": "coco",
+    "stage": "labels",
+    "command": [
+      "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/bin/labels",
+      "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/inputs/coco",
+      "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/inputs/coco/labels"
+    ],
+    "exit_code": 0,
+    "seconds": 93.59643697738647,
+    "log": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/logs/coco_labels.log"
+  },
+  {
+    "dataset": "coco",
+    "stage": "train",
+    "command": [
+      "/data/netg/ACSG/.venv_cpu/bin/python",
+      "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/src/train_gate.py",
+      "coco"
+    ],
+    "exit_code": 0,
+    "seconds": 949.3610124588013,
+    "log": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/logs/coco_train.log"
+  },
+  {
+    "dataset": "flickr30k",
+    "stage": "features",
+    "command": [
+      "/data/netg/ACSG/.venv_cpu/bin/python",
+      "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/scripts/prepare_gate.py",
+      "flickr30k"
+    ],
+    "exit_code": 0,
+    "seconds": 33.89531922340393,
+    "log": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/logs/flickr30k_features.log"
+  },
+  {
+    "dataset": "flickr30k",
+    "stage": "labels",
+    "command": [
+      "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/bin/labels",
+      "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/inputs/flickr30k",
+      "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/inputs/flickr30k/labels"
+    ],
+    "exit_code": 0,
+    "seconds": 111.48391270637512,
+    "log": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/logs/flickr30k_labels.log"
+  },
+  {
+    "dataset": "flickr30k",
+    "stage": "train_resume_boot1",
+    "command": [
+      "/data/netg/ACSG/.venv_cpu/bin/python",
+      "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/src/train_gate.py",
+      "flickr30k"
+    ],
+    "exit_code": 0,
+    "seconds": 599.0033020973206,
+    "log": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/logs/flickr30k_train_resume_boot1.log",
+    "earlier_committed_training_seconds_lower_bound": 241.47061562538147,
+    "lost_partial_epoch_cost_unknown": true
+  }
+]

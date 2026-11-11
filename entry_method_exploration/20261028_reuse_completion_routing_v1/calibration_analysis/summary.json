@@ -1,0 +1,61 @@
+{
+  "status": "PASS_E189_ANALYSIS",
+  "role": "calibration",
+  "points": 64,
+  "paired_points": 24,
+  "batches": 192,
+  "costs": [
+    {
+      "dataset": "coco",
+      "internal_wall_seconds": 244.478451941,
+      "suite_wall_seconds": 258.351591561,
+      "environment": {
+        "binding": {
+          "N": 118272,
+          "d": 512,
+          "full_embedded_base_audit": false,
+          "full_source_identity_authority": "external execution lock SHA256",
+          "metric_id": 0,
+          "sampled_embedded_base_rows": 256,
+          "sampled_words_equal": true,
+          "startup_seconds": 0.19658937
+        },
+        "block_backend_bytes": 5315784,
+        "cpu": 15,
+        "old_backend_bytes": 5468168,
+        "reuse_array_bytes": 525248,
+        "startup_seconds": 0.235292605,
+        "threads": 1,
+        "timer": "full Batch allocation/init + unchanged route/main + completion + six-array copy + destruction"
+      }
+    },
+    {
+      "dataset": "deep10m_l2_v1",
+      "internal_wall_seconds": 292.96806324599993,
+      "suite_wall_seconds": 318.971844587,
+      "environment": {
+        "binding": {
+          "N": 10000000,
+          "d": 96,
+          "full_embedded_base_audit": false,
+          "full_source_identity_authority": "external execution lock SHA256",
+          "metric_id": 1,
+          "sampled_embedded_base_rows": 256,
+          "sampled_words_equal": true,
+          "startup_seconds": 9.157003833
+        },
+        "block_backend_bytes": 243928280,
+        "cpu": 15,
+        "old_backend_bytes": 240499720,
+        "reuse_array_bytes": 40051200,
+        "startup_seconds": 9.399219185,
+        "threads": 1,
+        "timer": "full Batch allocation/init + unchanged route/main + completion + six-array copy + destruction"
+      }
+    }
+  ],
+  "seconds": 3.097676011999283,
+  "quality_scope": "historically exposed queries; not blind",
+  "bootstrap": "5000 paired draws, descriptive percentile95, no multiplicity adjustment",
+  "B32_counts": "unmeasured in native stats; reconstructed separately"
+}

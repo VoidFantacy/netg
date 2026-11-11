@@ -1,0 +1,38 @@
+{
+  "status": "PASS_ALL_AUTHORIZED_REQUIREMENTS",
+  "completed_at": "2026-11-10T20:34:30.039740+08:00",
+  "requirements": [
+    {
+      "requirement": "Four multimodal datasets, NSG/GT10/direct residual/external GATE, true K1/K100, 20 fixed budgets each",
+      "evidence": "config.locked.json + independent_audit.json: all 640 point keys and 1280 rounds verified"
+    },
+    {
+      "requirement": "Exactly two formal runs averaged, same full single-thread timing conditions",
+      "evidence": "rounds.csv + per-point results + independent audit: 1280 actual CPU15/T1 rounds; arithmetic and pooled QPS verified"
+    },
+    {
+      "requirement": "Frozen inputs and faithful method implementation, legal training/test roles",
+      "evidence": "qualification.json 64 points, 48 E183 and 16 legacy GATE comparisons; model/role/label gates and all 101 frozen SHA verified"
+    },
+    {
+      "requirement": "Actual returned IDs and complete cost, all points preserved",
+      "evidence": "Eight native complete.json receipts; independent full GT intersections, paired events, 2560 archived payloads, complete walls and both-round SHA"
+    },
+    {
+      "requirement": "Full curves and interpretable comparison with limitations and cost",
+      "evidence": "report_review.json + visual_review.json: actual PNG viewing, 32 curves with 20 markers, 96 threshold cells, negative cases, losses, severe counts and costs checked"
+    },
+    {
+      "requirement": "Document roles, snapshots and historical/default boundaries preserved",
+      "evidence": "document_sync.json nine documents; delivery audit 427 links, source snapshots and old code identities verified; default unchanged"
+    },
+    {
+      "requirement": "No unsolicited PDF, storage limits met, no remaining live work",
+      "evidence": "delivery_validation.json no PDF, allocated 3992821760 bytes under 6GiB, free-space floor passed; process inspection found no active experiment processes"
+    }
+  ],
+  "remaining_required_work": [],
+  "delivery_validation_sha256": "26296b00035782b304444be3987bbba073c5d5544d384fd1f93ee0579b039072",
+  "state_sha256": "4be1f92c8c1a5171af0f8ebe7b555482026e3e9a5bf79c3a97e006c44fdc4f24",
+  "pipeline_sha256": "93c1a23f6cdf063614bf35a1fe354fcfe5264f44d9de69f779e54ca7fdc9887f"
+}

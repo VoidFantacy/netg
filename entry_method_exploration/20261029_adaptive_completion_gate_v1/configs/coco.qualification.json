@@ -1,0 +1,143 @@
+{
+  "dataset": "coco",
+  "base": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/base.f32",
+    "format": "raw_f32",
+    "n": 118272,
+    "d": 512
+  },
+  "index": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/nsg.index",
+  "metric_id": 0,
+  "router": {
+    "name": "hard",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/ids.i32",
+    "W": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/router.hnsw",
+    "route_order": "heap_pop"
+  },
+  "queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261029_adaptive_completion_gate_v1/storage/inputs/coco/test.f32",
+    "format": "raw_f32",
+    "n": 128,
+    "d": 512
+  },
+  "test_gt": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261029_adaptive_completion_gate_v1/storage/inputs/coco/test.gt.i32",
+    "format": "raw_i32",
+    "n": 2048,
+    "k": 100
+  },
+  "train_queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/residual.f32",
+    "format": "raw_f32",
+    "n": 16000,
+    "d": 512
+  },
+  "train_gt": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/exact/residual.gt100.i64",
+    "format": "raw_i64",
+    "n": 16000,
+    "k": 100
+  },
+  "teacher_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/coco/teacher/hard",
+  "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/coco/compiled/hard/tables/JOINT32.bin",
+  "source_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/coco/compiled/hard/source",
+  "models": "/root/acsg-e191-storage/models/coco",
+  "output_dir": "/data/netg/ACSG/entry_method_exploration/20261029_adaptive_completion_gate_v1/storage/qualification/coco",
+  "threads": 1,
+  "cpu": 15,
+  "K_L": {
+    "1": [
+      32,
+      64,
+      100,
+      128,
+      160,
+      200,
+      256,
+      320,
+      400,
+      480,
+      512,
+      528,
+      544,
+      640,
+      800,
+      1024,
+      1200
+    ],
+    "100": [
+      100,
+      128,
+      160,
+      200,
+      256,
+      320,
+      400,
+      480,
+      512,
+      528,
+      544,
+      640,
+      800,
+      1024,
+      1200
+    ]
+  },
+  "completion_L": {
+    "1": [
+      32,
+      100,
+      200,
+      400
+    ],
+    "100": [
+      100,
+      200,
+      400,
+      800
+    ]
+  },
+  "methods": [
+    "GT10",
+    "B32",
+    "REUSE-PQ",
+    "REUSE-SQ",
+    "MAIN-SQ"
+  ],
+  "timing_repeats": 3,
+  "warmup_n": 256,
+  "PQ_M": 16,
+  "training_role_scope": "Residual training role disjoint from profile-fit and test by image/caption connected identity groups.",
+  "family": "hard",
+  "existing_blocks": "/data/netg/ACSG/entry_method_exploration/20261028_completion_cost_budget_v1/models/coco",
+  "existing_backend": "/data/netg/ACSG/entry_method_exploration/20261028_adaptive_completion_pilot_v1/models/coco",
+  "existing_reuse": "/data/netg/ACSG/entry_method_exploration/20261028_reuse_completion_routing_v1/models/coco",
+  "existing_sq8": "/data/netg/ACSG/entry_method_exploration/20261028_coco_fixed_candidate_scoring_v1/models",
+  "Ks": [
+    1,
+    100
+  ],
+  "GT_L": [
+    200,
+    202,
+    204,
+    208,
+    216,
+    232,
+    256,
+    272,
+    288,
+    304,
+    320,
+    400
+  ],
+  "gate_models": {
+    "1": "/data/netg/ACSG/entry_method_exploration/20261029_adaptive_completion_gate_v1/storage/gates/coco/k1.json",
+    "100": "/data/netg/ACSG/entry_method_exploration/20261029_adaptive_completion_gate_v1/storage/gates/coco/k100.json"
+  },
+  "oracle_masks": {
+    "1": "/data/netg/ACSG/entry_method_exploration/20261029_adaptive_completion_gate_v1/storage/oracle/coco/k1.u8",
+    "100": "/data/netg/ACSG/entry_method_exploration/20261029_adaptive_completion_gate_v1/storage/oracle/coco/k100.u8"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "formal_process_seconds_including_load_warmup_and_oracles": 2020.8311817190006,
+  "native_outer_seconds": 2018.7436554449998,
+  "formal_batch_wall_seconds": 1493.392787272999,
+  "analysis_seconds": 23.047927976999745,
+  "new_training": false,
+  "new_GT": false,
+  "old_training_debt_unchanged": true,
+  "nested_costs_not_additive": true,
+  "build": {
+    "argv": [
+      "g++",
+      "-O3",
+      "-march=native",
+      "-std=c++17",
+      "-fopenmp",
+      "-rdynamic",
+      "-I/data/netg/ACSG",
+      "-I/data/netg/ACSG/benches",
+      "-I/data/netg/ACSG/faiss",
+      "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+      "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_cost_controls_v1/src/benchmark.cpp",
+      "/root/acsg-e172-storage-v2/campaign/common/acsg_current.o",
+      "build/ACSG/libACSG.a",
+      "build/MRNN_Descent/libmrnndescent.a",
+      "build/faiss/faiss/libfaiss.a",
+      "-lopenblas",
+      "-lz",
+      "-ldl",
+      "-lcrypto",
+      "-o",
+      "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_cost_controls_v1/storage/benchmark"
+    ],
+    "returncode": 0,
+    "seconds": 16.386010336000254
+  },
+  "E195_cost_ledger": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/analysis/cost_ledger.json"
+}

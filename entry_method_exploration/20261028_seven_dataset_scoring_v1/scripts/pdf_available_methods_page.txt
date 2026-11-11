@@ -1,0 +1,10 @@
+        fig=doc.page('相对GT10有价值，是否也超过已有补全？','所有比较限于同窗口、同K的实际已测点；中位QPS覆盖与三轮范围另行保留')
+        assessment=rows(R/'analysis/candidate_assessment.csv');data=[]
+        for ds in DS:
+            a=[x for x in assessment if x['dataset']==ds and x['decision']=='RETAIN_EXPLORATORY']
+            data.append([LABEL[ds],len(a),sum(bool(x['existing_B32_dominating_L']) for x in a),sum(bool(x['existing_PQ_dominating_L']) for x in a),sum(x['median_nondominated_in_available_grid']=='True' for x in a)])
+        table(fig,['数据','GT10探索门保留','其中被B32覆盖','其中被PQ覆盖','未被任何已测方法覆盖'],data,(.045,.43,.91,.4),8.7)
+        notes(fig,['GT10探索门保留只说明相对默认参照有局部研究价值；若旧B32或PQ已以更高/相同Recall及中位QPS覆盖它，则尚无优于已有补全的证据。B32/PQ覆盖列可重叠。',
+            '全部候选仍按原GT10筛选结论保留，不修改原门或新增测试点。本表是已有实测结果的进一步说明；有限网格未覆盖不等于已证明全局最佳。',
+            'B32沿旧16K训练表，新块表12K；它是可用参考，训练量没有配平。中位QPS覆盖不等于统计显著损伤，三轮不重叠控制另列CSV。'],y=.37,size=10)
+        doc.save(fig)

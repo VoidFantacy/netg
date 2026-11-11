@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "g++",
+    "-O3",
+    "-march=native",
+    "-std=c++17",
+    "-fopenmp",
+    "-rdynamic",
+    "-I/data/netg/ACSG",
+    "-I/data/netg/ACSG/benches",
+    "-I/data/netg/ACSG/faiss",
+    "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+    "/data/netg/ACSG/entry_method_exploration/20261028_reuse_completion_routing_v1/src/reuse.cpp",
+    "/root/acsg-e172-storage-v2/campaign/common/acsg_current.o",
+    "build/ACSG/libACSG.a",
+    "build/MRNN_Descent/libmrnndescent.a",
+    "build/faiss/faiss/libfaiss.a",
+    "-lopenblas",
+    "-lz",
+    "-ldl",
+    "-lcrypto",
+    "-o",
+    "/data/netg/ACSG/entry_method_exploration/20261028_reuse_completion_routing_v1/bin/reuse"
+  ],
+  "returncode": 0,
+  "seconds": 13.438929464999092,
+  "snapshot_source": "/data/netg/ACSG/entry_method_exploration/20261028_completion_cost_budget_v1/src/cost_budget.cpp",
+  "snapshot_source_sha256": "ce84448391af3b4ef942c74d4acb9dfec5729925952e764c383f78d8949754dd",
+  "snapshot_edit": "rename main only"
+}

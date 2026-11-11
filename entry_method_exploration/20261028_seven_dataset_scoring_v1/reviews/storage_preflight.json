@@ -1,0 +1,119 @@
+{
+  "status": "NEEDS_OWN_NEW_PACKET_LOSSLESS_ARCHIVE",
+  "free_bytes": 1714786304,
+  "reserve_bytes": 751619276,
+  "predicted_final_bytes": 2239861113,
+  "predicted_peak_extra_bytes": 2285254308,
+  "predicted_free_at_peak": -570468004,
+  "datasets": [
+    {
+      "dataset": "coco",
+      "points": 113,
+      "batches": 339,
+      "actual_raw_packet_bytes": 487600000,
+      "trace_gzip_bytes_predicted": 77370702,
+      "trace_uncompressed_bytes": 153600000,
+      "access_bytes": 9600000,
+      "metadata_allowance_bytes": 2899968,
+      "final_bytes_predicted": 577470670
+    },
+    {
+      "dataset": "deep10m_l2_v1",
+      "points": 66,
+      "batches": 198,
+      "actual_raw_packet_bytes": 369600000,
+      "trace_gzip_bytes_predicted": 75383522,
+      "trace_uncompressed_bytes": 115200000,
+      "access_bytes": 7200000,
+      "metadata_allowance_bytes": 2129920,
+      "final_bytes_predicted": 454313442
+    },
+    {
+      "dataset": "flickr30k",
+      "points": 85,
+      "batches": 255,
+      "actual_raw_packet_bytes": 144280000,
+      "trace_gzip_bytes_predicted": 30909352,
+      "trace_uncompressed_bytes": 67200000,
+      "access_bytes": 4200000,
+      "metadata_allowance_bytes": 2441216,
+      "final_bytes_predicted": 181830568
+    },
+    {
+      "dataset": "gist1m_l2_v1",
+      "points": 88,
+      "batches": 264,
+      "actual_raw_packet_bytes": 37664000,
+      "trace_gzip_bytes_predicted": 9185039,
+      "trace_uncompressed_bytes": 15360000,
+      "access_bytes": 960000,
+      "metadata_allowance_bytes": 2490368,
+      "final_bytes_predicted": 50299407
+    },
+    {
+      "dataset": "sift10m_bigann_l2_v1",
+      "points": 55,
+      "batches": 165,
+      "actual_raw_packet_bytes": 366080000,
+      "trace_gzip_bytes_predicted": 63447190,
+      "trace_uncompressed_bytes": 96000000,
+      "access_bytes": 6000000,
+      "metadata_allowance_bytes": 1949696,
+      "final_bytes_predicted": 437476886
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "points": 90,
+      "batches": 270,
+      "actual_raw_packet_bytes": 290160000,
+      "trace_gzip_bytes_predicted": 81433511,
+      "trace_uncompressed_bytes": 134400000,
+      "access_bytes": 8400000,
+      "metadata_allowance_bytes": 2523136,
+      "final_bytes_predicted": 382516647
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "points": 44,
+      "batches": 132,
+      "actual_raw_packet_bytes": 101200000,
+      "trace_gzip_bytes_predicted": 48184021,
+      "trace_uncompressed_bytes": 76800000,
+      "access_bytes": 4800000,
+      "metadata_allowance_bytes": 1769472,
+      "final_bytes_predicted": 155953493
+    }
+  ],
+  "files": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261028_seven_dataset_scoring_v1/configs/coco.dense.json",
+      "sha256": "2e84177a8e79836ca276e042891e481fac10128248cf87ef407f6d006148fd72"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261028_seven_dataset_scoring_v1/configs/deep10m_l2_v1.dense.json",
+      "sha256": "fd21d715031fda406c1b9c9475ccf4bd68615e048d2ebde6513b44b9218fcdac"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261028_seven_dataset_scoring_v1/configs/flickr30k.dense.json",
+      "sha256": "3d9dc0c87d0bdbdd190e90718ca29fe5eab32010328324303f8154ac12f260aa"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261028_seven_dataset_scoring_v1/configs/gist1m_l2_v1.dense.json",
+      "sha256": "66eb6ecc110da69516e03a53897aa15208e1f6a8503cb60542bad2c0f468533b"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261028_seven_dataset_scoring_v1/configs/sift10m_bigann_l2_v1.dense.json",
+      "sha256": "ad3c447b78bcc6b8d431575ba798f767c41c5580c5a76b3cfaf92acefdecfd15"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261028_seven_dataset_scoring_v1/configs/webvid2_5m_light_v1.dense.json",
+      "sha256": "3c68c3e1104ff7fb6f449f246a6ebeecf834d10ab2a5eb21c87fe79ae5dc4d61"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261028_seven_dataset_scoring_v1/configs/yandex_t2i_official10M_ip_v1.dense.json",
+      "sha256": "6203d899904ac2d6c34bca327c6b74072080e69b8bfc1eaed7278c3de28379d6"
+    }
+  ],
+  "assumptions": "Dense completion points repeat original K/L/models, so trace compressed sizes use original actual traces; metadata and transient gzip buffers are conservative. No models, configs, points or old evidence changed.",
+  "seconds": 0.001691430003120331
+}

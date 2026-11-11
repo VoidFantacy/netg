@@ -1,0 +1,30 @@
+{
+  "status": "MEASURED_AND_PROVEN_E192_INTERPRETATION",
+  "created_at": "2026-10-29T02:55:57.231411+00:00",
+  "principal_conclusion": "Fixed candidate support is necessary. At current measured cost even perfect selection in the Deep/SIFT frozen pool is dominated by GT10. Universal no-ID-sharing implies every completion is useless is false.",
+  "conclusions": [
+    "能严格证明的是候选支持集必要条件：F⊆R∪C时，新增正确成员只能来自(G\\R)∩C；交集为零，净召回增量≤0。对固定训练遗漏ID源S，任何只从S取点的补全都受源覆盖上界约束。Deep/SIFT在K100/L200即使无限放大原表容量、不损失任何可覆盖成员，Recall增量也最多0.0195/0.0140pp。该结论不需要假设查询相似，但只约束固定源和固定主返回。",
+    "新受控实验表明训练块表与入口的对应关系确实提供质量信号：保留所有表行及其全局块频次、每hub行长、主搜索和2048/96上限，仅随机重配表行后，正常SQ比预定打乱SQ在COCO多救回9125个成员(+0.9125pp)，Deep仅150个(+0.0150pp)，SIFT仅109个(+0.0109pp)。这是各固定工作负载上的表对应关系干预效应，不是跨数据共享程度唯一因果归因。",
+    "七集32次冻结重配均给出一致的池覆盖方向：K100/L200正常池覆盖在每集都高于32次重配最大值。Deep为1091 vs重配均值943.5[940,952]，SIFT为816 vs709.25[705,716]；COCO为18932 vs9651.66[9402,9931]。所以低ID共享也不等于完全没有块级可迁移信号；主要问题是其绝对覆盖和可支付收益太小。32次重配不是32个独立测试集。",
+    "对Deep得到比实测未过门更强的排除证据：当前正常候选池即使免费完美救回全部1091个遗漏，Recall上限也只有97.1871%。同窗口GT10/L216达到97.3854%、1594.09 QPS，而当前SQ为1405.49 QPS、完整平均耗时相对L200 GT10增加22.05%。GT10三轮最慢1582.43仍快于SQ最快1413.56。在当前费用水平、候选池不变的前提下，仅改排序无法超过这个控制。",
+    "SIFT有同样的证据：当前池理想Recall上限98.2348%，GT10/L216为98.3963%、1327.80 QPS，当前SQ为1206.46 QPS、完整平均耗时增加18.14%；GT10最慢1326.23仍快于SQ最快1207.79。这两集即便忽略扫描、96容量、量化和合并损失，当前池在当前完整费用下仍被覆盖。未来若实质降费、改变候选源或主搜索，必须重新评估，本证据不是未来实现的运行时间下界。",
+    "普遍形式的“不共享目标ID就所有补全无用”不成立。实际E191包中，整个旧16K残差ID源对本次遗漏覆盖为零的查询，Deep/SIFT的块SQ仍分别救回853/773个成员、改善757/712条query，损伤为0。固定512样本里，最近训练query GT100重合为零时也仍有救回；这只针对选定最近query。块法可访问训练未遗漏的ID，身份共享不是必要条件，但这些救回没有证明费用划算。可执行一维L2反例及53条实际返回反例记录分别保留，反例记录不当成去重query数。",
+    "因此，能够落下的实践判断是：Deep/SIFT当前块源、预算与完整费用下，仅继续改善池内评分不够，后继需先扩大廉价候选支持或实质降费。不能据此宣布数据集永久无用、所有不共享场景不可做，或否定GT10主搜索。COCO本轮较粗控制网格未覆盖不代表新胜出，也不推翻E191密集对照；默认不变。新三集K100 39点/117T1、资格36点及七集两K32重配固定范围收口，公开test历史曝光、一套图/画像，无新盲确认。"
+  ],
+  "source_sha256": {
+    "analysis/support_bounds.csv": "3d9d7bf78cc5f42b2565ac728d792ee0160d95a981537a394089cce79635d805",
+    "analysis/permutation_pool.csv": "022765ceebb38c614702f009c97b1bfb18470ecde6d87feaa297ff30d8c87b8e",
+    "analysis/zero_source_strata.csv": "f94e5f5927df1742d9b918127f538a38d92ccfe345838528dd19289f8002bdc5",
+    "analysis/nearest_query_strata.csv": "53fc163a28206173f560ce071b50e10c5ade5539d668ed7f487bacb0cc1c0101",
+    "analysis/actual_counterexamples.json": "154f3640b91c3a7055c2b68942e4edb9c3c2453123203d19c66411cf4844b274",
+    "analysis/coco/points.csv": "73e83690e2c1ebe95aca5825e799fd999b4d53309613e03fed501a4e31829c15",
+    "analysis/coco/coverage.csv": "ecbe3d5309303ee49c28e9aef6afe0304238a6e64d28d3e90be3f4d963985c32",
+    "analysis/coco/intervention.json": "83f29be9c2ff0113e9e53cff37f18a49b7dfa35e4f33d444e789a6433350c220",
+    "analysis/deep10m_l2_v1/points.csv": "13b02859c5c052cb34f5195db830983e2bdf2aa874f9b90b064b30e979ddbd83",
+    "analysis/deep10m_l2_v1/coverage.csv": "6705903e776524aefc36beede10aa35c88df3773d9bd84d9f5fe7e08dfa2b739",
+    "analysis/deep10m_l2_v1/intervention.json": "00ed1ef44e5bf39030b7fa18547ebd8301b87ba9ad25d9d741b107bdd4b7c022",
+    "analysis/sift10m_bigann_l2_v1/points.csv": "b6a678bdaa890ec4a711d08f8e610c665cc61fd22924bc7dbeb21183318bf576",
+    "analysis/sift10m_bigann_l2_v1/coverage.csv": "e1221342528be2f303ea8dc9dab79a0318b920042d754114f15797e799abb346",
+    "analysis/sift10m_bigann_l2_v1/intervention.json": "d7ce4e6b4d9772f709f90ea06dbe7dba39a2d09d4fa6ab6fb79997a839a79ce6"
+  }
+}

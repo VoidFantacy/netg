@@ -1,0 +1,70 @@
+{
+  "backend": "/data/netg/ACSG/entry_method_exploration/20261028_adaptive_completion_pilot_v1/models/coco",
+  "base": {
+    "d": 512,
+    "format": "raw_f32",
+    "n": 118272,
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/base.f32"
+  },
+  "blocks": "/data/netg/ACSG/entry_method_exploration/20261028_completion_cost_budget_v1/models/coco",
+  "completion_L": [
+    100,
+    200,
+    400
+  ],
+  "cpu": 15,
+  "dataset": "coco",
+  "index": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/nsg.index",
+  "main_L": [
+    100,
+    200,
+    400
+  ],
+  "methods": [
+    "GT10",
+    "B32",
+    "BLOCK-R2048",
+    "REUSE-REG",
+    "REUSE-BLOCK",
+    "MAIN-BLOCK"
+  ],
+  "metric_id": 0,
+  "output_dir": "/data/netg/ACSG/entry_method_exploration/20261028_reuse_completion_routing_v1/reviews/qualification_coco",
+  "queries": {
+    "d": 512,
+    "format": "raw_f32",
+    "n": 128,
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/test.f32"
+  },
+  "reuse": "/data/netg/ACSG/entry_method_exploration/20261028_reuse_completion_routing_v1/models/coco",
+  "router": {
+    "W": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/router.hnsw",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/ids.i32",
+    "name": "hard",
+    "route_order": "heap_pop"
+  },
+  "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/coco/compiled/hard/tables/JOINT32.bin",
+  "teacher_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/coco/teacher/hard",
+  "test_gt": {
+    "format": "raw_i64",
+    "k": 100,
+    "n": 10000,
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/eval_gt/test.gt100.i64"
+  },
+  "threads": 1,
+  "timing_repeats": 3,
+  "train_gt": {
+    "format": "raw_i64",
+    "k": 100,
+    "n": 16000,
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/exact/residual.gt100.i64"
+  },
+  "train_queries": {
+    "d": 512,
+    "format": "raw_f32",
+    "n": 16000,
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/residual.f32"
+  },
+  "warmup_n": 256
+}

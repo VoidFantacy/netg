@@ -1,0 +1,1344 @@
+{
+  "status": "PASS_REPORT_DERIVATIONS_FROM_AUDITED_DATA",
+  "scope": "Descriptive measured-grid comparisons, not statistical significance or global optimality; member losses retain original GT and actual float32 scores",
+  "groups": [
+    {
+      "dataset": "coco",
+      "K": 1,
+      "residual_delta_pp_min": 0.020000000000010232,
+      "residual_delta_pp_max": 6.429999999999993,
+      "residual_time_increase_pct_min": 0.5611931455057562,
+      "residual_time_increase_pct_max": 20.666159726928,
+      "residual_lost_member_events_across_L": 0,
+      "other_method_covered_points": {
+        "NSG": 20,
+        "GT10": 19,
+        "GT10+Residual": 0,
+        "GATE": 20
+      },
+      "L200": [
+        {
+          "method": "NSG",
+          "recall_percent": "98.02",
+          "qps_mean": "2415.11354013481",
+          "mean_query_us": "414.05922104999996",
+          "severe_queries": ""
+        },
+        {
+          "method": "GT10",
+          "recall_percent": "98.08",
+          "qps_mean": "2505.2916486672266",
+          "mean_query_us": "399.15512485",
+          "severe_queries": ""
+        },
+        {
+          "method": "GT10+Residual",
+          "recall_percent": "99.11999999999999",
+          "qps_mean": "2423.64237692419",
+          "mean_query_us": "412.60226190000003",
+          "severe_queries": ""
+        },
+        {
+          "method": "GATE",
+          "recall_percent": "97.92999999999999",
+          "qps_mean": "2425.4761774321364",
+          "mean_query_us": "412.29020865",
+          "severe_queries": ""
+        }
+      ]
+    },
+    {
+      "dataset": "coco",
+      "K": 100,
+      "residual_delta_pp_min": 0.047100000000000364,
+      "residual_delta_pp_max": 2.559899999999999,
+      "residual_time_increase_pct_min": 0.40534660799063094,
+      "residual_time_increase_pct_max": 8.090919946676856,
+      "residual_lost_member_events_across_L": 1,
+      "other_method_covered_points": {
+        "NSG": 19,
+        "GT10": 19,
+        "GT10+Residual": 0,
+        "GATE": 20
+      },
+      "L200": [
+        {
+          "method": "NSG",
+          "recall_percent": "95.3747",
+          "qps_mean": "2413.8437676457693",
+          "mean_query_us": "414.2772543",
+          "severe_queries": "0"
+        },
+        {
+          "method": "GT10",
+          "recall_percent": "95.3444",
+          "qps_mean": "2500.3477183183068",
+          "mean_query_us": "399.94437869999996",
+          "severe_queries": "1"
+        },
+        {
+          "method": "GT10+Residual",
+          "recall_percent": "96.7159",
+          "qps_mean": "2397.120239460649",
+          "mean_query_us": "417.16732714999995",
+          "severe_queries": "1"
+        },
+        {
+          "method": "GATE",
+          "recall_percent": "95.33970000000001",
+          "qps_mean": "2422.8747565407884",
+          "mean_query_us": "412.7330398",
+          "severe_queries": "0"
+        }
+      ]
+    },
+    {
+      "dataset": "flickr30k",
+      "K": 1,
+      "residual_delta_pp_min": 0.01999999999999602,
+      "residual_delta_pp_max": 1.4200000000000017,
+      "residual_time_increase_pct_min": 0.44191305581189333,
+      "residual_time_increase_pct_max": 15.688200286454702,
+      "residual_lost_member_events_across_L": 0,
+      "other_method_covered_points": {
+        "NSG": 17,
+        "GT10": 11,
+        "GT10+Residual": 0,
+        "GATE": 20
+      },
+      "L200": [
+        {
+          "method": "NSG",
+          "recall_percent": "99.72",
+          "qps_mean": "2525.630512628086",
+          "mean_query_us": "395.940769",
+          "severe_queries": ""
+        },
+        {
+          "method": "GT10",
+          "recall_percent": "99.72",
+          "qps_mean": "2563.7387717634756",
+          "mean_query_us": "390.05535089999995",
+          "severe_queries": ""
+        },
+        {
+          "method": "GT10+Residual",
+          "recall_percent": "99.82",
+          "qps_mean": "2503.4072383396633",
+          "mean_query_us": "399.4556309",
+          "severe_queries": ""
+        },
+        {
+          "method": "GATE",
+          "recall_percent": "99.72",
+          "qps_mean": "2495.2037445427773",
+          "mean_query_us": "400.76899629999997",
+          "severe_queries": ""
+        }
+      ]
+    },
+    {
+      "dataset": "flickr30k",
+      "K": 100,
+      "residual_delta_pp_min": 0.009399999999999409,
+      "residual_delta_pp_max": 0.883199999999988,
+      "residual_time_increase_pct_min": 0.6841052796215275,
+      "residual_time_increase_pct_max": 6.259886948244797,
+      "residual_lost_member_events_across_L": 0,
+      "other_method_covered_points": {
+        "NSG": 4,
+        "GT10": 2,
+        "GT10+Residual": 0,
+        "GATE": 20
+      },
+      "L200": [
+        {
+          "method": "NSG",
+          "recall_percent": "97.2204",
+          "qps_mean": "2529.306973777246",
+          "mean_query_us": "395.3654247",
+          "severe_queries": "0"
+        },
+        {
+          "method": "GT10",
+          "recall_percent": "97.2072",
+          "qps_mean": "2568.7178446352564",
+          "mean_query_us": "389.2993285",
+          "severe_queries": "0"
+        },
+        {
+          "method": "GT10+Residual",
+          "recall_percent": "97.6352",
+          "qps_mean": "2484.212082172457",
+          "mean_query_us": "402.5421395",
+          "severe_queries": "0"
+        },
+        {
+          "method": "GATE",
+          "recall_percent": "97.209",
+          "qps_mean": "2501.83077372024",
+          "mean_query_us": "399.7075417",
+          "severe_queries": "0"
+        }
+      ]
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "residual_delta_pp_min": 1.1099999999999994,
+      "residual_delta_pp_max": 5.950000000000003,
+      "residual_time_increase_pct_min": 0.5142393987824567,
+      "residual_time_increase_pct_max": 19.91756557290063,
+      "residual_lost_member_events_across_L": 0,
+      "other_method_covered_points": {
+        "NSG": 20,
+        "GT10": 17,
+        "GT10+Residual": 0,
+        "GATE": 20
+      },
+      "L200": [
+        {
+          "method": "NSG",
+          "recall_percent": "77.63",
+          "qps_mean": "1494.4996843348158",
+          "mean_query_us": "669.1203251000001",
+          "severe_queries": ""
+        },
+        {
+          "method": "GT10",
+          "recall_percent": "80.56",
+          "qps_mean": "1606.0384161225602",
+          "mean_query_us": "622.651416",
+          "severe_queries": ""
+        },
+        {
+          "method": "GT10+Residual",
+          "recall_percent": "83.63000000000001",
+          "qps_mean": "1559.0024399263866",
+          "mean_query_us": "641.4367239",
+          "severe_queries": ""
+        },
+        {
+          "method": "GATE",
+          "recall_percent": "79.32000000000001",
+          "qps_mean": "1496.1311573256264",
+          "mean_query_us": "668.3906585499999",
+          "severe_queries": ""
+        }
+      ]
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "residual_delta_pp_min": 0.786200000000008,
+      "residual_delta_pp_max": 2.4618000000000038,
+      "residual_time_increase_pct_min": 0.4628108706300704,
+      "residual_time_increase_pct_max": 8.111323898607425,
+      "residual_lost_member_events_across_L": 3,
+      "other_method_covered_points": {
+        "NSG": 20,
+        "GT10": 13,
+        "GT10+Residual": 0,
+        "GATE": 20
+      },
+      "L200": [
+        {
+          "method": "NSG",
+          "recall_percent": "71.5156",
+          "qps_mean": "1496.3947780952233",
+          "mean_query_us": "668.2734331",
+          "severe_queries": "142"
+        },
+        {
+          "method": "GT10",
+          "recall_percent": "72.7033",
+          "qps_mean": "1604.4150123406039",
+          "mean_query_us": "623.28013265",
+          "severe_queries": "53"
+        },
+        {
+          "method": "GT10+Residual",
+          "recall_percent": "74.729",
+          "qps_mean": "1543.0775843825063",
+          "mean_query_us": "648.0556229",
+          "severe_queries": "46"
+        },
+        {
+          "method": "GATE",
+          "recall_percent": "72.0773",
+          "qps_mean": "1495.1232870376425",
+          "mean_query_us": "668.8426370000001",
+          "severe_queries": "112"
+        }
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "residual_delta_pp_min": 0.0,
+      "residual_delta_pp_max": 0.3200000000000074,
+      "residual_time_increase_pct_min": 0.33608661622783753,
+      "residual_time_increase_pct_max": 8.403092724881578,
+      "residual_lost_member_events_across_L": 0,
+      "other_method_covered_points": {
+        "NSG": 20,
+        "GT10": 0,
+        "GT10+Residual": 1,
+        "GATE": 20
+      },
+      "L200": [
+        {
+          "method": "NSG",
+          "recall_percent": "92.94",
+          "qps_mean": "1368.7460679846542",
+          "mean_query_us": "730.59573405",
+          "severe_queries": ""
+        },
+        {
+          "method": "GT10",
+          "recall_percent": "93.67999999999999",
+          "qps_mean": "1478.9519508931544",
+          "mean_query_us": "676.1545096",
+          "severe_queries": ""
+        },
+        {
+          "method": "GT10+Residual",
+          "recall_percent": "93.82000000000001",
+          "qps_mean": "1455.0707117882137",
+          "mean_query_us": "687.2520608000001",
+          "severe_queries": ""
+        },
+        {
+          "method": "GATE",
+          "recall_percent": "93.28",
+          "qps_mean": "1427.9319738496029",
+          "mean_query_us": "700.31377795",
+          "severe_queries": ""
+        }
+      ]
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "residual_delta_pp_min": 0.00899999999998613,
+      "residual_delta_pp_max": 0.08570000000000277,
+      "residual_time_increase_pct_min": 0.32259169332273796,
+      "residual_time_increase_pct_max": 4.156367452258469,
+      "residual_lost_member_events_across_L": 0,
+      "other_method_covered_points": {
+        "NSG": 20,
+        "GT10": 0,
+        "GT10+Residual": 0,
+        "GATE": 20
+      },
+      "L200": [
+        {
+          "method": "NSG",
+          "recall_percent": "88.0651",
+          "qps_mean": "1367.0738578655855",
+          "mean_query_us": "731.48939695",
+          "severe_queries": "174"
+        },
+        {
+          "method": "GT10",
+          "recall_percent": "88.77239999999999",
+          "qps_mean": "1478.94986142453",
+          "mean_query_us": "676.15573055",
+          "severe_queries": "86"
+        },
+        {
+          "method": "GT10+Residual",
+          "recall_percent": "88.8294",
+          "qps_mean": "1445.0553778482852",
+          "mean_query_us": "692.0150699000001",
+          "severe_queries": "85"
+        },
+        {
+          "method": "GATE",
+          "recall_percent": "88.42060000000001",
+          "qps_mean": "1429.174878316369",
+          "mean_query_us": "699.7044965",
+          "severe_queries": "126"
+        }
+      ]
+    }
+  ],
+  "threshold_comparisons": [
+    {
+      "dataset": "coco",
+      "K": 1,
+      "target_recall": 0.9,
+      "GT10": {
+        "dataset": "coco",
+        "K": "1",
+        "target_recall": "0.9",
+        "method": "GT10",
+        "reached": "True",
+        "L": "48",
+        "actual_recall": "0.9179",
+        "qps_mean": "8065.392913022908",
+        "qps_min": "8060.790970998406",
+        "qps_max": "8069.994855047411"
+      },
+      "residual": {
+        "dataset": "coco",
+        "K": "1",
+        "target_recall": "0.9",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "32",
+        "actual_recall": "0.9266",
+        "qps_mean": "9784.650064763875",
+        "qps_min": "9779.684155516108",
+        "qps_max": "9789.61597401164"
+      },
+      "qps_change_pct": 21.31647112895074,
+      "two_run_ranges_disjoint_in_residual_favor": true
+    },
+    {
+      "dataset": "coco",
+      "K": 1,
+      "target_recall": 0.95,
+      "GT10": {
+        "dataset": "coco",
+        "K": "1",
+        "target_recall": "0.95",
+        "method": "GT10",
+        "reached": "True",
+        "L": "96",
+        "actual_recall": "0.9567",
+        "qps_mean": "4593.7094100087115",
+        "qps_min": "4592.182910076588",
+        "qps_max": "4595.235909940835"
+      },
+      "residual": {
+        "dataset": "coco",
+        "K": "1",
+        "target_recall": "0.95",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "48",
+        "actual_recall": "0.9553",
+        "qps_mean": "7319.782160144901",
+        "qps_min": "7313.2256666550575",
+        "qps_max": "7326.338653634745"
+      },
+      "qps_change_pct": 59.34360463020711,
+      "two_run_ranges_disjoint_in_residual_favor": true
+    },
+    {
+      "dataset": "coco",
+      "K": 1,
+      "target_recall": 0.99,
+      "GT10": {
+        "dataset": "coco",
+        "K": "1",
+        "target_recall": "0.99",
+        "method": "GT10",
+        "reached": "True",
+        "L": "400",
+        "actual_recall": "0.9918",
+        "qps_mean": "1413.0478603702718",
+        "qps_min": "1409.8853922817398",
+        "qps_max": "1416.2103284588036"
+      },
+      "residual": {
+        "dataset": "coco",
+        "K": "1",
+        "target_recall": "0.99",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "200",
+        "actual_recall": "0.9912",
+        "qps_mean": "2423.64237692419",
+        "qps_min": "2422.2569615748644",
+        "qps_max": "2425.027792273516"
+      },
+      "qps_change_pct": 71.51877476316369,
+      "two_run_ranges_disjoint_in_residual_favor": true
+    },
+    {
+      "dataset": "coco",
+      "K": 100,
+      "target_recall": 0.9,
+      "GT10": {
+        "dataset": "coco",
+        "K": "100",
+        "target_recall": "0.9",
+        "method": "GT10",
+        "reached": "True",
+        "L": "112",
+        "actual_recall": "0.904352",
+        "qps_mean": "4042.320840788453",
+        "qps_min": "4040.7173339532255",
+        "qps_max": "4043.9243476236807"
+      },
+      "residual": {
+        "dataset": "coco",
+        "K": "100",
+        "target_recall": "0.9",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "100",
+        "actual_recall": "0.916777",
+        "qps_mean": "4101.587748054292",
+        "qps_min": "4099.306001062722",
+        "qps_max": "4103.869495045862"
+      },
+      "qps_change_pct": 1.466160396468652,
+      "two_run_ranges_disjoint_in_residual_favor": true
+    },
+    {
+      "dataset": "coco",
+      "K": 100,
+      "target_recall": 0.95,
+      "GT10": {
+        "dataset": "coco",
+        "K": "100",
+        "target_recall": "0.95",
+        "method": "GT10",
+        "reached": "True",
+        "L": "200",
+        "actual_recall": "0.953444",
+        "qps_mean": "2500.3477183183068",
+        "qps_min": "2500.044188281028",
+        "qps_max": "2500.651248355586"
+      },
+      "residual": {
+        "dataset": "coco",
+        "K": "100",
+        "target_recall": "0.95",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "160",
+        "actual_recall": "0.955126",
+        "qps_mean": "2863.944705078068",
+        "qps_min": "2861.6664150703864",
+        "qps_max": "2866.22299508575"
+      },
+      "qps_change_pct": 14.541856882382387,
+      "two_run_ranges_disjoint_in_residual_favor": true
+    },
+    {
+      "dataset": "coco",
+      "K": 100,
+      "target_recall": 0.99,
+      "GT10": {
+        "dataset": "coco",
+        "K": "100",
+        "target_recall": "0.99",
+        "method": "GT10",
+        "reached": "True",
+        "L": "640",
+        "actual_recall": "0.991331",
+        "qps_mean": "949.2789348721315",
+        "qps_min": "948.2092815352306",
+        "qps_max": "950.3485882090323"
+      },
+      "residual": {
+        "dataset": "coco",
+        "K": "100",
+        "target_recall": "0.99",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "480",
+        "actual_recall": "0.990623",
+        "qps_mean": "1182.4639924268752",
+        "qps_min": "1181.4091680725783",
+        "qps_max": "1183.518816781172"
+      },
+      "qps_change_pct": 24.564440333457306,
+      "two_run_ranges_disjoint_in_residual_favor": true
+    },
+    {
+      "dataset": "flickr30k",
+      "K": 1,
+      "target_recall": 0.9,
+      "GT10": {
+        "dataset": "flickr30k",
+        "K": "1",
+        "target_recall": "0.9",
+        "method": "GT10",
+        "reached": "True",
+        "L": "24",
+        "actual_recall": "0.9266",
+        "qps_mean": "14022.701730898014",
+        "qps_min": "14022.134730520525",
+        "qps_max": "14023.2687312755"
+      },
+      "residual": {
+        "dataset": "flickr30k",
+        "K": "1",
+        "target_recall": "0.9",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "16",
+        "actual_recall": "0.9014",
+        "qps_mean": "15888.489635941718",
+        "qps_min": "15875.990126366118",
+        "qps_max": "15900.98914551732"
+      },
+      "qps_change_pct": 13.305480932626379,
+      "two_run_ranges_disjoint_in_residual_favor": true
+    },
+    {
+      "dataset": "flickr30k",
+      "K": 1,
+      "target_recall": 0.95,
+      "GT10": {
+        "dataset": "flickr30k",
+        "K": "1",
+        "target_recall": "0.95",
+        "method": "GT10",
+        "reached": "True",
+        "L": "48",
+        "actual_recall": "0.97",
+        "qps_mean": "8258.70410717223",
+        "qps_min": "8258.204865119895",
+        "qps_max": "8259.203349224568"
+      },
+      "residual": {
+        "dataset": "flickr30k",
+        "K": "1",
+        "target_recall": "0.95",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "32",
+        "actual_recall": "0.9576",
+        "qps_mean": "10291.550725251727",
+        "qps_min": "10287.053394366338",
+        "qps_max": "10296.048056137119"
+      },
+      "qps_change_pct": 24.6145956036139,
+      "two_run_ranges_disjoint_in_residual_favor": true
+    },
+    {
+      "dataset": "flickr30k",
+      "K": 1,
+      "target_recall": 0.99,
+      "GT10": {
+        "dataset": "flickr30k",
+        "K": "1",
+        "target_recall": "0.99",
+        "method": "GT10",
+        "reached": "True",
+        "L": "128",
+        "actual_recall": "0.9928",
+        "qps_mean": "3697.0835988693407",
+        "qps_min": "3696.926249303267",
+        "qps_max": "3697.240948435415"
+      },
+      "residual": {
+        "dataset": "flickr30k",
+        "K": "1",
+        "target_recall": "0.99",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "80",
+        "actual_recall": "0.9904",
+        "qps_mean": "5203.046783234472",
+        "qps_min": "5195.560324290208",
+        "qps_max": "5210.533242178736"
+      },
+      "qps_change_pct": 40.733814751327024,
+      "two_run_ranges_disjoint_in_residual_favor": true
+    },
+    {
+      "dataset": "flickr30k",
+      "K": 100,
+      "target_recall": 0.9,
+      "GT10": {
+        "dataset": "flickr30k",
+        "K": "100",
+        "target_recall": "0.9",
+        "method": "GT10",
+        "reached": "True",
+        "L": "100",
+        "actual_recall": "0.921482",
+        "qps_mean": "4532.801102427157",
+        "qps_min": "4522.190179188529",
+        "qps_max": "4543.412025665785"
+      },
+      "residual": {
+        "dataset": "flickr30k",
+        "K": "100",
+        "target_recall": "0.9",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "100",
+        "actual_recall": "0.930314",
+        "qps_mean": "4265.779068230731",
+        "qps_min": "4253.798808659666",
+        "qps_max": "4277.759327801797"
+      },
+      "qps_change_pct": -5.890883543366698,
+      "two_run_ranges_disjoint_in_residual_favor": false
+    },
+    {
+      "dataset": "flickr30k",
+      "K": 100,
+      "target_recall": 0.95,
+      "GT10": {
+        "dataset": "flickr30k",
+        "K": "100",
+        "target_recall": "0.95",
+        "method": "GT10",
+        "reached": "True",
+        "L": "144",
+        "actual_recall": "0.953124",
+        "qps_mean": "3360.123896549214",
+        "qps_min": "3359.7119572186857",
+        "qps_max": "3360.535835879742"
+      },
+      "residual": {
+        "dataset": "flickr30k",
+        "K": "100",
+        "target_recall": "0.95",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "128",
+        "actual_recall": "0.951312",
+        "qps_mean": "3530.6139980809985",
+        "qps_min": "3530.220058011245",
+        "qps_max": "3531.007938150752"
+      },
+      "qps_change_pct": 5.073923068934305,
+      "two_run_ranges_disjoint_in_residual_favor": true
+    },
+    {
+      "dataset": "flickr30k",
+      "K": 100,
+      "target_recall": 0.99,
+      "GT10": {
+        "dataset": "flickr30k",
+        "K": "100",
+        "target_recall": "0.99",
+        "method": "GT10",
+        "reached": "True",
+        "L": "400",
+        "actual_recall": "0.992158",
+        "qps_mean": "1458.6770531232776",
+        "qps_min": "1458.2478620843187",
+        "qps_max": "1459.1062441622364"
+      },
+      "residual": {
+        "dataset": "flickr30k",
+        "K": "100",
+        "target_recall": "0.99",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "400",
+        "actual_recall": "0.993708",
+        "qps_mean": "1430.2941520655854",
+        "qps_min": "1429.919032476333",
+        "qps_max": "1430.6692716548378"
+      },
+      "qps_change_pct": -1.9457974605770034,
+      "two_run_ranges_disjoint_in_residual_favor": false
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "target_recall": 0.9,
+      "GT10": {
+        "dataset": "webvid2_5m_light_v1",
+        "K": "1",
+        "target_recall": "0.9",
+        "method": "GT10",
+        "reached": "True",
+        "L": "800",
+        "actual_recall": "0.9075",
+        "qps_mean": "427.6341785420914",
+        "qps_min": "427.48053044701174",
+        "qps_max": "427.787826637171"
+      },
+      "residual": {
+        "dataset": "webvid2_5m_light_v1",
+        "K": "1",
+        "target_recall": "0.9",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "640",
+        "actual_recall": "0.9113",
+        "qps_mean": "526.4661792142272",
+        "qps_min": "526.452527759522",
+        "qps_max": "526.4798306689322"
+      },
+      "qps_change_pct": 23.111342739038786,
+      "two_run_ranges_disjoint_in_residual_favor": true
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "target_recall": 0.9,
+      "GT10": {
+        "dataset": "webvid2_5m_light_v1",
+        "K": "100",
+        "target_recall": "0.9",
+        "method": "GT10",
+        "reached": "True",
+        "L": "1280",
+        "actual_recall": "0.908155",
+        "qps_mean": "269.04600701721887",
+        "qps_min": "268.6307963510492",
+        "qps_max": "269.46121768338855"
+      },
+      "residual": {
+        "dataset": "webvid2_5m_light_v1",
+        "K": "100",
+        "target_recall": "0.9",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "960",
+        "actual_recall": "0.900171",
+        "qps_mean": "352.84576857979164",
+        "qps_min": "352.659069142586",
+        "qps_max": "353.03246801699726"
+      },
+      "qps_change_pct": 31.147000653018274,
+      "two_run_ranges_disjoint_in_residual_favor": true
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "target_recall": 0.9,
+      "GT10": {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "K": "1",
+        "target_recall": "0.9",
+        "method": "GT10",
+        "reached": "True",
+        "L": "128",
+        "actual_recall": "0.9105",
+        "qps_mean": "2176.0377538438106",
+        "qps_min": "2174.8056588933014",
+        "qps_max": "2177.26984879432"
+      },
+      "residual": {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "K": "1",
+        "target_recall": "0.9",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "128",
+        "actual_recall": "0.9122",
+        "qps_mean": "2120.2149769426564",
+        "qps_min": "2118.618482336417",
+        "qps_max": "2121.811471548896"
+      },
+      "qps_change_pct": -2.5653404589395246,
+      "two_run_ranges_disjoint_in_residual_favor": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "target_recall": 0.95,
+      "GT10": {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "K": "1",
+        "target_recall": "0.95",
+        "method": "GT10",
+        "reached": "True",
+        "L": "256",
+        "actual_recall": "0.9502",
+        "qps_mean": "1188.541420248352",
+        "qps_min": "1187.8709705301676",
+        "qps_max": "1189.2118699665368"
+      },
+      "residual": {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "K": "1",
+        "target_recall": "0.95",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "256",
+        "actual_recall": "0.9512",
+        "qps_mean": "1170.2030394539174",
+        "qps_min": "1169.0411279041698",
+        "qps_max": "1171.3649510036653"
+      },
+      "qps_change_pct": -1.5429315699071577,
+      "two_run_ranges_disjoint_in_residual_favor": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 1,
+      "target_recall": 0.99,
+      "GT10": {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "K": "1",
+        "target_recall": "0.99",
+        "method": "GT10",
+        "reached": "True",
+        "L": "1400",
+        "actual_recall": "0.9911",
+        "qps_mean": "246.68406139234412",
+        "qps_min": "246.63797876036045",
+        "qps_max": "246.7301440243278"
+      },
+      "residual": {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "K": "1",
+        "target_recall": "0.99",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "1400",
+        "actual_recall": "0.9912",
+        "qps_mean": "245.32470488331737",
+        "qps_min": "244.90292438354737",
+        "qps_max": "245.74648538308736"
+      },
+      "qps_change_pct": -0.5510516169363378,
+      "two_run_ranges_disjoint_in_residual_favor": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "target_recall": 0.9,
+      "GT10": {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "K": "100",
+        "target_recall": "0.9",
+        "method": "GT10",
+        "reached": "True",
+        "L": "256",
+        "actual_recall": "0.909805",
+        "qps_mean": "1188.6948494080698",
+        "qps_min": "1188.6468835821724",
+        "qps_max": "1188.7428152339671"
+      },
+      "residual": {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "K": "100",
+        "target_recall": "0.9",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "256",
+        "actual_recall": "0.910284",
+        "qps_mean": "1163.196050665581",
+        "qps_min": "1162.7704399148556",
+        "qps_max": "1163.6216614163063"
+      },
+      "qps_change_pct": -2.1451088776220706,
+      "two_run_ranges_disjoint_in_residual_favor": false
+    },
+    {
+      "dataset": "yandex_t2i_official10M_ip_v1",
+      "K": 100,
+      "target_recall": 0.95,
+      "GT10": {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "K": "100",
+        "target_recall": "0.95",
+        "method": "GT10",
+        "reached": "True",
+        "L": "480",
+        "actual_recall": "0.950303",
+        "qps_mean": "669.3123927334677",
+        "qps_min": "669.3059916724022",
+        "qps_max": "669.3187937945331"
+      },
+      "residual": {
+        "dataset": "yandex_t2i_official10M_ip_v1",
+        "K": "100",
+        "target_recall": "0.95",
+        "method": "GT10+Residual",
+        "reached": "True",
+        "L": "480",
+        "actual_recall": "0.950596",
+        "qps_mean": "661.0184535256572",
+        "qps_min": "660.4770181793849",
+        "qps_max": "661.5598888719293"
+      },
+      "qps_change_pct": -1.2391731122649907,
+      "two_run_ranges_disjoint_in_residual_favor": false
+    }
+  ],
+  "joint_improvement_examples": [
+    {
+      "dataset": "coco",
+      "K": 1,
+      "GT10": {
+        "dataset": "coco",
+        "K": "1",
+        "L": "320",
+        "method": "GT10",
+        "n": "10000",
+        "hits": "9888",
+        "recall": "0.9888",
+        "recall_percent": "98.88",
+        "qps_mean": "1695.318658828599",
+        "qps_min": "1693.947018812766",
+        "qps_max": "1696.6902988444317",
+        "qps_round0": "1693.947018812766",
+        "qps_round1": "1696.6902988444317",
+        "wall_mean_seconds": "5.898599944",
+        "wall_round0_seconds": "5.903372354",
+        "wall_round1_seconds": "5.893827534",
+        "qps_pooled": "1695.3175490688948",
+        "mean_query_us": "589.8599944",
+        "severe_queries": "",
+        "zero_hit_queries": "112",
+        "packet_sha256": "936cb030d5f6768fcf229d6f5baa64509c7f4c477d27b25742ca434d2d630b09",
+        "point_dir": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/results/coco/k1_run/k1/GT10_L320",
+        "threads": "1"
+      },
+      "residual": {
+        "dataset": "coco",
+        "K": "1",
+        "L": "200",
+        "method": "GT10+Residual",
+        "n": "10000",
+        "hits": "9912",
+        "recall": "0.9912",
+        "recall_percent": "99.11999999999999",
+        "qps_mean": "2423.64237692419",
+        "qps_min": "2422.2569615748644",
+        "qps_max": "2425.027792273516",
+        "qps_round0": "2422.2569615748644",
+        "qps_round1": "2425.027792273516",
+        "wall_mean_seconds": "4.1260226190000004",
+        "wall_round0_seconds": "4.128381158",
+        "wall_round1_seconds": "4.12366408",
+        "qps_pooled": "2423.6415849856976",
+        "mean_query_us": "412.60226190000003",
+        "severe_queries": "",
+        "zero_hit_queries": "88",
+        "packet_sha256": "d1c2c39d72a5053af9c3f566681b55fa66525b046092391fee32e152c749ad79",
+        "point_dir": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/results/coco/k1_run/k1/GT10+Residual_L200",
+        "threads": "1"
+      },
+      "qps_change_pct": 42.96087430541438,
+      "two_run_ranges_disjoint_in_residual_favor": true
+    },
+    {
+      "dataset": "coco",
+      "K": 100,
+      "GT10": {
+        "dataset": "coco",
+        "K": "100",
+        "L": "256",
+        "method": "GT10",
+        "n": "10000",
+        "hits": "966528",
+        "recall": "0.966528",
+        "recall_percent": "96.6528",
+        "qps_mean": "2038.5862357437475",
+        "qps_min": "2037.8310986048202",
+        "qps_max": "2039.3413728826747",
+        "qps_round0": "2039.3413728826747",
+        "qps_round1": "2037.8310986048202",
+        "wall_mean_seconds": "4.9053609785",
+        "wall_round0_seconds": "4.903543925",
+        "wall_round1_seconds": "4.907178032",
+        "qps_pooled": "2038.5859560243573",
+        "mean_query_us": "490.53609785",
+        "severe_queries": "1",
+        "zero_hit_queries": "0",
+        "packet_sha256": "05d94b030ee7487a740f7546548b1a68d9d86902246496fb7e92b46762f95270",
+        "point_dir": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/results/coco/k100_run/k100/GT10_L256",
+        "threads": "1"
+      },
+      "residual": {
+        "dataset": "coco",
+        "K": "100",
+        "L": "200",
+        "method": "GT10+Residual",
+        "n": "10000",
+        "hits": "967159",
+        "recall": "0.967159",
+        "recall_percent": "96.7159",
+        "qps_mean": "2397.120239460649",
+        "qps_min": "2395.938206593474",
+        "qps_max": "2398.302272327824",
+        "qps_round0": "2395.938206593474",
+        "qps_round1": "2398.302272327824",
+        "wall_mean_seconds": "4.1716732715",
+        "wall_round0_seconds": "4.173730346",
+        "wall_round1_seconds": "4.169616197",
+        "qps_pooled": "2397.1196565938926",
+        "mean_query_us": "417.16732714999995",
+        "severe_queries": "1",
+        "zero_hit_queries": "0",
+        "packet_sha256": "8f8e3394b0cc1c718e884a8aed6791cbe6a866804062eb845510a7a137f1925f",
+        "point_dir": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/results/coco/k100_run/k100/GT10+Residual_L200",
+        "threads": "1"
+      },
+      "qps_change_pct": 17.587384699774343,
+      "two_run_ranges_disjoint_in_residual_favor": true
+    },
+    {
+      "dataset": "flickr30k",
+      "K": 1,
+      "GT10": {
+        "dataset": "flickr30k",
+        "K": "1",
+        "L": "96",
+        "method": "GT10",
+        "n": "5000",
+        "hits": "4942",
+        "recall": "0.9884",
+        "recall_percent": "98.83999999999999",
+        "qps_mean": "4693.23109117541",
+        "qps_min": "4693.059117713878",
+        "qps_max": "4693.403064636944",
+        "qps_round0": "4693.059117713878",
+        "qps_round1": "4693.403064636944",
+        "wall_mean_seconds": "1.0653641189999998",
+        "wall_round0_seconds": "1.065403157",
+        "wall_round1_seconds": "1.065325081",
+        "qps_pooled": "4693.23108487381",
+        "mean_query_us": "213.07282379999998",
+        "severe_queries": "",
+        "zero_hit_queries": "58",
+        "packet_sha256": "6874c2cd4345631034a38ce2a7bc5eff9070cc8b9f0e8cae28e3f5143ba25097",
+        "point_dir": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/results/flickr30k/k1_run/k1/GT10_L96",
+        "threads": "1"
+      },
+      "residual": {
+        "dataset": "flickr30k",
+        "K": "1",
+        "L": "80",
+        "method": "GT10+Residual",
+        "n": "5000",
+        "hits": "4952",
+        "recall": "0.9904",
+        "recall_percent": "99.03999999999999",
+        "qps_mean": "5203.046783234472",
+        "qps_min": "5195.560324290208",
+        "qps_max": "5210.533242178736",
+        "qps_round0": "5195.560324290208",
+        "qps_round1": "5210.533242178736",
+        "wall_mean_seconds": "0.9609773965",
+        "wall_round0_seconds": "0.962360109",
+        "wall_round1_seconds": "0.959594684",
+        "qps_pooled": "5203.036011263767",
+        "mean_query_us": "192.19547930000002",
+        "severe_queries": "",
+        "zero_hit_queries": "48",
+        "packet_sha256": "d7a7827f3c424b5e681b490f32abad496f1c13a6ca432b0b8a482c791f61f229",
+        "point_dir": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/results/flickr30k/k1_run/k1/GT10+Residual_L80",
+        "threads": "1"
+      },
+      "qps_change_pct": 10.862786897872102,
+      "two_run_ranges_disjoint_in_residual_favor": true
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "GT10": {
+        "dataset": "webvid2_5m_light_v1",
+        "K": "1",
+        "L": "800",
+        "method": "GT10",
+        "n": "10000",
+        "hits": "9075",
+        "recall": "0.9075",
+        "recall_percent": "90.75",
+        "qps_mean": "427.6341785420914",
+        "qps_min": "427.48053044701174",
+        "qps_max": "427.787826637171",
+        "qps_round0": "427.48053044701174",
+        "qps_round1": "427.787826637171",
+        "wall_mean_seconds": "23.384476248",
+        "wall_round0_seconds": "23.392878243",
+        "wall_round1_seconds": "23.376074253",
+        "qps_pooled": "427.6341233366417",
+        "mean_query_us": "2338.4476248",
+        "severe_queries": "",
+        "zero_hit_queries": "925",
+        "packet_sha256": "0a67a7f0b5814e442f31ccc1d43abdc8ab3a7a9730f6b9b411873d590a3d96fb",
+        "point_dir": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/results/webvid2_5m_light_v1/k1_run/k1/GT10_L800",
+        "threads": "1"
+      },
+      "residual": {
+        "dataset": "webvid2_5m_light_v1",
+        "K": "1",
+        "L": "640",
+        "method": "GT10+Residual",
+        "n": "10000",
+        "hits": "9113",
+        "recall": "0.9113",
+        "recall_percent": "91.13",
+        "qps_mean": "526.4661792142272",
+        "qps_min": "526.452527759522",
+        "qps_max": "526.4798306689322",
+        "qps_round0": "526.4798306689322",
+        "qps_round1": "526.452527759522",
+        "wall_mean_seconds": "18.994572494",
+        "wall_round0_seconds": "18.994079958",
+        "wall_round1_seconds": "18.99506503",
+        "qps_pooled": "526.46617886024",
+        "mean_query_us": "1899.4572494",
+        "severe_queries": "",
+        "zero_hit_queries": "887",
+        "packet_sha256": "9bf2b2efab5b2259d33805f2d2c3dbb77bc63d38b9240b157dc576d1b11bfc28",
+        "point_dir": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/results/webvid2_5m_light_v1/k1_run/k1/GT10+Residual_L640",
+        "threads": "1"
+      },
+      "qps_change_pct": 23.111342739038786,
+      "two_run_ranges_disjoint_in_residual_favor": true
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "GT10": {
+        "dataset": "webvid2_5m_light_v1",
+        "K": "100",
+        "L": "1120",
+        "method": "GT10",
+        "n": "10000",
+        "hits": "899997",
+        "recall": "0.899997",
+        "recall_percent": "89.9997",
+        "qps_mean": "305.79825860908926",
+        "qps_min": "305.6229709579979",
+        "qps_max": "305.9735462601806",
+        "qps_round0": "305.9735462601806",
+        "qps_round1": "305.6229709579979",
+        "wall_mean_seconds": "32.7013088015",
+        "wall_round0_seconds": "32.682563974",
+        "wall_round1_seconds": "32.720053629",
+        "qps_pooled": "305.7981581318636",
+        "mean_query_us": "3270.13088015",
+        "severe_queries": "1",
+        "zero_hit_queries": "0",
+        "packet_sha256": "ce6713aa39ff24b85358cf91c158afa404e635ff7cd269c524d5c81b5d6acfd6",
+        "point_dir": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/results/webvid2_5m_light_v1/k100_run/k100/GT10_L1120",
+        "threads": "1"
+      },
+      "residual": {
+        "dataset": "webvid2_5m_light_v1",
+        "K": "100",
+        "L": "960",
+        "method": "GT10+Residual",
+        "n": "10000",
+        "hits": "900171",
+        "recall": "0.900171",
+        "recall_percent": "90.0171",
+        "qps_mean": "352.84576857979164",
+        "qps_min": "352.659069142586",
+        "qps_max": "353.03246801699726",
+        "qps_round0": "353.03246801699726",
+        "qps_round1": "352.659069142586",
+        "wall_mean_seconds": "28.3410024725",
+        "wall_round0_seconds": "28.326006546",
+        "wall_round1_seconds": "28.355998399",
+        "qps_pooled": "352.8456697924943",
+        "mean_query_us": "2834.10024725",
+        "severe_queries": "1",
+        "zero_hit_queries": "0",
+        "packet_sha256": "5b61959ed3f1499bb13d1ec4198d3f948495565cbdb1fee0e78280ee8d267417",
+        "point_dir": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/results/webvid2_5m_light_v1/k100_run/k100/GT10+Residual_L960",
+        "threads": "1"
+      },
+      "qps_change_pct": 15.38514646378173,
+      "two_run_ranges_disjoint_in_residual_favor": true
+    }
+  ],
+  "member_loss_details": [
+    {
+      "dataset": "coco",
+      "K": 100,
+      "L": 800,
+      "query_row": 8121,
+      "main_hits": 99,
+      "residual_hits": 99,
+      "lost_correct": [
+        {
+          "id": 81405,
+          "main_distance": -0.3162323236465454
+        }
+      ],
+      "new_final_ids": [
+        {
+          "id": 25771,
+          "distance": -0.31946617364883423,
+          "in_GT": true
+        }
+      ],
+      "main_boundary_distance": -0.3162323236465454,
+      "residual_boundary_distance": -0.3162323534488678
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "L": 960,
+      "query_row": 92,
+      "main_hits": 99,
+      "residual_hits": 99,
+      "lost_correct": [
+        {
+          "id": 1961985,
+          "main_distance": -0.3356049060821533
+        }
+      ],
+      "new_final_ids": [
+        {
+          "id": 1572828,
+          "distance": -0.3368726968765259,
+          "in_GT": true
+        }
+      ],
+      "main_boundary_distance": -0.3356049060821533,
+      "residual_boundary_distance": -0.3356049656867981
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "L": 1120,
+      "query_row": 92,
+      "main_hits": 99,
+      "residual_hits": 99,
+      "lost_correct": [
+        {
+          "id": 1961985,
+          "main_distance": -0.3356049060821533
+        }
+      ],
+      "new_final_ids": [
+        {
+          "id": 1572828,
+          "distance": -0.3368726968765259,
+          "in_GT": true
+        }
+      ],
+      "main_boundary_distance": -0.3356049060821533,
+      "residual_boundary_distance": -0.3356049656867981
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "L": 1280,
+      "query_row": 92,
+      "main_hits": 99,
+      "residual_hits": 99,
+      "lost_correct": [
+        {
+          "id": 1961985,
+          "main_distance": -0.3356049060821533
+        }
+      ],
+      "new_final_ids": [
+        {
+          "id": 1572828,
+          "distance": -0.3368726968765259,
+          "in_GT": true
+        }
+      ],
+      "main_boundary_distance": -0.3356049060821533,
+      "residual_boundary_distance": -0.3356049656867981
+    }
+  ],
+  "formal_wall_sum_seconds": 13723.78310762402,
+  "native_process_sum_seconds": 14037.689803361893,
+  "archive_seconds": 78.95487141609192,
+  "source_sha256": {
+    "points.csv": "0eaf171a876cf98f2a9583589bc644e4e037e5b317ecf263c9d73d881452d0d2",
+    "rounds.csv": "6ed2c15ad4269b8d52655224c519026d9135c8ac804febe6699be210bfff8992",
+    "paired.csv": "23a0e85051d451eba2369c2dacc59bb41ac301f3996640cef8f1630c101c64f3",
+    "targets.csv": "9f63e8b7f1370bb6cf2f8da53e5b25f73669544ccf8460004b950595f9a57a3b",
+    "frontier.csv": "490b522638dfcd061419288343eb4f7b62a446ff61edc5997f9d3b0aa0ba3f66",
+    "independent_audit.json": "dfc63f9d9301bf4e020c9f8161916fbddfa55de7cc0623fda40106aaefe991e1"
+  }
+}

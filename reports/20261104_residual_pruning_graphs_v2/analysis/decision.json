@@ -1,0 +1,27 @@
+{
+  "status": "PRUNED_CURRENT_RESEARCH_MAINLINE",
+  "keep": [
+    "original search baseline",
+    "direct residual completion and return-equivalent optimizations"
+  ],
+  "stop_current_versions": [
+    "learned candidate selection",
+    "shortlist reranking plus auxiliary navigation",
+    "pre/post residual gates"
+  ],
+  "experimental_controls_not_independent_methods": [
+    "offline static switch",
+    "same-gate placement",
+    "75/90 retention targets",
+    "fixed-budget ablations"
+  ],
+  "preserve_conditional_history": [
+    "M5",
+    "B32",
+    "SQ"
+  ],
+  "default_changed": false,
+  "new_measurements": false,
+  "delete_evidence": false,
+  "scope": "E199 four multimodal datasets; exposed A/B; L200 complex pipeline; Q8 bank; single seed 384"
+}

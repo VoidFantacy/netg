@@ -1,0 +1,829 @@
+{
+  "dataset": "yandex_t2i_official10M_ip_v1",
+  "base": {
+    "path": "/data/netg/ACSG/benches/datasets/YandexT2I_official10M_ip_v1/base.official_first10M.fvecs",
+    "format": "fvecs",
+    "n": 10000000,
+    "d": 200
+  },
+  "index": "/data/netg/ACSG/indices/yandex_t2i_official10M_ip_v1_index/acosp_nsg.json",
+  "metric_id": 0,
+  "router": {
+    "name": "hard",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/yandex_t2i_official10M_ip_v1/gt10.ids.i32",
+    "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/yandex_t2i_official10M_ip_v1/gt10_hard/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/yandex_t2i_official10M_ip_v1/k100/GT10-hard.hnsw",
+    "route_order": "sorted_ids"
+  },
+  "queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/storage/inputs/yandex_t2i_official10M_ip_v1/queries.f32",
+    "format": "raw_f32",
+    "n": 16,
+    "d": 200,
+    "row_start": 2048,
+    "total_n": 3072
+  },
+  "test_gt": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/storage/inputs/yandex_t2i_official10M_ip_v1/gt.i32",
+    "format": "raw_i32",
+    "n": 16,
+    "k": 100,
+    "row_start": 2048,
+    "total_n": 3072
+  },
+  "train_queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/queries.f32",
+    "format": "raw_f32",
+    "n": 16000,
+    "d": 200,
+    "total_n": 20000,
+    "row_start": 0
+  },
+  "train_gt": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/yandex_t2i_official10M_ip_v1/fit/gt.i64",
+    "format": "raw_i64",
+    "n": 16000,
+    "k": 100,
+    "total_n": 20000,
+    "row_start": 0
+  },
+  "teacher_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/yandex_t2i_official10M_ip_v1/teacher/hard",
+  "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/yandex_t2i_official10M_ip_v1/compiled/hard/tables/JOINT32.bin",
+  "source_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/yandex_t2i_official10M_ip_v1/compiled/hard/source",
+  "models": "/root/acsg-e191-storage/models/yandex_t2i_official10M_ip_v1",
+  "output_dir": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/storage/runtime_qualification/yandex_t2i_official10M_ip_v1",
+  "threads": 1,
+  "cpu": 15,
+  "K_L": {
+    "1": [
+      32,
+      64,
+      100,
+      128,
+      160,
+      200,
+      256,
+      320,
+      400,
+      480,
+      512,
+      528,
+      544,
+      640,
+      800,
+      1024,
+      1200
+    ],
+    "100": [
+      100,
+      128,
+      160,
+      200,
+      256,
+      320,
+      400,
+      480,
+      512,
+      528,
+      544,
+      640,
+      800,
+      1024,
+      1200
+    ]
+  },
+  "completion_L": {
+    "1": [
+      32,
+      100,
+      200,
+      400
+    ],
+    "100": [
+      100,
+      200,
+      400,
+      800
+    ]
+  },
+  "methods": [
+    "GT10",
+    "B32",
+    "REUSE-PQ",
+    "REUSE-SQ",
+    "MAIN-SQ"
+  ],
+  "timing_repeats": 3,
+  "warmup_n": 256,
+  "PQ_M": 20,
+  "training_role_scope": "Residual fit shares original GT10 profile-fit prefix; test identities excluded.",
+  "family": "hard",
+  "window": "qualification",
+  "Ls": [
+    100,
+    128,
+    160,
+    200,
+    256,
+    320,
+    400,
+    512,
+    640,
+    800,
+    1000
+  ],
+  "nav_methods": [
+    "ONEHOP96",
+    "DIST96",
+    "DIST384",
+    "NOVEL96",
+    "NOVEL384",
+    "REP384"
+  ],
+  "meta_dir": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/meta/yandex_t2i_official10M_ip_v1",
+  "q8_table": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/storage/models/yandex_t2i_official10M_ip_v1/Q8-B32.bin",
+  "scratch": "/dev/shm/acsg-e197/yandex_t2i_official10M_ip_v1",
+  "experiment_root": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1",
+  "points": [
+    {
+      "K": 1,
+      "L": 100,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 128,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 128,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 160,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 160,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 256,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 256,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 320,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 320,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 512,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 512,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 640,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 640,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 800,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 800,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 1000,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 1000,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "AUX96"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "AUX384"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "CBRIDGE96"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "CBRIDGE384"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "SHARED96"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "SHARED384"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "EARLY-MIX"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "EARLY-ALL"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "MODEL1"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "MODEL-GATE"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "MODEL-FULL"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "MODEL-GATE-FULL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "AUX96"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "AUX384"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "CBRIDGE96"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "CBRIDGE384"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "SHARED96"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "SHARED384"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "EARLY-MIX"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "EARLY-ALL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "MODEL1"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "MODEL-GATE"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "MODEL-FULL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "MODEL-GATE-FULL"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "AUX96"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "AUX384"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "CBRIDGE96"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "CBRIDGE384"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "SHARED96"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "SHARED384"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "EARLY-MIX"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "EARLY-ALL"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "MODEL1"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "MODEL-GATE"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "MODEL-FULL"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "MODEL-GATE-FULL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "REF-DIST384"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "REUSE-SQ"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "CBRIDGE384-FULL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "SHARED384-FULL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "EARLY-MIX-FULL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "EARLY-ALL-FULL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "SHARED-FRONT3"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 128,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 128,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 160,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 160,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 256,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 256,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 320,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 320,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 512,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 512,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 640,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 640,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 800,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 800,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 1000,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 1000,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "AUX96"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "AUX384"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "CBRIDGE96"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "CBRIDGE384"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "SHARED96"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "SHARED384"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "EARLY-MIX"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "EARLY-ALL"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "MODEL1"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "MODEL-GATE"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "MODEL-FULL"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "MODEL-GATE-FULL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "AUX96"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "AUX384"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "CBRIDGE96"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "CBRIDGE384"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "SHARED96"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "SHARED384"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "EARLY-MIX"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "EARLY-ALL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "MODEL1"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "MODEL-GATE"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "MODEL-FULL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "MODEL-GATE-FULL"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "AUX96"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "AUX384"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "CBRIDGE96"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "CBRIDGE384"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "SHARED96"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "SHARED384"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "EARLY-MIX"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "EARLY-ALL"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "MODEL1"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "MODEL-GATE"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "MODEL-FULL"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "MODEL-GATE-FULL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "REF-DIST384"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "REUSE-SQ"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "CBRIDGE384-FULL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "SHARED384-FULL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "EARLY-MIX-FULL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "EARLY-ALL-FULL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "SHARED-FRONT3"
+    }
+  ]
+}

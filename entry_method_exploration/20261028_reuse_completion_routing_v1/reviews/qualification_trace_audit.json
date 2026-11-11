@@ -1,0 +1,45 @@
+{
+  "status": "PASS_E189_TRACE_SECOND_IMPLEMENTATION",
+  "role": "qualification",
+  "checks": [
+    {
+      "dataset": "coco",
+      "method": "REUSE-BLOCK",
+      "queries": 64,
+      "pool_identity": true,
+      "original_metric_block_routing": true,
+      "whole_block_budget": true,
+      "PQ_threshold_float64_tolerance": true
+    },
+    {
+      "dataset": "coco",
+      "method": "MAIN-BLOCK",
+      "queries": 64,
+      "pool_identity": true,
+      "original_metric_block_routing": true,
+      "whole_block_budget": true,
+      "PQ_threshold_float64_tolerance": true
+    },
+    {
+      "dataset": "deep10m_l2_v1",
+      "method": "REUSE-BLOCK",
+      "queries": 64,
+      "pool_identity": true,
+      "original_metric_block_routing": true,
+      "whole_block_budget": true,
+      "PQ_threshold_float64_tolerance": true
+    },
+    {
+      "dataset": "deep10m_l2_v1",
+      "method": "MAIN-BLOCK",
+      "queries": 64,
+      "pool_identity": true,
+      "original_metric_block_routing": true,
+      "whole_block_budget": true,
+      "PQ_threshold_float64_tolerance": true
+    }
+  ],
+  "coverage": [],
+  "trace": "full-sort oracle reconstructed from actual timed main; not separate timed trace",
+  "seconds": 0.18933546799962642
+}

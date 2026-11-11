@@ -1,0 +1,123 @@
+{
+  "dataset": "deep10m_l2_v1",
+  "base": {
+    "path": "/data/netg/ACSG/benches/datasets/DEEP10M/base.10M.fvecs",
+    "format": "fvecs",
+    "n": 10000000,
+    "d": 96
+  },
+  "index": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/deep10m_l2_v1/nsg/graph.nsg",
+  "metric_id": 1,
+  "router": {
+    "name": "soft",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/gt10.ids.i32",
+    "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/deep10m_l2_v1/gt10_soft_t1/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/deep10m_l2_v1/k100/GT10-soft-t1.hnsw",
+    "route_order": "sorted_ids"
+  },
+  "queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/test.f32",
+    "format": "raw_f32",
+    "n": 10000,
+    "d": 96,
+    "total_n": 10000
+  },
+  "test_gt": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/test.gt.i32",
+    "format": "raw_i32",
+    "n": 10000,
+    "k": 100,
+    "total_n": 10000,
+    "row_start": 0
+  },
+  "train_queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/fit.f32",
+    "format": "raw_f32",
+    "n": 16000,
+    "d": 96,
+    "total_n": 20000,
+    "row_start": 0
+  },
+  "train_gt": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/deep10m_l2_v1/fit.gt.i32",
+    "format": "raw_i32",
+    "n": 16000,
+    "k": 100,
+    "total_n": 20000,
+    "row_start": 0
+  },
+  "teacher_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/teacher/soft",
+  "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/compiled/soft/tables/JOINT32.bin",
+  "source_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/deep10m_l2_v1/compiled/soft/source",
+  "models": "/root/acsg-e191-storage/models/deep10m_l2_v1",
+  "output_dir": "/root/acsg-e191-storage/results/deep10m_l2_v1",
+  "threads": 1,
+  "cpu": 15,
+  "K_L": {
+    "1": [
+      32,
+      64,
+      100,
+      128,
+      160,
+      200,
+      256,
+      320,
+      400,
+      480,
+      512,
+      528,
+      544,
+      640,
+      800,
+      1024,
+      1200
+    ],
+    "100": [
+      100,
+      128,
+      160,
+      200,
+      256,
+      320,
+      400,
+      480,
+      512,
+      528,
+      544,
+      640,
+      800,
+      1024,
+      1200
+    ]
+  },
+  "completion_L": {
+    "1": [
+      32,
+      100,
+      200,
+      400
+    ],
+    "100": [
+      100,
+      200,
+      400,
+      800
+    ]
+  },
+  "methods": [
+    "GT10",
+    "B32",
+    "REUSE-PQ",
+    "REUSE-SQ",
+    "MAIN-SQ"
+  ],
+  "timing_repeats": 3,
+  "warmup_n": 256,
+  "PQ_M": 16,
+  "training_role_scope": "Residual fit shares original GT10 profile-fit prefix; test identities excluded.",
+  "family": "soft",
+  "existing_blocks": "/data/netg/ACSG/entry_method_exploration/20261028_completion_cost_budget_v1/models/deep10m_l2_v1",
+  "existing_backend": "/data/netg/ACSG/entry_method_exploration/20261028_adaptive_completion_pilot_v1/models/deep10m_l2_v1",
+  "existing_reuse": "/data/netg/ACSG/entry_method_exploration/20261028_reuse_completion_routing_v1/models/deep10m_l2_v1"
+}

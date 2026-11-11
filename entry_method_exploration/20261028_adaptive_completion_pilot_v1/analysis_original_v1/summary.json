@@ -1,0 +1,218 @@
+{
+  "status": "PASS_E187_ANALYSIS",
+  "point_count": 46,
+  "formal_batches": 138,
+  "summaries": [
+    {
+      "dataset": "coco",
+      "formal_outer_seconds": 590.23422405,
+      "formal_internal_seconds": 564.5605778290001,
+      "backend": {
+        "status": "PASS_FULL_BASE_BACKEND",
+        "dataset": "coco",
+        "N": 118272,
+        "d": 512,
+        "nlist": 1024,
+        "M": 16,
+        "ksub": 256,
+        "metric_id": 0,
+        "fit_base_n": 65536,
+        "base_vector_stream_sha256": "a121f6f411270fcc65af6226f15d0ace6bbf3dbf52ab22c7f1a404fbf690063d",
+        "global_PQ_not_residual": true,
+        "centroid_spherical": true,
+        "files": {
+          "offsets.u64": {
+            "bytes": 8200,
+            "sha256": "5f4a5b67a1d70a6af6ec1da06eebef08243a4f4d1f09728bfa9d5b07b0b5b742"
+          },
+          "centroids.f32": {
+            "bytes": 2097152,
+            "sha256": "e73bd8bb5667e04ab14c95cf053641db62a6708a81fc292da16241aa022fcce6"
+          },
+          "region_ids.i32": {
+            "bytes": 473088,
+            "sha256": "75e5849f93140bef1fbc5225c385986e4b6fbc43d0adeeaab6e62ea17cf7b6d8"
+          },
+          "codebooks.f32": {
+            "bytes": 524288,
+            "sha256": "0f0abe4d5401a120724622b55293f0d25ce26511a1baf215715ed931843c35c3"
+          },
+          "id_region.i32": {
+            "bytes": 473088,
+            "sha256": "68846ba4ca323e17df7d69b50514af0e36017b0a5083383e91d22724b6daaf0f"
+          },
+          "training_base_ids.i32": {
+            "bytes": 262144,
+            "sha256": "9bab8ef8121baa6cdf8da5575b1ee8910105fec55a7352bfbf9ea4df19590d37"
+          },
+          "codes.u8": {
+            "bytes": 1892352,
+            "sha256": "6c947b808891c2d6fedb051500ff48d28b2be2dbf9d8ed77479fd8d9cb72b248"
+          }
+        },
+        "query_exact_byte_overlap_fit_cal": 0,
+        "query_exact_byte_overlap_train_test": 0,
+        "group_identity_scope": "Residual training role disjoint from profile-fit and test by image/caption connected identity groups.",
+        "coarse_seconds": 4.392391895000003,
+        "pq_seconds": 0.9029439200000411,
+        "encode_seconds": 1.13281355700002,
+        "elapsed_seconds": 8.481578746999958,
+        "threads": 8,
+        "faiss_version": "1.15.0",
+        "max_region_size": 345,
+        "median_region_size": 112.0
+      },
+      "training": {
+        "REG-Q": {
+          "calibration_mse": 0.22379863026269994,
+          "selected_missing_GT_members": 1868,
+          "selected_fraction_of_all_missing": 0.09788304338713058,
+          "selected_mean_coarse_rank": 1.24475
+        },
+        "REG-R": {
+          "calibration_mse": 0.22174911479715995,
+          "selected_missing_GT_members": 1951,
+          "selected_fraction_of_all_missing": 0.10223223642842172,
+          "selected_mean_coarse_rank": 1.879375
+        },
+        "status": "PASS_E187_FIXED_RIDGE",
+        "fit_n": 12000,
+        "calibration_n": 4000,
+        "alpha": 10,
+        "label": "count of train GT100 omitted by fixed L200 teacher per coarse region",
+        "calibration_used_for_selection": false,
+        "test_or_test_GT_read": false,
+        "calibration_missing_GT_members": 19084,
+        "top8_region_coverage": 0.29731712429260115,
+        "REG_NN_selected_fraction": 0.09327185076503877,
+        "seconds": 0.43600951800010534,
+        "threads": 1
+      },
+      "environment": {
+        "backend_resident_bytes": 5468168,
+        "binding": {
+          "N": 118272,
+          "d": 512,
+          "full_embedded_base_audit": false,
+          "full_source_identity_authority": "external execution lock SHA256",
+          "metric_id": 0,
+          "sampled_embedded_base_rows": 256,
+          "sampled_words_equal": true,
+          "startup_seconds": 0.212058341
+        },
+        "cpu": 15,
+        "startup_seconds": 0.287034573,
+        "threads": 1,
+        "timer": "complete Batch allocate/init + route/main/completion + six-array copy + normal destruction"
+      }
+    },
+    {
+      "dataset": "deep10m_l2_v1",
+      "formal_outer_seconds": 862.529813281,
+      "formal_internal_seconds": 686.3663822950001,
+      "backend": {
+        "status": "PASS_FULL_BASE_BACKEND",
+        "dataset": "deep10m_l2_v1",
+        "N": 10000000,
+        "d": 96,
+        "nlist": 1024,
+        "M": 16,
+        "ksub": 256,
+        "metric_id": 1,
+        "fit_base_n": 65536,
+        "base_vector_stream_sha256": "1d39e90d5771657fb9dd5a7e30c24c966ce7ccc077734fb770887d6b7980f935",
+        "global_PQ_not_residual": true,
+        "centroid_spherical": false,
+        "files": {
+          "offsets.u64": {
+            "bytes": 8200,
+            "sha256": "a2408c06408dfedc085efffd3746408506fefe3252ea81a98b00f11aca37ed94"
+          },
+          "centroids.f32": {
+            "bytes": 393216,
+            "sha256": "5addcf33ade26d578312915e0ead468b656ffc5b341436184ac37658c4e88e7d"
+          },
+          "region_ids.i32": {
+            "bytes": 40000000,
+            "sha256": "d588126a75f76987b480f767697991dd36fe547888aa3c96e5cd76f169ea4b06"
+          },
+          "codebooks.f32": {
+            "bytes": 98304,
+            "sha256": "5a428d6fb187edbacdf2442f890a84be2aff9c215771924805d31075f34057ba"
+          },
+          "id_region.i32": {
+            "bytes": 40000000,
+            "sha256": "bbfb9285dc8e7a9bec943d93a0bdb0918feba2351032c9fe3e23b6f1515b7aba"
+          },
+          "training_base_ids.i32": {
+            "bytes": 262144,
+            "sha256": "f931a732c35600e6b7aa226ffaa7ac432e9dec0bbbec3799281babe743ff9a33"
+          },
+          "codes.u8": {
+            "bytes": 160000000,
+            "sha256": "75010b01720c26c01367c09abed0e023ef875428e67b4cc013348b23ddfdcc48"
+          }
+        },
+        "query_exact_byte_overlap_fit_cal": 0,
+        "query_exact_byte_overlap_train_test": 0,
+        "group_identity_scope": "Residual fit shares original GT10 profile-fit prefix; test identities excluded.",
+        "coarse_seconds": 0.9508177110000133,
+        "pq_seconds": 0.5764190700000427,
+        "encode_seconds": 39.044710114000054,
+        "elapsed_seconds": 62.80540374899999,
+        "threads": 8,
+        "faiss_version": "1.15.0",
+        "max_region_size": 31897,
+        "median_region_size": 9117.0
+      },
+      "training": {
+        "REG-Q": {
+          "calibration_mse": 0.7250627836689422,
+          "selected_missing_GT_members": 2638,
+          "selected_fraction_of_all_missing": 0.3101340230425582,
+          "selected_mean_coarse_rank": 0.828375
+        },
+        "REG-R": {
+          "calibration_mse": 0.9733166083219204,
+          "selected_missing_GT_members": 2591,
+          "selected_fraction_of_all_missing": 0.30460851163884317,
+          "selected_mean_coarse_rank": 0.937625
+        },
+        "status": "PASS_E187_FIXED_RIDGE",
+        "fit_n": 12000,
+        "calibration_n": 4000,
+        "alpha": 10,
+        "label": "count of train GT100 omitted by fixed L200 teacher per coarse region",
+        "calibration_used_for_selection": false,
+        "test_or_test_GT_read": false,
+        "calibration_missing_GT_members": 8506,
+        "top8_region_coverage": 0.5838231836350811,
+        "REG_NN_selected_fraction": 0.28097813308253,
+        "seconds": 0.42478397100001075,
+        "threads": 1
+      },
+      "environment": {
+        "backend_resident_bytes": 240499720,
+        "binding": {
+          "N": 10000000,
+          "d": 96,
+          "full_embedded_base_audit": false,
+          "full_source_identity_authority": "external execution lock SHA256",
+          "metric_id": 1,
+          "sampled_embedded_base_rows": 256,
+          "sampled_words_equal": true,
+          "startup_seconds": 9.533844842
+        },
+        "cpu": 15,
+        "startup_seconds": 9.656090102,
+        "threads": 1,
+        "timer": "complete Batch allocate/init + route/main/completion + six-array copy + normal destruction"
+      }
+    }
+  ],
+  "seconds": 9.288136600000144,
+  "failure": "per query Recall100<10%, hits 0..9",
+  "bootstrap": "5000 paired query multinomial draws, percentile95%, descriptive unadjusted intervals",
+  "B32_counters": "native stats not instrumented for B32; zeros in original result are placeholders; online cost is included in wall",
+  "quality_scope": "historically exposed original10K test per dataset; no blind confirmation"
+}

@@ -1,0 +1,47 @@
+{
+  "argv": [
+    "g++",
+    "-O3",
+    "-march=native",
+    "-std=c++17",
+    "-fopenmp",
+    "-rdynamic",
+    "-I/data/netg/ACSG",
+    "-I/data/netg/ACSG/benches",
+    "-I/data/netg/ACSG/faiss",
+    "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+    "/data/netg/ACSG/entry_method_exploration/20261102_conditional_residual_policy_v1/src/benchmark.cpp",
+    "/root/acsg-e172-storage-v2/campaign/common/acsg_current.o",
+    "build/ACSG/libACSG.a",
+    "build/MRNN_Descent/libmrnndescent.a",
+    "build/faiss/faiss/libfaiss.a",
+    "-lopenblas",
+    "-lz",
+    "-ldl",
+    "-lcrypto",
+    "-o",
+    "/data/netg/ACSG/entry_method_exploration/20261102_conditional_residual_policy_v1/storage/formal_benchmark"
+  ],
+  "returncode": 0,
+  "seconds": 20.100796112001262,
+  "log": "/data/netg/ACSG/entry_method_exploration/20261102_conditional_residual_policy_v1/reviews/build_formal.log",
+  "binary_sha256": "9aa71c5a5dd47a986533fcc837614a224fcfb2b221706538e6eb6d1a4d86027b",
+  "sources": [
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261102_conditional_residual_policy_v1/src/policy.inc",
+      "sha256": "2e19b9c60f97a0854b365408e7216c983d58adc8e9f0e41ed860115e008db4e0"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261102_conditional_residual_policy_v1/src/e197.inc",
+      "sha256": "2058eb0bd0cdda7ae5fede3727ba8b4b01a778ac802e4a2f3ed7e308fb47bfcf"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261102_conditional_residual_policy_v1/src/labels_frozen.cpp",
+      "sha256": "7c21e24fc6be9be0d012c185b4c98f8f3f6c5d9be1f1e32fd0237f0e9c2181d3"
+    },
+    {
+      "path": "/data/netg/ACSG/entry_method_exploration/20261102_conditional_residual_policy_v1/src/benchmark.cpp",
+      "sha256": "55f18124e21ebc1118f8f808359d3075f86fbb8ab6992c6358cf6b76a0863fb3"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "dataset": "flickr30k",
+  "base": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/flickr30k/prepared/base.f32",
+    "format": "raw_f32",
+    "n": 31782,
+    "d": 512
+  },
+  "index": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/flickr30k/nsg.index",
+  "metric_id": 0,
+  "router": {
+    "name": "hard",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/flickr30k/ids.i32",
+    "W": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/flickr30k/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/flickr30k/router.hnsw",
+    "route_order": "heap_pop"
+  },
+  "queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/inputs/flickr30k/B/queries.f32",
+    "format": "raw_f32",
+    "n": 512,
+    "d": 512
+  },
+  "test_gt": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/inputs/flickr30k/B/gt.i32",
+    "format": "raw_i32",
+    "n": 512,
+    "k": 100
+  },
+  "train_queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/flickr30k/prepared/residual.f32",
+    "format": "raw_f32",
+    "n": 16000,
+    "d": 512
+  },
+  "train_gt": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/flickr30k/exact/residual.gt100.i64",
+    "format": "raw_i64",
+    "n": 16000,
+    "k": 100
+  },
+  "teacher_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/flickr30k/teacher/hard",
+  "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/flickr30k/compiled/hard/tables/JOINT32.bin",
+  "source_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/flickr30k/compiled/hard/source",
+  "models": "/root/acsg-e191-storage/models/flickr30k",
+  "output_dir": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/results/flickr30k/B",
+  "threads": 1,
+  "cpu": 15,
+  "K_L": {
+    "1": [
+      32,
+      64,
+      100,
+      128,
+      160,
+      200,
+      256,
+      320,
+      400,
+      480,
+      512,
+      528,
+      544,
+      640,
+      800,
+      1024,
+      1200
+    ],
+    "100": [
+      100,
+      128,
+      160,
+      200,
+      256,
+      320,
+      400,
+      480,
+      512,
+      528,
+      544,
+      640,
+      800,
+      1024,
+      1200
+    ]
+  },
+  "completion_L": {
+    "1": [
+      32,
+      100,
+      200,
+      400
+    ],
+    "100": [
+      100,
+      200,
+      400,
+      800
+    ]
+  },
+  "methods": [
+    "GT10",
+    "B32",
+    "REUSE-PQ",
+    "REUSE-SQ",
+    "MAIN-SQ"
+  ],
+  "timing_repeats": 3,
+  "warmup_n": 256,
+  "PQ_M": 16,
+  "training_role_scope": "Residual training role disjoint from profile-fit and test by image/caption connected identity groups.",
+  "family": "hard",
+  "window": "B",
+  "Ls": [
+    100,
+    128,
+    160,
+    200,
+    256,
+    320,
+    400,
+    512,
+    640,
+    800,
+    1000
+  ],
+  "nav_methods": [
+    "ONEHOP96",
+    "DIST96",
+    "DIST384",
+    "NOVEL96",
+    "NOVEL384",
+    "REP384"
+  ],
+  "meta_dir": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/meta/flickr30k"
+}

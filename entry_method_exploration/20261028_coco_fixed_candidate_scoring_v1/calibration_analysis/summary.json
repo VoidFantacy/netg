@@ -1,0 +1,40 @@
+{
+  "status": "PASS_E190_ANALYSIS",
+  "role": "calibration",
+  "points": 26,
+  "paired_points": 6,
+  "batches": 78,
+  "costs": [
+    {
+      "dataset": "coco",
+      "internal_wall_seconds": 187.28502393600002,
+      "suite_wall_seconds": 199.738471892,
+      "environment": {
+        "binding": {
+          "N": 118272,
+          "d": 512,
+          "full_embedded_base_audit": false,
+          "full_source_identity_authority": "external execution lock SHA256",
+          "metric_id": 0,
+          "sampled_embedded_base_rows": 256,
+          "sampled_words_equal": true,
+          "startup_seconds": 0.204721331
+        },
+        "block_backend_bytes": 5315784,
+        "cpu": 15,
+        "old_backend_bytes": 5468168,
+        "reuse_array_bytes": 525248,
+        "sq8_code_bytes": 60555264,
+        "sq8_idpos_bytes": 473088,
+        "sq8_trained_bytes": 4096,
+        "startup_seconds": 0.268570501,
+        "threads": 1,
+        "timer": "full Batch allocation/init + unchanged route/main + completion + six-array copy + destruction"
+      }
+    }
+  ],
+  "seconds": 1.542535861000033,
+  "quality_scope": "historically exposed queries; not blind",
+  "bootstrap": "5000 paired draws, descriptive percentile95, no multiplicity adjustment",
+  "B32_counts": "unmeasured in native stats; reconstructed separately"
+}

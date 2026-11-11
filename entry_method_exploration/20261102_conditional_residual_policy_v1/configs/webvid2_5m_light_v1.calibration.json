@@ -1,0 +1,794 @@
+{
+  "dataset": "webvid2_5m_light_v1",
+  "base": {
+    "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+    "format": "fvecs",
+    "n": 2505000,
+    "d": 512
+  },
+  "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "metric_id": 0,
+  "router": {
+    "name": "soft",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+    "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+    "route_order": "sorted_ids"
+  },
+  "queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/storage/inputs/webvid2_5m_light_v1/queries.f32",
+    "format": "raw_f32",
+    "n": 512,
+    "d": 512,
+    "row_start": 2560,
+    "total_n": 3072
+  },
+  "test_gt": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/storage/inputs/webvid2_5m_light_v1/gt.i32",
+    "format": "raw_i32",
+    "n": 512,
+    "k": 100,
+    "row_start": 2560,
+    "total_n": 3072
+  },
+  "train_queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/queries.f32",
+    "format": "raw_f32",
+    "n": 16000,
+    "d": 512,
+    "total_n": 20000,
+    "row_start": 0
+  },
+  "train_gt": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/gt.i64",
+    "format": "raw_i64",
+    "n": 16000,
+    "k": 100,
+    "total_n": 20000,
+    "row_start": 0
+  },
+  "teacher_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/webvid2_5m_light_v1/teacher/soft",
+  "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/webvid2_5m_light_v1/compiled/soft/tables/JOINT32.bin",
+  "source_dir": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/webvid2_5m_light_v1/compiled/soft/source",
+  "models": "/root/acsg-e191-storage/models/webvid2_5m_light_v1",
+  "output_dir": "/data/netg/ACSG/entry_method_exploration/20261102_conditional_residual_policy_v1/storage/calibration/webvid2_5m_light_v1",
+  "threads": 1,
+  "cpu": 15,
+  "K_L": {
+    "1": [
+      32,
+      64,
+      100,
+      128,
+      160,
+      200,
+      256,
+      320,
+      400,
+      480,
+      512,
+      528,
+      544,
+      640,
+      800,
+      1024,
+      1200
+    ],
+    "100": [
+      100,
+      128,
+      160,
+      200,
+      256,
+      320,
+      400,
+      480,
+      512,
+      528,
+      544,
+      640,
+      800,
+      1024,
+      1200
+    ]
+  },
+  "completion_L": {
+    "1": [
+      32,
+      100,
+      200,
+      400
+    ],
+    "100": [
+      100,
+      200,
+      400,
+      800
+    ]
+  },
+  "methods": [
+    "GT10",
+    "B32",
+    "REUSE-PQ",
+    "REUSE-SQ",
+    "MAIN-SQ"
+  ],
+  "timing_repeats": 3,
+  "warmup_n": 256,
+  "PQ_M": 16,
+  "training_role_scope": "Residual fit shares original GT10 profile-fit prefix; test identities excluded.",
+  "family": "soft",
+  "window": "calibration",
+  "Ls": [
+    100,
+    128,
+    160,
+    200,
+    256,
+    320,
+    400,
+    512,
+    640,
+    800,
+    1000
+  ],
+  "nav_methods": [
+    "ONEHOP96",
+    "DIST96",
+    "DIST384",
+    "NOVEL96",
+    "NOVEL384",
+    "REP384"
+  ],
+  "meta_dir": "/data/netg/ACSG/entry_method_exploration/20261101_residual_navigation_diagnosis_v1/storage/meta/webvid2_5m_light_v1",
+  "q8_table": "/data/netg/ACSG/entry_method_exploration/20261101_residual_bottleneck_separation_v1/storage/models/webvid2_5m_light_v1/Q8-B32.bin",
+  "scratch": "/dev/shm/acsg-e197/webvid2_5m_light_v1",
+  "experiment_root": "/data/netg/ACSG/entry_method_exploration/20261102_conditional_residual_policy_v1",
+  "K": 100,
+  "L": 200,
+  "model_files": [
+    {
+      "K": 100,
+      "L": 100,
+      "path": "/data/netg/ACSG/entry_method_exploration/20261102_conditional_residual_policy_v1/storage/models/webvid2_5m_light_v1/k100_L100/model.json"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "path": "/data/netg/ACSG/entry_method_exploration/20261102_conditional_residual_policy_v1/storage/models/webvid2_5m_light_v1/k100_L200/model.json"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "path": "/data/netg/ACSG/entry_method_exploration/20261102_conditional_residual_policy_v1/storage/models/webvid2_5m_light_v1/k100_L400/model.json"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "path": "/data/netg/ACSG/entry_method_exploration/20261102_conditional_residual_policy_v1/storage/models/webvid2_5m_light_v1/k1_L200/model.json"
+    }
+  ],
+  "points": [
+    {
+      "K": 1,
+      "L": 32,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 32,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 32,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 64,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 64,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 64,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 100,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 128,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 128,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 128,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 160,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 160,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 160,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "ADAPT"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "CASCADE384"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "CASCADE96"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "DIST1-FULL"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "DIST384"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "DIST96"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "FAST384"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "FAST96"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "MODEL1"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "OLD-CACHED384"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "POLICY"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "REUSE-SQ"
+    },
+    {
+      "K": 1,
+      "L": 200,
+      "method": "TEACHER384"
+    },
+    {
+      "K": 1,
+      "L": 256,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 256,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 256,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 320,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 320,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 320,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 400,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 512,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 512,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 512,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 640,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 640,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 640,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 800,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 800,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 800,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 1,
+      "L": 1000,
+      "method": "GT10"
+    },
+    {
+      "K": 1,
+      "L": 1000,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 1,
+      "L": 1000,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "ADAPT"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "CASCADE384"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "CASCADE96"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "DIST1-FULL"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "DIST384"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "DIST96"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "FAST384"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "FAST96"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "MODEL1"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "OLD-CACHED384"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "POLICY"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "REUSE-SQ"
+    },
+    {
+      "K": 100,
+      "L": 100,
+      "method": "TEACHER384"
+    },
+    {
+      "K": 100,
+      "L": 128,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 128,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 128,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 100,
+      "L": 160,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 160,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 160,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "ADAPT"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "CASCADE384"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "CASCADE96"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "DIST1-FULL"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "DIST384"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "DIST96"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "FAST384"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "FAST96"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "MODEL1"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "OLD-CACHED384"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "POLICY"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "REUSE-SQ"
+    },
+    {
+      "K": 100,
+      "L": 200,
+      "method": "TEACHER384"
+    },
+    {
+      "K": 100,
+      "L": 256,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 256,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 256,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 100,
+      "L": 320,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 320,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 320,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "ADAPT"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "CASCADE384"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "CASCADE96"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "DIST1-FULL"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "DIST384"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "DIST96"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "FAST384"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "FAST96"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "MODEL1"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "OLD-CACHED384"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "POLICY"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "REUSE-SQ"
+    },
+    {
+      "K": 100,
+      "L": 400,
+      "method": "TEACHER384"
+    },
+    {
+      "K": 100,
+      "L": 512,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 512,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 512,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 100,
+      "L": 640,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 640,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 640,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 100,
+      "L": 800,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 800,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 800,
+      "method": "Q8-B32"
+    },
+    {
+      "K": 100,
+      "L": 1000,
+      "method": "GT10"
+    },
+    {
+      "K": 100,
+      "L": 1000,
+      "method": "OPT-B32"
+    },
+    {
+      "K": 100,
+      "L": 1000,
+      "method": "Q8-B32"
+    }
+  ],
+  "audit": false
+}

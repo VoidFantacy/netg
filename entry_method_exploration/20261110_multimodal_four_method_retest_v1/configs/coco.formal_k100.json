@@ -1,0 +1,89 @@
+{
+  "dataset": "coco",
+  "index": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/nsg.index",
+  "metric_id": 0,
+  "base": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/base.f32",
+    "format": "raw_f32",
+    "n": 118272,
+    "d": 512
+  },
+  "routers": [
+    {
+      "name": "hard",
+      "ids": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/ids.i32",
+      "W": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/router.hnsw",
+      "route_order": "heap_pop"
+    },
+    {
+      "name": "gate",
+      "gate": true,
+      "ids": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/inputs/coco/gate.ids.i32",
+      "W": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/models/coco/gate_disjoint_labels_v1/W.f32",
+      "graph": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/models/coco/gate_disjoint_labels_v1/router.hnsw",
+      "route_order": "heap_pop",
+      "allow_build": false
+    }
+  ],
+  "threads": 1,
+  "cpu": 15,
+  "protocol": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/protocol.md",
+  "queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/test.f32",
+    "format": "raw_f32",
+    "n": 10000,
+    "d": 512
+  },
+  "output_dir": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/results/coco/k100_run",
+  "K_L": {
+    "100": [
+      100,
+      112,
+      128,
+      144,
+      160,
+      180,
+      200,
+      224,
+      256,
+      320,
+      400,
+      480,
+      576,
+      640,
+      800,
+      960,
+      1120,
+      1280,
+      1440,
+      1600
+    ]
+  },
+  "timing_repeats": 2,
+  "warmup_n": 256,
+  "methods": [
+    {
+      "name": "NSG",
+      "family": "NSG"
+    },
+    {
+      "name": "GT10",
+      "family": "GT10",
+      "router": "hard"
+    },
+    {
+      "name": "GT10+Residual",
+      "family": "POST",
+      "router": "hard",
+      "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/coco/compiled/hard/tables/JOINT32.bin",
+      "baseline": "GT10"
+    },
+    {
+      "name": "GATE",
+      "family": "GATE",
+      "router": "gate"
+    }
+  ],
+  "dataset_order": 0
+}

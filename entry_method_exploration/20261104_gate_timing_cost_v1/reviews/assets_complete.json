@@ -1,0 +1,105 @@
+{
+  "status": "PASS_FROZEN_E198_REUSE_PLUS_NEW_FLICKR_YANDEX_MODELS",
+  "records": [
+    {
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20261102_conditional_residual_policy_v1/storage/labels_benchmark",
+        "labels",
+        "/data/netg/ACSG/entry_method_exploration/20261104_gate_timing_cost_v1/configs/flickr30k.k1.labels.json"
+      ],
+      "returncode": 0,
+      "seconds": 39.168967474000056,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261104_gate_timing_cost_v1/reviews/flickr30k.k1.labels.log"
+    },
+    {
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20261102_conditional_residual_policy_v1/storage/labels_benchmark",
+        "labels",
+        "/data/netg/ACSG/entry_method_exploration/20261104_gate_timing_cost_v1/configs/flickr30k.k100.labels.json"
+      ],
+      "returncode": 0,
+      "seconds": 43.22577633399999,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261104_gate_timing_cost_v1/reviews/flickr30k.k100.labels.log"
+    },
+    {
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20261102_conditional_residual_policy_v1/storage/labels_benchmark",
+        "labels",
+        "/data/netg/ACSG/entry_method_exploration/20261104_gate_timing_cost_v1/configs/yandex_t2i_official10M_ip_v1.k1.labels.json"
+      ],
+      "returncode": 0,
+      "seconds": 122.5544726139999,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261104_gate_timing_cost_v1/reviews/yandex_t2i_official10M_ip_v1.k1.labels.log"
+    },
+    {
+      "argv": [
+        "taskset",
+        "-c",
+        "15",
+        "/data/netg/ACSG/entry_method_exploration/20261102_conditional_residual_policy_v1/storage/labels_benchmark",
+        "labels",
+        "/data/netg/ACSG/entry_method_exploration/20261104_gate_timing_cost_v1/configs/yandex_t2i_official10M_ip_v1.k100.labels.json"
+      ],
+      "returncode": 0,
+      "seconds": 81.43223842199995,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261104_gate_timing_cost_v1/reviews/yandex_t2i_official10M_ip_v1.k100.labels.log"
+    },
+    {
+      "argv": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20261104_gate_timing_cost_v1/scripts/train.py",
+        "flickr30k",
+        "1",
+        "200"
+      ],
+      "returncode": 0,
+      "seconds": 28.046291224000015,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261104_gate_timing_cost_v1/reviews/flickr30k.k1.train.log"
+    },
+    {
+      "argv": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20261104_gate_timing_cost_v1/scripts/train.py",
+        "flickr30k",
+        "100",
+        "200"
+      ],
+      "returncode": 0,
+      "seconds": 26.254593967999995,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261104_gate_timing_cost_v1/reviews/flickr30k.k100.train.log"
+    },
+    {
+      "argv": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20261104_gate_timing_cost_v1/scripts/train.py",
+        "yandex_t2i_official10M_ip_v1",
+        "1",
+        "200"
+      ],
+      "returncode": 0,
+      "seconds": 27.813023774000044,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261104_gate_timing_cost_v1/reviews/yandex_t2i_official10M_ip_v1.k1.train.log"
+    },
+    {
+      "argv": [
+        "/data/netg/ACSG/.venv_cpu/bin/python",
+        "/data/netg/ACSG/entry_method_exploration/20261104_gate_timing_cost_v1/scripts/train.py",
+        "yandex_t2i_official10M_ip_v1",
+        "100",
+        "200"
+      ],
+      "returncode": 0,
+      "seconds": 28.077017851999926,
+      "log": "/data/netg/ACSG/entry_method_exploration/20261104_gate_timing_cost_v1/reviews/yandex_t2i_official10M_ip_v1.k100.train.log"
+    }
+  ]
+}
