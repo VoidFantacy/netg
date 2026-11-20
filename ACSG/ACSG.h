@@ -319,7 +319,13 @@ namespace acsg
             const std::vector<EnterPoint> &custom_enterpoints = std::vector<EnterPoint>(),
             std::vector<Neighbor> *retset_buf = nullptr);
 
-        // Runs the same search_new implementation while filling a diagnostic summary.
+        // Select the backend for plain Flat IP mode-2 searches.
+        // Configure the index before starting its query threads.
+        void set_flat_ip_batch4_enabled(bool enabled) {
+            flat_ip_batch4_enabled_ = enabled;
+        }
+
+        // Runs the scalar backend while filling a diagnostic summary.
         // `trace_gt` is optional supervision-only metadata and never affects search.
         void search_new_traced(
             DistanceComputer &dis,
@@ -346,5 +352,15 @@ namespace acsg
             int mode,
             int query_id,
             SearchTrace* trace = nullptr);  // 添加query_id参数
+
+    private:
+        bool flat_ip_batch4_enabled_ = true;
+
+        bool try_search_flat_ip_batch4(
+            DistanceComputer &dis,
+            VisitedTable &vt,
+            int L,
+            std::vector<Neighbor> &retset,
+            const std::vector<EnterPoint> &enterpoints);
     };
 }

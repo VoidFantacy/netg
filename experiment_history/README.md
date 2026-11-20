@@ -1,6 +1,8 @@
 # ACSG 详细实验与研究记录
 
-更新于2026-11-10。最新完成[E200](200_multimodal_four_method_retest_v1.md)四多模态四方法加密重测：640点/1280完整T1批次，每点两遍平均，原生/独立数值核验与实际图形审阅完成。COCO/WebVid残差有明确有效区间，Flickr按目标取舍，Yandex优先GT10；默认保持。前一实验E199及学习导航/残差门停止边界保留历史身份，全部前序卡片与科学原件不改。当前结论见[summary](../summary.md)，简要索引见[s-experiment](../s-experiment.md)。
+2026-11-20 完成 [E211 正式入口默认验证](211_span4_production_default_v1.md)。112个新旧配对返回逐字节相同，112/112个配对通过逐点速度筛选。纯GT10完整QPS变化+13.74%至+28.35%，GT10+B32变化+13.16%至+27.94%。 当前见[summary](../summary.md)。
+
+[E212 四集同期对照](212_gt10_nsg_b32_four_way_v1.md)。E212 四个真实数据集各3072条，真实 K1/K100 各7个 L。224点448批。同表的新 GT10+B32 相对旧 GT10+B32 56组返回逐字相同，完整 QPS 变化 +13.43% 至 +27.54%。固定同 L 补点平均 Recall 增加 52/56 点，完整 QPS 降低 56/56 点。
 
 下面按原卡片文件号排序，保留全部详细记录和原路径。早期卡片号与正文E编号不一定相同，不将它们重新编号。卡片中的“当前/最新/运行中/待执行”是历史原文，不代表当前队列；状态、范围和修正要沿原协议/结果复核。
 
@@ -18,6 +20,18 @@
 
 | 原卡片文件 | 原题（历史） |
 | --- | --- |
+| [212_gt10_nsg_b32_four_way_v1.md](212_gt10_nsg_b32_four_way_v1.md) | E212 四集 NSG、新 GT10、新 GT10+B32、旧 GT10+B32 |
+| [211_span4_production_default_v1.md](211_span4_production_default_v1.md) | E211 GT10 正式入口 A/B 与默认切换 |
+| [210_span4_four_dataset_retest_v1.md](210_span4_four_dataset_retest_v1.md) | E210：四集 SPAN4 同期复测和曲线 |
+| [209_webvid_b32_span_confirmation_v1.md](209_webvid_b32_span_confirmation_v1.md) | E209：WebVid补点跨窗确认及SPAN4完整复测 |
+| [208_b32_equivalent_speed_v1.md](208_b32_equivalent_speed_v1.md) | E208：四集 B32 等价预取和合并优化 |
+| [207_b32_stage_cost_v1.md](207_b32_stage_cost_v1.md) | E207：两集 B32 补点分段及等价工作诊断 |
+| [206_residual_budget_matched_table_v1.md](206_residual_budget_matched_table_v1.md) | E206：预算配套造表，两集离线及WebVid K100完整计时 |
+| [205_residual_prefix_signal_v1.md](205_residual_prefix_signal_v1.md) | E205：公共前缀分数离线诊断，较小 L 继续条件未通过 |
+| [204_residual_budget_allocation_v1.md](204_residual_budget_allocation_v1.md) | E204：三路残差预算分配，两集144点/288批 |
+| [203_residual_query_prototypes_v1.md](203_residual_query_prototypes_v1.md) | E203：残差查询双原型，两集236点/472批 |
+| [202_shared_residual_value_v1.md](202_shared_residual_value_v1.md) | E202：四多模态共享表示残差（544点/1088批完成） |
+| [201_query_conditioned_residual_v1.md](201_query_conditioned_residual_v1.md) | E201：两多模态查询条件残差首版（172点/344批次完成） |
 | [200_multimodal_four_method_retest_v1.md](200_multimodal_four_method_retest_v1.md) | E200：四多模态四方法加密重测（640点/1280批次完成） |
 | [193_adaptive_completion_gate_v1.md](193_adaptive_completion_gate_v1.md) | E193：收益异质性、理想开关与廉价门完整费用验证 |
 | [192_sharing_necessity_v1.md](192_sharing_necessity_v1.md) | E192：共享必要条件、候选支持上界与受控重配 |

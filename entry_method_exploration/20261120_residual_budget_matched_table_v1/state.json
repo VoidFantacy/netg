@@ -1,0 +1,84 @@
+{
+  "status": "PASS_E206_FULL_LOCAL_DELIVERY",
+  "gate": "RUN_FORMAL",
+  "offline_datasets": [
+    "coco",
+    "webvid2_5m_light_v1"
+  ],
+  "offline_K": [
+    1,
+    100
+  ],
+  "offline_L": [
+    184,
+    192,
+    200
+  ],
+  "formal_units": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100
+    }
+  ],
+  "new_train_ANN_calls": 128000,
+  "offline_table_merges": 384000,
+  "formal_started": true,
+  "formal_points": 32,
+  "formal_batches": 64,
+  "formal_public_queries": 640000,
+  "qualification_batches": 5,
+  "covered_by_full_B32_average": 0,
+  "covered_by_full_B32_nonoverlap": 0,
+  "strong_control_covered_average": 0,
+  "strong_control_covered_nonoverlap": 0,
+  "runtime_default": "E99 GT10 (WebVid soft-t1)",
+  "pending_experiment_queue": false,
+  "primary_webvid_new_L184": {
+    "dataset": "webvid2_5m_light_v1",
+    "K": "100",
+    "L": "184",
+    "method": "B32-L184",
+    "n": "10000",
+    "hits": "734082",
+    "recall_pct": "73.4082",
+    "qps": "1469.3659043681873",
+    "qps_round0": "1470.6840564161512",
+    "qps_round1": "1468.0477523202237",
+    "qps_min": "1468.0477523202237",
+    "qps_max": "1470.6840564161512",
+    "complete_us": "680.5662237",
+    "rescued_vs_main": "19520",
+    "damaged_vs_main": "0",
+    "zero": "2",
+    "severe_lt10pct": "54",
+    "severe_rescued_vs_main": "9",
+    "severe_added_vs_main": "0",
+    "mean_exact_posting": "93.3528",
+    "packet_sha256": "636c35ecd4e156435c559242afdd540288231806fa7d48f850a27866be887928",
+    "E204_anchor_checked": "False"
+  },
+  "primary_webvid_full_B32_L192": {
+    "dataset": "webvid2_5m_light_v1",
+    "K": "100",
+    "L": "192",
+    "method": "B32",
+    "n": "10000",
+    "hits": "741992",
+    "recall_pct": "74.1992",
+    "qps": "1407.5874958582413",
+    "qps_round0": "1413.6581601542644",
+    "qps_round1": "1401.5168315622184",
+    "qps_min": "1401.5168315622184",
+    "qps_max": "1413.6581601542644",
+    "complete_us": "710.4486248",
+    "rescued_vs_main": "20544",
+    "damaged_vs_main": "0",
+    "zero": "2",
+    "severe_lt10pct": "47",
+    "severe_rescued_vs_main": "7",
+    "severe_added_vs_main": "0",
+    "mean_exact_posting": "93.2349",
+    "packet_sha256": "ee0303e3216bbf7723224293b39ee77150c6a30432e9318da6137516dfd720ed",
+    "E204_anchor_checked": "True"
+  }
+}

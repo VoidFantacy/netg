@@ -1,0 +1,41 @@
+{
+  "status": "PASS_E211_DISPATCH",
+  "release_default_untouched": false,
+  "outcomes": [
+    {
+      "case": "fixture",
+      "receipt": "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/logs/candidate_verify_fixture.log",
+      "sha256": "21d5c408451a9d6c5e599617b1523d6426eca7d96ff4808dab0930e6d476b489"
+    }
+  ],
+  "build_argv": [
+    "g++",
+    "-O3",
+    "-march=native",
+    "-std=c++17",
+    "-fopenmp",
+    "-rdynamic",
+    "-I/data/netg/ACSG",
+    "-I/data/netg/ACSG/benches",
+    "-I/data/netg/ACSG/faiss",
+    "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+    "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/src/verify_dispatch.cpp",
+    "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/bin/libACSG.a",
+    "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+    "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+    "-lopenblas",
+    "-lz",
+    "-ldl",
+    "-lcrypto",
+    "-o",
+    "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/bin/verify_dispatch",
+    "-Wl,--wrap=_ZN5faiss26fvec_inner_product_batch_4EPKfS1_S1_S1_S1_mRfS2_S2_S2_",
+    "-Wl,--wrap=_ZN5faiss18fvec_L2sqr_batch_4EPKfS1_S1_S1_S1_mRfS2_S2_S2_"
+  ],
+  "binary": {
+    "resolved": "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/bin/verify_dispatch",
+    "bytes": 3590312,
+    "mtime_ns": 1795177497832249160,
+    "sha256": "bbed479525cd7bd839b6a4ded9eae40833d0885346685e66f8d931d949fbe5a9"
+  }
+}

@@ -1,5 +1,6 @@
 #include <faiss/impl/DistanceComputer.h>
 #include <faiss/impl/NSG.h>
+#include <faiss/IndexFlat.h>
 #include <ACSG/ACSG.h>
 #include <ACSG/detail/CandidatePool.h>
 
@@ -11,6 +12,7 @@
 #include <atomic>
 #include <unordered_set>
 #include <queue>
+#include <typeinfo>
 #include <vector>
 #include <unordered_map>
 
@@ -30,12 +32,22 @@ namespace acsg
 
         // It needs to be smaller than 0
         constexpr int EMPTY_ID = -1;
+
+        // Only plain Flat IP storage supplies this distance computer.
+        struct FlatIPSearchDistanceComputer final : NegativeDistanceComputer {
+            using NegativeDistanceComputer::NegativeDistanceComputer;
+        };
     } // namespace
 
     DistanceComputer *storage_distance_computer(const Index *storage)
     {
         if (is_similarity_metric(storage->metric_type))
         {
+            if (storage->metric_type == METRIC_INNER_PRODUCT &&
+                (typeid(*storage) == typeid(IndexFlat) ||
+                 typeid(*storage) == typeid(IndexFlatIP))) {
+                return new FlatIPSearchDistanceComputer(storage->get_distance_computer());
+            }
             return new NegativeDistanceComputer(storage->get_distance_computer());
         }
         else
@@ -1352,9 +1364,12 @@ void ACSG::search_new(
                 top_enterpoints, mode, current_query, nullptr);
             break;
         case 2: // 模式2: 使用自定义入口点 (Neural Router)
-            search_on_graph_new<false>(
-                *final_graph, dis, vt, pool_size, retset, 
-                custom_enterpoints, mode, current_query, nullptr);
+            if (!flat_ip_batch4_enabled_ ||
+                !try_search_flat_ip_batch4(dis, vt, pool_size, retset, custom_enterpoints)) {
+                search_on_graph_new<false>(
+                    *final_graph, dis, vt, pool_size, retset,
+                    custom_enterpoints, mode, current_query, nullptr);
+            }
             break;
         default:
             FAISS_THROW_FMT("Invalid search mode: %d", mode);
@@ -1372,6 +1387,103 @@ void ACSG::search_new(
             D[i] = std::numeric_limits<float>::max();
         }
     }
+}
+
+bool ACSG::try_search_flat_ip_batch4(
+    DistanceComputer &dis,
+    VisitedTable &vt,
+    int L,
+    std::vector<Neighbor> &retset,
+    const std::vector<EnterPoint> &enterpoints)
+{
+    auto* native = dynamic_cast<FlatIPSearchDistanceComputer*>(&dis);
+    if (!native || L <= 0 || enterpoints.empty()) return false;
+    const auto* flat = dynamic_cast<const FlatCodesDistanceComputer*>(native->basedis);
+    if (!flat) return false;
+
+    const int entry_count = std::min<size_t>(3, enterpoints.size());
+    for (int i = 0; i < entry_count; ++i) {
+        const int id = enterpoints[i].id;
+        if (id < 0 || id >= ntotal) return false;
+    }
+
+    constexpr float empty_distance = std::numeric_limits<float>::max();
+    int live = 0;
+    for (int i = 0; i < entry_count && live < L; ++i) {
+        const int id = enterpoints[i].id;
+        if (vt.get(id)) continue;
+        if (live == 0) retset.assign(L + 1, Neighbor(EMPTY_ID, empty_distance, false));
+        vt.set(id);
+        retset[live++] = Neighbor(id, dis(id), true);
+    }
+    if (live == 0) return false;  // Let the scalar backend select its fallback entry.
+
+    std::sort(retset.begin(), retset.begin() + live);
+    bool compact_pool = std::all_of(
+        retset.begin(), retset.begin() + live, [](const Neighbor& v) {
+            return std::isfinite(v.distance) && v.distance < empty_distance;
+        });
+
+    const auto& graph = *final_graph;
+#if defined(__GNUC__) || defined(__clang__)
+    const uint8_t* codes = flat->codes;
+    const size_t stride = flat->code_size;
+#endif
+    int k = 0;
+    while (k < live) {
+        int updated = L;
+        if (retset[k].flag) {
+            retset[k].flag = false;
+            const int node = retset[k].id;
+            // Read the current row so edge edits are visible without a span cache.
+            int width = graph.K;
+            while (width > 0) {
+                const int id = graph.at(node, width - 1);
+                if (id >= 0 && id < ntotal) break;
+                --width;
+            }
+            int m = 0;
+            while (m < width) {
+                int ids[4];
+                int count = 0;
+                while (m < width && count < 4) {
+                    const int id = graph.at(node, m++);
+                    if (id < 0 || id >= ntotal || vt.get(id)) continue;
+                    vt.set(id);
+                    ids[count++] = id;
+#if defined(__GNUC__) || defined(__clang__)
+                    if (codes && stride) {
+                        __builtin_prefetch(codes + size_t(id) * stride, 0, 3);
+                    }
+#endif
+                }
+                float distances[4];
+                if (count == 4) {
+                    dis.distances_batch_4(ids[0], ids[1], ids[2], ids[3],
+                        distances[0], distances[1], distances[2], distances[3]);
+                } else {
+                    for (int j = 0; j < count; ++j) distances[j] = dis(ids[j]);
+                }
+                // Admission must follow adjacency order, including ties.
+                for (int j = 0; j < count; ++j) {
+                    const float distance = distances[j];
+                    if (live == L && distance >= retset[L - 1].distance) continue;
+                    if (live < L && (!std::isfinite(distance) || distance >= empty_distance)) {
+                        compact_pool = false;
+                    }
+                    const int position = detail::insert_into_pool_live(
+                        retset.data(), L, compact_pool ? live : L,
+                        Neighbor(ids[j], distance, true));
+                    if (position < L) {
+                        updated = std::min(updated, position);
+                        if (live < L) ++live;
+                    }
+                }
+            }
+        }
+        k = updated <= k ? updated : k + 1;
+    }
+    return true;
 }
 
 void ACSG::search_new_traced(

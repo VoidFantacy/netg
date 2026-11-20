@@ -1,6 +1,34 @@
 # ACSG 实验与研究索引
 
-2026-11-10最新完成[E200四多模态四方法加密重测](entry_method_exploration/20261110_multimodal_four_method_retest_v1/analysis/final_v1/report_zh.md)：640点/1280完整CPU15单线程批次、1120万正式查询，每点两遍、每K20档L。COCO/WebVid残差有明确有效区间，Flickr按目标取舍，Yandex优先GT10；GATE160点均被同期其他方法覆盖。完整数值与实际图形已核验，默认不变。前一实验E199及复杂残差分支停止决定保留历史身份。当前结论读summary，实现读spec，后继读s-target。
+E212 四个真实数据集各3072条，真实 K1/K100 各7个 L。224点448批。同表的新 GT10+B32 相对旧 GT10+B32 56组返回逐字相同，完整 QPS 变化 +13.43% 至 +27.54%。固定同 L 补点平均 Recall 增加 52/56 点，完整 QPS 降低 56/56 点。 [历史卡片](experiment_history/212_gt10_nsg_b32_four_way_v1.md)。
+
+2026-11-20 完成 E211 并切换默认。标准 Flat raw-IP 的 `ACSG::search_new(mode=2)` 默认走 SPAN4，L2 等其他距离路径走标量。四个真实数据集各3,072条，真实K1/K100各7个L，224点、448个完整CPU15单线程批次。112个新旧配对返回逐字节相同，112/112个配对通过逐点速度筛选。纯GT10完整QPS变化+13.74%至+28.35%，GT10+B32变化+13.16%至+27.94%。 [E211 历史卡片](experiment_history/211_span4_production_default_v1.md)
+
+2026-11-20 完成 [E210 四集 SPAN4 复测](experiment_history/210_span4_four_dataset_retest_v1.md)。COCO、Flickr30k、WebVid、Yandex first10M 四集各3,072条真实公开查询。真实K1/K100，各7个L，224点、448个完整CPU15单线程批次、1,376,256次正式查询，每点两遍。112个优化点返回与各自对照逐字节一致。纯GT10 QPS变化+12.64%至+30.40%，56/56点过预设筛选。接完整B32变化+11.75%至+29.65%，56/56点过筛选。四集全部已测同L预算支持内核替换候选。生产发布合同仍为E99 GT10。
+
+2026-11-20 完成 [E209 WebVid两项等价复测](experiment_history/209_webvid_b32_span_confirmation_v1.md)。WebVid soft-t1 两个各2,048条查询窗口，真实K1/K100、L100/200/400，K100另测L960。71个点、142个单线程完整批次、290,816次正式查询，每点两遍。E208三个连续正向组合中0个按冻结口径在确认窗复现。SPAN4＋原B32 的完整 QPS 各点提升16.96%至22.24%，两个窗口同通过的预算为7/7。全部优化点与现用控制逐字节一致。默认 E99 GT10。
+
+2026-11-20 完成 [E208 四集 B32 等价优化](experiment_history/208_b32_equivalent_speed_v1.md)。COCO、Flickr30k、WebVid、Yandex 共四集，各取公共最前3,072条。真实 K1/K100，L100/200/400，96个点、192个完整CPU15单线程批次、589,824次正式查询，每点两遍。48个优化点均与原 B32 逐字节一致。9个点通过局部正向条件，0个点通过镜像下降条件。连续两个预算达到正向条件的组合有3个，包括WebVid K1 B32-PF4、WebVid K100 B32-PF4、WebVid K100 B32-BOTH。默认 E99 GT10，原 B32 作为固定补点强对照。
+
+2026-11-20 完成 [E207 B32补点分段计时](experiment_history/207_b32_stage_cost_v1.md)。COCO hard 和 WebVid soft-t1，各取公共10K的前3,072条，真实 K1/K100，L100/200/400。12个配置、48个正常批次和24个分段批次，合计221,184次计时查询。CPU15单线程，每点两遍。12个配置中，额外精算均是最大的残差阶段，占分段残差时间的60.6%–94.2%。K100/L200下，COCO/WebVid的额外精算为14.55/22.01微秒/query，查表去重1.97/2.51，合并5.29/6.07。
+
+2026-11-20 完成 [E206 按较小预算构建固定残差表](experiment_history/206_residual_budget_matched_table_v1.md)。COCO/WebVid 离线验证真实 K1/K100，生成128,000次真实训练 ANN，完成384,000次表合并。仅 WebVid K100 通过预锁继续条件并完成32点、64个完整CPU15单线程批次，每点两遍。WebVid K100，B32-L184 在 L184 为 73.4082% / 1469.37 QPS，旧完整 B32 在 L192 为 74.1992% / 1407.59 QPS，变化为 -0.7910 个百分点和 +4.39% QPS。本轮未建立 L184 对旧完整 B32 L192 的替换依据。当前默认采用 E99 GT10（WebVid soft-t1），保留完整 B32 已验证的条件有效区间。
+
+2026-11-20 完成 [E205 公共前缀分数诊断](experiment_history/205_residual_prefix_signal_v1.md)。COCO/WebVid，真实 K1/K100，回放 L100/200/400。384,000 个表与查询状态，3,840,000 次十配额实际合并。B32-FIT 下 L100 四个数据集与 K 单元均未过门，正式点为0。
+
+2026-11-19 完成 [E204 三路残差表预算分配](experiment_history/204_residual_budget_allocation_v1.md)。COCO/WebVid，144点、288个完整CPU15单线程批次，288万查询，真实K1/K100，每点两遍。ADAPT48 的12个点中 8 点被同期强控制或固定方案覆盖，同L相对 FIXED48 严格双升 4/12。默认保持 E99 GT10。
+
+2026-11-19存储维护：[旧数据简档](experiment_history/_maintenance/20261119_obsolete_payload_prune_v1/archive_index.md)。用户授权直接删除过旧实体数据，保留原研究卡片、报告、配置、manifest和CSV汇总。清单内旧模型/原始返回当前已不可直接重放；历史验收代表当时核验，不改变已测结论。当前七集和最近E200–E203冻结依赖保留。
+
+2026-11-17 完成 E203 两数据集残差查询双原型：COCO/WebVid，236点/472完整CPU15单线程批次，真实K1/K100、每点两遍。三个新版本36点中36/36被同期GT10/B32/SQ覆盖；两次描述性时长范围比较仍覆盖36/36。默认保持E99 GT10（WebVid soft-t1）。 [详细记录](experiment_history/203_residual_query_prototypes_v1.md)。
+
+2026-11-17完成四多模态E202：COCO、Flickr30k、WebVid、Yandex official first10M；544点/1088完整CPU15单线程批次，952万正式查询，真实K1/K100，每点两遍QPS算术平均。 固定共享表示新版未取得Recall–QPS改进，不替换旧QR3/B32，默认保持E99 GT10。 [E202详细记录](experiment_history/202_shared_residual_value_v1.md)。
+
+2026-11-13完成[E201查询条件残差首版](experiment_history/201_query_conditioned_residual_v1.md)：COCO/WebVid、172点/344完整CPU15单线程批次，每点两遍。当前稀疏树不替换B32；同入口遗漏异质性成立，QR对K100略正、K1负。全网格覆盖44/60、同阶段41/60，未覆盖点保留为取舍；默认保持，无待恢复队列。原理论设计保留当时身份，首版未实现强教师蒸馏。
+
+同日后续[方法诊断](experiment_history/_maintenance/20261113_query_conditioned_residual_diagnosis_v1/README.md)：无新ANN/QPS，复算36个原生叶trace与两集全部K/L合法角色。K100/L200当前QR3支持2096/1785，GT质量引导同beam3为22103/36368；第8层已丢约82%–85%目标，不能只归因深层回退。固定完整q遗漏迁移探针在12个K100 dev/cal组合均高于QR3，cal/L200为375→968、360→1053；普通GT标签仅208/470。支持继续改表示/监督/路径训练，尚无新部署收益；该诊断时教师与压缩后继仅设计，K1两项反例保留；后续实现及正式四集测量另见E202。
+
+前一E200于2026-11-10完成[E200四多模态四方法加密重测](entry_method_exploration/20261110_multimodal_four_method_retest_v1/analysis/final_v1/report_zh.md)：640点/1280完整CPU15单线程批次、1120万正式查询，每点两遍、每K20档L。COCO/WebVid残差有明确有效区间，Flickr按目标取舍，Yandex优先GT10；GATE160点均被同期其他方法覆盖。完整数值与实际图形已核验，默认不变。前一实验E199及复杂残差分支停止决定保留历史身份。当前结论读summary，实现读spec，后继读s-target。
 
 E199：[结论](entry_method_exploration/20261104_gate_timing_cost_v1/findings_zh.md) · [报告](entry_method_exploration/20261104_gate_timing_cost_v1/report_zh.md) · [PDF](entry_method_exploration/20261104_gate_timing_cost_v1/E199_残差门控时机与精排成本_20261104.pdf)。E199四个多模态数据集的门时机与精排成本实验已完成736点/2208完整单线程批次；主门策略80个窗口点中79个被同期强控制覆盖。 无待恢复队列。
 
@@ -20,6 +48,8 @@ E199：[结论](entry_method_exploration/20261104_gate_timing_cost_v1/findings_z
 
 | 记录 | 主题 | 状态与一句话判断 | 详细复盘 |
 | --- | --- | --- | --- |
+| E202 | 四多模态共享表示与补点净收益选块 | 544点/1088批完成；新168/168点被强控制覆盖，S32主配置24点全慢于旧QR3；默认保持 | [详细记录](experiment_history/202_shared_residual_value_v1.md) |
+| E201 | 查询/主返回条件的在线小叶块树残差首版 | 两集172点/344两遍T1完成；新QR3费用接近B32而救回更少；默认不变，保留条件取舍 | [详细记录](experiment_history/201_query_conditioned_residual_v1.md) |
 | E200 | 四多模态NSG/GT10/直接残差/GATE加密重测 | 完成640点/1280两遍T1；COCO/WebVid残差有效，Flickr条件性，Yandex优先GT10；默认保持 | [详细记录](experiment_history/200_multimodal_four_method_retest_v1.md) |
 | E199 | 四多模态集STATIC/PRE/POST门、F/N语义与精排分段 | 完成736/2208；主门79/80被覆盖；当前复杂分支停止扩展，另交付5页图解 | [原卡片](experiment_history/199_gate_timing_cost_v1.md) · [收敛记录](experiment_history/_maintenance/20261104_residual_pruning_graphs_v2/README.md) |
 | E198 | 状态匹配监督、双塔短名单、前置门与0/96/384动作 | 完成1480/4440；112/112新学习窗口点被强控制覆盖，默认保持 | [卡片](experiment_history/198_conditional_residual_policy_v1.md) |

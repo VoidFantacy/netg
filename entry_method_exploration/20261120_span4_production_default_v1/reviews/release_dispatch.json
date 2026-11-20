@@ -1,0 +1,76 @@
+{
+  "status": "PASS_E211_DISPATCH",
+  "release_default_untouched": true,
+  "outcomes": [
+    {
+      "case": "fixture",
+      "receipt": "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/logs/release_verify_fixture.log",
+      "sha256": "21d5c408451a9d6c5e599617b1523d6426eca7d96ff4808dab0930e6d476b489"
+    },
+    {
+      "case": "coco",
+      "receipt": "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/logs/release_verify_coco.log",
+      "sha256": "75f47d5e5b00371fce6731650ce707a02b0faca1e86911b8364f014c9d724d4c"
+    },
+    {
+      "case": "flickr30k",
+      "receipt": "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/logs/release_verify_flickr30k.log",
+      "sha256": "5266873b09b783f65df769ddba5e1f02f11830bf8d9ef79b31ff42cb808fe9dc"
+    },
+    {
+      "case": "webvid2_5m_light_v1",
+      "receipt": "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/logs/release_verify_webvid2_5m_light_v1.log",
+      "sha256": "bdc442d4574a9fbbd23a1ffef9ad26cb357cfcaecbeade27a7f8d6de355dbaed"
+    },
+    {
+      "case": "yandex_t2i_official10M_ip_v1",
+      "receipt": "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/logs/release_verify_yandex_t2i_official10M_ip_v1.log",
+      "sha256": "62a65014b8f6593516de1b651808afc5f97fcacd54d280791f1868a882404042"
+    },
+    {
+      "case": "deep10m_l2_v1",
+      "receipt": "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/logs/release_verify_deep10m_l2_v1.log",
+      "sha256": "6e7a01f81a135f7144a9f7697d270fbe2ec58b0f78e6c761e73201bc0568cbd9"
+    },
+    {
+      "case": "sift10m_bigann_l2_v1",
+      "receipt": "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/logs/release_verify_sift10m_bigann_l2_v1.log",
+      "sha256": "6cf23a073e80412b314df839509758e637f4b94490881a14e460eb3f765754cd"
+    },
+    {
+      "case": "gist1m_l2_v1",
+      "receipt": "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/logs/release_verify_gist1m_l2_v1.log",
+      "sha256": "b41cd86be92a13e92a563b8123cea9d84e51fb1fa22d0700a6eb2fef60474248"
+    }
+  ],
+  "build_argv": [
+    "g++",
+    "-O3",
+    "-march=native",
+    "-std=c++17",
+    "-fopenmp",
+    "-rdynamic",
+    "-I/data/netg/ACSG",
+    "-I/data/netg/ACSG/benches",
+    "-I/data/netg/ACSG/faiss",
+    "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+    "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/src/verify_dispatch.cpp",
+    "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/release/libACSG.a",
+    "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+    "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+    "-lopenblas",
+    "-lz",
+    "-ldl",
+    "-lcrypto",
+    "-o",
+    "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/release/verify_dispatch",
+    "-Wl,--wrap=_ZN5faiss26fvec_inner_product_batch_4EPKfS1_S1_S1_S1_mRfS2_S2_S2_",
+    "-Wl,--wrap=_ZN5faiss18fvec_L2sqr_batch_4EPKfS1_S1_S1_S1_mRfS2_S2_S2_"
+  ],
+  "binary": {
+    "resolved": "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/release/verify_dispatch",
+    "bytes": 3594408,
+    "mtime_ns": 1795178835821583815,
+    "sha256": "4fd702c035a9d734baf0126a4774066a640cd66d90803391caa33f2d78616ea7"
+  }
+}

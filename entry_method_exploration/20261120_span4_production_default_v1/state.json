@@ -1,0 +1,26 @@
+{
+  "status": "SEALED_E211_FLAT_IP_BATCH4_DEFAULT",
+  "datasets": [
+    "coco",
+    "flickr30k",
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "points": 224,
+  "batches": 448,
+  "queries": 1376256,
+  "matching_paired_points": 112,
+  "speed_screen_passing_points": 112,
+  "qualification_scratch_pairs": 3584,
+  "concurrent_per_binary_queries": 1200,
+  "default": "SPAN4, plain native Flat IP, ACSG::search_new mode 2",
+  "rollback": "set_flat_ip_batch4_enabled(false) before query threads",
+  "fallback": [
+    "L2",
+    "mode0/1",
+    "trace",
+    "non-native distance"
+  ],
+  "release_build": "release/libACSG.a",
+  "normal_bench_build": "release/test"
+}

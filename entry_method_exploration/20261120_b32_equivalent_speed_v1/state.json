@@ -1,0 +1,63 @@
+{
+  "status": "PASS_E208_LOCAL_DELIVERY",
+  "datasets": [
+    "coco",
+    "flickr30k",
+    "webvid2_5m_light_v1",
+    "yandex_t2i_official10M_ip_v1"
+  ],
+  "K": [
+    1,
+    100
+  ],
+  "L": [
+    100,
+    200,
+    400
+  ],
+  "formal_points": 96,
+  "formal_batches": 192,
+  "formal_query_calls": 589824,
+  "positive_points": 9,
+  "negative_points": 0,
+  "retest_candidates": [
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "method": "B32-PF4",
+      "positive_L": [
+        100,
+        200
+      ],
+      "negative_L": [],
+      "adjacent_retest_candidate": true,
+      "median_delta_qps_pct": 1.0890948936110645
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "method": "B32-PF4",
+      "positive_L": [
+        100,
+        200
+      ],
+      "negative_L": [],
+      "adjacent_retest_candidate": true,
+      "median_delta_qps_pct": 1.0844967414438633
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "method": "B32-BOTH",
+      "positive_L": [
+        100,
+        200
+      ],
+      "negative_L": [],
+      "adjacent_retest_candidate": true,
+      "median_delta_qps_pct": 1.4860554517887703
+    }
+  ],
+  "default": "E99 GT10",
+  "pending_experiment_queue": false
+}
