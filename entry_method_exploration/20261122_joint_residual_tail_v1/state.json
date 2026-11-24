@@ -1,0 +1,160 @@
+{
+  "status": "SEALED_E222_COMPLETE_WALL",
+  "scope": "COCO and WebVid true K100",
+  "points": 132,
+  "batches": 264,
+  "qualifications": [
+    {
+      "dataset": "coco",
+      "arm": "SHORT8",
+      "both_roles_reach_L192": false
+    },
+    {
+      "dataset": "coco",
+      "arm": "SHORT16",
+      "both_roles_reach_L192": false
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "arm": "SHORT8",
+      "both_roles_reach_L192": false
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "arm": "SHORT16",
+      "both_roles_reach_L192": false
+    }
+  ],
+  "scenarios": [
+    {
+      "dataset": "coco",
+      "SHORT8": {
+        "points": 11,
+        "matched": 11,
+        "unpaired": 0,
+        "faster": 0,
+        "slow_faster": 0,
+        "best": {
+          "dataset": "coco",
+          "K": "100",
+          "L": "188",
+          "method": "SHORT8",
+          "hits": "295464",
+          "recall": "96.1796875",
+          "qps": "2377.4586070319183",
+          "qps_min": "2374.211812107196",
+          "qps_max": "2380.7054019566413",
+          "us": "420.61799186197914",
+          "sha256": "3c4c59acb915144d51c59485af8ee937821b4a362b846d43eb3010cbb9db82ae",
+          "control": "B32",
+          "control_L": "188",
+          "control_recall": "96.27864583333333",
+          "control_qps": "2401.634528668613",
+          "delta_pct": "-1.0066444893302218",
+          "slow_vs_fast_pct": "-1.4497951311021273"
+        },
+        "same_L_vs_fit_B32": {
+          "recall_up": 11,
+          "recall_down": 0,
+          "qps_difference_median_pct": -1.40986541837973
+        }
+      },
+      "SHORT16": {
+        "points": 11,
+        "matched": 11,
+        "unpaired": 0,
+        "faster": 0,
+        "slow_faster": 0,
+        "best": {
+          "dataset": "coco",
+          "K": "100",
+          "L": "188",
+          "method": "SHORT16",
+          "hits": "295465",
+          "recall": "96.18001302083333",
+          "qps": "2372.5728389969154",
+          "qps_min": "2369.2528398746067",
+          "qps_max": "2375.892838119224",
+          "us": "421.4841971028646",
+          "sha256": "02d01767cbae9d7b1c93f78967207ad07db7d174c0ec6d34fb96d8a976a51cc7",
+          "control": "B32",
+          "control_L": "188",
+          "control_recall": "96.27864583333333",
+          "control_qps": "2401.634528668613",
+          "delta_pct": "-1.2100796072335052",
+          "slow_vs_fast_pct": "-1.6556351184902285"
+        },
+        "same_L_vs_fit_B32": {
+          "recall_up": 11,
+          "recall_down": 0,
+          "qps_difference_median_pct": -1.3786120663033419
+        }
+      }
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "SHORT8": {
+        "points": 11,
+        "matched": 11,
+        "unpaired": 0,
+        "faster": 0,
+        "slow_faster": 0,
+        "best": {
+          "dataset": "webvid2_5m_light_v1",
+          "K": "100",
+          "L": "176",
+          "method": "SHORT8",
+          "hits": "223106",
+          "recall": "72.62565104166667",
+          "qps": "2044.7757233952054",
+          "qps_min": "2041.3420201074782",
+          "qps_max": "2048.2094266829326",
+          "us": "489.0525686848959",
+          "sha256": "d7e692be2dd068af3a7db01f61c51fa3f6aac7b07880dd7e5a09d5b6c529e108",
+          "control": "B32",
+          "control_L": "176",
+          "control_recall": "72.75553385416667",
+          "control_qps": "2055.6323803220916",
+          "delta_pct": "-0.5281419494464812",
+          "slow_vs_fast_pct": "-1.2688447075006826"
+        },
+        "same_L_vs_fit_B32": {
+          "recall_up": 11,
+          "recall_down": 0,
+          "qps_difference_median_pct": -1.167991637906085
+        }
+      },
+      "SHORT16": {
+        "points": 11,
+        "matched": 11,
+        "unpaired": 0,
+        "faster": 0,
+        "slow_faster": 0,
+        "best": {
+          "dataset": "webvid2_5m_light_v1",
+          "K": "100",
+          "L": "192",
+          "method": "SHORT16",
+          "hits": "226939",
+          "recall": "73.87337239583333",
+          "qps": "1908.573724116392",
+          "qps_min": "1904.0700312594001",
+          "qps_max": "1913.0774169733836",
+          "us": "523.9543831380208",
+          "sha256": "0af940fda894a0247abe16345c38b087f70e822d47a81b60f879ef7f0f77347f",
+          "control": "B32",
+          "control_L": "192",
+          "control_recall": "73.9990234375",
+          "control_qps": "1915.9858059854437",
+          "delta_pct": "-0.3868547379576981",
+          "slow_vs_fast_pct": "-0.6515679301441701"
+        },
+        "same_L_vs_fit_B32": {
+          "recall_up": 11,
+          "recall_down": 0,
+          "qps_difference_median_pct": -1.2377600124247712
+        }
+      }
+    }
+  ]
+}

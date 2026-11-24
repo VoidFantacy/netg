@@ -1,0 +1,75 @@
+{
+  "outcomes": [
+    {
+      "dataset": "coco",
+      "K": 100,
+      "candidate": {
+        "dataset": "coco",
+        "K": 100,
+        "L": 200,
+        "method": "CACHE",
+        "hits": 297786,
+        "recall_pct": 96.935546875,
+        "qps": 1980.2301436115408,
+        "qps_min": 1973.562260182553,
+        "qps_max": 1986.8980270405284,
+        "qps0": 1986.8980270405284,
+        "qps1": 1973.562260182553,
+        "sha256": "7b97c0da35967341101ae6182686dcf84574350ebde1b3575f6ecd8cd0707301"
+      },
+      "fastest_control": {
+        "dataset": "coco",
+        "K": 100,
+        "L": 208,
+        "method": "B32",
+        "hits": 297953,
+        "recall_pct": 96.98990885416667,
+        "qps": 2034.0700266795197,
+        "qps_min": 2029.397496728807,
+        "qps_max": 2038.7425566302322,
+        "qps0": 2038.7425566302322,
+        "qps1": 2029.397496728807,
+        "sha256": "30de471b0e6a301625fb846ee6a0118e225cc627ea030c3c152c91c96c7dd64e"
+      },
+      "delta_pct": -2.6469041066333854,
+      "slow_new_vs_fastest_control_pct": -3.1970832332755883
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "candidate": {
+        "dataset": "webvid2_5m_light_v1",
+        "K": 1,
+        "L": 192,
+        "method": "CACHE",
+        "hits": 2564,
+        "recall_pct": 83.46354166666667,
+        "qps": 1571.0499043618188,
+        "qps_min": 1566.7876795089799,
+        "qps_max": 1575.3121292146575,
+        "qps0": 1566.7876795089799,
+        "qps1": 1575.3121292146575,
+        "sha256": "0df8a28cdd13b7014165bdf4b0a449d9a731b2bb103cdb3d0157b93be07bd827"
+      },
+      "fastest_control": {
+        "dataset": "webvid2_5m_light_v1",
+        "K": 1,
+        "L": 208,
+        "method": "B32-fit",
+        "hits": 2565,
+        "recall_pct": 83.49609375,
+        "qps": 1545.2799185254123,
+        "qps_min": 1542.34925267056,
+        "qps_max": 1548.2105843802647,
+        "qps0": 1542.34925267056,
+        "qps1": 1548.2105843802647,
+        "sha256": "dca732ed8c45cd12b4942f8c4a0b33b82ef56f8875123c9c01ae5da944dd7638"
+      },
+      "delta_pct": 1.6676581069530405,
+      "slow_new_vs_fastest_control_pct": 1.1999075136249315
+    }
+  ],
+  "matched_QPS_points": 59,
+  "report": "confirmation_result.md",
+  "exact_primary_packets": 23
+}

@@ -1,0 +1,160 @@
+{
+  "status": "SEALED_E219_REAL_WALL",
+  "report": "report.md",
+  "points": 222,
+  "batches": 444,
+  "timed_query_calls": 1363968,
+  "scenarios": [
+    {
+      "dataset": "coco",
+      "K": 100,
+      "selected": "Q8-2",
+      "all_qualified": [
+        "Q8-2",
+        "Q8-4"
+      ],
+      "matched": 8,
+      "both_repeats_win": 2,
+      "adjacent": true,
+      "best": {
+        "dataset": "coco",
+        "K": 100,
+        "L": 224,
+        "method": "Q8-2",
+        "recall": 97.24446614583333,
+        "qps": 1990.3066825494518,
+        "control": "CACHE",
+        "control_L": 232,
+        "control_recall": 97.31217447916667,
+        "control_qps": 1920.8133301809444,
+        "qps_gain_pct": 3.617912853716043,
+        "slow_vs_fast_pct": 2.569196221469161
+      }
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 1,
+      "selected": "Q8-2",
+      "all_qualified": [
+        "Q8-2",
+        "Q8-4"
+      ],
+      "matched": 9,
+      "both_repeats_win": 1,
+      "adjacent": false,
+      "best": {
+        "dataset": "webvid2_5m_light_v1",
+        "K": 1,
+        "L": 208,
+        "method": "Q8-2",
+        "recall": 84.50520833333333,
+        "qps": 1480.9898960189344,
+        "control": "CACHE",
+        "control_L": 208,
+        "control_recall": 84.63541666666667,
+        "control_qps": 1476.0546614970895,
+        "qps_gain_pct": 0.33435310023270937,
+        "slow_vs_fast_pct": -0.2547200109056291
+      }
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "selected": "Q8-4",
+      "all_qualified": [
+        "Q8-4"
+      ],
+      "matched": 8,
+      "both_repeats_win": 2,
+      "adjacent": true,
+      "best": {
+        "dataset": "webvid2_5m_light_v1",
+        "K": 100,
+        "L": 232,
+        "method": "Q8-4",
+        "recall": 76.90690104166667,
+        "qps": 1312.7642828828696,
+        "control": "B32",
+        "control_L": 256,
+        "control_recall": 77.64127604166667,
+        "control_qps": 1278.8052623060441,
+        "qps_gain_pct": 2.655527121900314,
+        "slow_vs_fast_pct": 2.385812596040804
+      }
+    }
+  ],
+  "confirmation": {
+    "outcomes": [
+      {
+        "dataset": "coco",
+        "candidate": {
+          "dataset": "coco",
+          "K": 100,
+          "L": 224,
+          "method": "Q8-2",
+          "hits": 298735,
+          "recall": 97.24446614583333,
+          "qps": 1953.7266246412173,
+          "qps_min": 1952.8075500798227,
+          "qps_max": 1954.6456992026121,
+          "qps0": 1952.8075500798227,
+          "qps1": 1954.6456992026121,
+          "sha256": "84deea152f8c609bf6cb2fea3a2c0ef8787184bf78012ff82ce6432ff23e9260"
+        },
+        "control": {
+          "dataset": "coco",
+          "K": 100,
+          "L": 236,
+          "method": "B32",
+          "hits": 298869,
+          "recall": 97.2880859375,
+          "qps": 1972.4979731695632,
+          "qps_min": 1969.992872338777,
+          "qps_max": 1975.0030740003494,
+          "qps0": 1975.0030740003494,
+          "qps1": 1969.992872338777,
+          "sha256": "7a6d7146c68a224640dbb7b08d5808fed085c559bcfc688ed2b616744a4e61a5"
+        },
+        "qps_gain_pct": -0.9516536282256682,
+        "slow_vs_fast_pct": -1.1238222467963022
+      },
+      {
+        "dataset": "webvid2_5m_light_v1",
+        "candidate": {
+          "dataset": "webvid2_5m_light_v1",
+          "K": 100,
+          "L": 232,
+          "method": "Q8-4",
+          "hits": 236258,
+          "recall": 76.90690104166667,
+          "qps": 1299.0409136598093,
+          "qps_min": 1297.7084264521152,
+          "qps_max": 1300.3734008675035,
+          "qps0": 1297.7084264521152,
+          "qps1": 1300.3734008675035,
+          "sha256": "0ff83755ae6dea8f1c44ec5b0f830d921e6670ab21dc2d0eae79653d7b8e2659"
+        },
+        "control": {
+          "dataset": "webvid2_5m_light_v1",
+          "K": 100,
+          "L": 244,
+          "method": "B32",
+          "hits": 236669,
+          "recall": 77.04069010416667,
+          "qps": 1328.5373065103304,
+          "qps_min": 1328.528300183571,
+          "qps_max": 1328.5463128370895,
+          "qps0": 1328.5463128370895,
+          "qps1": 1328.528300183571,
+          "sha256": "ff0d14ca78d838f1b6f50b6dba5ae5cb23529647d273d2eb5332c31503e273ab"
+        },
+        "qps_gain_pct": -2.2202156240534343,
+        "slow_vs_fast_pct": -2.321175113505869
+      }
+    ],
+    "same_raw_packets": 24,
+    "points": 60,
+    "batches": 120
+  },
+  "pending_work": false
+}

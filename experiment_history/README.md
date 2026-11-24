@@ -1,5 +1,77 @@
 # ACSG 详细实验与研究记录
 
+[E251 四集 B32、老 B64 与 Mixed64 复测](251_b64_four_dataset_retest_v1.md)于 2026-11-23 完成，真 K1/K100、465 点、930 批。
+
+[E250 COCO 97% 同期复测](250_coco_b64_target_retest_v1.md)于 2026-11-23 完成，40 点、80 批。
+
+[E249 WebVid 真 K1 84% 加密](249_webvid_k1_b64_dense84_v1.md)于 2026-11-23 完成，39 点、78 批。
+
+[E248 COCO 同样本监督深度消融](248_coco_b64_teacher_depth_ablation_v1.md)于 2026-11-23 完成，真 K100、49 点、98 批。
+
+[E242 WebVid K100 逐整数复测](242_b64_dense_target_v1.md)于 2026-11-23 完成，78 点、156 批。
+
+[E247 WebVid 同样本监督深度消融](247_b64_teacher_depth_ablation_v1.md)于 2026-11-23 完成，真 K100、84 点、168 批。
+
+[E246 WebVid K100 表到真 K1](246_webvid_k1_b64_trained_table_v1.md)于 2026-11-23 完成，85 点、170 批。
+
+[E245 COCO 多预算遗漏监督](245_coco_b64_multibudget_training_v1.md)于 2026-11-23 完成，真 K100、90 点、180 批。
+
+[E244 WebVid 同等精算复用](244_b64_equal_fastpath_v1.md)于 2026-11-23 完成，真 K100 第三窗、112 点、224 批。
+
+[E237 WebVid 异源高召回验证](237_b64_external_validation_v1.md)于 2026-11-23 完成，真 K100、115 点、230 批。
+
+[E243 WebVid 扩训练与多预算遗漏监督](243_b64_multibudget_training_v1.md)于 2026-11-23 完成，真 K100、90 点、180 批。
+
+[E235 WebVid 三路入口角色联合编表](235_b64_joint_role_table_v1.md)于 2026-11-23 完成，真 K100 两窗 154 点、308 批。
+
+[E238 WebVid 三路条件配额](238_b64_rank_budget_v1.md)于 2026-11-23 完成，真 K100、105 点、210 批。
+
+[E233 WebVid 复用访问标记](233_b64_visited_skip_v1.md)于 2026-11-23 完成，真 K100 两窗 132 点、264 批。
+
+[E236 WebVid 第三路单分数分档](236_b64_tail_ladder_v1.md)于 2026-11-23 完成，真 K100、75 点、150 批。[E239](239_b64_route_budget_v1.md)同日完成主 L 的真实缓存诊断。
+
+[E234 WebVid 按查询开放第三路](234_b64_tail_gate_v1.md)于 2026-11-23 完成，真 K100、90 点、180 批。
+
+[E232 WebVid 最远入口专用尾表](232_b64_role_conditioned_tail_v1.md)于 2026-11-23 完成，真 K100 两窗 192 点、384 批。
+
+[E231 WebVid B64 第三路深度](231_b64_far_depth_sweep_v1.md)于 2026-11-23 完成，真 K100 两窗、176 点、352 批。
+
+[E230 WebVid B64 入口配额](230_b64_entry_budget_v1.md)于 2026-11-23 完成，真 K1/K100，105 点、210 批。
+
+[E229 四集 B64 正式比较](229_b64_formal_four_dataset_v1.md)于 2026-11-22 完成。COCO、Flickr30k、WebVid、Yandex 真 K1/K100，218 点、436 批。
+
+[E228 B64 全精算异窗密集复测](228_b64_full_confirmation_v1.md)于 2026-11-22 完成。COCO、WebVid 真 K100，80 点、160 批。
+
+[E227 B32 截止分双塔](227_b32_cutoff_two_tower_v1.md)于 2026-11-22 完成。两集 K100、44 点、88 批。
+
+[E226 B32/B64 双塔直接补点](226_b32_b64_two_tower_v1.md)于 2026-11-22 完成。COCO、WebVid 真 K100，132 点、264 批。
+
+[E225 P64 候选探针分流](225_p64_candidate_probe_v1.md)于 2026-11-22 完成。COCO 真 K100、22 个实测点、44 完整批次。
+
+[E224 B32/P64 逐查询分流](224_p64_residual_gate_v1.md)于 2026-11-22 完成。COCO 真 K100、66 点、132 完整批次。
+
+[E223 单组全池逐查询残差交换](223_group_residual_rerank_v1.md)于 2026-11-22 完成。两集 K100 全精度回放及 COCO 66 点、132 批。
+
+[E222 B32 组内联合短尾表](222_joint_residual_tail_v1.md)于 2026-11-22 完成。COCO、WebVid K100 完整 132 点、264 批。
+
+[E221 Q8 粗分安全跳过精算](221_q8_certified_pruning_v1.md)于 2026-11-21 完成。真实 COCO K100 和 WebVid K1/K100 完整 107 点、214 批。
+
+[E220 Q8 等价提速与按需扩表回放](220_q8_equivalent_speed_v1.md)于 2026-11-21 完成。COCO、WebVid 等价验证、正式局部网格及扩表诊断。
+
+[E219 漏点 ID 粗排与 B32 尾部保留](219_bucket_id_reranking_v1.md)于 2026-11-21 完成。三场景 主网格 162 点、324 批，加密 60 点、120 批，CPU15 单线程。
+
+[E218 入口桶净收益选择与双表动作](218_bucket_gain_selection_v1.md)于 2026-11-21 完成。COCO K100 / WebVid K1 学习方案均无 QPS 资格，WebVid K100 双表保留离线正上限。
+
+[E217 复用 GT10 入口取补点候选](217_gt10_bucket_residual_v1.md)于 2026-11-21 完成。两集离线回放和桶内动作上限，正式点 0。
+
+[E216 在线相近查询补点](216_neighbor_residual_online_v1.md)于 2026-11-21 完成。COCO 和 WebVid 主网格 160 点、320 批，局部加密 59 点、118 批。
+
+[E215 小 L 补点候选来源](215_b32_cross_budget_tails_v1.md)于 2026-11-21 完成。COCO、WebVid 训练角色实际合并验证相近 fit 查询候选；正式 QPS 点为 0。
+
+[E214 四集 B32 候选四路精算](214_b32_batch4_scoring_v1.md)于 2026-11-21 完成。56 组返回逐字一致，完整 QPS 中位数 +0.35%。168 点、336 个完整批次已核验。
+
+[E213 四集 GT10+B32、NSG 与 GATE](213_span4_gt10_b32_nsg_gate_v1.md)于 2026-11-21 完成。主比较共用 SPAN4。GATE 标量 A/B 确认返回一致及端到端提速。全部 224 点、448 批已核验。
+
 2026-11-20 完成 [E211 正式入口默认验证](211_span4_production_default_v1.md)。112个新旧配对返回逐字节相同，112/112个配对通过逐点速度筛选。纯GT10完整QPS变化+13.74%至+28.35%，GT10+B32变化+13.16%至+27.94%。 当前见[summary](../summary.md)。
 
 [E212 四集同期对照](212_gt10_nsg_b32_four_way_v1.md)。E212 四个真实数据集各3072条，真实 K1/K100 各7个 L。224点448批。同表的新 GT10+B32 相对旧 GT10+B32 56组返回逐字相同，完整 QPS 变化 +13.43% 至 +27.54%。固定同 L 补点平均 Recall 增加 52/56 点，完整 QPS 降低 56/56 点。
@@ -20,6 +92,43 @@
 
 | 原卡片文件 | 原题（历史） |
 | --- | --- |
+| [251_b64_four_dataset_retest_v1.md](251_b64_four_dataset_retest_v1.md) | E251 四集三方法同期复测 |
+| [250_coco_b64_target_retest_v1.md](250_coco_b64_target_retest_v1.md) | E250 COCO 97% 同期复测 |
+| [249_webvid_k1_b64_dense84_v1.md](249_webvid_k1_b64_dense84_v1.md) | E249 WebVid 真 K1 84% 加密 |
+| [248_coco_b64_teacher_depth_ablation_v1.md](248_coco_b64_teacher_depth_ablation_v1.md) | E248 COCO 同样本监督深度消融 |
+| [247_b64_teacher_depth_ablation_v1.md](247_b64_teacher_depth_ablation_v1.md) | E247 WebVid 同样本监督深度消融 |
+| [246_webvid_k1_b64_trained_table_v1.md](246_webvid_k1_b64_trained_table_v1.md) | E246 WebVid K100 表到真 K1 |
+| [245_coco_b64_multibudget_training_v1.md](245_coco_b64_multibudget_training_v1.md) | E245 COCO 多预算遗漏监督 |
+| [244_b64_equal_fastpath_v1.md](244_b64_equal_fastpath_v1.md) | E244 WebVid 同等精算复用 |
+| [243_b64_multibudget_training_v1.md](243_b64_multibudget_training_v1.md) | E243 WebVid 扩训练与多预算遗漏监督 |
+| [242_b64_dense_target_v1.md](242_b64_dense_target_v1.md) | E242 WebVid K100 逐整数复测 |
+| [239_b64_route_budget_v1.md](239_b64_route_budget_v1.md) | E239 按原入口分数分配主搜索 L 诊断 |
+| [238_b64_rank_budget_v1.md](238_b64_rank_budget_v1.md) | E238 WebVid 三路条件配额 |
+| [237_b64_external_validation_v1.md](237_b64_external_validation_v1.md) | E237 WebVid 异源高召回验证 |
+| [236_b64_tail_ladder_v1.md](236_b64_tail_ladder_v1.md) | E236 WebVid 第三路单分数分档 |
+| [235_b64_joint_role_table_v1.md](235_b64_joint_role_table_v1.md) | E235 WebVid 三路入口角色联合编表 |
+| [234_b64_tail_gate_v1.md](234_b64_tail_gate_v1.md) | E234 WebVid 按查询开放第三路 |
+| [233_b64_visited_skip_v1.md](233_b64_visited_skip_v1.md) | E233 WebVid 复用主搜索访问标记 |
+| [232_b64_role_conditioned_tail_v1.md](232_b64_role_conditioned_tail_v1.md) | E232 WebVid 最远入口专用尾表 |
+| [231_b64_far_depth_sweep_v1.md](231_b64_far_depth_sweep_v1.md) | E231 WebVid B64 第三路深度 |
+| [230_b64_entry_budget_v1.md](230_b64_entry_budget_v1.md) | E230 WebVid B64 入口配额 |
+| [229_b64_formal_four_dataset_v1.md](229_b64_formal_four_dataset_v1.md) | E229 四集真 K1/K100 全精算 B64 |
+| [228_b64_full_confirmation_v1.md](228_b64_full_confirmation_v1.md) | E228 B64 全精算异窗密集复测 |
+| [227_b32_cutoff_two_tower_v1.md](227_b32_cutoff_two_tower_v1.md) | E227 B32 截止分双塔 |
+| [226_b32_b64_two_tower_v1.md](226_b32_b64_two_tower_v1.md) | E226 B32/B64 双塔直接补点与全精算扩池 |
+| [225_p64_candidate_probe_v1.md](225_p64_candidate_probe_v1.md) | E225 候选粗分探针及查询分流 |
+| [224_p64_residual_gate_v1.md](224_p64_residual_gate_v1.md) | E224 B32 与 P64 的逐查询选择 |
+| [223_group_residual_rerank_v1.md](223_group_residual_rerank_v1.md) | E223 单组动态选点和低维粗排 |
+| [222_joint_residual_tail_v1.md](222_joint_residual_tail_v1.md) | E222 B32 组内联合短尾表与覆盖诊断 |
+| [221_q8_certified_pruning_v1.md](221_q8_certified_pruning_v1.md) | E221 Q8 保守内积上界和精算剪枝 |
+| [220_q8_equivalent_speed_v1.md](220_q8_equivalent_speed_v1.md) | E220 Q8 等价热路径提速 |
+| [219_bucket_id_reranking_v1.md](219_bucket_id_reranking_v1.md) | E219 漏点 ID 粗排和 B32 尾部保留 |
+| [218_bucket_gain_selection_v1.md](218_bucket_gain_selection_v1.md) | E218 入口桶净收益预测与 WebVid K100 双表上限 |
+| [217_gt10_bucket_residual_v1.md](217_gt10_bucket_residual_v1.md) | E217 复用 GT10 入口取补点候选与桶内动作上限 |
+| [216_neighbor_residual_online_v1.md](216_neighbor_residual_online_v1.md) | E216 COCO、WebVid 在线近邻补点和局部加密验证 |
+| [215_b32_cross_budget_tails_v1.md](215_b32_cross_budget_tails_v1.md) | E215 小 L 的三种后半表和相近查询候选 |
+| [214_b32_batch4_scoring_v1.md](214_b32_batch4_scoring_v1.md) | E214 四集 B32 标量与四路精算 |
+| [213_span4_gt10_b32_nsg_gate_v1.md](213_span4_gt10_b32_nsg_gate_v1.md) | E213 四集 GT10+B32、NSG、GATE 与 GATE 标量对照 |
 | [212_gt10_nsg_b32_four_way_v1.md](212_gt10_nsg_b32_four_way_v1.md) | E212 四集 NSG、新 GT10、新 GT10+B32、旧 GT10+B32 |
 | [211_span4_production_default_v1.md](211_span4_production_default_v1.md) | E211 GT10 正式入口 A/B 与默认切换 |
 | [210_span4_four_dataset_retest_v1.md](210_span4_four_dataset_retest_v1.md) | E210：四集 SPAN4 同期复测和曲线 |

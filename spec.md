@@ -1,6 +1,6 @@
 # ACSG 代码架构与实现契约
 
-文档接续于2026-11-20；GT10 主搜索内核已按 E211 更新。E201–E212 见4.17–4.28。本文维护当前实现、输入/输出、metric、artifact及计量合同；结论见[summary](summary.md)，下一研究问题见[s-target](s-target.md)。详细历史模块合同已[归档](experiment_history/_maintenance/20261024_current_state_cleanup_v1/archive/spec.md)，原实现没有因文档整理被删除或改写。
+文档接续于2026-11-23。GT10 主搜索内核按 E211 合同。E201–E253 见4.17–4.53。本文维护当前实现、输入/输出、metric、artifact及计量合同；结论见[summary](summary.md)，下一研究问题见[s-target](s-target.md)。详细历史模块合同已[归档](experiment_history/_maintenance/20261024_current_state_cleanup_v1/archive/spec.md)，原实现没有因文档整理被删除或改写。
 
 2026-11-19存储更新：按用户“旧数据直接清除、保留简档”授权，退役数据集及早期实验的大型数据、旧模型和原始返回已按[逐项简档](experiment_history/_maintenance/20261119_obsolete_payload_prune_v1/archive_index.md)删除。当前七数据集所需输入/图/GT/画像/B32/SQ、E200–E203冻结依赖和COCO/Flickr准备后的身份/划分数据保留。下文旧实验的完整原件/重放描述属于当时交付事实；清单内旧包当前已不可直接重放，需重新下载或生成。生产API、metric、默认及当前模型内容未变。
 
@@ -314,6 +314,112 @@ query 用 fit-only 归一化 query 的二阶矩特征向量作无中心 PCA 512�
 ### 4.28 E212 四集 NSG 与三条 GT10 链路
 
 [评测入口](entry_method_exploration/20261120_gt10_nsg_b32_four_way_v1/src/benchmark.cpp)链接 E211 发布静态库。NSG 固定使用原图入口及 SPAN4，新 GT10 使用原三入口及 SPAN4。新旧补点版共用原完整 B32，旧版显式关闭 SPAN4。四集真实 K1/K100 各7 L，每点两遍 CPU15/T1，完整 wall。保存各点首轮返回包、两轮时间、输入与发布库冻结，计时结束后评估。对比见[E212 四集对比](entry_method_exploration/20261120_gt10_nsg_b32_four_way_v1/report.md)。
+
+### 4.29 E213 四集 GT10+B32、NSG 与 GATE
+
+[评测入口](entry_method_exploration/20261121_span4_gt10_b32_nsg_gate_v1/src/benchmark.cpp)链接 E211 发布静态库并复用 E206 批处理。NSG 用同图的固定单入口，GT10+B32 用 E212 的路由和完整表，GATE 用 E200 冻结的 512 hub、W 和小 HNSW。GATE 路由按单位 query、真实 ID 映射和 heap-pop 次序执行，原 query 随三入口传给 `search_new(mode=2)`。主比较各臂启用 SPAN4，另有 GATE 标量臂。独立链接的探针在四集 K1/K100/L200 验证实际 Faiss batch4 调用。正式程序用无探针构建，每点两遍 CPU15/T1 完整 wall，保存首轮返回，计时后核对 GT 和历史包。见[预锁协议](entry_method_exploration/20261121_span4_gt10_b32_nsg_gate_v1/protocol.md)和[封存](entry_method_exploration/20261121_span4_gt10_b32_nsg_gate_v1/seal.json)。
+
+### 4.30 E214 B32 候选四路精算
+
+[实验入口](entry_method_exploration/20261121_b32_batch4_scoring_v1/src/benchmark.cpp)链接 E211 发布静态库，主图统一采用 SPAN4。四路版复用 E206 查表去重，按原候选次序每四个用 `DistanceComputer::distances_batch_4` 计算 raw-IP 距离，余项逐个精算，沿原严格门槛与合并。标准 Flat raw-IP、固定原表，实验工作区复用原候选数组并用四个临时分数。正式 168 点、336 批。每配置先对首 256 条校验候选精算位元及结果。L200 补点重放复用正式纯 GT10 包，移出正式 wall。见[合同](entry_method_exploration/20261121_b32_batch4_scoring_v1/protocol.md)及[封存](entry_method_exploration/20261121_b32_batch4_scoring_v1/seal.json)。
+
+### 4.31 E215 小 L 补点候选的离线回放
+
+[尾部回放](entry_method_exploration/20261121_b32_cross_budget_tails_v1/src/study.cpp)绑定 E206 同一 fit/dev/cal 及真实 K1/K100 的 L184、L192 原包。保留每行原表最多 16 个前缀，以 fit K100/L184 真实遗漏编两套加权尾部，三路 27 动作逐查询实际计分数受原 B32 限制。[近邻回放](entry_method_exploration/20261121_b32_cross_budget_tails_v1/neighbor_source/protocol.md)从完整单位 query 离线取 16 个 fit 邻居，按遗漏 ID 倒数名次投票；保留各路公共前缀，固定最多替换 8/16 个原表尾部候选，回放实际原 raw-IP 且计分数逐查询相同。E211 发布库提供 DistanceComputer。候选上限和逐查询最优动作读取 GT，结果只属于离线。64,000＋15,906 个状态，正式 QPS 点为 0。见[报告](entry_method_exploration/20261121_b32_cross_budget_tails_v1/report.md)和[封存](entry_method_exploration/20261121_b32_cross_budget_tails_v1/seal.json)。
+
+### 4.32 E216 在线相近查询的直接补点
+
+[索引准备](entry_method_exploration/20261121_neighbor_residual_online_v1/scripts/prepare.py)使用独立 fit 查询、其 K100/L184 真实遗漏和 64 维非中心 PCA。VOTE 用 ef32 小 HNSW 取 32、原空间重排取 16、实时对遗漏 ID 投票。CACHE 用 ef16 取 4、重排取 1、取该 fit 查询预编表。两者保留各路 fit-B32 前缀，去重并排除主返回及固定表候选，最多替换 16 个尾部 ID，实际精算数逐查询相同。[在线实现](entry_method_exploration/20261121_neighbor_residual_online_v1/src/residual.hpp)共用原四路 raw-IP 精算和严格 Top-K 合并。主图用 E211 发布库。完整计时 160 点、320 批，另有同查询窗局部加密 59 点、118 批。两阶段分别计量，正式壁钟包含在线邻居查找、重排、投票和查表。[主协议](entry_method_exploration/20261121_neighbor_residual_online_v1/protocol.md) · [加密协议](entry_method_exploration/20261121_neighbor_residual_online_v1/confirmation.md) · [封存](entry_method_exploration/20261121_neighbor_residual_online_v1/seal.json)。
+
+### 4.33 E217 GT10 入口桶的补点候选回放
+
+[模型构建](entry_method_exploration/20261121_gt10_bucket_residual_v1/scripts/experiment.py)依据 E206 K100/L184 的 fit 三路入口建立桶，每桶贪心最远点选择实际 fit 代表。每入口取前 4/8 个，合并去重，定长全维点积选一个，读 E216 预编表。按原前缀、尾部至多 16 替换、逐查询相同实际精算数、四路精算与严格合并执行。COCO/WebVid 真 K1/K100 训练角色 [回放](entry_method_exploration/20261121_gt10_bucket_residual_v1/src/benchmark.cpp) 和 [整桶动作枚举](entry_method_exploration/20261121_gt10_bucket_residual_v1/src/oracle.cpp) 分离，后者使用训练 GT 确定上限。[协议](entry_method_exploration/20261121_gt10_bucket_residual_v1/protocol.md)及[报告](entry_method_exploration/20261121_gt10_bucket_residual_v1/report.md)记录正式阶段的资格与结果。
+
+### 4.34 E218 入口桶净命中选择和双表上限
+
+[建模](entry_method_exploration/20261121_bucket_gain_selection_v1/scripts/prepare.py)按 fit 身份三折重建 K100/L200 固定 B32、K100/L184 预编遗漏表、BKT8 代表和 16D 摘要。留出 fold [逐动作标签](entry_method_exploration/20261121_bucket_gain_selection_v1/src/replay.cpp)用实际同预算四路精算与 Top-K 净救回，固定线性回归分别使用余弦/入口、主返回重合、候选摘要。最终回放用冻结全 fit 目录。预测非正走同池 B32。WebVid K100 离线同预算枚举每表至多 8 个、扣除已有 ID 的双表动作，使用 memoized exact 与原生 batch4 抽样核对，单表上限核对 E217。计量和范围见[协议](entry_method_exploration/20261121_bucket_gain_selection_v1/protocol.md)。
+
+### 4.35 E219 漏点 ID 粗排与 B32 尾部保留
+
+[编码](entry_method_exploration/20261121_bucket_id_reranking_v1/scripts/prepare.py)以原向量逐行对称 int8 仅编码 E217 缓存和 fit-B32 ID。[实现](entry_method_exploration/20261121_bucket_id_reranking_v1/src/rerank.hpp)三路桶查前2/4代表、每表最多16个新 ID，排除主返回和原固定候选。对新点与原非前缀尾部跑 512D VNNI 内积，替换粗分较低的原尾部最多16个。原始列表实际精算数不变，使用 E216 原距离四路精算、严格 Top-K。EXACT2/4 为仅回放的同池原 IP 诊断。正式第二公共窗、配置和独立复核见[协议](entry_method_exploration/20261121_bucket_id_reranking_v1/protocol.md)与[报告](entry_method_exploration/20261121_bucket_id_reranking_v1/report.md)。
+
+### 4.36 E220 Q8 等价优化
+
+[热路径](entry_method_exploration/20261121_q8_equivalent_speed_v1/src/rerank.hpp)固定 E219 候选生成和评分，分别验证错误消息在失败分支才构造、在两列排序上 `nth_element` 后按原规则仅排前至多16名，以及合并版。[运行器](entry_method_exploration/20261121_q8_equivalent_speed_v1/src/benchmark.cpp)独立分段、验证浮点精算及正式全路径。WebVid K100 扩表为两/四表真实 Top-K 结果离线组合，开发窗拟合并锁定阈值。见[协议](entry_method_exploration/20261121_q8_equivalent_speed_v1/protocol.md)。
+
+### 4.37 E221 Q8 粗分保守上界
+
+[证书准备](entry_method_exploration/20261121_q8_certified_pruning_v1/scripts/prepare.py)对 E219 原 ID、向量与 int8 码计算 `||x||` 和量化残差范数向上值。[运行](entry_method_exploration/20261121_q8_certified_pruning_v1/src/rerank.hpp)沿 E220 作整套候选交换，只对留下且有粗分的候选按实际 q 编码误差考虑原 IP 的 FP32 舍入余量。上界严格低于原主返回第 K 名才不读取原向量，原 B32 前缀直接精算。余下候选保持原顺序，四路精算与严格合并沿旧代码。两个 K100 场景及 WebVid K1 分开冻结与计时；全部查询输出和回放拒绝见证见[报告](entry_method_exploration/20261121_q8_certified_pruning_v1/report.md)。
+
+### 4.38 E222 B32 组内联合短尾表
+
+[实验实现](entry_method_exploration/20261122_joint_residual_tail_v1/src/benchmark.cpp)复用 E217 三入口代表目录、E206 身份角色和 L184 的 K100 实际返回。fit 归组排除同身份代表，候选为组内 fit 遗漏并集。按原生 raw-IP 精算和最终 Top-K 净正确成员贪心构建 8/16 位嵌套表，在线只读选中的单表。保留 B32-fit 的每行前 16 位公共候选，实际新增候选与移出非公共尾部一一配对，逐查询保持实际精算预算，按原距离合并。模型文件为每代表一行的 offset/ID 数组。COCO、WebVid 冻结为真实 K100 同期单线程测量，公共 GT 仅用于计时后评分。见[协议](entry_method_exploration/20261122_joint_residual_tail_v1/protocol.md)和[封存](entry_method_exploration/20261122_joint_residual_tail_v1/seal.json)。
+
+### 4.39 E223 单组全池逐查询残差交换
+
+[实验代码](entry_method_exploration/20261122_group_residual_rerank_v1/src/benchmark.cpp)从 E222 fit 归组及实际 L184 遗漏重建每代表的完整候选池，线上复用代表选择。排除主返回和已有 B32-fit ID，按分数最多交换 16 个非前缀尾部，保留最终实际精算数。两集 FULL-IP 用原生完整内积额外给新点和可换旧点评分，费用单列。COCO P32/P64 采用 E216 冻结的非中心 PCA 方向，预计算原向量的 FP32 投影，查询每条投影一次。粗分决定交换，原生 raw-IP 决定最终 Top-K。WebVid 的全池全精度结果仅来自留出回放。COCO 准入、分流和完整计时见[协议](entry_method_exploration/20261122_group_residual_rerank_v1/protocol.md)及[封存](entry_method_exploration/20261122_group_residual_rerank_v1/seal.json)。
+
+### 4.40 E224 B32/P64 查询分流
+
+[实现](entry_method_exploration/20261122_p64_residual_gate_v1/src/benchmark.cpp)复用 E223 的主索引、原版 B32、P64 及原生 raw-IP 精算和 Top-K 合并。GT10 主返回后，从画像分数和前后段原返回分数抽取 11 维信号，固定线性模型与浅树按 L 使用校准阈值。门关闭完成原版 B32，门打开完成原版 P64；代表查找与向量投影只在 P64 分支执行。模型由 E223 第二公共窗按身份拆 fit/cal，正式第三公共窗 3,072 条此前未用于此门标签或阈值，属于历史曾用的公共数据。输出逐查询与独立复算的门选择和两条实际分支核对。见[协议](entry_method_exploration/20261122_p64_residual_gate_v1/protocol.md)与[封存](entry_method_exploration/20261122_p64_residual_gate_v1/seal.json)。
+
+### 4.41 E225 P64 候选探针
+
+[实现](entry_method_exploration/20261122_p64_candidate_probe_v1/src/benchmark.cpp)复用 E223 的候选组和 64 维代码。每组最多八个探针 ID，优先保留 E222 短表前四个，余量按完整组排序的位置补足。跳过主返回与 P64 原 fit-B32 已有 ID。查询投影和探针粗分提供七个新特征，和 E224 的 11 维主搜特征拟合净收益。启用后按 ID 顺序复用已算粗分及查询投影，使用原 P64 交换和精算；关闭走完整 B32。训练、校准和正式窗身份隔离，B32/P64 回放与在线分支逐条位级核对。见[协议](entry_method_exploration/20261122_p64_candidate_probe_v1/protocol.md)和[封存](entry_method_exploration/20261122_p64_candidate_probe_v1/seal.json)。
+
+### 4.42 E226 B32/B64 双塔直接补点
+
+[独立研究实现](entry_method_exploration/20261122_b32_b64_two_tower_v1/src/benchmark.cpp)复用 E183 原版 B32 表、E211 SPAN4 与对应 GT10 路由。B64 编译按原 K100/L200 漏点 token 的联合未覆盖贪心续填到每行至多 64，保留每行有序 B32 前缀。三入口行取并集，去重并排除主返回。两池的查询塔和候选塔分别为无偏置 512→32 线性映射，候选码离线存储。在线将查询投影一次，对对应池作 32 维内积短排，正式精算至多 48 个候选，按原生 raw-IP 与严格 Top-K 规则合并。PCA 使用同拟合查询和同精算预算。角色、原生回放、正式 K100 计时和审计见[协议](entry_method_exploration/20261122_b32_b64_two_tower_v1/protocol.md)。生产搜索合同仍按 E99/E211。
+
+### 4.43 E227 B32 截止分双塔
+
+[独立研究实现](entry_method_exploration/20261122_b32_cutoff_two_tower_v1/src/benchmark.cpp)沿用真实 GT10、SPAN4 和原版三行 B32。双塔独立作 512→16 线性映射，候选离线编码，表内 posting 预绑定短码槽。查询用转置 FP32 权重做在线 SIMD 投影。以真实原内积作回归目标，对原版 B32 实际补回的真值成员加罚。以主返回第 100 名原生内积分数减校准余量为选择阈值，一趟保留超过阈值的候选，按原顺序四路精算、严格 Top-K 合并。筛剩小于 16 个会恢复整池。第二公共窗训练与复核，第三公共窗真 K100 正式测量。见[协议](entry_method_exploration/20261122_b32_cutoff_two_tower_v1/protocol.md)及[封存](entry_method_exploration/20261122_b32_cutoff_two_tower_v1/seal.json)。
+
+### 4.44 E228 全精算 B64 异窗复测
+
+[复测实现](entry_method_exploration/20261122_b64_full_confirmation_v1/src/benchmark.cpp)冻结 E226 发布 SPAN4、两集路由、原版 B32 和 B64 扩表。B64 三路行去重、排除主图返回，在原顺序使用四路 native raw-IP 与严格 Top-K。原版 B32 使用原路径。由冻结物理行清单绑定官方 GT100。COCO 按源组身份审核，WebVid 按精确查询向量及官方角色审核。每集 20 个 L，独立原生标量核验，同档两遍完整 wall。见[协议](entry_method_exploration/20261122_b64_full_confirmation_v1/protocol.md)及[封存](entry_method_exploration/20261122_b64_full_confirmation_v1/seal.json)。
+
+### 4.45 E229 四集真 K1/K100 全精算 B64
+
+[正式比较](entry_method_exploration/20261122_b64_formal_four_dataset_v1/src/benchmark.cpp)冻结 E213 的发布 SPAN4、四集主图、GT10 路由与原 B32。COCO/WebVid 复用 E226 B64，Flickr30k/Yandex 从原 E183 K100/L200 token 按同一 E226 联合未覆盖贪心续填到 64，逐行保持有序 B32 前缀。查询合并三路候选 ID、去重、排除真实主返回，按原序对所有剩余候选执行 raw-IP 四路精算及严格 Top-K。K1/K100 各自独立调用主搜索，分别记录 1/100 个返回。源组或精确向量隔离、冻结物理行绑定、正式网格与完整计时见[协议](entry_method_exploration/20261122_b64_formal_four_dataset_v1/protocol.md)和[封存](entry_method_exploration/20261122_b64_formal_four_dataset_v1/seal.json)。
+
+### 4.46 E230 WebVid B64 入口配额
+
+[复测实现](entry_method_exploration/20261123_b64_entry_budget_v1/src/benchmark.cpp)冻结 E229 WebVid 的 GT10 soft-t1、SPAN4、主图库、B32 和原 B64 表。新版真 K1 按三行各 56 项截取，新版真 K100 复用三路路由画像距离给最远入口 40 项，另两路各 64 项。画像距离相同时，原路由次序最后的入口拿 40 项。原三路迭代次序及原 B32 前缀保留，去重并排除主返回后做原生 raw-IP 全精算与严格 Top-K 合并。K100 内部有均匀 B56 的同原始配额对照。确认窗源身份按向量字节与 E229 和冻结 fit 分离。完整测量见[协议](entry_method_exploration/20261123_b64_entry_budget_v1/protocol.md)和[封存](entry_method_exploration/20261123_b64_entry_budget_v1/seal.json)。
+
+### 4.47 E231–E239 WebVid B64 配额与精算复用（完成部分）
+
+E231 把最远路上限扩成 40/48/52/56/60 并保留近两路原各 64。确认和开发使用原公共查询的独立物理行。E232 的最远入口特化表使用 E183 冻结真实训练遗漏扣除近路供给，重排与允许换入其它训练 ID 的两种尾表均保留有序 B32 前缀。E234/E236 在线用 GT10 画像和原主结果分数选择第三路 40/64，E236 允许六档，实际冻结模型只用 40/64。真实完整包、查询分工和离线校准依赖分别记录于原协议与封存。E238 在相同 B32/B64 有序行上用一个主结果分数选择三路嵌套配额，按真实精算量分别冻结匹配 Far40 与 Far52 的离线策略。E239 用缓存诊断主 L 分配，生产没有实现入口预选 L。
+
+E233 只读已经完成的 SPAN4 visited，适用于同一查询、同一原生 raw-IP 核、原主搜索返回之后。visited 对应的非入选 Top-K 候选无需原 metric 重算，剩余候选在原行次序一次去重精算。保留仅改散列查插和同档原全精算对照。资格检查逐个核被跳过距离以及原生 Top-K 等价。实验实现保存在独立目录。
+
+协议及实现见[E231](entry_method_exploration/20261123_b64_far_depth_sweep_v1/protocol.md)、[E232](entry_method_exploration/20261123_b64_role_conditioned_tail_v1/protocol.md)、[E233](entry_method_exploration/20261123_b64_visited_skip_v1/protocol.md)、[E234](entry_method_exploration/20261123_b64_tail_gate_v1/protocol.md)、[E236](entry_method_exploration/20261123_b64_tail_ladder_v1/protocol.md)和[E239](entry_method_exploration/20261123_b64_route_budget_v1/protocol.md)。
+
+### 4.48 E243 WebVid B64 扩训练与多预算遗漏监督
+
+冻结 E183 的 16,000 条及 8,192 条额外 WebVid 原 exact raw-IP 训练。查询精确字节排除原完整拟合、公共 test10K 与 seed validation10K。发布 SPAN4 训练端实际运行四档 L，给真实 K100 生成主返回。More64 只用 L200。Mixed64 用 L176/192/208 的 query–L–target 遗漏事件，沿 E226 原生联合贪心编译器从原有序 B32 各行延长到 64。在线版按 GT10 原三路顺序取候选，去重和排除真实主返回，沿原 raw-IP 四路精算并严格 Top-K 合并。Mixed52 仅截同 Mixed64 最远路到 52。分工、训练身份、边界验证及实际计时见[源码](entry_method_exploration/20261123_b64_multibudget_training_v1/src/benchmark.cpp)、[协议](entry_method_exploration/20261123_b64_multibudget_training_v1/protocol.md)、[封存](entry_method_exploration/20261123_b64_multibudget_training_v1/seal.json)。
+
+### 4.49 E237/E244/E245/E246/E247 新尾表验证与迁移
+
+E237/E244 在 WebVid seed validation exact raw-IP GT 的两个 3,072 条身份窗以精确向量字节排除完整旧训练、E243 扩训及公共测试，两个窗口互斥。E237 直接用冻结 More64/Mixed64，另保留 E234 分流和原 B32/老 B64。E244 对原 B64、Budget40 和 Mixed64 各测原流程与同一个访问复用分支，所有对应 Top-K 逐字等价。读取训练 GT 的时机与测试计时分离。
+
+E245 在 COCO GT10 hard、同实际图和 exact raw-IP 上，用 16,000 条原真实拟合和 4,096 条按源组及精确向量隔离的额外数据重编；E229 3,072 原确认源组固定。编译及线上合同同 E243。E246 WebVid 真 K1 直接冻结 E243 表，训练仍为 K100，在线真实 K1 单独调用和合并，评分读取准确 GT 的首名。E247 沿 E243 同样本和四档原生缓存输出，用同 E226 编译器构造 L176/192/200/208 四个单档与多档对照。细节见[E237](entry_method_exploration/20261123_b64_external_validation_v1/protocol.md)、[E244](entry_method_exploration/20261123_b64_equal_fastpath_v1/protocol.md)、[E245](entry_method_exploration/20261123_coco_b64_multibudget_training_v1/protocol.md)、[E246](entry_method_exploration/20261123_webvid_k1_b64_trained_table_v1/protocol.md)、[E247](entry_method_exploration/20261123_b64_teacher_depth_ablation_v1/protocol.md)。
+
+### 4.50 E242/E248/E249/E250 整数 L、同样本编表及近阈值复测
+
+E242 与 E249 冻结旧策略与模型，仅在原确认窗和原在线真 K 值下细化主搜索 L。E248 复用 E245 同一批实际 COCO 主包，按 E247 的四单档对照方案重编三张新单档表。E250 冻结 E248 的强单档和多档，重测 97% 附近完整时间。均检查历史交叠配置的同查询原生 ID、距离、入口和画像字段。详见[E242](entry_method_exploration/20261123_b64_dense_target_v1/protocol.md)、[E248](entry_method_exploration/20261123_coco_b64_teacher_depth_ablation_v1/protocol.md)、[E249](entry_method_exploration/20261123_webvid_k1_b64_dense84_v1/protocol.md)、[E250](entry_method_exploration/20261123_coco_b64_target_retest_v1/protocol.md)。本轮实验状态由[完成收据](entry_method_exploration/20261123_b64_until1300/closeout.json)记录。
+
+### 4.51 E251 四集三方法同期复测
+
+E251 独立 runner 链接 E211 发布 SPAN4，冻结 E229 四集图、底库、GT10、原 B32、老 B64 与公开评测身份。直接读 E243/E245 封存表，另用 Flickr30k 原 profile 排重 4,096 个源组和 Yandex 排重官方 router_train 8,192 条扩训。原 E183 补点训练、实际 K100 三档漏点及原生 E226 联合覆盖续填至 64。三种方法的在线合并合同见[源码](entry_method_exploration/20261123_b64_four_dataset_retest_v1/src/benchmark.cpp)。真 K1/K100 完整计时、两次重复与逐字段历史校验见[协议](entry_method_exploration/20261123_b64_four_dataset_retest_v1/protocol.md)及[封存](entry_method_exploration/20261123_b64_four_dataset_retest_v1/seal.json)。
+
+### 4.52 E252 经典 L2 的 Mixed64 迁移
+
+[独立 runner](entry_method_exploration/20261123_b64_classical_retest_v1/src/benchmark.cpp)在 Deep10M、BIGANN-SIFT10M、GIST1M 冻结的 E183 底库与 NSG 图上统一走 E211 发布库的 L2 标量主搜索，B32 用 E206 原标量精算，Mixed64 用同一距离计算器精算三路去重后的候选，排除主返回成员。E197 的路由家族与原 JOINT32 不变，各增补 8,192 条有 E97 原平方 L2 标签的 learn 查询，采 L176/192/208 真实 K100 遗漏，由 E226 编译器延长前缀。真 K1/K100 两遍及公开 GT 不进入计时的合同见[协议](entry_method_exploration/20261123_b64_classical_retest_v1/protocol.md)、[输入锁](entry_method_exploration/20261123_b64_classical_retest_v1/inputs.json)和[封存](entry_method_exploration/20261123_b64_classical_retest_v1/seal.json)。
+
+### 4.53 E253 经典 L2 的三方法同期比较
+
+E253 [runner](entry_method_exploration/20261123_gt10_b32_mixed64_classical_v1/src/benchmark.cpp)冻结 E252 的底库、图、路由、评测身份、L 网格和两个补点表。纯 GT10 返回实际标量主搜索 Top-K，B32 与 Mixed64 使用原 E252 在线路径。三方法共用计量与 CPU15 单线程，每点两次正式批次。正式返回经 E252 逐字段对照，随后使用原冻结公开 GT 统一计分。[协议](entry_method_exploration/20261123_gt10_b32_mixed64_classical_v1/protocol.md) · [封存](entry_method_exploration/20261123_gt10_b32_mixed64_classical_v1/seal.json)。
 
 ## 5. 指标、计时与证据
 

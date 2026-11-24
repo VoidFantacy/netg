@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "g++",
+    "-O3",
+    "-march=native",
+    "-std=c++17",
+    "-fopenmp",
+    "-rdynamic",
+    "-I/data/netg/ACSG",
+    "-I/data/netg/ACSG/benches",
+    "-I/data/netg/ACSG/faiss",
+    "-I/data/netg/ACSG/build/_deps/json-src/single_include",
+    "/data/netg/ACSG/entry_method_exploration/20261123_gt10_b32_mixed64_classical_v1/src/benchmark.cpp",
+    "/data/netg/ACSG/entry_method_exploration/20261120_span4_production_default_v1/release/libACSG.a",
+    "/data/netg/ACSG/build/MRNN_Descent/libmrnndescent.a",
+    "/data/netg/ACSG/build/faiss/faiss/libfaiss.a",
+    "-lopenblas",
+    "-lz",
+    "-ldl",
+    "-lcrypto",
+    "-o",
+    "/data/netg/ACSG/entry_method_exploration/20261123_gt10_b32_mixed64_classical_v1/bin/benchmark"
+  ]
+}

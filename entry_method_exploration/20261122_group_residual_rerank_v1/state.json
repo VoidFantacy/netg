@@ -1,0 +1,70 @@
+{
+  "status": "SEALED_E223",
+  "full_ip_qualified": {
+    "coco": true,
+    "webvid2_5m_light_v1": true
+  },
+  "compact_qualified": [
+    32,
+    64
+  ],
+  "formal": {
+    "points": 66,
+    "batches": 132,
+    "historical_bitwise_controls": 44,
+    "queries": 405504
+  },
+  "matched_outcome": [
+    {
+      "method": "P32",
+      "matched": 11,
+      "points": 11,
+      "faster": 3,
+      "slow_faster": 1,
+      "best": {
+        "K": "100",
+        "L": "196",
+        "method": "P32",
+        "hits": "296823",
+        "recall": "96.6220703125",
+        "qps": "2643.922754615855",
+        "qps_min": "2640.883993621457",
+        "qps_max": "2646.9615156102527",
+        "us": "378.2263756510417",
+        "control": "B32-fit",
+        "control_L": "208",
+        "control_recall": "96.65983072916667",
+        "control_qps": "2624.3529736922246",
+        "delta_pct": "0.7456992683456454",
+        "slow_vs_fast_pct": "0.42027450828567847"
+      },
+      "same_L_fit_median_qps_pct": -4.36606893064152
+    },
+    {
+      "method": "P64",
+      "matched": 11,
+      "points": 11,
+      "faster": 1,
+      "slow_faster": 1,
+      "best": {
+        "K": "100",
+        "L": "200",
+        "method": "P64",
+        "hits": "297249",
+        "recall": "96.7607421875",
+        "qps": "2531.094289678608",
+        "qps_min": "2524.7952211701754",
+        "qps_max": "2537.3933581870406",
+        "us": "395.0884791666667",
+        "control": "Q8-cert",
+        "control_L": "208",
+        "control_recall": "96.92024739583333",
+        "control_qps": "2500.5677703413485",
+        "delta_pct": "1.2207835236192288",
+        "slow_vs_fast_pct": "0.7308544944808038"
+      },
+      "same_L_fit_median_qps_pct": -5.513412706265441
+    }
+  ],
+  "production_contract": "E99/E211"
+}

@@ -1,0 +1,54 @@
+{
+  "base": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/base.f32",
+    "format": "raw_f32",
+    "n": 118272,
+    "d": 512
+  },
+  "index": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/nsg.index",
+  "metric_id": 0,
+  "queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/coco/prepared/test.f32",
+    "format": "raw_f32",
+    "n": 3072,
+    "d": 512,
+    "row_start": 0,
+    "total_n": 10000
+  },
+  "threads": 1,
+  "cpu": 15,
+  "dataset": "coco",
+  "router": {
+    "name": "hard",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/ids.i32",
+    "W": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/coco/router.hnsw",
+    "route_order": "heap_pop"
+  },
+  "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/coco/compiled/hard/tables/JOINT32.bin",
+  "output_dir": "/data/netg/ACSG/entry_method_exploration/20261122_b32_b64_two_tower_v1/data/coco/formal",
+  "dense_L": [
+    176,
+    184,
+    188,
+    192,
+    196,
+    200,
+    208,
+    224,
+    232,
+    236,
+    244
+  ],
+  "K": 100,
+  "pool_dir": "/data/netg/ACSG/entry_method_exploration/20261122_b32_b64_two_tower_v1/models/coco/pool",
+  "model_dir": "/data/netg/ACSG/entry_method_exploration/20261122_b32_b64_two_tower_v1/models/coco",
+  "offline_L": [
+    176,
+    184,
+    200,
+    224
+  ],
+  "teacher_cache": "/data/netg/ACSG/entry_method_exploration/20261122_joint_residual_tail_v1/data/coco/formal",
+  "cal_rows": "/data/netg/ACSG/entry_method_exploration/20261122_b32_b64_two_tower_v1/models/coco/cal.i32"
+}

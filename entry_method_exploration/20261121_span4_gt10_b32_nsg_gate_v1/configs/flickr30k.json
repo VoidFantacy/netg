@@ -1,0 +1,37 @@
+{
+  "base": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/flickr30k/prepared/base.f32",
+    "format": "raw_f32",
+    "n": 31782,
+    "d": 512
+  },
+  "index": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/flickr30k/nsg.index",
+  "metric_id": 0,
+  "queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/inputs/flickr30k/prepared/test.f32",
+    "format": "raw_f32",
+    "n": 3072,
+    "d": 512
+  },
+  "threads": 1,
+  "cpu": 15,
+  "dataset": "flickr30k",
+  "router": {
+    "name": "hard",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/flickr30k/ids.i32",
+    "W": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/flickr30k/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20261016_m5_multimodal_transfer_v1/models/flickr30k/router.hnsw",
+    "route_order": "heap_pop"
+  },
+  "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/flickr30k/compiled/hard/tables/JOINT32.bin",
+  "output_dir": "/data/netg/ACSG/entry_method_exploration/20261121_span4_gt10_b32_nsg_gate_v1/data/flickr30k",
+  "gate_router": {
+    "name": "gate",
+    "gate": true,
+    "ids": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/inputs/flickr30k/gate.ids.i32",
+    "W": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/models/flickr30k/gate_disjoint_labels_v1/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20261110_multimodal_four_method_retest_v1/models/flickr30k/gate_disjoint_labels_v1/router.hnsw",
+    "route_order": "heap_pop",
+    "allow_build": false
+  }
+}

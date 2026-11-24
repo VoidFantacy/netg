@@ -1,0 +1,70 @@
+{
+  "status": "COMPLETE_E227",
+  "K": 100,
+  "windows": "6144:9216",
+  "formal_points": 44,
+  "formal_batches": 88,
+  "production_control": "GT10+B32",
+  "formal_checks": 11264,
+  "calibration_checks": 16352,
+  "results": {
+    "coco": {
+      "equal_recall": 0,
+      "same_L_qps_faster": 8,
+      "same_L_qps_slow_faster": 1,
+      "same_L_QPS_delta_median": 0.03772300597544298,
+      "same_L_recall_delta_range": [
+        -0.027994791666674512,
+        -0.023437500000000888
+      ],
+      "exact_saved_mean": 30.596235795454547,
+      "discrete_comparable": 11,
+      "discrete_faster": 8,
+      "discrete_slow_faster": 1,
+      "line_comparable": 10,
+      "line_faster": 3,
+      "best_discrete": {
+        "dataset": "coco",
+        "L": 236,
+        "target": 0.973720703125,
+        "QPS": 2405.8788628450066,
+        "B32_L": 236,
+        "B32_recall": 0.9739713541666667,
+        "B32_QPS": 2380.573908245952,
+        "versus_discrete_pct": 1.0629770624386747,
+        "slow_faster_than_fast": false,
+        "versus_line_pct": 0.41047978234356464
+      }
+    },
+    "webvid2_5m_light_v1": {
+      "equal_recall": 0,
+      "same_L_qps_faster": 6,
+      "same_L_qps_slow_faster": 2,
+      "same_L_QPS_delta_median": 0.23106271681010426,
+      "same_L_recall_delta_range": [
+        -0.034830729166668295,
+        -0.033528645833336146
+      ],
+      "exact_saved_mean": 19.604048295454547,
+      "discrete_comparable": 11,
+      "discrete_faster": 6,
+      "discrete_slow_faster": 2,
+      "line_comparable": 10,
+      "line_faster": 3,
+      "best_discrete": {
+        "dataset": "webvid2_5m_light_v1",
+        "L": 192,
+        "target": 0.7391796875,
+        "QPS": 1918.1011814413155,
+        "B32_L": 192,
+        "B32_recall": 0.7395247395833333,
+        "B32_QPS": 1901.2911553840572,
+        "versus_discrete_pct": 0.8841373931423258,
+        "slow_faster_than_fast": true,
+        "versus_line_pct": 0.5486536237176987
+      }
+    }
+  },
+  "report": "report.md",
+  "figure": "analysis/recall_qps.png"
+}

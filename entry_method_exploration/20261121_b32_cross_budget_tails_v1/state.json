@@ -1,0 +1,29 @@
+{
+  "status": "SEALED_E215_B32_CROSS_BUDGET_TAILS",
+  "datasets": [
+    "coco",
+    "webvid2_5m_light_v1"
+  ],
+  "tail_replay": {
+    "status": "PASS_E215_NATIVE",
+    "datasets": [
+      "coco",
+      "webvid2_5m_light_v1"
+    ],
+    "query_states": 64000,
+    "action_merges": 1728000,
+    "new_ANN_calls": 0,
+    "public_test_read": false
+  },
+  "neighbor_replay": {
+    "status": "PASS_E215_NEIGHBOR_AUDIT",
+    "action_merges": 63624,
+    "held_out_state_rows": 15906,
+    "witness_checks": 128,
+    "result_rows": 32
+  },
+  "online_qps_points": 0,
+  "selector_units": 0,
+  "pending_experiment_queue": false,
+  "report": "report.md"
+}

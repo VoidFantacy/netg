@@ -1,0 +1,60 @@
+{
+  "base": {
+    "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+    "format": "fvecs",
+    "n": 2505000,
+    "d": 512
+  },
+  "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "metric_id": 0,
+  "queries": {
+    "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/query.validation.seed20260826.fvecs",
+    "format": "fvecs",
+    "n": 10000,
+    "d": 512,
+    "row_start": 0,
+    "total_n": 10000
+  },
+  "threads": 1,
+  "cpu": 15,
+  "dataset": "webvid2_5m_light_v1",
+  "router": {
+    "name": "soft",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/webvid2_5m_light_v1/gt10.ids.i32",
+    "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/webvid2_5m_light_v1/gt10_soft_t1/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/webvid2_5m_light_v1/k100/GT10-soft-t1.hnsw",
+    "route_order": "sorted_ids"
+  },
+  "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/webvid2_5m_light_v1/compiled/soft/tables/JOINT32.bin",
+  "output_dir": "/data/netg/ACSG/entry_method_exploration/20261123_b64_external_validation_v1/data/validation",
+  "rows": "/data/netg/ACSG/entry_method_exploration/20261123_b64_external_validation_v1/configs/validation.rows.i32",
+  "pool_dir": "/data/netg/ACSG/entry_method_exploration/20261122_b32_b64_two_tower_v1/models/webvid2_5m_light_v1/pool",
+  "grid": [
+    144,
+    156,
+    168,
+    176,
+    184,
+    192,
+    196,
+    200,
+    204,
+    208,
+    216,
+    224,
+    232,
+    244,
+    256,
+    288,
+    320,
+    368,
+    440,
+    560,
+    680,
+    800,
+    960
+  ],
+  "more_pool": "/data/netg/ACSG/entry_method_exploration/20261123_b64_multibudget_training_v1/models/more",
+  "mixed_pool": "/data/netg/ACSG/entry_method_exploration/20261123_b64_multibudget_training_v1/models/mixed",
+  "cutoff_model": "/data/netg/ACSG/entry_method_exploration/20261123_b64_tail_gate_v1/configs/cutoff.json"
+}

@@ -1,0 +1,290 @@
+{
+  "status": "SEALED_E220_COMPLETE_WALL",
+  "pending_work": false,
+  "report": "report.md",
+  "points": 80,
+  "batches": 160,
+  "query_calls": 491520,
+  "replay": {
+    "status": "PASS_E220_REPLAY_AUDIT",
+    "states": 11952,
+    "exact_candidate_entries_per_original_arm": 1098596,
+    "historical_bitwise_matches": 16
+  },
+  "scenarios": [
+    {
+      "dataset": "coco",
+      "K": 100,
+      "focus": 224,
+      "focus_comparison": {
+        "dataset": "coco",
+        "K": 100,
+        "L": 224,
+        "method": "Q8-fast",
+        "recall": 97.24446614583333,
+        "qps": 2003.7825180544223,
+        "control": "B32",
+        "control_L": 236,
+        "control_recall": 97.2880859375,
+        "control_qps": 2018.9082533452952,
+        "qps_delta_pct": -0.749203697880263,
+        "saved_vs_control_us": -3.7357731119791993,
+        "slow_vs_control_fast_pct": -1.0475666456472355
+      },
+      "focus_other_implementations": [
+        {
+          "method": "Q8-original",
+          "qps": 1991.7972011376505,
+          "qps_delta_pct": -1.3428570695435127
+        },
+        {
+          "method": "Q8-check",
+          "qps": 2007.24489776904,
+          "qps_delta_pct": -0.5777060724244998
+        },
+        {
+          "method": "Q8-top",
+          "qps": 1983.4617436006492,
+          "qps_delta_pct": -1.7557266253140358
+        },
+        {
+          "method": "Q8-fast",
+          "qps": 2003.7825180544223,
+          "qps_delta_pct": -0.749203697880263
+        }
+      ],
+      "neighbor_comparison": {
+        "dataset": "coco",
+        "K": 100,
+        "L": 232,
+        "method": "Q8-fast",
+        "recall": 97.37076822916667,
+        "qps": 1971.8756032550218,
+        "control": "B32",
+        "control_L": 244,
+        "control_recall": 97.40657552083333,
+        "control_qps": 1970.683611824631,
+        "qps_delta_pct": 0.06048618982967824,
+        "saved_vs_control_us": 0.31951611328122453,
+        "slow_vs_control_fast_pct": -0.47013807667927177
+      },
+      "ab": [
+        {
+          "dataset": "coco",
+          "K": 100,
+          "L": 224,
+          "method": "Q8-original",
+          "recall": 97.24446614583333,
+          "qps": 1991.7972011376505,
+          "saved_vs_original_us": 0.0,
+          "qps_delta_pct": 0.0,
+          "slow_vs_original_fast_pct": -0.922417327529701
+        },
+        {
+          "dataset": "coco",
+          "K": 100,
+          "L": 224,
+          "method": "Q8-check",
+          "recall": 97.24446614583333,
+          "qps": 2007.24489776904,
+          "saved_vs_original_us": 3.86846956380208,
+          "qps_delta_pct": 0.7755657364397539,
+          "slow_vs_original_fast_pct": -0.04141372270303201
+        },
+        {
+          "dataset": "coco",
+          "K": 100,
+          "L": 224,
+          "method": "Q8-top",
+          "recall": 97.24446614583333,
+          "qps": 1983.4617436006492,
+          "saved_vs_original_us": -2.10469091796881,
+          "qps_delta_pct": -0.41848926849783474,
+          "slow_vs_original_fast_pct": -1.2074240476390719
+        },
+        {
+          "dataset": "coco",
+          "K": 100,
+          "L": 224,
+          "method": "Q8-fast",
+          "recall": 97.24446614583333,
+          "qps": 2003.7825180544223,
+          "saved_vs_original_us": 3.013670247395794,
+          "qps_delta_pct": 0.6017337964892233,
+          "slow_vs_original_fast_pct": 0.09332923699856277
+        }
+      ]
+    },
+    {
+      "dataset": "webvid2_5m_light_v1",
+      "K": 100,
+      "focus": 232,
+      "focus_comparison": {
+        "dataset": "webvid2_5m_light_v1",
+        "K": 100,
+        "L": 232,
+        "method": "Q8-fast",
+        "recall": 76.90690104166667,
+        "qps": 1342.5934861800197,
+        "control": "B32",
+        "control_L": 244,
+        "control_recall": 77.04069010416667,
+        "control_qps": 1334.4188696374863,
+        "qps_delta_pct": 0.6125974930760725,
+        "saved_vs_control_us": 4.570152343749896,
+        "slow_vs_control_fast_pct": -0.005303272531897996
+      },
+      "focus_other_implementations": [
+        {
+          "method": "Q8-original",
+          "qps": 1312.1378621421886,
+          "qps_delta_pct": -1.6697161590161436
+        },
+        {
+          "method": "Q8-check",
+          "qps": 1338.611619884853,
+          "qps_delta_pct": 0.31420046154666537
+        },
+        {
+          "method": "Q8-top",
+          "qps": 1316.9206118810944,
+          "qps_delta_pct": -1.3113017325021459
+        },
+        {
+          "method": "Q8-fast",
+          "qps": 1342.5934861800197,
+          "qps_delta_pct": 0.6125974930760725
+        }
+      ],
+      "neighbor_comparison": {
+        "dataset": "webvid2_5m_light_v1",
+        "K": 100,
+        "L": 224,
+        "method": "Q8-fast",
+        "recall": 76.49055989583333,
+        "qps": 1386.7268132446657,
+        "control": "B32",
+        "control_L": 236,
+        "control_recall": 76.62858072916667,
+        "control_qps": 1373.9013464832583,
+        "qps_delta_pct": 0.9335071105532,
+        "saved_vs_control_us": 6.751013346353943,
+        "slow_vs_control_fast_pct": 0.3115229865890301
+      },
+      "ab": [
+        {
+          "dataset": "webvid2_5m_light_v1",
+          "K": 100,
+          "L": 232,
+          "method": "Q8-original",
+          "recall": 76.90690104166667,
+          "qps": 1312.1378621421886,
+          "saved_vs_original_us": 0.0,
+          "qps_delta_pct": 0.0,
+          "slow_vs_original_fast_pct": -0.20840589454302894
+        },
+        {
+          "dataset": "webvid2_5m_light_v1",
+          "K": 100,
+          "L": 232,
+          "method": "Q8-check",
+          "recall": 76.90690104166667,
+          "qps": 1338.611619884853,
+          "saved_vs_original_us": 15.06745377604193,
+          "qps_delta_pct": 2.0176048955285575,
+          "slow_vs_original_fast_pct": 1.6286865205081602
+        },
+        {
+          "dataset": "webvid2_5m_light_v1",
+          "K": 100,
+          "L": 232,
+          "method": "Q8-top",
+          "recall": 76.90690104166667,
+          "qps": 1316.9206118810944,
+          "saved_vs_original_us": 2.767282552083543,
+          "qps_delta_pct": 0.36450055111567625,
+          "slow_vs_original_fast_pct": 0.12517593887488854
+        },
+        {
+          "dataset": "webvid2_5m_light_v1",
+          "K": 100,
+          "L": 232,
+          "method": "Q8-fast",
+          "recall": 76.90690104166667,
+          "qps": 1342.5934861800197,
+          "saved_vs_original_us": 17.284877929687582,
+          "qps_delta_pct": 2.321068914824953,
+          "slow_vs_original_fast_pct": 1.9805135215962277
+        }
+      ]
+    }
+  ],
+  "adaptive": {
+    "features": [
+      "main_kth_score",
+      "best_new_margin",
+      "new_above_main_kth",
+      "proposed",
+      "tail_slots",
+      "exchanged"
+    ],
+    "threshold": -2.4773490703062504,
+    "weights": [
+      -0.28361289299449116,
+      0.28598994682105766,
+      0.14598080425279492,
+      0.0,
+      -0.12853171660650234,
+      -0.0853345292870292
+    ],
+    "intercept": -1.780128308972007,
+    "means": [
+      0.28070570501871595,
+      -0.005746377576647495,
+      0.7547169811320755,
+      32.0,
+      46.852035749751735,
+      15.745283018867925
+    ],
+    "scales": [
+      0.0282426283806893,
+      0.017662363469884083,
+      1.426245372752026,
+      1.0,
+      1.6893713322492114,
+      0.8807581675419189
+    ],
+    "rows": [
+      {
+        "role": "dev",
+        "queries": 2014,
+        "two_table_hits": 148605,
+        "four_table_hits": 149018,
+        "control_L192_hits": 148831,
+        "queries_with_extra_hits": 322,
+        "expanded_queries": 1791,
+        "skipped_fraction": 0.11072492552135049,
+        "extra_hits_retained": 405,
+        "extra_hits_available": 413,
+        "vs_L192": 179,
+        "oracle_min_expanded_queries": 135
+      },
+      {
+        "role": "cal",
+        "queries": 1985,
+        "two_table_hits": 144961,
+        "four_table_hits": 145391,
+        "control_L192_hits": 145382,
+        "queries_with_extra_hits": 332,
+        "expanded_queries": 1753,
+        "skipped_fraction": 0.1168765743073048,
+        "extra_hits_retained": 421,
+        "extra_hits_available": 430,
+        "vs_L192": 0,
+        "oracle_min_expanded_queries": 323
+      }
+    ],
+    "qualification": true
+  },
+  "approximate_saving_before_gate_us": 0.4534876550371846
+}

@@ -1,5 +1,81 @@
 # ACSG 实验与研究索引
 
+2026-11-23 完成 [E253 经典 L2 的 GT10、GT10+B32 与 GT10+Mixed64 同期比较](experiment_history/253_gt10_b32_mixed64_classical_v1.md)。真 K1/K100、288 点、576 批，纯 GT10 最快 41/44 个固定召回目标，GIST 有两个新表达标速度正点。
+
+2026-11-23 完成 [E252 三套经典 L2 数据的 Mixed64 复测](experiment_history/252_b64_classical_retest_v1.md)。真 K1/K100、192 点、384 批。Deep/SIFT 的 28 个共同达标目标都由 B32 更快达到，GIST 有两个局部达标速度收益。
+
+2026-11-23 完成 [E251 四集 B32、老 B64 与 Mixed64 同期复测](experiment_history/251_b64_four_dataset_retest_v1.md)。真 K1/K100，465 点、930 批。新 B64 相对 B32 同 L 召回 149 点提高、6 点持平。四集的同门槛速度表现依 K 与目标而异。
+
+2026-11-23 完成 [E250 COCO 97% 同期复测](experiment_history/250_coco_b64_target_retest_v1.md)。40 点、80 批，单 L176 与多档都在 L196 达标，较老版 +2.44% 和 +2.49%。
+
+2026-11-23 完成 [E249 WebVid 真 K1 84% 加密](experiment_history/249_webvid_k1_b64_dense84_v1.md)。39 点、78 批，老 L180→新 L166，完整 QPS +7.01%。
+
+2026-11-23 完成 [E248 COCO 同样本监督深度消融](experiment_history/248_coco_b64_teacher_depth_ablation_v1.md)。真 K100 49 点、98 批。单档 L176 七个同 L 测点均比多档召回高，绝对 QPS 跨轮波动。
+
+2026-11-23 完成 [E242 WebVid K100 逐整数复测](experiment_history/242_b64_dense_target_v1.md)。78 点、156 批，75.5% 线性门 L205 对老 B64 L204 +0.02%，Budget52 +0.22%。
+
+2026-11-23 完成 [E247 WebVid 同样本监督深度消融](experiment_history/247_b64_teacher_depth_ablation_v1.md)。真 K100、84 点、168 批。最佳单档 L176，75.5% 与多档同在 L208，后者仅多 16 个正确成员。
+
+2026-11-23 完成 [E246 WebVid K100 表到真 K1](experiment_history/246_webvid_k1_b64_trained_table_v1.md)。85 点、170 批。84% Mixed64 L168 比老 B64 L184 +7.85%，慢遍仍 +7.79%。
+
+2026-11-23 完成 [E245 COCO 多预算遗漏监督](experiment_history/245_coco_b64_multibudget_training_v1.md)。真 K100、90 点、180 批。97% 多档版把老 B64 的 L204 降到 L196，完整 QPS +2.48%。
+
+2026-11-23 完成 [E244 WebVid 同等精算复用](experiment_history/244_b64_equal_fastpath_v1.md)。真 K100 第三窗 112 点、224 批。两个表都用访问复用时 75.5% 新表 +1.90%，慢遍仍 +1.52%。
+
+2026-11-23 完成 [E237 WebVid 异源高召回验证](experiment_history/237_b64_external_validation_v1.md)。真 K100，115 点、230 批。Mixed64 的 75.5% 目标较老版 +3.37%，慢遍比快遍仍 +3.30%。
+
+2026-11-23 完成 [E243 WebVid 扩训练与多预算遗漏监督](experiment_history/243_b64_multibudget_training_v1.md)。真 K100 90 点、180 批，75.5% 从老 B64 L204 到新 L200，完整 QPS +1.84%，慢遍仍 +1.81%。
+
+2026-11-23 完成 [E235 WebVid 三路入口角色联合编表](experiment_history/235_b64_joint_role_table_v1.md)。真 K100 两窗 154 点、308 批。训练覆盖增量未延续到独立确认，75.5% 三个重编版均慢于老 B64。
+
+2026-11-23 完成 [E238 WebVid 三路条件配额](experiment_history/238_b64_rank_budget_v1.md)。真 K100 105 点、210 批。Budget40 八个固定目标六个慢遍仍更快，75.5% 目标约持平且速度交叠。
+
+2026-11-23 完成 [E233 WebVid 复用主搜索访问标记](experiment_history/233_b64_visited_skip_v1.md)。两窗真 K100 132 点、264 批。原返回逐字保持，同 L 完整 QPS 中位数 +0.45%/+0.53%。
+
+2026-11-23 完成 [E236 WebVid 第三路单分数分档](experiment_history/236_b64_tail_ladder_v1.md)，真 K100 75 点、150 批。冻结只用 40/64，75.5% 目标比老 B64 慢 1.57%。[E239 原入口分数分配主 L](experiment_history/239_b64_route_budget_v1.md)完成真实缓存诊断，校准三个点净 −64/+15/−5，无新完整计时。
+
+2026-11-23 完成 [E234 WebVid 按查询开放第三路](experiment_history/234_b64_tail_gate_v1.md)。真 K100 90 点、180 批。条件选择的等预算回放质量改善，确认窗 75.5% 达标完整 QPS 仍比老 B64 慢 1.74%。
+
+2026-11-23 完成 [E232 WebVid 最远入口专用尾表](experiment_history/232_b64_role_conditioned_tail_v1.md)。真 K100 两窗 192 点、384 批。开发重排的小幅命中增量在确认窗没有复现。
+
+2026-11-23 完成 [E231 WebVid B64 第三路深度](experiment_history/231_b64_far_depth_sweep_v1.md)。真实 K100 两窗共 176 点、352 批。固定 52 在开发窗 L196 刚达到 75.5%，确认窗同门槛下各固定配额均未加速老 B64。
+
+2026-11-23 完成 [E230 WebVid B64 入口配额](experiment_history/230_b64_entry_budget_v1.md)。真 K1/K100，105 点、210 批。K100 新版同实际精算预算的均匀 B56 对照在 18/18 个同 L 测点召回更高。
+
+2026-11-22 完成 [E229 四集 B64 正式比较](experiment_history/229_b64_formal_four_dataset_v1.md)。真实 K1/K100、218 点、436 批。B64 双边达标目标均值更快分别 8/24、15/35。WebVid 的 72% K100 低 L 补测完成。
+
+2026-11-22 完成 [E228 B64 全精算异窗密集复测](experiment_history/228_b64_full_confirmation_v1.md)。COCO、WebVid 真 K100，80 点、160 批。B64 在同期双边达标目标中均值更快 7/7、5/6，各有 16/16 个同召回重叠点在 B32 折线右侧。
+
+2026-11-22 完成 [E227 B32 截止分双塔](experiment_history/227_b32_cutoff_two_tower_v1.md)。COCO、WebVid 真 K100，44 点、88 批。两集平均少精算 30.60 / 19.60 个，22 档同 L 召回小幅下降，完整 QPS 收益不稳定。
+
+2026-11-22 完成 [E226 B32/B64 双塔直接补点](experiment_history/226_b32_b64_two_tower_v1.md)。COCO、WebVid 真 K100，132 点、264 批。双塔 44/44 点召回高于同预算 PCA。全精算 B64 有 15/16 个重叠点位于同期 B32 折线右侧。
+
+2026-11-22 完成 [E225 P64 候选探针分流](experiment_history/225_p64_candidate_probe_v1.md)。COCO 真 K100、3,072 条身份隔离留出、22 点、44 完整批次。L184 达到 B32 L192 的召回，完整 QPS 慢 2.49%。
+
+2026-11-22 完成 [E224 B32 与 P64 逐查询分流](experiment_history/224_p64_residual_gate_v1.md)。COCO 真 K100、真实留出 3,072 条、66 点、132 批。主比较 L184→L192 两臂均少正确成员。
+
+2026-11-22 完成 [E223 单组全池逐查询残差交换](experiment_history/223_group_residual_rerank_v1.md)。两集真实 K100 全精度回放，COCO 32/64 维两窗及 66 点、132 批同期完整计时。
+
+2026-11-22 完成 [E222 B32 组内联合短尾表](experiment_history/222_joint_residual_tail_v1.md)。COCO 和 WebVid 真 K100、132 点、264 完整批次，短表 44/44 点被同期强控制覆盖。
+
+2026-11-21 完成 [E221 Q8 粗分安全跳过精算](experiment_history/221_q8_certified_pruning_v1.md)。11,952 个回放状态和 107 点、214 完整批次，真实 K1/K100，拒绝见证与逐字节等价核验完成。
+
+2026-11-21 完成 [E220 Q8 等价提速与按需扩表回放](experiment_history/220_q8_equivalent_speed_v1.md)。11,952 个回放状态以及两集 K100 完整 80 点、160 批。对 E219 的候选、精算与结果按字节核验。
+
+2026-11-21 完成 [E219 漏点 ID 粗排与 B32 尾部保留](experiment_history/219_bucket_id_reranking_v1.md)。COCO K100、WebVid K1/K100，主网格 162 点、324 批，加密 60 点、120 批，CPU15 单线程，三场景同期精算和性能复核。
+
+2026-11-21 完成 [E218 入口桶净收益选择与双表动作](experiment_history/218_bucket_gain_selection_v1.md)。COCO K100、WebVid K1 交叉拟合和两窗真实回放，正式点 0。WebVid K100 双表同预算精确上限两窗高于 L192。
+
+2026-11-21 完成 [E217 复用 GT10 入口取补点候选](experiment_history/217_gt10_bucket_residual_v1.md)。COCO、WebVid 真 K1/K100 共 15,906 个回放状态，BKT4/8 均无正式资格。额外做桶内固定动作的精确 Top-K 上限，正式点 0。
+
+2026-11-21 完成 [E216 COCO、WebVid 在线相近查询补点](experiment_history/216_neighbor_residual_online_v1.md)。真 K1/K100 五臂主网格 160 点、320 批；两个代表点加密 59 点、118 批。WebVid K1 CACHE 达标 QPS 快 1.67%，COCO K100 代表点慢 2.65%，在线检索与投票费用含在计时内。
+
+2026-11-21 完成 [E215 小 L 补点候选来源](experiment_history/215_b32_cross_budget_tails_v1.md)。COCO、WebVid 真 K1/K100，E206 训练角色 64,000 状态和 1,728,000 尾部动作，追加 15,906 状态和 63,624 次相近查询补点合并。相近 fit 查询全部遗漏替换原尾部时，COCO K100 两窗超过 L192 参考，WebVid K100 校准窗差 95 个成员。正式 QPS 点 0。
+
+2026-11-21 完成 [E214 四集 B32 候选四路精算](experiment_history/214_b32_batch4_scoring_v1.md)。真实 K1/K100 各 7 档 L，168 点、336 个完整 CPU15 单线程批次。56 组新旧 B32 返回逐字相同，完整 QPS 变化 −0.52% 至 +2.44%，中位数 +0.35%；均值更快 48/56，慢遍领先原版快遍 34/56。
+
+2026-11-21 完成 [E213 四集 GT10+B32、固定单入口 NSG 与 GATE](experiment_history/213_span4_gt10_b32_nsg_gate_v1.md)。三条 SPAN4 链路和一条 GATE 标量对照共 224 点、448 个完整 CPU15 单线程批次。GATE 与标量返回相同，完整 QPS 提升 11.97%–27.96%。GT10+B32 相对同期 SPAN4 的 NSG、GATE 同 L Recall/QPS 双升分别为 28/56、39/56。
+
 E212 四个真实数据集各3072条，真实 K1/K100 各7个 L。224点448批。同表的新 GT10+B32 相对旧 GT10+B32 56组返回逐字相同，完整 QPS 变化 +13.43% 至 +27.54%。固定同 L 补点平均 Recall 增加 52/56 点，完整 QPS 降低 56/56 点。 [历史卡片](experiment_history/212_gt10_nsg_b32_four_way_v1.md)。
 
 2026-11-20 完成 E211 并切换默认。标准 Flat raw-IP 的 `ACSG::search_new(mode=2)` 默认走 SPAN4，L2 等其他距离路径走标量。四个真实数据集各3,072条，真实K1/K100各7个L，224点、448个完整CPU15单线程批次。112个新旧配对返回逐字节相同，112/112个配对通过逐点速度筛选。纯GT10完整QPS变化+13.74%至+28.35%，GT10+B32变化+13.16%至+27.94%。 [E211 历史卡片](experiment_history/211_span4_production_default_v1.md)

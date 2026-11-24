@@ -1,0 +1,69 @@
+{
+  "base": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/base.fvecs",
+    "format": "fvecs",
+    "n": 10000000,
+    "d": 128
+  },
+  "index": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/sift10m_bigann_l2_v1/nsg/graph.nsg",
+  "metric_id": 1,
+  "dataset": "sift10m_bigann_l2_v1",
+  "threads": 1,
+  "cpu": 15,
+  "router": {
+    "name": "soft",
+    "ids": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/gt10.ids.i32",
+    "W": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/models/sift10m_bigann_l2_v1/gt10_soft_t1/W.f32",
+    "graph": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/results/sift10m_bigann_l2_v1/k100/GT10-soft-t1.hnsw",
+    "route_order": "sorted_ids"
+  },
+  "table": "/data/netg/ACSG/entry_method_exploration/20261017_gt10_residual_comprehensive_v1/models/sift10m_bigann_l2_v1/compiled/soft/tables/JOINT32.bin",
+  "queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260915_gate_l2_r1_r100_v1/inputs/sift10m_bigann_l2_v1/test.f32",
+    "format": "raw_f32",
+    "n": 10000,
+    "d": 128,
+    "total_n": 10000
+  },
+  "output_dir": "/data/netg/ACSG/entry_method_exploration/20261123_gt10_b32_mixed64_classical_v1/data/sift10m_bigann_l2_v1",
+  "grids": {
+    "1": [
+      16,
+      20,
+      24,
+      28,
+      32,
+      40,
+      48,
+      56,
+      64,
+      80,
+      100,
+      128,
+      160,
+      200,
+      280,
+      400
+    ],
+    "100": [
+      100,
+      112,
+      128,
+      144,
+      160,
+      176,
+      192,
+      208,
+      232,
+      256,
+      320,
+      400,
+      512,
+      640,
+      800
+    ]
+  },
+  "eval_n": 3072,
+  "rows": "/data/netg/ACSG/entry_method_exploration/20261123_b64_classical_retest_v1/configs/sift10m_bigann_l2_v1.rows.i32",
+  "mixed_pool": "/data/netg/ACSG/entry_method_exploration/20261123_b64_classical_retest_v1/models/sift10m_bigann_l2_v1/mixed"
+}

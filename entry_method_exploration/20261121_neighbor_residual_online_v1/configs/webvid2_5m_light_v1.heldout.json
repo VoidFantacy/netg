@@ -1,0 +1,50 @@
+{
+  "dataset": "webvid2_5m_light_v1",
+  "base": {
+    "path": "/data/netg/ACSG/benches/datasets/WebVid2.5M_light_v1/base.webvid2_5m.fvecs",
+    "format": "fvecs",
+    "n": 2505000,
+    "d": 512
+  },
+  "index": "/data/netg/ACSG/indices/webvid2_5m_light_v1_index/acosp_nsg.json",
+  "metric_id": 0,
+  "train_queries": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/queries.f32",
+    "format": "raw_f32",
+    "n": 16000,
+    "d": 512,
+    "total_n": 20000,
+    "row_start": 0
+  },
+  "train_gt": {
+    "path": "/data/netg/ACSG/entry_method_exploration/20260910_gt_topk_profiles_v1/inputs/webvid2_5m_light_v1/fit/gt.i64",
+    "format": "raw_i64",
+    "n": 16000,
+    "k": 100,
+    "total_n": 20000,
+    "row_start": 0
+  },
+  "roles": "/root/acsg-e202-storage/models/webvid2_5m_light_v1/tree/roles.i8",
+  "threads": 1,
+  "cpu": 15,
+  "output_dir": "/data/netg/ACSG/entry_method_exploration/20261121_neighbor_residual_online_v1/data/webvid2_5m_light_v1/heldout",
+  "anchor_table": "/data/netg/ACSG/entry_method_exploration/20261120_residual_budget_matched_table_v1/data/webvid2_5m_light_v1/tables_L200/fit/tables/JOINT32.bin",
+  "identity_groups": "/data/netg/ACSG/entry_method_exploration/20261120_residual_prefix_signal_v1/data/webvid2_5m_light_v1/identity_groups.i32",
+  "packets": {
+    "1": {
+      "low": "/data/netg/ACSG/entry_method_exploration/20261120_residual_budget_matched_table_v1/data/webvid2_5m_light_v1/teacher/k1/GT10_L184/raw",
+      "high": "/data/netg/ACSG/entry_method_exploration/20261120_residual_budget_matched_table_v1/data/webvid2_5m_light_v1/teacher/k1/GT10_L192/raw",
+      "anchor": "/data/netg/ACSG/entry_method_exploration/20261120_residual_budget_matched_table_v1/data/webvid2_5m_light_v1/replay/k1/B32-L200_L184/raw",
+      "target": "/data/netg/ACSG/entry_method_exploration/20261120_residual_budget_matched_table_v1/data/webvid2_5m_light_v1/replay/k1/B32-L200_L192/raw",
+      "old_small": "/data/netg/ACSG/entry_method_exploration/20261120_residual_budget_matched_table_v1/data/webvid2_5m_light_v1/replay/k1/B32-L184_L184/raw"
+    },
+    "100": {
+      "low": "/data/netg/ACSG/entry_method_exploration/20261120_residual_budget_matched_table_v1/data/webvid2_5m_light_v1/teacher/k100/GT10_L184/raw",
+      "high": "/data/netg/ACSG/entry_method_exploration/20261120_residual_budget_matched_table_v1/data/webvid2_5m_light_v1/teacher/k100/GT10_L192/raw",
+      "anchor": "/data/netg/ACSG/entry_method_exploration/20261120_residual_budget_matched_table_v1/data/webvid2_5m_light_v1/replay/k100/B32-L200_L184/raw",
+      "target": "/data/netg/ACSG/entry_method_exploration/20261120_residual_budget_matched_table_v1/data/webvid2_5m_light_v1/replay/k100/B32-L200_L192/raw",
+      "old_small": "/data/netg/ACSG/entry_method_exploration/20261120_residual_budget_matched_table_v1/data/webvid2_5m_light_v1/replay/k100/B32-L184_L184/raw"
+    }
+  },
+  "model_dir": "/data/netg/ACSG/entry_method_exploration/20261121_neighbor_residual_online_v1/models/webvid2_5m_light_v1"
+}

@@ -1,0 +1,131 @@
+{
+  "coco": {
+    "origin": "20261123_coco_b64_multibudget_training_v1",
+    "scope": {
+      "original": 16000,
+      "extra": 4096,
+      "n": 20096,
+      "need": 3072,
+      "identity": "source group and exact query bytes",
+      "excluded": [
+        "profile",
+        "qgt",
+        "residual",
+        "E229 confirmation"
+      ]
+    },
+    "pool": "/data/netg/ACSG/entry_method_exploration/20261123_coco_b64_multibudget_training_v1/models/mixed",
+    "original_eval": {
+      "source": "E228",
+      "identity": "prepared source group ids",
+      "count": 3072,
+      "distinct_identities": 3072,
+      "matching_fit": 0,
+      "first": 6144,
+      "last": 9215
+    }
+  },
+  "flickr30k": {
+    "origin": "E251",
+    "scope": {
+      "original": 16000,
+      "extra": 4096,
+      "n": 20096,
+      "source": "prepared profile role, exact group and query overlap checked",
+      "levels": [
+        176,
+        192,
+        208
+      ],
+      "events": {
+        "176": {
+          "events": 69681,
+          "B32_covered": 32173
+        },
+        "192": {
+          "events": 60492,
+          "B32_covered": 31158
+        },
+        "208": {
+          "events": 53029,
+          "B32_covered": 28834
+        }
+      },
+      "offline_seconds": 25.091803750001418
+    },
+    "pool": "/data/netg/ACSG/entry_method_exploration/20261123_b64_four_dataset_retest_v1/models/flickr30k/mixed",
+    "original_eval": {
+      "source": "E213",
+      "identity": "prepared source group ids",
+      "count": 3072,
+      "distinct_identities": 3072,
+      "matching_fit": 0,
+      "first": 0,
+      "last": 3071
+    }
+  },
+  "webvid2_5m_light_v1": {
+    "origin": "20261123_b64_multibudget_training_v1",
+    "scope": {
+      "original": 16000,
+      "extra": 8192,
+      "n": 24192,
+      "need": 4096,
+      "identity": "exact vector bytes",
+      "excluded": [
+        "full E183/GT10 fit",
+        "public test10K",
+        "seed validation10K"
+      ]
+    },
+    "pool": "/data/netg/ACSG/entry_method_exploration/20261123_b64_multibudget_training_v1/models/mixed",
+    "original_eval": {
+      "source": "E228",
+      "identity": "exact 512D or 200D vector bytes and official train roles",
+      "count": 3072,
+      "distinct_identities": 3072,
+      "matching_fit": 0,
+      "first": 6144,
+      "last": 9217
+    }
+  },
+  "yandex_t2i_official10M_ip_v1": {
+    "origin": "E251",
+    "scope": {
+      "original": 16000,
+      "extra": 8192,
+      "n": 24192,
+      "source": "official router_train, full fit/validation/public excluded by exact bytes",
+      "levels": [
+        176,
+        192,
+        208
+      ],
+      "events": {
+        "176": {
+          "events": 299667,
+          "B32_covered": 29894
+        },
+        "192": {
+          "events": 278364,
+          "B32_covered": 29817
+        },
+        "208": {
+          "events": 260160,
+          "B32_covered": 28738
+        }
+      },
+      "offline_seconds": 108.74702877500022
+    },
+    "pool": "/data/netg/ACSG/entry_method_exploration/20261123_b64_four_dataset_retest_v1/models/yandex_t2i_official10M_ip_v1/mixed",
+    "original_eval": {
+      "source": "E213",
+      "identity": "exact 512D or 200D vector bytes and official train roles",
+      "count": 3072,
+      "distinct_identities": 3072,
+      "matching_fit": 0,
+      "first": 0,
+      "last": 3071
+    }
+  }
+}
